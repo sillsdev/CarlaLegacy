@@ -3,9 +3,9 @@
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPAgrFeatures" count="2/2">
 	<title level="2">Basic, Single-Clause Sentences - Agreement Features</title>
-	<instruction>Verbs and auxiliaries may also carry agreement features that force agreement with the subject, and sometimes also with the direct object.  Look through the features in the chart below and check any that your language uses.  In the lexicon, add the appropriate features to the relevant affixes, including pronominal clitics that may attach to the verb.
+	<instruction>Verbs and auxiliaries may also carry agreement features that force agreement with the subject, and sometimes also with the direct object.  Look through the features in the chart below and check any that your language uses.  For class agreement, either a type or number should be used in the grammar output to replace the ## below. <span id="IPAgrFeaturesNotPracticalSpan" show="swNotPractical">In the lexicon, add the appropriate features to the relevant affixes, including pronominal clitics that may attach to the verb.  For class agreement, replace the ## with the appropriate class number up to 30 on the appropriate entries in the lexicon.
 <br/>
-		<br/>For animacy, it is most likely a property of the semantics of the individual verb whether its subject and/or object must be animate, so those features will need to be keyed on the verb entry.  Since verbs are a large, open class, you do not need to mark all verbs at this point (or even ever).  Mark those common verbs that come to mind that can only have an animate subject or object.  For example, any "experiencer" verbs which have to do with feeling or thinking must have an animate subject.  Later, when you are working on eliminating incorrect parses, you will find others that need these features.<br/>
+		<br/>For animacy, it is most likely a property of the semantics of the individual verb whether its subject and/or object must be animate, so those features will need to be keyed on the verb entry.  Since verbs are a large, open class, you do not need to mark all verbs at this point (or even ever).  Mark those common verbs that come to mind that can only have an animate subject or object.  For example, any "experiencer" verbs which have to do with feeling or thinking must have an animate subject.  Later, when you are working on eliminating incorrect parses, you will find others that need these features.</span><br/>
 		<featureChart>
 			<featureRow>
 				<featureType rowspan="20">person</featureType>
@@ -233,7 +233,7 @@
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipAgrFeatHumanAbsolutive" name="IPFeatAgrHumanAbsolutive">human_absolutive</featureItem>
-				<featureExplanation>the subject of an intransitive verb or the object of a transitive verb must be hman</featureExplanation>
+				<featureExplanation>the subject of an intransitive verb or the object of a transitive verb must be human</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipAgrFeatMinusHumanSubject" name="IPFeatAgrMinusHumanSubject">-human_subject</featureItem>
@@ -254,19 +254,19 @@
 			<featureRow>
 				<featureType rowspan="4">class</featureType>
 				<featureItem dataValue="ipAgrFeatClassClassNumberSubject" name="IPFeatAgrClassClassNumberSubject">class_##_subject</featureItem>
-				<featureExplanation>the subject must be class ## (replace ## with the class number up to 30)</featureExplanation>
+				<featureExplanation>the subject must be class ## </featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipAgrFeatClassClassNumberObject" name="IPFeatAgrClassClassNumberObject">class_##_object</featureItem>
-				<featureExplanation>the object must be class ## (replace ## with the class number up to 30)</featureExplanation>
+				<featureExplanation>the object must be class ##</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipAgrFeatClassClassNumberErgative" name="IPFeatAgrClassClassNumberErgative">class_##_ergative</featureItem>
-				<featureExplanation>the subject of a transitive verb must be class ## (replace ## with the class number up to 30)</featureExplanation>
+				<featureExplanation>the subject of a transitive verb must be class ##</featureExplanation>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipAgrFeatClassClassNumberAbsolutive" name="IPFeatAgrClassClassNumberAbsolutive">class_##_absolutive</featureItem>
-				<featureExplanation>the subject of an intransitive verb or the object of a transitive verb must be class ## (replace ## with the class number up to 30)</featureExplanation>
+				<featureExplanation>the subject of an intransitive verb or the object of a transitive verb must be class ## </featureExplanation>
 			</featureRow>
 		</featureChart>
 	</instruction>
@@ -277,4 +277,7 @@
 			<button id="IPAgrFeaturesNext" value="Next" goto="IPContents.htm"/>
 		</buttons>
 	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
 </page>

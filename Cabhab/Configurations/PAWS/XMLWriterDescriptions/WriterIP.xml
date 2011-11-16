@@ -716,7 +716,7 @@
 							<content>class</content>
 						</col>
 						<col>
-							<content>class_## subject</content>
+							<content>class ## subject</content>
 						</col>
 					</row>
 					<row show="swIPAgrFeatClassClassNumberObject">
@@ -724,7 +724,7 @@
 							<content>class</content>
 						</col>
 						<col>
-							<content>class_## object</content>
+							<content>class ## object</content>
 						</col>
 					</row>
 					<row show="swIPAgrFeatClassClassNumberErgative">
@@ -732,7 +732,7 @@
 							<content>class</content>
 						</col>
 						<col>
-							<content>class_## ergative argument</content>
+							<content>class ## ergative argument</content>
 						</col>
 					</row>
 					<row show="swIPAgrFeatClassClassNumberAbsolutive">
@@ -740,7 +740,7 @@
 							<content>class</content>
 						</col>
 						<col>
-							<content>class_## absolutive argument</content>
+							<content>class ## absolutive argument</content>
 						</col>
 					</row>
 				</table>
@@ -1124,7 +1124,13 @@ Some languages are not really pro-drop languages, but at least some of the prono
 			<p>
 				<content>Simple intransitives do not have any complements after the verb, such as in </content>
 				<langData>The girl swims</langData>
-				<content>.  Motion verbs include a location in the form of either a PP or adverb.  English examples of motion verbs include </content>
+				<content>.  Motion verbs include a location in the form of either a </content>
+				<case element="pp" attr="pPos">
+					<caseText value="before">prepositional</caseText>
+					<caseText value="after">postpositional</caseText>
+					<caseText value="both">prepositional or postpositional</caseText>
+					<caseText value="unknown">prepositional or postpositional</caseText></case>
+				<content> phrase or adverb.  English examples of motion verbs include </content>
 				<langData>The girl ran around the track</langData>
 				<content>, </content>
 				<langData>My mother went to the store</langData>
@@ -1157,7 +1163,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<content>, </content>
 				<langData>She seems nice</langData>
 				<content>, </content>
-				<langData>The girl is in charge</langData>
+				<langData>My sister is in the hospital</langData>
 				<content> and </content>
 				<langData>He is the leader</langData>
 				<content>.</content>

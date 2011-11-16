@@ -36,8 +36,8 @@
 		<p>
 <xsl:if test="normalize-space(//relcl/@exist)='no'">
 				<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -48,8 +48,8 @@
 <xsl:if test="normalize-space(//relcl/@exist)='yes'">
 				<xsl:text>In </xsl:text>
 				<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -64,8 +64,8 @@
 				</xsl:choose>
 				<xsl:text> the head noun.   </xsl:text>
 				<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -151,8 +151,8 @@
 <p>
 <xsl:text>Examples of relative clauses in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -250,8 +250,8 @@
 <p>
 <xsl:text> </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>

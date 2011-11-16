@@ -2,27 +2,27 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QEmbYN" count="3/9">
-	<title level="2">Las preguntas - Las preguntas sí/no de la cláusula subordinada</title>
+	<title level="2">Las preguntas - Las preguntas con respuesta afirmativa/negativa de la cláusula subordinada</title>
 	<form section="q">
 		<EnglishExample>
-			<exItem>Las preguntas sí/no de los ejemplos españoles en las cláusulas subordiadas, demostrando la presencia de los marcadores o de los complementizadores de la pregunta, incluyen:</exItem>
+			<exItem>Algunos ejemplos en español de las preguntas polares en las cláusulas subordinadas, demostrando la presencia de el indicador o complementizador de la pregunta, son:</exItem>
 			<exItem label="1.">Me pregunto si ella vendrá.</exItem>
 			<exItem label="2.">Yo sabré si ella va.</exItem>
 			<exItem label="3.">Susana se pregunta si el muchacho habría podido golpear el beísbol..</exItem>
 		</EnglishExample>
-		<prompt>Incorpore ejemplos similares de las preguntas sí/no de la cláusula subordinada en su idioma aquí:</prompt>
+		<prompt>Escriba ejemplos similares de las preguntas sí/no de la cláusula subordinada en su idioma aquí:</prompt>
 		<textBox id="QEmbYNExample" dataItem="embYNExample" cols="50"/>
 		<br/>
 		<instruction id="QEmbYNInstruction">Only certain verbs can take a question complement. In the lexicon, mark the verbs from your examples and any others that come to mind with the features <feature>sentential embedded_question</feature> if they can only take an embedded question complement (like 'wonder'), but use the features <feature>sentential embedded_question_allowed</feature> if they can take an embedded question as well as a non-question complement (like 'know').
 		</instruction>
 		<radioGroup>
 			<groupName dataItem="embYN" default="no">RQEmbYN</groupName>
-			<prompt>Para las preguntas sí/no de la cláusula subordinada, ¿su idioma tiene uno o más marcadores o complementizadores sí/no de la pregunta (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
+			<prompt>Para las preguntas polares de la cláusula subordinada, ¿Hay uno o más indicadores o complementizadores de la pregunta (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
 			<radio id="QEmbYNYes" dataValue="yes">Sí, como <example>si</example> en español</radio>
 			<radioGroup id="QEmbYNWordTable" show="swQEmbYNYes">
 				<groupName dataItem="embYNWord" default="yes">RQEmbYNWord</groupName>
-				<prompt>¿Se escribe como una palabra separada?</prompt>
-				<radio id="QEmbYNWordNo" dataValue="no">No, es un clítico que junta a otra palabra</radio>
+				<prompt>¿Se escribe como una palabra independiente?</prompt>
+				<radio id="QEmbYNWordNo" dataValue="no">No, es un clítico que se une a otra palabra</radio>
 				<radioGroup id="QEmbYNCliticPosTable" show="swQEmbYNWordNo">
 					<groupName dataItem="embYNCliticPos" default="unknown" position="yesHead">RQEmbYNCliticPos</groupName>
 					<prompt>¿Es el clítico un proclítico o un enclítico?</prompt>
@@ -32,37 +32,37 @@
 				</radioGroup>
 				<radioGroup id="QEmbYNCliticTypeTable" show="swQEmbYNWordNo">
 					<groupName dataItem="embYNCliticAttaches" default="edge">RQEmbYNCliticAttaches</groupName>
-					<prompt>¿Dónde hace la fijación del clítico a la pregunta sí/no subordinada?</prompt>
+					<prompt>¿Dónde se une el clítico a la pregunta polar subordinada?</prompt>
 					<radio id="QEmbYNCliticAttachesEdge" dataValue="edge">En el borde</radio>
 					<radio id="QEmbYNCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
-				<radio id="QEmbYNWordYes" dataValue="yes">Yes</radio>
+				<radio id="QEmbYNWordYes" dataValue="yes">Sí</radio>
 			</radioGroup>
 			<radioGroup id="QEmbYNPosTable" show="swQEmbYNWordYes">
 				<groupName dataItem="embYNPos" default="unknown" position="yesHead">RQEmbYNPos</groupName>
-				<prompt>¿De dónde el complementizador o marcador de pregunta sí/no ocurre con respecto al resto de la pregunta subordinada?</prompt>
+				<prompt>¿Dónde se presenta el indicador o complementizador de la pregunta con respecto al resto de la pregunta subordinada?</prompt>
 				<radio id="QEmbYNPosBefore" dataValue="before">Antes</radio>
 				<radio id="QEmbYNPosAfter" dataValue="after">Después</radio>
-				<radio id="QEmbYNPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados al mismo tiempo</radio>
-				<radio id="QEmbYNPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados al mismo tiempo</radio>
-				<radio id="QEmbYNPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados al mismo tiempo</radio>
-				<radio id="QEmbYNPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después, o en ambos lados al mismo tiempo</radio>
-				<radio id="QEmbYNPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+				<radio id="QEmbYNPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
+				<radio id="QEmbYNPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
+				<radio id="QEmbYNPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados en la misma oración</radio>
+				<radio id="QEmbYNPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después, o en ambos lados en la misma oración</radio>
+				<radio id="QEmbYNPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
 				<radioGroup id="QEmbYNEitherOrBothTable" show="swQEmbYNPosEitherOrBoth">
 					<groupName dataItem="embYNEitherRestricted" default="unrestricted">RQEmbYNEitherRestricted</groupName>
-					<prompt>¿Pueden todos los complementizadores o marcadores de pregunta sí/no aparecer de cualquier lado de la pregunta subordinada?</prompt>
+					<prompt>¿Pueden todos los indicadores o complementizadores de la pregunta presentarse de cualquier lado de la pregunta subordinada?</prompt>
 					<radio id="QEmbYNEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="QEmbYNEitherRestricted" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+					<radio id="QEmbYNEitherRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
-			<radio id="QEmbYNNoAux" dataValue="noAux">No, pero un auxiliar se afronta</radio>
+			<radio id="QEmbYNNoAux" dataValue="noAux">No, pero un auxiliar se desplaza</radio>
 			<radioGroup id="QEmbYNAuxPosTable" show="swQEmbYNNoAux">
 				<groupName dataItem="embYNAuxPos" default="unknown" position="yesHead">RQEmbYNAuxPos</groupName>
-				<prompt>¿De dónde el auxiliar ocurre con respecto al resto de la pregunta subordinada?</prompt>
+				<prompt>¿Dónde se presenta al auxiliar con respecto al resto de la pregunta subordinada?</prompt>
 				<radio id="QEmbYNAuxPosBefore" dataValue="before">Antes</radio>
 				<radio id="QEmbYNAuxPosAfter" dataValue="after">Después</radio>
 			</radioGroup>
-			<radio id="QEmbYNNo" dataValue="no">No, no hay el marcador o el cambio del orden de las palabras en preguntas sí/no subordinadas, apenas la diferencia en la entonación o el tono o la otra marca que no es sintáctica</radio>
+			<radio id="QEmbYNNo" dataValue="no">No, no hay indicador ni cambio del orden de las palabras en las preguntas polares subordinadas, apenas la diferencia en la entonación o el tono o otra indicación que no es sintáctica</radio>
 		</radioGroup>
 		<instruction id="QEmbYNHeadCliticInstruction" show="swQEmbYNHeadClitic">In the lexicon, add the feature <feature>YNQ</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbYNEdgeCliticPrefixInstruction" show="swQEmbYNEdgeCliticPrefix">In the lexicon, add the feature <feature>YNQ_prefix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>

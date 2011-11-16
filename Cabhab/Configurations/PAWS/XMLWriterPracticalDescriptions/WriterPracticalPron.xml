@@ -145,7 +145,7 @@
 							<content>class</content>
 						</col>
 						<col>
-							<content>class_number</content>
+							<content>class ##</content>
 						</col>
 					</row>
 				</table>

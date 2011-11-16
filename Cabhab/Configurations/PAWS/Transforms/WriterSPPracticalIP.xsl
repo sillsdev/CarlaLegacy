@@ -9,8 +9,8 @@
 <sectionRef sec="sIntro" />
 <xsl:text>,  la tipología de </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -71,8 +71,8 @@
 			<p>
 <xsl:text>Algunos ejemplos de oraciones intransitivas simples en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -108,7 +108,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -121,8 +121,8 @@
 			<p>
 <xsl:text>Algunos ejemplos con verbos del movimiento en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -158,7 +158,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -204,8 +204,8 @@
 			<p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -242,8 +242,8 @@
 			<p>
 <xsl:text>Algunos ejemplos de oraciones copulativas en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -279,7 +279,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -313,8 +313,8 @@
 			<p>
 <xsl:text>Algunos ejemplos de oraciones transitivas en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -350,7 +350,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -383,8 +383,8 @@
 			<p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -421,8 +421,8 @@
 			<p>
 <xsl:text>  Algunos ejemplos de oraciones ditransitivas en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -458,7 +458,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -514,8 +514,8 @@
 			<p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -562,8 +562,8 @@
 <p>
 <xsl:text>Algunos ejemplos de oraciones pasivas en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -601,7 +601,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />

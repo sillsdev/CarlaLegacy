@@ -4,7 +4,7 @@
 <page id="PronNP" count="6/8">
 	<title level="2">Los pronombres  - Como frases nominales</title>
 	<form section="pron">
-		<introduction>Sin embargo los pronombres y también los demonstratives, los cuantificadores, y los números pueden colocarse solamente como frase nominal en el contexto idóneo, modificantes también se permiten a veces. En la mayoría de los idiomas, estos elementos no se pueden modificar por los poseedores, los adjetivos, u otros cuantificadores, aunque puedan ser modificados por una palabra del grado, un artículo y/o un demostrativo. Los ejemplos españoles incluyen los siguientes:</introduction>
+		<introduction>Los pronombres comúnmente presentarse solamente en el lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo y en algunos idiomas los pronombres se pueden modificar por los determinantes y los cuantificadores, llenando el lugar de sustantivos en esta situación.   Los ejemplos en español de pronombres, de demonstratives o de cuantificadores modificados incluyen los siguientes: </introduction>
 		<EnglishExample>
 			<exItem label="1.">todos los doce.</exItem>
 			<exItem label="2.">solamente él.</exItem>
@@ -12,19 +12,19 @@
 			<exItem label="4.">apenas esos pocos.</exItem>
 		</EnglishExample>
 		<br/>
-		<prompt>Incorpore sus ejemplos aquí:</prompt>
+		<prompt>Escriba ejemplos similares en su idioma aquí:</prompt>
 		<textBox id="PronNPStandAloneExample" dataItem="standAloneNPExample"/>
 		<br/>
-		<introduction>Además, es posible hacer un pronombre, demostrativo, o cuantificador modificar por una cláusula relativa, como en:</introduction>
+		<introduction>Además, un pronombre, demostrativo o cuantificador puede ser modificado por una cláusula relativa, como en:</introduction>
 		<EnglishExample>
 			<exItem label="1.">todos que vayan con nosotros.</exItem>
 			<exItem label="2.">solamente estos dos que vi.</exItem>
 		</EnglishExample>
 		<br/>
-		<prompt>Incorpore sus ejemplos con las cláusulas relativas, incluidas en oraciones simples, aquí:</prompt>
+		<prompt>Escriba sus ejemplos con las cláusulas relativas, incluidos en oraciones simples, aquí:</prompt>
 		<textBox id="PronNPRelCl" dataItem="pronRelClExample"/>
 		<br/>
-		<introduction>Finalmente, estas categorías se pueden también modificar por una frase del partitivo (u otra frase preposicional y/o posposicional), como en</introduction>
+		<introduction>Finalmente, estas categorías también pueden ser modificadas por una frase del partitivo (u otra frase preposicional y/o posposicional), como en </introduction>
 		<EnglishExample>
 			<exItem label="1.">solamente algunos de ustedes.</exItem>
 			<exItem label="2.">apenas que muchos de ésos.</exItem>
@@ -32,12 +32,12 @@
 
 		</EnglishExample>
 		<br/>
-		<prompt>Incorpore sus ejemplos aquí:</prompt>
+		<prompt>Escriba sus ejemplos aquí:</prompt>
 		<textBox id="PronNPPartitiveExample" dataItem="partitiveExample"/>
 		<br/>
 		<radioGroup id="PronNPPartitiveTable">
 			<groupName dataItem="partitivePos" default="unknown" position="yesHeadDiff">RPronNPPartitive</groupName>
-			<prompt>¿De dónde las frase preposicionales y/o posposicionales opcionales ocurren con respecto al pronombre, demostrativo, cuantificador o número?</prompt>
+			<prompt>¿Dónde se presentan las frases preposicionales y/o posposicionales opcionales con respecto al pronombre, demostrativo, cuantificador o número?</prompt>
 			<radio id="PronNPPartBefore" dataValue="before">Antes</radio>
 			<radio id="PronNPPartAfter" dataValue="after">Después</radio>
 		</radioGroup>

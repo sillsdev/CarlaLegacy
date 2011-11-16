@@ -3,9 +3,9 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPManner" count="3/7">
-	<title level="2">Los adverbios y sus frases - Los adverbios de la manera</title>
-	<introduction>Los adverbios de la manera modifican directamente el verbo y terminan generalmente con <example>-mente</example> en español.
-		No parecen tener claro las contrapartes de los otro tipos de frase, a menos que posiblemente algunos comparativos, tales como <example>tan rápidamente como él podría</example>. (Los comparativos serán tratados en la sección <section number="15">Coordination Constructions</section>.)
+	<title level="2">Los adverbios y sus frases - Los adverbios de modo</title>
+	<introduction>Los adverbios de modo directamente modifican el verbo y generalmente terminan con <example>-mente</example> en español.
+		No parecen tener contrapartes de los otro tipos de frase, a menos que posiblemente algunos comparativos, tales como <example>tan rápidamente como él podría</example>. (Los comparativos serán tratados en  <section number="15">Las construcciones coordinativas</section>.)
 		En español, los adverbios de la manera se pueden modificar por <example>muy</example>
 y <example>tan</example>, como en:
 </introduction>
@@ -15,14 +15,14 @@ y <example>tan</example>, como en:
 		<exItem label="3.">muy bien.</exItem>
 	</EnglishExample>
 	<form section="advp">
-		<prompt>Incorpore sus ejemplos de cómo su lengua expresa manera aquí:</prompt>
+		<prompt>Escriba algunos ejemplos de cómo su idioma expresa el modo aquí:</prompt>
 		<textBox id="AdvPMannerExample" dataItem="mannerExample"/>
 <br/> <br/>
 <radioGroup>
 	<groupName dataItem="mannerType" default="word">RAdvPMannerType</groupName>
-	<prompt>Algunas idiomas no tienen palabras separadas, sino utilizan algo afijos para expresar manera. ¿Su lengua tiene adverbios de la manera que sean palabras separadas?</prompt>
+	<prompt>En algunos idiomas no hay palabras independientes, sino utilizan afijos para expresar el modo. ¿Hay adverbios de modo en su idioma que se escriben como palabras independientes?</prompt>
 	<radio id="AdvPMannerTypeWord" dataValue="word">Sí</radio>
-	<radio id="AdvPMannerTypeAffix" dataValue="affix">No, todas se escriben como parte del verbo</radio>
+	<radio id="AdvPMannerTypeAffix" dataValue="affix">No, todos se escriben como parte del verbo</radio>
 </radioGroup>
 		<instruction id="AdvPMannerTypeWordInstruction" show="swAdvPMannerTypeWord">In the lexicon, key the feature <feature>manner</feature>
 on all adverbs that express manner.

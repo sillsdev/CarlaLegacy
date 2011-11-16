@@ -377,7 +377,7 @@
 				<interlinear exampleLoc="qp/example"/>
 			</example>
 			<p show="swQPNPDegreeYesOrYesNeg">
-				<content>Algunoos ejemplos de los elementos especiales negativos de grado en frases nominales son: </content>
+				<content>Algunos ejemplos de los elementos especiales negativos de grado en frases nominales son: </content>
 			</p>
 			<example show="swQPNPDegreeYesOrYesNeg">
 				<interlinear exampleLoc="qp/negExample"/>
@@ -386,7 +386,7 @@
 		<section2 id="sNPArtDem">
 			<secTitle>Los artículos y demostrativos en la frase nominal</secTitle>
 			<p>
-				<content>Los artículos y/o los demostratives llenan normalmente el nivel siguiente cuando se mueve adentro hacia el sustantivo.
+				<content>Los artículos y/o los demostrativos llenan normalmente el nivel siguiente cuando se mueve adentro hacia el sustantivo.
 					En español, los artículos y los demostrativos no se presentan en la misma frase nominal, sino que ambos se presentan antes del sustantivo.
 					Algunos idiomas permiten que ambos se presentan en la misma frase, y pueden presentarse en diversas posiciones con respecto al sustantivo.
 					Por lo tanto, necesitan categorías sintácticas distintas. Algunos idiomas tienen solamente una categoría, los artículos o los demostrativos.
@@ -397,7 +397,7 @@
 				<langName/>
 				<content/>
 				<case element="np" attr="artAndDem">
-					<caseText value="no"> no hay ni artículos ni demonstratives que son palabras independientes.</caseText>
+					<caseText value="no"> no hay ni artículos ni demonstrativos que son palabras independientes.</caseText>
 					<caseText value="article"> solamente hay artículos que son palabras independientes, ningún demostrativo.</caseText>
 					<caseText value="demonstrative"> solamente hay demostrativos que son palabras independientes, ningún artículo.</caseText>
 					<caseText value="both"> hay los artículos y demostrativos que son palabras independientes.</caseText>
@@ -419,7 +419,7 @@
 				<content/>
 			</p>
 			<p show="swNPArtAndDemArt">
-				<content>El artículo ocurre </content>
+				<content>El artículo se presenta </content>
 				<case element="np" attr="artPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
@@ -465,7 +465,7 @@
 				<content/>
 			</p>
 			<p show="swNPArtAndDemDem">
-				<content>El demostrativo ocurre </content>
+				<content>El demostrativo se presenta </content>
 				<case element="np" attr="demPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
@@ -815,7 +815,7 @@
 			<p>
 				<content>En </content>
 				<langName/>
-				<content>, las frases del cuantificador se prsentan </content>
+				<content>, las frases del cuantificador se presentan </content>
 				<case element="np" attr="qpPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
@@ -867,7 +867,7 @@
 				<content>.  Las frases del adjetivo se presentan cerca del sustantivo.  Algunas frases nominales en inglés con adjetivos son:</content>
 				<langData>just those very few old, dirty books</langData><gloss><content>'apenas ésos muy pocos libros viejos, sucios'</content></gloss>
 				<content>, </content>
-				<langData>all the boy’s many black dogs</langData><gloss><content>'todo los muchos perros negros delo muchacho'</content></gloss>
+				<langData>all the boy’s many black dogs</langData><gloss><content>'todo los muchos perros negros del muchacho'</content></gloss>
 				<content> y </content>
 				<langData>only the first one hundred very eager young boys</langData><gloss><content>'solamente los primeros cientos muchachos jovenes muy impacientes'</content></gloss>
 				<content>.  Mientras que los ejemplos en inglés demuestran, todos los adjetivos se presentan antes del sustantivo, y, desemejante de los otros modificadores, se permita más de una frase del adjetivo.
@@ -993,7 +993,7 @@
 <section2 id="sNPParticiple">
 	<secTitle>Los participios</secTitle>
 		<p>
-			<content>Otro caso que se puede parecer como un sustantivo y un complemento puede ser realmente una frase del participio (también llamada un gerundio). Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición. Algunos ejemplos de español en oraciones completas con la frase del participio acorchetada son: </content>
+			<content>Otro caso que se puede parecer como un sustantivo y un complemento puede ser realmente una frase del participio (también llamada un gerundio). Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición o posposición. Algunos ejemplos de español en oraciones completas con la frase del participio acorchetada son: </content>
 			<langData>[Estudiando participios] es dificil</langData><content>, </content><langData>Él tiene gusto [leyendo la poesía latina]</langData>
 				<content> y </content>
 			<langData>El receptor demostró su valor cerca [haciendo el retén]</langData>
@@ -1015,7 +1015,7 @@
 				<interlinear exampleLoc="np/partHeadSentExample"/>
 			</example>
 	<p>
-		<content>Los participios o las frases del participio pueden también actuar como adjetivos en la modificación de un sustantivo en muchas idiomas, aunque no en español. Algunos ejemplos de inglés con el participio o la frase del participio acorchetada son: </content>
+		<content>Los participios o las frases del participio pueden también actuar como adjetivos en la modificación de un sustantivo en muchas idiomas, aunque no en español. Algunos ejemplos en inglés con el participio o la frase del participio acorchetada son: </content>
 		<langData>the bright, [shining] sun</langData><gloss><content>'el brillante, [brillando] sol'</content></gloss>
 		<content>, </content><langData>my [crying] child</langData><gloss><content>'mi niño, [gritando]'</content></gloss>
 		<content> y </content>

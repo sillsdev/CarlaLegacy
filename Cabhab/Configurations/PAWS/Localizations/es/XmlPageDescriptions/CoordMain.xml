@@ -2,64 +2,63 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="CoordMain" count="1/3">
-	<title>Las construcciones de la coordinación</title>
-	<introduction>Esta sección considera construcciones básicas de la coordinación donde hay una conjunción abierta entre las oraciones conjuntivas.
-		Nos ocuparemos de la coordinación en el nivel de la oración y la frase de verbo, la frase nominal, la frase preposicional y/o posposicional  y la frase del adjetivo.
-		Tipos más complejos de construcciones de la coordinación, tales como listas sin conjunciones abiertas entre cada oración conjuntiva, 'gapping' (donde hay palabras faltadas en la segunda parte de la construcción), los appositives y los comparativos, necesitarán ser tratados de más adelante.
+	<title>Las construcciones coordinativas</title>
+	<introduction>Esta sección considera construcciones coordinativas básicas donde una conjunción se presenta entre dos oraciones conjuntivas que estén en el mismo nivel. Esto incluye la coordinación en el nivel de la oración y en la frase de verbo, la frase nominal, la frase preposicional y/o posposicional y la frase del adjetivo.
+		Tipos más complejos de construcciones coordinativas, tales como por ejemplo listas sin conjunciones entre cada oración conjuntiva, partes que falta de una de las oraciones conjuntivas, appositivos o comparativos, necesitarán ser tratados de luego.
 		Otros niveles posibles de coordinación no se incluyen aquí tampoco.</introduction>
 	<form section="coord" transparent="no">
-		<introduction>En español, las conjunciones que se pueden utilizar entre dos oraciones conjuntivas son <example>y</example>, <example>o</example>, <example>pero</example> y <example>y/o</example>.
-			Además, hay las construcciones de la coordinación que requieren una conjunción inicial, como <example>o...o</example> y <example>ni...ni</example> construcciones. Algunas idiomas también utilizan un significado de la palabra <example>con</example> como conjunción entre las frases nominales.</introduction>
-		<prompt>Incorpore cómo su idioma expresa estas conjunciones en las cajas de texto siguientes. Si hay más de una opción, incorpore cada palabra en una línea separada.</prompt>
-		<prompt>Incorpore la palabra de la conjunción su idioma utiliza para 'y':</prompt>
+		<introduction>En español, las conjunciones que se pueden utilizar entre dos oraciones conjuntivas son  <example>y</example>, <example>o</example>, <example>pero</example> y <example>y/o</example>.
+			Además, hay las construcciones coordinativas que requieren una conjunción inicial, como <example>o...o</example> y <example>ni...ni</example> construcciones. Algunos idiomas también utilizan una palabra que significa <example>con</example> como conjunción entre las frases nominales.</introduction>
+		<prompt>Escriba cómo su idioma expresa estas conjunciones en las cajas de texto siguientes. Si hay más de una opción, escriba cada palabra en una línea separada.</prompt>
+		<prompt>Escriba la palabra su idioma utiliza para la conjunción 'y':</prompt>
 		<textBox id="CoordAnd" dataItem="and" rows="3"/>
 		<br/>
-		<prompt>Incorpore la palabra de la conjunción su idioma utiliza para 'o' aquí:</prompt>
+		<prompt>Escriba la palabra su idioma utiliza para la conjunción 'o' aquí:</prompt>
 		<textBox id="CoordOr" dataItem="or" rows="3"/>
 		<br/>
-		<prompt>Incorpore la palabra de la conjunción su idioma utiliza para 'pero' aquí:</prompt>
+		<prompt>Escriba la palabra su idioma utiliza para la conjunción 'pero' aquí:</prompt>
 		<textBox id="CoordBut" dataItem="but" rows="3"/>
 		<br/>
-		<prompt>Incorpore la palabra de la conjunción su idioma utiliza para 'y/o' aquí:</prompt>
+		<prompt>Escriba la palabra su idioma utiliza para la conjunción 'y/o' aquí:</prompt>
 		<textBox id="CoordAndOr" dataItem="andOr" rows="3"/>
 		<br/>
-		<prompt>Si su idioma utiliza 'con' como una conjunción entre frases nominales, incorpore esa palabra aquí:</prompt>
+		<prompt>Si su idioma utiliza 'con' como una conjunción entre frases nominales, escriba esa palabra aquí:</prompt>
 		<textBox id="CoordWith" dataItem="with" rows="3"/>
 		<br/>
-		<prompt>Incorpore cualquira palabra adicional que su idioma utiliza entre las oraciones conjuntivas aquí:</prompt>
+		<prompt>Escriba cualquiera palabra adicional que su idioma utiliza entre las oraciones conjuntivas aquí:</prompt>
 		<textBox id="CoordOther" dataItem="other" rows="3"/>
 		<br/>
-		<prompt>Incorpore la conjuncion inicial que significa 'o' que su idioma utiliza para 'o...o' construcciones aquí:</prompt>
+		<prompt>Escriba la conjuncion inicial que significa 'o' que su idioma utiliza para 'o...o' construcciones aquí:</prompt>
 		<textBox id="CoordEither" dataItem="either" rows="3"/>
 		<br/>
-		<prompt>Incorpore la conjuncion inicial negativa que significa 'ni' que su idioma utiliza para 'ni...ni' construcciones aquí:</prompt>
+		<prompt>Escriba la conjuncion inicial negativa que significa 'ni' que su idioma utiliza para 'ni...ni' construcciones aquí:</prompt>
 		<textBox id="CoordNeither" dataItem="neither" rows="3"/>
 		<br/>
-		<prompt>Incorpore la conjuncion negativa que significa 'ni' que su idioma utiliza para 'ni...ni' construcciones aquí ((incluso si una conjunción inicial no se requiere para su idioma):</prompt>
+		<prompt>Escriba la conjuncion negativa que significa 'ni' que su idioma utiliza para 'ni...ni' construcciones aquí ((incluso si una conjunción inicial no se requiere para su idioma):</prompt>
 		<textBox id="CoordNor" dataItem="nor" rows="3"/>
 		<br/>
 		<instruction id="CoordInstruction">In the lexicon, add the feature <feature>plural</feature> to the conjunctions meaning 'and', 'and/or' and 'with', and also on any other conjunctions in your language which require plural agreement when they are used to conjoin nominal phrases.  Also, add the feature <feature>-conjoins_IP</feature> to any conjunction, such as 'with', used for conjoining nominal phrases only.  Add the feature <feature>negative</feature> to the negative conjunctions meaning 'nor'.<br/>
 			<br/>
 Note that a word like 'and/or/' which is written with a slash (/) in the word, must be entered in your lexicon with a backslash in front of the slash (eg. 'and\/or') for <tool>CARLA Studio</tool> to process it correctly.</instruction>
-		<introduction>Algunos ejemplos españoles de coordinación del nivel de la oración son:</introduction>
+		<introduction>Algunos ejemplos en español de la coordinación del nivel de la oración son:</introduction>
 		<EnglishExample>
 			<exItem label="1.">Juan fue a la oficina esta mañana pero él no volvió.</exItem>
 			<exItem label="2.">¿Cuándo hizo el correo viene y dónde está mi paquete?</exItem>
 			<exItem label="3.">O vendré a la fiesta o enviaré a mi hermana.</exItem>
 		</EnglishExample>
-		<prompt>Incorpore ejemplos de la coordinación del nivel de la oración en su idioma aquí:</prompt>
+		<prompt>Escriba ejemplos de la coordinación del nivel de la oración en su idioma aquí:</prompt>
 		<textBox id="CoordSent" dataItem="sentExample" rows="5"/>
 		<br/>
-		<introduction>La coordinación de la frase de verbo se ejemplifica en las oraciones españolas siguientes:</introduction>
+		<introduction>La coordinación de la frase de verbo se ejemplifica en las oraciones en español siguientes:</introduction>
 		<EnglishExample>
 			<exItem label="1.">Guillermo corrió la carrera y ganó el premio.</exItem>
 			<exItem label="2.">Susana irá a la fiesta o enviará a su hermana.</exItem>
 			<exItem label="3.">Susana ni irá a la fiesta ni enviaré a su hermana.</exItem>
 		</EnglishExample>
-		<prompt>Incorpore ejemplos de la coordinación del nivel de la frase de verbo en su idioma aquí:</prompt>
+		<prompt>Escriba ejemplos de la coordinación del nivel de la frase de verbo en su idioma aquí:</prompt>
 		<textBox id="CoordVP" dataItem="vpExample" rows="5"/>
 		<br/>
-		<introduction>La coordinación de la frase nominal se ejemplifica en las oraciones españolas siguientes:</introduction>
+		<introduction>La coordinación de la frase nominal se ejemplifica en las oraciones en español siguientes:</introduction>
 		<EnglishExample>
 			<exItem label="1.">Guillermo corrió en el maratón de Boston y las Olimpiadas</exItem>
 			<exItem label="2.">Mi hermana o yo estará allí.</exItem>
@@ -67,25 +66,25 @@ Note that a word like 'and/or/' which is written with a slash (/) in the word, m
 			<exItem label="4.">Vendré al ensayo pero no a la cena.</exItem>
 			<exItem label="5.">Vendré a la boda y/o la recepción.</exItem>
 		</EnglishExample>
-		<prompt>Incorpore ejemplos de la coordinación del nivel de la frase nominal en su idioma aquí:</prompt>
+		<prompt>Escriba ejemplos de la coordinación del nivel de la frase nominal en su idioma aquí:</prompt>
 		<textBox id="CoordDP" dataItem="dpExample" rows="5"/>
 		<br/>
-		<introduction>Los ejemplos españoles de la coordinación de la frase preposicional incluyen:</introduction>
+		<introduction>Algunos ejemplos en español de la coordinación de la frase preposicional incluyen:</introduction>
 		<EnglishExample>
 			<exItem label="1.">Bill corrió a través del bosque y sobre el puente.</exItem>
 			<exItem label="2.">Vendré con usted al ensayo pero no a su hogar.</exItem>
 			<exItem label="3.">Vendré o a la boda o a la recepción.</exItem>
 		</EnglishExample>
-		<prompt>Incorpore ejemplos de la coordinación del nivel de la frase preposicional y/o posposcional en su idioma aquí:</prompt>
+		<prompt>Escriba ejemplos de la coordinación del nivel de la frase preposicional y/o posposcional en su idioma aquí:</prompt>
 		<textBox id="CoordPP" dataItem="coordppExample" rows="5"/>
 		<br/>
-		<introduction>La coordinación de la frase del adjetivo se ejemplifica en las oraciones españolas siguientes:</introduction>
+		<introduction>La coordinación de la frase del adjetivo se ejemplifica en las oraciones en español siguientes:</introduction>
 		<EnglishExample>
 			<exItem label="1.">El perro blanco y negro pertenece a mi hijo.</exItem>
 			<exItem label="2.">El lesión en su pierna es muy feo y doloroso y peligroso.</exItem>
 			<exItem label="3.">Mi hermana quiere una vela roja o azul.</exItem>
 		</EnglishExample>
-		<prompt>Incorpore ejemplos de la coordinación del nivel de la frase adjetivo en su idioma aquí:</prompt>
+		<prompt>Escriba ejemplos de la coordinación del nivel de la frase adjetivo en su idioma aquí:</prompt>
 		<textBox id="CoordAdj" dataItem="adjExample" rows="5"/>
 		<br/>
 		<br/>

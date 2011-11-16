@@ -7,7 +7,7 @@
 			<content>Hay varios tipos de cláusulas subordinadas que sean complementos de verbos principales o de adjetivos que actúan como el predicado de la oración.
 				Algunos ejemplos de cada tipo de complemento clausal serán dados en la sección siguiente, seguida por una discusión de los complementizadoras y su posición en cláusulas subordinadas declarativas. Véase la sección </content>
 			<sectionRef sec="sQues"/>
-			<content> para una discusión semejante para las preguntas y la sección </content>
+			<content> para una discusión semejante para las preguntas subordinadas y la sección </content>
 			<sectionRef sec="sRelCl"/>
 			<content> para las cláusulas relativas.</content>
 		</p>
@@ -32,7 +32,7 @@
 				<p>
 					<content>Algunos ejemplos con este tipo de complemento en </content>
 					<langName/>
-					<content> aon:</content>
+					<content> son:</content>
 				</p>
 				<example>
 					<interlinear exampleLoc="comp/finiteExample"/>

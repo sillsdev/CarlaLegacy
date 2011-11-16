@@ -6,7 +6,7 @@
 		<p>
 			<content>Ésta es una descripción del sintaxis de </content>
 			<langName/>
-			<content> basada en las respuestas dadas al programa de PAWS. Esta gramática descriptiva está escrita como una gramática práctica que puede ser útil para la comunidad del idioma así como para la documentar la mayor parte del idioma.</content>
+			<content> basada en las respuestas dadas al programa de PAWS. Esta gramática descriptiva está escrita como una gramática práctica que puede ser útil para la comunidad del idioma así como para documentar la mayor parte del idioma.</content>
 		</p>
 		<p>
 			<comment>Una vez que se termina de ingresar los datos al programa de PAWS, este archivo puede servir como borrador para preparar una gramática más completa.</comment>
@@ -15,7 +15,7 @@
 			<comment>Parte de la información dada puede ser inexacta hasta que usted haya terminado de ingresar los datos de cada página del programa de PAWS, porque se basa en los datos predeterminados que se refieren a la posición de elementos, los cuales se muestran como ____ hasta que usted haya terminado la página correspondiente en el programa de PAWS.</comment>
 		</p>
 		<p>
-			<comment>¡NO MODIFIQUE ESTE ARCHIVO HASTA HABER TERMINADO DE INGRESAR TODOS LOS  DATOS EN EL PROGRAMA DE PAWS, porque si no su trabajo será sobrescrito por el programa! Después de terminar de  contestar  todas las preguntas de PAWS, le sugerimos que guarde este archivo con otro nombre antes de corregir su gramática.</comment>
+			<comment>¡NO MODIFIQUE ESTE ARCHIVO HASTA HABER TERMINADO DE INGRESAR TODOS LOS  DATOS EN EL PROGRAMA DE PAWS, porque si no su trabajo será sobrescrito por el programa! Después de terminar de  contestar  todas las preguntas de PAWS, le sugerimos que guarde este archivo con otro nombre antes de corregir su gramática.  También, le sugerimos que cheque especialmente la sección acerca de los pronombres a ver si es correcto.  Si no, puede cambiar sus respuestas en PAWS antes de empezar editando este documento.</comment>
 		</p>
 		<p>
 			<content>El idioma </content>
@@ -48,264 +48,288 @@
 					</headerRow>
 					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
-					</row>                    <row>
+					</row>
+					<row>
 						<col>
-							<langData lang="lVernacular">ESCRIBA LA GRAFÍA</langData>
+							<langData lang="lVernacular">ESCRIBA_LA_GRAFÍA</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ESCRIBA UN EJEMPLO</langData>
+							<langData lang="lVernacular">ESCRIBA_UN_EJEMPLO</langData>
 						</col>
 						<col>
-							<gloss><content>ESCRIBA LA GLOSA</content></gloss>
+							<gloss><content>ESCRIBA_LA_GLOSA</content></gloss>
 						</col>
 					</row>
 				</table>

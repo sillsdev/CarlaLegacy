@@ -9,7 +9,7 @@
 		<textBox id="PPCompsNominalExample" dataItem="ppExample"/>
 		<radioGroup>
 			<groupName dataItem="pPos" default="unknown" position="yesHead">RPPPosition</groupName>
-			<prompt>Does you language have prepositions or postpositions?</prompt>
+			<prompt>Does your language have prepositions or postpositions?</prompt>
 			<radio id="PPPosPrep" dataValue="before">Prepositions only</radio>
 			<radio id="PPPosPost" dataValue="after">Postpositions only</radio>
 			<radio id="PPPosBoth" dataValue="both">Some of each type</radio>

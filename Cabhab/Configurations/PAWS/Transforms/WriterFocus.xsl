@@ -44,8 +44,8 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:if test="normalize-space(//focus/@topic)='no'">
 <p>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -57,8 +57,8 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:if test="normalize-space(//focus/@topic)='yes'">
 <p>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -117,8 +117,8 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -240,8 +240,8 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:if test="normalize-space(//focus/@focus)='no'">
 <p>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -253,8 +253,8 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:if test="normalize-space(//focus/@focus)='yes'">
 <p>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -313,8 +313,8 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>

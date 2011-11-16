@@ -15,8 +15,8 @@
 <exampleRef num="xPronAgrFeatures" equal="no" letterOnly="no" />
 <xsl:text> se muestran las características de concordancia usadas para los pronombres en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -186,7 +186,7 @@
 							<xsl:text>clase</xsl:text>
 						</td>
 						<td align="left">
-							<xsl:text>número de clase</xsl:text>
+							<xsl:text>clase ##</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
@@ -196,14 +196,14 @@
 		<section2 id="sPronPersonal">
 			<secTitle>Los pronombres personales</secTitle>
 			<p>
-<xsl:text>Todos los idiomas tienen pronombres personales independientes, los cuales son palabras separadas que pueden aparecer en todas las posiciones en las que aparecer los sustantivos o las frases nominales.
-				Algunos idiomas también tienen formas dependientes de los pronombres personales que se adhieren a otra palabra en la oración. </xsl:text>
+<xsl:text>Todos los idiomas tienen pronombres personales independientes, los cuales son palabras independientes que pueden presentarse en todas las posiciones en las que presentarse los sustantivos o las frases nominales.
+				Algunos idiomas también tienen formas dependientes de los pronombres personales que se unen a otra palabra en la oración. </xsl:text>
 </p>
 			<p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -223,8 +223,8 @@
 <p>
 <xsl:text>El </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -289,7 +289,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -344,7 +344,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -398,7 +398,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -415,15 +415,15 @@
 <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 <xsl:text> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de los pronombres para los sujetos, los objetos y los poseedores.
-					Los pronombres personales independientes que pueden aparecer en la posición del sujeto son: </xsl:text>
+					Los pronombres personales independientes que pueden presentarse en la posición del sujeto son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
@@ -481,7 +481,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -536,7 +536,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -590,7 +590,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -605,7 +605,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <p>
-<xsl:text>Los pronombres personales independientes que pueden aparecer en la posición del objeto son:</xsl:text>
+<xsl:text>Los pronombres personales independientes que pueden presentarse en la posición del objeto son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
@@ -663,7 +663,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -718,7 +718,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -772,7 +772,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -787,7 +787,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <p>
-<xsl:text>Los pronombres personales independientes que pueden aparecer en la posición del poseedor son: </xsl:text>
+<xsl:text>Los pronombres personales independientes que pueden presentarse en la posición del poseedor son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
@@ -845,7 +845,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -900,7 +900,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -954,7 +954,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -971,14 +971,14 @@
 <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> hay un sistema de caso ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales independientes que pueden aparecer en la posición del sujeto de verbos transitivos son: </xsl:text>
+<xsl:text> hay un sistema de caso ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales independientes que pueden presentarse en la posición del sujeto de verbos transitivos son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative'">
@@ -1036,7 +1036,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1091,7 +1091,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1146,7 +1146,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1162,7 +1162,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <p>
-<xsl:text>Los pronombres personales independientes que pueden aparecer en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</xsl:text>
+<xsl:text>Los pronombres personales independientes que pueden presentarse en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative'">
@@ -1220,7 +1220,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1275,7 +1275,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1330,7 +1330,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1346,7 +1346,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative'">
 <p>
-<xsl:text>Los pronombres personales independientes que pueden aparecer en la posición del poseedor son: </xsl:text>
+<xsl:text>Los pronombres personales independientes que pueden presentarse en la posición del poseedor son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative'">
@@ -1404,7 +1404,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1459,7 +1459,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1514,7 +1514,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1532,8 +1532,8 @@
 <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1598,7 +1598,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1653,7 +1653,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1707,7 +1707,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1722,7 +1722,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <p>
-<xsl:text>Los pronombres personales independientes que comúnmente aparecer en la posición del objeto son:</xsl:text>
+<xsl:text>Los pronombres personales independientes que comúnmente presentarse en la posición del objeto son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
@@ -1780,7 +1780,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1835,7 +1835,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1889,7 +1889,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -1904,7 +1904,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
 <p>
-<xsl:text>Los pronombres personales independientes que comúnmente aparecer en la posición del poseedor son: </xsl:text>
+<xsl:text>Los pronombres personales independientes que comúnmente presentarse en la posición del poseedor son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative'">
@@ -1962,7 +1962,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2017,7 +2017,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2071,7 +2071,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2087,7 +2087,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split'">
 <p>
-<xsl:text>Los pronombres personales independientes que pueden aparecer en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son:</xsl:text>
+<xsl:text>Los pronombres personales independientes que pueden presentarse en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split'">
@@ -2145,7 +2145,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2200,7 +2200,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2255,7 +2255,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2329,7 +2329,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2384,7 +2384,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2439,7 +2439,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2458,8 +2458,8 @@
 <p>
 <xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -2523,7 +2523,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2578,7 +2578,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2633,7 +2633,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2651,14 +2651,14 @@
 <p>
 <xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de pronombres para los sujetos, los objetos y los poseedores. Los pronombre personals dependientes que pueden aparecer en la posición del sujeto son: </xsl:text>
+<xsl:text> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de pronombres para los sujetos, los objetos y los poseedores. Los pronombre personals dependientes que pueden presentarse en la posición del sujeto son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative' and normalize-space(//pron/@dependentPron)='yes'">
@@ -2716,7 +2716,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2771,7 +2771,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2825,7 +2825,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2840,7 +2840,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Los pronombres personales dependientes que pueden aparecer en la posición del objeto son:</xsl:text>
+<xsl:text>Los pronombres personales dependientes que pueden presentarse en la posición del objeto son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative' and normalize-space(//pron/@dependentPron)='yes'">
@@ -2898,7 +2898,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -2953,7 +2953,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3007,7 +3007,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3022,7 +3022,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Los pronombres personales dependientes que pueden aparecer en la posición del poseedor son:</xsl:text>
+<xsl:text>Los pronombres personales dependientes que pueden presentarse en la posición del poseedor son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative' and normalize-space(//pron/@dependentPron)='yes'">
@@ -3080,7 +3080,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3135,7 +3135,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3189,7 +3189,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3206,14 +3206,14 @@
 <p>
 <xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> hay un sistema de caso del ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra de los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales dependientes que pueden aparecer en la posición de sujeto de verbos transitivos son: </xsl:text>
+<xsl:text> hay un sistema de caso del ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra de los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales dependientes que pueden presentarse en la posición de sujeto de verbos transitivos son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative' and normalize-space(//pron/@dependentPron)='yes'">
@@ -3271,7 +3271,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3326,7 +3326,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3381,7 +3381,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3397,7 +3397,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Los pronombres personales dependientes que pueden aparecer en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</xsl:text>
+<xsl:text>Los pronombres personales dependientes que pueden presentarse en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative' and normalize-space(//pron/@dependentPron)='yes'">
@@ -3455,7 +3455,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3510,7 +3510,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3565,7 +3565,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3581,7 +3581,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Los pronombres personales dependientes que pueden aparecer en la posición del poseedor son:</xsl:text>
+<xsl:text>Los pronombres personales dependientes que pueden presentarse en la posición del poseedor son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative' and normalize-space(//pron/@dependentPron)='yes'">
@@ -3639,7 +3639,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3694,7 +3694,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3749,7 +3749,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3767,8 +3767,8 @@
 <p>
 <xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -3832,7 +3832,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3887,7 +3887,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -3942,7 +3942,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4016,7 +4016,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4071,7 +4071,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4126,7 +4126,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4200,7 +4200,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4255,7 +4255,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4310,7 +4310,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4326,7 +4326,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Los pronombres personales dependientes que pueden aparecer en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son: </xsl:text>
+<xsl:text>Los pronombres personales dependientes que pueden presentarse en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son: </xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
@@ -4384,7 +4384,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4439,7 +4439,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4494,7 +4494,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4568,7 +4568,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4623,7 +4623,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4678,7 +4678,7 @@
 </td>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4750,8 +4750,8 @@
 			<p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -4819,7 +4819,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -4890,8 +4890,8 @@
 			<p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -4916,8 +4916,8 @@
 <xsl:if test="normalize-space(//pron/@refl)='yesVerbal'">
 					<xsl:text> Algunos ejemplos de reflexivos en </xsl:text>
 					<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -4971,7 +4971,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -5019,7 +5019,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -5049,8 +5049,8 @@
 			<p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -5121,7 +5121,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -5180,7 +5180,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -5228,7 +5228,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -5263,7 +5263,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>algo</langData>
-<xsl:text>,o pueden ser un cuantificador más un sustantivo genérico indefinido como en español </xsl:text>
+<xsl:text>, o pueden ser un cuantificador más un sustantivo genérico indefinido como en español </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -5286,7 +5286,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ninguno</langData>
-<xsl:text>.  Algunos idiomas pueden o no combinarse en una sola palabra, como en </xsl:text>
+<xsl:text>.  Algunos idiomas pueden no combinarse en una sola palabra, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -5300,8 +5300,8 @@
 			<p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -5359,7 +5359,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -5377,8 +5377,8 @@
 <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -5396,8 +5396,8 @@
 <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -5456,7 +5456,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 <gloss>
@@ -5505,7 +5505,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -5553,7 +5553,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -5570,8 +5570,8 @@
 <sectionRef sec="sNegNominal" />
 <xsl:text> para tener en cuenta otros ejemplos de los elementos negativos usados en oraciones y el análisis de las construcciones de la negación en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -5611,8 +5611,8 @@
 			<p>
 <xsl:text>Algunos ejemplos similares en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -5648,7 +5648,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -5659,7 +5659,7 @@
 </xsl:choose>
 </example>
 			<p>
-<xsl:text>Además, un pronombre, demostrativo, o cuantificador puede ser modificado por una cláusula relativa, como en </xsl:text>
+<xsl:text>Además, un pronombre, demostrativo o cuantificador puede ser modificado por una cláusula relativa, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -5669,10 +5669,13 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>solamente estos dos que vi</langData>
-<xsl:text>.  Algunos ejemplos similares en </xsl:text>
+<xsl:text>.</xsl:text>
+</p>
+			<p>
+<xsl:text> Algunos ejemplos similares en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -5680,7 +5683,7 @@
 </xsl:choose>
 <xsl:text>, incluido en oraciones completas son:</xsl:text>
 </p>
-			<example num="xPron.PronNP.12">
+			<example num="xPron.PronNP.14">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/pronRelClExample" />
 </xsl:variable>
@@ -5694,7 +5697,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//pron/pronRelClExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xPron.PronNP.12</xsl:with-param>
+<xsl:with-param name="sExNumber">xPron.PronNP.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -5703,12 +5706,12 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xPron.PronNP.12.1</xsl:text>
+<xsl:text>xPron.PronNP.14.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -5734,10 +5737,13 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>solamente ésos adentro allí</langData>
-<xsl:text>.   Algunos ejemplos similares en </xsl:text>
+<xsl:text>.  </xsl:text>
+</p>
+			<p>
+<xsl:text>Algunos ejemplos similares en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -5745,7 +5751,7 @@
 </xsl:choose>
 <xsl:text> son:</xsl:text>
 </p>
-			<example num="xPron.PronNP.16">
+			<example num="xPron.PronNP.20">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//pron/partitiveExample" />
 </xsl:variable>
@@ -5759,7 +5765,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//pron/partitiveExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xPron.PronNP.16</xsl:with-param>
+<xsl:with-param name="sExNumber">xPron.PronNP.20</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -5768,12 +5774,12 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xPron.PronNP.16.1</xsl:text>
+<xsl:text>xPron.PronNP.20.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />

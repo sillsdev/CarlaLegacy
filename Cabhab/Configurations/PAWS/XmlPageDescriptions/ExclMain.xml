@@ -37,7 +37,7 @@
 <prompt>Yes and No answers to questions will be treated by the same rule that allows interjections.  Key the word(s) which can stand alone and mean 'yes', such as 'yes' and 'yeah' in English, here:</prompt>
 		<textBox id="ExclYes" dataItem="yesExample" rows="3"/>
 		<br/>
-<prompt>Key the word(s) which can stand alone and mean 'no', such as 'no' and 'naw' in English, here:</prompt>
+<prompt>Key the word(s) which can stand alone and mean 'no', such as 'no' and 'naw' and 'nope' in English, here:</prompt>
 		<textBox id="ExclNo" dataItem="noExample" rows="3"/>
 		<br/>
 <instruction id="ExclYesNoInstruction">All of these words or phrases meaning 'yes' and 'no' and the interjections need to be entries in your lexicon.  Those that are phrases need to be entered in the lexicon with underscores between the words so <tool>Join Compound</tool> will parse them as units within <tool>CARLA Studio</tool>.  Any which are not regular adjectives need to either have the category <category>Intj</category> in the lexicon or have the feature <feature>makeIntj</feature> to assure the proper category for the syntax.</instruction>

@@ -91,7 +91,7 @@ namespace SIL.Cabhab
 				ImageHolder holder = new ImageHolder();
 				// TODO: may want to add following to xml at some point or put it in configuration Path using Cabhab.ico as name
 				// We are putting the configuration files in the common app directory
-				string sAppData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+				string sAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 				string sCabhabDirectory = Path.Combine(sAppData, Path.Combine("SIL", "Cabhab"));
 				string sConfigPath = Path.Combine(sCabhabDirectory, "Configurations");
 				string sConfig = Path.Combine(sConfigPath, ConfigurationFile);

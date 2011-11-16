@@ -12,58 +12,58 @@
 		</ul>
 		Some languages also allow one of the above structures to occur by itself as a nominal phrase without a head noun to modify, usually called "headless" relative clauses.
 	</introduction>
-	<introduction id="RelClIntroPractical" show="swPractical">Las cláusulas relativas modifican un sustantivo principal y tienen normalmente una de cuatro estructuras:
+	<introduction id="RelClIntroPractical" show="swPractical">Las cláusulas relativas modifican un sustantivo principal y normalmente tienen una de cuatro estructuras:
 		<ul>
-			<li>como una cláusula de complemento dirigida por 'que', como en <example>el hombre que vino a la reunión tarde</example>;</li>
-			<li>como una pregunta de información subordinada con 'quien' o 'cual'  afrontado, como en <example>el hombre quien vino a la reunión tarde</example>;</li>
-			<li>(o para algunos idiomas con excepción del español) como una cláusula de complemento pero con un marcador relativo especial que ocurre en la posición del complementizador, o posiblemente con dos marcadores que ocurren en cada lado de la cláusula relativa;</li>
-			<li>(o para algunos idiomas con excepción del español) como una oración regular con un marcador relativo juntado al verbo.</li>
+			<li>como una cláusula de complemento con el complementizador 'que' , como en <example>el hombre que vino a la reunión tarde</example>;</li>
+			<li>como una pregunta abierta subordinada con 'quien' o 'cual' desplazado a la izquierda, como en <example>el hombre quien vino a la reunión tarde</example>;</li>
+			<li>(o para algunos idiomas con excepción del español) como una cláusula de complemento pero con un indicador relativo especial que se presenta en la posición del complementizador, o posiblemente con dos indicadores que se presentan en cada lado de la cláusula relativa;</li>
+			<li>(o para algunos idiomas con excepción del español) como una oración regular con un indicador relativo unido al verbo.</li>
 		</ul>
-		Algunos idiomas también permiten que una de las estructuras antedichas ocurra por sí mismo como frase nominal sin un sustantivo principal para modificarse, generalmente llamado cláusulas relativas "sin cabeza".
+		Algunos idiomas también permiten que una de las estructuras antedichas se presente por sí mismo como frase nominal sin un sustantivo principal para modificarse, generalmente llamado cláusulas relativas "sin núcleo".
 	</introduction>
 	<form section="relcl">
 		<radioGroup>
 			<groupName dataItem="exist" default="no">RRelClExist</groupName>
-			<prompt>¿Su lengua tiene cláusulas relativas?</prompt>
+			<prompt>¿Hay cláusulas relativas en su idioma?</prompt>
 			<radio id="RelClExistYes" dataValue="yes">Sí</radio>
-			<radio id="RelClExistNo" dataValue="no">No, no hay ningún tipo de cláusulas relativas</radio>
+			<radio id="RelClExistNo" dataValue="no">No, no hay ningún tipo de cláusula relativa</radio>
 		</radioGroup>
-		<prompt id="RelClExamplePrompt" show="swRelClExistYes">Incorpore algunos ejemplos de cláusulas relativas normales en su idioma aquí:</prompt>
+		<prompt id="RelClExamplePrompt" show="swRelClExistYes">Escriba algunos ejemplos de cláusulas relativas normales en su idioma aquí:</prompt>
 		<textBox id="RelClExample" show="swRelClExistYes" dataItem="example" cols="50"/>
 		<br/>
 		<br/>
-		<prompt  id="RelClSentenceExamplePrompt" show="swRelClExistYes">Ahora ponga cada uno de los ejemplos antedichos en oraciones completas (pero simples) y incorporelas aquí:</prompt>
+		<prompt  id="RelClSentenceExamplePrompt" show="swRelClExistYes">Ahora incluye cada uno de los ejemplos antedichos en oraciones completas (pero simples) y escribalas aquí:</prompt>
 		<textBox id="RelClSentenceExample" show="swRelClExistYes" dataItem="sentExample" cols="50"/>
 		<br/>
 		<br/>
 		<radioGroup id="RelClClausePosRadioGroup"  show="swRelClExistYes">
 			<groupName dataItem="clausePos" default="unknown" position="yesHeadDiff">RRelClClausePos</groupName>
-			<prompt>¿De dónde la pieza de la cláusula ocurre con respecto al sustantivo principal?</prompt>
+			<prompt>¿Dónde se presenta la cláusula relativa con respecto al sustantivo principal?</prompt>
 			<radio id="RelClClausePosBefore" dataValue="before">Antes del sustantivo principal</radio>
 			<radio id="RelClClausePosAfter" checked="yes" dataValue="after">Después del sustantivo principal</radio>
 			<radio id="RelClClausePosEitherSide" checked="yes" dataValue="either">De cualquier lado del sustantivo principal, a veces antes y a veces después</radio>
 		</radioGroup>
 		<radioGroup id="RelClTypeRadioGroup" show="swRelClExistYes">
 			<groupName dataItem="type" default="none">RRelClType</groupName>
-			<prompt>¿Su idioma tiene cláusulas relativas que sean cláusulas de complemento (<span id="RelClTypeCPspanNotPractical" show="swNotPractical">CPs - </span>algunos de los primeros tres tipos arriba)?</prompt>
+			<prompt>¿Hay cláusulas relativas que son cláusulas de complemento en su idioma (<span id="RelClTypeCPspanNotPractical" show="swNotPractical">CPs - </span>algunos de los primeros tres tipos arriba)?</prompt>
 			<radio id="RelClTypeCP" dataValue="CP">Sí</radio>
 			<radioGroup id="RelClTypeCPTable" show="swRelClTypeCP">
 				<groupName dataItem="compCP" default="no">RRelClTypeCPComp</groupName>
-				<prompt>¿Su idioma tiene marcadores relativos que llenen la posición del complementizer en la cláusula de complemento (<span id="RelClTypeCPCompspanNotPractical" show="swNotPractical">CP - </span>el primer o tercer tipo arriba)?</prompt>
+				<prompt>¿Hay indcadores relativos que llenen la posición del complementizador en la cláusula de complemento en su idioma (<span id="RelClTypeCPCompspanNotPractical" show="swNotPractical">CP - </span>el primer o tercer tipo arriba)?</prompt>
 				<radio id="RelClTypeCPCompYes" dataValue="yes">Sí, ése es el único tipo de cláusula relativa permitido</radio>
-				<radio id="RelClTypeCPCompYesBoth" dataValue="yesBoth">Sí, y las cláusulas relativas como una pregunta también se permiten (como inglés y español)</radio>
-				<radio id="RelClTypeCPCompNo" dataValue="no">No, solamente se permiten las cláusulas relativas como una pregunta</radio>
+				<radio id="RelClTypeCPCompYesBoth" dataValue="yesBoth">Sí, y las cláusulas relativas de tipo interrogativo también se permiten (como inglés y español)</radio>
+				<radio id="RelClTypeCPCompNo" dataValue="no">No, solamente se permiten las cláusulas relativas de tipo interrogativo</radio>
 				<radioGroup id="RelClTypeCPWhTable" show="swRelClTypeCPWh">
 					<groupName dataItem="whAndComp" default="no">RRelClTypeCPWh</groupName>
-					<prompt>En las cláusulas relativas como una pregunta, ¿puede un marcador relativo también ocurrir en la posición del complementizador?</prompt>
-					<radio id="RelClTypeCPWhAndCompNo" dataValue="no">No, solamente la palabra interrogativa ocurre en este tipo de cláusula relativa, como en inglés</radio>
-					<radio id="RelClTypeCPWhAndCompYes" dataValue="yes">Sí, la palabra interrogativa y los marcadores relativos se requieren a ambas estén presentes en este tipo de cláusula relativa</radio>
-					<radio id="RelClTypeCPWhAndCompOptional" dataValue="optional">Sí, un marcador relativo puede ocurrir opcionalmente junto con la palabra interrogativa en este tipo de cláusula relativa</radio>
+					<prompt>En las cláusulas relativas de tipo interrogativo, ¿puede presentarse un indicador relativo en la posición del complementizador también?</prompt>
+					<radio id="RelClTypeCPWhAndCompNo" dataValue="no">No, solamente la palabra interrogativa se presenta en este tipo de cláusula relativa, como en inglés</radio>
+					<radio id="RelClTypeCPWhAndCompYes" dataValue="yes">Sí, la palabra interrogativa y los indicadores relativos se requieren ambas estén presentes en este tipo de cláusula relativa</radio>
+					<radio id="RelClTypeCPWhAndCompOptional" dataValue="optional">Sí, un indicador relativo puede presentarse opcionalmente junto con la palabra interrogativa en este tipo de cláusula relativa</radio>
 				</radioGroup>
 				<radioGroup id="RelClTypeCPCompWordTable" show="swRelClTypeCPCompYesOrBoth">
 					<groupName dataItem="relWord" default="yes">RRelClTypeCPCompWord</groupName>
-					<prompt>¿Se escribe el marcador relativo como una palabra separada?</prompt>
-					<radio id="RelClTypeCPCompWordNo" dataValue="no">No, es un clítico que junta a otra palabra en el borde de la cláusula relativa</radio>
+					<prompt>¿Se escribe el marcador relativo como una palabra independiente?</prompt>
+					<radio id="RelClTypeCPCompWordNo" dataValue="no">No, es un clítico que se une a otra palabra en el borde de la cláusula relativa</radio>
 					<radioGroup id="RelClTypeCPCompCliticPosTable" show="swRelClTypeCPCompWordNo">
 						<groupName dataItem="relCliticPos" default="unknown" position="yesHead">RRelClTypeCPCompCliticPos</groupName>
 						<prompt>¿Es el clítico un proclítico o un enclítico?</prompt>
@@ -71,29 +71,29 @@
 						<radio id="RelClTypeCPCompCliticPosAfter" dataValue="after">Un enclítico o un sufijo</radio>
 						<radio id="RelClTypeCPCompCliticPosBoth" dataValue="both">Algunos de cada tipo</radio>
 					</radioGroup>
-					<radio id="RelClTypeCPCompWordYes" dataValue="yes">Sí, es una palabra separada</radio>
+					<radio id="RelClTypeCPCompWordYes" dataValue="yes">Sí, es una palabra independiente</radio>
 				</radioGroup>
 				<radioGroup id="RelClTypeCPCompSameTable" show="swRelClTypeCPCompYesOrBothWord">
 					<groupName dataItem="relCompSame" default="no">RRelClTypeCPCompSame</groupName>
-					<prompt>¿Son algunos de los marcadores relativos iguales que el complementizador utilizó para las cláusulas de complemento verbales?</prompt>
+					<prompt>¿Son algunos de los marcadores relativos iguales que el complementizador que se usa en las cláusulas complementos de los verbos?</prompt>
 					<radio id="RelClTypeCPCompSameYes" dataValue="yes">Sí, como 'que' en español y 'that' en inglés</radio>
 					<radio id="RelClTypeCPCompSameNo" dataValue="no">No, son todos distintos</radio>
 				</radioGroup>
 				<radioGroup id="RelClTypeCPCompPosTable" show="swRelClTypeCPCompYesOrBothWord">
 					<groupName dataItem="relCompPos" default="unknown" position="yesHead">RRelClCompPos</groupName>
-					<prompt>¿De dónde el marcador relativo ocurre con respecto a la pieza de la oración de la cláusula relativa?</prompt>
+					<prompt>¿Dónde se presenta el indicador relativo con respecto de la oración pieza de la cláusula relativa?</prompt>
 					<radio id="RelClTypeCPCompBefore" checked="yes" dataValue="before">Antes</radio>
 					<radio id="RelClTypeCPCompAfter" checked="yes" dataValue="after">Después</radio>
-					<radio id="RelClTypeCPCompEitherSide" checked="yes" dataValue="either">De cualquier lado, pero no en ambos lados al mismo tiempo</radio>
-					<radio id="RelClTypeCPCompEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados al mismo tiempo</radio>
-					<radio id="RelClTypeCPCompBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados al mismo tiempo</radio>
-					<radio id="RelClTypeCPCompAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después, o en ambos lados al mismo tiempo</radio>
-					<radio id="RelClTypeCPCompBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+					<radio id="RelClTypeCPCompEitherSide" checked="yes" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
+					<radio id="RelClTypeCPCompEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
+					<radio id="RelClTypeCPCompBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados en la misma oración</radio>
+					<radio id="RelClTypeCPCompAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después, o en ambos lados en la misma oración</radio>
+					<radio id="RelClTypeCPCompBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
 					<radioGroup id="RelClTypeCPCompEitherSideTable" show="swRelClTypeCPCompEitherorBothWord">
 						<groupName dataItem="relCompEitherRestricted" default="unrestricted">RRelClTypeCPCompEitherSide</groupName>
-						<prompt>¿Pueden todos los complementizadores o marcadores de pregunta aparecer de cualquier lado de la la pieza de la oración de la cláusula relativa?</prompt>
+						<prompt>¿Pueden todos los indicadores relativos presentarse de cualquier lado de la oración pieza de la cláusula relativa?</prompt>
 						<radio id="RelClTypeCPCompEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-						<radio id="RelClTypeCPCompEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+						<radio id="RelClTypeCPCompEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
 					</radioGroup>
 				</radioGroup>
 			</radioGroup>
@@ -109,12 +109,12 @@
 		<instruction id="RelClTypeIPInstruction" show="swRelClTypeIP">In the lexicon, add the feature <feature>relative</feature> to each of the affixes that mark relative clauses.</instruction>
 		<radioGroup id="RelClHeadlessTable" show="swRelClExistYes">
 			<groupName dataItem="headless" default="no">RRelClHeadless</groupName>
-			<prompt>¿Su lengua permite cláusulas relativas sin cabeza?</prompt>
-			<radio id="RelClHeadlessNo" dataValue="no">No, se requiere un sustantivo principal</radio>
-			<radio id="RelClHeadlessYes" dataValue="yes">Sí, un sustantivo principal puede faltar</radio>
+			<prompt>¿Se permiten las cláusulas relativas sin núcleo en su idioma?</prompt>
+			<radio id="RelClHeadlessNo" dataValue="no">No, requiere un sustantivo principal estar presente en todas las cláusulas relativas</radio>
+			<radio id="RelClHeadlessYes" dataValue="yes">Sí, permite que un sustantivo principal no estar presente en cláusulas relativas</radio>
 		</radioGroup>
 		<br/>
-		<prompt id="RelClHeadlessYesPrompt" show="swRelClHeadlessYes">Incorpore algunos ejemplos de las cláusulas relativas sin cabeza incluidas en oraciones completas (pero simples) aquí:</prompt>
+		<prompt id="RelClHeadlessYesPrompt" show="swRelClHeadlessYes">Escriba algunos ejemplos de las cláusulas relativas sin núcleo incluidas en oraciones completas (pero simples) aquí:</prompt>
 		<textBox id="RelClHeadlessExample" dataItem="headlessExample" cols="50" show="swRelClHeadlessYes"/>
 		<br/>
 		<br/>

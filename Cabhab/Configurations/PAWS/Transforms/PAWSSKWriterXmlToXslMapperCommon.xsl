@@ -475,11 +475,15 @@ langName template
 		<xsl:element name="xsl:choose">
 			<xsl:element name="xsl:when">
 				<xsl:attribute name="test">
-					<xsl:text>string-length(normalize-space(//language/langName)) &gt; 0</xsl:text>
+					<xsl:text>string-length(normalize-space(//language/langNames/langName[@lang='</xsl:text>
+					<xsl:value-of select="$sLangNameCode"/>
+					<xsl:text>'])) &gt; 0</xsl:text>
 				</xsl:attribute>
 				<xsl:element name="xsl:value-of">
 					<xsl:attribute name="select">
-						<xsl:text>normalize-space(//language/langName)</xsl:text>
+						<xsl:text>normalize-space(//language/langNames/langName[@lang='</xsl:text>
+						<xsl:value-of select="$sLangNameCode"/>
+						<xsl:text>'])</xsl:text>
 					</xsl:attribute>
 				</xsl:element>
 			</xsl:element>

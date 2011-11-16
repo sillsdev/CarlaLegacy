@@ -3,38 +3,38 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QWh" count="4/9">
 	<title level="2">Las preguntas - Las frases interrogativas</title>
-	<introduction>Las preguntas que se contestan con información diferencian de preguntas sí/no en que contienen una palabra o una frase interrogativa, conocido como <example>wh-phrases 'frases-wh' </example> en inglés porque casi todos comienzan con las letras <example>wh</example>
+	<introduction>Las preguntas que se contestan con información diferencian de preguntas sí/no en que contienen una palabra o una frase interrogativa., conocido como <example>wh-phrases 'frases-wh' </example> en inglés porque casi todos comienzan con las letras <example>wh</example>
 		(<example>who(m) 'quién'</example>, <example>what 'qué'</example>, <example>why 'por qué'</example>, <example>where 'dónde'</example>, <example>when 'cuándo'</example>, <example>how 'cómo'</example>, <example>which 'cuál'</example>, <example>whose 'de quién'</example>).  En algunos idiomas, algunas o todas estas palabras interrogativas se expresan como afijos.</introduction>
 	<form section="q">
-		<prompt>Para todas las cajas de texto de siguiente, si su idioma expresa ese interrogativo vía un afijo, incorpórelo a la caja con un guión en el lado apropiado para indicar si es un prefijo o un sufijo. Cada palabra, frase o afijo se deben incorporar en una línea separada.</prompt>
-		<prompt>Incorpore las palabras o las frases o los afijos interrogativos su idioma utiliza para 'quién' aquí:</prompt>
+		<prompt>Para todas las cajas de texto siguientes, si su idioma expresa ese interrogativo vía un afijo, escribalo en la caja con un guión en el lado apropiado para indicar si es un prefijo o un sufijo. Cada palabra, frase o afijo se deben escribir en una línea separada.</prompt>
+		<prompt>Escriba las palabras o las frases o los afijos interrogativos su idioma utiliza para 'quién' aquí:</prompt>
 		<textBox id="QWho" dataItem="who" rows="3"/>
 		<br/>
-		<prompt>Incorpore las palabras o las frases o los afijos interrogativos su idioma utiliza para 'qué' aquí:</prompt>
+		<prompt>Escriba las palabras o las frases o los afijos interrogativos su idioma utiliza para 'qué' aquí:</prompt>
 		<textBox id="QWhat" dataItem="what" rows="3"/>
 		<br/>
-		<prompt>Incorpore las palabras o las frases o los afijos interrogativos su idioma utiliza para 'por qué' aquí:</prompt>
+		<prompt>Escriba las palabras o las frases o los afijos interrogativos su idioma utiliza para 'por qué' aquí:</prompt>
 		<textBox id="QWhy" dataItem="why" rows="3"/>
 		<br/>
-		<prompt>Incorpore las palabras o las frases o los afijos interrogativos su idioma utiliza para 'dónde' aquí:</prompt>
+		<prompt>Escriba las palabras o las frases o los afijos interrogativos su idioma utiliza para 'dónde' aquí:</prompt>
 		<textBox id="QWhere" dataItem="where" rows="3"/>
 		<br/>
-		<prompt>Incorpore las palabras o las frases o los afijos interrogativos su idioma utiliza para 'cuándo' aquí:</prompt>
+		<prompt>Escriba las palabras o las frases o los afijos interrogativos su idioma utiliza para 'cuándo' aquí:</prompt>
 		<textBox id="QWhen" dataItem="when" rows="3"/>
 		<br/>
-		<prompt>Incorpore las palabras o las frases o los afijos interrogativos su idioma utiliza para 'cómo' aquí:</prompt>
+		<prompt>Escriba las palabras o las frases o los afijos interrogativos su idioma utiliza para 'cómo' aquí:</prompt>
 		<textBox id="QHow" dataItem="how" rows="3"/>
 		<br/>
-		<prompt>Incorpore las palabras o las frases o los afijos interrogativos su idioma utiliza para 'cuál' aquí:</prompt>
+		<prompt>Escriba las palabras o las frases o los afijos interrogativos su idioma utiliza para 'cuál' aquí:</prompt>
 		<textBox id="QWhich" dataItem="which" rows="3"/>
 		<br/>
-		<prompt>Incorpore las palabras o las frases o los afijos interrogativos su idioma utiliza para 'de quién' aquí:</prompt>
+		<prompt>Escriba las palabras o las frases o los afijos interrogativos su idioma utiliza para 'de quién' aquí:</prompt>
 		<textBox id="QWhose" dataItem="whose" rows="3"/>
 		<br/>
-		<prompt>Incorpore algunas otras las palabras o las frases o los afijos interrogativos su idioma utiliza aquí:</prompt>
+		<prompt>Escriba algunas otras las palabras o las frases o los afijos interrogativos su idioma utiliza aquí:</prompt>
 		<textBox id="QOther" dataItem="other" rows="3"/>
 		<br/>
-		<introduction>De los ejemplos de palabras interrogativas arriba, coloqúese lo más simplemente solamente como pronombres o adverbios, pero <example>how 'cómo'</example> puede estar un adverbio de la manera por sí mismo o una palabra del grado que modifica un adjetivo, como en <example>how big 'cómo grande'</example> o una palabra del grado que modifica un cuantificador, como en <example>how many children 'cuántos niños'</example>; <example>what 'qué'</example> puede ser un pronombre por sí mismo o un demostrativo modificando un sustantivo, como en <example>what books 'qué libros'</example>; <example>which 'cuál'</example> nunca se coloca solamente pero modifica siempre un sustantivo como demostrativo, como en <example>which boy 'cuál muchacho'</example>; y <example>whose 'de quién</example> puede ser un pronombre posesivo solo del soporte, o puede llenar la posición del poseedor en una frase nominal, como en <example>whose toys 'de quién juguetes'</example>.</introduction>
+		<introduction>De los ejemplos de palabras interrogativas arriba, la mayoría simplemente funcionan como pronombres o adverbios, pero hay excepciones.  La palabra <example>how 'cómo'</example> puede ser un adverbio de modo por sí mismo o una palabra de grado que modifica un adjetivo, como en <example>how big 'cómo grande'</example> o una palabra de grado que modifica un cuantificador, como en <example>how many children 'cuántos niños'</example>; <example>what 'qué'</example> puede ser un pronombre por sí mismo o un demostrativo modificando un sustantivo, como en <example>what books 'qué libros'</example>; <example>which 'cuál'</example> nunca se coloca solamente pero modifica siempre un sustantivo como un demostrativo, como en <example>which boy 'cuál muchacho'</example>; y <example>whose 'de quién</example> puede ser un pronombre posesivo por sí mismo o puede llenar la posición del poseedor en una frase nominal, como en <example>whose toys 'de quién juguetes'</example>.</introduction>
 		<instruction id="QContInstruction">In the lexicon, mark all of the interrogative words or affixes with the feature <feature>wh</feature>.
 <br/>
 			<br/>
@@ -70,31 +70,31 @@ The word meaning 'whose' needs to have two entries, both with the category which
 		</instruction>
 		<radioGroup id="QContWhDemPosTable" show="swDemPosEither">
 			<groupName dataItem="whDemPos" default="unknown" position="yesSpec">RQContWhDemPos</groupName>
-			<prompt>Su idioma permite demonstrativos de cualquier lado del sustantivo. ¿Dónde haga las palabras que significan 'cuál' y 'qué' ocurra?</prompt>
-			<radio id="QContWhDemPosBefore" dataValue="before">Siempre antes del sustantivo, incluso si otro determinador ocurre después del sustantivo</radio>
-			<radio id="QContWhDemPosAfter" dataValue="after">Siempre después del sustantivo, incluso si otro determinador ocurre antes del sustantivo</radio>
-			<radio id="QContWhDemPosAgree" dataValue="agree">De cualquier lado, pero cuando hay un demostrativo en cada lado al mismo tiempo, ellos deben convenir en características (e.g. ambos sean palabras interrogativas o ambas no ser)</radio>
+			<prompt>Su idioma permite demonstrativos de cualquier lado del sustantivo. ¿Dónde se presentan las palabras que significan 'cuál' y 'qué' ?</prompt>
+			<radio id="QContWhDemPosBefore" dataValue="before">Solamente antes del sustantivo, incluso si otro demostrativo se presenta después del sustantivo</radio>
+			<radio id="QContWhDemPosAfter" dataValue="after">Solamente después del sustantivo, incluso si otro demostrativo se presenta antes del sustantivo</radio>
+			<radio id="QContWhDemPosAgree" dataValue="agree">De cualquier lado, pero cuando hay un demostrativo en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no)</radio>
 		</radioGroup>
 		<radioGroup id="QContWhArtPosTable" show="swArtOnlyPosEither">
 			<groupName dataItem="whArtPos" default="unknown" position="yesSpec">RQContWhArtPos</groupName>
-			<prompt>Su idioma permite artículos de cualquier lado del sustantivo. ¿Dónde haga las palabras que significan 'cuál' y 'qué' ocurra?</prompt>
-			<radio id="QContWhArtPosBefore" dataValue="before">Siempre antes del sustantivo, incluso si otro artículo ocurre después del sustantivo</radio>
-			<radio id="QContWhArtPosAfter" dataValue="after">Siempre después del sustantivo, incluso si otro artículo ocurre antes del sustantivo</radio>
-			<radio id="QContWhArtPosAgree" dataValue="agree">De cualquier lado, pero cuando hay un artículo en cada lado al mismo tiempo, ellos deben convenir en características (e.g. ambos sean palabras interrogativas o ambas no ser)</radio>
+			<prompt>Su idioma permite artículos de cualquier lado del sustantivo. ¿Dónde se presentan las palabras que significan 'cuál' y 'qué' ?</prompt>
+			<radio id="QContWhArtPosBefore" dataValue="before">Solamente antes del sustantivo, incluso si otro artículo se presenta después del sustantivo</radio>
+			<radio id="QContWhArtPosAfter" dataValue="after">Solamente después del sustantivo, incluso si otro artículo se presenta antes del sustantivo</radio>
+			<radio id="QContWhArtPosAgree" dataValue="agree">De cualquier lado, pero cuando hay un artículo en cada lado en la misma oración, ellos deben convenir en características (por ejemplo, ambas sean palabras interrogativas o ambas no)</radio>
 		</radioGroup>
 		<radioGroup id="QContWhDegAdjPosTable" show="swDegAdjPosEither">
 			<groupName dataItem="whDegAdjPos" default="unknown" position="yesSpec">RQContWhDegAdjPos</groupName>
-			<prompt>Su idioma permite palabras del grado de cualquier lado del adjetivo. ¿Dónde haga la palabra que significa 'cómo' (o cualesquiera otras palabras del interrogativo que pueda modificar adjetivos) ocurra?</prompt>
-			<radio id="QContWhDegAdjPosBefore" dataValue="before">Siempre antes del adjetivo, incluso si otra palabra del grado ocurre después del adjetivo</radio>
-			<radio id="QContWhDegAdjPosAfter" dataValue="after">Siempre después del adjetivo, incluso si otra palabra del grado ocurre antes del adjetivo</radio>
-			<radio id="QContWhDegAdjPosAgree" dataValue="agree">De cualquier lado, pero cuando hay una palabra del grado en cada lado al mismo tiempo, ellas deben convenir en características (e.g. ambos sean palabras interrogativas o ambas no ser)</radio>
+			<prompt>Su idioma permite palabras de grado de cualquier lado del adjetivo. ¿Dónde se presenta la palabra que significa 'cómo' ?</prompt>
+			<radio id="QContWhDegAdjPosBefore" dataValue="before">Solamente antes del adjetivo, incluso si otra palabra de grado se presenta después del adjetivo</radio>
+			<radio id="QContWhDegAdjPosAfter" dataValue="after">Solamente después del adjetivo, incluso si otra palabra de grado se presenta antes del adjetivo</radio>
+			<radio id="QContWhDegAdjPosAgree" dataValue="agree">De cualquier lado, pero cuando hay una palabra de grado en cada lado en la misma oración, ellas deben convenir en características (por ejemplo, ambas sean palabras interrogativas o ambas no)</radio>
 		</radioGroup>
 		<radioGroup id="QContWhDegQPosTable" show="swDegQPosEither">
 			<groupName dataItem="whDegQPos" default="unknown" position="yesSpec">RQContWhDegQPos</groupName>
-			<prompt>Su idioma permite palabras del grado de cualquier lado del cuantificador. ¿Dónde haga la palabra que significa 'cómo' (o cualesquiera otras palabras del interrogativo que pueda modificar cuantificadores) ocurra?</prompt>
-			<radio id="QContWhDegQPosBefore" dataValue="before">Siempre antes del cuantificador, incluso si otra palabra del grado ocurre después del cuantificador</radio>
-			<radio id="QContWhDegQPosAfter" dataValue="after">Siempre después del cuantificador, incluso si otra palabra del grado ocurre antes del cuantificador</radio>
-			<radio id="QContWhDegQPosAgree" dataValue="agree">De cualquier lado, pero cuando hay una palabra del grado en cada lado al mismo tiempo, ellas deben convenir en características (e.g. ambos sean palabras interrogativas o ambas no ser)</radio>
+			<prompt>Su idioma permite palabras de grado de cualquier lado del cuantificador. ¿Dónde se presenta la palabra que significa 'cómo' ?</prompt>
+			<radio id="QContWhDegQPosBefore" dataValue="before">Solamente antes del cuantificador, incluso si otra palabra de grado se presenta después del cuantificador</radio>
+			<radio id="QContWhDegQPosAfter" dataValue="after">Solamante después del cuantificador, incluso si otra palabra de gradose presenta antes del cuantificador</radio>
+			<radio id="QContWhDegQPosAgree" dataValue="agree">De cualquier lado, pero cuando hay una palabra de grado en cada lado en la misma oración, ellas deben convenir en características (por ejemplo, ambas sean palabras interrogativas o ambas no)</radio>
 		</radioGroup>
 		<br/>
 		<buttons>

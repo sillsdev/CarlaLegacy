@@ -4,11 +4,11 @@
 <page id="AdvPReason" count="4/7">
 	<title level="2">Los adverbios y sus frases - Los adverbios de la razón o del propósito</title>
 	<introduction>Los adverbios de la razón o del propósito incluyen <example>por lo tanto</example> y
-		<example>pues</example>.  La razón o el propósito se puede también expresar por una frase preposicional, por ejemplo  <example>por esta razón</example> o <example>en propósito</example>, y
-		por una cláusula adverbial empezando con <example>porque</example> o <example>desde que</example> o <example>en orden que</example>.  Los adverbios de la razón o del propósito no permiten modificadores en español.  La estructura de las cláusulas adverbiales será tratada en la sección <section number="13">Adverbial Clauses</section>.
+		<example>pues</example>.  La razón o el propósito también se puede expresar por una frase preposicional, por ejemplo  <example>por esta razón</example> o <example>en propósito</example>, y
+		por una cláusula adverbial empezando con <example>porque</example> o <example>desde que</example> o <example>en orden que</example>.  Los adverbios de la razón o del propósito no permiten modificadores en español.  La estructura de las cláusulas adverbiales será analizada en  <section number="13">Las cláusulas adverbiales</section>.
 </introduction>
 	<form section="advp">
-		<prompt>Incorpore sus ejemplos de los adverbios de la razón o del propósito aquí, incluyendo ellos en oraciones completas:</prompt>
+		<prompt>Escriba sus ejemplos de los adverbios de la razón o del propósito aquí, incluyendo ellos en oraciones completas:</prompt>
 		<textBox id="AdvPReasonExample" dataItem="reasonExample"/>
 		<instruction id="AdvPReasonInstruction">In the lexicon, key the feature <feature>reason</feature> on
 all adverbs that express reason or purpose, and also on the nouns like <example>reason</example> and <example>purpose</example>.  Any multi-word forms, like <example>in order</example> are best handled as a single entry using <tool>Join Compound</tool>.

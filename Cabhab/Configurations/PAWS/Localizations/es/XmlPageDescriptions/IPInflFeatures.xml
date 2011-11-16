@@ -3,8 +3,8 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="IPInflFeatures" count="1/2">
 	<title level="2">Las oraciones básicas - Las características de la inflexión</title>
-	<introduction>Las oraciones incluyen normalmente una cierta clase de inflexión en los verbos y posiblemente de acuerdo entre el tema, el objeto y el verbo.</introduction>
-	<instruction>Los verbos y los auxiliares llevan generalmente características de la inflexión, tales como tiempo, aspecto, voz y/o modo.  En la mayoría de los casos, estas características son agregadas por los afijos. Mire a través de las características en la carta abajo y compruebe cualquiera que su idioma utiliza. <span id="IPInflFeaturesNotPracticalSpan" show="swNotPractical"> In the lexicon, add the appropriate features to the relevant affixes and also to any auxiliaries or irregular verb forms.</span> <br/>
+	<introduction>Las oraciones incluyen normalmente la inflexión en los verbos y posiblemente la concordancia entre el sujeto, el objeto y el verbo.</introduction>
+	<instruction>Los verbos y los auxiliares generalmente llevan características de la inflexión, tales como tiempo, aspecto, y/o modo.  En la mayoría de los casos, estas características son agregadas por los afijos. Mire a las características en la carta abajo y compruebe cualquiera que su idioma utiliza. <span id="IPInflFeaturesNotPracticalSpan" show="swNotPractical"> In the lexicon, add the appropriate features to the relevant affixes and also to any auxiliaries or irregular verb forms.</span> <br/>
 		<featureChart explanations="no">
 			<featureRow>
 				<featureType rowspan="3">tiempo</featureType>

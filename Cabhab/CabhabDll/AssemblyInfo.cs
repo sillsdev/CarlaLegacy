@@ -41,11 +41,11 @@ using System.Runtime.CompilerServices;
 //      Revision
 //
 // Format: Version.Milestone.Year.MMDDL
-[assembly: AssemblyFileVersion("0.2.2011.0713")]
+[assembly: AssemblyFileVersion("0.2.2011.1115")]
 // Format: FwMajorVersion.FwMinorVersion
 [assembly: AssemblyInformationalVersionAttribute("0.2")]
 // Format: Version.Milestone.0.Level
-[assembly: AssemblyVersion("0.2.1.*")]
+[assembly: AssemblyVersion("0.2.2.*")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the

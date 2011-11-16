@@ -24,8 +24,8 @@
 			<p>
 <xsl:text>The following inflection features are marked on verbs and/or auxiliaries in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -260,8 +260,8 @@
 			<p>
 <xsl:text>The following agreement features are marked on verbs and/or auxiliaries in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -881,7 +881,7 @@
 							<xsl:text>class</xsl:text>
 						</td>
 						<td align="left">
-							<xsl:text>class_## subject</xsl:text>
+							<xsl:text>class ## subject</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
@@ -891,7 +891,7 @@
 							<xsl:text>class</xsl:text>
 						</td>
 						<td align="left">
-							<xsl:text>class_## object</xsl:text>
+							<xsl:text>class ## object</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
@@ -901,7 +901,7 @@
 							<xsl:text>class</xsl:text>
 						</td>
 						<td align="left">
-							<xsl:text>class_## ergative argument</xsl:text>
+							<xsl:text>class ## ergative argument</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
@@ -911,7 +911,7 @@
 							<xsl:text>class</xsl:text>
 						</td>
 						<td align="left">
-							<xsl:text>class_## absolutive argument</xsl:text>
+							<xsl:text>class ## absolutive argument</xsl:text>
 						</td>
 					</tr>
 </xsl:if>
@@ -942,8 +942,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 			<p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1042,8 +1042,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </p>
 			<p>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1063,8 +1063,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					</xsl:choose>
 					<xsl:text> in </xsl:text>
 					<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1100,8 +1100,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <p>
 <xsl:text>Examples of auxiliaries in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1245,8 +1245,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </p>
 			<p>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1291,8 +1291,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <p>
 <xsl:text>Examples of the negative auxiliaries in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1365,8 +1365,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <p>
 <xsl:text>Examples of the negative affix(es) attached to an auxiliary word in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1438,8 +1438,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <p>
 <xsl:text>Examples of the negative verbal affixes attached to a verb in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1514,8 +1514,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <sectionRef sec="sNegVerbal" />
 <xsl:text> for examples of these negative elements used in sentences and further discussion of the negation constructions in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1538,8 +1538,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </p>
 			<p>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1559,8 +1559,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					</xsl:choose>
 					<xsl:text> in nonfinte clauses in </xsl:text>
 					<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1591,8 +1591,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <p>
 <xsl:text>The nonfinite auxiliary marker(s) in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1712,8 +1712,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </p>
 			<p>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1750,8 +1750,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <p>
 <xsl:text>These other auxiliaries in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>

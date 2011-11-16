@@ -72,14 +72,14 @@
 			</p>
 			<p>
 				<content>
-					Algunos idiomas son aún más complejas en que tienen normalmente un sistema de caso del nominativo-acusativo pero bajo algunas condiciones el sistema de caso cambia a ergativo-absolutivo. Esto se llama "ergatividad escindida".</content>
+					Algunos idiomas son aún más complejas en que tienen normalmente un sistema de caso del nominativo-acusativo pero bajo ciertas condiciones el sistema de caso cambia a ergativo-absolutivo. Esto se llama "ergatividad escindida".</content>
 			</p>
 			<p>
 				<content>En </content>
 				<langName/>
 				<content/>
 				<case element="np" attr="case">
-					<caseText value="none"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición en la oración y no hay un indicador en los sustantivos o en alguno de los modificadores del sustantivo basados en su posición en la oración.</caseText>
+					<caseText value="none"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición en la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición en la oración.</caseText>
 					<caseText value="nominative"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se marcan de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se marcan de una manera diferente.</caseText>
 					<caseText value="ergative"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se marcan de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se marcan de una manera diferente.</caseText>
 					<caseText value="split"> tiene un sistema de caso de ergatividad escindida. El idioma sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones.</caseText>
@@ -105,7 +105,7 @@
 			</p>
 			<section3 id="sNPPossCase">
 				<secTitle>Caso del poseedor</secTitle>
-				<p show="swNPCaseNo"><content>Conforma a lo0 argumentado en la sección </content><sectionRef sec="sNPCase"/><content>, en </content><langName/><content> no existe ningún sistema de caso. Por lo tanto, no hay un indicador independiente que marque el caso en sustantivos ni un sistema distinto de pronombres usados para los poseedores.</content></p>
+				<p show="swNPCaseNo"><content>Conforma a lo argumentado en la sección </content><sectionRef sec="sNPCase"/><content>, en </content><langName/><content> no existe ningún sistema de caso. Por lo tanto, no hay un indicador independiente que marque el caso en sustantivos ni un sistema distinto de pronombres usados para los poseedores.</content></p>
 				<p show="swNPCaseNom">
 					<content>Con el sistema nromal de caso nominativo-acusativo que tiene el </content>
 					<langName/>
@@ -149,7 +149,7 @@
 				<p show="swNPPossNounCaseChangeYes">
 					<content>Los idiomas como </content>
 					<langName/>
-					<content> que cambian el caso del sustantivo principal cuando hay un poseedor, también camban los casos de los adjetivos correspondientes para concordar. Algunos idiomas de este tipo también cambian el caso del sustantivo principal cuando solamente un modificador adjetival está presente, incluso cuando no hay poseedor.</content>
+					<content> que cambian el caso del sustantivo principal cuando hay un poseedor, normalmente también camban los casos de los adjetivos correspondientes para concordar. Algunos idiomas de este tipo también cambian el caso del sustantivo principal cuando solamente un modificador adjetival está presente, incluso cuando no hay poseedor.</content>
 				</p>
 				<p  show="swNPPossNounCaseChangeYes">
 					<content>En </content>
@@ -162,7 +162,7 @@
 					<content/>
 				</p>
 				<p show="swNPAdjPCaseChangeYes">
-					<content>Además, algunos idiomas de este último tipo tienen un afijo que indica el caso de genitivo (o el caso normal de poseedores) en el sustantivo principal para indicar que debe haber un adjetivo o un poseedor en esa frase nominal. En esta situación, el adjetivo y/o el poseedor también estarán en caso genitivo (o el caso normal de poseedores), aunque el indicador de caso no será evidente en el modificador principal de la frase nominal.</content>
+					<content>Además, algunos idiomas de este último tipo tienen un afijo que indica el caso de genitivo (o el caso normal de poseedores) en el sustantivo principal para indicar que debe haber un adjetivo o un poseedor en esa frase nominal. En esta situación, el adjetivo y/o el poseedor también estarán en caso genitivo (o el caso normal de poseedores), aunque el indicador de caso no será evidente en el modificador más adelante en la frase nominal.</content>
 				</p>
 				<p show="swNPAdjPCaseChangeYes">
 					<content>En </content>
@@ -223,7 +223,7 @@
 			<section3 id="sNPPossAgreement">
 				<secTitle>Concordancia del poseedor</secTitle>
 				<p>
-					<content>La Concordancia del poseedor se manifiesta comúnmente de dos formas básicas:</content>
+					<content>La concordancia del poseedor se manifiesta comúnmente de dos formas básicas:</content>
 				</p>
 				<ul>
 					<li>
@@ -428,7 +428,7 @@
 				<langData>syrup</langData><gloss><content>'jarabe'</content></gloss>
 				<content> limita el tipo de </content>
 				<langData>bottle</langData><gloss><content>'botella'</content></gloss>
-				<content>, no al revésr. En inglés todos los sustantivos compuestos y construcciones con modificadores del sustantivo, el sustantivo principal en la serie es el de la derecha. </content>
+				<content>, no al revés. En inglés todos los sustantivos compuestos y construcciones con modificadores del sustantivo, el sustantivo principal en la serie es el de la derecha. </content>
 			</p>
 			<p show="swNPCompNo">
 				<content>En </content>

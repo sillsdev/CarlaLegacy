@@ -4,7 +4,7 @@
 	<section1 id="sQues">
 		<secTitle>Las preguntas</secTitle>
 		<p>
-<xsl:text>Hay dos tipos de preguntas: las que requieren una respuesta afirmativa o negativa y las que se contestan con información (preguntas abiertas). En esta sección se consideran las preguntas de la cláusula principal y las variedades subordinadas de ambos tipos de preguntas, comenzando con las preguntas que requieren una respuesta "sí/no".</xsl:text>
+<xsl:text>Hay dos tipos de preguntas: las que requieren una respuesta afirmativa o negativa (preguntas polares) y las que se contestan con información (preguntas abiertas). En esta sección se consideran las preguntas de la cláusula principal y las variedades subordinadas de ambos tipos de preguntas, comenzando con las preguntas que requieren una respuesta "sí/no".</xsl:text>
 </p>
 		<section2 id="sQuesYN">
 			<secTitle>Las preguntas con respuesta afirmativa/negativa</secTitle>
@@ -66,8 +66,8 @@
 				<p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -140,8 +140,8 @@
 				<p>
 <xsl:text> Algunos ejemplos de las preguntas con respuesta afirmativa/negativa de la cláusula principal en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -177,7 +177,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -211,8 +211,8 @@
 				<p>
 <xsl:text>En las preguntas con respuesta afirmativa/negativa de la cláusula subordinada en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -285,8 +285,8 @@
 				<p>
 <xsl:text> Algunos ejemplos de las preguntas con respuesta afirmativa/negativa de la cláusula subordinada  en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -322,7 +322,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -339,8 +339,8 @@
 			<p>
 <xsl:text>Las preguntas que se contestan con información diferencian de preguntas sí/no en que contienen una palabra o una frase interrogativa.  Las palabras o las frases o los afijos interrogativos correspondientes en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -356,8 +356,8 @@
 					<tr>
 						<th>
 							<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -401,7 +401,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 							<xsl:text>quién</xsl:text>
@@ -444,7 +444,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 							<xsl:text>qué</xsl:text>
@@ -487,7 +487,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 							<xsl:text>por qué</xsl:text>
@@ -530,7 +530,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 							<xsl:text>dónde</xsl:text>
@@ -573,7 +573,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 							<xsl:text>cuándo</xsl:text>
@@ -616,7 +616,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 							<xsl:text>cómo</xsl:text>
@@ -659,7 +659,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 							<xsl:text>cuál</xsl:text>
@@ -702,7 +702,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 							<xsl:text>cuyo</xsl:text>
@@ -745,7 +745,7 @@
 <tr>
 <td>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
 							<xsl:text>otros interrogativos</xsl:text>
@@ -833,8 +833,8 @@
 			<p>
 <xsl:text>Se asumen que estas mismas posibilidades ser verdades en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -844,8 +844,8 @@
 <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demPos)='either' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demPos)='both' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demOrArtPos)='either' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demOrArtPos)='both' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demAndArtPos)='either' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demAndArtPos)='both' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demPos)='either' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demPos)='both' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demOrArtPos)='either' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demOrArtPos)='both' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demAndArtPos)='either' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demAndArtPos)='both'">
 					<xsl:text>Los demonstrativos se permiten presentarse de cualquier lado del sustantivo en </xsl:text>
 					<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -865,7 +865,7 @@
 					<xsl:choose>
 						<xsl:when test="//q/@whDemPos='before'">solamente antes del sustantivo, incluso si otro demostrativo se presenta después del sustantivo.</xsl:when>
 						<xsl:when test="//q/@whDemPos='after'">solamente después del sustantivo, incluso si otro demostrativo se presenta antes del sustantivo.</xsl:when>
-						<xsl:when test="//q/@whDemPos='agree'">de cualquier lado el sustantivo, pero cuando hay un demostrativo en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
+						<xsl:when test="//q/@whDemPos='agree'">de cualquier lado el sustantivo, pero cuando hay un demostrativo en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
 					<xsl:when test="//q/@whDemPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text> </xsl:text>
@@ -874,8 +874,8 @@
 <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artPos)='either' or normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artPos)='both'">
 					<xsl:text>Los artículos se permiten presentarse de cualquier lado del sustantivo en </xsl:text>
 					<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -895,7 +895,7 @@
 					<xsl:choose>
 						<xsl:when test="//q/@whArtPos='before'">solamente antes del sustantivo, incluso si otro artículo se presenta después del sustantivo.</xsl:when>
 						<xsl:when test="//q/@whArtPos='after'">solamente después del sustantivo, incluso si otro artículo se presenta antes del sustantivo.</xsl:when>
-						<xsl:when test="//q/@whArtPos='agree'">de cualquier lado el sustantivo, pero cuando hay un artículo en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
+						<xsl:when test="//q/@whArtPos='agree'">de cualquier lado el sustantivo, pero cuando hay un artículo en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
 						<xsl:when test="//q/@whArtPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text> </xsl:text>
@@ -904,8 +904,8 @@
 <xsl:if test="normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)!='before' and normalize-space(//adjp/@degreePos)!='after' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)!='before' and normalize-space(//adjp/@mannerPos)!='after'">
 					<xsl:text>Las palabras de grado se permiten presentarse de cualquier lado del adjetivo en </xsl:text>
 					<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -920,7 +920,7 @@
 					<xsl:choose>
 						<xsl:when test="//q/@whDegAdjPos='before'">solamente antes del adjetivo, incluso si otra palabra de grado se presenta después del adjetivo.</xsl:when>
 						<xsl:when test="//q/@whDegAdjPos='after'">solamente después del adjetivo, incluso si otra palabra de grado se presenta antes del adjetivo.</xsl:when>
-						<xsl:when test="//q/@whDegAdjPos='agree'">de cualquier lado el adjetivo, pero cuando hay una palabra de grado en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
+						<xsl:when test="//q/@whDegAdjPos='agree'">de cualquier lado el adjetivo, pero cuando hay una palabra de grado en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
 					<xsl:when test="//q/@whDegAdjPos='unknown'">_______</xsl:when>
 					</xsl:choose>
 					<xsl:text> </xsl:text>
@@ -929,8 +929,8 @@
 <xsl:if test="normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)!='before' and normalize-space(//qp/@degreePos)!='after'">
 					<xsl:text>Las palabras de grado se permiten presentarse de cualquier lado del cuantificador en </xsl:text>
 					<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -945,7 +945,7 @@
 					<xsl:choose>
 						<xsl:when test="//q/@whDegQPos='before'">solamente antes del cuantificador, incluso si otra palabra de grado se presenta después del cuantificador.</xsl:when>
 						<xsl:when test="//q/@whDegQPos='after'">solamente después del cuantificador, incluso si otra palabra de grado se presenta antes del cuantificador.</xsl:when>
-						<xsl:when test="//q/@whDegQPos='agree'">de cualquier lado el cuantificador, pero cuando hay una palabra de grado en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
+						<xsl:when test="//q/@whDegQPos='agree'">de cualquier lado el cuantificador, pero cuando hay una palabra de grado en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</xsl:when>
 					 <xsl:when test="//q/@whDegQPos='unknown'">_______</xsl:when>
 				   </xsl:choose>
 					<xsl:text> </xsl:text>
@@ -962,8 +962,8 @@
 			<p>
 <xsl:text>En las preguntas abiertas de ambos las cláusula principal y la subordinada en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1011,8 +1011,8 @@
 				<p>
 <xsl:text>En las preguntas abiertas de la cláusula principal en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1081,7 +1081,7 @@
 					</xsl:if>
 <xsl:text> </xsl:text>
 <xsl:if test="normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' and normalize-space(//typology/@wordOrder)!='VSO'">
-						<xsl:text>El insicador o complementizador de la pregunta se presenta </xsl:text>
+						<xsl:text>El indicador o complementizador de la pregunta se presenta </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//q/@mainContPos='before'">antes</xsl:when>
 							<xsl:when test="//q/@mainContPos='after'">después</xsl:when>
@@ -1135,8 +1135,8 @@
 				<p>
 <xsl:text> Algunos ejemplos de las preguntas abiertas de la cláusula principal en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1172,7 +1172,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -1206,8 +1206,8 @@
 				<p>
 <xsl:text>En las preguntas abiertas de la cláusula subordinada en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1332,8 +1332,8 @@
 				<p>
 <xsl:text> Algunos ejemplos de las preguntas abiertas de la cláusula subordinada en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -1369,7 +1369,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />

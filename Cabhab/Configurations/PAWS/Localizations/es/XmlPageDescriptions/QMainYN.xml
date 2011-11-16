@@ -2,26 +2,26 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QMainYN" count="2/9">
-	<title level="2">Las preguntas - Las preguntas sí/no de la cláusula principal</title>
+	<title level="2">Las preguntas - Las preguntas con respuesta afirmativa/negativa de la cláusula principal</title>
 	<form section="q">
 		<EnglishExample>
-			<exItem>Los ejemplos ingleses de las preguntas sí/no de la cláusula principal son:</exItem>
+			<exItem>Algunos ejemplos en inglés de las preguntas polares de la cláusula principal son:</exItem>
 			<exItem label="1.">Are you going to the store? '¿Usted va al almacén?'</exItem>
 			<exItem label="2.">Will Sue buy the present for her mother? '¿Compra Susana el regalo para su madre?'</exItem>
 			<exItem label="3.">Could the boy have hit the ball? '¿Habría podido el muchacho golpear el beísbol?'</exItem>
 		</EnglishExample>
-		<prompt>Incorpore ejemplos similares de las preguntas sí/no de la cláusula principal en su idioma aquí:</prompt>
+		<prompt>Escriba ejemplos similares de las preguntas polares de la cláusula principal en su idioma aquí:</prompt>
 		<textBox id="QExample" dataItem="example" cols="50"/>
 		<br/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="mainYN" default="no">RQMainYN</groupName>
-			<prompt>Para las preguntas sí/no de la cláusula principal, ¿su idioma tiene uno o más marcadores o complementizadores sí/no de la pregunta (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
+			<prompt>Para las preguntas polares de la cláusula principal, ¿hay uno o más indicadores o complementizadores de la pregunta (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
 			<radio id="QMainYNYes" dataValue="yes">Sí</radio>
 			<radioGroup id="QMainYNWordTable" show="swQMainYNYes">
 				<groupName dataItem="mainYNWord" default="yes">RQMainYNWord</groupName>
-				<prompt>¿Se escribe como una palabra separada?</prompt>
-				<radio id="QMainYNWordNo" dataValue="no">No, es un clítico que junta a otra palabra</radio>
+				<prompt>¿Se escribe como una palabra independiente?</prompt>
+				<radio id="QMainYNWordNo" dataValue="no">No, es un clítico que se une a otra palabra</radio>
 				<radioGroup id="QMainYNCliticPosTable" show="swQMainYNWordNo">
 					<groupName dataItem="mainYNCliticPos" default="unknown" position="yesHead">RQMainYNCliticPos</groupName>
 					<prompt>¿Es el clítico un proclítico o un enclítico?</prompt>
@@ -31,7 +31,7 @@
 				</radioGroup>
 				<radioGroup id="QMainYNCliticTypeTable" show="swQMainYNWordNo">
 					<groupName dataItem="mainYNCliticAttaches" default="edge">RQMainYNCliticAttaches</groupName>
-					<prompt>¿Dónde hace la fijación del clítico a la pregunta sí/no?</prompt>
+					<prompt>¿Dónde se une el clítico a la pregunta polar?</prompt>
 					<radio id="QMainYNCliticAttachesEdge" dataValue="edge">En el borde</radio>
 					<radio id="QMainYNCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
@@ -39,29 +39,29 @@
 			</radioGroup>
 			<radioGroup id="QMainYNPosTable" show="swQMainYNWordYes">
 				<groupName dataItem="mainYNPos" default="unknown" position="yesHead">RQMainYNPos</groupName>
-				<prompt>¿De dónde el complementizador o marcador de pregunta sí/no ocurre con respecto al resto de la pregunta?</prompt>
+				<prompt>¿Dónde se presenta el indicador o complementizador de la pregunta con respecto al resto de la pregunta?</prompt>
 				<radio id="QMainYNPosBefore" dataValue="before">Antes</radio>
 				<radio id="QMainYNPosAfter" dataValue="after">Después</radio>
-				<radio id="QMainYNPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados al mismo tiempo</radio>
-				<radio id="QMainYNPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados al mismo tiempo</radio>
-				<radio id="QMainYNPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados al mismo tiempo</radio>
-				<radio id="QMainYNPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después, o en ambos lados al mismo tiempo</radio>
-				<radio id="QMainYNPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+				<radio id="QMainYNPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
+				<radio id="QMainYNPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
+				<radio id="QMainYNPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados en la misma oración</radio>
+				<radio id="QMainYNPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después, o en ambos lados en la misma oración</radio>
+				<radio id="QMainYNPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
 				<radioGroup id="QMainYNEitherOrBothTable" show="swQMainYNPosEitherOrBoth">
 					<groupName dataItem="mainYNEitherRestricted" default="unrestricted">RQMainYNEitherRestricted</groupName>
-					<prompt>¿Pueden todos los complementizadores o marcadores de pregunta sí/no aparecer de cualquier lado de la pregunta?</prompt>
+					<prompt>¿Pueden todos los indicadores o complementizadores de la pregunta presentarse de cualquier lado de la pregunta?</prompt>
 					<radio id="QMainYNEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="QMainYNEitherRestricted" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+					<radio id="QMainYNEitherRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
-			<radio id="QMainYNNoAux" dataValue="noAux">No, pero un auxiliar se afronta, como en inglés</radio>
+			<radio id="QMainYNNoAux" dataValue="noAux">No, pero un auxiliar se desplaza, como en inglés</radio>
 			<radioGroup id="QMainYNAuxPosTable" show="swQMainYNNoAux">
 				<groupName dataItem="mainYNAuxPos" default="unknown" position="yesHead">RQMainYNAuxPos</groupName>
-				<prompt>¿De dónde el auxiliar ocurre con respecto al resto de la pregunta?</prompt>
+				<prompt>¿Dónde se presenta el auxiliar con respecto al resto de la pregunta?</prompt>
 				<radio id="QMainYNAuxPosBefore" dataValue="before">Antes</radio>
 				<radio id="QMainYNAuxPosAfter" dataValue="after">Después</radio>
 			</radioGroup>
-			<radio id="QMainYNNo" dataValue="no">No, no hay el marcador o el cambio del orden de las palabras, apenas la diferencia en la entonación o el tono o la otra marca que no es sintáctica</radio>
+			<radio id="QMainYNNo" dataValue="no">No, no hay ni indicador ni cambio del orden de las palabras, apenas la diferencia en la entonación o el tono o otra indicación que no es sintáctica</radio>
 		</radioGroup>
 		<instruction id="QMainYNHeadCliticInstruction" show="swQMainYNHeadClitic">In the lexicon, add the feature <feature>YNQ</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QMainYNEdgeCliticPrefixInstruction" show="swQMainYNEdgeCliticPrefix">In the lexicon, add the feature <feature>YNQ_prefix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>

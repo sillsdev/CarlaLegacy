@@ -3,22 +3,22 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QPMain" count="1/6">
 	<title>Los cuantificadores y sus frases</title>
-	<introduction>Los cuantificadores pueden aparecer en varios lugares en una frase nominal. La mayoría de las idiomas tienen cuatro sistemas de cuantificadores:
+	<introduction>Los cuantificadores pueden presentarse en varios lugares en una frase nominal. La mayoría de las idiomas tienen cuatro sistemas de cuantificadores:
 <ul>
-	<li>ésos que significan  <example>todos</example> o <example>no</example>, que modifican la frase nominal del conjunto,</li>
-	<li>cuantificadores tales como  <example>alguno</example> o <example>ninguno</example>, que no ocurren con ningunos otros modificadores excepto adjetivos,</li>
+	<li>ésos que significan  <example>todos</example> o <example>no</example>, que modifican la frase nominal completo,</li>
+	<li>cuantificadores tales como  <example>alguno</example> o <example>ninguno</example>, que no se presentan con ningún otro modificador excepto con los adjetivos,</li>
 	<li>otros cuantificadores tales como  <example>muchos</example>
 o <example>pocos</example>, y</li>
 			<li>los números.</li>
 		</ul>
-		Cada tipo será considerado en turno.
+		Cada tipo será considerado en su orden correspondiente.
 </introduction>
-	<introduction>Los cuantificadores que significan  <example>todos</example> o <example>no</example> parecen ser una categoría propia.
-		Ocurren generalmente primero (o último) en una frase nominal, en una posición distinta de los otros cuantificadores pero en el mismo lugar que las palabras del grado como  <example>solamente</example> y <example>apenas</example>  (que pueden también actuar como marcadores del foco, para ser discutido en <section number="16">Las construcciones del foco y del asunto</section>) y las palabras que significan iguales que  <example>casi</example> (que pueden también ocurrir con <example>todos</example> como en (4) abajo), así que les referiremos como palabras especiales del grado.
+	<introduction>Los cuantificadores que significan  <example>todos</example> o <example>no</example> parecen tener una categoría propia.
+		Generalmente se presentan primero (o último) en una frase nominal, en una posición distinta de los otros cuantificadores pero en el mismo lugar que las palabras de grado como  <example>solamente</example> y <example>apenas</example>  ((que también pueden funcionar como indicadores de enfoque, lo cual será discutido en  <section number="16">Las construcciones de enfoque y asunto</section>) y las palabras que significan lo mismo que  <example>casi</example> (lo que también puede presentarse con <example>todos</example> como en (4) abajo), así que les llamaremos palabras especiales de grado.
 </introduction>
 	<instruction>Busque los ejemplos en su idioma como los siguientes:</instruction>
 	<EnglishExample>
-		<exItem>Ejemplo frases del cuantificador:</exItem>
+		<exItem>Ejemplo frases del cuantificador en español:</exItem>
 		<exItem label="1">
 			<u>todos</u> los niños.</exItem>
 		<exItem label="2">
@@ -36,9 +36,9 @@ o <example>pocos</example>, y</li>
 		<exItem label="8">
 			<u>solamente</u> los tres niños de Susana.</exItem>
 	</EnglishExample>
-	<instruction>Observe que <example>no</example> puede ocurrir en lugar de o antes de las otras palabras especiales de grado:</instruction>
+	<instruction>Observe que <example>no</example> puede presentarse en lugar de o antes de las otras palabras especiales de grado:</instruction>
 	<EnglishExample>
-		<exItem>Ejemplo frases del cuantificador:</exItem>
+		<exItem>Ejemplo frases del cuantificador en español:</exItem>
 		<exItem label="1">
 			<u>no</u> los niños.</exItem>
 		<exItem label="2">
@@ -48,112 +48,112 @@ o <example>pocos</example>, y</li>
 		<exItem label="4">
 			<u>no solamente</u> los tres niños de Susana.</exItem>
 	</EnglishExample>
-	<instruction>Esté seguro de distinguir los elementos como <example>not  "no"</example> que pueden negar una frase nominal completamente de palabras como <example>ningunos</example> (ser tratado en la página siguiente) que tomen el lugar de cualesquiera artículos, demonstrativos y el poseedor en la frase.</instruction>
+	<instruction>Esté seguro de distinguir los elementos como <example>not  "no"</example> que pueden negar una frase nominal completa de palabras como <example>ningunos</example> (ser tratado en la página siguiente) que se presentan en el lugar de los artículos, demonstrativos o el poseedor en la frase.</instruction>
 	<form section="qp">
-		<prompt>Incorpore la manera que su idioma expresa "todos", con cada palabra seguida por un punto y en una línea separada.  (Si "todos" es un afijo o un clítico que junta a otra palabra en la frase nominal, la incorpore aquí con una indicación del guión qué lado junta encendido.)</prompt>
+		<prompt>Escriba la manera que su idioma expresa "todos", con cada palabra seguida por un punto y en una línea separada.  (Si "todos" es un afijo o un clítico que se une a otra palabra en la frase nominal, escribalo aquí con una indicación del guión qué lado se une.)</prompt>
 		<textBox id="QPAllExample" dataItem="all" rows="3"/>
 		<br/>
 		<br/>
-		<prompt>Incorpore la manera que su idioma expresa "casi", con cada palabra seguida por un punto y en una línea separada.  (Si "casi" es un afijo o un clítico que junta a otra palabra en la frase nominal, la incorpore aquí con una indicación del guión qué lado junta encendido.)</prompt>
+		<prompt>Escriba la manera que su idioma expresa "casi", con cada palabra seguida por un punto y en una línea separada.  (Si "casi" es un afijo o un clítico que se une a otra palabra en la frase nominal, escribalo aquí con una indicación del guión qué lado se une.)</prompt>
 		<textBox id="QPAlmostExample" dataItem="almost" rows="3"/>
 		<br/>
 		<br/>
-		<prompt>Incorpore la manera que su idioma expresa "solamente" o "apensa", con cada palabra seguida por un punto y en una línea separada.  (Si uno es un afijo o un clítico que junta a otra palabra en la frase nominal, la incorpore aquí con una indicación del guión qué lado junta encendido.)</prompt>
+		<prompt>Escriba la manera que su idioma expresa "solamente" o "apenas", con cada palabra seguida por un punto y en una línea separada.  (Si uno es un afijo o un clítico que se une a otra palabra en la frase nominal, escribalo aquí con una indicación del guión qué lado se une.)</prompt>
 		<textBox id="QPOnlyExample" dataItem="only" rows="3"/>
 		<br/>
 		<br/>
-		<prompt>Incorpore la manera que su idioma expresa "no" (cuando modifica un nominal algo que una frase verbal), con cada palabra seguida por un punto y en una línea separada. (Si "no" es un afijo o un clítico que junta a otra palabra en la frase nominal, la afina aquí con una indicación del guión qué lado junta encendido.)</prompt>
+		<prompt>Escriba la manera que su idioma expresa "no" (cuando modifica un nominal algo que una frase verbal), con cada palabra seguida por un punto y en una línea separada. (Si "no" es un afijo o un clítico que se une a otra palabra en la frase nominal, escribalo aquí con una indicación del guión qué lado se une.)</prompt>
 		<textBox id="QPNotExample" dataItem="not" rows="3"/>
 		<br/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="npDegree" default="yes">RNPDegree</groupName>
-			<prompt>¿Su lengua expresa estos conceptos como palabras separadas que modifiquen la frase del nominal del conjunto?</prompt>
-			<radio id="QPNPDegreeYes" checked="yes" dataValue="yes">Sí, son todos palabras separadas</radio>
-			<radio id="QPNPDegreeYesPos" checked="yes" dataValue="yesPos">Las positivas (especialmente 'todos') son las palabras separadas, pero 'no' agregado a otra palabra</radio>
-			<radio id="QPNPDegreeYesPosOnly" checked="yes" dataValue="yesPosOnly">Las positivas (especialmente 'todos') son las palabras separadas, pero no hay ninguna manera de expresar 'no' modificación de una frase nominal en el idioma</radio>
-			<radio id="QPNPDegreeYesNeg" checked="yes" dataValue="yesNeg">La palabra negativa para 'no' es una palabra separada, pero las positivas (especialmente 'todos') junta a otra palabra</radio>
-			<radio id="QPNPDegreeNo" checked="yes" dataValue="no">No, ellas todas juntan a otra palabra en la frase nominal</radio>
-			<radio id="QPNPDegreeNoPosOnly" checked="yes" dataValue="noPosOnly">No, las positivas (especialmente 'todos') juntan a otra palabra en la frase nominal, pero no hay ninguna manera de expresar ' no' modificación de una frase nominal en el idioma</radio>
+			<prompt>¿Expresa su idioma estos conceptos como palabras independientes que modifican la frase nominal completo?</prompt>
+			<radio id="QPNPDegreeYes" checked="yes" dataValue="yes">Sí, todos son palabras independientes</radio>
+			<radio id="QPNPDegreeYesPos" checked="yes" dataValue="yesPos">Las positivas (especialmente 'todos') son palabras independientes, pero 'no' se una a otra palabra</radio>
+			<radio id="QPNPDegreeYesPosOnly" checked="yes" dataValue="yesPosOnly">Las positivas (especialmente 'todos') son palabras independientes, pero no hay ninguna manera de expresar 'no' cuando está modificando una frase nominal en el idioma</radio>
+			<radio id="QPNPDegreeYesNeg" checked="yes" dataValue="yesNeg">La palabra negativa para 'no' es una palabra independiente, pero las positivas (especialmente 'todos') se unen a otra palabra</radio>
+			<radio id="QPNPDegreeNo" checked="yes" dataValue="no">No, todas se unen a otra palabra en la frase nominal</radio>
+			<radio id="QPNPDegreeNoPosOnly" checked="yes" dataValue="noPosOnly">No, las positivas (especialmente 'todos') se unen a otra palabra en la frase nominal, pero no hay ninguna manera de expresar ' no' cuando está modificando una frase nominal en el idioma</radio>
 			<radioGroup id="NPDegreePosType" show="swQPNPDegreeNoOrNoPosOnlyOrYesNeg">
 				<groupName dataItem="npDegreePosType" default="proclitic">RNPDegreePosType</groupName>
-				<prompt>¿Dónde haga los elementos especiales positivos del grado (especialmente 'todos') juntan dentro de la frase nominal?</prompt>
-				<radio id="QPNPDegreePosProclitic" dataValue="proclitic">Como proclítico de la frase que junta al frente cualquier palabra comienza la frase nominal</radio>
-				<radio id="QPNPDegreePosEnclitic" dataValue="enclitic">Como enclítico de la frase que junta al final cualquier palabra termina la frase nominal</radio>
-				<radio id="QPNPDegreePosClitic" dataValue="clitic">Algunas formas son procliticos que junta al frente cualquier palabra comienza la frase nominal y otros son el encliticos que junta al final cualquier palabra termina la frase nominal</radio>
-				<radio id="QPNPDegreePosPrefix" dataValue="prefix">Como prefijo que junta al sustantivo principal de la frase nominal </radio>
-				<radio id="QPNPDegreePosSuffix" dataValue="suffix">Como sufijo que junta al sustantivo principal de la frase nominal</radio>
-				<radio id="QPNPDegreePosAffix" dataValue="affix">Algunas formas son prefijos que juntan al sustantivo principal de la frase nominal y algunas formas son sufijos</radio>
+				<prompt>¿Dónde se unen los elementos especiales positivos de grado (especialmente 'todos') en la frase nominal?</prompt>
+				<radio id="QPNPDegreePosProclitic" dataValue="proclitic">Como proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal</radio>
+				<radio id="QPNPDegreePosEnclitic" dataValue="enclitic">Como enclíticos que se unen al final de cualquier palabra que termina la frase nominal</radio>
+				<radio id="QPNPDegreePosClitic" dataValue="clitic">Algunas formas son proclíticos que se unen al inicio de cualquier palabra comienza la frase nominal y otros son enclíticos queque se unen al final de cualquier palabra termina la frase nominal</radio>
+				<radio id="QPNPDegreePosPrefix" dataValue="prefix">Como prefijos que se unen al sustantivo principal de la frase nominal</radio>
+				<radio id="QPNPDegreePosSuffix" dataValue="suffix">Como sufijos que se unen al sustantivo principal de la frase nominal</radio>
+				<radio id="QPNPDegreePosAffix" dataValue="affix">Algunas formas son prefijos y algunas formas son sufijos que se unen al sustantivo principal de la frase nominal</radio>
 			</radioGroup>
 			<radioGroup id="NPDegreeNegType" show="swQPNPDegreeNoOrYesPos">
 				<groupName dataItem="npDegreeNegType" default="proclitic">RNPDegreeNegType</groupName>
-				<prompt>¿Dónde haga los elementos especiales negativos del grado juntan dentro de la frase nominal?</prompt>
-				<radio id="QPNPDegreeNegProclitic" dataValue="proclitic">Como proclítico de la frase que junta al frente cualquier palabra comienza la frase nominal</radio>
-				<radio id="QPNPDegreeNegEnclitic" dataValue="enclitic">Como enclítico de la frase que junta al final cualquier palabra termina la frase nominal</radio>
-				<radio id="QPNPDegreeNegClitic" dataValue="clitic">Algunas formas son procliticos que junta al frente cualquier palabra comienza la frase nominal y otros son el encliticos que junta al final cualquier palabra termina la frase nominal</radio>
-				<radio id="QPNPDegreeNegPrefix" dataValue="prefix">Como prefijo que junta al sustantivo principal de la frase nominal </radio>
-				<radio id="QPNPDegreeNegSuffix" dataValue="suffix">Como sufijo que junta al sustantivo principal de la frase nominal</radio>
-				<radio id="QPNPDegreeNegAffix" dataValue="affix">Algunas formas son prefijos que juntan al sustantivo principal de la frase nominal y algunas formas son sufijos</radio>
+				<prompt>¿Dónde se unen los elementos especiales negativos de grado en la frase nominal?</prompt>
+				<radio id="QPNPDegreeNegProclitic" dataValue="proclitic">Como proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal</radio>
+				<radio id="QPNPDegreeNegEnclitic" dataValue="enclitic">Como enclíticos que se unen al final de cualquier palabra que termina la frase nominal</radio>
+				<radio id="QPNPDegreeNegClitic" dataValue="clitic">Algunas formas son proclíticos que se unen al frente de cualquier palabra que comienza la frase nominal y otros son enclíticos que se unen al final de cualquier palabra que termina la frase nominal</radio>
+				<radio id="QPNPDegreeNegPrefix" dataValue="prefix">Como prefijos que se unen al sustantivo principal de la frase nominal </radio>
+				<radio id="QPNPDegreeNegSuffix" dataValue="suffix">Como sufijos que se unen al sustantivo principal de la frase nominal</radio>
+				<radio id="QPNPDegreeNegAffix" dataValue="affix">Algunas formas son prefijos y algunas formas son sufijos que se unen al sustantivo principal de la frase nominal</radio>
 			</radioGroup>
 		</radioGroup>
-		<prompt>Incorpore sus ejemplos de <span id="QPNPDegreePromptYes" show="swQPNPDegreeYesOrYesPosOrYesPosOnly">las palabras</span>
+		<prompt>Escriba sus ejemplos de <span id="QPNPDegreePromptYes" show="swQPNPDegreeYesOrYesPosOrYesPosOnly">las palabras</span>
 			<span id="QPNPDegreePromptNoAffix" show="swQPNPDegreeNoOrNoPosOnlyOrYesNegAffix">los afijos</span>
-			<span id="QPNPDegreePromptNoClitic" show="swQPNPDegreeNoOrNoPosOnlyOrYesNegClitic">los clíticos</span> positivos con significado de 'todos', 'casi'  y 'solamente' o 'apenas' incluido en frases nominales completas aquí:</prompt>
+			<span id="QPNPDegreePromptNoClitic" show="swQPNPDegreeNoOrNoPosOnlyOrYesNegClitic">los clíticos</span> positivos que significa 'todos', 'casi'  y 'solamente' o 'apenas' incluido en frases nominales completas aquí:</prompt>
 		<textBox id="QPNPExample" dataItem="example" rows="4"/>
 		<br/>
 		<br/>
-		<prompt id="QPDegreeNegNominalPhrasePrompt" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">Incorpore sus ejemplos de <span id="QPNPDegreeNegPromptYes" show="swQPNPDegreeYesOrYesNeg">las palabras</span>
+		<prompt id="QPDegreeNegNominalPhrasePrompt" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">Escriba sus ejemplos de <span id="QPNPDegreeNegPromptYes" show="swQPNPDegreeYesOrYesNeg">las palabras</span>
 			<span id="QPNPDegreeNegPromptNoAffix" show="swQPNPDegreeNoOrYesPosAffix">los afijos</span>
-			<span id="QPNPDegreeNegPromptNoClitic" show="swQPNPDegreeNoOrYesPosClitic">los clíticos</span> negativos con significado 'no' incluido en frases nominales completas (sin los elementos especiales positivos del grado) aquí:</prompt>
+			<span id="QPNPDegreeNegPromptNoClitic" show="swQPNPDegreeNoOrYesPosClitic">los clíticos</span> negativos que significa 'no' incluido en frases nominales completas (sin los elementos especiales positivos de grado) aquí:</prompt>
 		<textBox id="QPNPNegExample" dataItem="negExample" rows="4" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly"/>
 		<br/>
 		<br/>
 		<radioGroup id="QPNPDegreeYesTable" show="swQPNPDegreeNotNo">
 			<groupName dataItem="npDegreePos" default="unknown" position="yesSpec">RQPNPDegreePos</groupName>
-			<prompt>Mirada de los datos en <span id="QPNPDegreeNegYesSpan" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">las dos cajos</span>
-				<span id="QPNPDegreeNegNoSpan" show="swQPNPDegreeYesPosOnlyOrNoPosOnly">la caja</span> arriba, ¿dónde hagan los elementos especiales del grado <span id="QPNPDegreeSomeAttachPrompt" show="swQPNPDegreeYesPosOrYesPosOnlyOrYesNeg">que se escriben como palabras separadas </span>ocurren con respecto al resto de la frase nominal?</prompt>
+			<prompt>En acuerdo con los datos en <span id="QPNPDegreeNegYesSpan" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">las dos cajas</span>
+				<span id="QPNPDegreeNegNoSpan" show="swQPNPDegreeYesPosOnlyOrNoPosOnly">la caja</span> arriba, ¿dónde se presentan los elementos especiales de grado <span id="QPNPDegreeSomeAttachPrompt" show="swQPNPDegreeYesPosOrYesPosOnlyOrYesNeg">que se escriben como palabras independientes </span>con respecto al resto de la frase nominal?</prompt>
 			<radio id="QPNPDegreeBefore" checked="yes" dataValue="before">Antes de él</radio>
 			<radio id="QPNPDegreeAfter" checked="yes" dataValue="after">Después de él</radio>
-			<radio id="QPNPDegreeEitherSide" checked="yes" dataValue="either">De cualquier lado, pero no ambos lados al mismo tiempo</radio>
-			<radio id="QPNPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o ambos lados al mismo tiempo</radio>
-			<radio id="QPNPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes de él, o en ambos lados al mismo tiempo</radio>
-			<radio id="QPNPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después de él, o en ambos lados al mismo tiempo</radio>
-			<radio id="QPNPDegreeBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+			<radio id="QPNPDegreeEitherSide" checked="yes" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
+			<radio id="QPNPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
+			<radio id="QPNPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes de él, o en ambos lados en la misma oración</radio>
+			<radio id="QPNPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después de él, o en ambos lados en la misma oración</radio>
+			<radio id="QPNPDegreeBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
 			<radioGroup id="QPNPDegreeEitherSideTable" show="swQPNPDegreeEitherorBoth">
 				<groupName dataItem="npDegreeEither" default="unrestricted">RQPNPDegreeEitherSide</groupName>
-				<prompt>¿Pueden todas las palabras especiales del grado aparecer de cualquier lado del resto de la frase nominal?</prompt>
+				<prompt>¿Pueden presentarse todas las palabras especiales de grado de cualquier lado del resto de la frase nominal?</prompt>
 				<radio id="QPNPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="QPNPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+				<radio id="QPNPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
 			</radioGroup>
 		</radioGroup>
 		<radioGroup id="QPNPDegreeNegCooccurTable" show="swQPNPDegreeYes">
 			<groupName dataItem="npDegreeNegCooccur" default="no">RQPNPDegreeNegCooccur</groupName>
-			<prompt>¿Puede las palabras que significado "no" ocurra con las otras palabras especiales del grado?</prompt>
+			<prompt>¿Pueden presentarse las palabras que significan "no" con las otras palabras especiales de grado?</prompt>
 			<radio id="QPNPDegreeNegCooccurYes" dataValue="yes">Sí</radio>
 			<radio id="QPNPDegreeNegCooccurNo" dataValue="no">No</radio>
 		</radioGroup>
-		<prompt id="QPNPDegreeNegCooccurPrompt" show="swQPNPDegreeNotYesAndNegCooccurNo">Incorpore sus ejemplos de <span id="NPDegreeNegWordSpan" show="swQPNPDegreeYesOrYesNeg">las palabras</span>
+		<prompt id="QPNPDegreeNegCooccurPrompt" show="swQPNPDegreeNotYesAndNegCooccurNo">Escriba sus ejemplos de <span id="NPDegreeNegWordSpan" show="swQPNPDegreeYesOrYesNeg">las palabras</span>
 			<span id="NPDegreeNegCliticSpan" show="swQPNPDegreeNoOrYesPosClitic">los clíticos</span>
 			<span id="NPDegreeNegAffixSpan" show="swQPNPDegreeNoOrYesPosAffix">los afijos</span>
-			negativos con significado 'no' incluido en frases nominales completas e incluido los elementos especiales positivos del grado aquí:</prompt>
+			negativos que significan 'no' incluido en frases nominales completas e incluido los elementos especiales positivos de grado aquí:</prompt>
 		<textBox id="QPNPNegCooccurExample" dataItem="negCooccurExample" rows="4" show="swQPNPDegreeNotYesAndNegCooccurNo"/>
 		<br/>
 		<br/>
 		<radioGroup id="QPNPDegreeNegCooccurYesTable" show="swQPNPDegreeNegCooccurYes">
 			<groupName dataItem="npDegreeNegPos" default="unknown" position="yesSpec">RQPNPDegreeNegPos</groupName>
-			<prompt>¿Dónde hagan los elementos negativos del grado que significan 'no' ocurra con respecto al resto de la frase nominal (incluyendo otras palabras especiales del grado?</prompt>
+			<prompt>¿Dónde se presentan los elementos negativos de grado que significan 'no' con respecto al resto de la frase nominal (incluyendo otras palabras especiales de grado?</prompt>
 			<radio id="QPNPDegreeNegBefore" checked="yes" dataValue="before">Antes de él</radio>
 			<radio id="QPNPDegreeNegAfter" checked="yes" dataValue="after">Después de él</radio>
-			<radio id="QPNPDegreeNegEitherSide" checked="yes" dataValue="either">De cualquier lado, pero no ambos lados al mismo tiempo</radio>
-			<radio id="QPNPDegreeNegEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o ambos lados al mismo tiempo</radio>
-			<radio id="QPNPDegreeNegBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes de él, o en ambos lados al mismo tiempo</radio>
-			<radio id="QPNPDegreeNegAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después de él, o en ambos lados al mismo tiempo</radio>
-			<radio id="QPNPDegreeNegBothSides" checked="yes" dataValue="both">olamente en ambos lados al mismo tiempo</radio>
+			<radio id="QPNPDegreeNegEitherSide" checked="yes" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
+			<radio id="QPNPDegreeNegEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
+			<radio id="QPNPDegreeNegBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes de él, o en ambos lados en la misma oración</radio>
+			<radio id="QPNPDegreeNegAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después de él, o en ambos lados en la misma oración</radio>
+			<radio id="QPNPDegreeNegBothSides" checked="yes" dataValue="both">solamente en ambos lados en la misma oración</radio>
 			<radioGroup id="QPNPDegreeNegEitherSideTable" show="swQPNPDegreeNegEitherorBoth">
 				<groupName dataItem="npDegreeNegEither" default="unrestricted">RQPNPDegreeNegEitherSide</groupName>
-				<prompt>¿Pueden todas las palabras especiales negativos del grado con significado 'no' aparecer de cualquier lado del resto de la frase nominal?</prompt>
-				<radio id="QPNPDegreeNegEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción (o solamente una palabra que pueden aparecer en cualquier lado)</radio>
-				<radio id="QPNPDegreeNegEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+				<prompt>¿Pueden presentarse todas las palabras especiales negativos de grado que significan 'no' de cualquier lado del resto de la frase nominal?</prompt>
+				<radio id="QPNPDegreeNegEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción (o solamente una palabra que puede presentarse de cualquier lado)</radio>
+				<radio id="QPNPDegreeNegEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
 			</radioGroup>
 		</radioGroup>
 		<instruction id="QPNPDegreeYesInstruction" show="swQPNPDegreeYes">In the lexicon, mark the words meaning <example>all</example>, <example>not</example>, <example>almost</example>, <example>only</example>, and <example>just</example> with the features <feature>makeDeg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>Deg</category>

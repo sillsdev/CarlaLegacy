@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- both the label and settingsId are specific to PAWS -->
 <window label="PAWS Starter Kit" settingsId="paws">
-	<version>0.7.0.0 Beta</version>
+	<version>0.7.2.0 Beta</version>
 	<!--
 Following are common to all Cabhab Applications
 -->
@@ -363,5 +363,6 @@ Following are specific to PAWS
 	<dataMigrations>
 		<dataMigration dbVersionXPath="/paws[@dbversion='4']" transform="Transforms/DataMigrations/DBVersion4To5.xsl"/>
 		<dataMigration dbVersionXPath="/paws[@dbversion='5']" transform="Transforms/DataMigrations/DBVersion5To6.xsl"/>
+		<dataMigration dbVersionXPath="/paws[@dbversion='6']" transform="Transforms/DataMigrations/DBVersion6To7.xsl"/>
 	</dataMigrations>
 </window>

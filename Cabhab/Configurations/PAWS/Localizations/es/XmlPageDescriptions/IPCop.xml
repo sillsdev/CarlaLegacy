@@ -3,41 +3,41 @@
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPCop" count="1/1">
 	<title level="2">Las oraciones básicas - Las oraciones intransitivas y copulares</title>
-	<introduction>Los intransitivos simples no tienen ningunos complementos después del verbo, como en <example>La muchacha flota.</example>  Los verbos del movimiento incluyen una localidad en la forma de una frase preposicional o posposicional o adverbio.  Los ejemplos españoles de los verbos del movimiento incluyen:</introduction>
+	<introduction>Los intransitivos simples no tienen ningún complemento después del verbo, como en <example>La muchacha flota.</example>  Los verbos del movimiento incluyen un lugar en la forma de una frase preposicional o posposicional o adverbio.  Algunos ejemplos en español con los verbos del movimiento son</introduction>
 	<EnglishExample>
 		<exItem label="1.">La muchacha corrió alrededor de la pista.</exItem>
 		<exItem label="2.">Mi madre fue a la tienda.</exItem>
 		<exItem label="3.">Mi profesor vino aquí.</exItem>
 	</EnglishExample>
 	<form section="ip">
-		<prompt>Incorpore sus ejemplos intransitivos aquí:</prompt>
+		<prompt>Escriba algunos ejemplos intransitivos en su idioma aquí:</prompt>
 		<textBox id="IPExamplesIntranExample" dataItem="intransExample" cols="50"/>
 		<br/>
 		<br/>
-		<prompt>Incorpore sus ejemplos con verbos del movimiento aquí:</prompt>
+		<prompt>Escriba algunos ejemplos con verbos del movimiento aquí:</prompt>
 		<textBox id="IPExamplesMotionExample" dataItem="motionExample" cols="50"/>
 		<instruction id="IPCopInstruction">Partial subcategorization can be done as follows, without entering a feature on every verb: if a particular verb is intransitive and can never have anything but a subject, mark it with the feature <feature>intransitive</feature>.  (Don't consider temporal elements.)  If it is an intransitive motion verb that can have a locative PP or AdvP <span id="IPCopFollow" show="swHeadInitial">following</span>
 			<span id="IPCopPrecede" show="swHeadFinal">preceding</span> it, add the feature <feature>motion</feature> to its lexical entry.  Since the motion verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-motion</feature>.</instruction>
-		<introduction>Las oraciones copulativas pueden tener un adjetivo, frase  preposicional o posposicional, o frase nominal después del verbo copulativo.  Algunas idiomas no requieren un verbo o un auxiliar copulativo estar presente. Los ejemplos españoles incluyen:</introduction>
+		<introduction>Las oraciones copulativas pueden tener un adjetivo, frase preposicional o posposicional, o frase nominal como complemento del verbo copulativo.  Algunos idiomas no requieren un verbo o un auxiliar copulativo estar presente. Algunos ejemplos en español son</introduction>
 		<EnglishExample>
 			<exItem label="1.">La muchacha es bonita.</exItem>
 			<exItem label="2.">Ella parece agradable.</exItem>
 			<exItem label="3.">Mi hermana está en el hospital.</exItem>
 			<exItem label="4.">Él es el líder.</exItem>
 		</EnglishExample>
-		<prompt>Incorpore sus ejemplos de oracioned copulativas aquí:</prompt>
+		<prompt>Escriba algunos ejemplos de oraciones copulativas aquí:</prompt>
 		<textBox id="IPExamplesCopularExample" dataItem="copularExample" cols="50"/>
 		<radioGroup>
 			<groupName dataItem="copular" default="yes">RIPCopVerb</groupName>
-			<prompt>¿Su idioma tiene un verbo abierto usado en oraciones copulativas?</prompt>
+			<prompt>¿Hay un verbo abierto usado en oraciones copulativas en su idioma?</prompt>
 			<radio id="IPCopVerbYes" dataValue="yes">Sí, y el verbo copular se requiere</radio>
-			<radio id="IPCopVerbYesOptional" dataValue="yesOptional">Sí, el idioma tiene un verbo copular, pero es opcional en por lo menos algunos casos y entonces no se requiere a ningún auxiliar</radio>
-			<radio id="IPCopVerbYesAux" dataValue="yesAux">Sí, el idioma tiene un verbo copular, pero es opcional cuando un auxiliar está presente</radio>
-			<radio id="IPCopVerbNoAux" dataValue="noAux">No, no hay verbo copular pero requieren un auxiliar</radio>
-			<radio id="IPCopVerbNoNeither" dataValue="noNeither">No, ni utilizan un verbo ni a un auxiliar en las oraciones copulativas</radio>
+			<radio id="IPCopVerbYesOptional" dataValue="yesOptional">Sí, hay un verbo copular, pero es opcional en por lo menos algunos casos y no se requiere a ningún auxiliar tampoco en las oraciones copulativas</radio>
+			<radio id="IPCopVerbYesAux" dataValue="yesAux">Sí, hay un verbo copular, pero requiere un auxiliar si el verbo copulativo no está presente en las oraciones copulativas</radio>
+			<radio id="IPCopVerbNoAux" dataValue="noAux">No, no hay verbo copular, pero requiere un auxiliar en las oraciones copulativas</radio>
+			<radio id="IPCopVerbNoNeither" dataValue="noNeither">No, ni utilizan un verbo copulativo ni un auxiliar en las oraciones copulativas</radio>
 			<radioGroup id="IPCopVerbNoNeitherTable" show="swIPCopVerbNoNeitherOrOptional">
 				<groupName dataItem="copularAffix" default="no">RIPCopAffix</groupName>
-				<prompt>¿Hay un afijo que ocurra en el nominal del predicado o el adjetivo predicativo en las oraciones copulativas <span  id="IPCopVerbYesOptionalPrompt" show="swIPCopVerbYesOptional">cuando no hay presente un verbo copulativo</span>?</prompt>
+				<prompt>¿Hay un afijo que se presenta en el predicativo nominal o el predicativo adjetivo en las oraciones copulativas <span  id="IPCopVerbYesOptionalPrompt" show="swIPCopVerbYesOptional">cuando no hay presente un verbo copulativo</span>?</prompt>
 				<radio id="IPCopAffixNo" dataValue="no">No</radio>
 				<radio id="IPCopAffixYesPrefix" dataValue="yesPrefix">Sí, un prefijo</radio>
 				<radio id="IPCopAffixYesSuffix" dataValue="yesSuffix">Sí, un sufijo</radio>

@@ -146,7 +146,7 @@
 							<content>clase</content>
 						</col>
 						<col>
-							<content>número de clase</content>
+							<content>clase ##</content>
 						</col>
 					</row>
 				</table>
@@ -154,8 +154,8 @@
 		</section2>
 		<section2 id="sPronPersonal">
 			<secTitle>Los pronombres personales</secTitle>
-			<p><content>Todos los idiomas tienen pronombres personales independientes, los cuales son palabras separadas que pueden aparecer en todas las posiciones en las que aparecer los sustantivos o las frases nominales.
-				Algunos idiomas también tienen formas dependientes de los pronombres personales que se adhieren a otra palabra en la oración. </content></p>
+			<p><content>Todos los idiomas tienen pronombres personales independientes, los cuales son palabras independientes que pueden presentarse en todas las posiciones en las que presentarse los sustantivos o las frases nominales.
+				Algunos idiomas también tienen formas dependientes de los pronombres personales que se unen a otra palabra en la oración. </content></p>
 			<p><content>En </content><langName/><content/><case element="pron" attr="dependentPron">
 				<caseText value="no"> no hay un sistema separado de pronombres personales dependientes.</caseText>
 				<caseText value="yes"> hay pronombres personales dependientes así como pronombres personales independientes. Ambos sistemas de pronombres personales serán presentados aquí, con el análisis de las formas independientes primero.</caseText>
@@ -196,7 +196,7 @@
 				<content>En </content>
 				<langName/>
 				<content> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de los pronombres para los sujetos, los objetos y los poseedores.
-					Los pronombres personales independientes que pueden aparecer en la posición del sujeto son: </content>
+					Los pronombres personales independientes que pueden presentarse en la posición del sujeto son: </content>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
@@ -222,7 +222,7 @@
 					</row>				</table>
 			</example>
 			<p show="swNPCaseNom">
-				<content>Los pronombres personales independientes que pueden aparecer en la posición del objeto son:</content>
+				<content>Los pronombres personales independientes que pueden presentarse en la posición del objeto son:</content>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
@@ -248,7 +248,7 @@
 					</row>				</table>
 			</example>
 			<p show="swNPCaseNom">
-				<content>Los pronombres personales independientes que pueden aparecer en la posición del poseedor son: </content>
+				<content>Los pronombres personales independientes que pueden presentarse en la posición del poseedor son: </content>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
@@ -276,7 +276,7 @@
 			<p show="swNPCaseErg">
 				<content>En </content>
 				<langName/>
-				<content> hay un sistema de caso ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales independientes que pueden aparecer en la posición del sujeto de verbos transitivos son: </content>
+				<content> hay un sistema de caso ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales independientes que pueden presentarse en la posición del sujeto de verbos transitivos son: </content>
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
@@ -304,7 +304,7 @@
 				</table>
 			</example>
 			<p show="swNPCaseErg">
-				<content>Los pronombres personales independientes que pueden aparecer en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</content>
+				<content>Los pronombres personales independientes que pueden presentarse en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</content>
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
@@ -332,7 +332,7 @@
 				</table>
 			</example>
 			<p show="swNPCaseErg">
-				<content>Los pronombres personales independientes que pueden aparecer en la posición del poseedor son: </content>
+				<content>Los pronombres personales independientes que pueden presentarse en la posición del poseedor son: </content>
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
@@ -389,7 +389,7 @@
 					</row>				</table>
 			</example>
 			<p show="swNPCaseNom">
-				<content>Los pronombres personales independientes que comúnmente aparecer en la posición del objeto son:</content>
+				<content>Los pronombres personales independientes que comúnmente presentarse en la posición del objeto son:</content>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
@@ -415,7 +415,7 @@
 					</row>				</table>
 			</example>
 			<p show="swNPCaseNom">
-				<content>Los pronombres personales independientes que comúnmente aparecer en la posición del poseedor son: </content>
+				<content>Los pronombres personales independientes que comúnmente presentarse en la posición del poseedor son: </content>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
@@ -442,7 +442,7 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplit">
-				<content>Los pronombres personales independientes que pueden aparecer en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son:</content>
+				<content>Los pronombres personales independientes que pueden presentarse en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son:</content>
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
@@ -534,7 +534,7 @@
 			<p show="swNPCaseNomandDependentYes">
 				<content>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </content>
 				<langName/>
-				<content> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de pronombres para los sujetos, los objetos y los poseedores. Los pronombre personals dependientes que pueden aparecer en la posición del sujeto son: </content>
+				<content> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de pronombres para los sujetos, los objetos y los poseedores. Los pronombre personals dependientes que pueden presentarse en la posición del sujeto son: </content>
 			</p>
 			<example show="swNPCaseNomandDependentYes">
 				<table border="1">
@@ -560,7 +560,7 @@
 					</row>				</table>
 			</example>
 			<p show="swNPCaseNomandDependentYes">
-				<content>Los pronombres personales dependientes que pueden aparecer en la posición del objeto son:</content>
+				<content>Los pronombres personales dependientes que pueden presentarse en la posición del objeto son:</content>
 			</p>
 			<example show="swNPCaseNomandDependentYes">
 				<table border="1">
@@ -586,7 +586,7 @@
 					</row>				</table>
 			</example>
 			<p show="swNPCaseNomandDependentYes">
-				<content>Los pronombres personales dependientes que pueden aparecer en la posición del poseedor son:</content>
+				<content>Los pronombres personales dependientes que pueden presentarse en la posición del poseedor son:</content>
 			</p>
 			<example show="swNPCaseNomandDependentYes">
 				<table border="1">
@@ -614,7 +614,7 @@
 			<p show="swNPCaseErgandDependentYes">
 				<content>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </content>
 				<langName/>
-				<content> hay un sistema de caso del ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra de los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales dependientes que pueden aparecer en la posición de sujeto de verbos transitivos son: </content>
+				<content> hay un sistema de caso del ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra de los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales dependientes que pueden presentarse en la posición de sujeto de verbos transitivos son: </content>
 			</p>
 			<example show="swNPCaseErgandDependentYes">
 				<table border="1">
@@ -642,7 +642,7 @@
 				</table>
 			</example>
 			<p show="swNPCaseErgandDependentYes">
-				<content>Los pronombres personales dependientes que pueden aparecer en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</content>
+				<content>Los pronombres personales dependientes que pueden presentarse en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</content>
 			</p>
 			<example show="swNPCaseErgandDependentYes">
 				<table border="1">
@@ -670,7 +670,7 @@
 				</table>
 			</example>
 			<p show="swNPCaseErgandDependentYes">
-				<content>Los pronombres personales dependientes que pueden aparecer en la posición del poseedor son:</content>
+				<content>Los pronombres personales dependientes que pueden presentarse en la posición del poseedor son:</content>
 			</p>
 			<example show="swNPCaseErgandDependentYes">
 				<table border="1">
@@ -784,7 +784,7 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplitandDependentYes">
-				<content>Los pronombres personales dependientes que pueden aparecer en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son: </content>
+				<content>Los pronombres personales dependientes que pueden presentarse en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son: </content>
 			</p>
 			<example show="swNPCaseSplitandDependentYes">
 				<table border="1">
@@ -1029,7 +1029,7 @@
 
 				<content>, </content>
 				<langData>algo</langData>
-				<content>,o pueden ser un cuantificador más un sustantivo genérico indefinido como en español </content><langData>algunas personas</langData><content>, etc.</content>
+				<content>, o pueden ser un cuantificador más un sustantivo genérico indefinido como en español </content><langData>algunas personas</langData><content>, etc.</content>
 			</p>
 			<p><content>Las versiones negativas de los pronombres indefinidos incluyen </content>
 				<langData>nadie</langData>
@@ -1037,7 +1037,7 @@
 				<langData>nada</langData>
 				<content> y </content>
 				<langData>ninguno</langData>
-				<content>.  Algunos idiomas pueden o no combinarse en una sola palabra, como en </content>
+				<content>.  Algunos idiomas pueden no combinarse en una sola palabra, como en </content>
 				<langData>no one</langData><gloss><content>'nadie'</content></gloss>
 				<content> para el inglés.</content>
 			</p>
@@ -1145,11 +1145,13 @@
 				<interlinear exampleLoc="pron/standAloneNPExample"/>
 			</example>
 			<p>
-				<content>Además, un pronombre, demostrativo, o cuantificador puede ser modificado por una cláusula relativa, como en </content>
+				<content>Además, un pronombre, demostrativo o cuantificador puede ser modificado por una cláusula relativa, como en </content>
 				<langData>todos que vayan con nosotros</langData>
 				<content> y </content>
 				<langData>solamente estos dos que vi</langData>
-				<content>.  Algunos ejemplos similares en </content>
+				<content>.</content></p>
+			<p>
+				<content> Algunos ejemplos similares en </content>
 				<langName/>
 				<content>, incluido en oraciones completas son:</content>
 			</p>
@@ -1163,7 +1165,8 @@
 				<langData>apenas que muchos de ésos</langData>
 				<content> y </content>
 				<langData>solamente ésos adentro allí</langData>
-				<content>.   Algunos ejemplos similares en </content>
+				<content>.  </content></p>
+			<p><content>Algunos ejemplos similares en </content>
 				<langName/>
 				<content> son:</content>
 			</p>

@@ -15,7 +15,7 @@
 			<comment>Until you have completed every page of the starter kit, some of the information given may be inaccurate because it is based only on the default answers.  Default answers relating to the position of elements are shown here as ______ until you have completed the appropriate page in the starter kit.</comment>
 		</p>
 		<p>
-			<comment> DO NOT MODIFY THIS FILE UNTIL YOU HAVE COMPLETED PAWS, because your work will be overwritten by the PAWS program!</comment>
+			<comment> DO NOT MODIFY THIS FILE UNTIL YOU HAVE COMPLETED PAWS, because your work will be overwritten by the PAWS program!  We suggest you save this file under another name before editing it.  Also, before you begin to edit the file, we suggest you especially check the pronouns section, to see if you need to return to PAWS to make corrections to get the proper number of tables.</comment>
 		</p>
 		<p>
 			<content>The </content>
@@ -48,255 +48,288 @@
 					</headerRow>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
-						</col>
-						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
-						</col>
-						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
-						</col>
-						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
-						</col>
-						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
-						</col>
-						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
-						</col>
-						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
-						</col>
-						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
-						</col>
-						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
-						</col>
-						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
-						</col>
-						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
-						</col>
-						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
-						</col>
-						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
-						</col>
-						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
-						</col>
-						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
-						</col>
-						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
-						</col>
-						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
-						</col>
-						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
-						</col>
-						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
-						</col>
-						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
-						</col>
-						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
-						</col>
-					</row>
-					<row>
-						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
-						</col>
-						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
-						</col>
-						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col>
-							<langData lang="lVernacular">ENTER SYMBOL HERE</langData>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
 						</col>
 						<col>
-							<langData lang="lVernacular">ENTER EXAMPLE HERE</langData>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
 						</col>
 						<col>
-							<gloss><content>ENTER GLOSS HERE</content></gloss>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col>
+							<langData lang="lVernacular">ENTER_SYMBOL</langData>
+						</col>
+						<col>
+							<langData lang="lVernacular">ENTER_EXAMPLE</langData>
+						</col>
+						<col>
+							<gloss><content>ENTER_GLOSS</content></gloss>
 						</col>
 					</row>
 				</table>
@@ -559,7 +592,7 @@
 			<case element="q" attr="contFront">
 				<caseText value="no">does not front; it simply remains in place</caseText>
 				<caseText value="after">may remain in place or it may move to the position immediately before the verb</caseText>
-				<caseText value="before">moves to the front of the clause </caseText>
+				<caseText value="before">moves to the front of the clause</caseText>
 				<caseText value="unknown"> _______ </caseText>
 			</case>
 			<content> (section </content>

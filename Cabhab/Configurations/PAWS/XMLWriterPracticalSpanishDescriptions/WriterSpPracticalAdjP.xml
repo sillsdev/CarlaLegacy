@@ -2,7 +2,7 @@
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
 	<section1 id="sAdjP">
-		<secTitle>Los Adjetivos</secTitle>
+		<secTitle>Los adjetivos</secTitle>
 		<p>
 			<content>En esta sección se consideran adjetivos cualitativos, los números y otros cuantificadores, artículos y los adjetivos demonstrativos. Las posiciones de los adjetivos que permiten cada uno de estos elementos dentro de la frase nominal serán tratadas en la sección </content>
 			<sectionRef sec="sNP"/>
@@ -233,7 +233,7 @@
 		<section2 id="sAdjQP">
 			<secTitle>Los cuantificadores</secTitle>
 		 <p>
-			 <content>Los cuantificadores pueden aparecer en varios lugares en una frase nominal. La mayoría de las idiomas tienen tres sistemas de cuantificadores además de números:</content>
+			 <content>Los cuantificadores pueden presentarse en varios lugares en una frase nominal. La mayoría de las idiomas tienen tres sistemas de cuantificadores además de números:</content>
 		 </p>
 		 <ul>
 			 <li>
@@ -248,7 +248,7 @@
 				 <langData>alguno</langData>
 				 <content> o </content>
 				 <langData>ninguno</langData>
-				 <content>, que no ocurren con ningún otro modificador excepto con los adjetivos,</content>
+				 <content>, que no se presentan con ningún otro modificador excepto con los adjetivos,</content>
 			 </li>
 			 <li>
 				 <content>y otros cuantificadores tales como </content>
@@ -263,7 +263,7 @@
 			 </content>
 		 </p>
 		 <section3 id="sQPAll">
-			 <secTitle>Los cuantificadores que modifican la frase del nominal completo</secTitle>
+			 <secTitle>Los cuantificadores que modifican la frase nominal completo</secTitle>
 			<p>
 				<content>Los cuantificadores que significan </content>
 				<langData>todos</langData>
@@ -278,7 +278,7 @@
 				<sectionRef sec="sFocus"/>
 				<content>) y las palabras que significan lo mismo que </content>
 				<langData>casi</langData>
-				<content> (lo que también puede presntarse con </content>
+				<content> (lo que también puede presentarse con </content>
 				<langData>todos</langData>
 				<content>), así que les llamaremos palabras especiales de grado. Estas palabras modifican la frase nominal completo, como en </content>
 				<langData>todos los niños</langData>
@@ -344,8 +344,8 @@
 				<langName/>
 				<content>, los elementos especiales de grado no se expresan como palabras independientes. Por el contrario, todos se unen a otra palabra de la frase nominal. Los elementos especiales positivos de grado son </content>
 				<case element="qp" attr="npDegreePosType">
-					<caseText value="proclitic">procliticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
-					<caseText value="enclitic">encliticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
+					<caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
+					<caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
 					<caseText value="clitic">clíticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
 					<caseText value="prefix">prefijos que se unen al sustantivo principal de la frase nominal.</caseText>
 					<caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
@@ -355,9 +355,9 @@
 			 <p show="swQPNPDegreeNo">
 				 <content>  Los elementos especiales negativos de grado son  </content>
 				<case element="qp" attr="npDegreeNegType">
-					<caseText value="proclitic">procliticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
-					<caseText value="enclitic">encliticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
-					<caseText value="clitic">cliticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
+					<caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
+					<caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
+					<caseText value="clitic">clíticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
 					<caseText value="prefix">prefijos que se unen al sustantivo principal de la frase nominal.</caseText>
 					<caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
 					<caseText value="affix">prefijos o sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
@@ -373,9 +373,9 @@
 				<langName/>
 				<content>, los elementos especiales positivos de grado no se expresan como palabras independientes. Pore el contrario, todos se unen a otra palabra de la frase nominal como </content>
 				<case element="qp" attr="npDegreePosType">
-					<caseText value="proclitic">procliticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
-					<caseText value="enclitic">encliticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
-					<caseText value="clitic">cliticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
+					<caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
+					<caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
+					<caseText value="clitic">clíticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
 					<caseText value="prefix">prefijos que se unen al sustantivo principal de la frase nominal.</caseText>
 					<caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
 					<caseText value="affix">prefijos o sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
@@ -414,9 +414,9 @@
 			 <p show="swQPNPDegreeYesPos">
 				 <content>Sin embargo, los elementos especiales negativos de grado no se expresan como palabras independientes. Por el contrario, se unen a otra palabra de la frase nominal. Estos elementos especiales negativos de grado son </content>
 				<case element="qp" attr="npDegreeNegType">
-					<caseText value="proclitic">procliticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
-					<caseText value="enclitic">encliticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
-					<caseText value="clitic">cliticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
+					<caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
+					<caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
+					<caseText value="clitic">clíticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
 					<caseText value="prefix">prefijos que se unen al sustantivo principal de la frase nominal.</caseText>
 					<caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
 					<caseText value="affix">prefijos o sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
@@ -462,18 +462,18 @@
 			<p show="swQPNPDegreeYesNeg">
 				<content>En </content>
 				<langName/>
-				<content>, los elementos especiales positivos del grado no se expresan como palabras independientes. Por el contrario, todos se unen a otra palabra de la frase nominal como  </content>
+				<content>, los elementos especiales positivos de grado no se expresan como palabras independientes. Por el contrario, todos se unen a otra palabra de la frase nominal como  </content>
 				<case element="qp" attr="npDegreePosType">
-					<caseText value="proclitic">procliticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
-					<caseText value="enclitic">encliticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
-					<caseText value="clitic">cliticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
+					<caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
+					<caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
+					<caseText value="clitic">clíticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
 					<caseText value="prefix">prefijos que se unen al sustantivo principal de la frase nominal.</caseText>
 					<caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
 					<caseText value="affix">prefijos o sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
 				</case>
 			</p>
 			 <p show="swQPNPDegreeYesNeg">
-				 <content>Sin embargo, los elementos especiales negativos del grado en </content>
+				 <content>Sin embargo, los elementos especiales negativos de grado en </content>
 				<langName/>
 				<content>  se expresan como palabras independientes que modifican la frase del nominal completo. Se presentan </content>
 				<case element="qp" attr="npDegreePos">
@@ -536,7 +536,7 @@
 			<p show="swQPNPDegreeNotPosOnly">
 				<content>Algunos ejemplos nominales negativos de la frase en </content>
 				<langName/>
-				<content> que no incluyen los elementos especiales positivos del grado son: </content>
+				<content> que no incluyen los elementos especiales positivos de grado son: </content>
 			</p>
 			<example show="swQPNPDegreeNotPosOnly">
 				<interlinear exampleLoc="qp/negExample"/>
@@ -546,14 +546,14 @@
 				<langName/>
 				<content> no se permite que las palabras que significan </content>
 				<langData>no</langData>
-				<content> se presentan con las palabras especiales positivas del grado en una sola frase nominal.</content>
+				<content> se presentan con las palabras especiales positivas de grado en una sola frase nominal.</content>
 			</p>
 			<p show="swQPNPDegreeNegCooccurYes">
 				<content>En </content>
 				<langName/>
 				<content> se permite que las palabras que significa </content>
 				<langData>no</langData>
-				<content> se presentan con las palabras especiales positivas del grado en una sola frase nominal.  Las palabras especiales negativas del grado se presentan </content>
+				<content> se presentan con las palabras especiales positivas de grado en una sola frase nominal.  Las palabras especiales negativas de grado se presentan </content>
 				<case element="qp" attr="npDegreeNegPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
@@ -597,7 +597,7 @@
 			<section3 id="sQPDeterminers">
 				<secTitle>Los cuantificadores que no se presentan con los determinantes</secTitle>
 				<p>
-					<content>El segundo grupo incluye cuantificadores como </content>
+					<content>El segundo sistema incluye cuantificadores como </content>
 					<langData>alguno</langData>
 					<content>, </content>
 					<langData>cada</langData>
@@ -625,7 +625,7 @@
 				<p show="swQPDeterminerNoPosOnly">
 					<content>En </content>
 					<langName/>
-					<content> nohay una categoría independiente de los cuantificadores que actúe como el único determinante de la frase nominal.  De la misma forma no hay ninguna manera de expresar el elemento especial negativo de grado, no hay ninguna manera de expresar </content><gloss><content>'ninguno'</content></gloss><content> cuando se modifica una frase nominal en esta lengua. Los conceptos positivos de </content>
+					<content> no hay una categoría independiente de los cuantificadores que actúe como el único determinante de la frase nominal.  De la misma forma no hay ninguna manera de expresar el elemento especial negativo de grado, no hay ninguna manera de expresar </content><gloss><content>'ninguno'</content></gloss><content> cuando se modifica una frase nominal en esta lengua. Los conceptos positivos de </content>
 					<langData>alguno</langData>
 					<content> y </content>
 					<langData>cada</langData>
@@ -744,7 +744,7 @@
 				</p>
 			</section3>
 			  <section3 id="sQPOtherQuantifiers">
-				 <secTitle>Otros cuantificadores y la palabras de grado</secTitle>
+				 <secTitle>Otros cuantificadores y las palabras de grado</secTitle>
 				 <p>
 					 <content>Otros cuantificadores, como </content>
 					 <langData>muchos</langData>
@@ -752,7 +752,7 @@
 					 <langData>mucho</langData>
 					 <content>, y </content>
 					 <langData>poco</langData>
-					 <content>, aparecen en diversas posiciones de la frase nominal. En español, estos cuantificadores aparecen después de un artículo, demostrativo o de poseedor pronominal y antes del sustantivo, como en </content>
+					 <content>, se presentan en diversas posiciones en la frase nominal. En español, estos cuantificadores se presentan después de un artículo, demostrativo o de poseedor pronominal y antes del sustantivo, como en </content>
 					 <langData>los muchos perros negros de Juan</langData>
 					 <content> o </content>
 					 <langData>sus pocos libros</langData><content>.
@@ -856,7 +856,7 @@
 				 <caseText value="no"> no hay artículos ni demostrativos que sean palabras independientes.</caseText>
 				 <caseText value="article"> solamente hay artículos que son palabras independientes, ningún demostrativo.</caseText>
 				 <caseText value="demonstrative"> solamente hay demostrativos que son palabras independientes, ningún artículo.</caseText>
-				 <caseText value="both">hay artículos y demostrativos que son palabras independientes.</caseText>
+				 <caseText value="both"> hay artículos y demostrativos que son palabras independientes.</caseText>
 			 </case>
 			 <content/>
 			 <text show="swNPArtAndOrDem">

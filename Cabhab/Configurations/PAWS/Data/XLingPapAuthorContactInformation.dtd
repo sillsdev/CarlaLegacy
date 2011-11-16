@@ -1,0 +1,67 @@
+<!-- a list of author contact information
+	   The version attribute is a way to document the set of author contacts contained within this element.
+	   This is to facilitate reuse of lists of author contacts.
+	   This is a subcomponent of XLingPap
+	   -->
+<!ELEMENT authorContacts (authorContact*)>
+<!ATTLIST authorContacts
+	version CDATA #IMPLIED
+>
+<!-- the contact information for an author
+ More than one are allowed to handle different languages and/or multiple possibilities
+   the id attribute uniquely identifies this author contact so it can be referred to by authorContactInfo
+-->
+<!ELEMENT authorContact (contactName+, contactAffiliation*, contactAddress+, contactPhone*, contactEmail*, contactElectronic*)>
+<!ATTLIST authorContact
+	id ID #REQUIRED
+>
+<!-- this is the author's name as it is to appear in the contact portion
+ It may be different than the name in the author element (e.g. it may include a Dr. prefix or a ", Ph.D." suffix
+   or a position title such as Prof. or Assoc. Prof.
+ note that this can be in different  languages so a given author's name can be expressed in multiple languages.
+  -->
+<!ELEMENT contactName (#PCDATA | %embedded;)*>
+<!ATTLIST contactName
+	lang IDREF #IMPLIED
+	xml:lang CDATA #IMPLIED
+>
+<!-- this is the author's affiliation(s) as it is to appear in the contact portion
+ note that this can be in different  languages so a given author's address can be expressed in multiple languages.
+  -->
+<!ELEMENT contactAffiliation (#PCDATA | %embedded;)*>
+<!ATTLIST contactAffiliation
+	lang IDREF #IMPLIED
+	xml:lang CDATA #IMPLIED
+>
+<!-- this is the author's address line(s) as it is to appear in the contact portion
+ note that this can be in different  languages so a given author's address can be expressed in multiple languages.
+  -->
+<!ELEMENT contactAddress (#PCDATA | %embedded;)*>
+<!ATTLIST contactAddress
+	lang IDREF #IMPLIED
+	xml:lang CDATA #IMPLIED
+>
+<!-- this is the author's telephone information as it is to appear in the contact portion
+ note that this can be in different  languages so a given author's address can be expressed in multiple languages.
+  -->
+<!ELEMENT contactPhone (#PCDATA | %embedded;)*>
+<!ATTLIST contactPhone
+	lang IDREF #IMPLIED
+	xml:lang CDATA #IMPLIED
+>
+<!-- this is the author's email address as it is to appear in the contact portion
+  -->
+<!ELEMENT contactEmail (#PCDATA)*>
+<!-- this is the author's electronic information as it is to appear in the contact portion
+ this can be things like a Skype name, IM handle, etc
+ note that this can be in different  languages so a given author's address can be expressed in multiple languages.
+ The show attribute is an attempt to control which electronic contact info to show in a given document (without having
+ to tag each one with the kind of electronic contact it is since the kinds of electrontic contacts seem to change
+ relatively rapidly).
+  -->
+<!ELEMENT contactElectronic (#PCDATA | %embedded;)*>
+<!ATTLIST contactElectronic
+	lang IDREF #IMPLIED
+	xml:lang CDATA #IMPLIED
+	show (yes|no) "yes"
+>

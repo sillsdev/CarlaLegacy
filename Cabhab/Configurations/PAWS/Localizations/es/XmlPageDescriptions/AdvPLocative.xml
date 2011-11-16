@@ -2,13 +2,13 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPLocative" count="2/7">
-	<title level="2">Los adverbios y sus frases - Los adverbios del lugar</title>
-	<introduction>Los adverbios del lugar incluyen las palabras españolas: <example>aquí</example>, <example>allí</example> y <example>allá</example>.  Muchos idiomas también tienen un adverbio del lugar negativo que significado <example>en ninguna parte</example>.
+	<title level="2">Los adverbios y sus frases - Los adverbios locativos</title>
+	<introduction>Los adverbios locativos incluyen las palabras en español: <example>aquí</example>, <example>allí</example> y <example>allá</example>.  Muchos idiomas también tienen un adverbio locativo negativo que significa <example>en ninguna parte</example>.
 <br/>
 		<br/>
 		El lugar a menudo también es expresada por una frase preposicional, por ejemplo: <example>en las montañas</example>, <example>hasta San José</example> y <example>a través del río</example>.  Muchos idiomas permiten apenas una frase nominal, consistiendo en un nombre propio o una descripción del lugar.
 <br/>
-		<br/>Piense en cómo los lugares se expresan adentro su idioma. Para los que sean adverbios, ¿hay palabras del grado que puedan modificarlos?  En español, los adverbios del lugar se pueden modificar por
+		<br/>Piense en cómo los lugares se expresan adentro su idioma. Para los que sean adverbios, ¿hay palabras de grado que puedan modificarlos?  En español, los adverbios locativos se pueden modificar por
 		<example>solamente</example> y <example>mero o mismo</example>, como en:
 </introduction>
 	<EnglishExample>
@@ -17,19 +17,19 @@
 		<exItem label="3.">allí mero.</exItem>
 	</EnglishExample>
 	<form section="advp">
-		<prompt>Incorpore sus ejemplos de los adverbials positivos del lugar y de cualquier palabra del grado que puedan modificarlos aquí:</prompt>
+		<prompt>Escriba sus ejemplos de los adverbiales locativos positivos y de cualquier palabra de grado que puedan modificarlos aquí:</prompt>
 		<textBox id="AdvPLocExample" dataItem="locativeExample"/>
 		<radioGroup>
 			<groupName dataItem="negLocativeType" default="word">RNegLocativeType</groupName>
-			<prompt>¿Su lengua tiene adverbios negativos del lugar que sean palabras separadas?</prompt>
+			<prompt>¿Hay adverbios locativos negativos que se escriben como palabras independientes en su idioma?</prompt>
 			<radio id="AdvPNegLocativeTypeWord" dataValue="word">Sí</radio>
 			<radio id="AdvPNegLocativeTypeAffix" dataValue="affix">No, todas se escriben como parte del verbo</radio>
-			<radio id="AdvPNegLocativeTypeVerb" dataValue="verb">No, hay solamente un afijo negativo verbal, pero puede ocurrir con adverbios positivos del lugar para dar un significado negativo del lugar</radio>
+			<radio id="AdvPNegLocativeTypeVerb" dataValue="verb">No, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios locativos positivos para dar un significado locativo negativo</radio>
 		</radioGroup>
-		<prompt id="AdvPNegLocativeExamplePrompt" show="swAdvPNegLocativeTypeWord">Incorpore sus ejemplos de los adverbios negativos del lugar aquí:</prompt>
+		<prompt id="AdvPNegLocativeExamplePrompt" show="swAdvPNegLocativeTypeWord">Escriba los adverbios locativos negativos aquí:</prompt>
 		<textBox id="AdvPNegLocativeExample" dataItem="negLocativeExample" show="swAdvPNegLocativeTypeWordOrVerb" rows="3"/>
-		<prompt id="AdvPNegLocativeAffixExamplePrompt" show="swAdvPNegLocativeTypeAffix">Incorpore sus ejemplos de los afijos adverbiales del lugar negativo juntados a los verbos aquí:</prompt>
-		<prompt id="AdvPNegLocativeExamplePrompt2" show="swAdvPNegLocativeTypeVerb">Incorpore sus ejemplos de los adverbios del lugar con un verbo negativo aquí:</prompt>
+		<prompt id="AdvPNegLocativeAffixExamplePrompt" show="swAdvPNegLocativeTypeAffix">Escriba algunos ejemplos de los afijos adverbiales del lugar negativo juntados a los verbos aquí:</prompt>
+		<prompt id="AdvPNegLocativeExamplePrompt2" show="swAdvPNegLocativeTypeVerb">Escriba algunos ejemplos de los adverbios del lugar con un verbo negativo aquí:</prompt>
 		<textBox id="AdvPNegLocativeAffixExample" dataItem="negLocativeAffixExample" show="swAdvPNegLocativeTypeAffix" rows="3"/>
 		<instruction id="AdvPLocativeInstruction">In the lexicon, key the feature <feature>locative</feature>
 on all adverbs that express location.  You can also add this feature

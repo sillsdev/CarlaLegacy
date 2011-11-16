@@ -4,12 +4,12 @@
 <page id="AdvClFeatures" count="2/3">
 	<title level="2">Las cláusulas adverbiales - Los ejemplos y las características</title>
 	<form section="advcl">
-		<prompt>Incorpore ejemplos similares de cláusulas adverbiales temporales en su idioma, incluidos en oraciones completas (pero simples) aquí:</prompt>
+		<prompt>Escriba ejemplos de cláusulas adverbiales temporales en su idioma, incluidos en oraciones completas (pero simples) aquí:</prompt>
 		<textBox id="AdvlClTemporalExample" dataItem="tempSentExample" cols="50"/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="advOrNPPos" default="unknown" position="yesHeadDiff">RAdvOrNPPos</groupName>
-			<prompt>¿De dónde una frase del adverbio o del nominal o el complemento clausal ocurre con respecto al adverbio principal?</prompt>
+			<prompt>¿Dónde se presenta una frase del adverbio o del nominal o el complemento clausal con respecto al adverbio principal?</prompt>
 			<radio id="AdvClAdvOrNPPosBefore" dataValue="before">Antes del adverbio</radio>
 			<radio id="AdvClAdvOrNPPosAfter" dataValue="after">Después del adverbio</radio>
 			<radio id="AdvClAdvOrNPPosEither" dataValue="either">De cualquier lado</radio>
@@ -24,10 +24,10 @@
 			</ul>
 		</instruction>
 		<br/>
-		<introduction>Dando vuelta ahora a las frases adverbiales o a las cláusulas que expresan razón o propósito, encontramos los adverbios que se colocan solamente, por ejemplo <example>por lo tanto</example> y <example>pues</example>(que a veces se consideran las conjunciones de oraciones), junto con los que toman varios tipos de cláusulas de complemento.  (Los ejemplos como <example>por esta razón</example> y <example>en propósito</example> deben servir basado en sus respuestas adentro <section number="8">Las frases preposicionales y/o posposicionales</section>.)
+		<introduction>Dando vuelta ahora a las frases adverbiales o a las cláusulas que expresan razón o propósito, encontramos los adverbios que se colocan solamente, por ejemplo <example>por lo tanto</example> y <example>pues</example> que a veces se consideran las conjunciones de oraciones), junto con los adverbios que tiene varios tipos de cláusulas de complemento.  (Los ejemplos como <example>por esta razón</example> y <example>en propósito</example> deben servir en acuerdo con sus respuestas en  <section number="8">Las frases preposicionales y/o posposicionales</section>.)
 </introduction>
 		<EnglishExample>
-			<exItem>Los ejemplos españoles de los adverbios de la razón o del propósito que toman complementos clausal incluyen:</exItem>
+			<exItem>Angunos ejemplos en español de los adverbios de la razón o del propósito que tienen complementos clausal son:</exItem>
 			<exItem label="1.">Juan fue de prisa al hospital [porque Susana estaba en un accidente].</exItem>
 			<exItem label="2.">[Puesto que Juliana dijo que ella tiene gusto de él], José sonríe todo el tiempo.</exItem>
 			<exItem label="3.">David fue de prisa al aeropuerto [de modo que él pudiera ver a María antes de que ella se fuera].</exItem>
@@ -37,10 +37,10 @@
 		<introduction id="AdvClReasonIntroNotPractical" show="swNotPractical">In the examples above, <example>because</example> and <example>since</example> take only finite IP complements and <example>so</example> takes a finite CP complement.  In contrast, <example>in order</example> takes either a nonfinite IP with a pro-dropped subject or a nonfinite CP complement.  This is the same subcategorization as shown for <example>like</example> and <example>hate</example> in <section number="10">Complement Clauses</section>.  <br/>
 			<br/>(Note again that if your language has any multi-word forms, like <example>in order</example>, they need be handled as a single lexical entry using <tool>Join Compound</tool>.)
  </introduction>
-		<introduction id="AdvClReasonIntroPractical" show="swPractical">En los ejemplos arriba, <example>porque</example> y <example>puesto que</example> y <example>de modo que</example> toma ocaciones finitos por complementos.  En cambio, <example>para</example> o <example>en orden</example> toma una oración infinitivo.  Éste es el grupo de complementos como se muestra para <example>gustar</example> y <example>odiar</example> en <section number="10">Las cláusulas de complemento</section>.
+		<introduction id="AdvClReasonIntroPractical" show="swPractical">En los ejemplos arriba, <example>porque</example> y <example>puesto que</example> y <example>de modo que</example> tienen oraciones finitos por complementos.  En cambio,  <example>para</example> o <example>en orden</example> tiene una oración infinitivo.  Éste es el grupo de complementos como se muestra para <example>gustar</example> y <example>odiar</example> en  <section number="10">Las cláusulas de complemento</section>.
 		 </introduction>
 		<br/>
-		<prompt>Los ejemplos que usted incorporó en <section number="3">Los adverbios</section> se demuestran abajo. Usted puede agregar cualesquiera ejemplos adicionales en oraciones completas (pero simples) también.</prompt>
+		<prompt>Los ejemplos que usted escribió en <section number="3">Los adverbios y sus frases</section> se demuestran abajo. Usted puede agregar ejemplos adicionales en oraciones completas (pero simples) también.</prompt>
 		<textBox id="AdvPReasonExample" section="advp" dataItem="reasonExample" cols="50"/>
 		<br/>
 		<br/>

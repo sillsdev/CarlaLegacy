@@ -84,7 +84,7 @@
 
 <section2 id="sFocusFocus">
 	<secTitle>Las frases enfocadas y los marcadores de enfoque</secTitle>
-	<p><content>En contraste con asuntos, mientras que las construcciones de enfoque también tienen un elemento desplazado que se pueda ser marcado por la puntuación, la frase en foco se mueve desde su posición normal en la oración, dejando un agujero.
+	<p><content>En contraste con asuntos, mientras que las construcciones de enfoque también tienen un elemento desplazado que se pueda ser marcado por la puntuación, la frase enfocada se mueve desde su posición normal en la oración, dejando un agujero.
 	Ciertos indicadores,  como </content><langData>solamente</langData><content> en español, se pueden utilizar para marcar la frase enfocada. Las construcciones de enfoque no se utilizan con frecuencia en idiomas del orden SVO, puesto que el sujeto es generalmente en foco y es ya primer en el orden normal.
 		Los idiomas con otros órdenes de la palabra, tales como idiomas del orden VSO, pueden hacer el uso extenso de construcciones de enfoque. Algunos ejemplos en español de las construcciones de enfoque son:</content></p>
 			<ol>
@@ -101,8 +101,8 @@
 	<p show="swFocusNo">
 		<content>En </content>
 		<langName/>
-		<content> no permite que una frase de enfoque sea desplazada ni antes ni después del resto de la oración de su posición normal. </content></p>
-<p show="swFocusYes"><langName/><content> hay las frases de enfoque que se presentan </content>
+		<content> no permite que una frase enfocada sea desplazada ni antes ni después del resto de la oración de su posición normal. </content></p>
+	<p show="swFocusYes"><content>En </content><langName/><content> hay las frases enfocadas que se presentan </content>
 			<case element="focus" attr="focusPos">
 				<caseText value="before">antes</caseText>
 				<caseText value="after">después</caseText>

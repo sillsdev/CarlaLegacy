@@ -2,18 +2,18 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPDegree" count="5/7">
-	<title level="2">Los adverbios y sus frases - Las palabras del grado</title>
-	<instruction>Considere otra vez los ejemplos que usted ha incorporado para los varios tipos de frases del adverbio, repetidos aquí, antes de contestar las preguntas siguientes.</instruction>
+	<title level="2">Los adverbios y sus frases - Las palabras de grado</title>
+	<instruction>Considere otra vez los ejemplos que usted ha escritoo para los varios tipos de frases del adverbio, repetidos aquí, antes de contestar las preguntas siguientes.</instruction>
 	<form section="advp">
 		<prompt>Los ejemplos de adverbios temporales:</prompt>
 		<textBox id="AdvPExample" dataItem="temporalExample"/>
 		<br/>
 		<br/>
-		<prompt>Los ejemplos de adverbios del lugar:</prompt>
+		<prompt>Los ejemplos de adverbios locativos:</prompt>
 		<textBox id="AdvPLocExample" dataItem="locativeExample"/>
 		<br/>
 		<br/>
-		<prompt>Los ejemplos de adverbios de la manera:</prompt>
+		<prompt>Los ejemplos de adverbios de modo:</prompt>
 		<textBox id="AdvPMannerExample" dataItem="mannerExample"/>
 		<br/>
 		<br/>
@@ -23,32 +23,32 @@
 		<br/>
 		<radioGroup>
 			<groupName dataItem="degree" default="no">RDegreeYN</groupName>
-			<prompt>¿Su idioma tiene palabras del grado (escritas como palabras sintácticas separadas) que puedan modificar algunos de los adverbios?</prompt>
+			<prompt>¿Hay palabras de grado (escritas como palabras independientes) en su idioma que puedan modificar algunos de los adverbios?</prompt>
 			<radio id="AdvPDegreeNo" dataValue="no">No</radio>
 			<radio id="AdvPDegreeYes" checked="yes" dataValue="yes">Sí</radio>
 			<radioGroup id="AdvPDegreeYesTable" show="swAdvPDegreeYes">
 				<groupName dataItem="degreePos" default="unknown" position="yesSpec">RDegree</groupName>
-				<prompt>¿De dónde las palabras del grado ocurren con respecto al adverbio?</prompt>
+				<prompt>¿Dónde se presentan las palabras de grado con respecto al adverbio?</prompt>
 				<radio id="AdvPDegreeBefore" checked="yes" dataValue="before">Antes del adverbio</radio>
 				<radio id="AdvPDegreeAfter" checked="yes" dataValue="after">Después del adverbio</radio>
-				<radio id="AdvPDegreeEitherSide" checked="yes" dataValue="either">De cualquier lado del adverbio, pero de no ambos lados al mismo tiempo</radio>
-				<radio id="AdvPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del adverbio, o de ambos lados al mismo tiempo</radio>
-				<radio id="AdvPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del adverbio, o de ambos lados al mismo tiempo</radio>
-				<radio id="AdvPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del adverbio, o de ambos lados al mismo tiempo</radio>
-				<radio id="AdvPDegreeBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+				<radio id="AdvPDegreeEitherSide" checked="yes" dataValue="either">De cualquier lado del adverbio, pero en no ambos lados en la misma oración</radio>
+				<radio id="AdvPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del adverbio, o en ambos lados en la misma oración</radio>
+				<radio id="AdvPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del adverbio, o en ambos lados en la misma oración</radio>
+				<radio id="AdvPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del adverbio, o en ambos lados en la misma oración</radio>
+				<radio id="AdvPDegreeBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
 				<radioGroup id="AdvPDegreeEitherSideTable" show="swAdvPDegreeEitherorBoth">
 					<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
-					<prompt>¿Pueden todas las palabras del grado aparecer de cualquier lado del adverbio?</prompt>
+					<prompt>¿Pueden presentarse todas las palabras de grado de cualquier lado del adverbio?</prompt>
 					<radio id="AdvPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="AdvPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+					<radio id="AdvPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
 			<radioGroup id="AdvPDegreeSetTable" show="swAdvPDegreeYes">
 				<groupName dataItem="degreeSet" default="unrestricted">RSet</groupName>
-				<prompt>¿Son las palabras del grado que pueden modificar adverbios todos los mismos?</prompt>
+				<prompt>¿Son las palabras de grado que pueden modificar adverbios todas las mismas?</prompt>
 				<radio id="AdvPSetUnrestricted" checked="yes" dataValue="unrestricted">Sí, el mismo grupo puede modificar cualquier tipo de adverbio</radio>
-				<radio id="AdvPSetAlmost" checked="yes" dataValue="exceptReason">Casi; el mismo grupo puede modificar temporales, lugares, y adverbios de la manera, pero los adverbios de la razón o del propósito no se modifican</radio>
-				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos de las palabras del grado para cada tipo de adverbio (nota que un cierto traslapo es aceptable y ningunas palabras del grado para los adverbios de la razón o del propósito es también aceptable)
+				<radio id="AdvPSetAlmost" checked="yes" dataValue="exceptReason">Casi; el mismo grupo puede modificar adverbios temporales, adverbios locativos y adverbios de modo, pero los adverbios de la razón o del propósito no se modifican</radio>
+				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos de las palabras de grado para cada tipo de adverbio (nota que algo traslapo es aceptable y ningunas palabras del grado para los adverbios de la razón o del propósito es también aceptable)
 </radio>
 			</radioGroup>
 		</radioGroup>

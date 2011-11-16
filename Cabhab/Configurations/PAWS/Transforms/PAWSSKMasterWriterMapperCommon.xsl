@@ -281,11 +281,13 @@
 				<xsl:attribute name="font-family">
 					<xsl:value-of select="//language/font/fontName"/>
 				</xsl:attribute>
-				<xsl:attribute name="font-size">
+<!--
+	Do not use the font-size for PAWS in the XLingPaper output;  The user can adjust it as needed for XLingPaper (e.g. using a %)
+	<xsl:attribute name="font-size">
 					<xsl:value-of select="//language/font/fontSize"/>
 					<xsl:text>pt</xsl:text>
 				</xsl:attribute>
-				<xsl:attribute name="color">
+-->                <xsl:attribute name="color">
 					<xsl:value-of select="//language/font/fontColor"/>
 				</xsl:attribute>
 				<xsl:if test="//language/font/@bold='True'">

@@ -26,8 +26,8 @@
 				<radioGroup id="IPPassiveAgentCatTable" show="swPassiveAgentYes">
 					<groupName dataItem="passiveAgentCat" default="dp">RIPPassiveAgentCat</groupName>
 					<prompt>What syntactic category is the Agent phrase?</prompt>
-					<radio id="IPPassiveAgentCatPP" dataValue="pp">pre/post-positional phrase (PP)</radio>
-					<radio id="IPPassiveAgentCatDP" dataValue="dp">nominal phrase (DP)</radio>
+					<radio id="IPPassiveAgentCatPP" dataValue="pp">A pre/post-positional phrase (PP)</radio>
+					<radio id="IPPassiveAgentCatDP" dataValue="dp">A nominal phrase (DP)</radio>
 				</radioGroup>
 			</radioGroup>
 			<radioGroup id="IPPassiveAuxTable" show="swPassiveYes">

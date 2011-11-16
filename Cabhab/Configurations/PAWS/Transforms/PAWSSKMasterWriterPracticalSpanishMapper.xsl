@@ -27,7 +27,7 @@
 		</xsl:processing-instruction>
 		<lingPaper automaticallywrapinterlinears="yes" sortRefsAbbrsByDocumentLanguage="yes">
 			<frontMatter>
-				<title>Una Gramática del  <xsl:value-of select="//language/langName"/>
+				<title>Una Gramática del  <xsl:value-of select="//language/langNames/langName[@lang='es']"/>
 				</title>
 				<xsl:call-template name="OutputCommonFrontmatter"/>
 			</frontMatter>

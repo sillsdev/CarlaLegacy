@@ -24,7 +24,7 @@ Main template
 		</xsl:processing-instruction>
 		<lingPaper automaticallywrapinterlinears="yes" sortRefsAbbrsByDocumentLanguage="yes">
 			<frontMatter>
-				<title>A Practical Grammar of  <xsl:value-of select="//language/langName"/>
+				<title>A Practical Grammar of  <xsl:value-of select="//language/langNames/langName[@lang='en']"/>
 				</title>
 				<xsl:call-template name="OutputCommonFrontmatter"/>
 			</frontMatter>

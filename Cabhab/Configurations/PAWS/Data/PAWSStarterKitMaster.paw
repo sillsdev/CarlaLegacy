@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<paws dbversion="6" outputGrammar="True" outputWriter="True" outputWriterPractical="True" outputWriterPracticalSpanish="False">
+<paws dbversion="7" outputGrammar="False" outputWriter="True" outputWriterPractical="True" outputWriterPracticalSpanish="False">
 	<leftOffAt>Contents.htm</leftOffAt>
 	<language>
-		<langName/>
+		<langNames>
+			<langName lang="en"/>
+			<langName lang="es"/>
+		</langNames>
 		<langAbbr/>
 		<font bold="False" italic="False" under="False" strike="False" rtl="False">
 			<fontName>Courier New</fontName>

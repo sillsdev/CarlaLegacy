@@ -6,8 +6,8 @@
 		<p>
 <xsl:text>This is a description of the syntax of </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -22,13 +22,13 @@
 <object type="tComment">Until you have completed every page of the starter kit, some of the information given may be inaccurate because it is based only on the default answers.  Default answers relating to the position of elements are shown here as ______ until you have completed the appropraite page in the starter kit.</object>
 </p>
 		<p>
-<object type="tComment"> DO NOT MODIFY THIS FILE UNTIL THE STARTER KIT IS COMPLETED, because your work will be overwritten by the PAWS program!</object>
+<object type="tComment"> DO NOT MODIFY THIS FILE UNTIL THE STARTER KIT IS COMPLETED, because your work will be overwritten by the PAWS program! We suggest you save this file under another name before editing it.  Also, before you begin to edit the file, we suggest you especially check the pronouns section, to see if you need to return to PAWS to make corrections to get the proper number of tables.</object>
 </p>
 		<p>
 <xsl:text>The </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -40,8 +40,8 @@
 <object type="tComment">number goes here</object>
 <xsl:text> speakers.  </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -56,8 +56,8 @@
 			<p>
 <xsl:text>The orthographic symbols used in writing </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -79,18 +79,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -99,18 +99,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -119,18 +119,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -139,18 +139,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -159,18 +159,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -179,18 +179,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -199,18 +199,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -219,18 +219,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -239,18 +239,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -259,18 +259,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -279,18 +279,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -299,18 +299,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -319,18 +319,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -339,18 +339,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -359,18 +359,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -379,18 +379,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -399,18 +399,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -419,18 +419,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -439,18 +439,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -459,18 +459,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -479,18 +479,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -499,18 +499,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -519,18 +519,78 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER SYMBOL HERE</langData>
+</xsl:attribute>ENTER_SYMBOL</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ENTER EXAMPLE HERE</langData>
+</xsl:attribute>ENTER_EXAMPLE</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS HERE</xsl:text>
+<xsl:text>ENTER_GLOSS</xsl:text>
+</gloss>
+						</td>
+					</tr>
+					<tr>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>ENTER_SYMBOL</langData>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>ENTER_EXAMPLE</langData>
+						</td>
+						<td align="left">
+							<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER_GLOSS</xsl:text>
+</gloss>
+						</td>
+					</tr>
+					<tr>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>ENTER_SYMBOL</langData>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>ENTER_EXAMPLE</langData>
+						</td>
+						<td align="left">
+							<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER_GLOSS</xsl:text>
+</gloss>
+						</td>
+					</tr>
+					<tr>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>ENTER_SYMBOL</langData>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>ENTER_EXAMPLE</langData>
+						</td>
+						<td align="left">
+							<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER_GLOSS</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -618,8 +678,8 @@
 			<p>
 <xsl:text>The words in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -627,8 +687,8 @@
 </xsl:choose>
 <xsl:text> are given on the first line.   The second line shows the morpheme glosses for the parts of the word, with the prefixes, root, and suffixes separated by hyphens.  The third line presents a literal translation in English, word for word, giving the English word gloss that is the closest in meaning to the word in </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -636,8 +696,8 @@
 </xsl:choose>
 <xsl:text>.  If more than one English word is needed to express the meaning of the </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -658,8 +718,8 @@
 		<p>
 <xsl:text>The basic word order of </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -718,8 +778,8 @@
 <p>
 <xsl:text>In keeping with the head-initial typology, </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -734,8 +794,8 @@
 <p>
 <xsl:text>In contrast with the head-initial typology, </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -749,8 +809,8 @@
 		<xsl:if test="normalize-space(//pp/@pPos)='both'">
 <p>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -765,8 +825,8 @@
 <p>
 <xsl:text>In keeping with the head-final typology, </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -781,8 +841,8 @@
 <p>
 <xsl:text>In contrast with the head-final typology, </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -818,8 +878,8 @@
 <xsl:text>).   </xsl:text>
 <xsl:if test="normalize-space(//relcl/@exist)='no'">
 				<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -843,8 +903,8 @@
 		<p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -872,8 +932,8 @@
 		<xsl:if test="normalize-space(//ip/@aux)='no'">
 <p>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -887,8 +947,8 @@
 		<xsl:if test="normalize-space(//ip/@aux)='yes'">
 <p>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>

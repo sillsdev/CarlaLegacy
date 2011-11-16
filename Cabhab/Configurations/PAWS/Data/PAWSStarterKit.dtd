@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XML Spy v3.0.7 (http://www.xmlspy.com) by Andy Black (SIL International) -->
 <!-- PAWS Starter Kit DTD -->
 <!-- The dbversion attribute is used in order to be able to automatically migrate data from one version to another
-       outputGrammar attribute means output the PC-PATR grammar
+	   outputGrammar attribute means output the PC-PATR grammar
 -->
 <!ELEMENT paws (leftOffAt, language, typology, qp, advp, adjp, np, prop, pron, pp, ip, comp, q, relcl, advcl, neg, coord, focus, excl)>
 <!ATTLIST paws
-    dbversion CDATA #IMPLIED
-    outputGrammar (True | False) "True"
-    outputWriter (True | False) "True"
-    outputWriterPractical (True | False) "True"
-    outputWriterPracticalSpanish (True | False) "False"
+	dbversion CDATA #IMPLIED
+	outputGrammar (True | False) "True"
+	outputWriter (True | False) "True"
+	outputWriterPractical (True | False) "True"
+	outputWriterPracticalSpanish (True | False) "False"
 >
 <!-- leftOffAt is the html page where the user last performed a save operation -->
 <!ELEMENT leftOffAt (#PCDATA)>
 <!-- Language has the language name, abbreviation and font information.  It
-     also has the SFM field code to use for examples (textSFM).  -->
-<!ELEMENT language (langName, langAbbr, font, textSFM, answerFile, grammarFile, writerFile, writerPracticalFile, writerPracticalSpanishFile, exampleFilesPath)>
+	 also has the SFM field code to use for examples (textSFM).  -->
+<!ELEMENT language (langNames, langAbbr, font, textSFM, answerFile, grammarFile, writerFile, writerPracticalFile, writerPracticalSpanishFile, exampleFilesPath)>
+<!ELEMENT langNames (langName) >
 <!ELEMENT langName (#PCDATA)>
+<!ATTLIST langName
+	lang CDATA #REQUIRED
+>
 <!ELEMENT langAbbr (#PCDATA)>
 <!ELEMENT font (fontName, fontSize, fontColor)>
 <!ATTLIST font
-    bold (True | False) "False"
-    italic (True | False) "False"
-    under (True | False) "False"
-    strike (True | False) "False"
-    rtl (True | False) "False"
+	bold (True | False) "False"
+	italic (True | False) "False"
+	under (True | False) "False"
+	strike (True | False) "False"
+	rtl (True | False) "False"
 >
 <!ELEMENT fontName (#PCDATA)>
 <!ELEMENT fontSize (#PCDATA)>
@@ -40,46 +43,46 @@
 <!-- Typology has the basic word order and some examples. -->
 <!ELEMENT typology (example)>
 <!ATTLIST typology
-    checkedOff (yes | no) "no"
-    wordOrder (SVO | SOV | VSO | VOS | OVS | OSV) "SVO"
+	checkedOff (yes | no) "no"
+	wordOrder (SVO | SOV | VSO | VOS | OVS | OSV) "SVO"
 >
 <!-- Quantifier Phrases consist of many kinds of examples, plus a possible category mapping.
-     Degree words modifying the whole NP may or may not appear (npDegree)
-     If so, they may appear before, after, or on either side or both sides at the same time.
-     If either side, they may appear (npDegreeEither) unrestricted or restricted.
-     Degree words within QPs may or may not appear (degree).
-     If so, they have a position (degreePos) with respect to the quantifier.
-     If they can appear either before or after, then either there are sets
-        for each side (degreeEither="restricted") or not.
-     Ordinal numbers are formed by affixation or are independent
-       (ordinalFormation).
-     Ordinal numbers appear before, after, or on either side of the
-       cardinal number they may modify (ordinalPos).
-      If they can appear either before or after, then either there are sets
-        for each side (ordinalEither="restricted") or not.
-     Compound cardinal numbers are either head-initial or head-final (cardinalHead).
+	 Degree words modifying the whole NP may or may not appear (npDegree)
+	 If so, they may appear before, after, or on either side or both sides at the same time.
+	 If either side, they may appear (npDegreeEither) unrestricted or restricted.
+	 Degree words within QPs may or may not appear (degree).
+	 If so, they have a position (degreePos) with respect to the quantifier.
+	 If they can appear either before or after, then either there are sets
+		for each side (degreeEither="restricted") or not.
+	 Ordinal numbers are formed by affixation or are independent
+	   (ordinalFormation).
+	 Ordinal numbers appear before, after, or on either side of the
+	   cardinal number they may modify (ordinalPos).
+	  If they can appear either before or after, then either there are sets
+		for each side (ordinalEither="restricted") or not.
+	 Compound cardinal numbers are either head-initial or head-final (cardinalHead).
 -->
 <!ELEMENT qp (all, almost, only, not, example, negExample, negCooccurExample, determinerExample, determinerNPExample, determinerNegExample, determinerNegNPExample, quantifierExample, degreeExample, cardinalNumbers1to10, cardinalNumbers11to20, cardinalNumbers30to100, ordinalNumbers, ordinalExample, cardinalCompoundExample, cardinalNumberCategory, conjunctionCategory)>
 <!ATTLIST qp
-    checkedOff (yes | no) "no"
-    npDegree (yes | yesPos | yesPosOnly | yesNeg | no | noPosOnly) "yes"
-    npDegreePosType (proclitic | enclitic | clitic | prefix | suffix | affix) "proclitic"
-    npDegreeNegType (proclitic | enclitic | clitic | prefix | suffix | affix) "proclitic"
-    npDegreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    npDegreeEither (unrestricted | restricted) "unrestricted"
-    npDegreeNegCooccur (yes | no) "no"
-    npDegreeNegPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    npDegreeNegEither (unrestricted | restricted) "unrestricted"
-    determiner (yes | yesSome | yesNo | no) "yes"
-    determinerPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    determinerEither (unrestricted | restricted) "unrestricted"
-    degree (yes | no) "no"
-    degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    degreeEither (unrestricted | restricted) "unrestricted"
-    ordinalFormation (affix | independent | both) "affix"
-    ordinalPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    ordinalEither (unrestricted | restricted) "unrestricted"
-    cardinalHead (before | after) "after"
+	checkedOff (yes | no) "no"
+	npDegree (yes | yesPos | yesPosOnly | yesNeg | no | noPosOnly) "yes"
+	npDegreePosType (proclitic | enclitic | clitic | prefix | suffix | affix) "proclitic"
+	npDegreeNegType (proclitic | enclitic | clitic | prefix | suffix | affix) "proclitic"
+	npDegreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	npDegreeEither (unrestricted | restricted) "unrestricted"
+	npDegreeNegCooccur (yes | no) "no"
+	npDegreeNegPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	npDegreeNegEither (unrestricted | restricted) "unrestricted"
+	determiner (yes | yesSome | yesNo | no) "yes"
+	determinerPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	determinerEither (unrestricted | restricted) "unrestricted"
+	degree (yes | no) "no"
+	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	degreeEither (unrestricted | restricted) "unrestricted"
+	ordinalFormation (affix | independent | both) "affix"
+	ordinalPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	ordinalEither (unrestricted | restricted) "unrestricted"
+	cardinalHead (before | after) "after"
 >
 <!ELEMENT all (#PCDATA)>
 <!ELEMENT almost (#PCDATA)>
@@ -103,25 +106,25 @@
 <!ELEMENT cardinalNumberCategory (#PCDATA)>
 <!ELEMENT conjunctionCategory (#PCDATA)>
 <!-- Adverb Phrases consist of various kinds of examples, plus a possible category mapping.
-    Manner adverbs may be words or affixes (mannerType).
-     Degree words may or may not appear (degree).
-     If so, they have a position (degreePos) with respect to the adverb.
-     If they can appear either before or after, then either there are sets
-        for each side (degreeEither="restricted") or not.
-     The set of degree words which can modify the four kinds of adverbs
-       (degreeSet) can modify all four kinds ("unrestricted"), all but reason ("exceptReason"),
-       or they are different ("restricted").
+	Manner adverbs may be words or affixes (mannerType).
+	 Degree words may or may not appear (degree).
+	 If so, they have a position (degreePos) with respect to the adverb.
+	 If they can appear either before or after, then either there are sets
+		for each side (degreeEither="restricted") or not.
+	 The set of degree words which can modify the four kinds of adverbs
+	   (degreeSet) can modify all four kinds ("unrestricted"), all but reason ("exceptReason"),
+	   or they are different ("restricted").
 -->
 <!ELEMENT advp (temporalExample, negTemporalExample, negTemporalAffixExample, locativeExample, negLocativeExample, negLocativeAffixExample, mannerExample, reasonExample, adverbCategory)>
 <!ATTLIST advp
-    checkedOff (yes | no) "no"
-    negTemporalType (word | affix | verb) "word"
-    negLocativeType (word | affix | verb) "word"
-    mannerType (word | affix) "word"
-    degree (yes | no) "no"
-    degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    degreeEither (unrestricted | restricted) "unrestricted"
-    degreeSet (unrestricted | exceptReason | restricted) "unrestricted"
+	checkedOff (yes | no) "no"
+	negTemporalType (word | affix | verb) "word"
+	negLocativeType (word | affix | verb) "word"
+	mannerType (word | affix) "word"
+	degree (yes | no) "no"
+	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	degreeEither (unrestricted | restricted) "unrestricted"
+	degreeSet (unrestricted | exceptReason | restricted) "unrestricted"
 >
 <!ELEMENT temporalExample (#PCDATA)>
 <!ELEMENT negTemporalExample (#PCDATA)>
@@ -133,52 +136,52 @@
 <!ELEMENT reasonExample (#PCDATA)>
 <!ELEMENT adverbCategory (#PCDATA)>
 <!-- Adjective Phrases have one set of examples and an optional category mapping.
-     Modifiers may or may not appear (modifiers).
-     If so and it is degree words only (modifiers="yesDegree"), then they
-        have a position (degreePos) with respect to the adjective.
-        If they can appear either before or after, then either there are sets
-          for each side (degreeEither="restricted") or not.
-     If so and it is degree words & manner adverbials (modifiers="yesManner"),
-        then the modifiers may have a position (mannerPos) with respect to
-        the adjective.
-        If they can appear either before or after, then either there are sets
-          for each side (mannerEither="restricted") or not.
+	 Modifiers may or may not appear (modifiers).
+	 If so and it is degree words only (modifiers="yesDegree"), then they
+		have a position (degreePos) with respect to the adjective.
+		If they can appear either before or after, then either there are sets
+		  for each side (degreeEither="restricted") or not.
+	 If so and it is degree words & manner adverbials (modifiers="yesManner"),
+		then the modifiers may have a position (mannerPos) with respect to
+		the adjective.
+		If they can appear either before or after, then either there are sets
+		  for each side (mannerEither="restricted") or not.
 
 -->
 <!ELEMENT adjp (example, adjectiveCategory)>
 <!ATTLIST adjp
-    checkedOff (yes | no) "no"
-    modifiers (yes | yesManner | no) "no"
-    degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    degreeEither (unrestricted | restricted) "unrestricted"
-    mannerPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    mannerEither (unrestricted | restricted) "unrestricted"
+	checkedOff (yes | no) "no"
+	modifiers (yes | yesManner | no) "no"
+	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	degreeEither (unrestricted | restricted) "unrestricted"
+	mannerPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	mannerEither (unrestricted | restricted) "unrestricted"
 >
 <!ELEMENT adjectiveCategory (#PCDATA)>
 <!-- Nominal phrases have examples with articles and demonstratives, embedded
-       possessors, prepositional phrases within the possessor, relative
-       clauses within the possessor, quantifier modifiers, adjective
-       phrase modifiers, compounds, and compounds containing PPs.  There also
-       is a series of table of contents items.
-     The question of which features are involved in agreement within NP is settled first
-      (agreeNumber) and (agreeOther, which can be animacy, class, or gender).
-      If agreeNumber=no, we assume that number is
-     marked for the nominal phrase by numbers and quantifiers.
-    The case system (case) may be "none, nominative, ergative, split".
-    If nominative or split, it can have a default of nominative (caseDefault).
-     The phrase may have articles and/or demonstratives (artAndDem).
-     The article/demonstrative may have case (artCase).
+	   possessors, prepositional phrases within the possessor, relative
+	   clauses within the possessor, quantifier modifiers, adjective
+	   phrase modifiers, compounds, and compounds containing PPs.  There also
+	   is a series of table of contents items.
+	 The question of which features are involved in agreement within NP is settled first
+	  (agreeNumber) and (agreeOther, which can be animacy, class, or gender).
+	  If agreeNumber=no, we assume that number is
+	 marked for the nominal phrase by numbers and quantifiers.
+	The case system (case) may be "none, nominative, ergative, split".
+	If nominative or split, it can have a default of nominative (caseDefault).
+	 The phrase may have articles and/or demonstratives (artAndDem).
+	 The article/demonstrative may have case (artCase).
   If articles only, the article has a position (artPos) which may be restricted if it can occur on
-     either side (artEither).  It may be required (artRequired) or optional always,
-    or it may have a split based on number and mass.  The requirement is further divided
+	 either side (artEither).  It may be required (artRequired) or optional always,
+	or it may have a split based on number and mass.  The requirement is further divided
    if articles may appear on both sides (artRequiredBothPos)
    The same options are available for demonstratives only (dem), both but do not
 cooccur (demOrArt) or both and cooccur (demAndArt).
-     The phrase may have a possessor.
-       The possessor may or may not be marked (possMarked).
-       If it is a phrasal clitic, it may be written as a distinct word
-          (possCliticWord) or not (in which case the affix type is needed (possCliticAffix).
-       The clitic word may be required on all possessors
+	 The phrase may have a possessor.
+	   The possessor may or may not be marked (possMarked).
+	   If it is a phrasal clitic, it may be written as a distinct word
+		  (possCliticWord) or not (in which case the affix type is needed (possCliticAffix).
+	   The clitic word may be required on all possessors
 	  (possCliticRequired).  It has a position with respect to the
 	  possessor (possCliticPossPos).
 	 The possessor has a position with respect to the head noun (possNounPos).
@@ -188,77 +191,77 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 	(possNounCaseChange) asks if the presence of a possessor affects the case of the
 	head noun.
 	The language may distinguish alienable and inalienble possession (possAlienable).
-       The possessor may agree with the head noun (possAgr).
-    (possNounAgrKeyed) asks if noun agreement features were keyed in Art/Dem section.
-     If the phrase has a quantifier phrase (at the N'' level), then it has a
-       position with respect to the noun (qpPos) which may be before, after, or on either side
-     or both sides at the same time.
-     If either or both sides, they may appear (qpEither) unrestricted or restricted.  Numbers only may
-     have a reqtricted position (qpEitherRestrictedNumPos).
-    QPs may or may not agree with the noun they modify (qpAgree).
-    If either side, they may appear (adjpEither) unrestricted  or  restricted.
-    Languages which change the case for a possessor may also do so just for an adjective (adjpCaseChange).
-    Some of these languages have a phrase delimiting case afix (adjpCaseAffix), which
-    may be either a prefix or a suffix (adjpCaseAffixType).
-     Adjective phrases have a position with respect to the noun (adjpPos).
-    Adjective Phrases may or may not agree with the noun they modify (adjpAgree).
-     Noun-noun compounds may or may not occur (comp).  If yes, they have a head (compHead)
-    and any PP occurs in a position with respect to that head (compHeadPPPos).
+	   The possessor may agree with the head noun (possAgr).
+	(possNounAgrKeyed) asks if noun agreement features were keyed in Art/Dem section.
+	 If the phrase has a quantifier phrase (at the N'' level), then it has a
+	   position with respect to the noun (qpPos) which may be before, after, or on either side
+	 or both sides at the same time.
+	 If either or both sides, they may appear (qpEither) unrestricted or restricted.  Numbers only may
+	 have a reqtricted position (qpEitherRestrictedNumPos).
+	QPs may or may not agree with the noun they modify (qpAgree).
+	If either side, they may appear (adjpEither) unrestricted  or  restricted.
+	Languages which change the case for a possessor may also do so just for an adjective (adjpCaseChange).
+	Some of these languages have a phrase delimiting case afix (adjpCaseAffix), which
+	may be either a prefix or a suffix (adjpCaseAffixType).
+	 Adjective phrases have a position with respect to the noun (adjpPos).
+	Adjective Phrases may or may not agree with the noun they modify (adjpAgree).
+	 Noun-noun compounds may or may not occur (comp).  If yes, they have a head (compHead)
+	and any PP occurs in a position with respect to that head (compHeadPPPos).
 -->
 <!ELEMENT np (agreeNumberExample, agreeAnimacyExample, agreeClassExample, agreeGenderExample, articleExample, demonstrativeExample, example, embeddedExample, ppExample, relClExample, possAlienableAffixExample, qpExample, adjpExample, partExample, compExample, compPPExample, partHeadExample, partHeadSentExample, articleCategory, demonstrativeCategory, nounCategory, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8, npContents9, npPossAgrPossFirst, npPossAgrPossExclusive, npPossAgrPossInclusive, npPossAgrPossSecond, npPossAgrPossThird, npPossAgrPossSingular, npPossAgrPossPlural, npPossAgrPossDual, npPossAgrPossMasculine, npPossAgrPossFeminine, npPossAgrPossNeuter, npPossAgrPossAnimate, npPossAgrPossInanimate, npPossAgrPossHuman, npPossAgrPossNonHuman, npPossAgrPossClassClassNumber)>
 <!ATTLIST np
-    checkedOff (yes | no) "no"
-    agreeNumber (no | yes) "no"
-    agreeOther (no | yesAnimacy | yesClass | yesGender) "no"
-    case (none | nominative | ergative | split) "nominative"
-    caseDefault (no | nominative) "no"
-    artAndDem (no | article | demonstrative | both) "no"
-    artCase (yes | no) "no"
-    artPos (before | after | either | unknown) "unknown"
-    artEither (unrestricted | restricted) "unrestricted"
-    artRequired (no | mass | yes) "no"
-    artBothRequiredPos (before | after | both | unknown) "unknown"
-    demPos (before | after | either | unknown) "unknown"
-    demEither (unrestricted | restricted) "unrestricted"
-    demRequired (no | mass | yes) "no"
-    demBothRequiredPos (before | after | both | unknown) "unknown"
-    artBothCooccur (no | different | yes) "different"
-    demOrArtPos (before | after | either | unknown) "unknown"
-    demOrArtEither (unrestricted | restricted) "unrestricted"
-    demOrArtRequired (no | mass | yes) "no"
-    demOrArtBothRequiredPos (before | after | both | unknown) "unknown"
-    demAndArtDemPos (before | after | either | unknown) "unknown"
-    demAndArtDemEither (unrestricted | restricted) "unrestricted"
-    demAndArtDemRequired (no | mass | yes) "no"
-    demAndArtDemBothRequiredPos (before | after | both | unknown) "unknown"
-    demAndArtArtPos (before | after | either | unknown) "unknown"
-    demAndArtArtEither (unrestricted | restricted) "unrestricted"
-    demAndArtArtRequired (no | mass | yes) "no"
-    demAndArtArtBothRequiredPos (before | after | both | unknown) "unknown"
-    possMarked (no | yesAffix | yesClitic) "no"
-    possCliticWord (no | yes) "no"
-    possCliticAffix (suffix | prefix) "suffix"
-    possCliticRequired (no | yes) "no"
-    possCliticPossPos (before | after | unknown) "unknown"
-    possNounPos (before | after | either | unknown) "unknown"
-    possCooccur (yes | no) "yes"
-    possCaseErg (ergative | absolutive | genitive) "genitive"
-    possNounCaseChange (no | yes) "no"
-    possAlienable (no | yes) "no"
-    possAgr (yes | no) "no"
-    possNounAgrKeyed (yes | no) "yes"
-    qpPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    qpEither (unrestricted | restricted) "unrestricted"
-    qpEitherRestrictedNumPos (before | after | no | unknown) "unknown"
-    qpAgree (no | yes) "no"
-    adjpPos (before | after | either | unknown) "unknown"
-    adjpEither (unrestricted | restricted) "unrestricted"
-    adjpCaseChange (no | yes) "no"
-    adjpCaseAffix (no | yesPrefix | yesSuffix) "no"
-    adjpAgree (no | yes) "no"
-    comp (no | yes) "no"
-    compHead (left | right) "right"
-    ppPos (before | after | either | unknown) "unknown"
+	checkedOff (yes | no) "no"
+	agreeNumber (no | yes) "no"
+	agreeOther (no | yesAnimacy | yesClass | yesGender) "no"
+	case (none | nominative | ergative | split) "nominative"
+	caseDefault (no | nominative) "no"
+	artAndDem (no | article | demonstrative | both) "no"
+	artCase (yes | no) "no"
+	artPos (before | after | either | unknown) "unknown"
+	artEither (unrestricted | restricted) "unrestricted"
+	artRequired (no | mass | yes) "no"
+	artBothRequiredPos (before | after | both | unknown) "unknown"
+	demPos (before | after | either | unknown) "unknown"
+	demEither (unrestricted | restricted) "unrestricted"
+	demRequired (no | mass | yes) "no"
+	demBothRequiredPos (before | after | both | unknown) "unknown"
+	artBothCooccur (no | different | yes) "different"
+	demOrArtPos (before | after | either | unknown) "unknown"
+	demOrArtEither (unrestricted | restricted) "unrestricted"
+	demOrArtRequired (no | mass | yes) "no"
+	demOrArtBothRequiredPos (before | after | both | unknown) "unknown"
+	demAndArtDemPos (before | after | either | unknown) "unknown"
+	demAndArtDemEither (unrestricted | restricted) "unrestricted"
+	demAndArtDemRequired (no | mass | yes) "no"
+	demAndArtDemBothRequiredPos (before | after | both | unknown) "unknown"
+	demAndArtArtPos (before | after | either | unknown) "unknown"
+	demAndArtArtEither (unrestricted | restricted) "unrestricted"
+	demAndArtArtRequired (no | mass | yes) "no"
+	demAndArtArtBothRequiredPos (before | after | both | unknown) "unknown"
+	possMarked (no | yesAffix | yesClitic) "no"
+	possCliticWord (no | yes) "no"
+	possCliticAffix (suffix | prefix) "suffix"
+	possCliticRequired (no | yes) "no"
+	possCliticPossPos (before | after | unknown) "unknown"
+	possNounPos (before | after | either | unknown) "unknown"
+	possCooccur (yes | no) "yes"
+	possCaseErg (ergative | absolutive | genitive) "genitive"
+	possNounCaseChange (no | yes) "no"
+	possAlienable (no | yes) "no"
+	possAgr (yes | no) "no"
+	possNounAgrKeyed (yes | no) "yes"
+	qpPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	qpEither (unrestricted | restricted) "unrestricted"
+	qpEitherRestrictedNumPos (before | after | no | unknown) "unknown"
+	qpAgree (no | yes) "no"
+	adjpPos (before | after | either | unknown) "unknown"
+	adjpEither (unrestricted | restricted) "unrestricted"
+	adjpCaseChange (no | yes) "no"
+	adjpCaseAffix (no | yesPrefix | yesSuffix) "no"
+	adjpAgree (no | yes) "no"
+	comp (no | yes) "no"
+	compHead (left | right) "right"
+	ppPos (before | after | either | unknown) "unknown"
 >
 <!ELEMENT agreeNumberExample (#PCDATA)>
 <!ELEMENT agreeAnimacyExample (#PCDATA)>
@@ -282,128 +285,128 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT nounCategory (#PCDATA)>
 <!ELEMENT npContents1 EMPTY>
 <!ATTLIST npContents1
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents2 EMPTY>
 <!ATTLIST npContents2
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents3 EMPTY>
 <!ATTLIST npContents3
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents4 EMPTY>
 <!ATTLIST npContents4
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents5 EMPTY>
 <!ATTLIST npContents5
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents6 EMPTY>
 <!ATTLIST npContents6
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents7 EMPTY>
 <!ATTLIST npContents7
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents8 EMPTY>
 <!ATTLIST npContents8
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents9 EMPTY>
 <!ATTLIST npContents9
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossFirst EMPTY>
 <!ATTLIST npPossAgrPossFirst
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossExclusive EMPTY>
 <!ATTLIST npPossAgrPossExclusive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossInclusive EMPTY>
 <!ATTLIST npPossAgrPossInclusive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossSecond EMPTY>
 <!ATTLIST npPossAgrPossSecond
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossThird EMPTY>
 <!ATTLIST npPossAgrPossThird
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossSingular EMPTY>
 <!ATTLIST npPossAgrPossSingular
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossPlural EMPTY>
 <!ATTLIST npPossAgrPossPlural
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossDual EMPTY>
 <!ATTLIST npPossAgrPossDual
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossMasculine EMPTY>
 <!ATTLIST npPossAgrPossMasculine
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossFeminine EMPTY>
 <!ATTLIST npPossAgrPossFeminine
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossNeuter EMPTY>
 <!ATTLIST npPossAgrPossNeuter
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossAnimate EMPTY>
 <!ATTLIST npPossAgrPossAnimate
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossInanimate EMPTY>
 <!ATTLIST npPossAgrPossInanimate
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossHuman EMPTY>
 <!ATTLIST npPossAgrPossHuman
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossNonHuman EMPTY>
 <!ATTLIST npPossAgrPossNonHuman
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossClassClassNumber EMPTY>
 <!ATTLIST npPossAgrPossClassClassNumber
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!-- Proper names.  Proper Names have examples, including ones
-       with PPs and relative clauses.
-     Proper Names may be marked in the morphological parser by N or one or more other
-       categories, so three category mappings are allowed (propAnimate1Category, propAnimate2Category and    propInanimateCategory).
+	   with PPs and relative clauses.
+	 Proper Names may be marked in the morphological parser by N or one or more other
+	   categories, so three category mappings are allowed (propAnimate1Category, propAnimate2Category and    propInanimateCategory).
  -->
 <!ELEMENT prop (example, ppExample, relClExample, propAnimate1Category, propAnimate2Category, propInanimateCategory)>
 <!ATTLIST prop
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT propAnimate1Category (#PCDATA)>
 <!ELEMENT propAnimate2Category (#PCDATA)>
 <!ELEMENT propInanimateCategory (#PCDATA)>
 <!-- Pronouns. Pronoun examples include personal pronouns in each position as determined by the
-      case system, possessives,  reflexives, reciprocals,
-       indefinites as NPs and/or indefinites as words, stand
-       alone NPs, partitives, and pronominals with relative clauses.
-     Stand alone possessives may exist (poss) and if so, may be formed by an affix
-       (possAffix).
-     Reflexives may exist (refl) and if so, may be formed by an affix
-       (reflAffix).
-     Reciprocals may exist (recip) and if so, may be formed by an affix
-       (recipAffix).
-     Indefinites may be positive or negative and formed by an NP or a word (indef).
-     Partitives may come before or after the head (partitivePos).
+	  case system, possessives,  reflexives, reciprocals,
+	   indefinites as NPs and/or indefinites as words, stand
+	   alone NPs, partitives, and pronominals with relative clauses.
+	 Stand alone possessives may exist (poss) and if so, may be formed by an affix
+	   (possAffix).
+	 Reflexives may exist (refl) and if so, may be formed by an affix
+	   (reflAffix).
+	 Reciprocals may exist (recip) and if so, may be formed by an affix
+	   (recipAffix).
+	 Indefinites may be positive or negative and formed by an NP or a word (indef).
+	 Partitives may come before or after the head (partitivePos).
 -->
 <!ELEMENT pron (personalFirstNoCaseExample, personalSecondNoCaseExample, personalThirdNoCaseExample,
 personalFirstNomSubjectExample, personalSecondNomSubjectExample, personalThirdNomSubjectExample,
@@ -431,18 +434,18 @@ personalDependentFirstSplitErgExample, personalDependentSecondSplitErgExample, p
 personalDependentFirstSplitAbsExample, personalDependentSecondSplitAbsExample, personalDependentThirdSplitAbsExample,
 possExample, reflExample, reflSentExample, recipExample, recipSentExample, indefExample, negIndefExample, indefNPExample, negIndefNPExample, standAloneNPExample, pronRelClExample, partitiveExample, pronounCategory, pronAgrFeatFirst, pronAgrFeatFirstExclusive, pronAgrFeatFirstInclusive, pronAgrFeatSecond, pronAgrFeatThird, pronAgrFeatSingular, pronAgrFeatDual, pronAgrFeatPlural, pronAgrFeatMasculine, pronAgrFeatFeminine, pronAgrFeatNeuter, pronAgrFeatAnimate, pronAgrFeatMinusAnimate, pronAgrFeatHuman, pronAgrFeatMinusHuman, pronAgrFeatClassNumber)>
 <!ATTLIST pron
-    checkedOff (yes | no) "no"
-    dependentPron (no | yes) "no"
-    poss (no | yes) "no"
-    possAffix (no | yes | both) "no"
-    refl (yes | no | yesVerbal) "no"
-    reflAffix (noWord | noNoun | yes) "yes"
-    recip (no | verbal | yes) "no"
-    recipAffix (noWord | noNoun | noQP | yes) "yes"
-    indef (yes | no) "no"
-    negIndef (yes | no) "no"
-    pronounCat (NP | N | DP) "NP"
-    partitivePos (before | after | unknown) "unknown"
+	checkedOff (yes | no) "no"
+	dependentPron (no | yes) "no"
+	poss (no | yes) "no"
+	possAffix (no | yes | both) "no"
+	refl (yes | no | yesVerbal) "no"
+	reflAffix (noWord | noNoun | yes) "yes"
+	recip (no | verbal | yes) "no"
+	recipAffix (noWord | noNoun | noQP | yes) "yes"
+	indef (yes | no) "no"
+	negIndef (yes | no) "no"
+	pronounCat (NP | N | DP) "NP"
+	partitivePos (before | after | unknown) "unknown"
 >
 <!ELEMENT personalFirstNoCaseExample (#PCDATA)>
 <!ELEMENT personalSecondNoCaseExample (#PCDATA)>
@@ -531,142 +534,142 @@ possExample, reflExample, reflSentExample, recipExample, recipSentExample, indef
 <!ELEMENT pronounCategory (#PCDATA)>
 <!ELEMENT pronAgrFeatFirst EMPTY>
 <!ATTLIST pronAgrFeatFirst
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatFirstExclusive EMPTY>
 <!ATTLIST pronAgrFeatFirstExclusive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatFirstInclusive EMPTY>
 <!ATTLIST pronAgrFeatFirstInclusive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatSecond EMPTY>
 <!ATTLIST pronAgrFeatSecond
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatThird EMPTY>
 <!ATTLIST pronAgrFeatThird
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatSingular EMPTY>
 <!ATTLIST pronAgrFeatSingular
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatDual EMPTY>
 <!ATTLIST pronAgrFeatDual
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatPlural EMPTY>
 <!ATTLIST pronAgrFeatPlural
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatMasculine EMPTY>
 <!ATTLIST pronAgrFeatMasculine
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatFeminine EMPTY>
 <!ATTLIST pronAgrFeatFeminine
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatNeuter EMPTY>
 <!ATTLIST pronAgrFeatNeuter
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatAnimate EMPTY>
 <!ATTLIST pronAgrFeatAnimate
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatMinusAnimate EMPTY>
 <!ATTLIST pronAgrFeatMinusAnimate
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatHuman EMPTY>
 <!ATTLIST pronAgrFeatHuman
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatMinusHuman EMPTY>
 <!ATTLIST pronAgrFeatMinusHuman
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT pronAgrFeatClassNumber EMPTY>
 <!ATTLIST pronAgrFeatClassNumber
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!-- Pre/post-positional phrases have examples of six kinds.
-     They may have modifiers (modifiers) or not of (modifierType) degree words, ordinals,
-      manner adverbials or any combination of those.
-    Each of the three types have a position, and if either or both sides, they may have restricted
-    sets which can occur on each side
-    The language may take prepositions,
-       postpositions, or both (pPos).  These may be words or clitics (pType), and the clitics may attach
-      (attaches) to the edge of the complement or to its head.
-    Pre/post-positions may be stand alone (alone).  They may take locative adverbs as complements (locative).
+	 They may have modifiers (modifiers) or not of (modifierType) degree words, ordinals,
+	  manner adverbials or any combination of those.
+	Each of the three types have a position, and if either or both sides, they may have restricted
+	sets which can occur on each side
+	The language may take prepositions,
+	   postpositions, or both (pPos).  These may be words or clitics (pType), and the clitics may attach
+	  (attaches) to the edge of the complement or to its head.
+	Pre/post-positions may be stand alone (alone).  They may take locative adverbs as complements (locative).
   Some locative Ps may take locative PPs as complements (ppComp).  Some may take sentential
-       complements (sentComp).
-     A category mapping is allowed.
+	   complements (sentComp).
+	 A category mapping is allowed.
 -->
 <!ELEMENT pp (example, ppExample, aloneExample, locExample, compPPExample, sentExample, pCategory)>
 <!ATTLIST pp
-    checkedOff (yes | no) "no"
-    modifiers (no | yes) "no"
-    modifierType (degree | ordinal | manner | degreeAndOrdinal | degreeAndManner | mannerAndOrdinal | all) "degree"
-    degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    degreeRestricted (unrestricted | restricted) "unrestricted"
-    ordinalPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    ordinalRestricted (unrestricted | restricted) "unrestricted"
-    mannerPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    mannerRestricted (unrestricted | restricted) "unrestricted"
-    pPos (before | after | both | unknown) "unknown"
-    pType (word | clitic | both) "word"
-    attaches (edge | head) "edge"
-    alone (no | yes) "no"
-    locative (no | yes) "no"
-    ppComp (no | yes) "no"
-    sentComp (no | yes) "no"
+	checkedOff (yes | no) "no"
+	modifiers (no | yes) "no"
+	modifierType (degree | ordinal | manner | degreeAndOrdinal | degreeAndManner | mannerAndOrdinal | all) "degree"
+	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	degreeRestricted (unrestricted | restricted) "unrestricted"
+	ordinalPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	ordinalRestricted (unrestricted | restricted) "unrestricted"
+	mannerPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	mannerRestricted (unrestricted | restricted) "unrestricted"
+	pPos (before | after | both | unknown) "unknown"
+	pType (word | clitic | both) "word"
+	attaches (edge | head) "edge"
+	alone (no | yes) "no"
+	locative (no | yes) "no"
+	ppComp (no | yes) "no"
+	sentComp (no | yes) "no"
 >
 <!ELEMENT aloneExample (#PCDATA)>
 <!ELEMENT locExample (#PCDATA)>
 <!ELEMENT sentExample (#PCDATA)>
 <!ELEMENT pCategory (#PCDATA)>
 <!-- Single clause sentences have examples for transitives, auxiliaries, nonfinite aux,
-     pro-drop, ditransitives, intransitives, motion, copular constructions, and passives.
-     There may be pro-drop of the subject or not or just imperatives or clitics.
-     If yes, pro-drop of the object is questioned.
-     Auxiliaries may be present (aux) and may be required (auxRequired).
-       More than one aux may be present (auxMany).  VSO and OSV have an order
-       issue (auxOrder).
-     Copular constructions can have verbs or aux or neither (copular).
-     Ditransitives take a DP or PP category (diCat).
-     Passives may exist (passive).  If so, there may be an agent (passiveAgent)
-       and it will have a category (passiveAgentCat).  Auxiliaries may also be
-       required (passiveAux).
-     Category mappings for Aux and V are available.
+	 pro-drop, ditransitives, intransitives, motion, copular constructions, and passives.
+	 There may be pro-drop of the subject or not or just imperatives or clitics.
+	 If yes, pro-drop of the object is questioned.
+	 Auxiliaries may be present (aux) and may be required (auxRequired).
+	   More than one aux may be present (auxMany).  VSO and OSV have an order
+	   issue (auxOrder).
+	 Copular constructions can have verbs or aux or neither (copular).
+	 Ditransitives take a DP or PP category (diCat).
+	 Passives may exist (passive).  If so, there may be an agent (passiveAgent)
+	   and it will have a category (passiveAgentCat).  Auxiliaries may also be
+	   required (passiveAux).
+	 Category mappings for Aux and V are available.
 -->
 <!ELEMENT ip (example, proDropExample, auxExample, auxiliaryExample, negAuxExample, negAuxAffixExample, negVerbExample, auxNonfiniteExample, auxiliaryNonfiniteExample, auxOtherExample, auxiliaryOtherExample, diExample, intransExample, motionExample, copularExample, passiveExample, auxCategory, verbCategory, ipContents1, ipContents2, ipContents3, ipContents4, ipContents5, ipContents6, ipContents7, ipContents8, ipContents9, ipAgrFeatFirstSubject, ipAgrFeatFirstObject, ipAgrFeatFirstErgative, ipAgrFeatFirstAbsolutive, ipAgrFeatFirstExclusiveSubject, ipAgrFeatFirstExclusiveObject, ipAgrFeatFirstExclusiveErgative, ipAgrFeatFirstExclusiveAbsolutive, ipAgrFeatFirstInclusiveSubject, ipAgrFeatFirstInclusiveObject, ipAgrFeatFirstInclusiveErgative, ipAgrFeatFirstInclusiveAbsolutive, ipAgrFeatSecondSubject, ipAgrFeatSecondObject, ipAgrFeatSecondErgative, ipAgrFeatSecondAbsolutive, ipAgrFeatThirdSubject, ipAgrFeatThirdObject, ipAgrFeatThirdErgative, ipAgrFeatThirdAbsolutive, ipAgrFeatSingularSubject, ipAgrFeatSingularObject, ipAgrFeatSingularErgative, ipAgrFeatSingularAbsolutive, ipAgrFeatDualSubject, ipAgrFeatDualObject, ipAgrFeatDualErgative, ipAgrFeatDualAbsolutive, ipAgrFeatPluralSubject, ipAgrFeatPluralObject, ipAgrFeatPluralErgative, ipAgrFeatPluralAbsolutive, ipAgrFeatMasculineSubject, ipAgrFeatMasculineObject, ipAgrFeatMasculineErgative, ipAgrFeatMasculineAbsolutive, ipAgrFeatFeminineSubject, ipAgrFeatFeminineObject, ipAgrFeatFeminineErgative, ipAgrFeatFeminineAbsolutive, ipAgrFeatNeuterSubject, ipAgrFeatNeuterObject, ipAgrFeatNeuterErgative, ipAgrFeatNeuterAbsolutive, ipAgrFeatAnimateSubject, ipAgrFeatAnimateObject, ipAgrFeatAnimateErgative, ipAgrFeatAnimateAbsolutive, ipAgrFeatMinusAnimateSubject, ipAgrFeatMinusAnimateObject, ipAgrFeatMinusAnimateErgative, ipAgrFeatMinusAnimateAbsolutive, ipAgrFeatHumanSubject, ipAgrFeatHumanObject, ipAgrFeatHumanErgative, ipAgrFeatHumanAbsolutive, ipAgrFeatMinusHumanSubject, ipAgrFeatMinusHumanObject, ipAgrFeatMinusHumanErgative, ipAgrFeatMinusHumanAbsolutive, ipAgrFeatClassClassNumberSubject, ipAgrFeatClassClassNumberObject, ipAgrFeatClassClassNumberErgative, ipAgrFeatClassClassNumberAbsolutive, ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatCompletive, ipInflFeatContinuative, ipInflFeatHabitual, ipInflFeatImperfective, ipInflFeatIncompletive, ipInflFeatPerfective, ipInflFeatPotential, ipInflFeatProgressive, ipInflFeatStative, ipInflFeatDeclarative, ipInflFeatImperative, ipInflFeatInterrogative, ipInflFeatIrrealis, ipInflFeatRealis, ipInflFeatPassive, ipInflFeatParticiple, ipInflFeatFinite, ipInflFeatMinusFinite)>
 <!ATTLIST ip
-    checkedOff (yes | no) "no"
-    proDrop (noImp | no | yes | yesClitic) "noImp"
-    proDropObject (no | yes) "no"
-    aux (no | yes) "no"
-    auxRequired (no | yes) "no"
-    auxMany (no | yes) "no"
-    auxOrder (no | yes) "yes"
-    negAux (yesOnly | yesAffix | yesVerb | yesAll | noAffixOnly | noAffixAndVerb | noVerb) "noVerb"
-    negAuxRequiresAux (no | yes) "no"
-    auxNonfinite (no | yes) "no"
-    auxNonfiniteRequired (no | yes) "no"
-    auxNonfiniteOrder (no | yes) "yes"
-    auxOther (no | yes) "no"
-    auxOtherOrder (no | yes) "yes"
-    copular (yes | yesOptional | yesAux | noAux | noNeither) "yes"
-    copularAffix (no | yesPrefix | yesSuffix | yesEither) "no"
-    diCat (pp | dp | both) "pp"
-    diOrder (direct | indirect) "direct"
-    passive (no | yes) "no"
-    passiveAgent (no | yes) "no"
-    passiveAux (no | yes) "no"
-    passiveAgentCat (dp | pp) "pp"
+	checkedOff (yes | no) "no"
+	proDrop (noImp | no | yes | yesClitic) "noImp"
+	proDropObject (no | yes) "no"
+	aux (no | yes) "no"
+	auxRequired (no | yes) "no"
+	auxMany (no | yes) "no"
+	auxOrder (no | yes) "yes"
+	negAux (yesOnly | yesAffix | yesVerb | yesAll | noAffixOnly | noAffixAndVerb | noVerb) "noVerb"
+	negAuxRequiresAux (no | yes) "no"
+	auxNonfinite (no | yes) "no"
+	auxNonfiniteRequired (no | yes) "no"
+	auxNonfiniteOrder (no | yes) "yes"
+	auxOther (no | yes) "no"
+	auxOtherOrder (no | yes) "yes"
+	copular (yes | yesOptional | yesAux | noAux | noNeither) "yes"
+	copularAffix (no | yesPrefix | yesSuffix | yesEither) "no"
+	diCat (pp | dp | both) "pp"
+	diOrder (direct | indirect) "direct"
+	passive (no | yes) "no"
+	passiveAgent (no | yes) "no"
+	passiveAux (no | yes) "no"
+	passiveAgentCat (dp | pp) "pp"
 >
 <!ELEMENT proDropExample (#PCDATA)>
 <!ELEMENT auxExample (#PCDATA)>
@@ -687,400 +690,400 @@ possExample, reflExample, reflSentExample, recipExample, recipSentExample, indef
 <!ELEMENT verbCategory (#PCDATA)>
 <!ELEMENT ipContents1 EMPTY>
 <!ATTLIST ipContents1
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents2 EMPTY>
 <!ATTLIST ipContents2
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents3 EMPTY>
 <!ATTLIST ipContents3
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents4 EMPTY>
 <!ATTLIST ipContents4
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents5 EMPTY>
 <!ATTLIST ipContents5
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents6 EMPTY>
 <!ATTLIST ipContents6
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents7 EMPTY>
 <!ATTLIST ipContents7
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents8 EMPTY>
 <!ATTLIST ipContents8
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents9 EMPTY>
 <!ATTLIST ipContents9
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstSubject EMPTY>
 <!ATTLIST ipAgrFeatFirstSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstObject EMPTY>
 <!ATTLIST ipAgrFeatFirstObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstErgative EMPTY>
 <!ATTLIST ipAgrFeatFirstErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatFirstAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstExclusiveSubject EMPTY>
 <!ATTLIST ipAgrFeatFirstExclusiveSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstExclusiveObject EMPTY>
 <!ATTLIST ipAgrFeatFirstExclusiveObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstExclusiveErgative EMPTY>
 <!ATTLIST ipAgrFeatFirstExclusiveErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstExclusiveAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatFirstExclusiveAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstInclusiveSubject EMPTY>
 <!ATTLIST ipAgrFeatFirstInclusiveSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstInclusiveObject EMPTY>
 <!ATTLIST ipAgrFeatFirstInclusiveObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstInclusiveErgative EMPTY>
 <!ATTLIST ipAgrFeatFirstInclusiveErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstInclusiveAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatFirstInclusiveAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSecondSubject EMPTY>
 <!ATTLIST ipAgrFeatSecondSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSecondObject EMPTY>
 <!ATTLIST ipAgrFeatSecondObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSecondErgative EMPTY>
 <!ATTLIST ipAgrFeatSecondErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSecondAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatSecondAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatThirdSubject EMPTY>
 <!ATTLIST ipAgrFeatThirdSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatThirdObject EMPTY>
 <!ATTLIST ipAgrFeatThirdObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatThirdErgative EMPTY>
 <!ATTLIST ipAgrFeatThirdErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatThirdAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatThirdAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSingularSubject EMPTY>
 <!ATTLIST ipAgrFeatSingularSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSingularObject EMPTY>
 <!ATTLIST ipAgrFeatSingularObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSingularErgative EMPTY>
 <!ATTLIST ipAgrFeatSingularErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSingularAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatSingularAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatDualSubject EMPTY>
 <!ATTLIST ipAgrFeatDualSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatDualObject EMPTY>
 <!ATTLIST ipAgrFeatDualObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatDualErgative EMPTY>
 <!ATTLIST ipAgrFeatDualErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatDualAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatDualAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatPluralSubject EMPTY>
 <!ATTLIST ipAgrFeatPluralSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatPluralObject EMPTY>
 <!ATTLIST ipAgrFeatPluralObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatPluralErgative EMPTY>
 <!ATTLIST ipAgrFeatPluralErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatPluralAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatPluralAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMasculineSubject EMPTY>
 <!ATTLIST ipAgrFeatMasculineSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMasculineObject EMPTY>
 <!ATTLIST ipAgrFeatMasculineObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMasculineErgative EMPTY>
 <!ATTLIST ipAgrFeatMasculineErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMasculineAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatMasculineAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFeminineSubject EMPTY>
 <!ATTLIST ipAgrFeatFeminineSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFeminineObject EMPTY>
 <!ATTLIST ipAgrFeatFeminineObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFeminineErgative EMPTY>
 <!ATTLIST ipAgrFeatFeminineErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFeminineAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatFeminineAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatNeuterSubject EMPTY>
 <!ATTLIST ipAgrFeatNeuterSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatNeuterObject EMPTY>
 <!ATTLIST ipAgrFeatNeuterObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatNeuterErgative EMPTY>
 <!ATTLIST ipAgrFeatNeuterErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatNeuterAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatNeuterAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatAnimateSubject EMPTY>
 <!ATTLIST ipAgrFeatAnimateSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatAnimateObject EMPTY>
 <!ATTLIST ipAgrFeatAnimateObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatAnimateErgative EMPTY>
 <!ATTLIST ipAgrFeatAnimateErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatAnimateAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatAnimateAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusAnimateSubject EMPTY>
 <!ATTLIST ipAgrFeatMinusAnimateSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusAnimateObject EMPTY>
 <!ATTLIST ipAgrFeatMinusAnimateObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusAnimateErgative EMPTY>
 <!ATTLIST ipAgrFeatMinusAnimateErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusAnimateAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatMinusAnimateAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatHumanSubject EMPTY>
 <!ATTLIST ipAgrFeatHumanSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatHumanObject EMPTY>
 <!ATTLIST ipAgrFeatHumanObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatHumanErgative EMPTY>
 <!ATTLIST ipAgrFeatHumanErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatHumanAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatHumanAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusHumanSubject EMPTY>
 <!ATTLIST ipAgrFeatMinusHumanSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusHumanObject EMPTY>
 <!ATTLIST ipAgrFeatMinusHumanObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusHumanErgative EMPTY>
 <!ATTLIST ipAgrFeatMinusHumanErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusHumanAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatMinusHumanAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatClassClassNumberSubject EMPTY>
 <!ATTLIST ipAgrFeatClassClassNumberSubject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatClassClassNumberObject EMPTY>
 <!ATTLIST ipAgrFeatClassClassNumberObject
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatClassClassNumberErgative EMPTY>
 <!ATTLIST ipAgrFeatClassClassNumberErgative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatClassClassNumberAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatClassClassNumberAbsolutive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatPresent EMPTY>
 <!ATTLIST ipInflFeatPresent
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatPast EMPTY>
 <!ATTLIST ipInflFeatPast
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatFuture EMPTY>
 <!ATTLIST ipInflFeatFuture
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatCompletive EMPTY>
 <!ATTLIST ipInflFeatCompletive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatContinuative EMPTY>
 <!ATTLIST ipInflFeatContinuative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatHabitual EMPTY>
 <!ATTLIST ipInflFeatHabitual
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatImperfective EMPTY>
 <!ATTLIST ipInflFeatImperfective
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatIncompletive EMPTY>
 <!ATTLIST ipInflFeatIncompletive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatPerfective EMPTY>
 <!ATTLIST ipInflFeatPerfective
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatPotential EMPTY>
 <!ATTLIST ipInflFeatPotential
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatProgressive EMPTY>
 <!ATTLIST ipInflFeatProgressive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatStative EMPTY>
 <!ATTLIST ipInflFeatStative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatDeclarative EMPTY>
 <!ATTLIST ipInflFeatDeclarative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatImperative EMPTY>
 <!ATTLIST ipInflFeatImperative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatInterrogative EMPTY>
 <!ATTLIST ipInflFeatInterrogative
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatIrrealis EMPTY>
 <!ATTLIST ipInflFeatIrrealis
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatRealis EMPTY>
 <!ATTLIST ipInflFeatRealis
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatPassive EMPTY>
 <!ATTLIST ipInflFeatPassive
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatParticiple EMPTY>
 <!ATTLIST ipInflFeatParticiple
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatFinite EMPTY>
 <!ATTLIST ipInflFeatFinite
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatMinusFinite EMPTY>
 <!ATTLIST ipInflFeatMinusFinite
-    checked (yes | no) "no"
+	checked (yes | no) "no"
 >
 <!-- Complement clauses have various type of examples of the
-     types of complement clauses they can take: finiteExample,
-    finiteOrNonfiniteExample, DPCPExample, nonfiniteExample,
-    nonfiniteProDropExample, nonfiniteCPOrProDropExample,
-    otherExample.       Complement Clauses may have
-      complementizers (comp).  These may be written as separate words
-      (compWord).  These have a position with respect to the rest of the
-      embedded clause (compPos).  If they can appear on either side, then all of
-      them may do so (compEitherRestricted) or not.  If a clitic questions of pre/post clitic
-     (compCliticPos) and type are asked (compCliticAttaches).
+	 types of complement clauses they can take: finiteExample,
+	finiteOrNonfiniteExample, DPCPExample, nonfiniteExample,
+	nonfiniteProDropExample, nonfiniteCPOrProDropExample,
+	otherExample.       Complement Clauses may have
+	  complementizers (comp).  These may be written as separate words
+	  (compWord).  These have a position with respect to the rest of the
+	  embedded clause (compPos).  If they can appear on either side, then all of
+	  them may do so (compEitherRestricted) or not.  If a clitic questions of pre/post clitic
+	 (compCliticPos) and type are asked (compCliticAttaches).
 -->
 <!ELEMENT comp (finiteExample, finiteOrNonfiniteExample, DPCPExample, nonfiniteExample, nonfiniteProDropExample, nonfiniteCPOrProDropExample, otherExample)>
 <!ATTLIST comp
-    checkedOff (yes | no) "no"
-    comp (yes | no) "no"
-    compWord (no | yes) "yes"
-    compCliticPos (before | after | both | unknown) "unknown"
-    compCliticAttaches (edge | head) "edge"
-    compPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    compEitherRestricted (unrestricted | restricted) "unrestricted"
+	checkedOff (yes | no) "no"
+	comp (yes | no) "no"
+	compWord (no | yes) "yes"
+	compCliticPos (before | after | both | unknown) "unknown"
+	compCliticAttaches (edge | head) "edge"
+	compPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	compEitherRestricted (unrestricted | restricted) "unrestricted"
 >
 <!ELEMENT finiteExample (#PCDATA)>
 <!ELEMENT finiteOrNonfiniteExample (#PCDATA)>
@@ -1090,102 +1093,102 @@ possExample, reflExample, reflSentExample, recipExample, recipSentExample, indef
 <!ELEMENT nonfiniteCPOrProDropExample (#PCDATA)>
 <!ELEMENT otherExample (#PCDATA)>
 <!-- Questions have main clause Yes/No examples (example),
-      embedded Yes/No examples (embYNExample),
-      main clause content examples (contentExample),
-      embedded content examples (embContentExample), and
-      eight examples of whWords or phrases (who, etc.).
-     There is a category mapping for wh-pronouns.
-     Main clause Yes/No questions may have complementizers (mainYN).
-     These may be written as separate words
-      (mainYNWord).  These have a position with respect to the rest of the
-      question (mainYNPos).  If they can appear on either or both sides, then all of
-      them may do so or not (mainYNEitherRestricted).  If a clitic questions of pre/post clitic
-     (mainYNCliticPos) and type are asked (mainYNCliticAttaches).
-      If only an Aux is fronted, then it has a position (mainYNAuxPos).
-     Embedded Yes/No questions may have
-      complementizers (embYN).  These may be written as separate words
-      (embYNWord).  These have a position with respect to the rest of the
-      question (embYNPos).  If they can appear on either side, then all of
-      them may do so (embYNEitherRestricted) or not.  If a clitic questions of pre/post clitic
-     (embYNCliticPos) and type are asked (embYNCliticAttaches).
-      If only an Aux is fronted, then it
-      has a position (embYNAuxPos).
-     Within interrogative phrases for languages which allow modifiers on either side,
-    the position of the wh demonstrative (whDemPos) article (whArtPos) or
-     degree word (whDegAdjPos), (whDegQPos) is needed
-     Content questions may require interrogative phrases to be fronted
-      (contFront) (before=yes; after=no so head position can be used to predict).
-     Main content questions may have
-      complementizers (mainCont).  These may be written as separate words
-      (mainContWord).  These have a position with
-      respect to the rest of the question (mainContPos).  If they can appear
-      on either side, then all of them may do so (mainContEither) or there may be sets.
-      A question marker may be required (mainContRequired).
-      For VSO languages with fronting, they may occur before a fronted interrogative phrase
-      (mainContVSOBeforeWh).
-      If a clitic questions of pre/post clitic
-     (mainContCliticPos) and type are asked (mainContCliticAttaches).
-      An Aux may front after the fronted phrase
-      (mainContAux).  If only an Aux is fronted,
-      then it may be required (mainContAuxRequired).
-     Embedded content questions may have
-      complementizers (embCont).  These may be written as separate words
-      (embContWord).  These have a position with
-      respect to the rest of the question (embContPos).  If they can appear
-      on either side, then all of them may do so (embContEither) or not.  A question
-      marker may be required (embContRequired).
-     For VSO languages with fronting, they may occur before a fronted interrogative phrase
-      (embContVSOBeforeWh).
-      If a clitic questions of pre/post clitic
-     (embContCliticPos) and type are asked (embContCliticAttaches).
-      An Aux may front after the fronted phrase
-      (embContAux).   If only an Aux is fronted,
-      then it may be required (embContAux).
+	  embedded Yes/No examples (embYNExample),
+	  main clause content examples (contentExample),
+	  embedded content examples (embContentExample), and
+	  eight examples of whWords or phrases (who, etc.).
+	 There is a category mapping for wh-pronouns.
+	 Main clause Yes/No questions may have complementizers (mainYN).
+	 These may be written as separate words
+	  (mainYNWord).  These have a position with respect to the rest of the
+	  question (mainYNPos).  If they can appear on either or both sides, then all of
+	  them may do so or not (mainYNEitherRestricted).  If a clitic questions of pre/post clitic
+	 (mainYNCliticPos) and type are asked (mainYNCliticAttaches).
+	  If only an Aux is fronted, then it has a position (mainYNAuxPos).
+	 Embedded Yes/No questions may have
+	  complementizers (embYN).  These may be written as separate words
+	  (embYNWord).  These have a position with respect to the rest of the
+	  question (embYNPos).  If they can appear on either side, then all of
+	  them may do so (embYNEitherRestricted) or not.  If a clitic questions of pre/post clitic
+	 (embYNCliticPos) and type are asked (embYNCliticAttaches).
+	  If only an Aux is fronted, then it
+	  has a position (embYNAuxPos).
+	 Within interrogative phrases for languages which allow modifiers on either side,
+	the position of the wh demonstrative (whDemPos) article (whArtPos) or
+	 degree word (whDegAdjPos), (whDegQPos) is needed
+	 Content questions may require interrogative phrases to be fronted
+	  (contFront) (before=yes; after=no so head position can be used to predict).
+	 Main content questions may have
+	  complementizers (mainCont).  These may be written as separate words
+	  (mainContWord).  These have a position with
+	  respect to the rest of the question (mainContPos).  If they can appear
+	  on either side, then all of them may do so (mainContEither) or there may be sets.
+	  A question marker may be required (mainContRequired).
+	  For VSO languages with fronting, they may occur before a fronted interrogative phrase
+	  (mainContVSOBeforeWh).
+	  If a clitic questions of pre/post clitic
+	 (mainContCliticPos) and type are asked (mainContCliticAttaches).
+	  An Aux may front after the fronted phrase
+	  (mainContAux).  If only an Aux is fronted,
+	  then it may be required (mainContAuxRequired).
+	 Embedded content questions may have
+	  complementizers (embCont).  These may be written as separate words
+	  (embContWord).  These have a position with
+	  respect to the rest of the question (embContPos).  If they can appear
+	  on either side, then all of them may do so (embContEither) or not.  A question
+	  marker may be required (embContRequired).
+	 For VSO languages with fronting, they may occur before a fronted interrogative phrase
+	  (embContVSOBeforeWh).
+	  If a clitic questions of pre/post clitic
+	 (embContCliticPos) and type are asked (embContCliticAttaches).
+	  An Aux may front after the fronted phrase
+	  (embContAux).   If only an Aux is fronted,
+	  then it may be required (embContAux).
 -->
 <!ELEMENT q (example, embYNExample, contentExample, embContentExample, who, what, why, where, when, how, which, whose, other, whPronCategory)>
 <!ATTLIST q
-    checkedOff (yes | no) "no"
-    mainYN (yes | noAux | no) "no"
-    mainYNWord (no | yes) "no"
-    mainYNCliticPos (before | after | both | unknown) "unknown"
-    mainYNCliticAttaches (edge | head) "edge"
-    mainYNPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    mainYNEitherRestricted (unrestricted | restricted) "unrestricted"
-    mainYNAuxPos (before | after | unknown) "unknown"
-    embYN (yes | noAux | no) "no"
-    embYNWord (no | yes) "no"
-    embYNCliticPos (before | after | both | unknown) "unknown"
-    embYNCliticAttaches (edge | head) "edge"
-    embYNPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    embYNEitherRestricted (unrestricted | restricted) "unrestricted"
-    embYNAuxPos (before | after | unknown) "unknown"
-    whDemPos (before | after | agree | unknown) "unknown"
-    whArtPos (before | after | agree | unknown) "unknown"
-    whDegAdjPos (before | after | agree | unknown) "unknown"
-    whDegQPos (before | after | agree | unknown) "unknown"
-    contFront (before | after | no | unknown) "unknown"
-    mainCont (yes | noAux | no) "no"
-    mainContWord (yes | no) "no"
-    mainContCliticPos (before | after | both | unknown) "unknown"
-    mainContCliticAttaches (edge | between | head) "edge"
-    mainContPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    mainContEitherRestricted (unrestricted | restricted) "unrestricted"
-    mainContVSOBeforeWh (no | noEnd | yes | some) "no"
-    mainContVSOBeforeWhNoEndRestricted (unrestricted | restricted) "unrestricted"
-    mainContRequired (no | yes) "no"
-    mainContAuxPos (before | after | unknown) "unknown"
-    mainContAuxRequired (no | yes) "no"
-    embCont (yes | noAux | no) "no"
-    embContWord (no | yes) "no"
-    embContCliticPos (before | after | both | unknown) "unknown"
-    embContCliticAttaches (edge | between | head) "edge"
-    embContPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    embContEitherRestricted (unrestricted | restricted) "unrestricted"
-    embContVSOBeforeWh (no | noEnd | yes | some) "no"
-    embContVSOBeforeWhNoEndRestricted (unrestricted | restricted) "unrestricted"
-    embContRequired (no | yes) "no"
-    embContAuxPos (before | after | unknown) "unknown"
-    embContAuxRequired (no | yes) "no"
+	checkedOff (yes | no) "no"
+	mainYN (yes | noAux | no) "no"
+	mainYNWord (no | yes) "no"
+	mainYNCliticPos (before | after | both | unknown) "unknown"
+	mainYNCliticAttaches (edge | head) "edge"
+	mainYNPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	mainYNEitherRestricted (unrestricted | restricted) "unrestricted"
+	mainYNAuxPos (before | after | unknown) "unknown"
+	embYN (yes | noAux | no) "no"
+	embYNWord (no | yes) "no"
+	embYNCliticPos (before | after | both | unknown) "unknown"
+	embYNCliticAttaches (edge | head) "edge"
+	embYNPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	embYNEitherRestricted (unrestricted | restricted) "unrestricted"
+	embYNAuxPos (before | after | unknown) "unknown"
+	whDemPos (before | after | agree | unknown) "unknown"
+	whArtPos (before | after | agree | unknown) "unknown"
+	whDegAdjPos (before | after | agree | unknown) "unknown"
+	whDegQPos (before | after | agree | unknown) "unknown"
+	contFront (before | after | no | unknown) "unknown"
+	mainCont (yes | noAux | no) "no"
+	mainContWord (yes | no) "no"
+	mainContCliticPos (before | after | both | unknown) "unknown"
+	mainContCliticAttaches (edge | between | head) "edge"
+	mainContPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	mainContEitherRestricted (unrestricted | restricted) "unrestricted"
+	mainContVSOBeforeWh (no | noEnd | yes | some) "no"
+	mainContVSOBeforeWhNoEndRestricted (unrestricted | restricted) "unrestricted"
+	mainContRequired (no | yes) "no"
+	mainContAuxPos (before | after | unknown) "unknown"
+	mainContAuxRequired (no | yes) "no"
+	embCont (yes | noAux | no) "no"
+	embContWord (no | yes) "no"
+	embContCliticPos (before | after | both | unknown) "unknown"
+	embContCliticAttaches (edge | between | head) "edge"
+	embContPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	embContEitherRestricted (unrestricted | restricted) "unrestricted"
+	embContVSOBeforeWh (no | noEnd | yes | some) "no"
+	embContVSOBeforeWhNoEndRestricted (unrestricted | restricted) "unrestricted"
+	embContRequired (no | yes) "no"
+	embContAuxPos (before | after | unknown) "unknown"
+	embContAuxRequired (no | yes) "no"
 >
 <!ELEMENT embYNExample (#PCDATA)>
 <!ELEMENT contentExample (#PCDATA)>
@@ -1201,48 +1204,48 @@ possExample, reflExample, reflSentExample, recipExample, recipSentExample, indef
 <!ELEMENT other (#PCDATA)>
 <!ELEMENT whPronCategory (#PCDATA)>
 <!-- Relative clauses have examples and full sentence examples of headed relatives, plus
-      examples of headless relatives if allowed. They can be of type CP, IP(with marker on V)
-      or none at all.  If type CP, they can have complementizer (compCP) or just wh-relatives or both.
-      If there is a complementizer, it can be the same as in verbal CPs or not (relCompSame).
-     The relative marker (C) has a position and, if either or both sides, there may be restricted sets.
-     Headless relatives may or may not be allowed (headless).
+	  examples of headless relatives if allowed. They can be of type CP, IP(with marker on V)
+	  or none at all.  If type CP, they can have complementizer (compCP) or just wh-relatives or both.
+	  If there is a complementizer, it can be the same as in verbal CPs or not (relCompSame).
+	 The relative marker (C) has a position and, if either or both sides, there may be restricted sets.
+	 Headless relatives may or may not be allowed (headless).
 -->
 <!ELEMENT relcl (example, sentExample, headlessExample)>
 <!ATTLIST relcl
-    checkedOff (yes | no) "no"
-    exist (yes | no) "no"
-    clausePos (before | after | either | unknown) "unknown"
-    type (CP | IP) "IP"
-    compCP (yes | yesBoth | no) "no"
-    whAndComp (no | yes | optional) "no"
-    relWord (no | yes) "yes"
-    relCliticPos (before | after | both | unknown) "unknown"
-    relCompSame (yes | no) "no"
-    relCompPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-    relCompEitherRestricted (unrestricted | restricted) "unrestricted"
-    headless (no | yes) "no"
+	checkedOff (yes | no) "no"
+	exist (yes | no) "no"
+	clausePos (before | after | either | unknown) "unknown"
+	type (CP | IP) "IP"
+	compCP (yes | yesBoth | no) "no"
+	whAndComp (no | yes | optional) "no"
+	relWord (no | yes) "yes"
+	relCliticPos (before | after | both | unknown) "unknown"
+	relCompSame (yes | no) "no"
+	relCompPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
+	relCompEitherRestricted (unrestricted | restricted) "unrestricted"
+	headless (no | yes) "no"
 >
 <!ELEMENT headlessExample (#PCDATA)>
 <!-- Adverbial clauses have temporal and reason/purpose examples in full sentences.
 -->
 <!ELEMENT advcl (tempSentExample)>
 <!ATTLIST advcl
-    checkedOff (yes | no) "no"
-    advOrNPPos (before | after | either | unknown) "unknown"
+	checkedOff (yes | no) "no"
+	advOrNPPos (before | after | either | unknown) "unknown"
 >
 <!ELEMENT tempSentExample (#PCDATA)>
 <!-- Negative Constructions have examples of all the previously noted negative elements in full sentences with the negative arguments in subject position.  The negation type is determined along with questions about co-occurrence restrictions and polarity items as well as any movement in negation constructions.  Examples in full sentences with the negative arguments in object position follow.
 -->
 <!ELEMENT neg (degreeSubjExample, determinerSubjExample, pronounSubjExample, advTemporalExample, advLocativeExample, auxExample, auxAffixExample, verbAffixExample, npiPronounExample, npiDeterminerExample, npiTemporalExample, npiLocativeExample, objectExample, indirectObjectExample, subjectObjectExample)>
 <!ATTLIST neg
-    checkedOff (yes | no) "no"
-    subjVerbRequired (yes | no) "no"
-    advVerbRequired (yes | no) "no"
-    auxVerbRequired (yes | no) "no"
-    type (changing | concord) "changing"
-    polarityItems (yes | no) "no"
-    objVerbRequired (yes | other | no) "other"
-    negFront (yes | optional | beforeVerb | no) "no"
+	checkedOff (yes | no) "no"
+	subjVerbRequired (yes | no) "no"
+	advVerbRequired (yes | no) "no"
+	auxVerbRequired (yes | no) "no"
+	type (changing | concord) "changing"
+	polarityItems (yes | no) "no"
+	objVerbRequired (yes | other | no) "other"
+	negFront (yes | optional | beforeVerb | no) "no"
 >
 <!ELEMENT degreeSubjExample (#PCDATA)>
 <!ELEMENT determinerSubjExample (#PCDATA)>
@@ -1262,7 +1265,7 @@ possExample, reflExample, reflSentExample, recipExample, recipSentExample, indef
 -->
 <!ELEMENT coord (and, or, but, andOr, with, other, either, neither, nor, sentExample, vpExample, dpExample, coordppExample, adjExample, conjunctionCategory)>
 <!ATTLIST coord
-    checkedOff (yes | no) "no"
+	checkedOff (yes | no) "no"
 >
 <!ELEMENT and (#PCDATA)>
 <!ELEMENT or (#PCDATA)>
@@ -1280,19 +1283,19 @@ possExample, reflExample, reflSentExample, recipExample, recipSentExample, indef
 -->
 <!ELEMENT focus (topicExample, topicMarkerExample, focusExample, focusMarkerExample)>
 <!ATTLIST focus
-    checkedOff (yes | no) "no"
-    topic (no | yes) "no"
-    topicPos (before | after | unknown) "unknown"
-    topicMarker (no | yesWord | yesClitic | yesAffix) "no"
-    topicMarkerPos (before | after | either | both | unknown) "unknown"
-    topicMarkerRequired (no | yes) "no"
-    topicMarkerEither (no | yes) "no"
-    focus (no | yes) "no"
-    focusPos (before | after | unknown) "unknown"
-    focusMarker (no | yesWord | yesClitic | yesAffix) "no"
-    focusMarkerPos (before | after | either | both | unknown) "unknown"
-    focusMarkerRequired (no | yes) "no"
-    focusMarkerEither (no | yes) "no"
+	checkedOff (yes | no) "no"
+	topic (no | yes) "no"
+	topicPos (before | after | unknown) "unknown"
+	topicMarker (no | yesWord | yesClitic | yesAffix) "no"
+	topicMarkerPos (before | after | either | both | unknown) "unknown"
+	topicMarkerRequired (no | yes) "no"
+	topicMarkerEither (no | yes) "no"
+	focus (no | yes) "no"
+	focusPos (before | after | unknown) "unknown"
+	focusMarker (no | yesWord | yesClitic | yesAffix) "no"
+	focusMarkerPos (before | after | either | both | unknown) "unknown"
+	focusMarkerRequired (no | yes) "no"
+	focusMarkerEither (no | yes) "no"
 >
 <!ELEMENT topicExample (#PCDATA)>
 <!ELEMENT topicMarkerExample (#PCDATA)>
@@ -1302,10 +1305,10 @@ possExample, reflExample, reflSentExample, recipExample, recipSentExample, indef
 -->
 <!ELEMENT excl (greetExample, intjExample, yesExample, noExample, exclExample, exclMExample)>
 <!ATTLIST excl
-    checkedOff (yes | no) "no"
-    exclM (no | yes) "no"
-    exclMPos (before | after | either | both | unknown) "unknown"
-    exclMEither (no | yes) "no"
+	checkedOff (yes | no) "no"
+	exclM (no | yes) "no"
+	exclMPos (before | after | either | both | unknown) "unknown"
+	exclMEither (no | yes) "no"
 >
 <!ELEMENT greetExample (#PCDATA)>
 <!ELEMENT intjExample (#PCDATA)>

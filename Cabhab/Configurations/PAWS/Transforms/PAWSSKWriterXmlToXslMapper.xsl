@@ -14,26 +14,27 @@ Revision History is at the end of this file.
 Preamble
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
-    <xsl:include href="PAWSSKWriterXmlToXslMapperCommon.xsl"/>
-    <!--
-        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        HandleGlossInfoInInterlinear
-        routine to deal with gloss information
-        Parameters: none
-        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    -->
-    <xsl:template name="HandleGlossInfoInInterlinear">
-        <xsl:element name="xsl:call-template">
-            <xsl:attribute name="name">
-                <xsl:text>DoMorphemeGloss</xsl:text>
-            </xsl:attribute>
-        </xsl:element>
-        <xsl:element name="xsl:call-template">
-            <xsl:attribute name="name">
-                <xsl:text>DoWordGloss</xsl:text>
-            </xsl:attribute>
-        </xsl:element>
-    </xsl:template>
+	<xsl:variable name="sLangNameCode" select="'en'"/>
+	<xsl:include href="PAWSSKWriterXmlToXslMapperCommon.xsl"/>
+	<!--
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		HandleGlossInfoInInterlinear
+		routine to deal with gloss information
+		Parameters: none
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	-->
+	<xsl:template name="HandleGlossInfoInInterlinear">
+		<xsl:element name="xsl:call-template">
+			<xsl:attribute name="name">
+				<xsl:text>DoMorphemeGloss</xsl:text>
+			</xsl:attribute>
+		</xsl:element>
+		<xsl:element name="xsl:call-template">
+			<xsl:attribute name="name">
+				<xsl:text>DoWordGloss</xsl:text>
+			</xsl:attribute>
+		</xsl:element>
+	</xsl:template>
 </xsl:stylesheet>
 <!--
 ================================================================

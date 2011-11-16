@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="OverallTypology" count="1/1">
 	<title>Overall Typology Questions</title>
-	<introduction>The answers given to these questions will be used to set the default values for the remaining questions on phrase structure.  If at any point, you do not know the answer to a particular question, you can accept the default value expected for the basic word order of your language.  Then test the phrase structures with your data and go back and amend your answers as needed.<br/><br/>
+	<introduction>The answers given to these questions will be used to set the default values for the remaining questions on phrase structure.  If at any point, you do not know the answer to a particular question, you can accept the default value expected for the basic word order of your language.  Then <span id="TypologyNotPractical" show="swNotPractical">test the phrase structures with your data and go back and </span>amend your answers as needed.<br/><br/>
 Note that the grammar write up will also contain some statements based on the default answers until you change them, but the statements about the position of specific elements in the phrase structure will have a _____ to indicate that the information has not been entered yet.  Therefore, the introductory comments in the grammar writeup may not be fully correct or complete for your language until you have completed the later sections.
 </introduction>
 	<instruction>Think of one or more basic transitive sentences in your language.
@@ -34,4 +34,7 @@ or simple noun phrases in the subject and direct object positions, rather than p
 			<button id="OTNext" value="Next" goto="Contents.htm"/>
 		</buttons>
 	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
 </page>

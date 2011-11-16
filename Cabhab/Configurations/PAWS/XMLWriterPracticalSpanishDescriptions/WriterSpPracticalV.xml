@@ -697,7 +697,7 @@
 							<content>clase</content>
 						</col>
 						<col>
-							<content>clase_## sujeto</content>
+							<content>clase ## sujeto</content>
 						</col>
 					</row>
 					<row show="swIPAgrFeatClassClassNumberObject">
@@ -705,7 +705,7 @@
 							<content>clase</content>
 						</col>
 						<col>
-							<content>clase_## objeto</content>
+							<content>clase ## objeto</content>
 						</col>
 					</row>
 					<row show="swIPAgrFeatClassClassNumberErgative">
@@ -713,7 +713,7 @@
 							<content>clase</content>
 						</col>
 						<col>
-							<content>clase_## ergativo</content>
+							<content>clase ## ergativo</content>
 						</col>
 					</row>
 					<row show="swIPAgrFeatClassClassNumberAbsolutive">
@@ -721,7 +721,7 @@
 							<content>clase</content>
 						</col>
 						<col>
-							<content>clase_## absolutivo</content>
+							<content>clase ## absolutivo</content>
 						</col>
 					</row>
 				</table>
@@ -752,11 +752,11 @@
 						>no se permite un sujeto que no está presente.  El sujeto debe ser expresado aun cuando en los imperativos.</caseText>
 					<caseText value="yes">un sujeto no debe estar presente en cualquier tipo de oración.</caseText>
 					<caseText value="yesClitic"
-						>el tema puede mirar como él es falta debido a los pronombres dependientes (clíticos pronominales) que juntan al verbo, pero no es una lengua verdadera que permite un tema que falta.</caseText>
+						>el sujeto puede mirar como no está presente debido a los pronombres dependientes (clíticos pronominales) que se unen al verbo, pero no es un idioma verdadero que permite un sujeto que no está presente.</caseText>
 				</case>
 				<content/>
 				<text show="swIPProDropYes">
-					<content>  Un objeto que falta </content>
+					<content>  Un objeto que no está presente </content>
 					<case element="ip" attr="proDropObject">
 						<caseText value="no">no</caseText>
 						<caseText value="yes">también</caseText>
@@ -984,7 +984,7 @@
 				</case>
 				<content> indicador de infinitivo similare a un auxiliar que se escribe como una palabra independiente.  </content>
 				<text show="swIPAuxNonfiniteYes">
-					<content>Un indicador auxiliar infinitovo es </content>
+					<content>Un indicador auxiliar infinitivo es </content>
 					<case element="ip" attr="auxRequired">
 						<caseText value="no">opcional</caseText>
 						<caseText value="no">requerido</caseText>

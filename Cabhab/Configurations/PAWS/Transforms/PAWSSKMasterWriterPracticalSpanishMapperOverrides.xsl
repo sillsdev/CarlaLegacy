@@ -63,7 +63,7 @@
 		<date>
 			<xsl:value-of select="$prmSDateTime"/>
 		</date>
-		<version>Este borrador fue generado por el kit del arrancador de las PATAS <xsl:value-of select="$prmSVersionNumber"/></version>
+		<version>Este borrador fue generado por el programa PAWS <xsl:value-of select="$prmSVersionNumber"/></version>
 		<contents showLevel="3" label="Contenido"/>
 	</xsl:template>
 	<xsl:template name="OutputContentsElement">

@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPArtDem" count="1/2">
 	<title level="2">Las frases nominales - Los artículos y los demonstrativos: los ejemplos y el caso</title>
-	<introduction>Ahora considere los artículos y los demonstrativos.  En español, los artículos incluyen <example>un</example>, <example>una</example>,<example>el</example>, y <example>la</example>.  Los demonstrativos adjetivos españoles incluyen <example>esto</example>, <example>ese</example>, <example>estos</example>, y <example>esos</example>.  Algunos ejemplos simples son:</introduction>
+	<introduction>Ahora se consideren los artículos y los demonstrativos.  En español, los artículos incluyen <example>un</example>, <example>una</example>,<example>el</example>, y <example>la</example>.  Los demonstrativos adjetivos españoles incluyen <example>esto</example>, <example>ese</example>, <example>estos</example>, y <example>esos</example>.  Algunos ejemplos simples son:</introduction>
 	<EnglishExample>
 		<exItem label="1.">un libro.</exItem>
 		<exItem label="2.">una manzana.</exItem>
@@ -12,31 +12,31 @@
 		<exItem label="5.">esta manzana.</exItem>
 		<exItem label="6.">esos libros.</exItem>
 	</EnglishExample>
-	<introduction>En español, los artículos y los demonstrativos no ocurren en la misma frase nominal, sino que ambos ocurren antes del sustantivo.  Tal vez su idioma permite que ambos ocurren en la misma frase, o pueden ocurrir en diversas posiciones con respecto al sustantivo.
-		Por lo tanto, necesitan categorías sintácticas distintas.  Algunos idiomas tienen solamente un grupo, los artículos o los demonstrativos. Un numero pequeño de idiomas pueden no tener ningún tipo expresado como palabras separadas.</introduction>
+	<introduction>En español, los artículos y los demonstrativos no se presentan en la misma frase nominal, sino que ambos se presentan antes del sustantivo.  Tal vez su idioma permite que ambos se presentan en la misma frase, o pueden presentarse en diversas posiciones con respecto al sustantivo.
+		Por lo tanto, necesitan categorías sintácticas distintas.  Algunos idiomas tienen solamente un sistema, los artículos o los demonstrativos. Un numero pequeño de idiomas no tienen cualquier tipo expresado como palabras independientes.</introduction>
 	<form section="np">
 		<radioGroup>
 			<groupName dataItem="artAndDem" default="no">RNPArtAndDem</groupName>
-			<prompt>¿Su lengua tiene artículos y demonstrativos observados como palabras separadas?</prompt>
-			<radio id="NPArtAndDemNo" dataValue="no">No, ni unos ni otros uno</radio>
-			<radio id="NPArtAndDemArt" dataValue="article">Solamente artículos, ningunos demonstrativos</radio>
-			<radio id="NPArtAndDemDem" dataValue="demonstrative">Solamente demonstrativos, ningunos artículos</radio>
+			<prompt>¿En su idioma hay artículos y/o demonstrativos que se escriben como palabras independientes?</prompt>
+			<radio id="NPArtAndDemNo" dataValue="no">No, ni artículos ni demonstrativos</radio>
+			<radio id="NPArtAndDemArt" dataValue="article">Solamente artículos, ningún demonstrativo</radio>
+			<radio id="NPArtAndDemDem" dataValue="demonstrative">Solamente demonstrativos, ningún artículo</radio>
 			<radio id="NPArtAndDemBoth" dataValue="both">Sí, artículos y demonstrativos</radio>
 		</radioGroup>
 		<br/>
-		<prompt id="NPArtAndDemArticlePrompt" show="swNPArtAndDemArtorBoth">Incorpore los artículos en su lengua aquí:</prompt>
+		<prompt id="NPArtAndDemArticlePrompt" show="swNPArtAndDemArtorBoth">Escriba los artículos en su idioma aquí:</prompt>
 		<textBox id="NPArtAndDemArticleExample" dataItem="articleExample" rows="3" show="swNPArtAndDemArtorBoth"/>
-		<prompt id="NPArtAndDemDemonstrativePrompt" show="swNPArtAndDemDemorBoth">Incorpore los demostrativos en su lengua aquí:</prompt>
+		<prompt id="NPArtAndDemDemonstrativePrompt" show="swNPArtAndDemDemorBoth">Escriba los demostrativos en su idioma aquí:</prompt>
 		<textBox id="NPArtAndDemDemonstrativeExample" dataItem="demonstrativeExample" rows="5" show="swNPArtAndDemDemorBoth"/>
 		<br/>
-		<prompt id="NPArtAndDemArtExamplePrompt" show="swNPArtAndDemArt">Ahora incorpore algunos ejemplos de frases nominales con los artículos aquí:</prompt>
-		<prompt id="NPArtAndDemDemExamplePrompt" show="swNPArtAndDemDem">Ahora incorpore algunos ejemplos de frases nominales con demonstrativos aquí:</prompt>
-		<prompt id="NPArtAndDemBothExamplePrompt" show="swNPArtAndDemBoth">Ahora incorpore algunos ejemplos de frases nominales con un artículo y un demostrativo, si es gramatical, así como algunos con cada tipo solo aquí:</prompt>
+		<prompt id="NPArtAndDemArtExamplePrompt" show="swNPArtAndDemArt">Ahora escriba algunos ejemplos de frases nominales con los artículos aquí:</prompt>
+		<prompt id="NPArtAndDemDemExamplePrompt" show="swNPArtAndDemDem">Ahora escriba algunos ejemplos de frases nominales con demonstrativos aquí:</prompt>
+		<prompt id="NPArtAndDemBothExamplePrompt" show="swNPArtAndDemBoth">Ahora escriba algunos ejemplos de frases nominales con un artículo y un demostrativo, si es gramatical, así como algunos con cada tipo solo aquí:</prompt>
 		<textBox id="NPExample" show="swNPArtAndOrDem" dataItem="example"/>
 		<br/>
 		<radioGroup id="NPArtCaseTable" show="swNPArtAndOrDem">
 			<groupName dataItem="artCase" default="no">RArtCase</groupName>
-			<prompt>¿Su lengua tiene diversas formas para <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">los artículos</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">los demonstrativos</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">los artículos y demonstrativos</span> basados en caso?</prompt>
+			<prompt>¿En su idioma hay diversas formas para <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">los artículos</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">los demonstrativos</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">los artículos y demonstrativos</span> basados en caso?</prompt>
 			<radio id="NPArtCaseNo" dataValue="no">No</radio>
 			<radio id="NPArtCaseYes" dataValue="yes">Sí</radio>
 		</radioGroup>

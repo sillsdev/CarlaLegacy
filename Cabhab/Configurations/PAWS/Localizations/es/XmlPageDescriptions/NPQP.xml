@@ -2,50 +2,50 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPQP" count="1/1">
-	<title level="2">Las frases nominales - Las frases del cuantificador como modificantes</title>
+	<title level="2">Las frases nominales - Las frases del cuantificador como modificadores</title>
 	<introduction id="NPQPIntroNotPractical" show="swNotPractical">Next to be added to the nominal phrase as we work our way down the tree are quantifier phrases (QP), discussed earlier in <section number="2">Quantifiers and QP</section>.  This means we will be able to parse nominal phrases such as these in English:</introduction>
-	<introduction id="NPQPIntroPractical" show="swPractical">Al lado de agregúese a la frase nominal son frases del cuantificador, discutidas anteriormente en <section number="2">Los cuantificadores y sus frases</section>. Esto significa que podremos analizar frases nominales tales como éstos en español:</introduction>    <EnglishExample>
+	<introduction id="NPQPIntroPractical" show="swPractical">Siguiente en la frase nominal son frases del cuantificador, discutidas anteriormente en  <section number="2">Los cuantificadores y sus frases</section>. Con las cuantificadores en la frase nominal podemos analizar frases nominales tales como éstas en español:</introduction>    <EnglishExample>
 		<exItem label="1.">ésos muy pocos libros.</exItem>
 		<exItem label="2.">los muchos perros del muchacho.</exItem>
 		<exItem label="3.">solamente los primeros cientos muchachos.</exItem>
 	</EnglishExample>
 	<form section="np">
-		<prompt>Incorpore sus ejemplos aquí:</prompt>
+		<prompt>Escriba ejemplos similares en su idioma aquí:</prompt>
 		<textBox id="NPQPExample" dataItem="qpExample"/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="qpPos" default="unknown" position="yesSpec">RNPQPPos</groupName>
-			<prompt>De acuerdo con los datos usted afinaron, ¿dónde las frases del cuantificador (números cardinales incluyendo) ocurren con respecto al sustantivo?</prompt>
+			<prompt>De acuerdo con los ejemplos, ¿dónde se presentan las frases del cuantificador (números cardinales incluyendo) con respecto al sustantivo?</prompt>
 			<radio id="NPQPPosBefore" dataValue="before">Antes</radio>
 			<radio id="NPQPPosAfter" dataValue="after">Después</radio>
-			<radio id="NPQPPosEitherSide" dataValue="either">Cualquier lado, pero no ambos lados al mismo tiempo</radio>
-			<radio id="NPQPPosEitherOrBoth" dataValue="eitherOrBoth">Cualquier lado, o en ambos lados al mismo tiempo</radio>
-			<radio id="NPQPPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del sustantivo, o en ambos lados al mismo tiempo</radio>
-			<radio id="NPQPPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del sustantivo, o en ambos lados al mismo tiempo</radio>
-			<radio id="NPQPPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+			<radio id="NPQPPosEitherSide" dataValue="either">Cualquier lado, pero no en ambos lados en la misma oración</radio>
+			<radio id="NPQPPosEitherOrBoth" dataValue="eitherOrBoth">Cualquier lado, o en ambos lados en la misma oración</radio>
+			<radio id="NPQPPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del sustantivo, o en ambos lados en la misma oración</radio>
+			<radio id="NPQPPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del sustantivo, o en ambos lados en la misma oración</radio>
+			<radio id="NPQPPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
 			<radioGroup id="NPQPPosEitherorBothTable" show="swNPQPPosEitherorBoth">
 				<groupName dataItem="qpEither" default="unrestricted">RNPQPPosEitherorBoth</groupName>
-				<prompt>¿Pueden todas las frases del cuantificador aparecer de cualquier lado de la frase nominal?</prompt>
+				<prompt>¿Pueden presentarse todas las frases del cuantificador de cualquier lado de la frase nominal?</prompt>
 				<radio id="NPQPPosEitherorBothUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="NPQPPosEitherorBothRestricted" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+				<radio id="NPQPPosEitherorBothRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
 				<radioGroup id="NPQPPosEitherorBothRestrictedTable" show="swNPQPPosEitherorBothRestricted">
 					<groupName dataItem="qpEitherRestrictedNumPos" default="unknown" position="yesSpec">RNPQPPosEitherRestrictedNum</groupName>
-					<prompt>¿Todos los números ocurren en solamente un lado del sustantivo?</prompt>
-					<radio id="NPQPPosEitherRestrictedNumBefore" dataValue="before">Sí, todos los números ocurren antes del sustantivo</radio>
-					<radio id="NPQPPosEitherRestrictedNumAfter" dataValue="after">Sí, todos los números ocurren después del sustantivo</radio>
-					<radio id="NPQPPosEitherRestrictedNumNo" dataValue="no">No, algunos pueden ocurrir en cada lado</radio>
+					<prompt>¿Se presentan todos los números en solamente un lado del sustantivo?</prompt>
+					<radio id="NPQPPosEitherRestrictedNumBefore" dataValue="before">Sí, todos los números se presentan antes del sustantivo</radio>
+					<radio id="NPQPPosEitherRestrictedNumAfter" dataValue="after">Sí, todos los números se presentan después del sustantivo</radio>
+					<radio id="NPQPPosEitherRestrictedNumNo" dataValue="no">No, algunos pueden presentarse en cada lado</radio>
 				</radioGroup>
 			</radioGroup>
 		</radioGroup>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="qpAgree" default="no">RNPQPAgree</groupName>
-			<prompt>¿Haga los números o los cuantificadores llevan cualquier marca para convenir con el sustantivo que se modifican, con excepción <span id="NPQPNumberMarkingSpan1" show="swNPQPNumberMarking">de la marca del</span>
-				<span id="NPQPNumberAgreementSpan1" show="swNPQPNumberAgreement">del acuerdo en</span> número?</prompt>
-			<radio id="NPQPAgreeNo" dataValue="no">No, ellos solamente <span id="NPQPNumberMarkingSpan" show="swNPQPNumberMarking"> marquen el número</span>
-				<span id="NPQPNumberAgreementSpan" show="swNPQPNumberAgreement"> conevngan en número</span>
+			<prompt>¿Tienen los números o los cuantificadores un indicador para concordar con el sustantivo que se modifican, además <span id="NPQPNumberMarkingSpan1" show="swNPQPNumberMarking">de la marca del</span>
+				<span id="NPQPNumberAgreementSpan1" show="swNPQPNumberAgreement">de concordancia en</span> número?</prompt>
+			<radio id="NPQPAgreeNo" dataValue="no">No, ellos solamente <span id="NPQPNumberMarkingSpan" show="swNPQPNumberMarking"> indican el número</span>
+				<span id="NPQPNumberAgreementSpan" show="swNPQPNumberAgreement"> concuerdan en número</span>
 			</radio>
-			<radio id="NPQPAgreeYes" dataValue="yes">Sí, convienen en otras características (también)</radio>
+			<radio id="NPQPAgreeYes" dataValue="yes">Sí, concuerden en otras características (también)</radio>
 		</radioGroup>
 		<instruction id="NPQPPosEitherRestrictedNumBeforeInstruction" show="swNPQPPosEitherRestrictedNumBefore">The program will mark numbers with the default feature <feature>DP-initial</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
 		<instruction id="NPQPPosEitherRestrictedNumAfterInstruction" show="swNPQPPosEitherRestrictedNumAfter">The program will mark numbers with the default feature <feature>DP-final</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>

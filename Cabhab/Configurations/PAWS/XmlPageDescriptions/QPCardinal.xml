@@ -7,9 +7,7 @@
 degree words like the quantifiers can, though they occur in the same
 position.  Note, however, that cardinal numbers can be modified by
 ordinal numbers and by <example>next</example> and <example>last</example>, as in <example>the first twenty boys</example> or
-<example>the next one hundred years</example>.  Ordinal numbers and <example>next</example> and <example>last</example> can also modify nouns directly, as in <example>the third girl</example> and <example>the last boy</example>.  Since these modifiers also act as regular
-adjectives in modifying nouns directly, they will need to have the
-syntactic category of adjectives plus a feature to distinguish them.
+<example>the next one hundred years</example>.  Ordinal numbers and <example>next</example> and <example>last</example> can also modify nouns directly, as in <example>the third girl</example> and <example>the last boy</example>.
 </introduction>
 	<form section="qp">
 		<prompt>Key the first ten cardinal numbers, each on a separate line and followed by a period, in order from one to ten here:</prompt>
@@ -47,7 +45,7 @@ syntactic category of adjectives plus a feature to distinguish them.
 			<radio id="QPOrdinalEitherSide" checked="yes" dataValue="either">On either side of the cardinal number, but not both at the same time</radio>
 			<radio id="QPOrdinalEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the cardinal number, or both sides at the same time</radio>
 			<radio id="QPOrdinalBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the cardinal number, or both sides at the same time</radio>
-			<radio id="QPOrdnialAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the cardinal nimber, or both sides at the same time</radio>
+			<radio id="QPOrdnialAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the cardinal number, or both sides at the same time</radio>
 			<radio id="QPOrdinalBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
 			<radioGroup id="QPOrdinalEitherSideTable" show="swQPOrdinalEitherorBoth">
 				<groupName dataItem="ordinalEither" default="yes">ROrdinalEitherSide</groupName>
@@ -80,7 +78,7 @@ written as separate words, such as <example>one hundred thirty three</example>. 
 		<br/>
 		<buttons>
 			<button id="QPCardinalExamplesBack" value="Back" goto="QPDegree.xml"/>
-		    <button id="QPCardinalExamplesNext" value="Next" goto="QPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+			<button id="QPCardinalExamplesNext" value="Next" goto="QPCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swQPOrdinalAffix">

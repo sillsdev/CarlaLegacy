@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronRefl" count="3/8">
 	<title level="2">Pronouns - Reflexives</title>
-	<introduction>Reflexives are another type of pronouns that most languages have.  They occur only in the same case as direct objects and normally must agree with the subject in person, gender, and number features.  Examples in English are: <example>herself</example>, <example>himself</example>, <example>themselves</example>, <example>myself</example>.    Some languages have a completely separate set of pronoun forms for reflexives, others use a phrase which consists of a noun (usually meaning ‘self’) that is possessed by the pronoun that refers back to the subject, some languages have a verbal affix to indicate reflexive action, and some languages do not distinguish reflexive constructions at all.</introduction>
+	<introduction>Reflexives are another type of pronouns that most languages have.  They occur only in the same case as direct objects and normally must agree with the subject in person, gender, and number features.  Examples in English are: <example>herself</example>, <example>himself</example>, <example>themselves</example>, <example>myself</example>.    Some languages have a completely separate set of pronoun forms for reflexives, others use a phrase which consists of a noun (usually meaning 'self') that is possessed by the pronoun that refers back to the subject, some languages have a verbal affix to indicate reflexive action, and some languages do not distinguish reflexive constructions at all.</introduction>
 	<form section="pron">
 		<radioGroup>
 			<groupName dataItem="refl" default="no">RPronRefl</groupName>
@@ -16,7 +16,7 @@
 			<br/>Key your reflexive examples here, with each on a separate line and followed by a period, beginning with first person, then second person, then third person:</prompt>
 		<textBox id="PronReflExample" dataItem="reflExample" show="swPronReflNotNo"/>
 		<prompt id="PronReflSentExamples" show="swPronReflYes">
-			<br/>Now key several example with a reflexive used in object position of a simple sentence, so that agreement between the reflexive and the subject can be tested later:</prompt>
+			<br/>Now key several example with a reflexive used in object position of a simple sentence<span id="PronReflSentExamplesSpan" show="swNotPractical"> so that agreement between the reflexive and the subject can be tested later</span>:</prompt>
 		<textBox id="PronReflSentExample" dataItem="reflSentExample" show="swPronReflYes"/>
 		<radioGroup id="PronReflYesTable" show="swPronReflYes">
 			<groupName dataItem="reflAffix" default="yes">RPronReflAffix</groupName>
@@ -65,5 +65,8 @@
 		<whenRadio button="PronReflYes"/>
 		<and/>
 		<whenRadio button="PronReflAffixNoNoun"/>
+	</showWhen>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
 	</showWhen>
 </page>

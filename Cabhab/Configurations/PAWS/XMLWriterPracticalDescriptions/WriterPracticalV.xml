@@ -694,7 +694,7 @@
 							<content>class</content>
 						</col>
 						<col>
-							<content>class_## subject</content>
+							<content>class ## subject</content>
 						</col>
 					</row>
 					<row show="swIPAgrFeatClassClassNumberObject">
@@ -702,7 +702,7 @@
 							<content>class</content>
 						</col>
 						<col>
-							<content>class_## object</content>
+							<content>class ## object</content>
 						</col>
 					</row>
 					<row show="swIPAgrFeatClassClassNumberErgative">
@@ -710,7 +710,7 @@
 							<content>class</content>
 						</col>
 						<col>
-							<content>class_## ergative argument</content>
+							<content>class ## ergative argument</content>
 						</col>
 					</row>
 					<row show="swIPAgrFeatClassClassNumberAbsolutive">
@@ -718,7 +718,7 @@
 							<content>class</content>
 						</col>
 						<col>
-							<content>class_## absolutive argument</content>
+							<content>class ## absolutive argument</content>
 						</col>
 					</row>
 				</table>

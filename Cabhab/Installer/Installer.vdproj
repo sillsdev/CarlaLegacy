@@ -333,6 +333,12 @@
 		}
 		"Entry"
 		{
+		"MsmKey" = "8:_1B408C90ABA5432C8255101DA5B2F0C0"
+		"OwnerKey" = "8:_UNDEFINED"
+		"MsmSig" = "8:_UNDEFINED"
+		}
+		"Entry"
+		{
 		"MsmKey" = "8:_1BE111DB27AF4CF8A902409C1FBC23EF"
 		"OwnerKey" = "8:_UNDEFINED"
 		"MsmSig" = "8:_UNDEFINED"
@@ -3841,10 +3847,10 @@
 			"ComponentsUrl" = "8:"
 				"Items"
 				{
-					"{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.2.0"
+					"{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5.SP1"
 					{
-					"Name" = "8:Microsoft .NET Framework 2.0"
-					"ProductCode" = "8:Microsoft.Net.Framework.2.0"
+					"Name" = "8:.NET Framework 3.5 SP1"
+					"ProductCode" = "8:Microsoft.Net.Framework.3.5.SP1"
 					}
 				}
 			}
@@ -4956,6 +4962,26 @@
 			"TargetName" = "8:PNMain.xml"
 			"Tag" = "8:"
 			"Folder" = "8:_F7C359265F734EA6BF601E0FDD8C325A"
+			"Condition" = "8:"
+			"Transitive" = "11:FALSE"
+			"Vital" = "11:TRUE"
+			"ReadOnly" = "11:FALSE"
+			"Hidden" = "11:FALSE"
+			"System" = "11:FALSE"
+			"Permanent" = "11:FALSE"
+			"SharedLegacy" = "11:FALSE"
+			"PackageAs" = "3:1"
+			"Register" = "3:1"
+			"Exclude" = "11:FALSE"
+			"IsDependency" = "11:FALSE"
+			"IsolateTo" = "8:"
+			}
+			"{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1B408C90ABA5432C8255101DA5B2F0C0"
+			{
+			"SourcePath" = "8:..\\Configurations\\PAWS\\Transforms\\DataMigrations\\DBVersion6To7.xsl"
+			"TargetName" = "8:DBVersion6To7.xsl"
+			"Tag" = "8:"
+			"Folder" = "8:_3B70C962F3BB441C80E784F0692D9DA7"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
 			"Vital" = "11:TRUE"
@@ -6900,7 +6926,7 @@
 			{
 			"AssemblyRegister" = "3:1"
 			"AssemblyIsInGAC" = "11:FALSE"
-			"AssemblyAsmDisplayName" = "8:Cabhab, Version=0.2.0.16977, Culture=neutral, processorArchitecture=x86"
+			"AssemblyAsmDisplayName" = "8:Cabhab, Version=0.2.0.28215, Culture=neutral, processorArchitecture=x86"
 				"ScatterAssemblies"
 				{
 					"_4886823C93364227B6ECB7831CCD6066"
@@ -10821,7 +10847,7 @@
 			{
 			"AssemblyRegister" = "3:1"
 			"AssemblyIsInGAC" = "11:FALSE"
-			"AssemblyAsmDisplayName" = "8:CabhabDll, Version=0.2.1.16974, Culture=neutral, processorArchitecture=MSIL"
+			"AssemblyAsmDisplayName" = "8:CabhabDll, Version=0.2.1.16173, Culture=neutral, processorArchitecture=MSIL"
 				"ScatterAssemblies"
 				{
 					"_9A9E6EF2FCA60FFC437FE0341AD0FE05"
@@ -15436,17 +15462,16 @@
 				{
 				}
 			}
-			"{994432C3-9487-495D-8656-3E829A8DBDDE}:_DB23CE5B693745308732B7D84EF88205"
+			"{1525181F-901A-416C-8A58-119130FE478E}:_D96990B423C64A059942DF4B9D9E2310"
 			{
-			"DefaultLocation" = "8:[CommonAppDataFolder]"
-			"Name" = "8:Common Data Folder"
+			"Name" = "8:#1915"
 			"AlwaysCreate" = "11:FALSE"
 			"Condition" = "8:"
 			"Transitive" = "11:FALSE"
-			"Property" = "8:NEWPROPERTY1"
+			"Property" = "8:AppDataFolder"
 				"Folders"
 				{
-					"{9EF0B969-E518-4E46-987F-47570745A589}:_A10B3B825E0447829488EB75FE7F09CB"
+					"{9EF0B969-E518-4E46-987F-47570745A589}:_E16DA33225584A36A7806D899BE294AB"
 					{
 					"Name" = "8:SIL"
 					"AlwaysCreate" = "11:FALSE"
@@ -15751,7 +15776,7 @@
 		"Name" = "8:Microsoft Visual Studio"
 		"ProductName" = "8:PAWS Starter Kit (Cabhab version)"
 		"ProductCode" = "8:{5E7A315D-6D57-42C1-8E07-11DFEB9A4CB6}"
-		"PackageCode" = "8:{F95E5C67-8186-4884-88F8-78CE6E66B071}"
+		"PackageCode" = "8:{1A0AA610-B58C-4BAE-B3DB-B1F94C9DBA04}"
 		"UpgradeCode" = "8:{FEBBCD5B-3BAF-45D9-A9B5-6B4D3CE2AB46}"
 		"RestartWWWService" = "11:FALSE"
 		"RemovePreviousVersions" = "11:FALSE"
@@ -15872,9 +15897,9 @@
 		{
 			"{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_BF347F3E762343B683AE38FF2D42B4DC"
 			{
-			"Name" = "8:PAWS Starter Kit version 0.6"
+			"Name" = "8:PAWS Starter Kit version 7.0"
 			"Arguments" = "8:-x PAWS\\paws.xml"
-			"Description" = "8:Shortcut to PAWS Starter Kit version 0.6"
+			"Description" = "8:Shortcut to PAWS Starter Kit version 7.0"
 			"ShowCmd" = "3:1"
 			"IconIndex" = "3:0"
 			"Transitive" = "11:FALSE"
@@ -16190,7 +16215,7 @@
 							"ContextData" = "8:1;True=1;False=0"
 							"Attributes" = "3:0"
 							"Setting" = "3:0"
-							"Value" = "3:1"
+							"Value" = "3:0"
 							"DefaultValue" = "3:1"
 							"UsePlugInResources" = "11:TRUE"
 							}

@@ -10,8 +10,10 @@
 var attr;
 
 function Initialize() {
-	window.external.GetAnswerValue("//language/langName");
-	LangPropLangName.value = window.external.OutValue;
+	window.external.GetAnswerValue("//language/langNames/langName[@lang='en']");
+	LangPropLangNameEn.value = window.external.OutValue;
+	window.external.GetAnswerValue("//language/langNames/langName[@lang='es']");
+	LangPropLangNameEs.value = window.external.OutValue;
 	window.external.GetAnswerValue("//language/langAbbr");
 	LangPropLangAbbr.value = window.external.OutValue;
 
@@ -36,7 +38,8 @@ function RLangPropRTL(radio) {
 
 function saveData() {
 	var sTemp;
-	window.external.SetAnswerValue("//language/langName", LangPropLangName.value);
+	window.external.SetAnswerValue("//language/langNames/langName[@lang='en']", LangPropLangNameEn.value);
+	window.external.SetAnswerValue("//language/langNames/langName[@lang='es']", LangPropLangNameEs.value);
 	window.external.SetAnswerValue("//language/langAbbr", LangPropLangAbbr.value);
 
 	//TODO: figure what to do if any of these are missing!
@@ -71,8 +74,11 @@ function Refresh() {
 information is needed.  Please enter the appropriate information
 below.</p>
 </div><br><div class="form">
-<p style="margin-left: 0.125in">Enter the name of your language:<br></p>
-<textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangName" name="LangPropLangName" contenteditable="inherit"></textarea><br><br><p style="margin-left: 0.125in">Enter an abbreviation for your language (we suggest using the Ethnologue or ISO639-3 code):<br></p>
+<p style="margin-left: 0.125in">Enter the English name of your language:<br></p>
+<textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangNameEn" name="LangPropLangNameEn" contenteditable="inherit"></textarea>
+	<p style="margin-left: 0.125in">Enter the Spanish name of your language:<br></p>
+	<textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangNameEs" name="LangPropLangNameEs" contenteditable="inherit"></textarea>
+	<br><br><p style="margin-left: 0.125in">Enter an abbreviation for your language (we suggest using the Ethnologue or ISO639-3 code):<br></p>
 <textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="4" id="LangPropLangAbbr" name="LangPropLangAbbr" contenteditable="inherit"></textarea>
 <p style="margin-left: 0.125in">The name of the font that will be used to display your language data is shown below.  Click on the 'Change font' button to change it or any of its font properties.<br></p>
 <textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="40" id="LangPropFont" name="LangPropFont" contenteditable="false"></textarea>

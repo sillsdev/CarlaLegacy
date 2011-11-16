@@ -4,7 +4,7 @@
 <page id="IPInflFeatures" count="1/2">
 	<title level="2">Basic, Single-Clause Sentences - Inflection Features</title>
 	<introduction>Sentences normally include some kind of inflection on the verbs and possibly agreement between the subject, object and verb.</introduction>
-	<instruction>Verbs and auxiliaries usually carry inflection features, such as tense, aspect, voice and/or mood.  In most cases, these features are added by affixes.  Look through the features in the chart below and check any that your language uses.  In the lexicon, add the appropriate features to the relevant affixes and also to any auxiliaries or irregular verb forms: <br/>
+	<instruction>Verbs and auxiliaries usually carry inflection features, such as tense, aspect, voice and/or mood.  In most cases, these features are added by affixes.  Look through the features in the chart below and check any that your language uses.  <span id="IPInflFeaturesNotPracticalSpan" show="swNotPractical"> In the lexicon, add the appropriate features to the relevant affixes and also to any auxiliaries or irregular verb forms.</span> <br/>
 		<featureChart explanations="no">
 			<featureRow>
 				<featureType rowspan="3">tense</featureType>
@@ -103,4 +103,7 @@
 			<button id="IPInflFeaturesNext" value="Next" goto="IPAgrFeatures.xml"/>
 		</buttons>
 	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
 </page>

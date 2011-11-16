@@ -4,7 +4,7 @@
 	<section1 id="sQues">
 		<secTitle>Las preguntas</secTitle>
 		<p>
-			<content>Hay dos tipos de preguntas: las que requieren una respuesta afirmativa o negativa y las que se contestan con información (preguntas abiertas). En esta sección se consideran las preguntas de la cláusula principal y las variedades subordinadas de ambos tipos de preguntas, comenzando con las preguntas que requieren una respuesta "sí/no".</content>
+			<content>Hay dos tipos de preguntas: las que requieren una respuesta afirmativa o negativa (preguntas polares) y las que se contestan con información (preguntas abiertas). En esta sección se consideran las preguntas de la cláusula principal y las variedades subordinadas de ambos tipos de preguntas, comenzando con las preguntas que requieren una respuesta "sí/no".</content>
 		</p>
 		<section2 id="sQuesYN">
 			<secTitle>Las preguntas con respuesta afirmativa/negativa</secTitle>
@@ -295,7 +295,7 @@
 					<case element="q" attr="whDemPos">
 						<caseText value="before">solamente antes del sustantivo, incluso si otro demostrativo se presenta después del sustantivo.</caseText>
 						<caseText value="after">solamente después del sustantivo, incluso si otro demostrativo se presenta antes del sustantivo.</caseText>
-						<caseText value="agree">de cualquier lado el sustantivo, pero cuando hay un demostrativo en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</caseText>
+						<caseText value="agree">de cualquier lado el sustantivo, pero cuando hay un demostrativo en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</caseText>
 					<caseText value="unknown">_______</caseText>
 					</case>
 					<content>&#x20;</content>
@@ -308,7 +308,7 @@
 					<case element="q" attr="whArtPos">
 						<caseText value="before">solamente antes del sustantivo, incluso si otro artículo se presenta después del sustantivo.</caseText>
 						<caseText value="after">solamente después del sustantivo, incluso si otro artículo se presenta antes del sustantivo.</caseText>
-						<caseText value="agree">de cualquier lado el sustantivo, pero cuando hay un artículo en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</caseText>
+						<caseText value="agree">de cualquier lado el sustantivo, pero cuando hay un artículo en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content>&#x20;</content>
@@ -321,7 +321,7 @@
 					<case element="q" attr="whDegAdjPos">
 						<caseText value="before">solamente antes del adjetivo, incluso si otra palabra de grado se presenta después del adjetivo.</caseText>
 						<caseText value="after">solamente después del adjetivo, incluso si otra palabra de grado se presenta antes del adjetivo.</caseText>
-						<caseText value="agree">de cualquier lado el adjetivo, pero cuando hay una palabra de grado en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</caseText>
+						<caseText value="agree">de cualquier lado el adjetivo, pero cuando hay una palabra de grado en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</caseText>
 					<caseText value="unknown">_______</caseText>
 					</case>
 					<content>&#x20;</content>
@@ -334,7 +334,7 @@
 					<case element="q" attr="whDegQPos">
 						<caseText value="before">solamente antes del cuantificador, incluso si otra palabra de grado se presenta después del cuantificador.</caseText>
 						<caseText value="after">solamente después del cuantificador, incluso si otra palabra de grado se presenta antes del cuantificador.</caseText>
-						<caseText value="agree">de cualquier lado el cuantificador, pero cuando hay una palabra de grado en cada lado al mismo tiempo, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</caseText>
+						<caseText value="agree">de cualquier lado el cuantificador, pero cuando hay una palabra de grado en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas sean palabras interrogativas o ambas no).</caseText>
 					 <caseText value="unknown">_______</caseText>
 				   </case>
 					<content>&#x20;</content>
@@ -441,7 +441,7 @@
 					</text>
 					<content>&#x20;</content>
 					<text show="swQMainContWordYesNotVSO">
-						<content>El insicador o complementizador de la pregunta se presenta </content>
+						<content>El indicador o complementizador de la pregunta se presenta </content>
 						<case element="q" attr="mainContPos">
 							<caseText value="before">antes</caseText>
 							<caseText value="after">después</caseText>

@@ -3,8 +3,8 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdjPMain" count="1/3">
 	<title>Adjectives and AdjP</title>
-	<introduction>In many grammars, numbers, quantifiers, articles, and demonstratives are considered adjectives, but each of them has a different distribution from the qualifying adjectives, so they will each have distinct syntactic categories.  This section is limited to considering qualitative adjectives that express size, color, age, texture, form, or quality.  One characteristic of this type of adjective is that more than one can modify a noun and in general the order of the adjectives can change (with a slight change in meaning due to the scope of the modification).  For example, <example>hard dull brass rods</example> versus <example>dull hard brass rods</example> versus <example>brass hard dull rods</example>, etc.  This characteristic of stacking adjectives will be dealt with in the section on nominal phrases by an adjunction rule which allows recursion.
-</introduction>
+	<introduction>In many grammars, numbers, quantifiers, articles, and demonstratives are considered adjectives, but each of them has a different distribution from the qualifying adjectives, so they will each have distinct syntactic categories.  This section is limited to considering qualitative adjectives that express size, color, age, texture, form, or quality.  One characteristic of this type of adjective is that more than one can modify a noun and in general the order of the adjectives can change (with a slight change in meaning due to the scope of the modification).  For example, <example>hard dull brass rods</example> versus <example>dull hard brass rods</example> versus <example>brass hard dull rods</example>, etc. <span id="AdjPNotPracticalSpan" show="swNotPractical"> This characteristic of stacking adjectives will be dealt with in the section on nominal phrases by an adjunction rule which allows recursion.
+	</span></introduction>
 	<introduction>Here we need to consider again what types of words can modify qualitative adjectives themselves.</introduction>
 	<EnglishExample>
 		<exItem>Some English examples are:</exItem>
@@ -77,9 +77,12 @@
 		<br/>
 		<buttons>
 			<button id="AdjPMainBack" value="Back" goto="Contents.htm"/>
-		    <button id="AdjPMainNext" value="Next" goto="AdjPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+			<button id="AdjPMainNext" value="Next" goto="AdjPCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
 	<showWhen id="swAdjPModifiersYesDegree">
 		<whenRadio button="AdjPModifiersYesDegree"/>
 	</showWhen>

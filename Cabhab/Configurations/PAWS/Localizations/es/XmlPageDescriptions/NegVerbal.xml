@@ -4,78 +4,78 @@
 <page id="NegVerbal" count="2/4">
 	<title level="2">Las construcciones negativas - La negación auxiliar y verbal</title>
 	<form section="neg">
-		<prompt id="NegAdvPTemporalTypeAffixInstruction" show="swAdvPNegTemporalTypeAffix">En <section number="3">Los adverbios y sus frases</section> usted indicó que su idioma no expresa los adverbios temporales negativos (significado 'nunca') como una palabra separada, pero algo como afijo verbal. En esa sección, usted dio los ejemplos siguientes de los afijos temporales negativos juntados a los verbos.  Usted puede agregar cualquier dato adicional que usted piense en ahora.</prompt>
-		<prompt id="NegAdvPTemporalTypeVerbInstruction" show="swAdvPNegTemporalTypeVerb">En <section number="3">Los adverbios y sus frases</section> usted indicó que su idioma expresa solamente las ideas temporales negativas usando un adverbio temporal positivo escrito como palabra separada junto con el afijo verbal negativo. En esa sección, usted dio los ejemplos siguientes de tales adverbios temporales y verbos negativos.  Usted puede agregar cualquier dato adicional que usted piense en ahora.</prompt>
-		<prompt id="NegAdvPTemporalTypeWordInstruction" show="swAdvPNegTemporalTypeWord">En <section number="3">Los adverbios y sus frases</section>usted incorporó los ejemplos siguientes de adverbios temporales negativos.  Usted puede agregar cualquier dato adicional que usted piense en ahora.</prompt>
-		<prompt id="NegAdvPTemporalTypeAffixPrompt" show="swAdvPNegTemporalTypeAffix">Los ejemplos de los afijos temporales negativos juntados a los verbos:</prompt>
+		<prompt id="NegAdvPTemporalTypeAffixInstruction" show="swAdvPNegTemporalTypeAffix">En <section number="3">Los adverbios y sus frases - Los adverbios temporales</section> usted indicó que su idioma no expresa los adverbios temporales negativos (que significa 'nunca') como una palabra independiente, pero como afijo verbal. En esa sección, usted dio los ejemplos siguientes de los afijos temporales negativos unidos a los verbos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+		<prompt id="NegAdvPTemporalTypeVerbInstruction" show="swAdvPNegTemporalTypeVerb">En <section number="3">Los adverbios y sus frases - Los adverbios temporales</section> usted indicó que su idioma expresa las ideas temporales negativas usando un adverbio temporal positivo escrito como palabra independiento junto con el afijo verbal negativo en el verbo. En esa sección, usted dio los ejemplos siguientes de adverbios temporales y verbos negativos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+		<prompt id="NegAdvPTemporalTypeWordInstruction" show="swAdvPNegTemporalTypeWord">En <section number="3">Los adverbios y sus frases - Los adverbios temporales</section> usted escribió los ejemplos siguientes de adverbios temporales negativos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+		<prompt id="NegAdvPTemporalTypeAffixPrompt" show="swAdvPNegTemporalTypeAffix">Algunos ejemplos de los afijos temporales negativos unidos a verbos:</prompt>
 		<textBox id="AdvPNegTemporalAffixExample" section="advp" dataItem="negTemporalAffixExample" show="swAdvPNegTemporalTypeAffix" rows="3"/>
 		 <instruction id="NegAdvPTemporalTypeAffixInstruction2" show="swAdvPNegTemporalTypeAffix">Be sure to key the features <feature>negative temporal</feature>
 on any new affix(es) that you added.</instruction>
 		<prompt id="NegAdvPTemporalTypeWordPrompt" show="swAdvPNegTemporalTypeWord">Ejemplos de los adverbios temporales negativos:</prompt>
-		<prompt id="NegAdvPTemporalTypeVerbPrompt" show="swAdvPNegTemporalTypeVerb">Ejemplos de adverbios temporales con los verbos negativos:</prompt>
+		<prompt id="NegAdvPTemporalTypeVerbPrompt" show="swAdvPNegTemporalTypeVerb">Algunos ejemplos de adverbios temporales con verbos negativos:</prompt>
 		<textBox id="AdvPNegTemporalExample" section="advp" dataItem="negTemporalExample" show="swAdvPNegTemporalTypeWordOrVerb" rows="3"/>
  <instruction id="NegAdvPTemporalTypeVerbInstruction2" show="swAdvPNegTemporalTypeVerb">Be sure to key the feature <feature>negative</feature>
 on any new affix(es) that express negation on the verb that you added.</instruction>
 		<instruction id="NegAdvPTemporalTypeWordInstruction2" show="swAdvPNegTemporalTypeWord">Be sure to key the features <feature>negative temporal</feature>
 on any new words that you added, and also make sure they will have the category <category>Adv</category>.</instruction>
-		<prompt>Ahora tome por lo menos uno de los ejemplos temporales negativos en la caja antedicha y utilícelo en una oración completa (sin tema o objeto negativa) aquí:</prompt>
+		<prompt>Ahora escriba por lo menos uno de los ejemplos temporales negativos en la caja antedicha en una oración completa (sin sujeto o objeto negativo) aquí:</prompt>
 		<textBox id="NegAdvPTemporalExample" dataItem="advTemporalExample" rows="4" cols="50"/>
 		<br/>
 		<br/>
-		<prompt id="NegAdvPLocativeTypeAffixInstruction" show="swAdvPNegLocativeTypeAffix">En <section number="3">Los adverbios y sus frases - Los adverbios del lugar</section> usted indicó que su idioma no expresa los adverbios negativos de lugar (significado 'nowhere' "en ninguna parte") como una palabra separada, pero algo como afijo verbal. En esa sección, usted dio los ejemplos siguientes de los afijos negativos de lugar juntados a los verbos.  Usted puede agregar cualquier dato adicional que usted piense en ahora.</prompt>
-		<prompt id="NegAdvPLocativeTypeVerbInstruction" show="swAdvPNegLocativeTypeVerb">En <section number="3">Los adverbios y sus frases - Los adverbios del lugar</section> usted indicó que su idioma expresa solamente las ideas negativas de lugar usando un adverbio positivo de lugar escrito como palabra separada junto con el afijo verbal negativo. En esa sección, usted dio los ejemplos siguientes de tales adverbios de lugar y verbos negativos.  Usted puede agregar cualquier dato adicional que usted piense en ahora.</prompt>
-		<prompt id="NegAdvPLocativeTypeWordInstruction" show="swAdvPNegLocativeTypeWord">En <section number="3">Los adverbios y sus frases - Los adverbios del lugar</section> usted incorporó los ejemplos siguientes de adverbios de lugares negativos.  Usted puede agregar cualquier dato adicional que usted piense en ahora.</prompt>
-		<prompt id="NegAdvPLocativeTypeAffixPrompt" show="swAdvPNegLocativeTypeAffix">Los ejemplos de los afijos negativos del locative juntados a los verbos:</prompt>
+		<prompt id="NegAdvPLocativeTypeAffixInstruction" show="swAdvPNegLocativeTypeAffix">En <section number="3">Los adverbios y sus frases - Los adverbios locativos</section> usted indicó que su idioma no expresa los adverbios locativos negativos (que significa 'nowhere' "en ninguna parte") como una palabra independiente, pero como afijo verbal. En esa sección, usted dio los ejemplos siguientes de los afijos locativos negativos unidos a los verbos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+		<prompt id="NegAdvPLocativeTypeVerbInstruction" show="swAdvPNegLocativeTypeVerb">En <section number="3">Los adverbios y sus frases - Los adverbios locativos</section> usted indicó que su idioma expresa las ideas locativas negativas usando un adverbio locativo positivo escrito como palabra independiente junto con el afijo verbal negativo en el verbo. En esa sección, usted dio los ejemplos siguientes de adverbios locativos y verbos negativos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+		<prompt id="NegAdvPLocativeTypeWordInstruction" show="swAdvPNegLocativeTypeWord">En <section number="3">Los adverbios y sus frases - Los adverbios locativos</section> usted escribió los ejemplos siguientes de adverbios locativos negativos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+		<prompt id="NegAdvPLocativeTypeAffixPrompt" show="swAdvPNegLocativeTypeAffix">Algunos ejemplos de los afijos locativos negativos unidos a verbos:</prompt>
 		<textBox id="AdvPNegLocativeAffixExample" section="advp" dataItem="negLocativeAffixExample" show="swAdvPNegLocativeTypeAffix" rows="3"/>
 		 <instruction id="NegAdvPLocativeTypeAffixInstruction2" show="swAdvPNegLocativeTypeAffix">Be sure to key the features <feature>negative locative</feature>
 on any new affix(es) that you added.</instruction>
-		<prompt id="NegAdvPLocativeTypeWordPrompt" show="swAdvPNegLocativeTypeWord">Ejemplos de los adverbios negativos de lugar:</prompt>
-		<prompt id="NegAdvPLocativeTypeVerbPrompt" show="swAdvPNegLocativeTypeVerb">Ejemplos de los adverbios de lugar con los verbos negativos:</prompt>
+		<prompt id="NegAdvPLocativeTypeWordPrompt" show="swAdvPNegLocativeTypeWord">Ejemplos de los adverbios locativos negativos:</prompt>
+		<prompt id="NegAdvPLocativeTypeVerbPrompt" show="swAdvPNegLocativeTypeVerb">Algunos ejemplos de los adverbios locativos con verbos negativos:</prompt>
 		<textBox id="AdvPNegLocativeExample" section="advp" dataItem="negLocativeExample" show="swAdvPNegLocativeTypeWordOrVerb" rows="3"/>
  <instruction id="NegAdvPLocativeTypeVerbInstruction2" show="swAdvPNegLocativeTypeVerb">Be sure to key the feature <feature>negative</feature>
 on any new affix(es) that express negation on the verb that you added.</instruction>
 		<instruction id="NegAdvPLocativeTypeWordInstruction2" show="swAdvPNegLocativeTypeWord">Be sure to key the features <feature>negative locative</feature>
 on any new words that you added, and also make sure they will have the category <category>Adv</category>.</instruction>
-		<prompt>Ahora tome por lo menos uno de los ejemplos de lugar negativos en la caja antedicha y utilícelo en una oración completa (sin tema u objeto negativa) aquí:</prompt>
+		<prompt>Ahora escriba por lo menos uno de los ejemplos locativos negativos en la caja antedicha en una oración completa (sin sujeto u objeto negativo) aquí:</prompt>
 		<textBox id="NegAdvPLocativeExample" dataItem="advLocativeExample" rows="4" cols="50"/>
 		<br/>
 		<br/>
 		<radioGroup id="NegAdvVerbRequiredTable" show="swAdvPNegTypeWord">
 			<groupName dataItem="advVerbRequired" default="no">RAdvVerbRequired</groupName>
-			<prompt>Considerando los ejemplos completos de la oración usted ha dado, ¿el verbo o el auxiliar se requiere ser negativo cuando hay un adverbio negativo separado?</prompt>
-			<radio id="NegAdvVerbRequiredYes" dataValue="yes">Sí, un adverbio negativo no se permite sin también tener un verbo o un auxiliar negativo</radio>
-			<radio id="NegAdvVerbRequiredNo" dataValue="no">No, no requieren el verbo o al auxiliar ser negativo cuando hay un adverbio negativo</radio>
+			<prompt>Considerando los ejemplos de las oraciones completas usted ha dado, ¿se requiere el verbo o el auxiliar ser negativo cuando hay un adverbio negativo independiente?</prompt>
+			<radio id="NegAdvVerbRequiredYes" dataValue="yes">Sí, un adverbio negativo no se permite sin también tener un verbo negativo o un auxiliar negativo</radio>
+			<radio id="NegAdvVerbRequiredNo" dataValue="no">No, no requiere el verbo o al auxiliar ser negativo cuando hay un adverbio negativo</radio>
 		</radioGroup>
 		<br/>
 		<br/>
-		<prompt id="NegAuxWordInstruction" show="swIPNegAuxWord">En <section number="9.4">Las oraciones básicas - Los auxiliares</section> usted incorporó los ejemplos siguientes de los auxiliares negativos que se escriben como palabras separadas.  Usted puede agregar cualquier dato adicional que usted piense en ahora.</prompt>
+		<prompt id="NegAuxWordInstruction" show="swIPNegAuxWord">En <section number="9.4">Las oraciones básicas - Los auxiliares</section> usted escribió los ejemplos siguientes de los auxiliares negativos que se escriben como palabras independientes.  Usted puede agregar ejemplos adicionales ahora.</prompt>
 		<prompt id="IPNegAuxWordPrompt" show="swIPNegAuxWord">Ejemplos de las palabras auxiliares negativas:</prompt>
 		<textBox id="IPNegAuxWordExample" section="ip" dataItem="negAuxExample" rows="3" show="swIPNegAuxWord"/>
 		<instruction id="NegAuxWordInstruction2" show="swIPNegAuxWord">Be sure to key the feature <feature>negative</feature>
 on any new words that you added, and also make sure they will have the category <category>Aux</category>.</instruction>
-		<prompt id="NegAuxWordSentPrompt" show="swIPNegAuxWord">Ahora utilice por lo menos a uno de los auxiliares negativos antedichos en una oración completa (sin tema u objeto negativo) y incorporelo aquí:</prompt>
+		<prompt id="NegAuxWordSentPrompt" show="swIPNegAuxWord">Ahora escriba por lo menos a uno de los auxiliares negativos antedichos en una oración completa (sin sujeto u objeto negativo) aquí:</prompt>
 		<textBox id="NegAuxWordSentExample" dataItem="auxExample" rows="4" cols="50" show="swIPNegAuxWord"/>
-		<prompt id="NegAuxAffixInstruction" show="swIPNegAuxAffix">En <section number="9.4">Las oraciones básicas - Los auxiliares</section> usted incorporó los ejemplos siguientes de los afijos auxiliares negativos juntados a un auxiliar.  Usted puede agregar cualquier dato adicional que usted piense en ahora.</prompt>
-		<prompt id="IPNegAuxAffixPrompt" show="swIPNegAuxAffix">Ejemplos del auxiliar negativo afijos juntados a un auxiliar: </prompt>
+		<prompt id="NegAuxAffixInstruction" show="swIPNegAuxAffix">En <section number="9.4">Las oraciones básicas - Los auxiliares</section> usted escribió los ejemplos siguientes de los afijos auxiliares negativos unidos a un auxiliar.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+		<prompt id="IPNegAuxAffixPrompt" show="swIPNegAuxAffix">Algunos ejemplos de los afijos auxiliares negativos unidos a un auxiliar: </prompt>
 		<textBox id="IPNegAuxAffixExample" section="ip" dataItem="negAuxAffixExample" rows="3" show="swIPNegAuxAffix"/>
 		<instruction id="NegAuxAffixInstruction2" show="swIPNegAuxAffix">Be sure to key the feature <feature>negative</feature>
 on any new affix(es) that you added.</instruction>
-		<prompt id="NegAuxAffixSentPrompt" show="swIPNegAuxAffix">Ahora utilice por lo menos uno de los ejemplos antedichos de un afijo auxiliar negativo juntado a un auxiliar en una oración completa (sin temo u objeto negativo) y incorporelo aquí:</prompt>
+		<prompt id="NegAuxAffixSentPrompt" show="swIPNegAuxAffix">Ahora escriba por lo menos uno de los ejemplos de los afijos auxiliares negativos unidos a un auxiliar antedichos en una oración completa (sin sujeto u objeto negativo) aquí:</prompt>
 		<textBox id="NegAuxAffixSentExample" dataItem="auxAffixExample" rows="4" cols="50" show="swIPNegAuxAffix"/>
-		<prompt id="NegVerbInstruction" show="swIPNegVerb">En <section number="9.4">Las oraciones básicas - Los auxiliares</section> you keyed the following examples of the negative verbal affix(es) attached to a verb.  Usted puede agregar cualquier dato adicional que usted piense en ahora.</prompt>
-		<prompt id="IPNegVerbPrompt" show="swIPNegVerb">Ejemplos de los afijos verbales negativos juntados a un verbo:</prompt>
+		<prompt id="NegVerbInstruction" show="swIPNegVerb">En <section number="9.4">Las oraciones básicas - Los auxiliares</section> usted escribió los ejemplos siguientes de los afijos verbales negativos unidos a un verbo.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+		<prompt id="IPNegVerbPrompt" show="swIPNegVerb">Algunos ejemplos de los afijos verbales negativos unidos a un verbo:</prompt>
 		<textBox id="IPNegVerbExample" section="ip" dataItem="negVerbExample" rows="3" show="swIPNegVerb"/>
 		<instruction id="NegVerbInstruction2" show="swIPNegVerb">Be sure to key the feature <feature>negative</feature>
 on any new affix(es) that you added.</instruction>
-		<prompt id="NegVerbPrompt" show="swIPNegVerb">Ahora tome varios de los ejemplos de verbos negativos arriba y utilice cada uno en una oración completa (sin ctema u objeto negativo) aquí:</prompt>
+		<prompt id="NegVerbPrompt" show="swIPNegVerb">Ahora escriba varios de los ejemplos de verbos negativos arriba en oraciones completas (sin sujeto u objeto negativo) aquí:</prompt>
 		<textBox id="NegVerbSentExample" dataItem="verbAffixExample" rows="4" cols="50" show="swIPNegVerb"/>
 		<br/>
 		<br/>
 		<radioGroup id="NegAuxVerbRequiredTable" show="swIPNegAuxAndVerb">
 			<groupName dataItem="auxVerbRequired" default="no">RAuxVerbRequired</groupName>
-			<prompt>Considerando los ejemplos completos de la oración usted ha dado, ¿el verbo o el auxiliar se requiere ser negativo cuando hay un auxiliar negativo?</prompt>
-			<radio id="NegAuxVerbRequiredYes" dataValue="yes">Sí, un auxiliar negativo no se permite sin también tener un verbo negativo</radio>
-			<radio id="NegAuxVerbRequiredNo" dataValue="no">No, no requieren el verbo ser negativo cuando hay un auxiliar negativo</radio>
+			<prompt>Considerando los ejemplos de las oraciones completas usted ha dado, ¿se requiere el verbo ser negativo cuando hay un auxiliar negativo?</prompt>
+			<radio id="NegAuxVerbRequiredYes" dataValue="yes">Sí, no se permite a un auxiliar negativo sinoque el verbo también es negativo</radio>
+			<radio id="NegAuxVerbRequiredNo" dataValue="no">No, el verbo no se requiere ser negativo cuando hay un auxiliar negativo</radio>
 		</radioGroup>
 		<br/>
 		<br/>

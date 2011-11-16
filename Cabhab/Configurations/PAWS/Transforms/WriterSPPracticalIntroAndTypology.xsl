@@ -6,14 +6,14 @@
 		<p>
 <xsl:text>Ésta es una descripción del sintaxis de </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> basada en las respuestas dadas al programa de PAWS. Esta gramática descriptiva está escrita como una gramática práctica que puede ser útil para la comunidad del idioma así como para la documentar la mayor parte del idioma.</xsl:text>
+<xsl:text> basada en las respuestas dadas al programa de PAWS. Esta gramática descriptiva está escrita como una gramática práctica que puede ser útil para la comunidad del idioma así como para documentar la mayor parte del idioma.</xsl:text>
 </p>
 		<p>
 <object type="tComment">Una vez que se termina de ingresar los datos al programa de PAWS, este archivo puede servir como borrador para preparar una gramática más completa.</object>
@@ -22,13 +22,13 @@
 <object type="tComment">Parte de la información dada puede ser inexacta hasta que usted haya terminado de ingresar los datos de cada página del programa de PAWS, porque se basa en los datos predeterminados que se refieren a la posición de elementos, los cuales se muestran como ____ hasta que usted haya terminado la página correspondiente en el programa de PAWS.</object>
 </p>
 		<p>
-<object type="tComment">¡NO MODIFIQUE ESTE ARCHIVO HASTA HABER TERMINADO DE INGRESAR TODOS LOS  DATOS EN EL PROGRAMA DE PAWS, porque si no su trabajo será sobrescrito por el programa! Después de terminar de  contestar  todas las preguntas de PAWS, le sugerimos que guarde este archivo con otro nombre antes de corregir su gramática.</object>
+<object type="tComment">¡NO MODIFIQUE ESTE ARCHIVO HASTA HABER TERMINADO DE INGRESAR TODOS LOS  DATOS EN EL PROGRAMA DE PAWS, porque si no su trabajo será sobrescrito por el programa! Después de terminar de  contestar  todas las preguntas de PAWS, le sugerimos que guarde este archivo con otro nombre antes de corregir su gramática.  También, le sugerimos que cheque especialmente la sección acerca de los pronombres a ver si es correcto.  Si no, puede cambiar sus respuestas en PAWS antes de empezar editando este documento.</object>
 </p>
 		<p>
 <xsl:text>El idioma </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -40,8 +40,8 @@
 <object type="tComment">(ponga el número aquí)</object>
 <xsl:text> hablantes. El </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -56,8 +56,8 @@
 			<p>
 <xsl:text>Las grafías que se usan para escribir el </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -79,18 +79,18 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -99,474 +99,498 @@
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
-					</tr>                    <tr>
+					</tr>
+					<tr>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA LA GRAFÍA</langData>
+</xsl:attribute>ESCRIBA_LA_GRAFÍA</langData>
 						</td>
 						<td align="left">
 							<langData>
 <xsl:attribute name="lang">
 <xsl:text>lVernacular</xsl:text>
-</xsl:attribute>ESCRIBA UN EJEMPLO</langData>
+</xsl:attribute>ESCRIBA_UN_EJEMPLO</langData>
 						</td>
 						<td align="left">
 							<gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+<xsl:text>ESCRIBA_LA_GLOSA</xsl:text>
 </gloss>
 						</td>
 					</tr>
@@ -654,8 +678,8 @@
 			<p>
 <xsl:text>Las palabras en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -663,8 +687,8 @@
 </xsl:choose>
 <xsl:text> aprecen en la primera línea. En la segunda línea se presenta una traducción literal en español, palabra por palabra, dando la palabra de español que está el más cercano al significado de la palabra en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -672,8 +696,8 @@
 </xsl:choose>
 <xsl:text>. Si es necesario usar más de una palabra en español para expresar el significado de la palabra en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -681,8 +705,8 @@
 </xsl:choose>
 <xsl:text>, estas palabras del español serán separadas por un punto. Siempre que una o más de las palabras en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -719,8 +743,8 @@
 		<p>
 <xsl:text>El orden básico de palabras en </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -765,7 +789,7 @@
 <lineGroup>
 <line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>INCOPORE UN EJEMPLO AQUÍ</langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </line>
 <xsl:call-template name="DoWordGloss" />
 <xsl:call-template name="DoMorphemeGloss" />
@@ -779,8 +803,8 @@
 <p>
 <xsl:text>De acuerdo con la tipología núcleo inicial, </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -795,8 +819,8 @@
 <p>
 <xsl:text>Al contrario de la tipología núcleo inicial, </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -811,8 +835,8 @@
 <p>
 <xsl:text>El </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -827,8 +851,8 @@
 <p>
 <xsl:text>De acuerdo con la tipología núcleo final, </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -843,8 +867,8 @@
 <p>
 <xsl:text>Al contrario de la tipología núcleo final, </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -881,8 +905,8 @@
 <xsl:if test="normalize-space(//relcl/@exist)='no'">
 				<xsl:text>El </xsl:text>
 				<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -906,8 +930,8 @@
 		<p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -936,8 +960,8 @@
 <p>
 <xsl:text>El </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>
@@ -952,8 +976,8 @@
 <p>
 <xsl:text>El </xsl:text>
 <xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langName)) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langName)" />
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
 <xsl:text>Vernacular</xsl:text>

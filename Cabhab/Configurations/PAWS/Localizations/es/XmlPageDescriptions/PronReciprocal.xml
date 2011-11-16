@@ -3,27 +3,27 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronReciprocal" count="4/8">
 	<title level="2">Los pronombres - Los rrecíprocos</title>
-	<introduction>Los recíprocos son similares a los reflexivos salvo que ocurren solamente con los temas plurales. Pueden ser de la misma manera formados reflexivos son, o pueden ser distintos. Por ejemplo, en español, las formas recíprocas son frases: <example>el uno al otro</example> y <example>uno a otro</example>.  Algunos idiomas usan solamente un afijo verbal de indicar la acción recíproca del tema plural, otros tiene pronombres separados, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no marcan la acción recíproca en absoluto.</introduction>
+	<introduction>Los recíprocos son similares a los reflexivos, salvo que se presentan solamente con sujetos plurales. Pueden formarse de la misma manera que los reflexivos, o pueden ser distintos. Por ejemplo, en español, las formas recíprocas son frases: <example>el uno al otro</example> y <example>uno a otro</example>.  Algunos idiomas usan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no marcan la acción recíproca en absoluto.</introduction>
 	<form section="pron">
 		<radioGroup>
 			<groupName dataItem="recip" default="yes">RPronRecip</groupName>
-			<prompt>¿Su lengua tiene recíprocos?</prompt>
+			<prompt>¿Hay recíprocos en su idioma?</prompt>
 			<radio id="PronRecipNo" dataValue="no">No</radio>
 			<radio id="PronRecipVerbal" dataValue="verbal">Sí, un afijo verbal indica la acción recíproca</radio>
 			<radio id="PronRecipYes" dataValue="yes">Sí, un pronombre especial o una frase nominal indica la acción recíproca</radio>
 		</radioGroup>
 		<prompt id="PronRecipExamples" show="swPronRecipYesOrVerbal">
-			<br/>Incorpore algunos ejemplos aquí:
+			<br/>Escriba algunos ejemplos aquí:
 		</prompt>
 		<textBox id="PronRecipExample" dataItem="recipExample" show="swPronRecipYesOrVerbal"/>
 		<prompt id="PronRecipSentExamples" show="swPronRecipYesOrVerbal">
-			<br/>Ahora incluya los ejemplos en oraciones simples aquí:
+			<br/>Ahora escriba los ejemplos en oraciones simples aquí:
 		</prompt>
 		<textBox id="PronRecipSentExample" dataItem="recipSentExample" show="swPronRecipYesOrVerbal"/>
 		<radioGroup id="PronRecipYesTable" show="swPronRecipYes">
 			<groupName dataItem="recipAffix" default="yes">RPronRecipAffix</groupName>
 			<prompt>
-				<br/>¿Los recíprocos son construidos agregando un afijo a otros pronombres?</prompt>
+				<br/>¿Son construidos los recíprocos agregando un afijo a otros pronombres?</prompt>
 			<radio id="PronRecipAffixYes" dataValue="yes">Sí, uno o más afijos se eligen entre para hacer otro pronombre un recíproco</radio>
 			<radio id="PronRecipAffixNoWord" dataValue="noWord">No, son palabras distintas</radio>
 			<radio id="PronRecipAffixNoNoun" dataValue="noNoun">No, una frase que consiste en cierto sustantivo con un pronombre como el poseedor se utiliza</radio>

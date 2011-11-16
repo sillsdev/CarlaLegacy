@@ -2,66 +2,66 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPAdjP" count="1/1">
-	<title level="2">Las frases nominales - Las frases del adjetivo como modificantes</title>
-	<introduction>Los frases del adjetivo venga próximo, discutido anterior en <section number="4">Los adjetivos y sus frases</section>.  Esto significa que podremos analizar frases nominales tales como éstos en inglés:</introduction>
+	<title level="2">Las frases nominales - Las frases del adjetivo como modificadores</title>
+	<introduction>Las frases del adjetivo fueron discutidas anteriormente en  <section number="4">Los adjetivos y sus frases</section>.  Las frases del adjetivo se presentan cerca del sustantivo.  Algunas frases nominales en inglés con adjetivos son:</introduction>
 	<EnglishExample>
 		<exItem label="1.">just those very few old, dirty books. 'apenas ésos muy pocos libros viejos, sucios'</exItem>
-		<exItem label="2.">all the boy's many black dogs. 'todo los muchos perros negros delo muchacho'</exItem>
+		<exItem label="2.">all the boy's many black dogs. 'todo los muchos perros negros del muchacho'</exItem>
 		<exItem label="3.">only the first one hundred very eager young boys. 'solamente los primeros cientos muchachos jovenes muy impacientes'</exItem>
 	</EnglishExample>
-	<introduction>Mientras que los ejemplos ingleses demuestran, más de una frase del adjetivo se permita.<span id="NPAdjPRecurringIntro" show="swNotPractical">  This will be handled in the syntactic parser by a recursive rule.</span></introduction>
+	<introduction>Mientras que los ejemplos en inglés demuestran, todos los adjetivos se presentan antes del sustantivo, y, desemejante de los otros modificadores, se permita más de una frase del adjetivo. <span id="NPAdjPRecurringIntro" show="swNotPractical">  This will be handled in the syntactic parser by a recursive rule.</span>  En español, los adjetivos se presentan después del sustantivo y se permite solamente una frase del adjetivo, a menos que los adjetivos son coordinados.</introduction>
 	<form section="np">
-		<prompt>Incorpore sus ejemplos aquí:</prompt>
+		<prompt>Escriba algunos ejemplos de su idioma aquí:</prompt>
 		<textBox id="NPAdjpExample" dataItem="adjpExample"/>
 		<br/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="adjpPos" default="unknown" position="yesSpec">RNPAdjPPos</groupName>
-			<prompt>¿De dónde las frases del adjetivo ocurren con respecto al sustantivo?</prompt>
+			<prompt>¿Dónde se presentan las frases del adjetivo con respecto al sustantivo?</prompt>
 			<radio id="NPAdjPPosBefore" dataValue="before">Antes</radio>
 			<radio id="NPAdjPPosAfter" dataValue="after">Después</radio>
 			<radio id="NPAdjPPosEitherSide" dataValue="either">Cualquier lado</radio>
 			<radioGroup id="NPAdjPPosEitherSideTable" show="swNPAdjPPosEitherSide">
 				<groupName dataItem="adjpEither" default="unrestricted">RNPAdjPPosEitherSideEither</groupName>
-				<prompt>¿Pueden todas las frases del adjetivo aparecer de cualquier lado del sustantivo?</prompt>
+				<prompt>¿Pueden presentarse todas las frases del adjetivo de cualquier lado del sustantivo?</prompt>
 				<radio id="NPAdjPPosEitherSideEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="NPAdjPPosEitherSideEitherRestricted" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+				<radio id="NPAdjPPosEitherSideEitherRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
 			</radioGroup>
 		</radioGroup>
 		<br/>
 		<br/>
-		<introduction>Los participios o las frases del participio pueden también actuar como adjetivos en la modificación de un sustantivo en muchas idiomas, aunque no en español. Algunos ejemplos ingleses con el participio o la frase del participio acorchetada incluyen:</introduction>
+		<introduction>Los participios o las frases del participio pueden también actuar como adjetivos en la modificación de un sustantivo en muchas idiomas, aunque no en español.  Algunos ejemplos en inglés con el participio o la frase del participio acorchetada son: </introduction>
 		<EnglishExample>
 			<exItem label="1.">the bright, [shining] sun. 'el brillante, [brillando] sol'</exItem>
 			<exItem label="2.">my [crying] child. 'mi niño, [gritando]'</exItem>
 			<exItem label="3.">the books [loved by millions]. 'los libros [amados por millones]'</exItem>
 		</EnglishExample>
-		<prompt>Incorpore ejemplos similares su idioma aquí:</prompt>
+		<prompt>Escriba ejemplos similares de su idioma aquí:</prompt>
 		<textBox id="NPAdjPPartExample" dataItem="partExample"/>
 		<br/>
 		<instruction id="NPAdjPInstruction">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Basic, Single-Clause Sentences - Inflection Features</section>
 		</instruction>
 		<br/>
-		<introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Idiomas que cambian el caso del sustantivo principal cuando un poseedor es actual normalmente también cambio el caso de los adjetivos de intervención a emparejar. Algunos idiomas de este tipo también cambian el caso del sustantivo principal cuando solamente un modificante adjetival está presente, incluso cuando no hay poseedor.
+		<introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Los idiomas que cambian el caso del sustantivo principal cuando hay un poseedor  normalmente también cambian los casos de los adjetivos correspondientes para concordar. Algunos idiomas de este tipo también cambian el caso del sustantivo principal cuando solamente un modificar adjetival está presente, incluso cuando no hay poseedor.
 <br/>
 			<br/>
-			Además, algunos idiomas del último tipo tienen un afijo abierto que marque el caso de genitivo (o el caso normal de poseedores) en el sustantivo principal para indicar que debe haber un adjetivo o un poseedor en esa frase nominal. En esta situación, el adjetivo y/o el poseedor también estarán en caso de genitivo (o el caso normal de poseedores), aunque la marca del caso no será abierta en el modificante más alto de la frase nominal. </introduction>
+			Además, algunos idiomas de este último tipo tienen un afijo que indica el caso de genitivo (o el caso normal de poseedores) en el sustantivo principal para indicar que debe haber un adjetivo o un poseedor en esa frase nominal. En esta situación, el adjetivo y/o el poseedor también estarán en caso de genitivo (o el caso normal de poseedores), aunque lel indicador de caso no será evidente en el modificador más adelante en la frase nominal. </introduction>
 <br/>
 		<radioGroup id="NPAdjPCaseChangeTable" show="swNPPossNounCaseChangeYes">
 			<groupName dataItem="adjpCaseChange" default="no">RNPAdjPCaseChange</groupName>
 			<prompt>
-				¿La presencia de un adjetivo cambia la marca del caso en el sustantivo principal para emparejar el caso normal de un poseedor, con o sin la presencia del poseedor también? </prompt>
-			<radio id="NPAdjPCaseChangeNo" dataValue="no">No, el caso del sustantivo principal cambia solamente cuando un poseedor está presente, aunque en esa situación que un adjetivo de intervención puede/debe que también llevar este caso</radio>
-			<radio id="NPAdjPCaseChangeYes" dataValue="yes">Sí, el caso del sustantivo principal cambia para emparejar el caso normal de un poseedor incluso si apenas un modificante adjetival está presente</radio>
+				¿La presencia de un adjetivo cambia el indicador del caso en el sustantivo principal para concordar con el caso normal de un poseedor, con o sin la presencia del poseedor también? </prompt>
+			<radio id="NPAdjPCaseChangeNo" dataValue="no">No, el caso del sustantivo principal cambia solamente cuando un poseedor está presente, aunque en esa situación un adjetivo puede/debe que también llevar este caso</radio>
+			<radio id="NPAdjPCaseChangeYes" dataValue="yes">Sí, el caso del sustantivo principal cambia para concordar con el caso normal de un poseedor incluso si apenas un modificante adjetival está presente</radio>
 			<radioGroup id="NPAdjPCaseAffixTable" show="swNPAdjPCaseChangeYes">
 				<groupName dataItem="adjpCaseAffix" default="no">RNPAdjPCaseAffix</groupName>
 				<prompt>
-					¿Hay un afijo abierto del caso que marque el caso <span id="NPAdjPCaseAffixGenPrompt" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitPrompt" show="swNPCaseSplitNotGen">or </span>
+					¿Hay un afijo del caso que indica el caso <span id="NPAdjPCaseAffixGenPrompt" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitPrompt" show="swNPCaseSplitNotGen">or </span>
 					<span id="NPAdjPCaseAffixErgPrompt" show="swNPPossCaseErg">ergativo </span>
 					<span id="NPAdjPCaseAffixAbsPrompt" show="swNPPossCaseAbs">absolutivo </span>(el caso normal de poseedores) en el sustantivo principal que, cuando presente, indica que debe haber un adjetivo o un poseedor en esa frase nominal?</prompt>
-				<radio id="NPAdjPCaseAffixNo" dataValue="no">No, la marca del caso <span id="NPAdjPCaseAffixGenNoSpan" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitNoSpan" show="swNPCaseSplitNotGen">or </span>
+				<radio id="NPAdjPCaseAffixNo" dataValue="no">No, el indicador de caso <span id="NPAdjPCaseAffixGenNoSpan" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitNoSpan" show="swNPCaseSplitNotGen">or </span>
 					<span id="NPAdjPCaseAffixErgNoSpan" show="swNPPossCaseErg">ergativo </span>
-					<span id="NPAdjPCaseAffixAbsNoSpan" show="swNPPossCaseAbs">absolutivo </span>no se maneja de esta manera distintiva</radio>
+					<span id="NPAdjPCaseAffixAbsNoSpan" show="swNPPossCaseAbs">absolutivo </span>no se marca con un afijo en esta manera</radio>
 				<radio id="NPAdjPCaseAffixYesPrefix" dataValue="yesPrefix">Sí, un prefijo: cuando el prefijo abierto del caso <span id="NPAdjPCaseAffixGenYesPrefixSpan" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitYesPrefixSpan" show="swNPCaseSplitNotGen">o </span>
 					<span id="NPAdjPCaseAffixErgYesPrefixSpan" show="swNPPossCaseErg">ergativo </span>
 					<span id="NPAdjPCaseAffixAbsYesPrefixSpan" show="swNPPossCaseAbs">absolutivo </span>está presente en el sustantivo principal, indica que un modificante adjetival y/o un poseedor deben estar presentes en la frase. (Si el adjetivo se marca con este prefijo <span id="NPAdjPCaseAffixGenYesPrefixSpan1" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitYesPrefixSpan1" show="swNPCaseSplitNotGen">or</span>
@@ -77,9 +77,9 @@
 				<instruction id="NPAdjPCaseChangeYesInstruction" show="swNPAdjPCaseChangeYes">As noted previously, the grammar rules needed to parse sentences with noun phrases modified by either a possessor or an adjective in your language with PC-Patr are not currently available within PAWS.  Please contact <a href="mailto:cheri_black@sil.org">Cheri_Black@sil.org</a> for help.</instruction>
 		<radioGroup>
 			<groupName dataItem="adjpAgree" default="no">RNPAdjPAgree</groupName>
-			<prompt>Do adjectives carry any marking to agree with the noun they modify?</prompt>
+			<prompt>¿Hay un indicador en los adjetivos que concuerda con el sustantivo que modifican?</prompt>
 			<radio id="NPAdjPAgreeNo" dataValue="no">No</radio>
-			<radio id="NPAdjPAgreeYes" dataValue="yes">Yes</radio>
+			<radio id="NPAdjPAgreeYes" dataValue="yes">Sí</radio>
 		</radioGroup>
 		<instruction id="NPAdjPCaseAffixYesPrefixInstruction" show="swNPAdjPCaseAffixYesPrefix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenPrefixSpan" show="swNPPossCaseGen">
 				<feature>genitive_prefix </feature>

@@ -2,33 +2,33 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPPossessorAgreement" count="2/2">
-	<title level="2">Las frases nominales - El acuerdo del poseedor</title>
-	<introduction>El acuerdo del poseedor viene normalmente en dos formas básicas:
+	<title level="2">Las frases nominales - La concordancia del poseedor</title>
+	<introduction>La concordancia del poseedor se manifiesta comúnmente de dos formas básicas:
 <ul>
-	<li>Un afijo que ocurre en sustantivos "alienably" poseídos para indicar que están poseídas y por lo tanto debe tener un poseedor en la frase nominal. Los sustantivos "inalienably" poseídos no toman ninguna marca, sino deben siempre tener un poseedor. Éstos incluyen, pero no se limitan a, los términos del parentesco y las partes del cuerpo.</li>
-	<li>Un afijo que conviene con el poseedor (o expresa posiblemente al poseedor por sí mismo).</li>
+	<li>Un afijo que se encuentra en sustantivos poseídos alienables para indicar que están poseídas y por lo tanto deben tener un poseedor en la frase nominal. Los sustantivos poseídos inalienables no llevan ningún indicador, sino que siempre deben tener un poseedor. Éstos incluyen, pero no se limitan a, los términos del parentesco y las partes del cuerpo.</li>
+	<li>Un afijo que corresponde al poseedor (o expresa posiblemente al poseedor en sí mismo).</li>
 		</ul>
-Discutimos cada tipo en turno.
+	   Cada tipo será considerado en su orden correspondiente.
 		</introduction>
 	<form section="np">
 		<radioGroup>
 			<groupName dataItem="possAlienable" default="no">RNPPossAlienable</groupName>
-			<prompt>¿Su lengua distingue sustantivos en medio "alienably" e "inalienably" poseídos?</prompt>
+			<prompt>¿Su idioma distingue sustantivos en medio de poseídos alienables u inalienables?</prompt>
 			<radio id="NPPossAlienableNo" dataValue="no">No</radio>
 			<radio id="NPPossAlienableYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="NPPossAlienableYesPrompt" show="swNPPossAlienableYes">Incorpore los afijos que se utilizan para marcar sustantivos "alienably" poseídos cuando tienen un poseedor en la caja (cada uno en una línea separada si más de una). Utilice un guión después de que los caracteres alfabéticos para indicar un prefijo, un guión antes para indicar un sufijo, y guiones en ambos lados para indicar un infijo.
+		<prompt id="NPPossAlienableYesPrompt" show="swNPPossAlienableYes">Escriba los afijos que se utilizan para indicar sustantivos poseídos alienables cuando tienen un poseedor en la caja (cada uno en una línea separada si más de una). Utilice un guión después de los caracteres alfabéticos para indicar un prefijo, un guión antes para indicar un sufijo, y guiones en ambos lados para indicar un infijo.
 		</prompt>
 		<textBox id="NPPossAlienableYesAffixExample" dataItem="possAlienableAffixExample" rows="3" cols="20" show="swNPPossAlienableYes"/>
 		<br/>
 		<instruction id="NPPossAlienableYesInstruction" show="swNPPossAlienableYes">Key the feature <feature>possessed</feature> on the affix(es) that marks the alienably possessed nouns when they have a possessor.  Also, key the feature <feature>possessed</feature> on all inalienably possessed nouns so that a possessor will be required.</instruction>
 		<radioGroup id="NPPossAgrTable">
 			<groupName dataItem="possAgr" default="no">RNPPossAgr</groupName>
-			<prompt>¿Los sustantivos se marcan con un afijo que acuerda con el poseedor (o expresa posiblemente al poseedor por sí mismo)?</prompt>
+			<prompt>¿Se marcan los sustantivos con un afijo que concuerda con el poseedor (o expresa posiblemente al poseedor por sí mismo)?</prompt>
 			<radio id="NPPossAgrNo" dataValue="no">No</radio>
 			<radio id="NPPossAgrYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYes">Mire a través de las características en la carta abajo y compruebe cualquiera que su lengua utiliza.  <br/>
+		<prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYes">Mire a través de las características en la carta abajo y compruebe cualquiera que su idioma utiliza.  Para la concordancia de clase, substituya un tipo o un número como apropriado para ## en la gramática.<br/>
 			<featureChart>
 				<featureRow>
 					<featureType rowspan="5">persona</featureType>
@@ -97,11 +97,11 @@ Discutimos cada tipo en turno.
 				<featureRow>
 				<featureType rowspan="1">class</featureType>
 					<featureItem dataValue="npPossAgrPossClassClassNumber" name="NPPossAgrPossClassClassNumber">poss_class_##</featureItem>
-					<featureExplanation>el poseedor debe ser ## de la clase (substituya el ## por el número de clase hasta 30)</featureExplanation>
+					<featureExplanation>el poseedor debe ser de ## clase</featureExplanation>
 				</featureRow>
 			</featureChart>
 		</prompt>
-			<instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes">In the lexicon, add one or more features from the following list as appropriate to the affix entries. <br/>
+		<instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes">In the lexicon, add one or more features from the following list as appropriate to the affix entries. For class agreement, replace the ## with the appropriate class number up to 30 on the appropriate entries in the lexicon.<br/>
 				Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="7">Pronouns</section>.</instruction>
 		<instruction id="NPPossNounAgrKeyedInstruction" show="swNPArtAndOrDem">If you followed instructions, any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.</instruction>
 		<radioGroup id="NPPossNounAgrKeyedTable" show="swNPArtAndOrDemandNotPractical">

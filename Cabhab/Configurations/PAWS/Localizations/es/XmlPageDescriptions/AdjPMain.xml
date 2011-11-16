@@ -3,14 +3,14 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdjPMain" count="1/3">
 	<title>Los Adjetivos y sus frases</title>
-	<introduction>En muchas gramáticas, los números, cuantificadores, artículos, y los demonstratives se consideran los adjetivos, pero cada uno de ellas tiene una diversa distribución de los adjetivos de calificación, así que ellos cada uno tendrán categorías sintácticas distintas.
-		Esta sección se limita a considerar los adjetivos cualitativos que expresan tamaño, color, edad, textura, la forma, o la calidad. Una característica de este tipo de adjetivo es que más de uno puede modificar un sustantivo y en general la orden de los adjetivos puede cambiar (con un cambio leve en el significado debido al alcance de la modificación). Por ejemplo,
+	<introduction>En muchas gramáticas, los números, cuantificadores, artículos y demonstratives se consideran los adjetivos, pero cada uno de estos tiene una diversa distribución de los adjetivos cualitativos, así que cada uno tendrán categorías sintácticas distintas.
+		Esta sección se limita a considerar los adjetivos cualitativos que expresan tamaño, color, edad, textura, la forma, o la calidad. Una característica de este tipo de adjetivo es que más de uno puede modificar un sustantivo y en general la orden de los adjetivos puede cambiar (con un cambio pequeño en el significado debido al alcance de la modificación). Por ejemplo,
 		<example>las barras de cobre amarillo embotadas duras</example>contra <example>las barras de cobre amarillo duras embotadas</example> contra <example>las barras embotadas duras de cobre amarillo</example>, etc.
-		Esta característica de apilar adjetivos será tratada en la sección de frases nominales por una regla de la adjunción que permita la repetición.
+		<span id="AdjPNotPracticalSpan" show="swNotPractical"> Esta característica de apilar adjetivos será analizada en la sección de frases nominales por una regla que permita la repetición.</span>
 </introduction>
 	<introduction>Aquí necesitamos considerar otra vez qué tipos de palabras pueden modificar los adjetivos cualitativos ellos mismos.</introduction>
 	<EnglishExample>
-		<exItem>Algunos ejemplos españoles son:</exItem>
+		<exItem>Algunos ejemplos en español son:</exItem>
 		<exItem label="1.">
 			<u>muy</u> grande</exItem>
 		<exItem label="2.">
@@ -22,48 +22,48 @@
 		<exItem label="5.">
 			<u>muy fácilmente</u> olvidado</exItem>
 	</EnglishExample>
-	<introduction>No todas las combinaciones de palabras suceden debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras del grado y adverbios de la manera o frases del adverbio de la manera pueden modificar adjetivos.</introduction>
+	<introduction>No todas las combinaciones de palabras suceden debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras de grado y adverbios o frases del adverbio de modo pueden modificar adjetivos.</introduction>
 	<form section="adjp">
-		<prompt>Incorpore sus ejemplos aquí:</prompt>
+		<prompt>Escriba sus ejemplos aquí:</prompt>
 		<textBox id="AdjPExamples" dataItem="example"/>
 		<radioGroup>
 			<groupName dataItem="modifiers" default="no">RAdjPModifiers</groupName>
-			<prompt>¿Su idioma tiene palabras o frases que puedan modificar adjetivos?</prompt>
+			<prompt>¿Hay palabras o frases en su idioma que puedan modificar adjetivos?</prompt>
 			<radio id="AdjPModifiersNo" checked="yes" dataValue="no">No</radio>
-			<radio id="AdjPModifiersYesDegree" checked="yes" dataValue="yes">Sí - aunque solamente ciertas palabras del grado </radio>
+			<radio id="AdjPModifiersYesDegree" checked="yes" dataValue="yes">Sí - aunque solamente ciertas palabras de grado </radio>
 			<radioGroup id="AdjPModifiersYesDegreeTable" show="swAdjPModifiersYesDegree">
 				<groupName dataItem="degreePos" default="unknown" position="yesSpec">RDegreePos</groupName>
-				<prompt>¿De dónde las palabras del grado ocurren con respecto al adjetivo?</prompt>
+				<prompt>¿Dónde se presentan las palabras de grado con respecto al adjetivo?</prompt>
 				<radio id="AdjPDegreeBefore" checked="yes" dataValue="before">Antes del adjetivo</radio>
 				<radio id="AdjPDegreeAfter" checked="yes" dataValue="after">Después del adjetivo</radio>
-				<radio id="AdjPDegreeEitherSide" checked="yes" dataValue="either">De cualquier lado del adjetivo, pero de no ambos lados al mismo tiempo</radio>
-				<radio id="AdjPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del adjetivo, o de ambos lados al mismo tiempo</radio>
-				<radio id="AdjPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del adjetivo, o de ambos lados al mismo tiempo</radio>
-				<radio id="AdjPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del adjetivo, o de ambos lados al mismo tiempo</radio>
-				<radio id="AdjPDegreeBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+				<radio id="AdjPDegreeEitherSide" checked="yes" dataValue="either">De cualquier lado del adjetivo, pero no en ambos lados en la misma oración</radio>
+				<radio id="AdjPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del adjetivo, o en ambos lados en la misma oración</radio>
+				<radio id="AdjPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del adjetivo, o en ambos lados en la misma oración</radio>
+				<radio id="AdjPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del adjetivo, o en ambos lados en la misma oración</radio>
+				<radio id="AdjPDegreeBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
 				<radioGroup id="AdjPDegreeEitherSideTable" show="swAdjPDegreeEitherorBoth">
 					<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
-					<prompt>¿Pueden todas las palabras del grado aparecer de cualquier lado del adjetivo?</prompt>
+					<prompt>¿Pueden todas las palabras de grado presentarse de cualquier lado del adjetivo?</prompt>
 					<radio id="AdjPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="AdjPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+					<radio id="AdjPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
-			<radio id="AdjPModifiersYesManner" checked="yes" dataValue="yesManner">Sí - ambas ciertas palabras del grado y frases del adverbio de la manera</radio>
+			<radio id="AdjPModifiersYesManner" checked="yes" dataValue="yesManner">Sí - ambas ciertas palabras de grado y frases del adverbio de modo</radio>
 			<radioGroup id="AdjPModifiersYesMannerTable" show="swAdjPModifiersYesManner">
 				<groupName dataItem="mannerPos" default="unknown" position="yesSpec">RManner</groupName>
-				<prompt>¿De dónde estos modificadores ocurren con respecto al adjetivo?</prompt>
+				<prompt>¿Dónde se presentan estos modificadores con respecto al adjetivo?</prompt>
 				<radio id="AdjPMannerBefore" checked="yes" dataValue="before">Antes del adjetivo</radio>
 				<radio id="AdjPMannerAfter" checked="yes" dataValue="after">Después del adjetivo</radio>
-				<radio id="AdjPMannerEitherSide" checked="yes" dataValue="either">De cualquier lado del adjetivo, pero de no ambos lados al mismo tiempo</radio>
-				<radio id="AdjPMannerEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del adjetivo, o de ambos lados al mismo tiempo</radio>
-				<radio id="AdjPMannerBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del adjetivo, o de ambos lados al mismo tiempo</radio>
-				<radio id="AdjPMannerAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del adjetivo, o de ambos lados al mismo tiempo</radio>
-				<radio id="AdjPMannerBothSides" checked="yes" dataValue="both">Solamente en ambos lados al mismo tiempo</radio>
+				<radio id="AdjPMannerEitherSide" checked="yes" dataValue="either">De cualquier lado del adjetivo, pero no en ambos lados en la misma oración</radio>
+				<radio id="AdjPMannerEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del adjetivo, o en ambos lados en la misma oración</radio>
+				<radio id="AdjPMannerBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del adjetivo, o en ambos lados en la misma oración</radio>
+				<radio id="AdjPMannerAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del adjetivo, o en ambos lados en la misma oración</radio>
+				<radio id="AdjPMannerBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
 				<radioGroup id="AdjPMannerEitherSideTable" show="swAdjPMannerEitherorBoth">
 					<groupName dataItem="mannerEither" default="unrestricted">RMannerEitherSide</groupName>
-					<prompt>¿Pueden todos los modificadores aparecer de cualquier lado del adjetivo?</prompt>
+					<prompt>¿Pueden todos los modificadores presentarse de cualquier lado del adjetivo?</prompt>
 					<radio id="AdjPMannerEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="AdjPMannerEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos separados para cada lado</radio>
+					<radio id="AdjPMannerEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
 		</radioGroup>
@@ -83,6 +83,9 @@
 			<button id="AdjPMainNext" value="Next" goto="AdjPCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
 	<showWhen id="swAdjPModifiersYesDegree">
 		<whenRadio button="AdjPModifiersYesDegree"/>
 	</showWhen>

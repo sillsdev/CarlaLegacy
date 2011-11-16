@@ -579,7 +579,7 @@
 					<content>Como los ejemplos de las oraciones muestran, </content>
 					<case element="neg" attr="subjVerbRequired">
 						<caseText value="yes">un sujeto negativo no se permite sin también tener un verbo negativo o un auxiliar negativo</caseText>
-						<caseText value="no">el verbo o auxiliar debe ser negativo cuando el sujeto es negativo</caseText>
+						<caseText value="no">no requiere el verbo o auxiliar ser negativo cuando el sujeto es negativo</caseText>
 					</case>
 					<content> en </content>
 					<langName/>

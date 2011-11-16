@@ -2,16 +2,18 @@
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css">
-<title>Language Properties</title>
+<title>Las propiedades del idioma</title>
 <script language="jscript" id="clientEventHandlersJS">
-	// LanguageProperties.js
+// LanguageProperties.js
 
-	// variables used throughout functions below
-	var attr;
+// variables used throughout functions below
+var attr;
 
-	function Initialize() {
-	window.external.GetAnswerValue("//language/langName");
-	LangPropLangName.value = window.external.OutValue;
+function Initialize() {
+	window.external.GetAnswerValue("//language/langNames/langName[@lang='en']");
+	LangPropLangNameEn.value = window.external.OutValue;
+	window.external.GetAnswerValue("//language/langNames/langName[@lang='es']");
+	LangPropLangNameEs.value = window.external.OutValue;
 	window.external.GetAnswerValue("//language/langAbbr");
 	LangPropLangAbbr.value = window.external.OutValue;
 
@@ -27,16 +29,17 @@
 	Return.style.display = "";
 
 	Refresh()
-	}
-	function RLangPropRTL(radio) {
+}
+function RLangPropRTL(radio) {
 	radio.checked = true;
 	saveData();
 	Refresh();
-	}
+}
 
-	function saveData() {
+function saveData() {
 	var sTemp;
-	window.external.SetAnswerValue("//language/langName", LangPropLangName.value);
+	window.external.SetAnswerValue("//language/langNames/langName[@lang='en']", LangPropLangNameEn.value);
+	window.external.SetAnswerValue("//language/langNames/langName[@lang='es']", LangPropLangNameEs.value);
 	window.external.SetAnswerValue("//language/langAbbr", LangPropLangAbbr.value);
 
 	//TODO: figure what to do if any of these are missing!
@@ -50,52 +53,53 @@
 
 	window.external.LanguageNameChanged();
 	window.external.SaveData();
-	}
-	function ButtonLangPropFont() {
+}
+function ButtonLangPropFont() {
 	saveData();
 	window.external.ChangeFontInfo();
 	Initialize();
-	}
-	function ButtonNext() {
+}
+function ButtonNext() {
 	saveData();
 	window.navigate("LanguageFilesNewMode");
-	}
-	function Refresh() {
+}
+function Refresh() {
 	var valArray = new Array();
-	}
-</script></head>
+}
+  </script></head>
 <body onload="Initialize()">
-<h2>Propiedades de la Lengua</h2>
+	<h2>Las propiedades del idioma</h2>
 <div class="introduction">
-<p>The PAWS Starter Kit is for a particular language.  Certain
-information is needed.  Please enter the appropriate information
-below.</p>
+	<p>Se usa PAWS para un idioma particular.  Informacióon acerca de su idioma es necesario.  Por favor, excriba la información apropriada abajo.</p>
 </div><br><div class="form">
-<p style="margin-left: 0.125in">Enter the name of your language:<br></p>
-<textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangName" name="LangPropLangName" contenteditable="inherit"></textarea><br><br><p style="margin-left: 0.125in">Enter an abbreviation for your language (we suggest using the Ethnologue or ISO639-3 code):<br></p>
+	<p style="margin-left: 0.125in">Escriba el nombre de su idioma en inglés aquí:<br></p>
+<textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangNameEn" name="LangPropLangNameEn" contenteditable="inherit"></textarea>
+	<p style="margin-left: 0.125in">Escriba el nombre de su idioma en español aquí:<br></p>
+	<textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangNameEs" name="LangPropLangNameEs" contenteditable="inherit"></textarea>
+	<br><br><p style="margin-left: 0.125in">Escriba una abreviatura para su idioma aquí (sugerimos usar el codificación ISO639-3 o del Ethnologue):<br></p>
 <textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="4" id="LangPropLangAbbr" name="LangPropLangAbbr" contenteditable="inherit"></textarea>
-<p style="margin-left: 0.125in">The name of the font that will be used to display your language data is shown below.  Click on the 'Change font' button to change it or any of its font properties.<br></p>
+		<p style="margin-left: 0.125in">El nombre del font que se usará para escribir su idioma se muestra abajo.  Empuje el botón 'Change font' si quiere cambiar el font o sus propiedades.<br></p>
 <textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="40" id="LangPropFont" name="LangPropFont" contenteditable="false"></textarea>
 &nbsp;&nbsp;&nbsp;
 <input type="button" value=" Change Font " name="BLangPropFont" id="BLangPropFont" onclick="ButtonLangPropFont()" style="width: 85px; height: 24px"><table border="0" style="margin-left: 0.5in">
 <tr>
-<td colspan="2"><span class="radioPrompt">In what direction is your language written?</span></td>
+	<td colspan="2"><span class="radioPrompt">¿En qué dirreción se escriba su idioma?</span></td>
 </tr>
 <tr>
 <td valign="top"><input type="radio" name="RLangPropRTL" id="LangPropRTLLTR" onclick="RLangPropRTL(LangPropRTLLTR)" value="False"></td>
-<td width="99%" id="LangPropRTLLTRRPrompt" onclick="RLangPropRTL(LangPropRTLLTR)" value="False" onmouseover="this.style.cursor='default'">Left to right</td>
+<td width="99%" id="LangPropRTLLTRRPrompt" onclick="RLangPropRTL(LangPropRTLLTR)" value="False" onmouseover="this.style.cursor='default'">De la izquierda a la derecha</td>
 </tr>
 <tr>
 <td valign="top"><input type="radio" name="RLangPropRTL" id="LangPropRTLRTL" onclick="RLangPropRTL(LangPropRTLRTL)" value="True"></td>
-<td width="99%" id="LangPropRTLRTLRPrompt" onclick="RLangPropRTL(LangPropRTLRTL)" value="True" onmouseover="this.style.cursor='default'">Right to left</td>
+<td width="99%" id="LangPropRTLRTLRPrompt" onclick="RLangPropRTL(LangPropRTLRTL)" value="True" onmouseover="this.style.cursor='default'">De la derecha a la izquierda</td>
 </tr>
 </table>
 <div id="ShowBackNextButtons">
 <br/><input type="button" value="Next >" name="BNext" id="LangPropNext" onclick="ButtonNext()" style="width: 78px; height: 24px">
 </div>
 </div>
-<div align="center" id="Return"  >
-	<a href="LeftOffAt" onclick="saveData()" class="return">Return</a><br/>
+<div align="center" id="Return"  class="return" >
+<a href="LeftOffAt" onclick="saveData()">Regresar</a><br/>
 </div>
 </body>
 </html>

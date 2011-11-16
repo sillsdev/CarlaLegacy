@@ -2,30 +2,30 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="IPProDrop" count="1/1">
-	<title level="2">Las oraciones básicas - Los temas que falta</title>
-	<introduction>En algunos idiomas un tema, o a veces un objeto, puede ser faltado o inexpresado en su posición normal sintáctica.  Por ejemplo, en español la manera normal de decir el ingles "I buy a book" es <example>Compro un libro</example> en vez de algo con el pronombre sujeto abierto incluido: <example>Yo compro un libro</example>.
-		Esto no se permite en inglés, con excepción de imperativos. (El tema que falta de infinitivos en complementos subordinados será cubierto en <section number="10">Las cláusulas de complemento</section>.)  <br/>
+	<title level="2">Las oraciones básicas - Los sujetos que no deben estar presentes</title>
+	<introduction>En algunos idiomas un sujeto, o a veces un objeto, no debe estar presente en su posición normal sintáctica.  Por ejemplo, en español la manera normal de decir el ejemplo en inglés "I buy a book" es <example>Compro un libro</example> en vez de algo con el pronombre sujeto abierto incluido: <example>Yo compro un libro</example>.
+		Esto no se permite en inglés, con excepción de imperativos. (El sujeto de infinitivos que no estar presente en complementos subordinados será analizada en  <section number="10">Las cláusulas de complemento</section>.)  <br/>
 		<br/>
-		Algunos idiomas no son realmente idiomas que permiten los temas que falta, pero por lo menos algunos de los pronombres son clíticos que pueden juntar al verbo. Cuando sucede esto, no hay pronombre o frase nominal en la posición sujeta, así que la oración aparece igual que en un idioma verdadera que permite los temas que falta.</introduction>
+		Algunos idiomas no en realidad son idiomas que permiten los sujetos que no deben estar presentes, pero por lo menos algunos de los pronombres son clíticos que se unen al verbo. Cuando sucede esto, no hay pronombre o frase nominal en la posición del sujeto, así que la oración aparece igual que en un idioma verdadera que permite los sujetos que no deben estar presentes.</introduction>
 	<form section="ip">
-		<prompt>Incorpore cualquier ejemplo de temas faltado de su lidioma aquí, incluyendo imperativos y cualesquiera casos donde no hay pronombre o frase nominal en la posición sujeta:</prompt>
+		<prompt>Escriba ejemplos sin un sujeto expresado en su lidioma aquí, incluyendo imperativos y casos donde no hay pronombre o frase nominal en la posición del sujeto:</prompt>
 		<textBox id="IPExamplesProDropExample" dataItem="proDropExample" cols="50"/>
 		<radioGroup>
 			<groupName dataItem="proDrop" default="no">RIPProDrop</groupName>
 			<prompt>
-				<br/>¿Su lengua permite los temas que falta?</prompt>
-			<radio id="IPProDropNoImp" dataValue="noImp">No, como inglés, el tema debe ser abierto excepto en imperativos</radio>
-			<radio id="IPProDropNo" dataValue="no">No, el tema debe ser abierto incluso en imperativos</radio>
-			<radio id="IPProDropYes" dataValue="yes">Sí, permite los temas que falta</radio>
-			<radio id="IPProDropYesClitic" dataValue="yesClitic">El tema puede mirar como es falta debido al clíticos pronominales juntado al verbo</radio>
+				<br/>¿Permite su idioma los sujetos que no deben estar presentes?</prompt>
+			<radio id="IPProDropNoImp" dataValue="noImp">No, como inglés, el sujeto debe está presente excepto en imperativos</radio>
+			<radio id="IPProDropNo" dataValue="no">No, el sujeto debe está presente incluso en imperativos</radio>
+			<radio id="IPProDropYes" dataValue="yes">Sí, un sujeto no debe estar presente en cualquier tipo de oración</radio>
+			<radio id="IPProDropYesClitic" dataValue="yesClitic">El sujeto puede mirar como no está presente debido a los pronombres dependientes (clíticos pronominales) que se unen al verbo, pero no es un idioma verdadero que permite un sujeto que no está presente.</radio>
 		</radioGroup>
 		<instruction id="IPProDropImpInstruction">In the lexicon, mark any affixes that indicate imperative and any inherently imperative verbs with the feature <feature>imperative</feature>.</instruction>
 		<instruction id="IPProDropYesCliticInstruction" show="swIPProDropYesClitic">All of the pronouns that may attach as subject clitics need to have the appropriate agreement features added in the lexicon.  If a particular pronoun can stand alone in subject position and also may attach to the verb, add both sets of features, e.g. <feature>first singular first_subject singular_subject</feature>.</instruction>
 		<radioGroup id="IPProDropObject" show="swIPProDropYes">
 			<groupName dataItem="proDropObject" default="no">RIPProDropObject</groupName>
-			<prompt>¿Su lengua tiene marca del acuerdo del objeto en el verbo para permitir que el objeto falte?</prompt>
+			<prompt>¿Hay indicadores de concordancia en el verbo con el objeto que permite que el objeto no está presente?</prompt>
 			<radio id="IPProDropObjectNo" dataValue="no">No</radio>
-			<radio id="IPProDropObjectYes" dataValue="yes">Sí, permite los objetos que falta también</radio>
+			<radio id="IPProDropObjectYes" dataValue="yes">Sí, permite los objetos que no está presente también</radio>
 		</radioGroup>
 		<br/>
 		<buttons>

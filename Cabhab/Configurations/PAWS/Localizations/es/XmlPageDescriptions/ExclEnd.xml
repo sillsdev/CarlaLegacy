@@ -3,8 +3,8 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="ExclEnd" count="1/2">
 	<title>¡Enhorabuena!</title>
-	<introduction>Usted ahora ha terminado el programa de las PATAS. Usted puede ver los bosquejos de la gramática creados por chascar doble en los archivos de .htm.  <br></br>
-Por favor, guardar las versiones .xml bajo diverso nombre de fichero antes de usted comienzan a corregir. Para un redactor de XML agradable para el relato de la gramática, preferimos personalmente el redactor de XML de XMLMind. Usted puede descubrir más información en  <a href="http://www.xlingpaper.org/">http://www.xlingpaper.org/</a>.
+	<introduction>Usted ahora ha terminado el programa de PAWS. Usted puede ver los boradores de la gramática por chascar doble en los archivos de .htm.  <br></br>
+Por favor, guarde las versiones .xml bajo un diverso nombre de fichero antes de usted comienza a corregirlas. Para un redactor de XML agradable para el relato de la gramática, preferimos personalmente el redactor de XML de XMLMind. Usted puede descubrir más información en  <a href="http://www.xlingpaper.org/">http://www.xlingpaper.org/</a>.
 </introduction>
 	<form section="excl" transparent="no">
 	  <br/>

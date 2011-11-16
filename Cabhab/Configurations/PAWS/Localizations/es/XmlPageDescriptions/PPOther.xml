@@ -4,55 +4,55 @@
 <page id="PPOther" count="3/5">
 	<title level="2">Las frases preposicionales y/o posposicionales - Los otros complementos</title>
 	<introduction> Además, algunas preposiciones o posposiciones  pueden colocarse solamente sin un complemento, por ejemplo en las oraciones  <example>Vienen [adentro]</example> y <example>John turned the light [on/off] 'Juan dio vuelta a la luz [conectada/desconectada]'</example>.
-		También, considere si su idioma permite preposiciones o posposiciones ser trenzadas en preguntas, como en <example>¿Quién usted dio el libro [al _ ]?</example>
+		También, algunos idiomas permite preposiciones o posposiciones ser trenzadas en preguntas, como en <example>¿Quién usted dio el libro [al _ ]?</example>
 	</introduction>
 	<form section="pp">
 		<radioGroup>
 			<groupName dataItem="alone" default="no">RPPAlone</groupName>
-			<prompt>¿Hace su idioma permiten cualesquiera  <span id="PPPrepSpanO2" show="swPPPosPrep">preposiciones</span>
+			<prompt>¿Hay en su idioma algunas <span id="PPPrepSpanO2" show="swPPPosPrep">preposiciones</span>
 				<span id="PPPostSpanO2" show="swPPPosPost">posposiciones</span>
-				<span id="PPBothSpanO2" show="swPPPosBoth">preposiciones y/o posposiciones</span> a colocarse solamente como en ejemplos ingleses similares de los arriba?</prompt>
+				<span id="PPBothSpanO2" show="swPPPosBoth">preposiciones y/o posposiciones</span> que pueden colocarse solamente como en ejemplos similares de los arriba?</prompt>
 			<radio id="PPAloneNo" dataValue="no">No</radio>
 			<radio id="PPAloneYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="PPAloneYesPrompt" show="swPPAloneYes">Incorpore algunos ejemplos de las <span id="PPPrepSpanO1" show="swPPPosPrep">preposiciones</span>
+		<prompt id="PPAloneYesPrompt" show="swPPAloneYes">Escriba algunos ejemplos de las <span id="PPPrepSpanO1" show="swPPPosPrep">preposiciones</span>
 			<span id="PPPostSpanO1" show="swPPPosPost">posposiciones</span>
-			<span id="PPBothSpanO1" show="swPPPosBoth">preposiciones y posposiciones</span> del soporte solamente de su idioma incluida en oraciones completas simples aquí:</prompt>
+			<span id="PPBothSpanO1" show="swPPPosBoth">preposiciones y posposiciones</span> que pueden colocarse solamente en su idioma incluidas en oraciones completas simples aquí:</prompt>
 		<textBox id="PPCompAloneExample" dataItem="aloneExample" show="swPPAloneYes"/>
 		<br/>
 		<br/>
 		<instruction id="PPCliticOnlyAloneInstruction" show="swPPTypeCliticAloneYes">Since your language has only clitic <span id="PPPrepSpanO3" show="swPPPosPrep">prepositions,</span>
 			<span id="PPPostSpanO3" show="swPPPosPost">postpositions,</span>
 			<span id="PPBothSpanO3" show="swPPPosBoth">prepositions and postpositions,</span> it should not be possible for them to stand alone.  If you do have forms which can stand alone, go back and change the earlier answer to "some of each type".</instruction>
-		<introduction>La mayoría de los idiomas permiten adverbios de lugar como complementos de las preposiciones o posposiciones, por ejemplo <example>por allá</example> y <example>adentro aquí</example>.</introduction>
+		<introduction>La mayoría de los idiomas permiten adverbios locativos como complementos de las preposiciones o posposiciones, por ejemplo <example>por allá</example> y <example>adentro aquí</example>.</introduction>
 		<radioGroup>
 			<groupName dataItem="locative" default="no">RPPLocative</groupName>
-			<prompt>¿Su idioma permite adverbios de lugar como complementos de <span id="PPPrepSpanO5" show="swPPPosPrep">preposiciones?</span>
+			<prompt>¿Permite su idioma adverbios locativos como complementos de <span id="PPPrepSpanO5" show="swPPPosPrep">preposiciones?</span>
 				<span id="PPPostSpanO5" show="swPPPosPost">posposiciones?</span>
 				<span id="PPBothSpanO5" show="swPPPosBoth">preposiciones y/o posposiciones?</span>
 			</prompt>
 			<radio id="PPLocativeNo" dataValue="no">No</radio>
 			<radio id="PPLocativeYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="PPLocativeYesPrompt" show="swPPLocativeYes">Incorpore algunos ejemplos con adverbios de lugar como complementos aquí:</prompt>
+		<prompt id="PPLocativeYesPrompt" show="swPPLocativeYes">Escriba algunos ejemplos con adverbios locativos como complementos aquí:</prompt>
 		<textBox id="PPCompLocExample" dataItem="locExample" show="swPPLocativeYes"/>
 		<br/>
 		<br/>
 		<instruction id="PPCliticOnlyLocativeInstruction" show="swPPTypeCliticLocativeYes">Since your language has only clitic <span id="PPPrepSpanO6" show="swPPPosPrep">prepositions,</span>
 			<span id="PPPostSpanO6" show="swPPPosPost">postpositions,</span>
 			<span id="PPBothSpanO6" show="swPPPosBoth">prepositions and postpositions,</span> we will assume that they can attach to adverbs, but the phrasal category in this situation wll remain AdvP, not change to PP.</instruction>
-		<introduction>Las preposiciones y posposiciones locativas son un grupo especial en eso en algunos idiomas que pueden tomar otra frase preposicional o posposicional locativa como su complemento. Los ejemplos ingleses de este tipo incluyen: <example>up [to the top] 'encima [al borde]'</example>, <example>around [behind the shed] 'alrededor [detrás del cobertizo]'</example> y <example>over [by the table] 'sobre [cerca de la mesa]'</example>.</introduction>
+		<introduction>Las preposiciones y posposiciones locativas forman una categoría especial porque en algunos idiomas pueden tener otra frase preposicional o posposicional locativa como su complemento. Algunos ejemplos en inglés son:  <example>up [to the top] 'encima [al borde]'</example>, <example>around [behind the shed] 'alrededor [detrás del cobertizo]'</example> y <example>over [by the table] 'sobre [cerca de la mesa]'</example>.</introduction>
 		<radioGroup>
 			<groupName dataItem="ppComp" default="no">RPPCompPP</groupName>
-			<prompt>¿Su idioma tiene algunas <span id="PPPrepSpanO9" show="swPPPosPrep">preposiciones</span>
+			<prompt>¿Hay en su idioma algunas <span id="PPPrepSpanO9" show="swPPPosPrep">preposiciones</span>
 				<span id="PPPostSpanO9" show="swPPPosPost">posposiciones</span>
-				<span id="PPBothSpanO9" show="swPPPosBoth">preposiciones y/o posposiciones</span> locativas que pueden tomar otra frase <span id="PPPrepSpanO9a" show="swPPPosPrep">preposicional</span>
+				<span id="PPBothSpanO9" show="swPPPosBoth">preposiciones y/o posposiciones</span> locativas que pueden tener otra frase <span id="PPPrepSpanO9a" show="swPPPosPrep">preposicional</span>
 				<span id="PPPostSpanO9a" show="swPPPosPost">posposicional</span>
 				<span id="PPBothSpanO9a" show="swPPPosBoth">preposicional y/o posposicional</span> locativa como su complemento?</prompt>
 			<radio id="PPCompPPNo" dataValue="no">No</radio>
 			<radio id="PPCompPPYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="PPCompPPYesPrompt" show="swPPCompPPYes">Incorpore algunos ejemplos de las frases <span id="PPPrepSpanO8a" show="swPPPosPrep">preposicionales</span>
+		<prompt id="PPCompPPYesPrompt" show="swPPCompPPYes">Escriba algunos ejemplos de las frases <span id="PPPrepSpanO8a" show="swPPPosPrep">preposicionales</span>
 			<span id="PPPostSpanO8a" show="swPPPosPost">posposicionales</span>
 			<span id="PPBothSpanO8a" show="swPPPosBoth">preposicionales y/o posposicionales</span> locativas que son complementos de <span id="PPPrepSpanO8" show="swPPPosPrep">preposiciones</span>
 			<span id="PPPostSpanO8" show="swPPPosPost">posposiciones</span>
@@ -68,16 +68,16 @@
 			<span id="PPBothSpanO10" show="swPPPosBoth">prepositions and postpositions,</span> if two locative <span id="PPPrepSpanO11" show="swPPPosPrep">prepositions</span>
 			<span id="PPPostSpanO11" show="swPPPosPost">postpositions</span>
 			<span id="PPBothSpanO11" show="swPPPosBoth">prepositions or postpositions</span> attach, it will still come out as a single locative PP (or locative AdvP if the head is an adverb).</instruction>
-		<introduction>Algunos preposiciones o posposiciones puede también tener oraciones o frases del participio como sus complementos, como en <example>antes de [la lluvia cesa]</example> y <example>después de [Juan volvió a casa]</example>.</introduction>
+		<introduction>Algunas preposiciones o posposiciones temporales pueden tener oraciones o frases del participio como sus complementos, como en <example>antes de [la lluvia cesa]</example> y <example>después de [Juan volvió a casa]</example>.</introduction>
 		<radioGroup>
 			<groupName dataItem="sentComp" default="no">RPPSentComp</groupName>
-			<prompt>¿Su idioma tiene algunas <span id="PPPrepSpanO13" show="swPPPosPrep">preposiciones</span>
+			<prompt>¿Hay en su idioma algunas <span id="PPPrepSpanO13" show="swPPPosPrep">preposiciones</span>
 				<span id="PPPostSpanO13" show="swPPPosPost">posposiciones</span>
-				<span id="PPBothSpanO13" show="swPPPosBoth">preposiciones y/o posposiciones</span> which take a sentential complement?</prompt>
+				<span id="PPBothSpanO13" show="swPPPosBoth">preposiciones y/o posposiciones</span> que pueden tener oraciones como complemento?</prompt>
 			<radio id="PPSentCompNo" dataValue="no">No</radio>
 			<radio id="PPSentCompYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="PPSentCompYesPrompt" show="swPPSentCompYes">Incorpore algunos ejemplos de las oraciones como complementos de las frases <span id="PPPrepSpanO13a" show="swPPPosPrep">preposicionales</span>
+		<prompt id="PPSentCompYesPrompt" show="swPPSentCompYes">Escriba algunos ejemplos de las oraciones como complementos de las frases <span id="PPPrepSpanO13a" show="swPPPosPrep">preposicionales</span>
 			<span id="PPPostSpanO13a" show="swPPPosPost">posposicionales</span>
 			<span id="PPBothSpanO13a" show="swPPPosBoth">preposicionales y/o posposicionales</span>, incluidos en oraciones completas simples aquí:</prompt>
 		<textBox id="PPCompSentExample" dataItem="sentExample" show="swPPSentCompYes"/>
