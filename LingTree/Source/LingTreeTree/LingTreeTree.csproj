@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
 	<ProjectType>Local</ProjectType>
-	<ProductVersion>9.0.30729</ProductVersion>
+	<ProductVersion>9.0.21022</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<ProjectGuid>{C69C527F-9766-4A88-8B28-346B3CB1F628}</ProjectGuid>
 	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -50,6 +50,7 @@
 	<WarningLevel>4</WarningLevel>
 	<DebugType>full</DebugType>
 	<ErrorReport>prompt</ErrorReport>
+	<PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
 	<OutputPath>..\bin\Release\</OutputPath>
@@ -73,7 +74,7 @@
 	<WarningLevel>4</WarningLevel>
 	<DebugType>none</DebugType>
 	<ErrorReport>prompt</ErrorReport>
-	<PlatformTarget>x86</PlatformTarget>
+	<PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
 	<Reference Include="System">
@@ -110,9 +111,11 @@
 	</Compile>
 	<EmbeddedResource Include="LingTreeNode.resx">
 	  <DependentUpon>LingTreeNode.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="LingTreeTree.resx">
 	  <DependentUpon>LingTreeTree.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
