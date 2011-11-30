@@ -50,8 +50,8 @@ namespace SIL.PcPatrBrowser
 		private System.Windows.Forms.MenuItem miParseNext;
 		private System.Windows.Forms.MenuItem miParseLast;
 		private System.Windows.Forms.MenuItem miSentenceGoTo;
-		private Sloppycode.Controls.WebBrowserEx wbFeatureStructure;
-		private Sloppycode.Controls.WebBrowserEx wbInterlinear;
+		private WebBrowser wbFeatureStructure;
+		private WebBrowser wbInterlinear;
 		private string m_sStartUpPath;
 
 		public static string m_sRegKey = "Software\\SIL\\PcPatrBrowser";
@@ -83,9 +83,9 @@ namespace SIL.PcPatrBrowser
 		private PcPatrDocument m_doc;
 		private PcPatrParse m_parse;
 		private LingTreeTree m_tree;
-		private XslTransform m_treeTransform;
-		private XslTransform m_fsTransform ;
-		private XslTransform m_interlinearTransform;
+		private XslCompiledTransform m_treeTransform;
+		private XslCompiledTransform m_fsTransform ;
+		private XslCompiledTransform m_interlinearTransform;
 		private string m_sInitFeatureMessagePath;
 		private string m_sInitInterlinearMessagePath;
 		private const string m_ksNoSentences = "No sentences";
@@ -180,13 +180,13 @@ namespace SIL.PcPatrBrowser
 			m_tree.m_LingTreeNodeClickedEvent += new LingTreeNodeClickedEventHandler(OnNodeClicked);
 			pnlTree.Controls.Add(m_tree);
 
-			m_treeTransform = new XslTransform();
+			m_treeTransform = new XslCompiledTransform();
 			m_treeTransform.Load(Path.Combine(sStartupPath, @"..\..\Transforms\PcPatrToLingTree.xsl"));
 
-			m_fsTransform = new XslTransform();
+			m_fsTransform = new XslCompiledTransform();
 			m_fsTransform.Load(Path.Combine(m_sStartUpPath, @"..\..\Transforms\ShowFS.xsl"));
 
-			m_interlinearTransform = new XslTransform();
+			m_interlinearTransform = new XslCompiledTransform();
 			m_interlinearTransform.Load(Path.Combine(sStartupPath, @"..\..\Transforms\ShowInterlinear.xsl"));
 
 			InitInterlinearBrowser();
@@ -385,36 +385,38 @@ namespace SIL.PcPatrBrowser
 			tbbtnNextParse.Enabled = bValue;
 			miParseLast.Enabled = bValue;
 		}
-		private void InitBrowser(Sloppycode.Controls.WebBrowserEx browser)
+		private void InitBrowser(WebBrowser browser)
 		{
-			browser.AddressBar = false;
-			browser.Border3D = true;
-			browser.DisableBackSpace = true;
-			browser.DisableCtrlF = true;
-			browser.DisableCtrlN = true;
-			browser.DisableCtrlP = true;
+			//browser.AddressBar = false;
+			//browser.Border3D = true;
+			//browser.DisableBackSpace = true;
+			//browser.DisableCtrlF = true;
+			//browser.DisableCtrlN = true;
+			//browser.DisableCtrlP = true;
 			browser.Dock = System.Windows.Forms.DockStyle.Fill;
-			browser.EnableHtmlDocumentEventHandling = false;
-			browser.FlatScrollBar = false;
-			browser.FullScreen = false;
+			//browser.EnableHtmlDocumentEventHandling = false;
+			browser.IsWebBrowserContextMenuEnabled = false;
+			//browser.FlatScrollBar = false;
+			//browser.FullScreen = false;
 			browser.Location = new System.Drawing.Point(176, 28);
-			browser.Offline = true;
-			browser.OpenInNewWindow = false;
-			browser.Options = Sloppycode.Controls.BrowserOptions.Images;
-			browser.RegisterAsBrowser = false;
-			browser.RegisterAsDropTarget = false;
-			browser.ScrollBarsVisible = true;
-			browser.ShowWebsiteInDesigner = false;
-			browser.Silent = false;
+			//browser.Offline = true;
+			//browser.OpenInNewWindow = false;
+			//browser.Options = Sloppycode.Controls.BrowserOptions.Images;
+			//browser.RegisterAsBrowser = false;
+			//browser.RegisterAsDropTarget = false;
+			//browser.ScrollBarsVisible = true;
+			browser.ScrollBarsEnabled = true;
+			//browser.ShowWebsiteInDesigner = false;
+			//browser.Silent = false;
 			browser.Size = new System.Drawing.Size(552, 388);
 			browser.TabIndex = 6;
-			browser.TheaterMode = false;
+			//browser.TheaterMode = false;
 			browser.Url = null;
-			browser.XPThemed = false;
+			//browser.XPThemed = false;
 		}
 		private void InitFeatureStructureBrowser()
 		{
-			wbFeatureStructure = new Sloppycode.Controls.WebBrowserEx();
+			wbFeatureStructure = new WebBrowser();
 			InitBrowser(wbFeatureStructure);
 			wbFeatureStructure.Name = "wbFeatureStructure";
 			pnlFeatureStructure.Controls.Add(wbFeatureStructure);
@@ -423,7 +425,7 @@ namespace SIL.PcPatrBrowser
 		}
 		private void InitInterlinearBrowser()
 		{
-			wbInterlinear = new Sloppycode.Controls.WebBrowserEx();
+			wbInterlinear = new WebBrowser();
 			InitBrowser(wbInterlinear);
 			wbInterlinear.Name = "wbInterlinear";
 			pnlInterlinear.Controls.Add(wbInterlinear);
@@ -454,8 +456,8 @@ namespace SIL.PcPatrBrowser
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(PcPatrBrowserApp));
-			this.mainMenu1 = new System.Windows.Forms.MainMenu();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PcPatrBrowserApp));
+			this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
 			this.miFile = new System.Windows.Forms.MenuItem();
 			this.miFileOpenAna = new System.Windows.Forms.MenuItem();
 			this.menuItem7 = new System.Windows.Forms.MenuItem();
@@ -526,26 +528,26 @@ namespace SIL.PcPatrBrowser
 			// mainMenu1
 			//
 			this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																					  this.miFile,
-																					  this.miView,
-																					  this.miSentence,
-																					  this.miParse,
-																					  this.miLanguage,
-																					  this.menuItem1});
+			this.miFile,
+			this.miView,
+			this.miSentence,
+			this.miParse,
+			this.miLanguage,
+			this.menuItem1});
 			//
 			// miFile
 			//
 			this.miFile.Index = 0;
 			this.miFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																				   this.miFileOpenAna,
-																				   this.menuItem7,
-																				   this.miFileOpenGrammar,
-																				   this.menuItem10,
-																				   this.miFileOpenLanguage,
-																				   this.miFileSaveLanguage,
-																				   this.miFileSaveLangAs,
-																				   this.menuItem9,
-																				   this.miExit});
+			this.miFileOpenAna,
+			this.menuItem7,
+			this.miFileOpenGrammar,
+			this.menuItem10,
+			this.miFileOpenLanguage,
+			this.miFileSaveLanguage,
+			this.miFileSaveLangAs,
+			this.menuItem9,
+			this.miExit});
 			this.miFile.Text = "File";
 			//
 			// miFileOpenAna
@@ -603,15 +605,15 @@ namespace SIL.PcPatrBrowser
 			//
 			this.miView.Index = 1;
 			this.miView.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																				   this.miViewFeatStruct,
-																				   this.miViewInterlinear,
-																				   this.miViewRuleFile,
-																				   this.miViewStatusBar,
-																				   this.miViewToolBar,
-																				   this.menuItem5,
-																				   this.miViewRightToLeft,
-																				   this.menuItem2,
-																				   this.miViewRefresh});
+			this.miViewFeatStruct,
+			this.miViewInterlinear,
+			this.miViewRuleFile,
+			this.miViewStatusBar,
+			this.miViewToolBar,
+			this.menuItem5,
+			this.miViewRightToLeft,
+			this.menuItem2,
+			this.miViewRefresh});
 			this.miView.Text = "View";
 			//
 			// miViewFeatStruct
@@ -676,12 +678,12 @@ namespace SIL.PcPatrBrowser
 			//
 			this.miSentence.Index = 2;
 			this.miSentence.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																					   this.miSentenceFirst,
-																					   this.miSentencePrevious,
-																					   this.miSentenceNext,
-																					   this.miSentenceLast,
-																					   this.menuItem3,
-																					   this.miSentenceGoTo});
+			this.miSentenceFirst,
+			this.miSentencePrevious,
+			this.miSentenceNext,
+			this.miSentenceLast,
+			this.menuItem3,
+			this.miSentenceGoTo});
 			this.miSentence.Text = "Sentence";
 			//
 			// miSentenceFirst
@@ -723,12 +725,12 @@ namespace SIL.PcPatrBrowser
 			//
 			this.miParse.Index = 3;
 			this.miParse.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																					this.miParseFirst,
-																					this.miParsePrevious,
-																					this.miParseNext,
-																					this.miParseLast,
-																					this.menuItem4,
-																					this.miParserGoTo});
+			this.miParseFirst,
+			this.miParsePrevious,
+			this.miParseNext,
+			this.miParseLast,
+			this.menuItem4,
+			this.miParserGoTo});
 			this.miParse.Text = "Parse";
 			//
 			// miParseFirst
@@ -776,7 +778,7 @@ namespace SIL.PcPatrBrowser
 			//
 			this.menuItem1.Index = 5;
 			this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																					  this.miHelpAbout});
+			this.miHelpAbout});
 			this.menuItem1.Text = "&Help";
 			//
 			// miHelpAbout
@@ -862,6 +864,7 @@ namespace SIL.PcPatrBrowser
 			this.splitterBetweenTreeAndFeat.Dock = System.Windows.Forms.DockStyle.Right;
 			this.splitterBetweenTreeAndFeat.Location = new System.Drawing.Point(0, 0);
 			this.splitterBetweenTreeAndFeat.Name = "splitterBetweenTreeAndFeat";
+			this.splitterBetweenTreeAndFeat.Size = new System.Drawing.Size(3, 3);
 			this.splitterBetweenTreeAndFeat.TabIndex = 8;
 			this.splitterBetweenTreeAndFeat.TabStop = false;
 			//
@@ -878,22 +881,22 @@ namespace SIL.PcPatrBrowser
 			// tbMain
 			//
 			this.tbMain.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
-																					  this.tbbtnOpenAnalysis,
-																					  this.tbbtnSeparator1,
-																					  this.tbbtnSeparator2,
-																					  this.tbbtnRefresh,
-																					  this.tbbtbSeparator4,
-																					  this.tbbtbSeparator5,
-																					  this.tbbtnFirstSentence,
-																					  this.tbbtnPreviousSentence,
-																					  this.tbbtnNextSentence,
-																					  this.tbbtnLastSentence,
-																					  this.tbbtnSeparator,
-																					  this.tbbtnSeparator3,
-																					  this.tbbtnFirstParse,
-																					  this.tbbtnPreviousParse,
-																					  this.tbbtnNextParse,
-																					  this.tbbtnLastParse});
+			this.tbbtnOpenAnalysis,
+			this.tbbtnSeparator1,
+			this.tbbtnSeparator2,
+			this.tbbtnRefresh,
+			this.tbbtbSeparator4,
+			this.tbbtbSeparator5,
+			this.tbbtnFirstSentence,
+			this.tbbtnPreviousSentence,
+			this.tbbtnNextSentence,
+			this.tbbtnLastSentence,
+			this.tbbtnSeparator,
+			this.tbbtnSeparator3,
+			this.tbbtnFirstParse,
+			this.tbbtnPreviousParse,
+			this.tbbtnNextParse,
+			this.tbbtnLastParse});
 			this.tbMain.DropDownArrows = true;
 			this.tbMain.ImageList = this.ilToolBar;
 			this.tbMain.Location = new System.Drawing.Point(0, 0);
@@ -906,84 +909,108 @@ namespace SIL.PcPatrBrowser
 			// tbbtnOpenAnalysis
 			//
 			this.tbbtnOpenAnalysis.ImageIndex = 8;
+			this.tbbtnOpenAnalysis.Name = "tbbtnOpenAnalysis";
 			this.tbbtnOpenAnalysis.ToolTipText = "Open Log or Analysis File";
 			//
 			// tbbtnSeparator1
 			//
+			this.tbbtnSeparator1.Name = "tbbtnSeparator1";
 			this.tbbtnSeparator1.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
 			//
 			// tbbtnSeparator2
 			//
+			this.tbbtnSeparator2.Name = "tbbtnSeparator2";
 			this.tbbtnSeparator2.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
 			//
 			// tbbtnRefresh
 			//
 			this.tbbtnRefresh.Enabled = false;
 			this.tbbtnRefresh.ImageIndex = 9;
+			this.tbbtnRefresh.Name = "tbbtnRefresh";
 			this.tbbtnRefresh.ToolTipText = "Refresh";
 			//
 			// tbbtbSeparator4
 			//
+			this.tbbtbSeparator4.Name = "tbbtbSeparator4";
 			this.tbbtbSeparator4.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
 			//
 			// tbbtbSeparator5
 			//
+			this.tbbtbSeparator5.Name = "tbbtbSeparator5";
 			this.tbbtbSeparator5.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
 			//
 			// tbbtnFirstSentence
 			//
 			this.tbbtnFirstSentence.ImageIndex = 0;
+			this.tbbtnFirstSentence.Name = "tbbtnFirstSentence";
 			this.tbbtnFirstSentence.ToolTipText = "First Sentence";
 			//
 			// tbbtnPreviousSentence
 			//
 			this.tbbtnPreviousSentence.ImageIndex = 1;
+			this.tbbtnPreviousSentence.Name = "tbbtnPreviousSentence";
 			this.tbbtnPreviousSentence.ToolTipText = "Previous Sentence";
 			//
 			// tbbtnNextSentence
 			//
 			this.tbbtnNextSentence.ImageIndex = 2;
+			this.tbbtnNextSentence.Name = "tbbtnNextSentence";
 			this.tbbtnNextSentence.ToolTipText = "Next Sentence";
 			//
 			// tbbtnLastSentence
 			//
 			this.tbbtnLastSentence.ImageIndex = 3;
+			this.tbbtnLastSentence.Name = "tbbtnLastSentence";
 			this.tbbtnLastSentence.ToolTipText = "Last Sentence";
 			//
 			// tbbtnSeparator
 			//
+			this.tbbtnSeparator.Name = "tbbtnSeparator";
 			this.tbbtnSeparator.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
 			//
 			// tbbtnSeparator3
 			//
+			this.tbbtnSeparator3.Name = "tbbtnSeparator3";
 			this.tbbtnSeparator3.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
 			//
 			// tbbtnFirstParse
 			//
 			this.tbbtnFirstParse.ImageIndex = 4;
+			this.tbbtnFirstParse.Name = "tbbtnFirstParse";
 			this.tbbtnFirstParse.ToolTipText = "First Parse";
 			//
 			// tbbtnPreviousParse
 			//
 			this.tbbtnPreviousParse.ImageIndex = 5;
+			this.tbbtnPreviousParse.Name = "tbbtnPreviousParse";
 			this.tbbtnPreviousParse.ToolTipText = "Previous Parse";
 			//
 			// tbbtnNextParse
 			//
 			this.tbbtnNextParse.ImageIndex = 6;
+			this.tbbtnNextParse.Name = "tbbtnNextParse";
 			this.tbbtnNextParse.ToolTipText = "Next Parse";
 			//
 			// tbbtnLastParse
 			//
 			this.tbbtnLastParse.ImageIndex = 7;
+			this.tbbtnLastParse.Name = "tbbtnLastParse";
 			this.tbbtnLastParse.ToolTipText = "Last Parse";
 			//
 			// ilToolBar
 			//
-			this.ilToolBar.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-			this.ilToolBar.ImageSize = new System.Drawing.Size(16, 16);
 			this.ilToolBar.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilToolBar.ImageStream")));
 			this.ilToolBar.TransparentColor = System.Drawing.Color.Fuchsia;
+			this.ilToolBar.Images.SetKeyName(0, "");
+			this.ilToolBar.Images.SetKeyName(1, "");
+			this.ilToolBar.Images.SetKeyName(2, "");
+			this.ilToolBar.Images.SetKeyName(3, "");
+			this.ilToolBar.Images.SetKeyName(4, "");
+			this.ilToolBar.Images.SetKeyName(5, "");
+			this.ilToolBar.Images.SetKeyName(6, "");
+			this.ilToolBar.Images.SetKeyName(7, "");
+			this.ilToolBar.Images.SetKeyName(8, "");
+			this.ilToolBar.Images.SetKeyName(9, "Refresh.bmp");
 			//
 			// PcPatrBrowserApp
 			//
@@ -1001,6 +1028,7 @@ namespace SIL.PcPatrBrowser
 			this.Text = "PcPatrBrowser";
 			this.pnlRule.ResumeLayout(false);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion
@@ -1246,7 +1274,7 @@ namespace SIL.PcPatrBrowser
 			argList.AddParam("sLexFont", "", m_language.LexInfo.Font.Name);
 			argList.AddParam("sLexFontSize", "", m_language.LexInfo.Font.Size.ToString());
 			argList.AddParam("sLexFontColor", "", m_language.LexInfo.Color.Name);
-			m_treeTransform.Transform(xpath, argList, result, null);
+			m_treeTransform.Transform(xpath, argList, result);
 			result.Close();
 
 			XmlDocument treeDoc = new XmlDocument();
