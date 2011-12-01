@@ -7,11 +7,11 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 //
 [assembly: AssemblyTitle("PcPatrBrowser")]
-[assembly: AssemblyDescription("A tool to aid in studying syntactic tree output from PcPatr.")]
+[assembly: AssemblyDescription("A tool to aid in studying syntactic tree output from PC-PATR.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SIL International")]
-[assembly: AssemblyProduct("PcPatrBrowser Alpha Version")]
-[assembly: AssemblyCopyright("2006")]
+[assembly: AssemblyProduct("PcPatrBrowser Beta Version")]
+[assembly: AssemblyCopyright("2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -26,7 +26,7 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("0.2.2.*")]
+[assembly: AssemblyVersion("0.2.3.*")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the

@@ -29,7 +29,7 @@ namespace SIL.PcPatrBrowser
 			//
 			InitializeComponent();
 
-			lblVersion.Text = "Alpha Version " + ProductVersion;
+			lblVersion.Text = "Beta Version " + ProductVersion;
 		}
 
 		/// <summary>
@@ -54,7 +54,7 @@ namespace SIL.PcPatrBrowser
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(DlgAbout));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DlgAbout));
 			this.button1 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@ namespace SIL.PcPatrBrowser
 			//
 			// label1
 			//
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(24, 16);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(248, 24);
@@ -85,9 +85,9 @@ namespace SIL.PcPatrBrowser
 			//
 			this.label2.Location = new System.Drawing.Point(24, 40);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(296, 24);
+			this.label2.Size = new System.Drawing.Size(317, 24);
 			this.label2.TabIndex = 2;
-			this.label2.Text = "A tool to aid in studying syntactic tree output from PcPatr.";
+			this.label2.Text = "A tool to aid in studying syntactic tree output from PC-PATR.";
 			//
 			// label3
 			//
@@ -95,7 +95,7 @@ namespace SIL.PcPatrBrowser
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(188, 24);
 			this.label3.TabIndex = 3;
-			this.label3.Text = "Copyright © 2005, SIL International";
+			this.label3.Text = "Copyright © 2011, SIL International";
 			//
 			// label4
 			//
@@ -111,7 +111,7 @@ namespace SIL.PcPatrBrowser
 			this.lblVersion.Name = "lblVersion";
 			this.lblVersion.Size = new System.Drawing.Size(256, 24);
 			this.lblVersion.TabIndex = 5;
-			this.lblVersion.Text = "Alpha Version";
+			this.lblVersion.Text = "Beta Version";
 			//
 			// DlgAbout
 			//
