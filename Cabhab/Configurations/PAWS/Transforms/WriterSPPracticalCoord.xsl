@@ -7,7 +7,7 @@
 <xsl:text>Esta sección considera construcciones coordinativas básicas donde una conjunción se presenta entre dos oraciones conjuntivas que estén en el mismo nivel. Esto incluye la coordinación en el nivel de la oración y en la frase de verbo, la frase nominal, la frase preposicional y/o posposicional y la frase del adjetivo.</xsl:text>
 </p>
 	  <p>
-<object type="tComment">Si su idioma tiene clases más complejas de construcciones coordinativas, tales como por ejemplo listas sin conjunciones entre cada oración conjuntiva, partes que falta de una de las oraciones conjuntivas, appositivos o comparativos, usted puede agregar la descripción y ejemplos como apropiados en esta sección.</object>
+<object type="tComment">Si su idioma tiene clases más complejas de construcciones coordinativas, tales como por ejemplo listas sin conjunciones entre cada oración conjuntiva, partes que falta de una de las oraciones conjuntivas, appositivos o comparativos, usted puede agregar la descripción y ejemplos apropiados en esta sección.</object>
 </p>
 	  <p>
 <xsl:text>En español, las conjunciones que se pueden utilizar entre dos oraciones conjuntivas son </xsl:text>
@@ -45,7 +45,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>con</langData>
-<xsl:text> como conjunción entre las frases nominales. </xsl:text>
+<xsl:text> al igual que una conjunción entre las frases nominales. </xsl:text>
 </p>
 			<p>
 <xsl:text>En </xsl:text>
@@ -94,8 +94,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>y</xsl:text>
@@ -137,8 +136,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>o</xsl:text>
@@ -180,8 +178,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>ni</xsl:text>
@@ -223,8 +220,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength3" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>y/o</xsl:text>
@@ -266,8 +262,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength4" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>pero</xsl:text>
@@ -309,8 +304,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength5" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>con</xsl:text>
@@ -352,8 +346,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength6" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>otros (si hay)</xsl:text>
@@ -434,8 +427,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>o (cualquiera)</xsl:text>
@@ -477,8 +469,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>ni (ningunos)</xsl:text>
@@ -503,7 +494,7 @@
 				</table>
 </example>
 		<section2 id="sCoordSentence">
-			<secTitle>La coordinación del nivel de la oración</secTitle>
+			<secTitle>Coordinación del nivel de la oración</secTitle>
 			<p>
 <xsl:text>La coordinación del nivel de la oración incluye declarativos y preguntas y otros  tipos de oraciones. Algunos ejemplos en español son: </xsl:text>
 </p>
@@ -571,11 +562,11 @@
 			<p>
 <xsl:text>Véase la sección </xsl:text>
 <sectionRef sec="sAdvCl" />
-<xsl:text> para considerar los ejemplos de palabras o cláusulas de introducción, designadas a veces como coordinación, y los ejemplos de las cláusulas adverbiales, que son subordinación.</xsl:text>
+<xsl:text> para considerar los ejemplos de palabras o cláusulas de introducción, designadas a veces al igual que coordinación, y los ejemplos de las cláusulas adverbiales, que son subordinación.</xsl:text>
 </p>
 </section2>
 		<section2 id="sCoordVP">
-			<secTitle>La coordinación de la frase de verbo</secTitle>
+			<secTitle>Coordinación de la frase de verbo</secTitle>
 			<p>
 <xsl:text>La coordinación de la frase de verbo se ejemplifica en las oraciones en español siguientes:  </xsl:text>
 </p>
@@ -642,7 +633,7 @@
 </example>
 </section2>
 		<section2 id="sCoordDP">
-			<secTitle>La coordinación de la frase nominal</secTitle>
+			<secTitle>Coordinación de la frase nominal</secTitle>
 			<p>
 <xsl:text>Las frases nominales coordinadas generalmente pueden presentarse en todas las posiciones donde una frase nominal normal puede presentarse, por ejemplo sujetos, objetos, objetos indirectos, y objetos de preposiciones. La coordinación de la frase nominal se ejemplifica en las oraciones en español siguientes: </xsl:text>
 </p>
@@ -717,10 +708,10 @@
 	  <section2 id="sCoordPP">
 		  <secTitle>
 		  <xsl:choose>
-				<xsl:when test="//pp/@pPos='before'">La coordinación de la frase preposicional</xsl:when>
-				<xsl:when test="//pp/@pPos='after'">La coordinación de la frase posposcional</xsl:when>
-				<xsl:when test="//pp/@pPos='both'">La coordinación de la frase preposicional y/o posposcional</xsl:when>
-				<xsl:when test="//pp/@pPos='unknown'">La coordinación de la frase preposicional y/o posposcional</xsl:when>
+				<xsl:when test="//pp/@pPos='before'">Coordinación de la frase preposicional</xsl:when>
+				<xsl:when test="//pp/@pPos='after'">Coordinación de la frase posposcional</xsl:when>
+				<xsl:when test="//pp/@pPos='both'">Coordinación de la frase preposicional y/o posposcional</xsl:when>
+				<xsl:when test="//pp/@pPos='unknown'">Coordinación de la frase preposicional y/o posposcional</xsl:when>
 			</xsl:choose>
 			</secTitle>
 		  <p>
@@ -796,7 +787,7 @@
 </example>
 	  </section2>
 		<section2 id="sCoordAdj">
-			<secTitle>La coordinación de la frase del adjetivo</secTitle>
+			<secTitle>Coordinación de la frase del adjetivo</secTitle>
 			<p>
 <xsl:text>La coordinación del adjetivo se ejemplifica en las oraciones en español siguientes: </xsl:text>
 </p>

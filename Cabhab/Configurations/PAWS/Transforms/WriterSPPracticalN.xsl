@@ -280,8 +280,8 @@
 		<section2 id="sNPCase">
 			<secTitle>Caso</secTitle>
 			<p>
-<xsl:text>En los sustantivos y sus modificadores también se pueden marcar para el caso. El sistema de caso más común es el nominativo-acusativo.
-					Éste es el sistema que español tiene, aunque solamente se marca el caso en los pronombres y los poseedores.
+<xsl:text>En los sustantivos y sus modificadores también se pueden indicar para el caso. El sistema de caso más común es el nominativo-acusativo.
+					Éste es el sistema que español tiene, aunque solamente se indica el caso en los pronombres y los poseedores.
 					En un sistema del nominativo-acusativo, los sujetos de los verbos intransitivos y transitivos son casos del nominativo, mientras que los objetos directos son casos del acusativo.
 					Los poseedores son casos del genitivo. Los pronombres del nominativo en español son: </xsl:text>
 <langData>
@@ -312,9 +312,9 @@
 </p>
 			<p>
 <xsl:text>
-					En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se marcan con el caso del ergativo, mientras que los objetos de verbos transitivos y los temas de verbos intransitivos se marcan con el caso del absolutivo.
-					El caso de poseedores no se fija en todos los idiomas de este tipo.  Algunos idiomas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de marcadores verbales del acuerdo, pero ninguna marca en sustantivos.
-					Este tipo de marca en la concordancia será considerado en la sección </xsl:text>
+					En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se indican con el caso del ergativo, mientras que los objetos de verbos transitivos y los sujetos de verbos intransitivos se indican con el caso del absolutivo.
+					El caso de poseedores no se fija en todos los idiomas de este tipo.  Algunos idiomas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de indicadores verbales de la concordancia, pero ningún indicador en sustantivos.
+					Este tipo de indicador en la concordancia será considerado en la sección </xsl:text>
 <sectionRef sec="sIPAgr" />
 <xsl:text>.</xsl:text>
 </p>
@@ -334,14 +334,14 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//np/@case='none'"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición en la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición en la oración.</xsl:when>
-					<xsl:when test="//np/@case='nominative'"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se marcan de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se marcan de una manera diferente.</xsl:when>
-					<xsl:when test="//np/@case='ergative'"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se marcan de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se marcan de una manera diferente.</xsl:when>
+					<xsl:when test="//np/@case='none'"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición de la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición de la oración.</xsl:when>
+					<xsl:when test="//np/@case='nominative'"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se indican de una manera diferente.</xsl:when>
+					<xsl:when test="//np/@case='ergative'"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se indican de una manera diferente.</xsl:when>
 					<xsl:when test="//np/@case='split'"> tiene un sistema de caso de ergatividad escindida. El idioma sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//np/@case)='nominative' and normalize-space(//np/@caseDefault)='nominative' or normalize-space(//np/@case)='split' and normalize-space(//np/@caseDefault)='nominative'">
-					<xsl:text>  El caso nominativo es un caso predeternimado (no marcado).</xsl:text>
+					<xsl:text>  El caso nominativo es un caso predeterminado (no indicado).</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
@@ -358,7 +358,7 @@
 <sectionRef sec="sPronPoss" />
 <xsl:text>), por un sustantivo simple, o por una frase nominal completa (véase la sección </xsl:text>
 <sectionRef sec="sNPPoss" />
-<xsl:text>).  El caso y las características de la concordancia en los sustantivos poseídos o los sustantivos que actúan como poseedores se especifican aquí. </xsl:text>
+<xsl:text>).  El caso y las características de la concordancia en los sustantivos poseídos o los sustantivos que funcionan como poseedores se especifican a continuación. </xsl:text>
 </p>
 			<section3 id="sNPPossCase">
 				<secTitle>Caso del poseedor</secTitle>
@@ -507,9 +507,9 @@
 </xsl:choose>
 <xsl:text>, el indicador de caso </xsl:text>
 <xsl:choose>
-						<xsl:when test="//np/@adjpCaseAffix='no'">no se marca con un afijo.</xsl:when>
-						<xsl:when test="//np/@adjpCaseAffix='yesPrefix'">se marca de la siguiente manera.  </xsl:when>
-						<xsl:when test="//np/@adjpCaseAffix='yesSuffix'">se marca de la siguiente manera.  </xsl:when>
+						<xsl:when test="//np/@adjpCaseAffix='no'">no se indica con un afijo.</xsl:when>
+						<xsl:when test="//np/@adjpCaseAffix='yesPrefix'">se indica de la siguiente manera.  </xsl:when>
+						<xsl:when test="//np/@adjpCaseAffix='yesSuffix'">se indica de la siguiente manera.  </xsl:when>
 					</xsl:choose>
 <xsl:if test="normalize-space(//np/@adjpCaseAffix)!='no' and normalize-space(//np/@adjpCaseChange)='yes'">
 						<xsl:text>Cuando el </xsl:text>
@@ -552,7 +552,7 @@
 							<xsl:when test="//np/@adjpCaseAffix='yesSuffix'">sufijo,</xsl:when>
 							<xsl:when test="//np/@adjpCaseAffix='yesPrefix'">prefijo,</xsl:when>
 						</xsl:choose>
-						<xsl:text> entonces otro adjetivo y/o un poseedor también deben estar presentes.</xsl:text>
+						<xsl:text> así que otro adjetivo y/o un poseedor también deben estar presentes.</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
 </p>
@@ -566,7 +566,7 @@
 </p>
 				<ul>
 					<li>
-						<xsl:text>Un afijo que se encuentra en sustantivos poseídos alienables para indicar que están poseídas y por lo tanto deben tener un poseedor en la frase nominal. Los sustantivos poseídos inalienables no llevan ningún indicador, sino que siempre deben tener un poseedor. Éstos incluyen, pero no se limitan a, los términos del parentesco y las partes del cuerpo.</xsl:text>
+						<xsl:text>Un afijo que se encuentra en sustantivos poseídos alienables para indicar que están poseídas y por lo tanto deben tener un poseedor en la frase nominal. Los sustantivos poseídos inalienables no tienen ningún indicador, sino que siempre deben tener un poseedor. Éstos incluyen, pero no se limitan a, los términos del parentesco y las partes del cuerpo.</xsl:text>
 					</li>
 					<li>
 						<xsl:text>Un afijo que corresponde al poseedor (o expresa posiblemente al poseedor en sí mismo). </xsl:text>
@@ -620,8 +620,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -853,8 +852,8 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>de</langData>
-<xsl:text> en esta situación, muchos otros idiomas son como inglés y tienen modificadores del sustantivo.
-					Pareciera que todos los sustantivos también se pueden utilizar como adjetivos, pero un estudio más detallada revela que los adjetivos verdaderos se presentan antes del modificador del sustantivo, como en </xsl:text>
+<xsl:text> en esta situación, muchos otros idiomas son al igual que inglés y tienen modificadores del sustantivo.
+					Pareciera que todos los sustantivos también se pueden utilizar al igual que adjetivos, pero un estudio más detallada revela que los adjetivos verdaderos se presentan antes del modificador del sustantivo, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -872,7 +871,7 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'redondo, botella grande del jarabe'</xsl:text>
 </gloss>
-<xsl:text>.  Por lo tanto, los modificadores del sustantivo serán tratados como sustantivos compuestos que se escriben con palabras independientes.</xsl:text>
+<xsl:text>.  Por lo tanto, los modificadores del sustantivo serán tratados al igual que sustantivos compuestos que se escriben con palabras independientes.</xsl:text>
 </p>
 			<p>
 <xsl:text>En los ejemplos anteriores en inglés, </xsl:text>

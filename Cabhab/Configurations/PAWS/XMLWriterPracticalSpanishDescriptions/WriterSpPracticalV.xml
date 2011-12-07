@@ -4,18 +4,18 @@
 	<section1 id="sV">
 		<secTitle>Los verbos</secTitle>
 		<p>
-			<content>Los verbos expresan acciones, estados, o emociones. Los tipos de características de la inflexión y de la concordancia en los verbos se detallan primero.
-			La aplicación cuando un sujeto no debe estar presente se discute en la sección </content><sectionRef sec="sIPProDrop"/><content>, y los auxiliares se cubre en la sección
+			<content>Los verbos expresan acciones, estados, o emociones. Primers se analizarán los tipos de la inflexión verbal y la concordancia de los verbos.
+				Las condiciones de cuando un sujeto no debe estar presente se analizan en la sección </content><sectionRef sec="sIPProDrop"/><content>, y los auxiliares se tratan en la sección
 			</content><sectionRef sec="sIPAux"/><content>.  Los ejemplos de los verbos usados en oraciones básicas se encuentran en la sección
-			</content><sectionRef sec="sIP"/><content>.  Las construcciones más complejas incluyendo verbos se cubren en las secciones </content><sectionRef sec="sFocus"/><content> - </content><sectionRef sec="sRelCl"/><content>.</content>
+			</content><sectionRef sec="sIP"/><content>.  Las construcciones más complejas incluyendo los verbos se tratan en las secciones </content><sectionRef sec="sFocus"/><content> - </content><sectionRef sec="sRelCl"/><content>.</content>
 		</p>
 		<section2 id="sIPInfl">
 			<secTitle>Características de la inflexión</secTitle>
 			<p>
-				<content>Los verbos y los auxiliares generalmente llevan características de la inflexión, tales como tiempo, aspecto, y/o modo.  En la mayoría de los casos, estas características son agregadas por los afijos, pero también pueden ser parte de los verbos irregulares.</content>
+				<content>Los verbos y los auxiliares generalmente tienen características de la inflexión, tales como tiempo, aspecto, y/o modo.  En la mayoría de los casos, estas características se agregan con afijos, pero también pueden ser parte de los verbos irregulares.</content>
 			</p>
 			<p>
-				<content>Las características siguientes de la inflexión se indican en los verbos y/o auxiliares en </content>
+				<content>Las siguientes características de la inflexión se indican en los verbos y/o los auxiliares en </content>
 				<langName/>
 				<content>:</content>
 			</p>
@@ -24,6 +24,7 @@
 					<headerRow>
 						<headerCol>Tipo de característica</headerCol>
 						<headerCol>Característica</headerCol>
+						<headerCol>Morfema(s)</headerCol>
 					</headerRow>
 					<row show="swIPInflFeatPresent">
 						<col>
@@ -32,7 +33,9 @@
 						<col>
 							<content>presente</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatPast">
 						<col>
 							<content>tiempo</content>
@@ -40,7 +43,9 @@
 						<col>
 							<content>pasado</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatFuture">
 						<col>
 							<content>tiempo</content>
@@ -48,7 +53,9 @@
 						<col>
 							<content>futuro</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatCompletive">
 						<col>
 							<content>aspecto</content>
@@ -56,7 +63,9 @@
 						<col>
 							<content>completivo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatContinuative">
 						<col>
 							<content>aspecto</content>
@@ -64,7 +73,9 @@
 						<col>
 							<content>continuativo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatHabitual">
 						<col>
 							<content>aspecto</content>
@@ -72,7 +83,9 @@
 						<col>
 							<content>habitual</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatImperfective">
 						<col>
 							<content>aspecto</content>
@@ -80,7 +93,9 @@
 						<col>
 							<content>imperfectivo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatIncompletive">
 						<col>
 							<content>aspecto</content>
@@ -88,7 +103,9 @@
 						<col>
 							<content>incompletivo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatPerfective">
 						<col>
 							<content>aspecto</content>
@@ -96,7 +113,9 @@
 						<col>
 							<content>perfectivo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatPotential">
 						<col>
 							<content>aspecto</content>
@@ -104,7 +123,9 @@
 						<col>
 							<content>potencial</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatProgressive">
 						<col>
 							<content>aspecto</content>
@@ -112,7 +133,9 @@
 						<col>
 							<content>progresivo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatStative">
 						<col>
 							<content>aspecto</content>
@@ -120,7 +143,9 @@
 						<col>
 							<content>estativo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatDeclarative">
 						<col>
 							<content>modo</content>
@@ -128,7 +153,9 @@
 						<col>
 							<content>declarativo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatImperative">
 						<col>
 							<content>modo</content>
@@ -136,7 +163,9 @@
 						<col>
 							<content>imperativo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatInterrogative">
 						<col>
 							<content>modo</content>
@@ -144,7 +173,9 @@
 						<col>
 							<content>interrogativo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatIrrealis">
 						<col>
 							<content>modo</content>
@@ -152,7 +183,9 @@
 						<col>
 							<content>irrealis</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatRealis">
 						<col>
 							<content>modo</content>
@@ -160,7 +193,9 @@
 						<col>
 							<content>realis</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatPassive">
 						<col>
 							<content>otro</content>
@@ -168,7 +203,9 @@
 						<col>
 							<content>pasivo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatParticiple">
 						<col>
 							<content>otro</content>
@@ -176,7 +213,9 @@
 						<col>
 							<content>participio</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatFinite">
 						<col>
 							<content>otro</content>
@@ -184,7 +223,9 @@
 						<col>
 							<content>finito</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 					<row show="swIPInflFeatMinusFinite">
 						<col>
 							<content>otro</content>
@@ -192,14 +233,16 @@
 						<col>
 							<content>infinitivo</content>
 						</col>
-					</row>
+						<col>
+							<langData>ESCRIBA_LOS_MORFEMAS</langData>
+						</col>					</row>
 				</table>
 			</example>
 		</section2>
 		<section2 id="sIPAgr">
 			<secTitle>Características de la concordancia</secTitle>
 			<p>
-				<content>Los verbos y los auxiliares también pueden llevar las características de la concordancia que concuerdan con el sujeto, y a veces también con el objeto directo. La mayor parte de estas características son agregadas por los afijos o clíticos pronominales que pueden unirse con el verbo. El animado de un sujeto o objeto es más probable una característica de la semántica del verbo individual, pero se indica por un afijo en algunos idiomas.</content>
+				<content>Los verbos y los auxiliares también pueden tener características de la concordancia que requieren las concordancia con el sujeto, y a veces también con el objeto directo. La mayor parte de estas características se agregan con afijos o con clíticos pronominales que pueden adherirse con el verbo. La característica de animado de un sujeto o de un objeto es más probable que sea una característica de la semántica del verbo individualen sí mismo, pero en algunos idiomas se indica con un afijo.</content>
 			</p>
 			<p>
 				<content>Las características siguientes de la concordancia se indican en verbos y/o auxiliares en </content>
@@ -734,12 +777,12 @@
 				<langData>Compro un libro</langData>
 				<content> en vez de algo con el pronombre sujeto abierto incluido: </content>
 				<langData>Yo compro un libro</langData>
-				<content>.  Esto no se permite en inglés, con excepción de imperativos. (El sujeto de infinitivos que no estar presente en complementos subordinados será analizada en la sección </content>
+				<content>.  Esto no se permite en inglés, con excepción de imperativos. (El sujeto de infinitivos que no estar presente en complementos subordinados se tratan en la sección </content>
 				<sectionRef sec="sComp"/>
 				<content>.) </content>
 			</p>
 			<p>
-				<content>Algunos idiomas no en realidad son idiomas que permiten los sujetos que no deben estar presentes, pero por lo menos algunos de los pronombres son clíticos que se unen al verbo. Cuando sucede esto, no hay pronombre o frase nominal en la posición del sujeto, así que la oración aparece igual que en un idioma verdadera que permite los sujetos que no deben estar presentes.</content>
+				<content>Algunos idiomas no en realidad son idiomas que permiten los sujetos que no deben estar presentes, pero por lo menos algunos de los pronombres son clíticos que se pueden unir al verbo. Cuando sucede esto, no hay pronombre o frase nominal en la posición del sujeto, así que la oración se ve igual que en un idioma verdadero que permite los sujetos que no deben estar presentes.</content>
 			</p>
 			<p>
 				<content>En </content>
@@ -747,12 +790,12 @@
 				<content>, </content>
 				<case element="ip" attr="proDrop">
 					<caseText value="noImp"
-						>no se permite un sujeto que no está presente.  El sujeto debe ser expresado a menos que en los imperativos.</caseText>
+						>no se permite un sujeto que no está presente.  El sujeto debe ser expresado excepto en los imperativos.</caseText>
 					<caseText value="no"
-						>no se permite un sujeto que no está presente.  El sujeto debe ser expresado aun cuando en los imperativos.</caseText>
+						>no se permite un sujeto que no está presente.  El sujeto debe ser expresado aun en los imperativos.</caseText>
 					<caseText value="yes">un sujeto no debe estar presente en cualquier tipo de oración.</caseText>
 					<caseText value="yesClitic"
-						>el sujeto puede mirar como no está presente debido a los pronombres dependientes (clíticos pronominales) que se unen al verbo, pero no es un idioma verdadero que permite un sujeto que no está presente.</caseText>
+						>el sujeto puede parecer como no está presente debido a un pronombre dependiente (clítico pronominal) que se une al verbo, pero no es un idioma verdadero que permite un sujeto que no está presente.</caseText>
 				</case>
 				<content/>
 				<text show="swIPProDropYes">
@@ -765,11 +808,11 @@
 				</text>
 				<content/>
 				<text show="swIPProDropNoImp">
-					<content>  Algunos ejemplos que demuestran que el sujeto no debe estar presente en imperativos son:</content>
+					<content>  Algunos ejemplos que muestran que el sujeto no debe estar presente en imperativos son:</content>
 				</text>
 				<content/>
 				<text show="swIPProDropYes">
-					<content>  Algunos ejemplos que demuestran que el sujeto no debe estar presente son:</content>
+					<content>  Algunos ejemplos que muestran que el sujeto no debe estar presente son:</content>
 				</text>
 				<content/>
 				<text show="swIPProDropYesClitic">
@@ -784,7 +827,7 @@
 		<section2 id="sIPAux">
 			<secTitle>Los auxiliares</secTitle>
 			<p>
-				<content>En algunos idiomas hay elementos auxiliares que sean palabras independientes, y algunos de los idiomas pueden tener más de un elemento auxiliar con el verbo principal. Algunos ejemplos para las oraciones transitivas en inglés son: </content>
+				<content>Algunos idiomas tienen elementos auxiliares que son palabras independientes, y algunos pueden tener más de un elemento auxiliar con el verbo principal. Algunos ejemplos de las oraciones transitivas en inglés son: </content>
 				<langData>The boy will hit the ball</langData><gloss><content>'El muchacho golpeará el beísbol'</content></gloss>
 				<content>, </content>
 				<langData>The boy might have hit the ball</langData><gloss><content>'El muchacho pudo haber golpeado el beísbol'</content></gloss>
@@ -811,24 +854,24 @@
 					<langName/>
 					<content> y  </content>
 					<case element="ip" attr="auxMany">
-						<caseText value="no">solamente uno es posible</caseText>
-						<caseText value="yes">más de uno puede presentarse</caseText>
+						<caseText value="no">solamente es posible uno</caseText>
+						<caseText value="yes">se puede presentar más de uno </caseText>
 					</case>
 					<content> en una sola cláusula. </content>
 					<text show="swIPAuxOrderVSO">
-						<content> Después de un auxiliar, la orden normal del VSO </content>
+						<content> Después de un auxiliar, el orden normal del VSO </content>
 						<case element="ip" attr="auxOrder">
-							<caseText value="yes">se mantiene. La orden es Aux V S O.</caseText>
-							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</caseText>
+							<caseText value="yes">se mantiene. El orden es Aux V S O.</caseText>
+							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del auxiliar y antes del verbo. El orden en estas cláusulas es Aux S V O.</caseText>
 						</case>
 						<content/>
 					</text>
 					<content/>
 					<text show="swIPAuxOrderOSV">
-						<content> Antes de un auxiliar, la orden normal del OSV </content>
+						<content> Antes de un auxiliar, el orden normal del OSV </content>
 						<case element="ip" attr="auxOrder">
-							<caseText value="yes">se mantiene. La orden es O S V Aux.</caseText>
-							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</caseText>
+							<caseText value="yes">se mantiene. El orden es O S V Aux.</caseText>
+							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del verbo y antes del auxiliar. El orden en estas cláusulas es O V S Aux.</caseText>
 						</case>
 						<content/>
 					</text>
@@ -851,7 +894,7 @@
 				</table>
 			</example>
 			<p show="swIPAuxYes">
-				<content>Algunos ejemplos de oraciones incluyendo estos auxiliares son:</content>
+				<content>Algunos ejemplos de oraciones que incluyen estos auxiliares son:</content>
 			</p>
 
 				<example show="swIPAuxYes">
@@ -886,13 +929,13 @@
 				</case>
 				<content> auxiliares negativos que se escriben como palabras independientes, </content>
 				<case element="ip" attr="negAux">
-					<caseText value="yesOnly">y ése es el único tipo de negación verbal en el idioma. No hay afijo verbal negativo ni afijo auxiliar negativo. </caseText>
-					<caseText value="yesAffix">y hay también un afijo auxiliar negativo, pero ningún afijo verbal negativo. </caseText>
-					<caseText value="yesVerb">y hay también un afijo verbal negativo, pero ningún afijo auxiliar negativo. </caseText>
-					<caseText value="yesAll">y hay también un afijo auxiliar negativo y un afijo verbal negativo. </caseText>
-					<caseText value="noAffixOnly">pero hay un afijo negativo que se une al auxiliar y ése es el único tipo de negación verbal en el idioma. No hay afijo verbal negativo.</caseText>
+					<caseText value="yesOnly">y ése es el único tipo de negación verbal en el idioma. No hay un afijo verbal negativo ni afijo auxiliar negativo. </caseText>
+					<caseText value="yesAffix">y también hay un afijo auxiliar negativo, pero ningún afijo verbal negativo. </caseText>
+					<caseText value="yesVerb">y también hay un afijo verbal negativo, pero ningún afijo auxiliar negativo. </caseText>
+					<caseText value="yesAll">y también hay un afijo auxiliar negativo y un afijo verbal negativo. </caseText>
+					<caseText value="noAffixOnly">pero hay un afijo negativo que se une al auxiliar y ése es el único tipo de negación verbal en el idioma. No hay un afijo verbal negativo.</caseText>
 					<caseText value="noAffixAndVerb">pero hay un afijo negativo que se une al auxiliar y también un afijo verbal negativo.</caseText>
-					<caseText value="noVerb">ni afijo negativo que se une al auxiliar. La única manera de expresar la negación verbal es con uno o más afijos verbales negativos.</caseText>
+					<caseText value="noVerb">ni un afijo negativo que se une al auxiliar. La única manera de expresar la negación verbal es con uno o más afijos verbales negativos.</caseText>
 				</case>
 				<content/>
 				<text show="swIPNegAuxWord">
@@ -910,7 +953,7 @@
 				</text>
 			</p>
 			<p show="swIPNegAuxWord">
-				<content>Algunos ejemplos de los auxiliares negativos en </content>
+				<content>Algunos ejemplos de auxiliares negativos en </content>
 				<langName/>
 				<content> son:</content>
 			</p>
@@ -927,14 +970,14 @@
 				</table>
 			</example>
 			<p show="swIPNegAuxAffix">
-				<content>Algunos ejemplos de los afijos negativos unidos a una palabra auxiliar en </content>
+				<content>Algunos ejemplos de afijos negativos unidos a una palabra auxiliar en </content>
 				<langName/>
 				<content> son:</content>
 			</p>
 			<example show="swIPNegAuxAffix">
 				<table border="1">
 					<headerRow>
-						<headerCol>Auxiliares negativos marcados</headerCol>
+						<headerCol>Auxiliares negativos indicados</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row >
@@ -944,14 +987,14 @@
 				</table>
 			</example>
 			<p show="swIPNegVerb">
-				<content>Algunos ejemplos de los afijos verbales negativos unidos a un verbo en </content>
+				<content>Algunos ejemplos de afijos verbales negativos unidos a un verbo en </content>
 				<langName/>
 				<content> son:</content>
 			</p>
 			<example show="swIPNegVerb">
 				<table border="1">
 				<headerRow>
-					<headerCol>Verbos negativos marcados</headerCol>
+					<headerCol>Verbos negativos indicados</headerCol>
 					<headerCol>Glosa</headerCol>
 				</headerRow>
 				<row>
@@ -963,16 +1006,16 @@
 			<p>
 				<content>Véase a sección </content>
 				<sectionRef sec="sNegVerbal"/>
-				<content> para considerar otros ejemplos de los elementos negativos usados en las oraciones y el análisis de las construcciones de la negación en </content>
+				<content> para considerar otros ejemplos de los elementos negativos usados en las oraciones y vea también un análisis de las construcciones de la negación en </content>
 				<langName/>
 				<content>.</content>
 			</p>
 			<p>
-				<content>La palabra que indica el infinitivo en inglés, </content>
+				<content>En  inglés la palabra que indica el infinitivo, </content>
 				<langData>to</langData>
-				<content>, utilizada en cláusulas subordinadas, también actúa como un auxiliar en que llena la misma posición y puede presentarse antes de los otros auxiliares. Por ejemplo, </content>
+				<content>, utilizada en cláusulas subordinadas, también funciona al igual que un auxiliar en que ocupa la misma posición y puede presentarse antes de otros auxiliares. Por ejemplo, </content>
 				<langData>The boy would like to have hit the ball</langData><gloss><content>'El muchacho quisiera haber golpeado el beísbol'</content></gloss>
-				<content>.  Por el contrario, el español no tiene un indicador separado para las cláusulas subordinadas infinitivas, sino utiliza simplemente la forma infinitiva del verbo. </content>
+				<content>.  Por el contrario, el español no tiene un indicador independiente para las cláusulas subordinadas infinitivas, sino utiliza simplemente la forma infinitiva del verbo. </content>
 			</p>
 			<p>
 				<content>En </content>
@@ -980,9 +1023,9 @@
 				<content/>
 				<case element="ip" attr="auxNonfinite">
 					<caseText value="no"> no hay ningún</caseText>
-					<caseText value="yes"> hay un (o más) </caseText>
+					<caseText value="yes"> hay un (o más)</caseText>
 				</case>
-				<content> indicador de infinitivo similare a un auxiliar que se escribe como una palabra independiente.  </content>
+				<content> indicador de infinitivo similar a un auxiliar que se escribe como una palabra independiente.  </content>
 				<text show="swIPAuxNonfiniteYes">
 					<content>Un indicador auxiliar infinitivo es </content>
 					<case element="ip" attr="auxRequired">
@@ -993,19 +1036,19 @@
 					<langName/>
 					<content>. </content>
 					<text show="swIPAuxNonfiniteOrderVSO">
-						<content> Después de un indicador infinitivo, la orden normal del VSO </content>
+						<content> Después de un indicador infinitivo, el orden normal del VSO </content>
 						<case element="ip" attr="auxNonfiniteOrder">
-							<caseText value="yes">se mantiene. La orden es Aux V S O.</caseText>
-							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</caseText>
+							<caseText value="yes">se mantiene. El orden es Aux V S O.</caseText>
+							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del auxiliar y antes del verbo. El orden en estas cláusulas es Aux S V O.</caseText>
 						</case>
 						<content/>
 					</text>
 					<content/>
 					<text show="swIPAuxNonfiniteOrderOSV">
-						<content> Antes de un indicador infinitivo, la orden normal del OSV </content>
+						<content> Antes de un indicador infinitivo, el orden normal del OSV </content>
 						<case element="ip" attr="auxOrder">
-							<caseText value="yes">se mantiene. La orden es O S V Aux.</caseText>
-							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</caseText>
+							<caseText value="yes">se mantiene. El orden es O S V Aux.</caseText>
+							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del verbo y antes del auxiliar. El orden en estas cláusulas es O V S Aux.</caseText>
 						</case>
 						<content/>
 					</text>
@@ -1036,7 +1079,7 @@
 			</example>
 
 			<p>
-				<content>En algunos idiomas hay otras palabras que actúen como auxiliares, tales como auxiliares del movimiento o indicadores del préstamo, que comparten el mimso sujeto y los complementos que el verbo principal.</content>
+				<content>En algunos idiomas hay otras palabras que funcionan al igual que auxiliares, tales como auxiliares del movimiento o indicadores del préstamo, que comparten el mimso sujeto y los complementos que el verbo principal.</content>
 			</p>
 			<p>
 				<content>En </content>
@@ -1049,19 +1092,19 @@
 				<content> auxiliares de este tipo que se escriben como palabras independientes.  </content>
 				<text show="swIPAuxOtherYes">
 					<text show="swIPAuxOtherOrderVSO">
-						<content> Después de uno de estos auxiliares, la orden normal del VSO </content>
+						<content> Después de uno de estos auxiliares, el orden normal del VSO </content>
 						<case element="ip" attr="auxOtherOrder">
-							<caseText value="yes">se mantiene. La orden es Aux V S O.</caseText>
-							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del auxiliar y antes del verbo. La orden en estas cláusulas es Aux S V O.</caseText>
+							<caseText value="yes">se mantiene. El orden es Aux V S O.</caseText>
+							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del auxiliar y antes del verbo. El orden en estas cláusulas es Aux S V O.</caseText>
 						</case>
 						<content/>
 					</text>
 					<content/>
 					<text show="swIPAuxOtherOrderOSV">
-						<content> Antes de uno de estos auxiliares, la orden normal del OSV </content>
+						<content> Antes de uno de estos auxiliares, el orden normal del OSV </content>
 						<case element="ip" attr="auxOrder">
-							<caseText value="yes">se mantiene. La orden es  O S V Aux.</caseText>
-							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del verbo y antes del auxiliar. La orden en estas cláusulas es O V S Aux.</caseText>
+							<caseText value="yes">se mantiene. El orden es  O S V Aux.</caseText>
+							<caseText value="no">puede cambiar así que el sujeto se presenta directamente después del verbo y antes del auxiliar. El orden en estas cláusulas es O V S Aux.</caseText>
 						</case>
 						<content/>
 					</text>

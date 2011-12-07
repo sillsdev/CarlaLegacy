@@ -3,12 +3,12 @@
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="PronMain" count="1/8">
 	<title>Los pronombres</title>
-	<introduction>Hay pronombres de varios tipos, incluyendo: pronombre personales, posesivos, reflexivos, recíprocos, e indefinidos.
-		Estos pronombres por lo regular se colocan solamente en lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo. En algunos idiomas los pronombres se pueden modificar por los determinantes y cuantificadores, en ese caso ocupan el lugar de los sustantivos.  Algunos idiomas tienen sistemas independientes y dependientes del pronombre. Cada uno de estos temas será mirado en su orden correspondiente.
+	<introduction>Hay pronombres de varios tipos: pronombre personales, posesivos, reflexivos, recíprocos, e indefinidos.
+		Estos pronombres por lo regular se colocan solamente en lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo. En algunos idiomas los pronombres se pueden modificar por los determinantes y cuantificadores, en ese caso ocupan el lugar de los sustantivos.  Algunos idiomas tienen sistemas independientes y dependientes del pronombre. Cada uno de estos temas será considerado en su orden correspondiente.
 	  </introduction>
 	<form section="pron">
 		<prompt id="PronCaseNonePrompt" show="swNPCaseNone">
-			<br/>Puesto que su idioma no distingue el caso, debe tener solamente un solo sistema de los pronombres independientes que se pueden utilizar en cualquier posición en la oración.<br/><br/>
+			<br/>Puesto que su idioma no distingue el caso, debe tener solamente un solo sistema de los pronombres independientes que se pueden utilizar en cualquier posición de la oración.<br/><br/>
 			Escriba los pronombres personales de la primera persona independiente en la caja de texto, con cada pronombre seguido por un punto y en una línea separada. <br/>
 		</prompt>
 		<textBox id="PronPersonalFirstNoCaseExample" dataItem="personalFirstNoCaseExample"  rows="3" show="swNPCaseNone"/>
@@ -207,7 +207,7 @@
 		</radioGroup>
   <br/>
 		<prompt id="PronDependentCaseNonePrompt" show="swNPCaseNoneandDependentYes">
-			<br/>Puesto que su idioma no distingue el caso, debe tener solamente un solo sistema de los pronombres dependientes que se pueden utilizar en cualquier posición en la oración.<br/><br/>
+			<br/>Puesto que su idioma no distingue el caso, debe tener solamente un solo sistema de los pronombres dependientes que se pueden utilizar en cualquier posición de la oración.<br/><br/>
 			Escriba los pronombres personales de la primera persona dependiente en la caja de texto, con cada pronombre seguido por un punto y en una línea separada. <br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstNoCaseExample" dataItem="personalDependentFirstNoCaseExample"  rows="3" show="swNPCaseNoneandDependentYes"/>
@@ -399,7 +399,7 @@
 			</ul>
 		</instruction>
 		<br/>
-		<prompt>  Los pronombres tienen normalmente más que o el mismo número de características de concordancia que los sustantivos tienen.  En la tabla abajo, compruebe cualquier característica del acuerdo usada en pronombres en su idioma.  Para la concordancia de clase, escriba un tipo o un número en la gramática en vz de el ## abajo.<br/>
+		<prompt>  Los pronombres tienen normalmente más que o el mismo número de características de concordancia que los sustantivos tienen.  En la tabla abajo, compruebe cualquier característica de la concordancia usada en pronombres en su idioma.  Para la concordancia de clase, escriba un tipo o un número en la gramática en vz de el ## abajo.<br/>
 			<br/>
 			<featureChart>
 				<featureRow>

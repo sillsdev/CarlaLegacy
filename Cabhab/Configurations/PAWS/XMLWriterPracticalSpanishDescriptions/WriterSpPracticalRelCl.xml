@@ -8,20 +8,20 @@
 		</p>
 		<ul>
 			<li>
-				<content>como una cláusula de complemento con el complementizador 'que' , como en  </content>
+				<content>al al igual que una cláusula de complemento con el complementizador 'que' , como en  </content>
 				<langData>el hombre que vino a la reunión tarde</langData>
 				<content>;</content>
 			</li>
 			<li>
-				<content>como una pregunta abierta subordinada con 'quien' o 'cual' desplazado a la izquierda, como en </content>
+				<content>al al igual que una pregunta abierta subordinada con 'quien' o 'cual' desplazado a la izquierda, como en </content>
 				<langData>el hombre quien vino a la reunión tarde</langData>
 				<content>;</content>
 			</li>
 			<li>
-				<content>(o para algunos idiomas con excepción del español) como una cláusula de complemento pero con un indicador relativo especial que se presenta en la posición del complementizador, o posiblemente con dos indicadores que se presentan en cada lado de la cláusula relativa;</content>
+				<content>(o para algunos idiomas con excepción del español) al al igual que una cláusula de complemento pero con un indicador relativo especial que se presenta en la posición del complementizador, o posiblemente con dos indicadores que se presentan en cada lado de la cláusula relativa;</content>
 			</li>
 			<li>
-				<content>(o para algunos idiomas con excepción del español) como una oración regular con un indicador relativo unido al verbo.</content>
+				<content>(o para algunos idiomas con excepción del español) al al igual que una oración regular con un indicador relativo unido al verbo.</content>
 			</li>
 		</ul>
 		<p>
@@ -56,10 +56,10 @@
 						<caseText value="yesBoth">como preguntas porque una palabra interrogativa se desplaza a la izquierda y algunos son como cláusulas de complemento con los indicadores relativos que </caseText>
 					</case>
 					<text show="swRelClCompCPNotNo">
-						<content>sean </content>
+						<content>son </content>
 						<case element="relcl" attr="relWord">
-							<caseText value="yes">escriton como palabras independientes.</caseText>
-							<caseText value="no">clíticos que se unen a otra palabra en el borde de la cláusula relativa.</caseText>
+							<caseText value="yes">escritos como palabras independientes.</caseText>
+							<caseText value="no">clíticos que se unen a otra palabra en el extremo de la cláusula relativa.</caseText>
 						</case>
 						<text show="swRelClTypeCPCompClitic">
 							<case element="relcl" attr="relCliticPos">
@@ -150,7 +150,7 @@
 	<section1 id="sTexts">
 		<secTitle>Los textos</secTitle>
 		<p><comment>Incluya varios textos aquí para mostrar cómo se forman las construcciones más grandes tales como párrafos, conversaciones e historias narrativas. Incluya los ejemplos de varios tipos literarios.</comment></p>
-		<p><comment>  Un formato sugerido para presentar los textos es presente en la lengua vernácula en conjunto primero, así que los nativos pueden apreciarla. Entonces presente la forma interlineal, como en los ejemplos a través de la gramática. Finalmente, dé una traducción libre en conjunto, así que el altavoz extranjero puede apreciar más sobre la cultura.</comment></p>
+		<p><comment>  Un formato sugerido para presentar los textos es presente el texto completo en el idioma vernáculo primero, así que los nativos pueden apreciarla. Después presenta la forma interlineal, como en los ejemplos a través de la gramática. Finalmente, dé una traducción libre completo, así que el altavoz extranjero puede apreciar más sobre la cultura.</comment></p>
 	</section1>
 
 	<showWhen id="swRelClExistNo">

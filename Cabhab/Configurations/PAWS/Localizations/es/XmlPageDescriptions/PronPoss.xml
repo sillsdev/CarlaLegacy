@@ -13,7 +13,7 @@
 			<radio id="PronPossYes" dataValue="yes">Sí</radio>
 		</radioGroup>
 		<prompt id="PronPossYesExamples" show="swPronPossYes">
-			<br/>Escriba sus pronombres posesivos aquí, con cada uno en una nueva línea y seguida por un punto, comenzando con la primera persona, entonces segunda persona, entonces tercera persona:
+			<br/>Escriba sus pronombres posesivos aquí, con cada uno en una nueva línea y seguida por un punto, comenzando con la primera persona, siguiendo con segunda persona, y finalmente con tercera persona:
 		</prompt>
 		<textBox id="PronPossExample" dataItem="possExample" show="swPronPossYes"/>
 		<radioGroup id="PronPossAffix" show="swPronPossYes">

@@ -4,13 +4,13 @@
   <section1 id="sExcl">
 	  <secTitle>Las exclamaciones y los saludos</secTitle>
 	<p>
-		<content>Esta sección considera los varios tipos de elocuciones comunes que no sean oraciones completas. Los saludos, las interjecciones y las exclamaciones será mirado en su order correspondiente.</content>
+		<content>Esta sección considera los varios tipos de locuciones comunes que no son oraciones completas. Los saludos, las interjecciones y las exclamaciones, cada uno se trata en su order correspondiente.</content>
 	</p>
 <section2 id="sExclGreet">
-	<secTitle>Los saludos</secTitle>
-	<p><content>Los saludos consisten típicamente en una palabra o una frase particular, o solamente o seguido por un nombre o una frase nominal que describe la persona o el animal que es saludado.
+	<secTitle>Saludos</secTitle>
+	<p><content>Los saludos consisten típicamente en una palabra o una frase particular, que puede ser seguido por un nombre o una frase nominal que describe la persona o el animal que es saludado.
 	Algunos son las oraciones completas o las preguntas completas, tales como </content> <langData>¿Cómo está usted? </langData> <content> y </content><langData>¡Tenga un buen día!</langData>
-		<content> Las cuáles no necesitan ser tratados por separado. </content></p>
+		<content> Las cuáles no necesitan ser tratadas por separado. </content></p>
 	<p><content>Algunos ejemplos de saludos en español son:  </content>    </p>
 			<ol>
 				<li>
@@ -38,7 +38,7 @@
 					<content>Buenas noches.</content>
 				</li>
 				<li>
-					<content>Buenas noches, bebé dulce.</content>
+					<content>Buenas noches, ducle bebé.</content>
 				</li>
 			</ol>
 	<p><content>Algunos ejemplos de saludos en </content><langName/> <content> son:</content></p>
@@ -47,7 +47,7 @@
 			</example>
 </section2>
 <section2 id="sExclIntj">
-	<secTitle>Las interjecciones</secTitle>
+	<secTitle>Interjecciones</secTitle>
 	<p><content>Las interjecciones consisten típicamente en una palabra o una frase particular que se utilicen solo, generalmente con puntos de exclamación. Muchas de las palabras en interjecciones no se utilizan en ninguna otra situación. Sin embargo, los adjetivos regulares también se utilizan de esta manera.</content></p>
 	<p><content>Algunos ejemplos de interjecciones en español son:
 </content></p>
@@ -97,7 +97,7 @@
 </example>
 </section2>
 <section2 id="sExclExcl">
-	<secTitle>Las exclamaciones</secTitle>
+	<secTitle>Exclamaciones</secTitle>
 	<p><content>Las exclamaciones típicamente consisten en una palabra particular, tal como </content><langData>qué</langData><content> o </content><langData>cómo</langData><content> en español, seguida por una frase adjetival y puntuada generalmente con puntos de exclamación. </content></p>
 	<p><content>Algunos ejemplos en español son:  </content></p>
 <ol>

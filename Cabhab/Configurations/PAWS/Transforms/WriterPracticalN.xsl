@@ -615,8 +615,7 @@ Some languages are even more complex in that they normally have a nominative-acc
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>

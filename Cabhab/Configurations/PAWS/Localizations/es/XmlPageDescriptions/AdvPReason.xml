@@ -2,10 +2,10 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPReason" count="4/7">
-	<title level="2">Los adverbios y sus frases - Los adverbios de la razón o del propósito</title>
-	<introduction>Los adverbios de la razón o del propósito incluyen <example>por lo tanto</example> y
-		<example>pues</example>.  La razón o el propósito también se puede expresar por una frase preposicional, por ejemplo  <example>por esta razón</example> o <example>en propósito</example>, y
-		por una cláusula adverbial empezando con <example>porque</example> o <example>desde que</example> o <example>en orden que</example>.  Los adverbios de la razón o del propósito no permiten modificadores en español.  La estructura de las cláusulas adverbiales será analizada en  <section number="13">Las cláusulas adverbiales</section>.
+	<title level="2">Los adverbios y sus frases - Los adverbios que expresan razón o propósito</title>
+	<introduction>Los adverbios que expresan razón o propósito son <example>por lo tanto</example> y
+		<example>pues</example>.  La razón o el propósito también se puede expresar con una frase preposicional, por ejemplo  <example>por esta razón</example> o <example>en propósito</example>, y
+		con una cláusula adverbial empezando con <example>porque</example> o <example>desde que</example> o <example>en orden que</example>.  Los adverbios que expresan razón o propósito no permiten modificadores en español.  La estructura de las cláusulas adverbiales será analizada en  <section number="13">Las cláusulas adverbiales</section>.
 </introduction>
 	<form section="advp">
 		<prompt>Escriba sus ejemplos de los adverbios de la razón o del propósito aquí, incluyendo ellos en oraciones completas:</prompt>

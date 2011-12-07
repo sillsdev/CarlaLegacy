@@ -5,9 +5,9 @@
 	  <secTitle>Las construcciones coordinativas</secTitle>
 	<p>
 		<content>Esta sección considera construcciones coordinativas básicas donde una conjunción se presenta entre dos oraciones conjuntivas que estén en el mismo nivel. Esto incluye la coordinación en el nivel de la oración y en la frase de verbo, la frase nominal, la frase preposicional y/o posposicional y la frase del adjetivo.</content></p>
-	  <p><comment>Si su idioma tiene clases más complejas de construcciones coordinativas, tales como por ejemplo listas sin conjunciones entre cada oración conjuntiva, partes que falta de una de las oraciones conjuntivas, appositivos o comparativos, usted puede agregar la descripción y ejemplos como apropiados en esta sección.</comment></p>
+	  <p><comment>Si su idioma tiene clases más complejas de construcciones coordinativas, tales como por ejemplo listas sin conjunciones entre cada oración conjuntiva, partes que falta de una de las oraciones conjuntivas, appositivos o comparativos, usted puede agregar la descripción y ejemplos apropiados en esta sección.</comment></p>
 	  <p><content>En español, las conjunciones que se pueden utilizar entre dos oraciones conjuntivas son </content><langData>y</langData><content>, </content><langData>o</langData><content>, </content><langData>pero</langData><content> y </content><langData>y/o</langData>
-		  <content>.  Además, hay las construcciones coordinativas que requieren una conjunción inicial, como </content><langData>o...o</langData><content> y </content><langData>ni...ni</langData><content> construcciones. Algunos idiomas también utilizan una palabra que significa </content><langData>con</langData><content> como conjunción entre las frases nominales. </content>
+		  <content>.  Además, hay las construcciones coordinativas que requieren una conjunción inicial, como </content><langData>o...o</langData><content> y </content><langData>ni...ni</langData><content> construcciones. Algunos idiomas también utilizan una palabra que significa </content><langData>con</langData><content> al igual que una conjunción entre las frases nominales. </content>
 	</p>
 			<p>
 				<content>En </content>
@@ -94,7 +94,7 @@
 				</table>
 			</example>
 		<section2 id="sCoordSentence">
-			<secTitle>La coordinación del nivel de la oración</secTitle>
+			<secTitle>Coordinación del nivel de la oración</secTitle>
 			<p>
 				<content>La coordinación del nivel de la oración incluye declarativos y preguntas y otros  tipos de oraciones. Algunos ejemplos en español son: </content>
   </p>
@@ -116,10 +116,10 @@
 			<example>
 				<interlinear exampleLoc="coord/sentExample"/>
 			</example>
-			<p><content>Véase la sección </content><sectionRef sec="sAdvCl"/><content> para considerar los ejemplos de palabras o cláusulas de introducción, designadas a veces como coordinación, y los ejemplos de las cláusulas adverbiales, que son subordinación.</content></p>
+			<p><content>Véase la sección </content><sectionRef sec="sAdvCl"/><content> para considerar los ejemplos de palabras o cláusulas de introducción, designadas a veces al igual que coordinación, y los ejemplos de las cláusulas adverbiales, que son subordinación.</content></p>
 </section2>
 		<section2 id="sCoordVP">
-			<secTitle>La coordinación de la frase de verbo</secTitle>
+			<secTitle>Coordinación de la frase de verbo</secTitle>
 			<p>
 				<content>La coordinación de la frase de verbo se ejemplifica en las oraciones en español siguientes:  </content>
  </p>
@@ -142,7 +142,7 @@
 			</example>
 </section2>
 		<section2 id="sCoordDP">
-			<secTitle>La coordinación de la frase nominal</secTitle>
+			<secTitle>Coordinación de la frase nominal</secTitle>
 			<p>
 				<content>Las frases nominales coordinadas generalmente pueden presentarse en todas las posiciones donde una frase nominal normal puede presentarse, por ejemplo sujetos, objetos, objetos indirectos, y objetos de preposiciones. La coordinación de la frase nominal se ejemplifica en las oraciones en español siguientes: </content>
 </p>
@@ -173,10 +173,10 @@
 	  <section2 id="sCoordPP">
 		  <secTitle>
 		  <case  element="pp" attr="pPos">
-				<caseText value="before">La coordinación de la frase preposicional</caseText>
-				<caseText value="after">La coordinación de la frase posposcional</caseText>
-				<caseText value="both">La coordinación de la frase preposicional y/o posposcional</caseText>
-				<caseText value="unknown">La coordinación de la frase preposicional y/o posposcional</caseText>
+				<caseText value="before">Coordinación de la frase preposicional</caseText>
+				<caseText value="after">Coordinación de la frase posposcional</caseText>
+				<caseText value="both">Coordinación de la frase preposicional y/o posposcional</caseText>
+				<caseText value="unknown">Coordinación de la frase preposicional y/o posposcional</caseText>
 			</case>
 			</secTitle>
 		  <p>
@@ -207,7 +207,7 @@
 		  </example>
 	  </section2>
 		<section2 id="sCoordAdj">
-			<secTitle>La coordinación de la frase del adjetivo</secTitle>
+			<secTitle>Coordinación de la frase del adjetivo</secTitle>
 			<p>
 				<content>La coordinación del adjetivo se ejemplifica en las oraciones en español siguientes: </content>
 </p>

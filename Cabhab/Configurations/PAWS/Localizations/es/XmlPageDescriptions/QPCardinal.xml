@@ -50,7 +50,7 @@
 				<groupName dataItem="ordinalEither" default="yes">ROrdinalEitherSide</groupName>
 				<prompt>¿Pueden presentarse todos los números ordinales y/o las palabras para 'último' y 'próximo' de cualquier lado del número cardinal?</prompt>
 				<radio id="QPOrdinalEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="QPOrdinalEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+				<radio id="QPOrdinalEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 			</radioGroup>
 		</radioGroup>
 		<instruction id="QPOrdinalInstruction">
@@ -63,8 +63,8 @@ feature <feature>QP-final</feature>.  Do not enter either
 feature <feature>QP-initial</feature> or <feature>QP-final</feature> on any ordinal numbers which can occur on
 either side.</span>
 		</instruction>
-		<introduction>Además, los números cardinales más grandes pueden ser los compuestos que se pueden escribir como palabras independientes, tales como <example>cientos treinta y tres</example>.  En muchos idiomas, las conjunciones se requieren o se permiten en los compuestos. La posición de la conjunción es generalmente en el mismo lado del número en que los números más pequeños se presentan. Estos dos hechos nos dicen si el compuesto es núcleo-inicial o núcleo-final.
-			Por ejemplo, el español tiene compuestos del número núcleo-finales porque la conjunción se presenta en el extremo del compuesto, antes del número de unidad, como en <example>cuatro mil y tres</example> o <example>seis mil cientos treinta y tres</example>.
+		<introduction>Además, los números cardinales más grandes pueden ser los compuestos que se pueden escribir como palabras independientes, tales como <example>cientos treinta y tres</example>.  En muchos idiomas, las conjunciones se requieren o se permiten en los compuestos. La posición de la conjunción es generalmente en el mismo lado del número en que los números más pequeños se presentan. Estos dos detalles nos dicen si el compuesto es núcleo-inicial o núcleo-final.
+			Por ejemplo, en español hay compuestos del número núcleo-finales porque la conjunción se presenta en el extremo del compuesto, antes del número de unidad, como en <example>cuatro mil y tres</example> o <example>seis mil cientos treinta y tres</example>.
 </introduction>
 		<prompt>Escriba unos ejemplos de números compuestos aquí:</prompt>
 		<textBox id="QPCardinalCompoundExample" dataItem="cardinalCompoundExample" cols="50"/>

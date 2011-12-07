@@ -4,16 +4,16 @@
 	<section1 id="sAdvCl">
 		<secTitle>Las cláusulas adverbiales</secTitle>
 		<p>
-			<content>En esta sección se analizan los complementos que pueden seguir los adverbios temporales y de razón, que fueron introducidos en las secciones </content>
+			<content>En esta sección se analizan los complementos que pueden seguir los adverbios de tiempo y de razón, que fueron introducidos en las secciones </content>
 			<sectionRef sec="sAdvPTemporal"/>
 			<content> y </content>
 			<sectionRef sec="sAdvPReason"/>
-			<content>.  Todas de estas cláusulas (o frases) adverbiales actúan igual que los adverbios simples, así que ellos serán considerados frases adverbiales con el tipo apropiado de complemento. Las cláusulas adverbiales de estos tipos normalmente pueden presentarse o inicial o final de la oración. </content>
+			<content>.  Todas de estas cláusulas (o frases) adverbiales funcionan al igual que los adverbios simples, así que ellos serán considerados frases adverbiales con el tipo apropiado de complemento. Las cláusulas adverbiales de estos tipos normalmente pueden presentarse o inicial o final de la oración. </content>
 		</p>
 		<section2 id="sAdvClTemporal">
-			<secTitle>Los complementos de adverbios temporales</secTitle>
+			<secTitle>Complementos de adverbios de tiempo</secTitle>
 			<p>
-				<content>Algunos ejemplos en español de adverbios temporales con los complementos usados en oraciones completas son:</content>
+				<content>Algunos ejemplos en español de adverbios de tiempo con los complementos usados en oraciones completas son:</content>
 			</p>
 			<ol>
 				<li>
@@ -36,9 +36,9 @@
 				</li>
 			</ol>
 			<p>
-				<content>Estos ejemplos muestran que los adverbios temporales particulares permiten ciertos tipos de complementos. En (1) </content>
+				<content>Estos ejemplos muestran que los adverbios de tiempo particulares permiten ciertos tipos de complementos. En (1) </content>
 				<langData>desde</langData>
-				<content> es seguido por otro adverbio temporal, y en (2) por una frase nominal temporal.  Los ejemplos (3) y (4) muestran que </content><langData>puesto</langData><content> y </content><langData>ahora</langData><content> pueden tener un complemento clausal finito con un complementizador, mientras que los ejemplos (5) y (6) muestran que </content>
+				<content> es seguido por otro adverbio de tiempo, y en (2) por una frase nominal de tiempo.  Los ejemplos (3) y (4) muestran que </content><langData>puesto</langData><content> y </content><langData>ahora</langData><content> pueden tener un complemento clausal finito con un complementizador, mientras que los ejemplos (5) y (6) muestran que </content>
 				<langData>cuando</langData>
 				<content> tiene una oración finito por su complemento.</content>
 			</p>
@@ -52,7 +52,7 @@
 					<caseText value="either">de cualquier lado</caseText>
 					<caseText value="unknown">_______</caseText>
 				</case>
-				<content> del adverbio.  Algunos ejemplos de cláusulas adverbiales temporales en </content>
+				<content> del adverbio.  Algunos ejemplos de cláusulas adverbiales de tiempo en </content>
 				<langName/>
 				<content>, incluidos en oraciones completas son: </content>
 			</p>
@@ -61,7 +61,7 @@
 			</example>
 		</section2>
 		<section2 id="sAdvClReason">
-			<secTitle>Los complementos de adverbios de razón</secTitle>
+			<secTitle>Complementos de adverbios de razón</secTitle>
 			<p>
 				<content>En las frases adverbiales o a las cláusulas que expresan razón o propósito, encontramos los adverbios que se colocan solamente, por ejemplo </content>
 				<langData>por lo tanto</langData>
@@ -88,7 +88,7 @@
 				</li>
 			</ol>
 			<p>
-				<content>En los ejemplos arriba, </content>
+				<content>En los ejemplos anteriores, </content>
 				<langData>porque</langData>
 				<content> y </content>
 				<langData>puesto que</langData>

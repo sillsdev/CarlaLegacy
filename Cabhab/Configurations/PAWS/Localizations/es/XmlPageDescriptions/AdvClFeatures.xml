@@ -4,7 +4,7 @@
 <page id="AdvClFeatures" count="2/3">
 	<title level="2">Las cláusulas adverbiales - Los ejemplos y las características</title>
 	<form section="advcl">
-		<prompt>Escriba ejemplos de cláusulas adverbiales temporales en su idioma, incluidos en oraciones completas (pero simples) aquí:</prompt>
+		<prompt>Escriba ejemplos de cláusulas adverbiales de tiempo en su idioma, incluidos en oraciones completas (pero simples) aquí:</prompt>
 		<textBox id="AdvlClTemporalExample" dataItem="tempSentExample" cols="50"/>
 		<br/>
 		<radioGroup>
@@ -37,10 +37,10 @@
 		<introduction id="AdvClReasonIntroNotPractical" show="swNotPractical">In the examples above, <example>because</example> and <example>since</example> take only finite IP complements and <example>so</example> takes a finite CP complement.  In contrast, <example>in order</example> takes either a nonfinite IP with a pro-dropped subject or a nonfinite CP complement.  This is the same subcategorization as shown for <example>like</example> and <example>hate</example> in <section number="10">Complement Clauses</section>.  <br/>
 			<br/>(Note again that if your language has any multi-word forms, like <example>in order</example>, they need be handled as a single lexical entry using <tool>Join Compound</tool>.)
  </introduction>
-		<introduction id="AdvClReasonIntroPractical" show="swPractical">En los ejemplos arriba, <example>porque</example> y <example>puesto que</example> y <example>de modo que</example> tienen oraciones finitos por complementos.  En cambio,  <example>para</example> o <example>en orden</example> tiene una oración infinitivo.  Éste es el grupo de complementos como se muestra para <example>gustar</example> y <example>odiar</example> en  <section number="10">Las cláusulas de complemento</section>.
+		<introduction id="AdvClReasonIntroPractical" show="swPractical">En los ejemplos anteriores, <example>porque</example> y <example>puesto que</example> y <example>de modo que</example> tienen oraciones finitos por complementos.  En cambio,  <example>para</example> o <example>en orden</example> tiene una oración infinitivo.  Éste es el grupo de complementos como se muestra para <example>gustar</example> y <example>odiar</example> en  <section number="10">Las cláusulas de complemento</section>.
 		 </introduction>
 		<br/>
-		<prompt>Los ejemplos que usted escribió en <section number="3">Los adverbios y sus frases</section> se demuestran abajo. Usted puede agregar ejemplos adicionales en oraciones completas (pero simples) también.</prompt>
+		<prompt>Los ejemplos que usted escribió en <section number="3">Los adverbios y sus frases</section> se muestran abajo. Usted puede agregar ejemplos adicionales en oraciones completas (pero simples) también.</prompt>
 		<textBox id="AdvPReasonExample" section="advp" dataItem="reasonExample" cols="50"/>
 		<br/>
 		<br/>

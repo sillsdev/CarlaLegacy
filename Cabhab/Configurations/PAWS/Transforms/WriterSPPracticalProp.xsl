@@ -4,7 +4,7 @@
 	<section1 id="sProp">
 		<secTitle>Los nombres propios</secTitle>
 		<p>
-<xsl:text>Los nombres propios son una clase especial de sustantivos o frases que sintácticamente actúan igual que otros sustantivos o frases nominales. En español, algunos nombres propios pueden presentarse solos, como </xsl:text>
+<xsl:text>Los nombres propios son una clase especial de sustantivos o frases que sintácticamente funcionan al igual que otros sustantivos o frases nominales. En español, algunos nombres propios pueden presentarse solos, como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>

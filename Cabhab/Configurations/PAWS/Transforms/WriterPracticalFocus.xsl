@@ -182,8 +182,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -378,8 +377,7 @@ As defined here, topic constructions consist of a topic phrase followed by a com
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>

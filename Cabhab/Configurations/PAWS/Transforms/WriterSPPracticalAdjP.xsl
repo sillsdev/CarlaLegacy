@@ -10,7 +10,7 @@
 </xsl:text>
 </p>
   <section2 id="sAdjQual">
-	  <secTitle>Los adjetivos cualitativos</secTitle>
+	  <secTitle>Adjetivos cualitativos</secTitle>
 	  <p>
 <xsl:text>Los adjetivos cualitativos también pueden modificarse.  Algunos ejemplos en español son:
 		  </xsl:text>
@@ -38,7 +38,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>olvidado muy fácilmente</langData>
-<xsl:text>.  No pueden darse todas las combinaciones de palabras debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras de grado y adverbios de modo o frases adverbiales pueden modificar a los adjetivos. </xsl:text>
+<xsl:text>.  No pueden proporcionarse todas las combinaciones de palabras debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras de grado y adverbios de manera o frases adverbiales pueden modificar a los adjetivos. </xsl:text>
 </p>
 	  <xsl:if test="normalize-space(//adjp/@modifiers)='no'">
 <p>
@@ -51,7 +51,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no se permite que ninguna palabra de grado ni adverbio de la modo modifique a los adjetivos. </xsl:text>
+<xsl:text> no se permite que ninguna palabra de grado ni adverbio de manera modifica a los adjetivos. </xsl:text>
 </p>
 </xsl:if>
 	  <xsl:if test="normalize-space(//adjp/@modifiers)='yes'">
@@ -65,7 +65,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> se permite que ciertas palabras de grado modifiquen a los adjetivos, pero los adverbios de modo no lo pueden hacer. Las palabras de grado se presentan </xsl:text>
+<xsl:text> se permite que ciertas palabras de grado modifican a los adjetivos, pero los adverbios de manera no lo pueden hacer. Las palabras de grado se presentan </xsl:text>
 <xsl:choose>
 			  <xsl:when test="//adjp/@degreePos='before'">antes</xsl:when>
 			  <xsl:when test="//adjp/@degreePos='after'">después</xsl:when>
@@ -98,7 +98,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> se permite que ciertas palabras de grado y adverbios de modo modifiquen a los adjetivos. Estos modificadores se presentan </xsl:text>
+<xsl:text> se permite que ciertas palabras de grado y adverbios de manera modifican a los adjetivos. Estos modificadores se presentan </xsl:text>
 <xsl:choose>
 			  <xsl:when test="//adjp/@mannerPos='before'">antes</xsl:when>
 			  <xsl:when test="//adjp/@mannerPos='after'">después</xsl:when>
@@ -111,11 +111,11 @@
 		  </xsl:choose>
 <xsl:text> del adjetivo.  </xsl:text>
 <xsl:if test="normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerEither)='unrestricted' and normalize-space(//adjp/@mannerPos)!='before' and normalize-space(//adjp/@mannerPos)!='after'">
-			  <xsl:text>Todas las palabras de grado y adverbios de modo pueden presentarse de cualquier lado del adjetivo. </xsl:text>
+			  <xsl:text>Todas las palabras de grado y adverbios de manera pueden presentarse de cualquier lado del adjetivo. </xsl:text>
 		  </xsl:if>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerEither)='restricted' and normalize-space(//adjp/@mannerPos)!='before' and normalize-space(//adjp/@mannerPos)!='after'">
-			  <xsl:text>Hay restricciones en cuanto a cuáles palabras de grado y cuáles adverbios de modo pueden presentarse en cada lado del adjetivo.</xsl:text>
+			  <xsl:text>Hay restricciones en cuanto a cuáles palabras de grado y cuáles adverbios de manera pueden presentarse en cada lado del adjetivo.</xsl:text>
 		  </xsl:if>
 <xsl:text></xsl:text>
 </p>
@@ -176,7 +176,7 @@
 			<section2 id="sAdjNumbers">
 				<secTitle>Los números</secTitle>
 				<p>
-<xsl:text>Los números no se pueden modificar con las palabras de grado como se puede hacer con los cuantificadores, aunque se presentan en la misma posición. Sin embargo, los números cardinales se pueden modificar con los números ordinales y los adjetivos </xsl:text>
+<xsl:text>Los números no se pueden modificar con las palabras de grado al iqual que se puede hacer con los cuantificadores, aunque se presentan en la misma posición. Sin embargo, los números cardinales se pueden modificar con los números ordinales y los adjetivos </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -220,7 +220,7 @@
 <xsl:text>.  </xsl:text>
 </p>
 				<section3 id="sQPNumbersCardinal">
-					<secTitle>Los números cardinales</secTitle>
+					<secTitle>Números cardinales</secTitle>
 					<p>
 <xsl:text>Las formas básicas para los números cardinales se dan en el cuadro siguiente:</xsl:text>
 </p>
@@ -479,7 +479,7 @@
 </p>
 				</section3>
 				<section3 id="sQPNumbersOrdinal">
-					<secTitle>Los números ordinales</secTitle>
+					<secTitle>Números ordinales</secTitle>
 					<p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
@@ -713,7 +713,7 @@
 			 </xsl:text>
 </p>
 		 <section3 id="sQPAll">
-			 <secTitle>Los cuantificadores que modifican la frase nominal completo</secTitle>
+			 <secTitle>Cuantificadores que modifican la frase nominal completo</secTitle>
 			<p>
 <xsl:text>Los cuantificadores que significan </xsl:text>
 <langData>
@@ -736,7 +736,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>apenas</langData>
-<xsl:text> (que también pueden funcionar como indicadores de enfoque, lo cual será discutido en la sección </xsl:text>
+<xsl:text> (que también pueden funcionar al al igual que indicadores de enfoque, lo cual será analizado en la sección </xsl:text>
 <sectionRef sec="sFocus" />
 <xsl:text>) y las palabras que significan lo mismo que </xsl:text>
 <langData>
@@ -842,8 +842,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>todos</xsl:text>
@@ -885,8 +884,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>casi</xsl:text>
@@ -928,8 +926,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength2" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>solamente o apenas</xsl:text>
@@ -972,8 +969,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength3" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 							<xsl:text>no</xsl:text>
@@ -1058,7 +1054,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>, los elementos especiales positivos de grado no se expresan como palabras independientes. Pore el contrario, todos se unen a otra palabra de la frase nominal como </xsl:text>
+<xsl:text>, los elementos especiales positivos de grado no se expresan como palabras independientes. Por el contrario, todos se unen a otra palabra de la frase nominal como </xsl:text>
 <xsl:choose>
 					<xsl:when test="//qp/@npDegreePosType='proclitic'">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</xsl:when>
 					<xsl:when test="//qp/@npDegreePosType='enclitic'">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</xsl:when>
@@ -1306,7 +1302,7 @@
 				</xsl:if>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeEitherRestricted)='restricted' and normalize-space(//qp/@npDegreePos)!='before' and normalize-space(//qp/@npDegreePos)!='after'">
-					<xsl:text>Hay estricciones en cuanto a las cuáles de estas palabras pueden ocurrir en cada lado de la frase nominal.</xsl:text>
+					<xsl:text>Hay estricciones en cuanto a las cuáles de estas palabras pueden presentarse en cada lado de la frase nominal.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
@@ -1559,7 +1555,7 @@
 </xsl:if>
 		 </section3>
 			<section3 id="sQPDeterminers">
-				<secTitle>Los cuantificadores que no se presentan con los determinantes</secTitle>
+				<secTitle>Cuantificadores que no se presentan con los determinantes</secTitle>
 				<p>
 <xsl:text>El segundo sistema incluye cuantificadores como </xsl:text>
 <langData>
@@ -1604,7 +1600,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no hay una categoría independiente de los cuantificadores que actúe como el único determinante de la frase nominal. La negación de una frase nominal se expresa solamente con los elementos especiales de grado. Los conceptos positivos de </xsl:text>
+<xsl:text> no hay una categoría independiente de los cuantificadores que funciona al al igual que el único determinante de la frase nominal. La negación de una frase nominal se expresa solamente con los elementos especiales de grado. Los conceptos positivos de </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1614,12 +1610,12 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>cada</langData>
-<xsl:text> son como </xsl:text>
+<xsl:text> son al igual que </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>todos</langData>
-<xsl:text> considerados anteriormente o como los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.</xsl:text>
+<xsl:text> considerados anteriormente o al igual que los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='noPosOnly' or normalize-space(//qp/@determiner)='no' and normalize-space(//qp/@npDegree)='yesPosOnly'">
@@ -1633,7 +1629,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no hay una categoría independiente de los cuantificadores que actúe como el único determinante de la frase nominal.  De la misma forma no hay ninguna manera de expresar el elemento especial negativo de grado, no hay ninguna manera de expresar </xsl:text>
+<xsl:text> no hay una categoría independiente de los cuantificadores que funciona al igual que el único determinante de la frase nominal.  De la misma forma no hay ninguna manera de expresar el elemento especial negativo de grado, no hay ninguna manera de expresar </xsl:text>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'ninguno'</xsl:text>
@@ -1648,12 +1644,12 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>cada</langData>
-<xsl:text> son como </xsl:text>
+<xsl:text> son al igual que </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>todos</langData>
-<xsl:text> considerados anteriormente o como los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.</xsl:text>
+<xsl:text> considerados anteriormente o al igual que los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
@@ -1667,7 +1663,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no hay una categoría independiente de los cuantificadores negativos que actúe como el único determinante de la frase nominal. La negación de una frase nominal es expresa solamente con los elementos especiales de grado. </xsl:text>
+<xsl:text> no hay una categoría independiente de los cuantificadores negativos que funciona al igual que el único determinante de la frase nominal. La negación de una frase nominal es expresa solamente con los elementos especiales de grado. </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegree)!='yesPosOnly'">
@@ -1681,7 +1677,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> se encuentran los siguientes cuantificadores positivos que actúan como el único determinante de la frase nominal: </xsl:text>
+<xsl:text> se encuentran los siguientes cuantificadores positivos que funcionan al igual que el único determinante de la frase nominal: </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly'">
@@ -1695,7 +1691,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no hay una categoría independiente de los cuantificadores negativos que actúe como el único determinante de la frase nominal. Asimismo tampoco hay alguna manera de expresar el elemento especial negativo de grado. </xsl:text>
+<xsl:text> no hay una categoría independiente de los cuantificadores negativos que funciona al igual que el único determinante de la frase nominal. Asimismo tampoco hay alguna manera de expresar el elemento especial negativo de grado. </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='noPosOnly' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@npDegree)='yesPosOnly'">
@@ -1709,7 +1705,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> se encuentran los siguientes cuantificadores positivos que actúan como el único determinante de la frase nominal:</xsl:text>
+<xsl:text> se encuentran los siguientes cuantificadores positivos que funcionan al igual que el único determinante de la frase nominal:</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yesNo'">
@@ -1723,7 +1719,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no hay una categoría independiente de los cuantificadores positivos que actúe como el único determinante de la frase nominal. Los conceptos positivos de </xsl:text>
+<xsl:text> no hay una categoría independiente de los cuantificadores positivos que funciona al igual que el único determinante de la frase nominal. Los conceptos positivos de </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1733,12 +1729,12 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>cada</langData>
-<xsl:text> son como </xsl:text>
+<xsl:text> son al igual que </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>todos</langData>
-<xsl:text> considerados anteriormente o como los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.   </xsl:text>
+<xsl:text> considerados anteriormente o al igual que los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.   </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yesNo'">
@@ -1752,7 +1748,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> se encuentran los siguientes cuantificadores negativos que actúan como el único determinante de la frase nominal: </xsl:text>
+<xsl:text> se encuentran los siguientes cuantificadores negativos que funcionan al igual que el único determinante de la frase nominal: </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)='yes'">
@@ -1766,7 +1762,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> se encuentran los siguientes cuantificadores positivos y negativos que actúan como el único determinante de la frase nominal: </xsl:text>
+<xsl:text> se encuentran los siguientes cuantificadores positivos y negativos que funcionan al igual que el único determinante de la frase nominal: </xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//qp/@determiner)!='no'">
@@ -2044,7 +2040,7 @@
 </xsl:if>
 			</section3>
 			  <section3 id="sQPOtherQuantifiers">
-				 <secTitle>Otros cuantificadores y las palabras de grado</secTitle>
+				 <secTitle>Otros cuantificadores y palabras de grado</secTitle>
 				 <p>
 <xsl:text>Otros cuantificadores, como </xsl:text>
 <langData>
@@ -2132,8 +2128,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -2263,9 +2258,9 @@
 
 	 </section2>
 	 <section2 id="sAdjArtDem">
-		 <secTitle>Los artículos y demostrativos</secTitle>
+		 <secTitle>Artículos y demostrativos</secTitle>
 		 <p>
-<xsl:text>En español, los artículos incluyen </xsl:text>
+<xsl:text>En español, los artículos son los siguientes: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -2285,7 +2280,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>la</langData>
-<xsl:text>.  Los demostrativos en español incluyen </xsl:text>
+<xsl:text>.  Los demostrativos en español son los siguientes: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -2332,7 +2327,7 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-				 <xsl:when test="//np/@artAndDem='no'"> no hay artículos ni demostrativos que sean palabras independientes.</xsl:when>
+				 <xsl:when test="//np/@artAndDem='no'"> no hay artículos ni demostrativos que son palabras independientes.</xsl:when>
 				 <xsl:when test="//np/@artAndDem='article'"> solamente hay artículos que son palabras independientes, ningún demostrativo.</xsl:when>
 				 <xsl:when test="//np/@artAndDem='demonstrative'"> solamente hay demostrativos que son palabras independientes, ningún artículo.</xsl:when>
 				 <xsl:when test="//np/@artAndDem='both'"> hay artículos y demostrativos que son palabras independientes.</xsl:when>
@@ -2394,8 +2389,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -2445,7 +2439,7 @@
 <table border="1">
 				 <tr>
 					 <th>Demostrativos</th>
-					 <th>Significado</th>
+					 <th>Glosa</th>
 				 </tr>
 				 <xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//np/demonstrativeExample),'.','')" />
@@ -2467,8 +2461,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>

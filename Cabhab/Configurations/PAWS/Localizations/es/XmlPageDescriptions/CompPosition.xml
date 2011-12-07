@@ -6,7 +6,7 @@
 	<form section="comp">
 		<radioGroup>
 			<groupName dataItem="comp" default="no">RComp</groupName>
-			<prompt>En vista de los ejemplos usted dio de cláusulas de complemento, ¿Hay uno o más complementizadores que marcan cláusulas subordinadas en su idioma?   (Las preguntas y las cláusulas relativas serán consideradas en las secciones siguientes, así que no contestan para esos tipos aquí.)</prompt>
+			<prompt>En vista de los ejemplos usted dio de cláusulas de complemento, ¿Hay uno o más complementizadores que indican cláusulas subordinadas en su idioma?   (Las preguntas y las cláusulas relativas serán consideradas en las secciones siguientes, así que no contestan para esos tipos aquí.)</prompt>
 			<radio id="CompYes" dataValue="yes">Sí, como <example>that 'que'</example> y <example>for 'para'</example> en inglés</radio>
 			<radioGroup id="CompWordTable" show="swCompYes">
 				<groupName dataItem="compWord" default="yes">RCompWord</groupName>
@@ -22,7 +22,7 @@
 				<radioGroup id="CompCliticTypeTable" show="swCompWordNo">
 					<groupName dataItem="compCliticAttaches" default="edge">RCompCliticAttaches</groupName>
 					<prompt>¿Dónde se une el clítico a la cláusula subordinada?</prompt>
-					<radio id="CompCliticAttachesEdge" dataValue="edge">En el borde</radio>
+					<radio id="CompCliticAttachesEdge" dataValue="edge">En el extremo</radio>
 					<radio id="CompCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
 				<radio id="CompWordYes" dataValue="yes">Sí</radio>
@@ -41,7 +41,7 @@
 					<groupName dataItem="compEitherRestricted" default="unrestricted">RCompEitherRestricted</groupName>
 					<prompt>¿Pueden todos los complementizadores presentarse de cualquier lado de la cláusula subordinada?</prompt>
 					<radio id="CompEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="CompEitherRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+					<radio id="CompEitherRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
 			<radio id="CompNo" dataValue="no">No, no hay ninguna palabra del complementizador ni un clítico para las cláusulas subordinadas declarativas<span id="CompNoSpanNotPractical" show="swNotPractical">, so all embedded clauses are simply IPs in this language</span></radio>

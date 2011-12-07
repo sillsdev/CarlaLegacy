@@ -8,7 +8,7 @@
 		<example>las barras de cobre amarillo embotadas duras</example>contra <example>las barras de cobre amarillo duras embotadas</example> contra <example>las barras embotadas duras de cobre amarillo</example>, etc.
 		<span id="AdjPNotPracticalSpan" show="swNotPractical"> Esta característica de apilar adjetivos será analizada en la sección de frases nominales por una regla que permita la repetición.</span>
 </introduction>
-	<introduction>Aquí necesitamos considerar otra vez qué tipos de palabras pueden modificar los adjetivos cualitativos ellos mismos.</introduction>
+	<introduction>En esta sección necesitamos considerar otra vez qué tipos de palabras pueden modificar los adjetivos cualitativos ellos mismos.</introduction>
 	<EnglishExample>
 		<exItem>Algunos ejemplos en español son:</exItem>
 		<exItem label="1.">
@@ -22,7 +22,7 @@
 		<exItem label="5.">
 			<u>muy fácilmente</u> olvidado</exItem>
 	</EnglishExample>
-	<introduction>No todas las combinaciones de palabras suceden debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras de grado y adverbios o frases del adverbio de modo pueden modificar adjetivos.</introduction>
+	<introduction>No todas las combinaciones de palabras suceden debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras de grado y adverbios o frases del adverbio de manera pueden modificar adjetivos.</introduction>
 	<form section="adjp">
 		<prompt>Escriba sus ejemplos aquí:</prompt>
 		<textBox id="AdjPExamples" dataItem="example"/>
@@ -45,10 +45,10 @@
 					<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
 					<prompt>¿Pueden todas las palabras de grado presentarse de cualquier lado del adjetivo?</prompt>
 					<radio id="AdjPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="AdjPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+					<radio id="AdjPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
-			<radio id="AdjPModifiersYesManner" checked="yes" dataValue="yesManner">Sí - ambas ciertas palabras de grado y frases del adverbio de modo</radio>
+			<radio id="AdjPModifiersYesManner" checked="yes" dataValue="yesManner">Sí - ambas ciertas palabras de grado y frases del adverbio de manera</radio>
 			<radioGroup id="AdjPModifiersYesMannerTable" show="swAdjPModifiersYesManner">
 				<groupName dataItem="mannerPos" default="unknown" position="yesSpec">RManner</groupName>
 				<prompt>¿Dónde se presentan estos modificadores con respecto al adjetivo?</prompt>
@@ -63,7 +63,7 @@
 					<groupName dataItem="mannerEither" default="unrestricted">RMannerEitherSide</groupName>
 					<prompt>¿Pueden todos los modificadores presentarse de cualquier lado del adjetivo?</prompt>
 					<radio id="AdjPMannerEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="AdjPMannerEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+					<radio id="AdjPMannerEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
 		</radioGroup>

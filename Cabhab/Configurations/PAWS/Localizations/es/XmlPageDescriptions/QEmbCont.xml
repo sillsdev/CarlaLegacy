@@ -5,7 +5,7 @@
 	<title level="2">La preguntas - Las preguntas abiertas de la cláusula subordinada</title>
 	<form section="q">
 		<EnglishExample>
-			<exItem>Algunos ejemplos de las preguntas abiertas subordinadas, demostrando el desplazamiento requerido de una frase interrogativa,son: </exItem>
+			<exItem>Algunos ejemplos de las preguntas abiertas subordinadas, mostrando el desplazamiento requerido de una frase interrogativa,son: </exItem>
 			<exItem label="1.">I know who hit the ball. 'Sé quién golpeó el beísbol.'</exItem>
 			<exItem label="2.">I wonder when she will come. 'Me pregunto cuándo ella vendrá.'</exItem>
 			<exItem label="3.">I will ask what the boy wants. 'Preguntaré qué quiere el muchacho.'</exItem>
@@ -32,7 +32,7 @@
 				<radioGroup id="QEmbContCliticTypeTable" show="swQEmbContWordNo">
 					<groupName dataItem="embContCliticAttaches" default="edge">RQEmbYNCliticAttaches</groupName>
 					<prompt>¿Dónde se une el clítico a la pregunta subordinada?</prompt>
-					<radio id="QEmbContCliticAttachesEdge" dataValue="edge">En el borde</radio>
+					<radio id="QEmbContCliticAttachesEdge" dataValue="edge">En el extremo</radio>
 					<radio id="QEmbContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">Entre la frase interrogativa desplazada y el resto de la pregunta subordinada</radio>
 					<radio id="QEmbContCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
@@ -47,7 +47,7 @@
 					<groupName dataItem="embContVSOBeforeWhNoEndRestricted" default="unrestricted">RQEmbContVSONoEnd</groupName>
 					<prompt>¿Pueden todos los indicadores o complementizadores de la pregunta presentarse en cualquiera posición?</prompt>
 					<radio id="QEmbContVSONoEndUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="QEmbContVSONoEndRestricted" dataValue="restricted">No, hay grupos distintos para cada posición</radio>
+					<radio id="QEmbContVSONoEndRestricted" dataValue="restricted">No, hay distintos grupos para cada posición</radio>
 				</radioGroup>
 				<radio id="QEmbContVSOBeforeWhYes" dataValue="yes">Sí, todos se presentan antes de una frase interrogativa desplazada</radio>
 				<radio id="QEmbContVSOBeforeWhSome" dataValue="some">Sí, algunos se presentan antes de una frase interrogativa desplazada pero algunos se presentan después de ella</radio>
@@ -66,7 +66,7 @@
 					<groupName dataItem="embContEitherRestricted" default="unrestricted">RQEmbContEither</groupName>
 					<prompt>¿Pueden todos los indicadores o complementizadores de la pregunta presentarse de cualquier lado de la pregunta subordinada?</prompt>
 					<radio id="QEmbContEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="QEmbContEitherRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+					<radio id="QEmbContEitherRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
 			<radioGroup id="QEmbContRequiredTable" show="swQEmbContWordYes">

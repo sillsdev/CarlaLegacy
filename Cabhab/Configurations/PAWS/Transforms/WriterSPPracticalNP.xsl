@@ -472,10 +472,10 @@
 <xsl:text>Cada una de estas frases será analizada y ejemplificada en las secciones siguientes.</xsl:text>
 </p>
 		<section2 id="sNPDegree">
-			<secTitle>Las palabras especiales de grado como modificadores</secTitle>
+			<secTitle>Palabras especiales de grado como modificadores</secTitle>
 			<p>
 <xsl:text>
-					Empezando con el exterior de la frase nominal, esta posición se ocupa por las palabras de grado que modifican a la frase completa, tal como </xsl:text>
+					Empezando con el extremo de la frase nominal, esta posición se ocupa por las palabras de grado que modifican a la frase completa, tal como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -502,7 +502,7 @@
 </xsl:attribute>no</langData>
 <xsl:text>.  Las palabras especiales de grado fueron analizadas en la sección </xsl:text>
 <sectionRef sec="sQPAll" />
-<xsl:text>.  Para repasar los detalles en </xsl:text>
+<xsl:text>.  De acuerdo con lo considerado, en  </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -654,16 +654,16 @@
 </xsl:if>
 		</section2>
 		<section2 id="sNPArtDem">
-			<secTitle>Los artículos y demostrativos en la frase nominal</secTitle>
+			<secTitle>Artículos y demostrativos en la frase nominal</secTitle>
 			<p>
-<xsl:text>Los artículos y/o los demostrativos llenan normalmente el nivel siguiente cuando se mueve adentro hacia el sustantivo.
+<xsl:text>Los artículos y/o los demostrativos normalmente ocupan el siguiente nivel adentro del extremo hacia el sustantivo.
 					En español, los artículos y los demostrativos no se presentan en la misma frase nominal, sino que ambos se presentan antes del sustantivo.
 					Algunos idiomas permiten que ambos se presentan en la misma frase, y pueden presentarse en diversas posiciones con respecto al sustantivo.
 					Por lo tanto, necesitan categorías sintácticas distintas. Algunos idiomas tienen solamente una categoría, los artículos o los demostrativos.
 					Algunos idiomas no tienen cualquier tipo expresado como palabras independientes. </xsl:text>
 </p>
 			<p>
-<xsl:text>Según lo visto en la sección </xsl:text>
+<xsl:text>De acuerdo con lo considerado en la sección </xsl:text>
 <sectionRef sec="sAdjArtDem" />
 <xsl:text>, en </xsl:text>
 <xsl:choose>
@@ -693,7 +693,7 @@
 					<xsl:if test="normalize-space(//np/@artAndDem)!='no' and normalize-space(//np/@artCase)='no'">
 						<xsl:text>no </xsl:text>
 					</xsl:if>
-					<xsl:text>se marcan para el caso.</xsl:text>
+					<xsl:text>se indican para el caso.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
 </p>
@@ -717,7 +717,7 @@
 <xsl:text>  La presencia de un artículo es </xsl:text>
 <xsl:choose>
 					<xsl:when test="//np/@artRequired='no'">siempre opcional.</xsl:when>
-					<xsl:when test="//np/@artRequired='mass'">opcional con sustantivos plurales o totales, pero se requiere con sustantivos singulares.</xsl:when>
+					<xsl:when test="//np/@artRequired='mass'">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</xsl:when>
 					<xsl:when test="//np/@artRequired='yes'">siempre requirido.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
@@ -765,7 +765,7 @@
 <xsl:text>  La presencia de un demostrativo es </xsl:text>
 <xsl:choose>
 					<xsl:when test="//np/@demRequired='no'">siempre opcional.</xsl:when>
-					<xsl:when test="//np/@demRequired='mass'">opcional con sustantivos plurales o totales, pero se requiere con sustantivos singulares.</xsl:when>
+					<xsl:when test="//np/@demRequired='mass'">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</xsl:when>
 					<xsl:when test="//np/@demRequired='yes'">siempre requirido.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
@@ -813,7 +813,7 @@
 <xsl:text>  La presencia de un artículo o un demostrativo es </xsl:text>
 <xsl:choose>
 					<xsl:when test="//np/@demOrArtRequired='no'">siempre opcional.</xsl:when>
-					<xsl:when test="//np/@demOrArtRequired='mass'">opcional con sustantivos plurales o totales, pero se requiere con sustantivos singulares.</xsl:when>
+					<xsl:when test="//np/@demOrArtRequired='mass'">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</xsl:when>
 					<xsl:when test="//np/@demOrArtRequired='yes'">siempre requirido.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
@@ -848,7 +848,7 @@
 					<xsl:when test="//np/@artBothCooccur='different'">sino ambos no pueden </xsl:when>
 					<xsl:when test="//np/@artBothCooccur='yes'">y que pueden ambos </xsl:when>
 				</xsl:choose>
-<xsl:text>presentarse en la misma frase nominal.  El demostrativo ocurre </xsl:text>
+<xsl:text>presentarse en la misma frase nominal.  El demostrativo se presenta </xsl:text>
 <xsl:choose>
 					<xsl:when test="//np/@demAndArtDemPos='before'">antes</xsl:when>
 					<xsl:when test="//np/@demAndArtDemPos='after'">después</xsl:when>
@@ -866,7 +866,7 @@
 <xsl:text>  La presencia de un demostrativo es </xsl:text>
 <xsl:choose>
 					<xsl:when test="//np/@demAndArtDemRequired='no'">siempre opcional.</xsl:when>
-					<xsl:when test="//np/@demAndArtDemRequired='mass'">opcional con sustantivos plurales o totales, pero se requiere con sustantivos singulares.</xsl:when>
+					<xsl:when test="//np/@demAndArtDemRequired='mass'">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</xsl:when>
 					<xsl:when test="//np/@demAndArtDemRequired='yes'">siempre requirido.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
@@ -909,7 +909,7 @@
 <xsl:text>  La presencia de un artículo es </xsl:text>
 <xsl:choose>
 					<xsl:when test="//np/@demAndArtArtRequired='no'">siempre opcional.</xsl:when>
-					<xsl:when test="//np/@demAndArtArtRequired='mass'">opcional con sustantivos plurales o totales, pero se requiere con sustantivos singulares.</xsl:when>
+					<xsl:when test="//np/@demAndArtArtRequired='mass'">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</xsl:when>
 					<xsl:when test="//np/@demAndArtArtRequired='yes'">siempre requirido.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
@@ -945,7 +945,7 @@
 					<xsl:when test="//np/@artAndDem='demonstrative'">los demostrativos</xsl:when>
 					<xsl:when test="//np/@artAndDem='both'">los artículos y/o los demostrativos</xsl:when>
 				</xsl:choose>
-<xsl:text> según lo permitido en </xsl:text>
+<xsl:text> de acuerdo con lo permitido en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -999,9 +999,9 @@
 </xsl:if>
 		</section2>
 		<section2 id="sNPPoss">
-			<secTitle>Los poseedores</secTitle>
+			<secTitle>Poseedores</secTitle>
 			<p>
-<xsl:text>La posesión se puede expresar normalmente por un pronombre posesivo (según lo visto en la sección </xsl:text>
+<xsl:text>La posesión se puede expresar normalmente por un pronombre posesivo (de acuerdo con lo considerado en la sección </xsl:text>
 <sectionRef sec="sPronPoss" />
 <xsl:text>), por un sustantivo simple, o por una frase nominal completa. El español permite solamente pronombres posesivos en la posición del poseedor antes del sustantivo,
 					con todos los poseedores de sustantivos o frases nominales expresados en una frase preposicional con la preposición </xsl:text>
@@ -1032,7 +1032,7 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'la madre del muchacho'</xsl:text>
 </gloss>
-<xsl:text>, hay las frases que demuestran claramente que el clítico se une al final de la frase nominal completo, tal como </xsl:text>
+<xsl:text>, hay las frases que muestran claramente que el clítico se une al final de la frase nominal completo, tal como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1050,7 +1050,7 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'el discurso maravilloso de la muchacha en verde'</xsl:text>
 </gloss>
-<xsl:text>.  Estos ejemplos demuestran que los poseedores pueden incluir frases </xsl:text>
+<xsl:text>.  Estos ejemplos muestran que los poseedores pueden incluir frases </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
 					<xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
@@ -1126,7 +1126,7 @@
 					<xsl:when test="//pp/@pPos='both'">preposicionales y/o posposicionales</xsl:when>
 					<xsl:when test="//pp/@pPos='unknown'">preposicionales y/o posposicionales</xsl:when>
 				</xsl:choose>
-<xsl:text> dentro del poseedor son:</xsl:text>
+<xsl:text> incluidas en el poseedor son:</xsl:text>
 </p>
 			<example num="xNP.NPPoss.14">
 <xsl:variable name="sExampleValue">
@@ -1167,7 +1167,7 @@
 </xsl:choose>
 </example>
 			<p>
-<xsl:text>Algunos ejemplos con cláusulas relativas dentro del poseedor, incluido en oraciones completas son:</xsl:text>
+<xsl:text>Algunos ejemplos con cláusulas relativas incluidas en el poseedor, incluido en oraciones completas son:</xsl:text>
 </p>
 			<example num="xNP.NPPoss.18">
 <xsl:variable name="sExampleValue">
@@ -1208,7 +1208,7 @@
 </xsl:choose>
 </example>
 			<p>
-<xsl:text>Según lo visto anteriormente en los ejemplos,  en </xsl:text>
+<xsl:text>De acuerdo con lo considerado anteriormente en los ejemplos,  en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -1316,9 +1316,9 @@
 </p>
 		</section2>
 		<section2 id="sNPQP">
-			<secTitle>Las frases del cuantificador como modificadores</secTitle>
+			<secTitle>Frases del cuantificador como modificadores</secTitle>
 			<p>
-<xsl:text>Las frases del cuantificador llenan el nivel siguiente hacia el sustantivo. Esta posición incluye ambos números (véase la sección </xsl:text>
+<xsl:text>Las frases del cuantificador ocupan el siguiente nivel hacia el sustantivo. Esta posición incluye ambos números (véase la sección </xsl:text>
 <sectionRef sec="sAdjNumbers" />
 <xsl:text>) y otros cuantificadores y palabras de grado (véase la sección </xsl:text>
 <sectionRef sec="sQPOtherQuantifiers" />
@@ -1427,7 +1427,7 @@
 </example>
 			<xsl:if test="normalize-space(//np/@qpAgree)='yes'">
 <p>
-<xsl:text>Como otros modificadores dentro de la frase nominal, las frases del cuantificador en  </xsl:text>
+<xsl:text>Al al igual que otros modificadores dentro de la frase nominal, las frases del cuantificador en  </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -1447,9 +1447,9 @@
 </xsl:if>
 		</section2>
 		<section2 id="sNPAdjP">
-			<secTitle>Las frases del adjetivo como modificadores</secTitle>
+			<secTitle>Frases del adjetivo como modificadores</secTitle>
 			<p>
-<xsl:text>Las frases del adjetivo fueron discutidas anteriormente en la sección </xsl:text>
+<xsl:text>Las frases del adjetivo fueron analizadas anteriormente en la sección </xsl:text>
 <sectionRef sec="sAdjP" />
 <xsl:text>.  Las frases del adjetivo se presentan cerca del sustantivo.  Algunas frases nominales en inglés con adjetivos son:</xsl:text>
 <langData>
@@ -1458,7 +1458,7 @@
 </xsl:attribute>just those very few old, dirty books</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'apenas ésos muy pocos libros viejos, sucios'</xsl:text>
+<xsl:text>'solo los muy pocos libros viejos, sucios'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -1467,7 +1467,7 @@
 </xsl:attribute>all the boy’s many black dogs</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'todo los muchos perros negros del muchacho'</xsl:text>
+<xsl:text>'todos los muchos perros negros del muchacho'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -1476,10 +1476,10 @@
 </xsl:attribute>only the first one hundred very eager young boys</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'solamente los primeros cientos muchachos jovenes muy impacientes'</xsl:text>
+<xsl:text>'solamente los primeros cien muchachos jovenes que están muy impacientes'</xsl:text>
 </gloss>
-<xsl:text>.  Mientras que los ejemplos en inglés demuestran, todos los adjetivos se presentan antes del sustantivo, y, desemejante de los otros modificadores, se permita más de una frase del adjetivo.
-					En español, los adjetivos se presentan después del sustantivo y se permite solamente una frase del adjetivo, a menos que los adjetivos son coordinados (véase la sección </xsl:text>
+<xsl:text>.  Como se puede ver en los ejemplos en inglés, todos los adjetivos se presentan antes del sustantivo, y, al contrario de los otros modificadores, se permita más de una frase adjetival.
+					En español, los adjetivos se presentan después del sustantivo y solamente se permite solamente una frase adjetival, a menos que los adjetivos son coordinados (véase la sección </xsl:text>
 <sectionRef sec="sCoordAdj" />
 <xsl:text>).</xsl:text>
 </p>
@@ -1563,7 +1563,7 @@
 </example>
 			<xsl:if test="normalize-space(//np/@adjpAgree)='yes'">
 <p>
-<xsl:text>Como otros modificadores dentro de la frase nominal, las frases del adjetivo en </xsl:text>
+<xsl:text>Al al igual que otros modificadores dentro de la frase nominal, las frases del adjetivo en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -1585,10 +1585,10 @@
 		</section2>
 		<section2 id="sNPPP">
 			<secTitle>            <xsl:choose>
-				<xsl:when test="//pp/@pPos='before'">Las frases preposicionales como modificadores o complementos</xsl:when>
-				<xsl:when test="//pp/@pPos='after'">Las frases posposicionales como modificadores o complementos</xsl:when>
-				<xsl:when test="//pp/@pPos='both'">Las frases preposicionales o posposicionales como modificadores o complementos</xsl:when>
-				<xsl:when test="//pp/@pPos='unknown'">Las frases preposicionales y/o posposicionales como modificadores o complementos</xsl:when>
+				<xsl:when test="//pp/@pPos='before'">Frases preposicionales como modificadores o complementos</xsl:when>
+				<xsl:when test="//pp/@pPos='after'">Frases posposicionales como modificadores o complementos</xsl:when>
+				<xsl:when test="//pp/@pPos='both'">Frases preposicionales o posposicionales como modificadores o complementos</xsl:when>
+				<xsl:when test="//pp/@pPos='unknown'">Frases preposicionales y/o posposicionales como modificadores o complementos</xsl:when>
 			</xsl:choose>
 </secTitle>
 			<p>
@@ -1616,7 +1616,7 @@
 					<xsl:when test="//pp/@pPos='both'">preposicionales y/o posposicionales</xsl:when>
 					<xsl:when test="//pp/@pPos='unknown'">preposicionales y/o posposicionales</xsl:when>
 				</xsl:choose>
-<xsl:text> del genitivo pueden actuar como el poseedor, tal como </xsl:text>
+<xsl:text> del genitivo pueden funcionar como el poseedor, tal como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1712,7 +1712,7 @@
 			<p>
 <xsl:text>Véase el la sección </xsl:text>
 <sectionRef sec="sPP" />
-<xsl:text> para el análisis de las frases </xsl:text>
+<xsl:text> para considerar el análisis de las frases </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
 					<xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
@@ -1732,24 +1732,36 @@
 </p>
 		</section2>
 <section2 id="sNPParticiple">
-	<secTitle>Los participios</secTitle>
+	<secTitle>Participios</secTitle>
 		<p>
-<xsl:text>Otro caso que se puede parecer como un sustantivo y un complemento puede ser realmente una frase del participio (también llamada un gerundio). Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición o posposición. Algunos ejemplos de español en oraciones completas con la frase del participio acorchetada son: </xsl:text>
+<xsl:text>Otro caso que se puede parecer al igual que un sustantivo y un complemento puede ser realmente una frase del participio. Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición o posposición. Algunos ejemplos en oraciones completas en inglés con la frase del participio entre corchetes son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>[Estudiando participios] es dificil</langData>
+</xsl:attribute>[Studying participles] is difficult</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'[Estudiando participios] es dificil'</xsl:text>
+</gloss>
 <xsl:text>, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>Él tiene gusto [leyendo la poesía latina]</langData>
+</xsl:attribute>He likes [reading Latin poetry]</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'Él tiene gusto [leyendo la poesía latina]'</xsl:text>
+</gloss>
 <xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>El receptor demostró su valor cerca [haciendo el retén]</langData>
-<xsl:text>  Tales frases se pueden poseer o modificar también, y a veces se presenta solamente el participio como el elemento principal de una frase nominal, como en </xsl:text>
+</xsl:attribute>The receiver showed his worth by [making the catch]</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'El receptor mostró su valor cerca [haciendo el retén]'</xsl:text>
+</gloss>
+<xsl:text>.  Tales frases se pueden poseer o modificar también, y a veces se presenta solamente el participio como el elemento principal de una frase nominal, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1763,7 +1775,12 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>su siguiente.</langData>
+</xsl:attribute>your following</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'su siguiente'</xsl:text>
+</gloss>
+<xsl:text>.</xsl:text>
 </p>
 			<p>
 <xsl:text> Algunos ejemplos de los participios o las frases del participio que pueden substituir por un sustantivo en una frase nominal en </xsl:text>
@@ -1816,7 +1833,7 @@
 </xsl:choose>
 </example>
 			<p>
-<xsl:text>Estas frases del participio pueden presentarse en oraciones completas como se muestra aquí: </xsl:text>
+<xsl:text>Estas frases del participio pueden presentarse en oraciones completas como se muestra a continuación: </xsl:text>
 </p>
 			<example num="xNP.NPParticiple.12">
 <xsl:variable name="sExampleValue">
@@ -1857,7 +1874,7 @@
 </xsl:choose>
 </example>
 	<p>
-<xsl:text>Los participios o las frases del participio pueden también actuar como adjetivos en la modificación de un sustantivo en muchas idiomas, aunque no en español. Algunos ejemplos en inglés con el participio o la frase del participio acorchetada son: </xsl:text>
+<xsl:text>Los participios o las frases del participio pueden también funcionar al igual que adjetivos en la modificación de un sustantivo en muchas idiomas (también llamada un gerundio). Algunos ejemplos en inglés con el participio o la frase del participio entre corchetes son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>

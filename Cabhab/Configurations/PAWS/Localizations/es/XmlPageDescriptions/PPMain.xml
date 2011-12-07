@@ -3,31 +3,31 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PPMain" count="1/5">
 	<title>Las frases preposicionales y/o posposicionales</title>
-	<introduction>En esta sección se analiza la estructura interna de las frases preposicionales o posposicionales.  Los modificadores posibles de la frase se consideran primero. Hay normalmente algunas palabras de grado que pueden modificar a una frase preposicional o posposicional completa, tal como <example>apenas</example> y <example>right 'hasta'</example> en <example>apenas alrededor de la esquina</example> y <example>right to the last second 'hasta el último momento'</example>.
-		Los números ordinales y los adjetivos también pueden modificar a las frases preposicionales o posposicionales, como en <example>próximo en línea</example> y <example>first out the door 'primero hacia fuera la puerta'</example>.
-		Además, ciertos adverbios de modo pueden modificar a las frases preposicionales o posposicionales, como <example>casi</example>, <example>mostly 'sobre todo'</example> y <example>squarely 'en ángulo recto'</example> en <example>casi en el agujero</example>, <example>mostly up the tree 'sobre todo encima del árbol'</example>, <example>squarely on the table 'en ángulo recto en la tabla'</example> y <example>casi sobre el enemigo</example>.</introduction>
+	<introduction>En esta sección se analiza la estructura interna de las frases preposicionales o posposicionales.  Primero se analizan los posibles modificadores de la frase. Normalmente hay algunas palabras de grado que pueden modificar una frase preposicional o posposicional completa, tal como <example>just 'justo'</example> y <example>right 'hasta'</example> en <example>just around the corner 'justo a la vuelta de la esquina'</example> y <example>right to the last second 'hasta el último momento'</example>.
+		Los números ordinales y los adjetivos también pueden modificar las frases preposicionales o posposicionales, como en <example>next in line 'el próximo en la file'</example> y <example>first out the door 'el primero en salir'</example>.
+		Además, ciertos adverbios de manera pueden modificar a las frases preposicionales o posposicionales, como <example>casi</example>, <example>mostly 'sobre todo'</example> y <example>squarely 'justo'</example> en <example>almost in the hole 'casi en el agujero'</example>, <example>mostly up the tree 'la mayoría en el árbol'</example>, <example>squarely on the table 'justo en la mesa'</example> y <example>nearly upon the enemy 'casi sobre el enemigo'</example>.</introduction>
 	<form section="pp">
 		<prompt>Escriba algunos ejemplos similares de su idioma aquí:</prompt>
 		<textBox id="PPMainExample" dataItem="example"/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="modifiers" default="no">RPPModifiers</groupName>
-			<prompt>En acuerdo con los datos escribió arriba, ¿hay modificadores que se presentan antes o después de las frases preposicionales o posposicionales como palabras independientes en su idioma?</prompt>
-			<radio id="PPModifiersNo" dataValue="no">No, ni las palabras de grado ni los ordinales ni los adverbios de modo pueden modificar a las frases preposicionales o posposicionales como palabras independientes</radio>
+			<prompt>De acuerdo con los ejemplos que usted escribió anteriormente, ¿hay modificadores que se presentan antes o después de las frases preposicionales o posposicionales como palabras independientes en su idioma?</prompt>
+			<radio id="PPModifiersNo" dataValue="no">No, ni las palabras de grado ni los ordinales ni los adverbios de manera pueden modificar las frases preposicionales o posposicionales como palabras independientes</radio>
 			<radio id="PPModifiersYes" dataValue="yes">Sí</radio>
 			<radioGroup id="PPModifiersTable" show="swPPModifiersYes">
 				<groupName dataItem="modifierType" default="degree">RPPModifiersType</groupName>
 				<prompt>¿Qué tipos de modificadores pueden presentarse?</prompt>
 				<radio id="PPModifiersDegree" dataValue="degree">Solamente palabras de grado</radio>
 				<radio id="PPModifiersOrdinal" dataValue="ordinal">Solamente ordinales</radio>
-				<radio id="PPModifiersManner" dataValue="manner">Solamente adverbios de modo</radio>
-				<radio id="PPModifiersDegreeAndOrdinal" dataValue="degreeAndOrdinal">Palabras de grado y ordinales, pero no adverbios de modo</radio>
-				<radio id="PPModifiersDegreeAndManner" dataValue="degreeAndManner">Palabras de grado y adverbios de modo, pero no ordinales</radio>
-				<radio id="PPModifiersMannerAndOrdinal" dataValue="mannerAndOrdinal">Adverbios de modo y ordinales, pero no palabras de grado</radio>
-				<radio id="PPModifiersAll" dataValue="all">Tres tipos, palabras de grado, adverbios de modo y ordinales pueden presentarse</radio>
+				<radio id="PPModifiersManner" dataValue="manner">Solamente adverbios de manera</radio>
+				<radio id="PPModifiersDegreeAndOrdinal" dataValue="degreeAndOrdinal">Palabras de grado y ordinales, pero no adverbios de manera</radio>
+				<radio id="PPModifiersDegreeAndManner" dataValue="degreeAndManner">Palabras de grado y adverbios de manera, pero no ordinales</radio>
+				<radio id="PPModifiersMannerAndOrdinal" dataValue="mannerAndOrdinal">Adverbios de manera y ordinales, pero no palabras de grado</radio>
+				<radio id="PPModifiersAll" dataValue="all">Tres tipos, palabras de grado, adverbios de manera y ordinales pueden presentarse</radio>
 				<radioGroup id="PPModifierDegreePosTable" show="swPPModifiersYesDegree">
 					<groupName dataItem="degreePos" default="unknown" position="yesSpec">RPPModifiersDegreePos</groupName>
-					<prompt>¿Dónde se presentan las palabras de grado vienen con respecto del resto de la frase preposicional o posposicional?</prompt>
+					<prompt>¿Dónde se presentan las palabras de grado con respecto del resto de la frase preposicional o posposicional?</prompt>
 					<radio id="PPModifiersDegreePosBefore" dataValue="before">Antes</radio>
 					<radio id="PPModifiersDegreePosAfter" dataValue="after">Después</radio>
 					<radio id="PPModifiersDegreePosEitherSide" dataValue="either">Cualquier lado, pero no en ambos lados en la misma oración</radio>
@@ -39,7 +39,7 @@
 						<groupName dataItem="degreeRestricted" default="unrestricted">RPPModifiersDegreePosRestricted</groupName>
 					   <prompt>¿Pueden todas las palabras de grado presentarse de cualquier lado de las frases preposicionales o posposicionales? </prompt>
 					   <radio id="PPModifiersDegreePosEitherOrBothUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-					   <radio id="PPModifiersDegreePosEitherOrBothRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+					   <radio id="PPModifiersDegreePosEitherOrBothRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 					</radioGroup>
 				</radioGroup>
 				<radioGroup id="PPModifiersOrdinalPosTable" show="swPPModifiersYesOrdinal">
@@ -56,12 +56,12 @@
 						<groupName dataItem="ordinalRestricted" default="unrestricted">RPPModifiersOrdinalPosRestricted</groupName>
 						<prompt>¿Pueden todos los ordinales presentarse de cualquier lado de las frases preposicionales o posposicionales?</prompt>
 						<radio id="PPModifiersOrdinalPosEitherOrBothUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-						<radio id="PPModifiersOrdinalPosEitherOrBothRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+						<radio id="PPModifiersOrdinalPosEitherOrBothRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 					</radioGroup>
 				</radioGroup>
 				<radioGroup id="PPModifiersPosTable" show="swPPModifiersYesManner">
 					<groupName dataItem="mannerPos" default="unknown" position="yesSpec">RPPModifiersMannerPos</groupName>
-					<prompt>¿Dónde se presentan los adverbios de modo con respecto del resto de la frase preposicional o posposicional?</prompt>
+					<prompt>¿Dónde se presentan los adverbios de manera con respecto del resto de la frase preposicional o posposicional?</prompt>
 					<radio id="PPModifiersMannerPosBefore" dataValue="before">Antes</radio>
 					<radio id="PPModifiersMannerPosAfter" dataValue="after">Después</radio>
 					<radio id="PPModifiersMannerPosEitherSide" dataValue="either">Cualquier lado, pero no en ambos lados en la misma oración</radio>
@@ -71,9 +71,9 @@
 					<radio id="PPModifiersMannerPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
 					<radioGroup id="PPModifiersMannerPosEitherOrBothRestrictedTable" show="swPPModifiersYesMannerEitherOrBoth">
 						<groupName dataItem="mannerRestricted" default="unrestricted">RPPModifiersMannerPosRestricted</groupName>
-						<prompt>¿Pueden todos los adverbios de modo presentarse de cualquier lado de las frases preposicionales o posposicionales?</prompt>
+						<prompt>¿Pueden todos los adverbios de manera presentarse de cualquier lado de las frases preposicionales o posposicionales?</prompt>
 						<radio id="PPModifiersMannerPosEitherOrBothUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-						<radio id="PPModifiersMannerPosEitherOrBothRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+						<radio id="PPModifiersMannerPosEitherOrBothRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 					</radioGroup>
 				</radioGroup>
 			</radioGroup>

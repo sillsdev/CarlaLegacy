@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPArtDem" count="1/2">
 	<title level="2">Las frases nominales - Los artículos y los demonstrativos: los ejemplos y el caso</title>
-	<introduction>Ahora se consideren los artículos y los demonstrativos.  En español, los artículos incluyen <example>un</example>, <example>una</example>,<example>el</example>, y <example>la</example>.  Los demonstrativos adjetivos españoles incluyen <example>esto</example>, <example>ese</example>, <example>estos</example>, y <example>esos</example>.  Algunos ejemplos simples son:</introduction>
+	<introduction>Ahora se consideren los artículos y los demonstrativos.  En español, los artículos son <example>un</example>, <example>una</example>,<example>el</example>, y <example>la</example>.  Los demonstrativos en español son <example>esto</example>, <example>ese</example>, <example>estos</example>, y <example>esos</example>.  Algunos ejemplos simples son:</introduction>
 	<EnglishExample>
 		<exItem label="1.">un libro.</exItem>
 		<exItem label="2.">una manzana.</exItem>

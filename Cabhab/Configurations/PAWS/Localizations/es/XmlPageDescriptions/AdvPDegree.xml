@@ -3,17 +3,17 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPDegree" count="5/7">
 	<title level="2">Los adverbios y sus frases - Las palabras de grado</title>
-	<instruction>Considere otra vez los ejemplos que usted ha escritoo para los varios tipos de frases del adverbio, repetidos aquí, antes de contestar las preguntas siguientes.</instruction>
+	<instruction>Considere otra vez los ejemplos que usted ha escritoo para los varios tipos de frases del adverbio, repetidos a continuación, antes de contestar las preguntas siguientes.</instruction>
 	<form section="advp">
-		<prompt>Los ejemplos de adverbios temporales:</prompt>
+		<prompt>Los ejemplos de adverbios de timepo:</prompt>
 		<textBox id="AdvPExample" dataItem="temporalExample"/>
 		<br/>
 		<br/>
-		<prompt>Los ejemplos de adverbios locativos:</prompt>
+		<prompt>Los ejemplos de adverbios de lugar:</prompt>
 		<textBox id="AdvPLocExample" dataItem="locativeExample"/>
 		<br/>
 		<br/>
-		<prompt>Los ejemplos de adverbios de modo:</prompt>
+		<prompt>Los ejemplos de adverbios de manera:</prompt>
 		<textBox id="AdvPMannerExample" dataItem="mannerExample"/>
 		<br/>
 		<br/>
@@ -40,15 +40,15 @@
 					<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
 					<prompt>¿Pueden presentarse todas las palabras de grado de cualquier lado del adverbio?</prompt>
 					<radio id="AdvPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="AdvPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+					<radio id="AdvPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
 			<radioGroup id="AdvPDegreeSetTable" show="swAdvPDegreeYes">
 				<groupName dataItem="degreeSet" default="unrestricted">RSet</groupName>
 				<prompt>¿Son las palabras de grado que pueden modificar adverbios todas las mismas?</prompt>
 				<radio id="AdvPSetUnrestricted" checked="yes" dataValue="unrestricted">Sí, el mismo grupo puede modificar cualquier tipo de adverbio</radio>
-				<radio id="AdvPSetAlmost" checked="yes" dataValue="exceptReason">Casi; el mismo grupo puede modificar adverbios temporales, adverbios locativos y adverbios de modo, pero los adverbios de la razón o del propósito no se modifican</radio>
-				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos de las palabras de grado para cada tipo de adverbio (nota que algo traslapo es aceptable y ningunas palabras del grado para los adverbios de la razón o del propósito es también aceptable)
+				<radio id="AdvPSetAlmost" checked="yes" dataValue="exceptReason">Casi; el mismo grupo puede modificar adverbios de tiempo, adverbios de lugar y adverbios de manera, pero los adverbios de razón o propósito no se modifican</radio>
+				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos de las palabras de grado para cada tipo de adverbio (nota que algo traslapo es aceptable y ningunas palabras de grado para los adverbios de razón o propósito es también aceptable)
 </radio>
 			</radioGroup>
 		</radioGroup>

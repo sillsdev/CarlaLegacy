@@ -3,20 +3,20 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronIndefinite" count="5/8">
 	<title level="2">Los pronombres - Los indefinidos</title>
-		<introduction>Un tipo final de pronombres es indefinidos.  Los indefinidos pueden ser pronombres como en español <example>todos</example>, <example>todo</example>, <example>algunos</example>, <example>alguien</example> y <example>algo</example>, o pueden ser un cuantificador más un sustantivo genérico indefinido como en español <example>algunas personas</example>.
-				Las versiones negativas de los pronombres indefinidos incluyen <example>nadie</example>, <example>nada</example> y <example>ninguno</example>.  Algunos idiomas pueden no combinarlas en una sola palabra, como en <example>no one 'nadie'</example> para el inglés.</introduction>
+		<introduction>Un tipo final de pronombres es indefinidos.  Los indefinidos pueden ser pronombres al igual que en español <example>todos</example>, <example>todo</example>, <example>algunos</example>, <example>alguien</example> y <example>algo</example>, o pueden ser un cuantificador más un sustantivo genérico indefinido al igual que en español <example>algunas personas</example>.
+				Las versiones negativas de los pronombres indefinidos son <example>nadie</example>, <example>nada</example> y <example>ninguno</example>.  Algunos idiomas pueden no combinarlas en una sola palabra, como en <example>no one 'nadie'</example> para el inglés.</introduction>
 	<form section="pron">
 		<radioGroup id="PronIndefGroup">
 			<groupName dataItem="indef" default="yes">RPronIndef</groupName>
 				<prompt>¿Hay pronombres indefinidos positivos que son palabras distintas en su idioma?</prompt>
-				<radio id="PronIndefYes" dataValue="yes">Sí, por lo menos algunos de ellos se combinan en pronombres indefinidos</radio>
+				<radio id="PronIndefYes" dataValue="yes">Sí, por lo menos algunos de ellos se combinan para formar pronombres indefinidos</radio>
 				<radio id="PronIndefNo" dataValue="no">No, son todos frases nominales</radio>
 		</radioGroup>
 		<radioGroup id="PronNegIndefGroup">
 			<groupName dataItem="negIndef" default="yes">RPronNegIndef</groupName>
 				<prompt>¿Hay pronombres indefinidos negativos que son palabras distintas en su idioma?</prompt>
-				<radio id="PronNegIndefYes" dataValue="yes">Sí, <span id="PronNegIndefNotPosOnlySpan" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">por lo menos algunos de ellos se combinan en pronombres indefinidos negativos</span><span id="PronNegIndefPosOnlySpan" show="swQPDeterminerNoOrYesSomeAndPosOnly">pero ningunas frases nominales indefinidas negativas puesto que la lengua no tiene ninguna medios de negar una frase nominal</span></radio>
-				<radio id="PronNegIndefNo" dataValue="no">No, <span id="PronNegIndefNotPosOnlySpan2" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">son todos frases nominales</span><span id="PronNegIndefPosOnlySpan2" show="swQPDeterminerNoOrYesSomeAndPosOnly">y no hay frases indefinidas negativas del nominal tampoco puesto que la lengua no tiene ninguna medios de negar una frase nominal</span></radio>
+				<radio id="PronNegIndefYes" dataValue="yes">Sí, <span id="PronNegIndefNotPosOnlySpan" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">por lo menos algunos de ellos se combinan para formar pronombres indefinidos negativos</span><span id="PronNegIndefPosOnlySpan" show="swQPDeterminerNoOrYesSomeAndPosOnly">pero ningunas frases nominales indefinidas negativas puesto que en su idioma no hay ningún medio de negar una frase nominal</span></radio>
+				<radio id="PronNegIndefNo" dataValue="no">No, <span id="PronNegIndefNotPosOnlySpan2" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">son todos frases nominales</span><span id="PronNegIndefPosOnlySpan2" show="swQPDeterminerNoOrYesSomeAndPosOnly">y no hay frases indefinidas negativas del nominal tampoco puesto que en su idioma no hay ningún medio de negar una frase nominal</span></radio>
 		</radioGroup>
 		<prompt id="PronIndefExamples" show="swPronIndefYes">
 				Escriba algunos ejemplos de los pronombres indefinidos positivos aquí:</prompt>

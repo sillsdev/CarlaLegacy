@@ -3,20 +3,20 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="ExclMain" count="1/2">
 	<title>Las exclamaciones y los saludos</title>
-	<introduction>Esta sección considera los varios tipos de elocuciones comunes que no sean oraciones completas. Los saludos, las interjecciones y las exclamaciones será mirado en su order correspondiente.</introduction>
+	<introduction>Esta sección considera los varios tipos de locuciones comunes que no son oraciones completas. Los saludos, las interjecciones y las exclamaciones, cada uno se trata en su order correspondiente.</introduction>
 	<form section="excl" transparent="no">
-		<introduction>Los saludos consisten típicamente en una palabra o una frase particular, o solamente o seguido por un nombre o una frase nominal que describe la persona o el animal que es saludado.
-			Algunos son las oraciones completas o las preguntas completas, tales como <example>¿Cómo está usted? </example> y <example>¡Tenga un buen día!</example>  Las cuáles no necesitan ser tratados por separado.  Estamos interesados en los tipos de saludos siguientes, ejemplificados en español:</introduction>
+		<introduction>Los saludos consisten típicamente en una palabra o una frase particular, que puede ser seguido por un nombre o una frase nominal que describe la persona o el animal que es saludado.
+			Algunos son las oraciones completas o las preguntas completas, tales como <example>¿Cómo está usted? </example> y <example>¡Tenga un buen día!</example>  Las cuáles no necesitan ser tratadas por separado.  Estamos interesados en los tipos de saludos siguientes, ejemplificados en español:</introduction>
 	<EnglishExample>
 		<exItem label="1.">¡Hola!</exItem>
-		<exItem label="2.">¡Ciao!</exItem>
+		<exItem label="2.">¡Adiós!</exItem>
 		<exItem label="3.">Hola, Juliana.</exItem>
 		<exItem label="4.">Hasta luego.</exItem>
 		<exItem label="5.">Buen día, señor.</exItem>
 		<exItem label="6.">Buena mañana, Roberto.</exItem>
 		<exItem label="7.">Buenas tardes.</exItem>
 		<exItem label="8.">Buenas noches.</exItem>
-		<exItem label="9.">Buenas noches, bebé dulce.</exItem>
+		<exItem label="9.">Buenas noches, dulce bebé.</exItem>
 	</EnglishExample>
 <prompt>Escriba ejemplos similares de saludos en su idioma aquí:</prompt>
 		<textBox id="ExclGreet" dataItem="greetExample" rows="5"/>
@@ -54,7 +54,7 @@
 		<br/>
 <radioGroup id="ExclMTable">
 	<groupName dataItem="exclM" default="no">RExclM</groupName>
-	<prompt>¿Hay una palabra o las palabras particular que señalen una exclamación (así haciéndolas diferentes que los adjetivos simples tratados en la sección de las interjecciones arriba)?</prompt>
+	<prompt>¿Hay una palabra o las palabras particular que señalen una exclamación (así haciéndolas diferentes que los adjetivos simples tratados en la sección de las interjecciones anteriormente)?</prompt>
 	<radio id="ExclMNo" dataValue="no">No</radio>
 	<radio id="ExclMYes" dataValue="yes">Sí</radio>
 </radioGroup>
@@ -71,7 +71,7 @@
 <radioGroup id="ExclMEitherOrBothTable" show="swExclMYesEitherOrBoth">
 	<groupName dataItem="exclMEither" default="no">RExclMEither</groupName>
 	<prompt>¿Pueden todas las palabras que señalan una exclamación presentarse de cualquier lado de la frase del adjetivo?</prompt>
-	<radio id="ExclMEitherNo" dataValue="no">No, hay grupos distintos para cada lado</radio>
+	<radio id="ExclMEitherNo" dataValue="no">No, hay distintos grupos para cada lado</radio>
 	<radio id="ExclMEitherYes" dataValue="yes">Sí, no hay restricción</radio>
 </radioGroup>
 </radioGroup>

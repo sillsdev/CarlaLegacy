@@ -11,7 +11,7 @@
 			</xsl:choose>
 			</secTitle>
 		<p>
-<xsl:text>En esta sección se analiza la estructura interna de las frases preposicionales o posposicionales. Las preposiciones vienen antes de sus complementos, mientras que vienen las posposiciones luego. El español tiene preposiciones, según los ejemplos </xsl:text>
+<xsl:text>Esta sección trata sobre la estructura interna de las frases preposicionales o posposicionales. Las preposiciones aparecen antes de los complementos, mientras que las posposiciones aparecen después. El español tiene preposiciones, de acuerdo con los ejemplos </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -21,7 +21,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>al lado del río</langData>
-<xsl:text>.  Las preposiciones o las posposiciones pueden ser palabras independientes, o pueden ser clíticos que se unen en el borde de la frase del complemento o al núcleo.</xsl:text>
+<xsl:text>.  Las preposiciones o las posposiciones pueden ser palabras independientes, o pueden ser clíticos que se unen al extremo de la frase del complemento o al núcleo.</xsl:text>
 </p>
 		<p>
 <xsl:text>En </xsl:text>
@@ -42,31 +42,31 @@
 			</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-				<xsl:when test="//pp/@pType='word'">Son todos palabras sintácticas independientes.</xsl:when>
-				<xsl:when test="//pp/@pType='clitic'">Son todos clíticos que se escriben unidos a otra palabra.</xsl:when>
-				<xsl:when test="//pp/@pType='both'">Escriben algunos como palabras sintácticas independientes, pero algunos son clíticos que se escriben unidos a otra palabra.  </xsl:when>
+				<xsl:when test="//pp/@pType='word'">Todos son palabras sintácticas independientes.</xsl:when>
+				<xsl:when test="//pp/@pType='clitic'">Todos son clíticos que se escriben unidos a otra palabra.</xsl:when>
+				<xsl:when test="//pp/@pType='both'">Algunos se escriben como palabras sintácticas independientes, pero algunos son clíticos que se escriben unidos a otra palabra.  </xsl:when>
 			</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//pp/@pType)!='word'">
 				<xsl:text>Los clíticos se unen </xsl:text>
 				<xsl:choose>
-					<xsl:when test="//pp/@attaches='egde'">en el borde</xsl:when>
+					<xsl:when test="//pp/@attaches='egde'">al extremo</xsl:when>
 					<xsl:when test="//pp/@attaches='head'">al núcleo</xsl:when>
 				</xsl:choose>
 				<xsl:text> de la frase del complemento.</xsl:text>
 			</xsl:if>
-<xsl:text>  Véase los ejemplos en la sección</xsl:text>
+<xsl:text>  Véase los ejemplos en la sección </xsl:text>
 <sectionRef sec="sPPComps" />
 <xsl:text>.</xsl:text>
 </p>
 
 				<p>
-<xsl:text>Los modificadores posibles de la frase se consideran primero, y después los complementos permitidos. </xsl:text>
+<xsl:text>Primero se analizan los posibles modificadores de la frase, después los complementos permitidos. </xsl:text>
 </p>
 		<section2 id="sPPModifiers">
-			<secTitle>Los modificadores</secTitle>
+			<secTitle>Modificadores</secTitle>
 			<p>
-<xsl:text>Hay normalmente algunas palabras de grado que pueden modificar a una frase </xsl:text>
+<xsl:text>Normalmente hay algunas palabras de grado que pueden modificar una frase </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
 					<xsl:when test="//pp/@pPos='after'">posposicional</xsl:when>
@@ -77,7 +77,11 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>apenas</langData>
+</xsl:attribute>just</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'justo'</xsl:text>
+</gloss>
 <xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -91,7 +95,11 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>apenas alrededor de la esquina</langData>
+</xsl:attribute>justo around the corner</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'justo a la vuelta de la esquina'</xsl:text>
+</gloss>
 <xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -101,7 +109,7 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'hasta el último momento'</xsl:text>
 </gloss>
-<xsl:text>. Los números ordinales y los adjetivos también pueden modificar a las frases </xsl:text>
+<xsl:text>. Los números ordinales y los adjetivos también pueden modificar las frases </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
 					<xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
@@ -112,7 +120,11 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>próximo en línea</langData>
+</xsl:attribute>next in line</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'el próximo en la fila'</xsl:text>
+</gloss>
 <xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -120,9 +132,9 @@
 </xsl:attribute>first out the door</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'primero hacia fuera la puerta'</xsl:text>
+<xsl:text>'el primero en salir'</xsl:text>
 </gloss>
-<xsl:text>.  Además, ciertos adverbios de modo pueden modificar a las frases </xsl:text>
+<xsl:text>.  Además, ciertos adverbios de manera pueden modificar las frases </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
 					<xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
@@ -133,27 +145,43 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>casi en el agujero</langData>
+</xsl:attribute>almost in the hole</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'casi en el agujero'</xsl:text>
+</gloss>
 <xsl:text>, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>sobre todo encima del árbol</langData>
+</xsl:attribute>mostly up the tree</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'la mayoría en el árbol'</xsl:text>
+</gloss>
 <xsl:text>, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>en ángulo recto en la tabla</langData>
-<xsl:text>, y </xsl:text>
+</xsl:attribute>squarely on the table</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'justo en la mesa'</xsl:text>
+</gloss>
+<xsl:text>, and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>casi sobre el enemigo</langData>
+</xsl:attribute>nearly upon the enemy</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'casi sobre el enemigo'</xsl:text>
+</gloss>
 <xsl:text>.</xsl:text>
 </p>
 			<xsl:if test="normalize-space(//pp/@modifiers)='yes'">
 <p>
-<xsl:text>Algunos ejemplos similares según lo expresado en </xsl:text>
+<xsl:text>Algunos ejemplos similares  en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -162,7 +190,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> son:</xsl:text>
+<xsl:text> de acuerdo con lo expresado son:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//pp/@modifiers)='yes'">
@@ -217,11 +245,11 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//pp/@modifiers='no'"> no hay ningún modificador que se presenta o antes o después de la frase sintácticamente.</xsl:when>
-					<xsl:when test="//pp/@modifiers='yes'"> permite </xsl:when>
+					<xsl:when test="//pp/@modifiers='no'"> no hay modificadores que se presenten sintácticamente antes o después de la frase.</xsl:when>
+					<xsl:when test="//pp/@modifiers='yes'"> se permiten </xsl:when>
 				</xsl:choose>
 <xsl:if test="normalize-space(//pp/@modifiers)='no'">
-<xsl:text>  Ni palabras del grado ni los números ordinales ni los adverbials pueden modificar las frases </xsl:text>
+<xsl:text>  Ni palabras de grado ni los números ordinales ni los adverbios pueden modificar las frases </xsl:text>
 					<xsl:choose>
 						<xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
 						<xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
@@ -235,11 +263,11 @@
 					<xsl:choose>
 						<xsl:when test="//pp/@modifierType='degree'">solamente las palabras de grado</xsl:when>
 						<xsl:when test="//pp/@modifierType='ordinal'">solamente los números ordinales</xsl:when>
-						<xsl:when test="//pp/@modifierType='manner'">solamente los adverbios de modo</xsl:when>
-						<xsl:when test="//pp/@modifierType='degreeAndOrdinal'">las palabras de grado y los números ordinales, pero no los adverbios de modo</xsl:when>
-						<xsl:when test="//pp/@modifierType='degreeAnd Manner'">las palabras de grado y los adverbios de modo, pero no los números ordinales</xsl:when>
-						<xsl:when test="//pp/@modifierType='mannerAndOrdinal'">los adverbios de modo y los números ordinales, pero no las palabras de grado</xsl:when>
-						<xsl:when test="//pp/@modifierType='all'">los tres tipos, las palabras de grado, los adverbios de modo y los números ordinales,</xsl:when>
+						<xsl:when test="//pp/@modifierType='manner'">solamente los adverbios de manera</xsl:when>
+						<xsl:when test="//pp/@modifierType='degreeAndOrdinal'">las palabras de grado y los números ordinales, pero no los adverbios de manera</xsl:when>
+						<xsl:when test="//pp/@modifierType='degreeAnd Manner'">las palabras de grado y los adverbios de manera, pero no los números ordinales</xsl:when>
+						<xsl:when test="//pp/@modifierType='mannerAndOrdinal'">los adverbios de manera y los números ordinales, pero no las palabras de grado</xsl:when>
+						<xsl:when test="//pp/@modifierType='all'">los tres tipos, las palabras de grado, los adverbios de manera y los números ordinales,</xsl:when>
 					</xsl:choose>
 					<xsl:text> como modificadores de las frases </xsl:text>
 					<xsl:choose>
@@ -338,7 +366,7 @@
 					</xsl:if>
 					<xsl:text></xsl:text>
 					<xsl:if test="normalize-space(//pp/@modifierType)='manner' or normalize-space(//pp/@modifierType)='degreeAndManner' or normalize-space(//pp/@modifierType)='mannerAndOrdinal' or normalize-space(//pp/@modifierType)='all'">
-						<xsl:text>Los adverbios de modo se presentan </xsl:text>
+						<xsl:text>Los adverbios de manera se presentan </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//pp/@mannerPos='before'">antes</xsl:when>
 							<xsl:when test="//pp/@mannerPos='after'">después</xsl:when>
@@ -360,7 +388,7 @@
 					</xsl:if>
 					<xsl:text></xsl:text>
 					<xsl:if test="normalize-space(//pp/@modifierType)='manner' and normalize-space(//pp/@degreePos)!='before' and normalize-space(//pp/@degreePos)!='after' and normalize-space(//pp/@degreeEither)='unrestricted' or normalize-space(//pp/@modifierType)='degreeAndManner' and normalize-space(//pp/@degreePos)!='before' and normalize-space(//pp/@degreePos)!='after' and normalize-space(//pp/@degreeEither)='unrestricted' or normalize-space(//pp/@modifierType)='mannerAndOrdinal' and normalize-space(//pp/@degreePos)!='before' and normalize-space(//pp/@degreePos)!='after' and normalize-space(//pp/@degreeEither)='unrestricted' or normalize-space(//pp/@modifierType)='all' and normalize-space(//pp/@degreePos)!='before' and normalize-space(//pp/@degreePos)!='after' and normalize-space(//pp/@degreeEither)='unrestricted'">
-						<xsl:text>Todos los adverbios de modo pueden presentarse de cualquier lado de la frase </xsl:text>
+						<xsl:text>Todos los adverbios de manera pueden presentarse de cualquier lado de la frase </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
 							<xsl:when test="//pp/@pPos='after'">posposicional</xsl:when>
@@ -371,7 +399,7 @@
 					</xsl:if>
 					<xsl:text></xsl:text>
 					<xsl:if test="normalize-space(//pp/@modifierType)='manner' and normalize-space(//pp/@degreePos)!='before' and normalize-space(//pp/@degreePos)!='after' and normalize-space(//pp/@degreeEither)='restricted' or normalize-space(//pp/@modifierType)='degreeAndManner' and normalize-space(//pp/@degreePos)!='before' and normalize-space(//pp/@degreePos)!='after' and normalize-space(//pp/@degreeEither)='restricted' or normalize-space(//pp/@modifierType)='mannerAndOrdinal' and normalize-space(//pp/@degreePos)!='before' and normalize-space(//pp/@degreePos)!='after' and normalize-space(//pp/@degreeEither)='restricted' or normalize-space(//pp/@modifierType)='all' and normalize-space(//pp/@degreePos)!='before' and normalize-space(//pp/@degreePos)!='after' and normalize-space(//pp/@degreeEither)='restricted'">
-						<xsl:text>Hay restricciones en cuanto a cuáles adverbios de modo pueden presentarse en cada lado de la frase </xsl:text>
+						<xsl:text>Hay restricciones en cuanto a cuáles adverbios de manera pueden presentarse en cada lado de la frase </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
 							<xsl:when test="//pp/@pPos='after'">posposicional</xsl:when>
@@ -388,10 +416,10 @@
 		 <section2 id="sPPComps">
 			 <secTitle>
 <xsl:choose>
-				 <xsl:when test="//pp/@pPos='before'">Los complementos a las preposiciones</xsl:when>
-				 <xsl:when test="//pp/@pPos='after'">Los complementos a las posposiciones</xsl:when>
-				 <xsl:when test="//pp/@pPos='both'">Los complementos a las preposiciones y posposiciones</xsl:when>
-				 <xsl:when test="//pp/@pPos='unknown'">Los complementos a las preposiciones y/o posposiciones</xsl:when>
+				 <xsl:when test="//pp/@pPos='before'">Complementos a las preposiciones</xsl:when>
+				 <xsl:when test="//pp/@pPos='after'">Complementos a las posposiciones</xsl:when>
+				 <xsl:when test="//pp/@pPos='both'">Complementos a las preposiciones y posposiciones</xsl:when>
+				 <xsl:when test="//pp/@pPos='unknown'">Complementos a las preposiciones y/o posposiciones</xsl:when>
 			 </xsl:choose>
 </secTitle>
 			<p>
@@ -402,7 +430,7 @@
 					<xsl:when test="//pp/@pPos='both'">preposiciones o posposiciones</xsl:when>
 					<xsl:when test="//pp/@pPos='unknown'">preposiciones o posposiciones</xsl:when>
 				</xsl:choose>
-<xsl:text> normalmente tienen a una frase nominal para su complemento, como en </xsl:text>
+<xsl:text> normalmente tienen una frase nominal para su complemento, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -411,11 +439,11 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>debajo [el árbol gigante del sicómoro]</langData>
+</xsl:attribute>debajo [del árbol sicómoro gigante]</langData>
 <xsl:text>. </xsl:text>
 </p>
 			<p>
-<xsl:text> Algunos ejemplos de </xsl:text>
+<xsl:text> Algunos ejemplos en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -424,7 +452,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> con los complementos nominales son: </xsl:text>
+<xsl:text> con complementos nominales son: </xsl:text>
 </p>
 			<example num="xPP.PPComps.8">
 <xsl:variable name="sExampleValue">
@@ -478,7 +506,7 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>Vienen [adentro]</langData>
+</xsl:attribute>Pasa [adentro]</langData>
 <xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -499,7 +527,11 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>¿Quién usted dio el libro [al _ ]?</langData>
+</xsl:attribute>Whom did you give the book [to _]?</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'¿Quién usted dio el libro [al _ ]?'</xsl:text>
+</gloss>
 <xsl:text></xsl:text>
 </p>
 				<p>
@@ -581,9 +613,9 @@
 </xsl:if>
 			</section3>
 			<section3 id="sPPLoc">
-				<secTitle>Los adverbios locativos como complementos</secTitle>
+				<secTitle>Adverbios de lugar como complementos</secTitle>
 				<p>
-<xsl:text>La mayoría de los idiomas permiten adverbios locativos como complementos de las </xsl:text>
+<xsl:text>La mayoría de los idiomas permiten adverbios de lugar como complementos de las </xsl:text>
 <xsl:choose>
 						<xsl:when test="//pp/@pPos='before'">preposiciones</xsl:when>
 						<xsl:when test="//pp/@pPos='after'">posposiciones</xsl:when>
@@ -599,7 +631,11 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>adentro aquí</langData>
+</xsl:attribute>in here</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'aquí adentro'</xsl:text>
+</gloss>
 <xsl:text>.</xsl:text>
 </p>
 				<p>
@@ -614,10 +650,10 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-						<xsl:when test="//pp/@locative='no'"> no hace permitir</xsl:when>
-						<xsl:when test="//pp/@locative='yes'"> permite</xsl:when>
+						<xsl:when test="//pp/@locative='no'"> no se permiten</xsl:when>
+						<xsl:when test="//pp/@locative='yes'"> se permiten</xsl:when>
 					</xsl:choose>
-<xsl:text> los adverbios locativos como complementos de sus </xsl:text>
+<xsl:text> los adverbios de lugar como complementos de los </xsl:text>
 <xsl:if test="normalize-space(//pp/@pPos)='before'">
 						<xsl:text>preposiciones.</xsl:text>
 					</xsl:if>
@@ -635,7 +671,7 @@
 					</xsl:if>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//pp/@locative)='yes'">
-						<xsl:text>  Algunos ejemplos con los adverbios locativos como complementos son:</xsl:text>
+						<xsl:text>  Algunos ejemplos con adverbios de lugar como complementos son:</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
 </p>
@@ -682,10 +718,10 @@
 			</section3>
 			<section3 id="sPPLocPP">
 				<secTitle>   <xsl:choose>
-					<xsl:when test="//pp/@pPos='before'">Las frases preposicionales locativas como complementos</xsl:when>
-					<xsl:when test="//pp/@pPos='after'">Las frases posposicionales locativas como complementos</xsl:when>
-					<xsl:when test="//pp/@pPos='both'">Las frases preposicionales y posposicionales locativas como complementos</xsl:when>
-					<xsl:when test="//pp/@pPos='unknown'">Las frases preposicionales y/o posposicionales locativas como complementos</xsl:when>
+					<xsl:when test="//pp/@pPos='before'">Frases preposicionales de lugar como complementos</xsl:when>
+					<xsl:when test="//pp/@pPos='after'">Frases posposicionales de lugar como complementos</xsl:when>
+					<xsl:when test="//pp/@pPos='both'">Frases preposicionales y posposicionales de lugar como complementos</xsl:when>
+					<xsl:when test="//pp/@pPos='unknown'">Frases preposicionales y/o posposicionales de lugar como complementos</xsl:when>
 				</xsl:choose>
 </secTitle>
 				<p>
@@ -696,14 +732,14 @@
 						<xsl:when test="//pp/@pPos='both'">preposiciones y posposiciones</xsl:when>
 						<xsl:when test="//pp/@pPos='unknown'">preposiciones y/o posposiciones</xsl:when>
 					</xsl:choose>
-<xsl:text> locativas forman una categoría especial porque en algunos idiomas pueden tener otra frase  </xsl:text>
+<xsl:text> de lugar forman una categoría especial porque en algunos idiomas pueden tener otra frase  </xsl:text>
 <xsl:choose>
 						<xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
 						<xsl:when test="//pp/@pPos='after'">posposicional</xsl:when>
 						<xsl:when test="//pp/@pPos='both'">preposicional o posposicional</xsl:when>
 						<xsl:when test="//pp/@pPos='unknown'">preposicional o posposicional</xsl:when>
 					</xsl:choose>
-<xsl:text> locativa como su complemento. Algunos ejemplos en inglés son: </xsl:text>
+<xsl:text> de lugar como su complemento. Algunos ejemplos en inglés son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -744,10 +780,9 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-						<xsl:when test="//pp/@ppComp='no'"> no hay</xsl:when>
-						<xsl:when test="//pp/@ppComp='yes'"> hay</xsl:when>
+						<xsl:when test="//pp/@ppComp='no'"> no hay </xsl:when>
+						<xsl:when test="//pp/@ppComp='yes'"> hay </xsl:when>
 					</xsl:choose>
-<xsl:text> las </xsl:text>
 <xsl:if test="normalize-space(//pp/@pPos)='before'">
 						<xsl:text>preposiciones</xsl:text>
 					</xsl:if>
@@ -763,23 +798,23 @@
 <xsl:if test="normalize-space(//pp/@pPos)='both'">
 						<xsl:text>preposiciones y posposiciones</xsl:text>
 					</xsl:if>
-<xsl:text> locativas que pueden tener una frase </xsl:text>
+<xsl:text> de lugar que pueden tener una frase </xsl:text>
 <xsl:choose>
 						<xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
 						<xsl:when test="//pp/@pPos='after'">posposicional</xsl:when>
 						<xsl:when test="//pp/@pPos='both'">preposicional o posposicional</xsl:when>
 						<xsl:when test="//pp/@pPos='unknown'">preposicional o posposicional</xsl:when>
 					</xsl:choose>
-<xsl:text> locativa como su complemento.  </xsl:text>
+<xsl:text> de lugar como complemento.  </xsl:text>
 <xsl:if test="normalize-space(//pp/@ppComp)='yes'">
-						<xsl:text>Algunos ejemplos con las frases </xsl:text>
+						<xsl:text>Algunos ejemplos con frases </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
 							<xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
 							<xsl:when test="//pp/@pPos='both'">preposicionales o posposicionales</xsl:when>
 							<xsl:when test="//pp/@pPos='unknown'">preposicionales o posposicionales</xsl:when>
 						</xsl:choose>
-<xsl:text> locativas como complementos en </xsl:text>
+<xsl:text> de lugar como complementos en </xsl:text>
 						<xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -834,7 +869,7 @@
 </xsl:if>
 			</section3>
 			<section3 id="sPPSent">
-				<secTitle>Las oraciones como complementos</secTitle>
+				<secTitle>Oraciones como complementos</secTitle>
 				<p>
 <xsl:text>Las </xsl:text>
 <xsl:choose>
@@ -843,16 +878,24 @@
 						<xsl:when test="//pp/@pPos='both'">preposiciones o posposiciones</xsl:when>
 						<xsl:when test="//pp/@pPos='unknown'">preposiciones o posposiciones</xsl:when>
 					</xsl:choose>
-<xsl:text> temporales pueden tener oraciones como sus complementos, como en </xsl:text>
+<xsl:text> de tiempo pueden tener oraciones como sus complementos, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>antes de [la lluvia cesa]</langData>
+</xsl:attribute>before [the rain stops]</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'antes de que [la lluvia cese]'</xsl:text>
+</gloss>
 <xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>después de [Juan volvió a casa]</langData>
+</xsl:attribute>after [John returns home]</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>'después de que [Juan volvió a casa]'</xsl:text>
+</gloss>
 <xsl:text>.</xsl:text>
 </p>
 				<p>
@@ -870,7 +913,6 @@
 						<xsl:when test="//pp/@sentComp='no'"> no hay</xsl:when>
 						<xsl:when test="//pp/@sentComp='yes'"> hay</xsl:when>
 					</xsl:choose>
-<xsl:text> las </xsl:text>
 <xsl:if test="normalize-space(//pp/@pPos)='before'">
 						<xsl:text>preposiciones</xsl:text>
 					</xsl:if>
@@ -886,9 +928,9 @@
 <xsl:if test="normalize-space(//pp/@pPos)='both'">
 						<xsl:text>preposiciones and posposiciones</xsl:text>
 					</xsl:if>
-<xsl:text> temporales que pueden tener una oración para su complemento.  </xsl:text>
+<xsl:text> de tiempo que pueden tener una oración como complemento.  </xsl:text>
 <xsl:if test="normalize-space(//pp/@sentComp)='yes'">
-						<xsl:text>Algunos ejemplos con las oraciones como complementos, incluidos en oraciones completas son:</xsl:text>
+						<xsl:text>Algunos ejemplos de oraciones como complementos, incluidos en oraciones completas son:</xsl:text>
 					</xsl:if>
 <xsl:text></xsl:text>
 </p>

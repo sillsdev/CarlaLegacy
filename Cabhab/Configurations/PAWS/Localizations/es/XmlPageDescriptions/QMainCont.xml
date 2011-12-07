@@ -5,7 +5,7 @@
 	<title level="2">Las preguntas - Las preguntas abiertas de la cláusula principal</title>
 	<form section="q">
 		<EnglishExample>
-			<exItem>Algunos ejemplos de las preguntas abiertas de la cláusula principal, demostrando el desplazamiento de una frase interrogativa requerido, son:</exItem>
+			<exItem>Algunos ejemplos de las preguntas abiertas de la cláusula principal, mostrando el desplazamiento de una frase interrogativa requerido, son:</exItem>
 			<exItem label="1.">Which boy hit the ball? '¿Cuál muchacho golpeó el beísbol?'</exItem>
 			<exItem label="2.">Who hit the ball? '¿Quién golpeó el beísbol?'</exItem>
 			<exItem label="3.">Who might have hit the ball? '¿Quién pudo haber golpeado el beísbol?'</exItem>
@@ -20,7 +20,7 @@
 		<radioGroup>
 			<groupName dataItem="contFront" default="unknown" position="yesHead">RQContFront</groupName>
 			<prompt>¿Se requiere una frase interrogativa ser desplazada en preguntas abiertas en su idioma?</prompt>
-			<radio id="QContFrontYes" dataValue="before">Sí, como en inglés y español</radio>
+			<radio id="QContFrontYes" dataValue="before">Sí, al igual que en inglés y español</radio>
 			<radio id="QContFrontOptional" dataValue="after">No, puede permanecer en su posición normal o puede desplazarse a la posición inmediatamente antes del verbo</radio>
 			<radio id="QContFrontNo" dataValue="no">No, permanece simplemente en su posición normal</radio>
 		</radioGroup>
@@ -42,7 +42,7 @@
 				<radioGroup id="QMainContCliticTypeTable" show="swQMainContWordNo">
 					<groupName dataItem="mainContCliticAttaches" default="edge">RQMainYNCliticAttaches</groupName>
 					<prompt>¿Dónde se une el clítico a la pregunta?</prompt>
-					<radio id="QMainContCliticAttachesEdge" dataValue="edge">En el borde</radio>
+					<radio id="QMainContCliticAttachesEdge" dataValue="edge">En el extremo</radio>
 					<radio id="QMainContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">Entre la frase interrogativa desplazada y el resto de la pregunta</radio>
 					<radio id="QMainContCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
@@ -57,7 +57,7 @@
 					<groupName dataItem="mainContVSOBeforeWhNoEndRestricted" default="unrestricted">RQMainContVSONoEnd</groupName>
 					<prompt>¿Pueden todos los indicadores o complementizadores de la pregunta presentarse en cualquiera posición?</prompt>
 					<radio id="QMainContVSONoEndUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="QMainContVSONoEndRestricted" dataValue="restricted">No, hay grupos distintos para cada posición</radio>
+					<radio id="QMainContVSONoEndRestricted" dataValue="restricted">No, hay distintos grupos para cada posición</radio>
 				</radioGroup>
 				<radio id="QMainContVSOBeforeWhYes" dataValue="yes">Sí, todos se presentan antes de una frase interrogativa desplazada</radio>
 				<radio id="QMainContVSOBeforeWhSome" dataValue="some">Sí, algunos se presentan antes de una frase interrogativa desplazada pero algunos se presentan después de ella</radio>
@@ -76,7 +76,7 @@
 					<groupName dataItem="mainContEitherRestricted" default="unrestricted">RQMainContEither</groupName>
 					<prompt>¿Pueden todos los indicadores o complementizadores de la pregunta presentarse de cualquier lado de la pregunta?</prompt>
 					<radio id="QMainContEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="QMainContEitherRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+					<radio id="QMainContEitherRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
 			<radioGroup id="QMainContRequiredTable" show="swQMainContWordYes">

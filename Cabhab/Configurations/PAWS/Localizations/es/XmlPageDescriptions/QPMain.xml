@@ -14,7 +14,7 @@ o <example>pocos</example>, y</li>
 		Cada tipo será considerado en su orden correspondiente.
 </introduction>
 	<introduction>Los cuantificadores que significan  <example>todos</example> o <example>no</example> parecen tener una categoría propia.
-		Generalmente se presentan primero (o último) en una frase nominal, en una posición distinta de los otros cuantificadores pero en el mismo lugar que las palabras de grado como  <example>solamente</example> y <example>apenas</example>  ((que también pueden funcionar como indicadores de enfoque, lo cual será discutido en  <section number="16">Las construcciones de enfoque y asunto</section>) y las palabras que significan lo mismo que  <example>casi</example> (lo que también puede presentarse con <example>todos</example> como en (4) abajo), así que les llamaremos palabras especiales de grado.
+		Generalmente se presentan primero (o último) en una frase nominal, en una posición distinta de los otros cuantificadores pero en el mismo lugar que las palabras de grado como  <example>solamente</example> y <example>apenas</example>  ((que también pueden funcionar al igual que indicadores de enfoque, lo cual será analizado en  <section number="16">Las construcciones de enfoque y asunto</section>) y las palabras que significan lo mismo que  <example>casi</example> (lo que también puede presentarse con <example>todos</example> como en (4) abajo), así que les llamaremos palabras especiales de grado.
 </introduction>
 	<instruction>Busque los ejemplos en su idioma como los siguientes:</instruction>
 	<EnglishExample>
@@ -90,7 +90,7 @@ o <example>pocos</example>, y</li>
 				<prompt>¿Dónde se unen los elementos especiales negativos de grado en la frase nominal?</prompt>
 				<radio id="QPNPDegreeNegProclitic" dataValue="proclitic">Como proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal</radio>
 				<radio id="QPNPDegreeNegEnclitic" dataValue="enclitic">Como enclíticos que se unen al final de cualquier palabra que termina la frase nominal</radio>
-				<radio id="QPNPDegreeNegClitic" dataValue="clitic">Algunas formas son proclíticos que se unen al frente de cualquier palabra que comienza la frase nominal y otros son enclíticos que se unen al final de cualquier palabra que termina la frase nominal</radio>
+				<radio id="QPNPDegreeNegClitic" dataValue="clitic">Algunas formas son proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal y otros son enclíticos que se unen al final de cualquier palabra que termina la frase nominal</radio>
 				<radio id="QPNPDegreeNegPrefix" dataValue="prefix">Como prefijos que se unen al sustantivo principal de la frase nominal </radio>
 				<radio id="QPNPDegreeNegSuffix" dataValue="suffix">Como sufijos que se unen al sustantivo principal de la frase nominal</radio>
 				<radio id="QPNPDegreeNegAffix" dataValue="affix">Algunas formas son prefijos y algunas formas son sufijos que se unen al sustantivo principal de la frase nominal</radio>
@@ -110,8 +110,8 @@ o <example>pocos</example>, y</li>
 		<br/>
 		<radioGroup id="QPNPDegreeYesTable" show="swQPNPDegreeNotNo">
 			<groupName dataItem="npDegreePos" default="unknown" position="yesSpec">RQPNPDegreePos</groupName>
-			<prompt>En acuerdo con los datos en <span id="QPNPDegreeNegYesSpan" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">las dos cajas</span>
-				<span id="QPNPDegreeNegNoSpan" show="swQPNPDegreeYesPosOnlyOrNoPosOnly">la caja</span> arriba, ¿dónde se presentan los elementos especiales de grado <span id="QPNPDegreeSomeAttachPrompt" show="swQPNPDegreeYesPosOrYesPosOnlyOrYesNeg">que se escriben como palabras independientes </span>con respecto al resto de la frase nominal?</prompt>
+			<prompt>De acuerdo con los datos en <span id="QPNPDegreeNegYesSpan" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">las dos cajas anteriores</span>
+				<span id="QPNPDegreeNegNoSpan" show="swQPNPDegreeYesPosOnlyOrNoPosOnly">la caja anterior</span>, ¿dónde se presentan los elementos especiales de grado <span id="QPNPDegreeSomeAttachPrompt" show="swQPNPDegreeYesPosOrYesPosOnlyOrYesNeg">que se escriben como palabras independientes </span>con respecto al resto de la frase nominal?</prompt>
 			<radio id="QPNPDegreeBefore" checked="yes" dataValue="before">Antes de él</radio>
 			<radio id="QPNPDegreeAfter" checked="yes" dataValue="after">Después de él</radio>
 			<radio id="QPNPDegreeEitherSide" checked="yes" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
@@ -123,7 +123,7 @@ o <example>pocos</example>, y</li>
 				<groupName dataItem="npDegreeEither" default="unrestricted">RQPNPDegreeEitherSide</groupName>
 				<prompt>¿Pueden presentarse todas las palabras especiales de grado de cualquier lado del resto de la frase nominal?</prompt>
 				<radio id="QPNPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="QPNPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+				<radio id="QPNPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 			</radioGroup>
 		</radioGroup>
 		<radioGroup id="QPNPDegreeNegCooccurTable" show="swQPNPDegreeYes">
@@ -153,7 +153,7 @@ o <example>pocos</example>, y</li>
 				<groupName dataItem="npDegreeNegEither" default="unrestricted">RQPNPDegreeNegEitherSide</groupName>
 				<prompt>¿Pueden presentarse todas las palabras especiales negativos de grado que significan 'no' de cualquier lado del resto de la frase nominal?</prompt>
 				<radio id="QPNPDegreeNegEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción (o solamente una palabra que puede presentarse de cualquier lado)</radio>
-				<radio id="QPNPDegreeNegEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+				<radio id="QPNPDegreeNegEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 			</radioGroup>
 		</radioGroup>
 		<instruction id="QPNPDegreeYesInstruction" show="swQPNPDegreeYes">In the lexicon, mark the words meaning <example>all</example>, <example>not</example>, <example>almost</example>, <example>only</example>, and <example>just</example> with the features <feature>makeDeg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>Deg</category>

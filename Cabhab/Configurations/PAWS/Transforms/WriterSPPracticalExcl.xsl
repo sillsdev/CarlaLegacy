@@ -4,12 +4,12 @@
   <section1 id="sExcl">
 	  <secTitle>Las exclamaciones y los saludos</secTitle>
 	<p>
-<xsl:text>Esta sección considera los varios tipos de elocuciones comunes que no sean oraciones completas. Los saludos, las interjecciones y las exclamaciones será mirado en su order correspondiente.</xsl:text>
+<xsl:text>Esta sección considera los varios tipos de locuciones comunes que no son oraciones completas. Los saludos, las interjecciones y las exclamaciones, cada uno se trata en su order correspondiente.</xsl:text>
 </p>
 <section2 id="sExclGreet">
-	<secTitle>Los saludos</secTitle>
+	<secTitle>Saludos</secTitle>
 	<p>
-<xsl:text>Los saludos consisten típicamente en una palabra o una frase particular, o solamente o seguido por un nombre o una frase nominal que describe la persona o el animal que es saludado.
+<xsl:text>Los saludos consisten típicamente en una palabra o una frase particular, que puede ser seguido por un nombre o una frase nominal que describe la persona o el animal que es saludado.
 	Algunos son las oraciones completas o las preguntas completas, tales como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -20,7 +20,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>¡Tenga un buen día!</langData>
-<xsl:text> Las cuáles no necesitan ser tratados por separado. </xsl:text>
+<xsl:text> Las cuáles no necesitan ser tratadas por separado. </xsl:text>
 </p>
 	<p>
 <xsl:text>Algunos ejemplos de saludos en español son:  </xsl:text>
@@ -51,7 +51,7 @@
 					<xsl:text>Buenas noches.</xsl:text>
 				</li>
 				<li>
-					<xsl:text>Buenas noches, bebé dulce.</xsl:text>
+					<xsl:text>Buenas noches, ducle bebé.</xsl:text>
 				</li>
 			</ol>
 	<p>
@@ -106,7 +106,7 @@
 </example>
 </section2>
 <section2 id="sExclIntj">
-	<secTitle>Las interjecciones</secTitle>
+	<secTitle>Interjecciones</secTitle>
 	<p>
 <xsl:text>Las interjecciones consisten típicamente en una palabra o una frase particular que se utilicen solo, generalmente con puntos de exclamación. Muchas de las palabras en interjecciones no se utilizan en ninguna otra situación. Sin embargo, los adjetivos regulares también se utilizan de esta manera.</xsl:text>
 </p>
@@ -228,8 +228,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left" rowspan="1">
 							<xsl:text>sí</xsl:text>
@@ -271,8 +270,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left" rowspan="1">
 							<xsl:text>no</xsl:text>
@@ -298,7 +296,7 @@
 </example>
 </section2>
 <section2 id="sExclExcl">
-	<secTitle>Las exclamaciones</secTitle>
+	<secTitle>Exclamaciones</secTitle>
 	<p>
 <xsl:text>Las exclamaciones típicamente consisten en una palabra particular, tal como </xsl:text>
 <langData>
@@ -437,8 +435,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>

@@ -54,12 +54,12 @@
 			</li>
 		</ul>
 		<p>
-			<content>Todos los antedichos se han cubierto como artículos individuales en secciones anteriores (según lo observado). Después de discutir el tipo del sistema de la negación que </content>
+			<content>Todos los antedichos se han cubierto como artículos individuales en secciones anteriores (de acruedo con lo observado). Después de analizar el tipo del sistema de la negación que </content>
 			<langName/>
-			<content> utiliza, los datos dados serán repasados aquí por categoría o el tipo de la frase, así como la adición de los ejemplos usados en oraciones completas y la discusión de cualquier restricción de la ocurrencia entre los varios elementos negativos. </content>
+			<content> utiliza, los datos dados serán repasados a continuación por categoría o el tipo de la frase, así como la adición de los ejemplos usados en oraciones completas y el análisis de cualquier restricción de la ocurrencia entre los varios elementos negativos. </content>
 		</p>
 		<section2 id="sNegType">
-			<secTitle>El tipo del sistema de la negación</secTitle>
+			<secTitle>Tipo del sistema de la negación</secTitle>
 			<p>
 				<content>Hay dos clasificaciones importantes para los idiomas con respecto a la negación: Idiomas cambiantes de la polaridad contra idiomas de la concordia negativa, ejemplificados por inglés estándar contra español, respectivamente.</content>
 			</p>
@@ -68,7 +68,7 @@
 				<langData>John saw nothing</langData><gloss><content>'Juan vio nada'</content></gloss>
 				<content> es negativo, pero </content>
 				<langData>John didn't see nothing</langData><gloss><content>'Juan no vio nada'</content></gloss>
-				<content> es positivo porque significa igual que </content>
+				<content> es positivo porque significa al igual que </content>
 				<langData>Juan vio algo</langData>
 				<content>.  La versión con un auxiliar negativo se expresa como </content>
 				<langData>John didn't see anything</langData><gloss><content>'Juan no vio algo'</content></gloss>
@@ -115,11 +115,11 @@
 				<content/>
 			</p>
 	 <p show="swNegTypeConcord">
-		 <content>En </content><langName/><content>, un verbo negativo-marcado </content>
+		 <content>En </content><langName/><content>, un verbo negativo-indicado </content>
 			<case element="neg" attr="objVerbRequired">
 				<caseText value="no">no se requiere cuando el objeto es negativo.  </caseText>
 				<caseText value="yes">se requiere cuando el objeto es negativo.  </caseText>
-				<caseText value="other"> no se requiere cuando el objeto es negativo, pero si el verbo no es negativo entonces otra palabra o frase negativa debe presentarse anteriormente en la oración.  </caseText></case>
+				<caseText value="other"> no se requiere cuando el objeto es negativo, pero si el verbo no es negativo así que otra palabra o frase negativa debe presentarse anteriormente en la oración.  </caseText></case>
 		 <content>Además, </content><case element="neg" attr="negFront">
 			 <caseText value="no">un objeto negativo se presenta simplemente en su posición normal en la oración.</caseText>
 			 <caseText value="yes">el despazamiento a la izquierda de la palabra o de la frase negativa se requiere, semejantemente al desplazamiento a la izquierda en preguntas.</caseText>
@@ -180,14 +180,14 @@
 					</row>
 					<row>
 						<col rowspan="1">
-							<content>Adverbios temporales</content>
+							<content>Adverbios de tiempo</content>
 						</col>
 						<col exampleLoc="neg/npiTemporalExample"/>
 						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 					</row>
 					<row>
 						<col rowspan="1">
-							<content>Adverbios locativos</content>
+							<content>Adverbios de lugar</content>
 						</col>
 						<col exampleLoc="neg/npiLocativeExample"/>
 						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
@@ -195,15 +195,15 @@
 				</table>
 			</example>
 			<p show="swPolarityItemsYesAndNegNotVerbOnly">
-				<content>En </content><langName/><content>, un verbo negativo-marcado </content>
+				<content>En </content><langName/><content>, un verbo negativo-indicado </content>
 		   <case element="neg" attr="objVerbRequired">
 			   <caseText value="no">no se requiere cuando hay un artículo negativo de la polaridad en la posición del objeto.  </caseText>
 			   <caseText value="yes">se requiere cuando hay un artículo negativo de la polaridad en la posición del objeto.  </caseText>
-			   <caseText value="other"> no se requiere cuando hay un artículo negativo de la polaridad en la posición del objeto, pero si el verbo no es negativo entonces otra palabra o frase negativa debe presentarse anteriormente en la oración.  </caseText></case>
+			   <caseText value="other"> no se requiere cuando hay un artículo negativo de la polaridad en la posición del objeto, pero si el verbo no es negativo así que otra palabra o frase negativa debe presentarse anteriormente en la oración.  </caseText></case>
 	  </p>
 		</section2>
 		<section2 id="sNegVerbal">
-			<secTitle>La negación auxiliar y verbal</secTitle>
+			<secTitle>Negación auxiliar y verbal</secTitle>
 			<p>
 				<content>Vimos en la sección </content>
 				<sectionRef sec="sIPAux"/>
@@ -308,7 +308,7 @@
 			<example show="swIPNegVerb">
 				<table border="1">
 					<headerRow>
-						<headerCol>Verbos negativo-marcados</headerCol>
+						<headerCol>Verbos negativo-indicados</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -326,24 +326,24 @@
 			</example>
 		</section2>
 		<section2 id="sNegAdverb">
-			<secTitle>La negación adverbial</secTitle>
+			<secTitle>Negación adverbial</secTitle>
 			<p>
 				<content>Vimos en la sección </content>
 				<sectionRef sec="sAdvPTemporal"/>
 				<content> que en </content>
 				<langName/>
-				<content> la idea temporal negativa de </content><gloss><content>' nunca'</content></gloss><content> se expresa </content>
+				<content> la idea negativa de tiempo </content><gloss><content>' nunca'</content></gloss><content> se expresa </content>
 <case element="advp" attr="negTemporalType">
 	<caseText value="word">por una o más palabras independientes. Algunos ejemplos</caseText>
 	<caseText value="affix">por uno o más afijos verbales, en vez de por palabras independientes. Algunos ejemplos de los afijos se unen a los verbos</caseText>
-	<caseText value="verb">usando el afijo negativo verbal, que puede presentarse con adverbios temporales positivos para dar un significado temporal negativo. Algunos ejemplos de adverbios temporales con un verbo negativo</caseText>
+	<caseText value="verb">usando el afijo negativo verbal, que puede presentarse con adverbios positivos de tiempo para dar un significado negativo de tiempo. Algunos ejemplos de adverbios de tiempo con un verbo negativo</caseText>
 </case>
 				<content> son:</content>
 			</p>
 			<example show="swAdvPNegTemporalTypeAffix">
 				<table border="1">
 					<headerRow>
-						<headerCol>Verbos temporales negativos</headerCol>
+						<headerCol>Verbos negativos de tiempo</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -356,7 +356,7 @@
 				<interlinear exampleLoc="advp/negTemporalExample"/>
 			</example>
 			<p>
-				<content>Algunos ejemplos en oraciones completas con un temporal negativo son: </content>
+				<content>Algunos ejemplos en oraciones completas con una expresión negativa de tiempo son: </content>
 			</p>
 			<example>
 				<interlinear exampleLoc="neg/advTemporalExample"/>
@@ -366,18 +366,18 @@
 				<sectionRef sec="sAdvPLocative"/>
 				<content> vimos que en </content>
 				<langName/>
-				<content> la idea negativa locativa de </content><gloss><content>'en ninguna parte'</content></gloss><content> se expresa </content>
+				<content> la idea negativa de lugar </content><gloss><content>'en ninguna parte'</content></gloss><content> se expresa </content>
 <case element="advp" attr="negLocativeType">
 	<caseText value="word">por una o más palabras independientes. Algunos ejemplos</caseText>
 	<caseText value="affix">por uno o más afijos verbales, en vez de por palabras independientes. Algunos ejemplos de los afijos se unen a los verbos</caseText>
-	<caseText value="verb">usando el afijo negativo verbal, que puede presentarse con adverbios positivos locativos para dar un significado negativo locativo. Algunos ejemplos de los adverbios locativos con un verbo negativo</caseText>
+	<caseText value="verb">usando el afijo negativo verbal, que puede presentarse con adverbios positivos de lugar para dar un significado negativo de lugar. Algunos ejemplos de los adverbios de lugar con un verbo negativo</caseText>
 </case>
 				<content> son:</content>
 			</p>
 			<example show="swAdvPNegLocativeTypeAffix">
 				<table border="1">
 					<headerRow>
-						<headerCol>Verbos locativos negativos</headerCol>
+						<headerCol>Verbos negativos de lugar</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -390,7 +390,7 @@
 				<interlinear exampleLoc="advp/negLocativeExample"/>
 			</example>
 			<p>
-				<content>Algunos ejemplos en oraciones completas con un locativo negativo son:</content>
+				<content>Algunos ejemplos en oraciones completas con una expresión negativa de lugar son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="neg/advLocativeExample"/>
@@ -405,13 +405,13 @@
 			</p>
 		</section2>
 		<section2 id="sNegNominal">
-			<secTitle>La negación de frases nominales</secTitle>
+			<secTitle>Negación de frases nominales</secTitle>
 			<p>
 				<content>Una frase nominal normalmente se puede negar por una palabra especial de grado, tal como </content>
 				<langData>no</langData>
 				<content>, o por un determinante del cuantificador, tal como </content>
 				<langData>ninguno</langData>
-				<content>, o usando un pronombre indefinido negativo. Cada tipo permitido en </content><langName/><content> será ejemplificado en oraciones completas cuando está utilizado como sujetos y objetos directos, y cualquier restricción será discutido.</content>
+				<content>, o usando un pronombre indefinido negativo. Cada tipo permitido en </content><langName/><content> será ejemplificado en oraciones completas cuando está utilizado como sujetos y objetos directos, y cualquier restricción será analizado.</content>
 				<text show="swPolarityItemsYesAndNegNotVerbOnly">
 					<content>  El uso de los artículos negativos de la polaridad en </content>
 					<langName/>
@@ -421,7 +421,7 @@
 				</text>
 			</p>
 			<section3 id="sNegNominalSubject">
-				<secTitle>Los sujetos negativos</secTitle>
+				<secTitle>Sujetos negativos</secTitle>
 				<p show="swQPNPDegreeNoPosOnlyOrYesPosOnly">
 					<content>En la sección </content>
 					<sectionRef sec="sQPAll"/>
@@ -436,14 +436,14 @@
 					<langName/>
 					<content> no hay ninguna palabra especial negativa de grado que se escriba como palabra independiente y modifica a la frase nominal completa. Por el contrario, son </content>
 					<case element="qp" attr="npDegreeNegType">
-						<caseText value="proclitic">proclíticos que se unen al frente de cualquiera palabra que comienza la frase nominal,</caseText>
+						<caseText value="proclitic">proclíticos que se unen al inicio de cualquiera palabra que comienza la frase nominal,</caseText>
 						<caseText value="enclitic">enclíticos que se unen al final de cualquiera palabra que termina la frase nominal,</caseText>
-						<caseText value="clitic">clíticos que se unen o al frente de cualquiera palabra que comienza la frase nominal o al final de cualquiera palabra que termina la frase nominal,</caseText>
+						<caseText value="clitic">clíticos que se unen o al inicio de cualquiera palabra que comienza la frase nominal o al final de cualquiera palabra que termina la frase nominal,</caseText>
 						<caseText value="prefix">prefijos que se uenn al sustantivo principal de la frase nominal,</caseText>
 						<caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal,</caseText>
 						<caseText value="affix">o prefijos o sufijos que se unen al sustantivo principal de la frase nominal,</caseText>
 					</case>
-					<content> según se mostra en el cuadro </content><exampleRef num="xNegDegree"/><content> que sigue. </content>
+					<content> de acuerdo con se mostra en el cuadro </content><exampleRef num="xNegDegree"/><content> que sigue. </content>
 				</p>
 				<p show="swQPNPDegreeYesOrYesNeg">
 					<content>En la sección </content>
@@ -455,7 +455,7 @@
 				<example show="swQPNPDegreeNotPosOnly" num="xNegDegree">
 					<table border="1">
 <headerRow>
-	<headerCol>Elementos especiales negativos del grado</headerCol>
+	<headerCol>Elementos especiales negativos de grado</headerCol>
 	<headerCol>Glosa</headerCol>
 </headerRow>
 						<row>
@@ -478,7 +478,7 @@
 					<interlinear exampleLoc="qp/negCooccurExample"/>
 				</example>
 				<p show="swQPNPDegreeNotPosOnly">
-					<content>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra aquí:</content>
+					<content>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra a continuación:</content>
 				</p>
 				<example show="swQPNPDegreeNotPosOnly">
 					<interlinear exampleLoc="neg/degreeSubjExample"/>
@@ -488,21 +488,21 @@
 					<sectionRef sec="sQPDeterminers"/>
 					<content> vimos que en </content>
 					<langName/>
-					<content>  no hay una categoría separada de los cuantificadores que actúan como el único determinante en la frase nominal. Apenas pues no hay ninguna manera de expresar el elemento especial negativo 'not' , no hay ninguna manera de expresar ' ninguno' cuando está  modificando a una frase nominal en este idioma.</content>
+					<content>  no hay una categoría independiente de los cuantificadores que funcionan al igual que el único determinante en la frase nominal. Apenas pues no hay ninguna manera de expresar el elemento especial negativo 'not' , no hay ninguna manera de expresar ' ninguno' cuando está  modificando a una frase nominal en este idioma.</content>
 				</p>
 				<p show="swQPDeterminerNoOrYesSomeAndNotPosOnly">
 					<content>En la sección </content>
 					<sectionRef sec="sQPDeterminers"/>
 					<content>  vimos que en </content>
 					<langName/>
-					<content> no hay una categoría separada de los cuantificadores que actúan como el único determinante en la frase nominal.  La negación de una frase nominal  solamente se expresa por los elementos especiales de grado. </content>
+					<content> no hay una categoría independiente de los cuantificadores que funcionan al igual que el único determinante en la frase nominal.  La negación de una frase nominal  solamente se expresa por los elementos especiales de grado. </content>
 				</p>
 				<p show="swQPDeterminerYesOrYesNo">
 					<content>En la sección </content>
 					<sectionRef sec="sQPDeterminers"/>
 					<content> vimos que en </content>
 					<langName/>
-					<content> hay los siguientes cuantificadores negativos que se escriben como palabras independientes y actúan como el único determinante en la frase nominal: </content>
+					<content> hay los siguientes cuantificadores negativos que se escriben como palabras independientes y funcionan al igual que el único determinante en la frase nominal: </content>
 				</p>
 				<example show="swQPDeterminerYesOrYesNo">
 					<table border="1" show="swQPDeterminerYesOrYesNo">
@@ -523,7 +523,7 @@
 					<interlinear exampleLoc="qp/determinerNegNPExample"/>
 				</example>
 				<p show="swQPDeterminerYesOrYesNo">
-					<content>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra aquí:</content>
+					<content>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra a continuación:</content>
 				</p>
 				<example show="swQPDeterminerYesOrYesNo">
 					<interlinear exampleLoc="neg/determinerSubjExample"/>
@@ -570,7 +570,7 @@
 					</table>
 				</example>
 				<p show="swNegNotVerbOnly">
-					<content>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra aquí:</content>
+					<content>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra a continuación:</content>
 				</p>
 				<example show="swNegNotVerbOnly">
 					<interlinear exampleLoc="neg/pronounSubjExample"/>
@@ -587,7 +587,7 @@
 				</p>
 			</section3>
 			<section3 id="sNegNominalObject">
-				<secTitle>Los objetos negativos</secTitle>
+				<secTitle>Objetos negativos</secTitle>
 				<p show="swNegVerbOnly"><content>Puesto que en </content><langName/><content> no hay ningún medio de negar una frase nominal, ni ningún pronombre indefinido negativo, no puede tener ningún objeto negativo.  </content></p>
 				<p show="swPolarityItemsYesAndNegNotVerbOnly">
 					<content>Como vimos en la sección </content>

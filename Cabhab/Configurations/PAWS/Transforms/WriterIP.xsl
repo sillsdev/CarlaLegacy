@@ -57,6 +57,7 @@
 					<tr>
 						<th>Type of feature</th>
 						<th>Feature</th>
+						<th>Form(s)</th>
 					</tr>
 					<xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
 <tr>
@@ -65,6 +66,12 @@
 						</td>
 						<td align="left">
 							<xsl:text>present</xsl:text>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
 						</td>
 					</tr>
 </xsl:if>
@@ -76,6 +83,12 @@
 						<td align="left">
 							<xsl:text>past</xsl:text>
 						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
@@ -85,6 +98,12 @@
 						</td>
 						<td align="left">
 							<xsl:text>future</xsl:text>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
 						</td>
 					</tr>
 </xsl:if>
@@ -96,6 +115,12 @@
 						<td align="left">
 							<xsl:text>completive</xsl:text>
 						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
@@ -105,6 +130,12 @@
 						</td>
 						<td align="left">
 							<xsl:text>continuative</xsl:text>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
 						</td>
 					</tr>
 </xsl:if>
@@ -116,6 +147,12 @@
 						<td align="left">
 							<xsl:text>habitual</xsl:text>
 						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
@@ -125,6 +162,12 @@
 						</td>
 						<td align="left">
 							<xsl:text>imperfective</xsl:text>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
 						</td>
 					</tr>
 </xsl:if>
@@ -136,6 +179,12 @@
 						<td align="left">
 							<xsl:text>incompletive</xsl:text>
 						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
@@ -145,6 +194,12 @@
 						</td>
 						<td align="left">
 							<xsl:text>perfective</xsl:text>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
 						</td>
 					</tr>
 </xsl:if>
@@ -156,6 +211,12 @@
 						<td align="left">
 							<xsl:text>potential</xsl:text>
 						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
@@ -165,6 +226,12 @@
 						</td>
 						<td align="left">
 							<xsl:text>progressive</xsl:text>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
 						</td>
 					</tr>
 </xsl:if>
@@ -176,6 +243,12 @@
 						<td align="left">
 							<xsl:text>stative</xsl:text>
 						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatDeclarative/@checked)='yes'">
@@ -185,6 +258,12 @@
 						</td>
 						<td align="left">
 							<xsl:text>declarative</xsl:text>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
 						</td>
 					</tr>
 </xsl:if>
@@ -196,6 +275,12 @@
 						<td align="left">
 							<xsl:text>imperative</xsl:text>
 						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatInterrogative/@checked)='yes'">
@@ -205,6 +290,12 @@
 						</td>
 						<td align="left">
 							<xsl:text>interrogative</xsl:text>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
 						</td>
 					</tr>
 </xsl:if>
@@ -216,6 +307,12 @@
 						<td align="left">
 							<xsl:text>irrealis</xsl:text>
 						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatRealis/@checked)='yes'">
@@ -225,6 +322,12 @@
 						</td>
 						<td align="left">
 							<xsl:text>realis</xsl:text>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
 						</td>
 					</tr>
 </xsl:if>
@@ -236,6 +339,12 @@
 						<td align="left">
 							<xsl:text>passive</xsl:text>
 						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatParticiple/@checked)='yes'">
@@ -245,6 +354,12 @@
 						</td>
 						<td align="left">
 							<xsl:text>participle</xsl:text>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
 						</td>
 					</tr>
 </xsl:if>
@@ -256,6 +371,12 @@
 						<td align="left">
 							<xsl:text>finite</xsl:text>
 						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+						</td>
 					</tr>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatMinusFinite/@checked)='yes'">
@@ -265,6 +386,12 @@
 						</td>
 						<td align="left">
 							<xsl:text>nonfinite</xsl:text>
+						</td>
+						<td align="left">
+							<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
 						</td>
 					</tr>
 </xsl:if>
@@ -1156,8 +1283,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1348,8 +1474,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1421,8 +1546,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1496,8 +1620,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1647,8 +1770,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1814,8 +1936,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>

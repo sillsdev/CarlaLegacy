@@ -11,37 +11,37 @@
 			<li>manera, y</li>
 	<li>razón o propósito.</li>
 		</ul>
-		Estos tipos tienen diversas características en cuanto a qué posiciones pueden presentarse y cómo pueden ser modificados. Cada tipo será mirado en su orden correspondiente.
+		Estos tipos tienen diversas características en cuanto a qué posiciones pueden presentarse y cómo pueden ser modificados. Cada tipo será considerado en su orden correspondiente.
 </introduction>
-	<introduction>Los adverbios temporales incluyen las palabras en español: <example>ya</example>, <example>entonces</example>, <example>pronto</example>, <example>ahora</example>,
-		<example>luego</example>, y <example>siempre</example>.  Muchos idiomas también tienen un adverbio temporal negativo, como <example>nunca</example> en español.  Piense en palabras similares en su idioma.
+	<introduction>Los adverbios de tiempo son las siguientes palabras en español: <example>ya</example>, <example>entonces</example>, <example>pronto</example>, <example>ahora</example>,
+		<example>luego</example>, y <example>siempre</example>.  Muchos idiomas también tienen un adverbio negativo de tiempo, como <example>nunca</example> en español.  Piense en palabras similares en su idioma.
 <br/>
 		<br/>
-		Los adverbios temporales necesitan estar distinguido de otros tipos de palabras o de frases que pueden también expresar el tiempo en una oración, por ejemplo: frases nominales <example>anoche</example>,
+		Los adverbios de tiempo necesitan estar distinguido de otros tipos de palabras o de frases que pueden también expresar el tiempo en una oración, por ejemplo: frases nominales <example>anoche</example>,
 		<example>el próximo año</example>,  <example>mañana</example>, <example>hace mucho tiempo</example>; frases preposicionales
 		<example>durante mucho tiempo</example>, <example>en poco tiempo</example>, <example>a las diez por la noche</example>; y
 		cláusulas adverbiales <example>mientras que usted está trabajando</example> y <example>cuando llegó Susana</example>.
 </introduction>
 	<EnglishExample>
-		<exItem>Algunos ejemplos en español incluyendo una palabra de grado como modificante son:</exItem>
+		<exItem>Algunos ejemplos en español incluyendo una palabra de grado como modificador son:</exItem>
 		<exItem label="1.">muy pronto.</exItem>
 		<exItem label="2.">más luego.</exItem>
 		<exItem label="3.">solamente ahora.</exItem>
 	</EnglishExample>
 	<form section="advp">
-		<prompt>Escriba sus ejemplos de los adverbios temporales positivos y de cualquier palabra de grado que pueda modificarlos aquí:</prompt>
+		<prompt>Escriba sus ejemplos de los adverbios positivos de tiempo y de cualquier palabra de grado que pueda modificarlos aquí:</prompt>
 		<textBox id="AdvPExample" dataItem="temporalExample"/>
 		<radioGroup>
 			<groupName dataItem="negTemporalType" default="word">RNegTemporalType</groupName>
-			<prompt>¿Hay adverbios temporales negativos en su idioma que se escriben como palabras independientes?</prompt>
+			<prompt>¿Hay adverbios negativos de tiempo en su idioma que se escriben como palabras independientes?</prompt>
 			<radio id="AdvPNegTemporalTypeWord" dataValue="word">Sí</radio>
 			<radio id="AdvPNegTemporalTypeAffix" dataValue="affix">No, todos se escriben como un parte del verbo</radio>
-			<radio id="AdvPNegTemporalTypeVerb" dataValue="verb">No, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios temporales positivos para dar un significado temporal negativo</radio>
+			<radio id="AdvPNegTemporalTypeVerb" dataValue="verb">No, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios positivos de tiempo para dar un significado negativo de tiempo</radio>
 		</radioGroup>
-		<prompt id="AdvPNegTemporalExamplePrompt" show="swAdvPNegTemporalTypeWord">Escriba los adverbios temporales negativos aquí:</prompt>
-		<prompt id="AdvPNegTemporalExamplePrompt2" show="swAdvPNegTemporalTypeVerb">Escriba algunos ejemplos de adverbios temporales con un verbo negativo aquí:</prompt>
+		<prompt id="AdvPNegTemporalExamplePrompt" show="swAdvPNegTemporalTypeWord">Escriba los adverbios negativos de tiempo aquí:</prompt>
+		<prompt id="AdvPNegTemporalExamplePrompt2" show="swAdvPNegTemporalTypeVerb">Escriba algunos ejemplos de adverbios de tiempo con un verbo negativo aquí:</prompt>
 		<textBox id="AdvPNegTemporalExample" dataItem="negTemporalExample" show="swAdvPNegTemporalTypeWordOrVerb" rows="3"/>
-		<prompt id="AdvPNegTemporalAffixExamplePrompt" show="swAdvPNegTemporalTypeAffix">Escriba algunos ejemplos de los afijos adverbiales temporales negativos unidos a los verbos aquí:</prompt>
+		<prompt id="AdvPNegTemporalAffixExamplePrompt" show="swAdvPNegTemporalTypeAffix">Escriba algunos ejemplos de los afijos adverbiales negativos de tiempo unidos a los verbos aquí:</prompt>
 		<textBox id="AdvPNegTemporalAffixExample" dataItem="negTemporalAffixExample" show="swAdvPNegTemporalTypeAffix" rows="3"/>
 		<instruction id="AdvPInstruction">In the lexicon, key the feature <feature>temporal</feature> on all adverbs that express
 time.  You can also add this feature to nouns such as <example>night</example>, <example>year</example>,

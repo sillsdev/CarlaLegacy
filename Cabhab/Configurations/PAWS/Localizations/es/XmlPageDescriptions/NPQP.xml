@@ -4,7 +4,7 @@
 <page id="NPQP" count="1/1">
 	<title level="2">Las frases nominales - Las frases del cuantificador como modificadores</title>
 	<introduction id="NPQPIntroNotPractical" show="swNotPractical">Next to be added to the nominal phrase as we work our way down the tree are quantifier phrases (QP), discussed earlier in <section number="2">Quantifiers and QP</section>.  This means we will be able to parse nominal phrases such as these in English:</introduction>
-	<introduction id="NPQPIntroPractical" show="swPractical">Siguiente en la frase nominal son frases del cuantificador, discutidas anteriormente en  <section number="2">Los cuantificadores y sus frases</section>. Con las cuantificadores en la frase nominal podemos analizar frases nominales tales como éstas en español:</introduction>    <EnglishExample>
+	<introduction id="NPQPIntroPractical" show="swPractical">Siguiente en la frase nominal son frases del cuantificador, analizadas anteriormente en  <section number="2">Los cuantificadores y sus frases</section>. Con las cuantificadores en la frase nominal podemos analizar frases nominales tales como éstas en español:</introduction>    <EnglishExample>
 		<exItem label="1.">ésos muy pocos libros.</exItem>
 		<exItem label="2.">los muchos perros del muchacho.</exItem>
 		<exItem label="3.">solamente los primeros cientos muchachos.</exItem>
@@ -15,7 +15,7 @@
 		<br/>
 		<radioGroup>
 			<groupName dataItem="qpPos" default="unknown" position="yesSpec">RNPQPPos</groupName>
-			<prompt>De acuerdo con los ejemplos, ¿dónde se presentan las frases del cuantificador (números cardinales incluyendo) con respecto al sustantivo?</prompt>
+			<prompt>De acuerdo con los ejemplos, ¿dónde se presentan las frases del cuantificador (incluyendo números cardinales) con respecto al sustantivo?</prompt>
 			<radio id="NPQPPosBefore" dataValue="before">Antes</radio>
 			<radio id="NPQPPosAfter" dataValue="after">Después</radio>
 			<radio id="NPQPPosEitherSide" dataValue="either">Cualquier lado, pero no en ambos lados en la misma oración</radio>
@@ -27,7 +27,7 @@
 				<groupName dataItem="qpEither" default="unrestricted">RNPQPPosEitherorBoth</groupName>
 				<prompt>¿Pueden presentarse todas las frases del cuantificador de cualquier lado de la frase nominal?</prompt>
 				<radio id="NPQPPosEitherorBothUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="NPQPPosEitherorBothRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+				<radio id="NPQPPosEitherorBothRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 				<radioGroup id="NPQPPosEitherorBothRestrictedTable" show="swNPQPPosEitherorBothRestricted">
 					<groupName dataItem="qpEitherRestrictedNumPos" default="unknown" position="yesSpec">RNPQPPosEitherRestrictedNum</groupName>
 					<prompt>¿Se presentan todos los números en solamente un lado del sustantivo?</prompt>
@@ -40,7 +40,7 @@
 		<br/>
 		<radioGroup>
 			<groupName dataItem="qpAgree" default="no">RNPQPAgree</groupName>
-			<prompt>¿Tienen los números o los cuantificadores un indicador para concordar con el sustantivo que se modifican, además <span id="NPQPNumberMarkingSpan1" show="swNPQPNumberMarking">de la marca del</span>
+			<prompt>¿Tienen los números o los cuantificadores un indicador para concordar con el sustantivo que se modifican, además <span id="NPQPNumberMarkingSpan1" show="swNPQPNumberMarking">del indicador del</span>
 				<span id="NPQPNumberAgreementSpan1" show="swNPQPNumberAgreement">de concordancia en</span> número?</prompt>
 			<radio id="NPQPAgreeNo" dataValue="no">No, ellos solamente <span id="NPQPNumberMarkingSpan" show="swNPQPNumberMarking"> indican el número</span>
 				<span id="NPQPNumberAgreementSpan" show="swNPQPNumberAgreement"> concuerdan en número</span>

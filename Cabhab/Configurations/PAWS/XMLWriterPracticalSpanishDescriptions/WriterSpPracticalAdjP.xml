@@ -10,7 +10,7 @@
 </content>
 		</p>
   <section2 id="sAdjQual">
-	  <secTitle>Los adjetivos cualitativos</secTitle>
+	  <secTitle>Adjetivos cualitativos</secTitle>
 	  <p>
 		  <content>Los adjetivos cualitativos también pueden modificarse.  Algunos ejemplos en español son:
 		  </content>
@@ -23,17 +23,17 @@
 		  <langData>muy bien construida</langData>
 		  <content> y </content>
 		  <langData>olvidado muy fácilmente</langData>
-		  <content>.  No pueden darse todas las combinaciones de palabras debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras de grado y adverbios de modo o frases adverbiales pueden modificar a los adjetivos. </content>
+		  <content>.  No pueden proporcionarse todas las combinaciones de palabras debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras de grado y adverbios de manera o frases adverbiales pueden modificar a los adjetivos. </content>
 	  </p>
 	  <p show="swAdjPModifiersNo">
 		  <content>En </content>
 		  <langName/>
-		  <content> no se permite que ninguna palabra de grado ni adverbio de la modo modifique a los adjetivos. </content>
+		  <content> no se permite que ninguna palabra de grado ni adverbio de manera modifica a los adjetivos. </content>
 	  </p>
 	  <p show="swAdjPModifiersYesDegree">
 		  <content>En </content>
 		  <langName/>
-		  <content> se permite que ciertas palabras de grado modifiquen a los adjetivos, pero los adverbios de modo no lo pueden hacer. Las palabras de grado se presentan </content>
+		  <content> se permite que ciertas palabras de grado modifican a los adjetivos, pero los adverbios de manera no lo pueden hacer. Las palabras de grado se presentan </content>
 		  <case element="adjp" attr="degreePos">
 			  <caseText value="before">antes</caseText>
 			  <caseText value="after">después</caseText>
@@ -57,7 +57,7 @@
 	  <p show="swAdjPModifiersYesManner">
 		  <content>En </content>
 		  <langName/>
-		  <content> se permite que ciertas palabras de grado y adverbios de modo modifiquen a los adjetivos. Estos modificadores se presentan </content>
+		  <content> se permite que ciertas palabras de grado y adverbios de manera modifican a los adjetivos. Estos modificadores se presentan </content>
 		  <case element="adjp" attr="mannerPos">
 			  <caseText value="before">antes</caseText>
 			  <caseText value="after">después</caseText>
@@ -70,11 +70,11 @@
 		  </case>
 		  <content> del adjetivo.  </content>
 		  <text show="swAdjPMannerEitherUnrestricted">
-			  <content>Todas las palabras de grado y adverbios de modo pueden presentarse de cualquier lado del adjetivo. </content>
+			  <content>Todas las palabras de grado y adverbios de manera pueden presentarse de cualquier lado del adjetivo. </content>
 		  </text>
 		  <content/>
 		  <text show="swAdjPMannerEitherRestricted">
-			  <content>Hay restricciones en cuanto a cuáles palabras de grado y cuáles adverbios de modo pueden presentarse en cada lado del adjetivo.</content>
+			  <content>Hay restricciones en cuanto a cuáles palabras de grado y cuáles adverbios de manera pueden presentarse en cada lado del adjetivo.</content>
 		  </text>
 		  <content/>
 	  </p>
@@ -92,7 +92,7 @@
 			<section2 id="sAdjNumbers">
 				<secTitle>Los números</secTitle>
 				<p>
-					<content>Los números no se pueden modificar con las palabras de grado como se puede hacer con los cuantificadores, aunque se presentan en la misma posición. Sin embargo, los números cardinales se pueden modificar con los números ordinales y los adjetivos </content>
+					<content>Los números no se pueden modificar con las palabras de grado al iqual que se puede hacer con los cuantificadores, aunque se presentan en la misma posición. Sin embargo, los números cardinales se pueden modificar con los números ordinales y los adjetivos </content>
 					<langData>próximo</langData>
 					<content> y </content>
 					<langData>último</langData>
@@ -112,7 +112,7 @@
 					<content>.  </content>
 				</p>
 				<section3 id="sQPNumbersCardinal">
-					<secTitle>Los números cardinales</secTitle>
+					<secTitle>Números cardinales</secTitle>
 					<p>
 						<content>Las formas básicas para los números cardinales se dan en el cuadro siguiente:</content>
 					</p>
@@ -166,7 +166,7 @@
 					</p>
 				</section3>
 				<section3 id="sQPNumbersOrdinal">
-					<secTitle>Los números ordinales</secTitle>
+					<secTitle>Números ordinales</secTitle>
 					<p>
 						<content>En </content>
 						<langName/>
@@ -263,7 +263,7 @@
 			 </content>
 		 </p>
 		 <section3 id="sQPAll">
-			 <secTitle>Los cuantificadores que modifican la frase nominal completo</secTitle>
+			 <secTitle>Cuantificadores que modifican la frase nominal completo</secTitle>
 			<p>
 				<content>Los cuantificadores que significan </content>
 				<langData>todos</langData>
@@ -274,7 +274,7 @@
 				<langData>solamente</langData>
 				<content> y </content>
 				<langData>apenas</langData>
-				<content> (que también pueden funcionar como indicadores de enfoque, lo cual será discutido en la sección </content>
+				<content> (que también pueden funcionar al al igual que indicadores de enfoque, lo cual será analizado en la sección </content>
 				<sectionRef sec="sFocus"/>
 				<content>) y las palabras que significan lo mismo que </content>
 				<langData>casi</langData>
@@ -371,7 +371,7 @@
 			<p show="swQPNPDegreeNoPosOnly">
 				<content>En </content>
 				<langName/>
-				<content>, los elementos especiales positivos de grado no se expresan como palabras independientes. Pore el contrario, todos se unen a otra palabra de la frase nominal como </content>
+				<content>, los elementos especiales positivos de grado no se expresan como palabras independientes. Por el contrario, todos se unen a otra palabra de la frase nominal como </content>
 				<case element="qp" attr="npDegreePosType">
 					<caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
 					<caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
@@ -521,7 +521,7 @@
 				</text>
 				<content/>
 				<text show="swQPNPDegreeEitherRestricted">
-					<content>Hay estricciones en cuanto a las cuáles de estas palabras pueden ocurrir en cada lado de la frase nominal.</content>
+					<content>Hay estricciones en cuanto a las cuáles de estas palabras pueden presentarse en cada lado de la frase nominal.</content>
 				</text>
 				<content/>
 			</p>
@@ -595,7 +595,7 @@
 			</p>
 		 </section3>
 			<section3 id="sQPDeterminers">
-				<secTitle>Los cuantificadores que no se presentan con los determinantes</secTitle>
+				<secTitle>Cuantificadores que no se presentan con los determinantes</secTitle>
 				<p>
 					<content>El segundo sistema incluye cuantificadores como </content>
 					<langData>alguno</langData>
@@ -614,65 +614,65 @@
 				<p show="swQPDeterminerNoNotPosOnly">
 					<content>En </content>
 					<langName/>
-					<content> no hay una categoría independiente de los cuantificadores que actúe como el único determinante de la frase nominal. La negación de una frase nominal se expresa solamente con los elementos especiales de grado. Los conceptos positivos de </content>
+					<content> no hay una categoría independiente de los cuantificadores que funciona al al igual que el único determinante de la frase nominal. La negación de una frase nominal se expresa solamente con los elementos especiales de grado. Los conceptos positivos de </content>
 					<langData>alguno</langData>
 					<content> y </content>
 					<langData>cada</langData>
-					<content> son como </content>
+					<content> son al igual que </content>
 					<langData>todos</langData>
-					<content> considerados anteriormente o como los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.</content>
+					<content> considerados anteriormente o al igual que los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.</content>
 				</p>
 				<p show="swQPDeterminerNoPosOnly">
 					<content>En </content>
 					<langName/>
-					<content> no hay una categoría independiente de los cuantificadores que actúe como el único determinante de la frase nominal.  De la misma forma no hay ninguna manera de expresar el elemento especial negativo de grado, no hay ninguna manera de expresar </content><gloss><content>'ninguno'</content></gloss><content> cuando se modifica una frase nominal en esta lengua. Los conceptos positivos de </content>
+					<content> no hay una categoría independiente de los cuantificadores que funciona al igual que el único determinante de la frase nominal.  De la misma forma no hay ninguna manera de expresar el elemento especial negativo de grado, no hay ninguna manera de expresar </content><gloss><content>'ninguno'</content></gloss><content> cuando se modifica una frase nominal en esta lengua. Los conceptos positivos de </content>
 					<langData>alguno</langData>
 					<content> y </content>
 					<langData>cada</langData>
-					<content> son como </content>
+					<content> son al igual que </content>
 					<langData>todos</langData>
-					<content> considerados anteriormente o como los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.</content>
+					<content> considerados anteriormente o al igual que los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.</content>
 				</p>
 				<p show="swQPDeterminerYesSomeNotPosOnly">
 					<content>En </content>
 					<langName/>
-					<content> no hay una categoría independiente de los cuantificadores negativos que actúe como el único determinante de la frase nominal. La negación de una frase nominal es expresa solamente con los elementos especiales de grado. </content>
+					<content> no hay una categoría independiente de los cuantificadores negativos que funciona al igual que el único determinante de la frase nominal. La negación de una frase nominal es expresa solamente con los elementos especiales de grado. </content>
 				</p>
 				<p show="swQPDeterminerYesSomeNotPosOnly">
 					<content>En </content>
 					<langName/>
-					<content> se encuentran los siguientes cuantificadores positivos que actúan como el único determinante de la frase nominal: </content>
+					<content> se encuentran los siguientes cuantificadores positivos que funcionan al igual que el único determinante de la frase nominal: </content>
 				</p>
 				<p show="swQPDeterminerYesSomePosOnly">
 					<content>En </content>
 					<langName/>
-					<content> no hay una categoría independiente de los cuantificadores negativos que actúe como el único determinante de la frase nominal. Asimismo tampoco hay alguna manera de expresar el elemento especial negativo de grado. </content>
+					<content> no hay una categoría independiente de los cuantificadores negativos que funciona al igual que el único determinante de la frase nominal. Asimismo tampoco hay alguna manera de expresar el elemento especial negativo de grado. </content>
 				</p>
 				<p show="swQPDeterminerYesSomePosOnly">
 					<content>En </content>
 					<langName/>
-					<content> se encuentran los siguientes cuantificadores positivos que actúan como el único determinante de la frase nominal:</content>
+					<content> se encuentran los siguientes cuantificadores positivos que funcionan al igual que el único determinante de la frase nominal:</content>
 				</p>
 				<p show="swQPDeterminerYesNo">
 					<content>En </content>
 					<langName/>
-					<content> no hay una categoría independiente de los cuantificadores positivos que actúe como el único determinante de la frase nominal. Los conceptos positivos de </content>
+					<content> no hay una categoría independiente de los cuantificadores positivos que funciona al igual que el único determinante de la frase nominal. Los conceptos positivos de </content>
 					<langData>alguno</langData>
 					<content> y </content>
 					<langData>cada</langData>
-					<content> son como </content>
+					<content> son al igual que </content>
 					<langData>todos</langData>
-					<content> considerados anteriormente o como los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.   </content>
+					<content> considerados anteriormente o al igual que los cuantificadores que pueden presentarse con los artículos, los demostrativos y/o los poseedores que se analizarán en la siguiente sección.   </content>
 				</p>
 				<p show="swQPDeterminerYesNo">
 					<content>En </content>
 					<langName/>
-					<content> se encuentran los siguientes cuantificadores negativos que actúan como el único determinante de la frase nominal: </content>
+					<content> se encuentran los siguientes cuantificadores negativos que funcionan al igual que el único determinante de la frase nominal: </content>
 				</p>
 				<p show="swQPDeterminerYes">
 					<content>En </content>
 					<langName/>
-					<content> se encuentran los siguientes cuantificadores positivos y negativos que actúan como el único determinante de la frase nominal: </content>
+					<content> se encuentran los siguientes cuantificadores positivos y negativos que funcionan al igual que el único determinante de la frase nominal: </content>
 				</p>
 				<example show="swQPDeterminerNotNo">
 					<table border="1">
@@ -744,7 +744,7 @@
 				</p>
 			</section3>
 			  <section3 id="sQPOtherQuantifiers">
-				 <secTitle>Otros cuantificadores y las palabras de grado</secTitle>
+				 <secTitle>Otros cuantificadores y palabras de grado</secTitle>
 				 <p>
 					 <content>Otros cuantificadores, como </content>
 					 <langData>muchos</langData>
@@ -821,9 +821,9 @@
 
 	 </section2>
 	 <section2 id="sAdjArtDem">
-		 <secTitle>Los artículos y demostrativos</secTitle>
+		 <secTitle>Artículos y demostrativos</secTitle>
 		 <p>
-			 <content>En español, los artículos incluyen </content>
+			 <content>En español, los artículos son los siguientes: </content>
 			 <langData>un</langData>
 			 <content>, </content>
 			 <langData>una</langData>
@@ -831,7 +831,7 @@
 			 <langData>el</langData>
 			 <content> y </content>
 			 <langData>la</langData>
-			 <content>.  Los demostrativos en español incluyen </content>
+			 <content>.  Los demostrativos en español son los siguientes: </content>
 			 <langData>esto</langData>
 			 <content>, </content>
 			 <langData>ese</langData>
@@ -853,7 +853,7 @@
 			 <langName/>
 			 <content/>
 			 <case element="np" attr="artAndDem">
-				 <caseText value="no"> no hay artículos ni demostrativos que sean palabras independientes.</caseText>
+				 <caseText value="no"> no hay artículos ni demostrativos que son palabras independientes.</caseText>
 				 <caseText value="article"> solamente hay artículos que son palabras independientes, ningún demostrativo.</caseText>
 				 <caseText value="demonstrative"> solamente hay demostrativos que son palabras independientes, ningún artículo.</caseText>
 				 <caseText value="both"> hay artículos y demostrativos que son palabras independientes.</caseText>
@@ -900,7 +900,7 @@
 			 <table border="1">
 				 <headerRow>
 					 <headerCol>Demostrativos</headerCol>
-					 <headerCol>Significado</headerCol>
+					 <headerCol>Glosa</headerCol>
 				 </headerRow>
 				 <row>
 					 <col exampleLoc="np/demonstrativeExample"/>

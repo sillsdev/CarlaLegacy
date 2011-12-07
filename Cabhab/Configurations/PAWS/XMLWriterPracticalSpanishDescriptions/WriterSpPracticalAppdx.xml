@@ -17,7 +17,7 @@
 				<exampleRef num="xConsonants"/>
 				<content>.  También se presenta la identificación de estos sonidos en el alfabeto fonético, con los símbolos del alfabeto práctico entre paréntesis, si hay diferencias.</content>
 			</p>
-			<p><comment>Observe que el cuadro contiene muchos símbolos más del alfabeto fonético que los que su idioma tiene. Usted necesita suprimir cualquiera de los símbolos y posiblemente también columnas o filas que no usan en su idioma. Además, es necesario incorporear el símbolo de la ortografía práctica entre paréntesis después del símbolo fonético dondequiera que sean diferentes. </comment></p>
+			<p><comment>Observe que el cuadro contiene muchos símbolos más del alfabeto fonético que los que su idioma tiene. Usted necesita suprimir cualquiera de los símbolos y posiblemente también columnas o filas que no usan en su idioma. Además, es necesario incorporear el símbolo de la ortografía práctica entre paréntesis después del símbolo fonético dondequiera que son diferentes. </comment></p>
 			<example num="xConsonants">
 				<table>
 					<headerRow>
@@ -351,7 +351,7 @@
 				<exampleRef num="xVowels"/>
 				<content>.  También se presenta la identificación de estos sonidos en el alfabeto fonético, con los símbolos del alfabeto práctico entre paréntesis, si hay diferencias.</content>
 			</p>
-			<p><comment>Observe que el cuadro contiene muchos símbolos más del alfabeto fonético que los que su idioma tiene. Usted necesita suprimir cualquiera de los símbolos y posiblemente también columnas o filas que no usan en su idioma. Además, es necesario incorporear el símbolo de la ortografía práctica entre paréntesis después del símbolo fonético dondequiera que sean diferentes. </comment></p>
+			<p><comment>Observe que el cuadro contiene muchos símbolos más del alfabeto fonético que los que su idioma tiene. Usted necesita suprimir cualquiera de los símbolos y posiblemente también columnas o filas que no usan en su idioma. Además, es necesario incorporear el símbolo de la ortografía práctica entre paréntesis después del símbolo fonético dondequiera que son diferentes. </comment></p>
 			<example num="xVowels">
 				<table>
 					<headerRow>

@@ -302,10 +302,10 @@
 			<content>Cada una de estas frases será analizada y ejemplificada en las secciones siguientes.</content>
 		</p>
 		<section2 id="sNPDegree">
-			<secTitle>Las palabras especiales de grado como modificadores</secTitle>
+			<secTitle>Palabras especiales de grado como modificadores</secTitle>
 			<p>
 				<content>
-					Empezando con el exterior de la frase nominal, esta posición se ocupa por las palabras de grado que modifican a la frase completa, tal como </content>
+					Empezando con el extremo de la frase nominal, esta posición se ocupa por las palabras de grado que modifican a la frase completa, tal como </content>
 				<langData>todos</langData>
 				<content>, </content>
 				<langData>casi</langData>
@@ -317,7 +317,7 @@
 				<langData>no</langData>
 				<content>.  Las palabras especiales de grado fueron analizadas en la sección </content>
 				<sectionRef sec="sQPAll"/>
-				<content>.  Para repasar los detalles en </content>
+				<content>.  De acuerdo con lo considerado, en  </content>
 				<langName/>
 				<content>,  </content>
 				<text show="swQPNPDegreeNo">
@@ -384,16 +384,16 @@
 			</example>
 		</section2>
 		<section2 id="sNPArtDem">
-			<secTitle>Los artículos y demostrativos en la frase nominal</secTitle>
+			<secTitle>Artículos y demostrativos en la frase nominal</secTitle>
 			<p>
-				<content>Los artículos y/o los demostrativos llenan normalmente el nivel siguiente cuando se mueve adentro hacia el sustantivo.
+				<content>Los artículos y/o los demostrativos normalmente ocupan el siguiente nivel adentro del extremo hacia el sustantivo.
 					En español, los artículos y los demostrativos no se presentan en la misma frase nominal, sino que ambos se presentan antes del sustantivo.
 					Algunos idiomas permiten que ambos se presentan en la misma frase, y pueden presentarse en diversas posiciones con respecto al sustantivo.
 					Por lo tanto, necesitan categorías sintácticas distintas. Algunos idiomas tienen solamente una categoría, los artículos o los demostrativos.
 					Algunos idiomas no tienen cualquier tipo expresado como palabras independientes. </content>
 			</p>
 			<p>
-				<content>Según lo visto en la sección </content><sectionRef sec="sAdjArtDem"/><content>, en </content>
+				<content>De acuerdo con lo considerado en la sección </content><sectionRef sec="sAdjArtDem"/><content>, en </content>
 				<langName/>
 				<content/>
 				<case element="np" attr="artAndDem">
@@ -414,7 +414,7 @@
 					<text show="swNPArtCaseNo">
 						<content>no </content>
 					</text>
-					<content>se marcan para el caso.</content>
+					<content>se indican para el caso.</content>
 				</text>
 				<content/>
 			</p>
@@ -437,7 +437,7 @@
 				<content>  La presencia de un artículo es </content>
 				<case element="np" attr="artRequired">
 					<caseText value="no">siempre opcional.</caseText>
-					<caseText value="mass">opcional con sustantivos plurales o totales, pero se requiere con sustantivos singulares.</caseText>
+					<caseText value="mass">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</caseText>
 					<caseText value="yes">siempre requirido.</caseText>
 				</case>
 				<content/>
@@ -483,7 +483,7 @@
 				<content>  La presencia de un demostrativo es </content>
 				<case element="np" attr="demRequired">
 					<caseText value="no">siempre opcional.</caseText>
-					<caseText value="mass">opcional con sustantivos plurales o totales, pero se requiere con sustantivos singulares.</caseText>
+					<caseText value="mass">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</caseText>
 					<caseText value="yes">siempre requirido.</caseText>
 				</case>
 				<content/>
@@ -529,7 +529,7 @@
 				<content>  La presencia de un artículo o un demostrativo es </content>
 				<case element="np" attr="demOrArtRequired">
 					<caseText value="no">siempre opcional.</caseText>
-					<caseText value="mass">opcional con sustantivos plurales o totales, pero se requiere con sustantivos singulares.</caseText>
+					<caseText value="mass">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</caseText>
 					<caseText value="yes">siempre requirido.</caseText>
 				</case>
 				<content/>
@@ -562,7 +562,7 @@
 					<caseText value="different">sino ambos no pueden </caseText>
 					<caseText value="yes">y que pueden ambos </caseText>
 				</case>
-				<content>presentarse en la misma frase nominal.  El demostrativo ocurre </content>
+				<content>presentarse en la misma frase nominal.  El demostrativo se presenta </content>
 				<case element="np" attr="demAndArtDemPos">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
@@ -580,7 +580,7 @@
 				<content>  La presencia de un demostrativo es </content>
 				<case element="np" attr="demAndArtDemRequired">
 					<caseText value="no">siempre opcional.</caseText>
-					<caseText value="mass">opcional con sustantivos plurales o totales, pero se requiere con sustantivos singulares.</caseText>
+					<caseText value="mass">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</caseText>
 					<caseText value="yes">siempre requirido.</caseText>
 				</case>
 				<content/>
@@ -623,7 +623,7 @@
 				<content>  La presencia de un artículo es </content>
 				<case element="np" attr="demAndArtArtRequired">
 					<caseText value="no">siempre opcional.</caseText>
-					<caseText value="mass">opcional con sustantivos plurales o totales, pero se requiere con sustantivos singulares.</caseText>
+					<caseText value="mass">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</caseText>
 					<caseText value="yes">siempre requirido.</caseText>
 				</case>
 				<content/>
@@ -657,7 +657,7 @@
 					<caseText value="demonstrative">los demostrativos</caseText>
 					<caseText value="both">los artículos y/o los demostrativos</caseText>
 				</case>
-				<content> según lo permitido en </content>
+				<content> de acuerdo con lo permitido en </content>
 				<langName/>
 				<content> son:</content>
 			</p>
@@ -666,9 +666,9 @@
 			</example>
 		</section2>
 		<section2 id="sNPPoss">
-			<secTitle>Los poseedores</secTitle>
+			<secTitle>Poseedores</secTitle>
 			<p>
-				<content>La posesión se puede expresar normalmente por un pronombre posesivo (según lo visto en la sección </content>
+				<content>La posesión se puede expresar normalmente por un pronombre posesivo (de acuerdo con lo considerado en la sección </content>
 				<sectionRef sec="sPronPoss"/>
 				<content>), por un sustantivo simple, o por una frase nominal completa. El español permite solamente pronombres posesivos en la posición del poseedor antes del sustantivo,
 					con todos los poseedores de sustantivos o frases nominales expresados en una frase preposicional con la preposición </content><langData>de</langData><content>, después del sustantivo.</content></p>
@@ -679,11 +679,11 @@
 				<langData>'s</langData>
 				<content> se presenta unido al sustantivo principal, como en </content>
 				<langData>the boy's mother</langData><gloss><content>'la madre del muchacho'</content></gloss>
-				<content>, hay las frases que demuestran claramente que el clítico se une al final de la frase nominal completo, tal como </content>
+				<content>, hay las frases que muestran claramente que el clítico se une al final de la frase nominal completo, tal como </content>
 				<langData>the boy that I just talked to's mother</langData><gloss><content>'la madre del muchacho que acabo de hablar con'</content></gloss>
 				<content> o </content>
 				<langData>the girl in green's wonderful speech</langData><gloss><content>'el discurso maravilloso de la muchacha en verde'</content></gloss>
-				<content>.  Estos ejemplos demuestran que los poseedores pueden incluir frases </content>
+				<content>.  Estos ejemplos muestran que los poseedores pueden incluir frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
@@ -710,19 +710,19 @@
 					<caseText value="both">preposicionales y/o posposicionales</caseText>
 					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
 				</case>
-				<content> dentro del poseedor son:</content>
+				<content> incluidas en el poseedor son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/ppExample"/>
 			</example>
 			<p>
-				<content>Algunos ejemplos con cláusulas relativas dentro del poseedor, incluido en oraciones completas son:</content>
+				<content>Algunos ejemplos con cláusulas relativas incluidas en el poseedor, incluido en oraciones completas son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/relClExample"/>
 			</example>
 			<p>
-				<content>Según lo visto anteriormente en los ejemplos,  en </content>
+				<content>De acuerdo con lo considerado anteriormente en los ejemplos,  en </content>
 				<langName/>
 				<content/>
 				<case element="np" attr="possMarked">
@@ -800,9 +800,9 @@
 				</p>
 		</section2>
 		<section2 id="sNPQP">
-			<secTitle>Las frases del cuantificador como modificadores</secTitle>
+			<secTitle>Frases del cuantificador como modificadores</secTitle>
 			<p>
-				<content>Las frases del cuantificador llenan el nivel siguiente hacia el sustantivo. Esta posición incluye ambos números (véase la sección </content>
+				<content>Las frases del cuantificador ocupan el siguiente nivel hacia el sustantivo. Esta posición incluye ambos números (véase la sección </content>
 				<sectionRef sec="sAdjNumbers"/>
 				<content>) y otros cuantificadores y palabras de grado (véase la sección </content><sectionRef sec="sQPOtherQuantifiers"/><content>).  Tales modificadores indican el número de la frase del nominal completo. Algunos ejemplos de frases nominales cuantificadas en español son: </content>
 				<langData>ésos muy pocos libros</langData>
@@ -848,7 +848,7 @@
 				<interlinear exampleLoc="np/qpExample"/>
 			</example>
 			<p show="swNPQPAgreeYes">
-				<content>Como otros modificadores dentro de la frase nominal, las frases del cuantificador en  </content>
+				<content>Al al igual que otros modificadores dentro de la frase nominal, las frases del cuantificador en  </content>
 				<langName/>
 				<content> concuerdan con el sustantivo principal en </content>
 				<case element="np" attr="agreeOther">
@@ -860,18 +860,18 @@
 			</p>
 		</section2>
 		<section2 id="sNPAdjP">
-			<secTitle>Las frases del adjetivo como modificadores</secTitle>
+			<secTitle>Frases del adjetivo como modificadores</secTitle>
 			<p>
-				<content>Las frases del adjetivo fueron discutidas anteriormente en la sección </content>
+				<content>Las frases del adjetivo fueron analizadas anteriormente en la sección </content>
 				<sectionRef sec="sAdjP"/>
 				<content>.  Las frases del adjetivo se presentan cerca del sustantivo.  Algunas frases nominales en inglés con adjetivos son:</content>
-				<langData>just those very few old, dirty books</langData><gloss><content>'apenas ésos muy pocos libros viejos, sucios'</content></gloss>
+				<langData>just those very few old, dirty books</langData><gloss><content>'solo los muy pocos libros viejos, sucios'</content></gloss>
 				<content>, </content>
-				<langData>all the boy’s many black dogs</langData><gloss><content>'todo los muchos perros negros del muchacho'</content></gloss>
+				<langData>all the boy’s many black dogs</langData><gloss><content>'todos los muchos perros negros del muchacho'</content></gloss>
 				<content> y </content>
-				<langData>only the first one hundred very eager young boys</langData><gloss><content>'solamente los primeros cientos muchachos jovenes muy impacientes'</content></gloss>
-				<content>.  Mientras que los ejemplos en inglés demuestran, todos los adjetivos se presentan antes del sustantivo, y, desemejante de los otros modificadores, se permita más de una frase del adjetivo.
-					En español, los adjetivos se presentan después del sustantivo y se permite solamente una frase del adjetivo, a menos que los adjetivos son coordinados (véase la sección </content><sectionRef sec="sCoordAdj"/><content>).</content></p>
+				<langData>only the first one hundred very eager young boys</langData><gloss><content>'solamente los primeros cien muchachos jovenes que están muy impacientes'</content></gloss>
+				<content>.  Como se puede ver en los ejemplos en inglés, todos los adjetivos se presentan antes del sustantivo, y, al contrario de los otros modificadores, se permita más de una frase adjetival.
+					En español, los adjetivos se presentan después del sustantivo y solamente se permite solamente una frase adjetival, a menos que los adjetivos son coordinados (véase la sección </content><sectionRef sec="sCoordAdj"/><content>).</content></p>
 			<p>
 				<content>En </content>
 				<langName/>
@@ -900,7 +900,7 @@
 				<interlinear exampleLoc="np/adjpExample"/>
 			</example>
 			<p show="swNPAdjPAgreeYes">
-				<content>Como otros modificadores dentro de la frase nominal, las frases del adjetivo en </content>
+				<content>Al al igual que otros modificadores dentro de la frase nominal, las frases del adjetivo en </content>
 				<langName/>
 				<content> concuerdan con el sustantivo principal en </content>
 				<case element="np" attr="agreeOther">
@@ -914,10 +914,10 @@
 		</section2>
 		<section2 id="sNPPP">
 			<secTitle>            <case  element="pp" attr="pPos">
-				<caseText value="before">Las frases preposicionales como modificadores o complementos</caseText>
-				<caseText value="after">Las frases posposicionales como modificadores o complementos</caseText>
-				<caseText value="both">Las frases preposicionales o posposicionales como modificadores o complementos</caseText>
-				<caseText value="unknown">Las frases preposicionales y/o posposicionales como modificadores o complementos</caseText>
+				<caseText value="before">Frases preposicionales como modificadores o complementos</caseText>
+				<caseText value="after">Frases posposicionales como modificadores o complementos</caseText>
+				<caseText value="both">Frases preposicionales o posposicionales como modificadores o complementos</caseText>
+				<caseText value="unknown">Frases preposicionales y/o posposicionales como modificadores o complementos</caseText>
 			</case></secTitle>
 			<p>
 				<content>Los sustantivos simples y compuestos pueden tener frases </content>
@@ -938,7 +938,7 @@
 					<caseText value="both">preposicionales y/o posposicionales</caseText>
 					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
 				</case>
-				<content> del genitivo pueden actuar como el poseedor, tal como </content>
+				<content> del genitivo pueden funcionar como el poseedor, tal como </content>
 				<langData>esos perros [de él]</langData>
 				<content> y </content>
 				<langData>el mantel [de mi madre]</langData>
@@ -978,7 +978,7 @@
 			<p>
 				<content>Véase el la sección </content>
 				<sectionRef sec="sPP"/>
-				<content> para el análisis de las frases </content>
+				<content> para considerar el análisis de las frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
@@ -991,16 +991,17 @@
 			</p>
 		</section2>
 <section2 id="sNPParticiple">
-	<secTitle>Los participios</secTitle>
+	<secTitle>Participios</secTitle>
 		<p>
-			<content>Otro caso que se puede parecer como un sustantivo y un complemento puede ser realmente una frase del participio (también llamada un gerundio). Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición o posposición. Algunos ejemplos de español en oraciones completas con la frase del participio acorchetada son: </content>
-			<langData>[Estudiando participios] es dificil</langData><content>, </content><langData>Él tiene gusto [leyendo la poesía latina]</langData>
+			<content>Otro caso que se puede parecer al igual que un sustantivo y un complemento puede ser realmente una frase del participio. Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición o posposición. Algunos ejemplos en oraciones completas en inglés con la frase del participio entre corchetes son: </content>
+			<langData>[Studying participles] is difficult</langData><gloss><content>'[Estudiando participios] es dificil'</content></gloss><content>, </content>
+			<langData>He likes [reading Latin poetry]</langData><gloss><content>'Él tiene gusto [leyendo la poesía latina]'</content></gloss>
 				<content> y </content>
-			<langData>El receptor demostró su valor cerca [haciendo el retén]</langData>
-			<content>  Tales frases se pueden poseer o modificar también, y a veces se presenta solamente el participio como el elemento principal de una frase nominal, como en </content>
+			<langData>The receiver showed his worth by [making the catch]</langData><gloss><content>'El receptor mostró su valor cerca [haciendo el retén]'</content></gloss>
+			<content>.  Tales frases se pueden poseer o modificar también, y a veces se presenta solamente el participio como el elemento principal de una frase nominal, como en </content>
 			<langData>el gravemente herido</langData><content>, </content><langData>el agonizante</langData>
 				<content> y </content>
-			<langData>su siguiente.</langData>
+			<langData>your following</langData><gloss><content>'su siguiente'</content></gloss><content>.</content>
 			</p>
 			<p>
 				<content> Algunos ejemplos de los participios o las frases del participio que pueden substituir por un sustantivo en una frase nominal en </content><langName/><content> son:</content>
@@ -1009,13 +1010,13 @@
 				<interlinear exampleLoc="np/partHeadExample"/>
 			</example>
 			<p>
-				<content>Estas frases del participio pueden presentarse en oraciones completas como se muestra aquí: </content>
+				<content>Estas frases del participio pueden presentarse en oraciones completas como se muestra a continuación: </content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/partHeadSentExample"/>
 			</example>
 	<p>
-		<content>Los participios o las frases del participio pueden también actuar como adjetivos en la modificación de un sustantivo en muchas idiomas, aunque no en español. Algunos ejemplos en inglés con el participio o la frase del participio acorchetada son: </content>
+		<content>Los participios o las frases del participio pueden también funcionar al igual que adjetivos en la modificación de un sustantivo en muchas idiomas (también llamada un gerundio). Algunos ejemplos en inglés con el participio o la frase del participio entre corchetes son: </content>
 		<langData>the bright, [shining] sun</langData><gloss><content>'el brillante, [brillando] sol'</content></gloss>
 		<content>, </content><langData>my [crying] child</langData><gloss><content>'mi niño, [gritando]'</content></gloss>
 		<content> y </content>

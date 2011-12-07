@@ -4,16 +4,16 @@
 	<section1 id="sAdvCl">
 		<secTitle>Las cláusulas adverbiales</secTitle>
 		<p>
-<xsl:text>En esta sección se analizan los complementos que pueden seguir los adverbios temporales y de razón, que fueron introducidos en las secciones </xsl:text>
+<xsl:text>En esta sección se analizan los complementos que pueden seguir los adverbios de tiempo y de razón, que fueron introducidos en las secciones </xsl:text>
 <sectionRef sec="sAdvPTemporal" />
 <xsl:text> y </xsl:text>
 <sectionRef sec="sAdvPReason" />
-<xsl:text>.  Todas de estas cláusulas (o frases) adverbiales actúan igual que los adverbios simples, así que ellos serán considerados frases adverbiales con el tipo apropiado de complemento. Las cláusulas adverbiales de estos tipos normalmente pueden presentarse o inicial o final de la oración. </xsl:text>
+<xsl:text>.  Todas de estas cláusulas (o frases) adverbiales funcionan al igual que los adverbios simples, así que ellos serán considerados frases adverbiales con el tipo apropiado de complemento. Las cláusulas adverbiales de estos tipos normalmente pueden presentarse o inicial o final de la oración. </xsl:text>
 </p>
 		<section2 id="sAdvClTemporal">
-			<secTitle>Los complementos de adverbios temporales</secTitle>
+			<secTitle>Complementos de adverbios de tiempo</secTitle>
 			<p>
-<xsl:text>Algunos ejemplos en español de adverbios temporales con los complementos usados en oraciones completas son:</xsl:text>
+<xsl:text>Algunos ejemplos en español de adverbios de tiempo con los complementos usados en oraciones completas son:</xsl:text>
 </p>
 			<ol>
 				<li>
@@ -36,12 +36,12 @@
 				</li>
 			</ol>
 			<p>
-<xsl:text>Estos ejemplos muestran que los adverbios temporales particulares permiten ciertos tipos de complementos. En (1) </xsl:text>
+<xsl:text>Estos ejemplos muestran que los adverbios de tiempo particulares permiten ciertos tipos de complementos. En (1) </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>desde</langData>
-<xsl:text> es seguido por otro adverbio temporal, y en (2) por una frase nominal temporal.  Los ejemplos (3) y (4) muestran que </xsl:text>
+<xsl:text> es seguido por otro adverbio de tiempo, y en (2) por una frase nominal de tiempo.  Los ejemplos (3) y (4) muestran que </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -75,7 +75,7 @@
 					<xsl:when test="//advcl/@advOrNPPos='either'">de cualquier lado</xsl:when>
 					<xsl:when test="//advcl/@advOrNPPos='unknown'">_______</xsl:when>
 				</xsl:choose>
-<xsl:text> del adverbio.  Algunos ejemplos de cláusulas adverbiales temporales en </xsl:text>
+<xsl:text> del adverbio.  Algunos ejemplos de cláusulas adverbiales de tiempo en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -126,7 +126,7 @@
 </example>
 		</section2>
 		<section2 id="sAdvClReason">
-			<secTitle>Los complementos de adverbios de razón</secTitle>
+			<secTitle>Complementos de adverbios de razón</secTitle>
 			<p>
 <xsl:text>En las frases adverbiales o a las cláusulas que expresan razón o propósito, encontramos los adverbios que se colocan solamente, por ejemplo </xsl:text>
 <langData>
@@ -159,7 +159,7 @@
 				</li>
 			</ol>
 			<p>
-<xsl:text>En los ejemplos arriba, </xsl:text>
+<xsl:text>En los ejemplos anteriores, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>

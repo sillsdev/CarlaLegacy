@@ -6,7 +6,7 @@
 	<form section="np">
 		<prompt id="NPArtAndDemInstruction" show="swNPArtAndDem"><span id="NPArtandDemTreespan" show="swNotPractical">Now we are ready to build the next part of the phrase structure tree.  </span>Mire los ejemplos de las frases nominales con <span id="NPArtandDemSpan" show="swNPArtAndDemBoth">los artículos y los demonstrativos</span><span id="NPArtSpan" show="swNPArtAndDemArt">los artículos</span><span id="NPDemSpan" show="swNPArtAndDemDem">los demonstrativos</span>que usted escribió (repetido abajo).</prompt>
 		<textBox id="NPArtPosExample" show="swNPArtAndDem" dataItem="example"/>
-		<prompt id="NPArtAndDemNoInstruction" show="swNPArtAndDemNo">Puesto que su idioma no tiene artículos o demonstrativos expresados como palabras independientes, no necesitamos determinar una posición sintáctica para ellos.</prompt>
+		<prompt id="NPArtAndDemNoInstruction" show="swNPArtAndDemNo">Puesto que en su idioma no hay artículos o demonstrativos expresados como palabras independientes, no necesitamos determinar una posición sintáctica para ellos.</prompt>
 <instruction id="NPArtAndDemNoInstruction2" show="swNPArtAndDemNo">You will be instructed to add the agreement features to nouns and their affixes when we deal with agreement again in the section on possessors.</instruction>
 		<radioGroup id="NPArtAndDemArtPosTable" show="swNPArtAndDemArt">
 			<groupName dataItem="artPos" default="unknown" position="yesSpec">RNPArtAndDemArtPos</groupName>
@@ -18,14 +18,14 @@
 				<groupName dataItem="artEither" default="unrestricted">RNPArtAndDemArtPosEither</groupName>
 				<prompt>¿Pueden presentarse todos los artículos de cualquier lado del sustantivo?</prompt>
 				<radio id="NPArtAndDemArtPosEitherSideUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="NPArtAndDemArtPosEitherSideRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+				<radio id="NPArtAndDemArtPosEitherSideRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 			</radioGroup>
 		</radioGroup>
 		<radioGroup id="NPArtAndDemArtRequiredTable" show="swNPArtAndDemArt">
 			<groupName dataItem="artRequired" default="no">RNPArtAndDemArtRequired</groupName>
 			<prompt>¿Se requiere un artículo presentarse en cada frase nominal?</prompt>
 			<radio id="NPArtAndDemArtRequiredNo" dataValue="no">No, un artículo es siempre opcional</radio>
-			<radio id="NPArtAndDemArtRequiredMass" dataValue="mass">No, un artículo es opcional con sustantivos plurales o totales, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos ahora)</radio>
+			<radio id="NPArtAndDemArtRequiredMass" dataValue="mass">No, un artículo es opcional con sustantivos plurales o no contables, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos ahora)</radio>
 			<radio id="NPArtAndDemArtRequiredYes" dataValue="yes">Sí, un artículo se requiere siempre</radio>
 			<radioGroup id="NPArtAndDemArtPosBothSidesRequiredTable" show="swNPArtAndDemArtPosBothSidesRequiredMassorYes">
 				<groupName dataItem="artBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemArtPosBothRequired</groupName>
@@ -45,14 +45,14 @@
 				<groupName dataItem="demEither" default="unrestricted">RNPArtAndDemDemPosEither</groupName>
 				<prompt>¿Pueden presentarse todos los demostrativos en lado del sustantivo?</prompt>
 				<radio id="NPArtAndDemDemPosEitherSideUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="NPArtAndDemDemPosEitherSideRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+				<radio id="NPArtAndDemDemPosEitherSideRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 			</radioGroup>
 		</radioGroup>
 		<radioGroup id="NPArtAndDemDemRequiredTable" show="swNPArtAndDemDem">
 			<groupName dataItem="demRequired" default="no">RNPArtAndDemDemRequired</groupName>
 			<prompt>¿Se requiere un demostrativo presentarse en cada frase nominal?</prompt>
 			<radio id="NPArtAndDemDemRequiredNo" dataValue="no">No, un demostrativo es siempre opcional</radio>
-			<radio id="NPArtAndDemDemRequiredMass" dataValue="mass">No, un demostrativo es opcional con sustantivos plurales o totales, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos para ahora)</radio>
+			<radio id="NPArtAndDemDemRequiredMass" dataValue="mass">No, un demostrativo es opcional con sustantivos plurales o no contables, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos para ahora)</radio>
 			<radio id="NPArtAndDemDemRequiredYes" dataValue="yes">Sí, un demostrativo se requiere siempre</radio>
 			<radioGroup id="NPArtAndDemDemPosBothSidesRequiredTable" show="swNPArtAndDemDemPosBothSidesRequiredMassorYes">
 				<groupName dataItem="demBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemDemPosBothRequired</groupName>
@@ -65,7 +65,7 @@
 		<radioGroup id="NPArtAndDemBothTable" show="swNPArtAndDemBoth">
 			<groupName dataItem="artBothCooccur" default="different">RNPArtAndDemBoth</groupName>
 			<prompt>¿Pueden presentarse los artículos y los demonstratives en la misma frase nominal?</prompt>
-			<radio id="NPArtAndDemBothCooccurNo" dataValue="no">No, se presentan en la misma posición, como en español</radio>
+			<radio id="NPArtAndDemBothCooccurNo" dataValue="no">No, se presentan en la misma posición, al igual que en español</radio>
 			<radioGroup id="NPArtAndDemBothCooccurNoPosTable" show="swNPArtAndDemBothCooccurNo">
 				<groupName dataItem="demOrArtPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurNoPos</groupName>
 				<prompt>¿Dónde se presenta el demostrativo o el artículo con respecto al sustantivo?</prompt>
@@ -77,13 +77,13 @@
 				<groupName dataItem="demOrArtEither" default="unrestricted">RNPArtAndDemBothCooccurNoPosEither</groupName>
 				<prompt>¿Pueden presentarse todos los demostrativos y artículos de cualquier lado del sustantivo?</prompt>
 				<radio id="NPArtAndDemBothCooccurNoPosEitherSideUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="NPArtAndDemBothCooccurNoPosEitherSideRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+				<radio id="NPArtAndDemBothCooccurNoPosEitherSideRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 			</radioGroup>
 			<radioGroup id="NPArtAndDemBothCooccurNoRequiredTable" show="swNPArtAndDemBothCooccurNo">
 				<groupName dataItem="demOrArtRequired" default="no">RNPArtAndDemBothCooccurNoRequired</groupName>
 				<prompt>¿Se requiere un demostrativo o un artículo presentarse en cada frase nominal?</prompt>
 				<radio id="NPArtAndDemBothCooccurNoRequiredNo" dataValue="no">No, un demostrativo o un artículo es siempre opcional</radio>
-				<radio id="NPArtAndDemBothCooccurNoRequiredMass" dataValue="mass">No, un demostrativo o un artículo es opcional con sustantivos plurales o totales, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos ahora)</radio>
+				<radio id="NPArtAndDemBothCooccurNoRequiredMass" dataValue="mass">No, un demostrativo o un artículo es opcional con sustantivos plurales o no contables, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos ahora)</radio>
 				<radio id="NPArtAndDemBothCooccurNoRequiredYes" dataValue="yes">Sí, o un demostrativo o un artículo se requiere siempre</radio>
 				<radioGroup id="NPArtAndDemBothCooccurNoPosBothSidesRequiredTable" show="swNPArtAndDemBothCooccurNoPosBothSidesRequiredMassorYes">
 					<groupName dataItem="demOrArtBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurNoPosBothRequired</groupName>
@@ -106,13 +106,13 @@
 				<groupName dataItem="demAndArtDemEither" default="unrestricted">RNPArtAndDemBothCooccurYesDemPosEitherorBoth</groupName>
 				<prompt>¿Pueden presentarse todos los demostrativos de cualquier lado del sustantivo?</prompt>
 				<radio id="NPArtAndDemBothCooccurYesDemPosEitherSideUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="NPArtAndDemBothCooccurYesDemPosEitherSideRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+				<radio id="NPArtAndDemBothCooccurYesDemPosEitherSideRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 			</radioGroup>
 			<radioGroup id="NPArtAndDemBothCooccurYesDemRequiredTable" show="swNPArtAndDemBothCooccurYes">
 				<groupName dataItem="demAndArtDemRequired" default="no">RNPArtAndDemBothCooccurYesDemRequired</groupName>
 				<prompt>¿Se requiere un demostrativo presentarse en cada frase nominal?</prompt>
 				<radio id="NPArtAndDemBothCooccurYesDemRequiredNo" dataValue="no">No, un demostrativo es siempre opcional</radio>
-				<radio id="NPArtAndDemBothCooccurYesDemRequiredMass" dataValue="mass">No, un demostrativo es opcional con sustantivos plurales o totales, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos ahora)</radio>
+				<radio id="NPArtAndDemBothCooccurYesDemRequiredMass" dataValue="mass">No, un demostrativo es opcional con sustantivos plurales o no contables, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos ahora)</radio>
 				<radio id="NPArtAndDemBothCooccurYesDemRequiredYes" dataValue="yes">Sí, un demostrativo se requiere siempre</radio>
 				<radioGroup id="NPArtAndDemBothCooccurYesDemPosBothSidesRequiredTable" show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMassorYes">
 					<groupName dataItem="demAndArtDemBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesDemPosBothRequired</groupName>
@@ -133,13 +133,13 @@
 				<groupName dataItem="demAndArtArtEither" default="unrestricted">RNPArtAndDemBothCooccurYesArtPosEitherorBoth</groupName>
 				<prompt>¿Pueden presentarse todos los artículos de cualquier lado del sustantivo?</prompt>
 				<radio id="NPArtAndDemBothCooccurYesArtPosEitherSideUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="NPArtAndDemBothCooccurYesArtPosEitherSideRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+				<radio id="NPArtAndDemBothCooccurYesArtPosEitherSideRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 			</radioGroup>
 			<radioGroup id="NPArtAndDemBothCooccurYesArtRequiredTable" show="swNPArtAndDemBothCooccurYes">
 				<groupName dataItem="demAndArtArtRequired" default="no">RNPArtAndDemBothCooccurYesArtRequired</groupName>
 				<prompt>¿Se requiere un artículo presentarse en cada frase nominal?</prompt>
 				<radio id="NPArtAndDemBothCooccurYesArtRequiredNo" dataValue="no">No, un artículo es siempre opcional</radio>
-				<radio id="NPArtAndDemBothCooccurYesArtRequiredMass" dataValue="mass">No, un artículo es opcional con sustantivos plurales o totales, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos ahora)</radio>
+				<radio id="NPArtAndDemBothCooccurYesArtRequiredMass" dataValue="mass">No, un artículo es opcional con sustantivos plurales o no contables, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos ahora)</radio>
 				<radio id="NPArtAndDemBothCooccurYesArtRequiredYes" dataValue="yes">Sí, un artículo se requiere siempre</radio>
 				<radioGroup id="NPArtAndDemBothCooccurYesArtPosBothSidesRequiredTable" show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMassorYes">
 					<groupName dataItem="demAndArtArtBothRequiredPos" default="unknown" position="yesSpec">RNPArtAndDemBothCooccurYesArtPosBothRequired</groupName>

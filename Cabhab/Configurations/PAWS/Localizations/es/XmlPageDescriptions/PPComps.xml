@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PPComps" count="2/5">
 	<title level="2">Las frases preposicionales y/o posposicionales - Los complementos nominales</title>
-	<introduction>Ahora consideramos al nivel de complementos.  Las preposiciones o posposiciones lleven normalmente una frase nominal para su complemento, como en <example>a [la casa de Guillermo]</example> y <example>debajo [el árbol gigante del sicómoro]</example>.  </introduction>
+	<introduction>Ahora consideramos al nivel de complementos.  Las preposiciones o posposiciones tienen normalmente una frase nominal para su complemento, como en <example>a [la casa de Guillermo]</example> y <example>debajo [del árbol sicómoro gigante]</example>.  </introduction>
 	<form section="pp">
 		<prompt>Escriba algunos ejemplos de las frases preposicionales y/o posposcionales de su idioma aquí (sin los soportes y seguido por un período):</prompt>
 		<textBox id="PPCompsNominalExample" dataItem="ppExample"/>
@@ -16,14 +16,14 @@
 		</radioGroup>
 		<radioGroup>
 			<groupName dataItem="pType" default="word">RPPType</groupName>
-			<prompt>¿Sean <span id="PPPrepSpan" show="swPPPosPrep">las preposiciones</span><span id="PPPostSpan" show="swPPPosPost">las posposiciones</span><span id="PPBothSpan" show="swPPPosBoth">las preposiciones y posposiciones</span> escritas como palabras independientes?</prompt>
+			<prompt>¿Se escriben <span id="PPPrepSpan" show="swPPPosPrep">las preposiciones</span><span id="PPPostSpan" show="swPPPosPost">las posposiciones</span><span id="PPBothSpan" show="swPPPosBoth">las preposiciones y posposiciones</span> como palabras independientes?</prompt>
 			<radio id="PPTypeWord" dataValue="word">Sí, son todas palabras sintácticas independientes</radio>
 			<radio id="PPTypeClitic" dataValue="clitic">No, son  todos clíticos que se escriben unidos a otra palabra</radio>
 			<radio id="PPTypeBoth" dataValue="both">Escriben algunos como palabras sintácticas independientes, pero algunos son clíticos que se escriben unidos a otra palabra</radio>
 			<radioGroup id="PPTypeCliticAttachesTable" show="swPPTypeCliticOrBoth">
 				<groupName dataItem="attaches" default="edge">RPPTypeCliticAttaches</groupName>
 				<prompt>¿Dónde se unen los clíticos a la frase nominal?</prompt>
-				<radio id="PPTypeCliticAttachesEdge" dataValue="edge">En el borde de la frase</radio>
+				<radio id="PPTypeCliticAttachesEdge" dataValue="edge">En el extremo de la frase</radio>
 				<radio id="PPTypeCliticAttachesHead" dataValue="head">Al sustantivo principal</radio>
 			</radioGroup>
 		</radioGroup>

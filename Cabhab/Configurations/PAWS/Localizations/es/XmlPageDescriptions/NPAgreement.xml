@@ -8,35 +8,35 @@
 	<form section="np">
 		<radioGroup>
 			<groupName dataItem="agreeNumber" default="no">RAgreementNumber</groupName>
-			<prompt>Piense en los varios modificadores que se pueden incluir en una frase nominal. ¿En su idioma hay un indicador en los artículos, los demonstrativos, los adjetivos u otros modificadores para demostrar la concordancia de número con el sustantivo principal?</prompt>
+			<prompt>Piense en los varios modificadores que se pueden incluir en una frase nominal. ¿En su idioma hay un indicador en los artículos, los demonstrativos, los adjetivos u otros modificadores para mostrar la concordancia de número con el sustantivo principal?</prompt>
 			<radio id="NPAgreeNoNumber" checked="yes" dataValue="no">No, no hay concordancia, pero la característica de número viene del número o del cuantificador</radio>
-			<radio id="NPAgreeYesNumber" checked="yes" dataValue="yes">Sí, como en español, los varios modificadores nominales pueden/deben concordar en número con el sustantivo principal</radio>
+			<radio id="NPAgreeYesNumber" checked="yes" dataValue="yes">Sí, al igual que en español, los varios modificadores nominales pueden/deben concordar en número con el sustantivo principal</radio>
 		</radioGroup>
-		<prompt id="NPAgreeNumberPrompt" show="swNPAgreeYesNumber">Escriba algunos ejemplos de las frases nominales que demuestran la concordancia de número aquí:</prompt>
+		<prompt id="NPAgreeNumberPrompt" show="swNPAgreeYesNumber">Escriba algunos ejemplos de las frases nominales que muestran la concordancia de número aquí:</prompt>
 		<textBox id="NPAgreeNumberExample" dataItem="agreeNumberExample" cols="50" show="swNPAgreeYesNumber"/>
 		<br/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="agreeOther" default="no">RAgreementOther</groupName>
-			<prompt>¿En su idioma hay características adicionales que se pueden o se deben marcar en los modificadores de modo que concuerdan con el sustantivo principal?</prompt>
+			<prompt>¿En su idioma hay características adicionales que se pueden o se deben indicar en los modificadores que concuerdan con el sustantivo principal?</prompt>
 			<radio id="NPAgreeNoOther" checked="yes" dataValue="no">No</radio>
 			<radio id="NPAgreeYesAnimacy" checked="yes" dataValue="yesAnimacy">Sí, pueden/deben concordar en animado</radio>
 			<radio id="NPAgreeYesClass" checked="yes" dataValue="yesClass">Sí, pueden/deben concordar en clase </radio>
 			<radio id="NPAgreeYesGender" checked="yes" dataValue="yesGender">Sí, pueden/deben concordar en género </radio>
 		</radioGroup>
-		<prompt id="NPAgreeAnimacyPrompt" show="swNPAgreeYesAnimacy">Escriba algunos ejemplos de las frases nominales que demuestran la concordancia de animado aquí:</prompt>
+		<prompt id="NPAgreeAnimacyPrompt" show="swNPAgreeYesAnimacy">Escriba algunos ejemplos de las frases nominales que muestran la concordancia de animado aquí:</prompt>
 		<textBox id="NPAgreeAnimacyExample" dataItem="agreeAnimacyExample" cols="50" show="swNPAgreeYesAnimacy"/>
 
 
-		<prompt id="NPAgreeClassPrompt" show="swNPAgreeYesClass">Escriba algunos ejemplos de las frases nominales que demuestran la concordancia de clase aquí:</prompt>
+		<prompt id="NPAgreeClassPrompt" show="swNPAgreeYesClass">Escriba algunos ejemplos de las frases nominales que muestran la concordancia de clase aquí:</prompt>
 		<textBox id="NPAgreeClassExample" dataItem="agreeClassExample" cols="50" show="swNPAgreeYesClass"/>
 
 
-		<prompt id="NPAgreeGenderPrompt" show="swNPAgreeYesGender">Escriba algunos ejemplos de las frases nominales que demuestran la concordancia de género aquí:</prompt>
+		<prompt id="NPAgreeGenderPrompt" show="swNPAgreeYesGender">Escriba algunos ejemplos de las frases nominales que muestran la concordancia de género aquí:</prompt>
 		<textBox id="NPAgreeGenderExample" dataItem="agreeGenderExample" cols="50" show="swNPAgreeYesGender"/>
 		<br/>
 		<br/>
-		<introduction id="NPCaseIntro" show="swNotPractical">>Besides agreement, nouns and their modifiers may be marked for case.  Therefore, we need to know what case system, if any, your language uses.  You may have the situation (as is true for two of the projects this starter kit was initially tested on) where the source language you wish to adapt from is unmarked or less marked for case than the target language(s) you wish to adapt into.  If so, you will need to add null allomorphs for the case markers in the source language to match the case markers in the target language(s) and allow the syntactic parser to disambiguate between these as much as possible.  If you have this situation, read the following information and answer the question(s) below based on the target language(s) case system.<br/>
+		<introduction id="NPCaseIntro" show="swNotPractical">Besides agreement, nouns and their modifiers may be marked for case.  Therefore, we need to know what case system, if any, your language uses.  You may have the situation (as is true for two of the projects this starter kit was initially tested on) where the source language you wish to adapt from is unmarked or less marked for case than the target language(s) you wish to adapt into.  If so, you will need to add null allomorphs for the case markers in the source language to match the case markers in the target language(s) and allow the syntactic parser to disambiguate between these as much as possible.  If you have this situation, read the following information and answer the question(s) below based on the target language(s) case system.<br/>
 			<br/>
 The most common case system is nominative-accusative.  This is the system English has, though only pronouns are marked for case in English.  In a nominative-accusative system, subjects of both transitive and intransitive verbs are in nominative case, while direct objects are accusative case.  Possessors are genitive case.  The nominative pronouns in English are: <example>I, we, you, he, she, they</example>.  The accusative pronouns are: <example>me, us, you, him, her, them</example>.  The genitive pronouns include: <example>my, our, your, his, her, their</example>.  Therefore, we say <example>They hit him</example> and not <example>Them hit he</example>. <br/>
 			<br/>
@@ -44,32 +44,32 @@ In an ergative-absolutive case system, subjects of transitive verbs are marked w
 			<br/>
 Some languages are even more complex in that they normally have a nominative-accusative system but under some conditions the case system switches to ergative-absolutive.  This is called "split ergativity".  In this starter kit, the best we can do for these languages is to add all the rules allowing both case systems.  Afterward, the specific constraints needed for your language can be added to the rules.
 </introduction>
-		<introduction id="NPCaseIntroPractical" show="swPractical">>En los sustantivos y sus modificadores también se pueden marcar para el caso. Por lo tanto, necesitamos saber qué sistema de caso, si algo, utiliza su idioma.<br/>
+		<introduction id="NPCaseIntroPractical" show="swPractical">En los sustantivos y sus modificadores también se pueden indicar para el caso. Por lo tanto, necesitamos saber qué sistema de caso, si algo, utiliza su idioma.<br/>
 			<br/>
 			El sistema de caso más común es el nominativo-acusativo.
-			Éste es el sistema que español tiene, aunque solamente se marca el caso en los pronombres y los poseedores.
+			Éste es el sistema que español tiene, aunque solamente se indica el caso en los pronombres y los poseedores.
 			En un sistema del nominativo-acusativo, los sujetos de los verbos intransitivos y transitivos son casos del nominativo, mientras que los objetos directos son casos del acusativo.
 			Los poseedores son casos del genitivo. Los pronombres del nominativo en español son: <example>yo, nosotros, usted, ustedes, él, ella, ellos, ellas</example>.  Los pronombres del acusativo son: <example>me, nos, te, le, les</example>.  Los pronombres del genitivo incluyen: <example>mi, nuestro, su, suyo, suya</example>.  Por lo tanto, decimos <example>Ellos le golpearon a él</example> y no <example>Les golpearon él</example>. <br/>
 			<br/>
-			En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se marcan con el caso del ergativo, mientras que los objetos de verbos transitivos y los temas de verbos intransitivos se marcan con el caso del absolutivo.
-			El caso de poseedores no se fija en todos los idiomas de este tipo.  Algunos idiomas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de marcadores verbales del acuerdo, pero ninguna marca en sustantivos.
-			Si esto es verdad en su idioma, y también hay solamente un solo sistema de pronombres independientes, conteste al "Ninguno" abajo. Si hay dos grupos de pronombres, sin embargo, así como diversos sistemas de marcadores del acuerdo, conteste "Ergativo-Absolutivo" abajo.  Este tipo de marca en la concordancia será considerado en  <section number="9.2">Las oraciones básicas - Las características de la inflexión y la concordancia</section>.<br/>
+			En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se indican con el caso del ergativo, mientras que los objetos de verbos transitivos y los temas de verbos intransitivos se indican con el caso del absolutivo.
+			El caso de poseedores no se fija en todos los idiomas de este tipo.  Algunos idiomas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de indicadores verbales de la concordancia, pero ningún indicador en sustantivos.
+			Si esto es verdad en su idioma, y también hay solamente un solo sistema de pronombres independientes, conteste al "Ninguno" abajo. Si hay dos grupos de pronombres, sin embargo, así como diversos sistemas de indicadores de la concordancia, conteste "Ergativo-Absolutivo" abajo.  Este tipo de indicador en la concordancia será considerado en  <section number="9.2">Las oraciones básicas - Las características de la inflexión y la concordancia</section>.<br/>
 			<br/>
 			Algunos idiomas son aún más complejas en que tienen normalmente un sistema de caso del nominativo-acusativo pero bajo ciertas condiciones el sistema de caso cambia a ergativo-absolutivo. Esto se llama "ergatividad escindida".
 		</introduction>
 		<radioGroup>
 			<groupName dataItem="case" default="nominative">RCase</groupName>
-			<prompt>De acuerdo con la descripción de los sistemas de caso arriba, ¿cuál está correcto para su idioma? Esté seguro de pensar en pronombres independientes así como sustantivos en la consideración de su respuesta.</prompt>
-			<radio id="NPCaseNone" checked="yes" dataValue="none">Ninguno: el mismo sistema de pronombres se puede utilizar en cualquier posición en la oración y no hay indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición en la oración</radio>
-			<radio id="NPCaseNom" checked="yes" dataValue="nominative">Nominativo-Acusativo: como en español, los sujetos de verbos intransitivos y transitivos son iguales, pero los objetos de verbos transitivos son diferentes</radio>
+			<prompt>De acuerdo con la descripción de los sistemas de caso anteriores, ¿cuál está correcto para su idioma? Esté seguro de pensar en pronombres independientes así como sustantivos en la consideración de su respuesta.</prompt>
+			<radio id="NPCaseNone" checked="yes" dataValue="none">Ninguno: el mismo sistema de pronombres se puede utilizar en cualquier posición de la oración y no hay indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición de la oración</radio>
+			<radio id="NPCaseNom" checked="yes" dataValue="nominative">Nominativo-Acusativo: al igual que en español, los sujetos de verbos intransitivos y transitivos son iguales, pero los objetos de verbos transitivos son diferentes</radio>
 			<radio id="NPCaseErg" checked="yes" dataValue="ergative">Ergativo-Absolutivo: los sujetos de verbos intransitivos y los objetos de verbos transitivos son iguales, pero los sujetos de verbos transitivos son diferentes</radio>
 			<radio id="NPCaseSplit" checked="yes" dataValue="split">Ergatividad escindida: el idioma sigue el sistema del nominativo-acusativo normalmente, pero el sistema de ergativo-absolutivo se utiliza bajo ciertas condiciones</radio>
 		</radioGroup>
 		<radioGroup id="NPCaseDefaultTable" show="swNPCaseNomOrSplit">
 			<groupName dataItem="caseDefault" default="no">RNPCaseDefault</groupName>
-			<prompt>¿Hay un caso predeterminado (no marcado) para su idioma?</prompt>
-			<radio id="NPCaseDefaultNo" dataValue="no">No, todos los marcadores de caso son abiertos (algunos alomorfos nulos son aceptables)</radio>
-			<radio id="NPCaseDefaultNom" dataValue="nominative">Sí, el caso nominativo es totalmente no marcado, pero los otros son abiertos (algunos alomorfos nulos son aceptables)</radio>
+			<prompt>¿Hay un caso predeterminado (no indicado) para su idioma?</prompt>
+			<radio id="NPCaseDefaultNo" dataValue="no">No, todos los indicadores de caso son abiertos (algunos alomorfos nulos son aceptables)</radio>
+			<radio id="NPCaseDefaultNom" dataValue="nominative">Sí, el caso nominativo es totalmente no indicado, pero los otros son abiertos (algunos alomorfos nulos son aceptables)</radio>
 		</radioGroup>
 		<br/>
 		<buttons>

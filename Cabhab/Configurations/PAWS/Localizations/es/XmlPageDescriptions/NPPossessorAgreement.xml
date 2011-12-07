@@ -5,7 +5,7 @@
 	<title level="2">Las frases nominales - La concordancia del poseedor</title>
 	<introduction>La concordancia del poseedor se manifiesta comúnmente de dos formas básicas:
 <ul>
-	<li>Un afijo que se encuentra en sustantivos poseídos alienables para indicar que están poseídas y por lo tanto deben tener un poseedor en la frase nominal. Los sustantivos poseídos inalienables no llevan ningún indicador, sino que siempre deben tener un poseedor. Éstos incluyen, pero no se limitan a, los términos del parentesco y las partes del cuerpo.</li>
+	<li>Un afijo que se encuentra en sustantivos poseídos alienables para indicar que están poseídas y por lo tanto deben tener un poseedor en la frase nominal. Los sustantivos poseídos inalienables no tienen ningún indicador, sino que siempre deben tener un poseedor. Éstos incluyen, pero no se limitan a, los términos del parentesco y las partes del cuerpo.</li>
 	<li>Un afijo que corresponde al poseedor (o expresa posiblemente al poseedor en sí mismo).</li>
 		</ul>
 	   Cada tipo será considerado en su orden correspondiente.
@@ -24,7 +24,7 @@
 		<instruction id="NPPossAlienableYesInstruction" show="swNPPossAlienableYes">Key the feature <feature>possessed</feature> on the affix(es) that marks the alienably possessed nouns when they have a possessor.  Also, key the feature <feature>possessed</feature> on all inalienably possessed nouns so that a possessor will be required.</instruction>
 		<radioGroup id="NPPossAgrTable">
 			<groupName dataItem="possAgr" default="no">RNPPossAgr</groupName>
-			<prompt>¿Se marcan los sustantivos con un afijo que concuerda con el poseedor (o expresa posiblemente al poseedor por sí mismo)?</prompt>
+			<prompt>¿Se indican los sustantivos con un afijo que concuerda con el poseedor (o expresa posiblemente al poseedor por sí mismo)?</prompt>
 			<radio id="NPPossAgrNo" dataValue="no">No</radio>
 			<radio id="NPPossAgrYes" dataValue="yes">Sí</radio>
 		</radioGroup>

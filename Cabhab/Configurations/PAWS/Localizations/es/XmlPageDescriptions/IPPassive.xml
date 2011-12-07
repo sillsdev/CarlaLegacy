@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPPassive" count="1/1">
 	<title level="2">Las oraciones básicas - Las oraciones pasivas</title>
-	<introduction>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente llena la posición del sujeto. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase preposicional o posposicional (como en español con la preposición particular <example>por</example>) o de una frase nominal, dependiendo del idioma. Además, un auxiliar particular puede ser requerido en pasivos (una forma de <example>estar</example> en español).  Algunos ejemplos en español con y sin una frase del agente son: </introduction>
+	<introduction>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente ocupa la posición del sujeto. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase preposicional o posposicional (como en español con la preposición particular <example>por</example>) o de una frase nominal, dependiendo del idioma. Además, un auxiliar particular puede ser requerido en pasivos (una forma de <example>estar</example> en español).  Algunos ejemplos en español con y sin una frase del agente son: </introduction>
 	<EnglishExample>
 		<exItem label="1.">El vidrio estaba quebrado.</exItem>
 		<exItem label="2.">El vidrio estaba quebrado por el niño.</exItem>

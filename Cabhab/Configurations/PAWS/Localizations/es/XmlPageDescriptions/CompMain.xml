@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="CompMain" count="1/4">
 	<title>Las cláusulas de complemento</title>
-	<introduction>Esta sección considera varios tipos de cláusulas subordinadas que sean complementos de verbos principales o de adjetivos que actúan como el predicado de la oración., como los ejemplos siguientes del inglés.  (Las preguntas subordinadas serán discutidas en  <section number="11">Las preguntas</section>.) </introduction>
+	<introduction>Esta sección considera varios tipos de cláusulas subordinadas que son complementos de verbos principales o de adjetivos que funcionan al igual que el predicado de la oración., como los ejemplos siguientes del inglés.  (Las preguntas subordinadas serán analizadas en  <section number="11">Las preguntas</section>.) </introduction>
 	<EnglishExample>
 		<exItem label="1.">I believe that Jill is my friend. 'Creo que Juliana es mi amiga.'</exItem>
 		<exItem label="2.">Jill insists that she is my friend. 'Juliana insiste que ella sea mi amiga.'</exItem>
@@ -34,7 +34,7 @@ Finally, a tree for example 8 with a nonfinite IP complement and required pro-dr
 		<help href="Help/Cbgbtext.doc#ClausalComplements">Click here for more information about the CP phrase structure of embedded clauses.</help>
 	</introduction>
 	<introduction id="CompIntroPractical" show="swPractical">Los ejemplos ilustran que el verbo principal selecciona uno o más tipos particulares de cláusulas de complemento que puedan presentarse gramaticalmente.  Por ejemplo, <example>try 'intentar'</example> no puede tener un a cláusula de complemento que empieza con <example>that 'que'</example> y el sujeto de la cláusula subordinada debe ser coreferente al sujeto de la cláusula principal y sea faltado.
-		Además, <example>believe 'creer'</example>, <example>insist 'insistir'</example> y <example>persuade 'persuadir'</example> no pueden tener un a cláusula de complemento que empieza con <example>for 'para'</example> y ningún verbo antedicho puede tener un complemento interrogativo.
+		Además, <example>believe 'creer'</example>, <example>insist 'insistir'</example> y <example>persuade 'persuadir'</example> no pueden tener un a cláusula de complemento que empieza con <example>for 'para'</example> y ningún verbo antedicho puede tener un complemento interrogativo. </introduction>
 	<form section="comp" transparent="yes">
 		<br/>
 		<buttons>

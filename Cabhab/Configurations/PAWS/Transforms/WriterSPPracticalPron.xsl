@@ -4,9 +4,9 @@
 	<section1 id="sPron">
 		<secTitle>Los pronombres</secTitle>
 		<p>
-<xsl:text>Hay pronombres de varios tipos, incluyendo: pronombre personales, posesivos, reflexivos, recíprocos, e indefinidos.
+<xsl:text>Hay pronombres de varios tipos: pronombre personales, posesivos, reflexivos, recíprocos, e indefinidos.
 				Estos pronombres por lo regular se colocan solamente en lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo. En algunos idiomas los pronombres se pueden modificar por los determinantes y cuantificadores, en ese caso ocupan el lugar de los sustantivos.
-				Cada tipo de pronombre será mirado en su orden correspondiente, después de analizar las características de la concordancia en todos los tipos de pronombres. </xsl:text>
+				Cada tipo de pronombre será considerado en su orden correspondiente, después de analizar las características de la concordancia en todos los tipos de pronombres. </xsl:text>
 </p>
 		<section2 id="sPronAgreement">
 			<secTitle>Características de concordancia en los pronombres</secTitle>
@@ -194,7 +194,7 @@
 </example>
 		</section2>
 		<section2 id="sPronPersonal">
-			<secTitle>Los pronombres personales</secTitle>
+			<secTitle>Pronombres personales</secTitle>
 			<p>
 <xsl:text>Todos los idiomas tienen pronombres personales independientes, los cuales son palabras independientes que pueden presentarse en todas las posiciones en las que presentarse los sustantivos o las frases nominales.
 				Algunos idiomas también tienen formas dependientes de los pronombres personales que se unen a otra palabra en la oración. </xsl:text>
@@ -211,8 +211,8 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-				<xsl:when test="//pron/@dependentPron='no'"> no hay un sistema separado de pronombres personales dependientes.</xsl:when>
-				<xsl:when test="//pron/@dependentPron='yes'"> hay pronombres personales dependientes así como pronombres personales independientes. Ambos sistemas de pronombres personales serán presentados aquí, con el análisis de las formas independientes primero.</xsl:when>
+				<xsl:when test="//pron/@dependentPron='no'"> no hay un sistema diferente de pronombres personales dependientes.</xsl:when>
+				<xsl:when test="//pron/@dependentPron='yes'"> hay pronombres personales dependientes así como pronombres personales independientes. Ambos sistemas de pronombres personales serán presentados a continuación, con el análisis de las formas independientes primero.</xsl:when>
 			</xsl:choose>
 <xsl:text></xsl:text>
 </p>
@@ -230,7 +230,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no tiene distinciones de Caso, entonces hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquier posición en la oración, según lo ejemplificado aquí.</xsl:text>
+<xsl:text> no tiene distinciones de Caso, así que hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquier posición de la oración, de acuerdo con lo ejemplificado a continuación.</xsl:text>
 </p>
 </xsl:if>
 
@@ -2456,7 +2456,7 @@
 
 			<xsl:if test="normalize-space(//np/@case)='none' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
+<xsl:text>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -2465,7 +2465,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no hay distinciones de Caso, así que hay solamente un solo sistema de pronombres que se pueden utilizar en cualquier posición de la oración, según lo ejemplificado a continuación:</xsl:text>
+<xsl:text> no hay distinciones de Caso, así que hay solamente un solo sistema de pronombres que se pueden utilizar en cualquier posición de la oración, de acuerdo con lo ejemplificado a continuación:</xsl:text>
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='none' and normalize-space(//pron/@dependentPron)='yes'">
@@ -2649,7 +2649,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='nominative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
+<xsl:text>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -3204,7 +3204,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='ergative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
+<xsl:text>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -3765,7 +3765,7 @@
 </xsl:if>
 			<xsl:if test="normalize-space(//np/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </xsl:text>
+<xsl:text>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -4703,7 +4703,7 @@
 </xsl:if>
 		</section2>
 		<section2 id="sPronPoss">
-			<secTitle>Los pronombres posesivos</secTitle>
+			<secTitle>Pronombres posesivos</secTitle>
 			<p>
 <xsl:text>Muchos idiomas también tienen pronombres posesivos que se pueden usar sólos, por ejemplo </xsl:text>
 <langData>
@@ -4801,8 +4801,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -4835,7 +4834,7 @@
 </xsl:if>
 		</section2>
 		<section2 id="sPronRefl">
-			<secTitle>Los reflexivos</secTitle>
+			<secTitle>Pronombres reflexivos</secTitle>
 			<p>
 <xsl:text>Los reflexivos son otro tipo de pronombres que la mayoría de los idiomas tienen. Se presentan solamente en el caso de los objetos directos y deben oncordar comúnmente con el sujeto en las aracterísticas de persona, género y número. Los ejemplos en inglés son:</xsl:text>
 <langData>
@@ -4873,7 +4872,7 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text>'yo mismo'</xsl:text>
 </gloss>
-<xsl:text>.    Algunos idiomas tienen un sistema totalmente separado de las formas del pronombre para los reflexivos, mientras que otras tales como español
+<xsl:text>.    Algunos idiomas tienen un sistema totalmente diferente de las formas del pronombre para los reflexivos, mientras que otras tales como español
 				utilizan una frase que consista en un sustantivo (que significa generalmente el </xsl:text>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
@@ -4953,8 +4952,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5032,7 +5030,7 @@
 </xsl:if>
 		</section2>
 		<section2 id="sPronRecip">
-			<secTitle>Los recíprocos</secTitle>
+			<secTitle>Pronombres recíprocos</secTitle>
 			<p>
 <xsl:text>Los recíprocos son similares a los reflexivos, salvo que se presentan solamente con sujetos plurales. Pueden formarse de la misma manera que los reflexivos, o pueden ser distintos. Por ejemplo, en español, las formas recíprocas son frases: </xsl:text>
 <langData>
@@ -5044,7 +5042,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>uno a otro</langData>
-<xsl:text>.  Algunos idiomas usan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no marcan la acción recíproca en absoluto. </xsl:text>
+<xsl:text>.  Algunos idiomas usan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no indican la acción recíproca en absoluto. </xsl:text>
 </p>
 			<p>
 <xsl:text>En </xsl:text>
@@ -5103,8 +5101,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5162,8 +5159,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5241,7 +5237,7 @@
 </xsl:if>
 		</section2>
 		<section2 id="sPronIndef">
-			<secTitle>Los indefinidos</secTitle>
+			<secTitle>Pronombres indefinidos</secTitle>
 			<p>
 <xsl:text>Los indefinidos pueden ser pronombres como en español </xsl:text>
 <langData>
@@ -5271,7 +5267,7 @@
 <xsl:text>, etc.</xsl:text>
 </p>
 			<p>
-<xsl:text>Las versiones negativas de los pronombres indefinidos incluyen </xsl:text>
+<xsl:text>Las versiones negativas de los pronombres indefinidos son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -5341,8 +5337,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5438,8 +5433,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5585,8 +5579,8 @@
 		<section2 id="sPronNP">
 			<secTitle>Los pronombres como frases nominales</secTitle>
 			<p>
-<xsl:text>Los pronombres comúnmente presentarse solamente en el lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo y en algunos idiomas los pronombres se pueden modificar por los determinantes y los cuantificadores, llenando el lugar de sustantivos en esta situación.
-				Los ejemplos en español de pronombres, de demonstratives o de cuantificadores modificados incluyen los siguientes: </xsl:text>
+<xsl:text>Los pronombres comúnmente presentarse solamente en el lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo y en algunos idiomas los pronombres se pueden modificar por los determinantes y los cuantificadores, ocupando el lugar de sustantivos en esta situación.
+				Algunos ejemplos en español de pronombres, de demonstratives o de cuantificadores modificados son los siguientes: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>

@@ -52,7 +52,7 @@
 <xsl:text>.</xsl:text>
 </p>
 		<section2 id="sOrtho">
-			<secTitle>La ortografía</secTitle>
+			<secTitle>Ortografía</secTitle>
 			<p>
 <xsl:text>Las grafías que se usan para escribir el </xsl:text>
 <xsl:choose>
@@ -712,7 +712,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tengan más de una parte con significado (morfema), entonces la tercera línea indicará la glosa para cada una de las partes de la palabra, con los prefijos, la raíz, y los sufijos separados por un guión. Esta tercera línea puede ser la más útil para los lingüistas. En la línea final se proporciona la traducción libre del ejemplo completo</xsl:text>
+<xsl:text> tengan más de una parte con significado (morfema), así que la tercera línea indicará la glosa para cada una de las partes de la palabra, con los prefijos, la raíz, y los sufijos separados por un guión. Esta tercera línea puede ser la más útil para los lingüistas. En la línea final se proporciona la traducción libre del ejemplo completo</xsl:text>
 </p>
 			<p>
 <object type="tComment">Mencione aquí cualquier diferencia que haya entre su idioma y español. Por ejemplo, si su idioma no distingue entre el número y/o el género en los sustantivos, como lo hace el español, usted debe eligir el uso de solamente las formas singulares y/o masculinas para las glosas.</object>
@@ -967,7 +967,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no tiene ningún auxiliar que se escriba como palabra separada (véase la sección </xsl:text>
+<xsl:text> no tiene ningún auxiliar que se escriba como palabra independiente (véase la sección </xsl:text>
 <sectionRef sec="sIPAux" />
 <xsl:text>).</xsl:text>
 </p>
@@ -983,7 +983,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene algunos auxiliares que se escriben como palabras separadas. Éstos se presentan </xsl:text>
+<xsl:text> tiene algunos auxiliares que se escriben como palabras independientes. Éstos se presentan </xsl:text>
 <xsl:choose>
 				<xsl:when test="//typology/@wordOrder='SVO'">antes</xsl:when>
 				<xsl:when test="//typology/@wordOrder='SOV'">después</xsl:when>

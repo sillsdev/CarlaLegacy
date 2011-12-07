@@ -8,7 +8,7 @@
 </p>
 		<ul>
 			<li>
-				<xsl:text>como una cláusula de complemento con el complementizador 'que' , como en  </xsl:text>
+				<xsl:text>al al igual que una cláusula de complemento con el complementizador 'que' , como en  </xsl:text>
 				<langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -16,7 +16,7 @@
 				<xsl:text>;</xsl:text>
 			</li>
 			<li>
-				<xsl:text>como una pregunta abierta subordinada con 'quien' o 'cual' desplazado a la izquierda, como en </xsl:text>
+				<xsl:text>al al igual que una pregunta abierta subordinada con 'quien' o 'cual' desplazado a la izquierda, como en </xsl:text>
 				<langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -24,10 +24,10 @@
 				<xsl:text>;</xsl:text>
 			</li>
 			<li>
-				<xsl:text>(o para algunos idiomas con excepción del español) como una cláusula de complemento pero con un indicador relativo especial que se presenta en la posición del complementizador, o posiblemente con dos indicadores que se presentan en cada lado de la cláusula relativa;</xsl:text>
+				<xsl:text>(o para algunos idiomas con excepción del español) al al igual que una cláusula de complemento pero con un indicador relativo especial que se presenta en la posición del complementizador, o posiblemente con dos indicadores que se presentan en cada lado de la cláusula relativa;</xsl:text>
 			</li>
 			<li>
-				<xsl:text>(o para algunos idiomas con excepción del español) como una oración regular con un indicador relativo unido al verbo.</xsl:text>
+				<xsl:text>(o para algunos idiomas con excepción del español) al al igual que una oración regular con un indicador relativo unido al verbo.</xsl:text>
 			</li>
 		</ul>
 		<p>
@@ -83,10 +83,10 @@
 						<xsl:when test="//relcl/@compCP='yesBoth'">como preguntas porque una palabra interrogativa se desplaza a la izquierda y algunos son como cláusulas de complemento con los indicadores relativos que </xsl:when>
 					</xsl:choose>
 					<xsl:if test="normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' or normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no'">
-						<xsl:text>sean </xsl:text>
+						<xsl:text>son </xsl:text>
 						<xsl:choose>
-							<xsl:when test="//relcl/@relWord='yes'">escriton como palabras independientes.</xsl:when>
-							<xsl:when test="//relcl/@relWord='no'">clíticos que se unen a otra palabra en el borde de la cláusula relativa.</xsl:when>
+							<xsl:when test="//relcl/@relWord='yes'">escritos como palabras independientes.</xsl:when>
+							<xsl:when test="//relcl/@relWord='no'">clíticos que se unen a otra palabra en el extremo de la cláusula relativa.</xsl:when>
 						</xsl:choose>
 						<xsl:if test="normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' or normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no'">
 							<xsl:choose>
@@ -313,7 +313,7 @@
 <object type="tComment">Incluya varios textos aquí para mostrar cómo se forman las construcciones más grandes tales como párrafos, conversaciones e historias narrativas. Incluya los ejemplos de varios tipos literarios.</object>
 </p>
 		<p>
-<object type="tComment">  Un formato sugerido para presentar los textos es presente en la lengua vernácula en conjunto primero, así que los nativos pueden apreciarla. Entonces presente la forma interlineal, como en los ejemplos a través de la gramática. Finalmente, dé una traducción libre en conjunto, así que el altavoz extranjero puede apreciar más sobre la cultura.</object>
+<object type="tComment">  Un formato sugerido para presentar los textos es presente el texto completo en el idioma vernáculo primero, así que los nativos pueden apreciarla. Después presenta la forma interlineal, como en los ejemplos a través de la gramática. Finalmente, dé una traducción libre completo, así que el altavoz extranjero puede apreciar más sobre la cultura.</object>
 </p>
 	</section1>
 

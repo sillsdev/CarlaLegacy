@@ -21,6 +21,7 @@
 					<headerRow>
 						<headerCol>Type of feature</headerCol>
 						<headerCol>Feature</headerCol>
+						<headerCol>Form(s)</headerCol>
 					</headerRow>
 					<row show="swIPInflFeatPresent">
 						<col>
@@ -28,6 +29,9 @@
 						</col>
 						<col>
 							<content>present</content>
+						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
 					<row show="swIPInflFeatPast">
@@ -37,6 +41,9 @@
 						<col>
 							<content>past</content>
 						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
+						</col>
 					</row>
 					<row show="swIPInflFeatFuture">
 						<col>
@@ -44,6 +51,9 @@
 						</col>
 						<col>
 							<content>future</content>
+						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
 					<row show="swIPInflFeatCompletive">
@@ -53,6 +63,9 @@
 						<col>
 							<content>completive</content>
 						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
+						</col>
 					</row>
 					<row show="swIPInflFeatContinuative">
 						<col>
@@ -60,6 +73,9 @@
 						</col>
 						<col>
 							<content>continuative</content>
+						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
 					<row show="swIPInflFeatHabitual">
@@ -69,6 +85,9 @@
 						<col>
 							<content>habitual</content>
 						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
+						</col>
 					</row>
 					<row show="swIPInflFeatImperfective">
 						<col>
@@ -76,6 +95,9 @@
 						</col>
 						<col>
 							<content>imperfective</content>
+						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
 					<row show="swIPInflFeatIncompletive">
@@ -85,6 +107,9 @@
 						<col>
 							<content>incompletive</content>
 						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
+						</col>
 					</row>
 					<row show="swIPInflFeatPerfective">
 						<col>
@@ -92,6 +117,9 @@
 						</col>
 						<col>
 							<content>perfective</content>
+						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
 					<row show="swIPInflFeatPotential">
@@ -101,6 +129,9 @@
 						<col>
 							<content>potential</content>
 						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
+						</col>
 					</row>
 					<row show="swIPInflFeatProgressive">
 						<col>
@@ -108,6 +139,9 @@
 						</col>
 						<col>
 							<content>progressive</content>
+						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
 					<row show="swIPInflFeatStative">
@@ -117,6 +151,9 @@
 						<col>
 							<content>stative</content>
 						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
+						</col>
 					</row>
 					<row show="swIPInflFeatDeclarative">
 						<col>
@@ -124,6 +161,9 @@
 						</col>
 						<col>
 							<content>declarative</content>
+						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
 					<row show="swIPInflFeatImperative">
@@ -133,6 +173,9 @@
 						<col>
 							<content>imperative</content>
 						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
+						</col>
 					</row>
 					<row show="swIPInflFeatInterrogative">
 						<col>
@@ -140,6 +183,9 @@
 						</col>
 						<col>
 							<content>interrogative</content>
+						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
 					<row show="swIPInflFeatIrrealis">
@@ -149,6 +195,9 @@
 						<col>
 							<content>irrealis</content>
 						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
+						</col>
 					</row>
 					<row show="swIPInflFeatRealis">
 						<col>
@@ -156,6 +205,9 @@
 						</col>
 						<col>
 							<content>realis</content>
+						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
 					<row show="swIPInflFeatPassive">
@@ -165,6 +217,9 @@
 						<col>
 							<content>passive</content>
 						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
+						</col>
 					</row>
 					<row show="swIPInflFeatParticiple">
 						<col>
@@ -172,6 +227,9 @@
 						</col>
 						<col>
 							<content>participle</content>
+						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
 					<row show="swIPInflFeatFinite">
@@ -181,6 +239,9 @@
 						<col>
 							<content>finite</content>
 						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
+						</col>
 					</row>
 					<row show="swIPInflFeatMinusFinite">
 						<col>
@@ -188,6 +249,9 @@
 						</col>
 						<col>
 							<content>nonfinite</content>
+						</col>
+						<col>
+							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
 				</table>

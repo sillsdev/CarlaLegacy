@@ -32,7 +32,7 @@
 				<radioGroup id="QMainYNCliticTypeTable" show="swQMainYNWordNo">
 					<groupName dataItem="mainYNCliticAttaches" default="edge">RQMainYNCliticAttaches</groupName>
 					<prompt>¿Dónde se une el clítico a la pregunta polar?</prompt>
-					<radio id="QMainYNCliticAttachesEdge" dataValue="edge">En el borde</radio>
+					<radio id="QMainYNCliticAttachesEdge" dataValue="edge">En el extremo</radio>
 					<radio id="QMainYNCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
 				<radio id="QMainYNWordYes" dataValue="yes">Sí</radio>
@@ -51,10 +51,10 @@
 					<groupName dataItem="mainYNEitherRestricted" default="unrestricted">RQMainYNEitherRestricted</groupName>
 					<prompt>¿Pueden todos los indicadores o complementizadores de la pregunta presentarse de cualquier lado de la pregunta?</prompt>
 					<radio id="QMainYNEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="QMainYNEitherRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+					<radio id="QMainYNEitherRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
-			<radio id="QMainYNNoAux" dataValue="noAux">No, pero un auxiliar se desplaza, como en inglés</radio>
+			<radio id="QMainYNNoAux" dataValue="noAux">No, pero un auxiliar se desplaza, al igual que en inglés</radio>
 			<radioGroup id="QMainYNAuxPosTable" show="swQMainYNNoAux">
 				<groupName dataItem="mainYNAuxPos" default="unknown" position="yesHead">RQMainYNAuxPos</groupName>
 				<prompt>¿Dónde se presenta el auxiliar con respecto al resto de la pregunta?</prompt>

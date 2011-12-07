@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PronReciprocal" count="4/8">
 	<title level="2">Los pronombres - Los rrecíprocos</title>
-	<introduction>Los recíprocos son similares a los reflexivos, salvo que se presentan solamente con sujetos plurales. Pueden formarse de la misma manera que los reflexivos, o pueden ser distintos. Por ejemplo, en español, las formas recíprocas son frases: <example>el uno al otro</example> y <example>uno a otro</example>.  Algunos idiomas usan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no marcan la acción recíproca en absoluto.</introduction>
+	<introduction>Los recíprocos son similares a los reflexivos, salvo que se presentan solamente con sujetos plurales. Pueden formarse de la misma manera que los reflexivos, o pueden ser distintos. Por ejemplo, en español, las formas recíprocas son frases: <example>el uno al otro</example> y <example>uno a otro</example>.  Algunos idiomas usan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no indican la acción recíproca en absoluto.</introduction>
 	<form section="pron">
 		<radioGroup>
 			<groupName dataItem="recip" default="yes">RPronRecip</groupName>

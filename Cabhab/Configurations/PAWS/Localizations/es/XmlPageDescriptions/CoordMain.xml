@@ -5,10 +5,10 @@
 	<title>Las construcciones coordinativas</title>
 	<introduction>Esta sección considera construcciones coordinativas básicas donde una conjunción se presenta entre dos oraciones conjuntivas que estén en el mismo nivel. Esto incluye la coordinación en el nivel de la oración y en la frase de verbo, la frase nominal, la frase preposicional y/o posposicional y la frase del adjetivo.
 		Tipos más complejos de construcciones coordinativas, tales como por ejemplo listas sin conjunciones entre cada oración conjuntiva, partes que falta de una de las oraciones conjuntivas, appositivos o comparativos, necesitarán ser tratados de luego.
-		Otros niveles posibles de coordinación no se incluyen aquí tampoco.</introduction>
+		Otros niveles posibles de coordinación no se incluyen tampoco.</introduction>
 	<form section="coord" transparent="no">
 		<introduction>En español, las conjunciones que se pueden utilizar entre dos oraciones conjuntivas son  <example>y</example>, <example>o</example>, <example>pero</example> y <example>y/o</example>.
-			Además, hay las construcciones coordinativas que requieren una conjunción inicial, como <example>o...o</example> y <example>ni...ni</example> construcciones. Algunos idiomas también utilizan una palabra que significa <example>con</example> como conjunción entre las frases nominales.</introduction>
+			Además, hay las construcciones coordinativas que requieren una conjunción inicial, como <example>o...o</example> y <example>ni...ni</example> construcciones. Algunos idiomas también utilizan una palabra que significa <example>con</example> al igual que una conjunción entre las frases nominales.</introduction>
 		<prompt>Escriba cómo su idioma expresa estas conjunciones en las cajas de texto siguientes. Si hay más de una opción, escriba cada palabra en una línea separada.</prompt>
 		<prompt>Escriba la palabra su idioma utiliza para la conjunción 'y':</prompt>
 		<textBox id="CoordAnd" dataItem="and" rows="3"/>
@@ -22,7 +22,7 @@
 		<prompt>Escriba la palabra su idioma utiliza para la conjunción 'y/o' aquí:</prompt>
 		<textBox id="CoordAndOr" dataItem="andOr" rows="3"/>
 		<br/>
-		<prompt>Si su idioma utiliza 'con' como una conjunción entre frases nominales, escriba esa palabra aquí:</prompt>
+		<prompt>Si su idioma utiliza 'con' al igual que una conjunción entre frases nominales, escriba esa palabra aquí:</prompt>
 		<textBox id="CoordWith" dataItem="with" rows="3"/>
 		<br/>
 		<prompt>Escriba cualquiera palabra adicional que su idioma utiliza entre las oraciones conjuntivas aquí:</prompt>
@@ -69,7 +69,7 @@ Note that a word like 'and/or/' which is written with a slash (/) in the word, m
 		<prompt>Escriba ejemplos de la coordinación del nivel de la frase nominal en su idioma aquí:</prompt>
 		<textBox id="CoordDP" dataItem="dpExample" rows="5"/>
 		<br/>
-		<introduction>Algunos ejemplos en español de la coordinación de la frase preposicional incluyen:</introduction>
+		<introduction>Algunos ejemplos en español de la coordinación de la frase preposicional son:</introduction>
 		<EnglishExample>
 			<exItem label="1.">Bill corrió a través del bosque y sobre el puente.</exItem>
 			<exItem label="2.">Vendré con usted al ensayo pero no a su hogar.</exItem>

@@ -4,7 +4,7 @@
 <page id="PronRefl" count="3/8">
 	<title level="2">Los pronombres - Los reflexivos</title>
 	<introduction>Los reflexivos son otro tipo de pronombres que la mayoría de los idiomas tienen. Se presentan solamente en el caso de los objetos directos y deben oncordar comúnmente con el sujeto en las aracterísticas de persona, género y número. Los ejemplos en inglés son: <example>herself 'ella misma'</example>, <example>himself 'sí mismo'</example>, <example>themselves 'ellos mismos'</example> y <example>myself 'yo mismo'</example>.
-		Algunos idiomas tienen un sistema totalmente separado de las formas del pronombre para los reflexivos, mientras que otras tales como español
+		Algunos idiomas tienen un sistema totalmente independiente de las formas del pronombre para los reflexivos, mientras que otras tales como español
 		utilizan una frase que consista en un sustantivo (que significa generalmente el 'mismo' o 'self') que es poseído por el pronombre que se refiere de nuevo al sujeto.
 		Algunos idiomas tienen un afijo verbal que indica la acción reflexiva, y algunos idiomas no distinguen las construcciones reflexivas en absoluto.</introduction>
 	<form section="pron">
@@ -12,11 +12,11 @@
 			<groupName dataItem="refl" default="no">RPronRefl</groupName>
 			<prompt>¿Hay reflexivos en su idioma?</prompt>
 			<radio id="PronReflNo" dataValue="no">No</radio>
-			<radio id="PronReflYes" dataValue="yes">Sí, un pronombre o un sustantivo poseído llena la posición del objeto</radio>
+			<radio id="PronReflYes" dataValue="yes">Sí, un pronombre o un sustantivo poseído ocupa la posición del objeto</radio>
 			<radio id="PronReflYesVerbal" dataValue="yesVerbal">Sí, un afijo verbal indica la acción reflexiva</radio>
 		</radioGroup>
 		<prompt id="PronReflExamples" show="swPronReflNotNo">
-			<br/>Escriba sus ejemplos reflexivos aquí, con cada uno en una línea separada y seguida por un punto, comenzando con la primera persona, entonces segunda persona, entonces tercera persona:</prompt>
+			<br/>Escriba sus ejemplos reflexivos aquí, con cada uno en una línea separada y seguida por un punto, comenzando con la primera persona, siguiendo con segunda persona, y finalmente con tercera persona:</prompt>
 		<textBox id="PronReflExample" dataItem="reflExample" show="swPronReflNotNo"/>
 		<prompt id="PronReflSentExamples" show="swPronReflYes">
 			<br/>Ahora escriba varios ejemplos con un reflexivo usado en la posición del objeto de una oración simple<span id="PronReflSentExamplesSpan" show="swNotPractical"> so that agreement between the reflexive and the subject can be tested later</span>:</prompt>
@@ -24,7 +24,7 @@
 		<radioGroup id="PronReflYesTable" show="swPronReflYes">
 			<groupName dataItem="reflAffix" default="yes">RPronReflAffix</groupName>
 			<prompt>
-				<br/>¿Son construidos los pronombres reflexivos agregando un afijo a otros pronombres, como en inglés?</prompt>
+				<br/>¿Son construidos los pronombres reflexivos agregando un afijo a otros pronombres, al igual que en inglés?</prompt>
 			<radio id="PronReflAffixYes" dataValue="yes">Sí, uno o más afijos se eligen entre para hacer otro pronombre un reflexivo</radio>
 			<radio id="PronReflAffixNoWord" dataValue="noWord">No, ellas son palabras distintas</radio>
 			<radio id="PronReflAffixNoNoun" dataValue="noNoun">No, una frase que consiste en cierto sustantivo con un pronombre como el poseedor se utiliza</radio>

@@ -13,7 +13,7 @@
 		<prompt>Escriba algunos ejemplos similares en su idioma aquí:</prompt>
 		<textBox id="IPExamplesExample" dataItem="example" cols="50"/>
 		<instruction id="IPTransDiInstructionFeature">If a verb is transitive and its object must always be present, add the feature <feature>transitive</feature> to its lexical entry.  Do not mark a verb like <example>eat</example> which may or may not have an overt object.</instruction>
-		<introduction>Los ditransitivos pueden tener el segundo objeto expresado como frase preposicional o posposicional o como frase nominal.  Algunos idiomas, como español, permiten ambos tipos (via el movimiento del dativo, como en 4. abajo).  Algunos ejemplos en español de oraciones ditransitivas son:</introduction>
+		<introduction>Los ditransitivos pueden tener el segundo objeto expresado como frase preposicional o posposicional o como frase nominal.  Algunos idiomas, al igual que español, permiten ambos tipos (via el movimiento del dativo, como en 4. abajo).  Algunos ejemplos en español de oraciones ditransitivas son:</introduction>
 		<EnglishExample>
 			<exItem label="1.">La muchacha compró el presente para su madre.</exItem>
 			<exItem label="2.">El hombre vendió su coche para dos mil dólares.</exItem>
@@ -27,7 +27,7 @@
 			<prompt>¿Qué categoría sintáctica es el segundo objeto en un ditransitivo en su idioma?</prompt>
 			<radio id="IPTransDiCatPP" dataValue="pp">Una frase preposicional o posposicional solamente</radio>
 			<radio id="IPTransDiCatDP" dataValue="dp">Una frase nominal solamente</radio>
-			<radio id="IPTransDiCatBoth" dataValue="both">O una frase nominal o una frase preposicional/posposicional (como en inglés)</radio>
+			<radio id="IPTransDiCatBoth" dataValue="both">O una frase nominal o una frase preposicional/posposicional (al igual que en inglés)</radio>
 <radioGroup id="IPTransDiOrderTable" show="swIPTransDiCatNotPP">
 	<groupName dataItem="diOrder" default="DO">RIPTransDiOrder</groupName>
 	<prompt>Cuando ambos objetos son las frases nominales, ¿cuál objeto se presenta lo más cerca posible al verbo?</prompt>

@@ -5,32 +5,32 @@
 		<secTitle>Las oraciones básicas</secTitle>
 		<p>
 			<content>Esta sección se considera las oraciones intransitivas, copulativas, transitivas, ditransitivas y pasivas en su orden de las palabras básico (es decir no cambiado por el enfoque, el asunto, el interrogativo, o las construcciones de la negación).
-				Según lo observado en la sección </content>
+				De acuerdo con lo observado en la sección </content>
 			<sectionRef sec="sIntro"/>
 			<content>,  la tipología de </content>
 			<langName/>
 			<content> es </content>
 			<case element="typology" attr="wordOrder">
-				<caseText value="SVO">SVO, así que el orden de las palabras básico es el sujeto, después cualquier elemento auxiliar, después la frase de verbo que consiste en el verbo en la posición inicial y cualesquiera complementos que la siguen.</caseText>
-				<caseText value="SOV">SOV, así que el orden de las palabras básico es el sujeto, después la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares.</caseText>
-				<caseText value="VSO">VSO, así que el orden de las palabras básico es el verbo en la posición inicial, entonces el sujeto, entonces cualquier complemento de verbo.</caseText>
-				<caseText value="VOS">VOS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición inicial y cualquier complemento que la sigue, entonces cualesquiera elementos auxiliares, entonces el sujeto.</caseText>
-				<caseText value="OVS">OVS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares, entonces el sujeto.</caseText>
-				<caseText value="OSV">OSV, así que el orden de las palabras básico es cualquier complemento de verbo primero, entonces el sujeto, entonces el verbo en la posición final.</caseText>
+				<caseText value="SVO">SVO, así que el orden de las palabras básico es el sujeto, después cualquier elemento auxiliar, después la frase de verbo que consiste en el verbo en la posición inicial y cualquiera complementos que la siguen.</caseText>
+				<caseText value="SOV">SOV, así que el orden de las palabras básico es el sujeto, después la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, y finalmente cualquiera elementos auxiliares.</caseText>
+				<caseText value="VSO">VSO, así que el orden de las palabras básico es el verbo en la posición inicial, después el sujeto, y finalmente cualquier complemento de verbo.</caseText>
+				<caseText value="VOS">VOS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición inicial y cualquier complemento que la sigue, después cualquiera elementos auxiliares, y finalmente el sujeto.</caseText>
+				<caseText value="OVS">OVS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, después cualquiera elementos auxiliares, y finalmente el sujeto.</caseText>
+				<caseText value="OSV">OSV, así que el orden de las palabras básico es cualquier complemento de verbo primero, después el sujeto, y finalmente el verbo.</caseText>
 			</case>
 			<content/>
 			<text show="swVSOorOSV">
-				<content>  Los cambios en el orden de las palabras cuando un auxiliar está presente fueron discutidos en la sección </content>
+				<content>  Los cambios en el orden de las palabras cuando un auxiliar está presente fueron analizados en la sección </content>
 				<sectionRef sec="sIPAux"/>
 				<content>.</content>
 			</text>
 			<content/>
 		</p>
 		<p>
-			<content>Cada uno de los tipos de la oración será mirado en su orden correspondiente aquí. </content>
+			<content>Cada uno de los tipos de la oración será considerado en su orden correspondiente aquí. </content>
 		</p>
 		<section2 id="sIPMotion">
-			<secTitle>Los intransitivos y las construcciones del movimiento</secTitle>
+			<secTitle>Intransitivos y construcciones del movimiento</secTitle>
 			<p>
 				<content>Los intransitivos simples no tienen ningún complemento después del verbo, como en </content>
 				<langData>La muchacha flota</langData>
@@ -66,7 +66,7 @@
 			</example>
 		</section2>
 		<section2 id="sIPCop">
-			<secTitle>Las construcciones copulativas</secTitle>
+			<secTitle>Construcciones copulativas</secTitle>
 			<p>
 				<content>Las oraciones copulativas pueden tener un adjetivo, frase </content>
 				<case element="pp" attr="pPos">
@@ -125,7 +125,7 @@
 			</example>
 		</section2>
 		<section2 id="sIPTrans">
-			<secTitle>Los transitivos y ditransitivos</secTitle>
+			<secTitle>Transitivos y ditransitivos</secTitle>
 			<p>
 				<content>Algunos ejemplos de las oraciones transitivas en español son </content>
 				<langData>El bateador golpearán el béisbol</langData>
@@ -194,9 +194,9 @@
 			</example>
 		</section2>
 		<section2 id="sIPPassive">
-			<secTitle>Los pasivos</secTitle>
+			<secTitle>Pasivos</secTitle>
 			<p>
-				<content>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente llena la posición del sujeto. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase  </content>
+				<content>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente ocupa la posición del sujeto. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase  </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicional</caseText>
 					<caseText value="after">posposicional</caseText>

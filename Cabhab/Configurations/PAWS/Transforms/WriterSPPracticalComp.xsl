@@ -4,10 +4,10 @@
 	<section1 id="sComp">
 		<secTitle>Las cláusulas de complemento</secTitle>
 		<p>
-<xsl:text>Hay varios tipos de cláusulas subordinadas que sean complementos de verbos principales o de adjetivos que actúan como el predicado de la oración.
-				Algunos ejemplos de cada tipo de complemento clausal serán dados en la sección siguiente, seguida por una discusión de los complementizadoras y su posición en cláusulas subordinadas declarativas. Véase la sección </xsl:text>
+<xsl:text>Hay varios tipos de cláusulas subordinadas que son complementos de verbos principales o de adjetivos que funcionan al igual que el predicado de la oración.
+				Algunos ejemplos de cada tipo de complemento clausal serán dados en la sección siguiente, seguida por un análisis de los complementizadoras y su posición en cláusulas subordinadas declarativas. Véase la sección </xsl:text>
 <sectionRef sec="sQues" />
-<xsl:text> para una discusión semejante para las preguntas subordinadas y la sección </xsl:text>
+<xsl:text> para un análisis semejante para las preguntas subordinadas y la sección </xsl:text>
 <sectionRef sec="sRelCl" />
 <xsl:text> para las cláusulas relativas.</xsl:text>
 </p>
@@ -16,7 +16,7 @@
 			<p>
 <xsl:text>Cada uno de las subsecciones siguientes ejemplifica un tipo particular de complemento para un verbo o otro predicado.  Véase la sección </xsl:text>
 <sectionRef sec="sAdvCl" />
-<xsl:text> para ejemplos de cláusulas adverbiales. Algunos adverbios también pueden tener complementos clausal de la mayor parte de estos tipos, aunque las cláusulas adverbiales no son complementos del verbo principal. </xsl:text>
+<xsl:text> para considerar ejemplos de cláusulas adverbiales. Algunos adverbios también pueden tener complementos clausal de la mayor parte de estos tipos, aunque las cláusulas adverbiales no son complementos del verbo principal. </xsl:text>
 </p>
 			<section3 id="sCompTypeFinite">
 				<secTitle>Un complemento finito</secTitle>
@@ -238,7 +238,7 @@
 </example>
 			</section3>
 			<section3 id="sCompTypeNonfiniteIPPRO">
-				<secTitle>Un complemento infinitivo con un tema coreferente</secTitle>
+				<secTitle>Un complemento infinitivo con un sujeto coreferente</secTitle>
 				<p>
 <xsl:text>Algunos ejemplos en inglés de los verbos que solamente pueden tener un complemento infinitivo sin un complementizador, pero requieren un sujeto no expresado porque es coreferente con el sujeto de la cláusula principal son: </xsl:text>
 <langData>
@@ -532,7 +532,7 @@
 			</section3>
 		</section2>
 		<section2 id="sCompPos">
-			<secTitle>La posición de complementizador</secTitle>
+			<secTitle>Posición de complementizador</secTitle>
 			<p>
 <xsl:text>En inglés hay dos complementizadores que indican cláusulas subordinadas declarativas, </xsl:text>
 <langData>
@@ -586,7 +586,7 @@
 					<xsl:if test="normalize-space(//comp/@compWord)='no' and normalize-space(//comp/@comp)='yes'">
 						<xsl:text></xsl:text>
 						<xsl:choose>
-							<xsl:when test="//comp/@compCliticAttaches='edge'">en el borde de la cláusula subordinada. </xsl:when>
+							<xsl:when test="//comp/@compCliticAttaches='edge'">en el extremo de la cláusula subordinada. </xsl:when>
 							<xsl:when test="//comp/@compCliticAttaches='head'">al verbo en la cláusula subordinada. </xsl:when>
 						</xsl:choose>
 						<xsl:choose>

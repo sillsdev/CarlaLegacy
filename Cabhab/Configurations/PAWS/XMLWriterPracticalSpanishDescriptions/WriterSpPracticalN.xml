@@ -47,8 +47,8 @@
 		<section2 id="sNPCase">
 			<secTitle>Caso</secTitle>
 			<p>
-				<content>En los sustantivos y sus modificadores también se pueden marcar para el caso. El sistema de caso más común es el nominativo-acusativo.
-					Éste es el sistema que español tiene, aunque solamente se marca el caso en los pronombres y los poseedores.
+				<content>En los sustantivos y sus modificadores también se pueden indicar para el caso. El sistema de caso más común es el nominativo-acusativo.
+					Éste es el sistema que español tiene, aunque solamente se indica el caso en los pronombres y los poseedores.
 					En un sistema del nominativo-acusativo, los sujetos de los verbos intransitivos y transitivos son casos del nominativo, mientras que los objetos directos son casos del acusativo.
 					Los poseedores son casos del genitivo. Los pronombres del nominativo en español son: </content>
 				<langData>yo, nosotros, usted, ustedes, él, ella, ellos, ellas</langData>
@@ -64,9 +64,9 @@
 			</p>
 			<p>
 				<content>
-					En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se marcan con el caso del ergativo, mientras que los objetos de verbos transitivos y los temas de verbos intransitivos se marcan con el caso del absolutivo.
-					El caso de poseedores no se fija en todos los idiomas de este tipo.  Algunos idiomas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de marcadores verbales del acuerdo, pero ninguna marca en sustantivos.
-					Este tipo de marca en la concordancia será considerado en la sección </content>
+					En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se indican con el caso del ergativo, mientras que los objetos de verbos transitivos y los sujetos de verbos intransitivos se indican con el caso del absolutivo.
+					El caso de poseedores no se fija en todos los idiomas de este tipo.  Algunos idiomas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de indicadores verbales de la concordancia, pero ningún indicador en sustantivos.
+					Este tipo de indicador en la concordancia será considerado en la sección </content>
 				<sectionRef sec="sIPAgr"/>
 				<content>.</content>
 			</p>
@@ -79,14 +79,14 @@
 				<langName/>
 				<content/>
 				<case element="np" attr="case">
-					<caseText value="none"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición en la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición en la oración.</caseText>
-					<caseText value="nominative"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se marcan de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se marcan de una manera diferente.</caseText>
-					<caseText value="ergative"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se marcan de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se marcan de una manera diferente.</caseText>
+					<caseText value="none"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición de la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición de la oración.</caseText>
+					<caseText value="nominative"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se indican de una manera diferente.</caseText>
+					<caseText value="ergative"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se indican de una manera diferente.</caseText>
 					<caseText value="split"> tiene un sistema de caso de ergatividad escindida. El idioma sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones.</caseText>
 				</case>
 				<content/>
 				<text show="swNPCaseDefaultNom">
-					<content>  El caso nominativo es un caso predeternimado (no marcado).</content>
+					<content>  El caso nominativo es un caso predeterminado (no indicado).</content>
 				</text>
 				<content/>
 			</p>
@@ -101,7 +101,7 @@
 			<p>
 				<content>La posesión se puede expresar normalmente por un pronombre posesivo (será tratado en la sección </content>
 				<sectionRef sec="sPronPoss"/>
-				<content>), por un sustantivo simple, o por una frase nominal completa (véase la sección </content><sectionRef sec="sNPPoss"/><content>).  El caso y las características de la concordancia en los sustantivos poseídos o los sustantivos que actúan como poseedores se especifican aquí. </content>
+				<content>), por un sustantivo simple, o por una frase nominal completa (véase la sección </content><sectionRef sec="sNPPoss"/><content>).  El caso y las características de la concordancia en los sustantivos poseídos o los sustantivos que funcionan como poseedores se especifican a continuación. </content>
 			</p>
 			<section3 id="sNPPossCase">
 				<secTitle>Caso del poseedor</secTitle>
@@ -169,9 +169,9 @@
 					<langName/>
 					<content>, el indicador de caso </content>
 					<case element="np" attr="adjpCaseAffix">
-						<caseText value="no">no se marca con un afijo.</caseText>
-						<caseText value="yesPrefix">se marca de la siguiente manera.  </caseText>
-						<caseText value="yesSuffix">se marca de la siguiente manera.  </caseText>
+						<caseText value="no">no se indica con un afijo.</caseText>
+						<caseText value="yesPrefix">se indica de la siguiente manera.  </caseText>
+						<caseText value="yesSuffix">se indica de la siguiente manera.  </caseText>
 					</case>
 					<text show="swNPAdjPCaseAffixNotNo">
 						<content>Cuando el </content>
@@ -214,7 +214,7 @@
 							<caseText value="yesSuffix">sufijo,</caseText>
 							<caseText value="yesPrefix">prefijo,</caseText>
 						</case>
-						<content> entonces otro adjetivo y/o un poseedor también deben estar presentes.</content>
+						<content> así que otro adjetivo y/o un poseedor también deben estar presentes.</content>
 					</text>
 					<content/>
 				</p>
@@ -227,7 +227,7 @@
 				</p>
 				<ul>
 					<li>
-						<content>Un afijo que se encuentra en sustantivos poseídos alienables para indicar que están poseídas y por lo tanto deben tener un poseedor en la frase nominal. Los sustantivos poseídos inalienables no llevan ningún indicador, sino que siempre deben tener un poseedor. Éstos incluyen, pero no se limitan a, los términos del parentesco y las partes del cuerpo.</content>
+						<content>Un afijo que se encuentra en sustantivos poseídos alienables para indicar que están poseídas y por lo tanto deben tener un poseedor en la frase nominal. Los sustantivos poseídos inalienables no tienen ningún indicador, sino que siempre deben tener un poseedor. Éstos incluyen, pero no se limitan a, los términos del parentesco y las partes del cuerpo.</content>
 					</li>
 					<li>
 						<content>Un afijo que corresponde al poseedor (o expresa posiblemente al poseedor en sí mismo). </content>
@@ -414,12 +414,12 @@
 		<section2 id="sNPCompounds">
 			<secTitle>Sustantivos compuestos</secTitle>
 			<p>
-				<content>Mientras que el español requiere una frase con </content><langData>de</langData><content> en esta situación, muchos otros idiomas son como inglés y tienen modificadores del sustantivo.
-					Pareciera que todos los sustantivos también se pueden utilizar como adjetivos, pero un estudio más detallada revela que los adjetivos verdaderos se presentan antes del modificador del sustantivo, como en </content>
+				<content>Mientras que el español requiere una frase con </content><langData>de</langData><content> en esta situación, muchos otros idiomas son al igual que inglés y tienen modificadores del sustantivo.
+					Pareciera que todos los sustantivos también se pueden utilizar al igual que adjetivos, pero un estudio más detallada revela que los adjetivos verdaderos se presentan antes del modificador del sustantivo, como en </content>
 				<langData>large, round [syrup bottle]</langData><gloss><content>'grande, redondo [botella del jarabe]'</content></gloss>
 				<content> pero no </content>
 				<langData>*round, syrup large bottle</langData><gloss><content>'redondo, botella grande del jarabe'</content></gloss>
-				<content>.  Por lo tanto, los modificadores del sustantivo serán tratados como sustantivos compuestos que se escriben con palabras independientes.</content>
+				<content>.  Por lo tanto, los modificadores del sustantivo serán tratados al igual que sustantivos compuestos que se escriben con palabras independientes.</content>
 			</p>
 			<p>
 				<content>En los ejemplos anteriores en inglés, </content>

@@ -5,7 +5,7 @@
 		<secTitle>Las oraciones básicas</secTitle>
 		<p>
 <xsl:text>Esta sección se considera las oraciones intransitivas, copulativas, transitivas, ditransitivas y pasivas en su orden de las palabras básico (es decir no cambiado por el enfoque, el asunto, el interrogativo, o las construcciones de la negación).
-				Según lo observado en la sección </xsl:text>
+				De acuerdo con lo observado en la sección </xsl:text>
 <sectionRef sec="sIntro" />
 <xsl:text>,  la tipología de </xsl:text>
 <xsl:choose>
@@ -18,26 +18,26 @@
 </xsl:choose>
 <xsl:text> es </xsl:text>
 <xsl:choose>
-				<xsl:when test="//typology/@wordOrder='SVO'">SVO, así que el orden de las palabras básico es el sujeto, después cualquier elemento auxiliar, después la frase de verbo que consiste en el verbo en la posición inicial y cualesquiera complementos que la siguen.</xsl:when>
-				<xsl:when test="//typology/@wordOrder='SOV'">SOV, así que el orden de las palabras básico es el sujeto, después la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares.</xsl:when>
-				<xsl:when test="//typology/@wordOrder='VSO'">VSO, así que el orden de las palabras básico es el verbo en la posición inicial, entonces el sujeto, entonces cualquier complemento de verbo.</xsl:when>
-				<xsl:when test="//typology/@wordOrder='VOS'">VOS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición inicial y cualquier complemento que la sigue, entonces cualesquiera elementos auxiliares, entonces el sujeto.</xsl:when>
-				<xsl:when test="//typology/@wordOrder='OVS'">OVS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, entonces cualesquiera elementos auxiliares, entonces el sujeto.</xsl:when>
-				<xsl:when test="//typology/@wordOrder='OSV'">OSV, así que el orden de las palabras básico es cualquier complemento de verbo primero, entonces el sujeto, entonces el verbo en la posición final.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='SVO'">SVO, así que el orden de las palabras básico es el sujeto, después cualquier elemento auxiliar, después la frase de verbo que consiste en el verbo en la posición inicial y cualquiera complementos que la siguen.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='SOV'">SOV, así que el orden de las palabras básico es el sujeto, después la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, y finalmente cualquiera elementos auxiliares.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='VSO'">VSO, así que el orden de las palabras básico es el verbo en la posición inicial, después el sujeto, y finalmente cualquier complemento de verbo.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='VOS'">VOS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición inicial y cualquier complemento que la sigue, después cualquiera elementos auxiliares, y finalmente el sujeto.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='OVS'">OVS, así que el orden de las palabras básico es la frase de verbo que consiste en el verbo en la posición final con cualquier complemento que la precede, después cualquiera elementos auxiliares, y finalmente el sujeto.</xsl:when>
+				<xsl:when test="//typology/@wordOrder='OSV'">OSV, así que el orden de las palabras básico es cualquier complemento de verbo primero, después el sujeto, y finalmente el verbo.</xsl:when>
 			</xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//typology/@wordOrder)='VSO' or normalize-space(//typology/@wordOrder)='OSV'">
-				<xsl:text>  Los cambios en el orden de las palabras cuando un auxiliar está presente fueron discutidos en la sección </xsl:text>
+				<xsl:text>  Los cambios en el orden de las palabras cuando un auxiliar está presente fueron analizados en la sección </xsl:text>
 				<sectionRef sec="sIPAux" />
 				<xsl:text>.</xsl:text>
 			</xsl:if>
 <xsl:text></xsl:text>
 </p>
 		<p>
-<xsl:text>Cada uno de los tipos de la oración será mirado en su orden correspondiente aquí. </xsl:text>
+<xsl:text>Cada uno de los tipos de la oración será considerado en su orden correspondiente aquí. </xsl:text>
 </p>
 		<section2 id="sIPMotion">
-			<secTitle>Los intransitivos y las construcciones del movimiento</secTitle>
+			<secTitle>Intransitivos y construcciones del movimiento</secTitle>
 			<p>
 <xsl:text>Los intransitivos simples no tienen ningún complemento después del verbo, como en </xsl:text>
 <langData>
@@ -170,7 +170,7 @@
 </example>
 		</section2>
 		<section2 id="sIPCop">
-			<secTitle>Las construcciones copulativas</secTitle>
+			<secTitle>Construcciones copulativas</secTitle>
 			<p>
 <xsl:text>Las oraciones copulativas pueden tener un adjetivo, frase </xsl:text>
 <xsl:choose>
@@ -291,7 +291,7 @@
 </example>
 		</section2>
 		<section2 id="sIPTrans">
-			<secTitle>Los transitivos y ditransitivos</secTitle>
+			<secTitle>Transitivos y ditransitivos</secTitle>
 			<p>
 <xsl:text>Algunos ejemplos de las oraciones transitivas en español son </xsl:text>
 <langData>
@@ -470,9 +470,9 @@
 </example>
 		</section2>
 		<section2 id="sIPPassive">
-			<secTitle>Los pasivos</secTitle>
+			<secTitle>Pasivos</secTitle>
 			<p>
-<xsl:text>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente llena la posición del sujeto. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase  </xsl:text>
+<xsl:text>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente ocupa la posición del sujeto. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase  </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
 					<xsl:when test="//pp/@pPos='after'">posposicional</xsl:when>

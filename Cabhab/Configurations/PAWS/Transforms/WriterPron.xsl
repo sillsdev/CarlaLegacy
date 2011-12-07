@@ -4801,8 +4801,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -4925,8 +4924,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5074,8 +5072,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5133,8 +5130,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5305,8 +5301,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5402,8 +5397,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore">
-</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -5777,15 +5771,13 @@
 <xsl:if test="normalize-space(//pron/@pronounCat)='NP'">
 					<xsl:choose>
 						<xsl:when test="//qp/@npDegree='yes'"> degree words,</xsl:when>
-						<xsl:when test="//qp/@npDegree='no'">
-</xsl:when>
+						<xsl:when test="//qp/@npDegree='no'"></xsl:when>
 					</xsl:choose>
 					<xsl:choose>
 						<xsl:when test="//np/@artAndDem='demonstrative'"> demonstratives,</xsl:when>
 						<xsl:when test="//np/@artAndDem='article'"> articles,</xsl:when>
 						<xsl:when test="//np/@artAndDem='both'"> demonstratives, articles,</xsl:when>
-						<xsl:when test="//np/@artAndDem='no'">
-</xsl:when>
+						<xsl:when test="//np/@artAndDem='no'"></xsl:when>
 					</xsl:choose>
 					<xsl:text> relative clauses and PPs, but not by possessors or adjectives.</xsl:text>
 				</xsl:if>

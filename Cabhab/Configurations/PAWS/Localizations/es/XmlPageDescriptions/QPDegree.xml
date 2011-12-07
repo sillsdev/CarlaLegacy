@@ -17,7 +17,7 @@
 			<radio id="QPDegreeNo" checked="yes" dataValue="no">No</radio>
 			<radio id="QPDegreeYes" checked="yes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="QPDegreeYesExamples" show="swQPDegreeYes">Escriba sus ejemplos que contienen palabras de grado aquí. Observe que estas palabras de grado muy probablemente no serán iguales de que las que pueden modificarse una frase nominal completa de la primera sección arriba.</prompt>
+		<prompt id="QPDegreeYesExamples" show="swQPDegreeYes">Escriba sus ejemplos que contienen palabras de grado aquí. Observe que estas palabras de grado muy probablemente no serán iguales de que las que pueden modificarse una frase nominal completa de la primera sección anterior.</prompt>
 		<textBox id="QPDegreeExample" dataItem="degreeExample" show="swQPDegreeYes"/>
 		<radioGroup id="QPDegreeWordsTable" show="swQPDegreeYes">
 			<groupName dataItem="degreePos" default="unknown" position="yesSpec">RDegree</groupName>
@@ -33,7 +33,7 @@
 				<groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
 				<prompt>¿Pueden presentarse todas las palabras de grado de cualquier lado del cuantificador?</prompt>
 				<radio id="QPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="QPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+				<radio id="QPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 			</radioGroup>
 		</radioGroup>
 		<instruction id="QPDegreeInstruction">In the lexicon, mark this type of quantifier

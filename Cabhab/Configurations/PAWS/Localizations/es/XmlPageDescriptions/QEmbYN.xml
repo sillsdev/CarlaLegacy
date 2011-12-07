@@ -5,7 +5,7 @@
 	<title level="2">Las preguntas - Las preguntas con respuesta afirmativa/negativa de la cláusula subordinada</title>
 	<form section="q">
 		<EnglishExample>
-			<exItem>Algunos ejemplos en español de las preguntas polares en las cláusulas subordinadas, demostrando la presencia de el indicador o complementizador de la pregunta, son:</exItem>
+			<exItem>Algunos ejemplos en español de las preguntas polares en las cláusulas subordinadas, mostrando la presencia de el indicador o complementizador de la pregunta, son:</exItem>
 			<exItem label="1.">Me pregunto si ella vendrá.</exItem>
 			<exItem label="2.">Yo sabré si ella va.</exItem>
 			<exItem label="3.">Susana se pregunta si el muchacho habría podido golpear el beísbol..</exItem>
@@ -18,7 +18,7 @@
 		<radioGroup>
 			<groupName dataItem="embYN" default="no">RQEmbYN</groupName>
 			<prompt>Para las preguntas polares de la cláusula subordinada, ¿Hay uno o más indicadores o complementizadores de la pregunta (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
-			<radio id="QEmbYNYes" dataValue="yes">Sí, como <example>si</example> en español</radio>
+			<radio id="QEmbYNYes" dataValue="yes">Sí, al igual que <example>si</example> en español</radio>
 			<radioGroup id="QEmbYNWordTable" show="swQEmbYNYes">
 				<groupName dataItem="embYNWord" default="yes">RQEmbYNWord</groupName>
 				<prompt>¿Se escribe como una palabra independiente?</prompt>
@@ -33,7 +33,7 @@
 				<radioGroup id="QEmbYNCliticTypeTable" show="swQEmbYNWordNo">
 					<groupName dataItem="embYNCliticAttaches" default="edge">RQEmbYNCliticAttaches</groupName>
 					<prompt>¿Dónde se une el clítico a la pregunta polar subordinada?</prompt>
-					<radio id="QEmbYNCliticAttachesEdge" dataValue="edge">En el borde</radio>
+					<radio id="QEmbYNCliticAttachesEdge" dataValue="edge">En el extremo</radio>
 					<radio id="QEmbYNCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
 				<radio id="QEmbYNWordYes" dataValue="yes">Sí</radio>
@@ -52,7 +52,7 @@
 					<groupName dataItem="embYNEitherRestricted" default="unrestricted">RQEmbYNEitherRestricted</groupName>
 					<prompt>¿Pueden todos los indicadores o complementizadores de la pregunta presentarse de cualquier lado de la pregunta subordinada?</prompt>
 					<radio id="QEmbYNEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="QEmbYNEitherRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+					<radio id="QEmbYNEitherRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
 			<radio id="QEmbYNNoAux" dataValue="noAux">No, pero un auxiliar se desplaza</radio>

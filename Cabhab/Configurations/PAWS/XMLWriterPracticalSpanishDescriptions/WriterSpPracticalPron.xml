@@ -4,9 +4,9 @@
 	<section1 id="sPron">
 		<secTitle>Los pronombres</secTitle>
 		<p>
-			<content>Hay pronombres de varios tipos, incluyendo: pronombre personales, posesivos, reflexivos, recíprocos, e indefinidos.
+			<content>Hay pronombres de varios tipos: pronombre personales, posesivos, reflexivos, recíprocos, e indefinidos.
 				Estos pronombres por lo regular se colocan solamente en lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo. En algunos idiomas los pronombres se pueden modificar por los determinantes y cuantificadores, en ese caso ocupan el lugar de los sustantivos.
-				Cada tipo de pronombre será mirado en su orden correspondiente, después de analizar las características de la concordancia en todos los tipos de pronombres. </content>
+				Cada tipo de pronombre será considerado en su orden correspondiente, después de analizar las características de la concordancia en todos los tipos de pronombres. </content>
 		</p>
 		<section2 id="sPronAgreement">
 			<secTitle>Características de concordancia en los pronombres</secTitle>
@@ -153,12 +153,12 @@
 			</example>
 		</section2>
 		<section2 id="sPronPersonal">
-			<secTitle>Los pronombres personales</secTitle>
+			<secTitle>Pronombres personales</secTitle>
 			<p><content>Todos los idiomas tienen pronombres personales independientes, los cuales son palabras independientes que pueden presentarse en todas las posiciones en las que presentarse los sustantivos o las frases nominales.
 				Algunos idiomas también tienen formas dependientes de los pronombres personales que se unen a otra palabra en la oración. </content></p>
 			<p><content>En </content><langName/><content/><case element="pron" attr="dependentPron">
-				<caseText value="no"> no hay un sistema separado de pronombres personales dependientes.</caseText>
-				<caseText value="yes"> hay pronombres personales dependientes así como pronombres personales independientes. Ambos sistemas de pronombres personales serán presentados aquí, con el análisis de las formas independientes primero.</caseText>
+				<caseText value="no"> no hay un sistema diferente de pronombres personales dependientes.</caseText>
+				<caseText value="yes"> hay pronombres personales dependientes así como pronombres personales independientes. Ambos sistemas de pronombres personales serán presentados a continuación, con el análisis de las formas independientes primero.</caseText>
 			</case><content/></p>
 			<p>
 				<content>Los pronombres personales tienen normalmente más que o el mismo número de características de Caso que los sustantivos tienen. </content>
@@ -166,7 +166,7 @@
 			<p show="swNPCaseNone">
 				<content>El </content>
 				<langName/>
-				<content> no tiene distinciones de Caso, entonces hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquier posición en la oración, según lo ejemplificado aquí.</content>
+				<content> no tiene distinciones de Caso, así que hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquier posición de la oración, de acuerdo con lo ejemplificado a continuación.</content>
 			</p>
 
 			<example show="swNPCaseNone">
@@ -499,9 +499,9 @@
 			</example>
 
 			<p show="swNPCaseNoneandDependentYes">
-				<content>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </content>
+				<content>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </content>
 				<langName/>
-				<content> no hay distinciones de Caso, así que hay solamente un solo sistema de pronombres que se pueden utilizar en cualquier posición de la oración, según lo ejemplificado a continuación:</content>
+				<content> no hay distinciones de Caso, así que hay solamente un solo sistema de pronombres que se pueden utilizar en cualquier posición de la oración, de acuerdo con lo ejemplificado a continuación:</content>
 			</p>
 			<example show="swNPCaseNoneandDependentYes">
 				<table border="1">
@@ -532,7 +532,7 @@
 				</table>
 			</example>
 			<p show="swNPCaseNomandDependentYes">
-				<content>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </content>
+				<content>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </content>
 				<langName/>
 				<content> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de pronombres para los sujetos, los objetos y los poseedores. Los pronombre personals dependientes que pueden presentarse en la posición del sujeto son: </content>
 			</p>
@@ -612,7 +612,7 @@
 					</row>				</table>
 			</example>
 			<p show="swNPCaseErgandDependentYes">
-				<content>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </content>
+				<content>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </content>
 				<langName/>
 				<content> hay un sistema de caso del ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra de los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales dependientes que pueden presentarse en la posición de sujeto de verbos transitivos son: </content>
 			</p>
@@ -698,7 +698,7 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplitandDependentYes">
-				<content>Cambiando de tema a los pronombres dependientes, según lo considerado anteriormente en </content>
+				<content>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </content>
 				<langName/>
 				<content> hay un sistema de caso de ergatividad escindida, así que hay sistemas distintos de los pronombres que se utilizan comúnmente como sujetos, objetos y poseedores, además de algunos sistemas especiales que se utilizan en los casos del ergatividad escindida. Los pronombres personales dependientes que aparecen comúnmente en la posición del sujeto son: </content>
 			</p>
@@ -842,7 +842,7 @@
 			<p show="swDependentPronYes"><content>Para considerar otros detalles sobre cómo pueden ser utilizados los pronombres dependientes, véanse las secciones </content><sectionRef sec="sIPAgr"/><content> y </content><sectionRef sec="sIPProDrop"/><content> donde se analizan la concordancia verbal y los sujetos que no deben estar presentes.</content></p>
 		</section2>
 		<section2 id="sPronPoss">
-			<secTitle>Los pronombres posesivos</secTitle>
+			<secTitle>Pronombres posesivos</secTitle>
 			<p>
 				<content>Muchos idiomas también tienen pronombres posesivos que se pueden usar sólos, por ejemplo </content>
 				<langData>suya</langData>
@@ -896,7 +896,7 @@
 			</example>
 		</section2>
 		<section2 id="sPronRefl">
-			<secTitle>Los reflexivos</secTitle>
+			<secTitle>Pronombres reflexivos</secTitle>
 			<p>
 				<content>Los reflexivos son otro tipo de pronombres que la mayoría de los idiomas tienen. Se presentan solamente en el caso de los objetos directos y deben oncordar comúnmente con el sujeto en las aracterísticas de persona, género y número. Los ejemplos en inglés son:</content>
 				<langData>herself</langData><gloss><content>'ella misma'</content></gloss>
@@ -906,7 +906,7 @@
 				<langData>themselves</langData><gloss><content>'ellos mismos'</content></gloss>
 				<content> y </content>
 				<langData>myself</langData><gloss><content>'yo mismo'</content></gloss>
-				<content>.    Algunos idiomas tienen un sistema totalmente separado de las formas del pronombre para los reflexivos, mientras que otras tales como español
+				<content>.    Algunos idiomas tienen un sistema totalmente diferente de las formas del pronombre para los reflexivos, mientras que otras tales como español
 				utilizan una frase que consista en un sustantivo (que significa generalmente el </content><gloss><content>‘mismo'</content></gloss><content> o </content><gloss><content>‘self'</content></gloss><content>) que es poseído por el pronombre que se refiere de nuevo al sujeto.
 					Algunos idiomas tienen un afijo verbal que indica la acción reflexiva, y algunos idiomas no distinguen las construcciones reflexivas en absoluto.</content>
 			</p>
@@ -955,13 +955,13 @@
 			</example>
 		</section2>
 		<section2 id="sPronRecip">
-			<secTitle>Los recíprocos</secTitle>
+			<secTitle>Pronombres recíprocos</secTitle>
 			<p>
 				<content>Los recíprocos son similares a los reflexivos, salvo que se presentan solamente con sujetos plurales. Pueden formarse de la misma manera que los reflexivos, o pueden ser distintos. Por ejemplo, en español, las formas recíprocas son frases: </content>
 				<langData>el uno al otro </langData>
 				<content> y </content>
 				<langData>uno a otro</langData>
-				<content>.  Algunos idiomas usan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no marcan la acción recíproca en absoluto. </content>
+				<content>.  Algunos idiomas usan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no indican la acción recíproca en absoluto. </content>
 			</p>
 			<p>
 				<content>En </content>
@@ -1018,7 +1018,7 @@
 			</example>
 		</section2>
 		<section2 id="sPronIndef">
-			<secTitle>Los indefinidos</secTitle>
+			<secTitle>Pronombres indefinidos</secTitle>
 			<p>
 				<content>Los indefinidos pueden ser pronombres como en español </content>
 				<langData>todos</langData>
@@ -1031,7 +1031,7 @@
 				<langData>algo</langData>
 				<content>, o pueden ser un cuantificador más un sustantivo genérico indefinido como en español </content><langData>algunas personas</langData><content>, etc.</content>
 			</p>
-			<p><content>Las versiones negativas de los pronombres indefinidos incluyen </content>
+			<p><content>Las versiones negativas de los pronombres indefinidos son: </content>
 				<langData>nadie</langData>
 				<content>, </content>
 				<langData>nada</langData>
@@ -1126,8 +1126,8 @@
 
 		<section2 id="sPronNP">
 			<secTitle>Los pronombres como frases nominales</secTitle>
-			<p><content>Los pronombres comúnmente presentarse solamente en el lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo y en algunos idiomas los pronombres se pueden modificar por los determinantes y los cuantificadores, llenando el lugar de sustantivos en esta situación.
-				Los ejemplos en español de pronombres, de demonstratives o de cuantificadores modificados incluyen los siguientes: </content>
+			<p><content>Los pronombres comúnmente presentarse solamente en el lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo y en algunos idiomas los pronombres se pueden modificar por los determinantes y los cuantificadores, ocupando el lugar de sustantivos en esta situación.
+				Algunos ejemplos en español de pronombres, de demonstratives o de cuantificadores modificados son los siguientes: </content>
 				<langData>todos los doce</langData>
 				<content>, </content>
 				<langData>solamente él</langData>
