@@ -12,20 +12,20 @@
 				<content>El español no tiene ningún indicador especial ni ningún cambio del orden de las palabras para las preguntas con respuesta sí/no de la cláusula principal.
 					Hay simplemente un cambio en la entonación. Otros idiomas pueden utilizar indicadores y/o cambios especiales del orden de las palabras.
 					En las preguntas sí/no de la cláusula principal en inglés, un verbo auxiliar desplaza delante del sujeto. Otros idiomas utilizan un indicador o un complementizador especial en vez del auxiliar desplazado a la izquierda. Éste es el caso en preguntas sí/no en las cláusulas subordinadas en inglés; no se permite el desplazamiento del auxiliar pero </content>
-				<langData>whether</langData><gloss><content>'sea que'</content></gloss>
+				<langData>whether</langData><gloss><content> 'sea que'</content></gloss>
 				<content> o </content>
-				<langData>if</langData><gloss><content>'si'</content></gloss>
+				<langData>if</langData><gloss><content> 'si'</content></gloss>
 				<content> ocupa la posición del complementizador. Puesto que los idiomas pueden funcionar diferentemente en preguntas sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será analizado por separado. </content>
 			</p>
 			<section3 id="sQuesYNMain">
 				<secTitle>Preguntas con respuesta afirmativa/negativa de la cláusula principal</secTitle>
 				<p>
 					<content>Mientras que en español simplemente hay un cambio en la entonación para señalar una pregunta con respuesta afirmativa/negativa de la cláusula principal, otros idiomas utilizan indicadores y/o cambios especiales del orden de las palabras. Algunos ejemplos en inglés de las preguntas sí/no de la cláusula principal que muestran el desplazamiento requerido de un auxiliar son: </content>
-					<langData>Are you going to the store?</langData><gloss><content>'¿Usted va al almacén?'</content></gloss>
+					<langData>Are you going to the store?</langData><gloss><content> '¿Usted va al almacén?'</content></gloss>
 					<content>, </content>
-					<langData>Will Sue buy the present for her mother?</langData><gloss><content>'¿Compra Susana el regalo para su madre?'</content></gloss>
+					<langData>Will Sue buy the present for her mother?</langData><gloss><content> '¿Compra Susana el regalo para su madre?'</content></gloss>
 					<content> y </content>
-					<langData>Could the boy have hit the ball?</langData><gloss><content>'¿Habría podido el muchacho golpear el beísbol?'</content></gloss>
+					<langData>Could the boy have hit the ball?</langData><gloss><content> '¿Habría podido el muchacho golpear el beísbol?'</content></gloss>
 					<content/>
 				</p>
 				<p>
@@ -268,20 +268,20 @@
 				<content> puede estar un adverbio de manera por sí mismo o una palabra de grado que modifica un adjetivo, como en </content>
 				<langData>¿cómo grande?</langData>
 				<content> o una palabra de grado que modifica un cuantificador, como en </content>
-				<langData>how many children?</langData><gloss><content>'¿cuántos niños?'</content></gloss>
+				<langData>how many children?</langData><gloss><content> '¿cuántos niños?'</content></gloss>
 				<content>; </content>
 				<langData>qué</langData>
 				<content> puede ser un pronombre por sí mismo o un demostrativo modificando un sustantivo, como en </content>
-				<langData>what books?</langData><gloss><content>'¿qué libros?'</content></gloss>
+				<langData>what books?</langData><gloss><content> '¿qué libros?'</content></gloss>
 				<content>; </content>
 				<langData>cuál</langData>
 				<content> nunca se coloca solamente pero modifica siempre un sustantivo como un demostrativo, como en </content>
 				<langData>¿cuál muchacho?</langData>
 				<content>; y </content>
-				<langData>whose</langData><gloss><content>'cuyo'</content></gloss>
+				<langData>whose</langData><gloss><content> 'cuyo'</content></gloss>
 				<content> puede ser un pronombre posesivo por sí mismo, como en </content>
-				<langData>whose is that?</langData><gloss><content>'¿cuyo es eso?'</content></gloss><content>, o puede ocupar la posición del poseedor en una frase nominal, como en </content>
-				<langData>whose toys?</langData><gloss><content>'¿jugetes de quién?'</content></gloss>
+				<langData>whose is that?</langData><gloss><content> '¿cuyo es eso?'</content></gloss><content>, o puede ocupar la posición del poseedor en una frase nominal, como en </content>
+				<langData>whose toys?</langData><gloss><content> '¿jugetes de quién?'</content></gloss>
 				<content>.</content>
 			</p>
 			<p>

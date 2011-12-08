@@ -1143,7 +1143,7 @@
 </xsl:attribute>The boy will hit the ball</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'El muchacho golpeará el beísbol'</xsl:text>
+<xsl:text> 'El muchacho golpeará el beísbol'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -1152,7 +1152,7 @@
 </xsl:attribute>The boy might have hit the ball</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'El muchacho pudo haber golpeado el beísbol'</xsl:text>
+<xsl:text> 'El muchacho pudo haber golpeado el beísbol'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -1161,7 +1161,7 @@
 </xsl:attribute>The boy might have been hitting the ball</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'El muchacho pudo habiendo golpeado el beísbol'</xsl:text>
+<xsl:text> 'El muchacho pudo habiendo golpeado el beísbol'</xsl:text>
 </gloss>
 <xsl:text>.  En español, éstos son expresados principalmente por los cambios del tiempo y del aspecto.</xsl:text>
 </p>
@@ -1354,7 +1354,7 @@
 </xsl:attribute>not</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'no'</xsl:text>
+<xsl:text> 'no'</xsl:text>
 </gloss>
 <xsl:text>, que es una palabra independiente que siempre debe seguir a otro auxiliar, y la forma de la contracción </xsl:text>
 <langData>
@@ -1368,7 +1368,7 @@
 </xsl:attribute>The boy did not hit the ball</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'El muchacho no golpeó el beísbol'</xsl:text>
+<xsl:text> 'El muchacho no golpeó el beísbol'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -1377,7 +1377,7 @@
 </xsl:attribute>The boy won't hit the ball</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'El muchacho no golpeará el beísbol'</xsl:text>
+<xsl:text> 'El muchacho no golpeará el beísbol'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -1386,7 +1386,7 @@
 </xsl:attribute>The boy might not have hit the ball</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'El muchacho no pudo haber golpeado el beísbol'</xsl:text>
+<xsl:text> 'El muchacho no pudo haber golpeado el beísbol'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -1678,7 +1678,7 @@
 </xsl:attribute>The boy would like to have hit the ball</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'El muchacho quisiera haber golpeado el beísbol'</xsl:text>
+<xsl:text> 'El muchacho quisiera haber golpeado el beísbol'</xsl:text>
 </gloss>
 <xsl:text>.  Por el contrario, el español no tiene un indicador independiente para las cláusulas subordinadas infinitivas, sino utiliza simplemente la forma infinitiva del verbo. </xsl:text>
 </p>

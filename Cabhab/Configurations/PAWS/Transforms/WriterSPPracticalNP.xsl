@@ -1030,7 +1030,7 @@
 </xsl:attribute>the boy's mother</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'la madre del muchacho'</xsl:text>
+<xsl:text> 'la madre del muchacho'</xsl:text>
 </gloss>
 <xsl:text>, hay las frases que muestran claramente que el clítico se une al final de la frase nominal completo, tal como </xsl:text>
 <langData>
@@ -1039,7 +1039,7 @@
 </xsl:attribute>the boy that I just talked to's mother</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'la madre del muchacho que acabo de hablar con'</xsl:text>
+<xsl:text> 'la madre del muchacho que acabo de hablar con'</xsl:text>
 </gloss>
 <xsl:text> o </xsl:text>
 <langData>
@@ -1048,7 +1048,7 @@
 </xsl:attribute>the girl in green's wonderful speech</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'el discurso maravilloso de la muchacha en verde'</xsl:text>
+<xsl:text> 'el discurso maravilloso de la muchacha en verde'</xsl:text>
 </gloss>
 <xsl:text>.  Estos ejemplos muestran que los poseedores pueden incluir frases </xsl:text>
 <xsl:choose>
@@ -1064,7 +1064,7 @@
 </xsl:attribute>the boy's sister's dog</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'el perro de la hermana del muchacho'</xsl:text>
+<xsl:text> 'el perro de la hermana del muchacho'</xsl:text>
 </gloss>
 <xsl:text>.  Esto se permite en español dentro de la frase preposicional después del sustantivo. </xsl:text>
 </p>
@@ -1427,7 +1427,7 @@
 </example>
 			<xsl:if test="normalize-space(//np/@qpAgree)='yes'">
 <p>
-<xsl:text>Al al igual que otros modificadores dentro de la frase nominal, las frases del cuantificador en  </xsl:text>
+<xsl:text>Al igual que otros modificadores dentro de la frase nominal, las frases del cuantificador en  </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -1458,7 +1458,7 @@
 </xsl:attribute>just those very few old, dirty books</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'solo los muy pocos libros viejos, sucios'</xsl:text>
+<xsl:text> 'solo los muy pocos libros viejos, sucios'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -1467,7 +1467,7 @@
 </xsl:attribute>all the boy’s many black dogs</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'todos los muchos perros negros del muchacho'</xsl:text>
+<xsl:text> 'todos los muchos perros negros del muchacho'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -1476,7 +1476,7 @@
 </xsl:attribute>only the first one hundred very eager young boys</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'solamente los primeros cien muchachos jovenes que están muy impacientes'</xsl:text>
+<xsl:text> 'solamente los primeros cien muchachos jovenes que están muy impacientes'</xsl:text>
 </gloss>
 <xsl:text>.  Como se puede ver en los ejemplos en inglés, todos los adjetivos se presentan antes del sustantivo, y, al contrario de los otros modificadores, se permita más de una frase adjetival.
 					En español, los adjetivos se presentan después del sustantivo y solamente se permite solamente una frase adjetival, a menos que los adjetivos son coordinados (véase la sección </xsl:text>
@@ -1563,7 +1563,7 @@
 </example>
 			<xsl:if test="normalize-space(//np/@adjpAgree)='yes'">
 <p>
-<xsl:text>Al al igual que otros modificadores dentro de la frase nominal, las frases del adjetivo en </xsl:text>
+<xsl:text>Al igual que otros modificadores dentro de la frase nominal, las frases del adjetivo en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -1741,7 +1741,7 @@
 </xsl:attribute>[Studying participles] is difficult</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'[Estudiando participios] es dificil'</xsl:text>
+<xsl:text> '[Estudiando participios] es dificil'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -1750,7 +1750,7 @@
 </xsl:attribute>He likes [reading Latin poetry]</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Él tiene gusto [leyendo la poesía latina]'</xsl:text>
+<xsl:text> 'Él tiene gusto [leyendo la poesía latina]'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -1759,7 +1759,7 @@
 </xsl:attribute>The receiver showed his worth by [making the catch]</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'El receptor mostró su valor cerca [haciendo el retén]'</xsl:text>
+<xsl:text> 'El receptor mostró su valor cerca [haciendo el retén]'</xsl:text>
 </gloss>
 <xsl:text>.  Tales frases se pueden poseer o modificar también, y a veces se presenta solamente el participio como el elemento principal de una frase nominal, como en </xsl:text>
 <langData>
@@ -1778,7 +1778,7 @@
 </xsl:attribute>your following</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'su siguiente'</xsl:text>
+<xsl:text> 'su siguiente'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -1881,7 +1881,7 @@
 </xsl:attribute>the bright, [shining] sun</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'el brillante, [brillando] sol'</xsl:text>
+<xsl:text> 'el brillante, [brillando] sol'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -1890,7 +1890,7 @@
 </xsl:attribute>my [crying] child</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'mi niño, [gritando]'</xsl:text>
+<xsl:text> 'mi niño, [gritando]'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -1899,7 +1899,7 @@
 </xsl:attribute>the books [loved by millions]</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'los libros [amados por millones]'</xsl:text>
+<xsl:text> 'los libros [amados por millones]'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>

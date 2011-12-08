@@ -899,13 +899,13 @@
 			<secTitle>Pronombres reflexivos</secTitle>
 			<p>
 				<content>Los reflexivos son otro tipo de pronombres que la mayoría de los idiomas tienen. Se presentan solamente en el caso de los objetos directos y deben oncordar comúnmente con el sujeto en las aracterísticas de persona, género y número. Los ejemplos en inglés son:</content>
-				<langData>herself</langData><gloss><content>'ella misma'</content></gloss>
+				<langData>herself</langData><gloss><content> 'ella misma'</content></gloss>
 				<content>, </content>
-				<langData>himself</langData><gloss><content>'sí mismo'</content></gloss>
+				<langData>himself</langData><gloss><content> 'sí mismo'</content></gloss>
 				<content>, </content>
-				<langData>themselves</langData><gloss><content>'ellos mismos'</content></gloss>
+				<langData>themselves</langData><gloss><content> 'ellos mismos'</content></gloss>
 				<content> y </content>
-				<langData>myself</langData><gloss><content>'yo mismo'</content></gloss>
+				<langData>myself</langData><gloss><content> 'yo mismo'</content></gloss>
 				<content>.    Algunos idiomas tienen un sistema totalmente diferente de las formas del pronombre para los reflexivos, mientras que otras tales como español
 				utilizan una frase que consista en un sustantivo (que significa generalmente el </content><gloss><content>‘mismo'</content></gloss><content> o </content><gloss><content>‘self'</content></gloss><content>) que es poseído por el pronombre que se refiere de nuevo al sujeto.
 					Algunos idiomas tienen un afijo verbal que indica la acción reflexiva, y algunos idiomas no distinguen las construcciones reflexivas en absoluto.</content>
@@ -1038,7 +1038,7 @@
 				<content> y </content>
 				<langData>ninguno</langData>
 				<content>.  Algunos idiomas pueden no combinarse en una sola palabra, como en </content>
-				<langData>no one</langData><gloss><content>'nadie'</content></gloss>
+				<langData>no one</langData><gloss><content> 'nadie'</content></gloss>
 				<content> para el inglés.</content>
 			</p>
 			<p>

@@ -107,6 +107,7 @@
 	-->
 	<xsl:template name="HandleAnyAbbreviations">
 		<glossary label="Abreviaturas">
+			<p>Las abreviaturas usadas en los ejemplos son:</p>
 			<abbreviationsShownHere/>
 		</glossary>
 		<xsl:copy-of select="document('../Data/AbreviaturasPAWS.xml')/abbreviations" />

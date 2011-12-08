@@ -99,7 +99,7 @@
 </xsl:attribute>I expect that Joe will come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Cuento con que José venga a la fiesta'</xsl:text>
+<xsl:text> 'Cuento con que José venga a la fiesta'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -108,7 +108,7 @@
 </xsl:attribute>I expect Joe to come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Espero que José venga a la fiesta'</xsl:text>
+<xsl:text> 'Espero que José venga a la fiesta'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -173,7 +173,7 @@
 </xsl:attribute>I want Joe to come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Quisiera que José viniera a la fiesta'</xsl:text>
+<xsl:text> 'Quisiera que José viniera a la fiesta'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -182,7 +182,7 @@
 </xsl:attribute>I want to come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Quiero que venir a la fiesta'</xsl:text>
+<xsl:text> 'Quiero que venir a la fiesta'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -247,7 +247,7 @@
 </xsl:attribute>Joe tried to come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'José intentó venir a la fiesta'</xsl:text>
+<xsl:text> 'José intentó venir a la fiesta'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -256,7 +256,7 @@
 </xsl:attribute>I tried to think of more examples</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Intenté pensar en más ejemplos'</xsl:text>
+<xsl:text> 'Intenté pensar en más ejemplos'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -321,7 +321,7 @@
 </xsl:attribute>for</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'para'</xsl:text>
+<xsl:text> 'para'</xsl:text>
 </gloss>
 <xsl:text> es presente cuando el sujeto no es coreferente con el sujeto de la cláusula principal son: </xsl:text>
 <langData>
@@ -330,7 +330,7 @@
 </xsl:attribute>Joe would hate for Sue to be at the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'José odiaría para que Susana esté en la fiesta'</xsl:text>
+<xsl:text> 'José odiaría para que Susana esté en la fiesta'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -339,7 +339,7 @@
 </xsl:attribute>Joe hates to dance</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'José odia a bailar'</xsl:text>
+<xsl:text> 'José odia a bailar'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -348,7 +348,7 @@
 </xsl:attribute>I would like to be appreciated</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Quisiera ser apreciado'</xsl:text>
+<xsl:text> 'Quisiera ser apreciado'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -413,7 +413,7 @@
 </xsl:attribute>I will persuade Joe that he should come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Persuadiré a José que él debe venir a la fiesta'</xsl:text>
+<xsl:text> 'Persuadiré a José que él debe venir a la fiesta'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -422,7 +422,7 @@
 </xsl:attribute>I will persuade Joe to come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Persuadiré a José de  venir a la fiesta'</xsl:text>
+<xsl:text> 'Persuadiré a José de  venir a la fiesta'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -541,7 +541,7 @@
 </xsl:attribute>that</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'que'</xsl:text>
+<xsl:text> 'que'</xsl:text>
 </gloss>
 <xsl:text>  para las cláusulas finitas y </xsl:text>
 <langData>
@@ -550,7 +550,7 @@
 </xsl:attribute>for</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'para'</xsl:text>
+<xsl:text> 'para'</xsl:text>
 </gloss>
 <xsl:text> para las cláusulas infinitivas. El español utiliza </xsl:text>
 <langData>

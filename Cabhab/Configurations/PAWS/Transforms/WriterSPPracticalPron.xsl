@@ -4843,7 +4843,7 @@
 </xsl:attribute>herself</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'ella misma'</xsl:text>
+<xsl:text> 'ella misma'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -4852,7 +4852,7 @@
 </xsl:attribute>himself</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'sí mismo'</xsl:text>
+<xsl:text> 'sí mismo'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -4861,7 +4861,7 @@
 </xsl:attribute>themselves</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'ellos mismos'</xsl:text>
+<xsl:text> 'ellos mismos'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -4870,7 +4870,7 @@
 </xsl:attribute>myself</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'yo mismo'</xsl:text>
+<xsl:text> 'yo mismo'</xsl:text>
 </gloss>
 <xsl:text>.    Algunos idiomas tienen un sistema totalmente diferente de las formas del pronombre para los reflexivos, mientras que otras tales como español
 				utilizan una frase que consista en un sustantivo (que significa generalmente el </xsl:text>
@@ -5289,7 +5289,7 @@
 </xsl:attribute>no one</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'nadie'</xsl:text>
+<xsl:text> 'nadie'</xsl:text>
 </gloss>
 <xsl:text> para el inglés.</xsl:text>
 </p>

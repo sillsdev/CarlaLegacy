@@ -736,7 +736,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>apenas</langData>
-<xsl:text> (que también pueden funcionar al al igual que indicadores de enfoque, lo cual será analizado en la sección </xsl:text>
+<xsl:text> (que también pueden funcionar al igual que indicadores de enfoque, lo cual será analizado en la sección </xsl:text>
 <sectionRef sec="sFocus" />
 <xsl:text>) y las palabras que significan lo mismo que </xsl:text>
 <langData>
@@ -1600,7 +1600,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no hay una categoría independiente de los cuantificadores que funciona al al igual que el único determinante de la frase nominal. La negación de una frase nominal se expresa solamente con los elementos especiales de grado. Los conceptos positivos de </xsl:text>
+<xsl:text> no hay una categoría independiente de los cuantificadores que funciona al igual que el único determinante de la frase nominal. La negación de una frase nominal se expresa solamente con los elementos especiales de grado. Los conceptos positivos de </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>

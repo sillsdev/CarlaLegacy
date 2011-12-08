@@ -8,7 +8,7 @@
 </p>
 		<ul>
 			<li>
-				<xsl:text>al al igual que una cláusula de complemento con el complementizador 'que' , como en  </xsl:text>
+				<xsl:text>al igual que una cláusula de complemento con el complementizador 'que' , como en  </xsl:text>
 				<langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -16,7 +16,7 @@
 				<xsl:text>;</xsl:text>
 			</li>
 			<li>
-				<xsl:text>al al igual que una pregunta abierta subordinada con 'quien' o 'cual' desplazado a la izquierda, como en </xsl:text>
+				<xsl:text>al igual que una pregunta abierta subordinada con 'quien' o 'cual' desplazado a la izquierda, como en </xsl:text>
 				<langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -24,10 +24,10 @@
 				<xsl:text>;</xsl:text>
 			</li>
 			<li>
-				<xsl:text>(o para algunos idiomas con excepción del español) al al igual que una cláusula de complemento pero con un indicador relativo especial que se presenta en la posición del complementizador, o posiblemente con dos indicadores que se presentan en cada lado de la cláusula relativa;</xsl:text>
+				<xsl:text>(o para algunos idiomas con excepción del español) al igual que una cláusula de complemento pero con un indicador relativo especial que se presenta en la posición del complementizador, o posiblemente con dos indicadores que se presentan en cada lado de la cláusula relativa;</xsl:text>
 			</li>
 			<li>
-				<xsl:text>(o para algunos idiomas con excepción del español) al al igual que una oración regular con un indicador relativo unido al verbo.</xsl:text>
+				<xsl:text>(o para algunos idiomas con excepción del español) al igual que una oración regular con un indicador relativo unido al verbo.</xsl:text>
 			</li>
 		</ul>
 		<p>

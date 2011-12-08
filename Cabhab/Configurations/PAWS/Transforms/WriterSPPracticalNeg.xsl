@@ -54,7 +54,7 @@
 </xsl:attribute>nowhere</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'en ninguna parte'</xsl:text>
+<xsl:text> 'en ninguna parte'</xsl:text>
 </gloss>
 				<xsl:text> (véase la sección </xsl:text>
 				<sectionRef sec="sAdvPLocative" />
@@ -68,7 +68,7 @@
 </xsl:attribute>not</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'no'</xsl:text>
+<xsl:text> 'no'</xsl:text>
 </gloss>
 				<xsl:text> o la forma afija de la contracción </xsl:text>
 				<langData>
@@ -110,7 +110,7 @@
 </xsl:attribute>John saw nothing</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Juan vio nada'</xsl:text>
+<xsl:text> 'Juan vio nada'</xsl:text>
 </gloss>
 <xsl:text> es negativo, pero </xsl:text>
 <langData>
@@ -119,7 +119,7 @@
 </xsl:attribute>John didn't see nothing</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Juan no vio nada'</xsl:text>
+<xsl:text> 'Juan no vio nada'</xsl:text>
 </gloss>
 <xsl:text> es positivo porque significa al igual que </xsl:text>
 <langData>
@@ -133,7 +133,7 @@
 </xsl:attribute>John didn't see anything</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Juan no vio algo'</xsl:text>
+<xsl:text> 'Juan no vio algo'</xsl:text>
 </gloss>
 <xsl:text>, usando qué se conoce como  </xsl:text>
 					<xsl:text>artículo negativo de la polaridad</xsl:text>
@@ -144,7 +144,7 @@
 </xsl:attribute>Anyone may come</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Cualquiera persona pueden venir'</xsl:text>
+<xsl:text> 'Cualquiera persona pueden venir'</xsl:text>
 </gloss>
 <xsl:text>, pero pueden presentarse en la posición del objeto solamente cuando un elemento anterior en la oración es negativo. Por ejemplo, uno puede decir </xsl:text>
 <langData>
@@ -153,7 +153,7 @@
 </xsl:attribute>Nobody saw anyone</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Nadie vio cualquiera persona'</xsl:text>
+<xsl:text> 'Nadie vio cualquiera persona'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -162,7 +162,7 @@
 </xsl:attribute>Nowhere will they find anyone</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'En ninguna parte ellos encuentra a cualquiera persona'</xsl:text>
+<xsl:text> 'En ninguna parte ellos encuentra a cualquiera persona'</xsl:text>
 </gloss>
 <xsl:text> pero sin el sujeto negativo o el adverbio negativo desplazado, el auxiliar negativo debe ser utilizado, como en </xsl:text>
 <langData>
@@ -171,7 +171,7 @@
 </xsl:attribute>We did not see anyone</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'No vimos a cualquiera persona'</xsl:text>
+<xsl:text> 'No vimos a cualquiera persona'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -180,7 +180,7 @@
 </xsl:attribute>They will not find anyone anywhere</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Ellos no encontrarán a cualquiera persona dondequiera'</xsl:text>
+<xsl:text> 'Ellos no encontrarán a cualquiera persona dondequiera'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -995,7 +995,7 @@
 <xsl:text> la idea negativa de tiempo </xsl:text>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>' nunca'</xsl:text>
+<xsl:text> ' nunca'</xsl:text>
 </gloss>
 <xsl:text> se expresa </xsl:text>
 <xsl:choose>
@@ -1159,7 +1159,7 @@
 <xsl:text> la idea negativa de lugar </xsl:text>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'en ninguna parte'</xsl:text>
+<xsl:text> 'en ninguna parte'</xsl:text>
 </gloss>
 <xsl:text> se expresa </xsl:text>
 <xsl:choose>
@@ -1382,7 +1382,7 @@
 <xsl:text> no hay ninguna manera de expresar la idea especial negativa de grado de </xsl:text>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>' not'</xsl:text>
+<xsl:text> ' not'</xsl:text>
 </gloss>
 <xsl:text> cuando está modificando a la frase nominal completa.  Ni las palabras especiales negativas de grado ni los clíticos ni los afijos unidos al sustantivo principal se utilizan para negar una frase nominal en </xsl:text>
 <xsl:choose>
@@ -2103,7 +2103,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> hay artículos negativos de la polaridad. Por lo tanto, una frase nominal negativa no se permite presentarse en la posición del objeto. Porel contrario, uno de los artículos negativos de la polaridad se utiliza y </xsl:text>
+<xsl:text> hay artículos negativos de la polaridad. Por lo tanto, una frase nominal negativa no se permite presentarse en la posición del objeto. Por el contrario, uno de los artículos negativos de la polaridad se utiliza y </xsl:text>
 <xsl:choose>
 						<xsl:when test="//neg/@objVerbRequired='yes'">el verbo o el auxiliar debe ser negativo.</xsl:when>
 						<xsl:when test="//neg/@objVerbRequired='other'">el verbo o el auxiliar debe ser negativo o otra palabra o frase negativa debe presentarse anteriormente en la oración.</xsl:when>

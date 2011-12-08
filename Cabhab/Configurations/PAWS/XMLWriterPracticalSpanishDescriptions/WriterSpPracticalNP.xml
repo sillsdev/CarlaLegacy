@@ -678,11 +678,11 @@
 					El indicador de inglés es el segundo tipo, porque junto a frases donde el </content>
 				<langData>'s</langData>
 				<content> se presenta unido al sustantivo principal, como en </content>
-				<langData>the boy's mother</langData><gloss><content>'la madre del muchacho'</content></gloss>
+				<langData>the boy's mother</langData><gloss><content> 'la madre del muchacho'</content></gloss>
 				<content>, hay las frases que muestran claramente que el clítico se une al final de la frase nominal completo, tal como </content>
-				<langData>the boy that I just talked to's mother</langData><gloss><content>'la madre del muchacho que acabo de hablar con'</content></gloss>
+				<langData>the boy that I just talked to's mother</langData><gloss><content> 'la madre del muchacho que acabo de hablar con'</content></gloss>
 				<content> o </content>
-				<langData>the girl in green's wonderful speech</langData><gloss><content>'el discurso maravilloso de la muchacha en verde'</content></gloss>
+				<langData>the girl in green's wonderful speech</langData><gloss><content> 'el discurso maravilloso de la muchacha en verde'</content></gloss>
 				<content>.  Estos ejemplos muestran que los poseedores pueden incluir frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
@@ -691,7 +691,7 @@
 					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
 				</case>
 				<content> y cláusulas relativas. Los poseedores pueden también ser subordinados en uno otro, como en </content>
-				<langData>the boy's sister's dog</langData><gloss><content>'el perro de la hermana del muchacho'</content></gloss>
+				<langData>the boy's sister's dog</langData><gloss><content> 'el perro de la hermana del muchacho'</content></gloss>
 				<content>.  Esto se permite en español dentro de la frase preposicional después del sustantivo. </content>
 			</p>
 			<p>
@@ -848,7 +848,7 @@
 				<interlinear exampleLoc="np/qpExample"/>
 			</example>
 			<p show="swNPQPAgreeYes">
-				<content>Al al igual que otros modificadores dentro de la frase nominal, las frases del cuantificador en  </content>
+				<content>Al igual que otros modificadores dentro de la frase nominal, las frases del cuantificador en  </content>
 				<langName/>
 				<content> concuerdan con el sustantivo principal en </content>
 				<case element="np" attr="agreeOther">
@@ -865,11 +865,11 @@
 				<content>Las frases del adjetivo fueron analizadas anteriormente en la sección </content>
 				<sectionRef sec="sAdjP"/>
 				<content>.  Las frases del adjetivo se presentan cerca del sustantivo.  Algunas frases nominales en inglés con adjetivos son:</content>
-				<langData>just those very few old, dirty books</langData><gloss><content>'solo los muy pocos libros viejos, sucios'</content></gloss>
+				<langData>just those very few old, dirty books</langData><gloss><content> 'solo los muy pocos libros viejos, sucios'</content></gloss>
 				<content>, </content>
-				<langData>all the boy’s many black dogs</langData><gloss><content>'todos los muchos perros negros del muchacho'</content></gloss>
+				<langData>all the boy’s many black dogs</langData><gloss><content> 'todos los muchos perros negros del muchacho'</content></gloss>
 				<content> y </content>
-				<langData>only the first one hundred very eager young boys</langData><gloss><content>'solamente los primeros cien muchachos jovenes que están muy impacientes'</content></gloss>
+				<langData>only the first one hundred very eager young boys</langData><gloss><content> 'solamente los primeros cien muchachos jovenes que están muy impacientes'</content></gloss>
 				<content>.  Como se puede ver en los ejemplos en inglés, todos los adjetivos se presentan antes del sustantivo, y, al contrario de los otros modificadores, se permita más de una frase adjetival.
 					En español, los adjetivos se presentan después del sustantivo y solamente se permite solamente una frase adjetival, a menos que los adjetivos son coordinados (véase la sección </content><sectionRef sec="sCoordAdj"/><content>).</content></p>
 			<p>
@@ -900,7 +900,7 @@
 				<interlinear exampleLoc="np/adjpExample"/>
 			</example>
 			<p show="swNPAdjPAgreeYes">
-				<content>Al al igual que otros modificadores dentro de la frase nominal, las frases del adjetivo en </content>
+				<content>Al igual que otros modificadores dentro de la frase nominal, las frases del adjetivo en </content>
 				<langName/>
 				<content> concuerdan con el sustantivo principal en </content>
 				<case element="np" attr="agreeOther">
@@ -994,14 +994,14 @@
 	<secTitle>Participios</secTitle>
 		<p>
 			<content>Otro caso que se puede parecer al igual que un sustantivo y un complemento puede ser realmente una frase del participio. Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición o posposición. Algunos ejemplos en oraciones completas en inglés con la frase del participio entre corchetes son: </content>
-			<langData>[Studying participles] is difficult</langData><gloss><content>'[Estudiando participios] es dificil'</content></gloss><content>, </content>
-			<langData>He likes [reading Latin poetry]</langData><gloss><content>'Él tiene gusto [leyendo la poesía latina]'</content></gloss>
+			<langData>[Studying participles] is difficult</langData><gloss><content> '[Estudiando participios] es dificil'</content></gloss><content>, </content>
+			<langData>He likes [reading Latin poetry]</langData><gloss><content> 'Él tiene gusto [leyendo la poesía latina]'</content></gloss>
 				<content> y </content>
-			<langData>The receiver showed his worth by [making the catch]</langData><gloss><content>'El receptor mostró su valor cerca [haciendo el retén]'</content></gloss>
+			<langData>The receiver showed his worth by [making the catch]</langData><gloss><content> 'El receptor mostró su valor cerca [haciendo el retén]'</content></gloss>
 			<content>.  Tales frases se pueden poseer o modificar también, y a veces se presenta solamente el participio como el elemento principal de una frase nominal, como en </content>
 			<langData>el gravemente herido</langData><content>, </content><langData>el agonizante</langData>
 				<content> y </content>
-			<langData>your following</langData><gloss><content>'su siguiente'</content></gloss><content>.</content>
+			<langData>your following</langData><gloss><content> 'su siguiente'</content></gloss><content>.</content>
 			</p>
 			<p>
 				<content> Algunos ejemplos de los participios o las frases del participio que pueden substituir por un sustantivo en una frase nominal en </content><langName/><content> son:</content>
@@ -1017,10 +1017,10 @@
 			</example>
 	<p>
 		<content>Los participios o las frases del participio pueden también funcionar al igual que adjetivos en la modificación de un sustantivo en muchas idiomas (también llamada un gerundio). Algunos ejemplos en inglés con el participio o la frase del participio entre corchetes son: </content>
-		<langData>the bright, [shining] sun</langData><gloss><content>'el brillante, [brillando] sol'</content></gloss>
-		<content>, </content><langData>my [crying] child</langData><gloss><content>'mi niño, [gritando]'</content></gloss>
+		<langData>the bright, [shining] sun</langData><gloss><content> 'el brillante, [brillando] sol'</content></gloss>
+		<content>, </content><langData>my [crying] child</langData><gloss><content> 'mi niño, [gritando]'</content></gloss>
 		<content> y </content>
-		<langData>the books [loved by millions]</langData><gloss><content>'los libros [amados por millones]'</content></gloss><content>.</content>
+		<langData>the books [loved by millions]</langData><gloss><content> 'los libros [amados por millones]'</content></gloss><content>.</content>
 	</p>
 	<p>
 		<content>  Algunos ejemplos en </content>

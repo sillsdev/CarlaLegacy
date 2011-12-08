@@ -719,7 +719,7 @@
 </p>
 		  <ol>
 			  <li>
-				  <xsl:text>Bill corrió a través del bosque y sobre el puente.</xsl:text>
+				  <xsl:text>Guillermo corrió a través del bosque y sobre el puente.</xsl:text>
 			  </li>
 			  <li>
 				  <xsl:text>Vendré con usted al ensayo pero no a su hogar.</xsl:text>

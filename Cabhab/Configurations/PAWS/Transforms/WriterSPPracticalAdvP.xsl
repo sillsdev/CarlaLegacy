@@ -353,7 +353,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>mientras que usted está trabajando</langData>
-<xsl:text>, y</xsl:text>
+<xsl:text>, y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>

@@ -828,11 +828,11 @@
 			<secTitle>Los auxiliares</secTitle>
 			<p>
 				<content>Algunos idiomas tienen elementos auxiliares que son palabras independientes, y algunos pueden tener más de un elemento auxiliar con el verbo principal. Algunos ejemplos de las oraciones transitivas en inglés son: </content>
-				<langData>The boy will hit the ball</langData><gloss><content>'El muchacho golpeará el beísbol'</content></gloss>
+				<langData>The boy will hit the ball</langData><gloss><content> 'El muchacho golpeará el beísbol'</content></gloss>
 				<content>, </content>
-				<langData>The boy might have hit the ball</langData><gloss><content>'El muchacho pudo haber golpeado el beísbol'</content></gloss>
+				<langData>The boy might have hit the ball</langData><gloss><content> 'El muchacho pudo haber golpeado el beísbol'</content></gloss>
 				<content> y </content>
-				<langData>The boy might have been hitting the ball</langData><gloss><content>'El muchacho pudo habiendo golpeado el beísbol'</content></gloss>
+				<langData>The boy might have been hitting the ball</langData><gloss><content> 'El muchacho pudo habiendo golpeado el beísbol'</content></gloss>
 				<content>.  En español, éstos son expresados principalmente por los cambios del tiempo y del aspecto.</content>
 			</p>
 			<p>
@@ -903,15 +903,15 @@
 			<p>
 				<content>En algunos idiomas la negación verbal es un elemento auxiliar, mientras que en otros idiomas es simplemente un afijo verbal. El español utiliza el auxiliar verbal negativo </content><langData>no</langData><content> antes del verbo.
 					El inglés tiene el auxiliar negativo </content>
-				<langData>not</langData><gloss><content>'no'</content></gloss>
+				<langData>not</langData><gloss><content> 'no'</content></gloss>
 				<content>, que es una palabra independiente que siempre debe seguir a otro auxiliar, y la forma de la contracción </content>
 				<langData>-n't</langData>
 				<content>, que se escribe como sufijo en el auxiliar. Algunos ejemplos de las oraciones transitivas negativas en inglés son:</content>
-				<langData>The boy did not hit the ball</langData><gloss><content>'El muchacho no golpeó el beísbol'</content></gloss>
+				<langData>The boy did not hit the ball</langData><gloss><content> 'El muchacho no golpeó el beísbol'</content></gloss>
 				<content>, </content>
-				<langData>The boy won't hit the ball</langData><gloss><content>'El muchacho no golpeará el beísbol'</content></gloss>
+				<langData>The boy won't hit the ball</langData><gloss><content> 'El muchacho no golpeará el beísbol'</content></gloss>
 				<content> y </content>
-				<langData>The boy might not have hit the ball</langData><gloss><content>'El muchacho no pudo haber golpeado el beísbol'</content></gloss>
+				<langData>The boy might not have hit the ball</langData><gloss><content> 'El muchacho no pudo haber golpeado el beísbol'</content></gloss>
 				<content>.</content>
 			</p>
 			<p>
@@ -1014,7 +1014,7 @@
 				<content>En  inglés la palabra que indica el infinitivo, </content>
 				<langData>to</langData>
 				<content>, utilizada en cláusulas subordinadas, también funciona al igual que un auxiliar en que ocupa la misma posición y puede presentarse antes de otros auxiliares. Por ejemplo, </content>
-				<langData>The boy would like to have hit the ball</langData><gloss><content>'El muchacho quisiera haber golpeado el beísbol'</content></gloss>
+				<langData>The boy would like to have hit the ball</langData><gloss><content> 'El muchacho quisiera haber golpeado el beísbol'</content></gloss>
 				<content>.  Por el contrario, el español no tiene un indicador independiente para las cláusulas subordinadas infinitivas, sino utiliza simplemente la forma infinitiva del verbo. </content>
 			</p>
 			<p>

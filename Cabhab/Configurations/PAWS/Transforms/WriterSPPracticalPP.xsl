@@ -80,7 +80,7 @@
 </xsl:attribute>just</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'justo'</xsl:text>
+<xsl:text> 'justo'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -89,7 +89,7 @@
 </xsl:attribute>right</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'hasta'</xsl:text>
+<xsl:text> 'hasta'</xsl:text>
 </gloss>
 <xsl:text> en </xsl:text>
 <langData>
@@ -98,7 +98,7 @@
 </xsl:attribute>justo around the corner</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'justo a la vuelta de la esquina'</xsl:text>
+<xsl:text> 'justo a la vuelta de la esquina'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -107,7 +107,7 @@
 </xsl:attribute>right to the last second</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'hasta el último momento'</xsl:text>
+<xsl:text> 'hasta el último momento'</xsl:text>
 </gloss>
 <xsl:text>. Los números ordinales y los adjetivos también pueden modificar las frases </xsl:text>
 <xsl:choose>
@@ -123,7 +123,7 @@
 </xsl:attribute>next in line</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'el próximo en la fila'</xsl:text>
+<xsl:text> 'el próximo en la fila'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -132,7 +132,7 @@
 </xsl:attribute>first out the door</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'el primero en salir'</xsl:text>
+<xsl:text> 'el primero en salir'</xsl:text>
 </gloss>
 <xsl:text>.  Además, ciertos adverbios de manera pueden modificar las frases </xsl:text>
 <xsl:choose>
@@ -148,7 +148,7 @@
 </xsl:attribute>almost in the hole</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'casi en el agujero'</xsl:text>
+<xsl:text> 'casi en el agujero'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -157,7 +157,7 @@
 </xsl:attribute>mostly up the tree</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'la mayoría en el árbol'</xsl:text>
+<xsl:text> 'la mayoría en el árbol'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -166,16 +166,16 @@
 </xsl:attribute>squarely on the table</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'justo en la mesa'</xsl:text>
+<xsl:text> 'justo en la mesa'</xsl:text>
 </gloss>
-<xsl:text>, and </xsl:text>
+<xsl:text>, y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>nearly upon the enemy</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'casi sobre el enemigo'</xsl:text>
+<xsl:text> 'casi sobre el enemigo'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -514,7 +514,7 @@
 </xsl:attribute>John turned the light [on/off]</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'Juan dio vuelta a la luz [conectada/desconectada]'</xsl:text>
+<xsl:text> 'Juan dio vuelta a la luz [conectada/desconectada]'</xsl:text>
 </gloss>
 <xsl:text>.  También, algunos idiomas permiten </xsl:text>
 <xsl:choose>
@@ -530,7 +530,7 @@
 </xsl:attribute>Whom did you give the book [to _]?</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'¿Quién usted dio el libro [al _ ]?'</xsl:text>
+<xsl:text> '¿Quién usted dio el libro [al _ ]?'</xsl:text>
 </gloss>
 <xsl:text></xsl:text>
 </p>
@@ -634,7 +634,7 @@
 </xsl:attribute>in here</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'aquí adentro'</xsl:text>
+<xsl:text> 'aquí adentro'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -746,7 +746,7 @@
 </xsl:attribute>up [to the top]</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'encima [al borde]'</xsl:text>
+<xsl:text> 'encima [al borde]'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -755,7 +755,7 @@
 </xsl:attribute>around [behind the shed]</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'alrededor [detrás del cobertizo]'</xsl:text>
+<xsl:text> 'alrededor [detrás del cobertizo]'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -764,7 +764,7 @@
 </xsl:attribute>over [by the table]</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'sobre [cerca de la mesa]'</xsl:text>
+<xsl:text> 'sobre [cerca de la mesa]'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -885,7 +885,7 @@
 </xsl:attribute>before [the rain stops]</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'antes de que [la lluvia cese]'</xsl:text>
+<xsl:text> 'antes de que [la lluvia cese]'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -894,7 +894,7 @@
 </xsl:attribute>after [John returns home]</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'después de que [Juan volvió a casa]'</xsl:text>
+<xsl:text> 'después de que [Juan volvió a casa]'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>

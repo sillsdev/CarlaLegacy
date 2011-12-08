@@ -18,7 +18,7 @@
 </xsl:attribute>whether</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'sea que'</xsl:text>
+<xsl:text> 'sea que'</xsl:text>
 </gloss>
 <xsl:text> o </xsl:text>
 <langData>
@@ -27,7 +27,7 @@
 </xsl:attribute>if</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'si'</xsl:text>
+<xsl:text> 'si'</xsl:text>
 </gloss>
 <xsl:text> ocupa la posición del complementizador. Puesto que los idiomas pueden funcionar diferentemente en preguntas sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será analizado por separado. </xsl:text>
 </p>
@@ -41,7 +41,7 @@
 </xsl:attribute>Are you going to the store?</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'¿Usted va al almacén?'</xsl:text>
+<xsl:text> '¿Usted va al almacén?'</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -50,7 +50,7 @@
 </xsl:attribute>Will Sue buy the present for her mother?</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'¿Compra Susana el regalo para su madre?'</xsl:text>
+<xsl:text> '¿Compra Susana el regalo para su madre?'</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -59,7 +59,7 @@
 </xsl:attribute>Could the boy have hit the ball?</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'¿Habría podido el muchacho golpear el beísbol?'</xsl:text>
+<xsl:text> '¿Habría podido el muchacho golpear el beísbol?'</xsl:text>
 </gloss>
 <xsl:text></xsl:text>
 </p>
@@ -766,7 +766,7 @@
 </xsl:attribute>how many children?</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'¿cuántos niños?'</xsl:text>
+<xsl:text> '¿cuántos niños?'</xsl:text>
 </gloss>
 <xsl:text>; </xsl:text>
 <langData>
@@ -780,7 +780,7 @@
 </xsl:attribute>what books?</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'¿qué libros?'</xsl:text>
+<xsl:text> '¿qué libros?'</xsl:text>
 </gloss>
 <xsl:text>; </xsl:text>
 <langData>
@@ -799,7 +799,7 @@
 </xsl:attribute>whose</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'cuyo'</xsl:text>
+<xsl:text> 'cuyo'</xsl:text>
 </gloss>
 <xsl:text> puede ser un pronombre posesivo por sí mismo, como en </xsl:text>
 <langData>
@@ -808,7 +808,7 @@
 </xsl:attribute>whose is that?</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'¿cuyo es eso?'</xsl:text>
+<xsl:text> '¿cuyo es eso?'</xsl:text>
 </gloss>
 <xsl:text>, o puede ocupar la posición del poseedor en una frase nominal, como en </xsl:text>
 <langData>
@@ -817,7 +817,7 @@
 </xsl:attribute>whose toys?</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'¿jugetes de quién?'</xsl:text>
+<xsl:text> '¿jugetes de quién?'</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>

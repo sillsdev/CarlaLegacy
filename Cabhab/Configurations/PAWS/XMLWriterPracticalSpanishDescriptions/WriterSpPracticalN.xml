@@ -416,18 +416,18 @@
 			<p>
 				<content>Mientras que el español requiere una frase con </content><langData>de</langData><content> en esta situación, muchos otros idiomas son al igual que inglés y tienen modificadores del sustantivo.
 					Pareciera que todos los sustantivos también se pueden utilizar al igual que adjetivos, pero un estudio más detallada revela que los adjetivos verdaderos se presentan antes del modificador del sustantivo, como en </content>
-				<langData>large, round [syrup bottle]</langData><gloss><content>'grande, redondo [botella del jarabe]'</content></gloss>
+				<langData>large, round [syrup bottle]</langData><gloss><content> 'grande, redondo [botella del jarabe]'</content></gloss>
 				<content> pero no </content>
-				<langData>*round, syrup large bottle</langData><gloss><content>'redondo, botella grande del jarabe'</content></gloss>
+				<langData>*round, syrup large bottle</langData><gloss><content> 'redondo, botella grande del jarabe'</content></gloss>
 				<content>.  Por lo tanto, los modificadores del sustantivo serán tratados al igual que sustantivos compuestos que se escriben con palabras independientes.</content>
 			</p>
 			<p>
 				<content>En los ejemplos anteriores en inglés, </content>
-				<langData>bottle</langData><gloss><content>'botella'</content></gloss>
+				<langData>bottle</langData><gloss><content> 'botella'</content></gloss>
 				<content> es claramente el sustantivo principal porque </content>
-				<langData>syrup</langData><gloss><content>'jarabe'</content></gloss>
+				<langData>syrup</langData><gloss><content> 'jarabe'</content></gloss>
 				<content> limita el tipo de </content>
-				<langData>bottle</langData><gloss><content>'botella'</content></gloss>
+				<langData>bottle</langData><gloss><content> 'botella'</content></gloss>
 				<content>, no al revés. En inglés todos los sustantivos compuestos y construcciones con modificadores del sustantivo, el sustantivo principal en la serie es el de la derecha. </content>
 			</p>
 			<p show="swNPCompNo">

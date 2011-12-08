@@ -33,14 +33,14 @@
 				<content> (véase la sección </content>
 				<sectionRef sec="sAdvPTemporal"/>
 				<content>) o</content>
-				<langData>nowhere</langData><gloss><content>'en ninguna parte'</content></gloss>
+				<langData>nowhere</langData><gloss><content> 'en ninguna parte'</content></gloss>
 				<content> (véase la sección </content>
 				<sectionRef sec="sAdvPLocative"/>
 				<content>),</content>
 			</li>
 			<li>
 				<content>auxiliares negativos, como </content>
-				<langData>not</langData><gloss><content>'no'</content></gloss>
+				<langData>not</langData><gloss><content> 'no'</content></gloss>
 				<content> o la forma afija de la contracción </content>
 				<langData>-n't</langData>
 				<content> (véase la sección </content>
@@ -65,27 +65,27 @@
 			</p>
 			<p>
 				<content>Los idiomas cambiantes de la polaridad normalmente permiten presentarse un solo elemento negativo en la oración para que la negación sea expresada (sin embargo, cualquier número impar de negativas expresa técnico polaridad negativa) porque la presencia de dos (o cualesquiera números pares de) elementos negativos cambia la polaridad de nuevo a positivo. Por ejemplo, </content>
-				<langData>John saw nothing</langData><gloss><content>'Juan vio nada'</content></gloss>
+				<langData>John saw nothing</langData><gloss><content> 'Juan vio nada'</content></gloss>
 				<content> es negativo, pero </content>
-				<langData>John didn't see nothing</langData><gloss><content>'Juan no vio nada'</content></gloss>
+				<langData>John didn't see nothing</langData><gloss><content> 'Juan no vio nada'</content></gloss>
 				<content> es positivo porque significa al igual que </content>
 				<langData>Juan vio algo</langData>
 				<content>.  La versión con un auxiliar negativo se expresa como </content>
-				<langData>John didn't see anything</langData><gloss><content>'Juan no vio algo'</content></gloss>
+				<langData>John didn't see anything</langData><gloss><content> 'Juan no vio algo'</content></gloss>
 				<content>, usando qué se conoce como  </content>
 				<object class="smallcaps">
 					<content>artículo negativo de la polaridad</content>
 				</object>
 				<content> en la posición del objeto.  Tales artículos negativos de la polaridad pueden presentarse como los sujetos en algunos contextos sin ninguna otra palabra negativa presente, tal como </content>
-				<langData>Anyone may come</langData><gloss><content>'Cualquiera persona pueden venir'</content></gloss>
+				<langData>Anyone may come</langData><gloss><content> 'Cualquiera persona pueden venir'</content></gloss>
 				<content>, pero pueden presentarse en la posición del objeto solamente cuando un elemento anterior en la oración es negativo. Por ejemplo, uno puede decir </content>
-				<langData>Nobody saw anyone</langData><gloss><content>'Nadie vio cualquiera persona'</content></gloss>
+				<langData>Nobody saw anyone</langData><gloss><content> 'Nadie vio cualquiera persona'</content></gloss>
 				<content> y </content>
-				<langData>Nowhere will they find anyone</langData><gloss><content>'En ninguna parte ellos encuentra a cualquiera persona'</content></gloss>
+				<langData>Nowhere will they find anyone</langData><gloss><content> 'En ninguna parte ellos encuentra a cualquiera persona'</content></gloss>
 				<content> pero sin el sujeto negativo o el adverbio negativo desplazado, el auxiliar negativo debe ser utilizado, como en </content>
-				<langData>We did not see anyone</langData><gloss><content>'No vimos a cualquiera persona'</content></gloss>
+				<langData>We did not see anyone</langData><gloss><content> 'No vimos a cualquiera persona'</content></gloss>
 				<content> y </content>
-				<langData>They will not find anyone anywhere</langData><gloss><content>'Ellos no encontrarán a cualquiera persona dondequiera'</content></gloss>
+				<langData>They will not find anyone anywhere</langData><gloss><content> 'Ellos no encontrarán a cualquiera persona dondequiera'</content></gloss>
 				<content>.</content>
 			</p>
 			<p>
@@ -332,7 +332,7 @@
 				<sectionRef sec="sAdvPTemporal"/>
 				<content> que en </content>
 				<langName/>
-				<content> la idea negativa de tiempo </content><gloss><content>' nunca'</content></gloss><content> se expresa </content>
+				<content> la idea negativa de tiempo </content><gloss><content> ' nunca'</content></gloss><content> se expresa </content>
 <case element="advp" attr="negTemporalType">
 	<caseText value="word">por una o más palabras independientes. Algunos ejemplos</caseText>
 	<caseText value="affix">por uno o más afijos verbales, en vez de por palabras independientes. Algunos ejemplos de los afijos se unen a los verbos</caseText>
@@ -366,7 +366,7 @@
 				<sectionRef sec="sAdvPLocative"/>
 				<content> vimos que en </content>
 				<langName/>
-				<content> la idea negativa de lugar </content><gloss><content>'en ninguna parte'</content></gloss><content> se expresa </content>
+				<content> la idea negativa de lugar </content><gloss><content> 'en ninguna parte'</content></gloss><content> se expresa </content>
 <case element="advp" attr="negLocativeType">
 	<caseText value="word">por una o más palabras independientes. Algunos ejemplos</caseText>
 	<caseText value="affix">por uno o más afijos verbales, en vez de por palabras independientes. Algunos ejemplos de los afijos se unen a los verbos</caseText>
@@ -427,7 +427,7 @@
 					<sectionRef sec="sQPAll"/>
 					<content>vimos que en </content>
 					<langName/>
-					<content> no hay ninguna manera de expresar la idea especial negativa de grado de </content><gloss><content>' not'</content></gloss><content> cuando está modificando a la frase nominal completa.  Ni las palabras especiales negativas de grado ni los clíticos ni los afijos unidos al sustantivo principal se utilizan para negar una frase nominal en </content><langName/><content>.</content>
+					<content> no hay ninguna manera de expresar la idea especial negativa de grado de </content><gloss><content> ' not'</content></gloss><content> cuando está modificando a la frase nominal completa.  Ni las palabras especiales negativas de grado ni los clíticos ni los afijos unidos al sustantivo principal se utilizan para negar una frase nominal en </content><langName/><content>.</content>
 </p>
 				<p show="swQPNPDegreeNoOrYesPos">
 					<content>En la sección </content>
@@ -594,7 +594,7 @@
 					<sectionRef sec="sNegType"/>
 					<content>, en </content>
 					<langName/>
-					<content> hay artículos negativos de la polaridad. Por lo tanto, una frase nominal negativa no se permite presentarse en la posición del objeto. Porel contrario, uno de los artículos negativos de la polaridad se utiliza y </content>
+					<content> hay artículos negativos de la polaridad. Por lo tanto, una frase nominal negativa no se permite presentarse en la posición del objeto. Por el contrario, uno de los artículos negativos de la polaridad se utiliza y </content>
 					<case element="neg" attr="objVerbRequired">
 						<caseText value="yes">el verbo o el auxiliar debe ser negativo.</caseText>
 						<caseText value="other">el verbo o el auxiliar debe ser negativo o otra palabra o frase negativa debe presentarse anteriormente en la oración.</caseText>

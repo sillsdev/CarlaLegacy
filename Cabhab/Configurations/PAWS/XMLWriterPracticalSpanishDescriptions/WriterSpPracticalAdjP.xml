@@ -274,7 +274,7 @@
 				<langData>solamente</langData>
 				<content> y </content>
 				<langData>apenas</langData>
-				<content> (que también pueden funcionar al al igual que indicadores de enfoque, lo cual será analizado en la sección </content>
+				<content> (que también pueden funcionar al igual que indicadores de enfoque, lo cual será analizado en la sección </content>
 				<sectionRef sec="sFocus"/>
 				<content>) y las palabras que significan lo mismo que </content>
 				<langData>casi</langData>
@@ -614,7 +614,7 @@
 				<p show="swQPDeterminerNoNotPosOnly">
 					<content>En </content>
 					<langName/>
-					<content> no hay una categoría independiente de los cuantificadores que funciona al al igual que el único determinante de la frase nominal. La negación de una frase nominal se expresa solamente con los elementos especiales de grado. Los conceptos positivos de </content>
+					<content> no hay una categoría independiente de los cuantificadores que funciona al igual que el único determinante de la frase nominal. La negación de una frase nominal se expresa solamente con los elementos especiales de grado. Los conceptos positivos de </content>
 					<langData>alguno</langData>
 					<content> y </content>
 					<langData>cada</langData>

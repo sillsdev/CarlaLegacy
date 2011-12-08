@@ -860,7 +860,7 @@
 </xsl:attribute>large, round [syrup bottle]</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'grande, redondo [botella del jarabe]'</xsl:text>
+<xsl:text> 'grande, redondo [botella del jarabe]'</xsl:text>
 </gloss>
 <xsl:text> pero no </xsl:text>
 <langData>
@@ -869,7 +869,7 @@
 </xsl:attribute>*round, syrup large bottle</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'redondo, botella grande del jarabe'</xsl:text>
+<xsl:text> 'redondo, botella grande del jarabe'</xsl:text>
 </gloss>
 <xsl:text>.  Por lo tanto, los modificadores del sustantivo serán tratados al igual que sustantivos compuestos que se escriben con palabras independientes.</xsl:text>
 </p>
@@ -881,7 +881,7 @@
 </xsl:attribute>bottle</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'botella'</xsl:text>
+<xsl:text> 'botella'</xsl:text>
 </gloss>
 <xsl:text> es claramente el sustantivo principal porque </xsl:text>
 <langData>
@@ -890,7 +890,7 @@
 </xsl:attribute>syrup</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'jarabe'</xsl:text>
+<xsl:text> 'jarabe'</xsl:text>
 </gloss>
 <xsl:text> limita el tipo de </xsl:text>
 <langData>
@@ -899,7 +899,7 @@
 </xsl:attribute>bottle</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>'botella'</xsl:text>
+<xsl:text> 'botella'</xsl:text>
 </gloss>
 <xsl:text>, no al revés. En inglés todos los sustantivos compuestos y construcciones con modificadores del sustantivo, el sustantivo principal en la serie es el de la derecha. </xsl:text>
 </p>
