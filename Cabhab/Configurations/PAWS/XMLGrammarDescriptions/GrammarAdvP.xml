@@ -11,9 +11,14 @@ AdvP = Adv'
 rule {AdvP option 1 - modifiers initial}
 AdvP = Deg Adv'
 	&lt;AdvP head&gt; = &lt;Adv' head&gt;
+	&lt;AdvP head modifier&gt; = &lt;Deg head&gt;
 	&lt;Deg head type AdvP-initial&gt; = +
-	&lt;Deg head type modifies_Adv&gt; = &lt;Adv' head type&gt;
+	&lt;Deg head type comma&gt; = -
 	&lt;AdvP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
+	&lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier:[type:[modifies_Adv:[manner:+]]]]
+	&lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier:[type:[modifies_Adv:[temporal:+]]]]
+	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[type:[modifies_Adv:[locative:+]]]]
+	&lt;AdvP head&gt; == [type:[reason:+]] -&gt; [modifier:[type:[modifies_Adv:[reason:+]]]]
 	&lt;AdvP option&gt; = 1
 </rule>
 	<showWhen id="AdvPoption1">
@@ -37,9 +42,15 @@ AdvP = Deg Adv'
 rule {AdvP option 2 - modifiers final}
 AdvP = Adv' Deg
 	&lt;AdvP head&gt; = &lt;Adv' head&gt;
+	&lt;AdvP head modifier&gt; = &lt;Deg head&gt;
 	&lt;Deg head type AdvP-final&gt; = +
-	&lt;Deg head type modifies_Adv&gt; = &lt;Adv' head type&gt;
+	&lt;Adv' head type comma&gt; = -
+	&lt;AdvP head type comma&gt; &lt;= &lt;Deg head type comma&gt;
 	&lt;AdvP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
+	&lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier:[type:[modifies_Adv:[manner:+]]]]
+	&lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier:[type:[modifies_Adv:[temporal:+]]]]
+	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[type:[modifies_Adv:[locative:+]]]]
+	&lt;AdvP head&gt; == [type:[reason:+]] -&gt; [modifier:[type:[modifies_Adv:[reason:+]]]]
 	&lt;AdvP option&gt; = 2
 </rule>
 	<showWhen id="AdvPoption2">
@@ -63,12 +74,23 @@ AdvP = Adv' Deg
 rule {AdvP option 3 - modifiers both sides}
 AdvP = Deg_1 Adv' Deg_2
 	&lt;AdvP head&gt; = &lt;Adv' head&gt;
-	&lt;Deg_1) head type modifies_Adv&gt; = &lt;Adv' head type&gt;
-	&lt;Deg_2) head type modifies_Adv&gt; = &lt;Adv' head type&gt;
+	&lt;AdvP head modifier_initial&gt; = &lt;Deg_1 head&gt;
+	&lt;AdvP head modifier_final&gt; = &lt;Deg_2 head&gt;
 	&lt;Deg_1 head type AdvP-initial&gt; = +
 	&lt;Deg_2 head type AdvP-final&gt;   = +
+	&lt;Deg_1 head type comma&gt; = -
+	&lt;Adv' head type comma&gt; = -
+	&lt;AdvP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
 	&lt;AdvP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;AdvP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
+	&lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier_initial:[type:[modifies_Adv:[manner:+]]]]
+	&lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier_initial:[type:[modifies_Adv:[temporal:+]]]]
+	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier_initial:[type:[modifies_Adv:[locative:+]]]]
+	&lt;AdvP head&gt; == [type:[reason:+]] -&gt; [modifier_initial:[type:[modifies_Adv:[reason:+]]]]
+	&lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier_final:[type:[modifies_Adv:[manner:+]]]]
+	&lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier_final:[type:[modifies_Adv:[temporal:+]]]]
+	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier_final:[type:[modifies_Adv:[locative:+]]]]
+	&lt;AdvP head&gt; == [type:[reason:+]] -&gt; [modifier_final:[type:[modifies_Adv:[reason:+]]]]
 	&lt;AdvP option&gt; = 3
 </rule>
 	<showWhen id="AdvPoption3">
@@ -92,6 +114,7 @@ AdvP = Deg_1 Adv' Deg_2
 rule {AdvBar option 0 - no complements}
 Adv' = Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
+	&lt;Adv head type stand-alone&gt; = +   |must be able to stand alone
 	&lt;Adv' option&gt; = 0
 </rule>
 	<rule show="AdvBaroption1f">
@@ -101,6 +124,8 @@ Adv' = Adv Adv_1
 	&lt;Adv head type temporal&gt; = +
 	&lt;Adv_1 head type temporal&gt; = +
 	&lt;Adv head type takes_Adv&gt; = +
+	&lt;Adv head type comma&gt; = -
+	&lt;Adv' head type comma&gt; &lt;= &lt;Adv_1 head type comma&gt;
 	&lt;Adv' head type suffix&gt; &lt;= &lt;Adv_1 head type suffix&gt;
 	&lt;Adv' option&gt; = 1f
 </rule>
@@ -116,21 +141,20 @@ Adv' = Adv_1 Adv
 	&lt;Adv head type temporal&gt; = +
 	&lt;Adv_1 head type temporal&gt; = +
 	&lt;Adv head type takes_Adv&gt; = +
+	&lt;Adv_1 head type comma&gt; = -
 	&lt;Adv' head type prefix&gt; &lt;= &lt;Adv_1 head type prefix&gt;
 	&lt;Adv' option&gt; = 1i
 </rule>
-	<showWhen id="AdvBaroption1i">
+   <showWhen id="AdvBaroption1i">
 		<whenValue element="advcl" attr="advOrNPPos" value="before"/>
-<or/>
-		<whenValue element="advcl" attr="advOrNPPos" value="either"/>
 	</showWhen>
 	<rule show="AdvBaroption2f">
 rule {AdvBar option 2f - DP complements final}
 Adv' = Adv DP
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
-	&lt;Adv head type temporal&gt; = +
-	&lt;DP head type temporal&gt; = +
 	&lt;Adv head type takes_DP&gt; = +
+	&lt;Adv head type comma&gt; = -
+	&lt;Adv' head type comma&gt; &lt;= &lt;DP head type comma&gt;
 	&lt;Adv' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;Adv' option&gt; = 2f
 </rule>
@@ -143,9 +167,8 @@ Adv' = Adv DP
 rule {AdvBar option 2i - DP complements initial}
 Adv' = DP Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
-	&lt;Adv head type temporal&gt; = +
-	&lt;DP head type temporal&gt; = +
 	&lt;Adv head type takes_DP&gt; = +
+	&lt;DP head type comma&gt; = -
 	&lt;Adv' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;Adv' option&gt; = 2i
 </rule>
@@ -159,11 +182,15 @@ rule {AdvBar option 3f - IP complements final}
 Adv' = Adv IP
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
 	&lt;Adv head type sentential&gt; = +
-	&lt;Adv head embedded&gt; = &lt;IP head&gt;
+	&lt;IP head fronted&gt; = none
 	&lt;IP head type question&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type verbheaded&gt; = +
 	&lt;IP head type root&gt; = -
+	&lt;Adv head type comma&gt; = -
+	&lt;Adv' head type comma&gt; &lt;= &lt;IP head type comma&gt;
 	&lt;Adv' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
+	&lt;Adv' head type motion&gt; &lt;= &lt;IP head type motion&gt;  |keep locative with motion V
 	&lt;Adv' option&gt; = 3f
 </rule>
 	<rule show="AdvBaroption3i">
@@ -171,11 +198,14 @@ rule {AdvBar option 3i - IP complements initial}
 Adv' = IP Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
 	&lt;Adv head type sentential&gt; = +
-	&lt;Adv head embedded&gt; = &lt;IP head&gt;
+	&lt;IP head fronted&gt; = none
 	&lt;IP head type question&gt; = -
 	&lt;IP head type relative&gt; = -
+	&lt;IP head type verbheaded&gt; = +
 	&lt;IP head type root&gt; = -
+	&lt;IP head type comma&gt; = -
 	&lt;Adv' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
+	&lt;Adv' head type motion&gt; &lt;= &lt;IP head type motion&gt;  |keep locative with motion V
 	&lt;Adv' option&gt; = 3i
 </rule>
 	<showWhen id="AdvBaroption3i">
@@ -194,6 +224,8 @@ Adv' = Adv CP
 	&lt;CP head type question&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;CP head type root&gt; = -
+	&lt;Adv head type comma&gt; = -
+	&lt;Adv' head type comma&gt; &lt;= &lt;CP head type comma&gt;
 	&lt;Adv' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
 	&lt;Adv' option&gt; = 4f
 </rule>
@@ -206,6 +238,7 @@ Adv' = CP Adv
 	&lt;CP head type question&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;CP head type root&gt; = -
+	&lt;CP head type comma&gt; = -
 	&lt;Adv' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
 	&lt;Adv' option&gt; = 4i
 </rule>

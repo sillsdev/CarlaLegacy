@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE masterGrammar SYSTEM "..\Data\MasterGrammar.dtd">
 <masterGrammar>
-	<rule>
+	<rule show="IPconj">
 rule {IP option conj - conjoined IPs}
 IP = (InitConj) IP_1 Conj IP_2
 	&lt;IP head&gt; = &lt;IP_1 head&gt;
@@ -9,7 +9,12 @@ IP = (InitConj) IP_1 Conj IP_2
 	&lt;IP conjoined&gt; = +
 	&lt;IP_1 conjoined&gt; = -	|limit recursion
 	&lt;IP option&gt; = conj
-</rule>
+	</rule>
+	<showWhen id="IPconj">
+		<whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="yes"/>
+	</showWhen>
 	<rule show="IPoption1a">
 rule {IP option 1a - no subject for imperatives}
 IP = I'
@@ -39,17 +44,12 @@ IP = I'
 	&lt;I' head subject head agr&gt; = &lt;I' head object head agr&gt;
 	}
 	&lt;IP head type passive&gt; = -
-	{&lt;IP head type question&gt; = -
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = AdvP
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = PP
-	}
 	&lt;IP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;IP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
-	&lt;IP option&gt; = 1b
+					 &lt;IP head fronted&gt; == ~[cat:DP]
+					 &lt;IP option&gt; = 1b
 </rule>
 	<showWhen id="IPoption1b">
 		<whenValue element="ip" attr="proDrop" value="yes" negateValue="no"/>
@@ -71,12 +71,7 @@ IP = I'
 	&lt;IP head type pro-drop&gt; = +
 	&lt;IP head infl mood imperative&gt; = -
 	&lt;IP head type passive&gt; = +
-	{&lt;IP head type question&gt; = -
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = AdvP
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = PP
-	}
+	&lt;IP head fronted&gt; == ~[cat:DP]
 	&lt;IP option&gt; = 1c
 </rule>
 	<showWhen id="IPoption1c">
@@ -118,6 +113,7 @@ IP = DP I'
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
 	&lt;IP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;I' head type negative&gt; &lt;= &lt;DP head type negative&gt;    <!-- |polarity from DP -->
 	&lt;IP head&gt; == [type:[reciprocal:+]] -&gt;
@@ -126,7 +122,7 @@ IP = DP I'
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;DP head&gt; == ~[case:accusative]
 	&lt;IP option&gt; = 2a
-</rule>
+	</rule>
 	<showWhen id="IPoption2a">
 		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
 		<and/>
@@ -159,6 +155,7 @@ IP = DP I'
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
 	&lt;IP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;DP head type comma&gt; = -
 	&lt;IP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
 	&lt;IP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
@@ -192,12 +189,7 @@ IP = DP I'
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
-	{&lt;IP head type question&gt; = -
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = AdvP
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = PP
-	}
+	&lt;DP head type comma&gt; = -
 	&lt;IP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;I' head type negative&gt; &lt;= &lt;DP head type negative&gt;    <!-- |polarity from DP -->
 	&lt;DP head&gt; == ~[case:accusative]
@@ -231,12 +223,7 @@ IP = DP I'
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
-	{&lt;IP head type question&gt; = -
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = AdvP
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = PP
-	}
+	&lt;DP head type comma&gt; = -
 	&lt;IP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;DP head&gt; == ~[case:accusative]
 	&lt;I' head&gt; == [subject:[head:[type:[negative:+]]]] -&gt;  | if subject negative, verb must be
@@ -278,6 +265,8 @@ IP = I' DP
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
+	&lt;I' head type comma&gt; = -
+	&lt;IP head type comma&gt; &lt;= &lt;DP head type comma&gt;
 	&lt;IP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;I' head type negative&gt; &lt;= &lt;DP head type negative&gt;    <!-- |polarity from DP -->
 	&lt;IP head&gt; == [type:[reciprocal:+]] -&gt;
@@ -318,6 +307,8 @@ IP = I' DP
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
+	&lt;I' head type comma&gt; = -
+	&lt;IP head type comma&gt; &lt;= &lt;DP head type comma&gt;
 	&lt;IP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;IP head&gt; == [type:[reciprocal:+]] -&gt;
 					 [subject:[head:[agr:[number:plural]]]]
@@ -352,12 +343,8 @@ IP = I' DP
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
-	{&lt;IP head type question&gt; = -
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = AdvP
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = PP
-	}
+	&lt;I' head type comma&gt; = -
+	&lt;IP head type comma&gt; &lt;= &lt;DP head type comma&gt;
 	&lt;IP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;I' head type negative&gt; &lt;= &lt;DP head type negative&gt;    <!-- |polarity from DP -->
 	&lt;DP head&gt; == ~[case:accusative]
@@ -391,12 +378,8 @@ IP = I' DP
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
-	{&lt;IP head type question&gt; = -
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = AdvP
-	/&lt;IP head type question&gt; = +
-	 &lt;IP head fronted cat&gt; = PP
-	}
+	&lt;I' head type comma&gt; = -
+	&lt;IP head type comma&gt; &lt;= &lt;DP head type comma&gt;
 	&lt;IP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;DP head&gt; == ~[case:accusative]
 	&lt;I' head&gt; == [subject:[head:[type:[negative:+]]]] -&gt;  | if subject negative, verb must be
@@ -437,10 +420,10 @@ IP = I'
 	&lt;IP head fronted cat&gt; = DP
 	&lt;IP head fronted head type wh&gt; = +
 	&lt;IP head fronted&gt; = &lt;I' head subject&gt;
-		{&lt;I' head type transitive&gt; = -
-		/&lt;I' head type transitive&gt; = +
+			{&lt;I' head type transitive&gt; = -
+			/&lt;I' head type transitive&gt; = +
 	&lt;I' head object head type reflexive&gt; = -
-		/&lt;I' head type transitive&gt; = +
+			/&lt;I' head type transitive&gt; = +
 	&lt;I' head object head type reflexive&gt; = +
 	&lt;IP head fronted&gt; = &lt;I' head object&gt;
 	}
@@ -464,10 +447,10 @@ IP = I'
 	&lt;IP head fronted cat&gt; = FocusP
 	&lt;IP head fronted head type wh&gt; = -
 	&lt;IP head fronted&gt; = &lt;I' head subject&gt;
-		{&lt;I' head type transitive&gt; = -
-		/&lt;I' head type transitive&gt; = +
+			{&lt;I' head type transitive&gt; = -
+			/&lt;I' head type transitive&gt; = +
 	&lt;I' head object head type reflexive&gt; = -
-		/&lt;I' head type transitive&gt; = +
+			/&lt;I' head type transitive&gt; = +
 	&lt;I' head object head type reflexive&gt; = +
 	&lt;IP head fronted&gt; = &lt;I' head object&gt;
 	}
@@ -603,8 +586,9 @@ I' = Aux VP
 	{&lt;VP head infl finite&gt; = -
 	/&lt;VP head infl finite&gt; = +
 	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
-	   }
-	&lt;I' head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;
+		}
+		&lt;Aux head type comma&gt; = -
+		&lt;I' head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;
 	&lt;I' option&gt; = 2
 </rule>
 	<showWhen id="IBaroption2">
@@ -619,6 +603,30 @@ I' = Aux VP
 		<whenValue element="ip" attr="aux" value="yes" negateValue="no"/>
 		<and/>
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+	<or/>
+		<whenValue element="ip" attr="auxNonfinite" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="SVO"/>
+		<or/>
+		<whenValue element="ip" attr="auxNonfinite" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VOS"/>
+		<or/>
+		<whenValue element="ip" attr="auxNonfinite" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
+	<or/>
+		<whenValue element="ip" attr="auxOther" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="SVO"/>
+		<or/>
+		<whenValue element="ip" attr="auxOther" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VOS"/>
+		<or/>
+		<whenValue element="ip" attr="auxOther" value="yes" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 	</showWhen>
 	<rule show="IBaroption2Neg">
 rule {IBar option 2Neg - negative Aux initial, either word or affix, but no other aux required}
@@ -630,8 +638,9 @@ I' = Aux VP
 	{&lt;VP head infl finite&gt; = -
 	/&lt;VP head infl finite&gt; = +
 	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
-	   }
-	&lt;I' head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;
+		}
+		&lt;Aux head type comma&gt; = -
+		&lt;I' head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;
 	&lt;VP head type negative&gt; &lt;= &lt;Aux head type negative&gt; | polarity from Aux
 	&lt;I' option&gt; = 2Neg
 </rule>
@@ -671,8 +680,9 @@ I' = Aux VP
 	{&lt;VP head infl finite&gt; = -
 	/&lt;VP head infl finite&gt; = +
 	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
-	   }
-	&lt;I' head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;
+		}
+		&lt;Aux head type comma&gt; = -
+			&lt;I' head type prefix&gt; &lt;= &lt;Aux head type prefix&gt;
 	&lt;I' option&gt; = 2NegAuxVerbRequired
 </rule>
 	<showWhen id="IBaroption2NegAuxVerbRequired">
@@ -711,8 +721,10 @@ I' = Aux_1 Aux VP
 	{&lt;VP head infl finite&gt; = -
 	/&lt;VP head infl finite&gt; = +
 	 &lt;Aux_1 head infl tense&gt; =  &lt;VP head infl tense&gt;
-	   }
-	&lt;I' head type prefix&gt; &lt;= &lt;Aux_1 head type prefix&gt;
+		}
+		&lt;Aux head type comma&gt; = -
+		&lt;Aux_1 head type comma&gt; = -
+		&lt;I' head type prefix&gt; &lt;= &lt;Aux_1 head type prefix&gt;
 	&lt;VP head type negative&gt; &lt;= &lt;Aux head type negative&gt; | polarity from Aux
 	&lt;I' option&gt; = 2NegPlusAux
 </rule>
@@ -825,8 +837,10 @@ I' = Aux_1 Aux VP
 	{&lt;VP head infl finite&gt; = -
 	/&lt;VP head infl finite&gt; = +
 	 &lt;Aux_1 head infl tense&gt; =  &lt;VP head infl tense&gt;
-	   }
-	&lt;I' head type prefix&gt; &lt;= &lt;Aux_1 head type prefix&gt;
+		}
+		&lt;Aux head type comma&gt; = -
+		&lt;Aux_1 head type comma&gt; = -
+		&lt;I' head type prefix&gt; &lt;= &lt;Aux_1 head type prefix&gt;
 	&lt;I' option&gt; = 2NegPlusAuxVerbRequired
 </rule>
 	<showWhen id="IBaroption2NegPlusAuxVerbRequired">
@@ -936,8 +950,10 @@ I' = VP Aux
 	{&lt;VP head infl finite&gt; = -
 	/&lt;VP head infl finite&gt; = +
 	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
-	   }
-	&lt;IP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+		}
+		&lt;VP head type comma&gt; = -
+		&lt;I' head type comma&gt; &lt;= &lt;Aux head type comma&gt;
+		&lt;IP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;I' option&gt; = 3
 </rule>
 	<showWhen id="IBaroption3">
@@ -963,8 +979,10 @@ I' = VP Aux
 	{&lt;VP head infl finite&gt; = -
 	/&lt;VP head infl finite&gt; = +
 	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
-	   }
-	&lt;I' head type suffix&gt; &lt;= &lt;Aux head type suffix&gt;
+		}
+		&lt;VP head type comma&gt; = -
+		&lt;I' head type comma&gt; &lt;= &lt;Aux head type comma&gt;
+		&lt;I' head type suffix&gt; &lt;= &lt;Aux head type suffix&gt;
 	&lt;VP head type negative&gt; &lt;= &lt;Aux head type negative&gt; | polarity from Aux
 	&lt;I' option&gt; = 3Neg
 </rule>
@@ -1004,8 +1022,10 @@ I' = VP Aux
 	{&lt;VP head infl finite&gt; = -
 	/&lt;VP head infl finite&gt; = +
 	 &lt;Aux head infl tense&gt; =  &lt;VP head infl tense&gt;
-	   }
-	&lt;I' head type suffix&gt; &lt;= &lt;Aux head type suffix&gt;
+		}
+		&lt;VP head type comma&gt; = -
+		&lt;I' head type comma&gt; &lt;= &lt;Aux head type comma&gt;
+		&lt;I' head type suffix&gt; &lt;= &lt;Aux head type suffix&gt;
 	&lt;I' option&gt; = 3NegAuxVerbRequired
 </rule>
 	<showWhen id="IBaroption3NegAuxVerbRequired">
@@ -1044,8 +1064,11 @@ I' = VP Aux Aux_1
 	{&lt;VP head infl finite&gt; = -
 	/&lt;VP head infl finite&gt; = +
 	 &lt;Aux_1 head infl tense&gt; =  &lt;VP head infl tense&gt;
-	   }
-	&lt;I' head type suffix&gt; &lt;= &lt;Aux_1 head type suffix&gt;
+		}
+		&lt;VP head type comma&gt; = -
+		&lt;Aux head type comma&gt; = -
+		&lt;I' head type comma&gt; &lt;= &lt;Aux_1 head type comma&gt;
+		&lt;I' head type suffix&gt; &lt;= &lt;Aux_1 head type suffix&gt;
 	&lt;VP head type negative&gt; &lt;= &lt;Aux head type negative&gt; | polarity from Aux
 	&lt;I' option&gt; = 3NegPlusAux
 </rule>
@@ -1158,8 +1181,11 @@ I' = VP Aux Aux_1
 	{&lt;VP head infl finite&gt; = -
 	/&lt;VP head infl finite&gt; = +
 	 &lt;Aux_1 head infl tense&gt; =  &lt;VP head infl tense&gt;
-	   }
-	&lt;I' head type suffix&gt; &lt;= &lt;Aux_1 head type suffix&gt;
+		}
+		&lt;VP head type comma&gt; = -
+		&lt;Aux head type comma&gt; = -
+		&lt;I' head type comma&gt; &lt;= &lt;Aux_1 head type comma&gt;
+		&lt;I' head type suffix&gt; &lt;= &lt;Aux_1 head type suffix&gt;
 	&lt;I' option&gt; = 3NegPlusAuxVerbRequired
 </rule>
 	<showWhen id="IBaroption3NegPlusAuxVerbRequired">

@@ -11,6 +11,7 @@ CP = (InitConj) CP_1 Conj CP_2
 	&lt;CP_1 conjoined&gt; = -	|limit recursion
 	&lt;CP option&gt; = conj
 </rule>
+
 	<rule show="CPoption1">
 rule {CP option 1 - no fronting, root}
 CP = C'
@@ -39,6 +40,7 @@ CP = DP C'
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
 	&lt;CP option&gt; = 2a
 </rule>
 	<showWhen id="CPoption2a">
@@ -57,6 +59,7 @@ CP = PP C'
 	&lt;PP head type wh&gt; = +
 	&lt;PP head type suffix poss&gt; = -         | only in possessor position
 	&lt;PP head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
 	&lt;CP option&gt; = 2b
 </rule>
 	<showWhen id="CPoption2b">
@@ -73,6 +76,7 @@ CP = AdvP C'
 	&lt;C' head type relative&gt; = -
 	&lt;C' head fronted&gt; = &lt;AdvP&gt;
 	&lt;AdvP head type wh&gt; = +
+	&lt;AdvP head type comma&gt; = -
 	&lt;CP option&gt; = 2c
 </rule>
 	<showWhen id="CPoption2c">
@@ -82,20 +86,22 @@ CP = AdvP C'
 	</showWhen>
 	<rule show="CPoption2d">
 rule {CP option 2d - C, DP specifier initial, wh, root}
-CP = C DP C'
-	&lt;CP head&gt; = &lt;C' head&gt;
-	&lt;C' head type root&gt; = +
-	&lt;C' head type question&gt; = +
+CP = C DP IP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = +
 	&lt;C head type question&gt; = +
 	&lt;C head type wh&gt; = +
 	&lt;C head type CP-specifier-initial&gt; = +
-	&lt;C' head type relative&gt; = -
-	&lt;C' head fronted&gt; = &lt;DP&gt;
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;DP&gt;
 	&lt;DP head type wh&gt; = +
 	&lt;DP head type suffix poss&gt; = -         | only in possessor position
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
+	&lt;C head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
 	&lt;CP option&gt; = 2d
 </rule>
 	<showWhen id="CPoption2d">
@@ -109,18 +115,20 @@ CP = C DP C'
 	</showWhen>
 	<rule show="CPoption2e">
 rule {CP option 2e - C, PP specifier initial, wh, root}
-CP = C PP C'
-	&lt;CP head&gt; = &lt;C' head&gt;
-	&lt;C' head type root&gt; = +
-	&lt;C' head type question&gt; = +
+CP = C PP IP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = +
 	&lt;C head type question&gt; = +
 	&lt;C head type wh&gt; = +
 	&lt;C head type CP-specifier-initial&gt; = +
-	&lt;C' head type relative&gt; = -
-	&lt;C' head fronted&gt; = &lt;PP&gt;
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;PP&gt;
 	&lt;PP head type wh&gt; = +
 	&lt;PP head type suffix poss&gt; = -         | only in possessor position
 	&lt;PP head type prefix poss&gt; = -
+	&lt;C head type comma&gt; = -
+	&lt;PP head type comma&gt; = -
 	&lt;CP option&gt; = 2e
 </rule>
 	<showWhen id="CPoption2e">
@@ -134,16 +142,18 @@ CP = C PP C'
 	</showWhen>
 	<rule show="CPoption2f">
 rule {CP option 2f - C, AdvP specifier initial, wh, root}
-CP = C AdvP C'
-	&lt;CP head&gt; = &lt;C' head&gt;
-	&lt;C' head type root&gt; = +
-	&lt;C' head type question&gt; = +
+CP = C AdvP IP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type root&gt; = +
+	&lt;IP head type question&gt; = +
 	&lt;C head type question&gt; = +
 	&lt;C head type wh&gt; = +
 	&lt;C head type CP-specifier-initial&gt; = +
-	&lt;C' head type relative&gt; = -
-	&lt;C' head fronted&gt; = &lt;AdvP&gt;
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;AdvP&gt;
 	&lt;AdvP head type wh&gt; = +
+	&lt;C head type comma&gt; = -
+	&lt;AdvP head type comma&gt; = -
 	&lt;CP option&gt; = 2f
 </rule>
 	<showWhen id="CPoption2f">
@@ -195,12 +205,13 @@ CP = DP C'
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
 	&lt;CP option&gt; = 4a
 </rule>
 	<showWhen id="CPoption4a">
 		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
 		<and/>
-		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="yes"/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="yes" negateValue="yes"/>
 	</showWhen>
 	<rule show="CPoption4arel">
 rule {CP option 4arel - DP specifier initial, wh, relative clause}
@@ -216,6 +227,7 @@ CP = DP C'
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
 	&lt;CP option&gt; = 4arel
 </rule>
 	<showWhen id="CPoption4arel">
@@ -234,12 +246,13 @@ CP = PP C'
 	&lt;PP head type wh&gt; = +
 	&lt;PP head type suffix poss&gt; = -         | only in possessor position
 	&lt;PP head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
 	&lt;CP option&gt; = 4b
 </rule>
 	<showWhen id="CPoption4b">
 		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
 		<and/>
-		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="yes"/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="yes" negateValue="yes"/>
 	</showWhen>
 	<rule show="CPoption4c">
 rule {CP option 4c - AdvP specifier initial, wh, non-root}
@@ -250,87 +263,94 @@ CP = AdvP C'
 	&lt;C' head type relative&gt; = -
 	&lt;C' head fronted&gt; = &lt;AdvP&gt;
 	&lt;AdvP head type wh&gt; = +
+	&lt;AdvP head type comma&gt; = -
 	&lt;CP option&gt; = 4c
 </rule>
 	<showWhen id="CPoption4c">
 		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
 		<and/>
-		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="yes"/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="yes" negateValue="yes"/>
 	</showWhen>
 	<rule show="CPoption4d">
 rule {CP option 4d - C, DP specifier initial, wh, non-root}
-CP = C DP C'
-	&lt;CP head&gt; = &lt;C' head&gt;
-	&lt;C' head type root&gt; = -
-	&lt;C' head type question&gt; = +
+CP = C DP IP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type root&gt; = -
+	&lt;IP head type question&gt; = +
 	&lt;C head type question&gt; = +
 	&lt;C head type wh&gt; = +
 	&lt;C head type CP-specifier-initial&gt; = +
-	&lt;C' head type relative&gt; = -
-	&lt;C' head fronted&gt; = &lt;DP&gt;
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;DP&gt;
 	&lt;DP head type wh&gt; = +
 	&lt;DP head type suffix poss&gt; = -         | only in possessor position
 	&lt;DP head type prefix poss&gt; = -
 	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;DP head type suffix copular&gt; = -
+	&lt;C head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
 	&lt;CP option&gt; = 4d
 </rule>
 	<showWhen id="CPoption4d">
 		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
 		<and/>
-		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="no"/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="yes" negateValue="no"/>
 		<or/>
 		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
 		<and/>
-		<whenValue element="q" attr="mainContVSOBeforeWh" value="some" negateValue="no"/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="some" negateValue="no"/>
 	</showWhen>
 	<rule show="CPoption4e">
 rule {CP option 4e - C, PP specifier initial, wh, non-root}
-CP = C PP C'
-	&lt;CP head&gt; = &lt;C' head&gt;
-	&lt;C' head type root&gt; = -
-	&lt;C' head type question&gt; = +
+CP = C PP IP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type root&gt; = -
+	&lt;IP head type question&gt; = +
 	&lt;C head type question&gt; = +
 	&lt;C head type wh&gt; = +
 	&lt;C head type CP-specifier-initial&gt; = +
-	&lt;C' head type relative&gt; = -
-	&lt;C' head fronted&gt; = &lt;PP&gt;
+	&lt;IP head type relative&gt; = -
+	&lt;IP head fronted&gt; = &lt;PP&gt;
 	&lt;PP head type wh&gt; = +
 	&lt;PP head type suffix poss&gt; = -         | only in possessor position
 	&lt;PP head type prefix poss&gt; = -
+	&lt;C head type comma&gt; = -
+	&lt;PP head type comma&gt; = -
 	&lt;CP option&gt; = 4e
 </rule>
 	<showWhen id="CPoption4e">
 		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
 		<and/>
-		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="no"/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="yes" negateValue="no"/>
 		<or/>
 		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
 		<and/>
-		<whenValue element="q" attr="mainContVSOBeforeWh" value="some" negateValue="no"/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="some" negateValue="no"/>
 	</showWhen>
 	<rule show="CPoption4f">
 rule {CP option 4f - C, AdvP specifier initial, wh, non-root}
-CP = C AdvP C'
-	&lt;CP head&gt; = &lt;C' head&gt;
-	&lt;C' head type root&gt; = -
-	&lt;C' head type question&gt; = +
+CP = C AdvP IP
+	&lt;CP head&gt; = &lt;IP head&gt;
+	&lt;IP head type root&gt; = -
+	&lt;IP head type question&gt; = +
 	&lt;C head type question&gt; = +
 	&lt;C head type wh&gt; = +
 	&lt;C head type CP-specifier-initial&gt; = +
-	&lt;C' head type relative&gt; = -
+	&lt;IP head type relative&gt; = -
 	&lt;C' head fronted&gt; = &lt;AdvP&gt;
 	&lt;AdvP head type wh&gt; = +
+	&lt;C head type comma&gt; = -
+	&lt;AdvP head type comma&gt; = -
 	&lt;CP option&gt; = 4f
 </rule>
 	<showWhen id="CPoption4f">
 		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
 		<and/>
-		<whenValue element="q" attr="mainContVSOBeforeWh" value="yes" negateValue="no"/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="yes" negateValue="no"/>
 		<or/>
 		<whenValue element="q" attr="contFront" value="before" negateValue="no"/>
 		<and/>
-		<whenValue element="q" attr="mainContVSOBeforeWh" value="some" negateValue="no"/>
+		<whenValue element="q" attr="embContVSOBeforeWh" value="some" negateValue="no"/>
 	</showWhen>
 	<rule show="CPoptionNeg">
 rule {CP option Neg - DP or AdvP specifier initial, negative, fronted}
@@ -344,6 +364,8 @@ CP = {DP / AdvP} IP
 	&lt;AdvP head type negative&gt; = +
 	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;
 	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;AdvP head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
 	&lt;CP option&gt; = Neg
 </rule>
 	<showWhen id="CPoptionNeg">
@@ -360,6 +382,7 @@ CP = FocusP IP
 	&lt;IP head type relative&gt; = -
 	&lt;IP head fronted&gt; = &lt;FocusP&gt;
 	&lt;IP head type pro-drop&gt; = -
+	&lt;FocusP head type comma&gt; = -
 	&lt;FocusP head&gt; == [type:[focusmarked:-]] -&gt; ~[case:nominative]  | subject in place, not focused, unless focusmarked
 	&lt;CP option&gt; = FocusInit
 </rule>
@@ -376,6 +399,7 @@ CP = FocusP IP
 	&lt;IP head type relative&gt; = -
 	&lt;IP head fronted&gt; = &lt;FocusP&gt;
 	&lt;IP head type pro-drop&gt; = +
+	&lt;FocusP head type comma&gt; = -
 	&lt;FocusP head&gt; == ~[case:nominative]  | subject pro-dropped, not focused
 	&lt;CP head&gt; == [fronted:[head:[agr:[person:first]]]] -> ~[subject:[head:[agr:[person:first]]]]
 	&lt;CP head&gt; == [fronted:[head:[agr:[person:second]]]] -> ~[subject:[head:[agr:[person:second]]]]
@@ -396,6 +420,8 @@ CP = IP FocusP
 	&lt;IP head type relative&gt; = -
 	&lt;IP head fronted&gt; = &lt;FocusP&gt;
 	&lt;IP head type pro-drop&gt; = -
+	&lt;IP head type comma&gt; = -
+	&lt;CP head type comma&gt; &lt;= &lt;FocusP head type comma&gt;
 	&lt;FocusP head&gt; == [type:[focusmarked:-]] -&gt; ~[case:nominative]  | subject in place, not focused, unless focusmarked
 	&lt;CP option&gt; = FocusFin
 </rule>
@@ -412,7 +438,8 @@ CP =  IP FocusP
 	&lt;IP head type relative&gt; = -
 	&lt;IP head fronted&gt; = &lt;FocusP&gt;
 	&lt;IP head type pro-drop&gt; = +
-	&lt;FocusP head&gt; == ~[case:nominative]  | subject pro-dropped, not focused
+	&lt;IP head type comma&gt; = -
+	&lt;CP head type comma&gt; &lt;= &lt;FocusP head type comma&gt;
 	&lt;CP head&gt; == [fronted:[head:[agr:[person:first]]]] -> ~[subject:[head:[agr:[person:first]]]]
 	&lt;CP head&gt; == [fronted:[head:[agr:[person:second]]]] -> ~[subject:[head:[agr:[person:second]]]]
 	&lt;CP option&gt; = FocusFinPro
@@ -463,11 +490,14 @@ C' = IP
 rule {CBar option 1c - head-initial, question, root}
 C' = C IP
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C head type root&gt; = +
+	&lt;C head type relative&gt; = -
+	&lt;C head type question&gt; = +
 	&lt;C' head type root&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C' head type question&gt; = +
 	&lt;C head type CP-initial&gt; = +
+	&lt;C head type comma&gt; = -
 	&lt;C' option&gt; = 1c
 </rule>
 	<showWhen id="CBaroption1c">
@@ -542,6 +572,7 @@ C' = Aux IP
 	&lt;C' head type root&gt; = +
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
+	&lt;Aux head type comma&gt; = -
 	&lt;C' option&gt; = 1d
 </rule>
 	<showWhen id="CBaroption1d">
@@ -557,11 +588,15 @@ C' = Aux IP
 rule {CBar option 1e - head-final, question, root}
 C' = IP C
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C head type root&gt; = +
+	&lt;C head type relative&gt; = -
+	&lt;C head type question&gt; = +
 	&lt;C' head type root&gt; = +
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C head type CP-final&gt; = +
+	&lt;IP head type comma&gt; = -
+	&lt;C' head type comma&gt; &lt;= &lt;C head type comma&gt;
 	&lt;C' option&gt; = 1e
 </rule>
 	<showWhen id="CBaroption1e">
@@ -636,6 +671,8 @@ C' = IP Aux
 	&lt;C' head type root&gt; = +
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
+	&lt;IP head type comma&gt; = -
+	&lt;C' head type comma&gt; &lt;= &lt;Aux head type comma&gt;
 	&lt;C' option&gt; = 1f
 </rule>
 	<showWhen id="CBaroption1f">
@@ -651,13 +688,20 @@ C' = IP Aux
 rule {CBar option 1g - head both sides, question, root}
 C' = C IP C_1
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
-	&lt;C head type question&gt; = &lt;C_1 head type question&gt;
+	&lt;C head type root&gt; = +
+	&lt;C head type relative&gt; = -
+	&lt;C head type question&gt; = +
+	&lt;C_1 head type root&gt; = +
+	&lt;C_1 head type relative&gt; = -
+	&lt;C_1 head type question&gt; = +
 	&lt;C' head type root&gt; = +
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C head type CP-initial&gt; = +
 	&lt;C_1 head type CP-final&gt; = +
+	&lt;C head type comma&gt; = -
+	&lt;IP head type comma&gt; = -
+	&lt;C' head type comma&gt; &lt;= &lt;C_1 head type comma&gt;
 	&lt;C' option&gt; = 1g
 </rule>
 	<showWhen id="CBaroption1g">
@@ -759,11 +803,14 @@ C' = IP
 rule {CBar option 2c - head-initial, question, non-root}
 C' = C IP
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C head type root&gt; = -
+	&lt;C head type relative&gt; = -
+	&lt;C head type question&gt; = +
 	&lt;C' head type root&gt; = -
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C head type CP-initial&gt; = +
+	&lt;C head type comma&gt; = -
 	&lt;C' option&gt; = 2c
 </rule>
 	<showWhen id="CBaroption2c">
@@ -838,6 +885,7 @@ C' = Aux IP
 	&lt;C' head type root&gt; = -
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
+	&lt;Aux head type comma&gt; = -
 	&lt;C' option&gt; = 2d
 </rule>
 	<showWhen id="CBaroption2d">
@@ -853,11 +901,15 @@ C' = Aux IP
 rule {CBar option 2e - head-final, question, non-root}
 C' = IP C
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C head type root&gt; = -
+	&lt;C head type relative&gt; = -
+	&lt;C head type question&gt; = +
 	&lt;C' head type root&gt; = -
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C head type CP-final&gt; = +
+	&lt;IP head type comma&gt; = -
+	&lt;C' head type comma&gt; &lt;= &lt;C head type comma&gt;
 	&lt;C' option&gt; = 2e
 </rule>
 	<showWhen id="CBaroption2e">
@@ -932,6 +984,8 @@ C' = IP Aux
 	&lt;C' head type root&gt; = -
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
+	&lt;IP head type comma&gt; = -
+	&lt;C' head type comma&gt; &lt;= &lt;Aux head type comma&gt;
 	&lt;C' option&gt; = 2f
 </rule>
 	<showWhen id="CBaroption2f">
@@ -947,13 +1001,20 @@ C' = IP Aux
 rule {CBar option 2g - head both sides, question, non-root}
 C' = C IP C_1
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
-	&lt;C head type question&gt; = &lt;C_1 head type question&gt;
+	&lt;C head type root&gt; = -
+	&lt;C head type relative&gt; = -
+	&lt;C head type question&gt; = +
+	&lt;C_1 head type root&gt; = -
+	&lt;C_1 head type relative&gt; = -
+	&lt;C_1 head type question&gt; = +
 	&lt;C' head type root&gt; = -
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C head type CP-initial&gt; = +
 	&lt;C_1 head type CP-final&gt; = +
+	&lt;C head type comma&gt; = -
+	&lt;IP head type comma&gt; = -
+	&lt;C' head type comma&gt; &lt;= &lt;C_1 head type comma&gt;
 	&lt;C' option&gt; = 2g
 </rule>
 	<showWhen id="CBaroption2g">
@@ -1017,11 +1078,14 @@ C' = C IP C_1
 rule {CBar option 2j - head-initial, non-question, non-root}
 C' = C IP
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C head type root&gt; = -
+	&lt;C head type relative&gt; = -
+	&lt;C head type question&gt; = -
 	&lt;C' head type root&gt; = -
 	&lt;C' head type question&gt; = -
 	&lt;C' head type relative&gt; = -
 	&lt;C head type CP-initial&gt; = +
+	&lt;C head type comma&gt; = -
 	&lt;C' option&gt; = 2j
 </rule>
 	<showWhen id="CBaroption2j">
@@ -1053,11 +1117,15 @@ C' = C IP
 rule {CBar option 2k - head-final, non-question, non-root}
 C' = IP C
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
+	&lt;C head type root&gt; = -
+	&lt;C head type relative&gt; = -
+	&lt;C head type question&gt; = -
 	&lt;C' head type root&gt; = -
 	&lt;C' head type question&gt; = -
 	&lt;C' head type relative&gt; = -
 	&lt;C head type CP-final&gt; = +
+	&lt;IP head type comma&gt; = -
+	&lt;C' head type comma&gt; &lt;= &lt;C head type comma&gt;
 	&lt;C' option&gt; = 2k
 </rule>
 	<showWhen id="CBaroption2k">
@@ -1089,14 +1157,20 @@ C' = IP C
 rule {CBar option 2l - head both sides, non-question, non-root}
 C' = C IP C_1
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
-	&lt;C head type question&gt; = &lt;C_1 head type question&gt;
-	&lt;C head type relative&gt; = &lt;C_1 head type relative&gt;
+	&lt;C head type root&gt; = -
+	&lt;C head type relative&gt; = -
+	&lt;C head type question&gt; = -
+	&lt;C_1 head type root&gt; = -
+	&lt;C_1 head type relative&gt; = -
+	&lt;C_1 head type question&gt; = -
 	&lt;C' head type root&gt; = -
 	&lt;C' head type question&gt; = -
 	&lt;C' head type relative&gt; = -
 	&lt;C head type CP-initial&gt; = +
 	&lt;C_1 head type CP-final&gt; = +
+	&lt;C head type comma&gt; = -
+	&lt;IP head type comma&gt; = -
+	&lt;C' head type comma&gt; &lt;= &lt;C_1 head type comma&gt;
 	&lt;C' option&gt; = 2l
 </rule>
 	<showWhen id="CBaroption2l">
@@ -1347,11 +1421,14 @@ C' = IP
 rule {CBar option 5a - head-initial, relative clause}
 C' = C IP
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
 	&lt;C' head type root&gt; = -
 	&lt;C' head type question&gt; = -
 	&lt;C' head type relative&gt; = +
+	&lt;C head type root&gt; = -
+	&lt;C head type question&gt; = -
+	&lt;C head type relative&gt; = +
 	&lt;C head type CP-initial&gt; = +
+	&lt;C head type comma&gt; = -
 	&lt;C' option&gt; = 5a
 </rule>
 	<showWhen id="CBaroption5a">
@@ -1447,11 +1524,15 @@ C' = C IP
 rule {CBar option 5b - head-final, relative clause}
 C' = IP C
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
 	&lt;C' head type root&gt; = -
 	&lt;C' head type question&gt; = -
 	&lt;C' head type relative&gt; = +
+	&lt;C head type root&gt; = -
+	&lt;C head type question&gt; = -
+	&lt;C head type relative&gt; = +
 	&lt;C head type CP-final&gt; = +
+	&lt;IP head type comma&gt; = -
+	&lt;C' head type comma&gt; &lt;= &lt;C head type comma&gt;
 	&lt;C' option&gt; = 5b
 </rule>
 	<showWhen id="CBaroption5b">
@@ -1547,14 +1628,20 @@ C' = IP C
 rule {CBar option 5c - head both sides, relative clause}
 C' = C IP C_1
 	&lt;C' head&gt; = &lt;IP head&gt;
-	&lt;C' head type&gt; = &lt;C head type&gt;
-	&lt;C head type question&gt; = &lt;C_1 head type question&gt;
-	&lt;C head type relative&gt; = &lt;C_1 head type relative&gt;
 	&lt;C' head type root&gt; = -
 	&lt;C' head type question&gt; = -
 	&lt;C' head type relative&gt; = +
+	&lt;C head type root&gt; = -
+	&lt;C head type question&gt; = -
+	&lt;C head type relative&gt; = +
+	&lt;C_1 head type root&gt; = -
+	&lt;C_1 head type question&gt; = -
+	&lt;C_1 head type relative&gt; = +
 	&lt;C head type CP-initial&gt; = +
 	&lt;C_1 head type CP-final&gt; = +
+	&lt;C head type comma&gt; = -
+	&lt;IP head type comma&gt; = -
+	&lt;C' head type comma&gt; &lt;= &lt;C_1 head type comma&gt;
 	&lt;C' option&gt; = 5c
 </rule>
 	<showWhen id="CBaroption5c">
@@ -1764,8 +1851,8 @@ TopicP = DP
 	&lt;DP head type topic&gt; = +
 	&lt;DP head type focus&gt; = -
 	&lt;DP head type wh&gt; = -
-	&lt;DP head type negative&gt; = -
 	&lt;DP head type temporal&gt; = -
+	&lt;TopicP head type topic-marked&gt; = -
 	&lt;TopicP option&gt; = nomarker
 </rule>
 <showWhen id="TopicPoption.nomarker">
@@ -1784,11 +1871,11 @@ rule {TopicP option markerinit}
 TopicP = TopicM DP
 		&lt;TopicP head&gt; = &lt;DP head&gt;
 	&lt;TopicM head type topic-initial&gt; = +
-	&lt;DP head type topic&gt; = +
 	&lt;DP head type focus&gt; = -
 	&lt;DP head type wh&gt; = -
-	&lt;DP head type negative&gt; = -
 	&lt;DP head type temporal&gt; = -
+	&lt;TopicP head type topic-marked&gt; = +
+	&lt;TopicM head type comma&gt; = -
 	&lt;TopicP option&gt; = markerinit
 </rule>
 <showWhen id="TopicPoption.markerinit">
@@ -1809,11 +1896,12 @@ rule {TopicP option markerfin}
 TopicP = DP TopicM
 		&lt;TopicP head&gt; = &lt;DP head&gt;
 	&lt;TopicM head type topic-final&gt; = +
-	&lt;DP head type topic&gt; = +
 	&lt;DP head type focus&gt; = -
 	&lt;DP head type wh&gt; = -
-	&lt;DP head type negative&gt; = -
 	&lt;DP head type temporal&gt; = -
+	&lt;TopicP head type topic-marked&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;TopicP head type comma&gt; &lt;= &lt;TopicM head type comma&gt;
 	&lt;TopicP option&gt; = markerfin
 </rule>
 <showWhen id="TopicPoption.markerfin">
@@ -1835,11 +1923,13 @@ TopicP = TopicM_1 DP TopicM_2
 		&lt;TopicP head&gt; = &lt;DP head&gt;
 	&lt;TopicM_1 head type topic-initial&gt; = +
 	&lt;TopicM_2 head type topic-final&gt; = +
-	&lt;DP head type topic&gt; = +
 	&lt;DP head type focus&gt; = -
 	&lt;DP head type wh&gt; = -
-	&lt;DP head type negative&gt; = -
 	&lt;DP head type temporal&gt; = -
+	&lt;TopicP head type topic-marked&gt; = +
+	&lt;TopicM_1 head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;TopicP head type comma&gt; &lt;= &lt;TopicM_2 head type comma&gt;
 	&lt;TopicP option&gt; = markerboth
 </rule>
 <showWhen id="TopicPoption.markerboth">
@@ -1857,8 +1947,8 @@ FocusP = DP
 	&lt;DP head type focus&gt; = +
 	&lt;DP head type topic&gt; = -
 	&lt;DP head type wh&gt; = -
-	&lt;DP head type negative&gt; = -
 	&lt;DP head type temporal&gt; = -
+	&lt;FocusP head type focusmarked&gt; &lt;= -
 	&lt;FocusP option&gt; = nomarker
 </rule>
 <showWhen id="FocusPoption.nomarker">
@@ -1880,9 +1970,10 @@ FocusP = FocusM DP
 	&lt;DP head type focus&gt; = +
 	&lt;DP head type topic&gt; = -
 	&lt;DP head type wh&gt; = -
-	&lt;DP head type negative&gt; = -
 	&lt;DP head type temporal&gt; = -
 	&lt;FocusP head type focusmarked&gt; &lt;= +
+	&lt;FocusM head type comma&gt; = -
+	&lt;FocusP head case&gt; &lt;= &lt;FocusM head case&gt;
 	&lt;FocusP option&gt; = markerinit
 </rule>
 <showWhen id="FocusPoption.markerinit">
@@ -1906,8 +1997,9 @@ FocusP = DP FocusM
 	&lt;DP head type focus&gt; = +
 	&lt;DP head type topic&gt; = -
 	&lt;DP head type wh&gt; = -
-	&lt;DP head type negative&gt; = -
 	&lt;DP head type temporal&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;FocusP head type comma&gt; &lt;= &lt;FocusM head type comma&gt;
 	&lt;FocusP head type focusmarked&gt; &lt;= +
 	&lt;FocusP option&gt; = markerfin
 </rule>
@@ -1933,8 +2025,10 @@ FocusP = FocusM_1 DP FocusM_2
 	&lt;DP head type focus&gt; = +
 	&lt;DP head type topic&gt; = -
 	&lt;DP head type wh&gt; = -
-	&lt;DP head type negative&gt; = -
 	&lt;DP head type temporal&gt; = -
+	&lt;FocusM_1 head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;FocusP head type comma&gt; &lt;= &lt;FocusM_2 head type comma&gt;
 	&lt;FocusP head type focusmarked&gt; &lt;= +
 	&lt;FocusP option&gt; = markerboth
 </rule>

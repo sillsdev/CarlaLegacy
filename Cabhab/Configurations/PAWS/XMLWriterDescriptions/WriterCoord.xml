@@ -4,7 +4,7 @@
   <section1 id="sCoord">
 	<secTitle>Coordination Constructions</secTitle>
 	<p>
-	  <content>This section considers basic coordination constructions where there is an overt conjunction between the conjuncts, including coordination at the sentence level and at the verb phrase, nominal phrase, and adjective level.  More complex types of coordination constructions, such as lists without overt conjunctions between each conjunct, gapping, appositives and comparatives, will need to be dealt with later.</content></p>
+	  <content>This section considers basic coordination constructions where there is an overt conjunction between the conjuncts, including coordination at the sentence level and at the verb phrase, nominal phrase, prepositional or postpositional phrase and adjective phrase level.  More complex types of coordination constructions, such as lists without overt conjunctions between each conjunct, gapping, appositives and comparatives, will need to be dealt with later.</content></p>
 	  <p><comment>If your language has more complex kinds of coordination constructions, such as such as lists without overt conjunctions between each conjunct, missing parts of one of the conjuncts, appositives and comparatives, you can add description and examples as appropriate in this section.</comment></p>
 	  <p><content>In English, the conjunctions which can be used between two conjuncts are</content> <langData>and</langData><content>, </content><langData>or</langData><content>, </content><langData>but</langData><content> and </content><langData>and/or</langData><content>.  In addition, there are coordination constructions which require an initial conjunction, such as </content><langData>either...or</langData><content> and </content><langData>neither...nor</langData><content> constructions.  Some languages also use a word meaning </content><langData>with</langData><content> as a conjunction between nominal phrases.
 </content>
@@ -69,7 +69,7 @@
 			<p>
 				<content/>
 				<langName/>
-				<content> uses the following conjunctions initially before the first conjunct in an </content><langData>either...or</langData><content> or </content><langData>neither...or</langData><content> type construction:</content>
+				<content> uses the following conjunctions initially before the first conjunct in an </content><langData>either...or</langData><content> or </content><langData>neither...nor</langData><content> type construction:</content>
 			</p>
 			<example>
 				<table border="1">
@@ -174,30 +174,61 @@
 				<interlinear exampleLoc="coord/dpExample"/>
 			</example>
 </section2>
-		<section2 id="sCoordAdj">
-			<secTitle>Adjective coordination</secTitle>
+		<section2 id="sCoordPP">
+			<secTitle>Prepositional and/or postpositional phrase coordination</secTitle>
 			<p>
-				<content>Adjective coordination is exemplified in the following English sentences: </content>
+				<content>English examples of prepositional phrase coordination include: </content>
 </p>
 			<ol>
 				<li>
-					<content>The black and white dog belongs to my son.</content>
+					<content>Bill ran through the forest and over the bridge.</content>
 				</li>
 				<li>
-					<content>The sore on your leg is ugly and painful and dangerous.</content>
+					<content>I will come with you to the rehearsal but not back home.</content>
 				</li>
 				<li>
-					<content>My sister wants a red or blue candle.</content>
+					<content>I will come either to the wedding or to the reception.</content>
 				</li>
 			</ol>
 			<p>
 				<content/>
 				<langName/>
-				<content> examples with adjective coordination include:</content>
+				<content> examples with </content>
+					<case element="pp" attr="pPos">
+						<caseText value="before">prepositional</caseText>
+						<caseText value="after">postpositional</caseText>
+						<caseText value="both">prepositional or postpositional</caseText>
+						<caseText value="unknown">prepositional or postpositional</caseText></case>
+					<content> phrase coordination include:</content>
 			</p>
 			<example>
-				<interlinear exampleLoc="coord/adjExample"/>
+				<interlinear exampleLoc="coord/coordppExample"/>
 			</example>
 </section2>
+	  <section2 id="sCoordAdj">
+		  <secTitle>Adjective phrase coordination</secTitle>
+		  <p>
+			  <content>Adjective phrase coordination is exemplified in the following English sentences: </content>
+		  </p>
+		  <ol>
+			  <li>
+				  <content>The black and white dog belongs to my son.</content>
+			  </li>
+			  <li>
+				  <content>The sore on your leg is very ugly and painful and dangerous.</content>
+			  </li>
+			  <li>
+				  <content>My sister wants a red or blue candle.</content>
+			  </li>
+		  </ol>
+		  <p>
+			  <content/>
+			  <langName/>
+			  <content> examples with adjective phrase coordination include:</content>
+		  </p>
+		  <example>
+			  <interlinear exampleLoc="coord/adjExample"/>
+		  </example>
+	  </section2>
   </section1>
 </portion>
