@@ -51,7 +51,7 @@ like </content>
 				<langData>only</langData>
 				<content> and </content>
 				<langData>just</langData>
-				<content> (which can also act as focus markers, to be dscussed in section </content>
+				<content> (which can also act as focus markers, to be discussed in section </content>
 				<sectionRef sec="sFocus"/>
 				<content>) and words that mean the same as </content>
 				<langData>almost</langData>
@@ -585,10 +585,7 @@ ordinal numbers and by </content>
 				<langData>the third girl</langData>
 				<content> and </content>
 				<langData>the last boy</langData>
-				<content>.  Since these modifiers (including ordinal numbers) also act as regular
-adjectives in modifying nouns directly, they act
-syntactically like adjectives.
-</content>
+				<content>.</content>
 			</p>
 			<section3 id="sQPNumbersCardinal">
 				<secTitle>Cardinal Numbers</secTitle>
