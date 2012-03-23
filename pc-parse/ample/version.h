@@ -4,12 +4,16 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 14		/* bug fix or other minor change */
-#define DATE "August 10, 2011"	/* date of release version */
-#define YEAR "2011"		/* used for copyright notice in banner */
+#define PATCHLEVEL 15		/* bug fix or other minor change */
+#define DATE "March 23, 2012"	/* date of release version */
+#define YEAR "2012"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 23-Mar-2012  hab  - Fix bug: when a partial reduplication allomorph was an
+ * [3.12.15]             infix and one was tracing using SGML or XML output,
+ *                       the environment shown for a failed infix location
+ *                       was incorrectly calculated.
  * 10-Aug-2011  hab  - Fix bug: in a partial reduplication allomorph, if there
  * [3.12.14]             was a character between string classes, the allomorph
  *                       was never matched.  Also fix both full and partial

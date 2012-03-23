@@ -1,5 +1,12 @@
 AMPLE CHANGE HISTORY
 
+3.12.15 (23-Mar-2012)
+---------------------
+
+1. Fix bug: when a partial reduplication allomorph was an infix and one
+   was tracing using SGML or XML output, the environment shown for a failed
+   infix location was incorrectly calculated.
+
 3.12.14 (02-Aug-2011)
 ---------------------
 
