@@ -133,6 +133,7 @@ static void		a_trace		P((int            dtype,
 					   AmpleData *    pAmple_in));
 static void	reportInfixEnvironmentFailure	P((char * pszTail_in,
 						   AmpleAllomorph *ap,
+						   int iAlloLen,
 						   AmpleData *    pAmple_in));
 static void	reportInfixTypeFailure	P((char *         pszType_in,
 					   AmpleData *    pAmple_in));
@@ -1781,7 +1782,7 @@ bPassed = checkAmpleStringEnviron(tail,
 if (!bPassed)
 {
   reportInfixMorphForLocationFailure(what, ifxtail, ifxp, ap, ip, pAmple_in);
-  reportInfixEnvironmentFailure(ifxtail, ap, pAmple_in);
+  reportInfixEnvironmentFailure(ifxtail, ap, ifxp->alen, pAmple_in);
 }
 return( bPassed );
 
@@ -7686,6 +7687,7 @@ static void xml_maximum_reached(AmpleData * pAmple_in, char * pszType_in)
  */
 static void reportInfixEnvironmentFailure(char *pszInfixTail_in,
 					  AmpleAllomorph *ap,
+					  int iAlloLen,
 					  AmpleData *pAmple_in)
 {
 char * pszIndent;
@@ -7710,7 +7712,7 @@ else if (pAmple_in->eTraceAnalysis == AMPLE_TRACE_SGML ||
 		 pAmple_in->eTraceAnalysis == AMPLE_TRACE_XML)
 	{
 	  formatFormForXMLEnvironment("InfixEnvironment", pszInfixTail_in,
-					  strlen(ap->pszAllomorph), pAmple_in);
+					  iAlloLen, pAmple_in);
 	  if (pAmple_in->pszTrace != NULL)
 		{
 		pAmple_in->pszTrace = stringifyAmpleEnvConstraint(
