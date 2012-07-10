@@ -30,7 +30,7 @@
 <!ELEMENT closeParen EMPTY>
 <!ELEMENT codeInfo (#PCDATA)>
 <!ELEMENT contents (#PCDATA)>
-<!ELEMENT div (textBox | prompt | radioGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | br | div)*>
+<!ELEMENT div (textBox | prompt | radioGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | br | div | table)*>
 <!ATTLIST div
 	id ID #REQUIRED
 	show IDREF #REQUIRED
@@ -66,7 +66,7 @@
 <!--
 transparent = 'yes' means do not show yellow background, let the grey background come through.
 -->
-<!ELEMENT form ((textBox | prompt | radioGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | br | div)*, br?, buttons)>
+<!ELEMENT form ((textBox | prompt | radioGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | table | br | div)*, br?, buttons)>
 <!ATTLIST form
 	transparent (yes | no) "no"
 	section CDATA #REQUIRED
@@ -106,7 +106,7 @@ transparent = 'yes' means do not show yellow background, let the grey background
 >
 <!ELEMENT openParen EMPTY>
 <!ELEMENT or EMPTY>
-<!ELEMENT page (title, (introduction | EnglishExample | instruction)*, form, showWhen*)>
+<!ELEMENT page (title, (introduction | EnglishExample | table | instruction)*, form, showWhen*)>
 <!ATTLIST page
 	id ID #REQUIRED
 	count CDATA #IMPLIED
@@ -143,6 +143,11 @@ transparent = 'yes' means do not show yellow background, let the grey background
 	id ID #REQUIRED
 >
 <!ELEMENT sub (#PCDATA)>
+<!ELEMENT table (tr+) >
+<!ELEMENT td (#PCDATA) >
+<!ATTLIST td
+	colspan CDATA #IMPLIED
+>
 <!ELEMENT textBox EMPTY>
 <!ATTLIST textBox
 	id ID #REQUIRED
@@ -153,6 +158,10 @@ transparent = 'yes' means do not show yellow background, let the grey background
 	cols CDATA #IMPLIED
 	show IDREF #IMPLIED
 >
+<!ELEMENT th (#PCDATA) >
+<!ATTLIST th
+	colspan CDATA #IMPLIED
+>
 <!ELEMENT title (#PCDATA | i)*>
 <!ATTLIST title
 	level CDATA #IMPLIED
@@ -160,6 +169,7 @@ transparent = 'yes' means do not show yellow background, let the grey background
 <!ELEMENT template (#PCDATA)>
 <!ELEMENT templateName (#PCDATA)>
 <!ELEMENT tool (#PCDATA)>
+<!ELEMENT tr (th | td)+ >
 <!ELEMENT tree (#PCDATA | br)*>
 <!ATTLIST tree
 	img CDATA #IMPLIED

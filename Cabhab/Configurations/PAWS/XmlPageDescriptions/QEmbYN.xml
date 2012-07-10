@@ -2,21 +2,21 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QEmbYN" count="3/9">
-    <title level="2">Questions - Embedded Clause Yes/No Questions</title>
-    <form section="q">
-        <EnglishExample>
-            <exItem>Representative examples of English embedded Yes/No questions include:</exItem>
-            <exItem label="1.">I wonder whether she will come.</exItem>
-            <exItem label="2.">I will know if she goes.</exItem>
-            <exItem label="3.">Sue wonders whether the boy could have hit the ball.</exItem>
-        </EnglishExample>
-        <prompt>Key similar examples of embedded Yes/No questions in your language here:</prompt>
-        <textBox id="QEmbYNExample" dataItem="embYNExample" cols="50"/>
-        <br/>
-        <instruction id="QEmbYNInstruction">Only certain verbs can take a question complement. In the lexicon, mark the verbs from your examples and any others that come to mind with the features <feature>sentential embedded_question</feature> if they can only take an embedded question complement (like 'wonder'), but use the features <feature>sentential embedded_question_allowed</feature> if they can take an embedded question as well as a non-question complement (like 'know').
-        </instruction>
-        <radioGroup>
-            <groupName dataItem="embYN" default="no">RQEmbYN</groupName>
+	<title level="2">Questions - Embedded Clause Yes/No Questions</title>
+   <introduction>Embedded Yes/No questions in English have a question marker or complementizer (<example>whether</example> or <example>if</example>) before the embedded question, which is otherwise the same as a declarative sentence.  Other languages may have other ways to signal an embedded Yes/No question.  Representative examples of English embedded Yes/No questions include:</introduction>
+		<EnglishExample>
+			<exItem label="1.">I wonder whether she will come.</exItem>
+			<exItem label="2.">I will know if she goes.</exItem>
+			<exItem label="3.">Sue wonders whether the boy could have hit the ball.</exItem>
+		</EnglishExample>
+   <form section="q">
+	  <prompt>Key similar examples of embedded Yes/No questions in your language here:</prompt>
+		<textBox id="QEmbYNExample" dataItem="embYNExample" cols="50"/>
+		<br/>
+		<instruction id="QEmbYNInstruction">Only certain verbs can take a question complement. In the lexicon, mark the verbs from your examples and any others that come to mind with the features <feature>sentential embedded_question</feature> if they can only take an embedded question complement (like ‘wonder’), but use the features <feature>sentential embedded_question_allowed</feature> if they can take an embedded question as well as a non-question complement (like ‘know’).
+		</instruction>
+		<radioGroup>
+			<groupName dataItem="embYN" default="no">RQEmbYN</groupName>
             <prompt>For embedded clause Yes/No questions, does your language have one or more Yes/No question marker particles, words or complementizers (include affixes or clitics in answering this question)?</prompt>
             <radio id="QEmbYNYes" dataValue="yes">Yes, like <example>whether</example> and <example>if</example> in English</radio>
             <radioGroup id="QEmbYNWordTable" show="swQEmbYNYes">

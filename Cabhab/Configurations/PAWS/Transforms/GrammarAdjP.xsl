@@ -1,23 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="adjp">
+<xsl:if test="normalize-space(//coord/@conjWord)!='no'">
 <xsl:text>
 rule {AdjP option conj - conjoined AdjPs}
 AdjP = (InitConj) AdjP_1 Conj AdjP_2
-	&lt;AdjP head&gt; = &lt;AdjP_1 head&gt;
+	&lt;AdjP head&gt; = &lt;AdjP_2 head&gt;
 	&lt;AdjP conjoined&gt; = +
 	&lt;AdjP_1 conjoined&gt; = -	|limit recursion
 	&lt;AdjP head type clausal-comp&gt; = -
-	&lt;AdjP head type comma&gt; &lt;= &lt;AdjP_2 head type comma&gt;
+	&lt;AdjP head type prefix&gt; &lt;= &lt;AdjP_1 head type prefix&gt;
 	&lt;AdjP option&gt; = conj
 </xsl:text>
+</xsl:if>
+
+
+
+   <xsl:if test="normalize-space(//coord/@conjWord)!='yes' and normalize-space(//coord/@conjPos)='before' or normalize-space(//coord/@conjWord)!='yes' and normalize-space(//coord/@conjPos)='either'">
+<xsl:text>
+	  rule {AdjP option conjPrefix - conjoined AdjPs}
+	  AdjP = AdjP_1  AdjP_2
+	  &lt;AdjP head&gt; = &lt;AdjP_2 head&gt;
+	  &lt;AdjP conjoined&gt; = +
+	  &lt;AdjP_1 conjoined&gt; = -	|limit recursion
+	  &lt;AdjP head type clausal-comp&gt; = -
+	  &lt;AdjP_2 head type prefix conj&gt; = +
+	  &lt;AdjP head type prefix&gt; &lt;= &lt;AdjP_1 head type prefix&gt;
+	  &lt;AdjP option&gt; = conjPrefix
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//coord/@conjWord)!='yes' and normalize-space(//coord/@conjPos)='after' or normalize-space(//coord/@conjWord)!='yes' and normalize-space(//coord/@conjPos)='either'">
+<xsl:text>
+	  rule {AdjP option conjSuffix - conjoined AdjPs}
+	  AdjP = AdjP_1  AdjP_2
+	  &lt;AdjP head&gt; = &lt;AdjP_2 head&gt;
+	  &lt;AdjP conjoined&gt; = +
+	  &lt;AdjP_1 conjoined&gt; = -	|limit recursion
+	  &lt;AdjP head type clausal-comp&gt; = -
+	  &lt;AdjP_1 head type suffix conj&gt; = +
+	  &lt;AdjP head type prefix&gt; &lt;= &lt;AdjP_1 head type prefix&gt;
+	  &lt;AdjP option&gt; = conjSuffix
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//coord/@conjWord)!='yes' and normalize-space(//coord/@conjPos)='other' or normalize-space(//coord/@noConj)='yes'">
+<xsl:text>
+	  rule {AdjP option conjNone - conjoined AdjPs}
+	  AdjP = AdjP_1  AdjP_2
+	  &lt;AdjP head&gt; = &lt;AdjP_2 head&gt;
+	  &lt;AdjP conjoined&gt; = +
+	  &lt;AdjP_1 conjoined&gt; = -	|limit recursion
+	  &lt;AdjP head type clausal-comp&gt; = -
+	  &lt;AdjP_2 head type prefix conj&gt; = -
+	  &lt;AdjP_1 head type suffix conj&gt; = -
+	  &lt;AdjP_1 head type comma&gt; = -
+	  &lt;AdjP head type prefix&gt; &lt;= &lt;AdjP_1 head type prefix&gt;
+	  &lt;AdjP option&gt; = conjNone
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+   <xsl:text>
+rule {AdjP option part - participle phrases}
+AdjP = VP
+			&lt;AdjP head&gt; = &lt;VP head&gt;
+			&lt;VP head type participle&gt; = +
+			&lt;AdjP head type comma&gt; &lt;= &lt;VP head type comma&gt;
+			&lt;AdjP option&gt; = part
+   </xsl:text>
 <xsl:text>
 rule {AdjP option 0 - no modifiers}
 AdjP = Adj'
 	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;AdjP option&gt; = 0
 </xsl:text>
-<xsl:if test="normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='before' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='either' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='beforeOrBoth'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='before' or normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='either' or normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='beforeOrBoth'">
 <xsl:text>
 rule {AdjP option 1d - degree modifiers initial}
 AdjP = Deg Adj'
@@ -79,7 +158,7 @@ AdjP = {Deg / AdvP} Adj'
 
 
 
-<xsl:if test="normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='after' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='either' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='afterOrBoth'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='after' or normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='either' or normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='afterOrBoth'">
 <xsl:text>
 rule {AdjP option 2d - degree modifiers final}
 AdjP = Adj' Deg
@@ -87,7 +166,7 @@ AdjP = Adj' Deg
 	&lt;Deg head type modifies_Adj&gt; = +
 	&lt;Deg head type AdjP-final&gt;   = +
 	&lt;Adj' head type comma&gt; = -
-	&lt;AdjPhead type comma&gt; &lt;= &lt;Deg head type comma&gt;
+	&lt;AdjP head type comma&gt; &lt;= &lt;Deg head type comma&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
 	&lt;AdjP option&gt; = 2d
 </xsl:text>
@@ -119,8 +198,8 @@ AdjP = Adj' {Deg / AdvP}
 	&lt;Deg head type AdjP-final&gt;   = +
 	&lt;AdvP head type AdjP-final&gt;   = +
 	&lt;Adj' head type comma&gt; = -
-	&lt;AdjPhead type comma&gt; &lt;= &lt;Deg head type comma&gt;
-	&lt;AdjPhead type comma&gt; &lt;= &lt;AdvP head type comma&gt;
+	&lt;AdjP head type comma&gt; &lt;= &lt;Deg head type comma&gt;
+	&lt;AdjP head type comma&gt; &lt;= &lt;AdvP head type comma&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;
 	&lt;AdjP option&gt; = 2m
@@ -143,7 +222,7 @@ AdjP = Adj' {Deg / AdvP}
 
 
 
-<xsl:if test="normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='both' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='beforeOrBoth' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yesDegree' and normalize-space(//adjp/@degreePos)='afterOrBoth'">
+<xsl:if test="normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='both' or normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='beforeOrBoth' or normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='eitherOrBoth' or normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)='afterOrBoth'">
 <xsl:text>
 rule {AdjP option 3d - degree modifiers both sides}
 AdjP = Deg_1 Adj' Deg_2
@@ -154,7 +233,7 @@ AdjP = Deg_1 Adj' Deg_2
 	&lt;Deg_2 head type AdjP-final&gt;   = +
 	&lt;Deg_1 head type comma&gt; = -
 	&lt;Adj' head type comma&gt; = -
-	&lt;AdjPhead type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+	&lt;AdjP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
 	&lt;AdjP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
 	&lt;AdjP option&gt; = 3d
@@ -191,8 +270,8 @@ AdjP = {Deg_1 / AdvP_1} Adj' {Deg_2 / AdvP_2}
 	&lt;Deg_1 head type comma&gt; = -
 	&lt;AdvP_1 head type comma&gt; = -
 	&lt;Adj' head type comma&gt; = -
-	&lt;AdjPhead type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
-	&lt;AdjPhead type comma&gt; &lt;= &lt;AdvP_2 head type comma&gt;
+	&lt;AdjP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+	&lt;AdjP head type comma&gt; &lt;= &lt;AdvP_2 head type comma&gt;
 	&lt;AdjP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
 	&lt;AdjP head type prefix&gt; &lt;= &lt;AdvP_1 head type prefix&gt;
@@ -243,13 +322,13 @@ Adj' = Adj {CP / IP}
 	&lt;Adj head type sentential&gt; = +
 	&lt;Adj' head type clausal-comp&gt; &lt;= +
 	&lt;Adj head type comma&gt; = -
-	&lt;AdjPhead type comma&gt; &lt;= &lt;CP head type comma&gt;
-	&lt;AdjPhead type comma&gt; &lt;= &lt;IP head type comma&gt;
+	&lt;Adj' head type comma&gt; &lt;= &lt;CP head type comma&gt;
+	&lt;Adj' head type comma&gt; &lt;= &lt;IP head type comma&gt;
 	&lt;Adj' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
 	&lt;Adj' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
 	&lt;Adj' option&gt; = 1a
 </xsl:text>
-	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//typology/@wordOrder)='OVS'">
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//typology/@wordOrder)='OSV'">
 <xsl:text>
 rule {Adj' option 1b - Adj final, sentential complement}
 Adj' = {CP / IP} Adj
@@ -273,6 +352,8 @@ Adj' = {CP / IP} Adj
 	&lt;Adj' option&gt; = 1b
 </xsl:text>
 </xsl:if>
+
+
 
 
 

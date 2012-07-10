@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="excl">
   <section1 id="sExcl">
-	<secTitle>Exclamations and Greetings</secTitle>
+	 <secTitle>Greetings, Interjections and Exclamations</secTitle>
 	<p>
 <xsl:text>This section considers various types of common utterances which are not complete sentences.  Greetings, interjections and exclamations are covered in turn.</xsl:text>
 </p>
@@ -23,38 +23,37 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Have a good day!</langData>
-<xsl:text> which do not need to be treated separately.  Some examples of English greetings are:
-</xsl:text>
+<xsl:text> which do not need to be treated separately. </xsl:text>
 </p>
-			<ol>
-				<li>
-					<xsl:text>Hi!</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Howdy!</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Hello, Jill.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Goodby.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Good day, sir.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Good morning, Bob.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Good afternoon.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Good evening.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Good night, sweet baby.</xsl:text>
-				</li>
-			</ol>
+   <p>
+<xsl:text>Some examples of English greetings are:
+   </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Hi!</langData>
+<xsl:text> </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Howdy!</langData>
+<xsl:text> </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Goodby</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Good day, sir</langData>
+<xsl:text> and </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Good night, sweet baby</langData>
+<xsl:text>.</xsl:text>
+</p>
 <p>
 <xsl:text>Examples of greetings in </xsl:text>
 <xsl:choose>
@@ -111,24 +110,27 @@
 <p>
 <xsl:text>Interjections typically consist of a particular word or phrase that is used alone, usually with an exclamation point following it.  Though many of the words in interjections are not used in any other situation, regular adjectives are also used in this way.  Some examples of interjections in English are:
 </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Ouch!</langData>
+<xsl:text> </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Gross!</langData>
+<xsl:text> </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Cool!</langData>
+<xsl:text> and </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Jimminy Cricket!</langData>
 </p>
-			<ol>
-				<li>
-					<xsl:text>Ouch!</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Gross!</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Cool!</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Jumping Jehosaphat!</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Jimminy Cricket!</xsl:text>
-				</li>
-			</ol>
+
 <p>
 <xsl:text>Examples of interjections in </xsl:text>
 <xsl:choose>
@@ -141,7 +143,7 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-			<example num="xExcl.ExclIntj.10">
+			<example num="xExcl.ExclIntj.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//excl/intjExample" />
 </xsl:variable>
@@ -155,7 +157,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//excl/intjExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xExcl.ExclIntj.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xExcl.ExclIntj.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -164,7 +166,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xExcl.ExclIntj.10.1</xsl:text>
+<xsl:text>xExcl.ExclIntj.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -191,7 +193,7 @@
 </xsl:choose>
 <xsl:text> uses the following words to express these answers:</xsl:text>
 </p>
-<example num="xExcl.ExclIntj.14">
+<example num="xExcl.ExclIntj.12">
 <table border="1">
 					<tr>
 						<th>
@@ -302,68 +304,22 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>how</langData>
 <xsl:text> in English, followed by an adjective phrase and usually punctuated with an exclamation point.  English examples include:</xsl:text>
-</p>
-<ol>
-	  <li>
-<xsl:text>How awful for you!</xsl:text>
-</li>
-	  <li>
-<xsl:text>How nice!</xsl:text>
-</li>
-	  <li>
-<xsl:text>How wonderful that your family could come!</xsl:text>
-</li>
-</ol>
-<p>
-<xsl:text>Examples of exclamations in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> include:</xsl:text>
-</p>
-			<example num="xExcl.ExclExcl.10">
-<xsl:variable name="sExampleValue">
-<xsl:value-of select="//excl/exclExample" />
-</xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//excl/exclExample))" />
-<xsl:choose>
-<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
-<xsl:call-template name="OutputInterlinearExamples">
-<xsl:with-param name="sExamples">
-<xsl:value-of select="//excl/exclExample" />
-</xsl:with-param>
-<xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//excl/exclExample))" />
-</xsl:with-param>
-<xsl:with-param name="sExNumber">xExcl.ExclExcl.10</xsl:with-param>
-<xsl:with-param name="sLetterList">
-<xsl:value-of select="$sMasterLetterList" />
-</xsl:with-param>
-</xsl:call-template>
-</xsl:when>
-<xsl:otherwise>
-<listInterlinear>
-<xsl:attribute name="letter">
-<xsl:text>xExcl.ExclExcl.10.1</xsl:text>
-</xsl:attribute>
-<lineGroup>
-<line>
 <langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
-</line>
-<xsl:call-template name="DoWordGloss" />
-<xsl:call-template name="DoMorphemeGloss" />
-</lineGroup>
-<xsl:call-template name="DoFree" />
-</listInterlinear>
-</xsl:otherwise>
-</xsl:choose>
-</example>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>How awful for you!</langData>
+<xsl:text> </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>How nice!</langData>
+<xsl:text> and </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>How wonderful that your family could come!</langData>
+</p>
+
 <xsl:if test="normalize-space(//excl/@exclM)='no'">
 <p>
 <xsl:choose>
@@ -393,13 +349,21 @@
 <xsl:when test="//excl/@exclMPos='after'">after</xsl:when>
 <xsl:when test="//excl/@exclMPos='either'">on either side of</xsl:when>
 <xsl:when test="//excl/@exclMPos='both'">on both sides of</xsl:when>
+   <xsl:when test="//excl/@exclMPos='unknown'">________</xsl:when>
 </xsl:choose>
-<xsl:text> the adjective phrase.  These exclamation marker words are:</xsl:text>
+<xsl:text> the adjective phrase.  </xsl:text>
+<xsl:if test="normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='either' and normalize-space(//excl/@exclMEither)='no' or normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='both' and normalize-space(//excl/@exclMEither)='no'">
+<xsl:text>There are separate sets words which can occur on each side of the adjective phrase. </xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='either' and normalize-space(//excl/@exclMEither)='yes' or normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='both' and normalize-space(//excl/@exclMEither)='yes'">
+<xsl:text>All of the words may occur on either side of the adjective phrase. </xsl:text>
+</xsl:if>
+<xsl:text>These exclamation marker words are:</xsl:text>
 </p>
 </xsl:if>
 <xsl:if test="normalize-space(//excl/@exclM)='yes'">
-<example num="xExcl.ExclExcl.16">
-<table border="0">
+<example num="xExcl.ExclExcl.10">
+<table border="1">
 <tr>
 	<th>Exclamation Markers</th>
 	<th>Gloss</th>
@@ -455,16 +419,57 @@
 </table>
 </example>
 </xsl:if>
-<xsl:if test="normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='either' and normalize-space(//excl/@exclMEither)='no' or normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='both' and normalize-space(//excl/@exclMEither)='no'">
-<p>
-<xsl:text>There are separate sets words which can occur on each side of the adjective phrase.</xsl:text>
+
+   <p>
+<xsl:text>Examples of exclamations in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
 </p>
-</xsl:if>
-<xsl:if test="normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='either' and normalize-space(//excl/@exclMEither)='yes' or normalize-space(//excl/@exclM)='yes' and normalize-space(//excl/@exclMPos)='both' and normalize-space(//excl/@exclMEither)='yes'">
-<p>
-<xsl:text>All of the words may occur on either side of the adjective phrase.</xsl:text>
-</p>
-</xsl:if>
+   <example num="xExcl.ExclExcl.14">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//excl/exclExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//excl/exclExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//excl/exclExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//excl/exclExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xExcl.ExclExcl.14</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xExcl.ExclExcl.14.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
 </section2>
   </section1>
 

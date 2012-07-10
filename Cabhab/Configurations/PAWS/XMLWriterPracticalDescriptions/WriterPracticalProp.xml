@@ -18,13 +18,13 @@
                 <caseText value="unknown">prepositional and/or postpositional</caseText>
             </case>
             <content> phrases, as in </content>
-            <langData>the United States of America</langData>
-            <content>.  Many languages require an article before a name.  Appositives also occur, possibly including a possessor, as in </content>
-            <langData>my son, David</langData>
-            <content>.  In addition, proper names can be modified by adjectives and relative clauses, as in </content>
-            <langData>the good, old USA</langData>
-            <content> or </content>
-            <langData>the Susan Welch that I know</langData>
+			<langData>the United States of America</langData>
+			<content>.  Many languages require an article before a name.  Appositives also occur, possibly including a possessor, as in </content>
+			<langData>my son, David</langData>
+		   <content>, but these will be handled later in section </content><sectionRef sec="sCoordAppositive"/><content>.  In addition, proper names can be modified by adjectives and relative clauses, as in </content>
+			<langData>the good, old USA</langData>
+			<content> or </content>
+			<langData>the Susan Welch that I know</langData>
             <content>.</content>
         </p>
         <p>
@@ -32,13 +32,22 @@
             <langName/>
             <content> include:</content>
         </p>
-        <example>
-            <interlinear exampleLoc="prop/example"/>
-        </example>
-        <p>
-            <content>Examples of proper names with </content>
-            <case element="pp" attr="pPos">
-                <caseText value="before">prepositional</caseText>
+		<example>
+			<interlinear exampleLoc="prop/example"/>
+		</example>
+	   <p show="swClassifiersYesPropYes"><content>In </content><langName/><content>, proper names carry classifiers just like nouns as part of the concord agreement system.</content></p>
+	   <p show="swClassifiersYesPropNo"><content>In </content><langName/><content>, proper names do not carry classifiers as nouns do as part of the concord agreement system.</content></p>
+	   <p show="swNPArtAndDemNotNo"><content>Proper names in </content><langName/><case element="prop" attr="pnDeterminer">
+		  <caseText value="no"> may but are not required to</caseText>
+		  <caseText value="yes"> must</caseText>
+	   </case><content> contain an </content><case element="np" attr="artAndDem">
+		  <caseText value="article">article</caseText>
+		  <caseText value="demonstrative">demonstrative</caseText>
+		  <caseText value="both">article and/or demonstrative</caseText></case><content> or a possessor.</content></p>
+	   <p>
+			<content>Examples of proper names with </content>
+			<case element="pp" attr="pPos">
+				<caseText value="before">prepositional</caseText>
                 <caseText value="after">postpositional</caseText>
                 <caseText value="both">prepositional and/or postpositional</caseText>
                 <caseText value="unknown">prepositional and/or postpositional</caseText>
@@ -56,7 +65,20 @@
             <content> include:</content>
         </p>
         <example>
-            <interlinear exampleLoc="prop/relClExample"/>
-        </example>
-    </section1>
+			<interlinear exampleLoc="prop/relClExample"/>
+		</example>
+	</section1>
+   <showWhen id="swClassifiersYesPropYes">
+	  <whenValue element="typology"  attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="prop" attr="pnClassifier" value="yes"/>
+   </showWhen>
+   <showWhen id="swClassifiersYesPropNo">
+	  <whenValue element="typology"  attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="prop" attr="pnClassifier" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemNotNo">
+	  <whenValue element="np" attr="artAndDem" value="no" negateValue="yes"/>
+   </showWhen>
 </portion>

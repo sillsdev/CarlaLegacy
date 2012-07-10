@@ -2,25 +2,25 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPAdjP" count="1/1">
-	<title level="2">Las frases nominales - Las frases del adjetivo como modificadores</title>
-	<introduction>Las frases del adjetivo fueron analizadas anteriormente en  <section number="4">Los adjetivos y sus frases</section>.  Las frases del adjetivo se presentan cerca del sustantivo.  Algunas frases nominales en inglés con adjetivos son:</introduction>
+	<title level="2">Las frases nominales - Las frases adjetivales y los participios como modificadores</title>
+	<introduction>Las frases adjetivales fueron discutidas anteriormente en  <section number="4">Las frases adjetivales</section>.  Las frases adjetivales se presentan cerca del sustantivo.  Algunas frases nominales en inglés con adjetivos son:</introduction>
 	<EnglishExample>
-		<exItem label="1.">just those very few old, dirty books 'solo los muy pocos libros viejos, sucios'</exItem>
-		<exItem label="2.">all the boy's many black dogs 'todos los muchos perros negros del muchacho'</exItem>
-		<exItem label="3.">only the first one hundred very eager young boys 'solamente los primeros cien muchachos jovenes que están muy impacientes'</exItem>
+	   <exItem label="1.">just those very few old, dirty books ‘solo los muy pocos libros viejos y sucios’</exItem>
+	   <exItem label="2.">all the boy’s many black dogs ‘todos los muchos perros negros del muchacho’</exItem>
+	   <exItem label="3.">only the first one hundred very eager young boys ‘solamente los primeros cien muchachos jovenes que están muy impacientes’</exItem>
 	</EnglishExample>
-	<introduction>Como se puede ver en los ejemplos en inglés, todos los adjetivos se presentan antes del sustantivo, y, al contrario de los otros modificadores, se permite más de una frase adjetival. <span id="NPAdjPRecurringIntro" show="swNotPractical">  This will be handled in the syntactic parser by a recursive rule.</span>  En español, los adjetivos se presentan después del sustantivo y se permite solamente una frase adjetival, a menos que los adjetivos son coordinados.</introduction>
+   <introduction>Como se puede ver en los ejemplos en inglés, todos los adjetivos se presentan antes del sustantivo, y, al contrario de los otros modificadores, se permite más de una frase adjetival. <span id="NPAdjPRecurringIntro" show="swNotPractical">  This will be handled in the syntactic parser by a recursive rule.</span>  En español, los adjetivos se presentan después del sustantivo y se permite solamente una frase adjetival, a menos que los adjetivos son coordinados o en una cláusula relativa.</introduction>
 	<form section="np">
-		<prompt>Escriba algunos ejemplos de su idioma aquí:</prompt>
+		<prompt>Escriba algunos ejemplos de su lengua aquí:</prompt>
 		<textBox id="NPAdjpExample" dataItem="adjpExample"/>
 		<br/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="adjpPos" default="unknown" position="yesSpec">RNPAdjPPos</groupName>
 			<prompt>¿Dónde se presentan las frases del adjetivo con respecto al sustantivo?</prompt>
-			<radio id="NPAdjPPosBefore" dataValue="before">Antes</radio>
-			<radio id="NPAdjPPosAfter" dataValue="after">Después</radio>
-			<radio id="NPAdjPPosEitherSide" dataValue="either">Cualquier lado</radio>
+			<radio id="NPAdjPPosBefore" dataValue="before">Antes del sustantivo</radio>
+			<radio id="NPAdjPPosAfter" dataValue="after">Después del sustantivo</radio>
+			<radio id="NPAdjPPosEitherSide" dataValue="either">De cualquier lado</radio>
 			<radioGroup id="NPAdjPPosEitherSideTable" show="swNPAdjPPosEitherSide">
 				<groupName dataItem="adjpEither" default="unrestricted">RNPAdjPPosEitherSideEither</groupName>
 				<prompt>¿Pueden presentarse todas las frases del adjetivo de cualquier lado del sustantivo?</prompt>
@@ -28,24 +28,60 @@
 				<radio id="NPAdjPPosEitherSideEitherRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 			</radioGroup>
 		</radioGroup>
-		<br/>
-		<br/>
-		<introduction>Los participios o las frases del participio pueden también funcionar al igual que adjetivos en la modificación de un sustantivo en muchas idiomas (también llamada un gerundio).  Algunos ejemplos en inglés con el participio o la frase del participio entre corchetes son: </introduction>
+	   <instruction id="NPAdjPPosEitherSideEitherRestrictedInstruction" show="swNPAdjPPosEitherSideEitherRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
+	   <br/>
+	   <radioGroup>
+		  <groupName dataItem="adjpAgree" default="no">RNPAdjPAgree</groupName>
+		  <prompt>¿Hay un indicador en los adjetivos que concuerda con el sustantivo que modifican?</prompt>
+		  <radio id="NPAdjPAgreeNo" dataValue="no">No</radio>
+		  <radio id="NPAdjPAgreeYes" dataValue="yes">Sí</radio>
+	   </radioGroup>
+	   <br/>
+	   <instruction id="NPAdjPNoAgreementInstruction" show="swNPAgreementNone">You said your language does not mark any agreement in <section number="5.2">Las frases nominales - La concordancia y el caso</section>, so it is unclear what agreement marking adjectives may have.  Return to <section number="5.2">Las frases nominales - La concordancia y el caso</section> and change your answer appropriately if you do have agreement marking.  If not, change your answer here to “no”.</instruction>
+	   <instruction id="NPAdjPNumberAgreementInstruction" show="swNPNumberAgreement">
+		  To handle the number agreement, in the lexicon:
+		  <ul>
+			 <li>Mark the adjectives (or appropriate affixes) that only go with singular nouns with the feature <feature>singular</feature>.</li>
+			 <li>Mark the adjectives (or appropriate affixes) that only go with plural nouns with the feature <feature>plural</feature>.</li>
+			 <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate adjectives, if any.
+			 </li>
+		  </ul>
+	   </instruction>
+	   <instruction id="NPAdjPAgreementAnimacyInstruction" show="swNPAgreementAnimacyYes">
+		  To handle animacy agreement:
+		  <ul>
+			 <li>Mark the adjectives (or the appropriate affixes) that can only go with animate nouns with the feature <feature>animate</feature>.</li>
+			 <li>Mark the adjectives (or the appropriate affixes) that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
+			 <li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
+		  </ul>
+	   </instruction>
+	   <instruction id="NPAdjPAgreementGenderInstruction" show="swNPAgreementGenderYes">
+		  Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any adjectives (or the appropriate affixes) that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.</instruction>
+	   <instruction id="NPQPAgreementClassInstruction" show="swNPAgreementClassYes">
+		  To handle class marking and agreement:
+		  <ul>
+			 <li>It is most likely the case that the same affixes that mark the class number or type on nouns are also used on adjectives.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">La tipología - Los clasificadores</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
+			 <li>Any adjectives which can only appear with a certain class, yet do not have an affix which marks the class, will require marking of the class feature on the particular lexical item in the lexicon.   Mark those elements with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">La tipología - Los clasificadores</section>.</li>
+		  </ul>
+	   </instruction>
+	   <br/>
+	   <br/>
+		<introduction>Los participios o las frases del participio pueden también funcionar al igual que adjetivos en la modificación de un sustantivo en muchas lenguas.  Algunos ejemplos en inglés con el participio o la frase del participio entre corchetes son: </introduction>
 		<EnglishExample>
-			<exItem label="1.">the bright, [shining] sun 'el brillante, [brillando] sol'</exItem>
-			<exItem label="2.">my [crying] child 'mi niño, [gritando]'</exItem>
-			<exItem label="3.">the books [loved by millions] 'los libros [amados por millones]'</exItem>
+		   <exItem label="1.">the bright, [shining] sun ‘el brillante, [brillando] sol’</exItem>
+		   <exItem label="2.">my [crying] child ‘mi niño, [gritando]’</exItem>
+		   <exItem label="3.">the books [loved by millions] ‘los libros [amados por millones]’</exItem>
 		</EnglishExample>
-		<prompt>Escriba ejemplos similares de su idioma aquí:</prompt>
+		<prompt>Escriba ejemplos similares de su lengua aquí:</prompt>
 		<textBox id="NPAdjPPartExample" dataItem="partExample"/>
 		<br/>
-		<instruction id="NPAdjPInstruction">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Basic, Single-Clause Sentences - Inflection Features</section>
+	   <instruction id="NPAdjPInstruction">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Las oraciones básicas - Las características de inflexión</section>
 		</instruction>
 		<br/>
-		<introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Los idiomas que cambian el caso del sustantivo principal cuando hay un poseedor  normalmente también cambian los casos de los adjetivos correspondientes para concordar. Algunos idiomas de este tipo también cambian el caso del sustantivo principal cuando solamente un modificar adjetival está presente, incluso cuando no hay poseedor.
+	   <introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Las lenguas que cambian el caso del sustantivo principal cuando un poseedor está presente normalmente también cambian los casos de los adjetivos correspondientes para concordar. Algunas lenguas de este tipo también cambian el caso del sustantivo principal cuando solamente un modificar adjetival está presente, incluso cuando no hay poseedor.
 <br/>
 			<br/>
-			Además, algunos idiomas de este último tipo tienen un afijo que indica el caso de genitivo (o el caso normal de poseedores) en el sustantivo principal para indicar que debe haber un adjetivo o un poseedor en esa frase nominal. En esta situación, el adjetivo y/o el poseedor también estarán en caso de genitivo (o el caso normal de poseedores), aunque lel indicador de caso no será evidente en el modificador más adelante en la frase nominal. </introduction>
+			Además, algunas lenguas de este último tipo tienen un afijo que indica el caso de genitivo (o el caso normal de poseedores) en el sustantivo principal para indicar que debe haber un adjetivo o un poseedor en esa frase nominal. En esta situación, el adjetivo y/o el poseedor también estarán en caso de genitivo (o el caso normal de poseedores), aunque el indicador de caso no será evidente en el modificador más adelante en la frase nominal. </introduction>
 <br/>
 		<radioGroup id="NPAdjPCaseChangeTable" show="swNPPossNounCaseChangeYes">
 			<groupName dataItem="adjpCaseChange" default="no">RNPAdjPCaseChange</groupName>
@@ -56,10 +92,10 @@
 			<radioGroup id="NPAdjPCaseAffixTable" show="swNPAdjPCaseChangeYes">
 				<groupName dataItem="adjpCaseAffix" default="no">RNPAdjPCaseAffix</groupName>
 				<prompt>
-					¿Hay un afijo del caso que indica el caso <span id="NPAdjPCaseAffixGenPrompt" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitPrompt" show="swNPCaseSplitNotGen">or </span>
+					¿Existe un afijo de caso que indica el caso <span id="NPAdjPCaseAffixGenPrompt" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitPrompt" show="swNPCaseSplitNotGen">o </span>
 					<span id="NPAdjPCaseAffixErgPrompt" show="swNPPossCaseErg">ergativo </span>
 					<span id="NPAdjPCaseAffixAbsPrompt" show="swNPPossCaseAbs">absolutivo </span>(el caso normal de poseedores) en el sustantivo principal que, cuando presente, indica que debe haber un adjetivo o un poseedor en esa frase nominal?</prompt>
-				<radio id="NPAdjPCaseAffixNo" dataValue="no">No, el indicador de caso <span id="NPAdjPCaseAffixGenNoSpan" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitNoSpan" show="swNPCaseSplitNotGen">or </span>
+				<radio id="NPAdjPCaseAffixNo" dataValue="no">No, el indicador de caso <span id="NPAdjPCaseAffixGenNoSpan" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitNoSpan" show="swNPCaseSplitNotGen">o </span>
 					<span id="NPAdjPCaseAffixErgNoSpan" show="swNPPossCaseErg">ergativo </span>
 					<span id="NPAdjPCaseAffixAbsNoSpan" show="swNPPossCaseAbs">absolutivo </span>no se indica con un afijo en esta manera</radio>
 				<radio id="NPAdjPCaseAffixYesPrefix" dataValue="yesPrefix">Sí, un prefijo: cuando el prefijo abierto del caso <span id="NPAdjPCaseAffixGenYesPrefixSpan" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitYesPrefixSpan" show="swNPCaseSplitNotGen">o </span>
@@ -74,13 +110,7 @@
 					<span id="NPAdjPCaseAffixAbsYesSuffixSpan1" show="swNPPossCaseAbs">absolutivo </span>así que otro adjetivo y/o un poseedor debe también estar presente.) </radio>
 			</radioGroup>
 		</radioGroup>
-				<instruction id="NPAdjPCaseChangeYesInstruction" show="swNPAdjPCaseChangeYes">As noted previously, the grammar rules needed to parse sentences with noun phrases modified by either a possessor or an adjective in your language with PC-Patr are not currently available within PAWS.  Please contact <a href="mailto:cheri_black@sil.org">Cheri_Black@sil.org</a> for help.</instruction>
-		<radioGroup>
-			<groupName dataItem="adjpAgree" default="no">RNPAdjPAgree</groupName>
-			<prompt>¿Hay un indicador en los adjetivos que concuerda con el sustantivo que modifican?</prompt>
-			<radio id="NPAdjPAgreeNo" dataValue="no">No</radio>
-			<radio id="NPAdjPAgreeYes" dataValue="yes">Sí</radio>
-		</radioGroup>
+
 		<instruction id="NPAdjPCaseAffixYesPrefixInstruction" show="swNPAdjPCaseAffixYesPrefix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenPrefixSpan" show="swNPPossCaseGen">
 				<feature>genitive_prefix </feature>
 			</span><span id="NPAdjPCaseAffixSplitPrefixSpan" show="swNPCaseSplitNotGen">or </span>
@@ -103,35 +133,7 @@
 			</span>on the phrase-delimiting affix which marks <span id="NPAdjPCaseAffixGenSuffixSpan1" show="swNPPossCaseGen">genitive </span><span id="NPAdjPCaseAffixSplitSuffixSpan1" show="swNPCaseSplitNotGen">or </span>
 			<span id="NPAdjPCaseAffixErgSuffixSpan1" show="swNPPossCaseErg">ergative </span>
 			<span id="NPAdjPCaseAffixAbsSuffixSpan1" show="swNPPossCaseAbs">absolutive </span> case.</instruction>
-		<instruction id="NPAdjPPosEitherSideEitherRestrictedInstruction" show="swNPAdjPPosEitherSideEitherRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
 		<br/>
-		<instruction id="NPAdjPNoAgreementInstruction" show="swNPAgreementNone">You said your language does not mark any agreement in <section number="5.1">Overview Plus Agreement and Case</section>, so it is unclear what agreement marking adjectives may have.  Return to <section number="5.1">Overview Plus Agreement and Case</section> and change your answer appropriately if you do have agreement marking.  If not, change your answer here to "no".</instruction>
-		<instruction id="NPAdjPNumberAgreementInstruction" show="swNPNumberAgreement">
-To handle the number agreement, in the lexicon:
-<ul>
-				<li>Mark the adjectives (or appropriate affixes) that only go with singular nouns with the feature <feature>singular</feature>.</li>
-				<li>Mark the adjectives (or appropriate affixes) that only go with plural nouns with the feature <feature>plural</feature>.</li>
-				<li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate adjectives, if any.
-				</li>
-			</ul>
-		</instruction>
-		<instruction id="NPAdjPAgreementAnimacyInstruction" show="swNPAgreementAnimacyYes">
-To handle animacy agreement:
-<ul>
-				<li>Mark the adjectives (or the appropriate affixes) that can only go with animate nouns with the feature <feature>animate</feature>.</li>
-				<li>Mark the adjectives (or the appropriate affixes) that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
-				<li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
-			</ul>
-		</instruction>
-		<instruction id="NPAdjPAgreementGenderInstruction" show="swNPAgreementGenderYes">
-Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any adjectives (or the appropriate affixes) that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.</instruction>
-		<instruction id="NPQPAgreementClassInstruction" show="swNPAgreementClassYes">
-To handle class marking and agreement, in the lexicon:
-<ul>
-				<li>Mark the adjectives that can only go with a particular class with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 99.</li>
-				<li>It may be the case that the same affixes that mark the class number on nouns are also used on adjectives.  If this is the case in your language, you should have already added the class feature to the affixes, so all the words will automatically come from the morphological parser with the class number marked.</li>
-			</ul>
-		</instruction>
 		<br/>
 		<buttons>
 			<button id="NPAdjPBack" value="Back" goto="NPContents.htm"/>

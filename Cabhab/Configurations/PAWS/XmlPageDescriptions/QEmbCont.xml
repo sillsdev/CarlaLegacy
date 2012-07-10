@@ -3,14 +3,14 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QEmbCont" count="7/9">
 	<title level="2">Questions - Embedded Content Questions</title>
-	<form section="q">
+   <introduction>In English embedded content questions, an interrogative phrase is required to be fronted to the beginning of the embedded clause.  However, in contrast to the main clause content questions, there is no auxiliary fronting.  Examples of English embedded content questions include:</introduction>
 		<EnglishExample>
-			<exItem>Examples of English embedded content questions, with required fronting, include:</exItem>
 			<exItem label="1.">I know who hit the ball.</exItem>
 			<exItem label="2.">I wonder when she will come.</exItem>
 			<exItem label="3.">I will ask what the boy hit.</exItem>
 		</EnglishExample>
-		<prompt>Key similar examples from your language, whether or not fronting is required, here:</prompt>
+   <form section="q">
+	  <prompt>Key similar examples from your language, whether or not fronting is required, here:</prompt>
 		<textBox id="QEmbContentExample" dataItem="embContentExample" cols="50"/>
 		<br/>
 		<instruction id="QEmbContInstruction">If any main verbs used in these examples were not marked with the feature <feature>sentential</feature> above, go to the lexicon and add the feature <feature>sentential</feature> to the appropriate entries now.</instruction>

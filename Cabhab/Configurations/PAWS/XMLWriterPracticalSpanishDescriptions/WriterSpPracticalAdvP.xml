@@ -2,7 +2,7 @@
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
 	<section1 id="sAdvP">
-		<secTitle>Los adverbios y frases del adverbio</secTitle>
+		<secTitle>Los adverbios</secTitle>
 		<p>
 			<content>Los adverbios expresan cuatro tipos básicos de información:</content>
 		</p>
@@ -14,7 +14,7 @@
 				<content> lugar,</content>
 			</li>
 			<li>
-				<content>manera, y</content>
+				<content>modo, y</content>
 			</li>
 			<li>
 				<content>razón o propósito.</content>
@@ -23,37 +23,6 @@
 		<p>
 			<content>Estos tipos tienen diversas características en cuanto a qué posiciones pueden presentarse y cómo pueden ser modificados. Cada tipo será considerado en su orden correspondiente.
 </content>
-		</p>
-		<p>
-			<content>Los idiomas tienen normalmente palabras de grado que puedan modificar por lo menos algunos tipos de adverbios.  En </content>
-			<langName/>
-			<content/>
-			<case element="advp" attr="degree">
-				<caseText value="no">, sin embargo, no hay ningún palabra de grado que modifica adverbios.</caseText>
-				<caseText value="yes"> hay tales palabras de grado.</caseText>
-			</case>
-			<content/>
-			<text show="swAdvPDegreeYes">
-				<content> Estas palabras de grado se presentan </content>
-				<case element="advp" attr="degreePos">
-					<caseText value="before">antes</caseText>
-					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-					<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
-					<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-					<caseText value="afterOrBoth">después o en ambos lados</caseText>
-					<caseText value="both">en ambos lados</caseText>
-					<caseText value="unknown">_______</caseText>
-				</case>
-				<content> del adverbio.  </content>
-				<case element="advp" attr="degreeSet">
-					<caseText value="unrestricted">Las palabras de grado pueden modificar cualquier tipo de adverbio.</caseText>
-					<caseText value="exceptReason">Las palabras de grado pueden modificar adverbios de tiempo, de lugar, y de manera, pero los adverbios de razón o propósito no se modifican.</caseText>
-					<caseText value="restricted">Hay restricciones en cuanto a cuáles de las palabras de grado pueden modificar a cada tipo de adverbio.</caseText>
-				</case>
-				<content/>
-			</text>
-			<content/>
 		</p>
 		<section2 id="sAdvPTemporal">
 			<secTitle>Adverbios de tiempo</secTitle>
@@ -70,46 +39,238 @@
 				<langData>luego</langData>
 				<content>, y </content>
 				<langData>siempre</langData>
-				<content>.  Algunos ejemplos incluyendo modificadores con las palabras de grado son: </content>
-				<langData>muy pronto</langData>
-				<content>, </content>
-				<langData>más luego</langData>
-				<content> y </content>
-				<langData>solamente ahora</langData>
-				<content>.  Muchos idiomas también tienen un adverbio negativo de tiempo, como </content>
+				<content>. Muchas lenguas también tienen un adverbio negativo de tiempo, como </content>
 				<langData>nunca</langData>
 				<content> en español.</content>
 			</p>
-			<p>
-				<content>Algunos ejemplos de los adverbios positivos de tiempo y de cualquier palabra de grado que puedan modificarlos en </content>
-				<langName/>
-				<content> son:
-</content>
-			</p>
-			<example>
-				<interlinear exampleLoc="advp/temporalExample"/>
-			</example>
-			<p show="swAdvPNegTemporalTypeAffix">
-				<content>En </content>
-				<langName/>
-				<content>, la idea negativa de tiempo </content><gloss><content>'nunca'</content></gloss><content> se expresa con uno o más afijos verbales, en lugar de palabras independientes.   Algunos ejemplos de afijos unidos a los verbos son:</content>
-			</p>
-			<example show="swAdvPNegTemporalTypeAffix">
-				<interlinear exampleLoc="advp/negTemporalAffixExample"/>
-			</example>
-			<p show="swAdvPNegTemporalTypeVerb">
-				<content>En </content>
-				<langName/>
-				<content>, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios positivos de tiempo para dar un significado negativo de tiempo. Algunos ejemplos de adverbios de tiempo con un verbo negativo son:</content>
-			</p>
-			<p show="swAdvPNegTemporalTypeWord">
-				<content>En </content>
-				<langName/>
-				<content>, la idea negativa de tiempo </content><gloss><content>'nunca'</content></gloss><content> se expresa con una o más palabras independientes.  Algunos ejemplos son:</content>
-			</p>
-			<example show="swAdvPNegTemporalTypeWordOrVerb">
-				<interlinear exampleLoc="advp/negTemporalExample"/>
-			</example>
+		   <p><content>Empezamos con los adverbios positivos de tiempo.</content></p>
+		   <p>
+			  <content>Los adverbios positivos de tiempo en </content>
+			  <langName/>
+			  <content> son:
+			  </content>
+		   </p>
+		   <example>
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbios positivos de tiempo</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/temporalExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p><content>En muchos idioimas los abverbios de tiempo puenden ser modificado con palabras de grado.  Algunos ejemplos en español son: </content>
+			  <langData>muy pronto</langData>
+			  <content>, </content>
+			  <langData>más luego</langData>
+			  <content> y </content>
+			  <langData>solamente ahora</langData>
+			  <content>.  </content></p>
+
+		   <p><content>En </content><langName/><content>, </content>
+			  <case element="advp" attr="temporalDegree">
+				 <caseText value="yesBefore">una palabra de grado puede presentarse antes del adverbio positivo de tiempo.</caseText>
+				 <caseText value="yesAfter">una palabra de grado puede presentarse después del adverbio positivo de tiempo.</caseText>
+				 <caseText value="attaches">hay un afijo o clítico que se une al adverbio positivo de tiempo para intensificarlo.</caseText>
+				 <caseText value="noRedup">no hay palabras de grado independientes, pero utiliza reduplicación para intensificar el significado del adverbio positivo de tiempo.</caseText>
+				 <caseText value="no">los adverbios positivos de tiempo no se modifican ni intensifican.</caseText>
+			  </case>
+		   </p>
+
+		   <p show="swAdvPTemporalDegreeYes"><content>Las palabras de grado que pueden modificar un adverbio positivo de tiempo en </content><langName/><content> son:</content></p>
+		   <example show="swAdvPTemporalDegreeYes">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Palabras de grado</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/temporalDegreeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPTemporalDegreeAttaches"><content>Los afijos o clíticos de grado que pueden modificar un adverbio positivo de tiempo en </content><langName/><content> son:</content></p>
+		   <example show="swAdvPTemporalDegreeAttaches">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Afijos o clíticos de grado</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/temporalDegreeAffixExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPTemporalDegreeNoRedup"><content>Algunos ejemplos de los adverbios positivos de tiempo con reduplicación son:</content></p>
+		   <example show="swAdvPTemporalDegreeNoRedup">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbiois de tiempo con reduplicación</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/temporalDegreeRedupExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPTemporalDegreeAttaches"><content>Algunos ejemplos de los afijos o clíticos de grado unido con un adverbio de tiempo son:</content></p>
+		   <example show="swAdvPTemporalDegreeAttaches">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbios positivos de tiempo intensificados</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/temporalPhraseAffixExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPTemporalDegreeYes"><content>Algunos ejemplos de un adverbio positivo de tiempo con una palabra de grado modificandolo son:</content></p>
+		   <example show="swAdvPTemporalDegreeYes">
+			  <interlinear exampleLoc="advp/temporalPhraseExample"/>
+		   </example>
+
+		   <p><content>Moviendo ahora al adverbio negativo de tiempo </content><langData>nunca</langData><content> que expresa el concepto de </content><gloss><content>‘no tiempo’</content></gloss><content>.</content></p>
+
+		   <p show="swAdvPNegTemporalTypeWord">
+			  <content>En </content>
+			  <langName/>
+			  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con una o más palabras independientes que no se relacionan con los adverbios positivos de tiempo.</content>
+		   </p>
+		   <p show="swAdvPNegTemporalTypeAdverb">
+			  <content>En </content>
+			  <langName/>
+			  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con un afijo negativo que se une con un adverbio positivo de tiempo para formar un adverbio negativo de tiempo.</content>
+		   </p>
+		   <p show="swAdvPNegTemporalTypeAdverbWord">
+			  <content>En </content>
+			  <langName/>
+			  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con una palabra negativa independiente que se presenta </content><case element="advp" attr="negTemporalWordPos">
+				 <caseText value="before">antes</caseText>
+				 <caseText value="after">después</caseText>
+				 <caseText value="unknown">________</caseText>
+			  </case><content> de un adverbio positivo de tiempo para formar una frase adverbial negativo de tiempo.</content>
+		   </p>
+		   <p show="swAdvPNegTemporalTypeAffix">
+			  <content>En </content>
+			  <langName/>
+			  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con uno o más afijos verbales, en lugar de palabras independientes.</content>
+		   </p>
+
+		   <p show="swAdvPNegTemporalTypeVerb">
+			  <content>En </content>
+			  <langName/>
+			  <content>, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios positivos de tiempo para dar un significado negativo de tiempo.</content>
+		   </p>
+
+		   <p show="swAdvPNegTemporalTypeAdverbWord"><content>La palabra negativa que se presenta con los adverbios positivos de tiempo es:</content></p>
+		   <example show="swAdvPNegTemporalTypeAdverbWord">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Palabra negativa</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negTemporalAdverbWordExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+		   <p show="swAdvPNegTemporalTypeAdverbWord"><content>Algunos ejemplos de frases de adverbios negativos de tiempo formadas por la palabra negativa presentarse </content><case element="advp" attr="negTemporalWordPos">
+			  <caseText value="before">antes</caseText>
+			  <caseText value="after">después</caseText>
+			  <caseText value="unknown">________</caseText>
+		   </case><content> de un adverbio positivo de tiempo son:</content></p>
+		   <example show="swAdvPNegTemporalTypeAdverbWord">
+			  <interlinear exampleLoc="advp/negTemporalAdverbWordsExample"/>
+		   </example>
+
+		   <p show="swAdvPNegTemporalTypeAdverb"><content>El afijo negativo que se une con un adverbio positivo de tiempo es:</content></p>
+		   <example show="swAdvPNegTemporalTypeAdverb">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Afijo negativo</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negTemporalAdverbAffixExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+		   <p show="swAdvPNegTemporalTypeAdverb"><content>Algunos ejemplos de adverbios negativos de tiempo formados por unirse el afijo negativo con un adverbio positivo de tiempo son:</content></p>
+		   <example show="swAdvPNegTemporalTypeAdverb">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbios negativos de tiempo</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negTemporalAdverbExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPNegTemporalTypeWord"><content>Los adverbios negativos de tiempo en </content><langName/><content> son:</content></p>
+		   <example show="swAdvPNegTemporalTypeWord">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbios negativos de tiempo</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negTemporalExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPNegTemporalTypeVerb"><content>Algunos ejemplos de adverbios positivos de tiempo con un verbo negativo son:</content></p>
+		   <example show="swAdvPNegTemporalTypeVerb">
+			  <interlinear exampleLoc="advp/negTemporalExample"/>
+		   </example>
+
+		   <p show="swAdvPNegTemporalTypeAffix"><content>Los afijos adverbiales negativos de tiempo que se unen a los verbos son:</content></p>
+		   <example show="swAdvPNegTemporalTypeAffix">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Afijos adverbiales negativos de tiempo</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negTemporalAffixExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPNegTemporalTypeAffix"><content>Algunos ejemplos de afijos adverbiales negativos de tiempo unidos a los verbos son:</content></p>
+		   <example show="swAdvPNegTemporalTypeAffix">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Verbos con un afijo adverbial negativo de tiempo</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negTemporalVerbExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
 			<p>
 				<content>Véase la sección </content>
 				<sectionRef sec="sNegAdverb"/>
@@ -122,7 +283,7 @@
 </content>
 				<langData>anoche</langData>
 				<content>, </content>
-				<langData>el próximo año</langData>
+			   <langData>el año próximo</langData>
 				<content>, </content>
 				<langData>mañana</langData>
 				<content>, </content>
@@ -161,50 +322,253 @@
 				<langData>allí</langData>
 				<content>, y </content>
 				<langData>allá</langData>
-				<content>.  Los adverbios de lugar se pueden modificar por </content>
-				<langData>solamente</langData>
-				<content> y </content>
-				<langData>mero o mismo</langData>
-				<content>, como en: </content>
-				<langData>solamente aquí</langData>
-				<content>, </content>
-				<langData>aquí mismo</langData>
-				<content> y </content>
-				<langData>allí mero</langData>
-				<content>.  Muchos idiomas también tienen un adverbio negativo de lugar que significa </content>
-				<gloss><content>'en ninguna parte'</content></gloss>
+				<content>.  Muchas lenguas también tienen un adverbio negativo de lugar que significa </content>
+				<gloss><content>‘en ninguna parte’</content></gloss>
 				<content>.</content>
 			</p>
-			<p>
-				<content>Algunos ejemplos de los adverbios positivos de lugar y de cualquier palabra de grado que pueda modificar en</content>
-				<langName/>
-				<content> son:
-</content>
-			</p>
-			<example>
-				<interlinear exampleLoc="advp/locativeExample"/>
-			</example>
-			<p show="swAdvPNegLocativeTypeAffix">
-				<content>En </content>
-				<langName/>
-				<content>, la idea negativa de lugar </content><gloss><content>'en ninguna parte'</content></gloss><content> se expresa con uno o más afijos verbales, en lugar de palabras independientes. Algunos ejemplos de afijos unidos a los verbos son:</content>
-			</p>
-			<example show="swAdvPNegLocativeTypeAffix">
-				<interlinear exampleLoc="advp/negLocativeAffixExample"/>
-			</example>
-			 <p show="swAdvPNegLocativeTypeVerb">
-				<content>En </content>
-				<langName/>
-				 <content>, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios positivos de lugar para dar un significado negativo de lugar. Algunos ejemplos de los adverbios de lugar con un verbo negativo son:</content>
-			</p>
+
+		   <p><content>Empezamos con los adverbios positivos de lugar.</content></p>
+		   <p show="swAdvPLocativeClassifierYes">
+			  <content>Los raíces de los adverbios positivos de lugar en </content>
+			  <langName/>
+			  <content> se muestran aquí.  Cada uno puede presentarse con su clasificador apropriado.</content>
+		   </p>
+		   <p show="swAdvPLocativeClassifierNo">
+			  <content>Los adverbios positivos de lugar en </content>
+			  <langName/>
+			  <content> se muestran aquí:</content>
+		   </p>
+		   <example>
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbios positivos de lugar</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/locativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p><content>Las formas de los adverbios positivos de lugar </content>
+			  <case element="advp" attr="advLocDem">
+				 <caseText value="no">son completemente distintos de los pronombres demostrativos. </caseText>
+				 <caseText value="same">son idénticos que los pronombres demostrativos, pero se presentan en posiciones distintos en la oración. </caseText>
+				 <caseText value="affix">se relacionan con los pronombres demostrativos por medio de un afijo que se une a un pronombre demostrativo para formar un adverbio de lugar. </caseText>
+			  </case><content> Véase la  sección </content><sectionRef sec="sPronDem"/><content> para información acerca de los pronombres demostrativos.</content></p>
+
+		   <p><content>En muchos idioimas los abverbios de lugar puenden ser modificado con palabras de grado.  Los adverbios de lugar en español se pueden modificar por </content>
+		   <langData>solamente</langData>
+		   <content> y </content>
+		   <langData>mero o mismo</langData>
+		   <content>, como en: </content>
+		   <langData>solamente aquí</langData>
+		   <content>, </content>
+		   <langData>aquí mismo</langData>
+		   <content> y </content>
+		   <langData>allí mero</langData></p>
+
+		   <p><content>En </content><langName/><content>, </content>
+			  <case element="advp" attr="locativeDegree">
+				 <caseText value="yesBefore">una palabra de grado puede presentarse antes del adverbio positivo de lugar.</caseText>
+				 <caseText value="yesAfter">una palabra de grado puede presentarse después del adverbio positivo de lugar.</caseText>
+				 <caseText value="attaches">hay un afijo o clítico que se une al adverbio positivo de lugar para intensificarlo.</caseText>
+				 <caseText value="noRedup">no hay palabras de grado independientes, pero utiliza reduplicación para intensificar el significado del adverbio positivo de lugar.</caseText>
+				 <caseText value="no">los adverbios positivos de lugar no se modifican ni intensifican.</caseText>
+			  </case>
+		   </p>
+
+		   <p show="swAdvPLocativeDegreeYes"><content>Las palabras de grado que pueden modificar un adverbio positivo de lugar en </content><langName/><content> son:</content></p>
+		   <example show="swAdvPLocativeDegreeYes">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Palabras de grado</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/locativeDegreeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPLocativeDegreeAttaches"><content>Los afijos o clíticos de grado que pueden modificar un adverbio positivo de lugar en </content><langName/><content> son:</content></p>
+		   <example show="swAdvPLocativeDegreeAttaches">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Afijos o clíticos de grado</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/locativeDegreeAffixExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPLocativeDegreeNoRedup"><content>Algunos ejemplos de los adverbios positivos de lugar con reduplicación son:</content></p>
+		   <example show="swAdvPLocativeDegreeNoRedup">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbiois de lugar con reduplicación</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/locativeDegreeRedupExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPLocativeDegreeAttaches"><content>Algunos ejemplos de los afijos o clíticos de grado unido con un adverbio de lugar son:</content></p>
+		   <example show="swAdvPLocativeDegreeAttaches">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbios positivos de lugar intensificados</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/locativePhraseAffixExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPLocativeDegreeYes"><content>Algunos ejemplos de un adverbio positivo de lugar con una palabra de grado modificandolo son:</content></p>
+		   <example show="swAdvPLocativeDegreeYes">
+			  <interlinear exampleLoc="advp/locativePhraseExample"/>
+		   </example>
+
+		   <p><content>Moviendo ahora al adverbio negativo de lugar </content><langData>en ninguna parte</langData><content> que expresa el concepto de </content><gloss><content>‘no lugar’</content></gloss><content>.</content></p>
+
 		   <p show="swAdvPNegLocativeTypeWord">
-				<content>En </content>
-				<langName/>
-			   <content>, la idea negativa de lugar </content><gloss><content>'en ninguna parte'</content></gloss><content> se expresa con una o más palabras independientes. Los ejemplos son:</content>
-			</p>
-			<example show="swAdvPNegLocativeTypeWordOrVerb">
-				<interlinear exampleLoc="advp/negLocativeExample"/>
-			</example>
+			  <content>En </content>
+			  <langName/>
+			  <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con una o más palabras independientes que no se relacionan con los adverbios positivos de lugar.</content>
+		   </p>
+		   <p show="swAdvPNegLocativeTypeAdverb">
+			  <content>En </content>
+			  <langName/>
+			  <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con un afijo negativo que se une con un adverbio positivo de lugar para formar un adverbio negativo de lugar.</content>
+		   </p>
+		   <p show="swAdvPNegLocativeTypeAdverbWord">
+			  <content>En </content>
+			  <langName/>
+			  <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con una palabra negativa independiente que se presenta </content><case element="advp" attr="negLocativeWordPos">
+				 <caseText value="before">antes</caseText>
+				 <caseText value="after">después</caseText>
+				 <caseText value="unknown">________</caseText>
+			  </case><content> de un adverbio positivo de lugar para formar una adverbio negativo de lugar frase.</content>
+		   </p>
+		   <p show="swAdvPNegLocativeTypeAffix">
+			  <content>En </content>
+			  <langName/>
+			  <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con uno o más afijos verbales, en vez de palabras independientes.</content>
+		   </p>
+
+		   <p show="swAdvPNegLocativeTypeVerb">
+			  <content>En </content>
+			  <langName/>
+			  <content>, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios positivos de lugar para dar un significado negativo de lugar.</content>
+		   </p>
+
+		   <p show="swAdvPNegLocativeTypeAdverbWord"><content>La palabra negativa que se presenta con los adverbios positivos de lugar es:</content></p>
+		   <example show="swAdvPNegLocativeTypeAdverbWord">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Palabra negativa</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negLocativeAdverbWordExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+		   <p show="swAdvPNegLocativeTypeAdverbWord"><content>Algunos ejemplos de frases de adverbios negativos de lugar formado por la palabra negativa presentarse </content><case element="advp" attr="negLocativeWordPos">
+			  <caseText value="before">antes</caseText>
+			  <caseText value="after">después</caseText>
+			  <caseText value="unknown">________</caseText>
+		   </case><content> de un adverbio positivo de lugar son:</content></p>
+		   <example show="swAdvPNegLocativeTypeAdverbWord">
+			  <interlinear exampleLoc="advp/negLocativeAdverbWordsExample"/>
+		   </example>
+
+		   <p show="swAdvPNegLocativeTypeAdverb"><content>El afijo negativo que se une con un adverbio positivo de lugar es:</content></p>
+		   <example show="swAdvPNegLocativeTypeAdverb">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Afijo negativo</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negLocativeAdverbAffixExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+		   <p show="swAdvPNegLocativeTypeAdverb"><content>Algunos ejemplos de adverbios negativos de lugar formados por unirse el afijo negativo con un adverbio positivo de lugar son:</content></p>
+		   <example show="swAdvPNegLocativeTypeAdverb">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbios negativos de lugar</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negLocativeAdverbExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPNegLocativeTypeWord"><content>Los adverbios negativos de lugar en </content><langName/><content> son:</content></p>
+		   <example show="swAdvPNegLocativeTypeWord">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbios negativos de lugar</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negLocativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPNegLocativeTypeVerb"><content>Algunos ejemplos de adverbios positivos de lugar con un verbo negativo son:</content></p>
+		   <example show="swAdvPNegLocativeTypeVerb">
+			  <interlinear exampleLoc="advp/negLocativeExample"/>
+		   </example>
+
+		   <p show="swAdvPNegLocativeTypeAffix"><content>Los afijos adverbiales negativos de lugar que se unen a los verbos son:</content></p>
+		   <example show="swAdvPNegLocativeTypeAffix">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Afijos adverbiales negativos de lugar</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negLocativeAffixExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPNegLocativeTypeAffix"><content>Algunos ejemplos de afijos adverbiales negativos de lugar unidos a los verbos son:</content></p>
+		   <example show="swAdvPNegLocativeTypeAffix">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Verbos con un afijo adverbial negativo de lugar</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/negLocativeVerbExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
 			<p>
 				<content>Véase la sección </content>
 				<sectionRef sec="sNegAdverb"/>
@@ -217,45 +581,195 @@
 				<langData>hasta San José</langData>
 				<content> y </content>
 				<langData>a través del río</langData>
-				<content>.  Muchos idiomas permiten sólo una frase nominal, la cual consiste en un nombre propio o una descripción del lugar. Las expresiones del lugar normalmente pueden presentarse al inicio o al final en una cláusula, o como complementos para verbos de movimiento. Véase la sección </content>
+				<content>.  Muchas lenguas permiten sólo una frase nominal, la cual consiste en un nombre propio o una descripción del lugar. Las expresiones del lugar normalmente pueden presentarse al inicio o al final en una cláusula, o como complementos para verbos de movimiento. Véase la sección </content>
 				<sectionRef sec="sIPMotion"/>
 				<content> para considerar otros ejemplos con verbos del movimiento.
 </content>
 			</p>
 		</section2>
+
 		<section2 id="sAdvPManner">
-			<secTitle>Adverbios de manera</secTitle>
+			<secTitle>Adverbios de modo</secTitle>
 			<p>
-				<content>Los adverbios de manera directamente modifican el verbo y generalmente terminan con el sufijo </content>
+				<content>Los adverbios de modo directamente modifican el verbo y generalmente terminan con el sufijo </content>
 				<langData>-mente</langData>
-				<content> en español. Estos adverbios de manera se pueden modificar con </content>
-				<langData>muy</langData>
-				<content>
-y </content>
-				<langData>tan</langData>
-				<content>, como en: </content>
-				<langData>muy rápidamente</langData>
-				<content>, </content>
-				<langData>tan lentamente</langData>
-				<content> y </content>
-				<langData>muy bien</langData>
-				<content>.</content>
+			   <content> en español.  En algunas lenguas, los adverbios de modo son todos escritos como afijos en el verbo, en lugar de como palabras independientes.</content>
 			</p>
-			<p>
-				<content>Algunos ejemplos de  adverbios de manera en </content>
-				<langName/>
-				<content> y de cualquier palabra de grado que pueda modificar son:
-</content>
-			</p>
-			<example>
-				<interlinear exampleLoc="advp/mannerExample"/>
-			</example>
-			<p show="swAdvPMannerTypeAffix">
-				<content>Los adverbios de manera en </content>
-				<langName/>
-				<content> son todos escritos como afijos en el verbo, en lugar de como palabras independientes.</content>
-			</p>
+
+		   <p show="swAdvPMannerTypeWord"><content>Los adverbios de modo en </content>
+			  <langName/><content> son escritos como palabras independientes.</content></p>
+		   <p show="swAdvPMannerTypeWord"><content>Algunos ejemplos de adverbios de modo en </content>
+			  <langName/><content> son:</content></p>
+		   <example show="swAdvPMannerTypeWord">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Alverbios de modo</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/mannerExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPMannerTypeAffix"><content>Los adverbios de modo en </content>
+			  <langName/><content> son todos escritos como afijos en el verbo.</content></p>
+		   <p show="swAdvPMannerTypeAffix"><content>Algunos ejemplos de afijos adverbiales de modo en </content>
+			  <langName/><content> son:</content></p>
+		   <example show="swAdvPMannerTypeAffix">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Afijos adverbiales de modo</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/mannerExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p><content>Los adverbios de modo normalmente se pueden modificar con palabras de grado.  En español, los adverbios de modo se pueden modificar con </content>
+			  <langData>muy</langData>
+			  <content>
+				 y </content>
+			  <langData>tan</langData>
+			  <content>, como en: </content>
+			  <langData>muy rápidamente</langData>
+			  <content>, </content>
+			  <langData>tan lentamente</langData>
+			  <content> y </content>
+			  <langData>muy bien</langData>
+			  <content>.</content>
+		   </p>
+
+		   <p show="swAdvPMannerTypeWord"><content>En </content><langName/><content>, </content>
+			  <case element="advp" attr="mannerDegree">
+				 <caseText value="yesBefore">una palabra de grado puede presentarse antes de un adverbio de modo.</caseText>
+				 <caseText value="yesAfter">una palabra de grado puede presentarse después de un adverbio de modo.</caseText>
+				 <caseText value="attaches">hay un afijo o clítico que se une al adverbio de modo para intensificarlo.</caseText>
+				 <caseText value="noRedup">no hay palabras de grado independientes, pero utiliza reduplicación para intensificar el significado del adverbio de modo.</caseText>
+				 <caseText value="no">los adverbios de modo no se modifican ni intensifican.</caseText>
+			  </case>
+		   </p>
+
+		   <p show="swAdvPMannerTypeWordAndDegreeYes"><content>Las palabras de grado que puede modificar los adverbios de modo en </content><langName/><content> son:</content></p>
+		   <example show="swAdvPMannerTypeWordAndDegreeYes">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Palabras de grado</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/mannerDegreeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPMannerTypeWordAndDegreeAttaches"><content>Los afijos o clíticos que pueden modificar los adverbios de modo en </content><langName/><content> son:</content></p>
+		   <example show="swAdvPMannerTypeWordAndDegreeAttaches">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Afijos o clíticos de grado</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/mannerDegreeAffixExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPMannerTypeWordAndDegreeNoRedup"><content>Algunos ejemplos de los adverbios de modo con reduplicación son:</content></p>
+		   <example show="swAdvPMannerTypeWordAndDegreeNoRedup">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbios de modo con reduplicación</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/mannerDegreeRedupExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPMannerTypeWordAndDegreeAttaches"><content>Algunos ejemplos de los afijos o clíticos de grado unidos a un adverbio de modo son:</content></p>
+		   <example show="swAdvPMannerTypeWordAndDegreeAttaches">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbios de modo con afijos o clíticos de grado</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/mannerPhraseAffixExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPMannerTypeWordAndDegreeYes"><content>Algunos ejemplos de los adverbios de modo con una palabra de grado modificándolos son:</content></p>
+		   <example show="swAdvPMannerTypeWordAndDegreeYes">
+			  <interlinear exampleLoc="advp/mannerDegreePhraseExample"/>
+		   </example>
+
+		   <p show="swAdvPMannerTypeAffix"><content>En </content><langName/><content>, </content>
+			  <case element="advp" attr="mannerAffixDegree">
+				 <caseText value="yesBefore">un afijo de grado puede presentarse antes de un afijo adverbial de modo.</caseText>
+				 <caseText value="yesAfter">un afijo de grado puede presentarse después de un afijo adverbial de modo.</caseText>
+				 <caseText value="noRedup">utiliza reduplicación para intensificar el significado del afijo adverbial de modo.</caseText>
+				 <caseText value="no">los afijos adverbiales de modo no se modifican ni intensifican.</caseText>
+			  </case>
+		   </p>
+
+		   <p show="swAdvPMannerTypeAffixAndDegreeYes"><content>Los afijos o clíticos de grado que pueden modificar los afijos adverbiales de modo en </content><langName/><content> son:</content></p>
+		   <example show="swAdvPMannerTypeAffixAndDegreeYes">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Afijos o clíticos de grado</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/mannerAffixDegreeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPMannerTypeAffixAndDegreeNoRedup"><content>Algunos ejemplos de los afijos adverbiales de modo con reduplicación unidos a los verbos son:</content></p>
+		   <example show="swAdvPMannerTypeAffixAndDegreeNoRedup">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Afijos adverbiales de modo con reduplicación</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/mannerAffixDegreeRedupExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swAdvPMannerTypeAffixAndDegreeYes"><content>Algunos ejemplos de los afijos adverbiales de modo con afijos de grado unidos a los verbos son:</content></p>
+		   <example show="swAdvPMannerTypeAffixAndDegreeYes">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Afijos adverbiales de modo con afijos de grado</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/mannerAffixPhraseExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+		   <p><content>Los adverbios de modo no parece tener el  mismo significado que otros tipos de frases, con la excepción de oraciones comparativas como </content>
+			  <langData>tan rápido como puede</langData><content>.  Las oraciones comparativas se discuten en las secciones </content><sectionRef sec="sIPComparatives"/><content> y </content><sectionRef sec="sCoordComparative"/><content>. </content></p>
+
 		</section2>
+
 		<section2 id="sAdvPReason">
 			<secTitle>Adverbios que expresan razón o propósito</secTitle>
 			<p>
@@ -263,69 +777,196 @@ y </content>
 				<langData>por lo tanto</langData>
 				<content> y </content>
 				<langData>pues</langData>
-				<content>.  Estos adverbios no permiten modificadores en español.  La razón o el propósito también se puede expresar con una cláusula adverbial empezando con </content>
+				<content>.  Estos adverbios normalmente no permiten modificadores.</content></p>
+		   <p><content>La razón o el propósito también se puede expresar con una cláusula adverbial empezando con </content>
 				<langData>porque</langData>
 				<content> o </content>
 				<langData>desde que</langData>
 				<content> o </content>
 				<langData>en orden que</langData>
-				<content>.  Estas frases o cláusulas adverbiales se presentan al inicio o al final en la oración.</content>
+			   <content>.  Estas frases o cláusulas adverbiales se presentan al inicio o al final en la oración.  La estructura de las cláusulas adverbiales será analizada en la sección </content>
+			   <sectionRef sec="sAdvClReason"/>
+			   <content>. </content>
 			</p>
-			<p>
-				<content>Algunos ejemplos de los adverbios que expresan razón o propósito o de las cláusulas adverbiales en </content>
+		   <p>
+			  <content>Los adverbios que expresan razón o propósito por sí mismos o que empiezan una cláusula adverbial que expresa razón o propósito en </content>
+			  <langName/>
+			  <content> son:
+			  </content>
+		   </p>
+		   <example>
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Adverbios que expresan razón o propósito</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/reasonExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+		   <p>
+			  <content> La razón o el propósito también se pueden expresar por una frase preposicional en español, por ejemplo </content>
+			  <langData>por esta razón</langData>
+			  <content> o </content>
+			  <langData>en propósito</langData>
+			  <content>.  Tales frases se analizan en la sección </content>
+			  <sectionRef sec="sPP"/>
+			  <content>.
+			  </content>
+		   </p>
+		   <p><content>Frases </content>
+			  <case element="pp" attr="pPos">
+				 <caseText value="before">preposicionales</caseText>
+				 <caseText value="after">posposicionales</caseText>
+				 <caseText value="both">preposicionales o posposicionales</caseText>
+				 <caseText value="unknown">preposicionales o posposicionales</caseText>
+			  </case><content> en </content><langName/><content> que expresan razón o propósito son:  </content>
+		   </p>
+		   <example>
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Otros expresiones de razón o propósito</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="advp/reasonPPExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p>
+			  <content>Algunos ejemplos de los adverbios que expresan razón o propósito o de las cláusulas adverbiales o de frases </content>
+			  <case element="pp" attr="pPos">
+				 <caseText value="before">preposicionales</caseText>
+				 <caseText value="after">posposicionales</caseText>
+				 <caseText value="both">preposicionales o posposicionales</caseText>
+				 <caseText value="unknown">preposicionales o posposicionales</caseText>
+			  </case><content> que expresan razón o propósito en </content>
 				<langName/>
 				<content>, incluidos en oraciones completas son:
 </content>
 			</p>
 			<example>
-				<interlinear exampleLoc="advp/reasonExample"/>
+				<interlinear exampleLoc="advp/reasonSentExample"/>
 			</example>
-			<p>
-				<content>La estructura de las cláusulas adverbiales será analizada en la sección </content>
-				<sectionRef sec="sAdvClReason"/>
-				<content>.  La razón o el propósito también se pueden expresar por una frase preposicional, por ejemplo </content>
-				<langData>por esta razón</langData>
-				<content> o </content>
-				<langData>en propósito</langData>
-				<content>.  Tales frases se analizan en la sección </content>
-				<sectionRef sec="sPP"/>
-				<content>.
-</content>
-			</p>
+
 		</section2>
 	</section1>
-	<showWhen id="swAdvPDegreeYes">
-		<whenValue element="advp" attr="degree" value="yes"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTemporalTypeAffix">
-		<whenValue element="advp" attr="negTemporalType" value="affix"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTemporalTypeWord">
-		<whenValue element="advp" attr="negTemporalType" value="word"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTemporalTypeVerb">
-		<whenValue element="advp" attr="negTemporalType" value="verb"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTemporalTypeWordOrVerb">
-		<whenValue element="advp" attr="negTemporalType" value="word"/>
- <or/>
-		<whenValue element="advp" attr="negTemporalType" value="verb"/>
+   <showWhen id="swAdvPTemporalDegreeYes">
+	  <whenValue element="advp" attr="temporalDegree" value="yesBefore"/>
+	  <or/>
+	  <whenValue element="advp" attr="temporalDegree" value="yesAfter"/>
    </showWhen>
-	<showWhen id="swAdvPNegLocativeTypeAffix">
-		<whenValue element="advp" attr="negLocativeType" value="affix"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeWord">
-		<whenValue element="advp" attr="negLocativeType" value="word"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeVerb">
-		<whenValue element="advp" attr="negLocativeType" value="verb"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeWordOrVerb">
-		<whenValue element="advp" attr="negLocativeType" value="word"/>
-<or/>
-		<whenValue element="advp" attr="negLocativeType" value="verb"/>
-	</showWhen>
-	<showWhen id="swAdvPMannerTypeAffix">
-		<whenValue element="advp" attr="mannerType" value="affix"/>
-	</showWhen>
+   <showWhen id="swAdvPTemporalDegreeAttaches">
+	  <whenValue element="advp" attr="temporalDegree" value="attaches"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalDegreeNoRedup">
+	  <whenValue element="advp" attr="temporalDegree" value="noRedup"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeAdverbWord">
+	  <whenValue element="advp"  attr="negTemporalType" value="adverbWord"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeAdverb">
+	  <whenValue element="advp"  attr="negTemporalType" value="adverb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeAffix">
+	  <whenValue element="advp" attr="negTemporalType" value="affix"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeWord">
+	  <whenValue element="advp" attr="negTemporalType" value="word"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeVerb">
+	  <whenValue element="advp" attr="negTemporalType" value="verb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeWordOrVerb">
+	  <whenValue element="advp" attr="negTemporalType" value="word"/>
+	  <or/>
+	  <whenValue element="advp" attr="negTemporalType" value="verb"/>
+   </showWhen>
+
+   <showWhen id="swAdvPLocativeDegreeYes">
+	  <whenValue element="advp" attr="locativeDegree" value="yesBefore"/>
+	  <or/>
+	  <whenValue element="advp" attr="locativeDegree" value="yesAfter"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeAttaches">
+	  <whenValue element="advp" attr="locativeDegree" value="attaches"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeNoRedup">
+	  <whenValue element="advp" attr="locativeDegree" value="noRedup"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeAdverbWord">
+	  <whenValue element="advp"  attr="negLocativeType" value="adverbWord"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeAdverb">
+	  <whenValue element="advp"  attr="negLocativeType" value="adverb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeAffix">
+	  <whenValue element="advp" attr="negLocativeType" value="affix"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeWord">
+	  <whenValue element="advp" attr="negLocativeType" value="word"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeVerb">
+	  <whenValue element="advp" attr="negLocativeType" value="verb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeWordOrVerb">
+	  <whenValue element="advp" attr="negLocativeType" value="word"/>
+	  <or/>
+	  <whenValue element="advp" attr="negLocativeType" value="verb"/>
+   </showWhen>
+
+   <showWhen id="swAdvPMannerTypeWord">
+	  <whenValue element="advp" attr="mannerType" value="word"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordAndDegreeYes">
+	  <whenValue element="advp" attr="mannerType" value="word"/>
+	  <and/>
+	  <whenValue element="advp" attr="mannerDegree" value="yesBefore"/>
+	  <or/>
+	  <whenValue element="advp" attr="mannerType" value="word"/>
+	  <and/>
+	  <whenValue element="advp" attr="mannerDegree" value="yesAfter"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordAndDegreeAttaches">
+	  <whenValue element="advp" attr="mannerType" value="word"/>
+	  <and/>
+	  <whenValue element="advp" attr="mannerDegree" value="attaches"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordAndDegreeNoRedup">
+	  <whenValue element="advp" attr="mannerType" value="word"/>
+	  <and/>
+	  <whenValue element="advp" attr="mannerDegree" value="noRedup"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffix">
+	  <whenValue element="advp" attr="mannerType" value="affix"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffixAndDegreeYes">
+	  <whenValue element="advp" attr="mannerType" value="affix"/>
+	  <and/>
+	  <whenValue element="advp" attr="mannerAffixDegree" value="yesBefore"/>
+	  <or/>
+	  <whenValue element="advp" attr="mannerType" value="affix"/>
+	  <and/>
+	  <whenValue element="advp" attr="mannerAffixDegree" value="yesAfter"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffixAndDegreeNoRedup">
+	  <whenValue element="advp" attr="mannerType" value="affix"/>
+	  <and/>
+	  <whenValue element="advp" attr="mannerAffixDegree" value="noRedup"/>
+   </showWhen>
+
+   <showWhen id="swAdvPLocativeClassifierYes">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="advp"  attr="locativeClassifier" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeClassifierNo">
+	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+	  <or/>
+	  <whenValue element="advp"  attr="locativeClassifier" value="yes" negateValue="yes"/>
+   </showWhen>
 </portion>

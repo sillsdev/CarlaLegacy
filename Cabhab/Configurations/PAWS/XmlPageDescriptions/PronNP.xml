@@ -1,58 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="PronNP" count="6/8">
-	<title level="2">Pronouns - Pronouns as an NP</title>
-	<form section="pron">
-		<introduction>Though pronouns and also demonstratives, quantifiers, and numbers can stand alone as a nominal phrase in the right context, sometimes modifiers are also allowed.  In most languages, these elements cannot be modified by possessors, adjectives, or other quantifiers, although they can be modified by a degree word, an article and/or a demonstrative. English examples of this type include the following:</introduction>
+<page id="PronNP" count="7/9">
+	<title level="2">Pronouns - As a Nominal Phrase</title>
+   <introduction>Pronouns normally stand alone in the place of an entire nominal phrase, but they can also be modified by a partitive phrase and in some languages pronouns may be modified by determiners and quantifiers. English examples of this type include the following:</introduction>
 		<EnglishExample>
-			<exItem label="1.">all twelve.</exItem>
-			<exItem label="2.">only he.</exItem>
-			<exItem label="3.">just two.</exItem>
-			<exItem label="4.">just those few.</exItem>
+			<exItem label="1.">all twelve</exItem>
+			<exItem label="2.">only he</exItem>
+			<exItem label="3.">just two</exItem>
+			<exItem label="4.">just those few</exItem>
+		</EnglishExample>
+   <introduction>In fewer languages, these elements can also be modified by adjectives and possessors, acting just like nouns.</introduction>
+   <form section="pron">
+	  <radioGroup>
+		 <groupName dataItem="pronMod" default="no">RPronMod</groupName>
+		 <prompt>Can personal pronouns and demonstratives, quantifiers, and numbers be modified in your language?</prompt>
+		 <radio id="PronModNo" dataValue="no">No, these elements only appear by themselves when they take the place of a nominal phrase </radio>
+		 <radio id="PronModDet" dataValue="det">Yes, these elements can be modified by the special degree words <span id="PronModDetArtSpan"  show="swArt">and articles</span><span id="PronModDetDemSpan" show="swDem">and demonstratives</span ><span id="PronModArtDemSpan" show="swArtAndDem">and articles and demonstratives</span></radio>
+	 <radio id="PronModAll" dataValue="all">Yes, these elements can be modified by all the same modifiers as nouns can, including adjectives and possessors</radio>
+	  </radioGroup>
+	  <prompt id="PronModMinimalExamplePrompt" show="swPronModNotNo">Key examples from your language of nominal phrases containing personal pronouns, demonstratives, quantifiers, and numbers modified by some or all of the allowed elements here:</prompt>
+		<textBox id="PronNPStandAloneExample" dataItem="standAloneNPExample" show="swPronModNotNo"/>
+	  <prompt id="PronModSentExamplePrompt" show="swPronModNotNo">Now take several of the examples you keyed in the textbox above and use them as the subject or object of a sentence here:</prompt>
+	  <prompt id="PronModNoSentExamplePrompt" show="swPronModNo">Key examples from your language of personal pronouns, demonstratives, quantifiers, and numbers acting as the subject or object of a sentence here:</prompt>
+	  <textBox id="PronNPSentExample" dataItem="pronSentExample"/>
+
+	  <br/><br/>
+		<introduction>In addition, it is usually possible to have a personal pronoun, demonstrative, or quantifier modified by a relative clause, as in:</introduction>
+		<EnglishExample>
+			<exItem label="1.">all those who are going with us</exItem>
+			<exItem label="2.">only these two that I saw</exItem>
+		   <exItem label="3.">we who believe</exItem>
 		</EnglishExample>
 		<br/>
-		<prompt>Key your examples here:</prompt>
-		<textBox id="PronNPStandAloneExample" dataItem="standAloneNPExample"/>
+	  <prompt id="PronNPRelClModNo" show="swPronModNo">We assume this is not possible in your language, since you said above that pronouns, etc., only appear by themselves.  If this is incorrect, please change your answer above.</prompt>
+	  <prompt id="PronNPRelClMod" show="swPronModNotNo">Key your examples with relative clauses, placing these nominal phrases as the subject or object of a simple sentence, here:</prompt>
+		<textBox id="PronNPRelCl" dataItem="pronRelClExample" show="swPronModNotNo"/>
 		<br/>
-		<introduction>In addition, it is possible to have a pronoun, demonstrative, or quantifier modified by a relative clause, as in:</introduction>
+		<introduction>Finally, these categories can usually be modified by a partitive phrase (or other PP), as in:</introduction>
 		<EnglishExample>
-			<exItem label="1.">all those who are going with us.</exItem>
-			<exItem label="2.">only these two that I saw.</exItem>
+			<exItem label="1.">only a few of you</exItem>
+			<exItem label="2.">just that many of those</exItem>
+			<exItem label="3.">only those in there</exItem>
+			<exItem label="4.">all of us</exItem>
+			<exItem label="5.">all by himself</exItem>
+			<exItem label="6.">some of the sad children</exItem>
 		</EnglishExample>
 		<br/>
-		<prompt>Key your examples with relative clauses, included in simple sentences, here:</prompt>
-		<textBox id="PronNPRelCl" dataItem="pronRelClExample"/>
+	  <prompt id="PronNPPartitiveModNo" show="swPronModNo">We assume this is not possible in your language, since you said above that pronouns, etc., only appear by themselves.  If this is incorrect, please change your answer above.</prompt>
+	  <prompt id="PronNPPartitiveMod" show="swPronModNotNo">Key your examples here:</prompt>
+	  <textBox id="PronNPPartitiveExample" dataItem="partitiveExample" show="swPronModNotNo"/>
 		<br/>
-		<introduction>Finally, these categories can also be modified by a partitive phrase (or other PP), as in:</introduction>
-		<EnglishExample>
-			<exItem label="1.">only a few of you.</exItem>
-			<exItem label="2.">just that many of those.</exItem>
-			<exItem label="3.">only those in there.</exItem>
-			<exItem label="4.">all of us.</exItem>
-			<exItem label="5.">all by himself.</exItem>
-		</EnglishExample>
-		<br/>
-		<prompt>Key your examples here:</prompt>
-		<textBox id="PronNPPartitiveExample" dataItem="partitiveExample"/>
-		<br/>
-		<radioGroup id="PronNPPartitiveTable">
+		<radioGroup id="PronNPPartitiveTable" show="swPronModNotNo">
 			<groupName dataItem="partitivePos" default="unknown" position="yesHeadDiff">RPronNPPartitive</groupName>
 			<prompt>Where does the optional PP occur with respect to the pronoun, demonstrative, quantifier or number?</prompt>
 			<radio id="PronNPPartBefore" dataValue="before">Before</radio>
 			<radio id="PronNPPartAfter" dataValue="after">After</radio>
 		</radioGroup>
 		<br/>
-		<introduction id="PronDistributionIntro" show="swNotPractical">This distribution discussed for English can be accounted for if we allow pronouns, demonstratives, quantifiers, and numbers to be NPs (rather than DPs) in the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>.  However, some languages allow pronouns to be modified by possessors and adjectives as well, so the correct category in that case is N.  A few languages may require pronouns to stand alone without any modification at all, making them DPs.  Possessive, reflexive, and reciprocal pronouns are always DPs, since they must stand alone.  Consider only personal pronouns and demonstratives, quantifiers, and numbers in answering below.</introduction>
-		<br/>
-		<radioGroup id="PronDistributionRadioGroup" show="swNotPractical">
-			<groupName dataItem="pronounCat" default="NP">RPronNPCat</groupName>
-			<prompt>Which category or level in the tree structure is correct for personal pronouns (and other elements which can occur without a head noun) in your language?
-</prompt>
-			<radio id="PronNPCatNP" dataValue="NP">NP, like in English, because they can be modified by degree words, demonstratives, articles, relative clauses and PPs, but not by possessors or adjectives</radio>
-			<radio id="PronNPCatN" dataValue="N">N, because they can be modified by all the same categories as nouns can</radio>
-			<radio id="PronNPCatDP" dataValue="DP">DP, because they must stand alone in the place of a whole nominal phrase</radio>
-		</radioGroup>
+	  <instruction id="PronDistributionNPInstruction" show="swNotPracticalAndPronModDet">In the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>, we will assume for your language that pronouns, demonstratives, quantifiers and numbers can fill the NP position, like in English, because they can be modified by degree words, demonstratives, articles, relative clauses and PPs, but not by possessors or adjectives.</instruction>
+	  <instruction id="PronDistributionNInstruction" show="swNotPracticalAndPronModAll">In the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>, we will assume for your language that pronouns, demonstratives, quantifiers and numbers can fill the N position, because they can be modified by all the same categories as nouns can.</instruction>
+	  <instruction id="PronDistributionDPInstruction" show="swNotPracticalAndPronModNo">In the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>, we will assume for your language that pronouns, demonstratives, quantifiers and numbers can fill the DP position, because they must stand alone in the place of a whole nominal phrase.</instruction>
+
 		<br/>
 		<buttons>
 			<button id="PronNPBack" value="Back" goto="PronIndefinite.xml"/>
@@ -62,4 +71,34 @@
 	<showWhen id="swNotPractical">
 		<whenValue  element="paws" attr="outputGrammar" value="True"/>
 	</showWhen>
+   <showWhen id="swArt">
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+   </showWhen>
+   <showWhen id="swDem">
+	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+   </showWhen>
+   <showWhen id="swArtAndDem">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+   </showWhen>
+   <showWhen id="swPronModNotNo">
+	  <not/><whenRadio button="PronModNo"/>
+   </showWhen>
+   <showWhen id="swPronModNo">
+	  <whenRadio button="PronModNo"/>
+   </showWhen>
+   <showWhen id="swNotPracticalAndPronModDet">
+	  <whenValue  element="paws" attr="outputGrammar" value="True"/>
+	  <and/>
+	  <whenRadio button="PronModDet"/>
+   </showWhen>
+   <showWhen id="swNotPracticalAndPronModAll">
+	  <whenValue  element="paws" attr="outputGrammar" value="True"/>
+	  <and/>
+	  <whenRadio button="PronModAll"/>
+   </showWhen>
+   <showWhen id="swNotPracticalAndPronModNo">
+	  <whenValue  element="paws" attr="outputGrammar" value="True"/>
+	  <and/>
+	  <whenRadio button="PronModNo"/>
+   </showWhen>
 </page>

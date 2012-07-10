@@ -4,7 +4,7 @@
 	<section1 id="sNeg">
 		<secTitle>Las construcciones negativas</secTitle>
 		<p>
-			<content>Todos los idiomas tienen la capacidad de expresar la negación. Esto generalmente se realiza con el uso de:</content>
+			<content>Todos las lenguas tienen la capacidad de expresar la negación. Esto generalmente se realiza con el uso de:</content>
 		</p>
 		<ul>
 			<li>
@@ -13,7 +13,7 @@
 				<content> (véase la sección </content>
 				<sectionRef sec="sQPAll"/>
 				<content>), o determinantes negativos del cuantificador, tales como </content>
-				<langData>ninguno</langData>
+			   <langData>ningún</langData>
 				<content> (véase la sección </content>
 				<sectionRef sec="sQPDeterminers"/>
 				<content>), que niegan una frase nominal,</content>
@@ -32,17 +32,17 @@
 				<langData>nunca</langData>
 				<content> (véase la sección </content>
 				<sectionRef sec="sAdvPTemporal"/>
-				<content>) o</content>
-				<langData>nowhere</langData><gloss><content> 'en ninguna parte'</content></gloss>
+				<content>) o </content>
+				<langData>nowhere</langData><gloss><content> ‘en ninguna parte’</content></gloss>
 				<content> (véase la sección </content>
 				<sectionRef sec="sAdvPLocative"/>
 				<content>),</content>
 			</li>
 			<li>
 				<content>auxiliares negativos, como </content>
-				<langData>not</langData><gloss><content> 'no'</content></gloss>
+				<langData>not</langData><gloss><content> ‘no’</content></gloss>
 				<content> o la forma afija de la contracción </content>
-				<langData>-n't</langData>
+				<langData>-n’t</langData>
 				<content> (véase la sección </content>
 				<sectionRef sec="sIPAux"/>
 				<content>), y/o</content>
@@ -54,68 +54,66 @@
 			</li>
 		</ul>
 		<p>
-			<content>Todos los antedichos se han cubierto como artículos individuales en secciones anteriores (de acruedo con lo observado). Después de analizar el tipo del sistema de la negación que </content>
+			<content>Todos los antedichos se han cubierto como artículos individuales en secciones anteriores (de acuerdo con lo observado). Después de analizar el tipo del sistema de la negación que </content>
 			<langName/>
-			<content> utiliza, los datos dados serán repasados a continuación por categoría o el tipo de la frase, así como la adición de los ejemplos usados en oraciones completas y el análisis de cualquier restricción de la ocurrencia entre los varios elementos negativos. </content>
+		   <content> utiliza, los datos dados serán repasados a continuación por categoría o el tipo de la frase.  Algunos ejemplos de cada construcción usado en oraciones completas se presentan y también el análisis de cualquier restricción de la ocurrencia entre los varios elementos negativos. </content>
 		</p>
 		<section2 id="sNegType">
 			<secTitle>Tipo del sistema de la negación</secTitle>
 			<p>
-				<content>Hay dos clasificaciones importantes para los idiomas con respecto a la negación: Idiomas cambiantes de la polaridad contra idiomas de la concordia negativa, ejemplificados por inglés estándar contra español, respectivamente.</content>
+				<content>Hay dos clasificaciones importantes para las lenguas con respecto a la negación: lenguas que cambian la polaridad contra lenguas de concordancia negativa, ejemplificados por inglés estándar contra español, respectivamente.</content>
 			</p>
 			<p>
-				<content>Los idiomas cambiantes de la polaridad normalmente permiten presentarse un solo elemento negativo en la oración para que la negación sea expresada (sin embargo, cualquier número impar de negativas expresa técnico polaridad negativa) porque la presencia de dos (o cualesquiera números pares de) elementos negativos cambia la polaridad de nuevo a positivo. Por ejemplo, </content>
-				<langData>John saw nothing</langData><gloss><content> 'Juan vio nada'</content></gloss>
+				<content>Las lenguas que cambian la polaridad normalmente permiten presentarse un solo elemento negativo en la oración para que la negación sea expresada (sin embargo, cualquier número impar de negativas expresa técnico polaridad negativa) porque la presencia de dos (o cualquier número de pares de) elementos negativos cambia la polaridad de nuevo a positivo. Por ejemplo, </content>
+				<langData>John saw nothing</langData><gloss><content> ‘Juan vio nada’</content></gloss>
 				<content> es negativo, pero </content>
-				<langData>John didn't see nothing</langData><gloss><content> 'Juan no vio nada'</content></gloss>
+				<langData>John didn’t see nothing</langData><gloss><content> ‘Juan no vio nada’</content></gloss>
 				<content> es positivo porque significa al igual que </content>
 				<langData>Juan vio algo</langData>
 				<content>.  La versión con un auxiliar negativo se expresa como </content>
-				<langData>John didn't see anything</langData><gloss><content> 'Juan no vio algo'</content></gloss>
-				<content>, usando qué se conoce como  </content>
-				<object class="smallcaps">
-					<content>artículo negativo de la polaridad</content>
-				</object>
-				<content> en la posición del objeto.  Tales artículos negativos de la polaridad pueden presentarse como los sujetos en algunos contextos sin ninguna otra palabra negativa presente, tal como </content>
-				<langData>Anyone may come</langData><gloss><content> 'Cualquiera persona pueden venir'</content></gloss>
+				<langData>John didn’t see anything</langData><gloss><content> ‘Juan no vio algo’</content></gloss>
+				<content>, usando qué se conoce como “artículo negativo de polaridad ” en la posición del objeto.  Tales artículos negativos de polaridad  pueden presentarse como los sujetos en algunos contextos sin ninguna otra palabra negativa presente, tal como </content>
+				<langData>Anyone may come</langData><gloss><content> ‘Cualquiera persona pueden venir’</content></gloss>
 				<content>, pero pueden presentarse en la posición del objeto solamente cuando un elemento anterior en la oración es negativo. Por ejemplo, uno puede decir </content>
-				<langData>Nobody saw anyone</langData><gloss><content> 'Nadie vio cualquiera persona'</content></gloss>
+				<langData>Nobody saw anyone</langData><gloss><content> ‘Nadie vio cualquiera persona’</content></gloss>
 				<content> y </content>
-				<langData>Nowhere will they find anyone</langData><gloss><content> 'En ninguna parte ellos encuentra a cualquiera persona'</content></gloss>
+				<langData>Nowhere will they find anyone</langData><gloss><content> ‘En ninguna parte ellos encuentra a cualquiera persona’</content></gloss>
 				<content> pero sin el sujeto negativo o el adverbio negativo desplazado, el auxiliar negativo debe ser utilizado, como en </content>
-				<langData>We did not see anyone</langData><gloss><content> 'No vimos a cualquiera persona'</content></gloss>
+				<langData>We did not see anyone</langData><gloss><content> ‘No vimos a cualquiera persona’</content></gloss>
 				<content> y </content>
-				<langData>They will not find anyone anywhere</langData><gloss><content> 'Ellos no encontrarán a cualquiera persona dondequiera'</content></gloss>
+				<langData>They will not find anyone anywhere</langData><gloss><content> ‘Ellos no encontrarán a cualquiera persona dondequiera’</content></gloss>
 				<content>.</content>
 			</p>
 			<p>
-				<content>En idiomas de la concordia negativa, cualquier número de elementos negativos expresa polaridad negativa, tan en español </content>
+				<content>En lenguas de concordancia negativa, cualquier número de elementos negativos expresa polaridad negativa, tan en español </content>
 				<langData>Juan no vio nada</langData>
 				<content> es la manera correcta de expresar una oración negativa con un objeto negativo.
-					En estos idiomas, un elemento negativo normalmente puede presentarse en la posición sujeta o una posición desplazada a la izquierda sin ningún otro elemento negativo presente,
+					En estas lenguas, un elemento negativo normalmente puede presentarse en la posición sujeta o una posición desplazada a la izquierda sin ningún otro elemento negativo presente,
 					pero un objeto negativo solamente puede presentarse cuando un elemento anterior en la oración es negativo.
-					Algunos idiomas de la concordia negativa tienen la restricción más fuerte que cualquiera palabra o frase negativa debe presentarse con la negación verbal, y
-					todavía otros requieren el desplazamiento a la izquierda de la palabra o frase negativa, semejantemente al desplazamiento a la izquierda de las palabras o frases interrogativas en preguntas abiertas.</content>
+					Algunas lenguas de concordancia negativa tienen la restricción más fuerte que cualquiera palabra o frase negativa debe presentarse con la negación verbal, y
+					todavía otros requieren el desplazamiento a la izquierda de la palabra o frase negativa, semejantemente al desplazamiento a la izquierda de las palabras o frases interrogativas en preguntas.</content>
 			</p>
 			<p show="swNegVerbOnly">
+			   <content>El </content>
 				<langName/>
-				<content> ni es un idioma cambiante de la polaridad ni un idioma de la concordia negativa, puesto que la única manera de expresar la negación es vía el afijo verbal. No hay casos múltiples de la negación para cambiar la polaridad ni a concordar con.</content></p>
+				<content> ni es una lengua que cambia la polaridad ni una lengua de concordancia negativa, puesto que la única manera de expresar la negación es vía el afijo verbal. No exhibe casos múltiples en la negación que cambiar la polaridad ni de concordancia.</content></p>
 			<p show="swNegNotVerbOnly">
-				<langName/>
+			   <content>El </content>
+			   <langName/>
 				<content> es un </content>
 				<case element="neg" attr="type">
-					<caseText value="changing">idioma cambiante de la polaridad</caseText>
-					<caseText value="concord">idioma de la concordia negativa</caseText>
+					<caseText value="changing">lengua que cambia la polaridad</caseText>
+					<caseText value="concord">lengua de concordancia negativa</caseText>
 				</case>
 				<content>, puesto que </content>
 				<case element="neg" attr="type">
-					<caseText value="changing">la polaridad cambia entre positivo y la negativa con cada caso de la negación. </caseText>
+				   <caseText value="changing">la polaridad cambia entre positiva y negativa con cada expresión negativa. </caseText>
 					<caseText value="concord">cualquier número de elementos negativos concuerda simplemente en la polaridad negativa. </caseText>
 				</case>
 				<content/>
 			</p>
 	 <p show="swNegTypeConcord">
-		 <content>En </content><langName/><content>, un verbo negativo-indicado </content>
+		 <content>En </content><langName/><content>, un verbo negativo-marcado </content>
 			<case element="neg" attr="objVerbRequired">
 				<caseText value="no">no se requiere cuando el objeto es negativo.  </caseText>
 				<caseText value="yes">se requiere cuando el objeto es negativo.  </caseText>
@@ -134,9 +132,9 @@
 					<caseText value="yes"> hay los </caseText>
 					<caseText value="no"> no hay los </caseText>
 				</case>
-				<content>artículos negativos de la polaridad.  </content>
+				<content>artículos negativos de polaridad .  </content>
 				<case element="neg" attr="polarityItems">
-					<caseText value="yes">Los pronombres siguientes, los elementos especiales de grado y los adverbios se presentan en la posición del objeto o la posición normal del adverbio en vez del artículo negativo equivalente cuando otro elemento negativo está presente en la oración.</caseText>
+				   <caseText value="yes">Los pronombres, los elementos especiales de grado y los adverbios siguientes se presentan en la posición del objeto o la posición normal del adverbio en vez del artículo negativo equivalente cuando otro elemento negativo está presente en la oración.</caseText>
 					<caseText value="no">Los pronombres negativos, los elementos especiales de grado y los adverbios pueden presentarse en la posición del objeto o la posición normal del adverbio incluso cuando hay otro elemento negativo en la oración.</caseText>
 				</case>
 			</p>
@@ -148,7 +146,7 @@
 					<caseText value="yes"> hay los </caseText>
 					<caseText value="no"> no hay los </caseText>
 				</case>
-				<content>artículos negativos de la polaridad.  </content>
+				<content>artículos negativos de polaridad .  </content>
 				<case element="neg" attr="polarityItems">
 					<caseText value="yes">Los pronombres, los determinantes y los adverbios siguientes se presentan en la posición del objeto o la posición normal del adverbio en vez del artículo negativo equivalente cuando otro elemento negativo está presente en la oración.</caseText>
 					<caseText value="no">Los pronombres, los determinantes y los adverbios negativos pueden presentarse en la posición del objeto o la posición normal del adverbio incluso cuando hay otro elemento negativo en la oración.</caseText>
@@ -158,7 +156,7 @@
 				<table border="1">
   <headerRow>
 	  <headerCol>Tipo</headerCol>
-	  <headerCol>Artículos negativos de la polaridad</headerCol>
+	  <headerCol>Artículos negativos de polaridad </headerCol>
 	  <headerCol>Glosa</headerCol>
   </headerRow>
 					<row>
@@ -169,10 +167,10 @@
 						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 					</row>
 					<row>
-						<col rowspan="1" show="swQPDeterminerYesOrYesNo">
+						<col rowspan="1" show="swQPDeterminerNegYesOrSome">
 							<content>Determinantes</content>
 						</col>
-						<col rowspan="1" show="swQPDeterminerNoOrYesSome">
+						<col rowspan="1" show="swQPDeterminerNegNoOrNone">
 							<content>Elementos especiales de grado</content>
 						</col>
 						<col exampleLoc="neg/npiDeterminerExample"/>
@@ -197,60 +195,62 @@
 			<p show="swPolarityItemsYesAndNegNotVerbOnly">
 				<content>En </content><langName/><content>, un verbo negativo-indicado </content>
 		   <case element="neg" attr="objVerbRequired">
-			   <caseText value="no">no se requiere cuando hay un artículo negativo de la polaridad en la posición del objeto.  </caseText>
-			   <caseText value="yes">se requiere cuando hay un artículo negativo de la polaridad en la posición del objeto.  </caseText>
-			   <caseText value="other"> no se requiere cuando hay un artículo negativo de la polaridad en la posición del objeto, pero si el verbo no es negativo así que otra palabra o frase negativa debe presentarse anteriormente en la oración.  </caseText></case>
+			   <caseText value="no">no se requiere cuando hay un artículo negativo de polaridad  en la posición del objeto.  </caseText>
+			   <caseText value="yes">se requiere cuando hay un artículo negativo de polaridad  en la posición del objeto.  </caseText>
+			   <caseText value="other"> no se requiere cuando hay un artículo negativo de polaridad  en la posición del objeto, pero si el verbo no es negativo así que otra palabra o frase negativa debe presentarse anteriormente en la oración.  </caseText></case>
 	  </p>
 		</section2>
+
 		<section2 id="sNegVerbal">
 			<secTitle>Negación auxiliar y verbal</secTitle>
 			<p>
 				<content>Vimos en la sección </content>
 				<sectionRef sec="sIPAux"/>
 				<content> que en </content>
-				<langName/>
-				<content/>
-				<case element="ip" attr="negAux">
-					<caseText value="yesOnly"> hay uno o más</caseText>
-					<caseText value="yesAffix"> hay uno o más</caseText>
-					<caseText value="yesVerb"> hay uno o máse</caseText>
-					<caseText value="yesAll"> hay uno o más</caseText>
-					<caseText value="noAffixOnly"> no hay</caseText>
-					<caseText value="noAffixAndVerb"> no hay</caseText>
-					<caseText value="noVerb"> no hay</caseText>
-				</case>
-				<content> auxiliares negativos que se escriben como palabras independientes, </content>
-				<case element="ip" attr="negAux">
-					<caseText value="yesOnly">y que son el único tipo de negación verbal en el idioma. No hay afijo verbal negativo ni afijo auxiliar negativo. </caseText>
-					<caseText value="yesAffix">y hay también un afijo auxiliar negativo, pero ningún afijo verbal negativo. </caseText>
-					<caseText value="yesVerb">y hay también un afijo verbal negativo, pero ningún afijo auxiliar negativo.  </caseText>
-					<caseText value="yesAll">y hay también un afijo auxiliar negativo y un afijo verbal negativo. </caseText>
-					<caseText value="noAffixOnly">pero hay un afijo negativo que se une en el auxiliar y ése es el único tipo de negación verbal en el idioma. No hay afijo verbal negativo.</caseText>
-					<caseText value="noAffixAndVerb">pero hay un afijo negativo quese une en el auxiliar y un afijo verbal negativo también.</caseText>
-					<caseText value="noVerb">ni afijo negativo que se une en un auxiliar. La única manera de expresar la negación verbal es por uno o más afijos verbales negativos.</caseText>
-				</case>
-				<content/>
-				<text show="swIPNegAuxWord">
-					<content> El auxiliar negativo </content>
-					<case element="ip" attr="negAuxRequiresAux">
-						<caseText value="no">pueda</caseText>
-						<caseText value="yes">no pueda</caseText>
-					</case>
-					<content> ser el único auxiliar en la frase;  </content>
-					<case element="ip" attr="negAuxRequiresAux">
+ <langName/>
+				  <content/>
+				  <case element="ip" attr="negAux">
+					 <caseText value="yes"> hay uno o más</caseText>
+					 <caseText value="no"> no hay</caseText>
+				  </case>
+				  <content> auxiliares negativos que se escriben como palabras independientes. </content>
+				  <text show="swIPNegAuxWord">
+					 <content> El auxiliar negativo </content>
+					 <case element="ip" attr="negAuxRequiresAux">
+						<caseText value="no">puede</caseText>
+						<caseText value="yes">no puede</caseText>
+					 </case>
+					 <content> ser el único auxiliar en la frase; </content>
+					 <case element="ip" attr="negAuxRequiresAux">
 						<caseText value="no">ningún otro</caseText>
 						<caseText value="yes">la presencia de otro</caseText>
-					</case>
-					<content> auxiliar es requirido.</content>
-				</text>
-				<content/>
-				<text show="swIPNegAuxAndVerb">
+					 </case>
+					 <content> auxiliar es requerido.</content>
+				  </text>
+			   </p>
+			   <p>
+				  <content>En </content><langName/>
+				  <content/>			<case element="ip" attr="negAuxAffix">
+					 <caseText value="yes"> hay <case element="ip" attr="negAux"><caseText value="yes">también</caseText></case> un afijo negativo que se une con un auxiliar positivo, </caseText>
+					 <caseText value="no"> no hay un afijo negativo que se une con un auxiliar positivo, </caseText>
+				  </case>
+				  <case element="ip" attr="negVAffix">
+
+					 <caseText value="yes"><case element="ip" attr="negAuxAffix"><caseText value="yes">y</caseText>
+						<caseText value="no">pero hay</caseText></case> un afijo verbal negativo. </caseText>
+
+					 <caseText value="no"><case element="ip" attr="negAuxAffix"><caseText value="yes">pero no hay</caseText>
+						<caseText value="no">ni</caseText></case> un afijo verbal negativo.</caseText>
+				  </case>
+				  <content/>
+			   </p>
+
+				<p show="swIPNegAuxAndVerb">
 					<content>  Además, </content>
 					<case element="neg" attr="auxVerbRequired">
 						<caseText value="yes">no se permite a un auxiliar negativo sinoque el verbo también es negativo.</caseText>
 						<caseText value="no">el verbo no se requiere ser negativo cuando hay un auxiliar negativo.</caseText>
 					</case>
-				</text>
 			</p>
 			<p show="swIPNegAuxWord">
 				<content>Las palabras auxiliares negativas en </content>
@@ -327,75 +327,295 @@
 		</section2>
 		<section2 id="sNegAdverb">
 			<secTitle>Negación adverbial</secTitle>
-			<p>
-				<content>Vimos en la sección </content>
-				<sectionRef sec="sAdvPTemporal"/>
-				<content> que en </content>
-				<langName/>
-				<content> la idea negativa de tiempo </content><gloss><content> ' nunca'</content></gloss><content> se expresa </content>
-<case element="advp" attr="negTemporalType">
-	<caseText value="word">por una o más palabras independientes. Algunos ejemplos</caseText>
-	<caseText value="affix">por uno o más afijos verbales, en vez de por palabras independientes. Algunos ejemplos de los afijos se unen a los verbos</caseText>
-	<caseText value="verb">usando el afijo negativo verbal, que puede presentarse con adverbios positivos de tiempo para dar un significado negativo de tiempo. Algunos ejemplos de adverbios de tiempo con un verbo negativo</caseText>
-</case>
-				<content> son:</content>
-			</p>
-			<example show="swAdvPNegTemporalTypeAffix">
-				<table border="1">
-					<headerRow>
-						<headerCol>Verbos negativos de tiempo</headerCol>
+
+			   <p show="swAdvPNegTemporalTypeWord">
+				  <content>Vimos en la sección </content>
+				  <sectionRef sec="sAdvPTemporal"/>
+				  <content> que en </content>
+				  <langName/>
+				  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con una o más palabras independientes que no se relacionan con los adverbios positivos de tiempo.</content>
+			   </p>
+			   <p show="swAdvPNegTemporalTypeAdverb">
+				  <content>Vimos en la sección </content>
+				  <sectionRef sec="sAdvPTemporal"/>
+				  <content> que en </content>
+				  <langName/>
+				  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con un afijo negativo que se une con un adverbio positivo de tiempo para formar un adverbio negativo de tiempo.</content>
+			   </p>
+			   <p show="swAdvPNegTemporalTypeAdverbWord">
+				  <content>Vimos en la sección </content>
+				  <sectionRef sec="sAdvPTemporal"/>
+				  <content> que en </content>
+				  <langName/>
+				  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con una palabra negativa independiente que se presenta </content><case element="advp" attr="negTemporalWordPos">
+					 <caseText value="before">antes</caseText>
+					 <caseText value="after">después</caseText>
+					 <caseText value="unknown">________</caseText>
+				  </case><content> de un adverbio positivo de tiempo para formar una adverbio negativo de tiempo frase.</content>
+			   </p>
+			   <p show="swAdvPNegTemporalTypeAffix">
+				  <content>Vimos en la sección </content>
+				  <sectionRef sec="sAdvPTemporal"/>
+				  <content> que en </content>
+				  <langName/>
+				  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con uno o más afijos verbales, en lugar de palabras independientes.</content>
+			   </p>
+
+			   <p show="swAdvPNegTemporalTypeVerb">
+				  <content>Vimos en la sección </content>
+				  <sectionRef sec="sAdvPTemporal"/>
+				  <content> que en </content>
+				  <langName/>
+				  <content>, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios positivos de tiempo para dar un significado negativo de tiempo.</content>
+			   </p>
+
+			   <p show="swAdvPNegTemporalTypeAdverbWord"><content>La palabra negativa que se presenta con los adverbios positivos de tiempo es:</content></p>
+			   <example show="swAdvPNegTemporalTypeAdverbWord">
+				  <table border="1">
+					 <headerRow>
+						<headerCol>Palabra negativa</headerCol>
 						<headerCol>Glosa</headerCol>
-					</headerRow>
-					<row>
+					 </headerRow>
+					 <row>
+						<col exampleLoc="advp/negTemporalAdverbWordExample"/>
+						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					 </row>
+				  </table>
+			   </example>
+			   <p show="swAdvPNegTemporalTypeAdverbWord"><content>Algunos ejemplos de frases de adverbios negativos de tiempo formado por la palabra negativa presentarse </content><case element="advp" attr="negTemporalWordPos">
+				  <caseText value="before">antes</caseText>
+				  <caseText value="after">después</caseText>
+				  <caseText value="unknown">________</caseText>
+			   </case><content> de un adverbio positivo de tiempo son:</content></p>
+			   <example show="swAdvPNegTemporalTypeAdverbWord">
+				  <interlinear exampleLoc="advp/negTemporalAdverbWordsExample"/>
+			   </example>
+
+			   <p show="swAdvPNegTemporalTypeAdverb"><content>El afijo negativo que se une con un adverbio positivo de tiempo es:</content></p>
+			   <example show="swAdvPNegTemporalTypeAdverb">
+				  <table border="1">
+					 <headerRow>
+						<headerCol>Afijo negativo</headerCol>
+						<headerCol>Glosa</headerCol>
+					 </headerRow>
+					 <row>
+						<col exampleLoc="advp/negTemporalAdverbAffixExample"/>
+						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					 </row>
+				  </table>
+			   </example>
+			   <p show="swAdvPNegTemporalTypeAdverb"><content>Algunos ejemplos de adverbios negativos de tiempo formados por unirse el afijo negativo con un adverbio positivo de tiempo son:</content></p>
+			   <example show="swAdvPNegTemporalTypeAdverb">
+				  <table border="1">
+					 <headerRow>
+						<headerCol>Adverbios negativos de tiempo</headerCol>
+						<headerCol>Glosa</headerCol>
+					 </headerRow>
+					 <row>
+						<col exampleLoc="advp/negTemporalAdverbExample"/>
+						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					 </row>
+				  </table>
+			   </example>
+
+			   <p show="swAdvPNegTemporalTypeWord"><content>Los adverbios negativos de tiempo en </content><langName/><content> son:</content></p>
+			   <example show="swAdvPNegTemporalTypeWord">
+				  <table border="1">
+					 <headerRow>
+						<headerCol>Adverbios negativos de tiempo</headerCol>
+						<headerCol>Glosa</headerCol>
+					 </headerRow>
+					 <row>
+						<col exampleLoc="advp/negTemporalExample"/>
+						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					 </row>
+				  </table>
+			   </example>
+
+			   <p show="swAdvPNegTemporalTypeVerb"><content>Algunos ejemplos de adverbios positivos de tiempo con un verbo negativo son:</content></p>
+			   <example show="swAdvPNegTemporalTypeVerb">
+				  <interlinear exampleLoc="advp/negTemporalExample"/>
+			   </example>
+
+			   <p show="swAdvPNegTemporalTypeAffix"><content>Los afijos adverbiales negativos de tiempo que se unen a los verbos son:</content></p>
+			   <example show="swAdvPNegTemporalTypeAffix">
+				  <table border="1">
+					 <headerRow>
+						<headerCol>Afijos adverbiales negativos de tiempo</headerCol>
+						<headerCol>Glosa</headerCol>
+					 </headerRow>
+					 <row>
 						<col exampleLoc="advp/negTemporalAffixExample"/>
 						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-					</row>
-				</table>
-			</example>
-			<example show="swAdvPNegTemporalTypeWordOrVerb">
-				<interlinear exampleLoc="advp/negTemporalExample"/>
-			</example>
-			<p>
+					 </row>
+				  </table>
+			   </example>
+
+			   <p show="swAdvPNegTemporalTypeAffix"><content>Algunos ejemplos de afijos adverbiales negativos de tiempo unidos a los verbos son:</content></p>
+			   <example show="swAdvPNegTemporalTypeAffix">
+				  <table border="1">
+					 <headerRow>
+						<headerCol>Verbos con un afijo adverbial negativo de tiempo</headerCol>
+						<headerCol>Gloss</headerCol>
+					 </headerRow>
+					 <row>
+						<col exampleLoc="advp/negTemporalVerbExample"/>
+						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					 </row>
+				  </table>
+			   </example>
+
+			   <p>
 				<content>Algunos ejemplos en oraciones completas con una expresión negativa de tiempo son: </content>
 			</p>
 			<example>
 				<interlinear exampleLoc="neg/advTemporalExample"/>
 			</example>
-			<p>
-				<content>En la sección </content>
-				<sectionRef sec="sAdvPLocative"/>
-				<content> vimos que en </content>
-				<langName/>
-				<content> la idea negativa de lugar </content><gloss><content> 'en ninguna parte'</content></gloss><content> se expresa </content>
-<case element="advp" attr="negLocativeType">
-	<caseText value="word">por una o más palabras independientes. Algunos ejemplos</caseText>
-	<caseText value="affix">por uno o más afijos verbales, en vez de por palabras independientes. Algunos ejemplos de los afijos se unen a los verbos</caseText>
-	<caseText value="verb">usando el afijo negativo verbal, que puede presentarse con adverbios positivos de lugar para dar un significado negativo de lugar. Algunos ejemplos de los adverbios de lugar con un verbo negativo</caseText>
-</case>
-				<content> son:</content>
-			</p>
-			<example show="swAdvPNegLocativeTypeAffix">
-				<table border="1">
+
+			  <p show="swAdvPNegLocativeTypeWord">
+				 <content>En la sección </content>
+				 <sectionRef sec="sAdvPLocative"/>
+				 <content> vimos que en </content>
+				 <langName/>
+				 <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con una o más palabras independientes que no se relacionan con los adverbios positivos de lugar.</content>
+			  </p>
+			  <p show="swAdvPNegLocativeTypeAdverb">
+				 <content>En la sección </content>
+				 <sectionRef sec="sAdvPLocative"/>
+				 <content> vimos que en </content>
+				 <langName/>
+				 <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con un afijo negativo que se une con un adverbio positivo de lugar para formar un adverbio negativo de lugar.</content>
+			  </p>
+			  <p show="swAdvPNegLocativeTypeAdverbWord">
+				 <content>En la sección </content>
+				 <sectionRef sec="sAdvPLocative"/>
+				 <content> vimos que en </content>
+				 <langName/>
+				 <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con una palabra negativa independiente que se presenta </content><case element="advp" attr="negLocativeWordPos">
+					<caseText value="before">antes</caseText>
+					<caseText value="after">después</caseText>
+					<caseText value="unknown">________</caseText>
+				 </case><content> de un adverbio positivo de lugar para formar una adverbio negativo de lugar frase.</content>
+			  </p>
+			  <p show="swAdvPNegLocativeTypeAffix">
+				 <content>En la sección </content>
+				 <sectionRef sec="sAdvPLocative"/>
+				 <content> vimos que en </content>
+				 <langName/>
+				 <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con uno o más afijos verbales, en vez de palabras independientes.</content>
+			  </p>
+
+			  <p show="swAdvPNegLocativeTypeVerb">
+				 <content>En la sección </content>
+				 <sectionRef sec="sAdvPLocative"/>
+				 <content> vimos que en </content>
+				 <langName/>
+				 <content>, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios positivos de lugar para dar un significado negativo de lugar.</content>
+			  </p>
+
+			  <p show="swAdvPNegLocativeTypeAdverbWord"><content>La palabra negativa que se presenta con los adverbios positivos de lugar es:</content></p>
+			  <example show="swAdvPNegLocativeTypeAdverbWord">
+				 <table border="1">
 					<headerRow>
-						<headerCol>Verbos negativos de lugar</headerCol>
-						<headerCol>Glosa</headerCol>
+					   <headerCol>Palabra negativa</headerCol>
+					   <headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
-						<col exampleLoc="advp/negLocativeAffixExample"/>
-						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					   <col exampleLoc="advp/negLocativeAdverbWordExample"/>
+					   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 					</row>
-				</table>
-			</example>
-			<example show="swAdvPNegLocativeTypeWordOrVerb">
-				<interlinear exampleLoc="advp/negLocativeExample"/>
-			</example>
-			<p>
+				 </table>
+			  </example>
+			  <p show="swAdvPNegLocativeTypeAdverbWord"><content>Algunos ejemplos de frases de adverbios negativos de lugar formado por la palabra negativa presentarse </content><case element="advp" attr="negLocativeWordPos">
+				 <caseText value="before">antes</caseText>
+				 <caseText value="after">después</caseText>
+				 <caseText value="unknown">________</caseText>
+			  </case><content> de un adverbio positivo de lugar son:</content></p>
+			  <example show="swAdvPNegLocativeTypeAdverbWord">
+				 <interlinear exampleLoc="advp/negLocativeAdverbWordsExample"/>
+			  </example>
+
+			  <p show="swAdvPNegLocativeTypeAdverb"><content>El afijo negativo que se une con un adverbio positivo de lugar es:</content></p>
+			  <example show="swAdvPNegLocativeTypeAdverb">
+				 <table border="1">
+					<headerRow>
+					   <headerCol>Afijo negativo</headerCol>
+					   <headerCol>Glosa</headerCol>
+					</headerRow>
+					<row>
+					   <col exampleLoc="advp/negLocativeAdverbAffixExample"/>
+					   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					</row>
+				 </table>
+			  </example>
+			  <p show="swAdvPNegLocativeTypeAdverb"><content>Algunos ejemplos de adverbios negativos de lugar formados por unirse el afijo negativo con un adverbio positivo de lugar son:</content></p>
+			  <example show="swAdvPNegLocativeTypeAdverb">
+				 <table border="1">
+					<headerRow>
+					   <headerCol>Adverbios negativos de lugar</headerCol>
+					   <headerCol>Glosa</headerCol>
+					</headerRow>
+					<row>
+					   <col exampleLoc="advp/negLocativeAdverbExample"/>
+					   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					</row>
+				 </table>
+			  </example>
+
+			  <p show="swAdvPNegLocativeTypeWord"><content>Los adverbios negativos de lugar en </content><langName/><content> son:</content></p>
+			  <example show="swAdvPNegLocativeTypeWord">
+				 <table border="1">
+					<headerRow>
+					   <headerCol>Adverbios negativos de lugar</headerCol>
+					   <headerCol>Glosa</headerCol>
+					</headerRow>
+					<row>
+					   <col exampleLoc="advp/negLocativeExample"/>
+					   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					</row>
+				 </table>
+			  </example>
+
+			  <p show="swAdvPNegLocativeTypeVerb"><content>Algunos ejemplos de adverbios positivos de lugar con un verbo negativo son:</content></p>
+			  <example show="swAdvPNegLocativeTypeVerb">
+				 <interlinear exampleLoc="advp/negLocativeExample"/>
+			  </example>
+
+			  <p show="swAdvPNegLocativeTypeAffix"><content>Los afijos adverbiales negativos de lugar que se unen a los verbos son:</content></p>
+			  <example show="swAdvPNegLocativeTypeAffix">
+				 <table border="1">
+					<headerRow>
+					   <headerCol>Afijos adverbiales negativos de lugar</headerCol>
+					   <headerCol>Glosa</headerCol>
+					</headerRow>
+					<row>
+					   <col exampleLoc="advp/negLocativeAffixExample"/>
+					   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					</row>
+				 </table>
+			  </example>
+
+			  <p show="swAdvPNegLocativeTypeAffix"><content>Algunos ejemplos de afijos adverbiales negativos de lugar unidos a los verbos son:</content></p>
+			  <example show="swAdvPNegLocativeTypeAffix">
+				 <table border="1">
+					<headerRow>
+					   <headerCol>Verbos con un afijo adverbial negativo de lugar</headerCol>
+					   <headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+					   <col exampleLoc="advp/negLocativeVerbExample"/>
+					   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					</row>
+				 </table>
+			  </example>
+
+			  <p>
 				<content>Algunos ejemplos en oraciones completas con una expresión negativa de lugar son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="neg/advLocativeExample"/>
 			</example>
-			<p show="swAdvPNegTypeWord">
+			<p show="swAdvPNegTypeWordorAdverb">
 				<content>En </content>
 				<langName/>
 				<case element="neg" attr="advVerbRequired">
@@ -410,166 +630,276 @@
 				<content>Una frase nominal normalmente se puede negar por una palabra especial de grado, tal como </content>
 				<langData>no</langData>
 				<content>, o por un determinante del cuantificador, tal como </content>
-				<langData>ninguno</langData>
+			   <langData>ningún</langData>
 				<content>, o usando un pronombre indefinido negativo. Cada tipo permitido en </content><langName/><content> será ejemplificado en oraciones completas cuando está utilizado como sujetos y objetos directos, y cualquier restricción será analizado.</content>
 				<text show="swPolarityItemsYesAndNegNotVerbOnly">
-					<content>  El uso de los artículos negativos de la polaridad en </content>
+					<content>  El uso de los artículos negativos de polaridad  en </content>
 					<langName/>
-					<content> también será cubierto en la sección</content>
+					<content> también será cubierto en la sección </content>
 					<sectionRef sec="sNegNominalObject"/>
 					<content>.</content>
 				</text>
 			</p>
 			<section3 id="sNegNominalSubject">
 				<secTitle>Sujetos negativos</secTitle>
-				<p show="swQPNPDegreeNoPosOnlyOrYesPosOnly">
-					<content>En la sección </content>
-					<sectionRef sec="sQPAll"/>
-					<content>vimos que en </content>
-					<langName/>
-					<content> no hay ninguna manera de expresar la idea especial negativa de grado de </content><gloss><content> ' not'</content></gloss><content> cuando está modificando a la frase nominal completa.  Ni las palabras especiales negativas de grado ni los clíticos ni los afijos unidos al sustantivo principal se utilizan para negar una frase nominal en </content><langName/><content>.</content>
-</p>
-				<p show="swQPNPDegreeNoOrYesPos">
-					<content>En la sección </content>
-					<sectionRef sec="sQPAll"/>
-					<content> vimos que en </content>
-					<langName/>
-					<content> no hay ninguna palabra especial negativa de grado que se escriba como palabra independiente y modifica a la frase nominal completa. Por el contrario, son </content>
-					<case element="qp" attr="npDegreeNegType">
-						<caseText value="proclitic">proclíticos que se unen al inicio de cualquiera palabra que comienza la frase nominal,</caseText>
-						<caseText value="enclitic">enclíticos que se unen al final de cualquiera palabra que termina la frase nominal,</caseText>
-						<caseText value="clitic">clíticos que se unen o al inicio de cualquiera palabra que comienza la frase nominal o al final de cualquiera palabra que termina la frase nominal,</caseText>
-						<caseText value="prefix">prefijos que se uenn al sustantivo principal de la frase nominal,</caseText>
-						<caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal,</caseText>
-						<caseText value="affix">o prefijos o sufijos que se unen al sustantivo principal de la frase nominal,</caseText>
-					</case>
-					<content> de acuerdo con se mostra en el cuadro </content><exampleRef num="xNegDegree"/><content> que sigue. </content>
-				</p>
-				<p show="swQPNPDegreeYesOrYesNeg">
-					<content>En la sección </content>
-					<sectionRef sec="sQPAll"/>
-					<content> vimos que en </content>
-					<langName/>
-					<content> hay las siguientes palabras negativas especiales de grado que se escriben como palabras independientes y modifican a la frase nominal completo:</content>
-				</p>
-				<example show="swQPNPDegreeNotPosOnly" num="xNegDegree">
-					<table border="1">
-<headerRow>
-	<headerCol>Elementos especiales negativos de grado</headerCol>
-	<headerCol>Glosa</headerCol>
-</headerRow>
-						<row>
-							<col exampleLoc="qp/not"/>
-							<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-						</row>
-					</table>
-				</example>
-				<p show="swQPNPDegreeNotPosOnly">
-					<content>Algunos ejemplos de frases nominales negativos usando los elementos especiales negativos de grado en </content>
-					<langName/><content> son: </content>
-				</p>
-				<example show="swQPNPDegreeNotPosOnly">
-					<interlinear exampleLoc="qp/negExample"/>
-				</example>
-				<p show="swQPNPDegreeNotYesAndNegCooccurNo">
-					<content>Algunos ejemplos que incluyen los elementos especiales positivos de grado también son:</content>
-				</p>
-				<example show="swQPNPDegreeNotYesAndNegCooccurNo">
-					<interlinear exampleLoc="qp/negCooccurExample"/>
-				</example>
-				<p show="swQPNPDegreeNotPosOnly">
+
+				   <p show="swQPNPDegreeNegNone">
+					  <content>En la sección </content>
+					  <sectionRef sec="sQPAll"/>
+					  <content> vimos que en </content>
+					  <langName/>
+					  <content>,  parece que no hay ninguna manera en la lengua para expresar el significado de </content><langData>no</langData><content> cuando está modificando a una frase nominal completa. </content>
+				   </p>
+				   <p show="swQPNPDegreeNegNo">
+					  <content>En la sección </content>
+					  <sectionRef sec="sQPAll"/>
+					  <content> vimos que en </content>
+					  <langName/>
+					  <content>, los elementos especiales negativos de grado no se expresan como palabras independientes. Por el contrario, todos se unen a otra palabra de la frase nominal como </content>
+					  <case element="qp" attr="npDegreeType">
+						 <caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
+						 <caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
+						 <caseText value="clitic">clíticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
+						 <caseText value="prefix">prefijos que se unen al sustantivo principal de la frase nominal.</caseText>
+						 <caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
+						 <caseText value="affix">prefijos o sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
+					  </case>
+					  <content/>
+				   </p>
+
+				   <p show="swQPNPDegreeNegSome">
+					  <content>En la sección </content>
+					  <sectionRef sec="sQPAll"/>
+					  <content> vimos que en </content>
+					  <langName/>
+					  <content>, algunos son palabras independientes pero algunos de los elementos especiales negativos de grado no se expresan como palabras independientes.  Por el contrario, algunos se unen a otra palabra de la frase nominal como </content>
+					  <case element="qp" attr="npDegreeNegType">
+						 <caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
+						 <caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
+						 <caseText value="clitic">clíticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
+						 <caseText value="prefix">prefijos que se unen al sustantivo principal de la frase nominal.</caseText>
+						 <caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
+						 <caseText value="affix">prefijos o sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
+					  </case>
+					  <content>  Los elementos especiales negativos de grado que se expresan como palabras independientes se presentan </content>
+					  <case element="qp" attr="npDegreeNegPos">
+						 <caseText value="before">antes</caseText>
+						 <caseText value="after">después</caseText>
+						 <caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+						 <caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
+						 <caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+						 <caseText value="afterOrBoth">después o en ambos lados</caseText>
+						 <caseText value="both">en ambos lados</caseText>
+						 <caseText value="unknown">_______</caseText>
+					  </case>
+					  <content> del resto de la frase nominal.  </content>
+					  <text show="swQPNPDegreeNegEitherUnrestricted">
+						 <content>Todas estas palabras pueden presentarse de cualquier lado de la frase nominal.</content>
+					  </text>
+					  <content/>
+					  <text show="swQPNPDegreeNegEitherRestricted">
+						 <content>Hay restricciones en cuanto a cuáles de estas palabras pueden presentarse en cada lado de la frase nominal.  </content>
+					  </text>
+				   </p>
+				   <p show="swQPNPDegreeNegYes">
+					  <content>En la sección </content>
+					  <sectionRef sec="sQPAll"/>
+					  <content> vimos que en </content>
+					  <langName/>
+					  <content>, los elementos especiales negativos de grado se expresan como palabras independientes que modifican la frase nominal completa.  Se presentan  </content>
+					  <case element="qp" attr="npDegreeNegPos">
+						 <caseText value="before">antes</caseText>
+						 <caseText value="after">después</caseText>
+						 <caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+						 <caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
+						 <caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+						 <caseText value="afterOrBoth">después o en ambos lados</caseText>
+						 <caseText value="both">en ambos lados</caseText>
+						 <caseText value="unknown">_______</caseText>
+					  </case>
+					  <content> del resto de la frase nominal.  </content>
+					  <text show="swQPNPDegreeNegEitherUnrestricted">
+						 <content>Todas estas palabras pueden presentarse de cualquier lado de la frase nominal.</content>
+					  </text>
+					  <content/>
+					  <text show="swQPNPDegreeNegEitherRestricted">
+						 <content>Hay restricciones en cuanto a cuáles de estas palabras pueden presentarse en cada lado de la frase nominal.  </content>
+					  </text>
+				   </p>
+				   <p show="swQPNPDegreeNegNotNone">
+					  <content>Algunos ejemplos de las frases nominales negativas (no incluyendo los elementos positivos especiales de grado) en </content>
+					  <langName/>
+					  <content> son:</content>
+				   </p>
+				   <example>
+					  <interlinear exampleLoc="qp/negExample"/>
+				   </example>
+
+				   <p show="swQPNPDegreeNegCooccurYes">
+					  <content>En la sección </content>
+					  <sectionRef sec="sQPAll"/>
+					  <content> vimos que en </content>
+					  <langName/>
+					  <content> se permite que las palabras que significa </content>
+					  <langData>no</langData>
+					  <content> se presentan con las palabras especiales positivas de grado en una sola frase nominal.  Las palabras especiales negativas de grado se presentan </content>
+					  <case element="qp" attr="npDegreeNegPos">
+						 <caseText value="before">antes</caseText>
+						 <caseText value="after">después</caseText>
+						 <caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+						 <caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
+						 <caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+						 <caseText value="afterOrBoth">después o en ambos lados</caseText>
+						 <caseText value="both">en ambos lados</caseText>
+						 <caseText value="unknown">_______</caseText>
+					  </case>
+					  <content> del resto de la frase nominal (incluyendo las palabras especiales positivas de grado).  </content>
+					  <text show="swQPNPDegreeNegEitherUnrestricted">
+						 <content>Todas estas palabras negativas pueden presentarse de cualquier lado de la frase nominal.  </content>
+					  </text>
+					  <content/>
+					  <text show="swQPNPDegreeNegEitherRestricted">
+						 <content>Hay restricciones en cuanto a cuáles de estas palabras negativas pueden presentarse en cada lado de la frase nominal.  </content>
+					  </text>
+				   </p>
+				   <p show="swQPNPDegreeNegCooccurYes">
+					  <content>Algunos ejemplos de las frases nominales negativos que incluyen las palabras especiales positivas de grado en </content>
+					  <langName/>
+					  <content> son:</content>
+				   </p>
+				   <example show="swQPNPDegreeNegCooccurYes">
+					  <interlinear exampleLoc="qp/negCooccurExample"/>
+				   </example>
+
+
+				   <p show="swQPNPDegreeNegNotNone">
 					<content>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra a continuación:</content>
 				</p>
-				<example show="swQPNPDegreeNotPosOnly">
+				<example show="swQPNPDegreeNegNotNone">
 					<interlinear exampleLoc="neg/degreeSubjExample"/>
 				</example>
-				<p show="swQPDeterminerNoOrYesSomeAndPosOnly">
-					<content>En la sección </content>
-					<sectionRef sec="sQPDeterminers"/>
-					<content> vimos que en </content>
-					<langName/>
-					<content>  no hay una categoría independiente de los cuantificadores que funcionan al igual que el único determinante en la frase nominal. Apenas pues no hay ninguna manera de expresar el elemento especial negativo 'not' , no hay ninguna manera de expresar ' ninguno' cuando está  modificando a una frase nominal en este idioma.</content>
-				</p>
-				<p show="swQPDeterminerNoOrYesSomeAndNotPosOnly">
-					<content>En la sección </content>
-					<sectionRef sec="sQPDeterminers"/>
-					<content>  vimos que en </content>
-					<langName/>
-					<content> no hay una categoría independiente de los cuantificadores que funcionan al igual que el único determinante en la frase nominal.  La negación de una frase nominal  solamente se expresa por los elementos especiales de grado. </content>
-				</p>
-				<p show="swQPDeterminerYesOrYesNo">
-					<content>En la sección </content>
-					<sectionRef sec="sQPDeterminers"/>
-					<content> vimos que en </content>
-					<langName/>
-					<content> hay los siguientes cuantificadores negativos que se escriben como palabras independientes y funcionan al igual que el único determinante en la frase nominal: </content>
-				</p>
-				<example show="swQPDeterminerYesOrYesNo">
-					<table border="1" show="swQPDeterminerYesOrYesNo">
-<headerRow>
-	<headerCol>Determinantes negativos del cuantificador</headerCol>
-	<headerCol>Glosa</headerCol>
-</headerRow>
-						<row>
-							<col exampleLoc="qp/determinerNegExample"/>
-							<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-						</row>
-					</table>
-				</example>
-				<p show="swQPDeterminerYesOrYesNo">
-					<content>Algunos ejemplos de las frases nominales negativas usando los determinantes negativos del cuantificador  en </content> <langName/><content> son:</content>
-				</p>
-				<example show="swQPDeterminerYesOrYesNo">
-					<interlinear exampleLoc="qp/determinerNegNPExample"/>
-				</example>
-				<p show="swQPDeterminerYesOrYesNo">
+
+
+			   <p show="swQPDeterminerNegNo">
+				  <content>En la sección </content>
+				  <sectionRef sec="sQPDeterminers"/>
+				  <content> vimos que en </content>
+				  <langName/>
+				  <content> no hay una categoría independiente de los cuantificadores negativos que funciona al igual que el único determinante de la frase nominal. La negación de una frase nominal es expresa solamente con los elementos especiales de grado. El concepto negativo de </content>
+				  <langData>ningún</langData>
+				  <content> es expresado como </content>
+				  <langData>no</langData>
+				  <content> en la sección anterior.</content>
+			   </p>
+			   <p show="swQPDeterminerNegAttaches">
+				  <content>En la sección </content>
+				  <sectionRef sec="sQPDeterminers"/>
+				  <content> vimos que en </content>
+				  <langName/>
+				  <content> no hay una categoría independiente de los cuantificadores negativos que funciona al igual que el único determinante de la frase nominal.  El concepto negativo de </content>
+				  <langData>ningún</langData>
+				  <content> es expresado por un clítico o afijo que se une a una palabra en la frase nominal, como explicó para </content><langData>no</langData><content> en la sección anterior.</content>
+			   </p>
+			   <p show="swQPDeterminerNegNone">
+				  <content>En la sección </content>
+				  <sectionRef sec="sQPDeterminers"/>
+				  <content> vimos que en </content>
+				  <langName/>
+				  <content> no hay una categoría independiente de los cuantificadores negativos que funciona al igual que el único determinante de la frase nominal. Asimismo tampoco hay alguna manera de expresar el elemento especial negativo de grado. </content>
+			   </p>
+
+			   <p show="swQPDeterminerNegYesOrSome">
+				  <content>En la sección </content>
+				  <sectionRef sec="sQPDeterminers"/>
+				  <content> vimos que en </content>
+				  <langName/>
+				  <content> se encuentran cuantificadores negativos que funcionan al igual que el único determinante de la frase nominal.  Estos determinantes del cuantificador se presentan  </content>
+				  <case element="qp" attr="determinerNegPos">
+					 <caseText value="before">antes</caseText>
+					 <caseText value="after">después</caseText>
+					 <caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
+					 <caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
+					 <caseText value="beforeOrBoth">antes o en ambos lados</caseText>
+					 <caseText value="afterOrBoth">después o en ambos lados</caseText>
+					 <caseText value="both">en ambos lados</caseText>
+					 <caseText value="unknown">_______</caseText>
+				  </case>
+				  <content> del sustantivo principal.  </content>
+				  <text show="swQPDeterminerNegEitherUnrestricted">
+					 <content>Todos los determinantes del cuantificador pueden presentarse de cualquier lado del sustantivo.</content>
+				  </text>
+				  <content/>
+				  <text show="swQPDeterminerNegEitherRestricted">
+					 <content>Hay restricciones en cuanto a cuáles de los determinantes del cuantificador pueden presentarse en cada lado del sustantivo.</content>
+				  </text>
+				  <content/>
+			   </p>
+
+			   <p show="swQPDeterminerNegYesOrSome">
+				  <content>Algunos ejemplos de los determinantes negativos del cuantificador en frases nominales completas en </content>
+				  <langName/>
+				  <content> son: </content>
+			   </p>
+			   <example show="swQPDeterminerNegYesOrSome">
+				  <interlinear exampleLoc="qp/determinerNegNPExample"/>
+			   </example>
+
+			   <p show="swQPDeterminerNegYesOrSome">
 					<content>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra a continuación:</content>
 				</p>
-				<example show="swQPDeterminerYesOrYesNo">
+				<example show="swQPDeterminerNegYesOrSome">
 					<interlinear exampleLoc="neg/determinerSubjExample"/>
 				</example>
-			<p show="swNotPosOnly">
-				<content>En section la sección </content>
-					<sectionRef sec="sPronIndef"/>
-					<content>, vimos que en </content>
-					<langName/>
-				<content> hay los siguientes pronombres indefinidos negativos y/o las frases nominales indefinidas negativas:</content>
-				</p>
-			<p show="swQPDeterminerNoOrYesSomeAndPosOnly">
-				<content>En la sección </content>
-					<sectionRef sec="sPronIndef"/>
-					<content>, vimos que en </content>
-					<langName/>
-				<case element="pron" attr="negIndef">
-					<caseText value="no"> no hay ningún pronombre indefinido negativo ni ninguna frase nominal indefinida negativa tampoco, puesto que el idioma no tiene ningún medio de negar una frase nominal.</caseText>
-					<caseText value="yes"> hay los siguientes pronombres indefinidos negativos:</caseText>
-				</case>
-				<content/>
-			</p>
-				<example show="swNegNotVerbOnly">
-					<table border="1">
- <headerRow>
-	 <headerCol>Tipo</headerCol>
-	 <headerCol>Indefinido negativo</headerCol>
-	 <headerCol>Glosa</headerCol>
- </headerRow>
-						<row show="swPronounNegIndefYes">
-							<col rowspan="1">
-								<content>Pronombres</content>
-							</col>
-							<col exampleLoc="pron/negIndefExample"/>
-							<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-						</row>
-						<row show="swNotPosOnly">
-							<col rowspan="1">
-								<content>Frases nominales</content>
-							</col>
-							<col exampleLoc="pron/negIndefNPExample"/>
-							<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-						</row>
-					</table>
-				</example>
-				<p show="swNegNotVerbOnly">
+
+			   <p show="swNotPosOnly">
+				  <content>En la sección </content>
+				  <sectionRef sec="sPronIndef"/>
+				  <content>, vimos que en </content>
+				  <langName/>
+				  <content>, </content>
+				  <case element="pron" attr="negIndef">
+					 <caseText value="no">todos los negativos indefinidos son frases nominales, en lugar de pronombres de una sóla palabra.</caseText>
+					 <caseText value="yes">algunos o todos los negativos indefinidos se combinan con pronombres para formar una palabra. A continuación se dan algunos ejemplos de pronombres negativos indefinidos: </caseText>
+				  </case>
+				  <content/>
+			   </p>
+			   <p show="swPosOnly">
+				  <content>En la sección </content>
+				  <sectionRef sec="sPronIndef"/>
+				  <content>, vimos que en </content>
+				  <langName/>
+				  <content>, </content>
+				  <case element="pron" attr="negIndef">
+					 <caseText value="no">no hay pronombres negativos indefinidos y tampoco expresa ningún nominal indefinido negativo, puesto que la lengua no tiene ningún medio para negar una frase nominal.</caseText>
+					 <caseText value="yes">todos los negativos indefinidos se combinan con pronombres para formar una palabra. No hay frases nominales negativas indefinidas, puesto que la lengua no tiene ningún medio para negar una frase nominal. A continuación se dan algunos ejemplos de pronombres negativos indefinidos:</caseText>
+				  </case>
+				  <content/>
+			   </p>
+			   <example show="swPronNegIndefYes">
+				  <table border="1">
+					 <headerRow>
+						<headerCol>Pronombres negativos indefinidos</headerCol>
+						<headerCol>Glosa</headerCol>
+					 </headerRow>
+					 <row>
+						<col exampleLoc="pron/negIndefExample"/>
+						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					 </row>
+				  </table>
+			   </example>
+
+			   <p show="swNotPosOnly">
+				  <content>Algunos ejemplos </content>
+				  <text show="swPronNegIndefYes">
+					 <content>(si hay) </content>
+				  </text>
+				  <content>de frases nominales negativas indefinidas son:</content>
+			   </p>
+			   <example show="swNotPosOnly">
+				  <interlinear exampleLoc="pron/negIndefNPExample"/>
+			   </example>
+
+			   <p show="swNegNotVerbOnly">
 					<content>Estas frases nominales negativas se pueden utilizar como el sujeto de una oración completa, como se muestra a continuación:</content>
 				</p>
 				<example show="swNegNotVerbOnly">
@@ -594,7 +924,7 @@
 					<sectionRef sec="sNegType"/>
 					<content>, en </content>
 					<langName/>
-					<content> hay artículos negativos de la polaridad. Por lo tanto, una frase nominal negativa no se permite presentarse en la posición del objeto. Por el contrario, uno de los artículos negativos de la polaridad se utiliza y </content>
+					<content> hay artículos negativos de polaridad . Por lo tanto, una frase nominal negativa no permite presentarse en la posición del objeto. Por el contrario, uno de los artículos negativos de polaridad  se utiliza y </content>
 					<case element="neg" attr="objVerbRequired">
 						<caseText value="yes">el verbo o el auxiliar debe ser negativo.</caseText>
 						<caseText value="other">el verbo o el auxiliar debe ser negativo o otra palabra o frase negativa debe presentarse anteriormente en la oración.</caseText>
@@ -605,7 +935,7 @@
 					<langName/>
 					<content> con un sujeto positivo y </content>
 					<text show="swPolarityItemsYes">
-						<content>un artículo negativo de la polaridad en la posición del objeto son: </content>
+						<content>un artículo negativo de polaridad  en la posición del objeto son: </content>
 					</text>
 					<text show="swPolarityItemsNo"><content>un objeto negativo son: </content>
 					</text>
@@ -618,7 +948,7 @@
 					<langName/>
 					<content> con un sujeto positivo y </content>
 					<text show="swPolarityItemsYes">
-						<content>un artículo negativo de la polaridad en la posición del objeto indirecto son: </content>
+						<content>un artículo negativo de polaridad  en la posición del objeto indirecto son: </content>
 					</text>
 					<text show="swPolarityItemsNo"><content>un objeto indirecto negativo son: </content>
 					</text>
@@ -631,7 +961,7 @@
 					<langName/>
 					<content> con un sujeto negativo y  </content>
 					<text show="swPolarityItemsYes">
-						<content>un artículo negativo de la polaridad en la posición del objeto son: </content>
+						<content>un artículo negativo de polaridad  en la posición del objeto son: </content>
 					</text>
 					<text show="swPolarityItemsNo"><content>un objeto negativo son: </content>
 					</text>
@@ -644,25 +974,25 @@
 					<text show="swObjectVerbRequiredNotNo">
 						<content>no</content>
 					</text>
-					<content> se permite presentarse en la posición del objeto o del objeto indirecto </content>
+					<content> permite presentarse en la posición del objeto o del objeto indirecto </content>
 					<case element="neg" attr="objVerbRequired">
 						<caseText value="yes">a menos que el verbo o el auxiliar es negativo. </caseText>
 						<caseText value="other">a menos que el verbo o el auxiliar es negativo o otra palabra o frase negativa se presenta anteriormente en la oración. </caseText>
 						<caseText value="no">sin cualquiera restricción sobre otros elementos negativos en la oración. </caseText>
 					</case>
 <text show="swNegTypeConcord"><content/><case element="neg" attr="negFront">
-	<caseText value="yes"> Un objeto negativo debepresentarse inicialmente en la oración, semejantemente al desplazamiento a la izquierda de las frases interrogativas en las preguntas en español. </caseText>
+	<caseText value="yes"> Un objeto negativo debe presentarse inicialmente en la oración, semejantemente al desplazamiento a la izquierda de las frases interrogativas en las preguntas en español. </caseText>
 	<caseText value="optional"> Un objeto negativo puede presentarse inicialmente en la oración o puede permanecer en su posición normal. </caseText>
 	<caseText value="beforeVerb"> Un objeto negativo puede presentarse en la posición directamente antes del verbo o puede permanecer en su posición normal.</caseText>
 	<caseText value="no"> Un objeto negativo simplemente presentarse en su posición normal en la oración, sin ningún desplazamiento.</caseText>
 </case><content/></text><content/>
 			   </p>
 				<p show="swPolarityItemsYesAndNegNotVerbOnly">
-					<content>Como estos ejemplos muestran, un artículo negativo de la polaridad </content>
+					<content>Como estos ejemplos muestran, un artículo negativo de polaridad  </content>
 					<text show="swObjectVerbRequiredNotNo">
 						<content>no</content>
 					</text>
-					<content> se permite presentarse en la posición del objeto o del objeto indirecto </content>
+					<content> permite presentarse en la posición del objeto o del objeto indirecto </content>
 					<case element="neg" attr="objVerbRequired">
 						<caseText value="yes">a menos que el verbo o el auxiliar es negativo. </caseText>
 						<caseText value="other">a menos que el verbo o el auxiliar es negativo o otra palabra o frase negativa se presenta anteriormente en la oración. </caseText>
@@ -674,41 +1004,18 @@
 		</section2>
 	</section1>
 
+
 <showWhen id="swNegVerbOnly">
-		 <whenValue element="qp" attr="determiner" value="no"/>
+		 <whenValue element="qp" attr="determinerNeg" value="none"/>
 		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-		<and/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
-<or/>
-		 <whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<and/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
-<or/>
-		 <whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-		<and/>
-		<whenValue element="pron" attr="negIndef" value="no"/>
-<or/>
-		 <whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
+		<whenValue element="qp" attr="npDegreeNeg" value="none"/>
 		<and/>
 		<whenValue element="pron" attr="negIndef" value="no"/>
 </showWhen>
 <showWhen id="swNegNotVerbOnly">
-		<whenValue element="qp" attr="determiner" value="yes"/>
+		<whenValue element="qp" attr="determinerNeg" value="none" negateValue="yes"/>
 		<or/>
-		<whenValue element="qp" attr="determiner" value="yesNo"/>
-<or/>
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
+		<whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
 		<or/>
 		<whenValue element="pron" attr="negIndef" value="yes"/>
 </showWhen>
@@ -718,54 +1025,56 @@
 	<showWhen id="swNegTypeChangingAndDeterminerNo">
 		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+		<whenValue element="qp" attr="determinerNeg" value="none"/>
 <or/>
 		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+		<whenValue element="qp" attr="determinerNeg" value="no"/>
 	</showWhen>
 	<showWhen id="swNegTypeChangingAndDeterminerYes">
 		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
-		<whenValue element="qp" attr="determiner" value="yes"/>
+		<whenValue element="qp" attr="determinerNeg" value="yes"/>
 <or/>
 		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
-		<whenValue element="qp" attr="determiner" value="yesNo"/>
+		<whenValue element="qp" attr="determinerNeg" value="some"/>
 	</showWhen>
 <showWhen id="swNegTypeChangingAndDeterminerNoAndNegNotVerbOnly">
 		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+		<whenValue element="qp" attr="determinerNeg" value="no"/>
 	<and/>
 		<whenValue element="pron" attr="negIndef" value="yes"/>
 <or/>
 		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+		<whenValue element="qp" attr="determinerNeg" value="none"/>
 	<and/>
 		<whenValue element="pron" attr="negIndef" value="yes"/>
 <or/>
 		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
-		<whenValue element="qp" attr="determiner" value="no"/>
+		<whenValue element="qp" attr="determinerNeg" value="no"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yes" negateValue="no"/>
+		<whenValue element="qp" attr="npDegreeNeg" value="yes" negateValue="no"/>
 <or/>
 		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+		<whenValue element="qp" attr="determinerNeg" value="none"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg" negateValue="no"/>
+		<whenValue element="qp" attr="npDegreeNeg" value="some" negateValue="no"/>
 </showWhen>
-	<showWhen id="swPolarityItemsNo">
-   <whenValue element="neg" attr="polarityItems" value="no"/>
-	</showWhen>
 <showWhen id="swPolarityItemsYes">
 		<whenValue element="neg" attr="polarityItems" value="yes"/>
 		<and/>
 		<whenValue element="neg" attr="type" value="changing"/>
 </showWhen>
+   <showWhen id="swPolarityItemsNo">
+	  <whenValue element="neg" attr="polarityItems" value="no"/>
+	  <or/>
+	  <whenValue element="neg" attr="type"  value="concord"/>
+   </showWhen>
 <showWhen id="swPolarityItemsYesAndNegNotVerbOnly">
 		<whenValue element="neg" attr="polarityItems" value="yes"/>
 		<and/>
@@ -777,25 +1086,25 @@
 		<and/>
 		<whenValue element="neg" attr="type" value="changing"/>
 		<and/>
-		<whenValue element="qp" attr="determiner" value="yes"/>
+		<whenValue element="qp" attr="determinerNeg" value="yes"/>
 	<or/>
 	<whenValue element="neg" attr="polarityItems" value="yes"/>
 	<and/>
 	<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-	<whenValue element="qp" attr="determiner" value="yesNo"/>
+	<whenValue element="qp" attr="determinerNeg" value="some"/>
 <or/>
 		<whenValue element="neg" attr="polarityItems" value="yes"/>
 		<and/>
 		<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yes" negateValue="no"/>
+		<whenValue element="qp" attr="npDegreeNeg" value="yes" negateValue="no"/>
 <or/>
 		<whenValue element="neg" attr="polarityItems" value="yes"/>
 		<and/>
 		<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg" negateValue="no"/>
+		<whenValue element="qp" attr="npDegreeNeg" value="some" negateValue="no"/>
 </showWhen>
 <showWhen id="swPronounNegIndefYes">
 		<whenValue element="pron" attr="negIndef" value="yes"/>
@@ -811,25 +1120,25 @@
 	<and/>
 	<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-	<whenValue element="qp" attr="determiner" value="yes"/>
+	<whenValue element="qp" attr="determinerNeg" value="yes"/>
 	<or/>
 	<whenValue element="neg" attr="polarityItems" value="no"/>
 	<and/>
 	<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-	<whenValue element="qp" attr="determiner" value="yesNo"/>
+	<whenValue element="qp" attr="determinerNeg" value="some"/>
 	<or/>
 	<whenValue element="neg" attr="polarityItems" value="no"/>
 	<and/>
 	<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-	<whenValue element="qp" attr="npDegree" value="yes" negateValue="no"/>
+	<whenValue element="qp" attr="npDegreeNeg" value="yes" negateValue="no"/>
 	<or/>
 	<whenValue element="neg" attr="polarityItems" value="no"/>
 	<and/>
 	<whenValue element="neg" attr="type" value="changing"/>
 	<and/>
-	<whenValue element="qp" attr="npDegree" value="yesNeg" negateValue="no"/>
+	<whenValue element="qp" attr="npDegreeNeg" value="some" negateValue="no"/>
 	<or/>
 	<whenValue element="neg" attr="type" value="concord"/>
 	<and/>
@@ -837,179 +1146,196 @@
 	<or/>
 	<whenValue element="neg" attr="type" value="concord"/>
 	<and/>
-	<whenValue element="qp" attr="determiner" value="yes"/>
+	<whenValue element="qp" attr="determinerNeg" value="yes"/>
 	<or/>
 	<whenValue element="neg" attr="type" value="concord"/>
 	<and/>
-	<whenValue element="qp" attr="determiner" value="yesNo"/>
+	<whenValue element="qp" attr="determinerNeg" value="some"/>
 	<or/>
 	<whenValue element="neg" attr="type" value="concord"/>
 	<and/>
-	<whenValue element="qp" attr="npDegree" value="yes" negateValue="no"/>
+	<whenValue element="qp" attr="npDegreeNeg" value="yes" negateValue="no"/>
 	<or/>
 	<whenValue element="neg" attr="type" value="concord"/>
 	<and/>
-	<whenValue element="qp" attr="npDegree" value="yesNeg" negateValue="no"/>
+	<whenValue element="qp" attr="npDegreeNeg" value="some" negateValue="no"/>
 </showWhen>
 	<showWhen id="swNegTypeConcord">
 		<whenValue element="neg" attr="type" value="concord"/>
 </showWhen>
-	<showWhen id="swIPNegAuxWord">
-		<whenValue element="ip" attr="negAux" value="yesOnly"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAffix"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAll"/>
-	</showWhen>
-	<showWhen id="swIPNegAuxAffix">
-		<whenValue element="ip" attr="negAux" value="noAffixOnly"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAffix"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAll"/>
-	</showWhen>
-	<showWhen id="swIPNegVerb">
-		<whenValue element="ip" attr="negAux" value="noVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAll"/>
-	</showWhen>
-	<showWhen id="swIPNegAuxAndVerb">
-		<whenValue element="ip" attr="negAux" value="yesVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAll"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTemporalTypeAffix">
-		<whenValue element="advp" attr="negTemporalType" value="affix"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTemporalTypeWord">
-		<whenValue element="advp" attr="negTemporalType" value="word"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTemporalTypeWordOrVerb">
-		<whenValue element="advp" attr="negTemporalType" value="word"/>
-<or/>
-		<whenValue element="advp" attr="negTemporalType" value="verb"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeAffix">
-		<whenValue element="advp" attr="negLocativeType" value="affix"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeWord">
-		<whenValue element="advp" attr="negLocativeType" value="word"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeWordOrVerb">
-		<whenValue element="advp" attr="negLocativeType" value="word"/>
-<or/>
-		<whenValue element="advp" attr="negLocativeType" value="verb"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTypeWord">
-		<whenValue element="advp" attr="negTemporalType" value="word"/>
-		<or/>
-		<whenValue element="advp" attr="negLocativeType" value="word"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNo">
-		<whenValue element="qp" attr="npDegree" value="no"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeYes">
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNoOrYesPos">
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeYesOrYesNeg">
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
-	</showWhen>
-<showWhen id="swQPNPDegreeNoPosOnlyOrYesPosOnly">
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-</showWhen>
-<showWhen id="swQPNPDegreeNotPosOnly">
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-</showWhen>
-	<showWhen id="swQPNPDegreeNotYesAndNegCooccurNo">
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegreeNegCooccur" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yes" negateValue="yes"/>
- <and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+   <showWhen id="swIPNegAuxWord">
+	  <whenValue element="ip" attr="negAux" value="yes"/>
    </showWhen>
-	<showWhen id="swQPDeterminerNoOrYesSome">
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-	</showWhen>
-	<showWhen id="swQPDeterminerYesOrYesNo">
-		<whenValue element="qp" attr="determiner" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesNo"/>
-	</showWhen>
-<showWhen id="swQPDeterminerNoOrYesSomeAndPosOnly">
-	 <whenValue element="qp" attr="determiner" value="no"/>
-	<and/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-	<and/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-	<or/>
-	 <whenValue element="qp" attr="determiner" value="no"/>
-	<and/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-	<and/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-</showWhen>
-<showWhen id="swQPDeterminerNoOrYesSomeAndNotPosOnly">
-	 <whenValue element="qp" attr="determiner" value="no"/>
-	<and/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-	<and/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-	<and/>
-	<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-	<and/>
-	<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-</showWhen>
-<showWhen id="swNotPosOnly">
-	   <whenValue element="qp" attr="determiner" value="yes"/>
-<or/>
-	   <whenValue element="qp" attr="determiner" value="yesNo"/>
-<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-</showWhen>
-	<showWhen id="swObjectVerbRequiredNotNo">
+   <showWhen id="swIPNegAuxAffix">
+	  <whenValue element="ip" attr="negAuxAffix" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPNegVerb">
+	  <whenValue element="ip" attr="negVAffix" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPNegAuxAndVerb">
+	  <whenValue element="ip" attr="negAux" value="yes"/>
+	  <or/>
+	  <whenValue element="ip" attr="negAuxAffix" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeAdverbWord">
+	  <whenValue element="advp"  attr="negTemporalType" value="adverbWord"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeAdverb">
+	  <whenValue element="advp"  attr="negTemporalType" value="adverb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeAffix">
+	  <whenValue element="advp" attr="negTemporalType" value="affix"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeWord">
+	  <whenValue element="advp" attr="negTemporalType" value="word"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeVerb">
+	  <whenValue element="advp" attr="negTemporalType" value="verb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeWordOrVerb">
+	  <whenValue element="advp" attr="negTemporalType" value="word"/>
+	  <or/>
+	  <whenValue element="advp" attr="negTemporalType" value="verb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeAdverbWord">
+	  <whenValue element="advp"  attr="negLocativeType" value="adverbWord"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeAdverb">
+	  <whenValue element="advp"  attr="negLocativeType" value="adverb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeAffix">
+	  <whenValue element="advp" attr="negLocativeType" value="affix"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeWord">
+	  <whenValue element="advp" attr="negLocativeType" value="word"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeVerb">
+	  <whenValue element="advp" attr="negLocativeType" value="verb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeWordOrVerb">
+	  <whenValue element="advp" attr="negLocativeType" value="word"/>
+	  <or/>
+	  <whenValue element="advp" attr="negLocativeType" value="verb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTypeWordorAdverb">
+	  <whenValue element="advp" attr="negTemporalType" value="word"/>
+	  <or/>
+	  <whenValue element="advp" attr="negLocativeType" value="word"/>
+	  <or/>
+	  <whenValue element="advp" attr="negTemporalType" value="adverb"/>
+	  <or/>
+	  <whenValue element="advp" attr="negLocativeType" value="adverb"/>
+	  <or/>
+	  <whenValue element="advp" attr="negTemporalType" value="adverbWord"/>
+	  <or/>
+	  <whenValue element="advp" attr="negLocativeType" value="adverbWord"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegNone">
+	  <whenValue element="qp" attr="npDegreeNeg" value="none"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegNotNone">
+	  <whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegNo">
+	  <whenValue element="qp" attr="npDegreeNeg" value="no"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegSome">
+	  <whenValue element="qp" attr="npDegreeNeg" value="some"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegYes">
+	  <whenValue element="qp" attr="npDegreeNeg" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegEitherUnrestricted">
+	  <whenValue element="qp" attr="npDegreeNegEither" value="unrestricted"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreeNegPos" value="before" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreeNegPos" value="after" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegEitherRestricted">
+	  <whenValue element="qp" attr="npDegreeNegEither" value="restricted"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreeNegPos" value="before" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreeNegPos" value="after" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegCooccurNo">
+	  <whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreeNegCooccur" value="no"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegCooccurYes">
+	  <whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreeNegCooccur" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegNoOrNone">
+	  <whenValue element="qp" attr="determinerNeg" value="no"/>
+	  <or/>
+	  <whenValue element="qp" attr="determinerNeg" value="none"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegNone">
+	  <whenValue element="qp" attr="determinerNeg" value="none"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreeNeg" value="none"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegYesOrSome">
+	  <whenValue element="qp" attr="determinerNeg" value="yes"/>
+	  <or/>
+	  <whenValue element="qp" attr="determinerNeg" value="some"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegNo">
+	  <whenValue element="qp" attr="determinerNeg" value="no"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegAttaches">
+	  <whenValue element="qp" attr="determinerNeg" value="attaches"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegEitherUnrestricted">
+	  <whenValue element="qp" attr="determinerNegEither" value="unrestricted"/>
+	  <and/>
+	  <whenValue element="qp" attr="determinerNegPos" value="before" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="determinerNegPos" value="after" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegEitherRestricted">
+	  <whenValue element="qp" attr="determinerNegEither" value="restricted"/>
+	  <and/>
+	  <whenValue element="qp" attr="determinerNegPos" value="before" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="determinerNegPos" value="after" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerYesOrSomeOrNegYesOrSome">
+	  <whenValue element="qp" attr="determiner" value="yes"/>
+	  <or/>
+	  <whenValue element="qp" attr="determiner" value="some"/>
+	  <or/>
+	  <whenValue element="qp"  attr="determinerNeg" value="yes"/>
+	  <or/>
+	  <whenValue element="qp" attr="determinerNeg" value="some"/>
+   </showWhen>
+   <showWhen id="swObjectVerbRequiredNotNo">
 		<whenValue element="neg" attr="objVerbRequired" value="no" negateValue="yes"/>
-	</showWhen>
-</portion>
+   </showWhen>
+   <showWhen id="swPronNegIndefYes">
+	  <whenValue element="pron" attr="negIndef" value="yes"/>
+   </showWhen>
+   <showWhen id="swNotPosOnlyAndNo">
+	  <whenValue element="qp" attr="determinerNeg" value="none" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pron" attr="negIndef" value="yes"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pron" attr="negIndef" value="yes"/>
+   </showWhen>
+   <showWhen id="swNotPosOnly">
+	  <whenValue element="qp" attr="determinerNeg" value="none" negateValue="yes"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swPosOnly">
+	  <whenValue element="qp" attr="determinerNeg" value="none"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreeNeg" value="none"/>
+   </showWhen>
+   </portion>

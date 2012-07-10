@@ -13,22 +13,22 @@
 	<form section="np">
 		<radioGroup>
 			<groupName dataItem="possAlienable" default="no">RNPPossAlienable</groupName>
-			<prompt>¿Su idioma distingue sustantivos en medio de poseídos alienables u inalienables?</prompt>
+		   <prompt>¿Su lengua distingue sustantivos entre posesión alienable o inalienable?</prompt>
 			<radio id="NPPossAlienableNo" dataValue="no">No</radio>
 			<radio id="NPPossAlienableYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="NPPossAlienableYesPrompt" show="swNPPossAlienableYes">Escriba los afijos que se utilizan para indicar sustantivos poseídos alienables cuando tienen un poseedor en la caja (cada uno en una línea separada si más de una). Utilice un guión después de los caracteres alfabéticos para indicar un prefijo, un guión antes para indicar un sufijo, y guiones en ambos lados para indicar un infijo.
-		</prompt>
+	   <prompt id="NPPossAlienableYesPrompt" show="swNPPossAlienableYes">Escriba los afijos que se utilizan para indicar sustantivos de posesión alienable cuando tienen un poseedor en el cuadro (cada uno en una línea separada si tiene más de uno). Utilice un guión después de los caracteres alfabéticos para indicar un prefijo, un guión antes para indicar un sufijo, y guiones en ambos lados para indicar un infijo.<br/><br/>
+		  Tenga en cuenta que estos afijos no deben ser iguales a los que concuerdan con o expresan el poseedor, examinado a continuación.</prompt>
 		<textBox id="NPPossAlienableYesAffixExample" dataItem="possAlienableAffixExample" rows="3" cols="20" show="swNPPossAlienableYes"/>
 		<br/>
 		<instruction id="NPPossAlienableYesInstruction" show="swNPPossAlienableYes">Key the feature <feature>possessed</feature> on the affix(es) that marks the alienably possessed nouns when they have a possessor.  Also, key the feature <feature>possessed</feature> on all inalienably possessed nouns so that a possessor will be required.</instruction>
 		<radioGroup id="NPPossAgrTable">
 			<groupName dataItem="possAgr" default="no">RNPPossAgr</groupName>
-			<prompt>¿Se indican los sustantivos con un afijo que concuerda con el poseedor (o expresa posiblemente al poseedor por sí mismo)?</prompt>
+		   <prompt>¿Se indican los sustantivos con un afijo que concuerda con el poseedor (o posiblemente expresa el poseedor por sí mismo)?  Estos afijos deben ser los pronombres dependientes utilizados para poseedores que se introducirán en <section number="7" >Los pronombres</section>.</prompt>
 			<radio id="NPPossAgrNo" dataValue="no">No</radio>
 			<radio id="NPPossAgrYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYes">Mire a través de las características en la carta abajo y compruebe cualquiera que su idioma utiliza.  Para la concordancia de clase, substituya un tipo o un número como apropriado para ## en la gramática.<br/>
+		<prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYes">Mire las características de la tabla abajo y compruebe (dando click) cualquiera que su lengua utiliza.  Para la concordancia de clase, substituya un tipo o un número como apropriado para ## en la gramática.<br/>
 			<featureChart>
 				<featureRow>
 					<featureType rowspan="5">persona</featureType>
@@ -52,7 +52,7 @@
 					<featureExplanation>el poseedor debe ser tercera persona</featureExplanation>
 				</featureRow>
 				<featureRow>
-				<featureType rowspan="3">number</featureType>
+					<featureType rowspan="3">número</featureType>
 					<featureItem dataValue="npPossAgrPossSingular" name="NPPossAgrPossSingular">poss_singular</featureItem>
 					<featureExplanation>el poseedor debe ser singular en número</featureExplanation>
 				</featureRow>
@@ -65,7 +65,7 @@
 					<featureExplanation>el poseedor debe ser dual en número</featureExplanation>
 				</featureRow>
 				<featureRow>
-				<featureType rowspan="3">gender</featureType>
+					<featureType rowspan="3">género</featureType>
 					<featureItem dataValue="npPossAgrPossMasculine" name="NPPossAgrPossMasculine">poss_masculine</featureItem>
 					<featureExplanation>el poseedor debe ser masculino en género</featureExplanation>
 				</featureRow>
@@ -78,7 +78,7 @@
 					<featureExplanation>el poseedor debe ser neutro en género</featureExplanation>
 				</featureRow>
 				<featureRow>
-				<featureType rowspan="4">animacy</featureType>
+				<featureType rowspan="4">animado</featureType>
 					<featureItem dataValue="npPossAgrPossAnimate" name="NPPossAgrPossAnimate">poss_animate</featureItem>
 					<featureExplanation>el poseedor debe ser animado</featureExplanation>
 				</featureRow>
@@ -95,116 +95,65 @@
 					<featureExplanation>el poseedor debe ser no humano</featureExplanation>
 				</featureRow>
 				<featureRow>
-				<featureType rowspan="1">class</featureType>
+				<featureType rowspan="1">clase</featureType>
 					<featureItem dataValue="npPossAgrPossClassClassNumber" name="NPPossAgrPossClassClassNumber">poss_class_##</featureItem>
 					<featureExplanation>el poseedor debe ser de ## clase</featureExplanation>
 				</featureRow>
 			</featureChart>
 		</prompt>
-		<instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes">In the lexicon, add one or more features from the following list as appropriate to the affix entries. For class agreement, replace the ## with the appropriate class number up to 30 on the appropriate entries in the lexicon.<br/>
-				Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="7">Pronouns</section>.</instruction>
-		<instruction id="NPPossNounAgrKeyedInstruction" show="swNPArtAndOrDem">If you followed instructions, any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.</instruction>
-		<radioGroup id="NPPossNounAgrKeyedTable" show="swNPArtAndOrDemandNotPractical">
-			<groupName dataItem="possNounAgrKeyed" default="yes">RNPPossNounAgrKeyed</groupName>
-			<prompt>Did you already enter the agreement features on nouns or noun affixes?</prompt>
-			<radio id="NPPossNounAgrKeyedYes" dataValue="yes">Yes</radio>
-			<radio id="NPPossNounAgrKeyedNo" dataValue="no">No, I still need to work on that</radio>
-		</radioGroup>
-		<instruction id="NPPossNounAgrKeyedYesInstruction" show="swNPPossNounAgrKeyedYes">Great! You can continue on.</instruction>
-		<instruction id="NPPossNounAgrArtAndDemNeitherInstruction" show="swNPArtAndDemNeither">Since your language does not have articles or demonstratives, you did not add any agreement marking on nouns for number, gender, animacy and/or class  in the section on Articles and Demonstratives.  You need to do it now.</instruction>
-		<instruction id="NPPossNounAgrKeyedNoInstruction" show="swNPPossNounAgrKeyedNo">The instructions relevant to your language are given here.
-<br/>
-			<br/>
-			<span id="NPPossNounAgrNoneInstruction" show="swNPArtAgreementNone">Since your language does not have any agreement marking, you can continue on.</span>
-			<span id="NPPossNounAgrNumberInstruction" show="swNPArtAgreementNumberYes">
-To handle the number agreement, we will assume that all nouns are singular by default.  Therefore, only the plural nouns need to be marked.  In the lexicon:
-<ul>
-					<li>Add the feature <feature>plural</feature> to any affixes which can be added to a noun to make it plural.</li>
-					<li>Also, add the feature <feature>plural</feature> to any nouns which are inherently plural (such as <example>scissors</example> or <example>pants</example> in English), or exceptionally don't take an affix.</li>
-					<li>Any nouns which do not make a distinction between singular and plural forms, such as <example>deer</example> in English, need to have two entries in the lexicon, one marked with the feature <feature>plural</feature> and the other for singular (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
-					<li id="NPPossArtDemMassSpan" show="swNPArtDemMassYes">All mass nouns need to have the feature <feature>mass</feature>.</li>
-				</ul>
-			</span>
-			<span id="NPPossNounAgrAnimacyInstruction" show="swNPArtAgreementAnimacyYes">
-To handle animacy agreement, we will assume that all (common) nouns are inanimate and nonhuman by default. Therefore, only the animate nouns need to be marked.  In the lexicon, add the feature <feature>animate</feature> to any animate nouns, such as <example>person</example>, <example>people</example>, <example>crowd</example>, <example>animal</example>, and names of types of animals which are not proper names.  Also add the feature <feature>human</feature> as appropriate if your language makes the further distinction between human and nonhuman nouns.  (Proper names will be dealt with in <section number="6">Pronouns and Proper Names</section>.)
-</span>
-			<span id="NPPossNounAgrGenderInstruction" show="swNPArtAgreementGenderYes">
-To handle gender agreement, we will assume that all nouns are masculine by default.  Therefore, only the feminine and neuter nouns need to be marked.  In the lexicon:
-<ul>
-					<li>Add the feature <feature>feminine</feature> to any affixes which can be added to a noun to make it feminine.  Add the feature <feature>neuter</feature> to any affixes which can be added to a noun to make it neuter.</li>
-					<li>Also, add the feature <feature>feminine</feature> to any nouns which are inherently feminine, or exceptionally don't take an affix.  Similarly, add the feature <feature>neuter</feature> to any nouns which are inherently neuter, or exceptionally don't take an affix.</li>
-					<li>Any nouns which do have the same form for both masculine and feminine, but which can take different forms of their modifiers based on gender need to have two entries in the lexicon, one marked with the feature <feature>feminine</feature> and the other for masculine (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
-				</ul>
-			</span>
-			<span id="NPPossNounAgrClassInstruction" show="swNPArtAgreementClassYes">
-To handle class marking and agreement, in the lexicon:
-<ul>
-					<li>It may be the case that the same affixes mark the class number on nouns and all their modifiers.  If this is the case in your language, simply add the class feature <feature>class_##</feature> (where ## is replaced by a number between 1 and 99) to the affixes, and all the words will automatically come from the morphological parser with the class number marked.</li>
-					<li>Any cases where nouns do not have an affix which marks the class will require marking of the class feature on the particular noun.</li>
-				</ul>
-			</span>
-		</instruction>
-		<br/>
+	   <instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes"> In the lexicon, add one or more features from the following list as appropriate to the affix entries.  For class agreement, replace the ## with the appropriate class type or number up to 25 on the appropriate entries in the lexicon.<br/>
+		  Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="7">Los pronombres</section>.</instruction>
+	   <instruction id="NPPossNounAgrKeyedInstruction" show="swNPArtAndOrDem">If you followed instructions, any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.  If not, return there to complete the feature marking in the lexicon, before continuing on.</instruction>
+	   <br/><br/>
 		<buttons>
 			<button id="NPPossAgrBack" value="Back" goto="NPPossessors.xml"/>
 			<button id="NPPossAgrNext" value="Next" goto="NPContents.htm"/>
 		</buttons>
 	</form>
-	<showWhen id="swNPPossNounAgrKeyedYes">
-		<whenRadio button="NPPossNounAgrKeyedYes"/>
-		<and/>
-		<not/>
-		<whenValue element="np" attr="artAndDem" value="no"/>
-	</showWhen>
-	<showWhen id="swNPPossNounAgrKeyedNo">
-		<whenRadio button="NPPossNounAgrKeyedNo"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="no"/>
-	</showWhen>
-	<showWhen id="swNPArtAgreementNone">
-		<whenValue element="np" attr="agreeNumber" value="no"/>
-		<and/>
-		<whenValue element="np" attr="agreeOther" value="no"/>
-	</showWhen>
-	<showWhen id="swNPArtAgreementNumberYes">
-		<whenValue element="np" attr="agreeNumber" value="yes"/>
-	</showWhen>
-	<showWhen id="swNPArtAgreementAnimacyYes">
-		<whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
-	</showWhen>
-	<showWhen id="swNPArtAgreementGenderYes">
-		<whenValue element="np" attr="agreeOther" value="yesGender"/>
-	</showWhen>
-	<showWhen id="swNPArtAgreementClassYes">
-		<whenValue element="np" attr="agreeOther" value="yesClass"/>
-	</showWhen>
-	<showWhen id="swNPArtDemMassYes">
-		<whenValue element="np" attr="artRequired" value="mass"/>
-		<or/>
-		<whenValue element="np" attr="demRequired" value="mass"/>
-		<or/>
-		<whenValue element="np" attr="demOrArtRequired" value="mass"/>
-		<or/>
-		<whenValue element="np" attr="demAndArtDem" value="mass"/>
-		<or/>
-		<whenValue element="np" attr="demAndArtArt" value="mass"/>
-	</showWhen>
-	<showWhen id="swNPPossAlienableYes">
-		<whenRadio button="NPPossAlienableYes"/>
-	</showWhen>
-	<showWhen id="swNPPossAgrYes">
-		<whenRadio button="NPPossAgrYes"/>
-	</showWhen>
-	<showWhen id="swNPArtAndOrDem">
-		<not/>
-		<whenValue element="np" attr="artAndDem" value="no"/>
-	</showWhen>
-	<showWhen id="swNPArtAndDemNeither">
-		<whenValue element="np" attr="artAndDem" value="no"/>
-	</showWhen>
-	<showWhen id="swNPArtAndOrDemandNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-		<and/><not/>
-		<whenValue element="np" attr="artAndDem" value="no"/>
-	</showWhen>
+   <showWhen id="swNPArtAgreementNone">
+	  <whenValue element="np" attr="agreeNumber" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="agreeOther" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAgreementNumberYes">
+	  <whenValue element="np" attr="agreeNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAgreementAnimacyYes">
+	  <whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
+   </showWhen>
+   <showWhen id="swNPArtAgreementGenderYes">
+	  <whenValue element="np" attr="agreeOther" value="yesGender"/>
+   </showWhen>
+   <showWhen id="swNPArtAgreementClassYes">
+	  <whenValue element="np" attr="agreeOther" value="yesClass"/>
+   </showWhen>
+   <showWhen id="swNPArtDemMassYes">
+	  <whenValue element="np" attr="artRequired" value="mass"/>
+	  <or/>
+	  <whenValue element="np" attr="demRequired" value="mass"/>
+	  <or/>
+	  <whenValue element="np" attr="demOrArtRequired" value="mass"/>
+	  <or/>
+	  <whenValue element="np" attr="demAndArtDem" value="mass"/>
+	  <or/>
+	  <whenValue element="np" attr="demAndArtArt" value="mass"/>
+   </showWhen>
+   <showWhen id="swNPPossAlienableYes">
+	  <whenRadio button="NPPossAlienableYes"/>
+   </showWhen>
+   <showWhen id="swNPPossAgrYes">
+	  <whenRadio button="NPPossAgrYes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndOrDem">
+	  <not/>
+	  <whenValue element="np" attr="artAndDem" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemNeither">
+	  <whenValue element="np" attr="artAndDem" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAndOrDemandNotPractical">
+	  <whenValue  element="paws" attr="outputGrammar" value="True"/>
+	  <and/><not/>
+	  <whenValue element="np" attr="artAndDem" value="no"/>
+   </showWhen>
 </page>

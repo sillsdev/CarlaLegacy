@@ -94,7 +94,7 @@
 			<section3 id="sCompTypeNonfiniteCP">
 				<secTitle>A Nonfinite Complement with a Complementizer</secTitle>
 				<p>
-					<content>Verbs which take only a nonfinite complement, but the complementizer 'for' is present when the embedded subject is not coreferent with the main clause subject, include the following examples in English: </content>
+					<content>Verbs which take only a nonfinite complement, but the complementizer ‘for’ is present when the embedded subject is not coreferent with the main clause subject, include the following examples in English: </content>
 					<langData>Joe would hate for Sue to be at the party</langData>
 					<content>, </content>
 					<langData>Joe hates to dance</langData>
@@ -129,7 +129,61 @@
 					<interlinear exampleLoc="comp/DPCPExample"/>
 				</example>
 			</section3>
-			<section3 id="sCompTypeOther">
+
+		   <section3 id="sCompRaising">
+			  <secTitle>Raising Constructions</secTitle>
+			  <p><content>‘Raising’ verbs seem to include all the perception verbs and copulas. These verbs take either a nonfinite complement or an adjective complement which itself has either a finite complement with a complementizer or a nonfinite complement. The main verb does not have its own subject, so the subject position is filled by the subject of the nonfinite complement, as in: </content>
+				 <langData>John seemed to like the tortillas</langData><content>, </content><langData>Joe is likely to come</langData><content> and </content><langData>The weather is certain to change soon</langData>
+				 <content>.  When the complement clause is finite, the subject cannot be ‘raised’, so a dummy </content><langData>it</langData><content> fills the main clause subject position in English, as in: </content>
+				 <langData>It seems likely that Joe will come</langData><content> and </content><langData>It is certain that the weather will change soon</langData><content>.</content>
+			  </p>
+			  <p>
+				 <content>Examples of this type in </content>
+				 <langName/>
+				 <content> include:</content>
+			  </p>
+			  <example>
+				 <interlinear exampleLoc="comp/raisingExample"/>
+			  </example>
+		   </section3>
+
+		   <section3 id="sCompCausative">
+			  <secTitle>Complements of Causatives</secTitle>
+			  <p><content>Syntactic causatives are made up of two clauses and have an object that also acts as the subject of the complement clause. That complement clause is always nonfinite, but does not need the nonfinite marker with some verbs in English, as in: </content>
+				 <langData>My mother made me clean my room</langData><content>, while it is required with others, as in: </content><langData>The other girl caused us to break up</langData><content>.</content></p>
+			  <p>
+				 <content>Examples of this type in </content>
+				 <langName/>
+				 <content> include:</content>
+			  </p>
+			  <example>
+				 <interlinear exampleLoc="comp/causeExample"/>
+			  </example>
+			  <p show="swIPCausativeNotNo"><content>See section </content><sectionRef sec="sIPCausatives"/><content> for examples of morphological causatives in </content><langName/><content>.</content>
+			  </p>
+		   </section3>
+
+		   <section3 id="sCompSpeech">
+			  <secTitle>Direct and Indirect Speech as Complements</secTitle>
+			  <p><content>Verbs of speaking can have either direct or indirect complements. Direct quotations can be just about any sentence or interjection or greeting, such as: </content>
+				 <langData>Sue said, “I will come to your house tomorrow”</langData><content> or </content><langData>Joe said, “Bye!”</langData>
+			  </p>
+			  <p><content>Indirect quotations as complements are more restricted. In English, some speech verbs take a finite sentence complement with or without a complementizer, and an optional prepositional phrase to express the hearer, as in: </content>
+				 <langData>Sue said (to me) that she would come here tomorrow</langData><content>.  Others require the hearer to be expressed as an object plus either a finite sentential complement, as in: </content>
+				 <langData>Sue told me that she would come here tomorrow</langData><content>, or a nonfinite sentential complement in which the subject must be coreferent with the main clause subject and dropped, as in: </content>
+				 <langData>Sue told me to come here tomorrow</langData><content>.</content>
+			  </p>
+			  <p>
+				 <content>Examples of this type in </content>
+				 <langName/>
+				 <content> include:</content>
+			  </p>
+			  <example>
+				 <interlinear exampleLoc="comp/quotationExample"/>
+			  </example>
+		   </section3>
+
+		   <section3 id="sCompTypeOther">
 				<secTitle>Other Restrictions on Complement Clauses</secTitle>
 				<p>
 					<content>Some languages also have verbs which have other restrictions on embedded clauses, such as that the embedded verb must be in the subjunctive mood or in the perfective aspect.  Any such examples in </content>
@@ -155,7 +209,7 @@
 				<langName/>
 				<content>, there is </content>
 				<case element="comp" attr="comp">
-					<caseText value="no">no complementizer word or clitic for declarative embedded clauses.</caseText>
+				   <caseText value="no">no complementizer word or clitic for declarative embedded clauses, so all embedded clauses are simply sentences in this language.</caseText>
 					<caseText value="yes">at least one complementizer for declarative embedded clauses.</caseText>
 				</case>
 				<content/>
@@ -239,4 +293,8 @@
 		<and/>
 		<whenValue element="comp" attr="comp" value="yes"/>
 	</showWhen>
+
+   <showWhen id="swIPCausativeNotNo">
+	  <whenValue element="ip" attr="causative" value="no" negateValue="yes"/>
+   </showWhen>
 </portion>

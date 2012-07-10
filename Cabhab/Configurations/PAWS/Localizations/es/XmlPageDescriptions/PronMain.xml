@@ -1,64 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
-<page id="PronMain" count="1/8">
+<page id="PronMain" count="1/9">
 	<title>Los pronombres</title>
-	<introduction>Hay pronombres de varios tipos: pronombre personales, posesivos, reflexivos, recíprocos, e indefinidos.
-		Estos pronombres por lo regular se colocan solamente en lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo. En algunos idiomas los pronombres se pueden modificar por los determinantes y cuantificadores, en ese caso ocupan el lugar de los sustantivos.  Algunos idiomas tienen sistemas independientes y dependientes del pronombre. Cada uno de estos temas será considerado en su orden correspondiente.
+	<introduction>Hay pronombres de varios tipos: personales, posesivos, reflexivos, recíprocos, demostrativos e indefinidos.
+		Estos pronombres por lo regular se colocan solamente en lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo. En algunas lenguas los pronombres se pueden modificar por los determinantes y cuantificadores, en ese caso ocupan el lugar de los sustantivos.  Algunas lenguas tienen sistemas independientes y dependientes del pronombre. Cada uno de estos temas será considerado en su orden correspondiente.
 	  </introduction>
 	<form section="pron">
+	   <radioGroup id="PronClassifierAgrTable" show="swOTClassifierAgr">
+		  <groupName dataItem="pronounClassifier" default="no">RPronClassifierAgr</groupName>
+		  <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar los pronombres que se escriban como palabras independientes?</prompt>
+		  <radio id="PronClassifierAgrNo" dataValue="no">No, los pronombres no se marcan con clasificadores</radio>
+		  <radio id="PronClassifierAgrYes" dataValue="yes">Sí, los pronombres independientes se marcan con clasificadores como parte del sistema de concordancia</radio>
+	   </radioGroup>
+	   <prompt id="PronClassifierAgrPrompt" show="swOTClassifierAgrAndPronYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada uno de los pronombres aquí.  Sin embargo, si todos los pronombres personales utilizar sólo un clasificador específico (o sólo un par de clasificadores), puede elegir la escribir los pronombres con el clasificador conectado con un guión en esta sección de pronombres.</prompt>
+	   <br/>
+
 		<prompt id="PronCaseNonePrompt" show="swNPCaseNone">
-			<br/>Puesto que su idioma no distingue el caso, debe tener solamente un solo sistema de los pronombres independientes que se pueden utilizar en cualquier posición de la oración.<br/><br/>
-			Escriba los pronombres personales de la primera persona independiente en la caja de texto, con cada pronombre seguido por un punto y en una línea separada. <br/>
+			<br/>Puesto que su lengua no distingue el caso, debe tener solamente un solo sistema de los pronombres independientes que pueden presentarse en cualquier posición de la oración.<br/><br/>
+			Escriba los pronombres personales de la primera persona independiente aquí, con cada pronombre en una línea separada. <br/>
 		</prompt>
 		<textBox id="PronPersonalFirstNoCaseExample" dataItem="personalFirstNoCaseExample"  rows="3" show="swNPCaseNone"/>
 		<prompt id="PronSecondCaseNonePrompt" show="swNPCaseNone">
-			Escriba los pronombres personales de la segunda persona independiente en la caja de texto, con cada pronombre seguido por un punto y en una línea separada. <br/>
+			Escriba los pronombres personales de la segunda persona independiente aquí, con cada pronombre en una línea separada. <br/>
 		</prompt>
 		<textBox id="PronPersonalSecondNoCaseExample" dataItem="personalSecondNoCaseExample" rows="3" show="swNPCaseNone"/>
 		<prompt id="PronThirdCaseNonePrompt" show="swNPCaseNone">
-			Escriba los pronombres personales de la tercera persona independiente en la caja de texto, con cada pronombre seguido por un punto y en una línea separada. <br/>
+			Escriba los pronombres personales de la tercera persona independiente aquí, con cada pronombre en una línea separada. <br/>
 		</prompt>
 		<textBox id="PronPersonalThirdNoCaseExample" dataItem="personalThirdNoCaseExample" rows="7" show="swNPCaseNone"/>
-		<prompt id="PronCaseNomPrompt" show="swNPCaseNom">
-			<br/>Puesto que su idioma tiene un sistema de caso del nominativo-acusativo, debe tener sistemas distintos de los pronombres independientes que se pueden utilizar como sujetos, objetos y poseedores. <br/><br/>
-			Escriba los pronombres personales de la primera persona independiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada. <br/>
+
+	   <prompt id="PronCaseNomPrompt" show="swNPCaseNom">
+			<br/>Puesto que su lengua tiene un sistema de caso del nominativo-acusativo, debe tener sistemas distintos de los pronombres independientes que pueden presentarse como sujetos, objetos y poseedores.
+		  <span id="ExperNoSpan" show="swExperiencerNo">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujetos-experimentadores que para sujetos-agentes.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		  <span id="ExperYesObjSpan" show="swExperiencerYesObj">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujetos-experimentadores que para los objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		  <span id="ExperYesDatSpan" show="swExperiencerYesDat">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza un sistema distinto de pronombres para sujetos-experimentadores contra los pronombres para los sujetos o objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos indirectos son los mismos que se utilizan para sujetos-experimentadores, y pedirémos a usted acerca de un sistema adicional de pronombres dativos. </span>
+		  <br/><br/>
+		  Escriba los pronombres personales de la primera persona independiente que pueden presentarse como sujetos<span id="ExperYesSpan" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada. <br/>
 		</prompt>
 		<textBox id="PronPersonalFirstNomSubjectExample" dataItem="personalFirstNomSubjectExample"  rows="3" show="swNPCaseNom"/>
 		<prompt id="PronSecondCaseNomPrompt" show="swNPCaseNom">
-			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada. <br/>
+		   Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como sujetos<span id="ExperYesSpan2" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada. <br/>
 		</prompt>
 		<textBox id="PronPersonalSecondNomSubjectExample" dataItem="personalSecondNomSubjectExample" rows="3" show="swNPCaseNom"/>
 		<prompt id="PronThirdCaseNomPrompt" show="swNPCaseNom">
-			IEscriba los pronombres personales de la tercera persona independiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada. <br/>
+		   IEscriba los pronombres personales de la tercera persona independiente que pueden presentarse como sujetos<span id="ExperYesSpan3" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada. <br/>
 		</prompt>
 		<textBox id="PronPersonalThirdNomSubjectExample" dataItem="personalThirdNomSubjectExample" rows="7" show="swNPCaseNom"/>
 		<prompt id="PronCaseNomPrompt1" show="swNPCaseNom">
-			Escriba los pronombres personales de la primera persona independiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona independiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalFirstNomObjectExample" dataItem="personalFirstNomObjectExample" rows="3" show="swNPCaseNom"/>
 		<prompt id="PronSecondCaseNomPrompt1" show="swNPCaseNom">
-			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalSecondNomObjectExample" dataItem="personalSecondNomObjectExample" rows="3" show="swNPCaseNom"/>
 		<prompt id="PronThirdCaseNomPrompt1" show="swNPCaseNom">
-			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalThirdNomObjectExample" dataItem="personalThirdNomObjectExample" rows="7" show="swNPCaseNom"/>
 		<prompt id="PronCaseNomPrompt2" show="swNPCaseNom">
-			Escriba los pronombres personales de la primera persona independiente que pueden presentarse en la posición de poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona independiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalFirstNomPossessorExample" dataItem="personalFirstNomPossessorExample" rows="3" show="swNPCaseNom"/>
 		<prompt id="PronSecondCaseNomPrompt2" show="swNPCaseNom">
-			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse en la posición de poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronSecondPersonalNomPossessorExample" dataItem="personalSecondNomPossessorExample" rows="3" show="swNPCaseNom"/>
 		<prompt id="PronThirdCaseNomPrompt2" show="swNPCaseNom">
-			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse en la posición de poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalThirdNomPossessorExample" dataItem="personalThirdNomPossessorExample" rows="7" show="swNPCaseNom"/>
-		<br/>
-		<instruction id="PronCaseTypeNomAccInstruction" show="swNPCaseNom">
+	   <prompt id="PronCaseNomPrompt3" show="swNPCaseNomExperiencerDat">
+		  Escriba los pronombres personales de la primera persona independiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronPersonalFirstNomDativeExample" dataItem="personalFirstNomDativeExample" rows="3" show="swNPCaseNomExperiencerDat"/>
+	   <prompt id="PronSecondCaseNomPrompt3" show="swNPCaseNomExperiencerDat">
+		  Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronPersonalSecondNomDativeExample" dataItem="personalSecondNomDativeExample" rows="3" show="swNPCaseNomExperiencerDat"/>
+	   <prompt id="PronThirdCaseNomPrompt3" show="swNPCaseNomExperiencerDat">
+		  Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronPersonalThirdNomDativeExample" dataItem="personalThirdNomDativeExample" rows="7" show="swNPCaseNomExperiencerDat"/>
+	   <br/>
+			   <instruction id="PronCaseTypeNomAccInstruction" show="swNPCaseNom">
 			<br/>In the lexicon:
 <ul>
 				<li>Add the feature <feature>nominative</feature> to all the pronouns that occur in subject position.</li>
@@ -71,43 +97,59 @@
 			</ul>
 		</instruction>
 		<prompt id="PronCaseErgPrompt" show="swNPCaseErg">
-			<br/>Puesto que su idioma tiene un sistema de caso ergativo-absolutivo, debe tener sistemas distintos de los pronombres independientes que se pueden utilizar como sujetos de verbos transitivos contra los sujetos de verbos intransitivos y los objetos de verbos transitivos. <br/><br/>
-			Escriba los pronombres personales de la primera persona independiente que pueden presentarse en la posición de sujeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+			<br/>Puesto que su lengua tiene un sistema de caso ergativo-absolutivo, debe tener sistemas distintos de los pronombres independientes que pueden presentarse como sujetos de verbos transitivos contra los sujetos de verbos intransitivos y los objetos de verbos transitivos.
+		   <span id="ExperNoErgSpan" show="swExperiencerNo">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujectos-experimentadores que para sujetos-agentes.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		   <span id="ExperYesObjErgSpan" show="swExperiencerYesObj">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujetos-experimentadores que para los objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		   <span id="ExperYesDatErgSpan" show="swExperiencerYesDat">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza un sistema distinto de pronombres para sujetos-experimentadores contra los pronombres para los sujetos o objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos indirectos son los mismos que se utilizan para sujetos-experimentadores, y pedirémos a usted acerca de un sistema adicional de pronombres dativos. </span>
+		   <br/><br/>
+		   Escriba los pronombres personales de la primera persona independiente que pueden presentarse como sujetos<span id="ExperYesErgSpan" show="swExperiencerNotNo">-agentes</span> de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalFirstErgSubjectTransExample" dataItem="personalFirstErgSubjectTransExample"  rows="3" show="swNPCaseErg"/>
 		<prompt id="PronSecondCaseErgPrompt" show="swNPCaseErg">
-			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse en la posición de sujeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+		   Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como sujetos<span id="ExperYesErgSpan2" show="swExperiencerNotNo">-agentes</span> de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalSecondErgSubjectTransExample" dataItem="personalSecondErgSubjectTransExample"  rows="3" show="swNPCaseErg"/>
 		<prompt id="PronThirdCaseErgPrompt" show="swNPCaseErg">
-			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse en la posición de sujeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+		   Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como sujetos<span id="ExperYesErgSpan3" show="swExperiencerNotNo">-agentes</span> de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalThirdErgSubjectTransExample" dataItem="personalThirdErgSubjectTransExample"  rows="7" show="swNPCaseErg"/>
 		<prompt id="PronCaseErgPrompt1" show="swNPCaseErg">
-			Escriba los pronombres personales de la primera persona independiente que pueden presentarse en la posición de sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona independiente que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalFirstErgSubjectIntransExample" dataItem="personalFirstErgSubjectIntransExample" rows="3" show="swNPCaseErg"/>
 		<prompt id="PronSecondCaseErgPrompt1" show="swNPCaseErg">
-			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse en la posición de sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalSecondErgSubjectIntransExample" dataItem="personalSecondErgSubjectIntransExample" rows="3" show="swNPCaseErg"/>
 		<prompt id="PronThirdCaseErgPrompt1" show="swNPCaseErg">
-			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse en la posición de sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalThirdErgSubjectIntransExample" dataItem="personalThirdErgSubjectIntransExample" rows="7" show="swNPCaseErg"/>
 	   <prompt id="PronCaseErgPrompt2" show="swNPCaseErg">
-		   Escriba los pronombres personales de la primera persona independiente que pueden presentarse en la posición de poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+		   Escriba los pronombres personales de la primera persona independiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonaFirstErgPossessorExample" dataItem="personalFirstErgPossessorExample" rows="3" show="swNPCaseErg"/>
 		<prompt id="PronSecondCaseErgPrompt2" show="swNPCaseErg">
-			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse en la posición de poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonaSecondErgPossessorExample" dataItem="personalSecondErgPossessorExample" rows="3" show="swNPCaseErg"/>
 		<prompt id="PronThirdCaseErgPrompt2" show="swNPCaseErg">
-			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse en la posición de poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonaThirdErgPossessorExample" dataItem="personalThirdErgPossessorExample" rows="7" show="swNPCaseErg"/>
-
+	   <prompt id="PronCaseErgPrompt3" show="swNPCaseErgExperiencerDat">
+		  Escriba los pronombres personales de la primera persona independiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronPersonalFirstErgDativeExample" dataItem="personalFirstErgDativeExample" rows="3" show="swNPCaseErgExperiencerDat"/>
+	   <prompt id="PronSecondCaseErgPrompt3" show="swNPCaseErgExperiencerDat">
+		  Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronPersonalSecondErgDativeExample" dataItem="personalSecondErgDativeExample" rows="3" show="swNPCaseErgExperiencerDat"/>
+	   <prompt id="PronThirdCaseErgPrompt3" show="swNPCaseErgExperiencerDat">
+		  Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronPersonalThirdErgDativeExample" dataItem="personalThirdErgDativeExample" rows="7" show="swNPCaseErgExperiencerDat"/>
+	   <br/>
 	   <instruction id="PronCaseTypeErgInstruction" show="swNPCaseErg">
 			<br/>In the lexicon:
 <ul>
@@ -126,64 +168,81 @@
 			</ul>
 		</instruction>
 		<prompt id="PronCaseSplitPrompt" show="swNPCaseSplit">
-			<br/>Puesto que su idioma tiene un sistema de caso de ergatividad escindida, debe tener sistemas distintos de los pronombres independientes que se utilizan normalmente como sujetos, objetos, y poseedores, más algunos sistemas especiales que se utilicen en los casos especiales de ergatividad escindida.<br/><br/>
-			Escriba los pronombres personales de la primera persona independiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			<br/>Puesto que su lengua tiene un sistema de caso de ergatividad escindida, debe tener sistemas distintos de los pronombres independientes que pueden presentarse normalmente como sujetos, objetos, y poseedores, más algunos sistemas especiales que se utilizan en los casos especiales de ergatividad escindida.
+		   <span id="ExperNoSplitSpan" show="swExperiencerNo">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujectos-experimentadores que para sujetos-agentes.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		   <span id="ExperYesObjSplitSpan" show="swExperiencerYesObj">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujetos-experimentadores que para los objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		   <span id="ExperYesDatSplitSpan" show="swExperiencerYesDat">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza un sistema distinto de pronombres para sujetos-experimentadores contra los pronombres para los sujetos o objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos indirectos son los mismos que se utilizan para sujetos-experimentadores, y pedirémos a usted acerca de un sistema adicional de pronombres dativos. </span>
+		   <br/><br/>
+		   Escriba los pronombres personales de la primera persona independiente que pueden presentarse como sujetos<span id="ExperYesSplitSpan" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalFirstSplitSubjectExample" dataItem="personalFirstSplitSubjectExample"  rows="3" show="swNPCaseSplit"/>
 		<prompt id="PronSecondCaseSplitPrompt" show="swNPCaseSplit">
-			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+		   Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como sujetos<span id="ExperYesSplitSpan2" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalSecondSplitSubjectExample" dataItem="personalSecondSplitSubjectExample"  rows="3" show="swNPCaseSplit"/>
 		<prompt id="PronThirdCaseSplitPrompt" show="swNPCaseSplit">
-			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+		   Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como sujetos<span id="ExperYesSplitSpan3" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalThirdSplitSubjectExample" dataItem="personalThirdSplitSubjectExample"  rows="7" show="swNPCaseSplit"/>
 		<prompt id="PronCaseSplitPrompt1" show="swNPCaseSplit">
-			Escriba los pronombres personales de la primera persona independiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona independiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalFirstSplitObjectExample" dataItem="personalFirstSplitObjectExample" rows="3" show="swNPCaseSplit"/>
 		<prompt id="PronSecondCaseSplitPrompt1" show="swNPCaseSplit">
-			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalSecondSplitObjectExample" dataItem="personalSecondSplitObjectExample" rows="3" show="swNPCaseSplit"/>
 		<prompt id="PronThirdCaseSplitPrompt1" show="swNPCaseSplit">
-			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalThirdSplitObjectExample" dataItem="personalThirdSplitObjectExample" rows="7" show="swNPCaseSplit"/>
 		<prompt id="PronCaseSplitPrompt2" show="swNPCaseSplit">
-			Escriba los pronombres personales de la primera persona independiente que pueden presentarse en la posición de poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona independiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalFirstSplitPossessorExample" dataItem="personalFirstSplitPossessorExample" rows="3" show="swNPCaseSplit"/>
 		<prompt id="PronSecondCaseSplitPrompt2" show="swNPCaseSplit">
-			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse en la posición de poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalSecondSplitPossessorExample" dataItem="personalSecondSplitPossessorExample" rows="3" show="swNPCaseSplit"/>
 		<prompt id="PronThirdCaseSplitPrompt2" show="swNPCaseSplit">
-			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse en la posición de poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalThirdSplitPossessorExample" dataItem="personalThirdSplitPossessorExample" rows="7" show="swNPCaseSplit"/>
-		<prompt id="PronCaseSplitPrompt3" show="swNPCaseSplit">
-			Escriba los pronombres personales de la primera persona independiente que pueden presentarse como los sujetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+	   <prompt id="PronCaseSplitPrompt5" show="swNPCaseSplitExperiencerDat">
+		  Escriba los pronombres personales de la primera persona independiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronPersonalFirstSplitDativeExample" dataItem="personalFirstSplitDativeExample" rows="3" show="swNPCaseSplitExperiencerDat"/>
+	   <prompt id="PronSecondCaseSplitPrompt5" show="swNPCaseSplitExperiencerDat">
+		  Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronPersonalSecondSplitDativeExample" dataItem="personalSecondSplitDativeExample" rows="3" show="swNPCaseSplitExperiencerDat"/>
+	   <prompt id="PronThirdCaseSplitPrompt5" show="swNPCaseSplitExperiencerDat">
+		  Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronPersonalThirdSplitDativeExample" dataItem="personalThirdSplitDativeExample" rows="7" show="swNPCaseSplitExperiencerDat"/>
+	   <br/>
+	   <prompt id="PronCaseSplitPrompt3" show="swNPCaseSplit">
+			Escriba los pronombres personales de la primera persona independiente que pueden presentarse como sujetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalFirstSplitErgExample" dataItem="personalFirstSplitErgExample" rows="3" show="swNPCaseSplit"/>
 		<prompt id="PronSecondCaseSplitPrompt3" show="swNPCaseSplit">
-			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como los sujetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como sujetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalSecondSplitErgExample" dataItem="personalSecondSplitErgExample" rows="3" show="swNPCaseSplit"/>
 		<prompt id="PronThirdCaseSplitPrompt3" show="swNPCaseSplit">
-			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como los sujetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como sujetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalThirdSplitErgExample" dataItem="personalThirdSplitErgExample" rows="7" show="swNPCaseSplit"/>
 		<prompt id="PronCaseSplitPrompt4" show="swNPCaseSplit">
-			Escriba los pronombres personales de la primera persona independiente que pueden presentarse como los sujetos de verbos intransitivos y los objetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona independiente que pueden presentarse como sujetos de verbos intransitivos y como objetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalFirstSplitAbsExample" dataItem="personalFirstSplitAbsExample" rows="3" show="swNPCaseSplit"/>
 		<prompt id="PronSecondCaseSplitPrompt4" show="swNPCaseSplit">
-			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como los sujetos de verbos intransitivos y los objetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona independiente que pueden presentarse como sujetos de verbos intransitivos y como objetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalSecondSplitAbsExample" dataItem="personalSecondSplitAbsExample" rows="3" show="swNPCaseSplit"/>
 		<prompt id="PronThirdCaseSplitPrompt4" show="swNPCaseSplit">
-			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como los sujetos de verbos intransitivos y los objetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona independiente que pueden presentarse como sujetos de verbos intransitivos y como objetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalThirdSplitAbsExample" dataItem="personalThirdSplitAbsExample" rows="7" show="swNPCaseSplit"/>
 		<instruction id="PronCaseTypeSplitInstruction" show="swNPCaseSplit">
@@ -201,62 +260,92 @@
 		</instruction><br/><br/>
 		<radioGroup>
 			<groupName dataItem="dependentPron" default="no">RPronDependent</groupName>
-			<prompt>¿Hay también sistemas de pronombres dependientes en su idioma?</prompt>
+			<prompt>¿Existen también sistemas de pronombres dependientes en su lengua?</prompt>
 			<radio id="PronDependentNo" dataValue="no">No, solamente pronombres independientes</radio>
 			<radio id="PronDependentYes" dataValue="yes">Sí, hay las formas dependientes del pronombre que se unen a otras palabras así como los pronombres independientes</radio>
 		</radioGroup>
-  <br/>
+	   <radioGroup id="PronDepPosTable" show="swPronDependentYes">
+		  <groupName dataItem="dependentPos" default="unknown" position="yesHeadDiff">RPronDependentPos</groupName>
+		  <prompt>¿Cómo se unen los pronombres dependientes a los verbos o sustantivos o otras palabras?</prompt>
+		  <radio id="PronDependentPosBefore" dataValue="before">Como proclíticos o prefijos</radio>
+		  <radio id="PronDependentPosAfter" dataValue="after">Como enclíticos o sufijos</radio>
+		  <radio id="PronDependentPosEither" dataValue="either">Como proclíticos o prefijos con algunas categorías de palabras con algunas categorías de palabras pero como sufijos or enclíticos con otras categorías de palabras</radio>
+	   </radioGroup>
+	   <br/>
+	   <radioGroup id="PronDepClassifierAgrTable" show="swOTClassifierAgrAndDepYes">
+		  <groupName dataItem="pronounDepClassifier" default="no">RPronDepClassifierAgr</groupName>
+		  <prompt>¿Son los pronombres dependientes y los clasificadores los mismos para clases específicos?</prompt>
+		  <radio id="PronDepClassifierAgrNo" dataValue="no">No, los pronombres dependientes son distintos de los clasificadores</radio>
+		  <radio id="PronDepClassifierAgrYes" dataValue="yes">Sí, especialmente en tercera persona, los pronombres dependientes son idénticos o relacionados a los clasificadores apropriados</radio>
+	   </radioGroup>
+	   <br/>
 		<prompt id="PronDependentCaseNonePrompt" show="swNPCaseNoneandDependentYes">
-			<br/>Puesto que su idioma no distingue el caso, debe tener solamente un solo sistema de los pronombres dependientes que se pueden utilizar en cualquier posición de la oración.<br/><br/>
-			Escriba los pronombres personales de la primera persona dependiente en la caja de texto, con cada pronombre seguido por un punto y en una línea separada. <br/>
+			<br/>Puesto que su lengua no distingue el caso, debe tener solamente un solo sistema de los pronombres dependientes que se pueden utilizar en cualquier posición de la oración. <br/><br/>
+			Escriba los pronombres personales de la primera persona dependiente aquí, con cada pronombre en una línea separada. <br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstNoCaseExample" dataItem="personalDependentFirstNoCaseExample"  rows="3" show="swNPCaseNoneandDependentYes"/>
 		<prompt id="PronDependentSecondCaseNonePrompt" show="swNPCaseNoneandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.  <br/>
+			Escriba los pronombres personales de la segunda persona dependiente aquí, con cada pronombre en una línea separada.  <br/>
 		</prompt>
 		<textBox id="PronDependentPersonalSecondNoCaseExample" dataItem="personalDependentSecondNoCaseExample" rows="3" show="swNPCaseNoneandDependentYes"/>
 		<prompt id="PronDependentThirdCaseNonePrompt" show="swNPCaseNoneandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.  <br/>
+			Escriba los pronombres personales de la tercera persona dependiente aquí, con cada pronombre en una línea separada.  <br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdNoCaseExample" dataItem="personalDependentThirdNoCaseExample" rows="7" show="swNPCaseNoneandDependentYes"/>
 		<prompt id="PronDependentCaseNomPrompt" show="swNPCaseNomandDependentYes">
-			<br/>Puesto que su idioma tiene un sistema de caso del nominativo-acusativo, debe tener sistemas distintos de los pronombres dependientes que se pueden utilizar como sujetos, objetos, y poseedores. <br/><br/>
-			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada. <br/>
+			<br/>Puesto que su lengua tiene un sistema de caso del nominativo-acusativo, debe tener sistemas distintos de los pronombres dependientes que pueden presentarse como sujetos, objetos, y poseedores.
+		   <span id="ExperNoDepSpan" show="swExperiencerNo">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujectos-experimentadores que para sujetos-agentes.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		   <span id="ExperYesObjDepSpan" show="swExperiencerYesObj">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujetos-experimentadores que para los objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		   <span id="ExperYesDatDepSpan" show="swExperiencerYesDat">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza un sistema distinto de pronombres para sujetos-experimentadores contra los pronombres para los sujetos o objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos indirectos son los mismos que se utilizan para sujetos-experimentadores, y pedirémos a usted acerca de un sistema adicional de pronombres dativos. </span>
+		   <br/><br/>
+		   Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como sujetos<span id="ExperYesDepSpan" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada. <br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstNomSubjectExample" dataItem="personalDependentFirstNomSubjectExample"  rows="3" show="swNPCaseNomandDependentYes"/>
 		<prompt id="PronDependentSecondCaseNomPrompt" show="swNPCaseNomandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+		   Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como sujetos<span id="ExperYesDepSpan2" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalSecondNomSubjectExample" dataItem="personalDependentSecondNomSubjectExample" rows="3" show="swNPCaseNomandDependentYes"/>
 		<prompt id="PronDependentThirdCaseNomPrompt" show="swNPCaseNomandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada. <br/>
+		   Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como sujetos<span id="ExperYesDepSpan3" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada. <br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdNomSubjectExample" dataItem="personalDependentThirdNomSubjectExample" rows="7" show="swNPCaseNomandDependentYes"/>
 		<prompt id="PronDependentCaseNomPrompt1" show="swNPCaseNomandDependentYes">
-			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstNomObjectExample" dataItem="personalDependentFirstNomObjectExample" rows="3" show="swNPCaseNomandDependentYes"/>
 		<prompt id="PronDependentSecondCaseNomPrompt1" show="swNPCaseNomandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalSecondNomObjectExample" dataItem="personalDependentSecondNomObjectExample" rows="3" show="swNPCaseNomandDependentYes"/>
 		<prompt id="PronDependentThirdCaseNomPrompt1" show="swNPCaseNomandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdNomObjectExample" dataItem="personalDependentThirdNomObjectExample" rows="7" show="swNPCaseNomandDependentYes"/>
 		<prompt id="PronDependentCaseNomPrompt2" show="swNPCaseNomandDependentYes">
-			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse en la posición del poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstNomPossessorExample" dataItem="personalDependentFirstNomPossessorExample" rows="3" show="swNPCaseNomandDependentYes"/>
 		<prompt id="PronDependentSecondCaseNomPrompt2" show="swNPCaseNomandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse en la posición del poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentSecondPersonalNomPossessorExample" dataItem="personalDependentSecondNomPossessorExample" rows="3" show="swNPCaseNomandDependentYes"/>
 		<prompt id="PronDependentThirdCaseNomPrompt2" show="swNPCaseNomandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse en la posición del poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdNomPossessorExample" dataItem="personalDependentThirdNomPossessorExample" rows="7" show="swNPCaseNomandDependentYes"/>
-		<br/>
+	   <prompt id="PronDependentCaseNomPrompt3" show="swNPCaseNomExperiencerDatandDependentYes">
+		  Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronDependentPersonalFirstNomDativeExample" dataItem="personalDependentFirstNomDativeExample" rows="3" show="swNPCaseNomExperiencerDatandDependentYes"/>
+	   <prompt id="PronDependentSecondCaseNomPrompt3" show="swNPCaseNomExperiencerDatandDependentYes">
+		  Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronDependentPersonalSecondNomDativeExample" dataItem="personalDependentSecondNomDativeExample" rows="3" show="swNPCaseNomExperiencerDatandDependentYes"/>
+	   <prompt id="PronDependentThirdCaseNomPrompt3" show="swNPCaseNomExperiencerDatandDependentYes">
+		  Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronDependentPersonalThirdNomDativeExample" dataItem="personalDependentThirdNomDativeExample" rows="7" show="swNPCaseNomExperiencerDatandDependentYes"/>
+	   <br/>
 		<instruction id="PronDependentCaseTypeNomAccInstruction" show="swNPCaseNomandDependentYes">
 			<br/>In the lexicon:
 			<ul>
@@ -270,42 +359,58 @@
 			</ul>
 		</instruction>
 		<prompt id="PronDependentCaseErgPrompt" show="swNPCaseErgandDependentYes">
-			<br/>Puesto que su idioma tiene un sistema de caso ergativo-absolutivo, debe tener sistemas distintos de los pronombres dependientes que se pueden utilizar como sujetos de verbos transitivos contra los sujetos de verbos intransitivos y los objetos de verbos transitivos. <br/><br/>
-			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse en la posición de sujeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+			<br/>Puesto que su lengua tiene un sistema de caso ergativo-absolutivo, debe tener sistemas distintos de los pronombres dependientes que pueden presentarse como sujetos de verbos transitivos contra los sujetos de verbos intransitivos y los objetos de verbos transitivos.
+		   <span id="ExperNoDepErgSpan" show="swExperiencerNo">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujectos-experimentadores que para sujetos-agentes.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		   <span id="ExperYesObjDepErgSpan" show="swExperiencerYesObj">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujetos-experimentadores que para los objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		   <span id="ExperYesDatDepErgSpan" show="swExperiencerYesDat">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza un sistema distinto de pronombres para sujetos-experimentadores contra los pronombres para los sujetos o objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos indirectos son los mismos que se utilizan para sujetos-experimentadores, y pedirémos a usted acerca de un sistema adicional de pronombres dativos. </span>
+		   <br/><br/>
+		   Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como sujetos<span id="ExperYesDepErgSpan" show="swExperiencerNotNo">-agentes</span> de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstErgSubjectTransExample" dataItem="personalDependentFirstErgSubjectTransExample"  rows="3" show="swNPCaseErgandDependentYes"/>
 		<prompt id="PronDependentSecondCaseErgPrompt" show="swNPCaseErgandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse en la posición de sujeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+		   Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como sujetos<span id="ExperYesDepErgSpan2" show="swExperiencerNotNo">-agentes</span> de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalSecondErgSubjectTransExample" dataItem="personalDependentSecondErgSubjectTransExample"  rows="3" show="swNPCaseErgandDependentYes"/>
 		<prompt id="PronDependentThirdCaseErgPrompt" show="swNPCaseErgandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse en la posición de sujeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+		   Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como sujetos<span id="ExperYesDepErgSpan3" show="swExperiencerNotNo">-agentes</span> de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdErgSubjectTransExample" dataItem="personalDependentThirdErgSubjectTransExample"  rows="7" show="swNPCaseErgandDependentYes"/>
 		<prompt id="PronDependentCaseErgPrompt1" show="swNPCaseErgandDependentYes">
-			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse en la posición de sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstErgSubjectIntransExample" dataItem="personalDependentFirstErgSubjectIntransExample" rows="3" show="swNPCaseErgandDependentYes"/>
 		<prompt id="PronDependentSecondCaseErgPrompt1" show="swNPCaseErgandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse en la posición de sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalSecondErgSubjectIntransExample" dataItem="personalDependentSecondErgSubjectIntransExample" rows="3" show="swNPCaseErgandDependentYes"/>
 		<prompt id="PronDependentThirdCaseErgPrompt1" show="swNPCaseErgandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse en la posición de sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos en la caja de texto, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos aquí, con cada pronombre seguido por un punto y respecto a una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdErgSubjectIntransExample" dataItem="personalDependentThirdErgSubjectIntransExample" rows="7" show="swNPCaseErgandDependentYes"/>
 		<prompt id="PronDependentCaseErgPrompt2" show="swNPCaseErgandDependentYes">
-			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse en la posición del poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonaFirstErgPossessorExample" dataItem="personalDependentFirstErgPossessorExample" rows="3" show="swNPCaseErgandDependentYes"/>
 		<prompt id="PronDependentSecondCaseErgPrompt2" show="swNPCaseErgandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse en la posición del poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalSecondErgPossessorExample" dataItem="personalDependentSecondErgPossessorExample" rows="3" show="swNPCaseErgandDependentYes"/>
 		<prompt id="PronDependentThirdCaseErgPrompt2" show="swNPCaseErgandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse en la posición del poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdErgPossessorExample" dataItem="personalDependentThirdErgPossessorExample" rows="7" show="swNPCaseErgandDependentYes"/>
+	   <prompt id="PronDependentCaseErgPrompt3" show="swNPCaseErgExperiencerDatandDependentYes">
+		  Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronDependentPersonalFirstErgDativeExample" dataItem="personalDependentFirstErgDativeExample" rows="3" show="swNPCaseErgExperiencerDatandDependentYes"/>
+	   <prompt id="PronDependentSecondCaseErgPrompt3" show="swNPCaseErgExperiencerDatandDependentYes">
+		  Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronDependentPersonalSecondErgDativeExample" dataItem="personalDependentSecondErgDativeExample" rows="3" show="swNPCaseErgExperiencerDatandDependentYes"/>
+	   <prompt id="PronDependentThirdCaseErgPrompt3" show="swNPCaseErgExperiencerDatandDependentYes">
+		  Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronDependentPersonalThirdErgDativeExample" dataItem="personalDependentThirdErgDativeExample" rows="7" show="swNPCaseErgExperiencerDatandDependentYes"/>
 
 		<instruction id="PronDependentCaseTypeErgInstruction" show="swNPCaseErgandDependentYes">
 			<br/>In the lexicon:
@@ -325,64 +430,80 @@
 			</ul>
 		</instruction>
 		<prompt id="PronDependentCaseSplitPrompt" show="swNPCaseSplitandDependentYes">
-			<br/>Puesto que su idioma tiene un sistema de caso de ergatividad escindida, debe tener sistemas distintos de los pronombres independientes que se utilizan normalmente como sujetos, objetos, y poseedores, más algunos sistemas especiales que se utilicen en los casos especiales de ergatividad escindida.<br/><br/>
-			Escriba los pronombres personales de la primera persona independiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			<br/>Puesto que su lengua tiene un sistema de caso de ergatividad escindida, debe tener sistemas distintos de los pronombres dependientes que pueden presentarse normalmente como sujetos, objetos, y poseedores, más algunos sistemas especiales que se utilizan en los casos especiales de ergatividad escindida.
+		   <span id="ExperNoDepSplitSpan" show="swExperiencerNo">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujectos-experimentadores que para sujetos-agentes.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		   <span id="ExperYesObjDepSplitSpan" show="swExperiencerYesObj">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza el mismo sistema de pronombres para sujetos-experimentadores que para los objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos directos se utilizan para objetos indirectos también, y no existe un sistema adicional de pronombres dativos. </span>
+		   <span id="ExperYesDatDepSplitSpan" show="swExperiencerYesDat">En <section number="1.">La tipología - Sistema de caso</section>, usted dijo que su lengua utiliza un sistema distinto de pronombres para sujetos-experimentadores contra los pronombres para los sujetos o objetos directos de verbos con un sujeto-agente.  Por eso, asumimos que los pronombres que se utilizan normalmente para objetos indirectos son los mismos que se utilizan para sujetos-experimentadores, y pedirémos a usted acerca de un sistema adicional de pronombres dativos. </span>
+		   <br/><br/>
+		   Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como sujetos<span id="ExperYesSplitDepSpan" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstSplitSubjectExample" dataItem="personalDependentFirstSplitSubjectExample"  rows="3" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentSecondCaseSplitPrompt" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+		   Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como sujetos<span id="ExperYesSplitDepSpan2" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalSecondSplitSubjectExample" dataItem="personalDependentSecondSplitSubjectExample"  rows="3" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentThirdCaseSplitPrompt" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse en la posición de sujeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+		   Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como sujetos<span id="ExperYesSplitDepSpan3" show="swExperiencerNotNo">-agentes</span> aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdSplitSubjectExample" dataItem="personalDependentThirdSplitSubjectExample"  rows="7" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentCaseSplitPrompt1" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstSplitObjectExample" dataItem="personalDependentFirstSplitObjectExample" rows="3" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentSecondCaseSplitPrompt1" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalSecondSplitObjectExample" dataItem="personalDependentSecondSplitObjectExample" rows="3" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentThirdCaseSplitPrompt1" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse en la posición de objeto en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como objetos aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdSplitObjectExample" dataItem="personalDependentThirdSplitObjectExample" rows="7" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentCaseSplitPrompt2" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse en la posición del poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstSplitPossessorExample" dataItem="personalDependentFirstSplitPossessorExample" rows="3" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentSecondCaseSplitPrompt2" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse en la posición del poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPersonalDependentSecondSplitPossessorExample" dataItem="personalDependentSecondSplitPossessorExample" rows="3" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentThirdCaseSplitPrompt2" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse en la posición del poseedor en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como poseedores aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdSplitPossessorExample" dataItem="personalDependentThirdSplitPossessorExample" rows="7" show="swNPCaseSplitandDependentYes"/>
-		<prompt id="PronDependentCaseSplitPrompt3" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como los sujetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+	   <prompt id="PronDependentCaseSplitPrompt5" show="swNPCaseSplitExperiencerDatandDependentYes">
+		  Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronDependentPersonalFirstSplitDativeExample" dataItem="personalDependentFirstSplitDativeExample" rows="3" show="swNPCaseSplitExperiencerDatandDependentYes"/>
+	   <prompt id="PronDependentSecondCaseSplitPrompt5" show="swNPCaseSplitExperiencerDatandDependentYes">
+		  Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronDependentPersonalSecondSplitDativeExample" dataItem="personalDependentSecondSplitDativeExample" rows="3" show="swNPCaseSplitExperiencerDatandDependentYes"/>
+	   <prompt id="PronDependentThirdCaseSplitPrompt5" show="swNPCaseSplitExperiencerDatandDependentYes">
+		  Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como objetos indirectos o como sujetos-experimentadores aquí, con cada pronombre en una línea separada.<br/>
+	   </prompt>
+	   <textBox id="PronDependentPersonalThirdSplitDativeExample" dataItem="personalDependentThirdSplitDativeExample" rows="7" show="swNPCaseSplitExperiencerDatandDependentYes"/>
+	   <prompt id="PronDependentCaseSplitPrompt3" show="swNPCaseSplitandDependentYes">
+			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como sujetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstSplitErgExample" dataItem="personalDependentFirstSplitErgExample" rows="3" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentSecondCaseSplitPrompt3" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como los sujetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como sujetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronPDependentersonalSecondSplitErgExample" dataItem="personalDependentSecondSplitErgExample" rows="3" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentThirdCaseSplitPrompt3" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como los sujetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como sujetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdSplitErgExample" dataItem="personalDependentThirdSplitErgExample" rows="7" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentCaseSplitPrompt4" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como los sujetos de verbos intransitivos y los objetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la primera persona dependiente que pueden presentarse como sujetos de verbos intransitivos y como objetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalFirstSplitAbsExample" dataItem="personalDependentFirstSplitAbsExample" rows="3" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentSecondCaseSplitPrompt4" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como los sujetos de verbos intransitivos y los objetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la segunda persona dependiente que pueden presentarse como sujetos de verbos intransitivos y como objetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalSecondSplitAbsExample" dataItem="personalDependentSecondSplitAbsExample" rows="3" show="swNPCaseSplitandDependentYes"/>
 		<prompt id="PronDependentThirdCaseSplitPrompt4" show="swNPCaseSplitandDependentYes">
-			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como los sujetos de verbos intransitivos y los objetos de verbos transitivos en los casos especiales del ergatividad escindida en la caja de texto, con cada pronombre seguido por un punto y en una línea separada.<br/>
+			Escriba los pronombres personales de la tercera persona dependiente que pueden presentarse como sujetos de verbos intransitivos y como objetos de verbos transitivos en los casos especiales del ergatividad escindida aquí, con cada pronombre en una línea separada.<br/>
 		</prompt>
 		<textBox id="PronDependentPersonalThirdSplitAbsExample" dataItem="personalDependentThirdSplitAbsExample" rows="7" show="swNPCaseSplitandDependentYes"/>
 		<instruction id="PronDependentCaseTypeSplitInstruction" show="swNPCaseSplitandDependentYes">
@@ -399,7 +520,7 @@
 			</ul>
 		</instruction>
 		<br/>
-		<prompt>  Los pronombres tienen normalmente más que o el mismo número de características de concordancia que los sustantivos tienen.  En la tabla abajo, compruebe cualquier característica de la concordancia usada en pronombres en su idioma.  Para la concordancia de clase, escriba un tipo o un número en la gramática en vz de el ## abajo.<br/>
+		<prompt>  Los pronombres tienen normalmente más que o el mismo número de características de concordancia que los sustantivos tienen.  En la tabla abajo, compruebe (dando click) cualquier característica de la concordancia se utiliza en pronombres en su lengua.  Para la concordancia de clase, escriba un tipo o un número en la gramática en vez de el ## abajo.<br/>
 			<br/>
 			<featureChart>
 				<featureRow>
@@ -480,63 +601,148 @@
 			<button id="PronMainNext" value="Next" goto="PronPoss.xml"/>
 		</buttons>
 	</form>
-	<showWhen id="swNPCaseNone">
-		<whenValue element="np" attr="case" value="none"/>
-	</showWhen>
-	<showWhen id="swNPCaseNom">
-		<whenValue element="np" attr="case" value="nominative"/>
-	</showWhen>
-	<showWhen id="swNPCaseErg">
-		<whenValue element="np" attr="case" value="ergative"/>
-	</showWhen>
-	<showWhen id="swNPCaseSplit">
-		<whenValue element="np" attr="case" value="split"/>
-	</showWhen>
-	<showWhen id="swNPPossCaseGenitive">
-		<whenValue element="np" attr="possCaseErg" value="genitive"/>
-	</showWhen>
-	<showWhen id="swNPPossCaseErgative">
-		<whenValue element="np" attr="possCaseErg" value="ergative"/>
-	</showWhen>
-	<showWhen id="swNPPossCaseAbsolutive">
-		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
-	</showWhen>
-	<showWhen id="swNPCaseNoneandDependentYes">
-		<whenValue element="np" attr="case" value="none"/>
-		<and/>
-		<whenRadio button="PronDependentYes"/>
-	</showWhen>
-	<showWhen id="swNPCaseNomandDependentYes">
-		<whenValue element="np" attr="case" value="nominative"/>
-		<and/>
-		<whenRadio button="PronDependentYes"/>
-	</showWhen>
-	<showWhen id="swNPCaseErgandDependentYes">
-		<whenValue element="np" attr="case" value="ergative"/>
-		<and/>
-		<whenRadio button="PronDependentYes"/>
-	</showWhen>
-	<showWhen id="swNPCaseSplitandDependentYes">
-		<whenValue element="np" attr="case" value="split"/>
-		<and/>
-		<whenRadio button="PronDependentYes"/>
-	</showWhen>
-	<showWhen id="swNPPossCaseGenitiveandDependentYes">
-		<whenValue element="np" attr="possCaseErg" value="genitive"/>
-		<and/>
-		<whenRadio button="PronDependentYes"/>
-	</showWhen>
-	<showWhen id="swNPPossCaseErgativeandDependentYes">
-		<whenValue element="np" attr="possCaseErg" value="ergative"/>
-		<and/>
-		<whenRadio button="PronDependentYes"/>
-	</showWhen>
-	<showWhen id="swNPPossCaseAbsolutiveandDependentYes">
-		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
-		<and/>
-		<whenRadio button="PronDependentYes"/>
-	</showWhen>
-	<showWhen id="swNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-	</showWhen>
+   <showWhen id="swOTClassifierAgr">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndPronYes">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenRadio button="PronClassifierAgrYes"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndDepYes">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swPronDependentYes">
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNone">
+	  <whenValue element="typology" attr="case" value="none"/>
+   </showWhen>
+   <showWhen id="swNPCaseNom">
+	  <whenValue element="typology" attr="case" value="nominative"/>
+   </showWhen>
+   <showWhen id="swNPCaseErg">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplit">
+	  <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swExperiencerNo">
+	  <whenValue element="typology" attr="caseExperiencer" value="no"/>
+   </showWhen>
+   <showWhen id="swExperiencerNotNo">
+	  <not/>    <whenValue element="typology" attr="caseExperiencer" value="no"/>
+   </showWhen>
+   <showWhen id="swExperiencerYesObj">
+	  <whenValue element="typology" attr="caseExperiencer" value="yesObj"/>
+   </showWhen>
+   <showWhen id="swExperiencerYesDat">
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+   </showWhen>
+   <showWhen id="swExperiencerNotYesDat">
+	  <not/>     <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+   </showWhen>
+   <showWhen id="swExperiencerNotYesDatButPossGen">
+	  <not/>     <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="np" attr="possCaseErg" value="genitive"/>
+   </showWhen>
+   <showWhen id="swExperiencerYesDatButPossNotGen">
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <not/>     <whenValue element="np" attr="possCaseErg" value="genitive"/>
+   </showWhen>
+   <showWhen id="swExperiencerYesDatAndPossGen">
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="np" attr="possCaseErg" value="genitive"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomExperiencerDat">
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="nominative"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgExperiencerDat">
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="ergative"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplitExperiencerDat">
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomExperiencerDatandDependentYes">
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="nominative"/>
+	  <and/>
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgExperiencerDatandDependentYes">
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <and/>
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplitExperiencerDatandDependentYes">
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="split"/>
+	  <and/>
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swNPPossCaseGenitive">
+	  <whenValue element="np" attr="possCaseErg" value="genitive"/>
+   </showWhen>
+   <showWhen id="swNPPossCaseNotGenitive">
+	  <not/><whenValue element="np" attr="possCaseErg" value="genitive"/>
+   </showWhen>
+   <showWhen id="swNPPossCaseErgative">
+	  <whenValue element="np" attr="possCaseErg" value="ergative"/>
+   </showWhen>
+   <showWhen id="swNPPossCaseAbsolutive">
+	  <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneandDependentYes">
+	  <whenValue element="typology" attr="case" value="none"/>
+	  <and/>
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomandDependentYes">
+	  <whenValue element="typology" attr="case" value="nominative"/>
+	  <and/>
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgandDependentYes">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <and/>
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplitandDependentYes">
+	  <whenValue element="typology" attr="case" value="split"/>
+	  <and/>
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swNPPossCaseGenitiveandDependentYes">
+	  <whenValue element="np" attr="possCaseErg" value="genitive"/>
+	  <and/>
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swNPPossCaseErgativeandDependentYes">
+	  <whenValue element="np" attr="possCaseErg" value="ergative"/>
+	  <and/>
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swNPPossCaseAbsolutiveandDependentYes">
+	  <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+	  <and/>
+	  <whenRadio button="PronDependentYes"/>
+   </showWhen>
+   <showWhen id="swNotPractical">
+	  <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
 </page>

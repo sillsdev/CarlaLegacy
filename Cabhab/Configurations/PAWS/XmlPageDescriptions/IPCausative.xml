@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPCausative" count="2/3">
+	<title level="2">Basic, Single-Clause Sentences - Causatives and Antipassives</title>
+	<introduction>Causatives add an additional argument to the sentence.  Some languages have single-clause causative sentences, where the verb is marked with an affix that introduces the additional argument.  That is the type of construction we want to cover here.<br/><br></br>
+	English and Spanish only have syntactic causatives which consist of two clauses, such as:</introduction>
+	<EnglishExample>
+		<exItem label="1.">My mother made me clean my room.</exItem>
+		<exItem label="2.">The other girl caused us to break up.</exItem>
+	</EnglishExample>
+	<introduction>This second type of causative will be handled more fully in <section number="10.">Complement Clauses</section>.</introduction>
+	<form section="ip">
+		<prompt>Key examples of causative sentences of either type in your language here:</prompt>
+		<textBox id="IPCausativeExample" dataItem="causativeExample" cols="50"/>
+		<radioGroup>
+			<groupName dataItem="causative" default="no">RIPCausative</groupName>
+			<prompt>Does your language have single-clause causative sentences?</prompt>
+		   <radio id="IPCausativeNo" dataValue="no">No, the only causative sentences consist of two clauses with a main verb meaning “make” or “cause”</radio>
+			<radio id="IPCausativeYes" dataValue="yes">Yes, there is a verbal affix for causative that introduces an additional argument, and that is the only type of causative in the language</radio>
+			<radio id="IPCausativeYesBoth" dataValue="yesBoth">Yes, there is a verbal affix for causative that introduces an additional argument, and syntactic causatives with two clauses are also possible</radio>
+		</radioGroup>
+		<prompt id="IPCausativeAffixPrompt" show="swIPCausativeYes">Key the causative affix(es) in your language with a hyphen to indicate which side they attach to the verb on, with each on a separate line, here: </prompt>
+	   <textBox id="IPCausativeAffixExample" dataItem="causativeAffixExample" rows="3" show="swIPCausativeYes"/>
+		<instruction id="IPCausativeInstruction">Mark inherently causative verbs and any causative affixes with the feature <feature>causative</feature> in the lexicon, if you have not already done so.
+		</instruction>
+	   <br/>
+	   <introduction>Antipassive is a verb voice that deletes the object of transitive verbs.  Antipassives are found most often in languages with an ergative-absolutive case system, where the deletion of the object changes the subject from ergative case to absolutive case.
+	   It is also found in some languages with a nominative-accusative case system where there is verbal agreement with both the subject and object.  In these languages, the antipassive is usually formed by deleting the object agreement affix.  Most languages with the antipassive voice are Australian Aboriginal or Native American languages.
+	   <br/> <br/>
+	   Similarly to the subject or Agent in passives, some languages allow the object or Patient to be optionally expressed in a prepositional or postpositional phrase.</introduction>
+	   <radioGroup>
+		  <groupName dataItem="antipassive" default="no">RIPAntipassive</groupName>
+		  <prompt>Does your language have antipassives?</prompt>
+		  <radio id="IPAntipassiveNo" dataValue="no">No</radio>
+		  <radio id="IPAntipassiveYesErg" dataValue="yesErg" show="swCaseErgOrSplit">Yes, the subject of a transitive verb changes to absolutive case when the object is deleted</radio>
+		  <radio id="IPAntipassiveYesAgr" dataValue="yesAgr">Yes, the object agreement affix on the verb is deleted to signal an antipassive</radio>
+		  <radio id="IPAntipassiveYesAffix" dataValue="yesAffix">Yes, there is a verbal affix for antipassive that signals the change in grammatical roles</radio>
+	   </radioGroup>
+	   <prompt id="IPAntipassivePrompt" show="swIPAntipassiveYes">Key examples of antipassive sentences in your language here, including the optional object or Patient in some if your language allows it:</prompt>
+	   <textBox id="IPAntipassiveExample" dataItem="antipassiveExample" cols="50" show="swIPAntipassiveYes"/>
+	   <prompt id="IPAntipassiveAffixPrompt" show="swIPAntipassiveYesAffix">Key the antipassive affix(es) in your language with a hyphen to indicate which side they attach to the verb on, with each on a separate line, here: </prompt>
+	   <textBox id="IPAntipassiveAffixExample" dataItem="antipassiveAffixExample" rows="3" show="swIPAntipassiveYesAffix"/>
+	   <instruction id="IPAntipassiveInstruction" show="swIPAntipassiveYesAffix">Mark the antipassive affixes with the feature <feature>antipasstive</feature> in the lexicon, if you have not already done so.
+	   </instruction>
+	   <br/><br/>
+		<buttons>
+			<button id="IPCausativeBack" value="Back" goto="IPPassive.xml"/>
+			<button id="IPCausativeNext" value="Next" goto="IPVoice.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swIPCausativeYes">
+		<not/>
+		<whenRadio button="IPCausativeNo"/>
+	</showWhen>
+   <showWhen id="swCaseErgOrSplit">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveYes">
+	  <not/>
+	  <whenRadio button="IPAntipassiveNo"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveYesAffix">
+	  <whenRadio button="IPAntipassiveYesAffix"/>
+   </showWhen>
+</page>

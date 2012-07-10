@@ -2,9 +2,9 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="ExclEnd" count="1/2">
-	<title>¡Enhorabuena!</title>
-	<introduction>Usted ahora ha terminado el programa de PAWS. Usted puede ver los boradores de la gramática por chascar doble en los archivos de .htm.  <br></br>
-Por favor, guarde las versiones .xml bajo un diverso nombre de fichero antes de usted comienza a corregirlas. Para un redactor de XML agradable para el relato de la gramática, preferimos personalmente el redactor de XML de XMLMind. Usted puede descubrir más información en  <a href="http://www.xlingpaper.org/">http://www.xlingpaper.org/</a>.
+	<title>¡Felicidades!</title>
+	<introduction>Usted ahora ha terminado el programa de PATAS. Usted puede ver los boradores de la gramática dando doble click en los archivos de .htm.  <br></br>
+	   Por favor, guarde las versiones .xml con un nombre diferente antes de usted comience a corregirlas. Para un editor de XML agradable para la gramática, personalmente preferimos XMLMind XML Editor. Usted puede obtener más información en  <a href="http://www.xlingpaper.org/">http://www.xlingpaper.org/</a>.
 </introduction>
 	<form section="excl" transparent="no">
 	  <br/>

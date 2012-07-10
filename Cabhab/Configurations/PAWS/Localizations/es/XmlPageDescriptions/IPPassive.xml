@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
-<page id="IPPassive" count="1/1">
+<page id="IPPassive" count="1/3">
 	<title level="2">Las oraciones básicas - Las oraciones pasivas</title>
-	<introduction>La mayoría de los idiomas también tienen oraciones pasivas, donde el tema o el paciente ocupa la posición del sujeto. El agente se puede expresar opcionalmente en algunos idiomas, pero no se permite en otros. Si está expresado, puede tomar la forma de una frase preposicional o posposicional (como en español con la preposición particular <example>por</example>) o de una frase nominal, dependiendo del idioma. Además, un auxiliar particular puede ser requerido en pasivos (una forma de <example>estar</example> en español).  Algunos ejemplos en español con y sin una frase del agente son: </introduction>
+	<introduction>La mayoría de las lenguas también tienen oraciones pasivas, donde el tema o el paciente ocupa la posición del sujeto. El agente se puede expresar opcionalmente en algunas lenguas, pero no se permite en otras. Si está expresado, puede tomar la forma de una frase preposicional o posposicional (como en español con la preposición particular <example>por</example>) o de una frase nominal, dependiendo de la lengua. Además, un auxiliar particular puede ser requerido en pasivos (una forma de <example>estar</example> en español).  Algunos ejemplos en español con y sin una frase del agente son: </introduction>
 	<EnglishExample>
 		<exItem label="1.">El vidrio estaba quebrado.</exItem>
 		<exItem label="2.">El vidrio estaba quebrado por el niño.</exItem>
@@ -11,21 +11,21 @@
 		<exItem label="4.">El béisbol se pudo haber golpeado por el muchacho.</exItem>
 	</EnglishExample>
 	<form section="ip">
-		<prompt>Escriba algunos ejemplos de oraciones pasivas (si hay) en su idioma aquí:</prompt>
+		<prompt>Escriba algunos ejemplos de oraciones pasivas (si hay) en su lengua aquí:</prompt>
 		<textBox id="IPPassiveExample" dataItem="passiveExample" cols="50"/>
 		<radioGroup>
 			<groupName dataItem="passive" default="yes">RIPPassive</groupName>
-			<prompt>¿Hay oraciones pasivas en su idioma?</prompt>
+			<prompt>¿Hay oraciones pasivas en su lengua?</prompt>
 			<radio id="IPPassiveNo" dataValue="no">No</radio>
 			<radio id="IPPassiveYes" dataValue="yes">Sí</radio>
 			<radioGroup id="IPPassiveAgentTable" show="swPassiveYes">
 				<groupName dataItem="passiveAgent" default="no">RIPPassiveAgent</groupName>
-				<prompt>¿Se permite una frase del agente?</prompt>
+				<prompt>¿Se permite una frase agentiva?</prompt>
 				<radio id="IPPassiveAgentNo" dataValue="no">No, el agente no puede ser expresado</radio>
 				<radio id="IPPassiveAgentYes" dataValue="yes">Sí, el agente puede ser expresado</radio>
 				<radioGroup id="IPPassiveAgentCatTable" show="swPassiveAgentYes">
 					<groupName dataItem="passiveAgentCat" default="dp">RIPPassiveAgentCat</groupName>
-					<prompt>¿Qué categoría sintáctica es la frase del agente?</prompt>
+					<prompt>¿Qué categoría sintáctica es la frase agentiva?</prompt>
 					<radio id="IPPassiveAgentCatPP" dataValue="pp">Una frase preposicional o posposicional</radio>
 					<radio id="IPPassiveAgentCatDP" dataValue="dp">Una frase nominal</radio>
 				</radioGroup>
@@ -37,15 +37,22 @@
 				<radio id="IPPassiveAuxYes" dataValue="yes">Sí</radio>
 			</radioGroup>
 		</radioGroup>
-		<instruction id="IPPassiveInstruction" show="swPassiveYes">Mark inherently passive verbs and any passive affixes with the feature <feature>passive</feature> in the lexicon, if you have not already done so.  The same forms may have the <feature>participle</feature> feature as well, if your language is like English, or you may have distinct forms for passive.  <span id="IPPassiveAgentPPSpan" show="swPassiveAgentPP">Also, mark the <span id="IPPrepSpan" show="swPPPosPrep">preposition</span>
-				<span id="PPPostSpan" show="swPPPosPost">postposition</span>
-				<span id="PPBothSpan" show="swPPPosBoth">preposition or postposition</span> that is included in the Agent phrase with the feature <feature>passive</feature>.</span>
-			<span id="IPPassiveAuxSpan" show="swIPPassiveAuxYes"> Mark the particular auxiliary that goes with passive sentences with the feature <feature>passive</feature> as well.</span>
-		</instruction>
-		<br/>
+	   <br/>
+	   <prompt id="IPPassiveAgentPPPrompt" show="swPassiveAgentPP">Escriba las <span id="IPPrepSpan2" show="swPPPosPrep">preposiciones</span><span id="PPPostSpan2" show="swPPPosPost">posposiciones</span><span id="PPBothSpan2" show="swPPPosBoth">preposiciones) o posposiciones</span> especiales que se utilizan para indicar la frase agentiva aquí:</prompt>
+	   <textBox id="IPPassiveAgentPPExample" dataItem="passiveAgentPExample" show="swPassiveAgentPP" rows="3"/>
+	   <br/>
+	   <prompt id="IPPassiveAuxPrompt" show="swIPPassiveAuxYes">Escriba el auxiliar particular que se requiere con las oraciones pasivas aquí:</prompt>
+	   <textBox id="IPPassiveAuxExample" dataItem="passiveAuxExample" show="swIPPassiveAuxYes" rows="3"/>
+	   <br/>
+	   <instruction id="IPPassiveInstruction" show="swPassiveYes">Mark inherently passive verbs and any passive affixes with the feature <feature>passive</feature> in the lexicon, if you have not already done so.  The same forms may have the <feature>participle</feature> feature as well, if your language is like English, or you may have distinct forms for passive.  <span id="IPPassiveAgentPPSpan" show="swPassiveAgentPP">Also, mark the <span id="IPPrepSpan" show="swPPPosPrep">preposition</span>
+		  <span id="PPPostSpan" show="swPPPosPost">postposition</span>
+		  <span id="PPBothSpan" show="swPPPosBoth">preposition or postposition</span> that is included in the Agent phrase with the feature <feature>passive</feature>.</span>
+		  <span id="IPPassiveAuxSpan" show="swIPPassiveAuxYes"> Mark the particular auxiliary that goes with passive sentences with the feature <feature>passive</feature> as well.</span>
+	   </instruction>
+	   <br/>
 		<buttons>
 			<button id="IPPassiveBack" value="Back" goto="IPContents.htm"/>
-			<button id="IPPassiveNext" value="Next" goto="IPContents.htm"/>
+			<button id="IPPassiveNext" value="Next" goto="IPCausative.xml"/>
 		</buttons>
 	</form>
 	<showWhen id="swPassiveYes">

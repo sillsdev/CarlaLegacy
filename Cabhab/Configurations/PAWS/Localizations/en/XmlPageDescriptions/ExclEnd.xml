@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="ExclEnd" count="1/2">
+	<title>Congratulations!</title>
+	<introduction>You have now completed the PAWS program.  You may view the grammar drafts by double clicking on the .htm files.  <br></br>
+Please save the .xml versions under a different file name before you begin editing.  For a nice XML editor for the grammar writeup, we personally prefer the XMLMind XML Editor.  You can find out more information at <a href="http://www.xlingpaper.org/">http://www.xlingpaper.org/</a>.
+</introduction>
+	<form section="excl" transparent="no">
+	  <br/>
+		<buttons>
+			<button id="ExclEndBack" value="Back" goto="ExclMain.xml"/>
+			<button id="ExclEndNext" value="Next" goto="Contents.htm"/>
+		</buttons>
+	</form>
+</page>

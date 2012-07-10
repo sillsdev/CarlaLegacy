@@ -3,38 +3,54 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="CompMain" count="1/4">
 	<title>Las cláusulas de complemento</title>
-	<introduction>Esta sección considera varios tipos de cláusulas subordinadas que son complementos de verbos principales o de adjetivos que funcionan al igual que el predicado de la oración., como los ejemplos siguientes del inglés.  (Las preguntas subordinadas serán analizadas en  <section number="11">Las preguntas</section>.) </introduction>
+	<introduction>Esta sección considera varios tipos de cláusulas subordinadas que son complementos de verbos principales o de adjetivos que funcionan al igual que el predicado de la oración, como los ejemplos siguientes del inglés. </introduction>
 	<EnglishExample>
-		<exItem label="1.">I believe that Jill is my friend. 'Creo que Juliana es mi amiga.'</exItem>
-		<exItem label="2.">Jill insists that she is my friend. 'Juliana insiste que ella sea mi amiga.'</exItem>
-		<exItem label="3.">I expect that Joe will come to the party. 'Cuento con que José venga a la fiesta.'</exItem>
-		<exItem label="4.">I expect Joe to come to the party. 'Espero que José venga a la fiesta.'</exItem>
-		<exItem label="5.">I will persuade Joe that he should come to the party. 'Persuadiré a José que él debe venir a la fiesta.'</exItem>
-		<exItem label="6.">I will persuade Joe to come to the party. 'Persuadiré a José de venir a la fiesta.'</exItem>
-		<exItem label="7.">Joe would hate for Sue to be at the party. 'José odiaría para que Susana esté en la fiesta.'</exItem>
-		<exItem label="8.">Joe tried to come to the party. 'José intentó venir a la fiesta.'</exItem>
+	   <exItem label="1.">I believe that Jill is my friend. ‘Creo que Juliana es mi amiga.’</exItem>
+	   <exItem label="2.">Jill insists that she is my friend. ‘Juliana insiste que ella sea mi amiga.’</exItem>
+	   <exItem label="3.">I expect that Joe will come to the party. ‘Cuento con que José venga a la fiesta.’</exItem>
+	   <exItem label="4.">I expect Joe to come to the party. ‘Espero que José venga a la fiesta.’</exItem>
+	   <exItem label="5.">I will persuade Joe that he should come to the party. ‘Persuadiré a José que él debe venir a la fiesta.’</exItem>
+	   <exItem label="6.">I will persuade Joe to come to the party. ‘Persuadiré a José de venir a la fiesta.’</exItem>
+	   <exItem label="7.">Joe would hate for Sue to be at the party. ‘José odiaría que Susana esté en la fiesta.’</exItem>
+	   <exItem label="8.">Joe tried to come to the party. ‘José intentó venir a la fiesta.’</exItem>
+	   <exItem label="9.">John seemed to like the tortillas. ‘Juan parecía tener gusto de las tortillas.’</exItem>
+	   <exItem label="10.">It seems likely that Joe will come. ‘Parece probablemente que vendrá José.’</exItem>
 	</EnglishExample>
-	<introduction id="CompIntroNotPractical" show="swNotPractical">The examples illustrate that the main verb selects one or more particular types of complement clauses which can occur gramatically.  For example, <example>try</example> cannot have a complement clause beginning with <example>that</example> and the subject of the embedded clause must be coreferent to the main clause subject and pro-dropped.  Further, <example>believe, insist</example> and <example>persuade</example> cannot have a complement clause beginning with <example>for</example> and none of the verbs above can have an embedded question complement.
-<br/>
-		<br/>
-A second point the examples illustrate is that the presence of a particular complementizer determines the finiteness of the embedded verb which follows it.  This evidence of subcategorization by the main verb for the complementizer and by the complementizer for the embedded verb form leads to the conclusion that the complementizer is the head of the embedded clause.  Therefore, within X-Bar Theory, embedded clauses which have complementizers are CPs, which sit on top of the IP.
-<br/>
-		<br/>A sample tree for example 1 is shown here:
-<tree img="TreeDescriptions/PawsCompCP.png"/>
-		<br/>
-When there is no complementizer present, as in examples 4, 6 and 8 above, the complement clause is simply an IP.  A sample tree for example 4 with a nonfinite complement is shown here:
-<tree img="TreeDescriptions/PawsCompIPnonfinite.png"/>
-<br/>
-There is an important difference between <example>expect</example> (in examples 3 and 4) and <example>persuade</example> (in examples 5 and 6): <example>expect</example> can have either a finite CP or a nonfinite IP for its complement while <example>persuade</example> has a direct object as well as either of those complement clauses.  A tree for example 5 is shown here:
-<tree img="TreeDescriptions/PawsCompDPCP.png"/>
-<br/>
-Finally, a tree for example 8 with a nonfinite IP complement and required pro-drop is shown here:
-<tree img="TreeDescriptions/PawsCompIPprodrop.png"/>
-		<br/>
-		<help href="Help/Cbgbtext.doc#ClausalComplements">Click here for more information about the CP phrase structure of embedded clauses.</help>
-	</introduction>
-	<introduction id="CompIntroPractical" show="swPractical">Los ejemplos ilustran que el verbo principal selecciona uno o más tipos particulares de cláusulas de complemento que puedan presentarse gramaticalmente.  Por ejemplo, <example>try 'intentar'</example> no puede tener un a cláusula de complemento que empieza con <example>that 'que'</example> y el sujeto de la cláusula subordinada debe ser coreferente al sujeto de la cláusula principal y sea faltado.
-		Además, <example>believe 'creer'</example>, <example>insist 'insistir'</example> y <example>persuade 'persuadir'</example> no pueden tener un a cláusula de complemento que empieza con <example>for 'para'</example> y ningún verbo antedicho puede tener un complemento interrogativo. </introduction>
+   <introduction>Los causativos sintácticos que consisten en dos cláusulas, como en ejemplos 11-12, se cubren aquí también. (Los causativos morfológicos que consisten en una sola cláusula fue discutido en <section number="9.8">Las oraciones básicas - Causativos y antipasivos</section>.)</introduction>
+   <EnglishExample>
+	  <exItem label="11.">My mother made me clean my room. ‘Mi madre me hizo limpiar mi dormitorio.’</exItem>
+	  <exItem label="12.">The other girl caused us to break up. ‘La otra muchacha hizo que nos separáramos.’</exItem>
+   </EnglishExample>
+   <introduction>Discurso directo e indirecto, como se muestran en ejemplos 13-14, pueden ser cláusulas de complemento como discutimos en esta sección.  Sin embargo, las preguntas subordinadas serán analizadas en  <section number="11">Las preguntas</section>.</introduction>
+   <EnglishExample>
+	  <exItem label="13.">Sue said, “I will come to your house tomorrow.” ‘Susana dijo, “Vendré a su casa mañana”.’</exItem>
+	  <exItem label="14."> Sue said (to me) that she would come here tomorrow. ‘Susana dijo (a mí) que ella vendría aquí mañana.’</exItem>
+   </EnglishExample>
+   <introduction id="CompIntroNotPractical" show="swNotPractical">The examples illustrate that the main verb selects one or more particular types of complement clauses which can occur gramatically.  For example, <example>try</example> cannot have a complement clause beginning with <example>that</example> and the subject of the embedded clause must be coreferent to the main clause subject and pro-dropped.  Further, <example>believe, insist</example> and <example>persuade</example> cannot have a complement clause beginning with <example>for</example> and none of the verbs above can have an embedded question complement.
+	  <br/>
+	  <br/>
+	  A second point the examples illustrate is that the presence of a particular complementizer determines the finiteness of the embedded verb which follows it.  This evidence of subcategorization by the main verb for the complementizer and by the complementizer for the embedded verb form leads to the conclusion that the complementizer is the head of the embedded clause.  Therefore, within X-Bar Theory, embedded clauses which have complementizers are CPs, which sit on top of the IP.
+	  <br/>
+	  <br/>A sample tree for example 1 is shown here:
+	  <tree img="TreeDescriptions/PawsCompCP.png"/>
+	  <br/>
+	  When there is no complementizer present, as in examples 4, 6 and 8 above, the complement clause is simply an IP.  A sample tree for example 4 with a nonfinite complement is shown here:
+	  <tree img="TreeDescriptions/PawsCompIPnonfinite.png"/>
+	  <br/>
+	  There is an important difference between <example>expect</example> (in examples 3 and 4) and <example>persuade</example> (in examples 5 and 6): <example>expect</example> can have either a finite CP or a nonfinite IP for its complement while <example>persuade</example> has a direct object as well as either of those complement clauses.  A tree for example 5 is shown here:
+	  <tree img="TreeDescriptions/PawsCompDPCP.png"/>
+	  <br/>
+	  Next, a tree for example 8 with a nonfinite IP complement and required pro-drop is shown here:
+	  <tree img="TreeDescriptions/PawsCompIPprodrop.png"/>
+	  <br/>
+	  Finally, verbs like <example>seem</example> ( including other perception verbs and copulas) are called ‘raising’ verbs, since <example>seem</example> doesn’t really have its own subject, and takes either a nonfinite sentence as a complement or an adjective which can have a finite sentence with a complementizer as its complement.  In the nonfinite case (9), the subject of the complement appears in the subject postion of <example>seem</example>.  In the finite complement case, there is no overt subject for <example>seem</example>, so a “dummy” word <example>it</example> fills that position in English.  Some languages simply leave the main clause subject postion empty.
+	  <br/><br/>     A tree for example 9 with a nonfinite IP complement and  coreferent subjects due to raising will look just like the tree for example 8 with <example>try</example>, since we are not modelling the null elements.  Similarly,
+	  a tree for example 10 would be vey similar to the tree above for example 1 with <example>believe</example>, except for the adjective complement and the dummy <example>it</example> in the main clause subject position.
+	  <br/>    <br/>
+	  <help href="Help/Cbgbtext.doc#ClausalComplements">Click here for more information about the CP phrase structure of embedded clauses.</help>
+   </introduction>
+   <introduction id="CompIntroPractical" show="swPractical">Los ejemplos ilustran que el verbo principal selecciona uno o más tipos particulares de cláusulas de complemento que puedan presentarse gramaticalmente.  Por ejemplo, <example>try ‘intentar’</example> no puede tener un a cláusula de complemento que empieza con <example>that ‘que’</example> y el sujeto de la cláusula subordinada debe ser coreferente al sujeto de la cláusula principal y sea faltado.
+	  Además, <example>believe ‘creer’</example>, <example>insist ‘insistir’</example> y <example>persuade ‘persuadir’</example> no pueden tener un a cláusula de complemento que empieza con <example>for ‘para’</example> y ningún verbo antedicho puede tener un complemento interrogativo. </introduction>
 	<form section="comp" transparent="yes">
 		<br/>
 		<buttons>

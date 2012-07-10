@@ -1,39 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
-<page id="IPCop" count="1/1">
-	<title level="2">Las oraciones básicas - Las oraciones intransitivas y copulares</title>
-	<introduction>Los intransitivos simples no tienen ningún complemento después del verbo, como en <example>La muchacha flota.</example>  Los verbos del movimiento incluyen un lugar en la forma de una frase preposicional o posposicional o adverbio.  Algunos ejemplos en español con los verbos del movimiento son</introduction>
-	<EnglishExample>
-		<exItem label="1.">La muchacha corrió alrededor de la pista.</exItem>
-		<exItem label="2.">Mi madre fue a la tienda.</exItem>
-		<exItem label="3.">Mi profesor vino aquí.</exItem>
-	</EnglishExample>
-	<form section="ip">
-		<prompt>Escriba algunos ejemplos intransitivos en su idioma aquí:</prompt>
-		<textBox id="IPExamplesIntranExample" dataItem="intransExample" cols="50"/>
-		<br/>
-		<br/>
-		<prompt>Escriba algunos ejemplos con verbos del movimiento aquí:</prompt>
-		<textBox id="IPExamplesMotionExample" dataItem="motionExample" cols="50"/>
-		<instruction id="IPCopInstruction">Partial subcategorization can be done as follows, without entering a feature on every verb: if a particular verb is intransitive and can never have anything but a subject, mark it with the feature <feature>intransitive</feature>.  (Don't consider temporal elements.)  If it is an intransitive motion verb that can have a locative PP or AdvP <span id="IPCopFollow" show="swHeadInitial">following</span>
-			<span id="IPCopPrecede" show="swHeadFinal">preceding</span> it, add the feature <feature>motion</feature> to its lexical entry.  Since the motion verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-motion</feature>.</instruction>
-		<introduction>Las oraciones copulativas pueden tener un adjetivo, frase preposicional o posposicional, o frase nominal como complemento del verbo copulativo.  Algunos idiomas no requieren un verbo o un auxiliar copulativo estar presente. Algunos ejemplos en español son</introduction>
+<page id="IPCop" count="1/3">
+   <title level="2">Las oraciones básicas - Las oraciones copulativas, comparativas y existenciales</title>
+   <introduction>Distinguimos aquí entre oraciones con verbos copulativas y verbos de percepción, comenzando con oraciones copulativas.
+		   <br/><br/>
+		   Las oraciones copulativas pueden tener un adjetivo, frase preposicional o posposicional, o frase nominal como complemento del verbo copulativo.  Algunas lenguas no requieren un verbo o un auxiliar copulativo estar presente. Algunos ejemplos en español son</introduction>
 		<EnglishExample>
 			<exItem label="1.">La muchacha es bonita.</exItem>
-			<exItem label="2.">Ella parece agradable.</exItem>
+		   <exItem label="2.">Susana está enferma.</exItem>
 			<exItem label="3.">Mi hermana está en el hospital.</exItem>
 			<exItem label="4.">Él es el líder.</exItem>
 		</EnglishExample>
-		<prompt>Escriba algunos ejemplos de oraciones copulativas aquí:</prompt>
+ <form section="ip">
+   <prompt>Escriba algunos ejemplos de oraciones copulativas aquí:</prompt>
 		<textBox id="IPExamplesCopularExample" dataItem="copularExample" cols="50"/>
 		<radioGroup>
 			<groupName dataItem="copular" default="yes">RIPCopVerb</groupName>
-			<prompt>¿Hay un verbo abierto usado en oraciones copulativas en su idioma?</prompt>
-			<radio id="IPCopVerbYes" dataValue="yes">Sí, y el verbo copular se requiere</radio>
-			<radio id="IPCopVerbYesOptional" dataValue="yesOptional">Sí, hay un verbo copular, pero es opcional en por lo menos algunos casos y no se requiere a ningún auxiliar tampoco en las oraciones copulativas</radio>
-			<radio id="IPCopVerbYesAux" dataValue="yesAux">Sí, hay un verbo copular, pero requiere un auxiliar si el verbo copulativo no está presente en las oraciones copulativas</radio>
-			<radio id="IPCopVerbNoAux" dataValue="noAux">No, no hay verbo copular, pero requiere un auxiliar en las oraciones copulativas</radio>
+			<prompt>¿Existe un verbo abierto usado en oraciones copulativas en su lengua?</prompt>
+			<radio id="IPCopVerbYes" dataValue="yes">Sí, y el verbo copulativo se requiere</radio>
+			<radio id="IPCopVerbYesOptional" dataValue="yesOptional">Sí, hay un verbo copulativo, pero es opcional en por lo menos algunos casos y no se requiere a ningún auxiliar tampoco en las oraciones copulativas</radio>
+			<radio id="IPCopVerbYesAux" dataValue="yesAux">Sí, hay un verbo copulativo, pero no se requiere el verbo si un auxiliar está presente en las oraciones copulativas</radio>
+			<radio id="IPCopVerbNoAux" dataValue="noAux">No, no hay verbo copulativo, pero se requiere un auxiliar en las oraciones copulativas</radio>
 			<radio id="IPCopVerbNoNeither" dataValue="noNeither">No, ni utilizan un verbo copulativo ni un auxiliar en las oraciones copulativas</radio>
 			<radioGroup id="IPCopVerbNoNeitherTable" show="swIPCopVerbNoNeitherOrOptional">
 				<groupName dataItem="copularAffix" default="no">RIPCopAffix</groupName>
@@ -48,10 +36,22 @@
 		<instruction id="IPCopAffixYesPrefixInstruction" show="swIPCopAffixYesPrefix">Add the feature <feature>copular_prefix</feature> to the appropriate prefix(es) in the lexicon.</instruction>
 		<instruction id="IPCopAffixYesSuffixInstruction" show="swIPCopAffixYesSuffix">Add the feature <feature>copular_suffix</feature> to the appropriate suffix(es) in the lexicon.</instruction>
 		<instruction id="IPCopVerbYesInstruction" show="swIPCopVerbYes">Add the feature <feature>copular</feature> to the verbs that take AdjP, PP or predicate nominative complements.  Since the copular verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-copular</feature>.</instruction>
-		<br/>
-		<buttons>
+	<br/><br/>
+	<introduction>Ahora consideramos las oraciones con verbos de percepción.<br/><br/>
+	   Los verbos de percepción permiten generalmente solamente una frase adjetival como su complemento, excepto en las construcciones superlativas en donde una frase nominal sigue un verbo de percepción, como se muestra en la página siguiente.   Algunos ejemplos son:</introduction>
+	<EnglishExample>
+	   <exItem label="5.">La muchacha se ve bonita.</exItem>
+	   <exItem label="6.">Ella parece agradable.</exItem>
+	</EnglishExample>
+	<prompt>Escriba ejemplos similares de su lengua aquí:</prompt>
+	<textBox id="IPExamplesPerceptionExample" dataItem="perceptionExample" cols="50"/>
+	<instruction id="IPCopPerceptionInstruction">Add the feature <feature>perception</feature> to the lexical entry of the perception verbs. Since the perception verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-perception</feature>.</instruction>
+	<br/>
+	<introduction>Los verbos copulativos y de percepción pueden también presentarse con un complemento de la cláusula adjetival, donde una oración o una cláusula de complemento sigue el adjetivo. Estas construcciones las veremos en  <section number="10.">Cláusulas de complemento</section> en la sección de verbos de percepción que actúan como verbos de ‘ascenso’.</introduction>
+	<br/><br/>
+	<buttons>
 			<button id="IPCopBack" value="Back" goto="IPContents.htm"/>
-			<button id="IPCopNext" value="Next" goto="IPContents.htm"/>
+			<button id="IPCopNext" value="Next" goto="IPComparative.xml"/>
 		</buttons>
 	</form>
 	<showWhen id="swHeadInitial">

@@ -19,12 +19,103 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>brass hard dull rods</langData>
-<xsl:text>, etc.  The position of adjectives within the nominal phrase will be dealt with in section </xsl:text>
+<xsl:text>.  The position of adjectives within the nominal phrase will be dealt with in section </xsl:text>
 <sectionRef sec="sNPAdjP" />
 <xsl:text>.
 </xsl:text>
 </p>
-		<p>
+	   <p>
+<xsl:text>This section is concerned with adjectives that modify nouns, in contrast to adjectives that acts as predicates.  Predicate adjective constructions will be covered in section </xsl:text>
+<sectionRef sec="sIPCop" />
+<xsl:text>.</xsl:text>
+</p>
+
+	   <xsl:if test="normalize-space(//typology/@classifier)='yesAgr' and normalize-space(//adjp/@adjectiveClassifier)='yes'">
+<p>
+<xsl:text>Examples from </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> of  the roots of qualitative adjectives which express size, color, age, texture, form or quality are given in the following chart.
+  Each one may surface with the appropriate classifier attached.</xsl:text>
+</p>
+</xsl:if>
+	   <xsl:if test="normalize-space(//typology/@classifier)!='yesAgr' or normalize-space(//adjp/@adjectiveClassifier)!='yes'">
+<p>
+<xsl:text>Examples from </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> of qualitative adjectives which express size, color, age, texture, form or quality are given in the following chart:</xsl:text>
+</p>
+</xsl:if>
+	   <example num="xAdjP.12">
+<table border="1">
+			 <tr>
+				<th>Qualitative adjectives</th>
+				<th>Gloss</th>
+			 </tr>
+			 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//adjp/example),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		  </table>
+</example>
+	   <p>
 <xsl:text>Qualitative adjectives themselves may be modified.  Some English examples are:
 </xsl:text>
 <langData>
@@ -100,6 +191,138 @@
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
+	   <xsl:if test="normalize-space(//typology/@classifier)='yesAgr' and normalize-space(//adjp/@adjectiveDegreeClassifier)='yes' and normalize-space(//adjp/@modifiers)='yes'">
+<p>
+<xsl:text>The roots of the degree words which can modify the qualitative adjectives in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> are shown here.  Each may surface with the appropriate classifier attached.</xsl:text>
+</p>
+</xsl:if>
+	   <xsl:if test="normalize-space(//typology/@classifier)!='yesAgr' and normalize-space(//adjp/@modifiers)='yes' or normalize-space(//adjp/@adjectiveDegreeClassifier)!='yes' and normalize-space(//adjp/@modifiers)='yes'">
+<p>
+<xsl:text>The degree words which can modify the qualitative adjectives in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> are shown here:</xsl:text>
+</p>
+</xsl:if>
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='yes'">
+<example num="xAdjP.24">
+<table border="1">
+			 <tr>
+				<th>Degree words</th>
+				<th>Gloss</th>
+			 </tr>
+			 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//adjp/adjectiveDegreeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		  </table>
+</example>
+</xsl:if>
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='yes'">
+<p>
+<xsl:text>Examples of qualitative adjectives with degree words modifying them are:</xsl:text>
+</p>
+</xsl:if>
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='yes'">
+<example num="xAdjP.28">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//adjp/adjectivePhraseExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//adjp/adjectivePhraseExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//adjp/adjectivePhraseExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//adjp/adjectivePhraseExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdjP.28</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xAdjP.28.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+
 		<xsl:if test="normalize-space(//adjp/@modifiers)='yesManner'">
 <p>
 <xsl:text></xsl:text>
@@ -133,8 +356,9 @@
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
-		<p>
-<xsl:text>Examples of adjectives or adjective phrases in </xsl:text>
+	   <xsl:if test="normalize-space(//typology/@classifier)='yesAgr' and normalize-space(//adjp/@adjectiveDegreeClassifier)='yes' and normalize-space(//adjp/@modifiers)='yesManner'">
+<p>
+<xsl:text>The roots of the degree words which can modify qualitative adjectives in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
@@ -143,24 +367,102 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> include:
-</xsl:text>
+<xsl:text> are shown here.  Each may surface with the appropriate classifier attached.</xsl:text>
 </p>
-		<example num="xAdjP.16">
-<xsl:variable name="sExampleValue">
-<xsl:value-of select="//adjp/example" />
+</xsl:if>
+	   <xsl:if test="normalize-space(//typology/@classifier)!='yesAgr' and normalize-space(//adjp/@modifiers)='yesManner' or normalize-space(//adjp/@adjectiveDegreeClassifier)!='yes' and normalize-space(//adjp/@modifiers)='yesManner'">
+<p>
+<xsl:text>The degree words which can modify qualitative adjectives in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> are shown here:</xsl:text>
+</p>
+</xsl:if>
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='yesManner'">
+<example num="xAdjP.36">
+<table border="1">
+			 <tr>
+				<th>Degree words</th>
+				<th>Gloss</th>
+			 </tr>
+			 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//adjp/adjectiveDegreeExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//adjp/example))" />
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		  </table>
+</example>
+</xsl:if>
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='yesManner'">
+<p>
+<xsl:text>Examples of qualitative adjectives with degree words and/or manner adverbs modifying them are:</xsl:text>
+</p>
+</xsl:if>
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='yesManner'">
+<example num="xAdjP.40">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//adjp/adjectivePhraseExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//adjp/adjectivePhraseExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="//adjp/example" />
+<xsl:value-of select="//adjp/adjectivePhraseExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//adjp/example))" />
+<xsl:value-of select="string-length(normalize-space(//adjp/adjectivePhraseExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xAdjP.16</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdjP.40</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -169,7 +471,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xAdjP.16.1</xsl:text>
+<xsl:text>xAdjP.40.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -184,7 +486,280 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
+</xsl:if>
+
+
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='attaches'">
+<p>
+<xsl:text>In </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, there are affixes or clitics that attach to the qualitative adjective to intensify it.  The degree affixes or clitics which can modify qualitative adjectives in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> are:</xsl:text>
+</p>
+</xsl:if>
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='attaches'">
+<example num="xAdjP.44">
+<table border="1">
+			 <tr>
+				<th>Degree affixes or clitics</th>
+				<th>Gloss</th>
+			 </tr>
+			 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//adjp/adjectiveDegreeAffixExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		  </table>
+</example>
+</xsl:if>
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='attaches'">
+<p>
+<xsl:text>Examples of qualitative adjectives with a degree affix or clitic attached are:</xsl:text>
+</p>
+</xsl:if>
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='attaches'">
+<example num="xAdjP.48">
+<table border="1">
+			 <tr>
+				<th>Modified qualitative adjectives</th>
+				<th>Gloss</th>
+			 </tr>
+			 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//adjp/adjectivePhraseAffixExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		  </table>
+</example>
+</xsl:if>
+
+
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='noRedup'">
+<p>
+<xsl:text>In </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, reduplication is used to intensify the meaning of  the qualitative adjective.  Examples of qualitative adjectives with reduplication modifying or intensifying them are:</xsl:text>
+</p>
+</xsl:if>
+	   <xsl:if test="normalize-space(//adjp/@modifiers)='noRedup'">
+<example num="xAdjP.52">
+<table border="1">
+			 <tr>
+				<th>Reduplicated qualitative adjectives</th>
+				<th>Gloss</th>
+			 </tr>
+			 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//adjp/adjectiveDegreeRedupExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		  </table>
+</example>
+</xsl:if>
+
+
+
 	</section1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

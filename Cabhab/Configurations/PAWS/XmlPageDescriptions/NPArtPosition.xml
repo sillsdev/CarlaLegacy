@@ -164,11 +164,11 @@ To handle the number agreement, in the lexicon:
             </ul>
 We will assume that all nouns are singular by default.  Therefore, only the plural nouns need to be marked.  In the lexicon:
 <ul>
-                <li>Add the feature <feature>plural</feature> to any affixes which can be added to a noun to make it plural.</li>
-                <li>Also, add the feature <feature>plural</feature> to any nouns which are inherently plural (such as <example>scissors</example> or <example>pants</example> in English), or exceptionally don't take an affix.</li>
-                <li>Any nouns which do not make a distinction between singular and plural forms, such as <example>deer</example> in English, need to have two entries in the lexicon, one marked with the feature <feature>plural</feature> and the other for singular (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
-                <li id="NPArtDemMassSpan" show="swNPArtDemMassYes">All mass nouns need to have the feature <feature>mass</feature> so that <span id="NPArtOnlyMassSpan" show="swNPArtAndDemArt">an article</span><span id="NPDemOnlyMassSpan" show="swNPArtAndDemDem">a demonstrative</span><span id="NPArtAndDemMassSpan" show="swNPArtAndDemBoth">an article or demonstrative</span> will not be required.</li>
-            </ul>
+				<li>Add the feature <feature>plural</feature> to any affixes which can be added to a noun to make it plural.</li>
+				<li>Also, add the feature <feature>plural</feature> to any nouns which are inherently plural (such as <example>scissors</example> or <example>pants</example> in English), or exceptionally don’t take an affix.</li>
+				<li>Any nouns which do not make a distinction between singular and plural forms, such as <example>deer</example> in English, need to have two entries in the lexicon, one marked with the feature <feature>plural</feature> and the other for singular (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
+				<li id="NPArtDemMassSpan" show="swNPArtDemMassYes">All mass nouns need to have the feature <feature>mass</feature> so that <span id="NPArtOnlyMassSpan" show="swNPArtAndDemArt">an article</span><span id="NPDemOnlyMassSpan" show="swNPArtAndDemDem">a demonstrative</span><span id="NPArtAndDemMassSpan" show="swNPArtAndDemBoth">an article or demonstrative</span> will not be required.</li>
+			</ul>
         </instruction>
         <instruction id="NPArtAgreementAnimacyInstruction" show="swNPArtAgreementAnimacyYes">
 To handle animacy agreement:
@@ -177,31 +177,30 @@ To handle animacy agreement:
 <span id="NPDemOnlyAnimateSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemAnimateSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with animate nouns with the feature <feature>animate</feature>.</li>
                 <li>Mark the <span id="NPArtOnlyInanimateSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyInanimateSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemInanimateSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
                 <li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
-                <li>If your language makes the further distinction between human and nonhuman, add the feature <feature>human</feature> to the <span id="NPArtOnlyHumanSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyHumanSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemHumanSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with human nouns and add the feature <feature>-human</feature> to the <span id="NPArtOnlyNonHumanSpan" show="swNPArtAndDemArt">articles</span>
+				<li>If your language makes the further distinction between human and nonhuman, add the feature <feature>human</feature> to the <span id="NPArtOnlyHumanSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyHumanSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemHumanSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with human nouns and add the feature <feature>-human</feature> to the <span id="NPArtOnlyNonHumanSpan" show="swNPArtAndDemArt">articles</span>
 <span id="NPDemOnlyNonHumanSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemNonHumanSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with nonhuman nouns.</li>
-            </ul>
-We will assume that all (common) nouns are inanimate and nonhuman by default. Therefore, only the animate nouns need to be marked.  In the lexicon, add the feature <feature>animate</feature> to any animate nouns, such as <example>person</example>, <example>people</example>, <example>crowd</example>, <example>animal</example>, and names of types of animals which are not proper names.  Also add the feature <feature>human</feature> as appropriate if your language makes the further distinction between human and nonhuman nouns.  (Proper names will be dealt with in <section number="6">Pronouns and Proper Names</section>.)
+			</ul>
+We will assume that all (common) nouns are inanimate and nonhuman by default. Therefore, only the animate nouns need to be marked.  In the lexicon, add the feature <feature>animate</feature> to any animate nouns, such as <example>person</example>, <example>people</example>, <example>crowd</example>, <example>animal</example>, and names of types of animals which are not proper names.  Also add the feature <feature>human</feature> as appropriate if your language makes the further distinction between human and nonhuman nouns.  (Proper names will be dealt with in <section number="6">Proper Names</section>.)
 </instruction>
-        <instruction id="NPArtAgreementGenderInstruction" show="swNPArtAgreementGenderYes">
+		<instruction id="NPArtAgreementGenderInstruction" show="swNPArtAgreementGenderYes">
 Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any <span id="NPArtOnlyGenderSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyGenderSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemGenderSpan" show="swNPArtAndDemBoth">articles or demonstratives</span> that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.<br/>
             <br/>
 We will assume that all nouns are masculine by default.  Therefore, only the feminine and neuter nouns need to be marked.  In the lexicon:
 <ul>
-                <li>Add the feature <feature>feminine</feature> to any affixes which can be added to a noun to make it feminine.  Add the feature <feature>neuter</feature> to any affixes which can be added to a noun to make it neuter.</li>
-                <li>Also, add the feature <feature>feminine</feature> to any nouns which are inherently feminine, or exceptionally don't take an affix.  Similarly, add the feature <feature>neuter</feature> to any nouns which are inherently neuter, or exceptionally don't take an affix.</li>
-                <li>Any nouns which do have the same form for both masculine and feminine, but which can take different forms of the <span id="NPArtOnlyGender2Span" show="swNPArtAndDemArt">articles</span>
+				<li>Add the feature <feature>feminine</feature> to any affixes which can be added to a noun to make it feminine.  Add the feature <feature>neuter</feature> to any affixes which can be added to a noun to make it neuter.</li>
+				<li>Also, add the feature <feature>feminine</feature> to any nouns which are inherently feminine, or exceptionally don’t take an affix.  Similarly, add the feature <feature>neuter</feature> to any nouns which are inherently neuter, or exceptionally don’t take an affix.</li>
+				<li>Any nouns which do have the same form for both masculine and feminine, but which can take different forms of the <span id="NPArtOnlyGender2Span" show="swNPArtAndDemArt">articles</span>
 <span id="NPDemOnlyGender2Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemGender2Span" show="swNPArtAndDemBoth">articles and demonstratives</span> based on gender need to have two entries in the lexicon, one marked with the feature <feature>feminine</feature> and the other for masculine (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
-            </ul>
+			</ul>
         </instruction>
-        <instruction id="NPArtAgreementClassInstruction" show="swNPArtAgreementClassYes">
+		<instruction id="NPArtAgreementClassInstruction" show="swNPArtAgreementClassYes">
 To handle class marking and agreement:
 <ul>
-                <li>Mark the<span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt"> articles</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">articles and demonstratives </span>that can only go with a particular class with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 99.</li>
-                <li>It may be the case that the same affixes that mark the class number on<span id="NPArtOnlyClass1Span" show="swNPArtAndDemArt"> articles</span><span id="NPDemOnlyClass1Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClass1Span" show="swNPArtAndDemBoth">articles and demonstratives </span>(and possibly adjectives too) also mark the class number on nouns.  If this is the case in your language, simply add the class feature to the affixes, and all the words will automatically come from the morphological parser with the class number marked.</li>
-                <li>Any cases where<span id="NPArtOnlyClass2Span" show="swNPArtAndDemArt"> articles</span><span id="NPDemOnlyClass2Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClass2Span" show="swNPArtAndDemBoth">articles, demonstratives </span>or nouns do not have an affix which marks the class will require marking of the class feature on the particular lexical item in the lexicon.</li>
-            </ul>
-        </instruction>
-        <br/>
+   <li>It is most likely the case that the same affixes that mark the class number or type on <span id="NPArtOnlyClass1Span" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClass1Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClass1Span" show="swNPArtAndDemBoth">articles and demonstratives</span> (and possibly adjectives too) are also used on nouns.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">Overall Typology - Classifiers</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
+   <li>Any cases where <span id="NPArtOnlyClass2Span" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClass2Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClass2Span" show="swNPArtAndDemBoth">articles, demonstratives</span> or nouns do not have an affix which marks the class will require marking of the class feature on the particular lexical item in the lexicon.   Mark the <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with a particular class with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">Overall Typology - Classifiers</section>.</li>
+			</ul>
+		</instruction>
+		<br/>
         <buttons>
             <button id="NPArtPosBack" value="Back" goto="NPArtDem.xml"/>
             <button id="NPArtPosNext" value="Next" goto="NPContents.htm"/>

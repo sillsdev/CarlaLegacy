@@ -29,7 +29,7 @@
 >
 <!ELEMENT category (#PCDATA)>
 <!-- content is the name of the syntactic category -->
-<!ELEMENT col (content | langData | gloss)*>
+<!ELEMENT col (content | langData | gloss | case)*>
 <!-- the content of rowspan actually gets calculated ono the fly; so just use any number in the description page -->
 <!ATTLIST col
 	align (left | center | right | justify) "left"

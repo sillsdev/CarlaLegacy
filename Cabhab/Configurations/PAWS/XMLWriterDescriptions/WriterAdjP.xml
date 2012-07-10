@@ -10,12 +10,31 @@
 			<langData>dull hard brass rods</langData>
 			<content> versus </content>
 			<langData>brass hard dull rods</langData>
-			<content>, etc.  The position of adjectives within the nominal phrase will be dealt with in section </content>
+			<content>.  The position of adjectives within the nominal phrase will be dealt with in section </content>
 			<sectionRef sec="sNPAdjP"/>
 			<content>.
 </content>
 		</p>
-		<p>
+	   <p><content>This section is concerned with adjectives that modify nouns, in contrast to adjectives that acts as predicates.  Predicate adjective constructions will be covered in section </content><sectionRef sec="sIPCop"/><content>.</content></p>
+
+	   <p show="swAdjPQualitativeClassifierYes"><content>Examples from </content><langName/><content> of  the roots of qualitative adjectives which express size, color, age, texture, form or quality are given in the following chart.
+  Each one may surface with the appropriate classifier attached.</content>
+	   </p>
+	   <p show="swAdjPQualitativeClassifierNo"><content>Examples from </content><langName/><content> of qualitative adjectives which express size, color, age, texture, form or quality are given in the following chart:</content>
+	   </p>
+	   <example>
+		  <table border="1">
+			 <headerRow>
+				<headerCol>Qualitative adjectives</headerCol>
+				<headerCol>Gloss</headerCol>
+			 </headerRow>
+			 <row>
+				<col exampleLoc="adjp/example"/>
+				<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+			 </row>
+		  </table>
+	   </example>
+	   <p>
 			<content>Qualitative adjectives themselves may be modified.  Some English examples are:
 </content>
 			<langData>very big</langData>
@@ -58,6 +77,25 @@
 			</text>
 			<content/>
 		</p>
+	   <p show="swAdjPModifiersYesDegreeAndClassifierYes"><content>The roots of the degree words which can modify the qualitative adjectives in </content><langName/><content> are shown here.  Each may surface with the appropriate classifier attached.</content></p>
+	   <p show="swAdjPModifiersYesDegreeAndClassifierNo"><content>The degree words which can modify the qualitative adjectives in </content><langName/><content> are shown here:</content></p>
+	   <example show="swAdjPModifiersYesDegree">
+		  <table border="1">
+			 <headerRow>
+				<headerCol>Degree words</headerCol>
+				<headerCol>Gloss</headerCol>
+			 </headerRow>
+			 <row>
+				<col exampleLoc="adjp/adjectiveDegreeExample"/>
+				<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+			 </row>
+		  </table>
+	   </example>
+	   <p show="swAdjPModifiersYesDegree"><content>Examples of qualitative adjectives with degree words modifying them are:</content></p>
+	   <example show="swAdjPModifiersYesDegree">
+		  <interlinear exampleLoc="adjp/adjectivePhraseExample"/>
+	   </example>
+
 		<p show="swAdjPModifiersYesManner">
 			<content/>
 			<langName/>
@@ -82,15 +120,72 @@
 			</text>
 			<content/>
 		</p>
-		<p>
-			<content>Examples of adjectives or adjective phrases in </content>
-			<langName/>
-			<content> include:
-</content>
-		</p>
-		<example>
-			<interlinear exampleLoc="adjp/example"/>
-		</example>
+	   <p show="swAdjPModifiersYesMannerAndClassifierYes"><content>The roots of the degree words which can modify qualitative adjectives in </content><langName/><content> are shown here.  Each may surface with the appropriate classifier attached.</content></p>
+	   <p show="swAdjPModifiersYesMannerAndClassifierNo"><content>The degree words which can modify qualitative adjectives in </content><langName/><content> are shown here:</content></p>
+	   <example show="swAdjPModifiersYesManner">
+		  <table border="1">
+			 <headerRow>
+				<headerCol>Degree words</headerCol>
+				<headerCol>Gloss</headerCol>
+			 </headerRow>
+			 <row>
+				<col exampleLoc="adjp/adjectiveDegreeExample"/>
+				<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+			 </row>
+		  </table>
+	   </example>
+	   <p show="swAdjPModifiersYesManner"><content>Examples of qualitative adjectives with degree words and/or manner adverbs modifying them are:</content></p>
+	   <example show="swAdjPModifiersYesManner">
+		  <interlinear exampleLoc="adjp/adjectivePhraseExample"/>
+	   </example>
+
+
+	   <p show="swAdjPModifiersAttaches"><content>In </content>
+		  <langName/><content>, there are affixes or clitics that attach to the qualitative adjective to intensify it.  The degree affixes or clitics which can modify qualitative adjectives in </content><langName/><content> are:</content></p>
+	   <example show="swAdjPModifiersAttaches">
+		  <table border="1">
+			 <headerRow>
+				<headerCol>Degree affixes or clitics</headerCol>
+				<headerCol>Gloss</headerCol>
+			 </headerRow>
+			 <row>
+				<col exampleLoc="adjp/adjectiveDegreeAffixExample"/>
+				<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+			 </row>
+		  </table>
+	   </example>
+	   <p show="swAdjPModifiersAttaches"><content>Examples of qualitative adjectives with a degree affix or clitic attached are:</content></p>
+	   <example show="swAdjPModifiersAttaches">
+		  <table border="1">
+			 <headerRow>
+				<headerCol>Modified qualitative adjectives</headerCol>
+				<headerCol>Gloss</headerCol>
+			 </headerRow>
+			 <row>
+				<col exampleLoc="adjp/adjectivePhraseAffixExample"/>
+				<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+			 </row>
+		  </table>
+	   </example>
+
+
+	   <p show="swAdjPModifiersNoRedup"><content>In </content>
+		  <langName/><content>, reduplication is used to intensify the meaning of  the qualitative adjective.  Examples of qualitative adjectives with reduplication modifying or intensifying them are:</content></p>
+	   <example show="swAdjPModifiersNoRedup">
+		  <table border="1">
+			 <headerRow>
+				<headerCol>Reduplicated qualitative adjectives</headerCol>
+				<headerCol>Gloss</headerCol>
+			 </headerRow>
+			 <row>
+				<col exampleLoc="adjp/adjectiveDegreeRedupExample"/>
+				<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+			 </row>
+		  </table>
+	   </example>
+
+
+
 	</section1>
 	<showWhen id="swAdjPModifiersNo">
 		<whenValue element="adjp" attr="modifiers" value="no"/>
@@ -101,6 +196,12 @@
 	<showWhen id="swAdjPModifiersYesManner">
 		<whenValue element="adjp" attr="modifiers" value="yesManner"/>
 	</showWhen>
+   <showWhen id="swAdjPModifiersAttaches">
+	  <whenValue element="adjp" attr="modifiers" value="attaches"/>
+   </showWhen>
+   <showWhen id="swAdjPModifiersNoRedup">
+	  <whenValue element="adjp" attr="modifiers" value="noRedup"/>
+   </showWhen>
 	<showWhen id="swAdjPDegreeEitherUnrestricted">
 		<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
 		<and/>
@@ -137,4 +238,47 @@
 		<and/>
 		<whenValue element="adjp" attr="mannerPos" value="after" negateValue="yes"/>
 	</showWhen>
+
+   <showWhen id="swAdjPQualitativeClassifierYes">
+	  <whenValue element="typology"  attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="adjp" attr="adjectiveClassifier" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdjPQualitativeClassifierNo">
+	  <whenValue element="typology"  attr="classifier" value="yesAgr" negateValue="yes"/>
+	  <or/>
+	  <whenValue element="adjp" attr="adjectiveClassifier" value="yes" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swAdjPModifiersYesDegreeAndClassifierYes">
+	  <whenValue element="typology"  attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="adjp" attr="adjectiveDegreeClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="adjp" attr="modifiers" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdjPModifiersYesDegreeAndClassifierNo">
+	  <whenValue element="typology"  attr="classifier" value="yesAgr" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="adjp" attr="modifiers" value="yes"/>
+	  <or/>
+	  <whenValue element="adjp" attr="adjectiveDegreeClassifier" value="yes" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="adjp" attr="modifiers" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdjPModifiersYesMannerAndClassifierYes">
+	  <whenValue element="typology"  attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="adjp" attr="adjectiveDegreeClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="adjp" attr="modifiers" value="yesManner"/>
+   </showWhen>
+   <showWhen id="swAdjPModifiersYesMannerAndClassifierNo">
+	  <whenValue element="typology"  attr="classifier" value="yesAgr" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="adjp" attr="modifiers" value="yesManner"/>
+	  <or/>
+	  <whenValue element="adjp" attr="adjectiveDegreeClassifier" value="yes" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="adjp" attr="modifiers" value="yesManner"/>
+   </showWhen>
 </portion>

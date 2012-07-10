@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="NPMain" count="1/1">
+	<title>Simple and Possessed Nominal Phrases</title>
+	<introduction>Nominal phrases can be very complex, so they will be divided into five sections in this starter kit.  This section concentrates on those with common nouns as the lexical head.  We will consider modification by articles, demonstratives, quantifiers and degree words, adjective phrases, and possessors.   Nominal phrases headed by proper names are handled in <section number="6">Proper Names</section> and those headed by pronouns, demonstratives, and quantifiers are handled in <section number="7">Pronouns</section>.  The possibility of modification by pre/post-positional phrases is added in <section number="8">Pre/Post-positional Phrases</section> and modification by relative clauses is added in <section number="12">Relative Clauses</section>.</introduction>
+	<introduction id="NPPhraseStructureIntro" show="swNotPractical">Because there are so many positions needed for distinct sets of modifiers, we will use the expanded DP (determiner phrase) structure, rather than the simpler NP phrase structure.  These more complex tree structures will be built step-by-step from your answers to the questions here. You simply need to be aware that when you look at the tree structures generated, nominal phrases will have DPs on top of the NPs.  A simple English example is given here:
+<tree img="TreeDescriptions/PawsNPTree.png"/>
+It may be difficult to understand the need for the change in English, because articles, demonstratives and possessors are mutually exclusive, but in many languages all three can occur in a single nominal phrase.  <help href="../Help/Cbgbtext.doc#DPHypothesis">(Click here to see more on the DP hypothesis.)</help>
+		<br/>
+		<br/>
+The top level of the nominal phrase is occupied by those special degree words that modify the whole DP, such as <example>all</example>, <example>almost</example>, <example>just</example>, <example>only</example>, and <example>not</example>, that were discussed and marked on the first page of <section number="2">Quantifiers and QP</section>.  Nothing more needs to be done with those modifiers.
+	</introduction>
+	<introduction id="NPPracticalIntro" show="swPractical">The top level of the nominal phrase is occupied by those special degree words that modify the whole phrase, such as <example>all</example>, <example>almost</example>, <example>just</example>, <example>only</example>, and <example>not</example>, that were discussed and marked on the first page of <section number="2">Quantifiers and QP</section>.  Nothing more needs to be done with those modifiers.</introduction>
+	<form section="np" transparent="yes">
+		<br/>
+		<buttons>
+			<button id="NPMainBack" value="Back" goto="NPContents.htm"/>
+			<button id="NPMainNext" value="Next" goto="NPContents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
+	<showWhen id="swPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="False"/>
+	</showWhen>
+</page>

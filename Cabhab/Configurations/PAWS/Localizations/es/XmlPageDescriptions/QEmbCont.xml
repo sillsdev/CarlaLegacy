@@ -2,21 +2,21 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QEmbCont" count="7/9">
-	<title level="2">La preguntas - Las preguntas abiertas de la cláusula subordinada</title>
-	<form section="q">
-		<EnglishExample>
-			<exItem>Algunos ejemplos de las preguntas abiertas subordinadas, mostrando el desplazamiento requerido de una frase interrogativa,son: </exItem>
-			<exItem label="1.">I know who hit the ball. 'Sé quién golpeó el beísbol.'</exItem>
-			<exItem label="2.">I wonder when she will come. 'Me pregunto cuándo ella vendrá.'</exItem>
-			<exItem label="3.">I will ask what the boy wants. 'Preguntaré qué quiere el muchacho.'</exItem>
+	<title level="2">La preguntas - Las preguntas de respuesta abierta de la cláusula subordinada</title>
+   <introduction>En las preguntas de respuesta abierta de la cláusula subordinada en español, se requiere el desplazamiento a la izquierda de una frase interrogativa.  Algunos ejemplos de las preguntas de respuesta abierta de la cláusula subordinada son:</introduction>
+   <EnglishExample>
+			<exItem label="1.">Yo sé quién golpeó el beísbol.</exItem>
+			<exItem label="2.">Me pregunto cuándo ella vendrá.</exItem>
+			<exItem label="3.">Preguntaré qué quiere el muchacho.</exItem>
 		</EnglishExample>
-		<prompt>Escriba ejemplos similares de su idioma, independientemente de si el desplazamiento está requerido, aquí:</prompt>
+   <form section="q">
+	  <prompt>Escriba ejemplos similares de su lengua, independientemente si el desplazamiento está requerido, aquí:</prompt>
 		<textBox id="QEmbContentExample" dataItem="embContentExample" cols="50"/>
 		<br/>
 		<instruction id="QEmbContInstruction">If any main verbs used in these examples were not marked with the feature <feature>sentential</feature> above, go to the lexicon and add the feature <feature>sentential</feature> to the appropriate entries now.</instruction>
 		<radioGroup>
 			<groupName dataItem="embCont" default="no">RQEmbCont</groupName>
-			<prompt>En preguntas abiertas de la cláusula subordinada, ¿hay una o más indicadores o complementizadores de la pregunta que pueden presentarse además de las frases interrogativas (incluya los afijos o los clíticos en la contestación de esta pregunta)?</prompt>
+			<prompt>En preguntas de respuesta abierta de la cláusula subordinada, ¿hay una o más indicadores o complementizadores de la pregunta que pueden presentarse además de las frases interrogativas (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
 			<radio id="QEmbContYes" dataValue="yes">Sí</radio>
 			<radioGroup id="QEmbContWordTable" show="swQEmbContYes">
 				<groupName dataItem="embContWord" default="yes">RQEmbContWord</groupName>
@@ -32,7 +32,7 @@
 				<radioGroup id="QEmbContCliticTypeTable" show="swQEmbContWordNo">
 					<groupName dataItem="embContCliticAttaches" default="edge">RQEmbYNCliticAttaches</groupName>
 					<prompt>¿Dónde se une el clítico a la pregunta subordinada?</prompt>
-					<radio id="QEmbContCliticAttachesEdge" dataValue="edge">En el extremo</radio>
+					<radio id="QEmbContCliticAttachesEdge" dataValue="edge">A la orilla</radio>
 					<radio id="QEmbContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">Entre la frase interrogativa desplazada y el resto de la pregunta subordinada</radio>
 					<radio id="QEmbContCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
@@ -55,8 +55,8 @@
 			<radioGroup id="QEmbContPosTable" show="swQEmbContWordNotVSOFrontYes">
 				<groupName dataItem="embContPos" default="unknown" position="yesHead">RQEmbContPos</groupName>
 				<prompt>¿Dónde se presenta el indicador o complementizador de la pregunta con respecto al resto de la pregunta subordinada<span id="QEmbContFrontingSpan" show="swQContFrontYes"> (con excepción de una frase interrogativa desplazada)</span>?</prompt>
-				<radio id="QEmbContPosBefore" dataValue="before">Antes</radio>
-				<radio id="QEmbContPosAfter" dataValue="after">Después</radio>
+				<radio id="QEmbContPosBefore" dataValue="before">Antes de la pregunta subordinada</radio>
+				<radio id="QEmbContPosAfter" dataValue="after">Después de la pregunat subordinada</radio>
 				<radio id="QEmbContPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
 				<radio id="QEmbContPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
 				<radio id="QEmbContPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados en la misma oración</radio>
@@ -71,25 +71,25 @@
 			</radioGroup>
 			<radioGroup id="QEmbContRequiredTable" show="swQEmbContWordYes">
 				<groupName dataItem="embContRequired" default="no">RQEmbContRequired</groupName>
-				<prompt>¿Se requiere un indicador o complementizador de la pregunta en cada pregunta abierta subordinada?</prompt>
+				<prompt>¿Se requiere un indicador o complementizador de la pregunta en cada pregunta de respuesta abierta subordinada?</prompt>
 				<radio id="QEmbContRequiredYes" dataValue="yes">Sí</radio>
-				<radio id="QEmbContRequiredNo" dataValue="no">No, algunas preguntas abiertas subordinadas no requieren un indicador o complementizador de la pregunta</radio>
+				<radio id="QEmbContRequiredNo" dataValue="no">No, algunas preguntas de respuesta abierta subordinada no requieren un indicador o complementizador de la pregunta</radio>
 			</radioGroup>
 			<radio id="QEmbContNoAux" dataValue="noAux">No, pero un auxiliar se desplaza</radio>
 			<radioGroup id="QEmbContAuxPosTable" show="swQEmbContNoAux">
 				<groupName dataItem="embContAuxPos" default="unknown" position="yesHead">RQEmbContAuxPos</groupName>
 				<prompt>¿Dónde se presenta el auxiliar con respecto al resto de la pregunta subordinada?</prompt>
-				<radio id="QEmbContAuxPosBefore" dataValue="before">Antes</radio>
-				<radio id="QEmbContAuxPosAfter" dataValue="after">Después</radio>
+				<radio id="QEmbContAuxPosBefore" dataValue="before">Antes de la pregunat subordinada</radio>
+				<radio id="QEmbContAuxPosAfter" dataValue="after">Después de la pregunat subordinada</radio>
 			</radioGroup>
 			<radioGroup id="QEmbContAuxTable" show="swQEmbContNoAux">
 				<groupName dataItem="embContAuxRequired" default="no">RQEmbContAux</groupName>
-				<prompt>¿Requiere un auxiliar ser desplazado en cada pregunta abierta subordinada?</prompt>
+				<prompt>¿Requiere un auxiliar ser desplazado en cada pregunta de respuesta abierta subordinada?</prompt>
 				<radio id="QEmbContAuxRequiredYes" dataValue="yes">Sí</radio>
-				<radio id="QEmbContAuxRequiredNo" dataValue="no">No, algunas preguntas abiertas subordinadas no requieren a un auxiliar desplazado</radio>
+				<radio id="QEmbContAuxRequiredNo" dataValue="no">No, algunas preguntas de respuesta abierta subordinada no requieren a un auxiliar desplazado</radio>
 			</radioGroup>
-			<radio id="QEmbContNo" dataValue="no">No, no hay indicador ni auxiliar que desplaza a la izquierda en preguntas abiertas de la cláusula subordinada, apenas <span id="QEmbContNoFrontYesSpan" show="swQContFrontYes">el desplazamiento a la izquierda de una frase interrogativa y posiblemente </span>
-				<span id="QEmbContNoFrontOptionalSpan" show="swQContFrontOptional">el desplazamiento opcional de una frase interrogativa y posiblemente </span>una diferencia de la entonación o el tono o otra indicación que no es sintáctica</radio>
+			<radio id="QEmbContNo" dataValue="no">No, no hay indicador ni auxiliar que desplaza a la izquierda en preguntas de respuesta abierta de la cláusula subordinada, solamente <span id="QEmbContNoFrontYesSpan" show="swQContFrontYes">el desplazamiento a la izquierda de una frase interrogativa y posiblemente </span>
+				<span id="QEmbContNoFrontOptionalSpan" show="swQContFrontOptional">el desplazamiento opcional de una frase interrogativa y posiblemente </span>un cambio en la entonación o el tono u otra indicación que no es sintáctica</radio>
 		</radioGroup>
 		<instruction id="QEmbContHeadCliticInstruction" show="swQEmbContHeadClitic">In the lexicon, add the feature <feature>whQ</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbContEdgeCliticPrefixInstruction" show="swQEmbContEdgeCliticPrefix">In the lexicon, add the feature <feature>whQ_prefix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>

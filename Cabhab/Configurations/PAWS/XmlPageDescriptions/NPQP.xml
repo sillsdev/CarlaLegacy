@@ -2,23 +2,23 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPQP" count="1/1">
-    <title level="2">Nominal Phrases - QP Modifiers</title>
-    <introduction id="NPQPIntroNotPractical" show="swNotPractical">Next to be added to the nominal phrase as we work our way down the tree are quantifier phrases (QP), discussed earlier in <section number="2">Quantifiers and QP</section>.  This means we will be able to parse nominal phrases such as these in English:</introduction>
-    <introduction id="NPQPIntroPractical" show="swPractical">Next to be added to the nominal phrase are quantifier phrases, discussed earlier in <section number="2">Quantifiers and QP</section>.  This means we will be able to parse nominal phrases such as these in English:</introduction>    <EnglishExample>
-        <exItem label="1.">just those very few books.</exItem>
-        <exItem label="2.">all the boy's many dogs.</exItem>
-        <exItem label="3.">only the first one hundred boys.</exItem>
-    </EnglishExample>
-    <form section="np">
-        <prompt>Key your examples here:</prompt>
-        <textBox id="NPQPExample" dataItem="qpExample"/>
-        <br/>
-        <radioGroup>
-            <groupName dataItem="qpPos" default="unknown" position="yesSpec">RNPQPPos</groupName>
-            <prompt>Based on the data you keyed, where do quantifier phrases (including cardinal numbers but not ordinal numbers modifying a noun, because ordinals are considered adjectives) occur with respect to the noun?</prompt>
-            <radio id="NPQPPosBefore" dataValue="before">Before</radio>
-            <radio id="NPQPPosAfter" dataValue="after">After</radio>
-            <radio id="NPQPPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
+	<title level="2">Nominal Phrases - QP Modifiers</title>
+	<introduction id="NPQPIntroNotPractical" show="swNotPractical">Next to be added to the nominal phrase as we work our way down the tree are quantifier phrases (QP), discussed earlier in <section number="2">Quantifiers and QP</section>.  This means we will be able to parse nominal phrases such as these in English:</introduction>
+	<introduction id="NPQPIntroPractical" show="swPractical">Next to be added to the nominal phrase are quantifier phrases, discussed earlier in <section number="2">Quantifiers and QP</section>.  This means we are interested in nominal phrases such as these in English:</introduction>    <EnglishExample>
+		<exItem label="1.">just those very few books.</exItem>
+		<exItem label="2.">all the boy’s many dogs.</exItem>
+		<exItem label="3.">only the first one hundred boys.</exItem>
+	</EnglishExample>
+	<form section="np">
+		<prompt>Key examples of similar nominal phrases in your language here:</prompt>
+		<textBox id="NPQPExample" dataItem="qpExample"/>
+		<br/>
+		<radioGroup>
+			<groupName dataItem="qpPos" default="unknown" position="yesSpec">RNPQPPos</groupName>
+			<prompt>Based on the data you keyed, where do quantifier phrases (including cardinal numbers) occur with respect to the noun?</prompt>
+			<radio id="NPQPPosBefore" dataValue="before">Before</radio>
+			<radio id="NPQPPosAfter" dataValue="after">After</radio>
+			<radio id="NPQPPosEitherSide" dataValue="either">Either side, but not both sides at the same time</radio>
             <radio id="NPQPPosEitherOrBoth" dataValue="eitherOrBoth">Either side, or on both sides at the same time</radio>
             <radio id="NPQPPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the noun, or on both sides at the same time</radio>
             <radio id="NPQPPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the noun, or on both sides at the same time</radio>
@@ -49,10 +49,10 @@
         </radioGroup>
         <instruction id="NPQPPosEitherRestrictedNumBeforeInstruction" show="swNPQPPosEitherRestrictedNumBefore">The program will mark numbers with the default feature <feature>DP-initial</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
         <instruction id="NPQPPosEitherRestrictedNumAfterInstruction" show="swNPQPPosEitherRestrictedNumAfter">The program will mark numbers with the default feature <feature>DP-final</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
-        <instruction id="NPQPPosEitherRestrictedNumNoInstruction" show="swNPQPPosEitherRestrictedNumNo">In the lexicon, mark those quantifiers or numbers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier or number which can occur on either side.</instruction>
-        <br/>
-        <instruction id="NPQPNumberMarkingInstruction" show="swNPQPNumberMarking">
-To handle the number marking, we will assume that all numbers are plural by default.  Therefore, only the number "one" needs to be marked with the feature <feature>singular</feature>.  If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the number "two".
+		<instruction id="NPQPPosEitherRestrictedNumNoInstruction" show="swNPQPPosEitherRestrictedNumNo">In the lexicon, mark those quantifiers or numbers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier or number which can occur on either side.</instruction>
+		<br/>
+		<instruction id="NPQPNumberMarkingInstruction" show="swNPQPNumberMarking">
+		   To handle the number marking, we will assume that all numbers are plural by default.  Therefore, only the number “one” needs to be marked with the feature <feature>singular</feature>.  If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the number “two”.
 <br/>
 For other quantifiers, in the lexicon:
 <ul>
@@ -60,10 +60,10 @@ For other quantifiers, in the lexicon:
                 <li>Mark the quantifiers that signify the whole nominal phrase is plural with the feature <feature>plural</feature>.  This should be most of the quantifiers.</li>
                 <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate quantifiers, if any.
                 </li>
-            </ul>
-        </instruction>
-        <instruction id="NPQPNumberAgreementInstruction" show="swNPQPNumberAgreement">
-To handle the number agreement, we will assume that all numbers are plural by default.  Therefore, only the number "one" needs to be marked with the feature <feature>singular</feature>.  If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the number "two".
+			</ul>
+		</instruction>
+		<instruction id="NPQPNumberAgreementInstruction" show="swNPQPNumberAgreement">
+		   To handle the number agreement, we will assume that all numbers are plural by default.  Therefore, only the number “one” needs to be marked with the feature <feature>singular</feature>.  If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the number “two”.
 <br/>
 For other quantifiers, in the lexicon:
 <ul>
@@ -81,17 +81,17 @@ To handle animacy agreement:
                 <li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
             </ul>
         </instruction>
-        <instruction id="NPQPAgreementGenderInstruction" show="swNPAgreementGenderYes">
+		<instruction id="NPQPAgreementGenderInstruction" show="swNPAgreementGenderYes">
 Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any numbers or quantifiers (or the appropriate affixes) that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.      </instruction>
-        <instruction id="NPQPAgreementClassInstruction" show="swNPAgreementClassYes">
-To handle class marking and agreement, in the lexicon:
-<ul>
-                <li>Mark the quantifiers or numbers that can only go with a particular class with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 99.</li>
-                <li>It may be the case that the same affixes that mark the class number on nouns are also used on numbers and/or quantifiers.  If this is the case in your language, you should have already added the class feature to the affixes, so all the words will automatically come from the morphological parser with the class number marked.</li>
-            </ul>
-        </instruction>
-        <br/>
-        <buttons>
+		<instruction id="NPQPAgreementClassInstruction" show="swNPAgreementClassYes">
+		   To handle class marking and agreement:
+		   <ul>
+			  <li>It is most likely the case that the same affixes that mark the class number or type on nouns are also used on numbers and/or quantifiers.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">Overall Typology - Classifiers</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
+			  <li>Any quantifiers or numbers which can only appear with a certain class, yet do not have an affix which marks the class, will require marking of the class feature on the particular lexical item in the lexicon.   Mark those elements with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">Overall Typology - Classifiers</section>.</li>
+		   </ul>
+		</instruction>
+		<br/>
+		<buttons>
             <button id="NPQPBack" value="Back" goto="NPContents.htm"/>
             <button id="NPQPNext" value="Next" goto="NPContents.htm"/>
         </buttons>

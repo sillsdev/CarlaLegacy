@@ -4,11 +4,18 @@
   <section1 id="sCoord">
 	  <secTitle>Las construcciones coordinativas</secTitle>
 	<p>
-<xsl:text>Esta sección considera construcciones coordinativas básicas donde una conjunción se presenta entre dos oraciones conjuntivas que estén en el mismo nivel. Esto incluye la coordinación en el nivel de la oración y en la frase de verbo, la frase nominal, la frase preposicional y/o posposicional y la frase del adjetivo.</xsl:text>
+<xsl:text>Esta sección empieza con las construcciones coordinativas básicas donde una conjunción se presenta entre dos oraciones conjuntivas. Esta incluye la coordinación a nivel de la oración y de la frase de verbo, la frase nominal, la frase </xsl:text>
+<xsl:choose>
+		   <xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
+		   <xsl:when test="//pp/@pPos='after'">posposicional</xsl:when>
+		   <xsl:when test="//pp/@pPos='both'">preposicional y posposicional</xsl:when>
+		   <xsl:when test="//pp/@pPos='unknown'">preposicional y/o posposicional</xsl:when>
+		</xsl:choose>
+<xsl:text> y la frase adjetival.  Entonces, para el nivel de la frase nominal solamente, los elementos consecutivos  y aposiciones serán descritas. Finalmente, las construcciones comparativas que consisten en oraciones completas serán discutidas. (Los comparativos más cortos fueron analizados en la sección </xsl:text>
+<sectionRef sec="sIPComparatives" />
+<xsl:text>.)</xsl:text>
 </p>
-	  <p>
-<object type="tComment">Si su idioma tiene clases más complejas de construcciones coordinativas, tales como por ejemplo listas sin conjunciones entre cada oración conjuntiva, partes que falta de una de las oraciones conjuntivas, appositivos o comparativos, usted puede agregar la descripción y ejemplos apropiados en esta sección.</object>
-</p>
+
 	  <p>
 <xsl:text>En español, las conjunciones que se pueden utilizar entre dos oraciones conjuntivas son </xsl:text>
 <langData>
@@ -25,7 +32,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>pero</langData>
-<xsl:text> y </xsl:text>
+<xsl:text> e </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -40,7 +47,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ni...ni</langData>
-<xsl:text> construcciones. Algunos idiomas también utilizan una palabra que significa </xsl:text>
+<xsl:text> construcciones. Algunas lenguas también utilizan una palabra que significa </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -59,7 +66,7 @@
 </xsl:choose>
 <xsl:text> hay las conjunciones siguientes que se utilizan entre las oraciones conjuntivas:</xsl:text>
 </p>
-			<example num="xCoord.12">
+			<example num="xCoord.10">
 <table border="1">
 					<tr>
 						<th>
@@ -159,7 +166,7 @@
 </xsl:otherwise>
 </xsl:choose>
 					<xsl:variable name="sExampleValue2">
-<xsl:value-of select="translate(string(//coord/nor),'.','')" />
+<xsl:value-of select="translate(string(//coord/andOr),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
 <xsl:choose>
@@ -181,7 +188,7 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>ni</xsl:text>
+							<xsl:text>y/o</xsl:text>
 						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
@@ -195,13 +202,13 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>ni</xsl:text>
+							<xsl:text>y/o</xsl:text>
 						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 					<xsl:variable name="sExampleValue3">
-<xsl:value-of select="translate(string(//coord/andOr),'.','')" />
+<xsl:value-of select="translate(string(//coord/but),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3" select="string-length(normalize-space($sExampleValue3))" />
 <xsl:choose>
@@ -223,7 +230,7 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>y/o</xsl:text>
+							<xsl:text>pero</xsl:text>
 						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
@@ -237,13 +244,13 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>y/o</xsl:text>
+							<xsl:text>pero</xsl:text>
 						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 					<xsl:variable name="sExampleValue4">
-<xsl:value-of select="translate(string(//coord/but),'.','')" />
+<xsl:value-of select="translate(string(//coord/with),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4" select="string-length(normalize-space($sExampleValue4))" />
 <xsl:choose>
@@ -265,7 +272,7 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>pero</xsl:text>
+							<xsl:text>con</xsl:text>
 						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
@@ -279,13 +286,13 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>pero</xsl:text>
+							<xsl:text>con</xsl:text>
 						</td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 					<xsl:variable name="sExampleValue5">
-<xsl:value-of select="translate(string(//coord/with),'.','')" />
+<xsl:value-of select="translate(string(//coord/other),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5" select="string-length(normalize-space($sExampleValue5))" />
 <xsl:choose>
@@ -303,48 +310,6 @@
 </xsl:with-param>
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength5" />
-</xsl:with-param>
-<xsl:with-param name="columnsBefore" />
-<xsl:with-param name="columnsAfter">
-<td align="left">
-							<xsl:text>con</xsl:text>
-						</td>
-</xsl:with-param>
-<xsl:with-param name="bHandleRowSpans" select="'Y'" />
-<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
-</xsl:call-template>
-</xsl:when>
-<xsl:otherwise>
-<tr>
-<td>
-<langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
-</td>
-<td align="left">
-							<xsl:text>con</xsl:text>
-						</td>
-</tr>
-</xsl:otherwise>
-</xsl:choose>
-					<xsl:variable name="sExampleValue6">
-<xsl:value-of select="translate(string(//coord/other),'.','')" />
-</xsl:variable>
-<xsl:variable name="iExampleLength6" select="string-length(normalize-space($sExampleValue6))" />
-<xsl:choose>
-<xsl:when test="$iExampleLength6 != 0 and $sExampleValue6 != ' '">
-<xsl:variable name="sCalculatedRows">
-<xsl:call-template name="CalculateRows">
-<xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue6" />
-</xsl:with-param>
-</xsl:call-template>
-</xsl:variable>
-<xsl:call-template name="OutputColExamples">
-<xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue6" />
-</xsl:with-param>
-<xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength6" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
@@ -380,7 +345,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> hay las conjunciones siguientes que se utilizan inicialmente antes de la primera oración conjuntiva en </xsl:text>
+<xsl:text> hay las conjunciones siguientes que se utilizan solamente en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -392,7 +357,7 @@
 </xsl:attribute>ni...ni</langData>
 <xsl:text> construcciones:</xsl:text>
 </p>
-			<example num="xCoord.16">
+			<example num="xCoord.14">
 <table border="1">
 					<tr>
 						<th>
@@ -472,7 +437,7 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>ni (ningunos)</xsl:text>
+							<xsl:text>ni (ningunos) - elemento inicial</xsl:text>
 						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
@@ -486,31 +451,150 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>ni (ningunos)</xsl:text>
+							<xsl:text>ni (ningunos) - elemento inicial</xsl:text>
 						</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+				   <xsl:variable name="sExampleValue2">
+<xsl:value-of select="translate(string(//coord/nor),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+						 <xsl:text>ni - elemento medial</xsl:text>
+					  </td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+						 <xsl:text>ni - elemento medial</xsl:text>
+					  </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 				</table>
 </example>
-		<section2 id="sCoordSentence">
-			<secTitle>Coordinación del nivel de la oración</secTitle>
-			<p>
-<xsl:text>La coordinación del nivel de la oración incluye declarativos y preguntas y otros  tipos de oraciones. Algunos ejemplos en español son: </xsl:text>
+
+	 <p>
+<xsl:text>En </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, </xsl:text>
+<xsl:choose>
+		<xsl:when test="//coord/@conjWord='yes'">todas las conjunciones antedichas se escriben como palabras independientes entre las oraciones conjuntivas.</xsl:when>
+		<xsl:when test="//coord/@conjWord='some'">algunas de las conjunciones antedichas se escriben como palabras independientes entre las oraciones conjuntivas, pero otras se unen </xsl:when>
+		<xsl:when test="//coord/@conjWord='no'">todas las conjunciones antedichas se unen </xsl:when>
+	 </xsl:choose>
+<xsl:if test="normalize-space(//coord/@conjWord)!='yes'">
+<xsl:choose>
+		   <xsl:when test="//coord/@conjPos='before'">al principio de la segunda oración conjuntiva. </xsl:when>
+		   <xsl:when test="//coord/@conjPos='after'">al final de la primera oración conjuntiva. </xsl:when>
+		   <xsl:when test="//coord/@conjPos='either'">al final de la primera oración conjuntiva o al principio de la segunda oración conjuntiva, según lo indicado por los guiones en los cuadros arriba. </xsl:when>
+		   <xsl:when test="//coord/@conjPos='other'">como proclíticos o enclíticos, según lo indicado por los guiones en los cuadros arriba, a un cierto lugar dentro de la construcción coordinativa con excepción del final de la primera oración conjuntiva o del principio de la segunda oración conjuntiva.</xsl:when>
+		</xsl:choose>
+</xsl:if>
 </p>
-			<ol>
-				<li>
-					<xsl:text>Juan fue a la oficina esta mañana pero él no volvió.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>¿Cuándo hizo el correo viene y dónde está mi paquete? </xsl:text>
-				</li>
-				<li>
-					<xsl:text>O vendré a la fiesta o enviaré a mi hermana.</xsl:text>
-				</li>
-			</ol>
+	 <xsl:if test="normalize-space(//coord/@noConj)='yes'">
+<p>
+<xsl:text>Además de usar estas conjunciones, dos elementos pueden también ser coordinativas sin ninguna conjunción entre ellas en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, al menos en los niveles de la frase nominal y la oración.</xsl:text>
+</p>
+</xsl:if>
+	 <xsl:if test="normalize-space(//coord/@noConj)='no'">
+<p>
+<xsl:text>Cuando solamente dos elementos se unen en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, una de las conjunciones antedichas debe presentarse.</xsl:text>
+</p>
+</xsl:if>
+
+
+	 <section2 id="sCoordLevels">
+		<secTitle>Niveles de coordinación</secTitle>
+
+		<p>
+<xsl:text>Ejemplos para los varios niveles de coordinación se presentan en las secciones siguientes.</xsl:text>
+</p>
+		<section3 id="sCoordSentence">
+			<secTitle>Coordinación a nivel de la oración</secTitle>
+		   <p>
+<xsl:text>En general, la coordinación está entre categorías similares. Para la coordinación a nivel de la oración, esto significa que dos oraciones declarativas pueden ser coordinativas, como en </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Juan fue a la oficina esta mañana y él acaba de volver</langData>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>O vendré a la fiesta o enviaré a mi hermana</langData>
+<xsl:text>, o dos preguntas, como en </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>¿Cuándo vino el correo y dónde está mi paquete?</langData>
+<xsl:text>  Cuando la conjunción significa </xsl:text>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>‘pero’</xsl:text>
+</gloss>
+<xsl:text>, una de las oraciones conjuntivas debe ser negativa, como en </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Juan fue a la oficina esta mañana pero él no volvió</langData>
+<xsl:text>.</xsl:text>
+</p>
+
 			<p>
-<xsl:text> Algunos ejemplos de la coordinación del nivel de la oración en </xsl:text>
+<xsl:text> Algunos ejemplos de la coordinación a nivel de la oración en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -521,7 +605,7 @@
 </xsl:choose>
 <xsl:text> son: </xsl:text>
 </p>
-			<example num="xCoord.CoordSentence.10">
+			<example num="xCoord.CoordLevels.CoordSentence.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/sentExample" />
 </xsl:variable>
@@ -535,7 +619,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//coord/sentExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xCoord.CoordSentence.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xCoord.CoordLevels.CoordSentence.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -544,7 +628,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xCoord.CoordSentence.10.1</xsl:text>
+<xsl:text>xCoord.CoordLevels.CoordSentence.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -564,23 +648,28 @@
 <sectionRef sec="sAdvCl" />
 <xsl:text> para considerar los ejemplos de palabras o cláusulas de introducción, designadas a veces al igual que coordinación, y los ejemplos de las cláusulas adverbiales, que son subordinación.</xsl:text>
 </p>
-</section2>
-		<section2 id="sCoordVP">
+</section3>
+		<section3 id="sCoordVP">
 			<secTitle>Coordinación de la frase de verbo</secTitle>
-			<p>
-<xsl:text>La coordinación de la frase de verbo se ejemplifica en las oraciones en español siguientes:  </xsl:text>
+		   <p>
+<xsl:text>La coordinación de la frase de verbo implica dos frases de verbo completas que compartan un solo sujeto. La coordinación de la frase de verbo se ejemplifica en las oraciones en español siguientes: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Guillermo corrió la carrera y ganó el premio</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Susana irá a la fiesta o enviará a su hermana</langData>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Susana ni irá a la fiesta ni enviará a su hermana</langData>
+<xsl:text>.</xsl:text>
 </p>
-			<ol>
-				<li>
-					<xsl:text>Guillermo corrió la carrera y ganó el premio.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Susana irá a la fiesta o enviará a su hermana.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Susana ni irá a la fiesta ni enviaré a su hermana.</xsl:text>
-				</li>
-			</ol>
+
 			<p>
 <xsl:text> Algunos ejemplos de la coordinación de la frase de verbo en </xsl:text>
 <xsl:choose>
@@ -593,7 +682,7 @@
 </xsl:choose>
 <xsl:text> son: </xsl:text>
 </p>
-			<example num="xCoord.CoordVP.10">
+			<example num="xCoord.CoordLevels.CoordVP.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/vpExample" />
 </xsl:variable>
@@ -607,7 +696,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//coord/vpExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xCoord.CoordVP.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xCoord.CoordLevels.CoordVP.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -616,7 +705,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xCoord.CoordVP.10.1</xsl:text>
+<xsl:text>xCoord.CoordLevels.CoordVP.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -631,29 +720,45 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-</section2>
-		<section2 id="sCoordDP">
+</section3>
+		<section3 id="sCoordDP">
 			<secTitle>Coordinación de la frase nominal</secTitle>
-			<p>
-<xsl:text>Las frases nominales coordinadas generalmente pueden presentarse en todas las posiciones donde una frase nominal normal puede presentarse, por ejemplo sujetos, objetos, objetos indirectos, y objetos de preposiciones. La coordinación de la frase nominal se ejemplifica en las oraciones en español siguientes: </xsl:text>
+		<p>
+<xsl:text>Las frases nominales coordinadas generalmente pueden presentarse en todas las posiciones donde una frase nominal normal puede presentarse, por ejemplo sujetos, objetos, objetos indirectos y objetos de </xsl:text>
+<xsl:choose>
+				 <xsl:when test="//pp/@pPos='before'">preposiciones</xsl:when>
+				 <xsl:when test="//pp/@pPos='after'">posposiciones</xsl:when>
+				 <xsl:when test="//pp/@pPos='both'">preposiciones y posposiciones</xsl:when>
+				 <xsl:when test="//pp/@pPos='unknown'">preposiciones y/o posposiciones</xsl:when>
+			  </xsl:choose>
+<xsl:text>. La coordinación de la frase nominal se ejemplifica en las oraciones en español siguientes: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Guillermo corrió en el maratón de Boston y las Olimpiadas</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Mi hermana o yo estará allí</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Ni su hermana ni mi hermano estará allí</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Vendré al ensayo pero no a la cena</langData>
+<xsl:text> and </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Vendré a la boda y/o la recepción</langData>
+<xsl:text>.</xsl:text>
 </p>
-			<ol>
-				<li>
-					<xsl:text>Guillermo corrió en el maratón de Boston y las Olimpiadas. </xsl:text>
-				</li>
-				<li>
-					<xsl:text>Mi hermana o yo estará allí.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Ni mi hermana ni yo estará allí.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Vendré al ensayo pero no a la cena.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Vendré a la boda y/o la recepción.</xsl:text>
-				</li>
-			</ol>
+
 			<p>
 <xsl:text>Algunos ejemplos de la coordinación de la frase nominal en </xsl:text>
 <xsl:choose>
@@ -666,7 +771,7 @@
 </xsl:choose>
 <xsl:text> son: </xsl:text>
 </p>
-			<example num="xCoord.CoordDP.10">
+			<example num="xCoord.CoordLevels.CoordDP.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/dpExample" />
 </xsl:variable>
@@ -680,7 +785,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//coord/dpExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xCoord.CoordDP.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xCoord.CoordLevels.CoordDP.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -689,7 +794,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xCoord.CoordDP.10.1</xsl:text>
+<xsl:text>xCoord.CoordLevels.CoordDP.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -704,8 +809,8 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-		</section2>
-	  <section2 id="sCoordPP">
+		</section3>
+	  <section3 id="sCoordPP">
 		  <secTitle>
 		  <xsl:choose>
 				<xsl:when test="//pp/@pPos='before'">Coordinación de la frase preposicional</xsl:when>
@@ -714,20 +819,31 @@
 				<xsl:when test="//pp/@pPos='unknown'">Coordinación de la frase preposicional y/o posposcional</xsl:when>
 			</xsl:choose>
 			</secTitle>
-		  <p>
-<xsl:text>Algunos ejemplos en español de la coordinación de la frase preposicional son: </xsl:text>
+		 <p>
+<xsl:text>Normalmente sea posible para frases </xsl:text>
+<xsl:choose>
+			   <xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
+			   <xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
+			   <xsl:when test="//pp/@pPos='both'">preposicionales o posposicionales</xsl:when>
+			   <xsl:when test="//pp/@pPos='unknown'">preposicionales o posposicionales</xsl:when>
+			</xsl:choose>
+<xsl:text> coordinativas presentarse en todas las posiciones en que una frase de este tipo puede presentarse.  Algunos ejemplos en español de la coordinación de la frase preposicional son: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Guillermo corrió a través del bosque y sobre el puente</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Vendré con usted al ensayo pero no a su hogar</langData>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Vendré o a la boda o a la recepción</langData>
+<xsl:text>.</xsl:text>
 </p>
-		  <ol>
-			  <li>
-				  <xsl:text>Guillermo corrió a través del bosque y sobre el puente.</xsl:text>
-			  </li>
-			  <li>
-				  <xsl:text>Vendré con usted al ensayo pero no a su hogar.</xsl:text>
-			  </li>
-			  <li>
-				  <xsl:text>Vendré o a la boda o a la recepción.</xsl:text>
-			  </li>
-		  </ol>
 		  <p>
 <xsl:text>Algunos ejemplos de la coordinación de las frases </xsl:text>
 <xsl:choose>
@@ -747,7 +863,7 @@
 </xsl:choose>
 <xsl:text> son:</xsl:text>
 </p>
-		  <example num="xCoord.CoordPP.10">
+		  <example num="xCoord.CoordLevels.CoordPP.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/coordppExample" />
 </xsl:variable>
@@ -761,7 +877,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//coord/coordppExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xCoord.CoordPP.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xCoord.CoordLevels.CoordPP.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -770,7 +886,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xCoord.CoordPP.10.1</xsl:text>
+<xsl:text>xCoord.CoordLevels.CoordPP.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -785,25 +901,39 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-	  </section2>
-		<section2 id="sCoordAdj">
-			<secTitle>Coordinación de la frase del adjetivo</secTitle>
-			<p>
-<xsl:text>La coordinación del adjetivo se ejemplifica en las oraciones en español siguientes: </xsl:text>
+	  </section3>
+		<section3 id="sCoordAdj">
+			<secTitle>Coordinación de la frase adjetival</secTitle>
+		   <p>
+<xsl:text>Finalmente, los adjetivos o frases adjetivales usualmente pueden ser coordinativas, cuando modifican un sustantivo, por ejemplo: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>El perro blanco y negro pertenece a mi hijo</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Mi hermana quiere una vela roja o azul</langData>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Ese parece un dolor terriblemente doloroso y muy peligroso en su pierna</langData>
+<xsl:text>, y también cuando actúan como el adjetivo predicativo en una oración copulativo, como en: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>El lesión en su pierna es muy feo y doloroso y peligroso</langData>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Este material siente muy liso y sedoso</langData>
+<xsl:text>.</xsl:text>
 </p>
-			<ol>
-				<li>
-					<xsl:text>El perro blanco y negro pertenece a mi hijo.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>El lesión en su pierna es muy feo y doloroso y peligroso.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>Mi hermana quiere una vela roja o azul.</xsl:text>
-				</li>
-			</ol>
 			<p>
-<xsl:text>Algunos ejemplos de la coordinación del adjetivo o la frase del adjetivo en </xsl:text>
+<xsl:text>Algunos ejemplos de la coordinación del adjetivo o la frase adjetival en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -814,7 +944,7 @@
 </xsl:choose>
 <xsl:text> son: </xsl:text>
 </p>
-			<example num="xCoord.CoordAdj.10">
+			<example num="xCoord.CoordLevels.CoordAdj.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//coord/adjExample" />
 </xsl:variable>
@@ -828,7 +958,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//coord/adjExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xCoord.CoordAdj.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xCoord.CoordLevels.CoordAdj.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -837,7 +967,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xCoord.CoordAdj.10.1</xsl:text>
+<xsl:text>xCoord.CoordLevels.CoordAdj.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -852,7 +982,369 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-</section2>
+		</section3>
+	 </section2>
+
+	 <section2 id="sCoordList">
+		<secTitle>Elementos consecutivos</secTitle>
+		<p>
+<xsl:text>Los elementos consecutivos consisten en tres o más artículos que están coordinados para formar una sola frase nominal. Los elementos iniciales son separados normalmente por comas y una conjunción se presenta antes del elemento final en la lista, aunque existen diversas posibilidades. Algunos ejemplos en español de frases nominales con elementos consecutivos son: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>[Juan, Guillermo, Susana y María]</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>[Juan, Guillermo, Susana y/o María]</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>[Juan y Guillermo o Susana y María]</langData>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>[un gato, dos perros y un pollo pero no un mono]</langData>
+<xsl:text>.</xsl:text>
+</p>
+
+		<p>
+<xsl:text>Algunos ejemplos de elementos consecutivos en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+		<example num="xCoord.CoordList.8">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//coord/listExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//coord/listExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//coord/listExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//coord/listExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xCoord.CoordList.8</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xCoord.CoordList.8.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+	 </section2>
+
+	 <section2 id="sCoordAppositive">
+		<secTitle>Aposiciones</secTitle>
+		<p>
+<xsl:text>Las aposiciones también forman una sola frase nominal.  Las aposiciones consisten normalmente en un nombre seguido por una coma y entonces una descripción también seguida por una coma o el orden puede ser invertido. Algunos ejemplos en español son: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>[George Washington, el primer Presidente de los Estados Unidos,]</langData>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>[Mi hermano, Jaime,]</langData>
+<xsl:text>.</xsl:text>
+</p>
+		<p>
+<xsl:text>Algunos ejemplos de frases nominales que contienen aposiciones en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+		<example num="xCoord.CoordAppositive.8">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//coord/appositiveExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//coord/appositiveExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//coord/appositiveExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//coord/appositiveExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xCoord.CoordAppositive.8</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xCoord.CoordAppositive.8.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+	 </section2>
+
+	 <section2 id="sCoordComparative">
+		<secTitle>Comparativos</secTitle>
+		<p>
+<xsl:text>Esta sección considera los comparativos que tienen dos oraciones alrededor de la palabra comparativa, aunque en la segunda oración puede faltar el adjetivo. Cubrimos ya los comparativos que son un subtipo de oraciones copulativas en la sección  </xsl:text>
+<sectionRef sec="sIPComparatives" />
+<xsl:text>.
+		   Como los comparativos más cortos, éstos comparan las calidades o las acciones de los sujetos de las oraciones y pueden tener un verbo copulativo o un verbo de percepción o un verbo de acción, junto con un adjetivo que sea modificado por una palabra o un afijo de grado. Algunos ejemplos en inglés son:
+		</xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>John is more handsome than Bill is</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Juan es más hermoso que Guillermo’</xsl:text>
+</gloss>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Sue runs much faster than Mary can run</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Susana corre mucho más rápido de lo que María puede correr’</xsl:text>
+</gloss>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>David appears lots taller than Michael does</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘David parece mucho más alto que Miguel’</xsl:text>
+</gloss>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Mary looks prettier than Julie looks</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘María se ve mucho más bonita que Julia’</xsl:text>
+</gloss>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>John seems more certain of his answers than Sue seems</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Juan parece más seguro de sus respuestas que Susana’</xsl:text>
+</gloss>
+<xsl:text>.</xsl:text>
+</p>
+		<p>
+<xsl:text>Algunas lenguas no permiten que ninguna parte de la segunda oración sea omitida, más bien aparecen dos oraciones completas, las cuales van a ser comparadas. También, algunas lenguas que no tienen una palabra comparativa independiente que significa </xsl:text>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>‘than (que)’</xsl:text>
+</gloss>
+<xsl:text> en las construcciones comparativas más cortas, simplemente tendrá las dos partes de la oración seguida una de la otra en esta construcción.
+		</xsl:text>
+</p>
+		<p>
+<xsl:text>En estas construcciones comparativas más completas, </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:choose>
+		   <xsl:when test="//coord/@gap='yes'"> permite que el adjetivo falte en la segunda parte,como en los ejemplos de español y inglés. </xsl:when>
+		   <xsl:when test="//coord/@gap='no'"> require que la oración completa se repite después del comparativo. </xsl:when>
+		</xsl:choose>
+<xsl:text>En </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:choose>
+			  <xsl:when test="//ip/@comparative='yes'"> hay una palabra comparativa que significa ‘que’ que utiliza en ambos los comparativos cortos y más completos, como muestra en el cuadro suguiente.</xsl:when>
+			  <xsl:when test="//ip/@comparative='no'"> no hay una palabra comparativa que significa ‘que’, entonces este tipo de comparativo simplemente tendrá las dos partes de la oración seguida una de la otra.</xsl:when>
+		   </xsl:choose>
+</p>
+
+		<xsl:if test="normalize-space(//ip/@comparative)='yes'">
+<example num="xCoord.CoordComparative.10">
+<table border="1">
+			  <tr>
+				 <th>Palabra Comparativa</th>
+				 <th>Glosa</th>
+			  </tr>
+			  <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//ip/comparativeWordExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>que</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>que</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		   </table>
+</example>
+</xsl:if>
+
+		<p>
+<xsl:text>Algunos ejemplos de las construcciones comparativas más completas en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+		<example num="xCoord.CoordComparative.14">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//coord/comparativeSentExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//coord/comparativeSentExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//coord/comparativeSentExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//coord/comparativeSentExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xCoord.CoordComparative.14</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xCoord.CoordComparative.14.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+	 </section2>
   </section1>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </xsl:template>
 </xsl:stylesheet>

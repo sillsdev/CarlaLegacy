@@ -43,6 +43,7 @@ function copyFiles() {
 	sTemp = "es";
 
 	window.external.CopyFiles("Localizations/" + sTemp + "/HTMs", "HTMs");
+	window.external.CopyFiles("Localizations/" + sTemp + "/Transforms", "Transforms");
 	window.external.CopyFiles("Localizations/" + sTemp + "/XmlPageDescriptions", "XmlPageDescriptions");
 	window.external.CopyFile("Localizations/" + sTemp + "/LocalizedItems_" + sTemp + ".xml", "LocalizedItems.xml");
 	window.external.SaveInterfaceLanguage();

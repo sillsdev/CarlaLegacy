@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
-<page id="OverallTypology" count="1/1">
+<page id="OverallTypology" count="1/3">
 	<title>La tipología</title>
-	<introduction>Las respuestas dadas a estas preguntas serán utilizadas para fijar los datos predeterminados para las preguntas sobre la estructura de frase. Si en cualquier momento, usted no sabe la respuesta a una pregunta particular, usted puede aceptar el valor predeterminado para el orden de las palabras básico de su idioma.  Después,<span id="TypologyNotPractical" show="swNotPractical"> pruebe las estructuras de frase con sus datos y vaya detrás y </span>cambia sus respuestas de acuerdo con lo necesitado.<br/><br/>
-		Observe que la gramática también contendrá algunas declaraciones basadas en las respuestas predeterminadas hasta que usted las cambie, pero las declaraciones sobre la posición de elementos específicos en la estructura de frase tendrán un _____ para indicar que la información no se ha incorporado todavía. Por lo tanto, los comentarios introductorios en el relato de la gramática pueden no ser completamente correctos o completos para su idioma hasta que usted haya terminado las secciones posteriores.
+   <introduction>Las respuestas dadas a estas preguntas serán utilizadas para fijar los datos predeterminados para las preguntas sobre la estructura de frase. Si en cualquier momento, usted no sabe la respuesta a una pregunta particular, usted puede aceptar el valor predeterminado del orden básico de la oración de su lengua.  Después,<span id="TypologyNotPractical" show="swNotPractical"> pruebe las estructuras de frase con sus datos y vaya detrás y</span> cambia sus respuestas según vaya necesitando.<br/><br/>
+	  Observe que la gramática también contendrá algunas declaraciones basadas en las respuestas predeterminadas hasta que usted las cambie, pero las declaraciones sobre la posición de elementos específicos en la estructura de frase tendrán un _____ para indicar que la información no se ha incorporado todavía. Por lo tanto, los comentarios introductorios en la descripción  de la gramática pueden no ser completamente correctos o completos para su lengua hasta que usted haya terminado las secciones posteriores.
 </introduction>
-	<instruction>Piense en una o más oraciones transitivas básicas en su idioma. Éstos deben estar en el orden de las palabras normal sin características especiales, tales como foco, asunto, voz pasiva, imperativo, interrogativo, o negación. Además, escoja las oraciones con nombres propios u oraciones nominales simples en las posiciones del objeto sujeto y directo, algo que pronombres. (No escribe los soportes y los subíndices como el ejemplo tiene - éstos son para su información solamente.)</instruction>
+   <instruction>Piense en una o más oraciones transitivas básicas en su lengua. Éstos deben estar en el orden básico de la oración sin características especiales, tales como foco, tópico, voz pasiva o otros cambios de voz, imperativo, interrogativo, o negación. Además, escoja las oraciones con nombres propios o frases nominales simples en las posiciones del sujeto y objeto directo, en lugar de pronombres.  (No escriba nada sobre las oraciones siguientes - éstas son para su información solamente.)</instruction>
 	<EnglishExample>
-		<exItem label="1.">[Juan]<sub>S</sub> [golpea]<sub>V</sub> [el beísbol]<sub>O</sub>.</exItem>
+		<exItem label="1.">[Juan]<sub>S</sub> [golpea]<sub>V</sub> [la pelota]<sub>O</sub>.</exItem>
 		<exItem label="2.">[El perro]<sub>S</sub> [enterró]<sub>V</sub> [un hueso]<sub>O</sub>.</exItem>
 	</EnglishExample>
 	<form section="typology">
-		<prompt>Escriba sus ejemplos aquí:</prompt>
+		<prompt>Escriba ejemplos aquí:</prompt>
 		<textBox id="OTExample" dataItem="example" cols="50"/>
 		<radioGroup>
 			<groupName dataItem="wordOrder" default="SVO">RTypology</groupName>
-			<prompt>De acuerdo con estas oraciones, ¿cuál es el orden de las palabras normal de su idioma?</prompt>
+		   <prompt>De acuerdo con estas oraciones, ¿cuál es el orden básico en la oración de su lengua?</prompt>
 			<radio id="OTSVO" dataValue="SVO">Sujeto-Verbo-Objeto</radio>
 			<radio id="OTSOV" dataValue="SOV">Sujeto-Objeto-Verbo</radio>
 			<radio id="OTVSO" dataValue="VSO">Verbo-Sujeto-Objeto</radio>
@@ -27,7 +27,7 @@
 		<br/>
 		<buttons>
 			<button id="OTBack" value="Back" goto="Contents.htm"/>
-			<button id="OTNext" value="Next" goto="Contents.htm"/>
+			<button id="OTNext" value="Next" goto="Case.xml"/>
 		</buttons>
 	</form>
 	<showWhen id="swNotPractical">

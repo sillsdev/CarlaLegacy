@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="IPCatMap" count="1/1">
+	<title level="2">Basic, Single-Clause Sentences - Category Mapper</title>
+	<form section="ip">
+		<instruction id="IPAuxYesInstruction" show="swAuxYes">The auxiliary elements need to have the category <category>Aux</category>.  If a particular form can also stand alone as the main verb in the sentence, you need to have two separate entries, one with the category <category>Aux</category> and one with the category <category>V</category>.  Choose one of the following options, depending on your situation:
+<ul>
+				<li>If you already have auxiliaries marked with the category <category>Aux</category> in your lexicon nothing more needs to be done.</li>
+				<li>If auxiliaries are mixed in with another category in the lexicon, you either need to give them the category <category>Aux</category> in your morphological parser, or add the feature <feature>makeAux</feature> to each appropriate entry in the lexicon so the category will be changed for the syntax.  (If a particular entry can also be used as another syntactic category, make a separate lexical entry for each use.)</li>
+				<li>If you have auxiliaries marked in your lexicon with a distinct category all their own, but it is different from <category>Aux</category>, enter that category below so PAWS can map your morphological category to <category>Aux</category>.<br/>
+					<catMap id="IPAuxCategory" dataItem="auxCategory">Aux</catMap>
+				</li>
+			</ul>
+		</instruction>
+		<instruction>You need to make sure the verbs in your lexicon will be mapped to the syntactic category <category>V</category>.  Choose one of the following options, depending on your situation:
+<ul>
+				<li>If you already have verbs marked with the category <category>V</category> in your lexicon, nothing
+  more needs to be done.</li>
+				<li>If verbs are mixed in with another category in the lexicon, you either need to give them the category <category>V</category> in your morphological parser, or add the feature <feature>makeV</feature> to each appropriate entry in the lexicon so the category will be changed for the syntax.  (If a particular entry can also be used as another syntactic category, make a separate lexical entry for each use.)</li>
+				<li>If you have verbs marked in your lexicon with a distinct category all their own, but it is different from <category>V</category>, enter that category below so PAWS can map your morphological category to <category>V</category>. <br/>
+					<catMap id="IPVerbCategory" dataItem="verbCategory">V</catMap>
+				</li>
+			</ul>
+		</instruction>
+		<br/>
+		<br/>
+		<buttons>
+			<button id="IPCatMapBack" value="Back" goto="IPContents.htm"/>
+			<button id="IPCatMapNext" value="Next" goto="IPContents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swAuxYes">
+		<whenValue element="ip" attr="aux" value="yes"/>
+	</showWhen>
+</page>

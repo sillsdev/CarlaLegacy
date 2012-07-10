@@ -2,16 +2,16 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="focus">
   <section1 id="sFocus">
-	  <secTitle>Las construcciones de enfoque y asunto</secTitle>
+	 <secTitle>Las construcciones de tópico y foco</secTitle>
 <p>
 <xsl:text>
-	Esta sección considera dos tipos de construcciones que dibujen la atención a un elemento particular. Puesto que los asuntos se presentan fuera de construcciones de enfoque, serán considerados primero. El ejemplo siguiente muestra que una sola oración puede tener un asunto y una frase enfocada.
-	En este caso, el asunto </xsl:text>
+   Esta sección considera dos tipos de construcciones que dibujen la atención a un elemento particular. Puesto que los tópicos se presentan fuera de construcciones de foco, serán considerados primero. El ejemplo siguiente muestra que una sola oración puede tener un tópico y una frase enfocada.
+   En este caso, el tópico </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Guillermo</langData>
-<xsl:text> es introducido por el indicador de asunto </xsl:text>
+<xsl:text> es introducido por el indicador de tópico </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -30,19 +30,21 @@
 </li>
 </ul>
 <section2 id="sFocusTopics">
-	<secTitle>Asuntos y indicadores de asunto</secTitle>
+   <secTitle>Tópicos y indicadores de tópico</secTitle>
 <p>
 <xsl:text>
-	De acuerdo con lo definido aquí, las construcciones de asunto consisten en una frase de asunto seguida por una oración o una pregunta completa y generalmente son fijados aparte por la puntuación. Ciertos indicadores se pueden utilizar para los asuntos, como en los ejemplos en español siguientes:</xsl:text>
+   De acuerdo con lo definido aquí, las construcciones de tópico consisten en una frase de tópico seguida por una oración o una pregunta completa y generalmente son fijados aparte por la puntuación. Ciertos indicadores se pueden utilizar para los tópicos, como en los ejemplos en español siguientes: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>En cuanto a Juan, pienso que él será un buen doctor</langData>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>El discurso de Juliana, ¿dónde está ella?</langData>
 </p>
-			<ol>
-				<li>
-					<xsl:text>En cuanto a Juan, pienso que él hará a un buen doctor.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>El discurso de Juliana, ¿dónde está ella?</xsl:text>
-				</li>
-			</ol>
+
 	<xsl:if test="normalize-space(//focus/@topic)='no'">
 <p>
 <xsl:text>En </xsl:text>
@@ -54,7 +56,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no hay frases de asunto. </xsl:text>
+<xsl:text> no hay frases de tópico. </xsl:text>
 </p>
 </xsl:if>
 	<xsl:if test="normalize-space(//focus/@topic)='yes'">
@@ -68,7 +70,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> hay frases de asunto que se presentan </xsl:text>
+<xsl:text> hay frases de tópico que se presentan </xsl:text>
 <xsl:choose>
 				<xsl:when test="//focus/@topicPos='before'">antes</xsl:when>
 				<xsl:when test="//focus/@topicPos='after'">después</xsl:when>
@@ -78,7 +80,7 @@
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//focus/@topic)='yes'">
-<example num="xFocus.FocusTopics.12">
+<example num="xFocus.FocusTopics.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//focus/topicExample" />
 </xsl:variable>
@@ -92,7 +94,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//focus/topicExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xFocus.FocusTopics.12</xsl:with-param>
+<xsl:with-param name="sExNumber">xFocus.FocusTopics.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -101,7 +103,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xFocus.FocusTopics.12.1</xsl:text>
+<xsl:text>xFocus.FocusTopics.10.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -119,7 +121,7 @@
 </xsl:if>
 	<xsl:if test="normalize-space(//focus/@topic)='yes'">
 <p>
-<xsl:text>En </xsl:text>
+<xsl:text>De acuerdo con los ejemplos, la frase de tópico en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -128,42 +130,41 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> la frase de asunto </xsl:text>
 <xsl:choose>
-	<xsl:when test="//focus/@topicMarker='no'">no es indicado por un indicador de asunto. Solamente la posición en la oración y posiblemente la puntuación distingue a la frase de asunto.</xsl:when>
-	<xsl:when test="//focus/@topicMarker='yesWord'">es indicado por ciertas palabras o frases.</xsl:when>
-	<xsl:when test="//focus/@topicMarker='yesClitic'">es indicado por uno o más clíticos que se unen a la frase de asunto.</xsl:when>
-	<xsl:when test="//focus/@topicMarker='yesAffix'">es indicado por uno o más afijos que se unen a la frase de asunto.</xsl:when>
+   <xsl:when test="//focus/@topicMarker='no'"> no es marcado por un indicador de tópico. Solamente la posición en la oración y posiblemente la puntuación distingue a la frase de tópico.</xsl:when>
+	<xsl:when test="//focus/@topicMarker='yesWord'"> es indicado por ciertas palabras o frases.</xsl:when>
+   <xsl:when test="//focus/@topicMarker='yesClitic'"> es indicado por uno o más clíticos que se unen a la frase de tópico.</xsl:when>
+   <xsl:when test="//focus/@topicMarker='yesAffix'"> es indicado por uno o más afijos que se unen a la frase de tópico.</xsl:when>
 </xsl:choose>
 <xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord'">
-<xsl:text>Los indicadores de asunto se presentan </xsl:text>
+<xsl:text>Los indicadores de tópico se presentan </xsl:text>
 <xsl:choose>
-	<xsl:when test="//focus/@topicMarkerPos='before'">antes de la frase sí mismo de asunto.</xsl:when>
-	<xsl:when test="//focus/@topicMarkerPos='after'">después de la frase sí mismo de asunto.</xsl:when>
-	<xsl:when test="//focus/@topicMarkerPos='either'">de cualquier lado de la frase sí mismo de asunto, pero no en ambos lados en la misma oración.</xsl:when>
-	<xsl:when test="//focus/@topicMarkerPos='both'">en ambos lados de la frase de asunto sí mismo.</xsl:when>
+   <xsl:when test="//focus/@topicMarkerPos='before'">antes de la frase sí mismo de tópico.</xsl:when>
+   <xsl:when test="//focus/@topicMarkerPos='after'">después de la frase sí mismo de tópico.</xsl:when>
+   <xsl:when test="//focus/@topicMarkerPos='either'">de cualquier lado de la frase sí mismo de tópico, pero no en ambos lados en la misma oración.</xsl:when>
+   <xsl:when test="//focus/@topicMarkerPos='both'">en ambos lados de la frase de tópico sí mismo.</xsl:when>
 <xsl:when test="//focus/@topicMarkerPos='unknown'">_______.</xsl:when>
 </xsl:choose>
-			<xsl:text> El indicador de asunto es </xsl:text>
+		  <xsl:text> El indicador de tópico es </xsl:text>
 <xsl:choose>
 				<xsl:when test="//focus/@topicMarkerRequired='no'">opcional</xsl:when>
 				<xsl:when test="//focus/@topicMarkerRequired='yes'">requerido</xsl:when>
 </xsl:choose>
-			<xsl:text> siempre que haya una frase de asunto.</xsl:text>
+		  <xsl:text> siempre que haya una frase de tópico.</xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='either' and normalize-space(//focus/@topicMarkerEither)='no' or normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='both' and normalize-space(//focus/@topicMarkerEither)='no'">
-<xsl:text>Hay restricciones en cuanto a cuáles indicadores de asunto pueden presentarse en cada lado de la frase de asunto.</xsl:text>
+<xsl:text> Hay restricciones en cuanto a cuáles indicadores de tópico pueden presentarse en cada lado de la frase de tópico.</xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='either' and normalize-space(//focus/@topicMarkerEither)='yes' or normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='both' and normalize-space(//focus/@topicMarkerEither)='yes'">
-<xsl:text>Todos los indicadores de asunto pueden presentarse de cualquier lado de la frase de asunto.</xsl:text>
+<xsl:text> Todos los indicadores de tópico pueden presentarse de cualquier lado de la frase de tópico.</xsl:text>
 </xsl:if>
 </p>
 </xsl:if>
-<xsl:if test="normalize-space(//focus/@topicMarker)!='no'">
-<example num="xFocus.FocusTopics.16">
+<xsl:if test="normalize-space(//focus/@topicMarker)!='no' and normalize-space(//focus/@topic)='yes'">
+<example num="xFocus.FocusTopics.14">
 <table border="1">
 <tr>
-	<th>Indicadores de asunto</th>
+   <th>Indicadores de tópico</th>
 	<th>Glosa o restricciones</th>
 </tr>
 	<xsl:variable name="sExampleValue0">
@@ -220,28 +221,33 @@
 </section2>
 
 <section2 id="sFocusFocus">
-	<secTitle>Frases enfocadas y los indicadores de enfoque</secTitle>
-	<p>
-<xsl:text>En contraste con asuntos, mientras que las construcciones de enfoque también tienen un elemento desplazado que se pueda ser indicado por la puntuación, la frase enfocada se mueve desde su posición normal en la oración, dejando un agujero.
+	<secTitle>Frases enfocadas y indicadores de foco</secTitle>
+   <p>
+<xsl:text>En contraste con tópico, mientras que las construcciones de foco también tienen un elemento desplazado que se pueda ser indicado por la puntuación, la frase enfocada se mueve desde su posición normal en la oración, dejando un agujero.
 		Ciertos indicadores,  como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>solamente</langData>
-<xsl:text> en español, se pueden utilizar para indicar la frase enfocada. Las construcciones de enfoque no se utilizan con frecuencia en idiomas del orden SVO, puesto que el sujeto es generalmente en foco y es ya primer en el orden normal.
-		Los idiomas con otros órdenes de la palabra, tales como idiomas del orden VSO, pueden hacer el uso extenso de construcciones de enfoque. Algunos ejemplos en español de las construcciones de enfoque son:</xsl:text>
+<xsl:text> en español, se pueden utilizar para indicar la frase enfocada. Las construcciones de foco no se utilizan con frecuencia en lenguas del orden SVO, puesto que el sujeto es generalmente en foco y es ya primer en el orden normal.
+		Las lenguas con otros órdenes de la palabra, tales como lenguas del orden VSO, pueden hacer el uso extenso de construcciones de foco. Algunos ejemplos en español de las construcciones de foco son: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>De las muchachas, tengo gusto  __</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>El fútbol, Guillermo juega __ fantástico</langData>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>A solamente ese muchacho, Juan golpeó  __</langData>
+<xsl:text>.</xsl:text>
 </p>
-			<ol>
-				<li>
-					<xsl:text>De las muchachas, tengo gusto  __.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>El fútbol, Guillermo juega __ fantástico.</xsl:text>
-				</li>
-				<li>
-					<xsl:text>A solamente ese muchacho, Juan golpeó  __ .</xsl:text>
-				</li>
-			</ol>
+
 	<xsl:if test="normalize-space(//focus/@focus)='no'">
 <p>
 <xsl:text>En </xsl:text>
@@ -277,7 +283,7 @@
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//focus/@focus)='yes'">
-<example num="xFocus.FocusFocus.12">
+<example num="xFocus.FocusFocus.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//focus/focusExample" />
 </xsl:variable>
@@ -291,7 +297,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//focus/focusExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xFocus.FocusFocus.12</xsl:with-param>
+<xsl:with-param name="sExNumber">xFocus.FocusFocus.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -300,7 +306,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xFocus.FocusFocus.12.1</xsl:text>
+<xsl:text>xFocus.FocusFocus.10.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -316,9 +322,9 @@
 </xsl:choose>
 </example>
 </xsl:if>
-<xsl:if test="normalize-space(//focus/@focus)='yes'">
+   <xsl:if test="normalize-space(//focus/@focus)='yes'">
 <p>
-<xsl:text>En </xsl:text>
+<xsl:text>De acuerdo con los ejemplos, la frase enfocada en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -327,15 +333,14 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>, la frase enfocada </xsl:text>
 <xsl:choose>
-	<xsl:when test="//focus/@focusMarker='no'">no es indicado por un indicador de enfoque. Solamente la posición en la oración y posiblemente la puntuación distingue a la frase enfocada.</xsl:when>
-	<xsl:when test="//focus/@focusMarker='yesWord'">es indicado por ciertas palabras o frases. </xsl:when>
-	<xsl:when test="//focus/@focusMarker='yesClitic'">es indicado por uno o más clíticos que se unen a la frase enfocada.</xsl:when>
-	<xsl:when test="//focus/@focusMarker='yesAffix'">es indicado por uno o más afijos que se unen a la frase enfocada.</xsl:when>
+	<xsl:when test="//focus/@focusMarker='no'"> no es marcado por un indicador de foco. Solamente la posición en la oración y posiblemente la puntuación distingue a la frase enfocada.</xsl:when>
+	<xsl:when test="//focus/@focusMarker='yesWord'"> es indicado por ciertas palabras o frases. </xsl:when>
+	<xsl:when test="//focus/@focusMarker='yesClitic'"> es indicado por uno o más clíticos que se unen a la frase enfocada.</xsl:when>
+	<xsl:when test="//focus/@focusMarker='yesAffix'"> es indicado por uno o más afijos que se unen a la frase enfocada.</xsl:when>
 </xsl:choose>
 <xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord'">
-<xsl:text>Los indicadores de enfoque se presentan </xsl:text>
+<xsl:text>Los indicadores de foco se presentan </xsl:text>
 <xsl:choose>
 	<xsl:when test="//focus/@focusMarkerPos='before'">antes de la frase enfocada sí mismo.</xsl:when>
 	<xsl:when test="//focus/@focusMarkerPos='after'">después de la frase enfocada sí mismo.</xsl:when>
@@ -343,7 +348,7 @@
 	<xsl:when test="//focus/@focusMarkerPos='both'">en ambos lados de la frase enfocada sí mismo.</xsl:when>
 <xsl:when test="//focus/@focusMarkerPos='unknown'">_______.</xsl:when>
 </xsl:choose>
-		<xsl:text> El indicador de enfoque es </xsl:text>
+		<xsl:text> El indicador de foco es </xsl:text>
 <xsl:choose>
 <xsl:when test="//focus/@focusMarkerRequired='no'">opcional</xsl:when>
 <xsl:when test="//focus/@focusMarkerRequired='yes'">requerido</xsl:when>
@@ -351,18 +356,18 @@
 		<xsl:text> siempre que haya una frase enfocada.</xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='either' and normalize-space(//focus/@focusMarkerEither)='no' or normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='both' and normalize-space(//focus/@focusMarkerEither)='no'">
-<xsl:text> Hay restricciones en cuanto a cuáles indicadores de enfoque pueden presentarse en cada lado de la frase enfocado.</xsl:text>
+<xsl:text> Hay restricciones en cuanto a cuáles indicadores de foco pueden presentarse en cada lado de la frase enfocada.</xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='either' and normalize-space(//focus/@focusMarkerEither)='yes' or normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='both' and normalize-space(//focus/@focusMarkerEither)='yes'">
-<xsl:text> Todos los indicadores de enfoque pueden presentarse de cualquier lado de la frase enfocada.</xsl:text>
+<xsl:text> Todos los indicadores de foco pueden presentarse de cualquier lado de la frase enfocada.</xsl:text>
 </xsl:if>
 </p>
 </xsl:if>
-	<xsl:if test="normalize-space(//focus/@focusMarker)!='no'">
-<example num="xFocus.FocusFocus.16">
+	<xsl:if test="normalize-space(//focus/@focusMarker)!='no' and normalize-space(//focus/@focus)='yes'">
+<example num="xFocus.FocusFocus.14">
 <table border="1">
 <tr>
-	<th>Indicadores de enfoque</th>
+	<th>Indicadores de foco</th>
 	<th>Glosa o restricciones</th>
 </tr>
 	<xsl:variable name="sExampleValue0">
@@ -421,6 +426,10 @@
 </section2>
 
   </section1>
+
+
+
+
 
 
 

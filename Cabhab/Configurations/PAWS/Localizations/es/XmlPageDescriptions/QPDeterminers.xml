@@ -3,183 +3,268 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QPDeterminers" count="2/6">
-	<title level="2">Los cuantificadores y sus frases - Los cuantificadores que no se presentan con los determinantes</title>
-	<introduction>El segundo sistema incluye cuantificadores como <example>algunos</example>, <example>cada</example>, y  <example>ningunos</example>, que no permiten ningún otro artículo, demostrativo o poseedor en la frase nominal. Algunos ejemplos en español en las frases son
-		<example>algunos niños tristes</example>, <example>casi cada niña que vea</example> y <example>ningún perro negro</example>.
-		Porque se presentan en el lugar de artículos, de demonstratives y de poseedores, analizaremos estos cuantificadores como los determinantes con su propia regla para la estructura de la frase.</introduction>
+	<title level="2">Frases cuantificadoras - Los cuantificadores que no se presentan con los determinantes</title>
+	<introduction>El segundo sistema incluye cuantificadores como <example>algunos</example>, <example>cada</example>, y  <example>ningunos</example>, que no permiten ningún otro artículo, demostrativo o poseedor en la frase nominal.
+	   <br/><br/>
+	   Empezando otra vez con los cuantificadores positivos, los ejemplos en español (1-2) son gramaticales, pero ejemplos (3-5) muestran que estos cuantificadores no se presentan con los artículos, demostrativos ni poseedores.  Observe que un ejemplo como  <example>algunos de los niños</example> es gramatical, pero es un ejemplo de <example>algunos</example> como el núcleo de la frase nominal, con una frase partitiva <example>de los niños</example> modificándola, cuál fue cubierto en <section  number="7">Los pronombres - Como una frase nominal</section>.
+	</introduction>
+   <EnglishExample>
+	  <exItem label="1.">algunos niños tristes</exItem>
+	  <exItem label="2.">casi cada niña que vea</exItem>
+	  <exItem label="3.">*casi el muchacho malo</exItem>
+	  <exItem label="4.">*estos algunos muchachos</exItem>
+	  <exItem label="5.">*mis algunos hijos tristes</exItem>
+   </EnglishExample>
+<introduction>
+   Porque se presentan en el lugar de artículos, de demonstratives y de poseedores, analizaremos estos cuantificadores como determinantes que modifican los sustantivos sólos<span id="QPDetNotPracticalSpan" show="swNotPractical"> con su propia regla para la estructura de la frase</span>.</introduction>
 	<form section="qp">
 		<radioGroup>
 			<groupName dataItem="determiner" default="yes">RDeterminerYesNo</groupName>
-			<prompt>¿En su idioma hay cuantificadores como 'algunos', 'cada', y 'ningunos' que se escriben como palabras independientes y funcionan al igual que el único determinador en la frase nominal?</prompt>
-			<radio id="QPDeterminerYes" checked="yes" dataValue="yes">Sí, 'algunos', 'cada', y 'ningunos' se escriben como palabras independientes y funcionan en este manera</radio>
-			<radio id="QPDeterminerYesSome" checked="yes" dataValue="yesSome">Sí, 'algunos' y 'cada' se escriben como palabras independientes y funcionan en este manera, <span id="QPDeterminerYesSomeNegSpan" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">pero 'ningunos' está al igual que el elemento especial negativo de grado 'no' en la página anterior</span>
-				<span id="QPDeterminerYesSomeNoNegSpan" show="swQPNPDegreeYesPosOnlyOrNoPosOnly">pero, apenas pues no hay ninguna manera de expresar el elemento especial negativo de grado 'no' en la página anterior, no hay ninguna manera de expresar 'ningunos' modificando una frase nominal en este idioma</span>
-			</radio>
-			<radio id="QPDeterminerYesNo" checked="yes" dataValue="yesNo">Sí, 'ningunos' se escribe como una palabra independiente y funciona en este manera y es distinto del elemento especial negativo de grado 'no' en la página anterior, pero 'algunos' y 'cada' o funcionan al igual que los elementos especiales de grado o como los cuantificadores que pueden presentarse con los artículos, los demonstrativos y/o los poseedores que se analizarán en la página siguiente</radio>
-			<radio id="QPDeterminerNo" checked="yes" dataValue="no">No, <span id="QPDeterminerYesSomeNegSpan1" show="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">todas estas nociones son expresadas por las palabras especiales de grado solamente; no hay dos sistemas (compruebe esta opción si es verdad para 'no' o 'ningunos' por lo menos; 'algunos' y 'cada' pueden ser los cuantificadores que pueden presentarse con los artículos, los demonstrativos y/o los poseedores que se analizarán en la página siguiente)</span>
-				<span id="QPDeterminerYesSomeNoNegSpan1" show="swQPNPDegreeYesPosOnlyOrNoPosOnly"> 'algunos' y 'cada' funcionan al igual que los elementos especiales de grado o al igual que los cuantificadores que pueden presentarse con los artículos, los demonstrativos y/o los poseedores que se analizarán en la página siguiente, pero, apenas pues no hay ninguna manera de expresar el elemento especial negativo de grado 'no' en la página anterior, no hay ninguna manera de expresar 'ningunos' modificando una frase nominal en este idioma</span>
-			</radio>
+		   <prompt>¿En su lengua hay cuantificadores como ‘algunos’ y ‘cada’ que se escriben como palabras independientes y actúan como el único determinante en la frase nominal?</prompt>
+		   <radio id="QPDeterminerYes" checked="yes" dataValue="yes">Sí, ‘algunos’ y ‘cada’ se escriben como palabras independientes y actúan de este modo</radio>
+		   <radio id="QPDeterminerSome" checked="yes" dataValue="some">Algunos se escriben como palabras independientes y actúan de este modo, pero algunos se unen a otra palabra en la frase nominal</radio>
+		   <radio id="QPDeterminerAttaches" checked="yes" dataValue="attaches">No, todas estas nociones se expresan por clíticos o afijos que se unen a otra palabra en la frase nominal</radio>
+		   <radio id="QPDeterminerNo" checked="yes" dataValue="no">No, ‘algunos’ y ‘cada’ actúan como los elementos especiales de grado en la página anterior o como los cuantificadores que pueden presentarse con los artículos, demostrativos y/o poseedores que trataremos en la página siguiente</radio>
 		</radioGroup>
-		<prompt id="QPDeterminerYesExamples" show="swQPDeterminerYesOrYesSome">Escriba sus ejemplos de los determinantes positivos del cuantificador (con cada uno en una línea separada y seguida por un punto) aquí:</prompt>
-		<textBox id="QPDeterminerExample" dataItem="determinerExample" show="swQPDeterminerYesOrYesSome" rows="3"/>
-		<prompt id="QPDeterminerYesNPExamples" show="swQPDeterminerYesOrYesSome">Escriba sus ejemplos de los determinantes positivos del cuantificador en frases nominales completas aquí:</prompt>
-		<textBox id="QPDeterminerNPExample" dataItem="determinerNPExample" rows="4" show="swQPDeterminerYesOrYesSome"/>
-		<prompt id="QPDeterminerYesNegExamples" show="swQPDeterminerYesOrYesNo">Escriba sus ejemplos de los determinantes negativos del cuantificador (con cada uno en una línea separada y seguida por un punto) aquí:</prompt>
-		<textBox id="QPDeterminerNegExample" dataItem="determinerNegExample" show="swQPDeterminerYesOrYesNo" rows="3"/>
-		<prompt id="QPDeterminerYesNPNegExamples" show="swQPDeterminerYesOrYesNo">Escriba sus ejemplos de los determinantes negativos del cuantificador en frases nominales completas aquí:</prompt>
-		<textBox id="QPDeterminerNegNPExample" dataItem="determinerNegNPExample" rows="4" show="swQPDeterminerYesOrYesNo"/>
-		<radioGroup id="QPDeterminerTable" show="swQPDeterminerNotNo">
-			<groupName dataItem="determinerPos" default="unknown" position="yesHead">RDeterminer</groupName>
-			<prompt>De acuerdo con los ejemplos, ¿dónde se presentan los determinantes del cuantificador con respecto al sustantivo principal?</prompt>
-			<radio id="QPDeterminerBefore" checked="yes" dataValue="before">Antes del sustantivo</radio>
-			<radio id="QPDeterminerAfter" dataValue="after">Después del sustantivo</radio>
-			<radio id="QPDeterminerEitherSide" checked="yes" dataValue="either">De cualquier lado del sustantivo, pero no en ambos lados en la misma oración</radio>
-			<radio id="QPDeterminerEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del sustantivo, o de ambos lados en la misma oración</radio>
-			<radio id="QPDeterminerBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del sustantivo, o en ambos lados en la misma oración</radio>
-			<radio id="QPDeterminerAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del sustantivo, o en ambos lados en la misma oración</radio>
-			<radio id="QPDeterminerBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
-			<radioGroup id="QPDeterminerEitherSideTable" show="swQPDeterminerEitherorBoth">
-				<groupName dataItem="determinerEither" default="unrestricted">RDeterminerEitherSide</groupName>
-				<prompt>¿Pueden presentarse todos los determinantes del cuantificador de cualquier lado del sustantivo?</prompt>
-				<radio id="QPDeterminerEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="QPDeterminerEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
-			</radioGroup>
-		</radioGroup>
-		<instruction id="QPDeterminerYesInstruction" show="swQPDeterminerYes">In the lexicon, mark this type of quantifier determiner with the feature <feature>makeDet</feature>.  This will change
-their category to <category>Det</category> for the syntax.  If a particular quantifier determiner can
-only go with plural nouns or if it marks plural itself (such as <example>some</example>), add the feature <feature>plural</feature> to that entry.  If a particular quantifier determiner can
-only go with singular nouns (such as <example>every</example> in English), add the feature <feature>singular</feature> to that entry.  Do not add either feature to a quantifier determiner which can
-go with either singular or plural nouns (such as <example>no</example> in English).  <br/>
-			<br/>
-Also mark the negative quantifier determiners with the feature <feature>negative</feature>.  These negative words will be discussed further in <section number="14">Negative Constructions</section>.</instruction>
-		<instruction id="QPDeterminerYesSomeInstruction" show="swQPDeterminerYesSome">In the lexicon, mark this type of quantifier determiner with the feature <feature>makeDet</feature>.  This will change
-their category to <category>Det</category> for the syntax.  If a particular quantifier determiner can
-only go with plural nouns or if it marks plural itself (such as <example>some</example>), add the feature <feature>plural</feature> to that entry.  If a particular quantifier determiner can
-only go with singular nouns (such as <example>every</example> in English), add the feature <feature>singular</feature> to that entry.  Do not add either feature to a quantifier determiner which can
-go with either singular or plural nouns.</instruction>
-		<instruction id="QPDeterminerYesNoInstruction" show="swQPDeterminerYesNo">In the lexicon, mark this type of quantifier determiner with the features <feature>makeDet negative</feature>.  This will change
-their category to <category>Det</category> for the syntax, as well as marking it as negative.  These negative words will be discussed further in <section number="14">Negative Constructions</section>.  </instruction>
-		<instruction id="QPDeterminerEitherRestrictedInstruction" show="swQPDeterminerEitherRestricted">Those which can only occur before the noun also need to have the feature <feature>DP-initial</feature>
-and those which can only occur after the noun also need the feature <feature>DP-final</feature>.  Do not enter either feature <feature>DP-initial</feature> or <feature>DP-final</feature> on any quantifier determiners which can occur on either side of the noun.</instruction>
-<br/>
-		<prompt id="QPDeterminerYesNoInstruction2" show="swQPDeterminerYesNo">Esté seguro que incluya las palabras que significa <example>algunos</example> y <example>cada</example> en la página anterior o la página siguiente como apropiada.</prompt>
-		<prompt id="QPDeterminerYesSomeInstruction2" show="swQPDeterminerYesSomeNotDegreePosOnly">Esté seguro que el elemento que significa <example>no</example> fue tratado completamente en la página anterior.</prompt>
-		<prompt id="QPDeterminerNoInstruction" show="swQPDeterminerNoNotDegreePosOnly">Esté seguro que incluya las palabras que significa <example>algunos</example> y <example>cada</example> en la página anterior o la página siguiente como apropiada, y que el elemento que significa <example>no</example> fue tratado completamente en la página anterior.</prompt>
-		<prompt id="QPDeterminerYesSomeInstruction3" show="swQPDeterminerYesSomeDegreePosOnly">Si es incorrecto que en su idioma no hay ninguna manera de negar una frase nominal, cambie su respuesta en esta página si el elemento negativo es una palabra independiente que no puede presentarse con un artículo, demonstrativo o poseedor. Si el elemento negativo es un clítico o un afijo, o si es una palabra independiente que puede presentarse con un artículo, demonstrativo o poseedor, vuelva a la página anterior y cambie sus respuestas allí antes de regresar a esta página. Si en su idioma no hay en verdad ninguna manera de negar una frase nominal, proceda a la página siguiente.</prompt>
-		<prompt id="QPDeterminerNoInstruction2" show="swQPDeterminerNoDegreePosOnly">Esté seguro que incluya las palabras que significa <example>algunos</example> y <example>cada</example> en la página anterior o la página siguiente como apropiada.<br/>
-			<br/>
-			Si es incorrecto que en su idioma no hay ninguna manera de negar una frase nominal, cambie su respuesta en esta página si el elemento negativo es una palabra independiente que no puede presentarse con un artículo, demonstrativo o poseedor. Si el elemento negativo es un clítico o un afijo, o si es una palabra independiente que puede presentarse con un artículo, demonstrativo o poseedor, vuelva a la página anterior y cambie sus respuestas allí antes de regresar a esta página. Si en su idioma no hay en verdad ninguna manera de negar una frase nominal, proceda a la página siguiente.</prompt>
-		<br/>
+	   <prompt id="QPDeterminerAttachesPrompt" show="swQPDeterminerAttachesOrSome">Para los elementos que significa ‘algunos’ o ‘cada’ que se unen a otra palabra en la frase nominal, por favor regresa a la página anterior y incluye estos elementos como clíticos o afijos allá.</prompt>
+	   <prompt id="QPDeterminerNoInstruction" show="swQPDeterminerNo">Esté seguro de incluir las palabras que significan <example>algunos</example> y <example>cada</example> en la página anterior o en la página siguiente según corresponda. </prompt>
+	   <radioGroup id="QPDeterminerClassifierAgrTable" show="swOTClassifierAgrAndYesOrSome">
+		  <groupName dataItem="determinerClassifier" default="no">RQPDeterminerClassifierAgr</groupName>
+		  <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar este tipo de cuantificadores que actúan como el único determinante en la frase nominal?</prompt>
+		  <radio id="QPDeterminerClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
+		  <radio id="QPDeterminerClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+	   </radioGroup>
+	   <prompt id="QPDeterminerClassifierAgrPrompt" show="swOTClassifierAgrAndYesOrSomeAndDeterminerClassifierYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada una de las palabras solicitadas en esta página.</prompt>
+	   <br/>
+	   <br/>
+	   <prompt id="QPDeterminerYesExamples" show="swQPDeterminerYesOrSome">Escriba ejemplos de los determinantes positivos del cuantificador que se escriben como palabras independientes (con cada uno en una línea separada y seguida por un punto) aquí:</prompt>
+	   <textBox id="QPDeterminerExample" dataItem="determinerExample" show="swQPDeterminerYesOrSome" rows="3"/>
+	   <prompt id="QPDeterminerYesNPExamples" show="swQPDeterminerYesOrSome">Escriba ejemplos de los determinantes positivos del cuantificador en frases nominales completas aquí:</prompt>
+	   <textBox id="QPDeterminerNPExample" dataItem="determinerNPExample" rows="4" show="swQPDeterminerYesOrSome"/>
+	   <radioGroup id="QPDeterminerTable" show="swQPDeterminerNotNo">
+		  <groupName dataItem="determinerPos" default="unknown" position="yesHead">RDeterminer</groupName>
+		  <prompt>De acuerdo con los ejemplos, ¿dónde se presentan los determinantes del cuantificador con respecto al sustantivo principal?</prompt>
+		  <radio id="QPDeterminerBefore" checked="yes" dataValue="before">Antes del sustantivo</radio>
+		  <radio id="QPDeterminerAfter" dataValue="after">Después del sustantivo</radio>
+		  <radio id="QPDeterminerEitherSide" checked="yes" dataValue="either">De cualquier lado del sustantivo, pero no en ambos lados en la misma oración</radio>
+		  <radio id="QPDeterminerEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del sustantivo, o de ambos lados en la misma oración</radio>
+		  <radio id="QPDeterminerBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del sustantivo, o en ambos lados en la misma oración</radio>
+		  <radio id="QPDeterminerAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del sustantivo, o en ambos lados en la misma oración</radio>
+		  <radio id="QPDeterminerBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
+		  <radioGroup id="QPDeterminerEitherSideTable" show="swQPDeterminerEitherorBoth">
+			 <groupName dataItem="determinerEither" default="unrestricted">RDeterminerEitherSide</groupName>
+			 <prompt>¿Pueden presentarse todos los determinantes del cuantificador de cualquier lado del sustantivo?</prompt>
+			 <radio id="QPDeterminerEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
+			 <radio id="QPDeterminerEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
+		  </radioGroup>
+	   </radioGroup>
+	   <br/><br/>
+	   <introduction>Ahora consideremos los determinantes negativos sel cuantificador que significan ‘ningún’.  Buscamos ejemplos como (1-2).  Observe que ‘ningún’ aquí  es diferente de ‘no’ en la página anterior porque ‘ningún’ no puede presentarse con los artículos, demostrativos ni poseedores, como (3-5) muestran.</introduction>
+	   <EnglishExample>
+		  <exItem label="1.">ningún perro negro</exItem>
+		  <exItem label="2.">ninguna hija</exItem>
+		  <exItem label="3.">*ningún el niño</exItem>
+		  <exItem label="4.">*ningún este libro</exItem>
+		  <exItem label="5.">*ningún mi perro</exItem>
+	   </EnglishExample>
+	   <br/><br/>
+	   <radioGroup>
+		  <groupName dataItem="determinerNeg" default="yes">RDeterminerNeg</groupName>
+		  <prompt>Piense cómo ejemplos similares a (1-2) arriba ser expresdaos en su lengua.  ¿Hay uno o más cuantificadores negativos que significan ‘ningún’ que se escriben como palabras independientes y actúan como el único determinante en la frase nominal?</prompt>
+		  <radio id="QPDeterminerNegYes"  dataValue="yes">Sí</radio>
+		  <radio id="QPDeterminerNegSome"  dataValue="some">Algunos se escriben como palabras independientes y actúan de este modo, pero algunos se unen a otra palabra enla frase nominal</radio>
+		  <radio id="QPDeterminerNegAttaches" dataValue="attaches">No, ‘ningún’ se expresan por clíticos o afijos que se unen a otra palabra en la frase nominal</radio>
+		  <radio id="QPDeterminerNegNo"  dataValue="no" show="swQPNPDegreeNegNotNone">No, ‘ningún’ es el mismo que el elmento especial negativo de grado en la página anterior</radio>
+		  <radio id="QPDeterminerNegNone"  dataValue="none" show="swQPNPDegreeNegNone">No, apenas pues no hay ninguna manera de expresar el elemento especial negativo de grado ‘no’ en la página anterior, no hay ninguna manera de expresar ‘ningún’ modificando una frase nominal en esta lengua</radio>
+	   </radioGroup>
+	   <prompt id="QPDeterminerNegAttachesPrompt" show="swQPDeterminerNegAttachesOrSome">Para estos elementos que significan ‘ningún’ que se unen a otra palabra en la frase nominal, por favor regresa a la página anterior y incluye estos elementos como clíticos o afijos allá. Tal vez sea necesario a cambiar algunas respuestas en esta página.</prompt>
+	   <prompt id="QPDeterminerNegNoInstruction" show="swQPDeterminerNegNo">Esté seguro que el elemento que significa ‘ningún’ o ‘no’ fue tratado completemente en la página anterior.</prompt>
+	   <prompt id="QPDeterminerNegNoneInstruction" show="swQPDeterminerNegNone">Si es incorrecto que en su lengua no hay ninguna manera de negar una frase nominal, cambie su respuesta en esta página si el elemento negativo es una palabra independiente que no puede presentarse con un artículo, demonstrativo o poseedor.  Si el elemento negativo es un clítico o un afijo, o si es una palabra independiente que puede presentarse con un artículo, demonstrativo o poseedor, vuelva a la página anterior y cambie sus respuestas allí antes de regresar a esta página.  Si en su lengua no hay en verdad ninguna manera de negar una frase nominal, proceda a la página siguiente</prompt>
+	   <prompt id="QPDeterminerYesNegExamples" show="swQPDeterminerNegYesOrSome">Escriba ejemplos de los determinantes negativos del cuantificador (con cada uno en una línea separada y seguida por un punto) aquí:</prompt>
+	   <textBox id="QPDeterminerNegExample" dataItem="determinerNegExample" show="swQPDeterminerNegYesOrSome" rows="3"/>
+	   <prompt id="QPDeterminerYesNPNegExamples" show="swQPDeterminerNegYesOrSome">Escriba ejemplos de los determinantes negativos del cuantificador en frases nominales completas aquí:</prompt>
+	   <textBox id="QPDeterminerNegNPExample" dataItem="determinerNegNPExample" rows="4" show="swQPDeterminerNegYesOrSome"/>
+	   <br/><br/>		<radioGroup id="QPDeterminerNegTable" show="swQPDeterminerNegYesOrSome">
+		  <groupName dataItem="determinerNegPos" default="unknown" position="yesHead">RDeterminerNegPos</groupName>
+		  <prompt>De acuerdo con los datos en el cuadro arriba, ¿dónde se presentan los determinantes negativos del cuantificador que se escriben como palabras independientes con respecto al sustantivo principal?</prompt>
+		  <radio id="QPDeterminerNegBefore" dataValue="before">Antes del sustantivo</radio>
+		  <radio id="QPDeterminerNegAfter" dataValue="after">Después del sustantivo</radio>
+		  <radio id="QPDeterminerNegEitherSide" dataValue="either">De cualquier lado del sustantivo, pero no en ambos lados en la misma oración</radio>
+		  <radio id="QPDeterminerNegEitherOrBoth" dataValue="eitherOrBoth">De cualquier lado del sustantivo, o en ambos lados en la misma oración</radio>
+		  <radio id="QPDeterminerNegBeforeOrBoth"  dataValue="beforeOrBoth">Antes del sustantivo, o en ambos lados en la misma oración</radio>
+		  <radio id="QPDeterminerNegAfterOrBoth" dataValue="afterOrBoth">Después del sustantivo, o en ambos lados en la misma oración</radio>
+		  <radio id="QPDeterminerNegBothSides" dataValue="both">Solamente en ambos lados en la misma oración</radio>
+		  <radioGroup id="QPDeterminerNegEitherSideTable" show="swQPDeterminerNegEitherorBoth">
+			 <groupName dataItem="determinerNegEither" default="unrestricted">RDeterminerNegEitherSide</groupName>
+			 <prompt>¿Pueden presentarse todos los determinantes negativos del cuantificador de cualquier lado del sustantivo principal?</prompt>
+			 <radio id="QPDeterminerNegEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción (o solamente existe una palabra negativa y puede presentarse de cualquier lado)</radio>
+			 <radio id="QPDeterminerNegEitherRestricted" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
+		  </radioGroup>
+	   </radioGroup>
+
+	   <br/><br/><prompt>Estos elementos negativos serán discutidos más en <section number="14">Las construcciones negativas</section>.</prompt>
+	   <instruction id="QPDeterminerYesInstruction" show="swQPDeterminerYesOrSome">In the lexicon, mark this type of quantifier determiner that is written as a separate word with the feature <feature>makeDet</feature>.  This will change
+		  their category to <category>Det</category> for the syntax.  If a particular quantifier determiner can
+		  only go with plural nouns or if it marks plural itself (such as <example>some</example>), add the feature <feature>plural</feature> to that entry.  If a particular quantifier determiner can
+		  only go with singular nouns (such as <example>every</example> in English), add the feature <feature>singular</feature> to that entry.  Do not add either feature to a quantifier determiner which can
+		  go with either singular or plural nouns. </instruction>
+	   <instruction id="QPDeterminerNegYesInstruction" show="swQPDeterminerNegYesOrSome">In the lexicon, mark this type of quantifier determiner that is written as a separate word with the features <feature>makeDet negative</feature>.  This will change
+		  their category to <category>Det</category> for the syntax, as well as marking it as negative. </instruction>
+	   <instruction id="QPDeterminerEitherRestrictedInstruction" show="swQPDeterminerEitherRestricted">Those which can only occur before the noun also need to have the feature <feature>DP-initial</feature>
+		  and those which can only occur after the noun also need the feature <feature>DP-final</feature>.  Do not enter either feature <feature>DP-initial</feature> or <feature>DP-final</feature> on any quantifier determiners which can occur on either side of the noun.</instruction>
+	   <instruction id="QPDeterminerNegEitherRestrictedInstruction" show="swQPDeterminerNegEitherRestricted">Those which can only occur before the noun also need to have the feature <feature>DP-initial</feature>
+		  and those which can only occur after the noun also need the feature <feature>DP-final</feature>.  Do not enter either feature <feature>DP-initial</feature> or <feature>DP-final</feature> on any negative quantifier determiners which can occur on either side of the noun.</instruction>
+	   <br/>
 		<br/>
 		<buttons>
 			<button id="QPDeterminersBack" value="Back" goto="QPMain.xml"/>
 			<button id="QPDeterminersNext" value="Next" goto="QPDegree.xml"/>
 		</buttons>
 	</form>
-	<showWhen id="swQPDeterminerYes">
-		<whenRadio button="QPDeterminerYes"/>
-	</showWhen>
-	<showWhen id="swQPDeterminerNo">
-		<whenRadio button="QPDeterminerNo"/>
-	</showWhen>
-	<showWhen id="swQPDeterminerYesOrYesSome">
-		<whenRadio button="QPDeterminerYes"/>
-		<or/>
-		<whenRadio button="QPDeterminerYesSome"/>
-	</showWhen>
-	<showWhen id="swQPDeterminerYesOrYesNo">
-		<whenRadio button="QPDeterminerYes"/>
-		<or/>
-		<whenRadio button="QPDeterminerYesNo"/>
-	</showWhen>
-	<showWhen id="swQPDeterminerNotNo">
-		<not/>
-		<whenRadio button="QPDeterminerNo"/>
-	</showWhen>
-	<showWhen id="swQPDeterminerYesSome">
-		<whenRadio button="QPDeterminerYesSome"/>
-	</showWhen>
-	<showWhen id="swQPDeterminerYesNo">
-		<whenRadio button="QPDeterminerYesNo"/>
-	</showWhen>
-	<showWhen id="swQPDeterminerEitherorBoth">
-		<not/>
-		<whenRadio button="QPDeterminerNo"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPDeterminerBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPDeterminerAfter"/>
-	</showWhen>
-	<showWhen id="swQPDeterminerEitherRestricted">
-		<not/>
-		<whenRadio button="QPDeterminerNo"/>
-		<and/>
-		<whenRadio button="QPDeterminerEitherRestricted"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPDeterminerBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPDeterminerAfter"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNotYesPosOnlyOrNoPosOnly">
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeYesPosOnlyOrNoPosOnly">
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-	</showWhen>
-	<showWhen id="swQPDeterminerYesSomeNotDegreePosOnly">
-		<whenRadio button="QPDeterminerYesSome"/>
-		<and/>
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swQPDeterminerNoNotDegreePosOnly">
-		<whenRadio button="QPDeterminerNo"/>
-		<and/>
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="no"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swQPDeterminerYesSomeDegreePosOnly">
-		<whenRadio button="QPDeterminerYesSome"/>
-		<and/>
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swQPDeterminerNoDegreePosOnly">
-		<whenRadio button="QPDeterminerNo"/>
-		<and/>
-		<openParen/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<closeParen/>
-	</showWhen>
+   <showWhen id="swQPDeterminerYes">
+	  <whenRadio button="QPDeterminerYes"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNo">
+	  <whenRadio button="QPDeterminerNo"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerYesOrSome">
+	  <whenRadio button="QPDeterminerYes"/>
+	  <or/>
+	  <whenRadio button="QPDeterminerSome"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndYesOrSome">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenRadio button="QPDeterminerYes"/>
+	  <or/>
+	  <whenRadio button="QPDeterminerSome"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndYesOrSomeAndDeterminerClassifierYes">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenRadio button="QPDeterminerYes"/>
+	  <and/>
+	  <whenRadio button="QPDeterminerClassifierAgrYes"/>
+	  <or/>
+	  <whenRadio button="QPDeterminerSome"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenRadio button="QPDeterminerClassifierAgrYes"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerAttachesOrSome">
+	  <whenRadio button="QPDeterminerAttaches"/>
+	  <or/>
+	  <whenRadio button="QPDeterminerSome"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNotNo">
+	  <not/>
+	  <whenRadio button="QPDeterminerNo"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegYes">
+	  <whenRadio button="QPDeterminerNegYes"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegNo">
+	  <whenRadio button="QPDeterminerNegNo"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegYesOrSome">
+	  <whenRadio button="QPDeterminerNegYes"/>
+	  <or/>
+	  <whenRadio button="QPDeterminerNegSome"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegAttachesOrSome">
+	  <whenRadio button="QPDeterminerNegAttaches"/>
+	  <or/>
+	  <whenRadio button="QPDeterminerNegSome"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegNone">
+	  <whenRadio button="QPDeterminerNegNone"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerEitherorBoth">
+	  <whenRadio button="QPDeterminerSome"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerBefore"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerAfter"/>
+	  <or/>
+	  <whenRadio button="QPDeterminerYes"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerBefore"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerAfter"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegEitherorBoth">
+	  <whenRadio button="QPDeterminerNegSome"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerNegBefore"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerNegAfter"/>
+	  <or/>
+	  <whenRadio button="QPDeterminerNegYes"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerNegBefore"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerNegAfter"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerEitherRestricted">
+	  <whenRadio button="QPDeterminerEitherRestricted"/>
+	  <and/>
+	  <whenRadio button="QPDeterminerSome"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerBefore"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerAfter"/>
+	  <or/>
+	  <whenRadio button="QPDeterminerEitherRestricted"/>
+	  <and/>
+	  <whenRadio button="QPDeterminerYes"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerBefore"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerAfter"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNegEitherRestricted">
+	  <whenRadio button="QPDeterminerNegEitherRestricted"/>
+	  <and/>
+	  <whenRadio button="QPDeterminerNegSome"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerNegBefore"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerNegAfter"/>
+	  <or/>
+	  <whenRadio button="QPDeterminerNegEitherRestricted"/>
+	  <and/>
+	  <whenRadio button="QPDeterminerNegYes"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerNegBefore"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDeterminerNegAfter"/>
+   </showWhen>
+   <showWhen id="swNotPractical">
+	  <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegNotNone">
+	  <not/><whenValue element="qp" attr="npDegreeNeg" value="none"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegNone">
+	  <whenValue element="qp" attr="npDegreeNeg" value="none"/>
+   </showWhen>
 </page>

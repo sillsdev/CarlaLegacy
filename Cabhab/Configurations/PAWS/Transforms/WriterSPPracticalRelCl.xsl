@@ -8,7 +8,7 @@
 </p>
 		<ul>
 			<li>
-				<xsl:text>al igual que una cláusula de complemento con el complementizador 'que' , como en  </xsl:text>
+				<xsl:text>al igual que una cláusula de complemento con el complementizador ‘que’ , como en  </xsl:text>
 				<langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -16,7 +16,7 @@
 				<xsl:text>;</xsl:text>
 			</li>
 			<li>
-				<xsl:text>al igual que una pregunta abierta subordinada con 'quien' o 'cual' desplazado a la izquierda, como en </xsl:text>
+				<xsl:text>al igual que una pregunta abierta subordinada con ‘quien’ o ‘cual’ desplazado a la izquierda, como en </xsl:text>
 				<langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -24,14 +24,32 @@
 				<xsl:text>;</xsl:text>
 			</li>
 			<li>
-				<xsl:text>(o para algunos idiomas con excepción del español) al igual que una cláusula de complemento pero con un indicador relativo especial que se presenta en la posición del complementizador, o posiblemente con dos indicadores que se presentan en cada lado de la cláusula relativa;</xsl:text>
+				<xsl:text>(o para algunas lenguas con excepción del español) al igual que una cláusula de complemento pero con un indicador relativo especial que se presenta en la posición del complementizador, o posiblemente con dos indicadores que se presentan en cada lado de la cláusula relativa;</xsl:text>
 			</li>
 			<li>
-				<xsl:text>(o para algunos idiomas con excepción del español) al igual que una oración regular con un indicador relativo unido al verbo.</xsl:text>
+				<xsl:text>(o para algunas lenguas con excepción del español) al igual que una oración regular con un indicador relativo unido al verbo.</xsl:text>
 			</li>
 		</ul>
 		<p>
-<xsl:text>Algunos idiomas también permiten que una de las estructuras antedichas se presente por sí mismo como frase nominal sin un sustantivo principal para modificarse, generalmente llamado cláusulas relativas "sin núcleo". </xsl:text>
+<xsl:text>Algunas lenguas también permiten que una de las estructuras antedichas se presente por sí mismo como frase nominal sin un sustantivo principal para modificarse, generalmente llamado cláusulas relativas “sin núcleo”.  Por ejemplo, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Julie brought [the food that we ate today]</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Julia trajo [el alimento que comimos hoy]’</xsl:text>
+</gloss>
+<xsl:text> tiene una cláusula relativa completa en la posición del objeto, mientras que </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Julie brought [what we ate today]</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Julia trajo [lo que comimos hoy]’</xsl:text>
+</gloss>
+<xsl:text>  tiene una cláusula relativa sin núcleo como el objeto.</xsl:text>
 </p>
 		<p>
 <xsl:if test="normalize-space(//relcl/@exist)='no'">
@@ -86,7 +104,7 @@
 						<xsl:text>son </xsl:text>
 						<xsl:choose>
 							<xsl:when test="//relcl/@relWord='yes'">escritos como palabras independientes.</xsl:when>
-							<xsl:when test="//relcl/@relWord='no'">clíticos que se unen a otra palabra en el extremo de la cláusula relativa.</xsl:when>
+							<xsl:when test="//relcl/@relWord='no'">clíticos que se unen a otra palabra en la orilla de la cláusula relativa.</xsl:when>
 						</xsl:choose>
 						<xsl:if test="normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' or normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no'">
 							<xsl:choose>
@@ -255,8 +273,8 @@
 </xsl:choose>
 <xsl:text> se </xsl:text>
 <xsl:choose>
-				<xsl:when test="//relcl/@headless='no'">requiere un sustantivo principal estar presente en todas las cláusulas relativas, así que no se permite ninguna cláusula relativa sin núcleo.</xsl:when>
-				<xsl:when test="//relcl/@headless='yes'">permite que un sustantivo principal no estar presente en cláusulas relativas, así que se permiten las cláusulas relativas sin núcleo.</xsl:when>
+			   <xsl:when test="//relcl/@headless='no'">requiere un sustantivo principal esté presente en todas las cláusulas relativas, así que no se permite ninguna cláusula relativa sin núcleo.</xsl:when>
+			   <xsl:when test="//relcl/@headless='yes'">permite que un sustantivo principal no esté presente en cláusulas relativas, así que se permiten las cláusulas relativas sin núcleo.</xsl:when>
 			</xsl:choose>
 <xsl:text> </xsl:text>
 </p>
@@ -313,7 +331,7 @@
 <object type="tComment">Incluya varios textos aquí para mostrar cómo se forman las construcciones más grandes tales como párrafos, conversaciones e historias narrativas. Incluya los ejemplos de varios tipos literarios.</object>
 </p>
 		<p>
-<object type="tComment">  Un formato sugerido para presentar los textos es presente el texto completo en el idioma vernáculo primero, así que los nativos pueden apreciarla. Después presenta la forma interlineal, como en los ejemplos a través de la gramática. Finalmente, dé una traducción libre completo, así que el altavoz extranjero puede apreciar más sobre la cultura.</object>
+<object type="tComment">  Un formato sugerido para presentar los textos es presente el texto completo en la lengua vernáculo primero, así que los nativos pueden apreciarla. Después presenta la forma interlineal, como en los ejemplos a través de la gramática. Finalmente, dé una traducción libre completo, así que el altavoz extranjero puede apreciar más sobre la cultura.</object>
 </p>
 	</section1>
 

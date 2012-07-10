@@ -10,24 +10,34 @@
 		<exItem label="3.">El perro pudo haber enterrado su hueso.</exItem>
 	</EnglishExample>
 	<form section="ip">
-		<prompt>Escriba algunos ejemplos similares en su idioma aquí:</prompt>
-		<textBox id="IPExamplesExample" dataItem="example" cols="50"/>
-		<instruction id="IPTransDiInstructionFeature">If a verb is transitive and its object must always be present, add the feature <feature>transitive</feature> to its lexical entry.  Do not mark a verb like <example>eat</example> which may or may not have an overt object.</instruction>
-		<introduction>Los ditransitivos pueden tener el segundo objeto expresado como frase preposicional o posposicional o como frase nominal.  Algunos idiomas, al igual que español, permiten ambos tipos (via el movimiento del dativo, como en 4. abajo).  Algunos ejemplos en español de oraciones ditransitivas son:</introduction>
+	   <prompt>Los ejemplos que usted escribió en <section number="1.">La tipología - Sistema de caso</section> de oraciones transitivas con frases nominales simples o nombres propios como sujetos de verbos que tienen un sujeto-agente se muestran aquí.  Ahora, puede escribir ejemplos adicionales si lo desea.</prompt>
+	   <textBox id="IPExamplesExample"  section="typology" dataItem="example" cols="50"/>
+	   <prompt>Los ejemplos que usted escribió en <section number="1.">La tipología - Sistema de caso</section> de oraciones transitivas con pronombres independientes como sujetos de verbos que tienen un sujeto-agente se muestran aquí.  Ahora, puede escribir ejemplos adicionales si lo desea.</prompt>
+	   <textBox id="IPExamplesPnExample"  section="typology" dataItem="pnExample" cols="50"/>
+	   <prompt>Los ejemplos que usted escribió en <section number="1.">La tipología - Sistema de caso</section> de oraciones transitivas con sujetos-experimentadores, con frases nominales simples o nombres propios en las posiciones del sujeto y objeto se muestran aquí.   Ahora, puede escribir ejemplos adicionales si lo desea.</prompt>
+	   <textBox id="IPExperiencerExample"  section="typology" dataItem="experiencerExample" cols="50"/>
+	   <prompt>Los ejemplos que usted escribió en <section number="1.">La tipología - Sistema de caso</section> de oraciones transitivas con sujetos-experimentadores, con pronombres independientes en las posiciones del sujeto y objeto se muestran aquí.   Ahora, puede escribir ejemplos adicionales si lo desea.</prompt>
+	   <textBox id="IPExperiencerPnExample"  section="typology" dataItem="experiencerPnExample" cols="50"/>
+	   <instruction id="IPTransExpInstruction" show="swExpNotNo">Since Experiencer subjects are distinct from Agent subjects in your language, add the feature <feature>experiencer</feature> to the verbs which have an Experiencer subject.</instruction>
+	   <instruction id="IPTransInstructionFeature">If a verb is transitive and its object must always be present, add the feature <feature>transitive</feature> to its lexical entry.  Do not mark a verb like <example>eat</example> which may or may not have an overt object.</instruction>
+	   <br/><br/>
+
+		<introduction>Los ditransitivos pueden tener el segundo objeto expresado como frase preposicional o posposicional o como frase nominal.  Algunas lenguas, como español, permiten ambos tipos (via el movimiento del dativo, como en 8. abajo).  Algunos ejemplos en español de oraciones ditransitivas son:</introduction>
 		<EnglishExample>
-			<exItem label="1.">La muchacha compró el presente para su madre.</exItem>
-			<exItem label="2.">El hombre vendió su coche para dos mil dólares.</exItem>
-			<exItem label="3.">La muchacha dio el regalo a su madre.</exItem>
-			<exItem label="4.">La muchacha dio a su madre el regalo.</exItem>
+			<exItem label="5.">La muchacha compró el presente para su madre.</exItem>
+			<exItem label="6.">El hombre vendió su coche para dos mil dólares.</exItem>
+			<exItem label="7.">La muchacha dio el regalo a su madre.</exItem>
+			<exItem label="8.">La muchacha dio a su madre el regalo.</exItem>
 		</EnglishExample>
 		<prompt>Escriba sus ejemplos aquí:</prompt>
 		<textBox id="IPExamplesDiExamples" dataItem="diExample" cols="50"/>
+	   <br/><br/>
 		<radioGroup>
 			<groupName dataItem="diCat" default="pp">RIPTransDiCat</groupName>
-			<prompt>¿Qué categoría sintáctica es el segundo objeto en un ditransitivo en su idioma?</prompt>
+			<prompt>¿Qué categoría sintáctica es el segundo objeto en un ditransitivo en su lengua?</prompt>
 			<radio id="IPTransDiCatPP" dataValue="pp">Una frase preposicional o posposicional solamente</radio>
 			<radio id="IPTransDiCatDP" dataValue="dp">Una frase nominal solamente</radio>
-			<radio id="IPTransDiCatBoth" dataValue="both">O una frase nominal o una frase preposicional/posposicional (al igual que en inglés)</radio>
+			<radio id="IPTransDiCatBoth" dataValue="both">O una frase nominal o una frase preposicional o posposicional</radio>
 <radioGroup id="IPTransDiOrderTable" show="swIPTransDiCatNotPP">
 	<groupName dataItem="diOrder" default="DO">RIPTransDiOrder</groupName>
 	<prompt>Cuando ambos objetos son las frases nominales, ¿cuál objeto se presenta lo más cerca posible al verbo?</prompt>
@@ -36,12 +46,25 @@
 </radioGroup>
 		</radioGroup>
 		<instruction id="IPTransDiInstructionDitrans">Any verbs which require the second object to always be present should be marked with the feature <feature>ditransitive</feature>.  Those which allow the second object, but it is optional, can be marked <feature>transitive</feature>.</instruction>
-		<buttons>
+<br/><br/>
+	   <buttons>
 			<button id="IPTransBack" value="Back" goto="IPContents.htm"/>
 			<button id="IPTransNext" value="Next" goto="IPContents.htm"/>
 		</buttons>
 	</form>
-<showWhen id="swIPTransDiCatNotPP">
-	<not/><whenRadio button="IPTransDiCatPP"></whenRadio>
-</showWhen>
+   <showWhen id="swExpNotNo">
+	  <not/> <whenValue element="typology" attr="caseExperiencer" value="no"/>
+   </showWhen>
+   <showWhen id="swIPTransDiCatNotPP">
+	  <not/><whenRadio button="IPTransDiCatPP"></whenRadio>
+   </showWhen>
+   <showWhen id="swPPPosPrep">
+	  <whenValue element="pp" attr="pPos" value="before"/>
+   </showWhen>
+   <showWhen id="swPPPosPost">
+	  <whenValue element="pp" attr="pPos" value="after"/>
+   </showWhen>
+   <showWhen id="swPPPosBoth">
+	  <whenValue element="pp" attr="pPos" value="both"/>
+   </showWhen>
 </page>

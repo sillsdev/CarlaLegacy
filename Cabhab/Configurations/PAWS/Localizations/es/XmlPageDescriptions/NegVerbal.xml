@@ -3,10 +3,17 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NegVerbal" count="2/4">
 	<title level="2">Las construcciones negativas - La negación auxiliar y verbal</title>
-	<form section="neg">
-		<prompt id="NegAdvPTemporalTypeAffixInstruction" show="swAdvPNegTemporalTypeAffix">En <section number="3">Los adverbios y sus frases - Los adverbios de tiempo</section> usted indicó que su idioma no expresa los adverbios negativos de tiempo (que significa 'nunca') como una palabra independiente, pero como afijo verbal. En esa sección, usted dio los ejemplos siguientes de los afijos negativos de tiempo unidos a los verbos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
-		<prompt id="NegAdvPTemporalTypeVerbInstruction" show="swAdvPNegTemporalTypeVerb">En <section number="3">Los adverbios y sus frases - Los adverbios de tiempo</section> usted indicó que su idioma expresa las ideas negativas de tiempo usando un adverbio positivo de tiempo escrito como palabra independiento junto con el afijo verbal negativo en el verbo. En esa sección, usted dio los ejemplos siguientes de adverbios de tiempo y verbos negativos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
-		<prompt id="NegAdvPTemporalTypeWordInstruction" show="swAdvPNegTemporalTypeWord">En <section number="3">Los adverbios y sus frases - Los adverbios de tiempo</section> usted escribió los ejemplos siguientes de adverbios negativos de tiempo.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+   <introduction>
+	  En esta sección, los ejemplos dados anteriormente de adverbios negativos de tiempo y de lugar y auxiliares negativos se repiten a continuación. Luego te piden poner estas palabras en oraciones. Estamos interesados en ejemplos sin frases nominales negativas o pronombres negativos, como los siguientes: </introduction>
+   <EnglishExample>
+	  <exItem label="1.">Juan nunca encontró el tesoro.</exItem>
+	  <exItem label="2.">En ninguna parte que miró él encontró el cuadro.</exItem>
+	  <exItem label="3.">Juan no pudo encontrar el tesoro.</exItem>
+   </EnglishExample>
+   <form section="neg">
+	  <prompt id="NegAdvPTemporalTypeAffixInstruction" show="swAdvPNegTemporalTypeAffix">En <section number="3">Las frases adverbiales - Los adverbios de tiempo</section> usted indicó que su lengua no expresa los adverbios negativos de tiempo (que significa ‘nunca’) como una palabra independiente, pero como afijo verbal. En esa sección, usted dio los ejemplos siguientes de los afijos negativos de tiempo unidos a los verbos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+	   <prompt id="NegAdvPTemporalTypeVerbInstruction" show="swAdvPNegTemporalTypeVerb">En <section number="3">Las frases adverbiales - Los adverbios de tiempo</section> usted indicó que su lengua expresa las ideas negativas de tiempo usando un adverbio positivo de tiempo escrito como palabra independiento junto con el afijo verbal negativo en el verbo. En esa sección, usted dio los ejemplos siguientes de adverbios de tiempo y verbos negativos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+	   <prompt id="NegAdvPTemporalTypeWordInstruction" show="swAdvPNegTemporalTypeWord">En <section number="3">Las frases adverbiales - Los adverbios de tiempo</section> usted escribió los ejemplos siguientes de adverbios negativos de tiempo.  Usted puede agregar ejemplos adicionales ahora.</prompt>
 		<prompt id="NegAdvPTemporalTypeAffixPrompt" show="swAdvPNegTemporalTypeAffix">Algunos ejemplos de los afijos negativos de tiempo unidos a verbos:</prompt>
 		<textBox id="AdvPNegTemporalAffixExample" section="advp" dataItem="negTemporalAffixExample" show="swAdvPNegTemporalTypeAffix" rows="3"/>
 		 <instruction id="NegAdvPTemporalTypeAffixInstruction2" show="swAdvPNegTemporalTypeAffix">Be sure to key the features <feature>negative temporal</feature>
@@ -18,13 +25,24 @@ on any new affix(es) that you added.</instruction>
 on any new affix(es) that express negation on the verb that you added.</instruction>
 		<instruction id="NegAdvPTemporalTypeWordInstruction2" show="swAdvPNegTemporalTypeWord">Be sure to key the features <feature>negative temporal</feature>
 on any new words that you added, and also make sure they will have the category <category>Adv</category>.</instruction>
+
+	  <prompt id="NegAdvPTemporalTypeAdverbWordPrompt" show="swAdvPNegTemporalTypeAdverbWord">En <section number="3">Las frases adverbiales - Los adverbios de tiempo</section> usted indicó que su lengua no expresa los adverbios negativos de tiempo (que significa ‘nunca’) utilzando una palabra negativa con un adverbio positivo de tiempo. En esa sección, usted dio los ejemplos siguientes.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+	  <textBox id="AdvPNegTemporalAdverbWordExample" dataItem="negTemporalAdverbWordExample" show="swAdvPNegTemporalTypeAdverbWord" rows="3"/>
+	  <prompt id="AdvPNegTemporalTypeAdverbWordPrompt2" show="swAdvPNegTemporalTypeAdverbWord">Ejemplos de las frases adverbiales negativo de tiempo formadas por la palabra negativa presentarse con un adverbio positivo de tiempo:</prompt>
+	  <textBox id="AdvPNegTemporalAdverbWordsExample" dataItem="negTemporalAdverbWordsExample" show="swAdvPNegTemporalTypeAdverbWord" rows="5"/>
+	  <prompt id="AdvPNegTemporalTypeAdverbPrompt" show="swAdvPNegTemporalTypeAdverb">En <section number="3">Las frases adverbiales - Los adverbios de tiempo</section> usted indicó que su lengua no expresa los adverbios negativos de tiempo (que significa ‘nunca’) utilzando un afijo negativa que une con adverbio positivo de tiempo. En esa sección, usted dio los ejemplos siguientes.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+	  <textBox id="AdvPNegTemporalAdverbAffixExample" dataItem="negTemporalAdverbAffixExample" show="swAdvPNegTemporalTypeAdverb" rows="3"/>
+	  <prompt id="AdvPNegTemporalTypeAdverbPrompt2" show="swAdvPNegTemporalTypeAdverb">Ejemplos de los advebios negativos de tiempo formados por unirse el afijo negativo con un adverbio positivo de tiempo:</prompt>
+	  <textBox id="AdvPNegTemporalAdverbExample" dataItem="negTemporalAdverbExample" show="swAdvPNegTemporalTypeAdverb" rows="5"/>
+
+
 		<prompt>Ahora escriba por lo menos uno de los ejemplos negativos de tiempo en la caja antedicha en una oración completa (sin sujeto o objeto negativo) aquí:</prompt>
 		<textBox id="NegAdvPTemporalExample" dataItem="advTemporalExample" rows="4" cols="50"/>
 		<br/>
 		<br/>
-		<prompt id="NegAdvPLocativeTypeAffixInstruction" show="swAdvPNegLocativeTypeAffix">En <section number="3">Los adverbios y sus frases - Los adverbios de lugar</section> usted indicó que su idioma no expresa los adverbios negativos de lugar (que significa 'nowhere' "en ninguna parte") como una palabra independiente, pero como afijo verbal. En esa sección, usted dio los ejemplos siguientes de los afijos negativos de lugar unidos con los verbos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
-		<prompt id="NegAdvPLocativeTypeVerbInstruction" show="swAdvPNegLocativeTypeVerb">En <section number="3">Los adverbios y sus frases - Los adverbios de lugar</section> usted indicó que su idioma expresa las ideas negativas de lugar usando un adverbio positivo de lugar escrito como palabra independiente junto con el afijo verbal negativo en el verbo. En esa sección, usted dio los ejemplos siguientes de adverbios de lugar  y verbos negativos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
-		<prompt id="NegAdvPLocativeTypeWordInstruction" show="swAdvPNegLocativeTypeWord">En <section number="3">Los adverbios y sus frases - Los adverbios de lugar</section> usted escribió los ejemplos siguientes de adverbios negativos de lugar.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+	  <prompt id="NegAdvPLocativeTypeAffixInstruction" show="swAdvPNegLocativeTypeAffix">En <section number="3">Las frases adverbiales - Los adverbios de lugar</section> usted indicó que su lengua no expresa los adverbios negativos de lugar (que significa ‘nowhere’ “en ninguna parte”) como una palabra independiente, pero como afijo verbal. En esa sección, usted dio los ejemplos siguientes de los afijos negativos de lugar unidos con los verbos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+	   <prompt id="NegAdvPLocativeTypeVerbInstruction" show="swAdvPNegLocativeTypeVerb">En <section number="3">Las frases adverbiales - Los adverbios de lugar</section> usted indicó que su lengua expresa las ideas negativas de lugar usando un adverbio positivo de lugar escrito como palabra independiente junto con el afijo verbal negativo en el verbo. En esa sección, usted dio los ejemplos siguientes de adverbios de lugar  y verbos negativos.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+	   <prompt id="NegAdvPLocativeTypeWordInstruction" show="swAdvPNegLocativeTypeWord">En <section number="3">Las frases adverbiales - Los adverbios de lugar</section> usted escribió los ejemplos siguientes de adverbios negativos de lugar.  Usted puede agregar ejemplos adicionales ahora.</prompt>
 		<prompt id="NegAdvPLocativeTypeAffixPrompt" show="swAdvPNegLocativeTypeAffix">Algunos ejemplos de afijos negativos de lugar unidos a verbos:</prompt>
 		<textBox id="AdvPNegLocativeAffixExample" section="advp" dataItem="negLocativeAffixExample" show="swAdvPNegLocativeTypeAffix" rows="3"/>
 		 <instruction id="NegAdvPLocativeTypeAffixInstruction2" show="swAdvPNegLocativeTypeAffix">Be sure to key the features <feature>negative locative</feature>
@@ -36,11 +54,21 @@ on any new affix(es) that you added.</instruction>
 on any new affix(es) that express negation on the verb that you added.</instruction>
 		<instruction id="NegAdvPLocativeTypeWordInstruction2" show="swAdvPNegLocativeTypeWord">Be sure to key the features <feature>negative locative</feature>
 on any new words that you added, and also make sure they will have the category <category>Adv</category>.</instruction>
-		<prompt>Ahora escriba por lo menos uno de los ejemplos negativos de lugar en la caja antedicha en una oración completa (sin sujeto u objeto negativo) aquí:</prompt>
+
+	  <prompt id="NegAdvPLocativeTypeAdverbWordPrompt" show="swAdvPNegLocativeTypeAdverbWord">En <section number="3">Las frases adverbiales - Los adverbios de lugar</section> usted indicó que su lengua no expresa los adverbios negativos de lugar (que significa ‘en ninguna parte’) utilzando una palabra negativa con un adverbio positivo de lugar. En esa sección, usted dio los ejemplos siguientes.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+	  <textBox id="AdvPNegLocativeAdverbWordExample" dataItem="negLocativeAdverbWordExample" show="swAdvPNegLocativeTypeAdverbWord" rows="3"/>
+	  <prompt id="AdvPNegLocativeTypeAdverbWordPrompt2" show="swAdvPNegLocativeTypeAdverbWord">Ejemplos de las frases adverbiales negativo de lugar formadas por la palabra negativa presentarse con un adverbio positivo de lugar:</prompt>
+	  <textBox id="AdvPNegLocativeAdverbWordsExample" dataItem="negLocativeAdverbWordsExample" show="swAdvPNegLocativeTypeAdverbWord" rows="5"/>
+	  <prompt id="AdvPNegLocativeTypeAdverbPrompt" show="swAdvPNegLocativeTypeAdverb">En <section number="3">Las frases adverbiales - Los adverbios de lugar</section> usted indicó que su lengua no expresa los adverbios negativos de lugar (que significa ‘en ninguna parte’) utilzando un afijo negativa que une con adverbio positivo de lugar. En esa sección, usted dio los ejemplos siguientes.  Usted puede agregar ejemplos adicionales ahora.</prompt>
+	  <textBox id="AdvPNegLocativeAdverbAffixExample" dataItem="negLocativeAdverbAffixExample" show="swAdvPNegLocativeTypeAdverb" rows="3"/>
+	  <prompt id="AdvPNegLocativeTypeAdverbPrompt2" show="swAdvPNegLocativeTypeAdverb">Ejemplos de los advebios negativos de lugar formados por unirse el afijo negativo con un adverbio positivo de lugar:</prompt>
+	  <textBox id="AdvPNegLocativeAdverbExample" dataItem="negLocativeAdverbExample" show="swAdvPNegLocativeTypeAdverb" rows="5"/>
+
+	  <prompt>Ahora escriba por lo menos uno de los ejemplos negativos de lugar en la caja antedicha en una oración completa (sin sujeto u objeto negativo) aquí:</prompt>
 		<textBox id="NegAdvPLocativeExample" dataItem="advLocativeExample" rows="4" cols="50"/>
 		<br/>
 		<br/>
-		<radioGroup id="NegAdvVerbRequiredTable" show="swAdvPNegTypeWord">
+		<radioGroup id="NegAdvVerbRequiredTable" show="swAdvPNegTypeWordorAdverb">
 			<groupName dataItem="advVerbRequired" default="no">RAdvVerbRequired</groupName>
 			<prompt>Considerando los ejemplos de las oraciones completas usted ha dado, ¿se requiere el verbo o el auxiliar ser negativo cuando hay un adverbio negativo independiente?</prompt>
 			<radio id="NegAdvVerbRequiredYes" dataValue="yes">Sí, un adverbio negativo no se permite sin también tener un verbo negativo o un auxiliar negativo</radio>
@@ -84,71 +112,71 @@ on any new affix(es) that you added.</instruction>
 			<button id="NegVerbalNext" value="Next" goto="NegType.xml"/>
 		</buttons>
 	</form>
-	<showWhen id="swAdvPNegTemporalTypeAffix">
-		<whenValue element="advp" attr="negTemporalType" value="affix"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTemporalTypeWord">
-		<whenValue element="advp" attr="negTemporalType" value="word"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTemporalTypeVerb">
-		<whenValue element="advp" attr="negTemporalType" value="verb"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTemporalTypeWordOrVerb">
-		<whenValue element="advp" attr="negTemporalType" value="word"/>
-<or/>
-		<whenValue element="advp" attr="negTemporalType" value="verb"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeAffix">
-		<whenValue element="advp" attr="negLocativeType" value="affix"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeWord">
-		<whenValue element="advp" attr="negLocativeType" value="word"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeVerb">
-		<whenValue element="advp" attr="negLocativeType" value="verb"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeWordOrVerb">
-		<whenValue element="advp" attr="negLocativeType" value="word"/>
-<or/>
-		<whenValue element="advp" attr="negLocativeType" value="verb"/>
-	</showWhen>
-	<showWhen id="swAdvPNegTypeWord">
-		<whenValue element="advp" attr="negTemporalType" value="word"/>
-		<or/>
-		<whenValue element="advp" attr="negLocativeType" value="word"/>
-	</showWhen>
-	<showWhen id="swIPNegAuxWord">
-		<whenValue element="ip" attr="negAux" value="yesOnly"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAffix"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAll"/>
-	</showWhen>
-	<showWhen id="swIPNegAuxAffix">
-		<whenValue element="ip" attr="negAux" value="noAffixOnly"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAffix"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAll"/>
-	</showWhen>
-	<showWhen id="swIPNegVerb">
-		<whenValue element="ip" attr="negAux" value="noVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAll"/>
-	</showWhen>
-	<showWhen id="swIPNegAuxAndVerb">
-		<whenValue element="ip" attr="negAux" value="yesVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAll"/>
-	</showWhen>
+   <showWhen id="swAdvPNegTemporalTypeAdverbWord">
+	  <whenValue element="advp" attr="negTemporalType" value="adverbWord"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeAdverb">
+	  <whenValue element="advp" attr="negTemporalType" value="adverb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeAffix">
+	  <whenValue element="advp" attr="negTemporalType" value="affix"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeWord">
+	  <whenValue element="advp" attr="negTemporalType" value="word"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeVerb">
+	  <whenValue element="advp" attr="negTemporalType" value="verb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTemporalTypeWordOrVerb">
+	  <whenValue element="advp" attr="negTemporalType" value="word"/>
+	  <or/>
+	  <whenValue element="advp" attr="negTemporalType" value="verb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeAdverbWord">
+	  <whenValue element="advp" attr="negLocativeType" value="adverbWord"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeAdverb">
+	  <whenValue element="advp" attr="negLocativeType" value="adverb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeAffix">
+	  <whenValue element="advp" attr="negLocativeType" value="affix"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeWord">
+	  <whenValue element="advp" attr="negLocativeType" value="word"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeVerb">
+	  <whenValue element="advp" attr="negLocativeType" value="verb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegLocativeTypeWordOrVerb">
+	  <whenValue element="advp" attr="negLocativeType" value="word"/>
+	  <or/>
+	  <whenValue element="advp" attr="negLocativeType" value="verb"/>
+   </showWhen>
+   <showWhen id="swAdvPNegTypeWordorAdverb">
+	  <whenValue element="advp" attr="negTemporalType" value="word"/>
+	  <or/>
+	  <whenValue element="advp" attr="negLocativeType" value="word"/>
+	  <or/>
+	  <whenValue element="advp" attr="negTemporalType" value="adverb"/>
+	  <or/>
+	  <whenValue element="advp" attr="negLocativeType" value="adverb"/>
+	  <or/>
+	  <whenValue element="advp" attr="negTemporalType" value="adverbWord"/>
+	  <or/>
+	  <whenValue element="advp" attr="negLocativeType" value="adverbWord"/>
+   </showWhen>
+   <showWhen id="swIPNegAuxWord">
+	  <whenValue element="ip" attr="negAux" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPNegAuxAffix">
+	  <whenValue element="ip" attr="negAuxAffix" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPNegVerb">
+	  <whenValue element="ip" attr="negVAffix" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPNegAuxAndVerb">
+	  <whenValue element="ip" attr="negAux" value="yes"/>
+	  <or/>
+	  <whenValue element="ip" attr="negAuxAffix" value="yes"/>
+   </showWhen>
 </page>

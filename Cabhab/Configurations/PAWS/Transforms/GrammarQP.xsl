@@ -133,15 +133,15 @@ QP = (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1)
 
 
 
-    <xsl:if test="normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='before' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='before' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num1i - modifiers initial, head initial}
-QP = Adj Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) (Num_5)))))
+QP = Num_6 Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) (Num_5)))))
 	&lt;QP head&gt; = &lt;Num head&gt;
 	&lt;Num head type quantifier&gt; = +
-	&lt;Adj head type ordinal&gt; = +
-	&lt;Adj head type QP-initial&gt; = +
-	&lt;Adj head type comma&gt; = -
+	&lt;Num_6 head type ordinal&gt; = +
+	&lt;Num_6 head type QP-initial&gt; = +
+	&lt;Num_6 head type comma&gt; = -
 	&lt;Conj head type conjoins_DP&gt; = +
 	&lt;Conj_1 head type conjoins_DP&gt; = +
 	&lt;Conj_2 head type conjoins_DP&gt; = +
@@ -167,15 +167,15 @@ QP = Adj Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj
 
 
 
-    <xsl:if test="normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='before' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='before' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num1f - modifiers initial, head final}
-QP = Adj (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1) (Conj) Num
+QP = Num_6 (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1) (Conj) Num
 	&lt;QP head&gt; = &lt;Num head&gt;
 	&lt;Num head type quantifier&gt; = +
-	&lt;Adj head type ordinal&gt; = +
-	&lt;Adj head type QP-initial&gt; = +
-	&lt;Adj head type comma&gt; = -
+	&lt;Num_6 head type ordinal&gt; = +
+	&lt;Num_6 head type QP-initial&gt; = +
+	&lt;Num_6 head type comma&gt; = -
 	&lt;Conj head type conjoins_DP&gt; = +
 	&lt;Conj_1 head type conjoins_DP&gt; = +
 	&lt;Conj_2 head type conjoins_DP&gt; = +
@@ -201,21 +201,21 @@ QP = Adj (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Nu
 
 
 
-    <xsl:if test="normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='after' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='after' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num2i - modifiers final, head initial}
-QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) (Num_5))))) Adj
+QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) (Num_5))))) Num_6
 	&lt;QP head&gt; = &lt;Num head&gt;
 	&lt;Num head type quantifier&gt; = +
-	&lt;Adj head type ordinal&gt; = +
-	&lt;Adj head type QP-final&gt; = +
+	&lt;Num_6 head type ordinal&gt; = +
+	&lt;Num_6 head type QP-final&gt; = +
 	&lt;Conj head type conjoins_DP&gt; = +
 	&lt;Conj_1 head type conjoins_DP&gt; = +
 	&lt;Conj_2 head type conjoins_DP&gt; = +
 	&lt;Conj_3 head type conjoins_DP&gt; = +
 	&lt;Conj_4 head type conjoins_DP&gt; = +
 	&lt;Num head type comma&gt; = -
-	&lt;QP head type comma&gt; &lt;= &lt;Adj head type comma&gt;
+	&lt;QP head type comma&gt; &lt;= &lt;Num_6 head type comma&gt;
 	&lt;QP option&gt; = Num2i
 </xsl:text>
 </xsl:if>
@@ -236,23 +236,21 @@ QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) 
 
 
 
-    <xsl:if test="normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='after' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='after' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='either' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num2f - modifiers final, head final}
-QP = (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1) (Conj) Num Adj
+QP = (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1) (Conj) Num Num_6
 	&lt;QP head&gt; = &lt;Num head&gt;
 	&lt;Num head type quantifier&gt; = +
-	&lt;Adj head type ordinal&gt; = +
-	&lt;Adj head type QP-final&gt; = +
+	&lt;Num_6 head type ordinal&gt; = +
+	&lt;Num_6 head type QP-final&gt; = +
 	&lt;Num head type comma&gt; = -
-	&lt;QP head type comma&gt; &lt;= &lt;Adj head type comma&gt;
-                &lt;Conj head type conjoins_DP&gt; = +
+				&lt;Conj head type conjoins_DP&gt; = +
 	&lt;Conj_1 head type conjoins_DP&gt; = +
 	&lt;Conj_2 head type conjoins_DP&gt; = +
 	&lt;Conj_3 head type conjoins_DP&gt; = +
 	&lt;Conj_4 head type conjoins_DP&gt; = +
-	&lt;Num head type comma&gt; = -
-	&lt;QP head type comma&gt; &lt;= &lt;Adj head type comma&gt;
+	&lt;QP head type comma&gt; &lt;= &lt;Num_6 head type comma&gt;
 	&lt;QP option&gt; = Num2f
 </xsl:text>
 </xsl:if>
@@ -273,24 +271,24 @@ QP = (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1)
 
 
 
-    <xsl:if test="normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='both' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='both' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='before' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num3i - modifiers both sides, head initial}
-QP = Adj Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) (Num_5))))) Adj_1
+QP = Num_6 Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) (Num_5))))) Num_7
 	&lt;QP head&gt; = &lt;Num head&gt;
 	&lt;Num head type quantifier&gt; = +
-	&lt;Adj head type ordinal&gt; = +
-	&lt;Adj_1 head type ordinal&gt; = +
-	&lt;Adj head type QP-initial&gt; = +
-	&lt;Adj_1 head type QP-final&gt; = +
+	&lt;Num_6 head type ordinal&gt; = +
+	&lt;Num_7 head type ordinal&gt; = +
+	&lt;Num_6 head type QP-initial&gt; = +
+	&lt;Num_7 head type QP-final&gt; = +
 	&lt;Conj head type conjoins_DP&gt; = +
 	&lt;Conj_1 head type conjoins_DP&gt; = +
 	&lt;Conj_2 head type conjoins_DP&gt; = +
 	&lt;Conj_3 head type conjoins_DP&gt; = +
 	&lt;Conj_4 head type conjoins_DP&gt; = +
-	&lt;Adj head type comma&gt; = -
+	&lt;Num_6 head type comma&gt; = -
 	&lt;Num head type comma&gt; = -
-	&lt;QP head type comma&gt; &lt;= &lt;Adj_1 head type comma&gt;
+	&lt;QP head type comma&gt; &lt;= &lt;Num_7 head type comma&gt;
 	&lt;QP option&gt; = Num3i
 </xsl:text>
 </xsl:if>
@@ -311,24 +309,24 @@ QP = Adj Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj
 
 
 
-    <xsl:if test="normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='both' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
+	<xsl:if test="normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='both' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='afterOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='beforeOrBoth' or normalize-space(//qp/@cardinalHead)='after' and normalize-space(//qp/@ordinalPos)='eitherOrBoth'">
 <xsl:text>
 rule {QP option Num3f - modifiers both sides, head final}
-QP = Adj (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1) (Conj) Num Adj_1
+QP = Num_6 (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1) (Conj) Num Num_7
 	&lt;QP head&gt; = &lt;Num head&gt;
 	&lt;Num head type quantifier&gt; = +
-	&lt;Adj head type ordinal&gt; = +
-	&lt;Adj_1 head type ordinal&gt; = +
-	&lt;Adj head type QP-initial&gt; = +
-	&lt;Adj_1 head type QP-final&gt; = +
+	&lt;Num_6 head type ordinal&gt; = +
+	&lt;Num_7 head type ordinal&gt; = +
+	&lt;Num_6 head type QP-initial&gt; = +
+	&lt;Num_7 head type QP-final&gt; = +
 	&lt;Conj head type conjoins_DP&gt; = +
 	&lt;Conj_1 head type conjoins_DP&gt; = +
 	&lt;Conj_2 head type conjoins_DP&gt; = +
 	&lt;Conj_3 head type conjoins_DP&gt; = +
 	&lt;Conj_4 head type conjoins_DP&gt; = +
-	&lt;Adj head type comma&gt; = -
+	&lt;Num_6 head type comma&gt; = -
 	&lt;Num head type comma&gt; = -
-	&lt;QP head type comma&gt; &lt;= &lt;Adj_1 head type comma&gt;
+	&lt;QP head type comma&gt; &lt;= &lt;Num_7 head type comma&gt;
 	&lt;QP option&gt; = Num3f
 </xsl:text>
 </xsl:if>

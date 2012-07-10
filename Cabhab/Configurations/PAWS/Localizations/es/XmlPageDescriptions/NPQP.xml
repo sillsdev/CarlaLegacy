@@ -2,24 +2,24 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPQP" count="1/1">
-	<title level="2">Las frases nominales - Las frases del cuantificador como modificadores</title>
-	<introduction id="NPQPIntroNotPractical" show="swNotPractical">Next to be added to the nominal phrase as we work our way down the tree are quantifier phrases (QP), discussed earlier in <section number="2">Quantifiers and QP</section>.  This means we will be able to parse nominal phrases such as these in English:</introduction>
-	<introduction id="NPQPIntroPractical" show="swPractical">Siguiente en la frase nominal son frases del cuantificador, analizadas anteriormente en  <section number="2">Los cuantificadores y sus frases</section>. Con las cuantificadores en la frase nominal podemos analizar frases nominales tales como éstas en español:</introduction>    <EnglishExample>
+	<title level="2">Las frases nominales - Las frases cuantificadoras como modificadores</title>
+	<introduction id="NPQPIntroNotPractical" show="swNotPractical">Next to be added to the nominal phrase as we work our way down the tree are quantifier phrases (QP), discussed earlier in <section number="2">Las frases cuantificadoras</section>.  This means we will be able to parse nominal phrases such as these in English:</introduction>
+	<introduction id="NPQPIntroPractical" show="swPractical">Siguiente en la frase nominal son las frases cuantificadoras, discutidas anteriormente en  <section number="2">Las frases cuantificadoras</section>. Con las cuantificadores dentro de la frase nominal podemos analizar frases nominales tales como éstas en español:</introduction>    <EnglishExample>
 		<exItem label="1.">ésos muy pocos libros.</exItem>
 		<exItem label="2.">los muchos perros del muchacho.</exItem>
 		<exItem label="3.">solamente los primeros cientos muchachos.</exItem>
 	</EnglishExample>
 	<form section="np">
-		<prompt>Escriba ejemplos similares en su idioma aquí:</prompt>
+		<prompt>Escriba ejemplos similares en su lengua aquí:</prompt>
 		<textBox id="NPQPExample" dataItem="qpExample"/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="qpPos" default="unknown" position="yesSpec">RNPQPPos</groupName>
-			<prompt>De acuerdo con los ejemplos, ¿dónde se presentan las frases del cuantificador (incluyendo números cardinales) con respecto al sustantivo?</prompt>
-			<radio id="NPQPPosBefore" dataValue="before">Antes</radio>
-			<radio id="NPQPPosAfter" dataValue="after">Después</radio>
-			<radio id="NPQPPosEitherSide" dataValue="either">Cualquier lado, pero no en ambos lados en la misma oración</radio>
-			<radio id="NPQPPosEitherOrBoth" dataValue="eitherOrBoth">Cualquier lado, o en ambos lados en la misma oración</radio>
+		   <prompt>De acuerdo con los ejemplos, ¿dónde se presentan las frases cuantificadoras (números cardinales incluyendo) con respecto al sustantivo?</prompt>
+			<radio id="NPQPPosBefore" dataValue="before">Antes del sustantivo</radio>
+			<radio id="NPQPPosAfter" dataValue="after">Después del sustantivo</radio>
+			<radio id="NPQPPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
+			<radio id="NPQPPosEitherOrBoth" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
 			<radio id="NPQPPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del sustantivo, o en ambos lados en la misma oración</radio>
 			<radio id="NPQPPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del sustantivo, o en ambos lados en la misma oración</radio>
 			<radio id="NPQPPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
@@ -52,7 +52,7 @@
 		<instruction id="NPQPPosEitherRestrictedNumNoInstruction" show="swNPQPPosEitherRestrictedNumNo">In the lexicon, mark those quantifiers or numbers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier or number which can occur on either side.</instruction>
 		<br/>
 		<instruction id="NPQPNumberMarkingInstruction" show="swNPQPNumberMarking">
-To handle the number marking, we will assume that all numbers are plural by default.  Therefore, only the number "one" needs to be marked with the feature <feature>singular</feature>.  If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the number "two".
+		   To handle the number marking, we will assume that all numbers are plural by default.  Therefore, only the number “one” needs to be marked with the feature <feature>singular</feature>.  If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the number “two”.
 <br/>
 For other quantifiers, in the lexicon:
 <ul>
@@ -63,7 +63,7 @@ For other quantifiers, in the lexicon:
 			</ul>
 		</instruction>
 		<instruction id="NPQPNumberAgreementInstruction" show="swNPQPNumberAgreement">
-To handle the number agreement, we will assume that all numbers are plural by default.  Therefore, only the number "one" needs to be marked with the feature <feature>singular</feature>.  If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the number "two".
+		   To handle the number agreement, we will assume that all numbers are plural by default.  Therefore, only the number “one” needs to be marked with the feature <feature>singular</feature>.  If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the number “two”.
 <br/>
 For other quantifiers, in the lexicon:
 <ul>

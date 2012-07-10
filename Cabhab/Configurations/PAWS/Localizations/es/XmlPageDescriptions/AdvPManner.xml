@@ -2,11 +2,11 @@
 <!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="AdvPManner" count="3/7">
-	<title level="2">Los adverbios y sus frases - Los adverbios de manera</title>
-	<introduction>Los adverbios de manera directamente modifican el verbo y generalmente terminan con <example>-mente</example> en español.
-		No parecen tener contrapartes de los otros tipos de frase, a menos que posiblemente algunos comparativos, tales como <example>tan rápidamente como él podría</example>. (Los comparativos serán tratados en  <section number="15">Las construcciones coordinativas</section>.)
-		En español, los adverbios de manera se pueden modificar con <example>muy</example>
+<page id="AdvPManner" count="3/6">
+	<title level="2">Frases adverbiales - Los adverbios de modo</title>
+	<introduction>Los adverbios de modo directamente modifican el verbo y generalmente terminan con <example>-mente</example> en español.
+	   No parecen tener contrapartes de los otros tipos de frase, a menos que posiblemente algunos comparativos, tales como <example>tan rápidamente como él podría</example>. (Los comparativos serán tratados en <section number="9.5">Las oraciones básicas - Los copulativas, comparativas y existenciales</section> y <section number="15">Las construcciones coordinativas</section>.)
+		En español, los adverbios de modo se pueden modificar con <example>muy</example>
 y <example>tan</example>, como en:
 </introduction>
 	<EnglishExample>
@@ -15,25 +15,96 @@ y <example>tan</example>, como en:
 		<exItem label="3.">muy bien.</exItem>
 	</EnglishExample>
 	<form section="advp">
-		<prompt>Escriba algunos ejemplos de cómo su idioma expresa la manera aquí:</prompt>
+	   <prompt>En algunas lenguas no hay palabras independientes, sino utilizan afijos verbales para expresar el modo. Escriba algunos ejemplos de cómo su lengua expresa el modo aquí, sin palabras de grado.  Si uno de los adverbios de modo es un afijo o un clítico que se une a otra palabra, escríbalo aquí con una indicación del guión en el lado donde se une.</prompt>
 		<textBox id="AdvPMannerExample" dataItem="mannerExample"/>
 <br/> <br/>
 <radioGroup>
 	<groupName dataItem="mannerType" default="word">RAdvPMannerType</groupName>
-	<prompt>En algunos idiomas no hay palabras independientes, sino utilizan afijos para expresar la manera. ¿Hay adverbios de manera en su idioma que se escriben como palabras independientes?</prompt>
+	<prompt>¿Hay adverbios de modo en su lengua que se escriben como palabras independientes?</prompt>
 	<radio id="AdvPMannerTypeWord" dataValue="word">Sí</radio>
 	<radio id="AdvPMannerTypeAffix" dataValue="affix">No, todos se escriben como parte del verbo</radio>
+   <radioGroup id="AdvPMannerWordDegree" show="swAdvPMannerTypeWord">
+	  <groupName dataItem="mannerDegree" default="no">RAdvPMannerWordDegree</groupName>
+	  <prompt>¿Existen palabras de grado en su lengua que pueden modificar los adverbios de modo?</prompt>
+	  <radio id="AdvPMannerWordDegreeYesBefore" dataValue="yesBefore">Sí, una palabra de grado puede presentarse antes del adverbio de modo</radio>
+	  <radio id="AdvPMannerWordDegreeYesAfter" dataValue="yesAfter">Sí, una palabra de grado puede presentarse después del adverbio de modo</radio>
+	  <radio id="AdvPMannerWordDegreeAttaches" dataValue="attaches">Hay un afijo o clítico que se une al adverbio de modo para intensificarlo</radio>
+	  <radio id="AdvPMannerWordDegreeNoRedup" dataValue="noRedup">No, pero utiliza reduplicación para intensificar el significado del adverbio de modo</radio>
+	  <radio id="AdvPMannerWordDegreeNo" dataValue="no">No, los adverbios de modo no se modifican ni intensifican</radio>
+   </radioGroup>
+   <radioGroup id="AdvPMannerAffixDegree" show="swAdvPMannerTypeAffix">
+	  <groupName dataItem="mannerAffixDegree" default="no">RAdvPMannerAffixDegree</groupName>
+	  <prompt>¿Existen afijos de grado en su lengua que pueden modificar los agijos adverbiales de modo?</prompt>
+	  <radio id="AdvPMannerAffixDegreeYesBefore" dataValue="yesBefore">Sí, un afijo de grado puede presentarse antes del afijo adverbial de modo</radio>
+	  <radio id="AdvPMannerAffixDegreeYesAfter" dataValue="yesAfter">Sí, un afijo de grado puede presentarse después del afijo adverbial de modo</radio>
+	  <radio id="AdvPMannerAffixDegreeNoRedup" dataValue="noRedup">No, pero utiliza reduplicación para intensificar el significado del afijo adverbial de modo</radio>
+	  <radio id="AdvPMannerAffixDegreeNo" dataValue="no">No, los adverbios de modo no se modifican ni intensifican</radio>
+   </radioGroup>
 </radioGroup>
-		<instruction id="AdvPMannerTypeWordInstruction" show="swAdvPMannerTypeWord">In the lexicon, key the feature <feature>manner</feature>
-on all adverbs that express manner.
-</instruction>
-<br/>
-		<buttons>
-			<button id="AdvPMannerExamplesBack" value="Back" goto="AdvPLocative.xml"/>
-			<button id="AdvPMannerExamplesNext" value="Next" goto="AdvPReason.xml"/>
-		</buttons>
+	   <prompt id="AdvPMannerWordDegreeAttachesPrompt" show="swAdvPMannerWordDegreeAttaches">Escriba los afijos de grado que pueden modificar los adverbios de modo aquí, con una indicación del guión en el lado que se une:</prompt>
+	   <textBox id="AdvPMannerWordDegreeAffixExample" dataItem="mannerDegreeAffixExample" show="swAdvPMannerWordDegreeAttaches" rows="3"/>
+	   <prompt id="AdvPMannerWordDegreePrompt" show="swAdvPMannerTypeWordAndYesDegree">Escriba las palabras de grado que pueden modificar los adverbios de modo aquí:</prompt>
+	   <textBox id="AdvPMannerDegreeExample" dataItem="mannerDegreeExample" rows="3" show="swAdvPMannerTypeWordAndYesDegree"/>
+	   <prompt id="AdvPMannerAffixDegreePrompt" show="swAdvPMannerTypeAffixAndYesDegree">Escriba los afijos de grado que pueden modificar los afijos adverbiales de modo aquí, con una indicación del guión en el lado que se une:</prompt>
+	   <textBox id="AdvPMannerAffixDegreeExample" dataItem="mannerAffixDegreeExample" rows="3" show="swAdvPMannerTypeAffixAndYesDegree"/>
+	   <br/><br/>
+	   <prompt id="AdvPMannerWordDegreeAffixPhrasePrompt" show="swAdvPMannerWordDegreeAttaches">Escriba ejemplos de los afijos o clíticos de grado unido con un adverbio de modo aquí:</prompt>
+	   <textBox id="AdvPMannerWordPhraseAffixExample" dataItem="mannerPhraseAffixExample" show="swAdvPMannerWordDegreeAttaches"/>
+	   <prompt id="AdvPMannerWordDegreePhrasePrompt" show="swAdvPMannerTypeWordAndYesDegree">Escriba ejemplos de adverbios de modo con una palabra de grado modificandolos aquí:</prompt>
+	   <textBox id="AdvPMannerDegreePhraseExample" dataItem="mannerDegreePhraseExample" rows="5" show="swAdvPMannerTypeWordAndYesDegree"/>
+	   <prompt id="AdvPMannerAffixDegreePhrasePrompt" show="swAdvPMannerTypeAffixAndYesDegree">Escriba algunos ejemplos de un afijo adverbial de modo con un afijo de grado modificandolo y ambos unidos a un verbo aquí:</prompt>
+	   <textBox id="AdvPMannerAffixDegreePhraseExample" dataItem="mannerAffixDegreePhraseExample" rows="5" show="swAdvPMannerTypeAffixAndYesDegree"/>
+	   <prompt id="AdvPMannerWordDegreeRedupPrompt" show="swAdvPMannerTypeWordAndNoRedup">Escriba ejemplos de los adverbios de modo con reduplicación aquí:</prompt>
+	   <textBox id="AdvPMannerDegreeRedupExample" dataItem="mannerDegreeRedupExample" rows="5" show="swAdvPMannerTypeWordAndNoRedup"/>
+	   <prompt id="AdvPMannerAffixDegreeRedupPrompt" show="swAdvPMannerTypeAffixAndNoRedup">Escriba ejemplos de los afijos adverbiales de modo con reduplicación unidos a los verbos aquí:</prompt>
+	   <textBox id="AdvPMannerAffixDegreeRedupExample" dataItem="mannerAffixDegreeRedupExample" rows="5" show="swAdvPMannerTypeAffixAndNoRedup"/>
+	   <br/><br/>
+	   <instruction id="AdvPMannerTypeWordInstruction" show="swAdvPMannerTypeWord">In the lexicon, key the feature <feature>manner</feature>
+		  on all adverbs that express manner.
+	   </instruction>
+	   <instruction  id="AdvPMannerDegreeYesInstruction" show="swAdvPMannerTypeWordAndYesDegree">In the lexicon, key the features <feature>makeDeg modifies_manner</feature> on the degree words to change the category and allow it to modify manner adverbs.  Simply add the <feature>modifies_manner</feature> feature if this same degree word can modify temporal and/or locative adverbs and you already marked it with those features.</instruction>
+	   <br/><br/>
+
+	   <buttons>
+		  <button id="AdvPMannerExamplesBack" value="Back" goto="AdvPLocative.xml"/>
+		  <button id="AdvPMannerExamplesNext" value="Next" goto="AdvPReason.xml"/>
+	   </buttons>
 	</form>
-<showWhen id="swAdvPMannerTypeWord">
-	<whenRadio button="AdvPMannerTypeWord"></whenRadio>
-</showWhen>
+   <showWhen id="swAdvPMannerTypeWord">
+	  <whenRadio button="AdvPMannerTypeWord"></whenRadio>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffix">
+	  <whenRadio button="AdvPMannerTypeAffix"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerWordDegreeAttaches">
+	  <whenRadio button="AdvPMannerWordDegreeAttaches"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordAndYesDegree">
+	  <whenRadio button="AdvPMannerTypeWord"/>
+	  <and/>
+	  <whenRadio button="AdvPMannerWordDegreeYesAfter"/>
+	  <or/>
+	  <whenRadio button="AdvPMannerTypeWord"/>
+	  <and/>
+	  <whenRadio button="AdvPMannerWordDegreeYesBefore"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffixAndYesDegree">
+	  <whenRadio button="AdvPMannerTypeAffix"/>
+	  <and/>
+	  <whenRadio button="AdvPMannerAffixDegreeYesAfter"/>
+	  <or/>
+	  <whenRadio button="AdvPMannerTypeAffix"/>
+	  <and/>
+	  <whenRadio button="AdvPMannerAffixDegreeYesBefore"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordAndNoRedup">
+	  <whenRadio button="AdvPMannerTypeWord"/>
+	  <and/>
+	  <whenRadio button="AdvPMannerWordDegreeNoRedup"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffixAndNoRedup">
+	  <whenRadio button="AdvPMannerTypeAffix"/>
+	  <and/>
+	  <whenRadio button="AdvPMannerAffixDegreeNoRedup"/>
+   </showWhen>
 </page>

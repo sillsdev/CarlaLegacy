@@ -1,0 +1,369 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css">
+<title>Answer and Result File Information</title>
+	<script language="jscript" id="clientEventHandlersJS">
+// PAWSFiles.js
+
+function Initialize() {
+	var sAnswer;
+	var sTemp;
+	var index;
+
+	window.external.GetAnswerValue("//language/answerFile");
+	sAnswer = FileLocAnswer.value = window.external.OutValue;
+
+	window.external.GetAnswerValue("//language/grammarFile");
+	sTemp = FileLocGrammar.value = window.external.OutValue;
+	if (sTemp == "") {
+		index = sAnswer.lastIndexOf(".paw");
+		if (index > - 1) {
+			sTemp = sAnswer.substr(0, index) + ".grm";
+			window.external.SetAnswerValue("//language/grammarFile", sTemp);
+			FileLocGrammar.value = sTemp;
+		}
+	}
+
+	window.external.GetAnswerValue("//language/writerFile");
+	sTemp = FileLocWriter.value = window.external.OutValue;
+	if (sTemp == "") {
+		index = sAnswer.lastIndexOf(".paw");
+		if (index > - 1) {
+			sTemp = sAnswer.substr(0, index) + ".xml";
+			window.external.SetAnswerValue("//language/writerFile", sTemp);
+			FileLocWriter.value = sTemp;
+		}
+	}
+
+	window.external.GetAnswerValue("//language/writerPracticalFile");
+	sTemp = FileLocWriterPractical.value = window.external.OutValue;
+	if (sTemp == "") {
+		index = sAnswer.lastIndexOf(".paw");
+		if (index > - 1) {
+			sTemp = sAnswer.substr(0, index) + "WriterPractical.xml";
+			window.external.SetAnswerValue("//language/writerPracticalFile", sTemp);
+			FileLocWriterPractical.value = sTemp;
+		}
+	}
+
+	window.external.GetAnswerValue("//language/writerPracticalSpanishFile");
+	sTemp = FileLocWriterPracticalSpanish.value = window.external.OutValue;
+	if (sTemp == "") {
+		index = sAnswer.lastIndexOf(".paw");
+		if (index > - 1) {
+			sTemp = sAnswer.substr(0, index) + "WriterPracticalSpanish.xml";
+			window.external.SetAnswerValue("//language/writerPracticalSpanishFile", sTemp);
+			FileLocWriterPracticalSpanish.value = sTemp;
+		}
+	}
+
+	window.external.GetAnswerValue("//language/exampleFilesPath");
+	sTemp = FileLocExampleFiles.value = window.external.OutValue;
+	if (sTemp == "") {
+		index = sAnswer.lastIndexOf("\\");
+		if (index > - 1) {
+			sTemp = sAnswer.substr(0, index);
+			window.external.SetAnswerValue("//language/exampleFilesPath", sTemp);
+			FileLocExampleFiles.value = sTemp;
+		}
+	}
+
+
+	window.external.GetAnswerValue("//language/textSFM");
+	FileTextSFM.value = window.external.OutValue;
+
+	displayCheckBoxValue(OutputGrammar, "/paws/@outputGrammar");
+	displayCheckBoxValue(OutputWriter, "/paws/@outputWriter");
+	displayCheckBoxValue(OutputWriterPractical, "/paws/@outputWriterPractical");
+	displayCheckBoxValue(OutputWriterPracticalSpanish, "/paws/@outputWriterPracticalSpanish");
+
+	ShowBackNextButtons.style.display = "none";
+	Return.style.display = "";
+
+	Refresh()
+}
+function displayCheckBoxValue(checkboxID, xpath) {
+	window.external.GetAnswerValue(xpath);
+	sTemp = checkboxID.value = window.external.OutValue;
+	if (sTemp == "True")
+	checkboxID.checked = true; else
+	checkboxID.checked = false;
+}
+function saveData() {
+	window.external.SetAnswerValue("//language/answerFile", FileLocAnswer.value);
+
+	window.external.SetAnswerValue("//language/grammarFile", FileLocGrammar.value);
+
+	window.external.SetAnswerValue("//language/writerFile", FileLocWriter.value);
+
+	window.external.SetAnswerValue("//language/writerPracticalFile", FileLocWriterPractical.value);
+
+	window.external.SetAnswerValue("//language/writerPracticalSpanishFile", FileLocWriterPracticalSpanish.value);
+
+	window.external.SetAnswerValue("//language/exampleFilesPath", FileLocExampleFiles.value);
+
+	window.external.SetAnswerValue("//language/textSFM", FileTextSFM.value);
+
+	window.external.SetAnswerValue("/paws/@outputGrammar", OutputGrammar.value);
+
+	window.external.SetAnswerValue("/paws/@outputWriter", OutputWriter.value);
+
+	window.external.SetAnswerValue("/paws/@outputWriterPractical", OutputWriterPractical.value);
+
+	window.external.SetAnswerValue("/paws/@outputWriterPracticalSpanish", OutputWriterPracticalSpanish.value);
+
+	window.external.SaveData();
+
+	window.external.InitAnswerTransforms()
+}
+function Refresh() {
+	var valArray = new Array();
+
+	if (! OutputWriter.checked && ! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked) {
+		OutputWriter.checked = true;
+	}
+	if (OutputGrammar.checked) {
+		BrowseForGrammar.style.display = "";
+		BrowseForGrammarDir.style.display = "";
+	} else {
+		BrowseForGrammar.style.display = "none";
+		BrowseForGrammarDir.style.display = "none";
+	}
+
+	if (OutputWriter.checked) {
+		BrowseForWriter.style.display = "";
+	} else {
+		BrowseForWriter.style.display = "none";
+	}
+
+	if (OutputWriterPractical.checked) {
+		BrowseForWriterPractical.style.display = "";
+	} else {
+		BrowseForWriterPractical.style.display = "none";
+	}
+
+	if (OutputWriterPracticalSpanish.checked) {
+		BrowseForWriterPracticalSpanish.style.display = "";
+	} else {
+		BrowseForWriterPracticalSpanish.style.display = "none";
+	}
+}
+function ButtonFileLocAnswer() {
+	var result;
+	window.external.FileBrowse(FileLocAnswer.value, "PAWS Starter Kit (*.paw)|*.paw|" + "All Files (*.*)|*.*");
+	result = window.external.OutValue;
+	if (result != "Cancel") {
+		FileLocAnswer.value = result;
+		saveData();
+	}
+}
+function ButtonFileLocGrammar() {
+	var result;
+	window.external.FileBrowse(FileLocGrammar.value, "PC-PATR Grammar  (*.grm)|*.grm|" + "All Files (*.*)|*.*");
+	result = window.external.OutValue;
+	if (result != "Cancel") {
+		FileLocGrammar.value = result;
+		saveData();
+	}
+}
+function ButtonFileLocWriter() {
+	var result;
+	window.external.FileBrowse(FileLocWriter.value, "Writer File  (*.xml)|*.xml|" + "All Files (*.*)|*.*");
+	result = window.external.OutValue;
+	if (result != "Cancel") {
+		FileLocWriter.value = result;
+		saveData();
+	}
+}
+function ButtonFileLocWriterPractical() {
+	var result;
+	window.external.FileBrowse(FileLocWriterPractical.value, "Writer File  (*.xml)|*.xml|" + "All Files (*.*)|*.*");
+	result = window.external.OutValue;
+	if (result != "Cancel") {
+		FileLocWriterPractical.value = result;
+		saveData();
+	}
+}
+function ButtonFileLocWriterPracticalSpanish() {
+	var result;
+	window.external.FileBrowse(FileLocWriterPracticalSpanish.value, "Writer File  (*.xml)|*.xml|" + "All Files (*.*)|*.*");
+	result = window.external.OutValue;
+	if (result != "Cancel") {
+		FileLocWriterPracticalSpanish.value = result;
+		saveData();
+	}
+}
+function ButtonFileLocExampleFiles() {
+	var result;
+	window.external.DirectoryBrowse(FileLocExampleFiles.value, "Example files directory");
+	result = window.external.OutValue;
+	if (result != "Cancel") {
+		FileLocExampleFiles.value = result;
+		saveData();
+	}
+}
+function SetOutputViaDescription(item) {
+	switch (item) {
+		case "grammar":
+		if (OutputGrammar.checked) {
+			OutputGrammar.checked = false;
+		} else {
+			OutputGrammar.checked = true;
+		}
+		break;
+		case "writer":
+		if (OutputWriter.checked) {
+			OutputWriter.checked = false;
+		} else {
+			OutputWriter.checked = true;
+		}
+		break;
+		case "writerPractical":
+		if (OutputWriterPractical.checked) {
+			OutputWriterPractical.checked = false;
+		} else {
+			OutputWriterPractical.checked = true;
+		}
+		break;
+		case "writerPracticalSpanish":
+		if (OutputWriterPracticalSpanish.checked) {
+			OutputWriterPracticalSpanish.checked = false;
+		} else {
+			OutputWriterPracticalSpanish.checked = true;
+		}
+		break;
+	}
+	SetOutput(item);
+}
+function SetOutput(item) {
+	switch (item) {
+		case "grammar":
+		if (OutputGrammar.checked) {
+			OutputGrammar.value = "True";
+		} else {
+			OutputGrammar.value = "False";
+		}
+		break;
+		case "writer":
+		if (OutputWriter.checked) {
+			OutputWriter.value = "True";
+		} else {
+			OutputWriter.value = "False";
+		}
+		break;
+		case "writerPractical":
+		if (OutputWriterPractical.checked) {
+			OutputWriterPractical.value = "True";
+		} else {
+			OutputWriterPractical.value = "False";
+		}
+		break;
+		case "writerPracticalSpanish":
+		if (OutputWriterPracticalSpanish.checked) {
+			OutputWriterPracticalSpanish.value = "True";
+		} else {
+			OutputWriterPracticalSpanish.value = "False";
+		}
+		break;
+	}
+	saveData();
+	Refresh();
+}
+function ButtonBack() {
+	window.navigate("LanguagePropertiesNewMode");
+}
+
+function ButtonNext() {
+	saveData();
+	window.navigate("Contents.htm");
+}
+  </script></head>
+<body onload="Initialize()">
+<h2>Answer and Result File Information</h2>
+<div class="introduction">
+<p>The PAWS Starter Kit can create several files. <ol style="margin-top: .025in">
+<li>One stores the answers you have given to the questions.</li>
+<li>Another stores the automatically generated PC-PATR grammar file.</li>
+<li>A third stores an automatically generated comparative grammar write-up file.</li>
+<li>A fourth stores an automatically generated practical grammar write-up file.</li>
+<li style="display:none">A fifth stores an automatically generated practical grammar write-up in Spanish file.</li>
+<li>Finally, there are many example files it creates so you can test the PC-PATR grammar.</li>
+</ol>You can set these files by answering the following questions.</p>
+</div>
+<br>
+<div class="form">
+<p>Select the outputs you want by checking the box before each one.  Please note that at least one writer output must be present.  The default writer is the comparative one.</p>
+<table>
+<tr>
+<td><input type="checkbox" name="OutputGrammar" id="OutputGrammar" onclick="SetOutput('grammar')" value="grammar"></td>
+<td onclick="SetOutputViaDescription('grammar')">Output the PC-PATR grammar file and test example files.</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="OutputWriter" id="OutputWriter" onclick="SetOutput('writer')" value="writer"></td>
+<td onclick="SetOutputViaDescription('writer')">Output the comparative grammar write-up file.</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="OutputWriterPractical" id="OutputWriterPractical" onclick="SetOutput('writerPractical')" value="writerPractical"></td>
+<td onclick="SetOutputViaDescription('writerPractical')">Output the practical grammar write-up file.</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="OutputWriterPracticalSpanish" id="OutputWriterPracticalSpanish" onclick="SetOutput('writerPracticalSpanish')" value="writerPracticalSpanish"></td>
+<td onclick="SetOutputViaDescription('writerPracticalSpanish')">Output the Spanish practical grammar write-up file.</td>
+</tr>
+</table>
+</div>
+<br/>
+<div class="form">
+<div>
+<p style="margin-left: 0.125in">The name of the file that contains your answers is shown below.  Click on the 'Browse' button to change it.<br></p>
+<textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="60" id="FileLocAnswer" name="FileLocAnswer" contenteditable="false"></textarea>
+&nbsp;&nbsp;&nbsp;
+<input type="button" value=" Browse " name="BFileLocAnswer" id="BFileLocAnswer" onclick="ButtonFileLocAnswer()" style="width: 85px; height: 24px">
+</div>
+<div id="BrowseForGrammar" name="BrowseForGrammar">
+<p style="margin-left: 0.125in">The name of the automatically generated PC-PATR grammar file is shown below.  Click on the 'Browse' button to change it.<br></p>
+<textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="60" id="FileLocGrammar" name="FileLocGrammar" contenteditable="false"></textarea>
+&nbsp;&nbsp;&nbsp;
+<input type="button" value=" Browse " name="BFileLocGrammar" id="BFileLocGrammar" onclick="ButtonFileLocGrammar()" style="width: 85px; height: 24px">
+</div>
+<div id="BrowseForWriter">
+<p style="margin-left: 0.125in">The name of the automatically generated comparative grammar write-up file is shown below.  Click on the 'Browse' button to change it.<br></p>
+<textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="60" id="FileLocWriter" name="FileLocWriter" contenteditable="false"></textarea>
+&nbsp;&nbsp;&nbsp;
+<input type="button" value=" Browse " name="BFileLocWriter" id="BFileLocWriter" onclick="ButtonFileLocWriter()" style="width: 85px; height: 24px">
+</div>
+<div id="BrowseForWriterPractical">
+<p style="margin-left: 0.125in">The name of the automatically generated practical grammar write-up file is shown below.  Click on the 'Browse' button to change it.<br></p>
+<textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="60" id="FileLocWriterPractical" name="FileLocWriterPractical" contenteditable="false"></textarea>
+&nbsp;&nbsp;&nbsp;
+<input type="button" value=" Browse " name="BFileLocWriterPractical" id="BFileLocWriterPractical" onclick="ButtonFileLocWriterPractical()" style="width: 85px; height: 24px">
+</div>
+<div id="BrowseForWriterPracticalSpanish">
+<p style="margin-left: 0.125in">The name of the automatically generated practical grammar write-up in Spanish file is shown below.  Click on the 'Browse' button to change it.<br></p>
+<textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="60" id="FileLocWriterPracticalSpanish" name="FileLocWriterPracticalSpanish" contenteditable="false"></textarea>
+&nbsp;&nbsp;&nbsp;
+<input type="button" value=" Browse " name="BFileLocWriterPracticalSpanish" id="BFileLocWriterPracticalSpanish" onclick="ButtonFileLocWriterPracticalSpanish()" style="width: 85px; height: 24px">
+</div>
+<div id="BrowseForGrammarDir">
+<p style="margin-left: 0.125in">The directory where the example files are located is shown below.  Click on the 'Browse' button to change it.<br></p>
+<textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="60" id="FileLocExampleFiles" name="FileLocExampleFiles" contenteditable="false"></textarea>
+&nbsp;&nbsp;&nbsp;
+<input type="button" value=" Browse " name="BFileLocExampleFiles" id="BFileLocExampleFiles" onclick="ButtonFileLocExampleFiles()" style="width: 85px; height: 24px"><br>
+<br/>
+<div class="introduction">
+<p>The example files are standard format files.  You can set the field code to use in them.</p>
+</div>
+<p style="margin-left: 0.125in">Enter the field code to use for example files (include the backslash):<br></p>
+<textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="10" id="FileTextSFM" name="FileTextSFM" contenteditable="inherit"></textarea>
+</div>
+<div id="ShowBackNextButtons">
+<br/>
+<input type="button" value="< Back" name="BBack" id="PAWSFilesBack" onclick="ButtonBack()" style="width: 78px; height: 24px">&nbsp;<input type="button" value="Next >" name="BNext" id="PAWSFilesNext" onclick="ButtonNext()" style="width: 78px; height: 24px">
+</div>
+</div>
+<div align="center" id="Return" class="return">
+<a  href="LeftOffAt" onclick="saveData()">Return</a>
+</div>
+</body>
+</html>

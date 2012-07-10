@@ -3,21 +3,38 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QPDegree" count="3/6">
-	<title level="2">Los cuantificadores y sus frases - Palabras de grado</title>
-	<introduction>Otros cuantificadores, como - <example>muchos</example>, <example>mucho</example>, y <example>poco</example>, se presentan en diversas posiciones en la frase nominal. estos cuantificadores se presentan después de un artículo, demostrativo o de poseedor pronominal y antes del sustantivo, como en
-		<example>los muchos perros negros de Juan</example> o <example>su pocos libros</example>.   Además, estos cuantificadores se pueden modificar con palabras de grado tales como <example>muy</example> y <example>tan</example>, como en <example>muchisimos perros</example> o <example>muy poco comida</example>.</introduction>
+	<title level="2">Frases cuantificadoras - Palabras de grado</title>
+   <introduction>Otros cuantificadores, como - <example>muchos</example>, <example>mucho</example>, y <example>poco</example>, se presentan en diversas posiciones en la frase nominal. En español, estos cuantificadores se presentan después de un artículo, demostrativo o de poseedor pronominal y antes del sustantivo, como en
+		<example>los muchos perros negros de Juan</example> o <example>sus pocos libros</example>.   Además, estos cuantificadores se pueden modificar con palabras de grado tales como <example>muy</example>, como en <example>muchisimos perros</example> o <example>muy poco comida</example>.</introduction>
 	<form section="qp">
-		<prompt>Escriba sus ejemplos de este tipo de cuantificador en su idioma aquí:</prompt>
+	   <radioGroup id="QPQuantifierClassifierAgrTable" show="swOTClassifierAgr">
+		  <groupName dataItem="quantifierClassifier" default="no">RQPQuantifierClassifierAgr</groupName>
+		  <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar este tipo de cuantificadores?</prompt>
+		  <radio id="QPQuantifierClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
+		  <radio id="QPQuantifierClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+	   </radioGroup>
+	   <prompt id="QPQuantifierClassifierAgrPrompt" show="swOTClassifierAgrAndQuantifierYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada uno de los cuantificadores.</prompt>
+	   <br/>
+	   <prompt>Escriba ejemplos de este tipo de cuantificador en su lengua aquí:</prompt>
 		<textBox id="QPQuantifierExample" dataItem="quantifierExample"/>
 		<br/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="degree" default="yes">RDegreeYesNo</groupName>
-			<prompt>¿En su idioma hay palabras de grado que puedan modificar este tipo de cuantificador?</prompt>
+			<prompt>¿En su lengua hay palabras de grado que puedan modificar este tipo de cuantificador?</prompt>
 			<radio id="QPDegreeNo" checked="yes" dataValue="no">No</radio>
 			<radio id="QPDegreeYes" checked="yes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="QPDegreeYesExamples" show="swQPDegreeYes">Escriba sus ejemplos que contienen palabras de grado aquí. Observe que estas palabras de grado muy probablemente no serán iguales de que las que pueden modificarse una frase nominal completa de la primera sección anterior.</prompt>
+	   <radioGroup id="QPDegreeClassifierAgrTable" show="swOTClassifierAgrAndDegreeYes">
+		  <groupName dataItem="degreeClassifier" default="no">RQPDegreeClassifierAgr</groupName>
+		  <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar este tipo de palabras de grado?</prompt>
+			 <radio id="QPDegreeClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
+			 <radio id="QPDegreeClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+	   </radioGroup>
+	   <prompt id="QPDegreeClassifierAgrPrompt" show="swOTClassifierAgrAndDegreeYesAndClassifierYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada una de las palabras de grado.</prompt>
+
+	   <br/>
+	   <prompt id="QPDegreeYesExamples" show="swQPDegreeYes">Escriba sus ejemplos que contienen palabras de grado aquí. Observe que estas palabras de grado muy probablemente no serán iguales de que las que pueden modificarse una frase nominal completa de la primera sección anterior.</prompt>
 		<textBox id="QPDegreeExample" dataItem="degreeExample" show="swQPDegreeYes"/>
 		<radioGroup id="QPDegreeWordsTable" show="swQPDegreeYes">
 			<groupName dataItem="degreePos" default="unknown" position="yesSpec">RDegree</groupName>
@@ -49,32 +66,53 @@ and those which can only occur after the quantifier also need the
 feature <feature>QP-final</feature>.  Do not enter either
 feature <feature>QP-initial</feature> or <feature>QP-final</feature> on any degree words which can occur on
 either side.</span></instruction>
+	   <br/><br/>
 		<buttons>
 			<button id="QPDegreeBack" value="Back" goto="QPDeterminers.xml"/>
 			<button id="QPDegreeNext" value="Next" goto="QPCardinal.xml"/>
 		</buttons>
 	</form>
-	<showWhen id="swQPDegreeYes">
-		<whenRadio button="QPDegreeYes"/>
-	</showWhen>
-	<showWhen id="swQPDegreeEitherorBoth">
-		<whenRadio button="QPDegreeYes"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPDegreeBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPDegreeAfter"/>
-	</showWhen>
-	<showWhen id="swQPDegreeEitherRestricted">
-		<whenRadio button="QPDegreeYes"/>
-		<and/>
-		<whenRadio button="QPDegreeEitherRestricted"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPDegreeBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPDegreeAfter"/>
-	</showWhen>
+   <showWhen id="swOTClassifierAgr">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndQuantifierYes">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenRadio button="QPQuantifierClassifierAgrYes"/>
+   </showWhen>
+   <showWhen id="swQPDegreeYes">
+	  <whenRadio button="QPDegreeYes"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndDegreeYes">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenRadio button="QPDegreeYes"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndDegreeYesAndClassifierYes">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenRadio button="QPDegreeYes"/>
+	  <and/>
+	  <whenRadio button="QPDegreeClassifierAgrYes"/>
+   </showWhen>
+   <showWhen id="swQPDegreeEitherorBoth">
+	  <whenRadio button="QPDegreeYes"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDegreeBefore"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDegreeAfter"/>
+   </showWhen>
+   <showWhen id="swQPDegreeEitherRestricted">
+	  <whenRadio button="QPDegreeYes"/>
+	  <and/>
+	  <whenRadio button="QPDegreeEitherRestricted"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDegreeBefore"/>
+	  <and/>
+	  <not/>
+	  <whenRadio button="QPDegreeAfter"/>
+   </showWhen>
 </page>

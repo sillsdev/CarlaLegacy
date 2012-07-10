@@ -3,9 +3,11 @@
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPAgrFeatures" count="2/2">
 	<title level="2">Las oraciones básicas - Las características de la concordancia</title>
-	<instruction>Los verbos y los auxiliares también pueden tener características de la concordancia que requieren la concordancia con el sujeto, y a veces también con el objeto directo. Mire a de las características en la carta abajo y compruebe cualquiera que su idioma utiliza.  Para la concordancia de clase, substituya un tipo o un número en vez de ## (abajo) en la gramática. <span id="IPAgrFeaturesNotPracticalSpan" show="swNotPractical">In the lexicon, add the appropriate features to the relevant affixes, including pronominal clitics that may attach to the verb.  For class agreement, replace the ## with the appropriate class number up to 30 on the appropriate entries in the lexicon.
+	<instruction>Los verbos y los auxiliares también pueden tener características de la concordancia que requieren la concordancia con el sujeto, y a veces también con el objeto directo. Mire las características en el cuadro abajo y dando click a la izquierda de cualquiera que su lengua utiliza.
+	   <br/><br/>
+	   <span id="IPAgrClassAndClassifierNoSpan" show="swClassifierNo">Tenga en cuenta que no debería tener ningún característica de clase porque ya dijiste en <section number="1">La tipología - Clasificadores</section> que su lengua no tiene clasificadores. Si esto es incorrecto, por favor regresa a <section number="1">La tipología - Clasificadores</section> para cambiar su respuesta allí y documentar los clasificadores.  También necesitará volver por el resto de las secciones anteriores hasta esta página para responder a las preguntas sobre si ese elemento está marcado con clasificadores antes de continuar más allá.  </span>Para la concordancia de clase, si su lengua tiene clasificadores para tipo, dando click a la izquierda de las características del tipo apropiadas a continuación.  Si se usan números de clase, dando click a la izquierda de las características <feature>class_ ## _ [tema/objeto/ergativo/absolutivo]</feature> apropiadas en el cuadro y substituya un tipo o un número en vez de ## (abajo) en la gramática. <span id="IPAgrFeaturesNotPracticalSpan" show="swNotPractical">In the lexicon, add the appropriate features to the relevant affixes, including pronominal clitics that may attach to the verb.  For class agreement, replace the ## with the appropriate class number up to 25 on the appropriate entries in the lexicon.
 <br/>
-		<br/>For animacy, it is most likely a property of the semantics of the individual verb whether its subject and/or object must be animate, so those features will need to be keyed on the verb entry.  Since verbs are a large, open class, you do not need to mark all verbs at this point (or even ever).  Mark those common verbs that come to mind that can only have an animate subject or object.  For example, any "experiencer" verbs which have to do with feeling or thinking must have an animate subject.  Later, when you are working on eliminating incorrect parses, you will find others that need these features.</span><br/>
+		  <br/>For animacy, it is most likely a property of the semantics of the individual verb whether its subject and/or object must be animate, so those features will need to be keyed on the verb entry.  Since verbs are a large, open class, you do not need to mark all verbs at this point (or even ever).  Mark those common verbs that come to mind that can only have an animate subject or object.  For example, any “experiencer” verbs which have to do with feeling or thinking must have an animate subject.  Later, when you are working on eliminating incorrect parses, you will find others that need these features.</span><br/>
 		<featureChart>
 			<featureRow>
 				<featureType rowspan="20">persona</featureType>
@@ -187,7 +189,7 @@
 				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser neutro</featureExplanation>
 			</featureRow>
 			<featureRow>
-				<featureType rowspan="16">animacy</featureType>
+				<featureType rowspan="16">animado</featureType>
 				<featureItem dataValue="ipAgrFeatAnimateSubject" name="IPFeatAgrAnimateSubject">animate_subject</featureItem>
 				<featureExplanation>el sujeto debe ser animado</featureExplanation>
 			</featureRow>
@@ -252,7 +254,7 @@
 				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo no debe ser humano</featureExplanation>
 			</featureRow>
 			<featureRow>
-				<featureType rowspan="4">clase</featureType>
+				<featureType rowspan="40">clase</featureType>
 				<featureItem dataValue="ipAgrFeatClassClassNumberSubject" name="IPFeatAgrClassClassNumberSubject">class_##_subject</featureItem>
 				<featureExplanation>el sujeto debe ser de la clase ##</featureExplanation>
 			</featureRow>
@@ -268,6 +270,150 @@
 				<featureItem dataValue="ipAgrFeatClassClassNumberAbsolutive" name="IPFeatAgrClassClassNumberAbsolutive">class_##_absolutive</featureItem>
 				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de la clase ## </featureExplanation>
 			</featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeAnimalSubject" name="IPFeatAgrClassClassTypeAnimalSubject">class_animal_subject</featureItem>
+			  <featureExplanation>el sujeto debe ser de tipo animal</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeInsectSubject" name="IPFeatAgrClassClassTypeInsectSubject">class_insect_subject</featureItem>
+			  <featureExplanation>el sujeto debe ser de tipo insecto</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeLiquidSubject" name="IPFeatAgrClassLiquidSubject">class_liquid_subject</featureItem>
+			  <featureExplanation>el sujeto debe ser de tipo líquido</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeRoundSubject" name="IPFeatAgrClassClassTypeRoundSubject">class_round_subject</featureItem>
+			  <featureExplanation>el sujeto debe ser de tipo redondo</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeCylinderSubject" name="IPFeatAgrClassClassTypeCylinderSubject">class_cylinder_subject</featureItem>
+			  <featureExplanation>el sujeto debe ser de tipo cilíndrico</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeSphericalSubject" name="IPFeatAgrClassClassTypeSphericalSubject">class_spherical_subject</featureItem>
+			  <featureExplanation>el sujeto debe ser de tipo esférico</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeTreeSubject" name="IPFeatAgrClassClassTypeTreeSubject">class_tree_subject</featureItem>
+			  <featureExplanation>el sujeto debe ser de tipo árbol</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeWoodSubject" name="IPFeatAgrClassClassTypeWoodSubject">class_wooden_subject</featureItem>
+			  <featureExplanation>el sujeto debe ser de tipo madera</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeOtherSubject" name="IPFeatAgrClassClassTypeOtherSubject">class_other_subject</featureItem>
+			  <featureExplanation>el sujeto debe ser de otro tipo inanimado</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeAnimalObject" name="IPFeatAgrClassClassTypeAnimalObject">class_animal_object</featureItem>
+			  <featureExplanation>el objeto debe ser de tipo animal</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeInsectObject" name="IPFeatAgrClassClassTypeInsectObject">class_insect_object</featureItem>
+			  <featureExplanation>el objeto debe ser de tipo insecto</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeLiquidObject" name="IPFeatAgrClassClassTypeLiquidObject">class_liquid_object</featureItem>
+			  <featureExplanation>el objeto debe ser de tipo líquido</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeRoundObject" name="IPFeatAgrClassClassTypeRoundObject">class_round_object</featureItem>
+			  <featureExplanation>el objeto debe ser de tipo redondo</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeCylinderObject" name="IPFeatAgrClassClassTypeCylinderObject">class_cylinder_object</featureItem>
+			  <featureExplanation>el objeto debe ser de tipo cilíndrico</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeSphericalObject" name="IPFeatAgrClassClassTypeSphericalObject">class_spherical_object</featureItem>
+			  <featureExplanation>el objeto debe ser de tipo esférico</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeTreeObject" name="IPFeatAgrClassClassTypeTreeObject">class_tree_object</featureItem>
+			  <featureExplanation>el objeto debe ser de tipo árbol</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeWoodObject" name="IPFeatAgrClassClassTypeWoodObject">class_wooden_object</featureItem>
+			  <featureExplanation>el objeto debe ser de tipo madera</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeOtherObject" name="IPFeatAgrClassClassTypeOtherObject">class_other_object</featureItem>
+			  <featureExplanation>el objeto debe ser de otro tipo inanimado</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeAnimalErgative" name="IPFeatAgrClassClassTypeAnimalErgative">class_animal_ergative</featureItem>
+			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo animal</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeInsectErgative" name="IPFeatAgrClassClassTypeInsectErgative">class_insect_ergative</featureItem>
+			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo insecto</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeLiquidErgative" name="IPFeatAgrClassClassTypeLiquidErgative">class_liquid_ergative</featureItem>
+			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo líquido</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeRoundErgative" name="IPFeatAgrClassClassTypeRoundErgative">class_round_ergative</featureItem>
+			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo redondo</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeCylinderErgative" name="IPFeatAgrClassClassTypeCylinderErgative">class_cylinder_ergative</featureItem>
+			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo cilíndrico</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeSphericalErgative" name="IPFeatAgrClassClassTypeSphericalErgative">class_spherical_ergative</featureItem>
+			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo esférico</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeTreeErgative" name="IPFeatAgrClassClassTypeTreeErgative">class_tree_ergative</featureItem>
+			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo árbol</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeWoodErgative" name="IPFeatAgrClassClassTypeWoodErgative">class_wooden_ergative</featureItem>
+			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo madera</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeOtherErgative" name="IPFeatAgrClassClassTypeOtherErgative">class_other_ergative</featureItem>
+			  <featureExplanation>el sujeto de un verbo transitivo debe ser de otro tipo inanimado</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeAnimalAbsolutive" name="IPFeatAgrClassClassTypeAnimalAbsolutive">class_animal_absolutive</featureItem>
+			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo animal</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeInsectAbsolutive" name="IPFeatAgrClassClassTypeInsectAbsolutive">class_insect_absolutive</featureItem>
+			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo insecto</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeLiquidAbsolutive" name="IPFeatAgrClassClassTypeLiquidAbsolutive">class_liquid_absolutive</featureItem>
+			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo líquido</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeRoundAbsolutive" name="IPFeatAgrClassClassTypeRoundAbsolutive">class_round_absolutive</featureItem>
+			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo redondo</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeCylinderAbsolutivet" name="IPFeatAgrClassClassTypeCylinderAbsolutive">class_cylinder_absolutive</featureItem>
+			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo cilíndrico</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeSphericalAbsolutive" name="IPFeatAgrClassClassTypeSphericalAbsolutive">class_spherical_absolutive</featureItem>
+			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo esférico</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeTreeAbsolutive" name="IPFeatAgrClassClassTypeTreeAbsolutive">class_tree_absolutive</featureItem>
+			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo árbol</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeWoodAbsolutive" name="IPFeatAgrClassClassTypeWoodAbsolutive">class_wooden_absolutive</featureItem>
+			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo madera</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipAgrFeatClassClassTypeOtherAbsolutive" name="IPFeatAgrClassClassTypeOtherAbsolutive">class_other_absolutive</featureItem>
+			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de otro tipo inanimado</featureExplanation>
+		   </featureRow>
 		</featureChart>
 	</instruction>
 	<form section="ip" transparent="yes">
@@ -280,4 +426,7 @@
 	<showWhen id="swNotPractical">
 		<whenValue  element="paws" attr="outputGrammar" value="True"/>
 	</showWhen>
+   <showWhen id="swClassifierNo">
+	  <whenValue element="typology" attr="classifier" value="no"/>
+   </showWhen>
 </page>

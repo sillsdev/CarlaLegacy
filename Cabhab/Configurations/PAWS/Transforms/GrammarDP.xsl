@@ -1,23 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="dp">
-	<xsl:text>
+   <xsl:if test="normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='yes' and normalize-space(//np/@casePos)='before' or normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='yes' and normalize-space(//np/@casePos)='either'">
+<xsl:text>
+	  rule {DP option CaseI - initial Case marker on DP, remaining DP instead of PP}
+	  DP = Case DP_1
+	  &lt;DP head&gt; = &lt;DP_1 head&gt;
+	  &lt;Case head type comma&gt; = -
+	  &lt;Case head type DP-initial&gt; = +
+	  &lt;DP_1 head type pronoun&gt; = -
+	  &lt;DP_1 head type case-marked&gt; = -
+	  &lt;DP head case&gt; &lt;= &lt;Case head case&gt;
+	  &lt;DP head type relative&gt; &lt;=  -
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = CaseI
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='yes' and normalize-space(//np/@casePos)='after' or normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='yes' and normalize-space(//np/@casePos)='either'">
+<xsl:text>
+	  rule {DP option CaseF - final Case marker on DP, remaining DP instead of PP}
+	  DP = DP_1 Case
+	  &lt;DP head&gt; = &lt;DP_1 head&gt;
+	  &lt;Case head type DP-final&gt; = +
+	  &lt;DP_1 head type comma&gt; = -
+	  &lt;DP_1 head type pronoun&gt; = -
+	  &lt;DP_1 head type case-marked&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Case head type comma&gt;
+	  &lt;DP head case&gt; &lt;= &lt;Case head case&gt;
+	  &lt;DP head type relative&gt; &lt;= -
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = CaseF
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//coord/@conjWord)!='no'">
+<xsl:text>
 rule {DP option conj - conjoined DPs}
 DP = (InitConj) DP_1 Conj DP_2
-	&lt;DP head&gt; = &lt;DP_1 head&gt;
+	&lt;DP head&gt; = &lt;DP_2 head&gt;
 	&lt;DP conjoined&gt; = +
 	&lt;DP_1 conjoined&gt; = -	|limit recursion
 	&lt;DP_2 head type relative&gt; = -
-	&lt;DP head type negative&gt; &lt;= &lt;Conj head type negative&gt;
+	&lt;DP head infl polarity&gt; &lt;= &lt;Conj head infl polarity&gt;
 	&lt;DP head agr number&gt; &lt;= &lt;Conj head agr number&gt;
-	&lt;DP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
 	&lt;DP option&gt; = conj
 </xsl:text>
-	<xsl:if test="normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@headless)='yes'">
+</xsl:if>
+
+
+
+   <xsl:if test="normalize-space(//coord/@conjWord)!='yes' and normalize-space(//coord/@conjPos)='before' or normalize-space(//coord/@conjWord)!='yes' and normalize-space(//coord/@conjPos)='either'">
+<xsl:text>
+	  rule {DP option conjPrefix - conjoined DPs}
+	  DP = DP_1  DP_2
+	  &lt;DP head&gt; = &lt;DP_2 head&gt;
+	  &lt;DP conjoined&gt; = +
+	  &lt;DP_1 conjoined&gt; = -	|limit recursion
+	  &lt;DP_2 head type prefix conj&gt; = +
+	  &lt;DP_2 head type relative&gt; = -
+	  &lt;DP head infl polarity&gt; &lt;= &lt;DP_2 head type prefix conj head infl polarity&gt;
+	  &lt;DP head agr number&gt; &lt;= &lt;DP_2 head type prefix conj head agr number&gt;
+	  &lt;DP option&gt; = conjPrefix
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//coord/@conjWord)!='yes' and normalize-space(//coord/@conjPos)='after' or normalize-space(//coord/@conjWord)!='yes' and normalize-space(//coord/@conjPos)='either'">
+<xsl:text>
+	  rule {DP option conjSuffix - conjoined DPs}
+	  DP = DP_1  DP_2
+	  &lt;DP head&gt; = &lt;DP_2 head&gt;
+	  &lt;DP conjoined&gt; = +
+	  &lt;DP_1 conjoined&gt; = -	|limit recursion
+	  &lt;DP_1 head type suffix conj&gt; = +
+	  &lt;DP_2 head type relative&gt; = -
+	  &lt;DP head infl polarity&gt; &lt;= &lt;DP_1 head type suffix conj head infl polarity&gt;
+	  &lt;DP head agr number&gt; &lt;= &lt;DP_1 head type suffix conj head agr number&gt;
+	  &lt;DP option&gt; = conjSuffix
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//coord/@conjWord)!='yes' and normalize-space(//coord/@conjPos)='other' or normalize-space(//coord/@noConj)='yes'">
+<xsl:text>
+	  rule {DP option conjNone - conjoined DPs}
+	  DP = DP_1  DP_2
+	  &lt;DP head&gt; = &lt;DP_2 head&gt;
+	  &lt;DP conjoined&gt; = +
+	  &lt;DP_1 conjoined&gt; = -	|limit recursion
+	  &lt;DP_2 head type prefix conj&gt; = -
+	  &lt;DP_1 head type suffix conj&gt; = -
+	  &lt;DP_1 head type comma&gt; = -
+	  &lt;DP_2 head type relative&gt; = -
+	  &lt;DP option&gt; = conjNone
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+   <xsl:text>
+	  rule {DP option conjListAppos - conjoined DPs, lists and appositives}
+	  DP = DP_1  DP_2
+	  &lt;DP head&gt; = &lt;DP_2 head&gt;
+	  &lt;DP conjoined&gt; = +
+	  &lt;DP_1 conjoined&gt; = -	|limit recursion
+	  &lt;DP_2 head type prefix conj&gt; = -
+	  &lt;DP_1 head type suffix conj&gt; = -
+|      &lt;DP_1 head type comma&gt; = +         | activate this constraint if/when you make comma a word-formation character
+																			   | until then you will get ambiguity if you also have DP option conjNone, so deactivate one rule
+	  &lt;DP_2 head type relative&gt; = -
+	 &lt;DP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	  &lt;DP option&gt; = conjListAppos
+   </xsl:text>
+   <xsl:if test="normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@headless)='yes'">
 <xsl:text>
 rule {DP option RelCP - headless relative CP}
 DP = CP
 	&lt;DP head&gt; = &lt;CP head&gt;
+	&lt;DP head type case-marked&gt; = -
 	&lt;CP head type relative&gt; = +
 	&lt;CP head type verbheaded&gt; = +          | to restrict recursion
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
@@ -37,6 +180,7 @@ DP = CP
 rule {DP option RelIP - headless relative IP}
 DP = IP
 	&lt;DP head&gt; = &lt;IP head&gt;
+	&lt;DP head type case-marked&gt; = -
 	&lt;IP head type relative&gt; = +
 	&lt;IP head type verbheaded&gt; = +          | to restrict recursion
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
@@ -52,15 +196,16 @@ DP = IP
 
 
 
-	<xsl:if test="normalize-space(//pron/@poss)!='no' or normalize-space(//pron/@refl)!='no' or normalize-space(//pron/@recip)!='no'">
+	<xsl:if test="normalize-space(//pron/@poss)='yes' or normalize-space(//pron/@refl)='yes' or normalize-space(//pron/@recip)='yes'">
 <xsl:text>
 rule {DP option Pron - possessives, reflexives and reciprocals}
 DP = Pron
 	&lt;DP head&gt; = &lt;Pron head&gt;
+	&lt;DP head type case-marked&gt; = -
 	{&lt;Pron head type possessive&gt; = +
-		/&lt;Pron head type reflexive&gt; = +
-		/&lt;Pron head type reciprocal&gt; = +
-		}
+			/&lt;Pron head type reflexive&gt; = +
+			/&lt;Pron head type reciprocal&gt; = +
+			}
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
 	&lt;DP option&gt; = Pron
@@ -73,12 +218,13 @@ DP = Pron
 
 
 
-	<xsl:if test="normalize-space(//pron/@pronounCat)='DP' and normalize-space(//pron/@partitive)='after'">
+	<xsl:if test="normalize-space(//pron/@pronMod)='no' and normalize-space(//pron/@partitivePos)='after'">
 <xsl:text>
 rule {DP option noNF - pronoun,dem,quantifiers w/ optional partitive PP after}
 DP = {Pron / Dem / Q / Num / Deg} (PP)
-	&lt;DP head&gt; = &lt;Pron head&gt;
-	&lt;Pron head type possessive&gt; = -
+			&lt;DP head&gt; = &lt;Pron head&gt;
+			&lt;DP head type case-marked&gt; = -
+			&lt;Pron head type possessive&gt; = -
 	&lt;Pron head type reflexive&gt; = -
 	&lt;Pron head type reciprocal&gt; = -
 	&lt;DP head&gt; = &lt;Dem head&gt;
@@ -104,11 +250,12 @@ DP = {Pron / Dem / Q / Num / Deg} (PP)
 
 
 
-	<xsl:if test="normalize-space(//pron/@pronounCat)='DP' and normalize-space(//pron/@partitive)='before'">
+	<xsl:if test="normalize-space(//pron/@pronMod)='no' and normalize-space(//pron/@partitivePos)='before'">
 <xsl:text>
 rule {DP option noNI - pronoun,dem,quantifiers, w/ optional partitive PP before}
 DP = (PP) {Pron / Dem / Q / Num / Deg }
 	&lt;DP head&gt; = &lt;Pron head&gt;
+	&lt;DP head type case-marked&gt; = -
 	&lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
 	&lt;Pron head type reflexive&gt; = -
 	&lt;Pron head type reciprocal&gt; = -
@@ -137,17 +284,88 @@ DP = (PP) {Pron / Dem / Q / Num / Deg }
 
 
 	<xsl:text>
-rule {DP option 0 - no Deg modifiers}
+rule {DP option 0 - no Deg modifiers, not case-marked}
 DP = {D' / D''}
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 0
 </xsl:text>
-	<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)='before' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)='before' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//qp/@npDegreePos)='before' or normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//qp/@npDegreePos)='beforeOrBoth'">
+   <xsl:if test="normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 1 - degree modifier initial}
+	  rule {DP option 0head - no Deg modifiers, head case-marked}
+	  DP = {D' / D''}
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;DP head type case-marked&gt; = -
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 0head
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 0cl - no Deg modifiers, clitic case-marked}
+	  DP = {D' / D''}
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;DP head type case-marked&gt; = -
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;=  &lt;DP head type case&gt;  |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 0cl
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth'">
+<xsl:text>
+rule {DP option 1 - degree modifier initial, not case-marked}
 DP = Deg {D' / D''}
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -156,10 +374,13 @@ DP = Deg {D' / D''}
 	&lt;Deg head agr&gt; = &lt;DP head agr&gt;
 	&lt;Deg head case&gt; = &lt;DP head case&gt;
 	&lt;Deg head type comma&gt; = -
-	&lt;DP head type negative&gt; &lt;= &lt;Deg head type negative&gt; |polarity from Deg
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg head infl polarity&gt; |polarity from Deg
 	&lt;DP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 1
 </xsl:text>
 </xsl:if>
@@ -228,9 +449,1013 @@ DP = Deg {D' / D''}
 
 
 
-	<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth'">
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 1NegInitial - modifiers initial, Deg_1 is negative, Deg is positive}
+	  rule {DP option 1head - degree modifier initial, head case-marked}
+	  DP = Deg {D' / D''}
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-initial&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg head infl polarity&gt; |polarity from Deg
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 1head
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 1cl - degree modifier initial, clitic case-marked}
+	  DP = Deg {D' / D''}
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-initial&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg head infl polarity&gt; |polarity from Deg
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt;  &lt;= &lt;DP head case&gt;  |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 1cl
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth'">
+<xsl:text>
+rule {DP option 1NegInitial - not case-marked - modifiers initial, Deg_1 is negative, Deg is positive}
 DP = Deg_1 Deg {D' / D''}
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -246,10 +1471,13 @@ DP = Deg_1 Deg {D' / D''}
 	&lt;Deg head type comma&gt; = -
 	&lt;Deg_1 head type comma&gt; = -
 	&lt;Deg_1 head type negative&gt; = +
-	&lt;DP head type negative&gt; &lt;= &lt;Deg_1 head type negative&gt; | polarity comes from Deg_1
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
 	&lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 1NegInitial
 </xsl:text>
 </xsl:if>
@@ -382,9 +1610,2883 @@ DP = Deg_1 Deg {D' / D''}
 
 
 
-	<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 1NegFinal - modifiers Deg positive initial, Deg_1 negative final}
+	  rule {DP option 1headNegInitial - head case-marked - modifiers initial, Deg_1 is negative, Deg is positive}
+	  DP = Deg_1 Deg {D' / D''}
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-initial&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type negative&gt; = -
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;Deg_1 head type negative&gt; = +
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 1headNegInitial
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 1clNegInitial - clitic case-marked - modifiers initial, Deg_1 is negative, Deg is positive}
+	  DP = Deg_1 Deg {D' / D''}
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-initial&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type negative&gt; = -
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;Deg_1 head type negative&gt; = +
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;= &lt;DP head type case&gt;  |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 1clNegInitial
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth'">
+<xsl:text>
+rule {DP option 1NegFinal - not case-marked - modifiers Deg positive initial, Deg_1 negative final}
 DP = Deg {D' / D''} Deg_1
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -392,7 +4494,7 @@ DP = Deg {D' / D''} Deg_1
 	&lt;Deg head type DP-initial&gt; = +
 	&lt;Deg head agr&gt; = &lt;DP head agr&gt;
 	&lt;Deg head case&gt; = &lt;DP head case&gt;
-	&lt;Deg head type negative&gt; = -
+	&lt;Deg head infl polarity&gt; = positive
 	&lt;Deg_1 head type modifies_NP&gt; = +
 	&lt;Deg_1 head type DP-final&gt; = +
 	&lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
@@ -401,12 +4503,15 @@ DP = Deg {D' / D''} Deg_1
 	&lt;D' head type comma&gt; = -
 	&lt;D'' head type comma&gt; = -
 	&lt;DP head type comma&gt; &lt;= &lt;Deg_1 head type comma&gt;
-	&lt;Deg_1 head type negative&gt; = +
-	&lt;DP head type negative&gt; &lt;= &lt;Deg_1 head type negative&gt; | polarity comes from Deg_1
+	&lt;Deg_1 head infl polarity&gt; = negative
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
 	&lt;DP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
 	&lt;DP head type suffix&gt; &lt;= &lt;Deg_1 head type suffix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 1NegIFinal
 </xsl:text>
 </xsl:if>
@@ -539,9 +4644,2889 @@ DP = Deg {D' / D''} Deg_1
 
 
 
-	<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 1NegBoth - Deg is positive initial, Deg_1, Deg_2 negative}
+	  rule {DP option 1headNegFinal - head case-marked - modifiers Deg positive initial, Deg_1 negative final}
+	  DP = Deg {D' / D''} Deg_1
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-initial&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head infl polarity&gt; = positive
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-final&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_1 head type comma&gt;
+	  &lt;Deg_1 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_1 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 1headNegIFinal
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 1clNegFinal - clitic case-marked - modifiers Deg positive initial, Deg_1 negative final}
+	  DP = Deg {D' / D''} Deg_1
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-initial&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head infl polarity&gt; = positive
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-final&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_1 head type comma&gt;
+	  &lt;Deg_1 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_1 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;= &lt;DP head type case&gt;  |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 1clNegIFinal
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth'">
+<xsl:text>
+rule {DP option 1NegBoth - not case-marked - Deg is positive initial, Deg_1, Deg_2 negative}
 DP = Deg_1 Deg {D' / D''} Deg_2
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -549,12 +7534,12 @@ DP = Deg_1 Deg {D' / D''} Deg_2
 	&lt;Deg head type DP-initial&gt; = +
 	&lt;Deg head agr&gt; = &lt;DP head agr&gt;
 	&lt;Deg head case&gt; = &lt;DP head case&gt;
-	&lt;Deg head type negative&gt; = -
+	&lt;Deg head infl polarity&gt; = positive
 	&lt;Deg_1 head type modifies_NP&gt; = +
 	&lt;Deg_1 head type DP-initial&gt; = +
 	&lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
 	&lt;Deg_1 head case&gt; = &lt;DP head case&gt;
-	&lt;Deg_1 head type negative&gt; = +
+	&lt;Deg_1 head infl polarity&gt; = negative
 	&lt;Deg_2 head type modifies_NP&gt; = +
 	&lt;Deg_2 head type DP-final&gt; = +
 	&lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
@@ -564,12 +7549,15 @@ DP = Deg_1 Deg {D' / D''} Deg_2
 	&lt;D' head type comma&gt; = -
 	&lt;D'' head type comma&gt; = -
 	&lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
-	&lt;Deg_2 head type negative&gt; = +
-	&lt;DP head type negative&gt; &lt;= &lt;Deg_1 head type negative&gt; | polarity comes from Deg_1
+	&lt;Deg_2 head infl polarity&gt; = negative
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
 	&lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 1NegBoth
 </xsl:text>
 </xsl:if>
@@ -702,9 +7690,2902 @@ DP = Deg_1 Deg {D' / D''} Deg_2
 
 
 
-	<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)='after' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yesNeg' and normalize-space(//qp/@npDegreePos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)='after' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yesPos' and normalize-space(//qp/@npDegreePos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//qp/@npDegreePos)='after' or normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yesPosOnly' and normalize-space(//qp/@npDegreePos)='afterOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 2 - degree modifier final}
+	  rule {DP option 1headNegBoth - head case-marked - Deg is positive initial, Deg_1, Deg_2 negative}
+	  DP = Deg_1 Deg {D' / D''} Deg_2
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-initial&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head infl polarity&gt; = positive
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head infl polarity&gt; = negative
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type DP-final&gt; = +
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+	  &lt;Deg_2 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 1headNegBoth
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='before' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth'">
+<xsl:text>
+	  rule {DP option 1NegBoth - clitic case-marked - Deg is positive initial, Deg_1, Deg_2 negative}
+	  DP = Deg_1 Deg {D' / D''} Deg_2
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-initial&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head infl polarity&gt; = positive
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head infl polarity&gt; = negative
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type DP-final&gt; = +
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+	  &lt;Deg_2 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;= &lt;DP head type case&gt;   |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 1clNegBoth
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth'">
+<xsl:text>
+rule {DP option 2 - not case-marked - degree modifier final}
 DP = {D' / D''} Deg
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -715,10 +10596,13 @@ DP = {D' / D''} Deg
 	&lt;D' head type comma&gt; = -
 	&lt;D'' head type comma&gt; = -
 	&lt;DP head type comma&gt; &lt;= &lt;Deg head type comma&gt;
-	&lt;DP head type negative&gt; &lt;= &lt;Deg head type negative&gt; |polarity from Deg
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg head infl polarity&gt; |polarity from Deg
 	&lt;DP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 2
 </xsl:text>
 </xsl:if>
@@ -787,9 +10671,1018 @@ DP = {D' / D''} Deg
 
 
 
-	<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth'">
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 2NegInitial - Deg_1 negative initial, Deg positive final}
+	  rule {DP option 2head - head case-marked - degree modifier final}
+	  DP = {D' / D''} Deg
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-final&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg head type comma&gt;
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg head infl polarity&gt; |polarity from Deg
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 2head
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 2cl - clitic case-marked - degree modifier final}
+	  DP = {D' / D''} Deg
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-final&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg head type comma&gt;
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg head infl polarity&gt; |polarity from Deg
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;= &lt;DP head type case&gt;  |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 2cl
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth'">
+<xsl:text>
+rule {DP option 2NegInitial - not case-marked - Deg_1 negative initial, Deg positive final}
 DP = Deg_1 {D' / D''} Deg
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -797,7 +11690,7 @@ DP = Deg_1 {D' / D''} Deg
 	&lt;Deg head type DP-final&gt; = +
 	&lt;Deg head agr&gt; = &lt;DP head agr&gt;
 	&lt;Deg head case&gt; = &lt;DP head case&gt;
-	&lt;Deg head type negative&gt; = -
+	&lt;Deg head infl polarity&gt; = positive
 	&lt;Deg_1 head type modifies_NP&gt; = +
 	&lt;Deg_1 head type DP-initial&gt; = +
 	&lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
@@ -806,12 +11699,15 @@ DP = Deg_1 {D' / D''} Deg
 	&lt;D' head type comma&gt; = -
 	&lt;D'' head type comma&gt; = -
 	&lt;DP head type comma&gt; &lt;= &lt;Deg head type comma&gt;
-	&lt;Deg_1 head type negative&gt; = +
-	&lt;DP head type negative&gt; &lt;= &lt;Deg_1 head type negative&gt; | polarity comes from Deg_1
+	&lt;Deg_1 head infl polarity&gt; = negative
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
 	&lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;DP head type suffix&gt; &lt;= &lt;Deg_1 head type suffix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 2NegInitial
 </xsl:text>
 </xsl:if>
@@ -944,9 +11840,2890 @@ DP = Deg_1 {D' / D''} Deg
 
 
 
-	<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 2NegFinal - modifiers Deg positive final, Deg_1 negative final}
+	  rule {DP option 2headNegInitial - head case-marked - Deg_1 negative initial, Deg positive final}
+	  DP = Deg_1 {D' / D''} Deg
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-final&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head infl polarity&gt; = positive
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg head type comma&gt;
+	  &lt;Deg_1 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_1 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 2headNegInitial
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 2clNegInitial - clitic case-marked - Deg_1 negative initial, Deg positive final}
+	  DP = Deg_1 {D' / D''} Deg
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-final&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head infl polarity&gt; = positive
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg head type comma&gt;
+	  &lt;Deg_1 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_1 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;= &lt;DP head type case&gt;  |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 2clNegInitial
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth'">
+<xsl:text>
+rule {DP option 2NegFinal - not case-marked - modifiers Deg positive final, Deg_1 negative final}
 DP = {D' / D''} Deg Deg_1
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -954,7 +14731,7 @@ DP = {D' / D''} Deg Deg_1
 	&lt;Deg head type DP-final&gt; = +
 	&lt;Deg head agr&gt; = &lt;DP head agr&gt;
 	&lt;Deg head case&gt; = &lt;DP head case&gt;
-	&lt;Deg head type negative&gt; = -
+	&lt;Deg head infl polarity&gt; = positive
 	&lt;Deg_1 head type modifies_NP&gt; = +
 	&lt;Deg_1 head type DP-final&gt; = +
 	&lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
@@ -963,11 +14740,14 @@ DP = {D' / D''} Deg Deg_1
 	&lt;D' head type comma&gt; = -
 	&lt;D'' head type comma&gt; = -
 	&lt;DP head type comma&gt; &lt;= &lt;Deg_1 head type comma&gt;
-	&lt;Deg_1 head type negative&gt; = +
-	&lt;DP head type negative&gt; &lt;= &lt;Deg_1 head type negative&gt; | polarity comes from Deg_1
+	&lt;Deg_1 head infl polarity&gt; = negative
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
 	&lt;DP head type suffix&gt; &lt;= &lt;Deg_1 head type suffix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 2NegIFinal
 </xsl:text>
 </xsl:if>
@@ -1100,9 +14880,2888 @@ DP = {D' / D''} Deg Deg_1
 
 
 
-	<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 2NegBoth - Deg is positive final, Deg_1, Deg_2 negative}
+	  rule {DP option 2headNegFinal - head case-marked - modifiers Deg positive final, Deg_1 negative final}
+	  DP = {D' / D''} Deg Deg_1
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-final&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head infl polarity&gt; = positive
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-final&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_1 head type comma&gt;
+	  &lt;Deg_1 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_1 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 2headNegFinal
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 2clNegFinal - clitic case-marked - modifiers Deg positive final, Deg_1 negative final}
+	  DP = {D' / D''} Deg Deg_1
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-final&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head infl polarity&gt; = positive
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-final&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_1 head type comma&gt;
+	  &lt;Deg_1 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_1 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;= &lt;DP head case&gt;   |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 2clNegFinal
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth'">
+<xsl:text>
+rule {DP option 2NegBoth - not case-marked - Deg is positive final, Deg_1, Deg_2 negative}
 DP = Deg_1 {D' / D''} Deg Deg_2
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -1110,12 +17769,12 @@ DP = Deg_1 {D' / D''} Deg Deg_2
 	&lt;Deg head type DP-final&gt; = +
 	&lt;Deg head agr&gt; = &lt;DP head agr&gt;
 	&lt;Deg head case&gt; = &lt;DP head case&gt;
-	&lt;Deg head type negative&gt; = -
+	&lt;Deg head infl polarity&gt; = positive
 	&lt;Deg_1 head type modifies_NP&gt; = +
 	&lt;Deg_1 head type DP-initial&gt; = +
 	&lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
 	&lt;Deg_1 head case&gt; = &lt;DP head case&gt;
-	&lt;Deg_1 head type negative&gt; = +
+	&lt;Deg_1 head infl polarity&gt; = negative
 	&lt;Deg_2 head type modifies_NP&gt; = +
 	&lt;Deg_2 head type DP-final&gt; = +
 	&lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
@@ -1125,12 +17784,15 @@ DP = Deg_1 {D' / D''} Deg Deg_2
 	&lt;D' head type comma&gt; = -
 	&lt;D'' head type comma&gt; = -
 	&lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
-	&lt;Deg_2 head type negative&gt; = +
-	&lt;DP head type negative&gt; &lt;= &lt;Deg_1 head type negative&gt; | polarity comes from Deg_1
+	&lt;Deg_2 head infl polarity&gt; = negative
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
 	&lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 2NegBoth
 </xsl:text>
 </xsl:if>
@@ -1263,9 +17925,2902 @@ DP = Deg_1 {D' / D''} Deg Deg_2
 
 
 
-	<xsl:if test="normalize-space(//qp/@npDegree)!='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegreePos)='both' or normalize-space(//qp/@npDegree)!='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegreePos)='afterOrBoth' or normalize-space(//qp/@npDegree)!='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)!='no' and normalize-space(//qp/@npDegree)!='noPosOnly' and normalize-space(//qp/@npDegreePos)='beforeOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 3 - modifiers both sides}
+	  rule {DP option 2headNegBoth - head case-marked - Deg is positive final, Deg_1, Deg_2 negative}
+	  DP = Deg_1 {D' / D''} Deg Deg_2
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-final&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head infl polarity&gt; = positive
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head infl polarity&gt; = negative
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type DP-final&gt; = +
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+	  &lt;Deg_2 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 2headNegBoth
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='after' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='either' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 2clNegBoth - clitic case-marked - Deg is positive final, Deg_1, Deg_2 negative}
+	  DP = Deg_1 {D' / D''} Deg Deg_2
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg head type modifies_NP&gt; = +
+	  &lt;Deg head type DP-final&gt; = +
+	  &lt;Deg head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head infl polarity&gt; = positive
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt; = +
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head infl polarity&gt; = negative
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type DP-final&gt; = +
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg head type comma&gt; = -
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+	  &lt;Deg_2 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;= &lt;DP head type case&gt;   |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 2clNegBoth
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth'">
+<xsl:text>
+rule {DP option 3 - not case-marked - modifiers both sides}
 DP = Deg_1 {D' / D''} Deg_2
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -1281,12 +20836,15 @@ DP = Deg_1 {D' / D''} Deg_2
 	&lt;D' head type comma&gt; = -
 	&lt;D'' head type comma&gt; = -
 	&lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
-	&lt;DP head type negative&gt; &lt;= &lt;Deg_1 head type negative&gt; | polarity comes from Deg_1
-	&lt;DP head type negative&gt; &lt;= &lt;Deg_2 head type negative&gt; | or polarity  from Deg_2
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg_2 head infl polarity&gt; | or polarity  from Deg_2
 	&lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 3
 </xsl:text>
 </xsl:if>
@@ -1315,9 +20873,1072 @@ DP = Deg_1 {D' / D''} Deg_2
 
 
 
-	<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 3NegInitial - modifiers both sides, Deg_1,Deg_2 positive, Deg_3 negative}
+	  rule {DP option 3head - head case-marked  - modifiers both sides}
+	  DP = Deg_1 {D' / D''} Deg_2
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt;  = +
+	  &lt;Deg_2 head type DP-final&gt;    = +
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_2 head infl polarity&gt; | or polarity  from Deg_2
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 3head
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='yes' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegreeNeg)='some' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 3cl - clitic case-marked - modifiers both sides}
+	  DP = Deg_1 {D' / D''} Deg_2
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt;  = +
+	  &lt;Deg_2 head type DP-final&gt;    = +
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_1 head infl polarity&gt; | polarity comes from Deg_1
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_2 head infl polarity&gt; | or polarity  from Deg_2
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;= &lt;DP head type case&gt;    |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 3cl
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth'">
+<xsl:text>
+rule {DP option 3NegInitial - not case-marked - modifiers both sides, Deg_1,Deg_2 positive, Deg_3 negative}
 DP = Deg_3 Deg_1 {D' / D''} Deg_2
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -1338,14 +21959,17 @@ DP = Deg_3 Deg_1 {D' / D''} Deg_2
 	&lt;D' head type comma&gt; = -
 	&lt;D'' head type comma&gt; = -
 	&lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
-	&lt;Deg_1 head type negative&gt; = -
-	&lt;Deg_2 head type negative&gt; = -
-	&lt;Deg_3 head type negative&gt; = +
-	&lt;DP head type negative&gt; &lt;= &lt;Deg_3 head type negative&gt; | polarity comes from Deg_3
+	&lt;Deg_1 head infl polarity&gt; = positive
+	&lt;Deg_2 head infl polarity&gt; = positive
+	&lt;Deg_3 head infl polarity&gt; = negative
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg_3 head infl polarity&gt; | polarity comes from Deg_3
 	&lt;DP head type prefix&gt; &lt;= &lt;Deg_3 head type prefix&gt;
 	&lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 3NegInitial
 </xsl:text>
 </xsl:if>
@@ -1478,9 +22102,2902 @@ DP = Deg_3 Deg_1 {D' / D''} Deg_2
 
 
 
-	<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 3NegFinal - modifiers both sides, Deg_1,Deg_2 positive, Deg_4 negative}
+	  rule {DP option 3headNegInitial - head case-marked - modifiers both sides, Deg_1,Deg_2 positive, Deg_3 negative}
+	  DP = Deg_3 Deg_1 {D' / D''} Deg_2
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_3 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_3 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_3 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt;  = +
+	  &lt;Deg_2 head type DP-final&gt;    = +
+	  &lt;Deg_3 head type DP-initial&gt;  = +
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;Deg_3 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+	  &lt;Deg_1 head infl polarity&gt; = positive
+	  &lt;Deg_2 head infl polarity&gt; = positive
+	  &lt;Deg_3 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_3 head infl polarity&gt; | polarity comes from Deg_3
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_3 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 3headNegInitial
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='before' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 3clNegInitial - clitic case-marked - modifiers both sides, Deg_1,Deg_2 positive, Deg_3 negative}
+	  DP = Deg_3 Deg_1 {D' / D''} Deg_2
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_3 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_3 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_3 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt;  = +
+	  &lt;Deg_2 head type DP-final&gt;    = +
+	  &lt;Deg_3 head type DP-initial&gt;  = +
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;Deg_3 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+	  &lt;Deg_1 head infl polarity&gt; = positive
+	  &lt;Deg_2 head infl polarity&gt; = positive
+	  &lt;Deg_3 head infl polarity&gt; = negative
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_3 head infl polarity&gt; | polarity comes from Deg_3
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_3 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;= &lt;DP head type case&gt;   |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 3clNegInitial
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth'">
+<xsl:text>
+rule {DP option 3NegFinal - not case-marked - modifiers both sides, Deg_1,Deg_2 positive, Deg_4 negative}
 DP = Deg_1 {D' / D''} Deg_2 Deg_4
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -1496,19 +25013,22 @@ DP = Deg_1 {D' / D''} Deg_2 Deg_4
 	&lt;Deg_1 head type DP-initial&gt;  = +
 	&lt;Deg_2 head type DP-final&gt;    = +
 	&lt;Deg_4 head type DP-final&gt;  = +
-	&lt;Deg_1 head type negative&gt; = -
-	&lt;Deg_2 head type negative&gt; = -
-	&lt;Deg_4 head type negative&gt; = +
+	&lt;Deg_1 head infl polarity&gt; = positive
+	&lt;Deg_2 head infl polarity&gt; = positive
+	&lt;Deg_4 head infl polarity&gt; = negative
 	&lt;Deg_1 head type comma&gt; = -
 	&lt;Deg_2 head type comma&gt; = -
 	&lt;D' head type comma&gt; = -
 	&lt;D'' head type comma&gt; = -
 	&lt;DP head type comma&gt; &lt;= &lt;Deg_4 head type comma&gt;
-	&lt;DP head type negative&gt; &lt;= &lt;Deg_4 head type negative&gt; | polarity comes from Deg_4
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg_4 head infl polarity&gt; | polarity comes from Deg_4
 	&lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;DP head type suffix&gt; &lt;= &lt;Deg_4 head type suffix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 3NegFinal
 </xsl:text>
 </xsl:if>
@@ -1641,9 +25161,2902 @@ DP = Deg_1 {D' / D''} Deg_2 Deg_4
 
 
 
-	<xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegPos)='eitherOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
 <xsl:text>
-rule {DP option 3NegBoth - modifiers both sides, Deg_1,Deg_2 positive, Deg_3,Deg_4 negative}
+	  rule {DP option 3headNegFinal - head case-marked - modifiers both sides, Deg_1,Deg_2 positive, Deg_4 negative}
+	  DP = Deg_1 {D' / D''} Deg_2 Deg_4
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_4 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_4 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_4 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt;  = +
+	  &lt;Deg_2 head type DP-final&gt;    = +
+	  &lt;Deg_4 head type DP-final&gt;  = +
+	  &lt;Deg_1 head infl polarity&gt; = positive
+	  &lt;Deg_2 head infl polarity&gt; = positive
+	  &lt;Deg_4 head infl polarity&gt; = negative
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;Deg_2 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_4 head type comma&gt;
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_4 head infl polarity&gt; | polarity comes from Deg_4
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_4 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 3headNegFinal
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='after' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='either' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 3NegclFinal - clitic case-marked - modifiers both sides, Deg_1,Deg_2 positive, Deg_4 negative}
+	  DP = Deg_1 {D' / D''} Deg_2 Deg_4
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_4 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_4 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_4 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt;  = +
+	  &lt;Deg_2 head type DP-final&gt;    = +
+	  &lt;Deg_4 head type DP-final&gt;  = +
+	  &lt;Deg_1 head infl polarity&gt; = positive
+	  &lt;Deg_2 head infl polarity&gt; = positive
+	  &lt;Deg_4 head infl polarity&gt; = negative
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;Deg_2 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_4 head type comma&gt;
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_4 head infl polarity&gt; | polarity comes from Deg_4
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_4 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;= &lt;DP head type case&gt;     |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 3clNegFinal
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth'">
+<xsl:text>
+rule {DP option 3NegBoth - not case-marked  - modifiers both sides, Deg_1,Deg_2 positive, Deg_3,Deg_4 negative}
 DP = Deg_3 Deg_1 {D' / D''} Deg_2 Deg_4
 	&lt;DP head&gt; = &lt;D' head&gt;
 	&lt;DP head&gt; = &lt;D'' head&gt;
@@ -1663,21 +28076,24 @@ DP = Deg_3 Deg_1 {D' / D''} Deg_2 Deg_4
 	&lt;Deg_2 head type DP-final&gt;    = +
 	&lt;Deg_3 head type DP-initial&gt;  = +
 	&lt;Deg_4 head type DP-final&gt;    = +
-	&lt;Deg_1 head type negative&gt; = -
-	&lt;Deg_2 head type negative&gt; = -
-	&lt;Deg_3 head type negative&gt; = +
-	&lt;Deg_4 head type negative&gt; = +
+	&lt;Deg_1 head infl polarity&gt; = positive
+	&lt;Deg_2 head infl polarity&gt; = positive
+	&lt;Deg_3 head infl polarity&gt; = negative
+	&lt;Deg_4 head infl polarity&gt; = negative
 	&lt;Deg_1 head type comma&gt; = -
 	&lt;Deg_2 head type comma&gt; = -
 	&lt;Deg_3 head type comma&gt; = -
 	&lt;D' head type comma&gt; = -
 	&lt;D'' head type comma&gt; = -
 	&lt;DP head type comma&gt; &lt;= &lt;Deg_4 head type comma&gt;
-	&lt;DP head type negative&gt; &lt;= &lt;Deg_3 head type negative&gt; | polarity comes from Deg_3
+	&lt;DP head infl polarity&gt; &lt;= &lt;Deg_3 head infl polarity&gt; | polarity comes from Deg_3
 	&lt;DP head type prefix&gt; &lt;= &lt;Deg_3 head type prefix&gt;
 	&lt;DP head type suffix&gt; &lt;= &lt;Deg_4 head type suffix&gt;
 	&lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
 	&lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	&lt;DP head type case&gt; = none
+	&lt;DP head case&gt; = none
+	&lt;DP head type case-marked&gt; = -
 	&lt;DP option&gt; = 3NegBoth
 </xsl:text>
 </xsl:if>
@@ -1811,7 +28227,2911 @@ DP = Deg_3 Deg_1 {D' / D''} Deg_2 Deg_4
 
 
 
-	<xsl:if test="normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='before' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='either' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='beforeOrBoth' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='before' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='either' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='beforeOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='prefixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='suffixN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='eitherN'">
+<xsl:text>
+	  rule {DP option 3headNegBoth - head case-marked - modifiers both sides, Deg_1,Deg_2 positive, Deg_3,Deg_4 negative}
+	  DP = Deg_3 Deg_1 {D' / D''} Deg_2 Deg_4
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_3 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_3 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_4 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_4 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_3 head type modifies_NP&gt; = +
+	  &lt;Deg_4 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt;  = +
+	  &lt;Deg_2 head type DP-final&gt;    = +
+	  &lt;Deg_3 head type DP-initial&gt;  = +
+	  &lt;Deg_4 head type DP-final&gt;    = +
+	  &lt;Deg_1 head infl polarity&gt; = positive
+	  &lt;Deg_2 head infl polarity&gt; = positive
+	  &lt;Deg_3 head infl polarity&gt; = negative
+	  &lt;Deg_4 head infl polarity&gt; = negative
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;Deg_2 head type comma&gt; = -
+	  &lt;Deg_3 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_4 head type comma&gt;
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_3 head infl polarity&gt; | polarity comes from Deg_3
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_3 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_4 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type case&gt; = none
+	  &lt;DP head&gt; == ~[case:none]
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 3headNegBoth
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='before' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='after' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='yes' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='both' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='beforeOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='afterOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='both' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='afterOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='eitherOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/@npDegreeNegCooccur)='yes' and normalize-space(//qp/@npDegreePos)='beforeOrBoth' and normalize-space(//qp/@npDegreeNegNPPos)='eitherOrBoth' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no' and normalize-space(//np/@caseCliticPos)='either'">
+<xsl:text>
+	  rule {DP option 3clNegBoth - clitic case-marked -modifiers both sides, Deg_1,Deg_2 positive, Deg_3,Deg_4 negative}
+	  DP = Deg_3 Deg_1 {D' / D''} Deg_2 Deg_4
+	  &lt;DP head&gt; = &lt;D' head&gt;
+	  &lt;DP head&gt; = &lt;D'' head&gt;
+	  &lt;Deg_1 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_1 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_2 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_2 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_3 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_3 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_4 head agr&gt; = &lt;DP head agr&gt;
+	  &lt;Deg_4 head case&gt; = &lt;DP head case&gt;
+	  &lt;Deg_1 head type modifies_NP&gt; = +
+	  &lt;Deg_2 head type modifies_NP&gt; = +
+	  &lt;Deg_3 head type modifies_NP&gt; = +
+	  &lt;Deg_4 head type modifies_NP&gt; = +
+	  &lt;Deg_1 head type DP-initial&gt;  = +
+	  &lt;Deg_2 head type DP-final&gt;    = +
+	  &lt;Deg_3 head type DP-initial&gt;  = +
+	  &lt;Deg_4 head type DP-final&gt;    = +
+	  &lt;Deg_1 head infl polarity&gt; = positive
+	  &lt;Deg_2 head infl polarity&gt; = positive
+	  &lt;Deg_3 head infl polarity&gt; = negative
+	  &lt;Deg_4 head infl polarity&gt; = negative
+	  &lt;Deg_1 head type comma&gt; = -
+	  &lt;Deg_2 head type comma&gt; = -
+	  &lt;Deg_3 head type comma&gt; = -
+	  &lt;D' head type comma&gt; = -
+	  &lt;D'' head type comma&gt; = -
+	  &lt;DP head type comma&gt; &lt;= &lt;Deg_4 head type comma&gt;
+	  &lt;DP head infl polarity&gt; &lt;= &lt;Deg_3 head infl polarity&gt; | polarity comes from Deg_3
+	  &lt;DP head type prefix&gt; &lt;= &lt;Deg_3 head type prefix&gt;
+	  &lt;DP head type suffix&gt; &lt;= &lt;Deg_4 head type suffix&gt;
+	  &lt;DP head type&gt; &lt;= &lt;DP head type prefix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; &lt;= &lt;DP head type suffix&gt;  |promote clitic values to phrase
+	  &lt;DP head type&gt; == ~[case:none]
+	  &lt;DP head case&gt; &lt;= &lt;DP head case&gt;   |promote clitic case to phrase
+	  &lt;DP head type case-marked&gt; &lt;= +
+	  &lt;DP option&gt; = 3clNegBoth
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='before' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='either' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='beforeOrBoth' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='before' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='either' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='beforeOrBoth' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='before' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='either' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='eitherOrBoth' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='beforeOrBoth' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='before' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='either' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='eitherOrBoth' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='beforeOrBoth'">
 <xsl:text>
 rule {DBar option QuantDetInitialNeg  - quantifier determiners initial - including neg}
 D' = Det N'
@@ -1819,7 +31139,7 @@ D' = Det N'
 	&lt;Det head type DP-initial&gt; = +
 	&lt;Det head agr&gt; = &lt;N' head agr&gt;
 	&lt;Det head type comma&gt; = -
-	&lt;D' head type negative&gt; &lt;= &lt;Det head type negative&gt; |polarity from Det
+	&lt;D' head infl polarity&gt; &lt;= &lt;Det head infl polarity&gt; |polarity from Det
 	&lt;D' head type negative-polarity&gt; &lt;= &lt;Det head type negative-polarity&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Det head type prefix&gt;
 	&lt;D' option&gt; = QuantDetInitialNeg
@@ -1858,13 +31178,45 @@ D' = Det N'
 
 
 
-	<xsl:if test="normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='before' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='either' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='beforeOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='before' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='either' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='eitherOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='beforeOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='before' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='either' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='eitherOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='beforeOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some'">
 <xsl:text>
 rule {DBar option QuantDetInitialPos  - quantifier determiners initial - positive only}
 D' = Det N'
 	&lt;D' head&gt; = &lt;N' head&gt;
 	&lt;Det head type DP-initial&gt; = +
-	&lt;Det head type negative&gt; = -
+	&lt;Det head infl polarity&gt; = positive
 	&lt;Det head type comma&gt; = -
 	&lt;Det head agr&gt; = &lt;N' head agr&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Det head type prefix&gt;
@@ -1888,7 +31240,55 @@ D' = Det N'
 
 
 
-	<xsl:if test="normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='after' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='either' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='afterOrBoth' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='after' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='either' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='afterOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='after' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='either' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='afterOrBoth' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='after' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='either' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='afterOrBoth' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='after' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='either' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='eitherOrBoth' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='afterOrBoth' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='after' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='either' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='eitherOrBoth' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='afterOrBoth'">
 <xsl:text>
 rule {DBar option QuantDetFinalNeg  - quantifier determiners final - including neg}
 D' = N' Det
@@ -1897,7 +31297,7 @@ D' = N' Det
 	&lt;Det head agr&gt; = &lt;N' head agr&gt;
 	&lt;N' head type comma&gt; = -
 	&lt;D' head type comma&gt; &lt;= &lt;Det head type comma&gt;
-	&lt;D' head type negative&gt; &lt;= &lt;Det head type negative&gt; |polarity from Det
+	&lt;D' head infl polarity&gt; &lt;= &lt;Det head infl polarity&gt; |polarity from Det
 	&lt;D' head type negative-polarity&gt; &lt;= &lt;Det head type negative-polarity&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Det head type suffix&gt;
 	&lt;D' option&gt; = QuantDetFinalNeg
@@ -1936,13 +31336,45 @@ D' = N' Det
 
 
 
-	<xsl:if test="normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='after' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='either' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='afterOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='after' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='either' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='eitherOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='afterOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='after' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='either' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='eitherOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='afterOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some'">
 <xsl:text>
 rule {DBar option QuantDetFinalPos  - quantifier determiners final - positive only}
 D' = N' Det
 	&lt;D' head&gt; = &lt;N' head&gt;
 	&lt;Det head type DP-initial&gt; = +
-	&lt;Det head type negative&gt; = -
+	&lt;Det head infl polarity&gt; = positive
 	&lt;Det head agr&gt; = &lt;N' head agr&gt;
 	&lt;N' head type comma&gt; = -
 	&lt;D' head type comma&gt; &lt;= &lt;Det head type comma&gt;
@@ -1967,7 +31399,55 @@ D' = N' Det
 
 
 
-	<xsl:if test="normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='both' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='beforeOrBoth' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='afterOrBoth' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='both' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='beforeOrBoth' or normalize-space(//qp/@determiner)='yesNo' and normalize-space(//qp/@determinerPos)='afterOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='both' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='beforeOrBoth' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='afterOrBoth' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='both' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='beforeOrBoth' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='afterOrBoth' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='both' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='eitherOrBoth' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='beforeOrBoth' or normalize-space(//qp/@determinerNeg)='yes' and normalize-space(//qp/@determinerNegPos)='afterOrBoth' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='both' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='eitherOrBoth' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='beforeOrBoth' or normalize-space(//qp/@determinerNeg)='some' and normalize-space(//qp/@determinerNegPos)='afterOrBoth'">
 <xsl:text>
 rule {DBar option QuantDetBothNeg  - quantifier determiners both sides - including neg}
 D' = Det N' Det_1
@@ -1979,8 +31459,8 @@ D' = Det N' Det_1
 	&lt;Det head type comma&gt; = -
 	&lt;N' head type comma&gt; = -
 	&lt;D' head type comma&gt; &lt;= &lt;Det_1 head type comma&gt;
-	&lt;D' head type negative&gt; &lt;= &lt;Det head type negative&gt; |polarity from Det
-	&lt;D' head type negative&gt; &lt;= &lt;Det_1 head type negative&gt;  |or polarity from Det_1
+	&lt;D' head infl polarity&gt; &lt;= &lt;Det head infl polarity&gt; |polarity from Det
+	&lt;D' head infl polarity&gt; &lt;= &lt;Det_1 head infl polarity&gt;  |or polarity from Det_1
 	&lt;D' head type negative-polarity&gt; &lt;= &lt;Det head type negative-polarity&gt;
 	&lt;D' head type negative-polarity&gt; &lt;= &lt;Det_1 head type negative-polarity&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Det head type prefix&gt;
@@ -2021,15 +31501,47 @@ D' = Det N' Det_1
 
 
 
-	<xsl:if test="normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='both' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='eitherOrBoth' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='beforeOrBoth' or normalize-space(//qp/@determiner)='yesSome' and normalize-space(//qp/@determinerPos)='afterOrBoth'">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='both' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='eitherOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='beforeOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='yes' and normalize-space(//qp/@determinerPos)='afterOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='both' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='eitherOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='beforeOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some' or normalize-space(//qp/@determiner)='some' and normalize-space(//qp/@determinerPos)='afterOrBoth' and normalize-space(//qp/@determinerNeg)!='yes' and normalize-space(//qp/@determinerNeg)!='some'">
 <xsl:text>
 rule {DBar option QuantDetBothPos  - quantifier determiners both sides - positive only}
 D' = Det N' Det_1
 	&lt;D' head&gt; = &lt;N' head&gt;
 	&lt;Det head type DP-initial&gt; = +
-	&lt;Det head type negative&gt; = -
+	&lt;Det head infl polarity&gt; = positive
 	&lt;Det_1 head type DP-final&gt; = +
-	&lt;Det_1 head type negative&gt; = -
+	&lt;Det_1 head infl polarity&gt; = positive
 	&lt;Det head agr&gt; = &lt;N' head agr&gt;
 	&lt;Det_1 head agr&gt; = &lt;N' head agr&gt;
 	&lt;Det head type comma&gt; = -
@@ -2058,6 +31570,54 @@ D' = Det N' Det_1
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<xsl:if test="normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@clausePos)='after' or normalize-space(//relcl/@exist)='yes' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@clausePos)='either'">
 <xsl:text>
 rule {DBar option 1frel - relative clause CP final}
@@ -2066,7 +31626,7 @@ D' = D'_1 CP
 	&lt;CP head type relative&gt; = +
 	&lt;CP head type verbheaded&gt; = +          | to restrict recursion
 	&lt;CP head type question&gt; = -
-	&lt;D' head agr animate&gt; = &lt;CP head agr animate&gt;
+	&lt;D' head agr animacy&gt; = &lt;CP head agr animacy&gt;
 	&lt;D'_1 head type comma&gt; = -
 	&lt;D' head type comma&gt; &lt;= &lt;CP head type comma&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
@@ -2095,7 +31655,7 @@ D' = CP D'_1
 	&lt;CP head type relative&gt; = +
 	&lt;CP head type verbheaded&gt; = +          | to restrict recursion
 	&lt;CP head type question&gt; = -
-	&lt;D' head agr animate&gt; = &lt;CP head agr animate&gt;
+	&lt;D' head agr animacy&gt; = &lt;CP head agr animacy&gt;
 	&lt;CP head type comma&gt; = -
 	&lt;D' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
 	&lt;D' head type relative&gt; &lt;= +	| restrict rel cl in subjects/copulars
@@ -2122,7 +31682,7 @@ D' = D'_1 IP
 	&lt;D' head&gt; = &lt;D'_1 head&gt;
 	&lt;IP head type relative&gt; = +
 	&lt;IP head type verbheaded&gt; = +          | to restrict recursion
-	&lt;D' head agr animate&gt; = &lt;IP head agr animate&gt;
+	&lt;D' head agr animacy&gt; = &lt;IP head agr animacy&gt;
 	&lt;D'_1 head type comma&gt; = -
 	&lt;D' head type comma&gt; &lt;= &lt;IP head type comma&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;IP head type suffix&gt;
@@ -2150,7 +31710,7 @@ D' = IP D'_1
 	&lt;D' head&gt; = &lt;D'_1 head&gt;
 	&lt;IP head type relative&gt; = +
 	&lt;IP head type verbheaded&gt; = +          | to restrict recursion
-	&lt;D' head agr animate&gt; = &lt;IP head agr animate&gt;
+	&lt;D' head agr animacy&gt; = &lt;IP head agr animacy&gt;
 	&lt;IP head type comma&gt; = -
 	&lt;D' head type prefix&gt; &lt;= &lt;IP head type prefix&gt;
 	&lt;D' head type relative&gt; &lt;= +	| restrict rel cl in subjects/copulars
@@ -2204,6 +31764,8 @@ D' = (Art) NP
 	&lt;Art head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 2a
 </xsl:text>
 </xsl:if>
@@ -2223,13 +31785,15 @@ D' = (Art) NP
 	&lt;D' head&gt; = &lt;NP head&gt;
 	&lt;Art head agr&gt; = &lt;D' head agr&gt;
 	&lt;Art head case&gt; = &lt;D' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
-		&lt;Art head type comma&gt; = -
-		&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
+			&lt;Art head type comma&gt; = -
+			&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 2apl
 </xsl:text>
 </xsl:if>
@@ -2272,10 +31836,10 @@ D' = (Art) NP
 	&lt;D' head&gt; = &lt;NP head&gt;
 	&lt;Art head agr&gt; = &lt;D' head agr&gt;
 	&lt;Art head case&gt; = &lt;D' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Art head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
@@ -2303,6 +31867,8 @@ D' = NP (Art)
 	&lt;D' head type comma&gt; &lt;= &lt;Art head type comma&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 2b
 </xsl:text>
 </xsl:if>
@@ -2322,14 +31888,16 @@ D' = NP (Art)
 	&lt;D' head&gt; = &lt;NP head&gt;
 	&lt;Art head agr&gt; = &lt;D' head agr&gt;
 	&lt;Art head case&gt; = &lt;D' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
-		&lt;NP head type comma&gt; = -
-		&lt;D' head type comma&gt; &lt;= &lt;Art head type comma&gt;
-		&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
+			&lt;NP head type comma&gt; = -
+			&lt;D' head type comma&gt; &lt;= &lt;Art head type comma&gt;
+			&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 2bpl
 </xsl:text>
 </xsl:if>
@@ -2373,10 +31941,10 @@ D' = NP (Art)
 	&lt;D' head&gt; = &lt;NP head&gt;
 	&lt;Art head agr&gt; = &lt;D' head agr&gt;
 	&lt;Art head case&gt; = &lt;D' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;NP head type comma&gt; = -
 	&lt;D' head type comma&gt; &lt;= &lt;Art head type comma&gt;
@@ -2411,6 +31979,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 2cwhI
 </xsl:text>
 </xsl:if>
@@ -2442,6 +32014,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 2cwhF
 </xsl:text>
 </xsl:if>
@@ -2474,6 +32050,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 2cwhagr
 </xsl:text>
 </xsl:if>
@@ -2497,10 +32077,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;Art_1 head case&gt; = &lt;D' head case&gt;
 	&lt;Art_2 head agr&gt; = &lt;D' head agr&gt;
 	&lt;Art_2 head case&gt; = &lt;D' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Art_2 head type DP-final&gt; = +
 	&lt;Art_1 head type comma&gt; = -
@@ -2509,6 +32089,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 2cplwhI
 </xsl:text>
 </xsl:if>
@@ -2532,10 +32116,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;Art_1 head case&gt; = &lt;D' head case&gt;
 	&lt;Art_2 head agr&gt; = &lt;D' head agr&gt;
 	&lt;Art_2 head case&gt; = &lt;D' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Art_2 head type DP-final&gt; = +
 	&lt;Art_1 head type comma&gt; = -
@@ -2544,6 +32128,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 2cplwhF
 </xsl:text>
 </xsl:if>
@@ -2567,10 +32155,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;Art_1 head case&gt; = &lt;D' head case&gt;
 	&lt;Art_2 head agr&gt; = &lt;D' head agr&gt;
 	&lt;Art_2 head case&gt; = &lt;D' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Art_2 head type DP-final&gt; = +
 	&lt;Art_1 head type comma&gt; = -
@@ -2580,6 +32168,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+																					 final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 2cplwhagr
 </xsl:text>
 </xsl:if>
@@ -2700,10 +32292,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;Art_1 head case&gt; = &lt;D' head case&gt;
 	&lt;Art_2 head agr&gt; = &lt;D' head agr&gt;
 	&lt;Art_2 head case&gt; = &lt;D' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Art_2 head type DP-final&gt; = +
@@ -2736,10 +32328,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;Art_1 head case&gt; = &lt;D' head case&gt;
 	&lt;Art_2 head agr&gt; = &lt;D' head agr&gt;
 	&lt;Art_2 head case&gt; = &lt;D' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Art_2 head type DP-final&gt; = +
@@ -2772,10 +32364,10 @@ D' = (Art_1) NP (Art_2)
 	&lt;Art_1 head case&gt; = &lt;D' head case&gt;
 	&lt;Art_2 head agr&gt; = &lt;D' head agr&gt;
 	&lt;Art_2 head case&gt; = &lt;D' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Art_2 head type DP-final&gt; = +
@@ -2810,6 +32402,8 @@ D' = Art NP
 	&lt;Art head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 3a
 </xsl:text>
 </xsl:if>
@@ -2835,6 +32429,8 @@ D' = Art NP
 	&lt;Art head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 3asg
 </xsl:text>
 </xsl:if>
@@ -2907,6 +32503,8 @@ D' = NP Art
 	&lt;D' head type comma&gt; &lt;= &lt;Art head type comma&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 3b
 </xsl:text>
 </xsl:if>
@@ -2933,6 +32531,8 @@ D' = NP Art
 	&lt;D' head type comma&gt; &lt;= &lt;Art head type comma&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 3bsg
 </xsl:text>
 </xsl:if>
@@ -3013,6 +32613,10 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3cwhI
 </xsl:text>
 </xsl:if>
@@ -3046,6 +32650,10 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3cwhF
 </xsl:text>
 </xsl:if>
@@ -3080,6 +32688,10 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3cwhagr
 </xsl:text>
 </xsl:if>
@@ -3116,6 +32728,10 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3csgwhI
 </xsl:text>
 </xsl:if>
@@ -3152,6 +32768,10 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3csgwhF
 </xsl:text>
 </xsl:if>
@@ -3189,6 +32809,10 @@ D' = Art_1 NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3csgwhagr
 </xsl:text>
 </xsl:if>
@@ -3437,6 +33061,10 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3dwhI
 </xsl:text>
 </xsl:if>
@@ -3470,6 +33098,10 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3dwhF
 </xsl:text>
 </xsl:if>
@@ -3504,6 +33136,10 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3dwhagr
 </xsl:text>
 </xsl:if>
@@ -3540,6 +33176,10 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3dsgwhI
 </xsl:text>
 </xsl:if>
@@ -3576,6 +33216,10 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3dsgwhF
 </xsl:text>
 </xsl:if>
@@ -3613,6 +33257,10 @@ D' = Art_1 NP (Art_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3dsgwhagr
 </xsl:text>
 </xsl:if>
@@ -3861,6 +33509,10 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3ewhI
 </xsl:text>
 </xsl:if>
@@ -3894,6 +33546,10 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3ewhF
 </xsl:text>
 </xsl:if>
@@ -3931,6 +33587,10 @@ D' = (Art_1) NP Art_2
 	&lt;D' head type wh&gt; &lt;= &lt;Art_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 3esgwhagr
 </xsl:text>
 </xsl:if>
@@ -4172,6 +33832,8 @@ D' = (Dem) NP
 	&lt;Dem head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 4a
 </xsl:text>
 </xsl:if>
@@ -4191,13 +33853,15 @@ D' = (Dem) NP
 	&lt;D' head&gt; = &lt;NP head&gt;
 	&lt;Dem head agr&gt; = &lt;NP head agr&gt;
 	&lt;Dem head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
-		&lt;Dem head type comma&gt; = -
-		&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
+			&lt;Dem head type comma&gt; = -
+			&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 4apl
 </xsl:text>
 </xsl:if>
@@ -4240,10 +33904,10 @@ D' = (Dem) NP
 	&lt;D' head&gt; = &lt;NP head&gt;
 	&lt;Dem head agr&gt; = &lt;NP head agr&gt;
 	&lt;Dem head case&gt; = &lt;NP head case&gt;
-	{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+		{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Dem head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
@@ -4271,6 +33935,8 @@ D' = NP (Dem)
 	&lt;D' head type comma&gt; &lt;= &lt;Dem head type comma&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 4b
 </xsl:text>
 </xsl:if>
@@ -4290,14 +33956,16 @@ D' = NP (Dem)
 	&lt;D' head&gt; = &lt;NP head&gt;
 	&lt;Dem head agr&gt; = &lt;NP head agr&gt;
 	&lt;Dem head case&gt; = &lt;NP head case&gt;
-	{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
-		&lt;NP head type comma&gt; = -
-		&lt;D' head type comma&gt; &lt;= &lt;Dem head type comma&gt;
-		&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
+		{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
+			&lt;NP head type comma&gt; = -
+			&lt;D' head type comma&gt; &lt;= &lt;Dem head type comma&gt;
+			&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 4bpl
 </xsl:text>
 </xsl:if>
@@ -4341,10 +34009,10 @@ D' = NP (Dem)
 	&lt;D' head&gt; = &lt;NP head&gt;
 	&lt;Dem head agr&gt; = &lt;NP head agr&gt;
 	&lt;Dem head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;NP head type comma&gt; = -
 	&lt;D' head type comma&gt; &lt;= &lt;Dem head type comma&gt;
@@ -4379,6 +34047,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 4cwhI
 </xsl:text>
 </xsl:if>
@@ -4410,6 +34082,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 4cwhF
 </xsl:text>
 </xsl:if>
@@ -4442,6 +34118,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 4cwhagr
 </xsl:text>
 </xsl:if>
@@ -4465,10 +34145,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; = &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt; = +
 	&lt;Dem_1 head type comma&gt; = -
@@ -4477,6 +34157,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 4cplwhI
 </xsl:text>
 </xsl:if>
@@ -4500,10 +34184,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; = &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt; = +
 	&lt;Dem_1 head type comma&gt; = -
@@ -4512,6 +34196,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 4cplwhF
 </xsl:text>
 </xsl:if>
@@ -4535,10 +34223,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; = &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt; = +
 	&lt;Dem_1 head type comma&gt; = -
@@ -4548,6 +34236,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 4cplwhagr
 </xsl:text>
 </xsl:if>
@@ -4668,10 +34360,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; = &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt; = +
@@ -4704,10 +34396,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; = &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt; = +
@@ -4740,10 +34432,10 @@ D' = (Dem_1) NP (Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; = &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt; = +
@@ -4778,6 +34470,8 @@ D' = Dem NP
 	&lt;Dem head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 5a
 </xsl:text>
 </xsl:if>
@@ -4803,6 +34497,8 @@ D' = Dem NP
 	&lt;Dem head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 5asg
 </xsl:text>
 </xsl:if>
@@ -4875,6 +34571,8 @@ D' = NP Dem
 	&lt;D' head type comma&gt; &lt;= &lt;Dem head type comma&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 5b
 </xsl:text>
 </xsl:if>
@@ -4901,6 +34599,8 @@ D' = NP Dem
 	&lt;D' head type comma&gt; &lt;= &lt;Dem head type comma&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 5bsg
 </xsl:text>
 </xsl:if>
@@ -4981,6 +34681,10 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5cwhI
 </xsl:text>
 </xsl:if>
@@ -5014,6 +34718,10 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5cwhF
 </xsl:text>
 </xsl:if>
@@ -5048,6 +34756,10 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5cwhagr
 </xsl:text>
 </xsl:if>
@@ -5084,6 +34796,10 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5csgwhI
 </xsl:text>
 </xsl:if>
@@ -5120,6 +34836,10 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5csgwhF
 </xsl:text>
 </xsl:if>
@@ -5157,6 +34877,10 @@ D' = Dem_1 NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5csgwhagr
 </xsl:text>
 </xsl:if>
@@ -5405,6 +35129,10 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5dwhI
 </xsl:text>
 </xsl:if>
@@ -5438,6 +35166,10 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5dwhF
 </xsl:text>
 </xsl:if>
@@ -5472,6 +35204,10 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5dwhagr
 </xsl:text>
 </xsl:if>
@@ -5508,6 +35244,10 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5dsgwhI
 </xsl:text>
 </xsl:if>
@@ -5544,6 +35284,10 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5dsgwhF
 </xsl:text>
 </xsl:if>
@@ -5581,6 +35325,10 @@ D' = Dem_1 NP (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5dsgwhagr
 </xsl:text>
 </xsl:if>
@@ -5829,6 +35577,10 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5ewhI
 </xsl:text>
 </xsl:if>
@@ -5862,6 +35614,10 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5ewhF
 </xsl:text>
 </xsl:if>
@@ -5896,6 +35652,10 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5ewhagr
 </xsl:text>
 </xsl:if>
@@ -5932,6 +35692,10 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5esgwhI
 </xsl:text>
 </xsl:if>
@@ -5968,6 +35732,10 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5esgwhF
 </xsl:text>
 </xsl:if>
@@ -6005,6 +35773,10 @@ D' = (Dem_1) NP Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 5esgwhagr
 </xsl:text>
 </xsl:if>
@@ -6251,6 +36023,10 @@ D' = (Art / Dem) NP
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 6a
 </xsl:text>
 </xsl:if>
@@ -6274,16 +36050,20 @@ D' = (Art / Dem) NP
 	&lt;Art head case&gt; = &lt;D' head case&gt;
 	&lt;Dem head agr&gt; =  &lt;NP head agr&gt;
 	&lt;Dem head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper &gt; = +
-		}
-		&lt;Art head type comma&gt; = -
-		&lt;Dem head type comma&gt; = -
-		&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper &gt; = +
+			}
+			&lt;Art head type comma&gt; = -
+			&lt;Dem head type comma&gt; = -
+			&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 6apl
 </xsl:text>
 </xsl:if>
@@ -6337,10 +36117,10 @@ D' = (Art / Dem) NP
 	&lt;Art head case&gt; = &lt;D' head case&gt;
 	&lt;Dem head agr&gt; =  &lt;NP head agr&gt;
 	&lt;Dem head case&gt; = &lt;NP head case&gt;
-	{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper &gt; = +
-		}
+		{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper &gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Art head type comma&gt; = -
 	&lt;Dem head type comma&gt; = -
@@ -6378,6 +36158,10 @@ D' = NP (Art / Dem)
 	&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 6b
 </xsl:text>
 </xsl:if>
@@ -6401,17 +36185,21 @@ D' = NP (Art / Dem)
 	&lt;Art head case&gt; = &lt;D' head case&gt;
 	&lt;Dem head agr&gt; =  &lt;NP head agr&gt;
 	&lt;Dem head case&gt; = &lt;NP head case&gt;
-	{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper &gt; = +
-		}
-		&lt;NP head type comma&gt; = -
-		&lt;D' head type comma&gt; &lt;= &lt;Art head type comma&gt;
-		&lt;D' head type comma&gt; &lt;= &lt;Dem head type comma&gt;
-		&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
+		{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper &gt; = +
+			}
+			&lt;NP head type comma&gt; = -
+			&lt;D' head type comma&gt; &lt;= &lt;Art head type comma&gt;
+			&lt;D' head type comma&gt; &lt;= &lt;Dem head type comma&gt;
+			&lt;D' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 6bpl
 </xsl:text>
 </xsl:if>
@@ -6466,10 +36254,10 @@ D' = NP (Art / Dem)
 	&lt;Art head case&gt; = &lt;D' head case&gt;
 	&lt;Dem head agr&gt; =  &lt;NP head agr&gt;
 	&lt;Dem head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper &gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper &gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;NP head type comma&gt; = -
 	&lt;D' head type comma&gt; &lt;= &lt;Art head type comma&gt;
@@ -6520,6 +36308,14 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 6cwhI
 </xsl:text>
 </xsl:if>
@@ -6564,6 +36360,14 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 6cwhF
 </xsl:text>
 </xsl:if>
@@ -6612,6 +36416,14 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 6cwhagr
 </xsl:text>
 </xsl:if>
@@ -6641,10 +36453,10 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper &gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper &gt; = +
+			}
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Art_2 head type DP-final&gt;   = +
@@ -6660,6 +36472,14 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 6cplwhI
 </xsl:text>
 </xsl:if>
@@ -6689,10 +36509,10 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper &gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper &gt; = +
+			}
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Art_2 head type DP-final&gt;   = +
@@ -6708,6 +36528,14 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 6cplwhF
 </xsl:text>
 </xsl:if>
@@ -6737,10 +36565,10 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper &gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper &gt; = +
+			}
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Art_2 head type DP-final&gt;   = +
@@ -6760,6 +36588,14 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 6cplwhagr
 </xsl:text>
 </xsl:if>
@@ -6928,10 +36764,10 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper &gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper &gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Dem_1 head type DP-initial&gt; = +
@@ -6977,10 +36813,10 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper &gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper &gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Dem_1 head type DP-initial&gt; = +
@@ -7026,10 +36862,10 @@ D' = (Art_1 / Dem_1) NP (Art_2 / Dem_2)
 	&lt;Dem_1 head case&gt; = &lt;NP head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;NP head agr&gt;
 	&lt;Dem_2 head case&gt; = &lt;NP head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper &gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper &gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Dem_1 head type DP-initial&gt; = +
@@ -7084,6 +36920,10 @@ D' = {Art / Dem} NP
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 7a
 </xsl:text>
 </xsl:if>
@@ -7116,6 +36956,10 @@ D' = {Art / Dem} NP
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 7asg
 </xsl:text>
 </xsl:if>
@@ -7208,6 +37052,10 @@ D' = NP {Art / Dem}
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 7b
 </xsl:text>
 </xsl:if>
@@ -7241,6 +37089,10 @@ D' = NP {Art / Dem}
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 7bsg
 </xsl:text>
 </xsl:if>
@@ -7348,6 +37200,14 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7cwhI
 </xsl:text>
 </xsl:if>
@@ -7394,6 +37254,14 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7cwhF
 </xsl:text>
 </xsl:if>
@@ -7444,6 +37312,14 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7cwhagr
 </xsl:text>
 </xsl:if>
@@ -7493,6 +37369,14 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7csgwhI
 </xsl:text>
 </xsl:if>
@@ -7542,6 +37426,14 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7csgwhF
 </xsl:text>
 </xsl:if>
@@ -7595,6 +37487,14 @@ D' = {Art_1 / Dem_1} NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7csgwhagr
 </xsl:text>
 </xsl:if>
@@ -7940,6 +37840,14 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7dwhI
 </xsl:text>
 </xsl:if>
@@ -7986,6 +37894,14 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7dwhF
 </xsl:text>
 </xsl:if>
@@ -8036,6 +37952,14 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7dwhagr
 </xsl:text>
 </xsl:if>
@@ -8085,6 +38009,14 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7dsgwhI
 </xsl:text>
 </xsl:if>
@@ -8135,6 +38067,14 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7dsgwhF
 </xsl:text>
 </xsl:if>
@@ -8188,6 +38128,14 @@ D' = {Art_1 / Dem_1} NP (Art_2 / Dem_2)
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7dsgwhagr
 </xsl:text>
 </xsl:if>
@@ -8533,6 +38481,14 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7ewhI
 </xsl:text>
 </xsl:if>
@@ -8579,6 +38535,14 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7ewhF
 </xsl:text>
 </xsl:if>
@@ -8629,6 +38593,14 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7ewhagr
 </xsl:text>
 </xsl:if>
@@ -8678,6 +38650,14 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7esgwhI
 </xsl:text>
 </xsl:if>
@@ -8727,6 +38707,14 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7esgwhF
 </xsl:text>
 </xsl:if>
@@ -8780,6 +38768,14 @@ D' = (Art_1 / Dem_1) NP {Art_2 / Dem_2}
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 7esgwhagr
 </xsl:text>
 </xsl:if>
@@ -9107,6 +39103,8 @@ D' = (Dem) D''
 	&lt;Dem head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 8aD
 </xsl:text>
 </xsl:if>
@@ -9128,13 +39126,15 @@ D' = (Dem) D''
 	&lt;D' head&gt; = &lt;D'' head&gt;
 	&lt;Dem head agr&gt; =  &lt;D' head agr&gt;
 	&lt;Dem head case&gt; =  &lt;D' head case&gt;
-		{&lt;D'' head agr number&gt; = plural
-		/&lt;D'' head type mass&gt; = +
-		/&lt;D'' head type proper&gt; = +
-		}
-		&lt;Dem head type comma&gt; = -
-		&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
+			{&lt;D'' head agr number&gt; = plural
+			/&lt;D'' head type mass&gt; = +
+			/&lt;D'' head type proper&gt; = +
+			}
+			&lt;Dem head type comma&gt; = -
+			&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 8aplD
 </xsl:text>
 </xsl:if>
@@ -9181,10 +39181,10 @@ D' = (Dem) D''
 	&lt;D' head&gt; = &lt;D'' head&gt;
 	&lt;Dem head agr&gt; =  &lt;D' head agr&gt;
 	&lt;Dem head case&gt; =  &lt;D' head case&gt;
-		{&lt;D'' head agr number&gt; = plural
-		/&lt;D'' head type mass&gt; = +
-		/&lt;D'' head type proper&gt; = +
-		}
+			{&lt;D'' head agr number&gt; = plural
+			/&lt;D'' head type mass&gt; = +
+			/&lt;D'' head type proper&gt; = +
+			}
 	&lt;D'' head type possessed&gt; = -
 	&lt;Dem head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
@@ -9214,6 +39214,8 @@ D' = D'' (Dem)
 	&lt;D' head type comma&gt; &lt;=&lt;Dem head type comma&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 8bD
 </xsl:text>
 </xsl:if>
@@ -9235,14 +39237,16 @@ D' = D'' (Dem)
 	&lt;D' head&gt; = &lt;D'' head&gt;
 	&lt;Dem head agr&gt; =  &lt;D' head agr&gt;
 	&lt;Dem head case&gt; =  &lt;D' head case&gt;
-		{&lt;D'' head agr number&gt; = plural
-		/&lt;D'' head type mass&gt; = +
-		/&lt;D'' head type proper&gt; = +
-		}
-		&lt;D'' head type comma&gt; = -
-		&lt;D' head type comma&gt; &lt;=&lt;Dem head type comma&gt;
-		&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
+			{&lt;D'' head agr number&gt; = plural
+			/&lt;D'' head type mass&gt; = +
+			/&lt;D'' head type proper&gt; = +
+			}
+			&lt;D'' head type comma&gt; = -
+			&lt;D' head type comma&gt; &lt;=&lt;Dem head type comma&gt;
+			&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 8bplD
 </xsl:text>
 </xsl:if>
@@ -9290,10 +39294,10 @@ D' = D'' (Dem)
 	&lt;D' head&gt; = &lt;D'' head&gt;
 	&lt;Dem head agr&gt; =  &lt;D' head agr&gt;
 	&lt;Dem head case&gt; =  &lt;D' head case&gt;
-		{&lt;D'' head agr number&gt; = plural
-		/&lt;D'' head type mass&gt; = +
-		/&lt;D'' head type proper&gt; = +
-		}
+			{&lt;D'' head agr number&gt; = plural
+			/&lt;D'' head type mass&gt; = +
+			/&lt;D'' head type proper&gt; = +
+			}
 	&lt;D'' head type possessed&gt; = -
 	&lt;D'' head type comma&gt; = -
 	&lt;D' head type comma&gt; &lt;=&lt;Dem head type comma&gt;
@@ -9330,6 +39334,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8cDwhI
 </xsl:text>
 </xsl:if>
@@ -9363,6 +39371,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8cDwhF
 </xsl:text>
 </xsl:if>
@@ -9397,6 +39409,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8cDwhagr
 </xsl:text>
 </xsl:if>
@@ -9422,10 +39438,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;Dem_1 head case&gt; =  &lt;D' head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;D' head agr&gt;
 	&lt;Dem_2 head case&gt; =  &lt;D' head case&gt;
-		{&lt;D'' head agr number&gt; = plural
-		/&lt;D'' head type mass&gt; = +
-		/&lt;D'' head type proper&gt; = +
-		}
+			{&lt;D'' head agr number&gt; = plural
+			/&lt;D'' head type mass&gt; = +
+			/&lt;D'' head type proper&gt; = +
+			}
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt;   = +
 	&lt;Dem_1 head type comma&gt; = -
@@ -9434,6 +39450,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8cplDwhI
 </xsl:text>
 </xsl:if>
@@ -9459,10 +39479,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;Dem_1 head case&gt; =  &lt;D' head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;D' head agr&gt;
 	&lt;Dem_2 head case&gt; =  &lt;D' head case&gt;
-		{&lt;D'' head agr number&gt; = plural
-		/&lt;D'' head type mass&gt; = +
-		/&lt;D'' head type proper&gt; = +
-		}
+			{&lt;D'' head agr number&gt; = plural
+			/&lt;D'' head type mass&gt; = +
+			/&lt;D'' head type proper&gt; = +
+			}
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt;   = +
 	&lt;Dem_1 head type comma&gt; = -
@@ -9471,6 +39491,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8cplDwhF
 </xsl:text>
 </xsl:if>
@@ -9496,10 +39520,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;Dem_1 head case&gt; =  &lt;D' head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;D' head agr&gt;
 	&lt;Dem_2 head case&gt; =  &lt;D' head case&gt;
-		{&lt;D'' head agr number&gt; = plural
-		/&lt;D'' head type mass&gt; = +
-		/&lt;D'' head type proper&gt; = +
-		}
+			{&lt;D'' head agr number&gt; = plural
+			/&lt;D'' head type mass&gt; = +
+			/&lt;D'' head type proper&gt; = +
+			}
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt;   = +
 	&lt;Dem_1 head type wh&gt; = &lt;Dem_2 head type wh&gt;
@@ -9509,6 +39533,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8cplDwhagr
 </xsl:text>
 </xsl:if>
@@ -9637,10 +39665,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;Dem_1 head case&gt; =  &lt;D' head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;D' head agr&gt;
 	&lt;Dem_2 head case&gt; =  &lt;D' head case&gt;
-		{&lt;D'' head agr number&gt; = plural
-		/&lt;D'' head type mass&gt; = +
-		/&lt;D'' head type proper&gt; = +
-		}
+			{&lt;D'' head agr number&gt; = plural
+			/&lt;D'' head type mass&gt; = +
+			/&lt;D'' head type proper&gt; = +
+			}
 	&lt;D'' head type possessed&gt; = -
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt;   = +
@@ -9675,10 +39703,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;Dem_1 head case&gt; =  &lt;D' head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;D' head agr&gt;
 	&lt;Dem_2 head case&gt; =  &lt;D' head case&gt;
-		{&lt;D'' head agr number&gt; = plural
-		/&lt;D'' head type mass&gt; = +
-		/&lt;D'' head type proper&gt; = +
-		}
+			{&lt;D'' head agr number&gt; = plural
+			/&lt;D'' head type mass&gt; = +
+			/&lt;D'' head type proper&gt; = +
+			}
 	&lt;D'' head type possessed&gt; = -
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt;   = +
@@ -9713,10 +39741,10 @@ D' = (Dem_1) D'' (Dem_2)
 	&lt;Dem_1 head case&gt; =  &lt;D' head case&gt;
 	&lt;Dem_2 head agr&gt; =  &lt;D' head agr&gt;
 	&lt;Dem_2 head case&gt; =  &lt;D' head case&gt;
-		{&lt;D'' head agr number&gt; = plural
-		/&lt;D'' head type mass&gt; = +
-		/&lt;D'' head type proper&gt; = +
-		}
+			{&lt;D'' head agr number&gt; = plural
+			/&lt;D'' head type mass&gt; = +
+			/&lt;D'' head type proper&gt; = +
+			}
 	&lt;D'' head type possessed&gt; = -
 	&lt;Dem_1 head type DP-initial&gt; = +
 	&lt;Dem_2 head type DP-final&gt;   = +
@@ -9753,6 +39781,8 @@ D' = Dem D''
 	&lt;Dem head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 8dD
 </xsl:text>
 </xsl:if>
@@ -9780,6 +39810,8 @@ D' = Dem D''
 	&lt;Dem head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem head type prefix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 8dsgD
 </xsl:text>
 </xsl:if>
@@ -9857,6 +39889,8 @@ D' = D'' Dem
 	&lt;Dem head type comma&gt; = -
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 8eD
 </xsl:text>
 </xsl:if>
@@ -9885,6 +39919,8 @@ D' = D'' Dem
 	&lt;D' head type comma&gt; &lt;= &lt;Dem head type comma&gt;
 	&lt;D' head type wh&gt; &lt;= &lt;Dem head type wh&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem head type suffix&gt;
+	&lt;D' head demonstrative head type cooccur&gt; &lt;= &lt;Dem head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[type:[cooccur:+]]]]
 	&lt;D' option&gt; = 8esgD
 </xsl:text>
 </xsl:if>
@@ -9971,6 +40007,10 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8fDwhI
 </xsl:text>
 </xsl:if>
@@ -10006,6 +40046,10 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8fDwhF
 </xsl:text>
 </xsl:if>
@@ -10042,6 +40086,10 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8fDwhagr
 </xsl:text>
 </xsl:if>
@@ -10080,6 +40128,10 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8fsgDwhI
 </xsl:text>
 </xsl:if>
@@ -10118,6 +40170,10 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8fsgDwhF
 </xsl:text>
 </xsl:if>
@@ -10157,6 +40213,10 @@ D' = Dem_1 D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8fsgDwhagr
 </xsl:text>
 </xsl:if>
@@ -10419,6 +40479,10 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8gDwhI
 </xsl:text>
 </xsl:if>
@@ -10454,6 +40518,10 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8gDwhF
 </xsl:text>
 </xsl:if>
@@ -10490,6 +40558,10 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8gDwhagr
 </xsl:text>
 </xsl:if>
@@ -10528,6 +40600,10 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										 final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8gsgDwhI
 </xsl:text>
 </xsl:if>
@@ -10566,6 +40642,10 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8gsgDwhF
 </xsl:text>
 </xsl:if>
@@ -10605,6 +40685,10 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8gsgDwhagr
 </xsl:text>
 </xsl:if>
@@ -10641,6 +40725,8 @@ D' = Dem_1 D'' (Dem_2)
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
 	&lt;D' option&gt; = 8gDposswhI
 </xsl:text>
 </xsl:if>
@@ -10867,6 +40953,10 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8hDwhI
 </xsl:text>
 </xsl:if>
@@ -10902,6 +40992,10 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8hDwhF
 </xsl:text>
 </xsl:if>
@@ -10938,6 +41032,10 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8hDwhagr
 </xsl:text>
 </xsl:if>
@@ -10976,6 +41074,10 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8hsgDwhI
 </xsl:text>
 </xsl:if>
@@ -11014,6 +41116,10 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_2 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8hsgDwhF
 </xsl:text>
 </xsl:if>
@@ -11053,6 +41159,10 @@ D' = (Dem_1) D'' Dem_2
 	&lt;D' head type wh&gt; &lt;= &lt;Dem_1 head type wh&gt;
 	&lt;D' head type prefix&gt; &lt;= &lt;Dem_1 head type prefix&gt;
 	&lt;D' head type suffix&gt; &lt;= &lt;Dem_2 head type suffix&gt;
+	&lt;D' head demonstrative head initial type cooccur&gt; &lt;= &lt;Dem_1 head type cooccur&gt;
+	&lt;D' head demonstrative head final type cooccur&gt; &lt;= &lt;Dem_2 head type cooccur&gt;
+	&lt;D' head&gt; == [type:[possessed:+]] -&gt; [demonstrative:[head:[initial:[type:[cooccur:+]]
+										  final:[type:[cooccur:+]]]]]
 	&lt;D' option&gt; = 8hsgDwhagr
 </xsl:text>
 </xsl:if>
@@ -11308,6 +41418,8 @@ D'' = (Art) NP
 	&lt;Art head type comma&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D'' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D'' option&gt; = 8aA
 </xsl:text>
 </xsl:if>
@@ -11329,13 +41441,15 @@ D'' = (Art) NP
 	&lt;D'' head&gt; = &lt;NP head&gt;
 	&lt;Art head agr&gt; = &lt;D'' head agr&gt;
 	&lt;Art head case&gt; = &lt;D'' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
-		&lt;Art head type comma&gt; = -
-		&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
+			&lt;Art head type comma&gt; = -
+			&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D'' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D'' option&gt; = 8aplA
 </xsl:text>
 </xsl:if>
@@ -11382,10 +41496,10 @@ D'' = (Art) NP
 	&lt;D'' head&gt; = &lt;NP head&gt;
 	&lt;Art head agr&gt; = &lt;D'' head agr&gt;
 	&lt;Art head case&gt; = &lt;D'' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Art head type comma&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
@@ -11415,6 +41529,8 @@ D'' = NP (Art)
 	&lt;D'' head type comma&gt; &lt;= &lt;Art head type comma&gt;
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D'' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D'' option&gt; = 8bA
 </xsl:text>
 </xsl:if>
@@ -11436,14 +41552,16 @@ D'' = NP (Art)
 	&lt;D'' head&gt; = &lt;NP head&gt;
 	&lt;Art head agr&gt; = &lt;D'' head agr&gt;
 	&lt;Art head case&gt; = &lt;D'' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
-		&lt;NP head type comma&gt; = -
-		&lt;D'' head type comma&gt; &lt;= &lt;Art head type comma&gt;
-		&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
+			&lt;NP head type comma&gt; = -
+			&lt;D'' head type comma&gt; &lt;= &lt;Art head type comma&gt;
+			&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D'' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D'' option&gt; = 8bplA
 </xsl:text>
 </xsl:if>
@@ -11491,10 +41609,10 @@ D'' = NP (Art)
 	&lt;D'' head&gt; = &lt;NP head&gt;
 	&lt;Art head agr&gt; = &lt;D'' head agr&gt;
 	&lt;Art head case&gt; = &lt;D'' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;NP head type comma&gt; = -
 	&lt;D'' head type comma&gt; &lt;= &lt;Art head type comma&gt;
@@ -11530,6 +41648,10 @@ D'' = (Art_1) NP (Art_2)
 	&lt;D'' head type comma&gt; &lt;= &lt;Art_2 head type comma&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D'' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D'' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+							final:[type:[cooccur:+]]]]]
 	&lt;D'' option&gt; = 8cA
 </xsl:text>
 </xsl:if>
@@ -11553,10 +41675,10 @@ D'' = (Art_1) NP (Art_2)
 	&lt;Art_1 head case&gt; = &lt;D'' head case&gt;
 	&lt;Art_2 head agr&gt; = &lt;D'' head agr&gt;
 	&lt;Art_2 head case&gt; = &lt;D'' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Art_2 head type DP-final&gt;   = +
 	&lt;Art_1 head type comma&gt; = -
@@ -11564,6 +41686,10 @@ D'' = (Art_1) NP (Art_2)
 	&lt;D'' head type comma&gt; &lt;= &lt;Art_2 head type comma&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D'' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D'' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+	final:[type:[cooccur:+]]]]]
 	&lt;D'' option&gt; = 8cplA
 </xsl:text>
 </xsl:if>
@@ -11618,10 +41744,10 @@ D'' = (Art_1) NP (Art_2)
 	&lt;Art_1 head case&gt; = &lt;D'' head case&gt;
 	&lt;Art_2 head agr&gt; = &lt;D'' head agr&gt;
 	&lt;Art_2 head case&gt; = &lt;D'' head case&gt;
-		{&lt;NP head agr number&gt; = plural
-		/&lt;NP head type mass&gt; = +
-		/&lt;NP head type proper&gt; = +
-		}
+			{&lt;NP head agr number&gt; = plural
+			/&lt;NP head type mass&gt; = +
+			/&lt;NP head type proper&gt; = +
+			}
 	&lt;NP head type possessed&gt; = -
 	&lt;Art_1 head type DP-initial&gt; = +
 	&lt;Art_2 head type DP-final&gt;   = +
@@ -11654,6 +41780,8 @@ D'' = Art NP
 	&lt;Art head type comma&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D'' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D'' option&gt; = 8dA
 </xsl:text>
 </xsl:if>
@@ -11681,6 +41809,8 @@ D'' = Art NP
 	&lt;Art head type comma&gt; = -
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art head type prefix&gt;
+	&lt;D'' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D'' option&gt; = 8dsgA
 </xsl:text>
 </xsl:if>
@@ -11759,6 +41889,8 @@ D'' = NP Art
 	&lt;D'' head type comma&gt; &lt;= &lt;Art head type comma&gt;
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D'' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D'' option&gt; = 8eA
 </xsl:text>
 </xsl:if>
@@ -11787,6 +41919,8 @@ D'' = NP Art
 	&lt;D'' head type comma&gt; &lt;= &lt;Art head type comma&gt;
 	&lt;D'' head type wh&gt; &lt;= &lt;Art head type wh&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art head type suffix&gt;
+	&lt;D'' head article head type cooccur&gt; &lt;= &lt;Art head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[type:[cooccur:+]]]]
 	&lt;D'' option&gt; = 8esgA
 </xsl:text>
 </xsl:if>
@@ -11872,6 +42006,10 @@ D'' = Art_1 NP Art_2
 	&lt;D'' head type comma&gt; &lt;= &lt;Art_2 head type comma&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D'' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D'' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D'' option&gt; = 8fA
 </xsl:text>
 </xsl:if>
@@ -11907,6 +42045,10 @@ D'' = Art_1 NP Art_2
 	&lt;D'' head type comma&gt; &lt;= &lt;Art_2 head type comma&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D'' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D'' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D'' option&gt; = 8fsgA
 </xsl:text>
 </xsl:if>
@@ -12008,6 +42150,10 @@ D'' = Art_1 NP (Art_2)
 	&lt;D'' head type comma&gt; &lt;= &lt;Art_2 head type comma&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D'' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D'' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+							final:[type:[cooccur:+]]]]]
 	&lt;D'' option&gt; = 8gA
 </xsl:text>
 </xsl:if>
@@ -12043,6 +42189,10 @@ D'' = Art_1 NP (Art_2)
 	&lt;D'' head type comma&gt; &lt;= &lt;Art_2 head type comma&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D'' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D'' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+							final:[type:[cooccur:+]]]]]
 	&lt;D'' option&gt; = 8gsgA
 </xsl:text>
 </xsl:if>
@@ -12144,6 +42294,10 @@ D'' = (Art_1) NP Art_2
 	&lt;D'' head type comma&gt; &lt;= &lt;Art_2 head type comma&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D'' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D'' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D'' option&gt; = 8hA
 </xsl:text>
 </xsl:if>
@@ -12179,6 +42333,10 @@ D'' = (Art_1) NP Art_2
 	&lt;D'' head type comma&gt; &lt;= &lt;Art_2 head type comma&gt;
 	&lt;D'' head type prefix&gt; &lt;= &lt;Art_1 head type prefix&gt;
 	&lt;D'' head type suffix&gt; &lt;= &lt;Art_2 head type suffix&gt;
+	&lt;D'' head article head initial type cooccur&gt; &lt;= &lt;Art_1 head type cooccur&gt;
+	&lt;D'' head article head final type cooccur&gt; &lt;= &lt;Art_2 head type cooccur&gt;
+	&lt;D'' head&gt; == [type:[possessed:+]] -&gt; [article:[head:[initial:[type:[cooccur:+]]
+						   final:[type:[cooccur:+]]]]]
 	&lt;D'' option&gt; = 8hsgA
 </xsl:text>
 </xsl:if>

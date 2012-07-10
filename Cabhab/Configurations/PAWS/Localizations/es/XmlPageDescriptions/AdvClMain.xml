@@ -3,9 +3,9 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvClMain" count="1/3">
 	<title>Las cláusulas adverbiales</title>
-	<introduction>En esta sección se analizan los complementos que pueden seguir los adverbios de tiempo y de razón.  Los adverbios de tiempo con los complementos se utilizan a continuación para ilustrar las construcciones, después ambos tipos serán analizados para de su idioma en la página siguiente. </introduction>
+	<introduction>En esta sección se analizan los complementos de los adverbios de tiempo y de razón.  Los adverbios de tiempo con los complementos se utilizan a continuación para ilustrar las construcciones, después ambos tipos serán analizados para de su lengua en la página siguiente.
+	   <br/><br/>Algunos ejemplos en español de adverbios de tiempo con los complementos utilzados en oraciones completas son:</introduction>
 	<EnglishExample>
-		<exItem>Algunos ejemplos españoles de adverbios de tiempo con los complementos usados en oraciones completas son:</exItem>
 		<exItem label="1.">[Desde entonces], Juan ha sido cambiante.</exItem>
 		<exItem label="2.">Juan ha sido en casa [desde la semana pasada].</exItem>
 		<exItem label="3.">[Puesto que Juan vuelto a casa del hospital] él está haciendo mejor.</exItem>
@@ -28,7 +28,7 @@ The structure with an IP complement (example 3) is:
 The structure with an CP complement (example 4) is:
 		<tree img="TreeDescriptions/PawsAdvClCP.png"/>
 	</introduction>
-	<introduction id="AdvClIntroPractical" show="swPractical">Estos ejemplos muestran que los adverbios de tiempo particulares permiten ciertos tipos de complementos. En ejemplo 1 <example>desde</example> es seguido por otro adverbio de tiempo y en ejemplo 2 por una frase nominal de tiempo  Los ejemplos 3 y 4 muestran que <example>puesto</example> y <example>ahora</example>  pueden tener un complemento clausal finito con un complementizador, mientras que los ejemplos 5 y 6 muestran que <example>cuando</example>  tiene una oración finito por su complemento.
+	<introduction id="AdvClIntroPractical" show="swPractical">Estos ejemplos muestran que los adverbios de tiempo particulares permiten ciertos tipos de complementos. En ejemplo 1 <example>desde</example> es seguido por otro adverbio de tiempo y en ejemplo 2 por una frase nominal de tiempo  Los ejemplos 3 y 4 muestran que <example>puesto</example> y <example>ahora</example>  pueden tener un complemento clausal finito con un complementizador, mientras que los ejemplos 5 y 6 muestran que <example>cuando</example> tiene una oración finito por su complemento.
 		<br/>
 		<br/>
 		Todas de estas cláusulas (o frases) adverbiales funcionan al igual que los adverbios simples, así que ellos serán considerados frases adverbiales con el tipo apropiado de complemento. Las cláusulas adverbiales de estos tipos normalmente pueden presentarse o inicial o final de la oración.

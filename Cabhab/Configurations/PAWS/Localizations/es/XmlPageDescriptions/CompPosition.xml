@@ -6,32 +6,33 @@
 	<form section="comp">
 		<radioGroup>
 			<groupName dataItem="comp" default="no">RComp</groupName>
-			<prompt>En vista de los ejemplos usted dio de cláusulas de complemento, ¿Hay uno o más complementizadores que indican cláusulas subordinadas en su idioma?   (Las preguntas y las cláusulas relativas serán consideradas en las secciones siguientes, así que no contestan para esos tipos aquí.)</prompt>
-			<radio id="CompYes" dataValue="yes">Sí, como <example>that 'que'</example> y <example>for 'para'</example> en inglés</radio>
+			<prompt>De acruedo con los ejemplos usted dio de cláusulas de complemento, ¿Hay uno o más complementizadores que indican cláusulas subordinadas en su lengua?   (Las preguntas y las cláusulas relativas serán consideradas en las secciones siguientes, así que no contestan para esto aquí.)</prompt>
+		   <radio id="CompNo" dataValue="no">No, no hay ninguna palabra del complementizador ni un clítico para las cláusulas subordinadas declarativas<span id="CompNoSpanNotPractical" show="swNotPractical">, so all embedded clauses are simply IPs in this language</span></radio>
+		   <radio id="CompYes" dataValue="yes">Sí, como <example>that ‘que’</example> y <example>for ‘para’</example> en inglés</radio>
 			<radioGroup id="CompWordTable" show="swCompYes">
 				<groupName dataItem="compWord" default="yes">RCompWord</groupName>
 				<prompt>¿Se escribe como una palabra independiente?</prompt>
-				<radio id="CompWordNo" dataValue="no">No, es un clítico que se une a otra palabra</radio>
+			   <radio id="CompWordYes" dataValue="yes">Sí</radio>
+			   <radio id="CompWordNo" dataValue="no">No, es un clítico que se une a otra palabra</radio>
 				<radioGroup id="CompCliticPosTable" show="swCompWordNo">
 					<groupName dataItem="compCliticPos" default="unknown" position="yesHead">RCompCliticPos</groupName>
 					<prompt>¿Es el clítico un proclítico o un enclítico?</prompt>
 					<radio id="CompCliticPosBefore" dataValue="before">Un proclítico o un prefijo</radio>
 					<radio id="CompCliticPosAfter" dataValue="after">Un enclítico o un sufijo</radio>
-					<radio id="CompCliticPosBoth" dataValue="both">Algunos de cada tipo</radio>
+					<radio id="CompCliticPosBoth" dataValue="both">Existen de los dos tipos</radio>
 				</radioGroup>
 				<radioGroup id="CompCliticTypeTable" show="swCompWordNo">
 					<groupName dataItem="compCliticAttaches" default="edge">RCompCliticAttaches</groupName>
 					<prompt>¿Dónde se une el clítico a la cláusula subordinada?</prompt>
-					<radio id="CompCliticAttachesEdge" dataValue="edge">En el extremo</radio>
+					<radio id="CompCliticAttachesEdge" dataValue="edge">A la orilla</radio>
 					<radio id="CompCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
-				<radio id="CompWordYes" dataValue="yes">Sí</radio>
 			</radioGroup>
 			<radioGroup id="CompPosTable" show="swCompWordYes">
 				<groupName dataItem="compPos" default="unknown" position="yesHead">RCompPos</groupName>
 				<prompt>¿Dónde se presenta el complementizador con respecto al resto de la cláusula subordinada?</prompt>
-				<radio id="CompPosBefore" dataValue="before">Antes</radio>
-				<radio id="CompPosAfter" dataValue="after">Después</radio>
+			   <radio id="CompPosBefore" dataValue="before">Antes de la cláusula</radio>
+			   <radio id="CompPosAfter" dataValue="after">Después de la cláusula</radio>
 				<radio id="CompPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
 				<radio id="CompPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
 				<radio id="CompPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados en la misma oración</radio>
@@ -44,7 +45,6 @@
 					<radio id="CompEitherRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
-			<radio id="CompNo" dataValue="no">No, no hay ninguna palabra del complementizador ni un clítico para las cláusulas subordinadas declarativas<span id="CompNoSpanNotPractical" show="swNotPractical">, so all embedded clauses are simply IPs in this language</span></radio>
 		</radioGroup>
 		<instruction id="CompHeadCliticInstruction" show="swCompHeadClitic">In the lexicon, add the feature <feature>comp</feature> to these clitics.</instruction>
 		<instruction id="CompEdgeCliticPrefixInstruction" show="swCompEdgeCliticPrefix">In the lexicon, add the feature <feature>comp_prefix</feature> to these clitics.</instruction>

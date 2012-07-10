@@ -88,7 +88,39 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+				   <xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>aspect</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>contemplative</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>aspect</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>contrafactual</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 						<td align="left">
 							<xsl:text>aspect</xsl:text>
@@ -168,7 +200,22 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
+				   <xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>aspect</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>perfect</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>					<xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
 <tr>
 						<td align="left">
 							<xsl:text>aspect</xsl:text>
@@ -232,7 +279,23 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(//ip/ipInflFeatDeclarative/@checked)='yes'">
+				   <xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>aspect</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>unreal</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatDeclarative/@checked)='yes'">
 <tr>
 						<td align="left">
 							<xsl:text>mood</xsl:text>
@@ -312,10 +375,106 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(//ip/ipInflFeatPassive/@checked)='yes'">
+							   <xsl:if test="normalize-space(//ip/ipInflFeatFinite/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>other</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>finite</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatMinusFinite/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>other</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>nonfinite</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatGerund/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>other</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>gerund</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatParticiple/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>other</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>participle</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatAntipassive/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>antipassive</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatCausative/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>causative</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatPassive/@checked)='yes'">
 <tr>
 						<td align="left">
-							<xsl:text>other</xsl:text>
+							<xsl:text>voice</xsl:text>
 						</td>
 						<td align="left">
 							<xsl:text>passive</xsl:text>
@@ -328,53 +487,101 @@
 						</td>
 					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(//ip/ipInflFeatParticiple/@checked)='yes'">
+				   <xsl:if test="normalize-space(//ip/ipInflFeatActorVoice/@checked)='yes'">
 <tr>
-						<td align="left">
-							<xsl:text>other</xsl:text>
-						</td>
-						<td align="left">
-							<xsl:text>participle</xsl:text>
-						</td>
-						<td align="left">
-							<langData>
+					  <td align="left">
+						 <xsl:text>voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>actor voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
-						</td>
-					</tr>
+					  </td>
+				   </tr>
 </xsl:if>
-					<xsl:if test="normalize-space(//ip/ipInflFeatFinite/@checked)='yes'">
+				   <xsl:if test="normalize-space(//ip/ipInflFeatDativeVoice/@checked)='yes'">
 <tr>
-						<td align="left">
-							<xsl:text>other</xsl:text>
-						</td>
-						<td align="left">
-							<xsl:text>finite</xsl:text>
-						</td>
-						<td align="left">
-							<langData>
+					  <td align="left">
+						 <xsl:text>voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>dative voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
-						</td>
-					</tr>
+					  </td>
+				   </tr>
 </xsl:if>
-					<xsl:if test="normalize-space(//ip/ipInflFeatMinusFinite/@checked)='yes'">
+				   <xsl:if test="normalize-space(//ip/ipInflFeatGoalVoice/@checked)='yes'">
 <tr>
-						<td align="left">
-							<xsl:text>other</xsl:text>
-						</td>
-						<td align="left">
-							<xsl:text>nonfinite</xsl:text>
-						</td>
-						<td align="left">
-							<langData>
+					  <td align="left">
+						 <xsl:text>voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>goal voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
-						</td>
-					</tr>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatInstrumentalVoice/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>instrumental voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatLocativeVoice/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>locative voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatObjectoice/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>object voice</xsl:text>
+					  </td>
+					  <td align="left">
+						 <langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>ENTER_POSSIBLE_FORMS</langData>
+					  </td>
+				   </tr>
 </xsl:if>
 				</table>
 </example>
@@ -1042,13 +1249,376 @@
 						</td>
 					</tr>
 </xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeAnimalSubject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type animal subject</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeInsectSubject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type insect subject</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeLiquidSubject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type liquid subject</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeRoundSubject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type round subject</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeCylinderSubject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type cylinder subject</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeSphericalSubject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type spherical subject</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeTreeSubject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type tree subject</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeWoodSubject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type wooden subject</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeOtherSubject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type other subject</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeAnimalObject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type animal object</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeInsectObject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type insect object</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeLiquidObject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type liquid object</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeRoundObject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type round object</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeCylinderObject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type cylinder object</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeSphericalObject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type spherical object</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeTreeObject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type tree object</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeWoodObject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type wooden object</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeOtherObject/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type other object</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeAnimalErgative/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type animal ergative argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeInsectErgative/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type insect ergative argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeLiquidErgative/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type liquid ergative argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeRoundErgative/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type round ergative argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeCylinderErgative/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type cylinder ergative argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeSphericalErgative/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type spherical ergative argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeTreeErgative/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type tree ergative argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeWoodErgative/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type wooden ergative argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeOtherErgative/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type other ergative argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeAnimalAbsolutive/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type animal absolutive argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeInsectAbsolutive/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type insect absolutive argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeLiquidAbsolutive/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type liquid absolutive argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeRoundAbsolutive/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type round absolutive argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeCylinderAbsolutive/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type cylinder absolutive argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeSphericalAbsolutive/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type spherical absolutive argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeTreeAbsolutive/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type tree absolutive argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeWoodAbsolutive/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type wooden absolutive argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeOtherAbsolutive/@checked)='yes'">
+<tr>
+					  <td align="left">
+						 <xsl:text>class</xsl:text>
+					  </td>
+					  <td align="left">
+						 <xsl:text>class type other absolutive argument</xsl:text>
+					  </td>
+				   </tr>
+</xsl:if>
 				</table>
 </example>
 		</section2>
 		<section2 id="sIPProDrop">
 			<secTitle>Missing Subjects</secTitle>
 			<p>
-<xsl:text>Some languages are called pro-drop languages because they allow a subject and/or object to be missing or unexpressed in their normal syntactic position.  For example, in Spanish the normal way to say "I buy a book" is </xsl:text>
+<xsl:text>Some languages are called pro-drop languages because they allow a subject and/or object to be missing or unexpressed in their normal syntactic position.  For example, in Spanish the normal way to say “I buy a book” is </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1093,35 +1663,28 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:text> allowed.</xsl:text>
 				</xsl:if>
 <xsl:text></xsl:text>
-<xsl:if test="normalize-space(//ip/@proDrop)='noImp'">
-					<xsl:text>  Examples showing a missing subject in imperatives include:</xsl:text>
-				</xsl:if>
-<xsl:text></xsl:text>
-<xsl:if test="normalize-space(//ip/@proDrop)='yes'">
-					<xsl:text>  Examples with pro-drop include:</xsl:text>
-				</xsl:if>
-<xsl:text></xsl:text>
-<xsl:if test="normalize-space(//ip/@proDrop)='yesClitic'">
-					<xsl:text>  Examples that look like pro-drop include:</xsl:text>
-				</xsl:if>
-<xsl:text></xsl:text>
 </p>
-			<xsl:if test="normalize-space(//ip/@proDrop)!='no'">
-<example num="xV.IPProDrop.10">
+				<xsl:if test="normalize-space(//ip/@proDrop)='noImp'">
+<p>
+<xsl:text>  Examples showing a missing subject in imperatives include:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//ip/@proDrop)='noImp'">
+<example num="xV.IPProDrop.12">
 <xsl:variable name="sExampleValue">
-<xsl:value-of select="//ip/proDropExample" />
+<xsl:value-of select="//ip/impExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/proDropExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/impExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="//ip/proDropExample" />
+<xsl:value-of select="//ip/impExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//ip/proDropExample))" />
+<xsl:value-of select="string-length(normalize-space(//ip/impExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xV.IPProDrop.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xV.IPProDrop.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1130,7 +1693,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xV.IPProDrop.10.1</xsl:text>
+<xsl:text>xV.IPProDrop.12.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1146,11 +1709,155 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:choose>
 </example>
 </xsl:if>
+		   <xsl:if test="normalize-space(//ip/@proDrop)='no'">
+<p>
+<xsl:text>  Examples of imperatives showing the overt subject include:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//ip/@proDrop)='no'">
+<example num="xV.IPProDrop.16">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//ip/impExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/impExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//ip/impExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//ip/impExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xV.IPProDrop.16</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xV.IPProDrop.16.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+		   <xsl:if test="normalize-space(//ip/@proDrop)='yes'">
+<p>
+<xsl:text>  Examples with pro-drop include:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//ip/@proDrop)='yes'">
+<example num="xV.IPProDrop.20">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//ip/proDropExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/proDropExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//ip/proDropExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//ip/proDropExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xV.IPProDrop.20</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xV.IPProDrop.20.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+				<xsl:if test="normalize-space(//ip/@proDrop)='yesClitic'">
+<p>
+<xsl:text>  Examples that look like pro-drop due to clitic pronouns attached to the verb include:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//ip/@proDrop)='yesClitic'">
+<example num="xV.IPProDrop.24">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//ip/cliticPnExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/cliticPnExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//ip/cliticPnExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//ip/cliticPnExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xV.IPProDrop.24</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xV.IPProDrop.24.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+
 		</section2>
 		<section2 id="sIPAux">
 			<secTitle>Auxiliaries</secTitle>
 			<p>
-<xsl:text>Some languages have auxiliary elements that are separate words, and some can have more than one auxiliary element before the main verb.  Examples for English transitive single-clause sentences include: </xsl:text>
+<xsl:text>There are several kinds of auxiliary elements, including positive and negative varieties, as well as nonfinite, motion and other types.  Each type will be covered in turn.</xsl:text>
+</p>
+
+		   <section3 id="sIPAuxPositive">
+			  <secTitle>Positive Auxuliary words</secTitle>
+
+		   <p>
+<xsl:text>
+		   Some languages have positive auxiliary elements that are separate words, and some can have more than one auxiliary element before the main verb.  Examples for English transitive sentences include: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1181,7 +1888,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<xsl:when test="//ip/@aux='no'"> does not have any </xsl:when>
 					<xsl:when test="//ip/@aux='yes'"> has some</xsl:when>
 				</xsl:choose>
-<xsl:text> auxiliaries which are written as separate words.  </xsl:text>
+<xsl:text> positive auxiliaries which are written as separate words.  </xsl:text>
 <xsl:if test="normalize-space(//ip/@aux)='yes'">
 					<xsl:text>An auxiliary is </xsl:text>
 					<xsl:choose>
@@ -1238,7 +1945,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@aux)='yes'">
-<example num="xV.IPAux.10">
+<example num="xV.IPAux.IPAuxPositive.10">
 <table border="1">
 					<tr>
 						<th>Auxiliary Words</th>
@@ -1302,7 +2009,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:if>
 
 				<xsl:if test="normalize-space(//ip/@aux)='yes'">
-<example num="xV.IPAux.14">
+<example num="xV.IPAux.IPAuxPositive.14">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/auxExample" />
 </xsl:variable>
@@ -1316,7 +2023,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//ip/auxExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xV.IPAux.14</xsl:with-param>
+<xsl:with-param name="sExNumber">xV.IPAux.IPAuxPositive.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1325,7 +2032,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xV.IPAux.14.1</xsl:text>
+<xsl:text>xV.IPAux.IPAuxPositive.14.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1341,7 +2048,11 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:choose>
 </example>
 </xsl:if>
-			<p>
+		   </section3>
+		   <section3 id="sIPAuxNegative">
+			  <secTitle>Negative Auxiliaries</secTitle>
+
+		   <p>
 <xsl:text>In some languages verbal negation is an auxiliary element, while in others it is simply a verbal affix. English has both the negative auxiliary </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -1351,8 +2062,8 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>-n't</langData>
-<xsl:text>, which is written as a suffix on the auxiliary.  Examples of English negative transitive single-clause sentences include:</xsl:text>
+</xsl:attribute>-n’t</langData>
+<xsl:text>, which is written as a suffix on the auxiliary.  Examples of English negative transitive sentences include:</xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1361,7 +2072,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>The boy won't hit the ball</langData>
+</xsl:attribute>The boy didn’t hit the ball</langData>
 <xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -1380,42 +2091,27 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@negAux='yesOnly'"> has one or more</xsl:when>
-					<xsl:when test="//ip/@negAux='yesAffix'"> has one or more</xsl:when>
-					<xsl:when test="//ip/@negAux='yesVerb'"> has one or more</xsl:when>
-					<xsl:when test="//ip/@negAux='yesAll'"> has one or more</xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixOnly'"> does not have any</xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixAndVerb'"> does not have any</xsl:when>
-					<xsl:when test="//ip/@negAux='noVerb'"> does not have any</xsl:when>
+					<xsl:when test="//ip/@negAux='yes'"> has one or more</xsl:when>
+					<xsl:when test="//ip/@negAux='no'"> does not have any</xsl:when>
 				</xsl:choose>
-<xsl:text> negative auxiliaries which are written as separate words, </xsl:text>
-<xsl:choose>
-					<xsl:when test="//ip/@negAux='yesOnly'">and that is the only type of verbal negation in the language.  There is no negative verbal affix nor negative auxiliary affix. </xsl:when>
-					<xsl:when test="//ip/@negAux='yesAffix'">and there is also a negative auxiliary affix, but no negative verbal affix. </xsl:when>
-					<xsl:when test="//ip/@negAux='yesVerb'">and there is also a negative verbal affix, but no negative auxiliary affix. </xsl:when>
-					<xsl:when test="//ip/@negAux='yesAll'">and there is also a negative auxiliary affix and a negative verbal affix. </xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixOnly'">but there is a negative affix which goes on the auxiliary and that is the only type of verbal negation in the language.  There is no negative verbal affix.</xsl:when>
-					<xsl:when test="//ip/@negAux='noAffixAndVerb'">but there is a negative affix which goes on the auxiliary and a negative verbal affix as well.</xsl:when>
-					<xsl:when test="//ip/@negAux='noVerb'">nor any negative affix which goes on an auxiliary.  The only way to express verbal negation is by one or more negative verbal affixes.</xsl:when>
-				</xsl:choose>
-<xsl:text></xsl:text>
-<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
-					<xsl:text> The negative auxiliary </xsl:text>
-					<xsl:choose>
-						<xsl:when test="//ip/@negAuxRequiresAux='no'">may</xsl:when>
-						<xsl:when test="//ip/@negAuxRequiresAux='yes'">may not</xsl:when>
-					</xsl:choose>
-					<xsl:text> be the only auxiliary in the phrase; </xsl:text>
-					<xsl:choose>
-						<xsl:when test="//ip/@negAuxRequiresAux='no'">no other</xsl:when>
-						<xsl:when test="//ip/@negAuxRequiresAux='yes'">the presence of another</xsl:when>
-					</xsl:choose>
-					<xsl:text> auxiliary is required.</xsl:text>
-				</xsl:if>
+<xsl:text> negative auxiliaries which are written as separate words. </xsl:text>
+<xsl:if test="normalize-space(//ip/@negAux)='yes'">
+				  <xsl:text> The negative auxiliary </xsl:text>
+				  <xsl:choose>
+					 <xsl:when test="//ip/@negAuxRequiresAux='no'">may</xsl:when>
+					 <xsl:when test="//ip/@negAuxRequiresAux='yes'">may not</xsl:when>
+				  </xsl:choose>
+				  <xsl:text> be the only auxiliary in the phrase; </xsl:text>
+				  <xsl:choose>
+					 <xsl:when test="//ip/@negAuxRequiresAux='no'">no other</xsl:when>
+					 <xsl:when test="//ip/@negAuxRequiresAux='yes'">the presence of another</xsl:when>
+				  </xsl:choose>
+				  <xsl:text> auxiliary is required.</xsl:text>
+			   </xsl:if>
 </p>
-			<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
-<p>
-<xsl:text>Examples of the negative auxiliaries in </xsl:text>
+
+	<p>
+<xsl:text>In </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
@@ -1424,18 +2120,63 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> include:</xsl:text>
+<xsl:text></xsl:text>
+<xsl:choose>
+					<xsl:when test="//ip/@negAuxAffix='yes'"> there is <xsl:choose>
+<xsl:when test="//ip/@negAux='yes'">also</xsl:when>
+</xsl:choose> a negative affix which attaches to a positive auxiliary to make it negative, </xsl:when>
+		  <xsl:when test="//ip/@negAuxAffix='no'"> there is not any negative affix which attaches to a positive auxiliary to make it negative, </xsl:when>
+	   </xsl:choose>
+<xsl:choose>
+
+					<xsl:when test="//ip/@negVAffix='yes'">
+<xsl:choose>
+<xsl:when test="//ip/@negAuxAffix='yes'">and</xsl:when>
+					   <xsl:when test="//ip/@negAuxAffix='no'">but there is</xsl:when>
+</xsl:choose> a negative verbal affix. </xsl:when>
+
+		  <xsl:when test="//ip/@negVAffix='no'">
+<xsl:choose>
+<xsl:when test="//ip/@negAuxAffix='yes'">but not</xsl:when>
+			 <xsl:when test="//ip/@negAuxAffix='no'">nor</xsl:when>
+</xsl:choose> any negative verbal affix.</xsl:when>
+				</xsl:choose>
+<xsl:text></xsl:text>
+</p>
+			<xsl:if test="normalize-space(//ip/@negAux)='yes' or normalize-space(//ip/@negAuxAffix)='yes' or normalize-space(//ip/@negVAffix)='yes'">
+<p>
+<xsl:text>The following chart summarizes the negative auxiliaries in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>:</xsl:text>
 </p>
 </xsl:if>
-			<xsl:if test="normalize-space(//ip/@negAux)='yesOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='yesAll'">
-<example num="xV.IPAux.22">
+			<xsl:if test="normalize-space(//ip/@negAux)='yes' or normalize-space(//ip/@negAuxAffix)='yes' or normalize-space(//ip/@negVAffix)='yes'">
+<example num="xV.IPAux.IPAuxNegative.12">
 <table border="1">
 				<tr>
-					<th>Negative Auxiliary Words</th>
+					<th>Type</th>
+				   <th>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+</th>
 					<th>Gloss</th>
 				</tr>
 
-					<xsl:variable name="sExampleValue0">
+					<xsl:if test="normalize-space(//ip/@negAux)='yes'">
+<xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
@@ -1455,7 +2196,11 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength0" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>Negative Auxiliary Word</xsl:text>
+</td>
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1470,6 +2215,9 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:when>
 <xsl:otherwise>
 <tr>
+<td align="left">
+<xsl:text>Negative Auxiliary Word</xsl:text>
+</td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
@@ -1483,51 +2231,33 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-				</table>
-</example>
 </xsl:if>
-			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
-<p>
-<xsl:text>Examples of the negative affix(es) attached to an auxiliary word in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> include:</xsl:text>
-</p>
-</xsl:if>
-			<xsl:if test="normalize-space(//ip/@negAux)='noAffixOnly' or normalize-space(//ip/@negAux)='yesAffix' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
-<example num="xV.IPAux.26">
-<table border="1">
-					<tr>
-						<th>Negative-Marked Auxiliaries</th>
-						<th>Gloss</th>
-					</tr>
-					<xsl:variable name="sExampleValue0">
+				   <xsl:if test="normalize-space(//ip/@negAuxAffix)='yes'">
+<xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//ip/negAuxAffixExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue0" />
+<xsl:value-of select="$sExampleValue1" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue0" />
+<xsl:value-of select="$sExampleValue1" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength0" />
+<xsl:value-of select="$iExampleLength1" />
 </xsl:with-param>
-<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>Negative Affix attached to an  Auxiliary</xsl:text>
+</td>
+</xsl:with-param>
 <xsl:with-param name="columnsAfter">
 <td align="left">
 <gloss>
@@ -1542,6 +2272,9 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:when>
 <xsl:otherwise>
 <tr>
+<td align="left">
+<xsl:text>Negative Affix attached to an  Auxiliary</xsl:text>
+</td>
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
@@ -1555,83 +2288,68 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </tr>
 </xsl:otherwise>
 </xsl:choose>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/@negVAffix)='yes'">
+<xsl:variable name="sExampleValue2">
+<xsl:value-of select="translate(string(//ip/negVerbExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>Negative Affix attached to a Verb</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>Negative Affix attached to a Verb</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
 				</table>
 </example>
 </xsl:if>
-			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
-<p>
-<xsl:text>Examples of the negative verbal affixes attached to a verb in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> include:</xsl:text>
-</p>
-</xsl:if>
-			<xsl:if test="normalize-space(//ip/@negAux)='noVerb' or normalize-space(//ip/@negAux)='yesVerb' or normalize-space(//ip/@negAux)='noAffixAndVerb' or normalize-space(//ip/@negAux)='yesAll'">
-<example num="xV.IPAux.30">
-<table border="1">
-				<tr>
 
-					<th>Negative-Marked Verbs</th>
-					<th>Gloss</th>
-				</tr>
-
-				<xsl:variable name="sExampleValue0">
-<xsl:value-of select="translate(string(//ip/negVerbExample),'.','')" />
-</xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
-<xsl:choose>
-<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
-<xsl:variable name="sCalculatedRows">
-<xsl:call-template name="CalculateRows">
-<xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue0" />
-</xsl:with-param>
-</xsl:call-template>
-</xsl:variable>
-<xsl:call-template name="OutputColExamples">
-<xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue0" />
-</xsl:with-param>
-<xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength0" />
-</xsl:with-param>
-<xsl:with-param name="columnsBefore" />
-<xsl:with-param name="columnsAfter">
-<td align="left">
-<gloss>
-<xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS</xsl:text>
-</gloss>
-</td>
-</xsl:with-param>
-<xsl:with-param name="bHandleRowSpans" select="'Y'" />
-<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
-</xsl:call-template>
-</xsl:when>
-<xsl:otherwise>
-<tr>
-<td>
-<langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
-</td>
-<td align="left">
-<gloss>
-<xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS</xsl:text>
-</gloss>
-</td>
-</tr>
-</xsl:otherwise>
-</xsl:choose>
-			</table>
-</example>
-</xsl:if>
 			<p>
 <xsl:text>See section </xsl:text>
 <sectionRef sec="sNegVerbal" />
@@ -1646,7 +2364,12 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:choose>
 <xsl:text>.</xsl:text>
 </p>
-			<p>
+		   </section3>
+		   <section3 id="sIPAuxNonfinite">
+			  <secTitle>Nonfinite Auxiliary</secTitle>
+
+
+		   <p>
 <xsl:text>The nonfinite word </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -1725,7 +2448,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@auxNonfinite)='yes'">
-<example num="xV.IPAux.40">
+<example num="xV.IPAux.IPAuxNonfinite.10">
 <table border="1">
 					<tr>
 						<th>Nonfinite Auxiliary Marker(s)</th>
@@ -1789,21 +2512,21 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:if>
 
 			<xsl:if test="normalize-space(//ip/@auxNonfinite)='yes'">
-<example num="xV.IPAux.44">
+<example num="xV.IPAux.IPAuxNonfinite.14">
 <xsl:variable name="sExampleValue">
-<xsl:value-of select="//ip/auxNoonfiniteExample" />
+<xsl:value-of select="//ip/auxNonfiniteExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/auxNoonfiniteExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/auxNonfiniteExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="//ip/auxNoonfiniteExample" />
+<xsl:value-of select="//ip/auxNonfiniteExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//ip/auxNoonfiniteExample))" />
+<xsl:value-of select="string-length(normalize-space(//ip/auxNonfiniteExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xV.IPAux.44</xsl:with-param>
+<xsl:with-param name="sExNumber">xV.IPAux.IPAuxNonfinite.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1812,7 +2535,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xV.IPAux.44.1</xsl:text>
+<xsl:text>xV.IPAux.IPAuxNonfinite.14.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1828,8 +2551,11 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:choose>
 </example>
 </xsl:if>
+		   </section3>
+		   <section3 id="sIPAuxOther">
+			  <secTitle>Other types of Auxiliaries</secTitle>
 
-			<p>
+		   <p>
 <xsl:text>Some languages have other words that act like auxiliaries, such as motion auxiliaries or loan markers, which share the same subject and complements as the main verb.</xsl:text>
 </p>
 			<p>
@@ -1883,7 +2609,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </p>
 </xsl:if>
 			<xsl:if test="normalize-space(//ip/@auxOther)='yes'">
-<example num="xV.IPAux.52">
+<example num="xV.IPAux.IPAuxOther.10">
 <table border="1">
 					<tr>
 						<th>Other Auxiliary Words</th>
@@ -1947,7 +2673,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:if>
 
 			<xsl:if test="normalize-space(//ip/@auxOther)='yes'">
-<example num="xV.IPAux.56">
+<example num="xV.IPAux.IPAuxOther.14">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//ip/auxOtherExample" />
 </xsl:variable>
@@ -1961,7 +2687,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//ip/auxOtherExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xV.IPAux.56</xsl:with-param>
+<xsl:with-param name="sExNumber">xV.IPAux.IPAuxOther.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1970,7 +2696,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xV.IPAux.56.1</xsl:text>
+<xsl:text>xV.IPAux.IPAuxOther.14.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1986,10 +2712,156 @@ Some languages are not really pro-drop languages, but at least some of the prono
 </xsl:choose>
 </example>
 </xsl:if>
-
+		   </section3>
 
 		</section2>
 	</section1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

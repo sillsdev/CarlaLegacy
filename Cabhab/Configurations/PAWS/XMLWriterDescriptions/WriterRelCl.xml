@@ -8,12 +8,12 @@
 		</p>
 		<ul>
 			<li>
-				<content>like a complement clause headed by 'that', as in </content>
+				<content>like a complement clause headed by ‘that’, as in </content>
 				<langData>the man that came to the meeting late</langData>
 				<content>;</content>
 			</li>
 			<li>
-				<content>like a content question with 'who' or 'which' fronted, as in </content>
+				<content>like a content question with ‘who’ or ‘which’ fronted, as in </content>
 				<langData>the man who came to the meeting late</langData>
 				<content>;</content>
 			</li>
@@ -25,7 +25,7 @@
 			</li>
 		</ul>
 		<p>
-			<content>Some languages also allow one of the above structures to occur by itself as a nominal phrase without a head noun to modify, usually called "headless" relative clauses.</content>
+		   <content>Some languages also allow one of the above structures to occur by itself as a nominal phrase without a head noun to modify, usually called “headless” relative clauses.  For example, </content><langData>Julie brought [the food that we ate today]</langData><content> has a full relative clause in the object position, while </content><langData>Julie brought [what we ate today]</langData><content> has a headless relative clause as the object.</content>
 		</p>
 		<p>
 			<text show="swRelClExistNo">
@@ -53,9 +53,9 @@
 				<text show="swRelClTypeCP">
 					<content>&#x20;</content>
 					<case element="relcl" attr="compCP">
-						<caseText value="no">are like questions because a "wh" word is fronted.</caseText>
+						<caseText value="no">are like questions because a “wh” word is fronted.</caseText>
 						<caseText value="yes">are like complement clauses with relative markers that </caseText>
-						<caseText value="yesBoth">are like questions because a "wh" word is fronted and some are  like complement clauses with relative markers that </caseText>
+						<caseText value="yesBoth">are like questions because a “wh” word is fronted and some are like complement clauses with relative markers that </caseText>
 					</case>
 					<text show="swRelClCompCPNotNo">
 						<content>are </content>
@@ -67,9 +67,9 @@
 						<text show="swRelClTypeCPCompClitic">
 							<content>&#x20;</content>
 							<case element="relcl" attr="relCliticPos">
-								<caseText value="before">These clitics are pro-clitics.</caseText>
-								<caseText value="after">These clitics are post-clitics.</caseText>
-								<caseText value="both">Some of the clitics are pro-clitics and some are post-clitics.</caseText>
+								<caseText value="before">These clitics are proclitics.</caseText>
+								<caseText value="after">These clitics are enclitics.</caseText>
+								<caseText value="both">Some of the clitics are proclitics and some are enclitics.</caseText>
 							   <caseText value="unknown"> _______ </caseText>
 						   </case>
 							<content>&#x20;</content>
@@ -108,11 +108,11 @@
 				</text>
 				<content>&#x20;</content>
 				<text show="swRelClTypeCPWh">
-					<content>In the "wh"-relative clauses, </content>
+					<content>In the “wh”-relative clauses, </content>
 					<case element="relcl" attr="whAndComp">
-						<caseText value="no">only the "wh"-word occurs without any type of relative marker.</caseText>
-						<caseText value="yes">the "wh"-word and the relative marker(s) are required to both be present.</caseText>
-						<caseText value="optional">a relative marker may optionally co-occur along with the "wh"-word.</caseText>
+						<caseText value="no">only the “wh”-word occurs without any type of relative marker.</caseText>
+						<caseText value="yes">the “wh”-word and the relative marker(s) are required to both be present.</caseText>
+						<caseText value="optional">a relative marker may optionally co-occur along with the “wh”-word.</caseText>
 					</case>
 					<content>&#x20;</content>
 				</text>

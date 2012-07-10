@@ -4,8 +4,8 @@
 	<section1 id="sPron">
 		<secTitle>Los pronombres</secTitle>
 		<p>
-			<content>Hay pronombres de varios tipos: pronombre personales, posesivos, reflexivos, recíprocos, e indefinidos.
-				Estos pronombres por lo regular se colocan solamente en lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo. En algunos idiomas los pronombres se pueden modificar por los determinantes y cuantificadores, en ese caso ocupan el lugar de los sustantivos.
+			<content>Hay pronombres de varios tipos: personales, posesivos, reflexivos, recíprocos, demostrativos e indefinidos.
+				Estos pronombres por lo regular se colocan solamente en lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo. En algunas lenguas los pronombres se pueden modificar por los determinantes y cuantificadores, en ese caso ocupan el lugar de los sustantivos.
 				Cada tipo de pronombre será considerado en su orden correspondiente, después de analizar las características de la concordancia en todos los tipos de pronombres. </content>
 		</p>
 		<section2 id="sPronAgreement">
@@ -151,22 +151,29 @@
 					</row>
 				</table>
 			</example>
+
+		   <p show="swClassifierYesPronNo"><content>Aunque hay un sistema de concordancia con clasificadores en </content><langName/><content>, los pronombres no se marcan con clasificadores.</content></p>
+
 		</section2>
 		<section2 id="sPronPersonal">
 			<secTitle>Pronombres personales</secTitle>
-			<p><content>Todos los idiomas tienen pronombres personales independientes, los cuales son palabras independientes que pueden presentarse en todas las posiciones en las que presentarse los sustantivos o las frases nominales.
-				Algunos idiomas también tienen formas dependientes de los pronombres personales que se unen a otra palabra en la oración. </content></p>
+			<p><content>Todos las lenguas tienen pronombres personales independientes, los cuales son palabras independientes que pueden presentarse en todas las posiciones en las que presentarse los sustantivos o las frases nominales.
+				Algunas lenguas también tienen formas dependientes de los pronombres personales que se unen a otra palabra en la oración. </content></p>
 			<p><content>En </content><langName/><content/><case element="pron" attr="dependentPron">
 				<caseText value="no"> no hay un sistema diferente de pronombres personales dependientes.</caseText>
 				<caseText value="yes"> hay pronombres personales dependientes así como pronombres personales independientes. Ambos sistemas de pronombres personales serán presentados a continuación, con el análisis de las formas independientes primero.</caseText>
 			</case><content/></p>
+
+		   <p show="swClassifierYesPronYes"><content>Los pronombres independientes en </content><langName/><content> se marcan con clasificadores como parte del sistema de concordancia.  Las formas para los pronombres dados en esta sección pueden ser solomente los raíces, o el clasificador puede ser mostrado unido con el pronombre.</content></p>
+
+
 			<p>
-				<content>Los pronombres personales tienen normalmente más que o el mismo número de características de Caso que los sustantivos tienen. </content>
+				<content>Los pronombres personales tienen normalmente más que o el mismo número de características de caso que los sustantivos tienen. </content>
 			</p>
 			<p show="swNPCaseNone">
-				<content>El </content>
+				<content>En </content>
 				<langName/>
-				<content> no tiene distinciones de Caso, así que hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquier posición de la oración, de acuerdo con lo ejemplificado a continuación.</content>
+				<content> no hay distinciones de caso, así que hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquier posición de la oración, de acuerdo con lo ejemplificado a continuación.</content>
 			</p>
 
 			<example show="swNPCaseNone">
@@ -195,15 +202,23 @@
 			<p show="swNPCaseNom">
 				<content>En </content>
 				<langName/>
-				<content> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de los pronombres para los sujetos, los objetos y los poseedores.
-					Los pronombres personales independientes que pueden presentarse en la posición del sujeto son: </content>
+			   <content> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de los pronombres para los sujetos, los objetos y los poseedores. </content><case element="typology" attr="caseExperiencer">
+				  <caseText value="no">Ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que ambos objetos directos e indirectos utilizan los pronombres acusativos.  No hay un sistema distinto de pronombres dativos.</caseText>
+				  <caseText value="yesObj">Los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para ambos objetos directos e indirectos.  No hay un sistema distinto de pronombres dativos.</caseText>
+				  <caseText value="yesDat">Los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan los pronombres dativos, que se utilizan también para objetos indirectos.  Los objetos directos utilizan los pronombres acusativos.</caseText>
+			   </case>
 			</p>
+		   <p show="swNPCaseNom"><content> Los pronombres personales independentes que se utilizan para </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">sujetos son: </caseText>
+			  <caseText value="yesObj">sujetos-agentes son:</caseText>
+			  <caseText value="yesDat">sujetos-agentes son:</caseText>
+		   </case></p>
 			<example show="swNPCaseNom">
 				<table border="1">
 					<caption><content>Pronombres personales independientes nominativos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para sujetos</headerCol>
+						<headerCol>Pronombres nominativos</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -222,14 +237,19 @@
 					</row>				</table>
 			</example>
 			<p show="swNPCaseNom">
-				<content>Los pronombres personales independientes que pueden presentarse en la posición del objeto son:</content>
+			   <content>Los pronombres personales independentes que se utilizan para </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">objetos directos e indirectos son:</caseText>
+				  <caseText value="yesObj">objetos directos e indirectos, o para sujetos-experimentadores son:</caseText>
+				  <caseText value="yesDat">objetos directos son:</caseText>
+			   </case>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
 					<caption><content>Pronombres personales independientes acusativos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para objetos</headerCol>
+						<headerCol>Pronombres acusativos</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -247,15 +267,41 @@
 						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 					</row>				</table>
 			</example>
-			<p show="swNPCaseNom">
-				<content>Los pronombres personales independientes que pueden presentarse en la posición del poseedor son: </content>
+		   <p show="swNPCaseNomAndYesDat">
+			  <content>Los pronombres personales independientes que se utilizan para sujetos-experimentadores o para objetos indirectos son:</content>
+		   </p>
+		   <example show="swNPCaseNomAndYesDat">
+			  <table border="1">
+				 <caption><content>Pronombres personales independientes genitivos</content></caption>
+				 <headerRow>
+					<headerCol>Persona</headerCol>
+					<headerCol>Pronombres dativos</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col rowspan="1"><content>Primera</content></col>
+					<col exampleLoc="pron/personalFirstNomDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+				 <row>
+					<col rowspan="1"><content>Segunda</content></col>
+					<col exampleLoc="pron/personalSecondNomDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>					<row>
+					<col rowspan="1"><content>Tercera</content></col>
+					<col exampleLoc="pron/personalThirdNomDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>				</table>
+		   </example>
+		   <p show="swNPCaseNom">
+				<content>Los pronombres personales independientes que se utilizan para el poseedor son: </content>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
 					<caption><content>Pronombres personales independientes genitivos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para poseedor</headerCol>
+						<headerCol>Pronombres para poseedores</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -276,8 +322,23 @@
 			<p show="swNPCaseErg">
 				<content>En </content>
 				<langName/>
-				<content> hay un sistema de caso ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales independientes que pueden presentarse en la posición del sujeto de verbos transitivos son: </content>
+				<content> hay un sistema de caso ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra los sujetos de verbos intransitivos y los objetos de verbos transitivos.
+				</content><case element="typology" attr="caseExperiencer">
+				   <caseText value="no">Ambos sujetos-agentes y sujetos-experimentadores de verbos transitivos utilizan los pronombres ergativos, mientras que ambos sujetos-agentes y sujetos-experimentadores de verbos intransitivos y objetos directos e indirectos de verbos transitivos utilizan los pronombres absolutivos.  No hay un sistema distinto de pronombres dativos.</caseText>
+				   <caseText value="yesObj">Los sujetos-agentes de verbos transitivos utilizan los pronombres ergativos, mientras que los sujetos-experimentadores de verbos transitivos utilizan el mismo sistema de pronombres absolutivos que se utilizan para sujetos de verbos intransitivos y ambos objetos directos e indirectos.  No hay un sistema distinto de pronombres dativos.</caseText>
+				   <caseText value="yesDat">Los sujetos-agentes de verbos transitivos utilizan los pronombres ergativos, mientras que los sujetos-agentes de verbos intransitivos y objetos directos de verbos  transitivos utilizan los pronombres absolutivos.  Los sujetos-experimentadores utilizan los pronombres dativos, que se utilizan también para objetos indirectos.</caseText>
+				</case>
+			   <content> Los poseedores utilizan los </content><case element="np" attr="possCaseErg">
+				  <caseText value="ergative">pronombres ergativos también.</caseText>
+				  <caseText value="absolutive">pronombres absolutivos también.</caseText>
+				  <caseText value="genitive">pronombres genitivos, un sistema distinto.</caseText>
+			   </case>
 			</p>
+		   <p show="swNPCaseErg"><content> Los pronombres personales independientes que se utilizan para </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">sujetos de verbos transitivos son: </caseText>
+			  <caseText value="yesObj">sujetos-agentes de verbos transitivos son: </caseText>
+			  <caseText value="yesDat">sujetos-agentes de verbos transitivos son: </caseText>
+		   </case></p>
 			<example show="swNPCaseErg">
 				<table border="1">
 					<caption><content>Pronombres personales independientes ergativos</content></caption>
@@ -304,7 +365,12 @@
 				</table>
 			</example>
 			<p show="swNPCaseErg">
-				<content>Los pronombres personales independientes que pueden presentarse en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</content>
+			   <content>Los pronombres personales independientes que se utilizan para  </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">sujetos de verbos intransitivos o para objetos directos e indirectos de verbos transitivos son:</caseText>
+				  <caseText value="yesObj">objetos directos e indirectos, o para sujetos-experimentadores son:</caseText>
+				  <caseText value="yesDat">sujetos-agentes de verbos intransitivos o para objetos directos de verbos transitivos son:</caseText>
+			   </case>
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
@@ -331,14 +397,44 @@
 					</row>
 				</table>
 			</example>
-			<p show="swNPCaseErg">
-				<content>Los pronombres personales independientes que pueden presentarse en la posición del poseedor son: </content>
-			</p>
-			<example show="swNPCaseErg">
-				<table border="1">
-					<caption><content>Pronombres personales independientes genitivos</content></caption>
-					<headerRow>
-						<headerCol>Persone</headerCol>
+		   <p show="swNPCaseErgAndYesDat">
+			  <content>Los pronombres personales independientes que se utilizan para sujetos-experimentadores o para objetos indirectos son:</content>
+		   </p>
+		   <example show="swNPCaseErgAndYesDat">
+			  <table border="1">
+				 <caption><content>Pronombres personales independientes dativos</content></caption>
+				 <headerRow>
+					<headerCol>Persona</headerCol>
+					<headerCol>Pronombres dativos</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col rowspan="1"><content>Primera</content></col>
+					<col exampleLoc="pron/personalFirstErgDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+				 <row>
+					<col rowspan="1"><content>Segunda</content></col>
+					<col exampleLoc="pron/personalSecondErgDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>					<row>
+					<col rowspan="1"><content>Tercera</content></col>
+					<col exampleLoc="pron/personalThirdErgDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>				</table>
+		   </example>
+		   <p show="swNPCaseErg">
+			  <content>Los pronombres personales independientes que se utilizan para el poseedor son: </content>
+		   </p>
+		   <example show="swNPCaseErg">
+			  <table border="1">
+				 <caption><content>Pronombres personales independientes </content><case element="np" attr="possCaseErg">
+					<caseText value="ergative">ergativos</caseText>
+					<caseText value="absolutive">absolutivos</caseText>
+					<caseText value="genitive">genitivos</caseText>
+				 </case></caption>
+				 <headerRow>
+						<headerCol>Persona</headerCol>
 						<headerCol>Pronombres para poseedores</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
@@ -362,15 +458,25 @@
 			<p show="swNPCaseSplit">
 				<content>En </content>
 				<langName/>
-				<content> hay un sistema de caso de ergatividad escindida, así que hay sistemas distintos de pronombres que se utilizan comúnmente como sujetos, objetos, y poseedores siguiendo el sistema nominativo-acusativo, más algunos sistemas especiales que se utilizan en los casos del ergatividad escindida.
-					Los pronombres personales independientes que comúnmente aparecen en la posición del sujeto son:  </content>
+			   <content> hay un sistema de caso de ergatividad escindida, así que hay sistemas distintos de pronombres que se utilizan comúnmente como sujetos, objetos, y poseedores siguiendo el sistema nominativo-acusativo, más algunos sistemas especiales que se utilizan en los casos del ergatividad escindida.  En los casos normales que siguen el sistema de nominativo-acusativo, </content>
+				   <case element="typology" attr="caseExperiencer">
+					  <caseText value="no">ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que ambos objetos directos e indirectos utilizan los pronombres acusativos.  No hay un sistema distinto de pronombres dativos.</caseText>
+					  <caseText value="yesObj">los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para ambos objetos directos e indirectos.  No hay un sistema distinto de pronombres dativos.</caseText>
+					  <caseText value="yesDat">los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan los pronombres dativos, que se utilizan también para objetos indirectos.  Los objetos directos utilizan los pronombres acusativos.</caseText>
+				   </case>
+			</p>
+		   <p show="swNPCaseSplit"><content> Los pronombres personales independientes que comúnmente se utilizan para </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">sujetos son: </caseText>
+			  <caseText value="yesObj">sujetos-agentes son:</caseText>
+			  <caseText value="yesDat">sujetos-agentes son:</caseText>
+		   </case>
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
 					<caption><content>Pronombres personales independientes nominativos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para sujetos</headerCol>
+						<headerCol>Pronombres nominativos</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -388,15 +494,20 @@
 						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 					</row>				</table>
 			</example>
-			<p show="swNPCaseNom">
-				<content>Los pronombres personales independientes que comúnmente presentarse en la posición del objeto son:</content>
+			<p show="swNPCaseSplit">
+				<content>Los pronombres personales independientes que comúnmente se utilizan para </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">objetos directos e indirectos son:</caseText>
+				  <caseText value="yesObj">objetos directos e indirectos, o para sujetos-experimentadores son:</caseText>
+				  <caseText value="yesDat">objetos directos son:</caseText>
+			   </case>
 			</p>
-			<example show="swNPCaseNom">
+			<example show="swNPCaseSplit">
 				<table border="1">
 					<caption><content>Pronombres personales independientes acusativos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para objetos</headerCol>
+						<headerCol>Pronombres acusativos</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -414,15 +525,41 @@
 						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 					</row>				</table>
 			</example>
-			<p show="swNPCaseNom">
-				<content>Los pronombres personales independientes que comúnmente presentarse en la posición del poseedor son: </content>
+		   <p show="swNPCaseSplitAndYesDat">
+			  <content>Los pronombres personales independientes que comúnmente se utilizan para sujetos-experimentadores o para objetos indirectos son:</content>
+		   </p>
+		   <example show="swNPCaseSplitAndYesDat">
+			  <table border="1">
+				 <caption><content>Pronombres personales independientes dativos</content></caption>
+				 <headerRow>
+					<headerCol>Persona</headerCol>
+					<headerCol>Pronombres dativos</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col rowspan="1"><content>Primera</content></col>
+					<col exampleLoc="pron/personalFirstSplitDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+				 <row>
+					<col rowspan="1"><content>Segunda</content></col>
+					<col exampleLoc="pron/personalSecondSplitDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>					<row>
+					<col rowspan="1"><content>Tercera</content></col>
+					<col exampleLoc="pron/personalThirdSplitDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>				</table>
+		   </example>
+		   <p show="swNPCaseSplit">
+				<content>Los pronombres personales independientes que comúnmente se utilizan para el poseedor son: </content>
 			</p>
-			<example show="swNPCaseNom">
+			<example show="swNPCaseSplit">
 				<table border="1">
 					<caption><content>Pronombres personales independientes genitivos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para poseedor</headerCol>
+						<headerCol>Pronombres para poseedores</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -442,11 +579,15 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplit">
-				<content>Los pronombres personales independientes que pueden presentarse en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son:</content>
+			   <content>Los pronombres personales independientes que se utilizan para </content><case element="typology" attr="caseExperiencer">
+				  <caseText value="no">sujetos de verbos transitivos</caseText>
+				  <caseText value="yesObj">sujetos-agentes de verbos transitivos</caseText>
+				  <caseText value="yesDat">sujetos-agentes de verbos transitivos</caseText>
+			   </case><content> en los casos especiales del ergatividad escindida son:</content>
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
-					<caption><content>Pronombres personalss independientes ergativos</content></caption>
+					<caption><content>Pronombres personales independientes ergativos</content></caption>
 				<headerRow>
 					<headerCol>Persona</headerCol>
 					<headerCol>Pronombres Ergativos</headerCol>
@@ -470,7 +611,12 @@
 			</table>
 			</example>
 			<p show="swNPCaseSplit">
-				<content>Los pronombres personales independientes que funcionan tanto como sujetos de verbos intransitivos y objetos de verbos transitivos en los casos especiales del ergatividad escindida son:</content>
+			   <content>Los pronombres personales independientes que se utilizan para </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">sujetos de verbos intransitivos o para objetos directos e indirectos de verbos transitivos</caseText>
+				  <caseText value="yesObj">objetos directos e indirectos, o para sujetos-experimentadores</caseText>
+				  <caseText value="yesDat">sujeots-agentes de verbos intransitivos o para objetos directos de verbos transitivos</caseText>
+			   </case><content> en los casos especiales del ergatividad escindida son:</content>
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
@@ -497,11 +643,34 @@
 					</row>
 				</table>
 			</example>
+		   <p show="swNPCaseSplit">
+			  <case element="typology" attr="caseExperiencer">
+				 <caseText value="yesDat">Los pronombres dativos que ha dado arriba se utilizan para sujetos-experimentadores y para objetos indirectos, tanto en los casos especiales de ergatividad escindida. </caseText></case>
+			  <content> Los poseedores se utilizan los pronombres </content><case element="np" attr="possCaseErg">
+				 <caseText value="ergative">ergativos en los casos especiales de ergatividad escindida.</caseText>
+				 <caseText value="absolutive">absolutivos en los casos especiales de ergatividad escindida.</caseText>
+				 <caseText value="genitive">genitivos que ha dado arriba en los casos especiales de ergatividad escindida también.</caseText>
+			  </case>
+		   </p>
 
-			<p show="swNPCaseNoneandDependentYes">
-				<content>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </content>
+		   <p show="swDependentPronYes">
+			  <content>Cambiando de tema a los pronombres dependientes, en </content><langName/><content> los pronombres dependientes se unen a un verbo o sustantivo o otra palabra como </content>
+			  <case element="pron" attr="dependentPos">
+				 <caseText value="before">prefijos o proclíticos. </caseText>
+				 <caseText value="after">sufijos or enclíticos. </caseText>
+				 <caseText value="either">prefijos o proclíticos con algunas categorías de palabras pero como sufijos or enclíticos con otras categorías de palabras.</caseText>
+				 <caseText value="unknown">________.</caseText>
+			  </case>
+			  <text show="swClassifiersYesAgrOrType"><content> Las formas de los pronombres dependientes</content>
+				 <case element="pron" attr="pronDepClassifier">
+					<caseText value="no"> son distintas de los clasificadores.</caseText>
+					<caseText value="yes">, especialmente en tercera persona, son idénticas o relacionadas a los clasificadores apropriados.</caseText>
+				 </case></text>
+		   </p>
+		   <p show="swNPCaseNoneandDependentYes">
+				<content>De acuerdo con lo considerado anteriormente en </content>
 				<langName/>
-				<content> no hay distinciones de Caso, así que hay solamente un solo sistema de pronombres que se pueden utilizar en cualquier posición de la oración, de acuerdo con lo ejemplificado a continuación:</content>
+				<content> no hay distinciones de caso, así que hay solamente un solo sistema de pronombres que se pueden utilizar en cualquier posición de la oración, de acuerdo con lo ejemplificado a continuación:</content>
 			</p>
 			<example show="swNPCaseNoneandDependentYes">
 				<table border="1">
@@ -532,16 +701,26 @@
 				</table>
 			</example>
 			<p show="swNPCaseNomandDependentYes">
-				<content>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </content>
+				<content>De acuerdo con lo considerado anteriormente en </content>
 				<langName/>
-				<content> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de pronombres para los sujetos, los objetos y los poseedores. Los pronombre personals dependientes que pueden presentarse en la posición del sujeto son: </content>
+				<content> hay un sistema de caso nominativo-acusativo, así que hay sistemas distintos de pronombres para los sujetos, los objetos y los poseedores. </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">Ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que ambos objetos directos e indirectos utilizan los pronombres acusativos.  No hay un sistema distinto de pronombres dativos.</caseText>
+				  <caseText value="yesObj">Los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para ambos objetos directos e indirectos.  No hay un sistema distinto de pronombres dativos.</caseText>
+				  <caseText value="yesDat">Los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan los pronombres dativos, que se utilizan también para objetos indirectos.  Los objetos directos utilizan los pronombres acusativos.</caseText>
+			   </case>
 			</p>
-			<example show="swNPCaseNomandDependentYes">
+		   <p show="swNPCaseNomandDependentYes"><content> Los pronombres personales dependentes que se utilizan para </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">sujetos son: </caseText>
+			  <caseText value="yesObj">sujetos-agentes son:</caseText>
+			  <caseText value="yesDat">sujetos-agentes son:</caseText>
+		   </case></p>
+		   <example show="swNPCaseNomandDependentYes">
 				<table border="1">
-					<caption><content>Pronombres personaels nominativos dependientes </content></caption>
+					<caption><content>Pronombres personales dependientes nominativos </content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para sujetos</headerCol>
+						<headerCol>Pronombres nominativos</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -560,14 +739,19 @@
 					</row>				</table>
 			</example>
 			<p show="swNPCaseNomandDependentYes">
-				<content>Los pronombres personales dependientes que pueden presentarse en la posición del objeto son:</content>
+			   <content>Los pronombres personales dependentes que se utilizan para </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">objetos directos e indirectos son:</caseText>
+				  <caseText value="yesObj">objetos directos e indirectos, o para sujetos-experimentadores son:</caseText>
+				  <caseText value="yesDat">objetos directos son:</caseText>
+			   </case>
 			</p>
 			<example show="swNPCaseNomandDependentYes">
 				<table border="1">
-					<caption><content>Pronombres personales acusativos dependientes</content></caption>
+					<caption><content>Pronombres personales depenientes acusativos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para objetos</headerCol>
+						<headerCol>Pronombres acusativos</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -585,12 +769,38 @@
 						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 					</row>				</table>
 			</example>
-			<p show="swNPCaseNomandDependentYes">
-				<content>Los pronombres personales dependientes que pueden presentarse en la posición del poseedor son:</content>
+		   <p show="swNPCaseNomAndYesDatandDependentYes">
+			  <content>Los pronombres personales dependientes que se utilizan para sujetos-experimentadores o para objetos indirectos son:</content>
+		   </p>
+		   <example show="swNPCaseNomAndYesDatandDependentYes">
+			  <table border="1">
+				 <caption><content>Pronombres personales dependientes dativos</content></caption>
+				 <headerRow>
+					<headerCol>Persona</headerCol>
+					<headerCol>Pronombres dativos</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col rowspan="1"><content>Primera</content></col>
+					<col exampleLoc="pron/personalDependentFirstNomDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+				 <row>
+					<col rowspan="1"><content>Segunda</content></col>
+					<col exampleLoc="pron/personalDependentSecondNomDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>					<row>
+					<col rowspan="1"><content>Tercera</content></col>
+					<col exampleLoc="pron/personalDependentThirdNomDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>				</table>
+		   </example>
+		   <p show="swNPCaseNomandDependentYes">
+				<content>Los pronombres personales dependientes que se utilizan para el poseedor son:</content>
 			</p>
 			<example show="swNPCaseNomandDependentYes">
 				<table border="1">
-					<caption><content>Pronombres personales genitivos dependientes</content></caption>
+					<caption><content>Pronombres personales dependientes genitivos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
 						<headerCol>Pronombres para poseedor</headerCol>
@@ -612,13 +822,28 @@
 					</row>				</table>
 			</example>
 			<p show="swNPCaseErgandDependentYes">
-				<content>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </content>
+				<content>De acuerdo con lo considerado anteriormente en </content>
 				<langName/>
-				<content> hay un sistema de caso del ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra de los sujetos de verbos intransitivos y los objetos de verbos transitivos. Los pronombres personales dependientes que pueden presentarse en la posición de sujeto de verbos transitivos son: </content>
+				<content> hay un sistema de caso del ergativo-absolutivo, así que hay sistemas distintos de pronombres que se pueden utilizar como sujetos de verbos transitivos contra de los sujetos de verbos intransitivos y los objetos de verbos transitivos. </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">Ambos sujetos-agentes y sujetos-experimentadores de verbos transitivos utilizan los pronombres ergativos, mientras que ambos sujetos-agentes y sujetos-experimentadores de verbos intransitivos y objetos directos e indirectos de verbos transitivos utilizan los pronombres absolutivos.  No hay un sistema distinto de pronombres dativos.</caseText>
+				  <caseText value="yesObj">Los sujetos-agentes de verbos transitivos utilizan los pronombres ergativos, mientras que los sujetos-experimentadores de verbos transitivos utilizan el mismo sistema de pronombres absolutivos que se utilizan para sujetos de verbos intransitivos y ambos objetos directos e indirectos.  No hay un sistema distinto de pronombres dativos.</caseText>
+				  <caseText value="yesDat">Los sujetos-agentes de verbos transitivos utilizan los pronombres ergativos, mientras que los sujetos-agentes de verbos intransitivos y objetos directos de verbos  transitivos utilizan los pronombres absolutivos.  Los sujetos-experimentadores utilizan los pronombres dativos, que se utilizan también para objetos indirectos.</caseText>
+			   </case>
+			   <content> Los poseedores utilizan los </content><case element="np" attr="possCaseErg">
+				  <caseText value="ergative">pronombres ergativos también.</caseText>
+				  <caseText value="absolutive">pronombres absolutivos también.</caseText>
+				  <caseText value="genitive">pronombres genitivos, un sistema distinto.</caseText>
+			   </case>
 			</p>
-			<example show="swNPCaseErgandDependentYes">
+		   <p show="swNPCaseErgandDependentYes"><content> Los pronombres personales dependientes que se utilizan para </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">sujetos de verbos transitivos son: </caseText>
+			  <caseText value="yesObj">sujetos-agentes de verbos transitivos son: </caseText>
+			  <caseText value="yesDat">sujetos-agentes de verbos transitivos son: </caseText>
+		   </case></p>
+		   <example show="swNPCaseErgandDependentYes">
 				<table border="1">
-					<caption><content>Pronombres personales ergativos dependientes</content></caption>
+					<caption><content>Pronombres personales dependientes ergativos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
 						<headerCol>Pronombres ergativos</headerCol>
@@ -642,11 +867,16 @@
 				</table>
 			</example>
 			<p show="swNPCaseErgandDependentYes">
-				<content>Los pronombres personales dependientes que pueden presentarse en la posición del sujeto de verbos intransitivos o en la posición del objeto de verbos transitivos son:</content>
+			   <content>Los pronombres personales dependientes que se utilizan para  </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">sujetos de verbos intransitivos o para objetos directos e indirectos de verbos transitivos son:</caseText>
+				  <caseText value="yesObj">objetos directos e indirectos, o para sujetos-experimentadores son:</caseText>
+				  <caseText value="yesDat">sujetos-agentes de verbos intransitivos o para objetos directos de verbos transitivos son:</caseText>
+			   </case>
 			</p>
 			<example show="swNPCaseErgandDependentYes">
 				<table border="1">
-					<caption><content>Pronombres personales absolutivos dependientes</content></caption>
+					<caption><content>Pronombres personales dependientes absolutivos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
 						<headerCol>Pronombres absolutivos</headerCol>
@@ -669,16 +899,46 @@
 					</row>
 				</table>
 			</example>
-			<p show="swNPCaseErgandDependentYes">
-				<content>Los pronombres personales dependientes que pueden presentarse en la posición del poseedor son:</content>
-			</p>
-			<example show="swNPCaseErgandDependentYes">
-				<table border="1">
-					<caption><content>Pronombres personales genitivos dependientes</content></caption>
+			   <p show="swNPCaseErgAndYesDatandDependentYes">
+				  <content>Los pronombres personales dependientes que se utilizan para sujetos-experimentadores o para objetos indirectos son:</content>
+			   </p>
+			   <example show="swNPCaseErgAndYesDatandDependentYes">
+				  <table border="1">
+					 <caption><content>Pronombres personales dependientes dativos</content></caption>
+					 <headerRow>
+						<headerCol>Persona</headerCol>
+						<headerCol>Pronombres dativos</headerCol>
+						<headerCol>Glosa</headerCol>
+					 </headerRow>
+					 <row>
+						<col rowspan="1"><content>Primera</content></col>
+						<col exampleLoc="pron/personalDependentFirstErgDativeExample"/>
+						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					 </row>
+					 <row>
+						<col rowspan="1"><content>Segunda</content></col>
+						<col exampleLoc="pron/personalDependentSecondErgDativeExample"/>
+						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					 </row>					<row>
+						<col rowspan="1"><content>Tercera</content></col>
+						<col exampleLoc="pron/personalDependentThirdErgDativeExample"/>
+						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					 </row>				</table>
+			   </example>
+			   <p show="swNPCaseErgandDependentYes">
+				  <content>Los pronombres personales dependientes que se utilizan para el poseedor son: </content>
+			   </p>
+			   <example show="swNPCaseErgandDependentYes">
+				  <table border="1">
+					 <caption><content>Pronombres personales dependientes </content><case element="np" attr="possCaseErg">
+						<caseText value="ergative">ergativos</caseText>
+						<caseText value="absolutive">absolutivos</caseText>
+						<caseText value="genitive">genitivos</caseText>
+					 </case></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para poseedor</headerCol>
-						<headerCol>Gloss</headerCol>
+						<headerCol>Pronombres para poseedores</headerCol>
+						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
 						<col rowspan="1"><content>Primera</content></col>
@@ -698,16 +958,27 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplitandDependentYes">
-				<content>Cambiando de tema a los pronombres dependientes, de acuerdo con lo considerado anteriormente en </content>
+				<content>De acuerdo con lo considerado anteriormente en </content>
 				<langName/>
-				<content> hay un sistema de caso de ergatividad escindida, así que hay sistemas distintos de los pronombres que se utilizan comúnmente como sujetos, objetos y poseedores, además de algunos sistemas especiales que se utilizan en los casos del ergatividad escindida. Los pronombres personales dependientes que aparecen comúnmente en la posición del sujeto son: </content>
+			   <content> hay un sistema de caso de ergatividad escindida, así que hay sistemas distintos de los pronombres que se utilizan comúnmente como sujetos, objetos y poseedores, además de algunos sistemas especiales que se utilizan en los casos del ergatividad escindida.  En los casos normales que siguen el sistema de nominativo-acusativo, </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que ambos objetos directos e indirectos utilizan los pronombres acusativos.  No hay un sistema distinto de pronombres dativos.</caseText>
+				  <caseText value="yesObj">los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para ambos objetos directos e indirectos.  No hay un sistema distinto de pronombres dativos.</caseText>
+				  <caseText value="yesDat">los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan los pronombres dativos, que se utilizan también para objetos indirectos.  Los objetos directos utilizan los pronombres acusativos.</caseText>
+			   </case>
 			</p>
+		   <p show="swNPCaseSplitandDependentYes"><content> Los pronombres personales dependientes que comúnmente se utilizan para </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">sujetos son: </caseText>
+			  <caseText value="yesObj">sujetos-agentes son:</caseText>
+			  <caseText value="yesDat">sujetos-agentes son:</caseText>
+		   </case>
+		   </p>
 			<example show="swNPCaseSplitandDependentYes">
 				<table border="1">
-					<caption><content>Pronombres personales nominativos dependientes</content></caption>
+					<caption><content>Pronombres personales dependientes nominativos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para sujetos</headerCol>
+						<headerCol>Pronombres nominativos</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -728,14 +999,19 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplitandDependentYes">
-				<content>Los pronombres personales dependientes que aparecen comúnmente en la posición del objeto son:</content>
+			   <content>Los pronombres personales dependientes que comúnmente se utilizan para </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">objetos directos e indirectos son:</caseText>
+				  <caseText value="yesObj">objetos directos e indirectos, o para sujetos-experimentadores son:</caseText>
+				  <caseText value="yesDat">objetos directos son:</caseText>
+			   </case>
 			</p>
 			<example show="swNPCaseSplitandDependentYes">
 				<table border="1">
-					<caption><content>Pronombres personales acusativos dependientes</content></caption>
+					<caption><content>Pronombres personales dependientes acusativos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para objetos</headerCol>
+						<headerCol>Pronombres acusativos</headerCol>
 						<headerCol>Signifiacdo</headerCol>
 					</headerRow>
 					<row>
@@ -755,15 +1031,41 @@
 					</row>
 				</table>
 			</example>
-			<p show="swNPCaseSplitandDependentYes">
-				<content>Los pronombres personales dependientes que aparecen comúnmente en la posición del poseedor son:</content>
+		   <p show="swNPCaseSplitAndYesDatandDependentYes">
+			  <content>Los pronombres personales dependientes que comúnmente se utilizan para sujetos-experimentadores o para objetos indirectos son:</content>
+		   </p>
+		   <example show="swNPCaseSplitAndYesDatandDependentYes">
+			  <table border="1">
+				 <caption><content>Pronombres personales dependientes dativos</content></caption>
+				 <headerRow>
+					<headerCol>Persona</headerCol>
+					<headerCol>Pronombres dativos</headerCol>
+					<headerCol>Glosa</headerCol>
+				 </headerRow>
+				 <row>
+					<col rowspan="1"><content>Primera</content></col>
+					<col exampleLoc="pron/personalDependentFirstSplitDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>
+				 <row>
+					<col rowspan="1"><content>Segunda</content></col>
+					<col exampleLoc="pron/personalDependentSecondSplitDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>					<row>
+					<col rowspan="1"><content>Tercera</content></col>
+					<col exampleLoc="pron/personalDependentThirdSplitDativeExample"/>
+					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				 </row>				</table>
+		   </example>
+		   <p show="swNPCaseSplitandDependentYes">
+				<content>Los pronombres personales dependientes que se utilizan comúnmente para el poseedor son:</content>
 			</p>
 			<example show="swNPCaseSplitandDependentYes">
 				<table border="1">
-					<caption><content>Pronombres personales genitivos dependientes</content></caption>
+					<caption><content>Pronombres personales dependientes genitivos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
-						<headerCol>Pronombres para poseedor</headerCol>
+						<headerCol>Pronombres para poseedores</headerCol>
 						<headerCol>Glosa</headerCol>
 					</headerRow>
 					<row>
@@ -784,11 +1086,15 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplitandDependentYes">
-				<content>Los pronombres personales dependientes que pueden presentarse en la posición del sujeto de verbos transitivos en los casos especiales del ergatividad escindida son: </content>
+			   <content>Los pronombres personales dependientes que se utilizan para </content><case element="typology" attr="caseExperiencer">
+				  <caseText value="no">sujetos de verbos transitivos</caseText>
+				  <caseText value="yesObj">sujetos-agentes de verbos transitivos</caseText>
+				  <caseText value="yesDat">sujetos-agentes de verbos transitivos</caseText>
+			   </case><content> en los casos especiales del ergatividad escindida son:</content>
 			</p>
 			<example show="swNPCaseSplitandDependentYes">
 				<table border="1">
-					<caption><content>Pronombres personales ergativos dependientes</content></caption>
+					<caption><content>Pronombres personales dependientes ergativos</content></caption>
 				<headerRow>
 					<headerCol>Persona</headerCol>
 					<headerCol>Pronombres ergativos</headerCol>
@@ -812,11 +1118,16 @@
 			</table>
 			</example>
 			<p show="swNPCaseSplitandDependentYes">
-				<content>Los pronombres personales dependientes que funcionan tanto como sujetos de verbos intransitivos y los objetos de verbos transitivos en los casos especiales del ergatividad escindida son:</content>
+			   <content>Los pronombres personales dependientes que se utilizan para </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">sujetos de verbos intransitivos o para objetos directos e indirectos de verbos transitivos</caseText>
+				  <caseText value="yesObj">objetos directos e indirectos, o para sujetos-experimentadores</caseText>
+				  <caseText value="yesDat">sujeots-agentes de verbos intransitivos o para objetos directos de verbos transitivos</caseText>
+			   </case><content> en los casos especiales del ergatividad escindida son:</content>
 			</p>
 			<example show="swNPCaseSplitandDependentYes">
 				<table border="1">
-					<caption><content>Pronombres personales absolutivos dependientes</content></caption>
+					<caption><content>Pronombres personales dependientes absolutivos</content></caption>
 					<headerRow>
 						<headerCol>Persona</headerCol>
 						<headerCol>Pronombres absolutivos</headerCol>
@@ -839,12 +1150,21 @@
 					</row>
 				</table>
 			</example>
-			<p show="swDependentPronYes"><content>Para considerar otros detalles sobre cómo pueden ser utilizados los pronombres dependientes, véanse las secciones </content><sectionRef sec="sIPAgr"/><content> y </content><sectionRef sec="sIPProDrop"/><content> donde se analizan la concordancia verbal y los sujetos que no deben estar presentes.</content></p>
+		   <p show="swNPCaseSplitandDependentYes">
+			  <case element="typology" attr="caseExperiencer">
+				 <caseText value="yesDat">Los pronombres dependientes dativos que ha dado arriba se utilizan para sujetos-experimentadores y para objetos indirectos, tanto en los casos especiales de ergatividad escindida. </caseText></case>
+			  <content> Los poseedores se utilizan los pronombres dependientes </content><case element="np" attr="possCaseErg">
+				 <caseText value="ergative">ergativos en los casos especiales de ergatividad escindida.</caseText>
+				 <caseText value="absolutive">absolutivos en los casos especiales de ergatividad escindida.</caseText>
+				 <caseText value="genitive">genitivos que ha dado arriba en los casos especiales de ergatividad escindida también.</caseText>
+			  </case>
+		   </p>
+		   <p show="swDependentPronYes"><content>Para considerar otros detalles sobre cómo pueden ser utilizados los pronombres dependientes, véanse las secciones </content><sectionRef sec="sIPAgr"/><content> y </content><sectionRef sec="sIPProDrop"/><content> donde se analizan la concordancia verbal y los sujetos que no deben estar presentes.</content></p>
 		</section2>
 		<section2 id="sPronPoss">
 			<secTitle>Pronombres posesivos</secTitle>
 			<p>
-				<content>Muchos idiomas también tienen pronombres posesivos que se pueden usar sólos, por ejemplo </content>
+				<content>Muchas lenguas también tienen pronombres posesivos que se pueden usar sólos, por ejemplo </content>
 				<langData>suya</langData>
 				<content>, </content>
 				<langData>mío</langData>
@@ -898,17 +1218,17 @@
 		<section2 id="sPronRefl">
 			<secTitle>Pronombres reflexivos</secTitle>
 			<p>
-				<content>Los reflexivos son otro tipo de pronombres que la mayoría de los idiomas tienen. Se presentan solamente en el caso de los objetos directos y deben oncordar comúnmente con el sujeto en las aracterísticas de persona, género y número. Los ejemplos en inglés son:</content>
-				<langData>herself</langData><gloss><content> 'ella misma'</content></gloss>
+				<content>Los reflexivos son otro tipo de pronombres que la mayoría de las lenguas tienen. Se presentan solamente en el caso de los objetos directos y deben concordar comúnmente con el sujeto en las aracterísticas de persona, género y número. Los ejemplos en inglés son: </content>
+				<langData>herself </langData><gloss><content>  ‘ella misma’</content></gloss>
 				<content>, </content>
-				<langData>himself</langData><gloss><content> 'sí mismo'</content></gloss>
+				<langData>himself </langData><gloss><content>  ‘sí mismo’</content></gloss>
 				<content>, </content>
-				<langData>themselves</langData><gloss><content> 'ellos mismos'</content></gloss>
+				<langData>themselves </langData><gloss><content> ‘ellos mismos’</content></gloss>
 				<content> y </content>
-				<langData>myself</langData><gloss><content> 'yo mismo'</content></gloss>
-				<content>.    Algunos idiomas tienen un sistema totalmente diferente de las formas del pronombre para los reflexivos, mientras que otras tales como español
-				utilizan una frase que consista en un sustantivo (que significa generalmente el </content><gloss><content>‘mismo'</content></gloss><content> o </content><gloss><content>‘self'</content></gloss><content>) que es poseído por el pronombre que se refiere de nuevo al sujeto.
-					Algunos idiomas tienen un afijo verbal que indica la acción reflexiva, y algunos idiomas no distinguen las construcciones reflexivas en absoluto.</content>
+				<langData>myself </langData><gloss><content>  ‘yo mismo’</content></gloss>
+				<content>.    Algunas lenguas tienen un sistema totalmente diferente de las formas del pronombre para los reflexivos, mientras que otras tales como español
+				utilizan una frase que consista en un sustantivo (que significa generalmente </content><gloss><content>‘mismo’</content></gloss><content> o </content><gloss><content>‘self’</content></gloss><content>) que es poseído por el pronombre que se refiere de nuevo al sujeto.
+					Algunas lenguas tienen un afijo verbal que indica la acción reflexiva, y algunas lenguas no distinguen las construcciones reflexivas en absoluto.</content>
 			</p>
 			<p>
 				<content>En </content>
@@ -926,8 +1246,10 @@
 						<caseText value="yes">se construyen agregando un afijo a otro pronombre.</caseText>
 						<caseText value="noWord">tienen un sistema distinto de pronombres.</caseText>
 						<caseText value="noNoun">se expresan por un cierto sustantivo con un pronombre como el poseedor, como en español.</caseText>
+					   <caseText value="noQP">se expresan por una frase nominal cuantificada especial.</caseText>
+					   <caseText value="some">se expresan por palabras independientes a veces, pero otros se expresan por frases y algunos pueden utilizar un afijo reflexivo.</caseText>
 					</case>
-					<content>  Las formas usadas para los reflexivos se dan a continuación, comenzando con la primera persona, continuando con la segunda persona y terminando con la tercera persona:</content>
+					<content>  Las formas utilizadas para los reflexivos se dan a continuación, comenzando con la primera persona, continuando con la segunda persona y terminando con la tercera persona:</content>
 				</text>
 				<text show="swPronReflYesVerbal">
 					<content> Algunos ejemplos de reflexivos en </content>
@@ -961,7 +1283,7 @@
 				<langData>el uno al otro </langData>
 				<content> y </content>
 				<langData>uno a otro</langData>
-				<content>.  Algunos idiomas usan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no indican la acción recíproca en absoluto. </content>
+				<content>.  Algunas lenguas utilizan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no indican la acción recíproca en absoluto. </content>
 			</p>
 			<p>
 				<content>En </content>
@@ -978,13 +1300,13 @@
 					<case element="pron" attr="recipAffix">
 						<caseText value="yes">se construyen agregando un afijo a otro pronombre. </caseText>
 						<caseText value="noWord">tienen un sistema distinto de pronombres.</caseText>
-						<caseText value="noNoun">se expresan a ravés de cierto sustantivo con un pronombre como poseedor.</caseText>
-						<caseText value="noQP">son oraciones nominales cuantificadas especiales</caseText>
+						<caseText value="noNoun">se expresan a través de cierto sustantivo con un pronombre como poseedor.</caseText>
+						<caseText value="noQP">son frases nominales cuantificadas especiales</caseText>
+					   <caseText value="some">se expresan por palabras independientes a veces, pero otros se expresan por frases y algunos pueden utilizar un afijo recíproco.</caseText>
 					</case>
 
-					<content/>
+			   <content>  Las formas usadas para los rrecíprocos se dan a continuación, comenzando con la primera persona, continuando con la segunda persona y terminando con la tercera persona:</content>
 				</text>
-				<content/>
 			</p>
 			<example show="swPronRecipYes">
 				<table border="1">
@@ -1017,7 +1339,261 @@
 				<interlinear exampleLoc="pron/recipSentExample"/>
 			</example>
 		</section2>
-		<section2 id="sPronIndef">
+	   <section2 id="sPronDem">
+		  <secTitle>Pronombres demostrativos</secTitle>
+
+		  <p><content>Muchas lenguas tienen pronombres demostrativos que están relacionados con los demostrativos que modifican un sustantivo o a los adverbios de lugar.  Los pronombres demostrativos especifican la distancia de donde se encuentra el hablante y pueden tener formas singulares y plurales.  Ejemplos en español son </content><langData>esto</langData><content>, </content><langData>eso</langData><content>, </content><langData>aquello</langData><content>, </content><langData>estos</langData><content> y </content><langData>esos</langData><content>, que son idénticos a los demostrativos que modifican un sustantivo.  Los pronombres demostrativos pueden presentarse como el sujeto u objeto de una oración, como en:: </content>
+			 <langData>Esos son los libros que pedí</langData><content>, </content><langData>Julia elige aquellos</langData><content>, </content><langData>Esto es lo que quiero</langData><content> y </content><langData>Nos gusta eso.</langData>
+			 </p>
+		  <p><content>Viendo los ejemplos arriba, el español tiene un solo sistema de demostrativos que se utilizan como sujetos y objetos. Algunas lenguas tienen sistemas distintos de pronombres demostrativos basados en un sistema de caso.</content></p>
+
+			 <p><content>En </content><langName/><content>, las formas de los pronombres demostrativos son </content><case element="advp" attr="advLocDem">
+				<caseText value="no">completemente distintos que los adverbios de lugar. </caseText>
+				<caseText value="same">idénticos con los adverbios de lugar, pero se usan en posiciones diferentes en la oración. </caseText>
+				<caseText value="affix">relacionados a los adverbios de lugar.  Un afijo se une a unl demostrativo para formar un adverbio de lugar. </caseText>
+			 </case><content> Véase la sección </content><sectionRef sec="sAdvPLocative"/><content> para información acerca de los adverbios de lugar</content><text show="swNPArtAndDemDemOrBoth"><content> y la sección </content><sectionRef sec="sAdjArtDem"/><content> para los detalles acerca de lo demostrativos que modifican un sustantivo</content></text>
+				<content>.</content></p>
+
+			 <p show="swCaseNotNone"><content>Los pronombres demostrativos en </content><langName/><case element="pron" attr="demCase">
+				<caseText value="no"> no son distinguidos por caso.  Las mismas formas se pueden utilizar en cualquier posicións.</caseText>
+				<caseText value="yes"> tiene sistemas diferentes dependiendo de la posición basados en el caso.</caseText>
+			 </case></p>
+
+		  <p show="swCaseNoneOrDemCaseNo"><content>Los pronombres demostrativos en </content><langName/><content> se dan en el cuadro siguiente, depende en la distancia del hablante:</content></p>
+			 <example show="swCaseNoneOrDemCaseNo">
+				<table border="1">
+				   <headerRow>
+					  <headerCol>Distancia</headerCol>
+					  <headerCol>Pronombres demostrativos</headerCol>
+					  <headerCol>Glosa</headerCol>
+				   </headerRow>
+				   <row>
+					  <col><content>Próxima</content></col>
+					  <col exampleLoc="pron/demProximalExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Intermedio</content></col>
+					  <col exampleLoc="pron/demMedialExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Distal</content></col>
+					  <col exampleLoc="pron/demDistalExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				</table>
+			 </example>
+
+		  <p show="swCaseNomAndDemCaseYes"><content>Puesto que </content><langName/><content> posee un sistema de caso de nominativo-acusativo, hay sistemas distintos de los pronombres demostrativos que pueden presentarse como sujetos y objetos.  Los pronombres demostrativos que pueden presentarse como sujetos en </content><langName/><content> se dan en el cuadro siguiente, depende en la distancia del hablante:</content></p>
+			 <example show="swCaseNomAndDemCaseYes">
+				<table border="1">
+				   <headerRow>
+					  <headerCol>Distancia</headerCol>
+					  <headerCol>Pronombres demostrativos para sujetos</headerCol>
+					  <headerCol>Glosa</headerCol>
+				   </headerRow>
+				   <row>
+					  <col><content>Próxima</content></col>
+					  <col exampleLoc="pron/demProximalNomExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Intermedio</content></col>
+					  <col exampleLoc="pron/demMedialNomExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Distal</content></col>
+					  <col exampleLoc="pron/demDistalNomExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				</table>
+			 </example>
+		  <p show="swCaseNomAndDemCaseYes"><content>Los pronombres demostrativos que pueden presentarse como objetos en </content><langName/><content> se dan en el cuadro siguiente, depende en la distancia del hablante:</content></p>
+			 <example show="swCaseNomAndDemCaseYes">
+				<table border="1">
+				   <headerRow>
+					  <headerCol>Distancia</headerCol>
+					  <headerCol>Pronombres demostrativos para objetos</headerCol>
+					  <headerCol>Glosa</headerCol>
+				   </headerRow>
+				   <row>
+					  <col><content>Próxima</content></col>
+					  <col exampleLoc="pron/demProximalAccExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Intermedio</content></col>
+					  <col exampleLoc="pron/demMedialAccExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Distal</content></col>
+					  <col exampleLoc="pron/demDistalAccExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				</table>
+			 </example>
+
+		  <p show="swCaseErgAndDemCaseYes"><content>Puesto que </content><langName/><content> posee un sistema de caso de ergativo-absolutivo, hay sistemas distintos de los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos contra sujetos de verbos intransitivos u objetos de verbos transiitivos.  Los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en </content><langName/><content> se dan en el cuadro siguiente, depende en la distancia del hablante:</content></p>
+			 <example show="swCaseErgAndDemCaseYes">
+				<table border="1">
+				   <headerRow>
+					  <headerCol>Distancia</headerCol>
+					  <headerCol>Pronombres demostrativos ergativos</headerCol>
+					  <headerCol>Glosa</headerCol>
+				   </headerRow>
+				   <row>
+					  <col><content>Próxima</content></col>
+					  <col exampleLoc="pron/demProximalErgExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Intermedio</content></col>
+					  <col exampleLoc="pron/demMedialErgExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Distal</content></col>
+					  <col exampleLoc="pron/demDistalErgExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				</table>
+			 </example>
+		  <p show="swCaseErgAndDemCaseYes"><content>Los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos u objetos de verbos transitivos en </content><langName/><content> se dan en el cuadro siguiente, depende en la distancia del hablante:</content></p>
+			 <example show="swCaseErgAndDemCaseYes">
+				<table border="1">
+				   <headerRow>
+					  <headerCol>Distancia</headerCol>
+					  <headerCol>Pronombres demostrativos absolutivos</headerCol>
+					  <headerCol>Glosa</headerCol>
+				   </headerRow>
+				   <row>
+					  <col><content>Próxima</content></col>
+					  <col exampleLoc="pron/demProximalAbsExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Intermedio</content></col>
+					  <col exampleLoc="pron/demMedialAbsExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Distal</content></col>
+					  <col exampleLoc="pron/demDistalAbsExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				</table>
+			 </example>
+
+		  <p show="swCaseSplitAndDemCaseYes"><content>Puesto que </content><langName/><content> posee un sistema de caso de ergatividad escindida, hay cuatro sistemas de pronombres demostrativos: dos para el sistema normal de caso de nominativo-acusativo, para distinguir entre sujetos contra objetos y dos para los especiales usos del sistema de caso de ergativo-absolutivo, para dinsinguir entre sujetos de verbos transitivos contra sujetos de verbos intransitivos u objetos de verbos transitivos.</content></p>
+		  <p show="swCaseSplitAndDemCaseYes"><content>Los pronombres demostrativos que pueden presentarse como sujetos en el sistema normal de caso de nominativo-acusativo en </content><langName/><content> se dan en el cuadro siguiente, depende en la distancia del hablante:</content></p>
+			 <example show="swCaseSplitAndDemCaseYes">
+				<table border="1">
+				   <headerRow>
+					  <headerCol>Distancia</headerCol>
+					  <headerCol>Pronombres demostrativos nominativos</headerCol>
+					  <headerCol>Glosa</headerCol>
+				   </headerRow>
+				   <row>
+					  <col><content>Próxima</content></col>
+					  <col exampleLoc="pron/demProximalNomExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Intermedio</content></col>
+					  <col exampleLoc="pron/demMedialNomExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Distal</content></col>
+					  <col exampleLoc="pron/demDistalNomExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				</table>
+			 </example>
+		  <p show="swCaseSplitAndDemCaseYes"><content>Los pronombres demostrativos que pueden presentarse como objetos en el sistema normal de caso de nominativo-accusativo en </content><langName/><content> se dan en el cuadro siguiente, depende en la distancia del hablante:</content></p>
+			 <example show="swCaseSplitAndDemCaseYes">
+				<table border="1">
+				   <headerRow>
+					  <headerCol>Distancia</headerCol>
+					  <headerCol>Pronombres demostrativos accusativos</headerCol>
+					  <headerCol>Glosa</headerCol>
+				   </headerRow>
+				   <row>
+					  <col><content>Próxima</content></col>
+					  <col exampleLoc="pron/demProximalAccExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Intermedio</content></col>
+					  <col exampleLoc="pron/demMedialAccExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Distal</content></col>
+					  <col exampleLoc="pron/demDistalAccExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				</table>
+			 </example>
+
+		  <p show="swCaseSplitAndDemCaseYes"><content>Los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida en </content><langName/><content> se dan en el cuadro siguiente, depende en la distancia del hablante:</content></p>
+			 <example show="swCaseSplitAndDemCaseYes">
+				<table border="1">
+				   <headerRow>
+					  <headerCol>Distancia</headerCol>
+					  <headerCol>Pronombres demostrativos ergativos</headerCol>
+					  <headerCol>Glosa</headerCol>
+				   </headerRow>
+				   <row>
+					  <col><content>Próxima</content></col>
+					  <col exampleLoc="pron/demProximalErgExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Intermedio</content></col>
+					  <col exampleLoc="pron/demMedialErgExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Distal</content></col>
+					  <col exampleLoc="pron/demDistalErgExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				</table>
+			 </example>
+		  <p show="swCaseSplitAndDemCaseYes"><content>Los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos u objetos de verbos transitivos en los situaciones de ergatividad escindida en </content><langName/><content> se dan en el cuadro siguiente, depende en la distancia del hablante:</content></p>
+			 <example show="swCaseSplitAndDemCaseYes">
+				<table border="1">
+				   <headerRow>
+					  <headerCol>Distancia</headerCol>
+					  <headerCol>Pronombres demostrativos absolutivos</headerCol>
+					  <headerCol>Glosa</headerCol>
+				   </headerRow>
+				   <row>
+					  <col><content>Próxima</content></col>
+					  <col exampleLoc="pron/demProximalAbsExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Intermedio</content></col>
+					  <col exampleLoc="pron/demMedialAbsExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				   <row>
+					  <col><content>Distal</content></col>
+					  <col exampleLoc="pron/demDistalAbsExample"/>
+					  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+				   </row>
+				</table>
+			 </example>
+
+
+		  </section2>
+
+	   <section2 id="sPronIndef">
 			<secTitle>Pronombres indefinidos</secTitle>
 			<p>
 				<content>Los indefinidos pueden ser pronombres como en español </content>
@@ -1027,22 +1603,22 @@
 				<content>, </content>
 				<langData>algunos</langData>
 
-				<content>, </content>
+				<content> y </content>
 				<langData>algo</langData>
 				<content>, o pueden ser un cuantificador más un sustantivo genérico indefinido como en español </content><langData>algunas personas</langData><content>, etc.</content>
 			</p>
-			<p><content>Las versiones negativas de los pronombres indefinidos son: </content>
+		  <p><content>Las versiones negativas de los pronombres indefinidos en español son: </content>
 				<langData>nadie</langData>
 				<content>, </content>
 				<langData>nada</langData>
 				<content> y </content>
 				<langData>ninguno</langData>
-				<content>.  Algunos idiomas pueden no combinarse en una sola palabra, como en </content>
-				<langData>no one</langData><gloss><content> 'nadie'</content></gloss>
+				<content>.  Algunas lenguas pueden no combinarse en una sola palabra, como en </content>
+				<langData>no one</langData><gloss><content> ‘nadie’</content></gloss>
 				<content> para el inglés.</content>
 			</p>
 			<p>
-				<content>En </content>
+				<content>Empezando con las formas positivas, en </content>
 				<langName/>
 				<content>, </content>
 				<case element="pron" attr="indef">
@@ -1063,8 +1639,19 @@
 					</row>
 				</table>
 			</example>
+		  <p>
+			 <content>Algunos ejemplos  </content>
+			 <text show="swPronIndefYes">
+				<content>(si hay) </content>
+			 </text>
+			 <content>de frases nominales positivas indefinidas son:</content>
+		  </p>
+		  <example>
+			 <interlinear exampleLoc="pron/indefNPExample"/>
+		  </example>
+
 			<p show="swNotPosOnly">
-				<content>En </content>
+				<content>Para las formas negativas, en </content>
 				<langName/>
 				<content>, </content>
 				<case element="pron" attr="negIndef">
@@ -1074,12 +1661,12 @@
 				<content/>
 			</p>
 			<p show="swPosOnly">
-				<content>En </content>
+			   <content>Para las formas negativas, en </content>
 				<langName/>
 				<content>, </content>
 				<case element="pron" attr="negIndef">
-					<caseText value="no">no hay pronombres negativos indefinidos y tampoco expresa ningún nominal indefinido negativo, puesto que el idioma no tiene ningún medio para negar una frase nominal.</caseText>
-					<caseText value="yes">todos los negativos indefinidos se combinan con pronombres para formar una palabra. No hay frases nominales negativas indefinidas, puesto que lel idioma no tiene ningún medio para negar una frase nominal. A continuación se dan algunos ejemplos de pronombres negativos indefinidos:</caseText>
+					<caseText value="no">no hay pronombres negativos indefinidos y tampoco expresa ningún nominal indefinido negativo, puesto que la lengua no tiene ningún medio para negar una frase nominal.</caseText>
+					<caseText value="yes">todos los negativos indefinidos se combinan con pronombres para formar una palabra. No hay frases nominales negativas indefinidas, puesto que la lengua no tiene ningún medio para negar una frase nominal. A continuación se dan algunos ejemplos de pronombres negativos indefinidos:</caseText>
 				</case>
 				<content/>
 			</p>
@@ -1095,16 +1682,7 @@
 					</row>
 				</table>
 			</example>
-			<p>
-				<content>Algunos ejemplos  </content>
-				<text show="swPronIndefYes">
-					<content>(si hay) </content>
-				</text>
-				<content>de frases nominales positivas indefinidas son:</content>
-			</p>
-			<example>
-				<interlinear exampleLoc="pron/indefNPExample"/>
-			</example>
+
 			<p show="swNotPosOnly">
 				<content>Algunos ejemplos </content>
 				<text show="swPronNegIndefYes">
@@ -1126,7 +1704,7 @@
 
 		<section2 id="sPronNP">
 			<secTitle>Los pronombres como frases nominales</secTitle>
-			<p><content>Los pronombres comúnmente presentarse solamente en el lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo y en algunos idiomas los pronombres se pueden modificar por los determinantes y los cuantificadores, ocupando el lugar de sustantivos en esta situación.
+			<p><content>Los pronombres comúnmente presentarse solamente en el lugar de una frase nominal completa, pero pueden también ser modificados por una frase del partitivo y en algunas lenguas los pronombres se pueden modificar por los determinantes y los cuantificadores, ocupando el lugar de sustantivos en esta situación.
 				Algunos ejemplos en español de pronombres, de demonstratives o de cuantificadores modificados son los siguientes: </content>
 				<langData>todos los doce</langData>
 				<content>, </content>
@@ -1136,60 +1714,92 @@
 				<content> y </content>
 				<langData>apenas esos pocos</langData>
 				<content>.</content></p>
-			<p>
-				<content>Algunos ejemplos similares en </content>
-				<langName/>
-				<content> son:</content>
-			</p>
-			<example>
-				<interlinear exampleLoc="pron/standAloneNPExample"/>
-			</example>
-			<p>
-				<content>Además, un pronombre, demostrativo o cuantificador puede ser modificado por una cláusula relativa, como en </content>
-				<langData>todos que vayan con nosotros</langData>
-				<content> y </content>
-				<langData>solamente estos dos que vi</langData>
-				<content>.</content></p>
-			<p>
-				<content> Algunos ejemplos similares en </content>
-				<langName/>
-				<content>, incluido en oraciones completas son:</content>
-			</p>
-			<example>
-				<interlinear exampleLoc="pron/pronRelClExample"/>
-			</example>
-			<p>
-				<content>Finalmente, estas categorías también pueden ser modificadas por una frase del partitivo (u otra frase preposicional y/o posposicional), como en </content>
-				<langData>solamente algunos de ustedes</langData>
-				<content>, </content>
-				<langData>apenas que muchos de ésos</langData>
-				<content> y </content>
-				<langData>solamente ésos adentro allí</langData>
-				<content>.  </content></p>
-			<p><content>Algunos ejemplos similares en </content>
-				<langName/>
-				<content> son:</content>
-			</p>
-			<example>
-				<interlinear exampleLoc="pron/partitiveExample"/>
-			</example>
-			<p>
-				<content> La frase </content>
-				<case element="pp" attr="pPos">
-					<caseText value="before">preposicional</caseText>
-					<caseText value="after">posposicional</caseText>
-					<caseText value="both">preposicional y/o posposicional</caseText>
-					<caseText value="unknown">preposicional y/o posposicional</caseText>
-				</case>
-				<content> opcional se presenta </content>
-				<case element="pron" attr="partitivePos">
-					<caseText value="before">antes</caseText>
-					<caseText value="after">después</caseText>
-					<caseText value="unknown">_______</caseText>
-				</case>
-				<content> del elemento principal de la frase nominal.</content>
+		   <p><content>En </content><langName/><content>, </content><case element="pron" attr="pronMod">
+			  <caseText value="no">ejemplos como estos dados arriba no se permiten. Estas categorías solamente presentarse sólos, sin ningún modificador, cuando toman el lugar de una frase nominal. No pueden ser modificadas por una cláusula relativa ni por una frase partitiva tampoco.</caseText>
+			  <caseText value="det">estas categorías pueden ser modificadas por las palabras especiales de grado y por <case element="np" attr="artAndDem">
+				 <caseText value="article">artículos</caseText>
+				 <caseText value="demonstrative">demostrativos</caseText>
+				 <caseText value="both">artículos y demostrativos</caseText>
+			  </case>.</caseText>
+			  <caseText value="all">estas categorías pueden ser modificadas por todos los mismos modificadores que sustantivos pueden, incluyendo los adjetivos y poseedores.</caseText>
+		   </case></p>
 
-			</p>
+		   <p show="swPronModNotNo">
+			  <content>Algunos ejemplos similares en </content>
+			  <langName/>
+			  <content> son:</content>
+		   </p>
+		   <example show="swPronModNotNo">
+			  <interlinear exampleLoc="pron/standAloneNPExample"/>
+		   </example>
+		   <p show="swPronModNotNo">
+			  <content>Algunos oraciones en que los ejemplos arriba funcionan como sujetos u objetos en </content>
+			  <langName/>
+			  <content> son:</content>
+		   </p>
+		   <example show="swPronModNotNo">
+			  <interlinear exampleLoc="pron/sentExample"/>
+		   </example>
+		   <p show="swPronModNo">
+			  <content>Algunos ejemplos de oraciones con los pronombres, demostrativos, cuantificadores y/o números funcionan como sujetos u objetos en </content>
+			  <langName/>
+			  <content> son:</content>
+		   </p>
+		   <example show="swPronModNo">
+			  <interlinear exampleLoc="pron/sentExample"/>
+		   </example>
+
+		   <p show="swPronModNotNo">
+			  <content>Además, un pronombre, demostrativo o cuantificador puede ser modificado por una cláusula relativa, como en </content>
+			  <langData>todos que vayan con nosotros</langData>
+			  <content> y </content>
+			  <langData>solamente estos dos que vi</langData>
+			  <content>.  </content></p>
+
+				 <p show="swPronModNotNo">
+					<content> Algunos ejemplos similares en </content>
+					<langName/>
+					<content>, incluido en oraciones completas son:</content>
+				 </p>
+
+		   <example show="swPronModNotNo">
+			  <interlinear exampleLoc="pron/pronRelClExample"/>
+		   </example>
+		   <p show="swPronModNotNo">
+
+			  <content>Finalmente, estas categorías también pueden ser modificadas por una frase del partitivo (u otra frase preposicional y/o posposicional), como en </content>
+			  <langData>solamente algunos de ustedes</langData>
+			  <content>, </content>
+			  <langData>apenas que muchos de ésos</langData>
+			  <content> y </content>
+			  <langData>solamente ésos adentro allí</langData>
+			  <content>.  </content></p>
+		   <p show="swPronModNotNo"><content>Algunos ejemplos similares en </content>
+			  <langName/>
+			  <content> son:</content>
+		   </p>
+
+		   <example show="swPronModNotNo">
+			  <interlinear exampleLoc="pron/partitiveExample"/>
+		   </example>
+
+		   <p show="swPronModNotNo">
+			  <content> La frase </content>
+			  <case element="pp" attr="pPos">
+				 <caseText value="before">preposicional</caseText>
+				 <caseText value="after">posposicional</caseText>
+				 <caseText value="both">preposicional o posposicional</caseText>
+				 <caseText value="unknown">preposicional o posposicional</caseText>
+			  </case>
+			  <content> opcional se presenta </content>
+			  <case element="pron" attr="partitivePos">
+				 <caseText value="before">antes</caseText>
+				 <caseText value="after">después</caseText>
+				 <caseText value="unknown">_______</caseText>
+			  </case>
+			  <content> del elemento principal de la frase nominal.</content>
+		   </p>
+
 		</section2>
 	</section1>
 	<showWhen id="swPronPronounCatNP">
@@ -1243,35 +1853,71 @@
 	<showWhen id="swPronAgrFeatClassNumber">
 		<whenValue element="pron/pronAgrFeatClassNumber" attr="checked" value="yes"/>
 	</showWhen>
-	<showWhen id="swNPCaseNone">
-		<whenValue element="np" attr="case" value="none"/>
-	</showWhen>
-	<showWhen id="swNPCaseNom">
-		<whenValue element="np" attr="case" value="nominative"/>
-	</showWhen>
-	<showWhen id="swNPCaseErg">
-		<whenValue element="np" attr="case" value="ergative"/>
-	</showWhen>
-	<showWhen id="swNPCaseSplit">
-		<whenValue element="np" attr="case" value="split"/>
-	</showWhen>
-	<showWhen id="swNPCaseNoneandDependentYes">
-		<whenValue element="np" attr="case" value="none"/>
+   <showWhen id="swNPCaseNone">
+	  <whenValue element="typology" attr="case" value="none"/>
+   </showWhen>
+   <showWhen id="swNPCaseNom">
+	  <whenValue element="typology" attr="case" value="nominative"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomAndYesDat">
+	  <whenValue element="typology"  attr="case" value="nominative"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomAndYesDatandDependentYes">
+	  <whenValue element="typology"  attr="case" value="nominative"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="pron" attr="dependentPron" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseErg">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgAndYesDat">
+	  <whenValue element="typology"  attr="case" value="ergative"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgAndYesDatandDependentYes">
+	  <whenValue element="typology"  attr="case" value="ergative"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="pron" attr="dependentPron" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplit">
+	  <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplitAndYesDat">
+	  <whenValue element="typology"  attr="case" value="split"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplitAndYesDatandDependentYes">
+	  <whenValue element="typology"  attr="case" value="split"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="pron" attr="dependentPron" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneandDependentYes">
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="pron"  attr="dependentPron" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPCaseNomandDependentYes">
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="pron"  attr="dependentPron" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPCaseErgandDependentYes">
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<and/>
 		<whenValue element="pron"  attr="dependentPron" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPCaseSplitandDependentYes">
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<and/>
 		<whenValue element="pron"  attr="dependentPron" value="yes"/>
 	</showWhen>
@@ -1305,79 +1951,76 @@
 	<showWhen id="swPronNegIndefYes">
 		<whenValue element="pron" attr="negIndef" value="yes"/>
 	</showWhen>
-	<showWhen id="swNotPosOnlyAndNo">
-		<whenValue element="qp" attr="determiner" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesNo"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-		<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-		<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-	</showWhen>
-	<showWhen id="swNotPosOnly">
-		<whenValue element="qp" attr="determiner" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesNo"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swPosOnly">
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-	</showWhen>
+   <showWhen id="swNotPosOnlyAndNo">
+	  <whenValue element="qp" attr="determinerNeg" value="none" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pron" attr="negIndef" value="yes"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pron" attr="negIndef" value="yes"/>
+   </showWhen>
+   <showWhen id="swNotPosOnly">
+	  <whenValue element="qp" attr="determinerNeg" value="none" negateValue="yes"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swPosOnly">
+	  <whenValue element="qp" attr="determinerNeg" value="none"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreeNeg" value="none"/>
+   </showWhen>
+
+
+   <showWhen id="swClassifierYesPronYes">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="pron" attr="pronounClassifier" value="yes"/>
+   </showWhen>
+   <showWhen id="swClassifierYesPronNo">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="pron" attr="pronounClassifier" value="no"/>
+   </showWhen>
+   <showWhen id="swClassifiersYesAgrOrType">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <or/>
+	  <whenValue element="typology" attr="classifier" value="yesType"/>
+   </showWhen>
+
+   <showWhen id="swNPArtAndDemDemOrBoth">
+	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+   </showWhen>
+   <showWhen id="swCaseNotNone">
+	  <whenValue element="typology"  attr="case" value="none" negateValue="yes" />
+   </showWhen>
+   <showWhen id="swCaseNoneOrDemCaseNo">
+	  <whenValue element="typology"  attr="case" value="none" />
+	  <or/>
+	  <whenValue element="pron" attr="demCase" value="no"/>
+   </showWhen>
+   <showWhen id="swCaseNomAndDemCaseYes">
+	  <whenValue element="typology"  attr="case" value="nominative" />
+	  <and/>
+	  <whenValue element="pron" attr="demCase" value="yes"/>
+   </showWhen>
+   <showWhen id="swCaseErgAndDemCaseYes">
+	  <whenValue element="typology"  attr="case" value="ergative" />
+	  <and/>
+	  <whenValue element="pron" attr="demCase" value="yes"/>
+   </showWhen>
+   <showWhen id="swCaseSplitAndDemCaseYes">
+	  <whenValue element="typology"  attr="case" value="split" />
+	  <and/>
+	  <whenValue element="pron" attr="demCase" value="yes"/>
+   </showWhen>
+
+   <showWhen id="swPronModNotNo">
+	  <whenValue element="pron"  attr="pronMod" value="no" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swPronModNo">
+	  <whenValue element="pron"  attr="pronMod" value="no" />
+   </showWhen>
 </portion>

@@ -28,7 +28,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SIL International")]
 [assembly: AssemblyProduct("Cabhab")]
-[assembly: AssemblyCopyright("© 2011, SIL International")]
+[assembly: AssemblyCopyright("© 2012, SIL International")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

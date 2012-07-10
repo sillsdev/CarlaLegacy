@@ -25,14 +25,14 @@
 			<include path="Extensions/*/MainConfigurationExtension.xml" query="root/menuAddOn/menu[@id='Edit']/*"/>
 		</menu>
 		<menu id="View" label="_View">
-			<item label="Show Toolbar" boolProperty="ShowToolbar" command="CmdShowToolbar"/>
-			<item label="Show Status Bar" boolProperty="ShowStatusBar" command="CmdShowStatusBar"/>
+			<!--<item label="Show Toolbar" boolProperty="ShowToolbar" command="CmdShowToolbar"/>no longer saves any space, so disable this -->
+			<item boolProperty="ShowStatusBar" command="CmdShowStatusBar"/>
 			<item label="-"/>
 			<item command="CmdBack"/>
 			<item command="CmdForward"/>
 			<item command="CmdRefresh"/>
-<!--  For later          <item label="-"/>
-			<item command="CmdInterfaceLanguage"/>-->
+			<item label="-"/>
+			<item command="CmdInterfaceLanguage"/>
 		</menu>
 		<menu id="Help" label="_Help">
 			<item id="Resources" command="CmdResources"/>

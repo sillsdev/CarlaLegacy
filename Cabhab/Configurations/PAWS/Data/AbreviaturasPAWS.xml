@@ -8,7 +8,7 @@ version="2.3.0"
 >Las siguientes abreviaturas están basadas en las reglas de glosa de Leipzig, lista de abreviaturas estándar en <link
 href="http://www.eva.mpg.de/lingua/resources/glossing-rules.php"
 >http://www.eva.mpg.de/lingua/resources/glossing-rules.php</link
-> el 1° de octubre de 2008. Algunas de las abreviaturas específicas del Otomangue fueron agregadas.</comment
+> el 1° de octubre de 2008. Se agregaron algunas de las abreviaturas específicas de otomangue.</comment
 ><abbreviation
 id="v1"
 ><abbrInLang
@@ -550,16 +550,6 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="v3UM"
-><abbrInLang
-lang="es"
-><abbrTerm
->3um</abbrTerm
-><abbrDefinition
->tercera persona varón soltero</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
 id="v3PL"
 ><abbrInLang
 lang="es"
@@ -690,6 +680,16 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="v3UM"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3vs</abbrTerm
+><abbrDefinition
+>tercera persona varón soltero</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vABL"
 ><abbrInLang
 lang="es"
@@ -754,7 +754,7 @@ id="vAFM"
 ><abbrInLang
 lang="es"
 ><abbrTerm
->afm</abbrTerm
+>anm</abbrTerm
 ><abbrDefinition
 >antes mencionado</abbrDefinition
 ></abbrInLang
@@ -830,16 +830,6 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vTOP"
-><abbrInLang
-lang="es"
-><abbrTerm
->as</abbrTerm
-><abbrDefinition
->asunto</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
 id="vAUG"
 ><abbrInLang
 lang="es"
@@ -904,9 +894,9 @@ id="vCF"
 ><abbrInLang
 lang="es"
 ><abbrTerm
->cf</abbrTerm
+>coh</abbrTerm
 ><abbrDefinition
->contrariamente al hecho</abbrDefinition
+>contrario a los hechos</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -920,6 +910,256 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vCL1"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl1</abbrTerm
+><abbrDefinition
+>clase 1</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL2"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl2</abbrTerm
+><abbrDefinition
+>clase 2</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL3"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl3</abbrTerm
+><abbrDefinition
+>clase 3</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL4"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl4</abbrTerm
+><abbrDefinition
+>clase 4</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL5"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl5</abbrTerm
+><abbrDefinition
+>clase 5</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL6"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl6</abbrTerm
+><abbrDefinition
+>clase 6</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL7"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl7</abbrTerm
+><abbrDefinition
+>clase 7</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL8"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl8</abbrTerm
+><abbrDefinition
+>clase 8</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL9"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl9</abbrTerm
+><abbrDefinition
+>clase 9</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL10"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl10</abbrTerm
+><abbrDefinition
+>clase 10</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL11"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl11</abbrTerm
+><abbrDefinition
+>clase 11</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL12"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl12</abbrTerm
+><abbrDefinition
+>clase 12</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL13"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl13</abbrTerm
+><abbrDefinition
+>clase 13</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL14"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl14</abbrTerm
+><abbrDefinition
+>clase 14</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL15"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl15</abbrTerm
+><abbrDefinition
+>clase 15</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL16"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl16</abbrTerm
+><abbrDefinition
+>clase 16</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL17"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl17</abbrTerm
+><abbrDefinition
+>clase 17</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL18"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl18</abbrTerm
+><abbrDefinition
+>clase 18</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL19"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl19</abbrTerm
+><abbrDefinition
+>clase 19</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL20"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl20</abbrTerm
+><abbrDefinition
+>clase 20</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL21"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl21</abbrTerm
+><abbrDefinition
+>clase 21</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL22"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl22</abbrTerm
+><abbrDefinition
+>clase 22</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL23"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl23</abbrTerm
+><abbrDefinition
+>clase 23</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL24"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl24</abbrTerm
+><abbrDefinition
+>clase 24</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCL25"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cl25</abbrTerm
+><abbrDefinition
+>clase 25</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vCLF"
 ><abbrInLang
 lang="es"
@@ -927,6 +1167,96 @@ lang="es"
 >clf</abbrTerm
 ><abbrDefinition
 >clasificador</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFAN"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfan</abbrTerm
+><abbrDefinition
+>clasificador para animales</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFINS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfins</abbrTerm
+><abbrDefinition
+>clasificador para insectos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFLIQ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfliq</abbrTerm
+><abbrDefinition
+>clasificador para líquido</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFRND"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfrnd</abbrTerm
+><abbrDefinition
+>clasificador para objetos redondos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFCLD"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfcld</abbrTerm
+><abbrDefinition
+>clasificador para objetos cilíndricos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFSPH"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfesf</abbrTerm
+><abbrDefinition
+>clasificador para objetos esféricos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFTR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfarb</abbrTerm
+><abbrDefinition
+>clasificador para árboles</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFWD"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfmad</abbrTerm
+><abbrDefinition
+>clasificador para objetos de madera</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFOT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfot</abbrTerm
+><abbrDefinition
+>clasificador para otros objetos inanimados</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -957,6 +1287,16 @@ lang="es"
 >cond</abbrTerm
 ><abbrDefinition
 >condicional</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVCNTP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cntp</abbrTerm
+><abbrDefinition
+>contemplativo</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1154,9 +1494,9 @@ id="vFOC"
 ><abbrInLang
 lang="es"
 ><abbrTerm
->foq</abbrTerm
+>foc</abbrTerm
 ><abbrDefinition
->enfoque</abbrDefinition
+>foco</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1180,6 +1520,16 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vIF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>fi</abbrTerm
+><abbrDefinition
+>futuro indefinido</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vFV"
 ><abbrInLang
 lang="es"
@@ -1200,6 +1550,16 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vGER"
+><abbrInLang
+lang="es"
+><abbrTerm
+>ger</abbrTerm
+><abbrDefinition
+>gerúndio</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vH"
 ><abbrInLang
 lang="es"
@@ -1207,16 +1567,6 @@ lang="es"
 >h</abbrTerm
 ><abbrDefinition
 >habitual</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vIF"
-><abbrInLang
-lang="es"
-><abbrTerm
->fi</abbrTerm
-><abbrDefinition
->futuro indefinido</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1560,6 +1910,16 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vPRC"
+><abbrInLang
+lang="es"
+><abbrTerm
+>prc</abbrTerm
+><abbrDefinition
+>percepción</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vPRF"
 ><abbrInLang
 lang="es"
@@ -1716,7 +2076,7 @@ lang="es"
 ><abbrTerm
 >preg</abbrTerm
 ><abbrDefinition
->marcador de la pregunta</abbrDefinition
+>indicador de la pregunta</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1840,6 +2200,16 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vTOP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>top</abbrTerm
+><abbrDefinition
+>tópico</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vTR"
 ><abbrInLang
 lang="es"
@@ -1857,6 +2227,66 @@ lang="es"
 >vrb</abbrTerm
 ><abbrDefinition
 >verbalizador</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVACT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vact</abbrTerm
+><abbrDefinition
+>voz de actor o activo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVDAT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vdat</abbrTerm
+><abbrDefinition
+>voz dativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVINS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vins</abbrTerm
+><abbrDefinition
+>voz de instrumento</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVLOC"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vloc</abbrTerm
+><abbrDefinition
+>voz locativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVGL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vmet</abbrTerm
+><abbrDefinition
+>voz de meta</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vobj</abbrTerm
+><abbrDefinition
+>voz de objeto, paciente o tema</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation

@@ -11,33 +11,22 @@ AdvP = Adv'
 rule {AdvP option 1 - modifiers initial}
 AdvP = Deg Adv'
 	&lt;AdvP head&gt; = &lt;Adv' head&gt;
-	&lt;AdvP head modifier&gt; = &lt;Deg head&gt;
+	&lt;AdvP head modifier&gt; = &lt;Deg&gt;
 	&lt;Deg head type AdvP-initial&gt; = +
 	&lt;Deg head type comma&gt; = -
 	&lt;AdvP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
-	&lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier:[type:[modifies_Adv:[manner:+]]]]
-	&lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier:[type:[modifies_Adv:[temporal:+]]]]
-	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[type:[modifies_Adv:[locative:+]]]]
-	&lt;AdvP head&gt; == [type:[reason:+]] -&gt; [modifier:[type:[modifies_Adv:[reason:+]]]]
+	&lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[manner:+]]]]]
+	&lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[temporal:+]]]]]
+	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[locative:+]]]]]
 	&lt;AdvP option&gt; = 1
 </rule>
 	<showWhen id="AdvPoption1">
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="before"/>
+		<whenValue element="advp" attr="temporalDegree" value="yesBefore"/>
 		<or/>
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="either"/>
-		<or/>
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="eitherOrBoth"/>
-		<or/>
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="beforeOrBoth"/>
-	</showWhen>
+		<whenValue element="advp" attr="locativeDegree" value="yesBefore"/>
+	  <or/>
+		<whenValue element="advp" attr="mannerDegree" value="yesBefore"/>
+   </showWhen>
 	<rule show="AdvPoption2">
 rule {AdvP option 2 - modifiers final}
 AdvP = Adv' Deg
@@ -47,74 +36,23 @@ AdvP = Adv' Deg
 	&lt;Adv' head type comma&gt; = -
 	&lt;AdvP head type comma&gt; &lt;= &lt;Deg head type comma&gt;
 	&lt;AdvP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
-	&lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier:[type:[modifies_Adv:[manner:+]]]]
-	&lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier:[type:[modifies_Adv:[temporal:+]]]]
-	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[type:[modifies_Adv:[locative:+]]]]
-	&lt;AdvP head&gt; == [type:[reason:+]] -&gt; [modifier:[type:[modifies_Adv:[reason:+]]]]
+	&lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[manner:+]]]]]
+	&lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[temporal:+]]]]]
+	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[locative:+]]]]]
 	&lt;AdvP option&gt; = 2
 </rule>
 	<showWhen id="AdvPoption2">
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="after"/>
-		<or/>
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="either"/>
-		<or/>
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="eitherOrBoth"/>
-		<or/>
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="afterOrBoth"/>
+	   <whenValue element="advp" attr="temporalDegree" value="yesAfter"/>
+	   <or/>
+	   <whenValue element="advp" attr="locativeDegree" value="yesAfter"/>
+	   <or/>
+	   <whenValue element="advp" attr="mannerDegree" value="yesAfter"/>
 	</showWhen>
-	<rule show="AdvPoption3">
-rule {AdvP option 3 - modifiers both sides}
-AdvP = Deg_1 Adv' Deg_2
-	&lt;AdvP head&gt; = &lt;Adv' head&gt;
-	&lt;AdvP head modifier_initial&gt; = &lt;Deg_1 head&gt;
-	&lt;AdvP head modifier_final&gt; = &lt;Deg_2 head&gt;
-	&lt;Deg_1 head type AdvP-initial&gt; = +
-	&lt;Deg_2 head type AdvP-final&gt;   = +
-	&lt;Deg_1 head type comma&gt; = -
-	&lt;Adv' head type comma&gt; = -
-	&lt;AdvP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
-	&lt;AdvP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
-	&lt;AdvP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
-	&lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier_initial:[type:[modifies_Adv:[manner:+]]]]
-	&lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier_initial:[type:[modifies_Adv:[temporal:+]]]]
-	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier_initial:[type:[modifies_Adv:[locative:+]]]]
-	&lt;AdvP head&gt; == [type:[reason:+]] -&gt; [modifier_initial:[type:[modifies_Adv:[reason:+]]]]
-	&lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier_final:[type:[modifies_Adv:[manner:+]]]]
-	&lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier_final:[type:[modifies_Adv:[temporal:+]]]]
-	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier_final:[type:[modifies_Adv:[locative:+]]]]
-	&lt;AdvP head&gt; == [type:[reason:+]] -&gt; [modifier_final:[type:[modifies_Adv:[reason:+]]]]
-	&lt;AdvP option&gt; = 3
-</rule>
-	<showWhen id="AdvPoption3">
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="both"/>
-		<or/>
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="beforeOrBoth"/>
-		<or/>
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="eitherOrBoth"/>
-		<or/>
-		<whenValue element="advp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="advp" attr="degreePos" value="afterOrBoth"/>
-	</showWhen>
+
 	<rule>
 rule {AdvBar option 0 - no complements}
 Adv' = Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
-	&lt;Adv head type stand-alone&gt; = +   |must be able to stand alone
 	&lt;Adv' option&gt; = 0
 </rule>
 	<rule show="AdvBaroption1f">
@@ -147,7 +85,9 @@ Adv' = Adv_1 Adv
 </rule>
    <showWhen id="AdvBaroption1i">
 		<whenValue element="advcl" attr="advOrNPPos" value="before"/>
-	</showWhen>
+	  <or/>
+	  <whenValue element="advcl" attr="advOrNPPos" value="either"/>
+   </showWhen>
 	<rule show="AdvBaroption2f">
 rule {AdvBar option 2f - DP complements final}
 Adv' = Adv DP
@@ -220,7 +160,7 @@ rule {AdvBar option 4f - CP complements final}
 Adv' = Adv CP
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
 	&lt;Adv head type sentential&gt; = +
-	&lt;Adv head embedded&gt; = &lt;CP head&gt;
+	&lt;Adv head embedded&gt; = &lt;CP&gt;
 	&lt;CP head type question&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;CP head type root&gt; = -
@@ -234,7 +174,7 @@ rule {AdvBar option 4i - CP complements initial}
 Adv' = CP Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
 	&lt;Adv head type sentential&gt; = +
-	&lt;Adv head embedded&gt; = &lt;CP head&gt;
+	&lt;Adv head embedded&gt; = &lt;CP&gt;
 	&lt;CP head type question&gt; = -
 	&lt;CP head type relative&gt; = -
 	&lt;CP head type root&gt; = -

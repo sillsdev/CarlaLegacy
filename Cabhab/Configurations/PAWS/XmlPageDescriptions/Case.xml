@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="Case" count="2/3">
+	<title level="2">Overall Typology Questions - Case System</title>
+	<introduction>Now we need to determine what case system, if any, your language uses.  We will start by examining data with both nouns and pronouns in the subject and object positions (the case of possessors will be determined later).</introduction>
+	<form section="typology">
+		<prompt>On the previous page, you keyed the following examples of simple transitive sentences in your language.  If you only used proper names in the subject and object positions, key additional examples here using simple noun phrases.  Please use only sentences with an Agent subject and no voice changes here.</prompt>
+		<textBox id="OTExample" dataItem="example" cols="50"/>
+		<prompt>Look at the examples in the box above.  Note if there is any marking on the nouns to indicate that they are the subject or object. (The notes you make as you examine the various kinds of examples asked for here will aid you in answering the questions below.)<br/><br/>
+			Now key similar examples of simple transitive sentences with an Agent subject, but this time use independent pronouns in the subject and object positions:</prompt>
+		<textBox id="OTPnExample" dataItem="pnExample" cols="50"/>
+		<prompt>Look at the examples in the box above.  Note if there are different sets of pronouns used for the subject and object.
+			</prompt>
+	   <br/>
+	   <introduction>Some languages (other than English) have a different case marking and a different set of pronouns used for Experiencer subjects than for Agent subjects.
+		  In some languages the distinction only shows up with the first singular pronoun “I”.  Some transitive verbs with Experiencer subjects are: ‘appear’, ‘see’, ‘fear’, ‘be found’, ‘want’ and ‘like’.</introduction>
+	   <br/><br/>
+	   <prompt>Key some examples of sentences with transitive verbs which have Experiencer subjects, with simple noun phrases in the subject and object positions, here:</prompt>
+	   <textBox id="OTExperiencerExample" dataItem="experiencerExample" cols="50"/>
+	   <prompt>Look at the examples in the box above.  Note if there is any marking on the nouns to indicate that they are the subject or object.  If so, is the marking the same for the Experiencer subjects as for the Agent subjects?  It may  instead match the objects in the Agent-subject examples above, or it may be a distinct marking. <br/><br/>
+		  Now key similar examples of simple transitive sentences with an Experiencer subject, but this time use independent pronouns in the subject and object positions:</prompt>
+	   <textBox id="OTExperiencerPnExample" dataItem="experiencerPnExample" cols="50"/>
+	   <prompt>Look at the examples in the box above.  Note again if there are different sets of pronouns used for the subject and object.  Then compare the pronouns used for the Experiencer subjects with those used for the Agent subjects above to see if they are the same or different.
+		  If different, do the pronouns used for the Experiencer subjects match the object pronouns in the Agent-subject examples above, or are they a distinct set?</prompt>
+		   <br/>
+			<prompt>Next we will examine similar issues with intransitives.  Key some examples of simple intransitive sentences, with a simple noun phrase Agent in the subject position:</prompt>
+		<textBox id="OTIntExample" dataItem="intExample" cols="50"/>
+		<prompt>Look at the examples in the box above.  Note if there is any marking on the noun to indicate it is the subject.  If so, does it match the marking on the subject or the object in the transitive examples with an Agent subject above?<br/><br/>
+			Now key similar examples of simple intransitive sentences with an Agent subject, but this time use independent pronouns in the subject position:</prompt>
+		<textBox id="OTIntPnExample" dataItem="pnIntExample" cols="50"/>
+		<prompt>Look at the examples in the box above.  Check whether the pronoun matches the set used for the subject or the object (or both) in the transitive examples with pronouns and an Agent subject above.</prompt>
+	   <br/>
+	   <prompt>Now we need to check on any differences with Experiencer subjects.  Some intransitive verbs with Experiencer subjects are: ‘laugh’, ‘cry’, ‘be sad’, ‘be afraid’ and ‘be angry’.  (These last three examples may really be copular constructions with a predicate adjective, but they are apparently verbs in some langauges.) Key some examples of sentences with intransitive verbs which have Experiencer subjects, with simple noun phrases in the subject  position, here:</prompt>
+	   <textBox id="OTExperiencerIntExample" dataItem="experiencerIntExample" cols="50"/>
+	   <prompt>Look at the examples in the box above.  Note if there is any marking on the nouns to indicate that they are the subject.  If so, is the marking the same for the Experiencer subjects as for the Agent subjects?  It may  instead match the objects in the transitive examples with Agent-subject above, or it may be a distinct marking. <br/><br/>
+		  Now key similar examples of simple intransitive sentences with an Experiencer subject, but this time use independent pronouns in the subject position:</prompt>
+	   <textBox id="OTExperiencerPnIntExample" dataItem="experiencerPnIntExample" cols="50"/>
+	   <prompt>Look at the examples in the box above.  Compare the pronouns used for the Experiencer subjects with those used for the Agent subjects above to see if they are the same or different.
+		  If different, do the pronouns used for the Experiencer subjects match the object pronouns in the transitive examples with Agent-subjects above, or are they a distinct set?</prompt>
+ <br/>
+	   <introduction>Keeping in mind what you have learned from these examples, please read through the following information about case systems, so you will be able to answer the questions about  the case system in your language.</introduction>
+	   <instruction id="CaseNullAdapting">You may have the situation (as is true for two of the projects this starter kit was initially tested on) where the source language you wish to adapt from is unmarked or less marked for case than the target language(s) you wish to adapt into.  If so, you will need to add null allomorphs for the case markers in the source language to match the case markers in the target language(s) and allow the syntactic parser to disambiguate between these as much as possible.  If you have this situation, read the following information and answer the question(s) below based on the case system of the target language(s).<br/>
+		</instruction>
+		<introduction id="NPCaseIntro">
+			The most common case system is nominative-accusative.  This is the system English has, though only pronouns are marked for case in English.  In a nominative-accusative system, subjects of both transitive and intransitive verbs are in nominative case, while direct objects are accusative case.  Possessors are genitive case.  The nominative pronouns in English are: <example>I, we, you, he, she, they</example>.  The accusative pronouns are: <example>me, us, you, him, her, them</example>.  The genitive pronouns include: <example>my, our, your, his, her, their</example>.  Therefore, we say <example>They hit him</example> and not <example>Them hit he</example>. <br/>
+			<br/>
+		   A language with a basic nominative-accusative case system may have different case marking for Experiencer subjects than for Agent subjects.<br/>
+		   <br/>
+			In an ergative-absolutive case system, subjects of transitive verbs are marked with the ergative case, while objects of transitive verbs and subjects of intransitive verbs are marked with the absolutive case.  This distinction is may also interact with whether the subject is an Agent or an Experiencer.  The case of possessors is not set cross-linguistically, so if your language has an ergative-absolutive system, you will be asked about the case of possessors in <section number="5.4">Nominal Phrases - Possessors</section>.
+		   <br/><br/>Some languages with an ergative-absolutive case system simply have different sets of verbal agreement markers, but no marking on nouns.  If this is true in your language, and there is also only a single set of independent pronouns, answer “None” below.  If there are two sets of pronouns, however, as well as different sets of agreement markers, answer “Ergative-Absolutive” below.  The agreement marking will be handled separately in <section number="9.2">Basic, Single-clause Sentences - Inflection and Agreement Features</section>.<br/>
+			<br/>
+		   Some languages are even more complex in that they normally have a nominative-accusative case system but under some grammatical conditions the case system switches to ergative-absolutive.  For example, In Urdu and Hindi, the ergative case is marked on Agents in the preterite and perfect tenses for transitive and ditransitive verbs, while in all other tenses and aspects Agents appear in the nominative case.
+		   In Dyirbal, pronouns follow a nominative–accusative pattern when the Agent is first or second person, but an ergative-absolutive pattern when the Agent is third person.
+		   This is called “split ergativity”.  <span id="OTCaseSplitNotPracticalSpan" show="swNotPractical"> In this starter kit, the best we can do for these languages is to add all the rules allowing both case systems.  Afterward, the specific constraints needed for your language can be added to the rules.</span>
+		</introduction>
+	   <br/>
+		<radioGroup>
+		<groupName dataItem="case" default="nominative">RCase</groupName>
+		<prompt>Based on the description of the case systems and the examples from your language with Agent subjects above, which one is correct for your language?</prompt>
+		<radio id="NPCaseNone" checked="yes" dataValue="none">None: the exact same set of pronouns may be used in any position in the sentence and there is no marking on nouns or on any noun modifiers based on their position in the sentence</radio>
+		<radio id="NPCaseNom" checked="yes" dataValue="nominative">Nominative-Accusative: like English, Agent subjects of both transitive and intransitive verbs are the same, but objects of transitive verbs are different</radio>
+		<radio id="NPCaseErg" checked="yes" dataValue="ergative">Ergative-Absolutive: Agent subjects of intransitive verbs and objects of transitive verbs are the same, but Agent subjects of transitive verbs are different</radio>
+		<radio id="NPCaseSplit" checked="yes" dataValue="split">Split Ergativity: the language has a Nominative-Accusative system normally, but the Ergative-Absolutive system is used under certain grammatical conditions</radio>
+		</radioGroup>
+	   <radioGroup id="NPCaseExperiencerTable" show="swNPCaseNotNone">
+		  <groupName dataItem="caseExperiencer" default="no">RNPCaseExperiencer</groupName>
+		  <prompt>Does your language have different case marking on nouns and/or distinct pronoun sets for Experiencer subjects versus Agent subjects?</prompt>
+		  <radio id="NPCaseExperiencerNo" dataValue="no">No, the same case marking and/or pronoun set is used for both Agent and Experiencer subjects</radio>
+		  <radio id="NPCaseExperiencerYesObj" dataValue="yesObj">Yes, Experiencer subjects use the same case marking and/or pronoun set as objects of  transitive verbs with an Agent subject do</radio>
+		  <radio id="NPCaseExperiencerYesDat" dataValue="yesDat">Yes, Experiencer subjects use a case marking and/or pronoun set which is distinct from both the subject and object of verbs with an Agent subject, but can be used for indirect objects</radio>
+	   </radioGroup>
+		<br/>
+		 <br/>
+		<buttons>
+			<button id="CaseBack" value="Back" goto="OverallTypology.xml"/>
+			<button id="CaseNext" value="Next" goto="Classifiers.xml"/>
+		</buttons>
+	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
+	<showWhen id="swPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="False"/>
+	</showWhen>
+	<showWhen id="swNPCaseNotNone">
+		<not/><whenRadio button="NPCaseNone"/>
+	</showWhen>
+	<showWhen id="swNPCaseNomOrSplit">
+		<whenRadio button="NPCaseNom"/>
+		<or/>
+		<whenRadio button="NPCaseSplit"/>
+	</showWhen>
+
+</page>

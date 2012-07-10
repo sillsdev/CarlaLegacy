@@ -2,45 +2,19 @@
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
   <section1 id="sExcl">
-	  <secTitle>Las exclamaciones y los saludos</secTitle>
+	 <secTitle>Los saludos, interjecciones y exclamaciones</secTitle>
 	<p>
-		<content>Esta sección considera los varios tipos de locuciones comunes que no son oraciones completas. Los saludos, las interjecciones y las exclamaciones, cada uno se trata en su order correspondiente.</content>
+	   <content>Esta sección considera los varios tipos de locuciones comunes que no son oraciones completas. Los saludos, las interjecciones y las exclamaciones serán vistas como corresponde.</content>
 	</p>
 <section2 id="sExclGreet">
 	<secTitle>Saludos</secTitle>
 	<p><content>Los saludos consisten típicamente en una palabra o una frase particular, que puede ser seguido por un nombre o una frase nominal que describe la persona o el animal que es saludado.
 	Algunos son las oraciones completas o las preguntas completas, tales como </content> <langData>¿Cómo está usted? </langData> <content> y </content><langData>¡Tenga un buen día!</langData>
 		<content> Las cuáles no necesitan ser tratadas por separado. </content></p>
-	<p><content>Algunos ejemplos de saludos en español son:  </content>    </p>
-			<ol>
-				<li>
-					<content>¡Hola!</content>
-				</li>
-				<li>
-					<content>¡Adiós!</content>
-				</li>
-				<li>
-					<content>Hola, Juliana.</content>
-				</li>
-				<li>
-					<content>Hasta luego.</content>
-				</li>
-				<li>
-					<content>Buen día, señor.</content>
-				</li>
-				<li>
-					<content>Buena mañana, Roberto.</content>
-				</li>
-				<li>
-					<content>Buenas tardes.</content>
-				</li>
-				<li>
-					<content>Buenas noches.</content>
-				</li>
-				<li>
-					<content>Buenas noches, ducle bebé.</content>
-				</li>
-			</ol>
+   <p><content>Algunos ejemplos de saludos en español son:  </content><langData>¡Hola!</langData><content>&#x20;</content><langData>¡Adiós!</langData><content>&#x20;</content><langData>Hasta luego</langData>
+	  <content>, </content><langData>Buen día, señor</langData>
+	  <content> y  </content><langData>Buenas noches, ducle bebé</langData><content>.</content></p>
+
 	<p><content>Algunos ejemplos de saludos en </content><langName/> <content> son:</content></p>
 			<example>
 				<interlinear exampleLoc="excl/greetExample"/>
@@ -49,30 +23,14 @@
 <section2 id="sExclIntj">
 	<secTitle>Interjecciones</secTitle>
 	<p><content>Las interjecciones consisten típicamente en una palabra o una frase particular que se utilicen solo, generalmente con puntos de exclamación. Muchas de las palabras en interjecciones no se utilizan en ninguna otra situación. Sin embargo, los adjetivos regulares también se utilizan de esta manera.</content></p>
-	<p><content>Algunos ejemplos de interjecciones en español son:
-</content></p>
-			<ol>
-				<li>
-					<content>¡Ay!</content>
-				</li>
-				<li>
-					<content>¡Caramba!</content>
-				</li>
-				<li>
-					<content>¡Ay de mí!</content>
-				</li>
-				<li>
-					<content>¡Cuidado!</content>
-				</li>
-				<li>
-					<content>¡Jesús, María y José!</content>
-				</li>
-			</ol>
+	<p><content>Algunos ejemplos de interjecciones en español son: </content>
+	   <langData>¡Ay!</langData><content>&#x20;</content><langData>¡Caramba!</langData><content>&#x20;</content><langData>¡Cuidado!</langData><content> y </content><langData>¡Jesús, María y José!</langData></p>
+
 	<p><content>Algunos ejemplos de interjecciones en </content><langName/> <content> son:</content></p>
 			<example>
 				<interlinear exampleLoc="excl/intjExample"/>
 			</example>
-	<p><content>Las respuestas de "Sí" y "No" a las preguntas sea similar a las interjecciones.  En </content><langName/><content> se utiliza las palabras siguientes para expresar estas respuestas: </content></p>
+	<p><content>Las respuestas de ‘Sí’ y ‘No’ a las preguntas sea similar a las interjecciones.  En </content><langName/><content> se utiliza las palabras siguientes para expresar estas respuestas: </content></p>
 <example>
 <table border="1">
 					<headerRow>
@@ -98,28 +56,26 @@
 </section2>
 <section2 id="sExclExcl">
 	<secTitle>Exclamaciones</secTitle>
-	<p><content>Las exclamaciones típicamente consisten en una palabra particular, tal como </content><langData>qué</langData><content> o </content><langData>cómo</langData><content> en español, seguida por una frase adjetival y puntuada generalmente con puntos de exclamación. </content></p>
-	<p><content>Algunos ejemplos en español son:  </content></p>
-<ol>
-	<li><content>¡Qué tremendo para usted!</content></li>
-	<li><content>¡Qué agradable!</content></li>
-	<li><content>¡Cómo es maravilloso que su familia podría venir!</content></li>
-</ol>
-	<p><content>Algunos ejemplos de exclamaciones en </content><langName/><content> son:</content></p>
-			<example>
-				<interlinear exampleLoc="excl/exclExample"/>
-			</example>
+   <p><content>Las exclamaciones consisten típicamente en una palabra particular, tal como </content><langData>qué</langData><content> o </content><langData>cómo</langData><content> en español, seguida por una frase adjetival y puntuada generalmente con puntos de exclamación. </content></p>
+	<p><content>Algunos ejemplos en español son:  </content>
+	   <langData>¡Qué tremendo para usted!</langData><content>&#x20;</content><langData>¡Qué agradable!</langData><content> y </content><langData>¡Cómo es maravilloso que su familia podría venir!</langData></p>
+
 	<p show="swExclMNo">
 		<content>En </content>
 		<langName/>
 		<content> no hay una palabra especial que indica exclamaciones, así que no son diferentes de las interjecciones que consisten en adjetivos como en la sección anterior.</content></p>
-	<p show="swExclMYes"><langName/> <content>hay una o más palabras especiales que señalen una exclamación.  Las cuáles se presentan </content><case element="excl" attr="exclMPos">
+   <p show="swExclMYes">        <content>En </content>
+	  <langName/><content>, hay una o más palabras especiales que señalen una exclamación.  Las cuáles se presentan </content><case element="excl" attr="exclMPos">
 <caseText value="before">antes</caseText>
 		<caseText value="after">después</caseText>
 		<caseText value="either">de cualquier lado</caseText>
 		<caseText value="both">en ambos lados</caseText>
-	</case><content> de la frase del adjetivo. Estas palabras que indican exclamaciones son:</content></p>
-<example show="swExclMYes"><table border="0">
+		 <caseText value="unknown">________</caseText>
+	  </case><content> de la frase adjetival. </content>
+	   <text show="swExclMYesEitherNo"><content>Hay restricciones en cuanto a cuáles indicadores pueden presentarse en cada lado de la frase adjetival. </content></text>
+	   <text show="swExclMYesEitherYes"><content>Todos los indicadores pueden presentarse de cualquier lado de la frase adjetival. </content></text>
+	  <content>Estas palabras que indican exclamaciones son:</content></p>
+<example show="swExclMYes"><table border="1">
 <headerRow>
 	<headerCol>Indicadores de la exclamación</headerCol>
 	<headerCol>Glosa</headerCol>
@@ -130,8 +86,10 @@
 	</row>
 </table>
 </example>
-	<p show="swExclMYesEitherNo"><content>Hay restricciones en cuanto a cuáles indicadores pueden presentarse en cada lado de la frase del adjetivo. </content></p>
-	<p show="swExclMYesEitherYes"><content>Todos los indicadores pueden presentarse de cualquier lado de la frase del adjetivo.</content></p>
+   <p><content>Algunos ejemplos de exclamaciones en </content><langName/><content> son:</content></p>
+   <example>
+	  <interlinear exampleLoc="excl/exclExample"/>
+   </example>
 </section2>
   </section1>
 <showWhen id="swExclMYes">
