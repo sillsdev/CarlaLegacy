@@ -289,7 +289,7 @@
 			<section3 id="sCompTypeNonfiniteCP">
 				<secTitle>A Nonfinite Complement with a Complementizer</secTitle>
 				<p>
-<xsl:text>Verbs which take only a nonfinite complement, but the complementizer 'for' is present when the embedded subject is not coreferent with the main clause subject, include the following examples in English: </xsl:text>
+<xsl:text>Verbs which take only a nonfinite complement, but the complementizer ‘for’ is present when the embedded subject is not coreferent with the main clause subject, include the following examples in English: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -423,7 +423,262 @@
 </xsl:choose>
 </example>
 			</section3>
-			<section3 id="sCompTypeOther">
+
+		   <section3 id="sCompRaising">
+			  <secTitle>Raising Constructions</secTitle>
+			  <p>
+<xsl:text>‘Raising’ verbs seem to include all the perception verbs and copulas. These verbs take either a nonfinite complement or an adjective complement which itself has either a finite complement with a complementizer or a nonfinite complement. The main verb does not have its own subject, so the subject position is filled by the subject of the nonfinite complement, as in: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>John seemed to like the tortillas</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Joe is likely to come</langData>
+<xsl:text> and </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>The weather is certain to change soon</langData>
+<xsl:text>.  When the complement clause is finite, the subject cannot be ‘raised’, so a dummy </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>it</langData>
+<xsl:text> fills the main clause subject position in English, as in: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>It seems likely that Joe will come</langData>
+<xsl:text> and </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>It is certain that the weather will change soon</langData>
+<xsl:text>.</xsl:text>
+</p>
+			  <p>
+<xsl:text>Examples of this type in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
+</p>
+			  <example num="xComp.CompType.CompRaising.8">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//comp/raisingExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/raisingExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//comp/raisingExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//comp/raisingExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xComp.CompType.CompRaising.8</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xComp.CompType.CompRaising.8.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+		   </section3>
+
+		   <section3 id="sCompCausative">
+			  <secTitle>Complements of Causatives</secTitle>
+			  <p>
+<xsl:text>Syntactic causatives are made up of two clauses and have an object that also acts as the subject of the complement clause. That complement clause is always nonfinite, but does not need the nonfinite marker with some verbs in English, as in: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>My mother made me clean my room</langData>
+<xsl:text>, while it is required with others, as in: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>The other girl caused us to break up</langData>
+<xsl:text>.</xsl:text>
+</p>
+			  <p>
+<xsl:text>Examples of this type in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
+</p>
+			  <example num="xComp.CompType.CompCausative.8">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//comp/causeExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/causeExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//comp/causeExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//comp/causeExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xComp.CompType.CompCausative.8</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xComp.CompType.CompCausative.8.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+			  <xsl:if test="normalize-space(//ip/@causative)!='no'">
+<p>
+<xsl:text>See section </xsl:text>
+<sectionRef sec="sIPCausatives" />
+<xsl:text> for examples of morphological causatives in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>.</xsl:text>
+</p>
+</xsl:if>
+		   </section3>
+
+		   <section3 id="sCompSpeech">
+			  <secTitle>Direct and Indirect Speech as Complements</secTitle>
+			  <p>
+<xsl:text>Verbs of speaking can have either direct or indirect complements. Direct quotations can be just about any sentence or interjection or greeting, such as: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Sue said, “I will come to your house tomorrow”</langData>
+<xsl:text> or </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Joe said, “Bye!”</langData>
+</p>
+			  <p>
+<xsl:text>Indirect quotations as complements are more restricted. In English, some speech verbs take a finite sentence complement with or without a complementizer, and an optional prepositional phrase to express the hearer, as in: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Sue said (to me) that she would come here tomorrow</langData>
+<xsl:text>.  Others require the hearer to be expressed as an object plus either a finite sentential complement, as in: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Sue told me that she would come here tomorrow</langData>
+<xsl:text>, or a nonfinite sentential complement in which the subject must be coreferent with the main clause subject and dropped, as in: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Sue told me to come here tomorrow</langData>
+<xsl:text>.</xsl:text>
+</p>
+			  <p>
+<xsl:text>Examples of this type in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> include:</xsl:text>
+</p>
+			  <example num="xComp.CompType.CompSpeech.10">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//comp/quotationExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/quotationExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//comp/quotationExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//comp/quotationExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xComp.CompType.CompSpeech.10</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xComp.CompType.CompSpeech.10.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+		   </section3>
+
+		   <section3 id="sCompTypeOther">
 				<secTitle>Other Restrictions on Complement Clauses</secTitle>
 				<p>
 <xsl:text>Some languages also have verbs which have other restrictions on embedded clauses, such as that the embedded verb must be in the subjunctive mood or in the perfective aspect.  Any such examples in </xsl:text>
@@ -504,7 +759,7 @@
 </xsl:choose>
 <xsl:text>, there is </xsl:text>
 <xsl:choose>
-					<xsl:when test="//comp/@comp='no'">no complementizer word or clitic for declarative embedded clauses.</xsl:when>
+				   <xsl:when test="//comp/@comp='no'">no complementizer word or clitic for declarative embedded clauses, so all embedded clauses are simply sentences in this language.</xsl:when>
 					<xsl:when test="//comp/@comp='yes'">at least one complementizer for declarative embedded clauses.</xsl:when>
 				</xsl:choose>
 <xsl:text></xsl:text>
@@ -557,6 +812,10 @@
 </p>
 		</section2>
 	</section1>
+
+
+
+
 
 
 

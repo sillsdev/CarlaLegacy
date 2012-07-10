@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="PronIndefinite" count="5/8">
+<page id="PronIndefinite" count="6/9">
 	<title level="2">Los pronombres - Los indefinidos</title>
-		<introduction>Un tipo final de pronombres es indefinidos.  Los indefinidos pueden ser pronombres al igual que en español <example>todos</example>, <example>todo</example>, <example>algunos</example>, <example>alguien</example> y <example>algo</example>, o pueden ser un cuantificador más un sustantivo genérico indefinido al igual que en español <example>algunas personas</example>.
-				Las versiones negativas de los pronombres indefinidos son <example>nadie</example>, <example>nada</example> y <example>ninguno</example>.  Algunos idiomas pueden no combinarlas en una sola palabra, como en <example>no one 'nadie'</example> para el inglés.</introduction>
+		<introduction>Un tipo final de pronombres es indefinidos.  Los indefinidos pueden ser pronombres como en español <example>todos</example>, <example>todo</example>, <example>algunos</example>, <example>alguien</example> y <example>algo</example>, o pueden ser un cuantificador más un sustantivo genérico indefinido como en español <example>algunas personas</example>.
+		   Las versiones negativas de los pronombres indefinidos son <example>nadie</example>, <example>nada</example> y <example>ninguno</example>.  Algunas lenguas pueden no combinarse en una sola palabra, como en <example>no one ‘nadie’</example> para el inglés.</introduction>
 	<form section="pron">
 		<radioGroup id="PronIndefGroup">
 			<groupName dataItem="indef" default="yes">RPronIndef</groupName>
-				<prompt>¿Hay pronombres indefinidos positivos que son palabras distintas en su idioma?</prompt>
+		   <prompt>Empezando con las formas positivas, ¿existen pronombres indefinidos positivos que se escriben como una sóla palabra en su lengua?</prompt>
 				<radio id="PronIndefYes" dataValue="yes">Sí, por lo menos algunos de ellos se combinan para formar pronombres indefinidos</radio>
 				<radio id="PronIndefNo" dataValue="no">No, son todos frases nominales</radio>
 		</radioGroup>
-		<radioGroup id="PronNegIndefGroup">
+	   <prompt id="PronIndefExamples" show="swPronIndefYes">
+		  Escriba algunos ejemplos de los pronombres indefinidos positivos aquí:</prompt>
+	   <textBox id="PronIndefExample" dataItem="indefExample" show="swPronIndefYes"/>
+	   <prompt id="PronIndefNPExamples">
+		  Escriba algunos ejemplos de las frases nominales indefinidas positivas <span id="PronIndefYesSpan" show="swPronIndefYes">(si hay) </span>en su lengua aquí:</prompt>
+	   <textBox id="PronIndefNPExample" dataItem="indefNPExample"/>
+ <br/><br/>
+	   <radioGroup id="PronNegIndefGroup">
 			<groupName dataItem="negIndef" default="yes">RPronNegIndef</groupName>
-				<prompt>¿Hay pronombres indefinidos negativos que son palabras distintas en su idioma?</prompt>
-				<radio id="PronNegIndefYes" dataValue="yes">Sí, <span id="PronNegIndefNotPosOnlySpan" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">por lo menos algunos de ellos se combinan para formar pronombres indefinidos negativos</span><span id="PronNegIndefPosOnlySpan" show="swQPDeterminerNoOrYesSomeAndPosOnly">pero ningunas frases nominales indefinidas negativas puesto que en su idioma no hay ningún medio de negar una frase nominal</span></radio>
-				<radio id="PronNegIndefNo" dataValue="no">No, <span id="PronNegIndefNotPosOnlySpan2" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">son todos frases nominales</span><span id="PronNegIndefPosOnlySpan2" show="swQPDeterminerNoOrYesSomeAndPosOnly">y no hay frases indefinidas negativas del nominal tampoco puesto que en su idioma no hay ningún medio de negar una frase nominal</span></radio>
+		   <prompt>Para las formas negativas, ¿existen pronombres indefinidos negativos que se escriben como una sóla palabra en su lengua?</prompt>
+				<radio id="PronNegIndefYes" dataValue="yes">Sí, <span id="PronNegIndefNotPosOnlySpan" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">por lo menos algunos de ellos se combinan para formar pronombres indefinidos negativos</span><span id="PronNegIndefPosOnlySpan" show="swQPDeterminerNoOrYesSomeAndPosOnly">pero ningunas frases nominales indefinidas negativas puesto que en su lengua no hay ningún medio de negar una frase nominal</span></radio>
+				<radio id="PronNegIndefNo" dataValue="no">No, <span id="PronNegIndefNotPosOnlySpan2" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">son todos frases nominales</span><span id="PronNegIndefPosOnlySpan2" show="swQPDeterminerNoOrYesSomeAndPosOnly">y no hay frases nominales indefinidas negativas tampoco puesto que en su lengua no hay ningún medio de negar una frase nominal</span></radio>
 		</radioGroup>
-		<prompt id="PronIndefExamples" show="swPronIndefYes">
-				Escriba algunos ejemplos de los pronombres indefinidos positivos aquí:</prompt>
-		<textBox id="PronIndefExample" dataItem="indefExample" show="swPronIndefYes"/>
 		<prompt id="PronNegIndefExamples" show="swPronNegIndefYes">
 				Escriba algunos ejemplos de los pronombres indefinidos negativos aquí:</prompt>
 		<textBox id="PronNegIndefExample" dataItem="negIndefExample" show="swPronNegIndefYes"/>
-		<prompt id="PronIndefNPExamples">
-				Escriba algunos ejemplos de las oraciones nominales indefinidas positivas <span id="PronIndefYesSpan" show="swPronIndefYes">(si hay) </span>en su idioma aquí:</prompt>
-		<textBox id="PronIndefNPExample" dataItem="indefNPExample"/>
 		<prompt id="PronNegIndefNPExamples" show="swQPDeterminerNotNoOrYesSomeAndPosOnly">
-				Escriba algunos ejemplos de las oraciones nominales indefinidas negativas <span id="PronNegIndefYesSpan1" show="swPronNegIndefYes">(si hay) </span>en su idioma aquí:</prompt>
+				Escriba algunos ejemplos de las oraciones nominales indefinidas negativas <span id="PronNegIndefYesSpan1" show="swPronNegIndefYes">(si hay) </span>en su lengua aquí:</prompt>
 		<textBox id="PronNegIndefNPExample" dataItem="negIndefNPExample" show="swQPDeterminerNotNoOrYesSomeAndPosOnly"/>
 		<instruction id="PronNegIndefYesInstruction" show="swPronNegIndefYesAndQPDeterminerYesOrYesNo">
-			Add the feature <feature>negative</feature> to the negative indefinite pronouns.  The negative quantifier determiners meaning 'no' that can be used in a negative indefinite noun phrase should have already been marked with the features <feature>negative makeDet</feature> in <section number="2">Quantifiers and QP - No other modifiers</section>.  If any of the ones noted here were missed, marked them now.   We will leave <feature>indefinite</feature> unspecified.</instruction>
+		   Add the feature <feature>negative</feature> to the negative indefinite pronouns.  The negative quantifier determiners meaning ‘no’ that can be used in a negative indefinite noun phrase should have already been marked with the features <feature>negative makeDet</feature> in <section number="2">Quantifiers and QP - No other modifiers</section>.  If any of the ones noted here were missed, marked them now.   We will leave <feature>indefinite</feature> unspecified.</instruction>
 		<instruction id="PronNegIndefYesInstruction2" show="swPronNegIndefYesAndQPDeterminerNoOrYesSomeAndPosOnly">
 			Add the feature <feature>negative</feature> to the negative indefinite pronouns.   We will leave <feature>indefinite</feature> unspecified.</instruction>
 		<instruction id="PronNegIndefYesInstruction3" show="swPronNegIndefYesAndQPDeterminerNoOrYesSomeAndNotPosOnly">
-			Add the feature <feature>negative</feature> to the negative indefinite pronouns.  Any negative special degree elements meaning 'not' that can be used in a negative indefinite noun phrase should have already been marked with the proper features in <section number="2">Quantifiers and QP</section>.  If any of the ones noted here were missed, marked them now: those written as separate words need the features <feature>negative makeDeg modifies_NP</feature>; phrasal clitics which attach to the front first word of the nominal phrase need the feature <feature>negative_prefix</feature> and phrasal clitics which attach to the end of the last word in the nominal phrase need the feature <feature>negative_suffix</feature>; affixes that attach to the head noun need only the feature <feature>negative</feature>.   We will leave <feature>indefinite</feature> unspecified.</instruction>
+		   Add the feature <feature>negative</feature> to the negative indefinite pronouns.  Any negative special degree elements meaning ‘not’ that can be used in a negative indefinite noun phrase should have already been marked with the proper features in <section number="2">Quantifiers and QP</section>.  If any of the ones noted here were missed, marked them now: those written as separate words need the features <feature>negative makeDeg modifies_NP</feature>; phrasal clitics which attach to the front first word of the nominal phrase need the feature <feature>negative_prefix</feature> and phrasal clitics which attach to the end of the last word in the nominal phrase need the feature <feature>negative_suffix</feature>; affixes that attach to the head noun need only the feature <feature>negative</feature>.   We will leave <feature>indefinite</feature> unspecified.</instruction>
 		<instruction id="PronNegIndefNoInstruction" show="swPronNegIndefNoAndQPDeterminerNotNoOrYesSome">
-			The negative quantifier determiners meaning 'no' that can be used in a negative indefinite noun phrase should have already been marked with the features <feature>negative makeDet</feature> in <section number="2">Quantifiers and QP - No other modifiers</section>.  If any of the ones noted here were missed, marked them now.  We will leave <feature>indefinite</feature> unspecified.</instruction>
+		   The negative quantifier determiners meaning ‘no’ that can be used in a negative indefinite noun phrase should have already been marked with the features <feature>negative makeDet</feature> in <section number="2">Quantifiers and QP - No other modifiers</section>.  If any of the ones noted here were missed, marked them now.  We will leave <feature>indefinite</feature> unspecified.</instruction>
 		<instruction id="PronNegIndefNoInstruction2" show="swPronNegIndefNoAndQPDeterminerNoOrYesSomeAndNotPosOnly">
-			Any negative special degree elements meaning 'not' that can be used in a negative indefinite noun phrase should have already been marked with the proper features in <section number="2">Quantifiers and QP</section>.  If any of the ones noted here were missed, marked them now: those written as separate words need the features <feature>negative makeDeg modifies_NP</feature>; phrasal clitics which attach to the front first word of the nominal phrase need the feature <feature>negative_prefix</feature> and phrasal clitics which attach to the end of the last word in the nominal phrase need the feature <feature>negative_suffix</feature>; affixes that attach to the head noun need only the feature <feature>negative</feature>.   We will leave <feature>indefinite</feature> unspecified.</instruction>
+		   Any negative special degree elements meaning ‘not’ that can be used in a negative indefinite noun phrase should have already been marked with the proper features in <section number="2">Quantifiers and QP</section>.  If any of the ones noted here were missed, marked them now: those written as separate words need the features <feature>negative makeDeg modifies_NP</feature>; phrasal clitics which attach to the front first word of the nominal phrase need the feature <feature>negative_prefix</feature> and phrasal clitics which attach to the end of the last word in the nominal phrase need the feature <feature>negative_suffix</feature>; affixes that attach to the head noun need only the feature <feature>negative</feature>.   We will leave <feature>indefinite</feature> unspecified.</instruction>
 		<br/>
 <br/>
 		<buttons>
-			<button id="PronIndefBack" value="Back" goto="PronReciprocal.xml"/>
+			<button id="PronIndefBack" value="Back" goto="PronDem.xml"/>
 			<button id="PronIndefNext" value="Next" goto="PronNP.xml"/>
 		</buttons>
 	</form>

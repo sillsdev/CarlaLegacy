@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="PPOther" count="3/5">
+	<title level="2">Pre/Post-Positional Phrases - Other Complements</title>
+	<introduction> In addition, some prepositions or postpositions can stand alone without a complement due to particle movement, such as in the sentences <example>Come [right in]</example> and <example>John turned the light [on/off]</example>.  Also, consider whether your language allows prepositions or postpositions to be stranded when its complement is fronted with questions, as in <example>Who(m) did you give the book [to _ ]?</example>
+	</introduction>
+	<form section="pp">
+		<radioGroup>
+			<groupName dataItem="alone" default="no">RPPAlone</groupName>
+			<prompt>Does your language allow any <span id="PPPrepSpanO2" show="swPPPosPrep">prepositions</span>
+				<span id="PPPostSpanO2" show="swPPPosPost">postpositions</span>
+				<span id="PPBothSpanO2" show="swPPPosBoth">prepositions and postpositions</span> to stand alone due to movement or stranding as in any of the English examples above?</prompt>
+			<radio id="PPAloneNo" dataValue="no">No</radio>
+			<radio id="PPAloneYes" dataValue="yes">Yes</radio>
+		</radioGroup>
+		<prompt id="PPAloneYesPrompt" show="swPPAloneYes">Key some examples from your language of such cases of <span id="PPPrepSpanO1" show="swPPPosPrep">prepositions</span>
+			<span id="PPPostSpanO1" show="swPPPosPost">postpositions</span>
+			<span id="PPBothSpanO1" show="swPPPosBoth">prepositions and postpositions</span> without an immediate complement, included in simple full sentences here:</prompt>
+		<textBox id="PPCompAloneExample" dataItem="aloneExample" show="swPPAloneYes"/>
+		<br/>
+		<br/>
+		<prompt id="PPCliticOnlyAloneInstruction" show="swPPTypeCliticAloneYes">Since your language has only clitic <span id="PPPrepSpanO3" show="swPPPosPrep">prepositions,</span>
+			<span id="PPPostSpanO3" show="swPPPosPost">postpositions,</span>
+			<span id="PPBothSpanO3" show="swPPPosBoth">prepositions and postpositions,</span> it should not be possible for them to stand alone.  If you do have forms which can stand alone, go back and change the earlier answer to ‘Some are written as separate words, but some are clitics written attached to another word’.</prompt>
+<br/>
+	   <introduction>Most languages will allow locative adverbs as complements of prepositions or postpositions, such as <example>over there</example> and <example>in here</example>.</introduction>
+		<radioGroup>
+			<groupName dataItem="locative" default="no">RPPLocative</groupName>
+			<prompt>Does your language allow locative adverbs as complements of <span id="PPPrepSpanO5" show="swPPPosPrep">prepositions?</span>
+				<span id="PPPostSpanO5" show="swPPPosPost">postpositions?</span>
+				<span id="PPBothSpanO5" show="swPPPosBoth">prepositions and postpositions?</span>
+			</prompt>
+			<radio id="PPLocativeNo" dataValue="no">No</radio>
+			<radio id="PPLocativeYes" dataValue="yes">Yes</radio>
+		</radioGroup>
+		<prompt id="PPLocativeYesPrompt" show="swPPLocativeYes">Key some examples with locative adverbs as complements here:</prompt>
+		<textBox id="PPCompLocExample" dataItem="locExample" show="swPPLocativeYes"/>
+		<br/>
+		<br/>
+		<instruction id="PPCliticOnlyLocativeInstruction" show="swPPTypeCliticLocativeYes">Since your language has only clitic <span id="PPPrepSpanO6" show="swPPPosPrep">prepositions,</span>
+			<span id="PPPostSpanO6" show="swPPPosPost">postpositions,</span>
+			<span id="PPBothSpanO6" show="swPPPosBoth">prepositions and postpositions,</span> we will assume that they can attach to adverbs, but the phrasal category in this situation wll remain AdvP, not change to PP.</instruction>
+		<introduction>Locative prepositions and postpositions are a special group in that they can take another locative PP as their complement.  English examples of this type include: <example>up [to the top]</example>, <example>around [behind the shed]</example> and <example>over [by the table]</example>.</introduction>
+		<radioGroup>
+			<groupName dataItem="ppComp" default="no">RPPCompPP</groupName>
+			<prompt>Does your language have any locative <span id="PPPrepSpanO9" show="swPPPosPrep">prepositions</span>
+				<span id="PPPostSpanO9" show="swPPPosPost">postpositions</span>
+				<span id="PPBothSpanO9" show="swPPPosBoth">prepositions and postpositions</span> which take a locative PP complement?</prompt>
+			<radio id="PPCompPPNo" dataValue="no">No</radio>
+			<radio id="PPCompPPYes" dataValue="yes">Yes</radio>
+		</radioGroup>
+		<prompt id="PPCompPPYesPrompt" show="swPPCompPPYes">Key some examples of locative PP complements of locative <span id="PPPrepSpanO8" show="swPPPosPrep">prepositions</span>
+			<span id="PPPostSpanO8" show="swPPPosPost">postpositions</span>
+			<span id="PPBothSpanO8" show="swPPPosBoth">prepositions and postpositions</span> here:</prompt>
+		<textBox id="PPCompPPExample" dataItem="compPPExample" show="swPPCompPPYes"/>
+		<br/>
+		<br/>
+		<instruction id="PPCompPPYesInstruction" show="swPPCompPPYesExceptClitic">The rule allowing the PP complements is restricted to only locative prepositions or postpositions.  Therefore, in the lexicon, you need to add the feature <feature>locative</feature> to all the <span id="PPPrepSpanO12" show="swPPPosPrep">prepositions</span>
+			<span id="PPPostSpanO12" show="swPPPosPost">postpositions</span>
+			<span id="PPBothSpanO12" show="swPPPosBoth">prepositions and postpositions</span> which can take a locative PP complement.</instruction>
+		<instruction id="PPCliticOnlyCompPPInstruction" show="swPPTypeCliticCompPPYes">Since your language has only clitic <span id="PPPrepSpanO10" show="swPPPosPrep">prepositions,</span>
+			<span id="PPPostSpanO10" show="swPPPosPost">postpositions,</span>
+			<span id="PPBothSpanO10" show="swPPPosBoth">prepositions and postpositions,</span> if two locative <span id="PPPrepSpanO11" show="swPPPosPrep">prepositions</span>
+			<span id="PPPostSpanO11" show="swPPPosPost">postpositions</span>
+			<span id="PPBothSpanO11" show="swPPPosBoth">prepositions or postpositions</span> attach, it will still come out as a single locative PP (or locative AdvP if the head is an adverb).</instruction>
+	<br/>
+	   <introduction>Temporals such as <example>before</example> and <example>after</example> are prepositions or postpositions when they take a nominal phrase complement, as in <example>before you</example> or <example>after that</example>.  They can also have a gerund complement, as in <example>before [signing the contract]</example> and <example>after [buying our new house]</example>, since gerunds are a special type of nominal phrase.
+		  <br/><br/>These same words can also have full sentences as their complements, as in <example>before [the rain stops]</example> and <example>after [John came home]</example>.  In this usage, they are temporal adverbs instead of prepositions or postpositions, and the whole phrase is an adverbial clause which normally modifies the main sentence.  Such examples will be handled in <section number="13.">Adverbial Clauses</section>.</introduction>
+		<radioGroup>
+			<groupName dataItem="tempComp" default="no">RPPTempComp</groupName>
+			<prompt>Does your language have any temporal <span id="PPPrepSpanO13" show="swPPPosPrep">prepositions</span>
+				<span id="PPPostSpanO13" show="swPPPosPost">postpositions</span>
+				<span id="PPBothSpanO13" show="swPPPosBoth">prepositions and postpositions</span> which take a nominal phrase or gerund complement?</prompt>
+			<radio id="PPTempCompNo" dataValue="no">No</radio>
+			<radio id="PPTempCompYes" dataValue="yes">Yes</radio>
+		</radioGroup>
+		<prompt id="PPTempCompYesPrompt" show="swPPTempCompYes">Key some examples of temporal PPs, included in simple full sentences here:</prompt>
+		<textBox id="PPTempCompExample" dataItem="tempExample" show="swPPTempCompYes"/>
+		<br/>
+		<br/>
+
+		<instruction id="PPTempCompYesInstruction" show="swPPTempCompYes">In the lexicon, mark the temporal <span id="PPPrepSpanO15" show="swPPPosPrep">prepositions </span>
+			<span id="PPPostSpanO15" show="swPPPosPost">postpositions </span>
+		   <span id="PPBothSpanO15" show="swPPPosBoth">prepositions and postpositions </span>with the feature <feature>temporal</feature>.  If  these same words can also take a sentential complement, you will need two separate entries so one can have the category <category>P</category> and the other the category <category>Adv</category>.  The adverb entry will also need the features <feature>temporal sentential</feature> as will be discussied further in <section number="13.">Adverbial Clauses</section>.</instruction>
+		<br/>
+		<buttons>
+			<button id="PPOtherBack" value="Back" goto="PPComps.xml"/>
+			<button id="PPOtherNext" value="Next" goto="PPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swPPCompPPYesExceptClitic">
+		<whenRadio button="PPCompPPYes"/>
+		<and/>
+		<not/>
+		<whenValue element="pp" attr="pType" value="clitic"/>
+	</showWhen>
+
+	<showWhen id="swPPCompPPYes">
+		<whenRadio button="PPCompPPYes"/>
+	</showWhen>
+	<showWhen id="swPPPosPrep">
+		<whenValue element="pp" attr="pPos" value="before"/>
+	</showWhen>
+	<showWhen id="swPPPosPost">
+		<whenValue element="pp" attr="pPos" value="after"/>
+	</showWhen>
+	<showWhen id="swPPPosBoth">
+		<whenValue element="pp" attr="pPos" value="both"/>
+	</showWhen>
+	<showWhen id="swPPAloneYes">
+		<whenRadio button="PPAloneYes"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticAloneYes">
+		<whenValue element="pp" attr="pType" value="clitic"/>
+		<and/>
+		<whenRadio button="PPAloneYes"/>
+	</showWhen>
+	<showWhen id="swPPLocativeYes">
+		<whenRadio button="PPLocativeYes"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticLocativeYes">
+		<whenValue element="pp" attr="pType" value="clitic"/>
+		<and/>
+		<whenRadio button="PPLocativeYes"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticCompPPYes">
+		<whenValue element="pp" attr="pType" value="clitic"/>
+		<and/>
+		<whenRadio button="PPCompPPYes"/>
+	</showWhen>
+   <showWhen id="swPPTempCompYes">
+	  <whenRadio button="PPTempCompYes"/>
+   </showWhen>
+</page>

@@ -10,8 +10,9 @@
 				<caseText value="unknown">Prepositional and/or Postpositional Phrases</caseText>
 			</case>
 			</secTitle>
-		<p>
-			<content>This section covers the internal structure of prepositional or postpositional phrases.  Prepositions come before their complements, while postpositions come afterward.  English has prepositions, as shown in </content>
+	   <p>
+		  <content>This section covers the internal structure of prepositional or postpositional phrases, which usually express location, accompaniment, goal, instrument, recipient, or agent for languages which do not have case marking on nouns or nominal phrases.    Languages with case marking normally still have locative and temporal prepositional or postpositional phrases.</content></p>
+	   <p><content>Prepositions come before their complements, while postpositions come afterward.  English has prepositions, as shown in </content>
 			<langData>for Joe</langData>
 			<content> and </content>
 			<langData>by the river</langData>
@@ -29,20 +30,25 @@
 			</case>
 			<content/>
 			<case element="pp" attr="pType">
-				<caseText value="word">They are all separate syntactic words.</caseText>
+				<caseText value="word">They are all separate words.</caseText>
 				<caseText value="clitic">They are all clitics written attached to another word.</caseText>
-				<caseText value="both">Some are written as separate syntactic words, but some are clitics written attached to another word.  </caseText>
+				<caseText value="both">Some are written as separate words, but some are clitics written attached to another word.  </caseText>
 			</case>
 			<content/>
 			<text show="swPPTypeCliticOrBoth">
 				<content>The clitics attach </content>
 				<case element="pp" attr="attaches">
-					<caseText value="egde">at the edge</caseText>
+					<caseText value="edge">at the edge</caseText>
 					<caseText value="head">to the head</caseText>
 				</case>
 				<content> of the complement phrase.</content>
 			</text>
-			<content>  See the examples in section</content><sectionRef sec="sPPComps"/><content>.</content>
+		   <content>  See the examples in section </content><sectionRef sec="sPPComps"/><content>.  </content><text show="swPPClassifierYesAndWordOrBoth"><case element="pp" attr="pPos">
+			  <caseText value="before">Prepositions</caseText>
+		   <caseText value="after">Postpositions</caseText>
+		   <caseText value="both">Prepositions and postpositions</caseText>
+			  <caseText value="unknown">Prepositions and/or postpositions</caseText></case>
+			  <content> are marked with classifiers in </content><langName/><content> as part of the concord agreement system.</content> </text>
 		</p>
 
 				<p>
@@ -66,7 +72,7 @@
 				<langData>just around the corner</langData>
 				<content> and </content>
 				<langData>right to the last second</langData>
-				<content>. Ordinal numbers and adjectives can also modify </content>
+			   <content>. Some languages have a set of locative adverbs meaning </content><gloss><content>‘right here’</content></gloss><content> and </content><gloss><content>‘right there’</content></gloss><content> that can modify PPs. Ordinal numbers and adjectives can also modify </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">prepositional</caseText>
 					<caseText value="after">postpositional</caseText>
@@ -125,10 +131,13 @@
 						<caseText value="degree">only degree words</caseText>
 						<caseText value="ordinal">only ordinals</caseText>
 						<caseText value="manner">only manner adverbials</caseText>
-						<caseText value="degreeAndOrdinal">both degree words and ordinals, but not manner adverbials</caseText>
-						<caseText value="degreeAnd Manner">both degree words and manner adverbials, but not ordinals</caseText>
-						<caseText value="mannerAndOrdinal">both manner adverbials and ordinals, but not degree words</caseText>
-						<caseText value="all">all three types, degree words, manner adverbials and ordinals,</caseText>
+					   <caseText value="locative">only locative adverbials</caseText>
+						<caseText value="degreeAndOrdinal">both degree words and ordinals, but no adverbials</caseText>
+						<caseText value="degreeAnd Manner">both degree words and manner adverbials, but not ordinals or locative adverbials</caseText>
+						<caseText value="mannerAndOrdinal">both manner adverbials and ordinals, but not degree words or locative adverbials</caseText>
+					   <caseText value="mannerAndLocative">both manner and locative adverbials, but not degree words or ordinals</caseText>
+						<caseText value="all">all three main types, degree words, manner adverbials and ordinals,</caseText>
+					   <caseText value="all4">all four types, degree words, manner and locative adverbials and ordinals,</caseText>
 					</case>
 					<content> as modifiers to </content>
 					<case element="pp" attr="pPos">
@@ -267,12 +276,56 @@
 							<caseText value="both">prepositional or postpositional</caseText>
 							<caseText value="unknown">prepositional or postpositional</caseText>
 						</case>
-						<content> phrase.</content>
+						<content> phrase.  </content>
 					</text>
 					<content/>
 				</text>
 				<content/>
-			</p>
+		   <text show="swPPModifiersYesLocative">
+			  <content>The locative adverbials occur </content>
+			  <case element="pp" attr="locativePos">
+				 <caseText value="before">before</caseText>
+				 <caseText value="after">after</caseText>
+				 <caseText value="either">on either side (but not both sides) of</caseText>
+				 <caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+				 <caseText value="beforeOrBoth">before or on both sides of</caseText>
+				 <caseText value="afterOrBoth">after or on both sides of</caseText>
+				 <caseText value="both">on both sides of</caseText>
+				 <caseText value="unknown">_______</caseText>
+			  </case>
+			  <content> the rest of the </content>
+			  <case element="pp" attr="pPos">
+				 <caseText value="before">prepositional</caseText>
+				 <caseText value="after">postpositional</caseText>
+				 <caseText value="both">prepositional or postpositional</caseText>
+				 <caseText value="unknown">prepositional or postpositional</caseText>
+			  </case>
+			  <content> phrase.  </content>
+		   </text>
+		   <content/>
+		   <text show="swPPLocativeEitherUnrestricted">
+			  <content>All the locative adverbials can occur on either side of the </content>
+			  <case element="pp" attr="pPos">
+				 <caseText value="before">prepositional</caseText>
+				 <caseText value="after">postpositional</caseText>
+				 <caseText value="both">prepositional or postpositional</caseText>
+				 <caseText value="unknown">prepositional or postpositional</caseText>
+			  </case>
+			  <content> phrase.  </content>
+		   </text>
+		   <content/>
+		   <text show="swPPLocativeEitherRestricted">
+			  <content>There are restrictions as to which of the locative adverbials can occur on each side of the </content>
+			  <case element="pp" attr="pPos">
+				 <caseText value="before">prepositional</caseText>
+				 <caseText value="after">postpositional</caseText>
+				 <caseText value="both">prepositional or postpositional</caseText>
+				 <caseText value="unknown">prepositional or postpositional</caseText>
+			  </case>
+			  <content> phrase.</content>
+		   </text>
+		   <content/>
+		   </p>
 		</section2>
 		 <section2 id="sPPComps">
 			 <secTitle><case  element="pp" attr="pPos">
@@ -288,7 +341,7 @@
 					<caseText value="both">Prepositions and postpositions</caseText>
 					<caseText value="unknown">Prepositions and/or postpositions</caseText>
 				</case><content> normally take a nominal phrase for their complements, as in </content>
-				<langData>to [Bill's house]</langData>
+				<langData>to [Bill’s house]</langData>
 				<content> and </content>
 				<langData>under [the giant Sycamore tree]</langData>
 				<content>. </content>
@@ -310,7 +363,7 @@
 						<caseText value="after">postpositions</caseText>
 						<caseText value="both">prepositions or postpositions</caseText>
 						<caseText value="unknown">prepositions or postpositions</caseText>
-					</case><content>  can stand alone without a complement, such as in the sentences </content>
+					</case><content>  can stand alone without a complement due to particle movement, such as in the sentences </content>
 					<langData>Come [right in]</langData>
 					<content> and </content>
 					<langData>John turned the light [on/off]</langData>
@@ -320,7 +373,7 @@
 						<caseText value="after">postpositions</caseText>
 						<caseText value="both">prepositions or postpositions</caseText>
 						<caseText value="unknown">prepositions or postpositions</caseText>
-					</case><content> to be stranded in questions, as in </content>
+					</case><content> to be stranded when its complement is fronted with questions, as in </content>
 					<langData>Who(m) did you give the book [to _ ]?</langData>
 					<content/>
 				</p>
@@ -481,11 +534,25 @@
 					<interlinear exampleLoc="pp/compPPExample"/>
 				</example>
 			</section3>
-			<section3 id="sPPSent">
-				<secTitle>Sentential Complements</secTitle>
+			<section3 id="sPPTemp">
+			   <secTitle><case  element="pp" attr="pPos">
+				  <caseText value="before">Complements of Temporal Prepositions</caseText>
+				  <caseText value="after">Complements of Temporal Postpositions</caseText>
+				  <caseText value="both">Complements of Temporal Prepositions and Postpositions</caseText>
+				  <caseText value="unknown">Complements of Temporal Prepositions and/or Postpositions</caseText>
+			   </case></secTitle>
 				<p>
-					<content>Temporal </content>
-					<case element="pp" attr="pPos">
+					<content>Temporals such as </content><langData>before</langData><content> and </content><langData>after</langData><content> are </content>
+				   <case element="pp" attr="pPos">
+					  <caseText value="before">prepositions</caseText>
+					  <caseText value="after">postpositions</caseText>
+					  <caseText value="both">prepositions or postpositions</caseText>
+					  <caseText value="unknown">prepositions or postpositions</caseText>
+				   </case><content> when they take a nominal phrase complement, as in </content><langData>before you</langData><content> or </content><langData>after that</langData>
+	  <content>.  They can also have a gerund complement, as in </content><langData>before [signing the contract]</langData><content> and </content><langData>after [buying our new house]</langData>
+<content>, since gerunds are a special type of nominal phrase.</content> </p>
+			   <p><content>These same temporal </content>
+				   <case element="pp" attr="pPos">
 						<caseText value="before">prepositions</caseText>
 						<caseText value="after">postpositions</caseText>
 						<caseText value="both">prepositions or postpositions</caseText>
@@ -494,13 +561,19 @@
 					<langData>before [the rain stops]</langData>
 					<content> and </content>
 					<langData>after [John came home]</langData>
-					<content>.</content>
-				</p>
+					<content>.  In this usage, they are temporal adverbs instead of </content>
+				  <case element="pp" attr="pPos">
+					 <caseText value="before">prepositions</caseText>
+					 <caseText value="after">postpositions</caseText>
+					 <caseText value="both">prepositions or postpositions</caseText>
+					 <caseText value="unknown">prepositions or postpositions</caseText>
+				  </case><content>, and the whole phrase is an adverbial clause which normally modifies the main sentence.  Such examples will be detailed in section </content><sectionRef sec="sAdvCl"/><content>.</content>
+			   </p>
 				<p>
 					<content/>
 					<langName/>
 					<content/>
-					<case element="pp" attr="sentComp">
+					<case element="pp" attr="tempComp">
 						<caseText value="no"> does not have any</caseText>
 						<caseText value="yes"> has</caseText>
 					</case>
@@ -520,14 +593,14 @@
 					<text show="swPPPosBoth">
 						<content>prepositions and postpositions</content>
 					</text>
-					<content> which take a sentential complement.  </content>
-					<text show="swPPSentCompYes">
-						<content>Some examples with sentential complements, included in full sentences are:</content>
+					<content> which take a nominal phrase or a gerund complement.  </content>
+					<text show="swPPTempCompYes">
+						<content>Some examples with nominal phrase or gerund complements, included in full sentences are:</content>
 					</text>
 					<content/>
 				</p>
-				<example show="swPPSentCompYes">
-					<interlinear exampleLoc="pp/sentExample"/>
+				<example show="swPPTempCompYes">
+					<interlinear exampleLoc="pp/tempExample"/>
 				</example>
 			</section3>
 		</section2>
@@ -546,6 +619,8 @@
 		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="all"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="all4"/>
 	</showWhen>
 	<showWhen id="swPPDegreeEitherRestricted">
 		<whenValue element="pp" attr="modifierType" value="degree"/>
@@ -554,7 +629,7 @@
 		<and/>
 		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
 		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+		<whenValue element="pp" attr="degreeRestricted" value="restricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="degreeAndManner"/>
 		<and/>
@@ -562,7 +637,7 @@
 		<and/>
 		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
 		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+	   <whenValue element="pp" attr="degreeRestricted" value="restricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
 		<and/>
@@ -570,7 +645,7 @@
 		<and/>
 		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
 		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+	   <whenValue element="pp" attr="degreeRestricted" value="restricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="all"/>
 		<and/>
@@ -578,7 +653,15 @@
 		<and/>
 		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
 		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+	   <whenValue element="pp" attr="degreeRestricted" value="restricted"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="all4"/>
+	   <and/>
+	   <whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="degreeRestricted" value="restricted"/>
 	</showWhen>
 	<showWhen id="swPPDegreeEitherUnrestricted">
 		<whenValue element="pp" attr="modifierType" value="degree"/>
@@ -587,7 +670,7 @@
 		<and/>
 		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
 		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="degreeRestricted" value="unrestricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="degreeAndManner"/>
 		<and/>
@@ -595,7 +678,7 @@
 		<and/>
 		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
 		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="degreeRestricted" value="unrestricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
 		<and/>
@@ -603,7 +686,7 @@
 		<and/>
 		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
 		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="degreeRestricted" value="unrestricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="all"/>
 		<and/>
@@ -611,7 +694,15 @@
 		<and/>
 		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
 		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="degreeRestricted" value="unrestricted"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="all4"/>
+	   <and/>
+	   <whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="degreeRestricted" value="unrestricted"/>
 	</showWhen>
 	<showWhen id="swPPModifiersYesOrdinal">
 		<whenValue element="pp" attr="modifierType" value="ordinal"/>
@@ -621,72 +712,90 @@
 		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="all"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="all4"/>
 	</showWhen>
 	<showWhen id="swPPOrdinalEitherRestricted">
 		<whenValue element="pp" attr="modifierType" value="ordinal"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalRestricted" value="restricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalRestricted" value="restricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalRestricted" value="restricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="all"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalRestricted" value="restricted"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="all4"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalRestricted" value="restricted"/>
 	</showWhen>
 	<showWhen id="swPPOrdinalEitherUnrestricted">
 		<whenValue element="pp" attr="modifierType" value="ordinal"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalRestricted" value="unrestricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalRestricted" value="unrestricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalRestricted" value="unrestricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="all"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalRestricted" value="unrestricted"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="all4"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="ordinalRestricted" value="unrestricted"/>
 	</showWhen>
 	<showWhen id="swPPModifiersYesManner">
 		<whenValue element="pp" attr="modifierType" value="manner"/>
@@ -696,78 +805,179 @@
 		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="all"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="all4"/>
 	</showWhen>
 	<showWhen id="swPPMannerEitherRestricted">
 		<whenValue element="pp" attr="modifierType" value="manner"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
+		<whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
+		<whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
 		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="degreeAndManner"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="all"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="restricted"/>
+	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="all4"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
 	</showWhen>
 	<showWhen id="swPPMannerEitherUnrestricted">
 		<whenValue element="pp" attr="modifierType" value="manner"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="degreeAndManner"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
 		<or/>
 		<whenValue element="pp" attr="modifierType" value="all"/>
 		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeEither" value="unrestricted"/>
+	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
+	   <or/>
+	   <whenValue element="pp" attr="modifierType" value="all4"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
 	</showWhen>
-	<showWhen id="swPPTypeCliticOrBoth">
+   <showWhen id="swPPModifiersYesLocative">
+	  <whenValue element="pp" attr="modifierType" value="locative"/>
+	  <or/>
+	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
+	  <or/>
+	  <whenValue element="pp" attr="modifierType" value="all4"/>
+   </showWhen>
+   <showWhen id="swPPLocativeEitherRestricted">
+	  <whenValue element="pp" attr="modifierType" value="locative"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativeRestricted" value="restricted"/>
+	  <or/>
+	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativeRestricted" value="restricted"/>
+	  <or/>
+	  <whenValue element="pp" attr="modifierType" value="all4"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativeRestricted" value="restricted"/>
+   </showWhen>
+   <showWhen id="swPPLocativeEitherUnrestricted">
+	  <whenValue element="pp" attr="modifierType" value="locative"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativeRestricted" value="unrestricted"/>
+	  <or/>
+	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativeRestricted" value="unrestricted"/>
+	  <or/>
+	  <whenValue element="pp" attr="modifierType" value="all4"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="locativeRestricted" value="unrestricted"/>
+   </showWhen>
+   <showWhen id="swPPClassifierYesAndWordOrBoth">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="pp" attr="ppClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+   </showWhen>
+
+   <showWhen id="swPPTypeCliticOrBoth">
 		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
 	</showWhen>
-	<showWhen id="swPPSentCompYes">
-		<whenValue element="pp" attr="sentComp" value="yes"/>
+	<showWhen id="swPPTempCompYes">
+		<whenValue element="pp" attr="tempComp" value="yes"/>
 	</showWhen>
 	<showWhen id="swPPCompPPYes">
 		<whenValue element="pp" attr="ppComp" value="yes"/>

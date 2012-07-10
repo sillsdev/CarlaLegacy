@@ -8,7 +8,7 @@
 </p>
 		<ul>
 			<li>
-				<xsl:text>like a complement clause headed by 'that', as in </xsl:text>
+				<xsl:text>like a complement clause headed by ‘that’, as in </xsl:text>
 				<langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -16,7 +16,7 @@
 				<xsl:text>;</xsl:text>
 			</li>
 			<li>
-				<xsl:text>like a content question with 'who' or 'which' fronted, as in </xsl:text>
+				<xsl:text>like a content question with ‘who’ or ‘which’ fronted, as in </xsl:text>
 				<langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -31,7 +31,17 @@
 			</li>
 		</ul>
 		<p>
-<xsl:text>Some languages also allow one of the above structures to occur by itself as a nominal phrase without a head noun to modify, usually called "headless" relative clauses.</xsl:text>
+<xsl:text>Some languages also allow one of the above structures to occur by itself as a nominal phrase without a head noun to modify, usually called “headless” relative clauses.  For example, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Julie brought [the food that we ate today]</langData>
+<xsl:text> has a full relative clause in the object position, while </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Julie brought [what we ate today]</langData>
+<xsl:text> has a headless relative clause as the object.</xsl:text>
 </p>
 		<p>
 <xsl:if test="normalize-space(//relcl/@exist)='no'">
@@ -80,9 +90,9 @@
 				<xsl:if test="normalize-space(//relcl/@type)='CP'">
 					<xsl:text> </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//relcl/@compCP='no'">are like questions because a "wh" word is fronted.</xsl:when>
+						<xsl:when test="//relcl/@compCP='no'">are like questions because a “wh” word is fronted.</xsl:when>
 						<xsl:when test="//relcl/@compCP='yes'">are like complement clauses with relative markers that </xsl:when>
-						<xsl:when test="//relcl/@compCP='yesBoth'">are like questions because a "wh" word is fronted and some are  like complement clauses with relative markers that </xsl:when>
+						<xsl:when test="//relcl/@compCP='yesBoth'">are like questions because a “wh” word is fronted and some are like complement clauses with relative markers that </xsl:when>
 					</xsl:choose>
 					<xsl:if test="normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' or normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no'">
 						<xsl:text>are </xsl:text>
@@ -94,9 +104,9 @@
 						<xsl:if test="normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='no' or normalize-space(//relcl/@relWord)='no' and normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)='no' and normalize-space(//relcl/@whAndComp)!='no'">
 							<xsl:text> </xsl:text>
 							<xsl:choose>
-								<xsl:when test="//relcl/@relCliticPos='before'">These clitics are pro-clitics.</xsl:when>
-								<xsl:when test="//relcl/@relCliticPos='after'">These clitics are post-clitics.</xsl:when>
-								<xsl:when test="//relcl/@relCliticPos='both'">Some of the clitics are pro-clitics and some are post-clitics.</xsl:when>
+								<xsl:when test="//relcl/@relCliticPos='before'">These clitics are proclitics.</xsl:when>
+								<xsl:when test="//relcl/@relCliticPos='after'">These clitics are enclitics.</xsl:when>
+								<xsl:when test="//relcl/@relCliticPos='both'">Some of the clitics are proclitics and some are enclitics.</xsl:when>
 							   <xsl:when test="//relcl/@relCliticPos='unknown'"> _______ </xsl:when>
 						   </xsl:choose>
 							<xsl:text> </xsl:text>
@@ -135,11 +145,11 @@
 				</xsl:if>
 				<xsl:text> </xsl:text>
 				<xsl:if test="normalize-space(//relcl/@type)='CP' and normalize-space(//relcl/@compCP)!='yes'">
-					<xsl:text>In the "wh"-relative clauses, </xsl:text>
+					<xsl:text>In the “wh”-relative clauses, </xsl:text>
 					<xsl:choose>
-						<xsl:when test="//relcl/@whAndComp='no'">only the "wh"-word occurs without any type of relative marker.</xsl:when>
-						<xsl:when test="//relcl/@whAndComp='yes'">the "wh"-word and the relative marker(s) are required to both be present.</xsl:when>
-						<xsl:when test="//relcl/@whAndComp='optional'">a relative marker may optionally co-occur along with the "wh"-word.</xsl:when>
+						<xsl:when test="//relcl/@whAndComp='no'">only the “wh”-word occurs without any type of relative marker.</xsl:when>
+						<xsl:when test="//relcl/@whAndComp='yes'">the “wh”-word and the relative marker(s) are required to both be present.</xsl:when>
+						<xsl:when test="//relcl/@whAndComp='optional'">a relative marker may optionally co-occur along with the “wh”-word.</xsl:when>
 					</xsl:choose>
 					<xsl:text> </xsl:text>
 				</xsl:if>

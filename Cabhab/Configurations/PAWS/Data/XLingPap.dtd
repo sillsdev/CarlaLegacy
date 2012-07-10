@@ -1,7 +1,6 @@
  <!-- XLingPap.dtd
 	 XML/XSLT-based Linguistic paper document type definition
-	 Version 2.12.0
-	 (Revision history is at the end.)
+	 Version 2.18.0
   -->
 <!-- xlingpaper top element allows for the paper/book itself, a stylesheet, and published document information to be included -->
 <!ELEMENT  xlingpaper (lingPaper | styledPaper | publishedPaper | publishedCollection)>
@@ -81,7 +80,7 @@
 	 When the xml:lang attribute is set, it is the default xml:lang for the document.
 	 The version attribute is the version of XLingPap the document is for.
   -->
-<!ELEMENT lingPaper (comment*, frontMatter?, ((chapterBeforePart?, part*) | chapter* | section1*), backMatter?, languages?, types?, indexTerms*, comment*, publishingInfo?)>
+<!ELEMENT lingPaper (comment*, frontMatter?, ((chapterBeforePart?, part*) | chapter* | section1*), backMatter?, referencedInterlinearTexts?, languages?, types?, indexTerms*, comment*, publishingInfo?)>
 <!ATTLIST lingPaper
 	partlabel CDATA #IMPLIED
 	chapterlabel CDATA #IMPLIED
@@ -119,6 +118,7 @@
 <!ELEMENT language (langName*)>
 <!ATTLIST language
 	id ID #REQUIRED
+	hyphenationExceptionsFile CDATA #IMPLIED
 	name CDATA #IMPLIED
 	ethnCode CDATA #IMPLIED
 	ISO639-3Code CDATA #IMPLIED
@@ -208,26 +208,32 @@
 <!ELEMENT section1 (secTitle, shortTitle?, (%chunk; | landscape)*, section2*)>
 <!ATTLIST section1
 	id ID #REQUIRED
+	XeLaTeXSpecial CDATA #IMPLIED
 >
 <!ELEMENT section2 (secTitle, shortTitle?, (%chunk; | landscape)*, section3*)>
 <!ATTLIST section2
 	id ID #REQUIRED
+	XeLaTeXSpecial CDATA #IMPLIED
 >
 <!ELEMENT section3 (secTitle, shortTitle?, (%chunk; | landscape)*, section4*)>
 <!ATTLIST section3
 	id ID #REQUIRED
+	XeLaTeXSpecial CDATA #IMPLIED
 >
 <!ELEMENT section4 (secTitle, shortTitle?, (%chunk; | landscape)*, section5*)>
 <!ATTLIST section4
 	id ID #REQUIRED
+	XeLaTeXSpecial CDATA #IMPLIED
 >
 <!ELEMENT section5 (secTitle, shortTitle?, (%chunk; | landscape)*, section6*)>
 <!ATTLIST section5
 	id ID #REQUIRED
+	XeLaTeXSpecial CDATA #IMPLIED
 >
 <!ELEMENT section6 (secTitle, shortTitle?, (%chunk; | landscape)*)>
 <!ATTLIST section6
 	id ID #REQUIRED
+	XeLaTeXSpecial CDATA #IMPLIED
 >
 <!ELEMENT secTitle (#PCDATA | %embedded;)*>
 <!ATTLIST secTitle
@@ -322,6 +328,16 @@
 	type IDREF #REQUIRED
 	xml:lang CDATA #IMPLIED
 >
+
+<!-- a set of one or more interlinear-text elements which will be referenced within the document, but not included in the output of the document -->
+<!ELEMENT referencedInterlinearTexts (referencedInterlinearText+) >
+<!-- a single interlinear-text which will be referenced, but not shown in the document  -->
+<!-- the url attribute is used for citing references to an interlinear within an interlinear-text -->
+<!ELEMENT referencedInterlinearText (interlinear-text) >
+<!ATTLIST  referencedInterlinearText
+	url CDATA #REQUIRED
+>
+
 <!-- types group a set of types -->
 <!ELEMENT types (type | comment)*>
 <!-- a type element allows for customization via either CSS or XSL-FO.
@@ -378,23 +394,33 @@
 	%special;
 >
 <!ELEMENT word (langData | gloss)+>
+<!ATTLIST word
+	externalID CDATA #IMPLIED
+>
 <!ELEMENT listWord (langData | gloss)+>
 <!ATTLIST listWord
+	externalID CDATA #IMPLIED
 	letter ID #REQUIRED
 >
 <!ELEMENT single (langData | gloss)+>
+<!ATTLIST single
+	externalID CDATA #IMPLIED
+>
 <!ELEMENT listSingle (langData | gloss)+>
 <!ATTLIST listSingle
+	externalID CDATA #IMPLIED
 	letter ID #REQUIRED
 >
 <!-- the text ID is a reference number for an interlinear within an interlinear text
 	the textref IDREF refers to a text ID when the interlinear is in an example
 	interlinearSource is a way to manually indicate where the interlinear came from
 -->
-<!ELEMENT interlinear ((exampleHeading | lineGroup | free | interlinear | phrase)+, interlinearSource?)>
+<!ELEMENT interlinear (exampleHeading?, (lineGroup | free | interlinear | phrase)+, interlinearSource?)>
 <!ATTLIST interlinear
+	externalID CDATA #IMPLIED
 	text ID #IMPLIED
 	textref IDREF #IMPLIED
+	XeLaTeXSpecial CDATA #IMPLIED
 >
 <!--
 	the textref IDREF refers to a text ID of some interlinear elsewhere in the document; the interlinear content is copied there
@@ -433,13 +459,16 @@
 <!ELEMENT conflation (lineSet+)>
 <!ELEMENT free (#PCDATA | %embedded;)*>
 <!ATTLIST free
+	externalID CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	xml:lang CDATA #IMPLIED
 >
 <!ELEMENT exampleHeading (#PCDATA | %embedded;)*>
-<!ELEMENT listInterlinear ((exampleHeading | lineGroup | free | interlinear | interlinearRef | phrase)+, interlinearSource?)>
+<!ELEMENT listInterlinear (exampleHeading?, (lineGroup | free | interlinear | interlinearRef | phrase)+, interlinearSource?)>
 <!ATTLIST listInterlinear
+	externalID CDATA #IMPLIED
 	letter ID #REQUIRED
+	XeLaTeXSpecial CDATA #IMPLIED
 >
 <!-- EMELD interlinear items
 	Augmented by morphset so we can get XMLmind to show it as a table.
@@ -465,6 +494,7 @@
 <!-- N.B. EMELD uses interlinear-text, so we will, too -->
 <!ELEMENT interlinear-text (textInfo?, ((item*, phrases*) | interlinear*))>
 <!ATTLIST interlinear-text
+	externalID CDATA #IMPLIED
 	text ID #IMPLIED
 	%special;
 >
@@ -474,15 +504,18 @@
 >
 <!ELEMENT textTitle (#PCDATA | %embedded;)*>
 <!ATTLIST textTitle
+	externalID CDATA #IMPLIED
 	xml:lang CDATA #IMPLIED
 >
 <!ELEMENT source (#PCDATA | %embedded;)*>
 <!ATTLIST source
+	externalID CDATA #IMPLIED
 	xml:lang CDATA #IMPLIED
 >
 <!ELEMENT genres (genre)*>
 <!ELEMENT genre (#PCDATA | %embedded;)*>
 <!ATTLIST genre
+	externalID CDATA #IMPLIED
 	xml:lang CDATA #IMPLIED
 >
 <!ELEMENT phrases (phrase*)>
@@ -586,7 +619,7 @@
 	direction (ltr | rtl | inherit) #IMPLIED
 	xml:lang CDATA #IMPLIED
 >
-<!ELEMENT td (#PCDATA | %embedded; | table | interlinear | example)*>
+<!ELEMENT td (#PCDATA | %embedded; | table | interlinear | example | counter)*>
 <!ATTLIST td
 	align (left | center | right | justify) "left"
 	backgroundcolor CDATA #IMPLIED
@@ -599,6 +632,7 @@
 	xml:lang CDATA #IMPLIED
 	%special;
 >
+<!ELEMENT counter EMPTY >
 <!ELEMENT chart (#PCDATA | %embedded; | ol | ul | dl)*>
 <!ATTLIST chart
 	type IDREF #IMPLIED
@@ -669,11 +703,13 @@
 <!-- langData is a way to tag some text as belonging to a particular language. -->
 <!ELEMENT langData (#PCDATA | %embedded;)*>
 <!ATTLIST langData
+	externalID CDATA #IMPLIED
 	lang IDREF #REQUIRED
 >
 <!-- gloss is a way to tag some text as being a gloss in a particular language. -->
 <!ELEMENT gloss (#PCDATA | %embedded; | abbrRef)*>
 <!ATTLIST gloss
+	externalID CDATA #IMPLIED
 	lang IDREF #REQUIRED
 >
 <!-- references to example numbers or example number/letter.
@@ -692,10 +728,18 @@
 	paren (none | both | initial | final) #IMPLIED
 	letterOnly (no | yes) "no"
 >
-<!-- generic references (to sections, examples, endnotes, etc.) -->
+<!-- generic references (to sections, examples, endnotes, etc.)
+		gref is the link
+		showlivalue is used only when the link is to an li within an ol
+		   no is the default and means do not show the li number/letter
+		   before means show the li number/letter before the content of the genricRef
+		   after means show the li number/letter after the content of the genricRef
+		   only means show the li number/letter but do not show the content of the genericRef
+-->
 <!ELEMENT genericRef (#PCDATA | %embedded; | abbrRef)*>
 <!ATTLIST genericRef
 	gref IDREF #REQUIRED
+	showlivalue (no | before | after | only) "no"
 	xml:lang CDATA #IMPLIED
 >
 <!-- generic target: an ID that can be embedded almost anywhere and then linked to via a genericRef -->
@@ -726,13 +770,16 @@
 <!ELEMENT endnoteRef EMPTY>
 <!ATTLIST endnoteRef
 	note IDREF #REQUIRED
+	showNumberOnly (yes | no) "no"
 >
 <!-- appendices are handled like chapters -->
 <!ELEMENT appendix (secTitle, shortTitle?, (%chunk; | landscape | abbreviationsShownHere | section1 | section2)*)>
 <!ATTLIST appendix
 	id ID #REQUIRED
 	label CDATA #IMPLIED
+	showinlandscapemode (yes | no) "no"
 	type IDREF #IMPLIED
+	XeLaTeXSpecial CDATA #IMPLIED
 >
 <!-- glossary -->
 <!ELEMENT glossary (%chunk; | landscape | abbreviationsShownHere | listOfFiguresShownHere | listOfTablesShownHere)+>

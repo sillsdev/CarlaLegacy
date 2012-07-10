@@ -3,61 +3,68 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPCompounds" count="1/1">
 	<title level="2">Las frases nominales - Los compuestos del sustantivo, los complementos y los participios</title>
-	<introduction>Mientras que el español requiere una frase con <example>de</example> en esta situación, muchos otros idiomas son al igual que inglés y tienen modificadores del sustantivo.
-		Pareciera que todos los sustantivos también se pueden utilizar al igual que adjetivos, pero un estudio más detallada revela que los adjetivos verdaderos se presentan antes del modificador del sustantivo, como en  <example>large, round [syrup bottle] 'grande, redondo [botella del jarabe]'</example> pero no <example>*round, syrup large bottle 'redondo, botella grande del jarabe'</example>.  Por lo tanto, los modificadores del sustantivo serán tratados al igual que sustantivos compuestos que se escriben con palabras independientes.<br/>
-		<br/>En los ejemplos anteriores en inglés,  <example>bottle 'botella'</example> es claramente el sustantivo principal porque <example>syrup 'jarabe'</example> limita el tipo de <example>bottle 'botella'</example>, no al revés. En inglés todos los sustantivos compuestos y construcciones con modificadores del sustantivo, el sustantivo principal en la serie es el de la derecha.</introduction>
+	<introduction>Mientras que el español requiere una frase con <example>de</example> en esta situación, muchos otras lenguas tienen modificadores del sustantivo.
+	   Pareciera que todos los sustantivos también se pueden utilizar al igual que adjetivos, pero un estudio más detallada revela que los adjetivos verdaderos se presentan antes del modificador del sustantivo, como en  <example>large, round [syrup bottle] ‘grande, redondo [botella del jarabe]’</example> pero no <example>*round, syrup large bottle ‘redondo, botella grande del jarabe’</example>.  Por lo tanto, los modificadores del sustantivo serán tratados al igual que sustantivos compuestos que se escriben con palabras independientes.<br/>
+	   <br/>En los ejemplos anteriores en inglés,  <example>bottle ‘botella’</example> es claramente el sustantivo principal porque <example>syrup ‘jarabe’</example> limita el tipo de <example>bottle ‘botella’</example>, no al revés. En inglés, en todos los sustantivos compuestos y construcciones con modificadores del sustantivo, el sustantivo principal en la serie es el de la derecha.</introduction>
 	<form section="np">
-		<prompt>Escriba uno o más ejemplos con los modificadores del sustantivo o los sustantivos compuestos escritos como palabras independientes en la caja. Si usted escribe todos los compuestos del sustantivo como solas palabras, escriba algunos de esos ejemplos usados en una frase aquí:</prompt>
+	   <prompt>Escriba uno o más ejemplos con los modificadores del sustantivo o los sustantivos compuestos escritos como palabras independientes aquí. Si usted escribe todos los compuestos del sustantivo como una sola palabra, escriba algunos de esos ejemplos aquí.</prompt>
 		<textBox id="NPCompExample" dataItem="compExample"/>
 		<br/>
-		<br/>
+	   <radioGroup>
+		  <groupName dataItem="comp" default="no">RNPCompounds</groupName>
+		  <prompt>¿Hay compuestos del sustantivo o modificadores del sustantivo en su lengua que se escriban como palabras independientes?</prompt>
+		  <radio id="NPCompNo" dataValue="no">No, todas se escriben como una sola palabra unida con el sustantivo principal</radio>
+		  <radio id="NPCompYes" dataValue="yes">Sí, escriben algunos como palabras independientes</radio>
+		  <radioGroup id="NPCompHeadTable" show="swNPCompYes">
+			 <groupName dataItem="compHead" default="right">RNPCompHead</groupName>
+			 <prompt>En un compuesto o una construcción con un sustantivo que modifica, ¿cuál sustantivo es el núcleo en su lengua?</prompt>
+			 <radio id="NPCompHeadLeft" dataValue="left">El de la izquierda</radio>
+			 <radio id="NPCompHeadRight" dataValue="right">El de la derecha</radio>
+		  </radioGroup>
+		  <radioGroup id="NPCompHeadMorphemeTable">
+			 <groupName dataItem="compHeadMorpheme" default="right">RNPCompHeadMorpheme</groupName>
+			 <prompt>En un sustantivo compuesto que se escriba como una sola palabra, ¿cuál raíz es el núcleo en su lengua?</prompt>
+			 <radio id="NPCompHeadMorphemeLeft" dataValue="left">El de la izquierda</radio>
+			 <radio id="NPCompHeadMorphemeRight" dataValue="right">El de la derecha</radio>
+		  </radioGroup>
+	   </radioGroup>
+	   <br/>
 		<introduction>Ahora considera las frases preposicionales y/o posposicionales como modificadores o complementos, tal como en <example>la botella grande, redonda [de jarabe]</example> y <example>la carta del muchacho [a esa muchacha]</example>.  Incluye también ejemplos de las frases preposicionales y/o posposicionales del genitivo que pueden funcionar como el poseedor, tal como <example>esos perros [de él]</example> y <example>el mantel [de mi madre]</example>.
 		</introduction>
 		<br/>
 		<br/>
-		<prompt>Escriba sus ejemplos de las frases preposicionales y/o posposicionales que modifican sustantivos aquí (sin los soportes):</prompt>
+	   <prompt>Escriba ejemplos de las frases preposicionales y/o posposicionales que modifican sustantivos pero no son frases de posesión aquí (sin los soportes):</prompt>
 		<textBox id="NPCompPPExample" dataItem="compPPExample"/>
+	   <prompt>Escriba ejemplos de las frases preposicionales y/o posposicionales que están actuando como de poseedor del sustantivo aquí:</prompt>
+	   <textBox id="NPCompPPPossessorExample" dataItem="compPPPossessorExample"/>
+	   <br/>
 		<br/>
-		<br/>
-		<introduction>Refiera a ambos cajas de los datos antedichos para las preguntas siguientes. Puede ser el caso que en su idioma no hay ningún sustantivo compuesto o modificador del sustantivo que se escriban como palabras independientes, dependiendo de reglas orthográficas.</introduction>
-		<radioGroup>
-			<groupName dataItem="comp" default="no">RNPCompounds</groupName>
-			<prompt>¿Hay compuestos del sustantivo o modificadores del sustantivo en su idioma que se escriban como palabras independientes?</prompt>
-			<radio id="NPCompNo" dataValue="no">No, todas se escriben como una sola palabra unida con el sustantivo principal</radio>
-			<radio id="NPCompYes" dataValue="yes">Sí, escriben algunos como palabras independientes</radio>
-			<radioGroup id="NPCompHeadTable" show="swNPCompYes">
-				<groupName dataItem="compHead" default="right">RNPCompHead</groupName>
-				<prompt>En un compuesto o una construcción del modificador del sustantivo, ¿qué sustantivo es el núcleo en su idioma?</prompt>
-				<radio id="NPCompHeadLeft" dataValue="left">La izquierda</radio>
-				<radio id="NPCompHeadRight" dataValue="right">La derecha</radio>
-			</radioGroup>
-		</radioGroup>
 		<radioGroup>
 			<groupName dataItem="ppPos" default="unknown" position="yesHeadDiff">RNPPPPos</groupName>
-			<prompt>¿Dónde se presentan las frases preposicionales y/o pospocionales con respecto al sustantivo principal?</prompt>
-			<radio id="NPPPPosBefore" dataValue="before">Antes</radio>
-			<radio id="NPPPPosAfter" dataValue="after">Después</radio>
-			<radio id="NPPPPosEither" dataValue="either">Cualquier lado</radio>
+			<prompt>De acuerdo con los ejemplos arriba, ¿dónde se presentan las frases preposicionales y/o pospocionales con respecto al sustantivo principal?</prompt>
+			<radio id="NPPPPosBefore" dataValue="before">Antes del sustantivo</radio>
+			<radio id="NPPPPosAfter" dataValue="after">Después del sustantivo</radio>
+			<radio id="NPPPPosEither" dataValue="either">De cualquier lado</radio>
 		</radioGroup>
 		<br/>
 		<br/>
-		<introduction>Otro caso que se puede parecer como un sustantivo y un complemento puede ser realmente una frase del participio. Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición o posposición. Algunos ejemplos en oraciones completas en inglés con la frase del participio entre corchetes son:
+		<introduction>Otro caso que se puede parecer como un sustantivo y un complemento puede ser realmente una frase del gerundio. Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición o posposición. Algunos ejemplos en oraciones completas en inglés con la frase del gerundio entre corchetes son:
 </introduction>
 	<EnglishExample>
-		<exItem label="1.">[Studying participles] is difficult. '[Estudiando participios] es dificil.'</exItem>
-		<exItem label="2.">He likes [reading Latin poetry] 'Él tiene gusto [leyendo la poesía latina].'</exItem>
-		<exItem label="3.">The receiver showed his worth by [making the catch]. 'El receptor mostró su valor cerca [haciendo el retén].'</exItem>
+	   <exItem label="1.">[Studying grammar] is difficult. ‘[Estudiando gramática] es dificil.’</exItem>
+	   <exItem label="2.">He likes [reading Latin poetry] ‘Él tiene gusto [leyendo la poesía latina].’</exItem>
+	   <exItem label="3.">The receiver showed his worth by [making the catch]. ‘El receptor mostró su valor cerca [haciendo el retén].’</exItem>
 	</EnglishExample>
-		<introduction>Tales frases se pueden poseer o modificar también, y a veces se presenta solamente el participio como el elemento principal de una frase nominal, como en <example>el gravemente herido</example>, <example>el agonizante</example> y <example>your following 'su siguiente'</example>. Por lo tanto, permitiremos que las frases del participio ocupen la posición principal en la frase nominal.</introduction><br/>
+	   <introduction>Tales frases se pueden poseer o modificar también, y a veces se presenta solamente el gerundio como el elemento principal de una frase nominal, como en <example>el gravemente herido</example>, <example>el agonizante</example> y <example>your following ‘su siguiente’</example>. Por lo tanto, permitiremos que las frases del gerundio ocupen la posición principal en la frase nominal.</introduction><br/>
 		<br/>
-		<prompt>Escriba uno o más ejemplos de los participios o de las frases del participio que pueden tomar el lugar de un sustantivo en una frase nominal:</prompt>
+		<prompt>Escriba uno o más ejemplos de los gerundios o de las frases del gerundio que pueden tomar el lugar de un sustantivo en una frase nominal:</prompt>
 		<textBox id="NPPartExample" dataItem="partHeadExample"/>
 		<br/>
 <br/>
-		<prompt>Ahora escriba los participios o las frases del participio que usted escribió anteriormente en oraciones completas:</prompt>
+	   <prompt>Ahora escriba los gerundios o las frases del gerundio que usted escribió anteriormente en oraciones completas:</prompt>
 		<textBox id="NPPartSentExample" dataItem="partHeadSentExample"/>
 		<br/>
-		<instruction id="NPCompInstruction">Note that the head of these participle phrases is categorically a verb, so these are derived nominals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as nouns.   The appropriate features will be added in section <section number="9.2">Basic, Single-Clause Sentences - Inflection Features</section></instruction>
+	   <instruction id="NPCompInstruction">Note that the head of these gerund phrases is categorically a verb, so these are derived nominals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as nouns.   The appropriate features will be added in section <section number="9.2">Las oraciones básicas - Las características de la inflexión</section></instruction>
 		<br/>
 		<br/>
 		<buttons>

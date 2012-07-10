@@ -7,11 +7,13 @@
         <radioGroup>
             <groupName dataItem="comp" default="no">RComp</groupName>
             <prompt>Considering the examples you gave of complement clauses, does your language have one or more complementizers which mark embedded clauses?   (Questions and relative clauses will be considered in the following sections, so do not answer for those types here.)</prompt>
-            <radio id="CompYes" dataValue="yes">Yes, like <example>that</example> and <example>for</example> in English</radio>
+		   <radio id="CompNo" dataValue="no">No, there is no complementizer word or clitic for complement clauses, so all embedded clauses are simply sentences<span id="CompNoSpanNotPractical" show="swNotPractical"> (IPs)</span> in this language</radio>
+		   <radio id="CompYes" dataValue="yes">Yes, like <example>that</example> and <example>for</example> in English</radio>
             <radioGroup id="CompWordTable" show="swCompYes">
                 <groupName dataItem="compWord" default="yes">RCompWord</groupName>
                 <prompt>Is it written as a separate word?</prompt>
-                <radio id="CompWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
+			   <radio id="CompWordYes" dataValue="yes">Yes</radio>
+			   <radio id="CompWordNo" dataValue="no">No, it is a clitic which attaches to another word</radio>
                 <radioGroup id="CompCliticPosTable" show="swCompWordNo">
                     <groupName dataItem="compCliticPos" default="unknown" position="yesHead">RCompCliticPos</groupName>
                     <prompt>Is the clitic a proclitic or an enclitic?</prompt>
@@ -25,7 +27,6 @@
                     <radio id="CompCliticAttachesEdge" dataValue="edge">At the edge</radio>
                     <radio id="CompCliticAttachesHead" dataValue="head">To the verb</radio>
                 </radioGroup>
-                <radio id="CompWordYes" dataValue="yes">Yes</radio>
             </radioGroup>
             <radioGroup id="CompPosTable" show="swCompWordYes">
                 <groupName dataItem="compPos" default="unknown" position="yesHead">RCompPos</groupName>
@@ -44,7 +45,6 @@
                     <radio id="CompEitherRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
                 </radioGroup>
             </radioGroup>
-            <radio id="CompNo" dataValue="no">No, there is no complementizer word or clitic for complement clauses<span id="CompNoSpanNotPractical" show="swNotPractical">, so all embedded clauses are simply IPs in this language</span></radio>
         </radioGroup>
         <instruction id="CompHeadCliticInstruction" show="swCompHeadClitic">In the lexicon, add the feature <feature>comp</feature> to these clitics.</instruction>
         <instruction id="CompEdgeCliticPrefixInstruction" show="swCompEdgeCliticPrefix">In the lexicon, add the feature <feature>comp_prefix</feature> to these clitics.</instruction>

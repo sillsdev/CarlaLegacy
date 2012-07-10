@@ -1,35 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
-<page id="IPCop" count="1/1">
-    <title level="2">Basic, Single-Clause Sentences - Intransitive and Copular Sentences</title>
-    <introduction>Simple intransitives do not have any complements after the verb, such as <example>The girl swims.</example>  Motion verbs include a location in the form of either a PP or adverb.  English examples of motion verbs include:</introduction>
-    <EnglishExample>
-        <exItem label="1.">The girl ran around the track.</exItem>
-        <exItem label="2.">My mother went to the store.</exItem>
-        <exItem label="3.">My teacher came here.</exItem>
-    </EnglishExample>
-    <form section="ip">
-        <prompt>Key your intransitive examples here:</prompt>
-        <textBox id="IPExamplesIntranExample" dataItem="intransExample" cols="50"/>
-        <br/>
-        <br/>
-        <prompt>Key your examples with motion verbs here:</prompt>
-        <textBox id="IPExamplesMotionExample" dataItem="motionExample" cols="50"/>
-        <instruction id="IPCopInstruction">Partial subcategorization can be done as follows, without entering a feature on every verb: if a particular verb is intransitive and can never have anything but a subject, mark it with the feature <feature>intransitive</feature>.  (Don't consider temporal elements.)  If it is an intransitive motion verb that can have a locative PP or AdvP <span id="IPCopFollow" show="swHeadInitial">following</span>
-            <span id="IPCopPrecede" show="swHeadFinal">preceding</span> it, add the feature <feature>motion</feature> to its lexical entry.  Since the motion verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-motion</feature>.</instruction>
-        <introduction>Copular sentences can have an adjective, PP, or nominal phrase following the copular verb.  Some languages do not require a copular verb or auxiliary to be present.  English examples include:</introduction>
+<page id="IPCop" count="1/3">
+	<title level="2">Basic, Single-Clause Sentences - Copular</title>
+		<introduction>We will distinguish here between sentences with copular and perception verbs, beginning with copular sentences.<br/><br/>
+		   Copular sentences can have an adjective phrase, prepositional or postpositional phrase, or nominal phrase as the complement of the copular verb.  Some languages do not require a copular verb or auxiliary to be present.  English examples include:</introduction>
         <EnglishExample>
             <exItem label="1.">The girl is pretty.</exItem>
-            <exItem label="2.">She seems nice.</exItem>
+			<exItem label="2.">She is nice.</exItem>
             <exItem label="3.">The girl is in charge.</exItem>
-            <exItem label="4.">The girl is the leader.</exItem>
+			<exItem label="4.">He is the leader.</exItem>
         </EnglishExample>
-        <prompt>Key your examples here:</prompt>
+	<form section="ip">
+	<prompt>Key your examples here:</prompt>
         <textBox id="IPExamplesCopularExample" dataItem="copularExample" cols="50"/>
         <radioGroup>
             <groupName dataItem="copular" default="yes">RIPCopVerb</groupName>
-            <prompt>Does your language have an overt verb used in copular type sentences?</prompt>
+			<prompt>Does your language have one or more overt verbs used in copular type sentences?</prompt>
             <radio id="IPCopVerbYes" dataValue="yes">Yes, and the copular verb is required</radio>
             <radio id="IPCopVerbYesOptional" dataValue="yesOptional">Yes, the language has a copular verb, but it is optional in at least some cases and no auxiliary is required then</radio>
             <radio id="IPCopVerbYesAux" dataValue="yesAux">Yes, the language has a copular verb, but it is optional when an auxiliary is present</radio>
@@ -48,10 +35,23 @@
         <instruction id="IPCopAffixYesPrefixInstruction" show="swIPCopAffixYesPrefix">Add the feature <feature>copular_prefix</feature> to the appropriate prefix(es) in the lexicon.</instruction>
         <instruction id="IPCopAffixYesSuffixInstruction" show="swIPCopAffixYesSuffix">Add the feature <feature>copular_suffix</feature> to the appropriate suffix(es) in the lexicon.</instruction>
         <instruction id="IPCopVerbYesInstruction" show="swIPCopVerbYes">Add the feature <feature>copular</feature> to the verbs that take AdjP, PP or predicate nominative complements.  Since the copular verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-copular</feature>.</instruction>
-        <br/>
-        <buttons>
+		<br/><br/>
+	   <introduction>Now let’s consider sentences with perception verbs.<br/><br/>
+		  Perception verbs usually only allow an adjective phrase as theri complement, except in superlative constructions where a nominal phrase follows a perception verb, as shown on the next page.  Some English examples include:</introduction>
+	   <EnglishExample>
+		  <exItem label="5.">The girl looks pretty.</exItem>
+		  <exItem label="6.">She seems nice.</exItem>
+		  <exItem label="7.">The water appears murky.</exItem>
+	   </EnglishExample>
+	   <prompt>Key similar examples from your language here:</prompt>
+	   <textBox id="IPExamplesPerceptionExample" dataItem="perceptionExample" cols="50"/>
+	   <instruction id="IPCopPerceptionInstruction">Add the feature <feature>perception</feature> to the lexical entry of the perception verbs. Since the perception verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-perception</feature>.</instruction>
+	   <br/>
+	   <introduction>Both copular and perception verbs can also occur with an adjectival clause complement, where a sentence or complement clause follows the adjective.  These constructions will be covered in <section number="10.">Complement Clauses</section> under the discussion of perception verbs acting as ‘raising’ verbs.</introduction>
+	   <br/><br/>
+	   <buttons>
             <button id="IPCopBack" value="Back" goto="IPContents.htm"/>
-            <button id="IPCopNext" value="Next" goto="IPContents.htm"/>
+			<button id="IPCopNext" value="Next" goto="IPComparative.xml"/>
         </buttons>
     </form>
     <showWhen id="swHeadInitial">
@@ -105,4 +105,4 @@
         <and/> <not/>
         <whenRadio button="IPCopVerbNoAux"/>
 </showWhen>
-</page>
+ </page>

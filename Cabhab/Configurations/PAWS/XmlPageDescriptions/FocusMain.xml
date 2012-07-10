@@ -3,19 +3,20 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="FocusMain" count="1/2">
     <title>Focus and Topic Constructions</title>
-    <introduction>This section considers two types of constructions which draw attention to a particular element.  As defined here, topic constructions consist of a topic phrase followed by a complete sentence or question and usually set apart by punctuation.  Certain markers may be used to set off topics, as shown in the following English examples:</introduction>
+	<introduction>This section considers two types of constructions which draw attention to a particular element.  Since topic phrases occur outside of focus phrase, we will consider topics first. <br/><br/>
+	   As defined here, topic constructions consist of a topic phrase followed by a complete sentence or question and usually set apart by a comma.  Certain marker morphemes may also be used to set off topics, as shown in the following English examples:</introduction>
     <EnglishExample>
         <exItem label="1.">As for John, I think he will make a good doctor.</exItem>
         <exItem label="2.">Speaking of Jill, where is she?</exItem>
     </EnglishExample>
-    <introduction>In contrast, while focus constructions also have an element fronted which may be set off by punctuation, the phrase in focus is moved from its normal position in the sentence, leaving a gap.  Certain markers, such as 'only' in English, may be used to mark the focused phrase.  Focus constructions are not used frequently in SVO languages, since the subject is usually in focus and is already first in the normal order.  Other word orders, such as VSO languages, may make extensive use of focus constructions.  English examples of focus constructions include:
+	<introduction>In contrast, while focus constructions also have an element fronted which may be set off by punctuation, the phrase in focus is moved from its normal position in the sentence, leaving a gap.  Certain markers, such as ‘only’ in English, may be used to mark the focused phrase.  Focus constructions are not used frequently in SVO languages, since the subject is usually in focus and is already first in the normal order.  Other word orders, such as VSO languages, may make extensive use of focus constructions.  English examples of focus constructions include:
     </introduction>
     <EnglishExample>
         <exItem label="1.">Girls, I like __.</exItem>
         <exItem label="2.">Soccer, Bill plays __ best.</exItem>
         <exItem label="3.">Only that boy, Jerry hit  __ .</exItem>
     </EnglishExample>
-    <introduction>It is possible to have both a topic phrase and a focus phrase in the same sentence.  In this case, the topic phrase is always outside (either first or last) of the focus phrase, as in:
+	<introduction>It is possible to have both a topic phrase and a focus phrase in the same sentence.  In this case, the topic phrase is always closer to the edge of the sentence (either first or last) than the focus phrase, as in:
     </introduction>
     <EnglishExample>
         <exItem label="1.">As for Bill, soccer he plays __ best.</exItem>
@@ -27,7 +28,7 @@
     <radio id="TopicNo" dataValue="no">No</radio>
     <radio id="TopicYes" dataValue="yes">Yes</radio>
 </radioGroup>
-<prompt id="TopicYesInstruction" show="swTopicYes">Think of topic constructions in your language and key the examples here:</prompt>
+<prompt id="TopicYesInstruction" show="swTopicYes">Key examples of topic constructions in your language here:</prompt>
         <textBox id="Topic" show="swTopicYes" dataItem="topicExample" rows="5"/>
 <br/>
 <radioGroup id="TopicPosTable" show="swTopicYes">
@@ -44,8 +45,10 @@
     <radio id="TopicMarkerYesClitic" dataValue="yesClitic">Yes, the topic is marked by a clitic</radio>
     <radio id="TopicMarkerYesAffix" dataValue="yesAffix">Yes, the topic is marked by an affix</radio>
 </radioGroup>
-<prompt id="TopicMarkerYesInstruction" show="swTopicMarkerYes">Key the topic markers your language uses in the following box.  If  the marker is a phrase, such as 'as for' or 'speaking of' in English, key it together on the same line.  If the marker is a clitic or an affix, key a hyphen with the marker to show which side it attaches on.</prompt>
-        <textBox id="TopicMarker" show="swTopicMarkerYes" dataItem="topicMarkerExample" rows="4"/>
+<prompt id="TopicMarkerYesWordInstruction" show="swTopicMarkerYesWord">Key the topic markers your language uses in the following box.  If  the marker is a phrase, such as ‘as for’ or ‘speaking of’ in English, key it together on the same line.</prompt>
+	   <prompt id="TopicMarkerYesCliticInstruction" show="swTopicMarkerYesClitic">Key the topic marker clitic(s) your language uses in the following box, with a hyphen to show which side it attaches on.</prompt>
+	   <prompt id="TopicMarkerYesAffixInstruction" show="swTopicMarkerYesAffix">Key the topic marker affix(es) your language uses in the following box, with a hyphen to show which side it attaches on.</prompt>
+	   <textBox id="TopicMarker" show="swTopicMarkerYes" dataItem="topicMarkerExample" rows="4"/>
 <br/>
 <radioGroup id="TopicMarkerPosTable" show="swTopicMarkerYesWord">
     <groupName dataItem="topicMarkerPos" default="unknown" position="yesHead">RTopicMarkerPos</groupName>
@@ -68,17 +71,19 @@
 </radioGroup>
 </radioGroup>
 <instruction id="TopicMarkerEitherNoInstruction" show="swTopicMarkerYesWordEitherNo">In the lexicon, add the feature <feature>topic-initial</feature> to the topic markers which can only appear before the topic itself.  Add the feature <feature>topic-final</feature> to the topic markers which can only appear after the topic itself.  Do not add either feature to topic markers which can appear on either side of the topic. </instruction>
-<instruction id="TopicMarkerYesWordInstruction" show="swTopicMarkerYesWord">In the lexicon, add the feature <feature>makeTopicM</feature> to each topic marker to change the category for the syntax.  (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, such as 'as for' or 'speaking of' in English, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
-<instruction id="TopicMarkerYesCliticInstruction" show="swTopicMarkerYesClitic">In the lexicon, add the feature <feature>topic</feature> to each topic marker clitic.</instruction>
-<instruction id="TopicMarkerYesAffixInstruction" show="swTopicMarkerYesAffix">In the lexicon, add the feature <feature>topic</feature> to each topic marker affix.</instruction>
+<instruction id="TopicMarkerYesWordInstruction2" show="swTopicMarkerYesWord">In the lexicon, add the feature <feature>makeTopicM</feature> to each topic marker to change the category for the syntax.  (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, such as ‘as for’ or ‘speaking of’ in English, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
+<instruction id="TopicMarkerYesCliticInstruction2" show="swTopicMarkerYesClitic">In the lexicon, add the feature <feature>topic</feature> to each topic marker clitic.</instruction>
+<instruction id="TopicMarkerYesAffixInstruction2" show="swTopicMarkerYesAffix">In the lexicon, add the feature <feature>topic</feature> to each topic marker affix.</instruction>
 <br/>
-<radioGroup id="FocusTable">
+	   <instruction id="TopicCommaInstruction">Note that the comma is important in topic constructions and may be useful in disambiguating topics from other types of constructions.  As mentioned in <section number="15">Coordination Constructions - Lists and Appositives</section>, you can choose to make the comma (,) a word-formation character in <tool>CarlaStudio</tool>. Then make it a suffix or enclitic that can go on any word category and give it the feature <feature>comma</feature>.  The PC-Patr grammar constraints to disambiguate via commas are already provided, but you will need to activate them by removing the comment character in the S rule(s) including a TopicP.</instruction>
+	   <br/>
+	   <radioGroup id="FocusTable">
     <groupName dataItem="focus" default="no">RFocus</groupName>
     <prompt>Moving now to focus constructions, does your language allow a focus phrase to be moved before or after the rest of the sentence out of its normal position?</prompt>
     <radio id="FocusNo" dataValue="no">No</radio>
     <radio id="FocusYes" dataValue="yes">Yes</radio>
 </radioGroup>
-<prompt id="FocusYesInstruction" show="swFocusYes">Think of focus constructions in your language and key the examples here:</prompt>
+<prompt id="FocusYesInstruction" show="swFocusYes">Key examples of focus constructions in your language here:</prompt>
         <textBox id="Focus" show="swFocusYes" dataItem="focusExample" rows="5"/>
 <br/>
 <radioGroup id="FocusPosTable" show="swFocusYes">
@@ -95,8 +100,10 @@
     <radio id="FocusMarkerYesClitic" dataValue="yesClitic">Yes, focus is marked by a clitic</radio>
     <radio id="FocusMarkerYesAffix" dataValue="yesAffix">Yes, focus is marked by an affix</radio>
 </radioGroup>
-<prompt id="FocusMarkerYesInstruction" show="swFocusMarkerYes">Key the focus markers your language uses in the following box.  If  the marker is a phrase, key it together on the same line.  If the marker is a clitic or an affix, key a hyphen with the marker to show which side it attaches on.</prompt>
-        <textBox id="FocusMarker" show="swFocusMarkerYes" dataItem="focusMarkerExample" rows="4"/>
+<prompt id="FocusMarkerYesWordInstruction" show="swFocusMarkerYesWord">Key the focus markers your language uses in the following box.  If  the marker is a phrase, key it together on the same line.</prompt>
+	   <prompt id="FocusMarkerYesCliticInstruction" show="swFocusMarkerYesClitic">Key the focus marker clitic(s) your language uses in the following box, with a hyphen to show which side it attaches on.</prompt>
+	   <prompt id="FocusMarkerYesAffixInstruction" show="swFocusMarkerYesAffix">Key the focus marker affix(es) your language uses in the following box, with a hyphen to show which side it attaches on.</prompt>
+	   <textBox id="FocusMarker" show="swFocusMarkerYes" dataItem="focusMarkerExample" rows="4"/>
 <br/>
 <radioGroup id="FocusMarkerPosTable" show="swFocusMarkerYesWord">
     <groupName dataItem="focusMarkerPos" default="unknown" position="yesHead">RFocusMarkerPos</groupName>
@@ -119,9 +126,9 @@
 </radioGroup>
 </radioGroup>
 <instruction id="FocusMarkerEitherNoInstruction" show="swFocusMarkerYesWordEitherNo">In the lexicon, add the feature <feature>focus-initial</feature> to the focus markers which can only appear before the focused phrase or word itself.  Add the feature <feature>focus-final</feature> to the focus markers which can only appear after the focused phrase or word  itself.  Do not add either feature to focus markers which can appear on either side of the focused phrase or word. </instruction>
-<instruction id="FocusMarkerYesWordInstruction" show="swFocusMarkerYesWord">In the lexicon, add the feature <feature>makeFocusM</feature> to each focus marker to change the category for the syntax. (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
-<instruction id="FocusMarkerYesCliticInstruction" show="swFocusMarkerYesClitic">In the lexicon, add the feature <feature>focus</feature> to each focus marker clitic.</instruction>
-<instruction id="FocusMarkerYesAffixInstruction" show="swFocusMarkerYesAffix">In the lexicon, add the feature <feature>focus</feature> to each focus marker affix.</instruction>
+<instruction id="FocusMarkerYesWordInstruction2" show="swFocusMarkerYesWord">In the lexicon, add the feature <feature>makeFocusM</feature> to each focus marker to change the category for the syntax. (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
+<instruction id="FocusMarkerYesCliticInstruction2" show="swFocusMarkerYesClitic">In the lexicon, add the feature <feature>focus</feature> to each focus marker clitic.</instruction>
+<instruction id="FocusMarkerYesAffixInstruction2" show="swFocusMarkerYesAffix">In the lexicon, add the feature <feature>focus</feature> to each focus marker affix.</instruction>
         <br/>
         <buttons>
             <button id="FocusMainBack" value="Back" goto="Contents.htm"/>

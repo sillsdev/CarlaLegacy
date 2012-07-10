@@ -3,11 +3,25 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PNMain" count="1/3">
 	<title>Proper Names</title>
-	<introduction> In English, some names can stand alone, like <example>Sue</example> or <example>Russia</example>.  Others are like compound nouns, such as <example>George Washington</example>.  Proper names may also contain articles and/or pre/post-positional phrases, as in <example>the United States of America</example>.  Many languages require an article before a name.  Appositives, possibly including a possessor, as in <example>my son, David</example>, also occur.  In addition, proper names can be modified by adjectives and relative clauses, as in <example>the good, old USA</example> or <example>the Susan Welch that I know</example>.</introduction>
+	<introduction> In English, some names can stand alone, like <example>Sue</example> or <example>Russia</example>.  Others are like compound nouns, such as <example>George Washington</example>.  Proper names may also contain articles and/or pre/post-positional phrases, as in <example>the United States of America</example>.  Many languages require an article before a name.  Appositives, possibly including a possessor, as in <example>my son, David</example>, also occur, but they will be handled later in <section number="15.">Coordination Constructions</section>. In addition, proper names can be modified by adjectives and relative clauses, as in <example>the good, old USA</example> or <example>the Susan Welch that I know</example>.</introduction>
 	<form section="prop">
 		<prompt>Key your examples with simple and compound proper names, or those including articles, demonstratives, adjectives, and/or possessors here:</prompt>
 		<textBox id="PNExample" dataItem="example"/>
-		<br/>
+<br/><br/>
+	   <radioGroup id="PNClassifiersTable" show="swOTClassifierAgr">
+		  <groupName dataItem="pnClassifier" default="no">RPNClassifiers</groupName>
+		  <prompt>Do proper names carry classifiers as part of the concord agreement in your language?</prompt>
+		  <radio id="PNClassifiersNo" dataValue="no">No, proper names are not marked with a classifier</radio>
+		  <radio id="PNClassifiersYes" dataValue="yes">Yes, proper names carry classifier affixes just like nouns</radio>
+	   </radioGroup>
+	   <radioGroup id="PNDeterminersTable" show="swNPArtAndDemNotNo">
+	   <groupName dataItem="pnDeterminer" default="no">RPNDeterminer</groupName>
+	   <prompt>Must all proper names in your language contain <span id="PNArtOnlySpan" show="swNPArtAndDemArt">an article</span>
+		  <span id="PNDemOnlySpan" show="swNPArtAndDemDem">a demonstrative</span><span id="PNArtAndDemSpan" show="swNPArtAndDemBoth">an article or a demonstrative</span> or a possessor?</prompt>
+	   <radio id="PNDeterminerNo" dataValue="no">No, like English these elements are allowed but not required</radio>
+	   <radio id="PNDeterminerYes" dataValue="yes">Yes, every proper name must contain one of those elements</radio>
+	</radioGroup>
+	   <br/>
 		<br/>
 		<prompt>Key your examples of proper names with pre/post-positional phrases here:</prompt>
 		<textBox id="PNPPExample" dataItem="ppExample"/>
@@ -22,4 +36,24 @@
 		    <button id="PNMainNext" value="Next" goto="PNCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
+   <showWhen id="swOTClassifierAgr">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArt">
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDem">
+	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBoth">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemNotNo">
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+   </showWhen>
+
 </page>

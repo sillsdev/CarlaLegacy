@@ -6,29 +6,23 @@
 		<p>
 			<content>Ésta es una descripción del sintaxis de </content>
 			<langName/>
-			<content> basada en las respuestas dadas al programa de PAWS. Esta gramática descriptiva está escrita como una gramática práctica que puede ser útil para la comunidad del idioma así como para documentar la mayor parte del idioma.</content>
+		   <content> basada en las respuestas dadas al programa de PATAS </content><comment>Pone una cita para Las Referencias aquí</comment><content>. Esta gramática descriptiva está escrita como una gramática práctica que puede ser útil para la comunidad de la lengua así como para documentar la mayor parte de la lengua.</content>
 		</p>
 		<p>
-			<comment>Una vez que se termina de ingresar los datos al programa de PAWS, este archivo puede servir como borrador para preparar una gramática más completa.</comment>
+			<comment>Una vez que se termina de ingresar los datos al programa de PATAS, este archivo puede servir como borrador para preparar una gramática más completa.</comment>
 		</p>
 		<p>
-			<comment>Parte de la información dada puede ser inexacta hasta que usted haya terminado de ingresar los datos de cada página del programa de PAWS, porque se basa en los datos predeterminados que se refieren a la posición de elementos, los cuales se muestran como ____ hasta que usted haya terminado la página correspondiente en el programa de PAWS.</comment>
+			<comment>Parte de la información dada puede ser inexacta hasta que usted haya terminado de ingresar los datos de cada página del programa de PATAS, porque se basa en los datos predeterminados que se refieren a la posición de elementos, los cuales se muestran como ____ hasta que usted haya terminado la página correspondiente en el programa de PATAS.</comment>
 		</p>
 		<p>
-			<comment>¡NO MODIFIQUE ESTE ARCHIVO HASTA HABER TERMINADO DE INGRESAR TODOS LOS  DATOS EN EL PROGRAMA DE PAWS, porque si no su trabajo será sobrescrito por el programa! Después de terminar de  contestar  todas las preguntas de PAWS, le sugerimos que guarde este archivo con otro nombre antes de corregir su gramática.  También, le sugerimos que cheque especialmente la sección acerca de los pronombres a ver si es correcto.  Si no, puede cambiar sus respuestas en PAWS antes de empezar editando este documento.</comment>
+			<comment>¡NO MODIFIQUE ESTE ARCHIVO HASTA HABER TERMINADO DE INGRESAR TODOS LOS  DATOS EN EL PROGRAMA DE PATAS, porque si no su trabajo será sobrescrito por el programa! Después de terminar de  contestar  todas las preguntas de PATAS, le sugerimos que guarde este archivo con otro nombre antes de corregir su gramática.  También, le sugerimos que cheque especialmente la sección acerca de los pronombres a ver si es correcto.  Si no, puede cambiar sus respuestas en PATAS antes de empezar editando este documento.</comment>
 		</p>
 		<p>
-			<content>El idioma </content>
+			<content>La lengua </content>
 			<langName/>
-			<content> se habla en </content>
-			<comment>(ponga las localidades aquí)</comment>
-			<content>. Hay aproximadamente </content>
-			<comment>(ponga el número aquí)</comment>
-			<content> hablantes. El </content>
+		   <content> se habla en LOCALIDADES. Hay aproximadamente NÚMERO hablantes. El </content>
 			<langName/>
-			<content> es miembro de la familia de idiomas </content>
-			<comment>(pone el nombre de familia del idioma aquí)</comment>
-			<content>.</content>
+			<content> es miembro de la familia de lenguas NOMBRE_DE_FAMILIA.</content>
 		</p>
 		<section2 id="sOrtho">
 			<secTitle>Ortografía</secTitle>
@@ -414,10 +408,10 @@
 				<content> tengan más de una parte con significado (morfema), así que la tercera línea indicará la glosa para cada una de las partes de la palabra, con los prefijos, la raíz, y los sufijos separados por un guión. Esta tercera línea puede ser la más útil para los lingüistas. En la línea final se proporciona la traducción libre del ejemplo completo</content>
 			</p>
 			<p>
-				<comment>Mencione aquí cualquier diferencia que haya entre su idioma y español. Por ejemplo, si su idioma no distingue entre el número y/o el género en los sustantivos, como lo hace el español, usted debe eligir el uso de solamente las formas singulares y/o masculinas para las glosas.</comment>
+				<comment>Mencione aquí cualquier diferencia que haya entre su lengua y español. Por ejemplo, si su lengua no distingue entre el número y/o el género en los sustantivos, como lo hace el español, usted debe eligir el uso de solamente las formas singulares y/o masculinas para las glosas.</comment>
 			</p>
 			<p>
-				<content>Después proveer la información sobre la tipología sintáctica del idioma, la gramática comienza describiendo las partes del discurso y las frases en las secciones </content>
+				<content>Después proveer la información sobre la tipología sintáctica de la lengua, la gramática comienza describiendo las partes del discurso y las frases en las secciones </content>
 				<sectionRef sec="sN"/>
 				<content>-</content>
 				<sectionRef sec="sExcl"/>
@@ -438,7 +432,7 @@
 		</section2>
 	</section1>
 	<section1 id="sTypology">
-		<secTitle>La tipología del orden de las palabras</secTitle>
+		<secTitle>La tipología</secTitle>
 		<p>
 			<content>El orden básico de palabras en </content>
 			<langName/>
@@ -520,7 +514,7 @@
 				<content> no tiene ningún tipo de cláusula relativa.</content>
 			</text>
 			<text show="swRelClExistYes">
-				<content>Las cláusulas relativas aparecen </content>
+				<content> Las cláusulas relativas aparecen </content>
 				<case attr="clausePos" element="relcl">
 					<caseText value="before">delante</caseText>
 					<caseText value="after">después</caseText>
@@ -540,7 +534,7 @@
 				<caseText value="noImp">no se permite la ausencia del sujeto. Éste siempre debe ser expresado, excepto cuando haya imperativos</caseText>
 				<caseText value="no">no se permite la ausencia del sujeto. Éste siempre debe ser expresado aun cuando haya imperativos</caseText>
 				<caseText value="yes">se permite la ausencia del sujeto en cualquier tipo de oración</caseText>
-				<caseText value="yesClitic">se puede ver la ausencia del sujeto  debido a los pronombres dependientes (clíticos pronominales) que se ligan al verbo, pero no es un idioma que en realidad permita la ausencia del sujeto</caseText>
+				<caseText value="yesClitic">se puede ver la ausencia del sujeto  debido a los pronombres dependientes (clíticos pronominales) que se ligan al verbo, pero no es una lengua que en realidad permita la ausencia del sujeto</caseText>
 			</case>
 			<content> (véase la sección </content>
 			<sectionRef sec="sIPProDrop"/>
@@ -579,7 +573,7 @@
 		</p>
 		<p>
 			<text show="swQMainYNWordYes">
-				<content>En preguntas con respuestas sí/no, hay un indicador o un complementador de la pregunta que aparece </content>
+				<content>En preguntas de respuesta sí/no, hay un indicador o un complementador de la pregunta que aparece </content>
 				<case attr="mainYNPos" element="q">
 					<caseText value="before">antes</caseText>
 					<caseText value="after">después</caseText>
@@ -587,12 +581,13 @@
 					<caseText value="beforeOrBoth">antes de o en ambos lados</caseText>
 					<caseText value="afterOrBoth">después de o en ambos lados</caseText>
 					<caseText value="both">en ambos lados</caseText>
+				   <caseText value="unknown">________</caseText>
 				</case>
 				<content> del resto de la pregunta (véase la sección </content>
 				<sectionRef sec="sQuesYN"/>
 				<content>).</content>
 			</text>
-			<content>  En preguntas abiertas, una frase interrogativa </content>
+			<content>  En preguntas de respuesta abierta, una frase interrogativa </content>
 			<case attr="contFront" element="q">
 				<caseText value="no">no se introduce al inicio de la cláusula; simplemente permanece en su lugar</caseText>
 				<caseText value="after">puede permanecer en su lugar o puede desplazarse a la posición inmediatamente antes que el verbo</caseText>
@@ -603,102 +598,974 @@
 			<sectionRef sec="sQuesContent"/>
 			<content>).</content>
 		</p>
+
+
+		  <p>
+			 <content>En </content>
+			 <langName/>
+			 <content/>
+			 <case element="typology" attr="case">
+				<caseText value="none"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición de la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición de la oración.</caseText>
+				<caseText value="nominative"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se indican de una manera diferente.</caseText>
+				<caseText value="ergative"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se indican de una manera diferente.</caseText>
+				<caseText value="split"> tiene un sistema de caso de ergatividad escindida. La lengua sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones gramaticales.</caseText>
+			 </case>
+			 <text show="swNPCaseNotNone"><content>  En </content><langName/><content>, </content><case element="np" attr="caseN">
+				<caseText value="yes">los sustantivos y posiblements sus modificadores se indican el caso así como los pronombres.</caseText>
+				<caseText value="no">los sustantivos no se indican el caso.  Solamente los pronombres indican el caso, como en español.</caseText>
+			 </case></text>
+			 <text show="swNPCaseDefaultNom">
+				<content>  El caso nominativo es un caso predeterminado (no indicado).</content>
+			 </text>
+			 <content> (Véase la sección </content><sectionRef sec="sNPCase"/><content>.)</content>
+		  </p>
+	   <p><content>En </content><langName/><content></content><case element="typology" attr="classifier">
+		  <caseText value="no"> no hay ningún sistema de clasificadores para sustantivos.</caseText>
+		  <caseText value="yesAgr"> hay un sistema de clasificadores para sustantivos, como detallado en la sección siguiente.</caseText>
+		  <caseText value="yesType"> hay un sistema de clasificadores para sustantivos, como detallado en la sección siguiente.</caseText>
+	   </case></p>
 	</section1>
+   <section1 id="sClassifiers" show="swClassifiersNotNo">
+	  <secTitle>Clasificadores</secTitle>
+	  <p><content>
+		 Algunas lenguas tiene un sistema de clasificadores para sustantivos que indican su forma, posición u otras características.  En muchos de estas lenguas, el clasificador es un tipo de concordancia que es requerido entre todos los modificadores en la frase nominal y también con el verbo.  Por eso, los quantificadores, artículos, demostrativs, adjetivos y verbos posiblemente necesitan ser marcado con un clasificador appropriado.</content></p>
+	  <p><content>Las lenguas Bantu que se habla en Africa tienen el sistema de clasificadores para sustantivos más conocido en el mundo.  Estas lenguas tienen hasta 22 clases distintas, que son representadas por números.  Aproximadamente la mitad está para los sustantivos singulares solamente y un número igual para los nombres en plural solamente. Otros están para los sustantivos  totales o abstractos o para los lugares.</content></p>
+	  <p><content>Hay también un sistema de clasificadores más simple donde hay clasificador afijos que son derivados de un sustantivo genérico o de un pronombre y estos debe aparecer con muchos de los sustantivos que refiere a animales, insectos, líquidos, árboles, objetos de madera o objetos que están básicamente redondos. En este sistema simple, normalmente no hay concordancia de clasificador en la frase nominal ni en la oración, entonces estos prefijos solamente marcan los sustantivos y tal vez son más derivativo.  Este tipo de sistema típicamente utiliza tipos en vez de números para identificar los clasificadores.</content></p>
+
+	  <p show="swClassifiersYesType"><langName/><content> tiene un sistema de clasificadores simple en que los tipos de sustantivos son distinguidos, pero no hay concordancia en la frase nominal o la oración.</content></p>
+	  <p show="swClassifiersYesAgr"><langName/><content> tiene un sistema de clasificadores con la concordancia en todas partes de la frase nominal y en el verbo.  En </content><langName/><content>, los clasificadores son identificaos por </content>
+	  <case element="typology" attr="classifierNum">
+		 <caseText value="number">números de clase. </caseText>
+		 <caseText value="type">los tipos.  <case element="typology" attr="classifierTypeNumAgr">
+			<caseText value="no">Los clasificadores no son separados entre singular y plural, entonces hay solamente un clasificador para cada tipo de sustantivo.</caseText>
+			<caseText value="yes">Hay clasificadores separados para singular y plural para cada tipo de sustantivo.</caseText>
+		 </case></caseText>
+	  </case>
+	  </p>
+	  <p><content>Los clasificadores en </content><langName/><content> se muestran en el cuadro siguiente:</content></p>
+	  <example show="swClassifiersYesTypeOrYesAgrTypeAndNoNumAgr">
+		 <table border="1" >
+			<caption>
+			   <content>Clasificadores para sustantivos por tipo</content>
+			</caption>
+			<headerRow>
+			   <headerCol>
+				  Tipo
+			   </headerCol>
+			   <headerCol>Clasificador</headerCol>
+			</headerRow>
+			<row>
+			   <col>
+				  <content>animal</content>
+			   </col>
+			   <col exampleLoc="typology/classAnimalExample"/>
+			 </row>
+			<row>
+			   <col>
+				  <content>insecto</content>
+			   </col>
+			   <col exampleLoc="typology/classInsectExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>líquido</content>
+			   </col>
+			   <col exampleLoc="typology/classLiquidExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>redondo</content>
+			   </col>
+			   <col exampleLoc="typology/classRoundExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>cilíndrico</content>
+			   </col>
+			   <col exampleLoc="typology/classCylinderExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>esférico</content>
+			   </col>
+			   <col exampleLoc="typology/classSphereExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>árbol</content>
+			   </col>
+			   <col exampleLoc="typology/classTreeExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>madera</content>
+			   </col>
+			   <col exampleLoc="typology/classWoodExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>general</content>
+			   </col>
+			   <col exampleLoc="typology/classOtherExample"/>
+			</row>
+		 </table>
+	  </example>
+	  <example show="swClassifiersYesAgrTypeAndYesNumAgr">
+		 <table border="1" >
+			<caption>
+			   <content>Clasificadores para sustantivos por tipo</content>
+			</caption>
+			<headerRow>
+			   <headerCol>Tipo</headerCol>
+<headerCol>Singular</headerCol>
+			   <headerCol>Plural</headerCol>
+			</headerRow>
+			<row>
+			   <col>
+				  <content>animal</content>
+			   </col>
+			   <col><content>singular</content></col>
+			   <col exampleLoc="typology/classAnimalSgExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>animal</content>
+			   </col>
+			   <col><content>plural</content></col>
+			   <col exampleLoc="typology/classAnimalPlExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>insecto</content>
+			   </col>
+			   <col><content>singular</content></col>
+			   <col exampleLoc="typology/classInsectSgExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>insecto</content>
+			   </col>
+			   <col><content>plural</content></col>
+			   <col exampleLoc="typology/classInsectPlExample"/>
+			</row>
+			<row>
+			   <col >
+				  <content>líquido</content>
+			   </col>
+			   <col><content>singular</content></col>
+			   <col exampleLoc="typology/classLiquidSgExample"/>
+			</row>
+			<row>
+			   <col >
+				  <content>líquido</content>
+			   </col>
+			   <col><content>plural</content></col>
+			   <col exampleLoc="typology/classLiquidPlExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>redondo</content>
+			   </col>
+			   <col><content>singular</content></col>
+			   <col exampleLoc="typology/classRoundSgExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>redondo</content>
+			   </col>
+			   <col><content>plural</content></col>
+			   <col exampleLoc="typology/classRoundPlExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>cilíndrico</content>
+			   </col>
+			   <col><content>singular</content></col>
+			   <col exampleLoc="typology/classCylinderSgExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>cilíndrico</content>
+			   </col>
+			   <col><content>plural</content></col>
+			   <col exampleLoc="typology/classCylinderPlExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>esférico</content>
+			   </col>
+			   <col><content>singular</content></col>
+			   <col exampleLoc="typology/classSphereSgExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>esférico</content>
+			   </col>
+			   <col><content>plural</content></col>
+			   <col exampleLoc="typology/classSpherePlExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>árbol</content>
+			   </col>
+			   <col><content>singular</content></col>
+			   <col exampleLoc="typology/classTreeSgExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>árbol</content>
+			   </col>
+			   <col><content>plural</content></col>
+			   <col exampleLoc="typology/classTreePlExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>madera</content>
+			   </col>
+			   <col><content>singular</content></col>
+			   <col exampleLoc="typology/classWoodSgExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>madera</content>
+			   </col>
+			   <col><content>plural</content></col>
+			   <col exampleLoc="typology/classWoodPlExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>otro / general</content>
+			   </col>
+			   <col><content>singular</content></col>
+			   <col exampleLoc="typology/classOtherSgExample"/>
+			</row>
+			<row>
+			   <col>
+				  <content>otro / general</content>
+			   </col>
+			   <col><content>plural</content></col>
+			   <col exampleLoc="typology/classOtherPlExample"/>
+			</row>
+		 </table>
+	  </example>
+	  <example show="swClassifiersYesAgrNum">
+		 <table border="1" >
+			<caption>
+			   <content>Clasificadores para sustantivos por número</content>
+			</caption>
+			<headerRow>
+			   <headerCol>
+				  Número de clase
+			   </headerCol>
+			   <headerCol>Clasificador</headerCol>
+			   <headerCol>Concordancia de número</headerCol>
+			</headerRow>
+			<row>
+			   <col>
+				  <content>1</content>
+			   </col>
+			   <col exampleLoc="typology/class1Example"/>
+			   <col>
+				  <case element="typology" attr="class1agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>2</content>
+			   </col>
+			   <col exampleLoc="typology/class2Example"/>
+			   <col>
+				  <case element="typology" attr="class2agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+				  </col>
+			</row>
+			<row>
+			   <col>
+				  <content>3</content>
+			   </col>
+			   <col exampleLoc="typology/class3Example"/>
+			   <col>
+				  <case element="typology" attr="class3agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>4</content>
+			   </col>
+			   <col exampleLoc="typology/class4Example"/>
+			   <col>
+				  <case element="typology" attr="class4agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>5</content>
+			   </col>
+			   <col exampleLoc="typology/class5Example"/>
+			   <col>
+				  <case element="typology" attr="class5agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>6</content>
+			   </col>
+			   <col exampleLoc="typology/class6Example"/>
+			   <col>
+				  <case element="typology" attr="class6agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>7</content>
+			   </col>
+			   <col exampleLoc="typology/class7Example"/>
+			   <col>
+				  <case element="typology" attr="class7agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>8</content>
+			   </col>
+			   <col exampleLoc="typology/class8Example"/>
+			   <col>
+				  <case element="typology" attr="class8agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>9</content>
+			   </col>
+			   <col exampleLoc="typology/class9Example"/>
+			   <col>
+				  <case element="typology" attr="class9agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>10</content>
+			   </col>
+			   <col exampleLoc="typology/class10Example"/>
+			   <col>
+				  <case element="typology" attr="class10agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>11</content>
+			   </col>
+			   <col exampleLoc="typology/class11Example"/>
+			   <col>
+				  <case element="typology" attr="class11agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>12</content>
+			   </col>
+			   <col exampleLoc="typology/class12Example"/>
+			   <col>
+				  <case element="typology" attr="class12agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>13</content>
+			   </col>
+			   <col exampleLoc="typology/class13Example"/>
+			   <col>
+				  <case element="typology" attr="class13agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>14</content>
+			   </col>
+			   <col exampleLoc="typology/class14Example"/>
+			   <col>
+				  <case element="typology" attr="class14agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>15</content>
+			   </col>
+			   <col exampleLoc="typology/class15Example"/>
+			   <col>
+				  <case element="typology" attr="class15agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>16</content>
+			   </col>
+			   <col exampleLoc="typology/class16Example"/>
+			   <col>
+				  <case element="typology" attr="class16agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>17</content>
+			   </col>
+			   <col exampleLoc="typology/class17Example"/>
+			   <col>
+				  <case element="typology" attr="class17agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>18</content>
+			   </col>
+			   <col exampleLoc="typology/class18Example"/>
+			   <col>
+				  <case element="typology" attr="class18agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>19</content>
+			   </col>
+			   <col exampleLoc="typology/class19Example"/>
+			   <col>
+				  <case element="typology" attr="class19agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>20</content>
+			   </col>
+			   <col exampleLoc="typology/class20Example"/>
+			   <col>
+				  <case element="typology" attr="class20agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>21</content>
+			   </col>
+			   <col exampleLoc="typology/class21Example"/>
+			   <col>
+				  <case element="typology" attr="class21agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>22</content>
+			   </col>
+			   <col exampleLoc="typology/class22Example"/>
+			   <col>
+				  <case element="typology" attr="class22agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>23</content>
+			   </col>
+			   <col exampleLoc="typology/class23Example"/>
+			   <col>
+				  <case element="typology" attr="class23agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>24</content>
+			   </col>
+			   <col exampleLoc="typology/class24Example"/>
+			   <col>
+				  <case element="typology" attr="class24agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+			<row>
+			   <col>
+				  <content>25</content>
+			   </col>
+			   <col exampleLoc="typology/class25Example"/>
+			   <col>
+				  <case element="typology" attr="class25agr">
+					 <caseText value="sg">singular</caseText>
+					 <caseText value="pl">plural</caseText>
+					 <caseText value="irrelevant">no aplica</caseText>
+				  </case>
+			   </col>
+			</row>
+		 </table>
+	  </example>
+
+ <p show="swClassifiersYesType"><content>Algunos ejemplos de sustantivos con sus clasificadores de tipo son:</content></p>
+	  <example show="swClassifiersYesType">
+		 <interlinear exampleLoc="typology/classifierTypeExample"/>
+	  </example>
+	  <p show="swClassifiersYesAgr"><content>Algunos ejemplos de oraciones que muestran la concordancia de clasificador en la frase nominal y en el verbo son:</content></p>
+	  <example show="swClassifiersYesAgr">
+		 <interlinear exampleLoc="typology/classifierAgrExample"/>
+	  </example>
+   </section1>
+
 	<showWhen id="swHeadInitialAndPrep">
-		<whenValue attr="wordOrder" element="typology" value="SVO"/>
+		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="before"/>
+		<whenValue element="pp" attr="pPos" value="before"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="VSO"/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="before"/>
+		<whenValue element="pp" attr="pPos" value="before"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="VOS"/>
+		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="before"/>
+		<whenValue element="pp" attr="pPos" value="before"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="SVO"/>
+		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="unknown"/>
+		<whenValue element="pp" attr="pPos" value="unknown"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="VSO"/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="unknown"/>
+		<whenValue element="pp" attr="pPos" value="unknown"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="VOS"/>
+		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="unknown"/>
+		<whenValue element="pp" attr="pPos" value="unknown"/>
 	</showWhen>
 	<showWhen id="swHeadInitialAndPost">
-		<whenValue attr="wordOrder" element="typology" value="SVO"/>
+		<whenValue element="typology" attr="wordOrder" value="SVO"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="after"/>
+		<whenValue element="pp" attr="pPos" value="after"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="VSO"/>
+		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="after"/>
+		<whenValue element="pp" attr="pPos" value="after"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="VOS"/>
+		<whenValue element="typology" attr="wordOrder" value="VOS"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="after"/>
+		<whenValue element="pp" attr="pPos" value="after"/>
 	</showWhen>
 	<showWhen id="swPrePost">
-		<whenValue attr="pPos" element="pp" value="both"/>
+		<whenValue element="pp" attr="pPos" value="both"/>
 	</showWhen>
 	<showWhen id="swHeadFinalAndPost">
-		<whenValue attr="wordOrder" element="typology" value="SOV"/>
+		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="after"/>
+		<whenValue element="pp" attr="pPos" value="after"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="OVS"/>
+		<whenValue element="typology" attr="wordOrder" value="OVS"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="after"/>
+		<whenValue element="pp" attr="pPos" value="after"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="OSV"/>
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="after"/>
+		<whenValue element="pp" attr="pPos" value="after"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="SOV"/>
+		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="unknown"/>
+		<whenValue element="pp" attr="pPos" value="unknown"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="OVS"/>
+		<whenValue element="typology" attr="wordOrder" value="OVS"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="unknown"/>
+		<whenValue element="pp" attr="pPos" value="unknown"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="OSV"/>
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="unknown"/>
+		<whenValue element="pp" attr="pPos" value="unknown"/>
 	</showWhen>
 	<showWhen id="swHeadFinalAndPre">
-		<whenValue attr="wordOrder" element="typology" value="SOV"/>
+		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="before"/>
+		<whenValue element="pp" attr="pPos" value="before"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="OVS"/>
+		<whenValue element="typology" attr="wordOrder" value="OVS"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="before"/>
+		<whenValue element="pp" attr="pPos" value="before"/>
 		<or/>
-		<whenValue attr="wordOrder" element="typology" value="OSV"/>
+		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 		<and/>
-		<whenValue attr="pPos" element="pp" value="before"/>
+		<whenValue element="pp" attr="pPos" value="before"/>
 	</showWhen>
 	<showWhen id="swRelClExistNo">
-		<whenValue attr="exist" element="relcl" value="no"/>
+		<whenValue element="relcl" attr="exist" value="no"/>
 	</showWhen>
 	<showWhen id="swRelClExistYes">
-		<whenValue attr="exist" element="relcl" value="yes"/>
+		<whenValue element="relcl" attr="exist" value="yes"/>
 	</showWhen>
 	<showWhen id="swAuxNone">
-		<whenValue attr="aux" element="ip" value="no"/>
+		<whenValue element="ip" attr="aux" value="no"/>
 	</showWhen>
 	<showWhen id="swAuxNotNone">
-		<whenValue attr="aux" element="ip" value="yes"/>
+		<whenValue element="ip" attr="aux" value="yes"/>
 	</showWhen>
 	<showWhen id="swQMainYNWordYes">
-		<whenValue attr="mainYNWord" element="q" value="yes"/>
+		<whenValue element="q" attr="mainYNWord" value="yes"/>
 	</showWhen>
 	<showWhen id="swIPProDropYes">
-		<whenValue attr="proDrop" element="ip" value="yes"/>
+		<whenValue element="ip" attr="proDrop" value="yes"/>
 	</showWhen>
+   <showWhen id="swNPCaseNYes">
+	  <whenValue element="typology" attr="caseN" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNone">
+	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseDefaultNom">
+	  <whenValue element="typology" attr="case" value="nominative"/>
+	  <and/>
+	  <whenValue element="np" attr="caseDefault" value="nominative"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+	  <and/>
+	  <whenValue element="np" attr="caseDefault" value="nominative"/>
+   </showWhen>
+   <showWhen id="swClassifiersNotNo">
+	  <whenValue element="typology" attr="classifier" value="no" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swClassifiersYesType">
+	  <whenValue element="typology" attr="classifier" value="yesType"/>
+   </showWhen>
+   <showWhen id="swClassifiersYesAgr">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swClassifiersYesAgrNum">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifierNum" value="number"/>
+   </showWhen>
+   <showWhen id="swClassifiersYesTypeOrYesAgrTypeAndNoNumAgr">
+	  <whenValue element="typology" attr="classifier" value="yesType"/>
+	  <or/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifierNum" value="type"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifierTypeNumAgr" value="no"/>
+   </showWhen>
+   <showWhen id="swClassifiersYesAgrTypeAndYesNumAgr">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifierNum" value="type"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifierTypeNumAgr" value="yes"/>
+   </showWhen>
+   <showWhen id="swClass1AgrSg">
+	  <whenValue element="typology" attr="class1Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass1AgrPl">
+	  <whenValue element="typology" attr="class1Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass1AgrIrr">
+	  <whenValue element="typology" attr="class1Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass2AgrSg">
+	  <whenValue element="typology" attr="class2Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass2AgrPl">
+	  <whenValue element="typology" attr="class2Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass2AgrIrr">
+	  <whenValue element="typology" attr="class2Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass3AgrSg">
+	  <whenValue element="typology" attr="class3Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass3AgrPl">
+	  <whenValue element="typology" attr="class3Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass3AgrIrr">
+	  <whenValue element="typology" attr="class3Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass4AgrSg">
+	  <whenValue element="typology" attr="class4Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass4AgrPl">
+	  <whenValue element="typology" attr="class4Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass4AgrIrr">
+	  <whenValue element="typology" attr="class4Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass5AgrSg">
+	  <whenValue element="typology" attr="class5Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass5AgrPl">
+	  <whenValue element="typology" attr="class5Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass5AgrIrr">
+	  <whenValue element="typology" attr="class5Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass6AgrSg">
+	  <whenValue element="typology" attr="class6Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass6AgrPl">
+	  <whenValue element="typology" attr="class6Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass6AgrIrr">
+	  <whenValue element="typology" attr="class6Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass7AgrSg">
+	  <whenValue element="typology" attr="class7Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass7AgrPl">
+	  <whenValue element="typology" attr="class7Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass7AgrIrr">
+	  <whenValue element="typology" attr="class7Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass8AgrSg">
+	  <whenValue element="typology" attr="class8Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass8AgrPl">
+	  <whenValue element="typology" attr="class8Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass8AgrIrr">
+	  <whenValue element="typology" attr="class8Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass9AgrSg">
+	  <whenValue element="typology" attr="class9Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass9AgrPl">
+	  <whenValue element="typology" attr="class9Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass9AgrIrr">
+	  <whenValue element="typology" attr="class1Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass10AgrSg">
+	  <whenValue element="typology" attr="class10Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass10AgrPl">
+	  <whenValue element="typology" attr="class10Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass10AgrIrr">
+	  <whenValue element="typology" attr="class10Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass11AgrSg">
+	  <whenValue element="typology" attr="class11Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass11AgrPl">
+	  <whenValue element="typology" attr="class11Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass11AgrIrr">
+	  <whenValue element="typology" attr="class11Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass12AgrSg">
+	  <whenValue element="typology" attr="class12Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass12AgrPl">
+	  <whenValue element="typology" attr="class12Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass12AgrIrr">
+	  <whenValue element="typology" attr="class12Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass13AgrSg">
+	  <whenValue element="typology" attr="class13Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass13AgrPl">
+	  <whenValue element="typology" attr="class13Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass13AgrIrr">
+	  <whenValue element="typology" attr="class13Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass14AgrSg">
+	  <whenValue element="typology" attr="class14Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass14AgrPl">
+	  <whenValue element="typology" attr="class14Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass14AgrIrr">
+	  <whenValue element="typology" attr="class14Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass15AgrSg">
+	  <whenValue element="typology" attr="class15Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass15AgrPl">
+	  <whenValue element="typology" attr="class15Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass15AgrIrr">
+	  <whenValue element="typology" attr="class15Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass16AgrSg">
+	  <whenValue element="typology" attr="class16Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass16AgrPl">
+	  <whenValue element="typology" attr="class16Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass16AgrIrr">
+	  <whenValue element="typology" attr="class16Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass17AgrSg">
+	  <whenValue element="typology" attr="class17Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass17AgrPl">
+	  <whenValue element="typology" attr="class17Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass17AgrIrr">
+	  <whenValue element="typology" attr="class17Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass18AgrSg">
+	  <whenValue element="typology" attr="class18Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass18AgrPl">
+	  <whenValue element="typology" attr="class18Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass18AgrIrr">
+	  <whenValue element="typology" attr="class18Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass19AgrSg">
+	  <whenValue element="typology" attr="class19Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass19AgrPl">
+	  <whenValue element="typology" attr="class19Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass19AgrIrr">
+	  <whenValue element="typology" attr="class19Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass20AgrSg">
+	  <whenValue element="typology" attr="class20Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass20AgrPl">
+	  <whenValue element="typology" attr="class20Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass20AgrIrr">
+	  <whenValue element="typology" attr="class20Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass21AgrSg">
+	  <whenValue element="typology" attr="class21Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass21AgrPl">
+	  <whenValue element="typology" attr="class21Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass21AgrIrr">
+	  <whenValue element="typology" attr="class21Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass22AgrSg">
+	  <whenValue element="typology" attr="class22Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass22AgrPl">
+	  <whenValue element="typology" attr="class22Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass22AgrIrr">
+	  <whenValue element="typology" attr="class22Agr" value="irrelevant"/>
+   </showWhen>
+	  <showWhen id="swClass23AgrSg">
+	  <whenValue element="typology" attr="class23Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass23AgrPl">
+	  <whenValue element="typology" attr="class23Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass23AgrIrr">
+	  <whenValue element="typology" attr="class23Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass24AgrSg">
+	  <whenValue element="typology" attr="class24Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass24AgrPl">
+	  <whenValue element="typology" attr="class24Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass24AgrIrr">
+	  <whenValue element="typology" attr="class24Agr" value="irrelevant"/>
+   </showWhen>
+   <showWhen id="swClass25AgrSg">
+	  <whenValue element="typology" attr="class25Agr" value="sg"/>
+   </showWhen>
+   <showWhen id="swClass25AgrPl">
+	  <whenValue element="typology" attr="class25Agr" value="pl"/>
+   </showWhen>
+   <showWhen id="swClass25AgrIrr">
+	  <whenValue element="typology" attr="class25Agr" value="irrelevant"/>
+   </showWhen>
+
 </portion>

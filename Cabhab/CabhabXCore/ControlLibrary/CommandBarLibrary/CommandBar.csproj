@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
 	<ProjectType>Local</ProjectType>
-	<ProductVersion>9.0.30729</ProductVersion>
+	<ProductVersion>9.0.21022</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<ProjectGuid>{014A62A9-FDC3-4BC5-99AE-8C92351549C9}</ProjectGuid>
 	<SccProjectName>
@@ -174,9 +174,11 @@
 	</Compile>
 	<EmbeddedResource Include="CommandBar.resx">
 	  <DependentUpon>CommandBar.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="CommandBarManager.resx">
 	  <DependentUpon>CommandBarManager.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

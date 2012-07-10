@@ -11,11 +11,12 @@ function Initialize() {
 	displayStatus(IPContentsFeaturesStatus, "ipContents2");
 	displayStatus(IPContentsProDropStatus, "ipContents3");
 	displayStatus(IPContentsAuxStatus, "ipContents4");
-	displayStatus(IPContentsIntransStatus, "ipContents5");
-	displayStatus(IPContentsTransStatus, "ipContents6");
-	displayStatus(IPContentsPassiveStatus, "ipContents7");
-	displayStatus(IPContentsCatMapStatus, "ipContents8");
-	displayStatus(IPContentsTestingStatus, "ipContents9");
+	displayStatus(IPContentsCopStatus, "ipContents5");
+	displayStatus(IPContentsIntransStatus, "ipContents6");
+	displayStatus(IPContentsTransStatus, "ipContents7");
+	displayStatus(IPContentsPassiveStatus, "ipContents8");
+	displayStatus(IPContentsCatMapStatus, "ipContents9");
+	displayStatus(IPContentsTestingStatus, "ipContents10");
 
 	displayOutputGrammarItems();
 

@@ -50,41 +50,52 @@
         <prompt id="IPAuxiliaryExamplePrompt" show="swAuxYes">Key the (positive) auxiliary words used your language here:</prompt>
         <textBox id="IPAuxiliaryExample" dataItem="auxiliaryExample" rows="5" show="swAuxYes"/>
         <br/><br/>
-        <introduction>In some languages verbal negation is an auxiliary element, while in others it is simply a verbal affix. English has both the negative auxiliary <example>not</example>, which is a separate word that must always follow another auxiliary, and the contraction form <example>-n't</example>, which is written as a suffix on the auxiliary.  Examples are given for English negative transitive single-clause sentences.</introduction>
+		<introduction>In some languages verbal negation is an auxiliary element, while in others it is simply a verbal affix. English has both the negative auxiliary <example>not</example>, which is a separate word that must always follow another auxiliary, and the contraction form <example>-n’t</example>, which is written as a suffix on the auxiliary.  Examples are given for English negative transitive single-clause sentences.</introduction>
     <EnglishExample>
         <exItem label="1.">The boy did <u>not</u> hit the ball.</exItem>
-        <exItem label="2.">The boy did<u>n't</u> hit the ball.</exItem>
+		<exItem label="2.">The boy did<u>n’t</u> hit the ball.</exItem>
         <exItem label="3.">The boy will <u>not</u> hit the ball.</exItem>
-        <exItem label="4.">The boy wo<u>n't</u> hit the ball.</exItem>
+		<exItem label="4.">The boy wo<u>n’t</u> hit the ball.</exItem>
         <exItem label="5.">The boy might <u>not</u> have hit the ball.</exItem>
     </EnglishExample>
         <br/>
         <br/>
 <radioGroup>
-    <groupName dataItem="negAux" default="noVerb">RNegAux</groupName>
+	<groupName dataItem="negAux" default="no">RNegAux</groupName>
     <prompt>Does you language have one or more negative auxiliaries which are written as a separate word?</prompt>
-    <radio id="IPNegAuxWordOnly" dataValue="yesOnly">Yes, and that is the only type of verbal negation (no verbal affix nor auxiliary affix)</radio>
-    <radio id="IPNegAuxWordAndAffix" dataValue="yesAffix">Yes, and there is also a negative auxiliary affix, but no negative verbal affix</radio>
-    <radio id="IPNegAuxWordAndVerb" dataValue="yesVerb">Yes, and there is also a negative verbal affix, but no negative auxiliary affix</radio>
-    <radio id="IPNegAuxAll" dataValue="yesAll">Yes, and there is also a negative auxiliary affix and a negative verbal affix</radio>
-    <radio id="IPNegAuxAffixOnly" dataValue="noAffixOnly">No, but there is a negative affix which goes on the auxiliary, and that is the only type of verbal negation (no verbal affix)</radio>
-    <radio id="IPNegAuxAffixAndVerb" dataValue="noAffixAndVerb">No, but there is a negative affix which goes on the auxiliary and a negative verbal affix as well</radio>
-    <radio id="IPNegAuxVerbOnly" dataValue="noVerb">No, the only way to express verbal negation is by one or more negative verbal affixes</radio>
-<radioGroup id="NegAuxRequiresAuxTable" show="swIPNegAuxYes">
+	<radio id="IPNegAuxYes" dataValue="yes">Yes</radio>
+	<radio id="IPNegAuxNo" dataValue="no">No</radio>
+</radioGroup>
+		<radioGroup>
+			<groupName dataItem="negAuxAffix" default="no">RNegAuxAffix</groupName>
+			<prompt>Does your language have one or more negative affixes which attach to a positive auxiliary to make it negative?</prompt>
+			<radio id="IPNegAuxAffixYes" dataValue="yes">Yes</radio>
+			<radio id="IPNegAuxAffixNo" dataValue="no">No</radio>
+		</radioGroup>
+		<radioGroup>
+			<groupName dataItem="negVAffix" default="no">RNegVAffix</groupName>
+			<prompt>Does your language have one or more negative affixes which attach to a verb to make it negative?</prompt>
+			<radio id="IPNegVAffixYes" dataValue="yes">Yes</radio>
+			<radio id="IPNegVAffixNo" dataValue="no">No</radio>
+		</radioGroup>
+ <radioGroup id="NegAuxRequiresAuxTable" show="swIPNegAuxYes">
     <groupName dataItem="negAuxRequiresAux" default="no">RNegAuxRequiresAux</groupName>
     <prompt>Is there required to be another auxiliary element in the sentence when the negative auxiliary word is present?</prompt>
     <radio id="IPNegAuxRequiresAuxNo" dataValue="no">No, the negative auxiliary may be the only auxiliary in the phrase</radio>
     <radio id="IPNegAuxRequiresAuxYes" dataValue="yes">Yes, another auxiliary is required, as in English</radio>
-</radioGroup>
-</radioGroup>
-<prompt id="IPNegAuxWordPrompt" show="swIPNegAuxYes">Key the negative auxiliary word(s) only (each on a separate line and followed by a period) here:</prompt>
+ </radioGroup>
+		<prompt id="IPNegAuxRequiresAuxButNoAuxInstruction" show="swIPNegAuxRequiresAuxButNoAux">WARNING - The answers you have entered are incompatible!! A negative auxiliary word cannot require the presence of another auxiliary if your language does not have (positive) auxiliaries that are written as separate words.  Please change the answer to either question to correct this problem before proceeding.</prompt>
+		<prompt id="IPNegAuxAffixButNoAuxInstruction" show="swIPNegAuxAffixButNoAux">WARNING - The answers you have entered are incompatible!! A negative auxiliary affix cannot attach to anything if your language does not have (positive) auxiliaries that are written as separate words.  Please change the answer to either question to correct this problem before proceeding.</prompt>
+<prompt id="IPNegAuxWordPrompt" show="swIPNegAuxYes">Key the negative auxiliary word(s) only (each on a separate line) here:</prompt>
 <textBox id="IPNegAuxWordExample" dataItem="negAuxExample" rows="3" show="swIPNegAuxYes"></textBox>
-<prompt id="IPNegAuxAffixPrompt" show="swIPNegAuxAffix">Key the negative auxiliary affix(es) attached to an auxiliary (each on a separate line and followed by a period) here:</prompt>
+<prompt id="IPNegAuxAffixPrompt" show="swIPNegAuxAffix">Key examples of the negative auxiliary affix(es) attached to an auxiliary (each on a separate line) here:</prompt>
 <textBox id="IPNegAuxAffixExample" dataItem="negAuxAffixExample" rows="3" show="swIPNegAuxAffix"></textBox>
-<prompt id="IPNegVerbPrompt" show="swIPNegVerb">Key the negative affix(es) attached to a verb (each on a separate line and followed by a period) here:</prompt>
+<prompt id="IPNegVerbPrompt" show="swIPNegVerb">Key examples of the negative affix(es) attached to a verb (each on a separate line) here:</prompt>
 <textBox id="IPNegVerbExample" dataItem="negVerbExample" rows="3" show="swIPNegVerb"></textBox>
         <br/>
         <br/>
+	   <prompt>  These negative elements will be discussed further in <section number="14">Negative Constructions</section>.</prompt>
+	   <br/><br/>
         <introduction>The nonfinite word <example>to</example> used in English embedded clauses also acts as an auxiliary in that it fills the same position and can occur before other auxiliaries:</introduction>
         <EnglishExample>
             <exItem label="1.">The boy wanted to hit the ball.</exItem>
@@ -126,7 +137,7 @@
         <br/><br/>
         <introduction>Some languages have other words that act like auxiliaries, such as motion auxiliaries or loan markers, which are written <span id="ipAuxVInitialSpan" show="swVInitial">before</span>
             <span id="ipAuxVFinalSpan" show="swVFinal">after</span> the verb and share the same subject and complements.</introduction>
-        <prompt>Key examples with these other kinds of auxiliaries if your language has them here:</prompt>
+		<prompt>Key examples of sentences including these other kinds of auxiliaries if your language has them here:</prompt>
         <textBox id="IPAuxOtherExample" dataItem="auxOtherExample" cols="50"/>
         <br/>
         <br/>
@@ -153,12 +164,10 @@
         <prompt id="IPAuxiliaryOtherExamplePrompt" show="swAuxOtherYes">Key the other types of auxiliary words, such as motion auxiliaries or loan markers, used your language here:</prompt>
         <textBox id="IPAuxiliaryOtherExample" dataItem="auxiliaryOtherExample" rows="3" show="swAuxOtherYes"/>
         <br/><br/>
-        <instruction id="IPNegAuxRequiresAuxButNoAuxInstruction" show="swIPNegAuxRequiresAuxButNoAux">WARNING - The answers you have entered are incompatible!! A negative auxiliary word cannot require the presence of another auxiliary if your language does not have (positive) auxiliaries that are written as separate words.  Please change the answer to either question to correct this problem before proceeding.</instruction>
-        <instruction id="IPNegAuxAffixButNoAuxInstruction" show="swIPNegAuxAffixButNoAux">WARNING - The answers you have entered are incompatible!! A negative auxiliary affix cannot attach to anything if your language does not have (positive) auxiliaries that are written as separate words.  Please change the answer to either question to correct this problem before proceeding.</instruction>
-        <instruction id="IPNegAuxYesInstruction" show="swIPNegAuxYes">Add the features <feature>negative makeAux</feature> to the negative auxiliary elements that are written as separate words.  This will mark them as negative and also assure that they have the category <category>Aux</category>.  These negative words will be discussed further in <section number="14">Negative Constructions</section>.</instruction>
-        <instruction id="IPNegAuxAffixInstruction" show="swIPNegAuxAffix">Add the feature <feature>negative</feature> to the negative auxiliary affix(es).  These negative elements will be discussed further in <section number="14">Negative Constructions</section>.</instruction>
-        <instruction id="IPNegVerbInstruction" show="swIPNegVerb">Add the feature <feature>negative</feature> to the negative verbal affix(es).  These negative elements will be discussed further in <section number="14">Negative Constructions</section>.</instruction>
-        <instruction id="IPAuxNonfiniteInstruction" show="swAuxYes">If your language has a nonfinite marker that is written as a separate word like <example>to</example> in English, add the feature <feature>-finite</feature> to the entry and make sure that it is included in the category mapping to <category>Aux</category> in the <section number="9.8">Basic, Single-Clause Sentences - Category Mapper</section>.  Alternatively, you can add the feature <feature>makeAux</feature> now to be sure.  However, remember that if the word can also be used as another syntactic category (like English <example>to</example> can be both a nonfinite <category>Aux</category> and a preposition <category>P</category>), you need to make a separate lexical entry for each use.</instruction>
+		<instruction id="IPNegAuxYesInstruction" show="swIPNegAuxYes">Add the features <feature>negative makeAux</feature> to the negative auxiliary elements that are written as separate words.  This will mark them as negative and also assure that they have the category <category>Aux</category>.</instruction>
+		<instruction id="IPNegAuxAffixInstruction" show="swIPNegAuxAffix">Add the feature <feature>negative</feature> to the negative auxiliary affix(es).</instruction>
+		<instruction id="IPNegVerbInstruction" show="swIPNegVerb">Add the feature <feature>negative</feature> to the negative verbal affix(es).</instruction>
+		<instruction id="IPAuxNonfiniteInstruction" show="swAuxNonfiniteYes">Add the feature <feature>-finite</feature> to the entry for the nonfinite marker that is written as a separate word like <example>to</example> in English and make sure that it is included in the category mapping to <category>Aux</category> in the <section number="9.9">Basic, Single-Clause Sentences - Category Mapper</section>.  Alternatively, you can add the feature <feature>makeAux</feature> now to be sure.  However, remember that if the word can also be used as another syntactic category (like English <example>to</example> can be both a nonfinite <category>Aux</category> and a preposition <category>P</category>), you need to make a separate lexical entry for each use.</instruction>
         <br/>
         <br/>
         <buttons>
@@ -167,65 +176,27 @@
         </buttons>
     </form>
 <showWhen id="swIPNegAuxYes">
-    <whenRadio button="IPNegAuxWordOnly"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxWordAndAffix"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxWordAndVerb"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxAll"></whenRadio>
+	<whenRadio button="IPNegAuxYes"></whenRadio>
 </showWhen>
 <showWhen id="swIPNegAuxAffix">
-    <whenRadio button="IPNegAuxAffixOnly"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxWordAndAffix"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxAffixAndVerb"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxAll"></whenRadio>
+	<whenRadio button="IPNegAuxAffixYes"></whenRadio>
 </showWhen>
 <showWhen id="swIPNegVerb">
-    <whenRadio button="IPNegAuxVerbOnly"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxWordAndVerb"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxAffixAndVerb"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxAll"></whenRadio>
-</showWhen>
-<showWhen id="swIPNegAuxRequiresAuxButNoAux">
-<openParen/>
-    <whenRadio button="IPNegAuxWordOnly"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxWordAndAffix"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxWordAndVerb"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxAll"></whenRadio>
-<closeParen/>
-<and/>
-<openParen/>
-    <whenRadio button="IPNegAuxRequiresAuxYes"></whenRadio>
-<and/>
-<whenRadio button="IPAuxNo"></whenRadio>
-<closeParen/>
-</showWhen>
-<showWhen id="swIPNegAuxAffixButNoAux">
-<openParen/>
-    <whenRadio button="IPNegAuxAffixOnly"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxWordAndAffix"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxAffixAndVerb"></whenRadio>
-<or/>
-<whenRadio button="IPNegAuxAll"></whenRadio>
-<closeParen/>
-<and/>
-<whenRadio button="IPAuxNo"></whenRadio>
+	<whenRadio button="IPNegVAffixYes"></whenRadio>
 </showWhen>
     <showWhen id="swAuxYes">
         <whenRadio button="IPAuxYes"/>
     </showWhen>
+	<showWhen id="swIPNegAuxRequiresAuxButNoAux">
+		<whenRadio button="IPAuxNo"/>
+		<and/>
+		<whenRadio button="IPNegAuxRequiresAuxYes"/>
+	</showWhen>
+	<showWhen id="swIPNegAuxAffixButNoAux">
+		<whenRadio button="IPAuxNo"/>
+		<and/>
+		<whenRadio button="IPNegAuxAffixYes"/>
+	</showWhen>
     <showWhen id="swAuxNonfiniteYes">
         <whenRadio button="IPAuxNonfiniteYes"/>
     </showWhen>

@@ -1,238 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
-  <section1 id="sFocus">
-    <secTitle>Focus and Topic Constructions</secTitle>
-<p><content>
-This section considers two types of constructions which draw attention to a particular element.  Since topics occur outside of focus constructions, they will be considered first.  The following example shows that a single sentence may have both a topic and a focused phrase.  In this case, the topic </content><langData>Bill</langData><content> is introduced by the topic marker </content><langData>as for</langData><content>, then the focused phrase </content><langData>soccer</langData><content>, which has been moved out of its regular place in the sentence follows.</content></p>
-<ul>
-<li>
-<content>As for Bill, soccer he plays __ best.</content>
-</li></ul>
-<section2 id="sFocusTopics">
-    <secTitle>Topics and Topic Markers</secTitle>
-<p><content>
-As defined here, topic constructions consist of a topic phrase followed by a complete sentence or question and usually set apart by punctuation.  Certain markers may be used to set off topics, as shown in the following English examples:</content>
-    </p>
-            <ol>
-                <li>
-                    <content>As for John, I think he will make a good doctor.</content>
-                </li>
-                <li>
-                    <content>Speaking of Jill, where is she?</content>
-                </li>
-            </ol>
-<p show="swTopicNo"><langName/><content> does not allow topic phrases. </content></p>
-<p show="swTopicYes"><langName/><content> has topic phrases which occur </content>
+   <section1 id="sFocus">
+	  <secTitle>Topic and Focus Constructions</secTitle>
+	  <p><content>
+		 This section considers two types of constructions which draw attention to a particular element.  Since topics occur outside of focus constructions, they will be considered first.  The following example shows that a single sentence may have both a topic and a focused phrase.  In this case, the topic </content><langData>Bill</langData><content> is introduced by the topic marker </content><langData>as for</langData><content>, then the focused phrase </content><langData>soccer</langData><content>, which has been moved out of its regular place in the sentence follows.</content></p>
+	  <ul>
+		 <li>
+			<content>As for Bill, soccer he plays __ best.</content>
+		 </li></ul>
+	  <section2 id="sFocusTopics">
+		 <secTitle>Topics and Topic Markers</secTitle>
+		 <p><content>
+			As defined here, topic constructions consist of a topic phrase followed by a complete sentence or question and usually set apart by punctuation.  Certain markers may be used to set off topics, as shown in the following English examples: </content>
+			<langData>As for John, I think he will make a good doctor</langData><content> and </content><langData>Speaking of Jill, where is she?</langData>    </p>
+
+		 <p show="swTopicNo"><langName/><content> does not allow topic phrases. </content></p>
+		 <p show="swTopicYes"><langName/><content> has topic phrases which occur </content>
             <case element="focus" attr="topicPos">
-                <caseText value="before">before</caseText>
-                <caseText value="after">after</caseText>
-                <caseText value="unknown">_______</caseText>
+			   <caseText value="before">before</caseText>
+			   <caseText value="after">after</caseText>
+			   <caseText value="unknown">_______</caseText>
             </case>
             <content> the main sentence or question.   Some examples include:</content>
-</p>
-            <example show="swTopicYes">
-                <interlinear exampleLoc="focus/topicExample"/>
-            </example>
-<p show="swTopicYes"><content>In </content><langName/><content>, the topic phrase is </content>
-<case element="focus" attr="topicMarker">
-<caseText value="no">not marked by a topic marker.  Only the position in the sentence and possibly punctuation distinguish the topic phrase.</caseText>
-<caseText value="yesWord">marked by certain words or phrases.</caseText>
-<caseText value="yesClitic">marked by one or more clitics which attach to the topic phrase.</caseText>
-<caseText value="yesAffix">marked by one or more affixes which attach to the topic phrase.</caseText>
-</case>
-<text show="swTopicYesWord"><content>The topic markers occur </content>
-<case element="focus" attr="topicMarkerPos">
-<caseText value="before">before the topic phrase itself.</caseText>
-<caseText value="after">after the topic phrase itself.</caseText>
-<caseText value="either">on either side of the topic phrase itself, but not on both sides in the same sentence.</caseText>
-<caseText value="both">on both sides of the topic phrase itself.</caseText>
-<caseText value="unknown">_______.</caseText>
-</case>
-<content> A topic marker is </content><case element="focus" attr="topicMarkerRequired">
-<caseText value="no">optional</caseText>
-<caseText value="yes">required</caseText></case>
-<content> whenever there is a topic phrase.</content>
-</text>
-<text show="swTopicYesWordEitherNo"><content>There are separate sets of topic markers which can occur on each side of the topic phrase.</content></text>
-<text show="swTopicYesWordEitherYes"><content>All of the topic markers may occur on either side of the topic phrase.</content></text>
-</p>
-<example show="swTopicMarkerYes">
-    <table border="1">
-<headerRow>
-    <headerCol>Topic Markers</headerCol>
-    <headerCol>Gloss or Restrictions</headerCol>
-</headerRow>
-    <row>
-        <col exampleLoc="focus/topicMarkerExample"></col>
-        <col ><gloss><content>ENTER GLOSS</content></gloss></col>
-    </row>
-</table>
-</example>
-</section2>
+		 </p>
+		 <example show="swTopicYes">
+			<interlinear exampleLoc="focus/topicExample"/>
+		 </example>
+		 <p show="swTopicYes"><content>As the examples show, the topic phrase in </content><langName/><content> is </content>
+			<case element="focus" attr="topicMarker">
+			   <caseText value="no">not marked by a topic marker.  Only the position in the sentence and possibly punctuation distinguish the topic phrase.</caseText>
+			   <caseText value="yesWord">marked by certain words or phrases.</caseText>
+			   <caseText value="yesClitic">marked by one or more clitics which attach to the topic phrase.</caseText>
+			   <caseText value="yesAffix">marked by one or more affixes which attach to the topic phrase.</caseText>
+			</case>
+			<text show="swTopicYesWord"><content>The topic markers occur </content>
+			   <case element="focus" attr="topicMarkerPos">
+				  <caseText value="before">before the topic phrase itself.</caseText>
+				  <caseText value="after">after the topic phrase itself.</caseText>
+				  <caseText value="either">on either side of the topic phrase itself, but not on both sides in the same sentence.</caseText>
+				  <caseText value="both">on both sides of the topic phrase itself.</caseText>
+				  <caseText value="unknown">_______.</caseText>
+			   </case>
+			   <content> A topic marker is </content><case element="focus" attr="topicMarkerRequired">
+				  <caseText value="no">optional</caseText>
+				  <caseText value="yes">required</caseText></case>
+			   <content> whenever there is a topic phrase.</content>
+			</text>
+			<text show="swTopicYesWordEitherNo"><content> There are separate sets of topic markers which can occur on each side of the topic phrase.</content></text>
+			<text show="swTopicYesWordEitherYes"><content> All of the topic markers may occur on either side of the topic phrase.</content></text>
+		 </p>
+		 <example show="swTopicMarkerYes">
+			<table border="1">
+			   <headerRow>
+				  <headerCol>Topic Markers</headerCol>
+				  <headerCol>Gloss or Restrictions</headerCol>
+			   </headerRow>
+			   <row>
+				  <col exampleLoc="focus/topicMarkerExample"></col>
+				  <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+			   </row>
+			</table>
+		 </example>
+	  </section2>
 
-<section2 id="sFocusFocus">
-    <secTitle>Focused Phrases and Focus Markers</secTitle>
-<p><content>In contrast to topics, while focus constructions also have an element fronted which may be set off by punctuation, the phrase in focus is moved from its normal position in the sentence, leaving a gap.  Certain markers, such as </content><langData>only</langData>  <content> in English, may be used to mark the focused phrase.  Focus constructions are not used frequently in SVO languages, since the subject is usually in focus and is already first in the normal order.  Languages with other word orders, such as VSO languages, may make extensive use of focus constructions.  English examples of focus constructions include:</content></p>
-            <ol>
-                <li>
-                    <content>Girls, I like __.</content>
-                </li>
-                <li>
-                    <content>Soccer, Bill plays __ best.</content>
-                </li>
-                <li>
-                    <content>Only that boy, Jerry hit  __ .</content>
-                </li>
-            </ol>
-<p show="swFocusNo"><langName/><content> does not allow a focus phrase to be moved before or after the rest of the sentence out of its normal position. </content></p>
-<p show="swFocusYes"><langName/><content> has focused phrases which occur </content>
+	  <section2 id="sFocusFocus">
+		 <secTitle>Focused Phrases and Focus Markers</secTitle>
+		 <p><content>In contrast to topics, while focus constructions also have an element fronted which may be set off by punctuation, the phrase in focus is moved from its normal position in the sentence, leaving a gap.  Certain markers, such as </content><langData>only</langData>  <content> in English, may be used to mark the focused phrase.  Focus constructions are not used frequently in SVO languages, since the subject is usually in focus and is already first in the normal order.  Languages with other word orders, such as VSO languages, may make extensive use of focus constructions.  English examples of focus constructions include: </content>
+			<langData>Girls, I like __</langData><content>, </content><langData>Soccer, Bill plays __ best</langData><content> and </content><langData>Only that boy, Jerry hit  __ </langData><content>.</content></p>
+
+		 <p show="swFocusNo"><langName/><content> does not allow a focus phrase to be moved before or after the rest of the sentence out of its normal position. </content></p>
+		 <p show="swFocusYes"><langName/><content> has focused phrases which occur </content>
             <case element="focus" attr="focusPos">
-                <caseText value="before">before</caseText>
-                <caseText value="after">after</caseText>
-                <caseText value="unknown">_______</caseText>
+			   <caseText value="before">before</caseText>
+			   <caseText value="after">after</caseText>
+			   <caseText value="unknown">_______</caseText>
             </case>
             <content> the rest of the sentence.   Some examples include:</content>
-</p>
-            <example show="swFocusYes">
-                <interlinear exampleLoc="focus/focusExample"/>
-            </example>
-<p show="swFocusYes"><content>In </content><langName/><content>, the focused phrase is </content>
-<case element="focus" attr="focusMarker">
-<caseText value="no">not marked by a focus marker.  Only the position in the sentence and possibly punctuation distinguish the focused phrase.</caseText>
-<caseText value="yesWord">marked by certain words or phrases. </caseText>
-<caseText value="yesClitic">marked by one or more clitics which attach to the focused phrase.</caseText>
-<caseText value="yesAffix">marked by one or more affixes which attach to the focused phrase.</caseText>
-</case>
-<text show="swFocusYesWord"><content>The focus markers occur </content>
-<case element="focus" attr="focusMarkerPos">
-<caseText value="before">before the focused phrase itself.</caseText>
-<caseText value="after">after the focused phrase itself.</caseText>
-<caseText value="either">on either side of the focused phrase itself, but not on both sides in the same sentence.</caseText>
-<caseText value="both">on both sides of the focused phrase itself.</caseText>
-<caseText value="unknown">_______.</caseText>
-</case>
-<content> A focus marker is </content><case element="focus" attr="focusMarkerRequired">
-<caseText value="no">optional</caseText>
-<caseText value="yes">required</caseText></case>
-<content> whenever there is a focused phrase.</content>
-</text>
-<text show="swFocusYesWordEitherNo"><content> There are separate sets of focus markers which can occur on each side of the focused phrase.</content></text>
-<text show="swFocusYesWordEitherYes"><content> All of the focus markers may occur on either side of the focused phrase.</content></text>
-</p>
-    <example show="swFocusMarkerYes">
-        <table border="1">
-<headerRow>
-    <headerCol>Focus Markers</headerCol>
-    <headerCol>Gloss or Restrictions</headerCol>
-</headerRow>
-    <row>
-        <col exampleLoc="focus/focusMarkerExample"/>
-        <col ><gloss><content>ENTER GLOSS</content></gloss></col>
-    </row>
-</table>
-</example>
+		 </p>
+		 <example show="swFocusYes">
+			<interlinear exampleLoc="focus/focusExample"/>
+		 </example>
+		 <p show="swFocusYes"><content>As the examples show, the focused phrase in </content><langName/><content> is </content>
+			<case element="focus" attr="focusMarker">
+			   <caseText value="no">not marked by a focus marker.  Only the position in the sentence and possibly punctuation distinguish the focused phrase.</caseText>
+			   <caseText value="yesWord">marked by certain words or phrases.</caseText>
+			   <caseText value="yesClitic">marked by one or more clitics which attach to the focused phrase.</caseText>
+			   <caseText value="yesAffix">marked by one or more affixes which attach to the focused phrase.</caseText>
+			</case>
+			<text show="swFocusYesWord"><content>The focus markers occur </content>
+			   <case element="focus" attr="focusMarkerPos">
+				  <caseText value="before">before the focused phrase itself.</caseText>
+				  <caseText value="after">after the focused phrase itself.</caseText>
+				  <caseText value="either">on either side of the focused phrase itself, but not on both sides in the same sentence.</caseText>
+				  <caseText value="both">on both sides of the focused phrase itself.</caseText>
+				  <caseText value="unknown">_______.</caseText>
+			   </case>
+			   <content> A focus marker is </content><case element="focus" attr="focusMarkerRequired">
+				  <caseText value="no">optional</caseText>
+				  <caseText value="yes">required</caseText></case>
+			   <content> whenever there is a focused phrase.</content>
+			</text>
+			<text show="swFocusYesWordEitherNo"><content> There are separate sets of focus markers which can occur on each side of the focused phrase.</content></text>
+			<text show="swFocusYesWordEitherYes"><content> All of the focus markers may occur on either side of the focused phrase.</content></text>
+		 </p>
+		 <example show="swFocusMarkerYes">
+			<table border="1">
+			   <headerRow>
+				  <headerCol>Focus Markers</headerCol>
+				  <headerCol>Gloss or Restrictions</headerCol>
+			   </headerRow>
+			   <row>
+				  <col exampleLoc="focus/focusMarkerExample"/>
+				  <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+			   </row>
+			</table>
+		 </example>
 
 
-</section2>
+	  </section2>
 
-  </section1>
-<showWhen id="swTopicYes">
-    <whenValue element="focus" attr="topic" value="yes"></whenValue>
-</showWhen>
-<showWhen id="swTopicNo">
-    <whenValue element="focus" attr="topic" value="no"></whenValue>
-</showWhen>
-<showWhen id="swTopicYesWord">
-    <whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
-</showWhen>
-<showWhen id="swTopicYesWordEitherNo">
-    <whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarkerPos" value="either"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarkerEither" value="no"></whenValue>
-<or/>
-    <whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarkerPos" value="both"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarkerEither" value="no"></whenValue>
-</showWhen>
-<showWhen id="swTopicYesWordEitherYes">
-    <whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarkerPos" value="either"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarkerEither" value="yes"></whenValue>
-<or/>
-    <whenValue element="focus" attr="topic" value="yes"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarkerPos" value="both"></whenValue>
-<and/>
-    <whenValue element="focus" attr="topicMarkerEither" value="yes"></whenValue>
-</showWhen>
-<showWhen id="swTopicMarkerYes">
-    <whenValue element="focus" attr="topicMarker" value="no" negateValue="yes"></whenValue>
-</showWhen>
+   </section1>
+   <showWhen id="swTopicYes">
+	  <whenValue element="focus" attr="topic" value="yes"></whenValue>
+   </showWhen>
+   <showWhen id="swTopicNo">
+	  <whenValue element="focus" attr="topic" value="no"></whenValue>
+   </showWhen>
+   <showWhen id="swTopicYesWord">
+	  <whenValue element="focus" attr="topic" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
+   </showWhen>
+   <showWhen id="swTopicYesWordEitherNo">
+	  <whenValue element="focus" attr="topic" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarkerPos" value="either"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarkerEither" value="no"></whenValue>
+	  <or/>
+	  <whenValue element="focus" attr="topic" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarkerPos" value="both"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarkerEither" value="no"></whenValue>
+   </showWhen>
+   <showWhen id="swTopicYesWordEitherYes">
+	  <whenValue element="focus" attr="topic" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarkerPos" value="either"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarkerEither" value="yes"></whenValue>
+	  <or/>
+	  <whenValue element="focus" attr="topic" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarkerPos" value="both"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarkerEither" value="yes"></whenValue>
+   </showWhen>
+   <showWhen id="swTopicMarkerYes">
+	  <whenValue element="focus" attr="topicMarker" value="no" negateValue="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus"  attr="topic" value="yes" />
+   </showWhen>
 
-<showWhen id="swFocusYes">
-    <whenValue element="focus" attr="focus" value="yes"></whenValue>
-</showWhen>
-<showWhen id="swFocusNo">
-    <whenValue element="focus" attr="focus" value="no"></whenValue>
-</showWhen>
-<showWhen id="swFocusYesWord">
-    <whenValue element="focus" attr="focus" value="yes"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
-</showWhen>
-<showWhen id="swFocusYesWordEitherNo">
-    <whenValue element="focus" attr="focus" value="yes"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarkerPos" value="either"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarkerEither" value="no"></whenValue>
-<or/>
-    <whenValue element="focus" attr="focus" value="yes"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarkerPos" value="both"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarkerEither" value="no"></whenValue>
-</showWhen>
-<showWhen id="swFocusYesWordEitherYes">
-    <whenValue element="focus" attr="focus" value="yes"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarkerPos" value="either"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarkerEither" value="yes"></whenValue>
-<or/>
-    <whenValue element="focus" attr="focus" value="yes"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarkerPos" value="both"></whenValue>
-<and/>
-    <whenValue element="focus" attr="focusMarkerEither" value="yes"></whenValue>
-</showWhen>
-<showWhen id="swFocusMarkerYes">
-    <whenValue element="focus" attr="focusMarker" value="no" negateValue="yes"></whenValue>
-</showWhen>
+   <showWhen id="swFocusYes">
+	  <whenValue element="focus" attr="focus" value="yes"></whenValue>
+   </showWhen>
+   <showWhen id="swFocusNo">
+	  <whenValue element="focus" attr="focus" value="no"></whenValue>
+   </showWhen>
+   <showWhen id="swFocusYesWord">
+	  <whenValue element="focus" attr="focus" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
+   </showWhen>
+   <showWhen id="swFocusYesWordEitherNo">
+	  <whenValue element="focus" attr="focus" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarkerPos" value="either"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarkerEither" value="no"></whenValue>
+	  <or/>
+	  <whenValue element="focus" attr="focus" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarkerPos" value="both"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarkerEither" value="no"></whenValue>
+   </showWhen>
+   <showWhen id="swFocusYesWordEitherYes">
+	  <whenValue element="focus" attr="focus" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarkerPos" value="either"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarkerEither" value="yes"></whenValue>
+	  <or/>
+	  <whenValue element="focus" attr="focus" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarkerPos" value="both"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarkerEither" value="yes"></whenValue>
+   </showWhen>
+   <showWhen id="swFocusMarkerYes">
+	  <whenValue element="focus" attr="focusMarker" value="no" negateValue="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focus" value="yes"/>
+   </showWhen>
+
 
 </portion>

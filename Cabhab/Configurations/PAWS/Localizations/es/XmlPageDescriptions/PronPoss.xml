@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="PronPoss" count="2/8">
+<page id="PronPoss" count="2/9">
 	<title level="2">Los pronombres - Los posesivos</title>
-	<introduction>Muchos idiomas también tienen los pronombres posesivos que pueden usar sólos, por ejemplo <example>suys</example>, <example>mío</example>, <example>suyos</example> o <example>tuyo</example>  en español.
+	<introduction>Muchas lenguas también tienen los pronombres posesivos que pueden usar sólos, por ejemplo <example>suys</example>, <example>mío</example>, <example>suyos</example> o <example>tuyo</example>  en español.
 		Éstos son distintos de los que puedan presentarse en la posición del poseedor, tal como <example>su</example>, <example>mi</example>, <example>sus</example> o <example>tu</example>, que fueron ejemplificados con los pronombres personales en la página anterior.</introduction>
 	<form section="pron">
 		<radioGroup>
 			<groupName dataItem="poss" default="no">RPronPoss</groupName>
-			<prompt>¿Hay pronombres posesivos que se usan sólos como frase nominal en su idioma?</prompt>
+			<prompt>¿Existen pronombres posesivos que se usan sólos como frase nominal en su lengua?</prompt>
 			<radio id="PronPossNo" dataValue="no">No</radio>
 			<radio id="PronPossYes" dataValue="yes">Sí</radio>
 		</radioGroup>
 		<prompt id="PronPossYesExamples" show="swPronPossYes">
-			<br/>Escriba sus pronombres posesivos aquí, con cada uno en una nueva línea y seguida por un punto, comenzando con la primera persona, siguiendo con segunda persona, y finalmente con tercera persona:
+			<br/>Escriba sus pronombres posesivos aquí, con cada uno en una nueva línea, comenzando con la primera persona, siguiendo con segunda persona, y finalmente con tercera persona:
 		</prompt>
 		<textBox id="PronPossExample" dataItem="possExample" show="swPronPossYes"/>
 		<radioGroup id="PronPossAffix" show="swPronPossYes">

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<paws dbversion="7" outputGrammar="False" outputWriter="True" outputWriterPractical="True" outputWriterPracticalSpanish="False">
+<paws dbversion="8" outputGrammar="False" outputWriter="True" outputWriterPractical="True" outputWriterPracticalSpanish="True">
 	<leftOffAt>Contents.htm</leftOffAt>
 	<language>
-		<langNames>
-			<langName lang="en"/>
-			<langName lang="es"/>
-		</langNames>
+	   <langNames>
+		  <langName lang="en"/>
+		  <langName lang="es"/>
+	   </langNames>
 		<langAbbr/>
 		<font bold="False" italic="False" under="False" strike="False" rtl="False">
 			<fontName>Courier New</fontName>
@@ -20,10 +20,79 @@
 		<writerPracticalSpanishFile/>
 		<exampleFilesPath/>
 	</language>
-	<typology checkedOff="no" wordOrder="SVO">
+   <typology checkedOff="no" wordOrder="SVO" case="nominative" caseExperiencer="no" classifier="no" classifierNum="number"
+	  class1agr="irrelevant" class2agr="irrelevant" class3agr="irrelevant" class4agr="irrelevant" class5agr="irrelevant" class6agr="irrelevant" class7agr="irrelevant"
+	  class8agr="irrelevant" class9agr="irrelevant" class10agr="irrelevant" class11agr="irrelevant" class12agr="irrelevant" class13agr ="irrelevant"
+	  class14agr="irrelevant" class15agr="irrelevant" class16agr="irrelevant" class17agr="irrelevant" class18agr="irrelevant" class19agr="irrelevant"
+	  class20agr="irrelevant" class21agr="irrelevant" class22agr="irrelevant" class23agr="irrelevant" class24agr="irrelevant" class25agr="irrelevant"
+	  classifierTypeNumAgr="no">
 		<example/>
+	  <pnExample/>
+	  <experiencerExample/>
+	  <experiencerPnExample/>
+	  <intExample/>
+	  <pnIntExample/>
+	  <experiencerIntExample/>
+	  <experiencerPnIntExample/>
+	  <class1Example/>
+	  <class2Example/>
+	  <class3Example/>
+	  <class4Example/>
+	  <class5Example/>
+	  <class6Example/>
+	  <class7Example/>
+	  <class8Example/>
+	  <class9Example/>
+	  <class10Example/>
+	  <class11Example/>
+	  <class12Example/>
+	  <class13Example/>
+	  <class14Example/>
+	  <class15Example/>
+	  <class16Example/>
+	  <class17Example/>
+	  <class18Example/>
+	  <class19Example/>
+	  <class20Example/>
+	  <class21Example/>
+	  <class22Example/>
+	  <class23Example/>
+	  <class24Example/>
+	  <class25Example/>
+	  <classAnimalSgExample/>
+	  <classAnimalPlExample/>
+	  <classInsectSgExample/>
+	  <classInsectPlExample/>
+	  <classLiquidSgExample/>
+	  <classLiquidPlExample/>
+	  <classRoundSgExample/>
+	  <classRoundPlExample/>
+	  <classCylinderSgExample/>
+	  <classCylinderPlExample/>
+	  <classSphereSgExample/>
+	  <classSpherePlExample/>
+	  <classTreeSgExample/>
+	  <classTreePlExample/>
+	  <classWoodSgExample/>
+	  <classWoodPlExample/>
+	  <classOtherSgExample/>
+	  <classOtherPlExample/>
+	  <classAnimalExample/>
+	  <classInsectExample/>
+	  <classLiquidExample/>
+	  <classRoundExample/>
+	  <classCylinderExample/>
+	  <classSphereExample/>
+	  <classTreeExample/>
+	  <classWoodExample/>
+	  <classOtherExample/>
+	  <classifierAgrExample/>
+	  <classifierTypeExample/>
 	</typology>
-	<qp checkedOff="no" npDegree="yes" npDegreePosType="proclitic" npDegreeNegType="proclitic" npDegreePos="unknown" npDegreeEither="unrestricted" npDegreeNegCooccur="no" npDegreeNegPos="unknown" npDegreeNegEither="unrestricted" determiner="yes" determinerPos="unknown" determinerEither="unrestricted" degree="no" degreePos="unknown" degreeEither="unrestricted"  ordinalFormation="affix" ordinalPos="unknown" ordinalEither="unrestricted" cardinalHead="after">
+   <qp checkedOff="no" npDegreeClassifier="no" npDegree="yes" npDegreeType="proclitic" npDegreePos="unknown" npDegreeEither="unrestricted" npDegreeNeg="yes" npDegreeNegType="proclitic" npDegreeNegPos="unknown" npDegreeNegEither="unrestricted" npDegreeNegCooccur="no" npDegreeNegNPPos="unknown"
+	  determiner="yes" determinerClassifier="no" determinerPos="unknown" determinerEither="unrestricted" determinerNeg="yes" determinerNegPos="unknown" determinerNegEither="unrestricted"
+	  quantifierClassifier="no" degree="no" degreeClassifier="no" degreePos="unknown" degreeEither="unrestricted"  numberClassifier="no"
+	  ordinalFormation="affix" ordinalWordPos="unknown" ordinalPos="unknown" ordinalEither="unrestricted" cardinalHead="after">
 		<all/>
 		<almost/>
 		<only/>
@@ -36,8 +105,9 @@
 		<determinerNegExample/>
 		<determinerNegNPExample/>
 		<quantifierExample/>
-		<degreeExample/>
-		<cardinalNumbers1to10/>
+		<degreeWordExample/>
+	   <degreeExample/>
+	   <cardinalNumbers1to10/>
 		<cardinalNumbers11to20/>
 		<cardinalNumbers30to100/>
 		<ordinalNumbers/>
@@ -46,30 +116,83 @@
 		<cardinalNumberCategory/>
 		<conjunctionCategory/>
 	</qp>
-	<advp checkedOff="no" negTemporalType="word" negLocativeType="word" mannerType="word" degree="no" degreePos="unknown" degreeEither="unrestricted" degreeSet="unrestricted">
+   <advp checkedOff="no" temporalDegree="no" negTemporalType="word" negTemporalWordPos="unknown" locativeClassifier="no" advLocDem="no"
+	  locativeDegree="no" negLocativeType="word" mannerType="word" mannerDegree="no" mannerAffixDegree="no">
 		<temporalExample/>
-		<negTemporalExample/>
+	   <temporalDegreeExample/>
+	   <temporalDegreeAffixExample/>
+	   <temporalDegreeRedupExample/>
+	   <temporalPhraseAffixExample/>
+	   <temporalPhraseExample/>
+	   <negTemporalAdverbWordExample/>
+	   <negTemporalAdverbWordsExample/>
+	   <negTemporalAdverbAffixExample/>
+	   <negTemporalAdverbExample/>
+	   <negTemporalExample/>
 		<negTemporalAffixExample/>
+	   <negTemporalVerbExample/>
 		<locativeExample/>
+	   <locativeDegreeExample/>
+	   <locativeDegreeAffixExample/>
+	   <locativeDegreeRedupExample/>
+	   <locativePhraseAffixExample/>
+	   <locativePhraseExample/>
+	   <negLocativeAdverbWordExample/>
+	   <negLocativeAdverbWordsExample/>
+	   <negLocativeAdverbAffixExample/>
+	   <negLocativeAdverbExample/>
 		<negLocativeExample/>
 		<negLocativeAffixExample/>
+	   <negLocativeVerbExample/>
 		<mannerExample/>
+	   <mannerDegreeAffixExample/>
+	   <mannerDegreeExample/>
+	   <mannerAffixDegreeExample/>
+	   <mannerPhraseAffixExample/>
+	   <mannerDegreePhraseExample/>
+	   <mannerAffixDegreePhraseExample/>
+	   <mannerDegreeRedupExample/>
+	   <mannerAffixDegreeRedupExample/>
 		<reasonExample/>
+	   <reasonPPExample/>
+	   <reasonSentExample/>
 		<adverbCategory/>
 	</advp>
-	<adjp checkedOff="no" modifiers="no" degreePos="unknown" degreeEither="unrestricted" mannerPos="unknown" mannerEither="unrestricted">
+   <adjp checkedOff="no" adjectiveClassifier="no" modifiers="no" adjectiveDegreeClassifier="no" degreePos="unknown" degreeEither="unrestricted" mannerPos="unknown" mannerEither="unrestricted">
 		<example/>
+	  <adjectiveDegreeExample/>
+	  <adjectiveDegreeAffixExample/>
+	  <adjectiveDegreeRedupExample/>
+	  <adjectivePhraseAffixExample/>
+	  <adjectivePhraseExample/>
 		<adjectiveCategory/>
 	</adjp>
-	<np checkedOff="no" agreeNumber="no" agreeOther="no" case="nominative" caseDefault="no" artAndDem="no" artCase="no" artPos="unknown" artEither="unrestricted" artRequired="no" artBothRequiredPos="unknown" demPos="unknown" demEither="unrestricted" demRequired="no" demBothRequiredPos="unknown" artBothCooccur="different" demOrArtPos="unknown" demOrArtEither="unrestricted" demOrArtRequired="no" demOrArtBothRequiredPos="unknown" demAndArtDemPos="unknown" demAndArtDemEither="unrestricted" demAndArtDemRequired="no" demAndArtDemBothRequiredPos="unknown" demAndArtArtPos="unknown" demAndArtArtEither="unrestricted" demAndArtArtRequired="no" demAndArtArtBothRequiredPos="unknown"
-possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired="no" possCliticPossPos="unknown" possNounPos="unknown" possCooccur="yes" possCaseErg="genitive" possNounCaseChange="no" possAlienable="no" possAgr="no" possNounAgrKeyed="yes" qpPos="unknown" qpEither="unrestricted" qpEitherRestrictedNumPos="unknown" qpAgree="no" adjpPos="unknown" adjpEither="unrestricted" adjpCaseChange="no" adjpCaseAffix="no" adjpAgree="no" comp="no" compHead="right" ppPos="unknown">
+   <np checkedOff="no" agreeNumber="no" agreeOther="no" caseN="no" caseDefault="no" caseWord="yes" casewordPos="unknown" caseWordEither="unrestricted" caseCliticPos="unknown" possCaseErg="genitive" artAndDem="no" artDefOnly="no" artPl="no" demPl="no" artDemClassifier="no" artCase="no" artPos="unknown" artEither="unrestricted" artRequired="no" artBothRequiredPos="unknown" demPos="unknown" demEither="unrestricted" demRequired="no" demBothRequiredPos="unknown" artBothCooccur="different" demOrArtPos="unknown" demOrArtEither="unrestricted" demOrArtRequired="no" demOrArtBothRequiredPos="unknown" demAndArtDemPos="unknown" demAndArtDemEither="unrestricted" demAndArtDemRequired="no" demAndArtDemBothRequiredPos="unknown" demAndArtArtPos="unknown" demAndArtArtEither="unrestricted" demAndArtArtRequired="no" demAndArtArtBothRequiredPos="unknown"
+possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired="no" possCliticPossPos="unknown" possNounPos="unknown" possCooccur="yes" possNounCaseChange="no" possAlienable="no" possAgr="no" qpPos="unknown" qpEither="unrestricted" qpEitherRestrictedNumPos="unknown" qpAgree="no" adjpPos="unknown" adjpEither="unrestricted" adjpCaseChange="no" adjpCaseAffix="no" adjpAgree="no" comp="no" compHead="right" compHeadMorpheme="right" ppPos="unknown">
 	   <agreeNumberExample/>
 	   <agreeAnimacyExample/>
 	   <agreeClassExample/>
 	   <agreeGenderExample/>
-	   <articleExample/>
+		<nominative/>
+	  <accusative/>
+	  <ergative/>
+	  <absolutive/>
+	  <genitive/>
+	  <dative/>
+	  <ablative/>
+	  <instrumental/>
+	  <locative/>
+	  <vocative/>
+	  <oblique/>
+	  <otherCase/>
+	  <articleExample/>
 	   <demonstrativeExample/>
-	   <example/>
+	  <articleSgExample/>
+	  <demonstrativeSgExample/>
+	  <articlePlExample/>
+	  <demonstrativePlExample/>
+	  <example/>
+	  <possessorExample/>
 		<embeddedExample/>
 		<ppExample/>
 		<relClExample/>
@@ -79,6 +202,7 @@ possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired=
 		<partExample/>
 		<compExample/>
 		<compPPExample/>
+		<compPPPossessorExample/>
 		<partHeadExample/>
 		<partHeadSentExample/>
 		<articleCategory/>
@@ -110,7 +234,7 @@ possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired=
 		<npPossAgrPossNonHuman checked="no"/>
 		<npPossAgrPossClassClassNumber checked="no"/>
 	</np>
-	<prop checkedOff="no">
+	<prop checkedOff="no" pnClassifier="no" pnDeterminer="no">
 		<example/>
 		<ppExample/>
 		<relClExample/>
@@ -118,7 +242,7 @@ possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired=
 		<propAnimate2Category/>
 		<propInanimateCategory/>
 	</prop>
-	<pron checkedOff="no" dependentPron="no" poss="no" possAffix="no" refl="no" reflAffix="yes" recip="no" recipAffix="yes" indef="no" negIndef="no" pronounCat="NP" partitivePos="unknown">
+	<pron checkedOff="no" pronounClassifier="no" dependentPron="no" dependentPos="unknown" pronDepClassifier="no" poss="no" possAffix="no" refl="no" reflAffix="yes" recip="no" recipAffix="yes" demCase="no"  indef="no" negIndef="no" pronMod="no" partitivePos="unknown">
 		<personalFirstNoCaseExample/>
 		<personalSecondNoCaseExample/>
 		<personalThirdNoCaseExample/>
@@ -131,7 +255,10 @@ possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired=
 		<personalFirstNomPossessorExample/>
 		<personalSecondNomPossessorExample/>
 		<personalThirdNomPossessorExample/>
-		<personalFirstErgSubjectTransExample/>
+	   <personalFirstNomDativeExample/>
+	   <personalSecondNomDativeExample/>
+	   <personalThirdNomDativeExample/>
+	   <personalFirstErgSubjectTransExample/>
 		<personalSecondErgSubjectTransExample/>
 		<personalThirdErgSubjectTransExample/>
 		<personalFirstErgSubjectIntransExample/>
@@ -140,7 +267,10 @@ possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired=
 		<personalFirstErgPossessorExample/>
 		<personalSecondErgPossessorExample/>
 		<personalThirdErgPossessorExample/>
-		<personalFirstSplitSubjectExample/>
+	   <personalFirstErgDativeExample/>
+	   <personalSecondErgDativeExample/>
+	   <personalThirdErgDativeExample/>
+	   <personalFirstSplitSubjectExample/>
 		<personalSecondSplitSubjectExample/>
 		<personalThirdSplitSubjectExample/>
 		<personalFirstSplitObjectExample/>
@@ -149,7 +279,10 @@ possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired=
 		<personaFirstlSplitPossessorExample/>
 		<personalSecondSplitPossessorExample/>
 		<personalThirdSplitPossessorExample/>
-		<personalFirstSplitErgExample/>
+	   <personaFirstlSplitDativeExample/>
+	   <personalSecondSplitDativeExample/>
+	   <personalThirdSplitDativeExample/>
+	   <personalFirstSplitErgExample/>
 		<personalSecondSplitErgExample/>
 		<personalThirdSplitErgExample/>
 		<personalFirstSplitAbsExample/>
@@ -167,7 +300,10 @@ possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired=
 		<personalDependentFirstNomPossessorExample/>
 		<personalDependentSecondNomPossessorExample/>
 		<personalDependentThirdNomPossessorExample/>
-		<personalDependentFirstErgSubjectTransExample/>
+	   <personalDependentFirstNomDativeExample/>
+	   <personalDependentSecondNomDativeExample/>
+	   <personalDependentThirdNomDativeExample/>
+	   <personalDependentFirstErgSubjectTransExample/>
 		<personalDependentSecondErgSubjectTransExample/>
 		<personalDependentThirdErgSubjectTransExample/>
 		<personalDependentFirstErgSubjectIntransExample/>
@@ -176,17 +312,23 @@ possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired=
 		<personalDependentFirstErgPossessorExample/>
 		<personalDependentSecondErgPossessorExample/>
 		<personalDependentThirdErgPossessorExample/>
-		<personalDependentFirstSplitSubjectExample/>
+	   <personalDependentFirstErgDativeExample/>
+	   <personalDependentSecondErgDativeExample/>
+	   <personalDependentThirdErgDativeExample/>
+	   <personalDependentFirstSplitSubjectExample/>
 		<personalDependentSecondSplitSubjectExample/>
 		<personalDependentThirdSplitSubjectExample/>
 		<personalDependentFirstSplitObjectExample/>
 		<personalDependentSecondSplitObjectExample/>
 		<personalDependentThirdSplitObjectExample/>
-		<personaFirstlSplitPossessorExample/>
+		<personalDependentFirstlSplitPossessorExample/>
 		<personalDependentSecondSplitPossessorExample/>
 		<personalDependentThirdSplitPossessorExample/>
-		<personalDependentFirstSplitErgExample/>
-		<personalDependentSecondSplitErgExample/>
+	   <personalDependentFirstlSplitDativeExample/>
+	   <personalDependentSecondSplitDativeExample/>
+	   <personalDependentThirdSplitdativeExample/>
+	   <personalDependentFirstSplitErgExample/>
+	   <personalDependentSecondSplitErgExample/>
 		<personalDependentThirdSplitErgExample/>
 		<personalDependentFirstSplitAbsExample/>
 		<personalDependentSecondSplitAbsExample/>
@@ -196,11 +338,27 @@ possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired=
 		<reflSentExample/>
 		<recipExample/>
 		<recipSentExample/>
+		 <demProximalExample/>
+		 <demMedialExample/>
+		 <demDistalExample/>
+		 <demProximalNomExample/>
+		 <demMedialNomExample/>
+		 <demDistalNomExample/>
+		 <demProximalAccExample/>
+		 <demMedialAccExample/>
+		 <demDistalAccExample/>
+		 <demProximalErgExample/>
+		 <demMedialErgExample/>
+		 <demDistalErgExample/>
+		 <demProximalAbsExample/>
+		 <demMedialAbsExample/>
+		 <demDistalAbsExample/>
 		<indefExample/>
 		<negIndefExample/>
 		<indefNPExample/>
 		<negIndefNPExample/>
 		<standAloneNPExample/>
+	   <pronSentExample/>
 		<pronRelClExample/>
 		<partitiveExample/>
 		<pronounCategory/>
@@ -221,19 +379,21 @@ possMarked="no" possCliticWord="no" possCliticAffix="suffix" possCliticRequired=
 		<pronAgrFeatMinusHuman checked="no"/>
 		<pronAgrFeatClassNumber checked="no"/>
 	</pron>
-	<pp checkedOff="no" modifiers="no" modifierType="degree" degreePos="unknown" degreeRestricted="unrestricted" ordinalPos="unknown" ordinalRestricted="unrestricted" mannerPos="unknown" mannerRestricted="unrestricted" pPos="unknown" pType="word" attaches="edge" alone="no" locative="no" ppComp="no" sentComp="no">
+	<pp checkedOff="no" modifiers="no" modifierType="degree" degreePos="unknown" degreeRestricted="unrestricted" ordinalPos="unknown" ordinalRestricted="unrestricted" mannerPos="unknown" mannerRestricted="unrestricted" locativePos="unknown" locativeRestricted="unrestricted" pPos="unknown" ppClassifier="no" pType="word" attaches="edge" alone="no" locative="no" ppComp="no" tempComp="no">
 		<example/>
 		<ppExample/>
 		<aloneExample/>
 		<locExample/>
 		<compPPExample/>
-		<sentExample/>
+	   <tempExample/>
 		<pCategory/>
 	</pp>
-	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="yes" negAux="noVerb" negAuxRequiresAux="no"  auxNonfinite="no" auxNonfiniteRequired="no" auxNonfiniteOrder="yes" auxOther="no" auxOtherOrder="yes"
-copular="yes" copularAffix="no" diCat="pp" diOrder="direct" passive="no" passiveAgent="no" passiveAux="no" passiveAgentCat="pp">
-		<example/>
+	<ip checkedOff="no" proDrop="noImp" proDropObject="no" aux="no" auxRequired="no" auxMany="no" auxOrder="yes" negAux="no" negAuxAffix="no"  negVAffix="no" negAuxRequiresAux="no"  auxNonfinite="no" auxNonfiniteRequired="no" auxNonfiniteOrder="yes" auxOther="no" auxOtherOrder="yes"
+copular="yes" copularAffix="no" same="yes" compareN="yes" as="yes" compareAdj="yes" comparative="yes" comparativeAdj="no" existVerb="no" diCat="pp" diOrder="direct" passive="no" passiveAgent="no" passiveAux="no" passiveAgentCat="pp"
+causative="no" antipassive="no" voice="no" voiceCase="no">
 		<proDropExample/>
+	   <impExample/>
+	   <cliticPnExample/>
 		<auxExample/>
 		 <auxiliaryExample/>
 	   <negAuxExample/>
@@ -243,13 +403,43 @@ copular="yes" copularAffix="no" diCat="pp" diOrder="direct" passive="no" passive
 		<auxiliaryNonfiniteExample/>
 		<auxOtherExample/>
 		<auxiliaryOtherExample/>
-		<diExample/>
-		<intransExample/>
-		<motionExample/>
 		<copularExample/>
+	   <perceptionExample/>
+	   <sameExample/>
+	   <sameWordExample/>
+	   <sameAffixExample/>
+	   <compareNExample/>
+	   <asExample/>
+	   <asWordExample/>
+	   <compareAdjExample/>
+	   <comparativeExample/>
+	   <comparativeWordExample/>
+	   <comparativeAffixExample/>
+	   <comparativeDegExample/>
+	   <superlativeExample/>
+	   <superlativeAffixExample/>
+	   <superlativeDegExample/>
+	   <existExample/>
+	   <existVerbExample/>
+	   <existWordExample/>
+		<motionExample/>
+		<diExample/>
 		<passiveExample/>
 		<auxCategory/>
-		<verbCategory/>
+	   <passiveAgentPExample/>
+	   <passiveAuxExample/>
+	   <causativeExample/>
+	   <causativeAffixExample/>
+	   <antipassiveExample/>
+	   <antipassiveAffixExample/>
+	   <voiceExample/>
+	   <actorVoiceExample/>
+	   <objectVoiceExample/>
+	   <dativeVoiceExample/>
+	  <goalVoiceExample/>
+	   <instrumentalVoiceExample/>
+	   <locativeVoiceExample/>
+	   <verbCategory/>
 		<ipContents1 checkedOff="no"/>
 		<ipContents2 checkedOff="no"/>
 		<ipContents3 checkedOff="no"/>
@@ -259,7 +449,8 @@ copular="yes" copularAffix="no" diCat="pp" diOrder="direct" passive="no" passive
 		<ipContents7 checkedOff="no"/>
 		<ipContents8 checkedOff="no"/>
 		<ipContents9 checkedOff="no"/>
-		<ipAgrFeatFirstSubject checked="no"/>
+	   <ipContents10 checkedOff="no"/>
+	   <ipAgrFeatFirstSubject checked="no"/>
 		<ipAgrFeatFirstObject checked="no"/>
 		<ipAgrFeatFirstErgative checked="no"/>
 		<ipAgrFeatFirstAbsolutive checked="no"/>
@@ -323,27 +514,76 @@ copular="yes" copularAffix="no" diCat="pp" diOrder="direct" passive="no" passive
 		<ipAgrFeatClassClassNumberObject checked="no"/>
 		<ipAgrFeatClassClassNumberErgative checked="no"/>
 		<ipAgrFeatClassClassNumberAbsolutive checked="no"/>
-		<ipInflFeatPresent checked="no"/>
+	   <ipAgrFeatClassClassTypeAnimalSubject checked="no"/>
+	  <ipAgrFeatClassClassTypeInsectSubject checked="no"/>
+	   <ipAgrFeatClassClassTypeLiquidSubject checked="no"/>
+	   <ipAgrFeatClassClassTypeRoundSubject checked="no"/>
+	   <ipAgrFeatClassClassTypeCylinderSubject checked="no"/>
+	   <ipAgrFeatClassClassTypeSphericalSubject checked="no"/>
+	   <ipAgrFeatClassClassTypeTreeSubject checked="no"/>
+	   <ipAgrFeatClassClassTypeWoodSubject checked="no"/>
+	   <ipAgrFeatClassClassTypeOtherSubject checked="no"/>
+	   <ipAgrFeatClassClassTypeAnimalObject checked="no"/>
+	   <ipAgrFeatClassClassTypeInsectObject checked="no"/>
+	   <ipAgrFeatClassClassTypeLiquidObject checked="no"/>
+	   <ipAgrFeatClassClassTypeRoundObject checked="no"/>
+	   <ipAgrFeatClassClassTypeCylinderObject checked="no"/>
+	   <ipAgrFeatClassClassTypeSphericalObject checked="no"/>
+	   <ipAgrFeatClassClassTypeTreeObject checked="no"/>
+	   <ipAgrFeatClassClassTypeWoodObject checked="no"/>
+	   <ipAgrFeatClassClassTypeOtherObject checked="no"/>
+	   <ipAgrFeatClassClassTypeAnimalErgative checked="no"/>
+	   <ipAgrFeatClassClassTypeInsectErgative checked="no"/>
+	   <ipAgrFeatClassClassTypeLiquidErgative checked="no"/>
+	   <ipAgrFeatClassClassTypeRoundErgative checked="no"/>
+	   <ipAgrFeatClassClassTypeCylinderErgative checked="no"/>
+	   <ipAgrFeatClassClassTypeSphericalErgative checked="no"/>
+	   <ipAgrFeatClassClassTypeTreeErgative checked="no"/>
+	   <ipAgrFeatClassClassTypeWoodErgative checked="no"/>
+	   <ipAgrFeatClassClassTypeOtherErgative checked="no"/>
+	   <ipAgrFeatClassClassTypeAnimalAbsolutive checked="no"/>
+	   <ipAgrFeatClassClassTypeInsectAbsolutive checked="no"/>
+	   <ipAgrFeatClassClassTypeLiquidAbsolutive checked="no"/>
+	   <ipAgrFeatClassClassTypeRoundAbsolutive checked="no"/>
+	   <ipAgrFeatClassClassTypeCylinderAbsolutive checked="no"/>
+	   <ipAgrFeatClassClassTypeSphericalAbsolutive checked="no"/>
+	   <ipAgrFeatClassClassTypeTreeAbsolutive checked="no"/>
+	   <ipAgrFeatClassClassTypeWoodAbsolutive checked="no"/>
+	   <ipAgrFeatClassClassTypeOtherAbsolutive checked="no"/>
+	   <ipInflFeatPresent checked="no"/>
 		<ipInflFeatPast checked="no"/>
 		<ipInflFeatFuture checked="no"/>
-		<ipInflFeatCompletive checked="no"/>
+	   <ipInflFeatContemplative checked="no"/>
+	   <ipInflFeatContrafactual checked="no"/>
+	   <ipInflFeatCompletive checked="no"/>
 		<ipInflFeatContinuative checked="no"/>
 		<ipInflFeatHabitual checked="no"/>
 		<ipInflFeatImperfective checked="no"/>
 		<ipInflFeatIncompletive checked="no"/>
-		<ipInflFeatPerfective checked="no"/>
+	   <ipInflFeatPerfect checked="no"/>
+	   <ipInflFeatPerfective checked="no"/>
 		<ipInflFeatPotential checked="no"/>
 		<ipInflFeatProgressive checked="no"/>
 		<ipInflFeatStative checked="no"/>
-		<ipInflFeatDeclarative checked="no"/>
+	   <ipInflFeatUnreal checked="no"/>
+	   <ipInflFeatDeclarative checked="no"/>
 		<ipInflFeatImperative checked="no"/>
 		<ipInflFeatInterrogative checked="no"/>
 		<ipInflFeatIrrealis checked="no"/>
 		<ipInflFeatRealis checked="no"/>
-		<ipInflFeatPassive checked="no"/>
-		<ipInflFeatParticiple checked="no"/>
-		<ipInflFeatFinite checked="no"/>
-		<ipInflFeatMinusFinite checked="no"/>
+	   <ipInflFeatAntipassive checked="no"/>
+	   <ipInflFeatCausative checked="no"/>
+	   <ipInflFeatFinite checked="no"/>
+	   <ipInflFeatMinusFinite checked="no"/>
+	   <ipInflFeatPassive checked="no"/>
+	   <ipInflFeatGerund checked="no"/>
+	   <ipInflFeatParticiple checked="no"/>
+	   <ipInflFeatActorVoice checked="no"/>
+	   <ipInflFeatDativeVoice checked="no"/>
+	   <ipInflFeatGoalVoice checked="no"/>
+	   <ipInflFeatInstrumentalVoice checked="no"/>
+	   <ipInflFeatLocativeVoice checked="no"/>
+	   <ipInflFeatObjectVoice checked="no"/>
 	</ip>
 	<comp checkedOff="no" comp="no" compWord="yes" compCliticPos="unknown" compCliticAttaches="edge" compPos="unknown" compEitherRestricted="unrestricted">
 		<finiteExample/>
@@ -352,7 +592,10 @@ copular="yes" copularAffix="no" diCat="pp" diOrder="direct" passive="no" passive
 		<nonfiniteExample/>
 		<nonfiniteProDropExample/>
 		<nonfiniteCPOrProDropExample/>
-		<otherExample/>
+	   <raisingExample/>
+	   <causeExample/>
+	   <quotationExample/>
+	   <otherExample/>
 	</comp>
 	<q checkedOff="no" mainYN="no" mainYNWord="no" mainYNCliticPos="unknown" mainYNCliticAttaches="edge" mainYNPos="unknown" mainYNEitherRestricted="unrestricted" mainYNAuxPos="unknown" embYN="no" embYNWord="no" embYNCliticPos="unknown" embYNCliticAttaches="edge" embYNPos="unknown" embYNEitherRestricted="unrestricted" embYNAuxPos="unknown" whDemPos="unknown" whArtPos="unknown" whDegAdjPos="unknown" whDegQPos="unknown" contFront="unknown" mainCont="no" mainContWord="no" mainContCliticPos="unknown" mainContCliticAttaches="edge" mainContPos="unknown" mainContEitherRestricted="unrestricted" mainContVSOBeforeWh="no" mainContVSOBeforeWhNoEndRestricted="unrestricted" mainContRequired="no" mainContAuxPos="unknown" mainContAuxRequired="no" embCont="no" embContWord="no" embContCliticPos="unknown" embContCliticAttaches="edge" embContPos="unknown" embContEitherRestricted="unrestricted" embContVSOBeforeWh="no" embContVSOBeforeWhNoEndRestricted="unrestricted" embContRequired="no" embContAuxPos="unknown" embContAuxRequired="no">
 		<example/>
@@ -365,6 +608,7 @@ copular="yes" copularAffix="no" diCat="pp" diOrder="direct" passive="no" passive
 		<where/>
 		<when/>
 		<how/>
+	   <howMany/>
 		<which/>
 		<whose/>
 		<other/>
@@ -395,7 +639,7 @@ copular="yes" copularAffix="no" diCat="pp" diOrder="direct" passive="no" passive
 		<indirectObjectExample/>
 		<subjectObjectExample/>
 	</neg>
-	<coord checkedOff="no">
+   <coord checkedOff="no" conjWord="yes" conjPos="before" noConj="no" gap="yes">
 		<and/>
 		<or/>
 		<but/>
@@ -410,7 +654,10 @@ copular="yes" copularAffix="no" diCat="pp" diOrder="direct" passive="no" passive
 		<dpExample/>
 		<coordppExample/>
 		<adjExample/>
-		<conjunctionCategory/>
+	  <listExample/>
+	  <appositiveExample/>
+	  <comparativeSentExample/>
+	  <conjunctionCategory/>
 	</coord>
 	<focus checkedOff="no" topic="no" topicPos="unknown" topicMarker="no" topicMarkerPos="unknown" topicMarkerRequired="no" topicMarkerEither="no" focus="no" focusPos="unknown" focusMarker="no" focusMarkerPos="unknown" focusMarkerRequired="no" focusMarkerEither="no">
 		<topicExample/>

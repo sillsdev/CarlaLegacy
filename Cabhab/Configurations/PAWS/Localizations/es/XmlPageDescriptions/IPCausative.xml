@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPCausative" count="2/3">
+   <title level="2">Las oraciones básicas - Causativos y antipasivos</title>
+   <introduction>Los causativos agregan un argumento adicional a la oración. Algunas lenguas tienen oraciones causativas de una sola cláusula, donde el verbo se marca con un afijo que introduce el argumento adicional. Ese es el tipo de construcción que queremos cubrir aquí. Inglés y español tienen solamente causativos sintácticos que consistan en dos cláusulas, por ejemplo:</introduction>
+	<EnglishExample>
+	   <exItem label="1.">My mother made me clean my room. ‘Mi madre me hizo limpiar mi dormitorio.’</exItem>
+	   <exItem label="2.">The other girl caused us to break up. ‘La otra muchacha hizo que nos separáramos.’</exItem>
+	</EnglishExample>
+   <introduction>Este segundo tipo de causativo será discutido más completamente en <section number="10.">Cláusulas de complemento</section>.</introduction>
+	<form section="ip">
+	   <prompt>Escriba ejemplos de causativos de cualquier tipo en su lengua aquí:</prompt>
+		<textBox id="IPCausativeExample" dataItem="causativeExample" cols="50"/>
+		<radioGroup>
+			<groupName dataItem="causative" default="no">RIPCausative</groupName>
+		   <prompt>¿Su lengua tiene oraciones causativas de una sola cláusula?</prompt>
+		   <radio id="IPCausativeNo" dataValue="no">No, las únicas oraciones causativas consisten en dos cláusulas con un verbo principal que significa “make (hacer)” o “cause (causar)”</radio>
+		   <radio id="IPCausativeYes" dataValue="yes">Sí, existe un afijo verbal para causativo que introduce un argumento adicional, y que es el único tipo de causativo en la lengua</radio>
+		   <radio id="IPCausativeYesBoth" dataValue="yesBoth">Sí, existe un afijo verbal para causativo que introduce un argumento adicional, y los causatives sintácticos con dos cláusulas son también posibles</radio>
+		</radioGroup>
+	   <prompt id="IPCausativeAffixPrompt" show="swIPCausativeYes">Escriba los afijos causativos en su lengua con una indicación del guión en el lado que se unen al verbo (con cada uno en una línea separada) aquí:  </prompt>
+	   <textBox id="IPCausativeAffixExample" dataItem="causativeAffixExample" rows="3" show="swIPCausativeYes"/>
+		<instruction id="IPCausativeInstruction">Mark inherently causative verbs and any causative affixes with the feature <feature>causative</feature> in the lexicon, if you have not already done so.
+		</instruction>
+		<br/>
+	   <br/>
+	   <introduction>El antipasivo es una voz del verbo que suprime el objeto de verbos transitivos. Los antipasivos se encuentran principalmente en las lenguas con un sistema de caso ergativo-absolutivo, donde el sujeto cambia de caso ergativo al caso absolutivo cuando el objeto se suprime.
+		  También se encuentran en algunas lenguas con un sistema de caso del nominativo-acusativo donde hay concordancia verbal con el sujeto y el objeto.
+		  En estas lenguas, el antipasivo es formada generalmente por suprimiendo el afijo de la concordancia del objeto. La mayoría de las lenguas con voz antipasivo son lenguas aborígenes australianas o del nativo americano.
+		  <br/> <br/>
+		  Semejantemente al sujeto o agente en pasivos, algunas lenguas permiten el objeto o paciente se expresan opcionalmente en una frase preposicional o posposicional.</introduction>
+	   <radioGroup>
+		  <groupName dataItem="antipassive" default="no">RIPAntipassive</groupName>
+		  <prompt>¿Su lengua tiene antipasivos?</prompt>
+		  <radio id="IPAntipassiveNo" dataValue="no">No</radio>
+		  <radio id="IPAntipassiveYesErg" dataValue="yesErg" show="swCaseErgOrSplit">Sí, el sujeto de un verbo transitivo cambia al caso absolutivo cuando se suprime el objeto</radio>
+		  <radio id="IPAntipassiveYesAgr" dataValue="yesAgr">Sí, el afijo de concordancia con el objeto en el verbo se suprime para indicar una oración antipasiva</radio>
+		  <radio id="IPAntipassiveYesAffix" dataValue="yesAffix">Sí, hay un afijo para antipasivo que se une con un verbo transitivo para indicar el cambio en relaciones gramaticales</radio>
+	   </radioGroup>
+	   <prompt id="IPAntipassivePrompt" show="swIPAntipassiveYes">Escriba algunos ejemplos de oraciones antipasivas en su lengua aquí, incluyendo el objeto o paciente opcional en algunos si es posible en su lengua:</prompt>
+	   <textBox id="IPAntipassiveExample" dataItem="antipassiveExample" cols="50" show="swIPAntipassiveYes"/>
+	   <prompt id="IPAntipassiveAffixPrompt" show="swIPAntipassiveYesAffix">Escriba los afijos antipasivos en su lengua con una indicación del guión en el lado que se une con el verbo, con cada uno en una linea separada, aquí: </prompt>
+	   <textBox id="IPAntipassiveAffixExample" dataItem="antipassiveAffixExample" rows="3" show="swIPAntipassiveYesAffix"/>
+	   <instruction id="IPAntipassiveInstruction" show="swIPAntipassiveYesAffix">Mark the antipassive affixes with the feature <feature>antipasstive</feature> in the lexicon, if you have not already done so.
+	   </instruction>
+	   <br/><br/>
+	   <buttons>
+			<button id="IPCausativeBack" value="Back" goto="IPPassive.xml"/>
+			<button id="IPCausativeNext" value="Next" goto="IPVoice.xml"/>
+		</buttons>
+	</form>
+   <showWhen id="swIPCausativeYes">
+	  <not/>
+	  <whenRadio button="IPCausativeNo"/>
+   </showWhen>
+   <showWhen id="swCaseErgOrSplit">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveYes">
+	  <not/>
+	  <whenRadio button="IPAntipassiveNo"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveYesAffix">
+	  <whenRadio button="IPAntipassiveYesAffix"/>
+   </showWhen>
+</page>

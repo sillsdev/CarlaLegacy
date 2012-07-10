@@ -14,15 +14,15 @@ As discussed in <section number="10">Complement Clauses</section>, X-bar theory 
 		<tree img="TreeDescriptions/PawsEmbYNQues.png"/>
 		<br/>
 		<help href="Help/Cbgbtext.doc#CPYesNoQuestions">Click here for more information about the CP phrase structure of Yes/No questions.</help>
-		<br/>Since a language may act differently  in Yes/No questions in the main clause versus subordinate clauses, each type will be discussed separately.
+	   <br/><br/>Since a language may act differently  in Yes/No questions in the main clause versus subordinate clauses, each type will be discussed separately.
 	</introduction>
-	<introduction id="QMainIntroPractical" show="swPractical">Hay dos tipos de preguntas: las que requieren una respuesta de "sí" o "no" (preguntas polares) y las que se contestan con información (preguntas abiertas).  En esta sección se consideran las preguntas de la cláusula principal y las variedades subordinadas de ambos tipos de preguntas, comenzando con las preguntas que requieren una respuesta "sí/no".
+   <introduction id="QMainIntroPractical" show="swPractical">Hay dos tipos de preguntas: las que requieren una respuesta de “sí” o “no” y las de respuesta abierta.  En esta sección se consideran las preguntas de la cláusula principal y las variedades subordinadas de ambos tipos de preguntas, comenzando con las preguntas de respuesta “sí/no”.
 		<br/>
 		<br/>
-		En español no hay ningún indicador especial ni ningún cambio del orden de las palabras para las preguntas con respuesta sí/no de la cláusula principal.
-		Hay simplemente un cambio en la entonación. Otros idiomas pueden utilizar indicadores y/o cambios especiales del orden de las palabras.
-		En las preguntas sí/no de la cláusula principal en inglés, un verbo auxiliar desplaza delante del sujeto. Otros idiomas utilizan un indicador o un complementizador especial en vez del auxiliar desplazado a la izquierda. Éste es el caso en preguntas sí/no en las cláusulas subordinadas en inglés; no se permite el desplazamiento del auxiliar pero <example>whether 'sea que'</example> o <example>if 'si'</example> ocupa la posición del complementizador.
-		<br/> <br/>Puesto que los idiomas pueden funcionar diferentemente en preguntas sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será analizado por separado.
+		En español no hay ningún indicador especial ni ningún cambio del orden de las palabras para las preguntas de respuesta sí/no de la cláusula principal.
+		Hay simplemente un cambio en la entonación. Otras lenguas pueden utilizar indicadores y/o cambios especiales del orden de las palabras.
+		En las preguntas de respuesta sí/no de la cláusula principal en inglés, un verbo auxiliar desplaza delante del sujeto. Otras lenguas utilizan un indicador o un complementizador especial en vez del auxiliar desplazado a la izquierda. Éste es el caso en preguntas de respuesta sí/no en las cláusulas subordinadas en inglés; no se permite el desplazamiento del auxiliar pero <example>whether ‘sea que’</example> o <example>if ‘si’</example> ocupa la posición del complementizador.
+		<br/> <br/>Puesto que las lenguas pueden funcionar diferentemente en preguntas de respuesta sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será analizado por separado.
 	</introduction>
 	<form section="q" transparent="yes">
 		<br/>

@@ -3,35 +3,40 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PPMain" count="1/5">
 	<title>Las frases preposicionales y/o posposicionales</title>
-	<introduction>En esta sección se analiza la estructura interna de las frases preposicionales o posposicionales.  Primero se analizan los posibles modificadores de la frase. Normalmente hay algunas palabras de grado que pueden modificar una frase preposicional o posposicional completa, tal como <example>just 'justo'</example> y <example>right 'hasta'</example> en <example>just around the corner 'justo a la vuelta de la esquina'</example> y <example>right to the last second 'hasta el último momento'</example>.
-		Los números ordinales y los adjetivos también pueden modificar las frases preposicionales o posposicionales, como en <example>next in line 'el próximo en la file'</example> y <example>first out the door 'el primero en salir'</example>.
-		Además, ciertos adverbios de manera pueden modificar a las frases preposicionales o posposicionales, como <example>casi</example>, <example>mostly 'sobre todo'</example> y <example>squarely 'justo'</example> en <example>almost in the hole 'casi en el agujero'</example>, <example>mostly up the tree 'la mayoría en el árbol'</example>, <example>squarely on the table 'justo en la mesa'</example> y <example>nearly upon the enemy 'casi sobre el enemigo'</example>.</introduction>
+   <introduction>En esta sección se analiza la estructura interna de las frases preposicionales o posposicionales, que expresan generalmente la localidad, el acompañamiento, la meta, el instrumento, el recipiente o el agente en lenguas que no indican el caso en sustantivos o frases nominales. Las lenguas que tienen marcadores de caso en sustantivos normalmente tienen frases preposionales o posposicionales de lugar y tiempo todavía.<br/><br/>
+	  Primero se tratan los posibles modificadores de la frase. Normalmente hay algunas palabras de grado que pueden modificar una frase preposicional o posposicional completa, tal como <example>just ‘justo’</example> y <example>right ‘hasta’</example> en <example>just around the corner ‘justo a la vuelta de la esquina’</example> y <example>right to the last second ‘hasta el último momento’</example>.
+	  En algunas lenguas hay adverbios de lugar que significa <example>‘right here’ (exactamente aquí)</example> y <example>‘right there’ (exactamente allí)</example> que pueden modificar estas frases, entonces permitimos esta opción también.<br/><br/>
+	  Los números ordinales y los adjetivos también pueden modificar las frases preposicionales o posposicionales, como en <example>next in line ‘siguiente en la linea’</example> y <example>first out the door ‘el primero en salir’</example>.  <br/><br/>
+	  Además, ciertos adverbios de modo pueden modificar a las frases preposicionales o posposicionales, como <example>casi</example>, <example>mostly ‘sobre todo’</example> y <example>squarely ‘justo’</example> en <example>almost in the hole ‘casi en el agujero’</example>, <example>mostly up the tree ‘la mayoría en el árbol’</example>, <example>squarely on the table ‘justo en la mesa’</example> y <example>nearly upon the enemy ‘casi sobre el enemigo’</example>.</introduction>
 	<form section="pp">
-		<prompt>Escriba algunos ejemplos similares de su idioma aquí:</prompt>
+		<prompt>Escriba algunos ejemplos similares de su lengua aquí:</prompt>
 		<textBox id="PPMainExample" dataItem="example"/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="modifiers" default="no">RPPModifiers</groupName>
-			<prompt>De acuerdo con los ejemplos que usted escribió anteriormente, ¿hay modificadores que se presentan antes o después de las frases preposicionales o posposicionales como palabras independientes en su idioma?</prompt>
-			<radio id="PPModifiersNo" dataValue="no">No, ni las palabras de grado ni los ordinales ni los adverbios de manera pueden modificar las frases preposicionales o posposicionales como palabras independientes</radio>
+			<prompt>De acuerdo con los ejemplos que usted escribió arriba, ¿hay modificadores que se presentan antes o después de las frases preposicionales o posposicionales como palabras independientes en su lengua?</prompt>
+			<radio id="PPModifiersNo" dataValue="no">No, ni las palabras de grado ni los ordinales ni los adverbios pueden modificar las frases preposicionales o posposicionales como palabras independientes</radio>
 			<radio id="PPModifiersYes" dataValue="yes">Sí</radio>
 			<radioGroup id="PPModifiersTable" show="swPPModifiersYes">
 				<groupName dataItem="modifierType" default="degree">RPPModifiersType</groupName>
 				<prompt>¿Qué tipos de modificadores pueden presentarse?</prompt>
 				<radio id="PPModifiersDegree" dataValue="degree">Solamente palabras de grado</radio>
 				<radio id="PPModifiersOrdinal" dataValue="ordinal">Solamente ordinales</radio>
-				<radio id="PPModifiersManner" dataValue="manner">Solamente adverbios de manera</radio>
-				<radio id="PPModifiersDegreeAndOrdinal" dataValue="degreeAndOrdinal">Palabras de grado y ordinales, pero no adverbios de manera</radio>
-				<radio id="PPModifiersDegreeAndManner" dataValue="degreeAndManner">Palabras de grado y adverbios de manera, pero no ordinales</radio>
-				<radio id="PPModifiersMannerAndOrdinal" dataValue="mannerAndOrdinal">Adverbios de manera y ordinales, pero no palabras de grado</radio>
-				<radio id="PPModifiersAll" dataValue="all">Tres tipos, palabras de grado, adverbios de manera y ordinales pueden presentarse</radio>
-				<radioGroup id="PPModifierDegreePosTable" show="swPPModifiersYesDegree">
+				<radio id="PPModifiersManner" dataValue="manner">Solamente adverbios de modo</radio>
+			   <radio id="PPModifiersLocative" dataValue="locative">Solamente adverbios de lugar</radio>
+			   <radio id="PPModifiersDegreeAndOrdinal" dataValue="degreeAndOrdinal">Palabras de grado y ordinales, pero no adverbios</radio>
+				<radio id="PPModifiersDegreeAndManner" dataValue="degreeAndManner">Palabras de grado y adverbios de modo, pero no ordinales ni adverbios de lugar</radio>
+			   <radio id="PPModifiersMannerAndOrdinal" dataValue="mannerAndOrdinal">Adverbios de modo y ordinales, pero no palabras de grado ni adverbios de lugar</radio>
+			   <radio id="PPModifiersMannerAndLocative" dataValue="mannerAndLocative">Adverbios de modo y adverbios de lugar, pero no palabras de grado ni ordinales</radio>
+			   <radio id="PPModifiersAll" dataValue="all">Los tres tipos principales, palabras de grado, adverbios de modo y ordinales pueden presentarse</radio>
+			   <radio id="PPModifiersAll4" dataValue="all4">Los cuatro tipos, palabras de grado, adverbios de modo, adverbios de lugar y ordinales pueden presentarse</radio>
+			   <radioGroup id="PPModifierDegreePosTable" show="swPPModifiersYesDegree">
 					<groupName dataItem="degreePos" default="unknown" position="yesSpec">RPPModifiersDegreePos</groupName>
 					<prompt>¿Dónde se presentan las palabras de grado con respecto del resto de la frase preposicional o posposicional?</prompt>
-					<radio id="PPModifiersDegreePosBefore" dataValue="before">Antes</radio>
-					<radio id="PPModifiersDegreePosAfter" dataValue="after">Después</radio>
-					<radio id="PPModifiersDegreePosEitherSide" dataValue="either">Cualquier lado, pero no en ambos lados en la misma oración</radio>
-					<radio id="PPModifiersDegreePosEitherOrBoth" dataValue="eitherOrBoth">Cualquier lado, o en ambos lados en la misma oración</radio>
+					<radio id="PPModifiersDegreePosBefore" dataValue="before">Antes de la frase</radio>
+					<radio id="PPModifiersDegreePosAfter" dataValue="after">Después de la frase</radio>
+					<radio id="PPModifiersDegreePosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
+					<radio id="PPModifiersDegreePosEitherOrBoth" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
 					<radio id="PPModifiersDegreePosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes de la frase, o en ambos lados en la misma oración</radio>
 					<radio id="PPModifiersDegreePosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después de la frase, o en ambos lados en la misma oración</radio>
 					<radio id="PPModifiersDegreePosBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
@@ -45,10 +50,10 @@
 				<radioGroup id="PPModifiersOrdinalPosTable" show="swPPModifiersYesOrdinal">
 					<groupName dataItem="ordinalPos" default="unknown" position="yesSpec">RPPModifiersOrdinalPos</groupName>
 					<prompt>¿Dónde se presentan los ordinales con respecto del resto de la frase preposicional o posposicional?</prompt>
-					<radio id="PPModifiersOrdinalPosBefore" dataValue="before">Antes</radio>
-					<radio id="PPModifiersOrdinalPosAfter" dataValue="after">Después</radio>
-					<radio id="PPModifiersOrdinalPosEitherSide" dataValue="either">Cualquier lado, pero no en ambos lados en la misma oración</radio>
-					<radio id="PPModifiersOrdinalPosEitherOrBoth" dataValue="eitherOrBoth">Cualquier lado, o en ambos lados en la misma oración</radio>
+					<radio id="PPModifiersOrdinalPosBefore" dataValue="before">Antes de la frase</radio>
+					<radio id="PPModifiersOrdinalPosAfter" dataValue="after">Después de la frase</radio>
+					<radio id="PPModifiersOrdinalPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
+					<radio id="PPModifiersOrdinalPosEitherOrBoth" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
 					<radio id="PPModifiersOrdinalPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes de la frase, o en ambos lados en la misma oración</radio>
 					<radio id="PPModifiersOrdinalPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después de la frase, o en ambos lados en la misma oración</radio>
 					<radio id="PPModifiersOrdinalPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
@@ -59,172 +64,252 @@
 						<radio id="PPModifiersOrdinalPosEitherOrBothRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 					</radioGroup>
 				</radioGroup>
-				<radioGroup id="PPModifiersPosTable" show="swPPModifiersYesManner">
+				<radioGroup id="PPModifiersMannerPosTable" show="swPPModifiersYesManner">
 					<groupName dataItem="mannerPos" default="unknown" position="yesSpec">RPPModifiersMannerPos</groupName>
-					<prompt>¿Dónde se presentan los adverbios de manera con respecto del resto de la frase preposicional o posposicional?</prompt>
-					<radio id="PPModifiersMannerPosBefore" dataValue="before">Antes</radio>
-					<radio id="PPModifiersMannerPosAfter" dataValue="after">Después</radio>
-					<radio id="PPModifiersMannerPosEitherSide" dataValue="either">Cualquier lado, pero no en ambos lados en la misma oración</radio>
-					<radio id="PPModifiersMannerPosEitherOrBoth" dataValue="eitherOrBoth">Cualquier lado, o en ambos lados en la misma oración</radio>
+					<prompt>¿Dónde se presentan los adverbios de modo con respecto del resto de la frase preposicional o posposicional?</prompt>
+					<radio id="PPModifiersMannerPosBefore" dataValue="before">Antes de la frase</radio>
+					<radio id="PPModifiersMannerPosAfter" dataValue="after">Después de la frase</radio>
+				   <radio id="PPModifiersMannerPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
+					<radio id="PPModifiersMannerPosEitherOrBoth" dataValue="eitherOrBoth">Decualquier lado, o en ambos lados en la misma oración</radio>
 					<radio id="PPModifiersMannerPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes de la frase, o en ambos lados en la misma oración</radio>
 					<radio id="PPModifiersMannerPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después de la frase, o en ambos lados en la misma oración</radio>
 					<radio id="PPModifiersMannerPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
 					<radioGroup id="PPModifiersMannerPosEitherOrBothRestrictedTable" show="swPPModifiersYesMannerEitherOrBoth">
 						<groupName dataItem="mannerRestricted" default="unrestricted">RPPModifiersMannerPosRestricted</groupName>
-						<prompt>¿Pueden todos los adverbios de manera presentarse de cualquier lado de las frases preposicionales o posposicionales?</prompt>
+						<prompt>¿Pueden todos los adverbios de modo presentarse de cualquier lado de las frases preposicionales o posposicionales?</prompt>
 						<radio id="PPModifiersMannerPosEitherOrBothUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
 						<radio id="PPModifiersMannerPosEitherOrBothRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 					</radioGroup>
 				</radioGroup>
+			   <radioGroup id="PPModifiersLocativePosTable" show="swPPModifiersYesLocative">
+				  <groupName dataItem="locativePos" default="unknown" position="yesSpec">RPPModifiersLocativePos</groupName>
+				  <prompt>¿Dónde se presentan los adverbios de lugar con respecto del resto de la frase preposicional o posposicional?</prompt>
+				  <radio id="PPModifiersLocativePosBefore" dataValue="before">Antes de la frase</radio>
+				  <radio id="PPModifiersLocativePosAfter" dataValue="after">Después de la frase</radio>
+				  <radio id="PPModifiersLocativePosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
+				  <radio id="PPModifiersLocativePosEitherOrBoth" dataValue="eitherOrBoth">Decualquier lado, o en ambos lados en la misma oración</radio>
+				  <radio id="PPModifiersLocativePosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes de la frase, o en ambos lados en la misma oración</radio>
+				  <radio id="PPModifiersLocativePosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después de la frase, o en ambos lados en la misma oración</radio>
+				  <radio id="PPModifiersLocativePosBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
+				  <radioGroup id="PPModifiersLocativePosEitherOrBothRestrictedTable" show="swPPModifiersYesLocativeEitherOrBoth">
+					 <groupName dataItem="locativeRestricted" default="unrestricted">RPPModifiersLocativePosRestricted</groupName>
+					 <prompt>¿Pueden todos los adverbios de lugar presentarse de cualquier lado de las frases preposicionales o posposicionales?</prompt>
+					 <radio id="PPModifiersLocativePosEitherOrBothUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
+					 <radio id="PPModifiersLocativePosEitherOrBothRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
+				  </radioGroup>
+			   </radioGroup>
 			</radioGroup>
 		</radioGroup>
 		<instruction id="PPModifiersDegreeYesInstruction" show="swPPModifiersYesDegree">In the lexicon, mark the degree words with the features <feature>makeDeg modifies_PP</feature>.    (If any of these degree words are the same as those which can modify another category, you can simply add the additional feature <feature>modifies_PP</feature> to the same lexical entry.)</instruction>
 		<instruction id="PPModifiersDegreeEitherSideInstruction" show="swPPModifiersYesDegreeRestricted">In the lexicon, mark those degree words which can only occur before the PP with the feature <feature>PP-initial</feature> and those which can only occur after the PP with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
 		<instruction id="PPModifiersOrdinalEitherSideInstruction" show="swPPModifiersYesOrdinalRestricted">In the lexicon, mark those ordinals which can only occur before the PP with the feature <feature>PP-initial</feature> and those which can only occur after the PP with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
 		<instruction id="PPModifiersMannerEitherSideInstruction" show="swPPModifiersYesMannerRestricted">In the lexicon, mark those manner adverbials which can only occur before the PP with the feature <feature>PP-initial</feature> and those which can only occur after the PP with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
-		<br/>
-		<buttons>
-			<button id="PPMainBack" value="Back" goto="Contents.htm"/>
-			<button id="PPMainNext" value="Next" goto="PPComps.xml"/>
-		</buttons>
+	   <instruction id="PPModifiersLocativeEitherSideInstruction" show="swPPModifiersYesLocativeRestricted">In the lexicon, mark those locative adverbials which can only occur before the PP with the feature <feature>PP-initial</feature> and those which can only occur after the PP with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+	   <br/>
+	   <buttons>
+		  <button id="PPMainBack" value="Back" goto="Contents.htm"/>
+		  <button id="PPMainNext" value="Next" goto="PPComps.xml"/>
+	   </buttons>
 	</form>
-	<showWhen id="swPPModifiersYes">
-		<whenRadio button="PPModifiersYes"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesDegree">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersDegree"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesDegreeEitherOrBoth">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersDegree"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-		<closeParen/>
-		<and/> <not/>         <whenRadio button="PPModifiersDegreePosBefore"/>
+   <showWhen id="swPPModifiersYes">
+	  <whenRadio button="PPModifiersYes"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesDegree">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersDegree"/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndManner"/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesDegreeEitherOrBoth">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersDegree"/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndManner"/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
+	  <and/> <not/>         <whenRadio button="PPModifiersDegreePosBefore"/>
 	  <and/> <not/>         <whenRadio button="PPModifiersDegreePosAfter"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesDegreeRestricted">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersDegree"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-		<closeParen/>
-		<and/>
-		 <not/>         <whenRadio button="PPModifiersDegreePosBefore"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesDegreeRestricted">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersDegree"/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndManner"/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
+	  <and/>
+	  <not/>         <whenRadio button="PPModifiersDegreePosBefore"/>
 	  <and/> <not/>         <whenRadio button="PPModifiersDegreePosAfter"/>
-		<and/>
-		<whenRadio button="PPModifiersDegreePosEitherOrBothRestricted"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesOrdinal">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal "/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesOrdinalEitherOrBoth">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal "/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-		<closeParen/>
-			 <and/> <not/>         <whenRadio button="PPModifiersOrdinalPosBefore"/>
+	  <and/>
+	  <whenRadio button="PPModifiersDegreePosEitherOrBothRestricted"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesOrdinal">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndOrdinal "/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesOrdinalEitherOrBoth">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndOrdinal "/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
+	  <and/> <not/>         <whenRadio button="PPModifiersOrdinalPosBefore"/>
 	  <and/> <not/>         <whenRadio button="PPModifiersOrdinalPosAfter"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesOrdinalRestricted">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal "/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-		<closeParen/>
-		<and/> <not/>         <whenRadio button="PPModifiersOrdinalPosBefore"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesOrdinalRestricted">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndOrdinal "/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
+	  <and/> <not/>         <whenRadio button="PPModifiersOrdinalPosBefore"/>
 	  <and/> <not/>         <whenRadio button="PPModifiersOrdinalPosAfter"/>
-		<and/>
-		<whenRadio button="PPModifiersOrdinalPosEitherOrBothRestricted"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesManner">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesMannerEitherOrBoth">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-		<closeParen/>
-		<and/> <not/>         <whenRadio button="PPModifiersMannerPosBefore"/>
-	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosAfter"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesMannerRestricted">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-		<closeParen/>
+	  <and/>
+	  <whenRadio button="PPModifiersOrdinalPosEitherOrBothRestricted"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesManner">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersManner"/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndManner"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndLocative"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesMannerEitherOrBoth">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersManner"/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndManner"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndLocative"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
 	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosBefore"/>
 	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosAfter"/>
-		<and/>
-		<whenRadio button="PPModifiersMannerPosEitherOrBothRestricted"/>
-	</showWhen>
+   </showWhen>
+   <showWhen id="swPPModifiersYesMannerRestricted">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersManner"/>
+	  <or/>
+	  <whenRadio button="PPModifiersDegreeAndManner"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndOrdinal"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndLocative"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
+	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosBefore"/>
+	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosAfter"/>
+	  <and/>
+	  <whenRadio button="PPModifiersMannerPosEitherOrBothRestricted"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesLocative">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersLocative"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndLocative"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesLocativeEitherOrBoth">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersLocative"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndLocative"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
+	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosBefore"/>
+	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosAfter"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesLocativeRestricted">
+	  <whenRadio button="PPModifiersYes"/>
+	  <and/>
+	  <openParen/>
+	  <whenRadio button="PPModifiersLocative"/>
+	  <or/>
+	  <whenRadio button="PPModifiersMannerAndLocative"/>
+	  <or/>
+	  <whenRadio button="PPModifiersAll4"/>
+	  <closeParen/>
+	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosBefore"/>
+	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosAfter"/>
+	  <and/>
+	  <whenRadio button="PPModifiersLocativePosEitherOrBothRestricted"/>   </showWhen>
 </page>

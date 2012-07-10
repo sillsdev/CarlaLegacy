@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="PronReciprocal" count="4/8">
-	<title level="2">Los pronombres - Los rrecíprocos</title>
-	<introduction>Los recíprocos son similares a los reflexivos, salvo que se presentan solamente con sujetos plurales. Pueden formarse de la misma manera que los reflexivos, o pueden ser distintos. Por ejemplo, en español, las formas recíprocas son frases: <example>el uno al otro</example> y <example>uno a otro</example>.  Algunos idiomas usan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una oración nominal poseída o una oración nominal cuantificada (como en español), y algunos no indican la acción recíproca en absoluto.</introduction>
+<page id="PronReciprocal" count="4/9">
+	<title level="2">Los pronombres - Los recíprocos</title>
+	<introduction>Los recíprocos son similares a los reflexivos, salvo que se presentan solamente con sujetos plurales. Pueden formarse de la misma manera que los reflexivos, o pueden ser distintos. Por ejemplo, en español, las formas recíprocas son frases: <example>el uno al otro</example> y <example>uno a otro</example>.  Algunas lenguas utilizan solamente un afijo verbal para indicar la acción recíproca del sujeto plural, otros tienen pronombres independientes, otros utilizan una frase nominal poseída o una frase nominal cuantificada (como en español), y algunos no indican la acción recíproca en absoluto.</introduction>
 	<form section="pron">
 		<radioGroup>
 			<groupName dataItem="recip" default="yes">RPronRecip</groupName>
-			<prompt>¿Hay recíprocos en su idioma?</prompt>
+			<prompt>¿Hay recíprocos en su lengua?</prompt>
 			<radio id="PronRecipNo" dataValue="no">No</radio>
 			<radio id="PronRecipVerbal" dataValue="verbal">Sí, un afijo verbal indica la acción recíproca</radio>
 			<radio id="PronRecipYes" dataValue="yes">Sí, un pronombre especial o una frase nominal indica la acción recíproca</radio>
@@ -27,7 +27,8 @@
 			<radio id="PronRecipAffixYes" dataValue="yes">Sí, uno o más afijos se eligen entre para hacer otro pronombre un recíproco</radio>
 			<radio id="PronRecipAffixNoWord" dataValue="noWord">No, son palabras distintas</radio>
 			<radio id="PronRecipAffixNoNoun" dataValue="noNoun">No, una frase que consiste en cierto sustantivo con un pronombre como el poseedor se utiliza</radio>
-			<radio id="PronRecipAffixNoQP" dataValue="noQP">No, unas oraciones nominales cuantificadas especiales se utilizan, como en español</radio>
+			<radio id="PronRecipAffixNoQP" dataValue="noQP">No, unas frases nominales cuantificadas especiales se utilizan, como en español</radio>
+		   <radio id="PronRecipAffixSome" dataValue="some">Se expresan por palabras independientes a veces, pero otros se expresan por frases y algunos pueden utilizar un afijo recíproco</radio>
 		</radioGroup>
 		<instruction id="PronRecipAffixYesInstruction" show="swPronRecipAffixYes">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant affix(es).</instruction>
 		<instruction id="PronRecipVerbalInstruction" show="swPronRecipVerbal">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant affix(es).</instruction>
@@ -44,7 +45,7 @@
 		<br/>
 		<buttons>
 			<button id="PronRecipBack" value="Back" goto="PronRefl.xml"/>
-			<button id="PronRecipNext" value="Next" goto="PronIndefinite.xml"/>
+		   <button id="PronRecipNext" value="Next" goto="PronDem.xml"/>
 		</buttons>
 	</form>
 	<showWhen id="swPronRecipYesOrVerbal">

@@ -4,12 +4,16 @@
 	   This is to facilitate reuse of sets of abbreviations.
 	   This is a subcomponent of XLingPap
 	   The usesmallcaps attribute is deprecated; use font-variant='small-caps' or, better, use a real small caps font-family
+	   The fontissmallcaps attribute is used to indicate whether or not the font used for abbreviations is a small caps font
+		 (or a faked small caps font).  This attribute is only used in the Java ConvertAnyAbbreviationsToAbbrRefs command
+		 which attempts to take what a user typed in a gloss and convert any of its abbeviations to abbrRef elements.
 	   -->
 <!ELEMENT abbreviations (comment?, abbreviation*, comment?)>
 <!ATTLIST abbreviations
 	label CDATA #IMPLIED
 	version CDATA #IMPLIED
 	usesmallcaps (yes | no ) "no"
+	fontissmallcaps (yes | no ) "yes"
 	%fontinfo;
 >
 <!-- an abbreviation that might be used in glossing within a document.

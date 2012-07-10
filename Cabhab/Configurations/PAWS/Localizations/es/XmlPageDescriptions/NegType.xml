@@ -7,9 +7,9 @@
 		<br/>
 			Polarity Changing languages normally allow only a single negative element in the sentence for negation to be expressed (though technically any odd number of negatives expresses negative polarity) because the presence of two
 			(or any even number of) negative elements changes the polarity back to positive.
-			For example, <example>John saw nothing</example> is negative, but <example>John didn't see nothing</example> is positive
+			For example, <example>John saw nothing</example> is negative, but <example>John didn’t see nothing</example> is positive
 			because it means the same as <example>John saw something</example>.
-			The version with a negative auxiliary is expressed as <example>John didn't see anything</example>, using what is known as a negative polarity item in object position.
+			The version with a negative auxiliary is expressed as <example>John didn’t see anything</example>, using what is known as a negative polarity item in object position.
 			Such negative polarity items may occur as subjects in some contexts without any other negation present, such as <example>Anyone may come</example>,
 			but they may only occur in object position when some higher (technically c-commanding) element  is negative.
 			For example, one can say <example>Nobody saw anyone</example> and <example>Nowhere will they find anyone</example>
@@ -18,7 +18,7 @@
 <br/>
 		<br/>
 In Negative Concord languages, any number of negative elements expresses negative polarity, so in a Negative Concord version of English (such as Black English)
-			<example>John didn't see nothing</example> is the correct way to express a negative sentence with a negative object.
+			<example>John didn’t see nothing</example> is the correct way to express a negative sentence with a negative object.
 			In these languages, similarly to the restriction on negative polarity items above, a negative element may normally occur in subject position or a
 			fronted position without any other negative element present, but a negative object may only occur when some higher (technically c-commanding) element is negative.
 			Some Negative Concord languages have the stronger restriction that any negative argument must co-occur with verbal negation and still others require fronting of the negative argument,
@@ -27,50 +27,51 @@ In Negative Concord languages, any number of negative elements expresses negativ
 		<br/>
 		<help href="../Help/Cbgbtext.doc#cCommand">(Click here to see more on c-command.)</help>
 	</introduction>
-		<introduction id="NegTypeIntroPractical" show="swPractical">Hay dos clasificaciones importantes para los idiomas con respecto a la negación: Idiomas cambiantes de la polaridad contra idiomas de la concordia negativa, ejemplificados por inglés estándar contra español, respectivamente. <br/>
+		<introduction id="NegTypeIntroPractical" show="swPractical">Hay dos clasificaciones importantes para las lenguas con respecto a la negación: Lenguas que cambian la polaridad contra lenguas de concordancia negativa, ejemplificados por inglés estándar contra español, respectivamente. <br/>
 				<br/>
-				Los idiomas cambiantes de la polaridad normalmente permiten presentarse un solo elemento negativo en la oración para que la negación sea expresada (sin embargo, cualquier número impar de negativas expresa técnico polaridad negativa) porque la presencia de dos (o cualesquiera números pares de) elementos negativos cambia la polaridad de nuevo a positivo. Por ejemplo,
-				<example>John saw nothing 'Juan vio nada'</example> es negativo, pero <example>John didn't see nothing 'Juan no vio nada'</example> es positivo porque significa al igual que
-				<example>John saw something 'Juan vio algo'</example>.  <br/>
+				Las lenguas que cambian la polaridad normalmente permiten presentarse un solo elemento negativo en la oración para que la negación sea expresada (sin embargo, cualquier número impar de negativas expresa técnico polaridad negativa) porque la presencia de dos (o cualesquiera números pares de) elementos negativos cambia la polaridad de nuevo a positivo. Por ejemplo,
+		   <example>John saw nothing ‘Juan vio nada’</example> es negativo, pero <example>John didn’t see nothing ‘Juan no vio nada’</example> es positivo porque significa al igual que
+		   <example>John saw something ‘Juan vio algo’</example>.  <br/>
 				<br/>
-				La versión con un auxiliar negativo se expresa como <example>John didn't see anything 'Juan no vio algo'</example>, usando qué se conoce como <i>artículo negativo de la polaridad</i> en la posición del objeto.  Tales artículos negativos de la polaridad pueden presentarse como los sujetos en algunos contextos sin ninguna otra palabra negativa presente, tal como
-				<example>Anyone may come 'Cualquiera persona pueden venir'</example>,
+		   La versión con un auxiliar negativo se expresa como <example>John didn’t see anything ‘Juan no vio algo’</example>, utilizando qué se conoce como <i>artículo negativo de polaridad </i> en la posición del objeto.  Tales artículos negativos de polaridad  pueden presentarse como los sujetos en algunos contextos sin ninguna otra palabra negativa presente, tal como
+		   <example>Anyone may come ‘Cualquiera persona pueden venir’</example>,
 				pero pueden presentarse en la posición del objeto solamente cuando un elemento anterior en la oración es negativo. Por ejemplo, uno puede decir
-				<example>Nobody saw anyone 'Nadie vio cualquiera persona'</example> y <example>Nowhere will they find anyone 'En ninguna parte ellos encuentra a cualquiera persona'</example>
+		   <example>Nobody saw anyone ‘Nadie vio cualquiera persona’</example> y <example>Nowhere will they find anyone ‘En ninguna parte ellos encuentra a cualquiera persona’</example>
 				pero sin el sujeto negativo o el adverbio negativo desplazado, el auxiliar negativo debe ser utilizado, como en
-				<example>We did not see anyone 'No vimos a cualquiera persona'</example> y <example>They will not find anyone anywhere 'Ellos no encontrarán a cualquiera persona dondequiera'</example>.
+		   <example>We did not see anyone ‘No vimos a cualquiera persona’</example> y <example>They will not find anyone anywhere ‘Ellos no encontrarán a cualquiera persona dondequiera’</example>.
 				<br/>
 				<br/>
-				En idiomas de la concordia negativa, cualquier número de elementos negativos expresa polaridad negativa, tan en español
+				En lenguas de concordancia negativa, cualquier número de elementos negativos expresa polaridad negativa, tan en español
 				<example>Juan no vio nada</example> es la manera correcta de expresar una oración negativa con un objeto negativo.
-				En estos idiomas, un elemento negativo normalmente puede presentarse en la posición sujeta o una posición desplazada a la izquierda sin ningún otro elemento negativo presente,
+				En estas lenguas, un elemento negativo normalmente puede presentarse en la posición sujeta o una posición desplazada a la izquierda sin ningún otro elemento negativo presente,
 				pero un objeto negativo solamente puede presentarse cuando un elemento anterior en la oración es negativo.
-				Algunos idiomas de la concordia negativa tienen la restricción más fuerte que cualquiera palabra o frase negativa debe presentarse con la negación verbal, y
-				todavía otros requieren el desplazamiento a la izquierda de la palabra o frase negativa, semejantemente al desplazamiento a la izquierda de las palabras o frases interrogativas en preguntas abiertas.
+				Algunas lenguas de concordancia negativa tienen la restricción más fuerte que cualquiera palabra o frase negativa debe presentarse con la negación verbal, y
+				todavía otros requieren el desplazamiento a la izquierda de la palabra o frase negativa, semejantemente al desplazamiento a la izquierda de las palabras o frases interrogativas en preguntas.
 				<br/>
-		</introduction>   <form section="neg">
-				<prompt id="NegVerbOnlyInstruction" show="swNegVerbOnly">Su lidioma es ni es un idioma cambiante de la polaridad ni un idioma de la concordia negativa, puesto que la única manera de expresar la negación es vía el afijo verbal. No hay casos múltiples de la negación para cambiar la polaridad ni a concordar con.  Puesto que no le pedirán otros ejemplos en esta página, es importante que usted esté seguro que usted dio los suficientes ejemplos que mostraban la negación verbal en la página anterior para el uso en el relato de la gramática antes de continuar.
+		</introduction>
+   <form section="neg">
+	  <prompt id="NegVerbOnlyInstruction" show="swNegVerbOnly">Su lengua ni es una lengua que cambia la polaridad ni una lengua de concordancia negativa, puesto que la única manera de expresar la negación es vía el afijo verbal. No exhibe casos múltiples en la negación que cambiar la polaridad ni de concordancia.  Puesto que no se le pedirán otros ejemplos en esta página, es importante que usted esté seguro que usted proporcionó suficientes ejemplos que mostraban la negación verbal en la página anterior para el uso en la descripción de la gramática antes de continuar.
 </prompt>
 		<radioGroup id="NegTypeTable" show="swNegNotVerbOnly">
 			<groupName dataItem="type" default="changing">RType</groupName>
-				<prompt>¿Qué tipo de negación tiene su idioma?</prompt>
-				<radio id="NegTypeChanging" dataValue="changing">Cambiante de la polaridad, al igual que inglés estándar, puesto que la polaridad cambia entre positivo y la negativa con cada caso de la negación</radio>
-				<radio id="NegTypeConcord" dataValue="concord">Concordia negativa, puesto que cualquier número de elementos negativos concuerda simplemente en la polaridad negativa</radio>
+				<prompt>¿Qué tipo de negación tiene su lengua?</prompt>
+				<radio id="NegTypeChanging" dataValue="changing">Que cambia la polaridad, coma inglés estándar, puesto que la polaridad cambia entre positivo y negativo con cada caso de la negación</radio>
+		   <radio id="NegTypeConcord" dataValue="concord">Concordancia negativa, como español, puesto que cualquier número de elementos negativos concuerda simplemente en la polaridad negativa</radio>
 			<radioGroup id="PolarityItemsTable" show="swNegTypeChanging">
 				<groupName dataItem="polarityItems" default="no">RPolarityItems</groupName>
-					<prompt>¿Hay artículos negativos de la polaridad en su idioma?</prompt>
-					<radio id="PolarityItemsYes" dataValue="yes">Sí, hay una sistema distinta de los pronombres, los determinantes y los adverbios que se presentan en la posición del objeto o la posición normal del adverbio en vez del artículo negativo equivalente cuando otro elemento negativo está presente en la oración</radio>
-					<radio id="PolarityItemsNo" dataValue="no">No, los pronombres, los determinantes y los adverbios negativos pueden presentarse en la posición del objeto o la posición normal del adverbio incluso cuando hay otro elemento negativo en la oración</radio>
+					<prompt>¿Existen artículos negativos de polaridad  en su lengua?</prompt>
+					<radio id="PolarityItemsYes" dataValue="yes">Sí, tiene una sistema distinta de pronombres, determinantes y adverbios que se presentan en la posición de objeto o la posición normal del adverbio en vez del artículo negativo equivalente cuando otro elemento negativo está presente en la oración</radio>
+			   <radio id="PolarityItemsNo" dataValue="no">No, los pronombres, determinantes y adverbios negativos pueden presentarse en la posición de objeto o la posición normal del adverbio incluso cuando otro elemento negativo está presente en la oración</radio>
 			</radioGroup>
 		</radioGroup>
-				<prompt id="PolarityItemsYesInstruction" show="swPolarityItemsYesAndNotVerbOnly">Escriba sus ejemplos de los varios artículos negativos de la polaridad en las cajas apropiadas, cada uno en una línea separada y seguido por un punto.</prompt>
-				<prompt id="PronounPolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">Los artículos negativos de la polaridad que son pronombres, tales como 'anyone' "cualquier persona", 'anybody' "cualquiera" , 'anything' "cualquier cosa". Incluya los elementos que significan iguales, pero se escriben mientras que más de una palabra.</prompt>
+				<prompt id="PolarityItemsYesInstruction" show="swPolarityItemsYesAndNotVerbOnly">Escriba ejemplos de los varios artículos negativos de polaridad en los cuadros apropiados, cada uno en una línea separada.</prompt>
+	  <prompt id="PronounPolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">Los artículos negativos de polaridad que son pronombres, tales como ‘anyone’ (cualquier persona), ‘anybody’ (cualquiera) , ‘anything’ (cualquier cosa). Incluya los elementos que significan lo mismo, pero se escriben con más de una palabra.</prompt>
 		<textBox id="PronounPolarityItemsExamples" dataItem="npiPronounExample" rows="3" show="swPolarityItemsYesAndNotVerbOnly"/>
-				<prompt id="DeterminerPolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">Los artículos negativos de la polaridad que son determinantes<span id="QPDeterminerNoOnlySpan" show="swQPDeterminerNoOrYesSome"> (elementos especiales de grado para su idioma)</span>, por ejemplo 'any' "cualquiera":</prompt>
+	  <prompt id="DeterminerPolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">Los artículos negativos de polaridad  que son determinantes<span id="QPDeterminerNoOnlySpan" show="swQPDeterminerNoOrYesSome"> (elementos especiales de grado para su lengua)</span>, por ejemplo ‘any’ (cualquiera):</prompt>
 		<textBox id="DeterminerPolarityItemsExamples" dataItem="npiDeterminerExample" rows="3" show="swPolarityItemsYesAndNotVerbOnly"/>
-				<prompt id="TemporalPolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">Los artículos negativos de la polaridad que son adverbios de tiempo, tales como 'anytime' "en cualquier momento":</prompt>
+	  <prompt id="TemporalPolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">Los artículos negativos de polaridad  que son adverbios de tiempo, tales como ‘anytime’ (en cualquier momento):</prompt>
 		<textBox id="TemporalPolarityItemsExamples" dataItem="npiTemporalExample" rows="3" show="swPolarityItemsYesAndNotVerbOnly"/>
-				<prompt id="LocativePolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">Los artículos negativos de la polaridad que son adverbios de lugar, tales como 'anywhere' "dondequiera":</prompt>
+	  <prompt id="LocativePolarityItemsPrompt" show="swPolarityItemsYesAndNotVerbOnly">Los artículos negativos de polaridad  que son adverbios de lugar, tales como ‘anywhere’ (dondequiera):</prompt>
 		<textBox id="LocativePolarityItemsExamples" dataItem="npiLocativeExample" rows="3" show="swPolarityItemsYesAndNotVerbOnly"/>
 		<instruction id="PolarityItemsFeaturesInstruction" show="swPolarityItemsYesAndNotVerbOnly">Add the feature <feature>negative-polarity</feature> to all the negative polarity items<span id="QPDeterminerNoAffixSpan" show="swQPDeterminerNoOrYesSomeAffix">, including the affix(es) used in the nominal phrase in place of the negative special degree affix(es)</span>
 			<span id="QPDeterminerNoCliticSpan" show="swQPDeterminerNoOrYesSomeClitic">, though use instead the feature <feature>negative-polarity_prefix</feature> or <feature>negative-polarity_suffix</feature> for the negative-polarity proclitics and enclitics, respectively, used in the nominal phrase in place of the negative special degree clitic(s)</span>.  Those which are adverbs also need either the feature <feature>temporal</feature> or <feature>locative</feature> as appropriate.  You also need to make sure the categories are correct.  If the pronouns (written as a single word including the negative polarity item) do not already have the category <category>Pron</category>, add the feature <feature>makePron</feature> to change the category for the syntax.  If the adverbs do not already have the category <category>Adv</category>, add the feature <feature>makeAdv</feature> to change the category for the syntax.  <span id="QPDeterminerNoSpan1" show="swQPDeterminerNoOrYesSomeWord">Add the feature <feature>Q</feature> to the negative polarity special degree words to change their category appropriately.</span>
@@ -86,34 +87,34 @@ In Negative Concord languages, any number of negative elements expresses negativ
 				<prompt id="NegSubjectPronounPrompt" show="swNegNotVerbOnly">Pronombres indefinidos negativos o frases nominales como el sujeto de una oración completa:</prompt>
 		<textBox id="NegPronounSubjExample" dataItem="pronounSubjExample" rows="4" cols="50" show="swNegNotVerbOnly"/>
 				<prompt id="NegObjectInstruction" show="swPolarityItemsNoAndNotVerbOnly">Ahora escriba ejemplos similares pero con un sujeto positivo y una frase nominal negativa en la posición del objeto.</prompt>
-				<prompt id="NegPolarityObjectInstruction" show="swPolarityItemsYesAndNotVerbOnly">Ahora escriba ejemplos similares pero con un sujeto positivo y un artículo negativo de la polaridad en la posición del objeto.</prompt>
-				<prompt id="NegObjectPrompt" show="swNegNotVerbOnly">Algunos ejemplos de oraciones con <span id="PolarityItemsYesSpan" show="swPolarityItemsYes">un artículo negativo de la polaridad </span><span id="PolarityItemsNoSpan" show="swPolarityItemsNo">una frase nominal negativa </span>en la posición del objeto:</prompt>
+				<prompt id="NegPolarityObjectInstruction" show="swPolarityItemsYesAndNotVerbOnly">Ahora escriba ejemplos similares pero con un sujeto positivo y un artículo negativo de polaridad en la posición del objeto.</prompt>
+				<prompt id="NegObjectPrompt" show="swNegNotVerbOnly">Algunos ejemplos de oraciones con <span id="PolarityItemsYesSpan" show="swPolarityItemsYes">un artículo negativo de polaridad </span><span id="PolarityItemsNoSpan" show="swPolarityItemsNo">una frase nominal negativa </span>en la posición del objeto:</prompt>
 		<textBox id="NegObjectExample" dataItem="objectExample" rows="4" cols="50" show="swNegNotVerbOnly"/>
-				<prompt id="NegIObjectInstruction" show="swPolarityItemsNoAndNotVerbOnly">Ahora escriba ejemplos similares pero con un sujeto positivo y una frase nominal negativa como el objeto indirecto.</prompt>
-				<prompt id="NegPolarityIObjectInstruction" show="swPolarityItemsYesAndNotVerbOnly">Ahora escrtba ejemplos similares pero con un sujeto positivo y un artículo negativo de la polaridad como el objeto indirecto..</prompt>
-				<prompt id="NegIObjectPrompt" show="swNegNotVerbOnly">Algunos ejemplos de oraciones con <span id="PolarityItemsYesSpan1" show="swPolarityItemsYes">un artículo negativo de la polaridad </span><span id="PolarityItemsNoSpan1" show="swPolarityItemsNo">una frase nominal negativa </span>en la posición del objeto indirecto:</prompt>
+				<prompt id="NegIObjectInstruction" show="swPolarityItemsNoAndNotVerbOnly">Ahora escriba ejemplos similares pero con un sujeto positivo y una frase nominal negativa como objeto indirecto.</prompt>
+				<prompt id="NegPolarityIObjectInstruction" show="swPolarityItemsYesAndNotVerbOnly">Ahora escrtba ejemplos similares pero con un sujeto positivo y un artículo negativo de polaridad como objeto indirecto..</prompt>
+				<prompt id="NegIObjectPrompt" show="swNegNotVerbOnly">Algunos ejemplos de oraciones con <span id="PolarityItemsYesSpan1" show="swPolarityItemsYes">un artículo negativo de polaridad </span><span id="PolarityItemsNoSpan1" show="swPolarityItemsNo">una frase nominal negativa </span>en la posición del objeto indirecto:</prompt>
 		<textBox id="NegIObjectExample" dataItem="indirectObjectExample" rows="4" cols="50" show="swNegNotVerbOnly"/>
-				<prompt id="NegSubjectObjectInstruction" show="swPolarityItemsNoAndNotVerbOnly">Finalmente, escriba algunos ejemplos con ambos el sujeto y el objeto negativos.</prompt>
-				<prompt id="NegPolaritySubjectObjectInstruction" show="swPolarityItemsYesAndNotVerbOnly">Finalmente, escriba algunos ejemplos con un sujeto negativo y un artículo negativo de la polaridad como el objeto.</prompt>
-				<prompt id="NegSubjectObjectPrompt" show="swNegNotVerbOnly">Algunos ejemplos de oraciones con un sujeto negativo y <span id="PolarityItemsYesSpan2" show="swPolarityItemsYes">un artículo negativo de la polaridad </span><span id="PolarityItemsNoSpan2" show="swPolarityItemsNo">una frase nominal negativa </span>en la posición del objeto:</prompt>
+				<prompt id="NegSubjectObjectInstruction" show="swPolarityItemsNoAndNotVerbOnly">Finalmente, escriba algunos ejemplos con ambos sujeto y objeto negativos.</prompt>
+				<prompt id="NegPolaritySubjectObjectInstruction" show="swPolarityItemsYesAndNotVerbOnly">Finalmente, escriba algunos ejemplos con un sujeto negativo y un artículo negativo de polaridad como objeto.</prompt>
+				<prompt id="NegSubjectObjectPrompt" show="swNegNotVerbOnly">Algunos ejemplos de oraciones con un sujeto negativo y <span id="PolarityItemsYesSpan2" show="swPolarityItemsYes">un artículo negativo de polaridad </span><span id="PolarityItemsNoSpan2" show="swPolarityItemsNo">una frase nominal negativa </span>en la posición del objeto:</prompt>
 		<textBox id="NegSubjectObjectExample" dataItem="subjectObjectExample" rows="4" cols="50" show="swNegNotVerbOnly"/>
 		<br/>
 		<br/>
 		<radioGroup id="ObjectVerbRequiredTable" show="swNegNotVerbOnly">
 			<groupName dataItem="objVerbRequired" default="other">RObjectVerbRequired</groupName>
-				<prompt>Considerando los ejemplos de las oraciones completas usted ha dado, ¿se requiere el verbo o el auxiliar ser negativo cuando la frase nominal del objeto <span id="NegObjectSpan" show="swPolarityItemsNo">es negativa?</span>
-						<span id="NegPolarityObjectSpan" show="swPolarityItemsYes">contiene un artículo negativo de la polaridad?</span>
+				<prompt>Considerando los ejemplos de las oraciones completas usted ha dado, ¿se requiere el verbo o el auxiliar sea negativo cuando la frase nominal de objeto <span id="NegObjectSpan" show="swPolarityItemsNo">es negativa?</span>
+						<span id="NegPolarityObjectSpan" show="swPolarityItemsYes">contiene un artículo negativo de polaridad ?</span>
 			</prompt>
-				<radio id="NegObjectVerbRequiredYes" dataValue="yes">Sí, un negativo <span id="NegPolarityObjectYesSpan" show="swPolarityItemsYes">artículo de la polaridad en el </span>objeto (o el objeto indirecto) no se permite sin también tener un verbo o un auxiliar negativo</radio>
-				<radio id="NegObjectVerbRequiredOther" dataValue="other">No, no requiere el verbo o al auxiliar ser negativo cuando hay un negativo <span id="NegPolarityObjectOtherSpan" show="swPolarityItemsYes">artículo de la polaridad en el </span>objeto (o el objeto indirecto), pero si el verbo no es negativo así que otra palabra o frase negativa debe presentarse <span id="NegTypeCCommandSpanNotPractical" show="swNotPractical">other (c-commanding)</span><span id="NegTypeCCommandSpanPractical" show="swPractical">anteriormente</span> en la oración</radio>
-				<radio id="NegObjectVerbRequiredNo" dataValue="no" show="swPolarityItemsNo">No, no hay restricción sobre la presencia de otro elemento negativo en la oración cuando hay un negativo <span id="NegPolarityObjectNoSpan" show="swPolarityItemsYes">artículo de la polaridad en el </span>objeto (o el objeto indirecto)</radio>
+		   <radio id="NegObjectVerbRequiredYes" dataValue="yes">Sí, un <span id="NegPolarityObjectYesSpan" show="swPolarityItemsYes">artículo negativo de polaridad en la posición objeto (o el objeto indirecto)</span><span id="NegPolarityObjectNoSpan1" show="swPolarityItemsNo">objeto (o objeto indirecto) negativo</span> no se permite sin también tener un verbo o un auxiliar negativo</radio>
+		   <radio id="NegObjectVerbRequiredOther" dataValue="other">No, no requiere el verbo o al auxiliar ser negativo cuando hay un <span id="NegPolarityObjectOtherSpan" show="swPolarityItemsYes">artículo negativo de polaridad en la posición del objeto (o del objeto indirecto)</span><span id="NegPolarityObjectNoSpan2" show="swPolarityItemsNo">objeto (o objeto indirecto) negativo</span>, pero si el verbo no es negativo así que otra palabra o frase negativa debe presentarse <span id="NegTypeCCommandSpanNotPractical" show="swNotPractical">other (c-commanding)</span><span id="NegTypeCCommandSpanPractical" show="swPractical">anteriormente</span> en la oración</radio>
+		   <radio id="NegObjectVerbRequiredNo" dataValue="no">No, no hay restricción sobre la presencia de otro elemento negativo en la oración cuando hay un <span id="NegPolarityObjectNoSpan" show="swPolarityItemsYes">artículo negativo de polaridad en la posición del objeto (o del objeto indirecto)</span><span id="NegPolarityObjectNoSpan3" show="swPolarityItemsNo">objeto (o objeto indirecto) negativo</span>.</radio>
 		</radioGroup>
 <radioGroup id="NegFrontTable" show="swNegTypeConcordAndNotVerbOnly">
 	<groupName dataItem="negFront" default="no">RNegFront</groupName>
-		<prompt>¿Se requiere un objeto negativo ser desplazado en todas las construcciones de la negación en su idioma? </prompt>
+		<prompt>¿Se requiere un objeto negativo ser desplazado en todas las construcciones de la negación en su lengua? </prompt>
 		<radio id="NegFrontYes" dataValue="yes">Sí, el despazamiento a la izquierda de la palabra o de la frase negativa se requiere, semejantemente al desplazamiento a la izquierda en preguntas</radio>
 		<radio id="NegFrontOptional" dataValue="optional">Un objeto negativo puede presentarse inicialmente en la oración, o puede permanecer en su posición normal</radio>
-		<radio id="NegFrontBeforeVerb" dataValue="beforeVerb">Un objeto negativo puede presentarse en la posición directamente antes del verbo, o puede permanecer en su posición normal</radio>
+		<radio id="NegFrontBeforeVerb" dataValue="beforeVerb" show="swWordOrderSOV">Un objeto negativo puede presentarse en la posición directamente antes del verbo, o puede permanecer en su posición normal</radio>
 		<radio id="NegFrontNo" dataValue="no">No, un objeto negativo presentarse simplemente en su posición normal en la oración</radio>
 </radioGroup>
 		<br/>
@@ -458,4 +459,7 @@ In Negative Concord languages, any number of negative elements expresses negativ
 		<showWhen id="swPractical">
 				<whenValue  element="paws" attr="outputGrammar" value="False"/>
 		</showWhen>
+   <showWhen id="swWordOrderSOV">
+	  <whenValue element="typology" attr="wordOrder" value="SOV"/>
+   </showWhen>
 </page>

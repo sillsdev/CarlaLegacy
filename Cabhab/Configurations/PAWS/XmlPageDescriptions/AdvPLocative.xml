@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="AdvPLocative" count="2/7">
+<page id="AdvPLocative" count="2/6">
     <title level="2">Adverbs and AdvP - Locative Adverbs</title>
-    <introduction>Locative adverbs include the English words: <example>here</example>, <example>there</example>, <example>everywhere</example>.  Many languages also have a negative temporal adverb meaning <example>nowhere</example>.
+	<introduction>Locative adverbs include the English words: <example>here</example>, <example>there</example>, <example>everywhere</example>.  These locative adverbs may be related to the demonstratives.  Many languages also have a negative temporal adverb meaning <example>nowhere</example>.
 <br/>
         <br/>
 In English, location is often also expressed by a prepositional
@@ -11,7 +11,7 @@ phrase, such as: <example>in the mountains</example>, <example>at San Jose</exam
 languages allow just a nominal phrase, consisting of a proper noun or
 description of the place.
 <br/>
-        <br/>Think about how locatives are expressed in
+		<br/>We will begin again with the positive locative adverbs.  Think about how locatives are expressed in
 your language.  For those which are adverbs, are there any degree
 words which can modify them?  In English, this seems to be limited to
 <example>only</example> (a type of focus construction) and <example>right</example>, as in:
@@ -23,32 +23,98 @@ words which can modify them?  In English, this seems to be limited to
         <exItem label="4.">right there.</exItem>
     </EnglishExample>
     <form section="advp">
-        <prompt>Key your examples of positive locative adverbials and any degree words which can modify them here:</prompt>
+	   <radioGroup id="AdvPLocativeClassifierAgrTable" show="swOTClassifierAgr">
+		  <groupName dataItem="locativeClassifier" default="no">RAdvPLocativeClassifierAgr</groupName>
+		  <prompt>You said that your language has classifiers which mark concord agreement. Many languages of this type also have classifiers on locatives.  Do the locative adverbs have classifiers attached to them in your language?</prompt>
+		  <radio id="AdvPLocativeClassifierAgrNo" dataValue="no">No, these elements are not marked with classifiers</radio>
+		  <radio id="AdvPLocativeClassifierAgrYes" dataValue="yes">Yes, these elements are marked with classifiers as part of the concord agreement system</radio>
+	   </radioGroup>
+	   <prompt id="AdvPLocativeClassifierAgrPrompt" show="swOTClassifierAgrLocativeYes">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the words asked for on this page.  However, if the classifiers for the locatives are a limited class, you may choose to enter all the forms here, with a hyphen to separate the classifier from the root.</prompt>
+	   <br/>
+	   <prompt>Key your examples of positive locative adverbs here, without any degree words:</prompt>
         <textBox id="AdvPLocExample" dataItem="locativeExample"/>
+		<br/><br/>
+	   <radioGroup>
+		  <groupName dataItem="advLocDem" default="no">RAdvPLocDem</groupName>
+		  <prompt>Are the positive locative adverbs in your language related to the demonstratives?</prompt>
+		  <radio id="AdvPLocDemNo" dataValue="no">No, the forms are completely distinct</radio>
+		  <radio id="AdvPLocDemSame" dataValue="same">Yes, the forms are identical, but they are used in different positions in the sentence</radio>
+		  <radio id="AdvPLocDemAffix" dataValue="affix">Yes, an affix is added to a demonstrative to form a locative adverb</radio>
+	   </radioGroup>
+	   <br/><br/>
+	   <radioGroup>
+			<groupName dataItem="locativeDegree" default="no">RAdvPLocativeDegree</groupName>
+			<prompt>Does your language have any degree words which modify the locative adverbs?</prompt>
+			<radio id="AdvPLocativeDegreeYesBefore" dataValue="yesBefore">Yes, a degree word many appear before the locative adverb</radio>
+			<radio id="AdvPLocativeDegreeYesAfter" dataValue="yesAfter">Yes, a degree word many appear after the locative adverb</radio>
+			<radio id="AdvPLocativeDegreeAttaches" dataValue="attaches">There is an affix or clitic that attaches to the locative adverb to intensify it</radio>
+			<radio id="AdvPLocativeDegreeNoRedup" dataValue="noRedup">No, but reduplication is used to intensify the meaning of the locative adverb</radio>
+			<radio id="AdvPLocativeDegreeNo" dataValue="no">No, locative adverbs are not modified or intensified</radio>
+		</radioGroup>
+		<br/><br/>
+		<prompt id="AdvPLocativeDegreePrompt" show="swAdvPLocativeDegreeYes">Key your examples of degree words which can modify locative adverbs here:</prompt>
+		<textBox id="AdvPLocativeDegreeExample" dataItem="locativeDegreeExample" show="swAdvPLocativeDegreeYes" rows="3"/>
+		<prompt id="AdvPLocativeDegreeAttachesPrompt" show="swAdvPLocativeDegreeAttaches">Key your examples of the degree affixes or clitics which can modify locative adverbs here, with a hyphen indicating which side it attaches to the locative adverb on:</prompt>
+		<textBox id="AdvPLocativeDegreeAffixExample" dataItem="locativeDegreeAffixExample" show="swAdvPLocativeDegreeAttaches" rows="3"/>
+		<prompt id="AdvPLocativeDegreePhrasePrompt" show="swAdvPLocativeDegreeYes">Now key examples of the degree words modifying the positive locative adverbs here:</prompt>
+		<textBox id="AdvPLocativePhraseExample" dataItem="locativePhraseExample" show="swAdvPLocativeDegreeYes"/>
+		<prompt id="AdvPLocativeDegreeAffixPhrasePrompt" show="swAdvPLocativeDegreeAttaches">Now key examples of the degree affixes or clitics attached to the positive locative adverbs here:</prompt>
+		<textBox id="AdvPLocativePhraseAffixExample" dataItem="locativePhraseAffixExample" show="swAdvPLocativeDegreeAttaches"/>
+		<prompt id="AdvPLocativeDegreeRedupPrompt" show="swAdvPLocativeDegreeNoRedup">Key some examples of the positive locative adverbs with reduplication modifying or intensifying them here:</prompt>
+		<textBox id="AdvPLocativeRedupExample" dataItem="locativeRedupExample" show="swAdvPLocativeDegreeNoRedup"/>
+		<instruction  id="AdvPLocativeDegreeYesInstruction" show="swAdvPLocativeDegreeYes">In the lexicon, key the features <feature>makeDeg modifies_locative</feature> on the degree words to change the category and allow it to modify locative adverbs.  Simply add the <feature>modifies_locative</feature> feature if this same degree word can modify temporal adverbs and you already marked it with those features.</instruction>
+		<br/><br/>
+
         <radioGroup>
             <groupName dataItem="negLocativeType" default="word">RNegLocativeType</groupName>
-            <prompt>Does your language have any negative locative adverbs which are separate words?</prompt>
-            <radio id="AdvPNegLocativeTypeWord" dataValue="word">Yes</radio>
+			<prompt>Moving now to the negatives, does your language have any negative locative adverbs which are separate words?</prompt>
+		   <radio id="AdvPNegLocativeTypeWord" dataValue="word">Yes, a separate word or phrase unrelated to the positive forms expresses the negative locative concept of ‘no place’</radio>
+			<radio id="AdvPNegLocativeTypeAdverb" dataValue="adverb">Yes, a negative affix is added to the positive locative adverb(s) to form the negative adverb word(s)</radio>
+			<radio id="AdvPNegLocativeTypeAdverbWord" dataValue="adverbWord">Yes, a separate negative word occurs with the positive locative adverb(s) to form the negative locative adverb phrase(s)</radio>
             <radio id="AdvPNegLocativeTypeAffix" dataValue="affix">No, they are all written as part of the verb</radio>
             <radio id="AdvPNegLocativeTypeVerb" dataValue="verb">No, there is only a verbal negative affix, but it may occur with positive locative adverbs to give a negative locative meaning</radio>
+			<radioGroup id="AdvPNegLocativeTypeAdverbWordTable" show="swAdvPNegLocativeTypeAdverbWord">
+				<groupName dataItem="negLocativeWordPos" default="unknown" position="yesSpec">RNegLocativeWordPos</groupName>
+				<prompt>Where does the negative word occur with respect to the positive locative adverb?</prompt>
+				<radio id="AdvPNegLocativeWordBefore" dataValue="before">Before it</radio>
+				<radio id="AdvPNegLocativeWordAfter" dataValue="after">After it</radio>
+			</radioGroup>
         </radioGroup>
-        <prompt id="AdvPNegLocativeExamplePrompt" show="swAdvPNegLocativeTypeWord">Key your examples of negative locative adverbs here:</prompt>
-        <textBox id="AdvPNegLocativeExample" dataItem="negLocativeExample" show="swAdvPNegLocativeTypeWordOrVerb" rows="3"/>
-        <prompt id="AdvPNegLocativeAffixExamplePrompt" show="swAdvPNegLocativeTypeAffix">Key your examples of the negative locative adverbial affix(es) attached to verbs here:</prompt>
+		<prompt id="AdvPNegLocativeTypeAdverbWordPrompt" show="swAdvPNegLocativeTypeAdverbWord">Key the negative word that occurs with the positive locative adverbs here:</prompt>
+		<textBox id="AdvPNegLocativeAdverbWordExample" dataItem="negLocativeAdverbWordExample" show="swAdvPNegLocativeTypeAdverbWord" rows="3"/>
+		<prompt id="AdvPNegLocativeTypeAdverbWordPrompt2" show="swAdvPNegLocativeTypeAdverbWord">Now key examples of the negative locative adverb phrases formed by adding the negative word to the positive locative adverbs here:</prompt>
+		<textBox id="AdvPNegLocativeAdverbWordsExample" dataItem="negLocativeAdverbWordsExample" show="swAdvPNegLocativeTypeAdverbWord" rows="5"/>
+		<prompt id="AdvPNegLocativeTypeAdverbPrompt" show="swAdvPNegLocativeTypeAdverb">Key the negative affix that is added to the positive locative adverbs here, with a hyphen to show what side it attaches on:</prompt>
+		<textBox id="AdvPNegLocativeAdverbAffixExample" dataItem="negLocativeAdverbAffixExample" show="swAdvPNegLocativeTypeAdverb" rows="3"/>
+		<prompt id="AdvPNegLocativeTypeAdverbPrompt2" show="swAdvPNegLocativeTypeAdverb">Now key examples of the negative locative adverbs formed by adding the negative affix to the positive locative adverbs here:</prompt>
+		<textBox id="AdvPNegLocativeAdverbExample" dataItem="negLocativeAdverbExample" show="swAdvPNegLocativeTypeAdverb" rows="5"/>
+
+		<prompt id="AdvPNegLocativeExamplePrompt" show="swAdvPNegLocativeTypeWord">Key your examples of negative locative adverbs or phrases here:</prompt>
         <prompt id="AdvPNegLocativeExamplePrompt2" show="swAdvPNegLocativeTypeVerb">Key your examples of locative adverbs with a negative verb here:</prompt>
+		<textBox id="AdvPNegLocativeExample" dataItem="negLocativeExample" show="swAdvPNegLocativeTypeWordOrVerb" rows="3"/>
+		<prompt id="AdvPNegLocativeAffixExamplePrompt" show="swAdvPNegLocativeTypeAffix">Key your examples of the negative locative adverbial affix(es) which can attach to verbs here, with a hyphen to show which side it attaches on here:</prompt>
         <textBox id="AdvPNegLocativeAffixExample" dataItem="negLocativeAffixExample" show="swAdvPNegLocativeTypeAffix" rows="3"/>
+		<prompt id="AdvPNegLocativeAffixVerbExamplePrompt" show="swAdvPNegLocativeTypeAffix">Now key some examples of the negative locative adverbial affix(es) attached to verbs here:</prompt>
+		<textBox id="AdvPNegLocativeVerbExample" dataItem="negLocativeVerbExample" show="swAdvPNegLocativeTypeAffix" rows="5"/>
+		<br/><br/>
+		<prompt>  These negative elements will be discussed further in <section number="14">Negative Constructions - Adverbial and Auxiliary elements</section>.</prompt>
         <instruction id="AdvPLocativeInstruction">In the lexicon, key the feature <feature>locative</feature>
 on all adverbs that express location.  You can also add this feature
 to nouns and proper names which express location.
-</instruction>
+		</instruction>
+		<instruction id="AdvPLocDemSameInstruction" show="swAdvPLocDemSame">In the lexicon, you will need to have two entries for each word, one with the category <category>Adv</category> and feature <feature>locative</feature> and one with the category <category>Dem</category>.</instruction>
+<instruction id="AdvPLocDemAffixInstruction" show="swAdvPLocDemAffix">In the lexicon, key the features <feature>locative makeAdv</feature> on the affix that  is added to a demonstrative to form a locative adverb, as this will take care of the category change needed.</instruction>
         <instruction id="AdvPNegLocativeTypeWordInstruction" show="swAdvPNegLocativeTypeWord">In the lexicon, key the features <feature>negative locative</feature>
-on all the negative locative adverbs.  These negative words will be discussed further in <section number="14">Negative Constructions - Adverbial and Auxiliary elements</section>.
+on all the negative locative adverbs.
 </instruction>
+		<instruction id="AdvPNegLocativeTypeAdverbInstruction" show="swAdvPNegLocativeTypeAdverb">In the lexicon, key the feature <feature>negative</feature>
+			on the negative affix(es) that attach to a locative adverb to express the meaning of ‘nowhere’.
+		</instruction>
         <instruction id="AdvPNegLocativeTypeAffixInstruction" show="swAdvPNegLocativeTypeAffix">In the lexicon, key the feature <feature>negative locative</feature>
-on the affix(es) that express the meaning of 'nowhere'.  These negative elements will be discussed further in <section number="14">Negative Constructions - Adverbial and Auxiliary elements</section>.
-</instruction>
+			on the affix(es) that express the meaning of ‘nowhere’.
+		</instruction>
         <instruction id="AdvPNegLocativeTypeVerbInstruction" show="swAdvPNegLocativeTypeVerb">In the lexicon, key the feature <feature>negative</feature>
-on the affix(es) that express the negation on the verb.  Verbal negation will be discussed further in <section number="9">Basic, Single-clause Sentences - Auxiliaries</section> and in <section number="14">Negative Constructions - Adverbial and Auxiliary elements</section>.</instruction>
+on the affix(es) that express the negation on the verb.  Verbal negation will be discussed further in <section number="9">Basic, Single-clause Sentences - Auxiliaries</section>.</instruction>
         <br/>
         <br/>
         <buttons>
@@ -56,13 +122,41 @@ on the affix(es) that express the negation on the verb.  Verbal negation will be
             <button id="AdvPLocExamplesNext" value="Next" goto="AdvPManner.xml"/>
         </buttons>
     </form>
+   <showWhen id="swOTClassifierAgr">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrLocativeYes">
+	  <whenRadio button="AdvPLocativeClassifierAgrYes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+	<showWhen id="swAdvPLocativeDegreeYes">
+		<whenRadio button="AdvPLocativeDegreeYesBefore"/>
+		<or/>
+		<whenRadio button="AdvPLocativeDegreeYesAfter"/>
+	</showWhen>
+	<showWhen id="swAdvPLocativeDegreeAttaches">
+		<whenRadio button="AdvPLocativeDegreeAttaches"/>
+	</showWhen>
+	<showWhen id="swAdvPLocativeDegreeNoRedup">
+		<whenRadio button="AdvPLocativeDegreeNoRedup"/>
+	</showWhen>
+	<showWhen id="swAdvPLocDemSame">
+	<whenRadio button="AdvPLocDemSame"/>
+</showWhen>
+	<showWhen id="swAdvPLocDemAffix">
+		<whenRadio button="AdvPLocDemAffix"/>
+	</showWhen>
     <showWhen id="swAdvPNegLocativeTypeWord">
         <whenRadio button="AdvPNegLocativeTypeWord"/>
     </showWhen>
     <showWhen id="swAdvPNegLocativeTypeAffix">
         <whenRadio button="AdvPNegLocativeTypeAffix"/>
     </showWhen>
-<showWhen id="swAdvPNegLocativeTypeVerb">
+	<showWhen id="swAdvPNegLocativeTypeAdverb">
+		<whenRadio button="AdvPNegLocativeTypeAdverb"/>
+	</showWhen>
+	<showWhen id="swAdvPNegLocativeTypeVerb">
         <whenRadio button="AdvPNegLocativeTypeVerb"/>
 </showWhen>
     <showWhen id="swAdvPNegLocativeTypeWordOrVerb">
@@ -70,4 +164,7 @@ on the affix(es) that express the negation on the verb.  Verbal negation will be
 <or/>
         <whenRadio button="AdvPNegLocativeTypeVerb"/>
     </showWhen>
+	<showWhen id="swAdvPNegLocativeTypeAdverbWord">
+		<whenRadio button="AdvPNegLocativeTypeAdverbWord"/>
+	</showWhen>
 </page>

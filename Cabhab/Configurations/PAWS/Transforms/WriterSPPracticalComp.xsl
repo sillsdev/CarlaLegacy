@@ -35,7 +35,7 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>Yo sé que él tiene gusto de mí</langData>
+</xsl:attribute>Yo sé que le gusto a él</langData>
 <xsl:text>.  Observe que en estos mismos ejemplos en inglés, el complementizador es opcional.</xsl:text>
 </p>
 				<p>
@@ -99,7 +99,7 @@
 </xsl:attribute>I expect that Joe will come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'Cuento con que José venga a la fiesta'</xsl:text>
+<xsl:text> ‘Cuento con que José venga a la fiesta’</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -108,7 +108,7 @@
 </xsl:attribute>I expect Joe to come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'Espero que José venga a la fiesta'</xsl:text>
+<xsl:text> ‘Espero que José venga a la fiesta’</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -173,7 +173,7 @@
 </xsl:attribute>I want Joe to come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'Quisiera que José viniera a la fiesta'</xsl:text>
+<xsl:text> ‘Quisiera que José viniera a la fiesta’</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -182,7 +182,7 @@
 </xsl:attribute>I want to come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'Quiero que venir a la fiesta'</xsl:text>
+<xsl:text> ‘Quiero que venir a la fiesta’</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -247,7 +247,7 @@
 </xsl:attribute>Joe tried to come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'José intentó venir a la fiesta'</xsl:text>
+<xsl:text> ‘José intentó venir a la fiesta’</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -256,7 +256,7 @@
 </xsl:attribute>I tried to think of more examples</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'Intenté pensar en más ejemplos'</xsl:text>
+<xsl:text> ‘Intenté pensar en más ejemplos’</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -321,7 +321,7 @@
 </xsl:attribute>for</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'para'</xsl:text>
+<xsl:text> ‘para’</xsl:text>
 </gloss>
 <xsl:text> es presente cuando el sujeto no es coreferente con el sujeto de la cláusula principal son: </xsl:text>
 <langData>
@@ -330,7 +330,7 @@
 </xsl:attribute>Joe would hate for Sue to be at the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'José odiaría para que Susana esté en la fiesta'</xsl:text>
+<xsl:text> ‘José odiaría que Susana esté en la fiesta’</xsl:text>
 </gloss>
 <xsl:text>, </xsl:text>
 <langData>
@@ -339,7 +339,7 @@
 </xsl:attribute>Joe hates to dance</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'José odia a bailar'</xsl:text>
+<xsl:text> ‘José odia a bailar’</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -348,7 +348,7 @@
 </xsl:attribute>I would like to be appreciated</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'Quisiera ser apreciado'</xsl:text>
+<xsl:text> ‘Quisiera ser apreciado’</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -413,7 +413,7 @@
 </xsl:attribute>I will persuade Joe that he should come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'Persuadiré a José que él debe venir a la fiesta'</xsl:text>
+<xsl:text> ‘Persuadiré a José que él debe venir a la fiesta’</xsl:text>
 </gloss>
 <xsl:text> y </xsl:text>
 <langData>
@@ -422,7 +422,7 @@
 </xsl:attribute>I will persuade Joe to come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'Persuadiré a José de  venir a la fiesta'</xsl:text>
+<xsl:text> ‘Persuadiré a José de venir a la fiesta’</xsl:text>
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
@@ -477,10 +477,314 @@
 </xsl:choose>
 </example>
 			</section3>
+
+		   <section3 id="sCompRaising">
+			  <secTitle>Complementos de verbos de ‘ascenso’</secTitle>
+			  <p>
+<xsl:text>Parece que los verbos de ‘ascenso’ incluyen todos los verbos de percepción y los verbos copulativos. Estos verbos pueden tener un complemento infinitivo o un complemento del adjetivo que sí mismo tiene un complemento finito con un complementizador o un complemento infinitivo. El verbo principal no tiene su propio sujeto, así que la posición sujeta es llenada por el sujeto del complemento infinitivo, como en: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>John seemed to like the tortillas</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Juan parecía tener gusto de las tortillas’</xsl:text>
+</gloss>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Joe is likely to come</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘José es probable venir’</xsl:text>
+</gloss>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>The weather is certain to change soon</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘El tiempo cambia seguramente pronto’</xsl:text>
+</gloss>
+<xsl:text>.  Cuando la cláusula de complemento es finita, el sujeto no puede ser ‘ascensado’ , así que una palabra sin significado </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>it</langData>
+<xsl:text> llena la posición del sujeto de la cláusula principal en inglés, como en:  </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>It seems likely that Joe will come</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Parece probablemente que vendrá José’</xsl:text>
+</gloss>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>It is certain that the weather will change soon</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Es cierto que el tiempo cambiará pronto’</xsl:text>
+</gloss>
+<xsl:text>.</xsl:text>
+</p>
+			  <p>
+<xsl:text>Algunos ejemplos con este tipo de complemento en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+			  <example num="xComp.CompType.CompRaising.8">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//comp/raisingExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/raisingExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//comp/raisingExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//comp/raisingExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xComp.CompType.CompRaising.8</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xComp.CompType.CompRaising.8.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+		   </section3>
+
+		   <section3 id="sCompCausative">
+			  <secTitle>Complementos de verbos causativos</secTitle>
+			  <p>
+<xsl:text>Los causativos sintácticos consisten en dos cláusulas y tienen un objeto que también actúa como el sujeto de la cláusula de complemento. Esta cláusula de complemento es siempre infinitiva, pero no necesita el indicador infinitivo con algunos verbos en inglés, como en </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>My mother made me clean my room</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Mi madre me hizo limpiar mi dormitorio’</xsl:text>
+</gloss>
+<xsl:text>, mientras que se requiere con otros verbos, como en </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>The other girl caused us to break up</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘La otra muchacha hizo que nos separáramos’</xsl:text>
+</gloss>
+<xsl:text>.</xsl:text>
+</p>
+			  <p>
+<xsl:text>Algunos ejemplos con este tipo de complemento en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+			  <example num="xComp.CompType.CompCausative.8">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//comp/causeExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/causeExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//comp/causeExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//comp/causeExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xComp.CompType.CompCausative.8</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xComp.CompType.CompCausative.8.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+			  <xsl:if test="normalize-space(//ip/@causative)!='no'">
+<p>
+<xsl:text>Véase la sección </xsl:text>
+<sectionRef sec="sIPCausatives" />
+<xsl:text> para ejemplos de causativos oraciones causativas de una sola cláusula, donde el verbo se marca con un afijo que introduce el argumento adicional en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>.</xsl:text>
+</p>
+</xsl:if>
+		   </section3>
+
+		   <section3 id="sCompSpeech">
+			  <secTitle>Discurso directo e indirecto como complementos</secTitle>
+			  <p>
+<xsl:text>Los verbos del discurso pueden tener complementos directos o indirectos. Las citas directas pueden consistir de cualquiera oración o interjección o saludo, por ejemplo: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Sue said, “I will come to your house tomorrow”</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Susana dijo, “Vendré a su casa mañana”’</xsl:text>
+</gloss>
+<xsl:text> o </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Joe said, “Bye!”</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘José dijo, “¡Adiós!”’</xsl:text>
+</gloss>
+</p>
+			  <p>
+<xsl:text>Las citas indirectas como complementos son más restrictas. En inglés, algunos verbos del discurso pueden tener un complemento finito, con o sin un complementizador, y una frase preposicional opcional para expresar al oyente, como en </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Sue said (to me) that she would come here tomorrow</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Susana dijo (a mí) que ella vendría aquí mañana’</xsl:text>
+</gloss>
+<xsl:text>.  Otros verbos pueden tener al oyente ser expresado como objeto más un complemento finito, como en </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Sue told me that she would come here tomorrow</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Susana me dijo que ella vendría aquí mañana’</xsl:text>
+</gloss>
+<xsl:text>, o un complemento infinitivo sin un complementizador con sujeto no expresado porque es coreferente con el sujeto de la cláusula principal, como en </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>Sue told me to come here tomorrow</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Susana me dijo venir aquí mañana’</xsl:text>
+</gloss>
+<xsl:text>.</xsl:text>
+</p>
+			  <p>
+<xsl:text>Algunos ejemplos con este tipo de complemento en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+			  <example num="xComp.CompType.CompSpeech.10">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//comp/quotationExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//comp/quotationExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//comp/quotationExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//comp/quotationExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xComp.CompType.CompSpeech.10</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xComp.CompType.CompSpeech.10.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+		   </section3>
+
+
 			<section3 id="sCompTypeOther">
 				<secTitle>Otras restricciones en cláusulas de complemento</secTitle>
 				<p>
-<xsl:text>Algunos idiomas también tienen verbos que tengan otras restricciones en cláusulas subordinadas, tales como eso que el verbo subordinado debe estar en el modo subjuntivo o en el aspecto de perfectivo. Cualquiera ejemplos en </xsl:text>
+<xsl:text>Algunas lenguas también tienen verbos que tengan otras restricciones en cláusulas subordinadas, tales como eso que el verbo subordinado debe estar en el modo subjuntivo o en el aspecto de perfectivo. Cualquiera ejemplos en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -541,7 +845,7 @@
 </xsl:attribute>that</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'que'</xsl:text>
+<xsl:text> ‘que’</xsl:text>
 </gloss>
 <xsl:text>  para las cláusulas finitas y </xsl:text>
 <langData>
@@ -550,7 +854,7 @@
 </xsl:attribute>for</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text> 'para'</xsl:text>
+<xsl:text> ‘para’</xsl:text>
 </gloss>
 <xsl:text> para las cláusulas infinitivas. El español utiliza </xsl:text>
 <langData>
@@ -558,7 +862,7 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>que</langData>
 <xsl:text> como el complementizador en ambos tipos de cláusulas subordinadas declarativas.
-					En otros idiomas los complementizadores para las cláusulas declarativas subordinadas pueden o no pueden ser presentes, y en algunos idiomas son clíticos que se escriben unidos con otra palabra.</xsl:text>
+					En otras lenguas los complementizadores para las cláusulas declarativas subordinadas pueden o no pueden ser presentes, y en algunas lenguas son clíticos que se escriben unidos con otra palabra.</xsl:text>
 </p>
 			<p>
 <xsl:text>En </xsl:text>
@@ -606,7 +910,7 @@
 						<xsl:when test="//comp/@compPos='after'">después</xsl:when>
 						<xsl:when test="//comp/@compPos='either'">de cualquier lado (pero no en ambos lados)</xsl:when>
 						<xsl:when test="//comp/@compPos='eitherOrBoth'">de cualquier lado o en ambo lados</xsl:when>
-						<xsl:when test="//comp/@compPos='beforeOrBoth'">antes on en ambos lados</xsl:when>
+						<xsl:when test="//comp/@compPos='beforeOrBoth'">antes o en ambos lados</xsl:when>
 						<xsl:when test="//comp/@compPos='afterOrBoth'">después o en ambos lados</xsl:when>
 						<xsl:when test="//comp/@compPos='both'">en ambos lados</xsl:when>
 						<xsl:when test="//comp/@compPos='unknown'">_______</xsl:when>
@@ -625,6 +929,10 @@
 </p>
 		</section2>
 	</section1>
+
+
+
+
 
 
 

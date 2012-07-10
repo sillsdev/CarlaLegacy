@@ -2,15 +2,76 @@
 <!DOCTYPE masterGrammar SYSTEM "..\Data\MasterGrammar.dtd">
 <masterGrammar>
 	<!-- |******************************************************** -->
-<rule>
+<rule show="CPoptionconj">
 rule {CP option conj - conjoined CPs}
 CP = (InitConj) CP_1 Conj CP_2
-	&lt;CP head&gt; = &lt;CP_1 head&gt;
+	&lt;CP head&gt; = &lt;CP_2 head&gt;
 	&lt;Conj head type conjoins_IP&gt; = +
 	&lt;CP conjoined&gt; = +
 	&lt;CP_1 conjoined&gt; = -	|limit recursion
+	&lt;CP head type prefix&gt; &lt;= &lt;CP_1 head type prefix&gt;
 	&lt;CP option&gt; = conj
 </rule>
+   <showWhen id="CPoptionconj">
+	  <whenValue element="coord" attr="conjWord" value="no" negateValue="yes"/>
+   </showWhen>
+   <rule show="CPoptionconjPrefix">
+	  rule {CP option conjPrefix - conjoined CPs}
+	  CP = CP_1  CP_2
+	  &lt;CP head&gt; = &lt;CP_2 head&gt;
+	  &lt;CP conjoined&gt; = +
+	  &lt;CP_1 conjoined&gt; = -	|limit recursion
+	  &lt;CP_2 head type prefix conj&gt; = +
+	  &lt;CP head type prefix&gt; &lt;= &lt;CP_1 head type prefix&gt;
+	  &lt;CP option&gt; = conjPrefix
+   </rule>
+   <showWhen id="CPoptionconjPrefix">
+	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="coord" attr="conjPos" value="before"/>
+	  <or/>
+	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="coord" attr="conjPos" value="either"/>
+   </showWhen>
+   <rule show="CPoptionconjSuffix">
+	  rule {CP option conjSuffix - conjoined CPs}
+	  CP = CP_1  CP_2
+	  &lt;CP head&gt; = &lt;CP_2 head&gt;
+	  &lt;CP conjoined&gt; = +
+	  &lt;CP_1 conjoined&gt; = -	|limit recursion
+	  &lt;CP_1 head type suffix conj&gt; = +
+	  &lt;CP head type prefix&gt; &lt;= &lt;CP_1 head type prefix&gt;
+	  &lt;CP option&gt; = conjSuffix
+   </rule>
+   <showWhen id="CPoptionconjSuffix">
+	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="coord" attr="conjPos" value="after"/>
+	  <or/>
+	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="coord" attr="conjPos" value="either"/>
+   </showWhen>
+   <rule show="CPoptionconjNone">
+	  rule {CP option conjNone - conjoined CPs}
+	  CP = CP_1  CP_2
+	  &lt;CP head&gt; = &lt;CP_2 head&gt;
+	  &lt;CP conjoined&gt; = +
+	  &lt;CP_1 conjoined&gt; = -	|limit recursion
+	  &lt;CP_2 head type prefix conj&gt; = -
+	  &lt;CP_1 head type suffix conj&gt; = -
+	  &lt;CP_1 head type comma&gt; = -
+	  &lt;CP head type prefix&gt; &lt;= &lt;CP_1 head type prefix&gt;
+	  &lt;CP option&gt; = conjNone
+   </rule>
+   <showWhen id="CPoptionconjNone">
+	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="coord" attr="conjPos" value="other"/>
+	  <or/>
+	  <whenValue element="coord" attr="noConj" value="yes" negateValue="no"/>
+   </showWhen>
 
 	<rule show="CPoption1">
 rule {CP option 1 - no fronting, root}
@@ -171,7 +232,7 @@ CP = C'
 	&lt;CP head&gt; = &lt;C' head&gt;
 	&lt;C' head type root &gt; = -
 	&lt;C' head type vacuous&gt; = -		| to avoid empty CP
-	&lt;C' head fronted&gt; = none
+	&lt;C' head fronted cat&gt; = none
 	&lt;CP option&gt; = 3
 </rule>
 	<showWhen id="CPoption3">
@@ -360,10 +421,10 @@ CP = {DP / AdvP} IP
 	&lt;IP head type relative&gt; = -
 	&lt;IP head fronted&gt; = &lt;DP&gt;
 	&lt;IP head fronted&gt; = &lt;AdvP&gt;
-	&lt;DP head type negative&gt; = +
-	&lt;AdvP head type negative&gt; = +
-	&lt;IP head type negative&gt; &lt;= &lt;DP head type negative&gt;
-	&lt;IP head type negative&gt; &lt;= &lt;AdvP head type negative&gt;
+	&lt;DP head infl polarity&gt; =  negative
+	&lt;AdvP head infl polarity&gt; =  negative
+	&lt;IP head infl polarity&gt; &lt;= &lt;DP head infl polarity&gt;
+	&lt;IP head infl polarity&gt; &lt;= &lt;AdvP head infl polarity&gt;
 	&lt;AdvP head type comma&gt; = -
 	&lt;DP head type comma&gt; = -
 	&lt;CP option&gt; = Neg
@@ -1208,7 +1269,8 @@ C' = IP
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C' head type root&gt; = +
-</rule>
+	&lt;C' option&gt; = 3a
+	</rule>
 	<showWhen id="CBaroption3a">
 		<whenValue element="q" attr="mainYNWord" value="no" negateValue="no"/>
 		<and/>
@@ -1228,7 +1290,7 @@ C' = IP
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C' head type root&gt; = +
-	&lt;CBar option&gt; = 3b
+	&lt;C' option&gt; = 3b
 </rule>
 	<showWhen id="CBaroption3b">
 		<whenValue element="q" attr="mainYNWord" value="no" negateValue="no"/>
@@ -1249,7 +1311,7 @@ C' = IP
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C' head type root&gt; = -
-	&lt;CBar option&gt; = 3c
+	&lt;C' option&gt; = 3c
 </rule>
 	<showWhen id="CBaroption3c">
 		<whenValue element="q" attr="embYNWord" value="no" negateValue="no"/>
@@ -1270,7 +1332,7 @@ C' = IP
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C' head type root&gt; = +
-	&lt;CBar option&gt; = 3d
+	&lt;C' option&gt; = 3d
 </rule>
 	<showWhen id="CBaroption3d">
 		<whenValue element="q" attr="embYNWord" value="no" negateValue="no"/>
@@ -1291,7 +1353,7 @@ C' = IP
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C' head type root&gt; = +
-	&lt;CBar option&gt; = 4a
+	&lt;C' option&gt; = 4a
 </rule>
 	<showWhen id="CBaroption4a">
 		<whenValue element="q" attr="mainContWord" value="no" negateValue="no"/>
@@ -1312,7 +1374,7 @@ C' = IP
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C' head type root&gt; = +
-	&lt;CBar option&gt; = 4b
+	&lt;C' option&gt; = 4b
 </rule>
 	<showWhen id="CBaroption4b">
 		<whenValue element="q" attr="mainContWord" value="no" negateValue="no"/>
@@ -1333,7 +1395,7 @@ C' = IP
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C' head type root&gt; = -
-	&lt;CBar option&gt; = 4c
+	&lt;C' option&gt; = 4c
 </rule>
 	<showWhen id="CBaroption4c">
 		<whenValue element="q" attr="embContWord" value="no" negateValue="no"/>
@@ -1354,7 +1416,7 @@ C' = IP
 	&lt;C' head type question&gt; = +
 	&lt;C' head type relative&gt; = -
 	&lt;C' head type root&gt; = +
-	&lt;CBar option&gt; = 4d
+	&lt;C' option&gt; = 4d
 </rule>
 	<showWhen id="CBaroption4d">
 		<whenValue element="q" attr="embContWord" value="no" negateValue="no"/>
@@ -1375,7 +1437,7 @@ C' = IP
 	&lt;C' head type question&gt; = -
 	&lt;C' head type relative&gt; = -
 	&lt;C' head type root&gt; = -
-	&lt;CBar option&gt; = 4e
+	&lt;C' option&gt; = 4e
 </rule>
 	<showWhen id="CBaroption4e">
 		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
@@ -1400,7 +1462,7 @@ C' = IP
 	&lt;C' head type question&gt; = -
 	&lt;C' head type relative&gt; = -
 	&lt;C' head type root&gt; = +
-	&lt;CBar option&gt; = 4f
+	&lt;C' option&gt; = 4f
 </rule>
 	<showWhen id="CBaroption4f">
 		<whenValue element="comp" attr="comp" value="yes" negateValue="no"/>
@@ -1741,7 +1803,7 @@ C' = IP
 	&lt;C' head type question&gt; = -
 	&lt;C' head type relative&gt; = +
 	&lt;C' head type root&gt; = -
-	&lt;CBar option&gt; = 5d
+	&lt;C' option&gt; = 5d
 </rule>
 	<showWhen id="CBaroption5d">
 		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>
@@ -1796,7 +1858,7 @@ C' = IP
 	&lt;C' head type question&gt; = -
 	&lt;C' head type relative&gt; = +
 	&lt;C' head type root&gt; = +
-	&lt;CBar option&gt; = 5e
+	&lt;C' option&gt; = 5e
 </rule>
 	<showWhen id="CBaroption5e">
 		<whenValue element="relcl" attr="exist" value="yes" negateValue="no"/>

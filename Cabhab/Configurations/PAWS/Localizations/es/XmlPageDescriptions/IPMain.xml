@@ -3,23 +3,26 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="IPMain" count="1/1">
 	<title level="2">Las oraciones básicas</title>
-	<introduction id="IPMainIntroNotPractical" show="swNotPractical">In this section, we want to handle transitive, intransitive, and copular sentences in their basic word order (i.e. not changed by focus, topic, interrogative, or negation constructions).  The data is in surface form, so the grammar must model surface structure, not the underlying structure before any derivational movement.<br/>
-		<br/>
-The trees you see will be in an X-bar theory form, as much as is possible for modelling the surface structure without movement.  This means that sentences are Inflectional Phrases (IPs) rather than the traditional S.  The subject usually occupies the specifier position, the head is an inflectional or auxiliary element, and the complement is the VP predicate.  For example, the tree for a transitive sentence in an SVO language, like English will be:
-<tree img="TreeDescriptions/PawsIPSVO.png"/>
-		<help href="../Help/Cbgbtext.doc#XBarTheory">(Click here to see more on the the IP phrase structure of sentences and X-Bar Theory in general.)</help>
-		<br/>
-		<br/>
-SOV, VOS, and OVS word orders can be handled by taking the mirror image of the appropriate subtrees above.  VSO and OSV word order must have the subject internal to the VP, however, so the flatter structure shown here for VSO word order will be used:
-<tree img="TreeDescriptions/PawsIPVSO.png"/>
-		<br/>
-		<br/>
-The basic issues to be dealt with are presented here for your consideration and gathering of appropriate data, then the questions relevant to the basic word order of your language (as determined in section <section number="1">Overall Typology Questions</section>) will deal with the details of setting up the phrase structure rules and lexical features and constraints.
+   <introduction id="IPMainIntroNotPractical" show="swNotPractical">In this section, we want to handle copular, intransitive, transitive and ditransitive sentences in their basic word order (i.e. not changed by focus, topic, interrogative, or negation constructions).  Inflection and agreement features on verbs, cases when a subject may be missing, auxiliaries, and sentences with passive and other voice changes are also covered.
+	  <br/>
+	  <br/>
+	  The data is in surface form, so the grammar must model surface structure, not the underlying structure before any derivational movement.<br/>
+	  <br/>
+	  The trees you see will be in an X-bar theory form, as much as is possible for modelling the surface structure without movement.  This means that sentences are Inflectional Phrases (IPs) rather than the traditional S.  The subject usually occupies the specifier position, the head is an inflectional or auxiliary element, and the complement is the VP predicate.  For example, the tree for a transitive sentence in an SVO language, like English will be:
+	  <tree img="TreeDescriptions/PawsIPSVO.png"/>
+	  <help href="../Help/Cbgbtext.doc#XBarTheory">(Click here to see more on the the IP phrase structure of sentences and X-Bar Theory in general.)</help>
+	  <br/>
+	  <br/>
+	  SOV, VOS, and OVS word orders can be handled by taking the mirror image of the appropriate subtrees above.  VSO and OSV word order must have the subject internal to the VP, however, so the flatter structure shown here for VSO word order will be used:
+	  <tree img="TreeDescriptions/PawsIPVSO.png"/>
+	  <br/>
+	  <br/>
+	  The basic issues to be dealt with are presented here for your consideration and gathering of appropriate data, then the questions relevant to the basic word order of your language (as determined in section <section number="1">La tipología</section>) will deal with the details of setting up the phrase structure rules and lexical features and constraints.
 </introduction>
-	<introduction id="IPMainIntroPractical" show="swPractical">En esta sección, se consideran las oraciones intransitivas, copulativas, transitivas y ditransitivas en su orden de las palabras básico (es decir no cambiado por el foco, el asunto, el interrogativo o las construcciones de la negación).
+   <introduction id="IPMainIntroPractical" show="swPractical">En esta sección, se consideran las oraciones copulativas, intransitivas, transitivas y ditransitivas en su orden de las palabras básico (es decir no cambiado por el foco, el tópico, el interrogativo o las construcciones de la negación).
 		<br/>
 		<br/>
-		Los tipos de la inflexión verbal y la concordancia de los verbos, las condiciones de cuando un sujeto no debe estar presente, los auxiliares y las oraciones pasivas también se analizan.
+	  Se analizan también los tipos de características verbales de la inflexión y la concordancia, cuando un sujeto no debe estar presente, los auxiliares y las oraciones pasivas y con otros cambios de voz.
 	</introduction>
 	<form section="ip" transparent="yes">
 		<br/>

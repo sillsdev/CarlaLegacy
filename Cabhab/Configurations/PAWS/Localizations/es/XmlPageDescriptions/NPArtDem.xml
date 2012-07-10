@@ -2,45 +2,84 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NPArtDem" count="1/2">
-	<title level="2">Las frases nominales - Los artículos y los demonstrativos: los ejemplos y el caso</title>
-	<introduction>Ahora se consideren los artículos y los demonstrativos.  En español, los artículos son <example>un</example>, <example>una</example>,<example>el</example>, y <example>la</example>.  Los demonstrativos en español son <example>esto</example>, <example>ese</example>, <example>estos</example>, y <example>esos</example>.  Algunos ejemplos simples son:</introduction>
+	<title level="2">Las frases nominales - Los artículos y los demonstrativos: ejemplos y caso</title>
+	<introduction>Ahora se consideren los artículos y los demonstrativos.  En español, los artículos son <example>un</example>, <example>una</example>, <example>el</example>, y <example>la</example>.  Los demonstrativos en español son <example>esto</example>, <example>ese</example>, <example>estos</example>, y <example>esos</example>.  Algunos ejemplos simples son:</introduction>
 	<EnglishExample>
 		<exItem label="1.">un libro.</exItem>
 		<exItem label="2.">una manzana.</exItem>
-		<exItem label="3.">el librok.</exItem>
+		<exItem label="3.">el libro.</exItem>
 		<exItem label="4.">los libros.</exItem>
 		<exItem label="5.">esta manzana.</exItem>
 		<exItem label="6.">esos libros.</exItem>
 	</EnglishExample>
-	<introduction>En español, los artículos y los demonstrativos no se presentan en la misma frase nominal, sino que ambos se presentan antes del sustantivo.  Tal vez su idioma permite que ambos se presentan en la misma frase, o pueden presentarse en diversas posiciones con respecto al sustantivo.
-		Por lo tanto, necesitan categorías sintácticas distintas.  Algunos idiomas tienen solamente un sistema, los artículos o los demonstrativos. Un numero pequeño de idiomas no tienen cualquier tipo expresado como palabras independientes.</introduction>
+	<introduction>En español, los artículos y los demonstrativos no se presentan en la misma frase nominal, sino que ambos se presentan antes del sustantivo.  Tal vez su lengua permite que ambos se presentan en la misma frase, o pueden presentarse en diversas posiciones con respecto al sustantivo.
+		Por lo tanto, necesitan categorías sintácticas distintas.  Algunas lenguas tienen solamente un sistema, los artículos o los demonstrativos. Un numero pequeño de lenguas no tienen cualquier tipo expresado como palabras independientes.</introduction>
 	<form section="np">
 		<radioGroup>
 			<groupName dataItem="artAndDem" default="no">RNPArtAndDem</groupName>
-			<prompt>¿En su idioma hay artículos y/o demonstrativos que se escriben como palabras independientes?</prompt>
+			<prompt>¿En su lengua existen artículos y/o demonstrativos que se escriben como palabras independientes?</prompt>
 			<radio id="NPArtAndDemNo" dataValue="no">No, ni artículos ni demonstrativos</radio>
 			<radio id="NPArtAndDemArt" dataValue="article">Solamente artículos, ningún demonstrativo</radio>
 			<radio id="NPArtAndDemDem" dataValue="demonstrative">Solamente demonstrativos, ningún artículo</radio>
 			<radio id="NPArtAndDemBoth" dataValue="both">Sí, artículos y demonstrativos</radio>
+		   <radioGroup id="NPArtDefifniteTable" show="swNPArtAndDemArtorBoth">
+			  <groupName dataItem="artDefOnly" default="no">RNPArtDefOnly</groupName>
+			  <prompt>¿Son los artículos indefinidos no marcados en su lengua?</prompt>
+			  <radio id="NPArtDefOnlyNo" dataValue="no">No, ambos los artículos definidos e indefinidos son palabras independientes</radio>
+			  <radio id="NPArtDefOnlyYes" dataValue="yes">Sí, solamente los artículos definidos son palabras independientes; los sustantivos indefinidos no son marcados</radio>
+		   </radioGroup>
+		   <radioGroup id="NPArtPlTable" show="swNPArtAndDemArtorBoth">
+			  <groupName dataItem="artPl" default="no">RNPArtPl</groupName>
+			  <prompt>¿Existen sistemas distintos de artículos para singular y plural de modo que pueden concordar con el sustantivo en su lengua?</prompt>
+			  <radio id="NPArtPlNo" dataValue="no">No, hay solamente un sistema de artículos que se usa con ambos sustantivos singulares y plurales</radio>
+			  <radio id="NPArtPlYes" dataValue="yes">Sí, hay sistemas de artículos para singular y plural de modo que pueden concordar con el sustantivo</radio>
+		   </radioGroup>
+		   <radioGroup id="NPDemPlTable" show="swNPArtAndDemDemorBoth">
+			  <groupName dataItem="demPl" default="no">RNPDemPl</groupName>
+			  <prompt>¿Existen sistemas distintos de demostrativos para singular y plural de modo que pueden concordar con el sustantivo en su lengua?</prompt>
+			  <radio id="NPDemPlNo" dataValue="no">No, hay solamente un sistema de demostrativos que se usa con ambos sustantivos singulares y plurales</radio>
+			  <radio id="NPDemPlYes" dataValue="yes">Sí, hay sistemas de demostrativos para singular y plural de modo que pueden concordar con el sustantivo</radio>
+		   </radioGroup>
 		</radioGroup>
-		<br/>
-		<prompt id="NPArtAndDemArticlePrompt" show="swNPArtAndDemArtorBoth">Escriba los artículos en su idioma aquí:</prompt>
-		<textBox id="NPArtAndDemArticleExample" dataItem="articleExample" rows="3" show="swNPArtAndDemArtorBoth"/>
-		<prompt id="NPArtAndDemDemonstrativePrompt" show="swNPArtAndDemDemorBoth">Escriba los demostrativos en su idioma aquí:</prompt>
-		<textBox id="NPArtAndDemDemonstrativeExample" dataItem="demonstrativeExample" rows="5" show="swNPArtAndDemDemorBoth"/>
-		<br/>
-		<prompt id="NPArtAndDemArtExamplePrompt" show="swNPArtAndDemArt">Ahora escriba algunos ejemplos de frases nominales con los artículos aquí:</prompt>
+	   <br/>
+	   <radioGroup id="NPArtAndDemClassifierAgrTable" show="swOTClassifierAgrAndArtAndDemNotNo">
+		  <groupName dataItem="artDemClassifier" default="no">RNPArtAndDemClassifierAgr</groupName>
+		  <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar <span id="NPArtAndDemArtSpan" show="swNPArtAndDemArt">los artículos</span><span id="NPArtAndDemDemSpan" show="swNPArtAndDemDem">los demostrativos</span><span id="NPArtAndDemBothSpan" show="swNPArtAndDemBoth">los artículos y demostrativos</span>?</prompt>
+		  <radio id="NPArtAndDemClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
+		  <radio id="NPArtAndDemClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+	   </radioGroup>
+	   <prompt id="NPArtAndDemClassifierAgrPrompt" show="swOTClassifierAgrAndArtAndDemNotNoAndClassifierYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada uno de <span id="NPArtAndDemArtSpan1" show="swNPArtAndDemArt">los artículos</span><span id="NPArtAndDemDemSpan1" show="swNPArtAndDemDem">demostrativos</span><span id="NPArtAndDemBothSpan1" show="swNPArtAndDemBoth">los artículos y demostrativos</span> aquí .  Sin embargo, incluye los clasificadores en los ejemplos de las frases nominales completas abajo.</prompt>
+	   <br/>
+	   <prompt id="NPArtAndDemArticlePrompt" show="swNPArtAndDemArtorBothAndPlNo">Escriba los artículos <span id="NPArtDefOnlySpan" show="swNPArtDefOnly">definidos </span>en su lengua aquí:</prompt>
+	   <textBox id="NPArtAndDemArticleExample" dataItem="articleExample" rows="3" show="swNPArtAndDemArtorBothAndPlNo"/>
+	   <prompt id="NPArtAndDemDemonstrativePrompt" show="swNPArtAndDemDemorBothAndPlNo">Escriba los demostrativos en su lengua aquí:</prompt>
+	   <textBox id="NPArtAndDemDemonstrativeExample" dataItem="demonstrativeExample" rows="5" show="swNPArtAndDemDemorBothAndPlNo"/>
+	   <br/>
+	   <prompt id="NPArtAndDemArticleSgPrompt" show="swNPArtAndDemArtorBothAndPlYes">Escriba los artículos <span id="NPArtDefOnlySpan3" show="swNPArtDefOnly">definidos </span>singulares en su lengua aquí:</prompt>
+	   <textBox id="NPArtAndDemArticleSgExample" dataItem="articleSgExample" rows="3" show="swNPArtAndDemArtorBothAndPlYes"/>
+	   <prompt id="NPArtAndDemDemonstrativeSgPrompt" show="swNPArtAndDemDemorBothAndPlYes">Escriba los demostrativos singulares en su lengua aquí:</prompt>
+	   <textBox id="NPArtAndDemDemonstrativeSgExample" dataItem="demonstrativeSgExample" rows="5" show="swNPArtAndDemDemorBothAndPlYes"/>
+	   <br/>
+	   <prompt id="NPArtAndDemArticlePlPrompt" show="swNPArtAndDemArtorBothAndPlYes">Escriba los demostrativos <span id="NPArtDefOnlySpan4" show="swNPArtDefOnly">definidos </span>plurales en su lengua aquí:</prompt>
+	   <textBox id="NPArtAndDemArticlePlExample" dataItem="articlePlExample" rows="3" show="swNPArtAndDemArtorBothAndPlYes"/>
+	   <prompt id="NPArtAndDemDemonstrativePlPrompt" show="swNPArtAndDemDemorBothAndPlYes">Escriba los demostrativos plurales en su lengua aquí:</prompt>
+	   <textBox id="NPArtAndDemDemonstrativePlExample" dataItem="demonstrativePlExample" rows="5" show="swNPArtAndDemDemorBothAndPlYes"/>
+	   <br/>
+	   <br/>
+	   <prompt id="NPArtAndDemArtExamplePrompt" show="swNPArtAndDemArt">Ahora escriba algunos ejemplos de frases nominales con los artículos <span id="NPArtDefOnlySpan1" show="swNPArtDefOnly">definidos </span>aquí:</prompt>
 		<prompt id="NPArtAndDemDemExamplePrompt" show="swNPArtAndDemDem">Ahora escriba algunos ejemplos de frases nominales con demonstrativos aquí:</prompt>
 		<prompt id="NPArtAndDemBothExamplePrompt" show="swNPArtAndDemBoth">Ahora escriba algunos ejemplos de frases nominales con un artículo y un demostrativo, si es gramatical, así como algunos con cada tipo solo aquí:</prompt>
 		<textBox id="NPExample" show="swNPArtAndOrDem" dataItem="example"/>
 		<br/>
-		<radioGroup id="NPArtCaseTable" show="swNPArtAndOrDem">
+	   <br/>
+	   <radioGroup id="NPArtCaseTable" show="swNPArtAndOrDem">
 			<groupName dataItem="artCase" default="no">RArtCase</groupName>
-			<prompt>¿En su idioma hay diversas formas para <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">los artículos</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">los demonstrativos</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">los artículos y demonstrativos</span> basados en caso?</prompt>
+			<prompt>¿En su lengua hay diversas formas para <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">los artículos</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">los demonstrativos</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">los artículos y demonstrativos</span> basados en caso?</prompt>
 			<radio id="NPArtCaseNo" dataValue="no">No</radio>
 			<radio id="NPArtCaseYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<instruction id="NPArtCaseNomAccInstruction" show="swNPCaseNom">Since your language has a nominative-accusative case system, in the lexicon:
+	   <prompt id="NPDemCaseYesPrompt" show="swNPArtAndDemDemOrBothAndCaseYes">Las diferentes formas de los demostrativos basadas en caso se incluirán en <section number="7">Los pronombres - Demostrativos</section>.</prompt>
+	   <instruction id="NPArtCaseNomAccInstruction" show="swNPCaseNom">Since your language has a nominative-accusative case system, in the lexicon:
 <ul>
 				<li>Mark the <span id="NPArtOnlyCaseNomSpan" show="swNPArtAndDemArt">articles</span>
 					<span id="NPDemOnlyCaseNomSpan" show="swNPArtAndDemDem">demonstratives</span>
@@ -91,51 +130,142 @@
 			<button id="NPArtDemNext" value="Next" goto="NPArtPosition.xml"/>
 		</buttons>
 	</form>
-	<showWhen id="swNPArtAndOrDem">
-		<not/>
-		<whenRadio button="NPArtAndDemNo"/>
-	</showWhen>
-	<showWhen id="swNPArtAndDemArt">
-		<whenRadio button="NPArtAndDemArt"/>
-	</showWhen>
-	<showWhen id="swNPArtAndDemDem">
-		<whenRadio button="NPArtAndDemDem"/>
-	</showWhen>
-	<showWhen id="swNPArtAndDemBoth">
-		<whenRadio button="NPArtAndDemBoth"/>
-	</showWhen>
-	<showWhen id="swNPArtAndDemArtorBoth">
-		<whenRadio button="NPArtAndDemArt"/>
-		<or/>
-		<whenRadio button="NPArtAndDemBoth"/>
-	</showWhen>
-	<showWhen id="swNPArtAndDemDemorBoth">
-		<whenRadio button="NPArtAndDemDem"/>
-		<or/>
-		<whenRadio button="NPArtAndDemBoth"/>
-	</showWhen>
-	<showWhen id="swNPCaseNom">
-		<not/>
-		<whenRadio button="NPArtAndDemNo"/>
-		<and/>
-		<whenRadio button="NPArtCaseYes"/>
-		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
-	</showWhen>
-	<showWhen id="swNPCaseErg">
-		<not/>
-		<whenRadio button="NPArtAndDemNo"/>
-		<and/>
-		<whenRadio button="NPArtCaseYes"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
-	</showWhen>
-	<showWhen id="swNPCaseSplit">
-		<not/>
-		<whenRadio button="NPArtAndDemNo"/>
-		<and/>
-		<whenRadio button="NPArtCaseYes"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split"/>
-	</showWhen>
+   <showWhen id="swOTClassifierAgrAndArtAndDemNotNo">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/><not/>
+	  <whenRadio button="NPArtAndDemNo"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndArtAndDemNotNoAndClassifierYes">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/><not/>
+	  <whenRadio button="NPArtAndDemNo"/>
+	  <and/>
+	  <whenRadio button="NPArtAndDemClassifierAgrYes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndOrDem">
+	  <not/>
+	  <whenRadio button="NPArtAndDemNo"/>
+   </showWhen>
+   <showWhen id="swNPArtAndOrDemAndCaseYes">
+	  <not/>
+	  <whenRadio button="NPArtAndDemNo"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="nominative"/>
+	  <or/>
+	  <not/>
+	  <whenRadio button="NPArtAndDemNo"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <or/>
+	  <not/>
+	  <whenRadio button="NPArtAndDemNo"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArt">
+	  <whenRadio button="NPArtAndDemArt"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDem">
+	  <whenRadio button="NPArtAndDemDem"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBoth">
+	  <whenRadio button="NPArtAndDemBoth"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArtorBoth">
+	  <whenRadio button="NPArtAndDemArt"/>
+	  <or/>
+	  <whenRadio button="NPArtAndDemBoth"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArtorBothAndPlNo">
+	  <whenRadio button="NPArtAndDemArt"/>
+	  <and/>
+	  <whenRadio button="NPArtPlNo"/>
+	  <or/>
+	  <whenRadio button="NPArtAndDemBoth"/>
+	  <and/>
+	  <whenRadio button="NPArtPlNo"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArtorBothAndPlYes">
+	  <whenRadio button="NPArtAndDemArt"/>
+	  <and/>
+	  <whenRadio button="NPArtPlYes"/>
+	  <or/>
+	  <whenRadio button="NPArtAndDemBoth"/>
+	  <and/>
+	  <whenRadio button="NPArtPlYes"/>
+   </showWhen>
+   <showWhen id="swNPArtDefOnly">
+	  <whenRadio button="NPArtAndDemArt"/>
+	  <and/>
+	  <whenRadio button="NPArtDefOnlyYes"/>
+	  <or/>
+	  <whenRadio button="NPArtAndDemBoth"/>
+	  <and/>
+	  <whenRadio button="NPArtDefOnlyYes"/>
+   </showWhen>
+   <showWhen id="swNPArtNotDefOnly">
+	  <whenRadio button="NPArtAndDemArt"/>
+	  <and/>
+	  <whenRadio button="NPArtDefOnlyNo"/>
+	  <or/>
+	  <whenRadio button="NPArtAndDemBoth"/>
+	  <and/>
+	  <whenRadio button="NPArtDefOnlyNo"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDemorBoth">
+	  <whenRadio button="NPArtAndDemDem"/>
+	  <or/>
+	  <whenRadio button="NPArtAndDemBoth"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDemorBothAndPlNo">
+	  <whenRadio button="NPArtAndDemDem"/>
+	  <and/>
+	  <whenRadio button="NPDemPlNo"/>
+	  <or/>
+	  <whenRadio button="NPArtAndDemBoth"/>
+	  <and/>
+	  <whenRadio button="NPDemPlNo"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDemorBothAndPlYes">
+	  <whenRadio button="NPArtAndDemDem"/>
+	  <and/>
+	  <whenRadio button="NPDemPlYes"/>
+	  <or/>
+	  <whenRadio button="NPArtAndDemBoth"/>
+	  <and/>
+	  <whenRadio button="NPDemPlYes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDemOrBothAndCaseYes">
+	  <whenRadio button="NPArtAndDemDem"/>
+	  <and/>
+	  <whenRadio button="NPArtCaseYes"/>
+	  <or/>
+	  <whenRadio button="NPArtAndDemBoth"/>
+	  <and/>
+	  <whenRadio button="NPArtCaseYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNom">
+	  <not/>
+	  <whenRadio button="NPArtAndDemNo"/>
+	  <and/>
+	  <whenRadio button="NPArtCaseYes"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="nominative"/>
+   </showWhen>
+   <showWhen id="swNPCaseErg">
+	  <not/>
+	  <whenRadio button="NPArtAndDemNo"/>
+	  <and/>
+	  <whenRadio button="NPArtCaseYes"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="ergative"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplit">
+	  <not/>
+	  <whenRadio button="NPArtAndDemNo"/>
+	  <and/>
+	  <whenRadio button="NPArtCaseYes"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
 </page>

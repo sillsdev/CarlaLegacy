@@ -4,36 +4,36 @@
 	<section1 id="sQues">
 		<secTitle>Las preguntas</secTitle>
 		<p>
-			<content>Hay dos tipos de preguntas: las que requieren una respuesta afirmativa o negativa (preguntas polares) y las que se contestan con información (preguntas abiertas). En esta sección se consideran las preguntas de la cláusula principal y las variedades subordinadas de ambos tipos de preguntas, comenzando con las preguntas que requieren una respuesta "sí/no".</content>
+			<content>Hay dos tipos de preguntas: las que requieren una respuesta afirmativa o negativa y las que se contestan con información. En esta sección se consideran las preguntas de la cláusula principal y las variedades subordinadas de ambos tipos de preguntas, comenzando con las preguntas que requieren una respuesta “sí/no”.</content>
 		</p>
 		<section2 id="sQuesYN">
-			<secTitle>Preguntas con respuesta afirmativa/negativa</secTitle>
+		   <secTitle>Preguntas de respuesta sí/no</secTitle>
 			<p>
-				<content>El español no tiene ningún indicador especial ni ningún cambio del orden de las palabras para las preguntas con respuesta sí/no de la cláusula principal.
-					Hay simplemente un cambio en la entonación. Otros idiomas pueden utilizar indicadores y/o cambios especiales del orden de las palabras.
-					En las preguntas sí/no de la cláusula principal en inglés, un verbo auxiliar desplaza delante del sujeto. Otros idiomas utilizan un indicador o un complementizador especial en vez del auxiliar desplazado a la izquierda. Éste es el caso en preguntas sí/no en las cláusulas subordinadas en inglés; no se permite el desplazamiento del auxiliar pero </content>
-				<langData>whether</langData><gloss><content> 'sea que'</content></gloss>
+				<content>El español no tiene ningún indicador especial ni ningún cambio del orden de las palabras para las preguntas de respuesta sí/no de la cláusula principal.
+					Hay simplemente un cambio en la entonación. Otras lenguas pueden utilizar indicadores y/o cambios especiales del orden de las palabras.
+					En las preguntas de respuesta sí/no de la cláusula principal en inglés, un verbo auxiliar desplaza delante del sujeto. Otras lenguas utilizan un indicador o un complementizador especial en vez del auxiliar desplazado a la izquierda. Éste es el caso en preguntas de respuesta sí/no en las cláusulas subordinadas en inglés; no se permite el desplazamiento del auxiliar pero </content>
+				<langData>whether</langData><gloss><content> ‘sea que’</content></gloss>
 				<content> o </content>
-				<langData>if</langData><gloss><content> 'si'</content></gloss>
-				<content> ocupa la posición del complementizador. Puesto que los idiomas pueden funcionar diferentemente en preguntas sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será analizado por separado. </content>
+				<langData>if</langData><gloss><content> ‘si’</content></gloss>
+				<content> ocupa la posición del complementizador. Puesto que las lenguas pueden funcionar diferentemente en preguntas de respuesta sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será analizado por separado. </content>
 			</p>
 			<section3 id="sQuesYNMain">
-				<secTitle>Preguntas con respuesta afirmativa/negativa de la cláusula principal</secTitle>
+			   <secTitle>Preguntas de respuesta sí/no de la cláusula principal</secTitle>
 				<p>
-					<content>Mientras que en español simplemente hay un cambio en la entonación para señalar una pregunta con respuesta afirmativa/negativa de la cláusula principal, otros idiomas utilizan indicadores y/o cambios especiales del orden de las palabras. Algunos ejemplos en inglés de las preguntas sí/no de la cláusula principal que muestran el desplazamiento requerido de un auxiliar son: </content>
-					<langData>Are you going to the store?</langData><gloss><content> '¿Usted va al almacén?'</content></gloss>
+				   <content>Mientras que en español simplemente hay un cambio en la entonación para señalar una pregunta de respuesta sí/no de la cláusula principal, otras lenguas utilizan indicadores y/o cambios especiales del orden de las palabras. Algunos ejemplos en inglés de las preguntas de respuesta sí/no de la cláusula principal que muestran el desplazamiento requerido de un auxiliar son: </content>
+					<langData>Are you going to the store?</langData><gloss><content> ‘¿Usted va al almacén?’</content></gloss>
 					<content>, </content>
-					<langData>Will Sue buy the present for her mother?</langData><gloss><content> '¿Compra Susana el regalo para su madre?'</content></gloss>
+					<langData>Will Sue buy the present for her mother?</langData><gloss><content> ‘¿Compra Susana el regalo para su madre?’</content></gloss>
 					<content> y </content>
-					<langData>Could the boy have hit the ball?</langData><gloss><content> '¿Habría podido el muchacho golpear el beísbol?'</content></gloss>
+					<langData>Could the boy have hit the ball?</langData><gloss><content> ‘¿Habría podido el muchacho golpear el beísbol?’</content></gloss>
 					<content/>
 				</p>
 				<p>
 					<content>En </content>
 					<langName/>
-					<content> preguntas con respuesta afirmativa/negativa de la cláusula principal, </content>
+				   <content> preguntas de respuesta sí/no de la cláusula principal, </content>
 					<case element="q" attr="mainYN">
-						<caseText value="no"> no hay ni indicador ni cambio del orden de las palabras, apenas la diferencia en la entonación o el tono o otra indicación que no es sintáctica.</caseText>
+					   <caseText value="no"> no hay ni indicador ni cambio del orden de las palabras, se da con un cambio en la entonación o el tono u otra indicación que no es sintáctica.</caseText>
 						<caseText value="noAux">el movimiento de un auxiliar</caseText>
 						<caseText value="yes">hay por lo menos un indicador o complementizador de la pregunta.</caseText>
 					</case>
@@ -58,7 +58,7 @@
 						<text show="swQMainYNWordNo">
 							<content>&#x20;</content>
 							<case element="q" attr="mainYNCliticAttaches">
-								<caseText value="edge"> en el extremo de la pregunta.</caseText>
+								<caseText value="edge"> a la orilla de la pregunta.</caseText>
 								<caseText value="head"> al verbo en la pregunta.</caseText>
 							</case>
 							<case element="q" attr="mainYNCliticPos">
@@ -96,16 +96,16 @@
 					<content>&#x20;</content>
 				</p>
 				<p>
-					<content> Algunos ejemplos de las preguntas con respuesta afirmativa/negativa de la cláusula principal en </content><langName/><content> son: </content>
+				   <content> Algunos ejemplos de las preguntas de respuesta sí/no de la cláusula principal en </content><langName/><content> son: </content>
 				</p>
 				<example>
 					<interlinear exampleLoc="q/example"/>
 				</example>
 			</section3>
 			<section3 id="sQuesYNEmb">
-				<secTitle>Preguntas con respuesta afirmativa/negativa de la cláusula subordinada</secTitle>
+			   <secTitle>Preguntas de respuesta sí/no de la cláusula subordinada</secTitle>
 				<p>
-					<content>Algunos ejemplos en español de las preguntas con respuesta afirmativa/negativa en las cláusulas subordinadas que muestran la presencia de los indicadores o complementizadores de la pregunta son: </content>
+				   <content>Algunos ejemplos en español de las preguntas de respuesta sí/no en las cláusulas subordinadas que muestran la presencia de los indicadores o complementizadores de la pregunta son: </content>
 					<langData>Me pregunto si ella vendrá</langData>
 					<content>, </content>
 					<langData>Yo sabré si ella va</langData>
@@ -114,11 +114,11 @@
 					<content>.</content>
 				</p>
 				<p>
-					<content>En las preguntas con respuesta afirmativa/negativa de la cláusula subordinada en </content>
+				   <content>En las preguntas de respuesta sí/no de la cláusula subordinada en </content>
 					<langName/>
 					<content>, </content>
 					<case element="q" attr="embYN">
-						<caseText value="no"> no hay indicador ni cambio del orden de las palabras, apenas la diferencia en la entonación o el tono o otra indicación que no es sintáctica.</caseText>
+					   <caseText value="no"> no hay indicador ni cambio del orden de las palabras, se da con un cambio en la entonación o el tono u otra indicación que no es sintáctica.</caseText>
 						<caseText value="noAux">el desplazamiento de un auxiliar</caseText>
 						<caseText value="yes">hay por lo menos un indicador o complementizador de la pregunta.</caseText>
 					</case>
@@ -143,7 +143,7 @@
 						<text show="swQEmbYNWordNo">
 							<content>&#x20;</content>
 							<case element="q" attr="embYNCliticAttaches">
-								<caseText value="edge"> en el extremo de la pregunta subordinada.</caseText>
+								<caseText value="edge"> a la orilla de la pregunta subordinada.</caseText>
 								<caseText value="head"> al verbo en la pregunta subordinada.</caseText>
 							</case>
 							<case element="q" attr="embYNCliticPos">
@@ -170,7 +170,7 @@
 					   </case>
 						<content> del resto de la pregunta subordinada.  </content>
 						<text show="swQEmbYNEitherUnrestricted">
-							<content>Todos los indicadores o complementizadores de la pregunta pueden presentarse de cualquier lado de la pregunta subordinjada.</content>
+							<content>Todos los indicadores o complementizadores de la pregunta pueden presentarse de cualquier lado de la pregunta subordinada.</content>
 						</text>
 						<content>&#x20;</content>
 						<text show="swQEmbYNEitherRestricted">
@@ -181,7 +181,7 @@
 					<content>&#x20;</content>
 				</p>
 				<p>
-					<content> Algunos ejemplos de las preguntas con respuesta afirmativa/negativa de la cláusula subordinada  en </content><langName/><content> son: </content>
+				   <content> Algunos ejemplos de las preguntas de respuesta sí/no de la cláusula subordinada  en </content><langName/><content> son: </content>
 				</p>
 				<example>
 					<interlinear exampleLoc="q/embYNExample"/>
@@ -189,16 +189,16 @@
 			</section3>
 		</section2>
 		<section2 id="sQuesContent">
-			<secTitle>Preguntas abiertas</secTitle>
+		   <secTitle>Preguntas de respuesta abierta</secTitle>
 			<p>
-				<content>Las preguntas que se contestan con información diferencian de preguntas sí/no en que contienen una palabra o una frase interrogativa.  Las palabras o las frases o los afijos interrogativos correspondientes en </content>
+			   <content>Las preguntas de respuesta abierta diferencian de preguntas de respuesta sí/no en que contienen una palabra o una frase interrogativa.  En algunos idiomas, algunos o todos estos interrogativos se expresan como afijos.  Las palabras o las frases o los afijos interrogativos correspondientes en </content>
 				<langName/>
 				<content> se muestran en la tabla siguiente.</content>
 			</p>
 			<example num="xWh">
 				<table border="1">
 					<caption>
-						<content>Interrogativos usados en preguntas abiertas </content>
+					   <content>Interrogativos usados en preguntas de respuesta abierta </content>
 					</caption>
 					<headerRow>
 						<headerCol>
@@ -239,10 +239,16 @@
 					<row>
 						<col exampleLoc="q/how"/>
 						<col>
-							<content>cómo</content>
+						   <content>cómo o cuán</content>
 						</col>
 					</row>
-					<row>
+				   <row>
+					  <col exampleLoc="q/howMany"/>
+					  <col>
+						 <content>cuánto o cuántos</content>
+					  </col>
+				   </row>
+				   <row>
 						<col exampleLoc="q/which"/>
 						<col>
 							<content>cuál</content>
@@ -251,7 +257,7 @@
 					<row>
 						<col exampleLoc="q/whose"/>
 						<col>
-							<content>cuyo</content>
+						   <content>de quién o cuyo</content>
 						</col>
 					</row>
 					<row>
@@ -265,24 +271,25 @@
 			<p>
 				<content>De los ejemplos de palabras interrogativas en el cuadro </content><exampleRef num="xWh"/> <content>, la mayoría simplemente funcionan como pronombres o adverbios, pero hay excepciones.  La palabra </content>
 				<langData>cómo</langData>
-				<content> puede estar un adverbio de manera por sí mismo o una palabra de grado que modifica un adjetivo, como en </content>
-				<langData>¿cómo grande?</langData>
-				<content> o una palabra de grado que modifica un cuantificador, como en </content>
-				<langData>how many children?</langData><gloss><content> '¿cuántos niños?'</content></gloss>
+			   <content> es un adverbio de modo por sí mismo pero </content><langData>cómo</langData><content> es una palabra de grado que modifica un adjetivo, como en </content>
+			   <langData>¿cuán grande?</langData>
 				<content>; </content>
 				<langData>qué</langData>
 				<content> puede ser un pronombre por sí mismo o un demostrativo modificando un sustantivo, como en </content>
-				<langData>what books?</langData><gloss><content> '¿qué libros?'</content></gloss>
+			   <langData>¿qué libros?</langData>
 				<content>; </content>
 				<langData>cuál</langData>
 				<content> nunca se coloca solamente pero modifica siempre un sustantivo como un demostrativo, como en </content>
 				<langData>¿cuál muchacho?</langData>
-				<content>; y </content>
-				<langData>whose</langData><gloss><content> 'cuyo'</content></gloss>
+			   <content>; </content>
+			   <langData>cuánto o cuántos</langData>
+			   <content> es un cuantificador, como en </content>
+			   <langData>¿cuántos niños?</langData>
+			   <content>; y </content>
+			   <langData>de quién</langData>
 				<content> puede ser un pronombre posesivo por sí mismo, como en </content>
-				<langData>whose is that?</langData><gloss><content> '¿cuyo es eso?'</content></gloss><content>, o puede ocupar la posición del poseedor en una frase nominal, como en </content>
-				<langData>whose toys?</langData><gloss><content> '¿jugetes de quién?'</content></gloss>
-				<content>.</content>
+			   <langData>¿de quién es eso?</langData><content>, pero </content><langData>cuyo</langData><content> puede ocupar la posición del poseedor en una frase nominal, como en </content>
+			   <langData>¿cuyos jugetes son estos?</langData>
 			</p>
 			<p>
 				<content>Se asumen que estas mismas posibilidades ser verdades en </content>
@@ -291,11 +298,11 @@
 				<text show="swDemPosEither">
 					<content>Los demonstrativos se permiten presentarse de cualquier lado del sustantivo en </content>
 					<langName/>
-					<content>.  Las palabras que significan </content><gloss><content>'cuál'</content></gloss><content> y </content><gloss><content>'qué'</content></gloss><content> se presentan </content>
+					<content>.  Las palabras que significan </content><gloss><content>‘cuál’</content></gloss><content> y </content><gloss><content>‘qué’</content></gloss><content> se presentan </content>
 					<case element="q" attr="whDemPos">
 						<caseText value="before">solamente antes del sustantivo, incluso si otro demostrativo se presenta después del sustantivo.</caseText>
 						<caseText value="after">solamente después del sustantivo, incluso si otro demostrativo se presenta antes del sustantivo.</caseText>
-						<caseText value="agree">de cualquier lado el sustantivo, pero cuando hay un demostrativo en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas son palabras interrogativas o ambas no).</caseText>
+						<caseText value="agree">de cualquier lado el sustantivo, pero cuando hay un demostrativo en cada lado en la misma oración, estos deben concordar en características (por ejemplo, ambas son palabras interrogativas o no).</caseText>
 					<caseText value="unknown">_______</caseText>
 					</case>
 					<content>&#x20;</content>
@@ -304,11 +311,11 @@
 				<text show="swArtOnlyPosEither">
 					<content>Los artículos se permiten presentarse de cualquier lado del sustantivo en </content>
 					<langName/>
-					<content>.  Las palabras que significan </content><gloss><content>'cuál'</content></gloss><content> y </content><gloss><content>'qué'</content></gloss><content> se presentan </content>
+					<content>.  Las palabras que significan </content><gloss><content>‘cuál’</content></gloss><content> y </content><gloss><content>‘qué’</content></gloss><content> se presentan </content>
 					<case element="q" attr="whArtPos">
 						<caseText value="before">solamente antes del sustantivo, incluso si otro artículo se presenta después del sustantivo.</caseText>
 						<caseText value="after">solamente después del sustantivo, incluso si otro artículo se presenta antes del sustantivo.</caseText>
-						<caseText value="agree">de cualquier lado el sustantivo, pero cuando hay un artículo en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas son palabras interrogativas o ambas no).</caseText>
+						<caseText value="agree">de cualquier lado el sustantivo, pero cuando hay un artículo en cada lado en la misma oración, estos deben concordar en características (por ejemplo, ambas son palabras interrogativas o no).</caseText>
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content>&#x20;</content>
@@ -317,11 +324,11 @@
 				<text show="swDegAdjPosEither">
 					<content>Las palabras de grado se permiten presentarse de cualquier lado del adjetivo en </content>
 					<langName/>
-					<content>.  La palabra que significa </content><gloss><content>'cómo'</content></gloss><content> se presenta </content>
+					<content>.  La palabra que significa </content><gloss><content>‘cómo’</content></gloss><content> se presenta </content>
 					<case element="q" attr="whDegAdjPos">
 						<caseText value="before">solamente antes del adjetivo, incluso si otra palabra de grado se presenta después del adjetivo.</caseText>
 						<caseText value="after">solamente después del adjetivo, incluso si otra palabra de grado se presenta antes del adjetivo.</caseText>
-						<caseText value="agree">de cualquier lado el adjetivo, pero cuando hay una palabra de grado en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas son palabras interrogativas o ambas no).</caseText>
+						<caseText value="agree">de cualquier lado el adjetivo, pero cuando hay una palabra de grado en cada lado en la misma oración, estas deben concordar en características (por ejemplo, ambas son palabras interrogativas o no).</caseText>
 					<caseText value="unknown">_______</caseText>
 					</case>
 					<content>&#x20;</content>
@@ -330,11 +337,11 @@
 				<text show="swDegQPosEither">
 					<content>Las palabras de grado se permiten presentarse de cualquier lado del cuantificador en </content>
 					<langName/>
-					<content>.  La palabra que significa </content><gloss><content>'cómo'</content></gloss><content> se presenta </content>
+					<content>.  La palabra que significa </content><gloss><content>‘cómo’</content></gloss><content> se presenta </content>
 					<case element="q" attr="whDegQPos">
 						<caseText value="before">solamente antes del cuantificador, incluso si otra palabra de grado se presenta después del cuantificador.</caseText>
 						<caseText value="after">solamente después del cuantificador, incluso si otra palabra de grado se presenta antes del cuantificador.</caseText>
-						<caseText value="agree">de cualquier lado el cuantificador, pero cuando hay una palabra de grado en cada lado en la misma oración, ellos deben concordar en características (por ejemplo, ambas son palabras interrogativas o ambas no).</caseText>
+						<caseText value="agree">de cualquier lado el cuantificador, pero cuando hay una palabra de grado en cada lado en la misma oración, estas deben concordar en características (por ejemplo, ambas son palabras interrogativas o no).</caseText>
 					 <caseText value="unknown">_______</caseText>
 				   </case>
 					<content>&#x20;</content>
@@ -342,14 +349,14 @@
 				<content>&#x20;</content>
 			</p>
 			<p>
-				<content>Dependiendo del orden de las palabras básico del idioma, las preguntas abiertas pueden ser formadas con o sin el desplazamiento a la izquierda de una frase interrogativa.
-					Los idiomas con núcleo final (SOV, OVS, y OSV) no tienen generalmente desplazamiento de una frase interrogativa en preguntas, mientras que los idiomas con núcleo inicial (SVO, VOS, y VSO) generalmente requieren el desplazamiento a la izquierda de una frase interrogativa.
-					En idiomas sin el desplazamiento a la izquierda para los interrogativos, la estructura de una pregunta abierta será al igual que una pregunta sí/no con un indicador de la pregunta o un auxiliar en la posición del complementizador o apenas al igual que una oración normal.
-					En cualquier caso, la frase interrogativa se presenta en su posición normal.  Muchos idiomas del orden SOV permiten opcionalmente el desplazamiento de una frase interrogativa a la posición inmediatamente antes del verbo.
+			   <content>Dependiendo del orden de las palabras básico de la lengua, las preguntas de respuesta abierta pueden ser formadas con o sin el desplazamiento a la izquierda de una frase interrogativa.
+					Las lenguas con núcleo final (SOV, OVS, y OSV) no tienen generalmente desplazamiento de una frase interrogativa en preguntas, mientras que las lenguas con núcleo inicial (SVO, VOS, y VSO) generalmente requieren el desplazamiento a la izquierda de una frase interrogativa.
+					En lenguas sin el desplazamiento a la izquierda para los interrogativos, la estructura de una pregunta de respuesta abierta será al igual que una pregunta de respuesta sí/no con un indicador de la pregunta o un auxiliar en la posición del complementizador o apenas al igual que una oración normal.
+					En cualquier caso, la frase interrogativa se presenta en su posición normal.  Muchas lenguas del orden SOV permiten opcionalmente el desplazamiento de una frase interrogativa a la posición inmediatamente antes del verbo.
 </content>
 			</p>
 			<p>
-				<content>En las preguntas abiertas de ambos las cláusula principal y la subordinada en </content>
+			   <content>En las preguntas de respuesta abierta de ambos las cláusula principal y la subordinada en </content>
 				<langName/>
 				<content>, una frase interrogativa </content>
 				<case element="q" attr="contFront">
@@ -361,14 +368,14 @@
 				<content>&#x20;</content>
 			</p>
 			<section3 id="sQuesContentMain">
-				<secTitle>Preguntas abiertas de la cláusula principal</secTitle>
+			   <secTitle>Preguntas de respuesta abierta de la cláusula principal</secTitle>
 				<p>
-					<content>Algunos ejemplos en español de las preguntas abiertas de la cláusula principal, mostrando el desplazamiento a la izquierda a una frase interrogativa que es requerido, son: </content>
-					<langData>¿Qué muchacho golpeó el beísbol?</langData>
+				   <content>Algunos ejemplos en español de las preguntas de respuesta abierta de la cláusula principal, mostrando el desplazamiento a la izquierda a una frase interrogativa que es requerido, son: </content>
+				   <langData>¿Cuál muchacho golpeó el beísbol?</langData>
 					<content>, </content>
 					<langData>¿Quién pudo haber golpeado el beísbol?</langData>
 					<content>, </content>
-					<langData>¿Qué el muchacho golpeó?</langData>
+				   <langData>¿Qué golpeó el muchacho?</langData>
 					<content>, </content>
 					<langData>¿Cuándo viene ella?</langData>
 					<content> y </content>
@@ -376,7 +383,7 @@
 					<content>&#x20;</content>
 				</p>
 				<p>
-					<content>En las preguntas abiertas de la cláusula principal en </content>
+				   <content>En las preguntas de respuesta abierta de la cláusula principal en </content>
 					<langName/>
 					<content> , </content>
 					<case element="q" attr="mainCont">
@@ -386,14 +393,14 @@
 					</case>
 					<content>&#x20;</content>
 					<text show="swQMainContNo">
-						<content> apenas </content>
+						<content> solamente </content>
 						<case element="q" attr="contFront">
 							<caseText value="no">una diferencia de</caseText>
-							<caseText value="after">el desplazamiento opcional de una frase interrogativa y posiblemente una diferencia de</caseText>
-							<caseText value="before">el dsesplazamiento a la izquierda de una frase interrogativa y posiblemente una diferencia de</caseText>
-							<caseText value="unknown">_______ de una frase interrogativa y posiblemente una diferencia de</caseText>
+							<caseText value="after">el desplazamiento opcional de una frase interrogativa y posiblemente un cambio en</caseText>
+							<caseText value="before">el desplazamiento a la izquierda de una frase interrogativa y posiblemente un cambio en</caseText>
+							<caseText value="unknown">_______ de una frase interrogativa y posiblemente un cambio en</caseText>
 						</case>
-						<content> la entonación o el tono o otra indicación que no es sintáctica.</content>
+						<content> la entonación o el tono u otra indicación que no es sintáctica.</content>
 					</text>
 					<content>&#x20;</content>
 					<text show="swQMainContNoAux">
@@ -411,7 +418,7 @@
 						<case element="q" attr="contFront">
 							<caseText value="no">.</caseText>
 							<caseText value="after">.</caseText>
-							<caseText value="before"> además del desplazamiento a la izquierda de una frase interrogativa.</caseText>
+							<caseText value="before"> solamente el desplazamiento a la izquierda de una frase interrogativa.</caseText>
 						</case>
 						<content>&#x20;</content>
 					</text>
@@ -426,7 +433,7 @@
 						<text show="swQMainContWordNo">
 							<content>&#x20;</content>
 							<case element="q" attr="mainContCliticAttaches">
-								<caseText value="edge"> en el extremo de la pregunta.</caseText>
+								<caseText value="edge"> a la orilla de la pregunta.</caseText>
 								<caseText value="head"> al verbo en la pregunta.</caseText>
 								<caseText value="between"> entre la frase interrogativa afrontada y el resto de la pregunta.</caseText>
 							</case>
@@ -488,19 +495,19 @@
 							<caseText value="yes">es requerido</caseText>
 							<caseText value="yes">no es requerido</caseText>
 						</case>
-						<content> en cada pregunta abierta.</content>
+					   <content> en cada pregunta de respuesta abierta.</content>
 					</text>
 					<content>&#x20;</content>
 				</p>
 				<p>
-					<content> Algunos ejemplos de las preguntas abiertas de la cláusula principal en </content><langName/><content> son: </content>
+				   <content> Algunos ejemplos de las preguntas de respuesta abierta de la cláusula principal en </content><langName/><content> son: </content>
 				</p>
 				<example>
 					<interlinear exampleLoc="q/contentExample"/>
 				</example>
 			</section3>
 			<section3 id="sQuesContentEmb">
-				<secTitle>Preguntas abiertas de la cláusula subordinada</secTitle>
+			   <secTitle>Preguntas de respuesta abierta de la cláusula subordinada</secTitle>
 				<p>
 					<content>Algunos ejemplos en español de las preguntas subordinadas, mostrando el desplazamiento a la izquierda requerido de una frase interrogativa, son: </content>
 					<langData>Sé quién golpeó el beísbol</langData>
@@ -511,7 +518,7 @@
 					<content>.</content>
 				</p>
 				<p>
-					<content>En las preguntas abiertas de la cláusula subordinada en </content>
+				   <content>En las preguntas de respuesta abierta de la cláusula subordinada en </content>
 					<langName/>
 					<content>, </content>
 					<case element="q" attr="embCont">
@@ -524,11 +531,11 @@
 						<content> apenas </content>
 						<case element="q" attr="contFront">
 							<caseText value="no">una diferencia en</caseText>
-							<caseText value="after">el desplazamiento opcional de una frase interrogativa y posiblemente una diferencia en</caseText>
-							<caseText value="before">el desplazamiento a la izquierda de una frase interrogativa y posiblemente una diferencia en</caseText>
-							<caseText value="unknown">_______ de una frase interrogativa y posiblemente una diferencia en</caseText>
+							<caseText value="after">el desplazamiento opcional de una frase interrogativa y posiblemente un cambio en</caseText>
+							<caseText value="before">el desplazamiento a la izquierda de una frase interrogativa y posiblemente un cambio en</caseText>
+							<caseText value="unknown">_______ de una frase interrogativa y posiblemente un cambio en</caseText>
 						</case>
-						<content> la entonación o el tono o otra indicación que no es sintáctica.</content>
+						<content> la entonación o el tono u otra indicación que no es sintáctica.</content>
 					</text>
 					<content>&#x20;</content>
 					<text show="swQEmbContNoAux">
@@ -561,7 +568,7 @@
 						<text show="swQEmbContWordNo">
 							<content>&#x20;</content>
 							<case element="q" attr="embContCliticAttaches">
-								<caseText value="edge"> en el extremo de la pregunta subordinada.</caseText>
+								<caseText value="edge"> a la orilla de la pregunta subordinada.</caseText>
 								<caseText value="head"> al verbo en la pregunta subordinada.</caseText>
 								<caseText value="between"> entre la frase interrogativa desplazada y el resto de la pregunta subordinada.</caseText>
 							</case>
@@ -625,12 +632,12 @@
 							<caseText value="yes">es requerido</caseText>
 							<caseText value="yes">no es requerido</caseText>
 						</case>
-						<content> en cada pregunta abierta subordinada.</content>
+					   <content> en cada pregunta de respuesta abierta subordinada.</content>
 					</text>
 					<content>&#x20;</content>
 				</p>
 				<p>
-					<content> Algunos ejemplos de las preguntas abiertas de la cláusula subordinada en </content><langName/><content> son: </content>
+				   <content> Algunos ejemplos de las preguntas de respuesta abierta de la cláusula subordinada en </content><langName/><content> son: </content>
 				</p>
 				<example>
 					<interlinear exampleLoc="q/embContentExample"/>
@@ -638,7 +645,7 @@
 			</section3>
 		</section2>
 	</section1>
-	<showWhen id="swQMainYNYes">
+	 <showWhen id="swQMainYNYes">
 		<whenValue element="q" attr="mainYN" value="yes"/>
 	</showWhen>
 	<showWhen id="swQMainYNWordNo">
@@ -646,6 +653,8 @@
 	</showWhen>
 	<showWhen id="swQMainYNWordYes">
 		<whenValue element="q" attr="mainYNWord" value="yes"/>
+	   <and/>
+	   <whenValue element="q" attr="mainYN" value="yes"/>
 	</showWhen>
 	<showWhen id="swQMainYNEitherRestricted">
 		<whenValue element="q" attr="mainYNEitherRestricted" value="restricted"/>
@@ -703,23 +712,11 @@
 		<or/>
 		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
-		<whenValue element="np" attr="demPos" value="both"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
-		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
 		<or/>
 		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
-		<whenValue element="np" attr="demOrArtPos" value="both"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
-		<and/>
-		<whenValue element="np" attr="demAndArtPos" value="either"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
-		<and/>
-		<whenValue element="np" attr="demAndArtPos" value="both"/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
 		<or/>
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
@@ -727,35 +724,19 @@
 		<or/>
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
-		<whenValue element="np" attr="demPos" value="both"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="both"/>
-		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="either"/>
-		<or/>
+	   <or/>
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
-		<whenValue element="np" attr="demOrArtPos" value="both"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="both"/>
-		<and/>
-		<whenValue element="np" attr="demAndArtPos" value="either"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="both"/>
-		<and/>
-		<whenValue element="np" attr="demAndArtPos" value="both"/>
+		<whenValue element="np" attr="demAndArtDemPos" value="either"/>
 	</showWhen>
 	<showWhen id="swArtOnlyPosEither">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<whenValue element="np" attr="artPos" value="either"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="article"/>
-		<and/>
-		<whenValue element="np" attr="artPos" value="both"/>
 	</showWhen>
 	<showWhen id="swDegAdjPosEither">
-		<whenValue element="adjp" attr="modifiers" value="yesDegree"/>
+		<whenValue element="adjp" attr="modifiers" value="yes"/>
 		<and/>
 		<whenValue element="adjp" attr="degreePos" value="before" negateValue="yes"/>
 		<and/>

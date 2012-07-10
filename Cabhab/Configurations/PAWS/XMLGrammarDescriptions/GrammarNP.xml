@@ -2,13 +2,65 @@
 <!DOCTYPE masterGrammar SYSTEM "..\Data\MasterGrammar.dtd">
 <masterGrammar>
 	<!-- |********************************************************* -->
-	<rule show="NPoption0">
+   <rule show="NPoptionProna">
+	  rule {NP option Prona - pronoun,dem,quantifiers w/o head noun (optional PP after)}
+	  NP = {Pron / Dem / Q / Num / Deg} (PP)
+	  &lt;NP head&gt; = &lt;Pron head&gt;
+	  &lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
+	  &lt;Pron head type reflexive&gt; = -
+	  &lt;Pron head type reciprocal&gt; = -
+	  &lt;NP head&gt; = &lt;Dem head&gt;
+	  &lt;NP head&gt; = &lt;Q head&gt;
+	  &lt;NP head&gt; = &lt;Num head&gt;
+	  &lt;NP head&gt; = &lt;Deg head&gt;
+	  &lt;Deg head type quantifier&gt; = +
+	  &lt;Dem head type wh &gt; = -		| so "which" not separate
+	  &lt;PP head type stranded&gt; = -	| PP must have overt complement
+	  &lt;PP head type sentential&gt; = -	| sentential not within NP
+	  |	&lt;PP head type partitive&gt; = +
+	  &lt;NP head type prefix poss&gt; = -  |can't be possessors
+	  &lt;NP head type suffix poss&gt; = -  |can't be possessors
+	  &lt;NP head type comma&gt; &lt;= &lt;PP head type comma&gt;
+	  &lt;NP option&gt; = Prona
+   </rule>
+   <showWhen id="NPoptionProna">
+	  <whenValue element="pron" attr="pronMod" value="det"/>
+	  <and/>
+	  <whenValue element="pron" attr="partitivePos" value="after"/>
+   </showWhen>
+   <rule show="NPoptionPronb">
+	  rule {NP option Pronb - pronoun,dem,quantifiers w/o head noun (optional PP before)}
+	  NP = (PP) {Pron / Dem / Q / Num / Deg}
+	  &lt;NP head&gt; = &lt;Pron head&gt;
+	  &lt;Pron head type possessive&gt; = -  | these use DP rule "Pron"
+	  &lt;Pron head type reflexive&gt; = -
+	  &lt;Pron head type reciprocal&gt; = -
+	  &lt;NP head&gt; = &lt;Dem head&gt;
+	  &lt;NP head&gt; = &lt;Q head&gt;
+	  &lt;NP head&gt; = &lt;Num head&gt;
+	  &lt;NP head&gt; = &lt;Deg head&gt;
+	  &lt;Deg head type quantifier&gt; = +
+	  &lt;Dem head type wh &gt; = -		| so "which" not separate
+	  &lt;PP head type stranded&gt; = -	| PP must have overt complement
+	  &lt;PP head type sentential&gt; = -	| sentential not within NP
+	  |	&lt;PP head type partitive&gt; = +
+	  &lt;NP head type prefix poss&gt; = -  |can't be possessors
+	  &lt;NP head type suffix poss&gt; = -  |can't be possessors
+	  &lt;PP head type comma&gt; = -
+	  &lt;NP option&gt; = Pronb
+   </rule>
+   <showWhen id="NPoptionPronb">
+	  <whenValue element="pron" attr="pronMod" value="det"/>
+	  <and/>
+	  <whenValue element="pron" attr="partitivePos" value="before"/>
+   </showWhen>
+	  <rule show="NPoption0">
 rule {NP option 0 - not possessed}
 NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
 	&lt;NP head type possessed&gt; = -
-	&lt;NP head possessor head agr&gt; = none
+	&lt;NP head possessor head agr person&gt; = none
 	&lt;NP option&gt; = 0
 </rule>
 	<showWhen id="NPoption0">
@@ -24,8 +76,8 @@ NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
 	&lt;NP head type possessed&gt; = -
-	&lt;NP head possessor head agr&gt; = none
-	&lt;NP head type suffix absolutive&gt; = -   | if +, possessor required
+	&lt;NP head possessor head agr person&gt; = none
+	&lt;NP head type suffix case&gt; = none   | if absolutive, possessor required
 	&lt;NP option&gt; = 0Asuf
 </rule>
 	<showWhen id="NPoption0Asuf">
@@ -35,7 +87,7 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	<and/>
-	<whenValue element="np" attr="case" value="ergative"/>
+	<whenValue element="typology" attr="case" value="ergative"/>
 <or/>
 	<whenValue element="np" attr="possNounCaseChange" value="yes"/>
 	<and/>
@@ -43,7 +95,7 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	<and/>
-	<whenValue element="np" attr="case" value="split"/>
+	<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption0Apre">
 rule {NP option 0Apre - not possessed, absolutive_prefix}
@@ -51,8 +103,8 @@ NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
 	&lt;NP head type possessed&gt; = -
-	&lt;NP head possessor head agr&gt; = none
-	&lt;NP head type prefix absolutive&gt; = -   | if +, possessor required
+	&lt;NP head possessor head agr person&gt; = none
+	&lt;NP head type prefix case&gt; = none   | if absolutive, possessor required
 	&lt;NP option&gt; = 0Apre
 </rule>
 	<showWhen id="NPoption0Apre">
@@ -62,7 +114,7 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	<and/>
-	<whenValue element="np" attr="case" value="ergative"/>
+	<whenValue element="typology" attr="case" value="ergative"/>
 <or/>
 	<whenValue element="np" attr="possNounCaseChange" value="yes"/>
 	<and/>
@@ -70,7 +122,7 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	<and/>
-	<whenValue element="np" attr="case" value="split"/>
+	<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption0Esuf">
 rule {NP option 0Esuf - not possessed, ergative_suffix}
@@ -78,7 +130,7 @@ NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
 	&lt;NP head type possessed&gt; = -
-	&lt;NP head possessor head agr&gt; = none
+	&lt;NP head possessor head agr person&gt; = none
 	&lt;NP head type suffix ergative&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Esuf
 </rule>
@@ -89,7 +141,7 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	<and/>
-	<whenValue element="np" attr="case" value="ergative"/>
+	<whenValue element="typology" attr="case" value="ergative"/>
 <or/>
 	<whenValue element="np" attr="possNounCaseChange" value="yes"/>
 	<and/>
@@ -97,7 +149,7 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	<and/>
-	<whenValue element="np" attr="case" value="split"/>
+	<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption0Epre">
 rule {NP option 0Epre - not possessed, ergative_prefix}
@@ -105,7 +157,7 @@ NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
 	&lt;NP head type possessed&gt; = -
-	&lt;NP head possessor head agr&gt; = none
+	&lt;NP head possessor head agr person&gt; = none
 	&lt;NP head type prefix ergative&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Epre
 </rule>
@@ -116,7 +168,7 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	<and/>
-	<whenValue element="np" attr="case" value="ergative"/>
+	<whenValue element="typology" attr="case" value="ergative"/>
 <or/>
 	<whenValue element="np" attr="possNounCaseChange" value="yes"/>
 	<and/>
@@ -124,7 +176,7 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	<and/>
-	<whenValue element="np" attr="case" value="split"/>
+	<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption0Gsuf">
 rule {NP option 0Gsuf - not possessed, genitive_suffix}
@@ -132,7 +184,7 @@ NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
 	&lt;NP head type possessed&gt; = -
-	&lt;NP head possessor head agr&gt; = none
+	&lt;NP head possessor head agr person&gt; = none
 	&lt;NP head type suffix genitive&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Gsuf
 </rule>
@@ -143,7 +195,7 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	<and/>
-	<whenValue element="np" attr="case" value="ergative"/>
+	<whenValue element="typology" attr="case" value="ergative"/>
 <or/>
 	<whenValue element="np" attr="possNounCaseChange" value="yes"/>
 	<and/>
@@ -151,11 +203,11 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	<and/>
-	<whenValue element="np" attr="case" value="split"/>
+	<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="adjpCaseAffix" value="yesSuffix" negateValue="no"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NPoption0Gpre">
 rule {NP option 0Gpre - not possessed, genitive_prefix}
@@ -163,7 +215,7 @@ NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N'' head&gt;
 	&lt;NP head&gt; = &lt;N' head&gt;
 	&lt;NP head type possessed&gt; = -
-	&lt;NP head possessor head agr&gt; = none
+	&lt;NP head possessor head agr person&gt; = none
 	&lt;NP head type prefix genitive&gt; = -   | if +, possessor required
 	&lt;NP option&gt; = 0Gpre
 </rule>
@@ -174,7 +226,7 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	<and/>
-	<whenValue element="np" attr="case" value="ergative"/>
+	<whenValue element="typology" attr="case" value="ergative"/>
 <or/>
 	<whenValue element="np" attr="possNounCaseChange" value="yes"/>
 	<and/>
@@ -182,11 +234,11 @@ NP = {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 	<and/>
-	<whenValue element="np" attr="case" value="split"/>
+	<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="adjpCaseAffix" value="yesPrefix" negateValue="no"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 	</showWhen>
 
 	<rule show="NPoption0p">
@@ -196,7 +248,7 @@ NP = {N'' / N'}
 	&lt;NP head&gt; = &lt;N' head&gt;
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
-	&lt;NP head possessor&gt; == ~[agr:none]
+	&lt;NP head possessor head agr&gt; == ~[person:none]
 	&lt;NP option&gt; = 0p
 </rule>
 	<showWhen id="NPoption0p">
@@ -212,9 +264,12 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1a
 </rule>
@@ -223,7 +278,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -235,7 +290,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -253,9 +308,12 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1aErg
 </rule>
@@ -266,7 +324,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	<and/>
-	<whenValue element="np" attr="case" value="ergative"/>
+	<whenValue element="typology" attr="case" value="ergative"/>
 	<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -274,7 +332,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	<and/>
-	<whenValue element="np" attr="case" value="ergative"/>
+	<whenValue element="typology" attr="case" value="ergative"/>
 <or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -282,7 +340,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	<and/>
-	<whenValue element="np" attr="case" value="split"/>
+	<whenValue element="typology" attr="case" value="split"/>
 	<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -290,7 +348,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 	<and/>
-	<whenValue element="np" attr="case" value="split"/>
+	<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption1aAbs">
 rule {NP option 1aAbs - no marker, possessor initial, absolutive}
@@ -302,9 +360,12 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1aAbs
 </rule>
@@ -315,7 +376,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -323,7 +384,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 <or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -331,7 +392,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -339,7 +400,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption1b">
 rule {NP option 1b - no marker, possessor final}
@@ -351,9 +412,14 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1b
 </rule>
@@ -362,7 +428,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -374,7 +440,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -392,9 +458,14 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1bErg
 </rule>
@@ -405,7 +476,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -413,7 +484,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -421,7 +492,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -429,7 +500,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption1bAbs">
 rule {NP option 1bAbs - no marker, possessor final, absolutive}
@@ -441,9 +512,14 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 1bAbs
 </rule>
@@ -454,7 +530,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -462,7 +538,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -470,7 +546,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="yes"/>
 		<and/>
@@ -478,7 +554,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption2a">
 rule {NP option 2a - optional marker before, possessor initial}
@@ -490,10 +566,14 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Poss head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2a
 </rule>
@@ -508,7 +588,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -520,7 +600,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -534,7 +614,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -548,7 +628,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption2aErg">
 rule {NP option 2aErg - optional marker before, possessor initial, ergative}
@@ -560,10 +640,14 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Poss head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2aErg
 </rule>
@@ -580,7 +664,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -594,7 +678,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -608,7 +692,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -622,7 +706,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption2aAbs">
 rule {NP option 2aAbs - optional marker before, possessor initial, absolutive}
@@ -634,10 +718,14 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;Poss head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2aAbs
 </rule>
@@ -654,7 +742,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -668,7 +756,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 <or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -682,7 +770,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -696,7 +784,7 @@ NP = {{(Poss) DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption2b">
 rule {NP option 2b - optional marker before, possessor final}
@@ -708,10 +796,16 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2b
 </rule>
@@ -726,7 +820,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -738,7 +832,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -752,7 +846,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -766,7 +860,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption2bErg">
 rule {NP option 2bErg - optional marker before, possessor final, ergative}
@@ -775,13 +869,19 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head&gt; = &lt;N' head&gt;
 	&lt;NP head possessor&gt; &lt;= &lt;DP&gt;
 	&lt;NP head possessor&gt; &lt;= &lt;Pron&gt;
-	&lt;NP head type possessed&gt;&lt; = +
+	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2bErg
 </rule>
@@ -798,7 +898,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -812,7 +912,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -826,7 +926,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -840,7 +940,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption2bAbs">
 rule {NP option 2bAbs - optional marker before, possessor final, absolutive}
@@ -852,10 +952,16 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 2bAbs
 </rule>
@@ -872,7 +978,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -886,7 +992,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -900,7 +1006,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -914,7 +1020,7 @@ NP = {N'' / N'} {{(Poss) DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption3a">
 rule {NP option 3a - optional marker after, possessor initial}
@@ -926,10 +1032,14 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3a
 </rule>
@@ -944,7 +1054,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -956,7 +1066,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -970,7 +1080,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -984,7 +1094,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption3aErg">
 rule {NP option 3aErg - optional marker after, possessor initial, ergative}
@@ -996,10 +1106,14 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3aErg
 </rule>
@@ -1016,7 +1130,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1030,7 +1144,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1044,7 +1158,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1058,7 +1172,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption3aAbs">
 rule {NP option 3aAbs - optional marker after, possessor initial, absolutive}
@@ -1070,10 +1184,14 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3aAbs
 </rule>
@@ -1090,7 +1208,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1104,7 +1222,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1118,7 +1236,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1132,7 +1250,7 @@ NP = {{DP (Poss)} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption3b">
 rule {NP option 3b - optional marker after, possessor final}
@@ -1144,10 +1262,16 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3b
 </rule>
@@ -1162,7 +1286,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1174,7 +1298,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1188,7 +1312,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1202,7 +1326,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption3bErg">
 rule {NP option 3bErg - optional marker after, possessor final, ergative}
@@ -1214,10 +1338,16 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3bErg
 </rule>
@@ -1234,7 +1364,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1248,7 +1378,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1262,7 +1392,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1276,7 +1406,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption3bAbs">
 rule {NP option 3bAbs - optional marker after, possessor final, absolutive}
@@ -1288,10 +1418,16 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 3bAbs
 </rule>
@@ -1308,7 +1444,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1322,7 +1458,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1336,7 +1472,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1350,7 +1486,7 @@ NP = {N'' / N'} {{DP (Poss)} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption4a">
 rule {NP option 4a - required marker before, possessor initial}
@@ -1362,9 +1498,13 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4a
 </rule>
@@ -1379,7 +1519,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1391,7 +1531,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1405,7 +1545,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1419,7 +1559,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption4aErg">
 rule {NP option 4aErg - required marker before, possessor initial, ergative}
@@ -1431,9 +1571,13 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4aErg
 </rule>
@@ -1450,7 +1594,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1464,7 +1608,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1478,7 +1622,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1492,7 +1636,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption4aAbs">
 rule {NP option 4aAbs - required marker before, possessor initial, absolutive}
@@ -1504,9 +1648,13 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; = +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4aAbs
 </rule>
@@ -1523,7 +1671,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1537,7 +1685,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1551,7 +1699,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1565,7 +1713,7 @@ NP = {{Poss DP} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption4b">
 rule {NP option 4b - required marker before, possessor final}
@@ -1577,9 +1725,15 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4b
 </rule>
@@ -1594,7 +1748,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1606,7 +1760,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1620,7 +1774,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1634,7 +1788,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption4bErg">
 rule {NP option 4bErg - required marker before, possessor final, ergative}
@@ -1646,9 +1800,15 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4bErg
 </rule>
@@ -1665,7 +1825,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1679,7 +1839,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1693,7 +1853,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1707,7 +1867,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption4bAbs">
 rule {NP option 4bAbs - required marker before, possessor final, absolutive}
@@ -1719,9 +1879,15 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 4bAbs
 </rule>
@@ -1738,7 +1904,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1752,7 +1918,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1766,7 +1932,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1780,7 +1946,7 @@ NP = {N'' / N'} {{Poss DP} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption5a">
 rule {NP option 5a - required marker after, possessor initial}
@@ -1792,9 +1958,13 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5a
 </rule>
@@ -1809,7 +1979,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1821,7 +1991,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1835,7 +2005,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1849,7 +2019,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption5aErg">
 rule {NP option 5aErg - required marker after, possessor initial, ergative}
@@ -1861,9 +2031,13 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5aErg
 </rule>
@@ -1880,7 +2054,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1894,7 +2068,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1908,7 +2082,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1922,7 +2096,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption5aAbs">
 rule {NP option 5aAbs - required marker after, possessor initial, absolutive}
@@ -1934,9 +2108,13 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
+	&lt;Poss head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5aAbs
 </rule>
@@ -1953,7 +2131,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1967,7 +2145,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1981,7 +2159,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -1995,7 +2173,7 @@ NP = {{DP Poss} / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption5b">
 rule {NP option 5b - required marker after, possessor final}
@@ -2006,10 +2184,16 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head possessor&gt; &lt;= &lt;Pron&gt;
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head type quantifier&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;Poss head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5b
 </rule>
@@ -2024,7 +2208,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2036,7 +2220,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2050,7 +2234,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2064,7 +2248,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption5bErg">
 rule {NP option 5bErg - required marker after, possessor final, ergative}
@@ -2076,9 +2260,15 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;Poss head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5bErg
 </rule>
@@ -2095,7 +2285,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2109,7 +2299,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2123,7 +2313,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2137,7 +2327,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption5bAbs">
 rule {NP option 5bAbs - required marker after, possessor final, absolutive}
@@ -2149,9 +2339,15 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head case&gt; = &lt;Poss head case&gt;
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;Poss head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 5bAbs
 </rule>
@@ -2168,7 +2364,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2182,7 +2378,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2196,7 +2392,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2210,7 +2406,7 @@ NP = {N'' / N'} {{DP Poss} / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption6ap">
 rule {NP option 6ap - poss_prefix, possessor initial}
@@ -2222,10 +2418,13 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6ap
 </rule>
@@ -2238,7 +2437,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2248,7 +2447,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2260,7 +2459,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2272,7 +2471,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption6apErg">
 rule {NP option 6apErg - poss_prefix, possessor initial, ergative}
@@ -2284,10 +2483,13 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6apErg
 </rule>
@@ -2302,7 +2504,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2314,7 +2516,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2326,7 +2528,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2338,7 +2540,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption6apAbs">
 rule {NP option 6apAbs - poss_prefix, possessor initial, absolutive}
@@ -2350,10 +2552,13 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6apAbs
 </rule>
@@ -2368,7 +2573,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2380,7 +2585,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2392,7 +2597,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2404,7 +2609,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption6as">
 rule {NP option 6as - poss_suffix, possessor initial}
@@ -2416,10 +2621,13 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6as
 </rule>
@@ -2432,7 +2640,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2442,7 +2650,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2454,7 +2662,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2466,7 +2674,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption6asErg">
 rule {NP option 6asErg - poss_suffix, possessor initial, ergative}
@@ -2478,10 +2686,13 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6asErg
 </rule>
@@ -2496,7 +2707,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2508,7 +2719,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2520,7 +2731,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2532,7 +2743,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption6asAbs">
 rule {NP option 6asAbs - poss_suffix, possessor initial, absolutive}
@@ -2543,11 +2754,14 @@ NP = {DP / Pron} {N'' / N'}
 	&lt;NP head possessor&gt; &lt;= &lt;Pron&gt;
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
+	&lt;DP head type no_N&gt; = -
 	&lt;DP head type quantifier&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;DP head type comma&gt; = -
+	&lt;Pron head type comma&gt; = -
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6asAbs
 </rule>
@@ -2562,7 +2776,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2574,7 +2788,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2586,7 +2800,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2598,7 +2812,7 @@ NP = {DP / Pron} {N'' / N'}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption6bp">
 rule {NP option 6bp - poss_prefix, possessor final}
@@ -2610,10 +2824,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bp
 </rule>
@@ -2626,7 +2845,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2636,7 +2855,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2648,7 +2867,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2660,7 +2879,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption6bpErg">
 rule {NP option 6bpErg - poss_prefix, possessor final, ergative}
@@ -2672,10 +2891,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bpErg
 </rule>
@@ -2690,7 +2914,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2702,7 +2926,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2714,7 +2938,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2726,7 +2950,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption6bpAbs">
 rule {NP option 6bpAbs - poss_prefix, possessor final, absolutive}
@@ -2738,10 +2962,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type prefix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bpAbs
 </rule>
@@ -2756,7 +2985,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2768,7 +2997,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2780,7 +3009,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2792,7 +3021,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption6bs">
 rule {NP option 6bs - poss_suffix, possessor final}
@@ -2804,10 +3033,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type genitive_PP&gt; = -  | to restrict possessor w/ gen PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = genitive
 	&lt;Pron head case&gt; = genitive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bs
 </rule>
@@ -2820,7 +3054,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2830,7 +3064,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2840,7 +3074,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<or/>
@@ -2854,7 +3088,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative" negateValue="no"/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
 	</showWhen>
 	<rule show="NPoption6bsErg">
 rule {NP option 6bsErg - poss_suffix, possessor final, ergative}
@@ -2866,10 +3100,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type ergative_PP&gt; = -  | to restrict possessor w/ erg PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = ergative
 	&lt;Pron head case&gt; = ergative
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bsErg
 </rule>
@@ -2884,7 +3123,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2896,7 +3135,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2908,7 +3147,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2920,7 +3159,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<rule show="NPoption6bsAbs">
 rule {NP option 6bsAbs - poss_suffix, possessor final, absolutive}
@@ -2932,10 +3171,15 @@ NP = {N'' / N'} {DP / Pron}
 	&lt;NP head type possessed&gt; &lt;= +
 	&lt;NP head type absolutive_PP&gt; = -  | to restrict possessor w/ abs PP
 	&lt;DP head type quantifier&gt; = -
+	&lt;DP head type no_N&gt; = -
 	&lt;DP   head case&gt; = absolutive
 	&lt;Pron head case&gt; = absolutive
 	&lt;Pron head type possessive&gt; = -    | not stand alone possessive
 	&lt;DP head type suffix poss&gt; = +
+	&lt;N'' head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;NP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;NP head type comma&gt; &lt;= &lt;Pron head type comma&gt;
 	&lt;NP head type wh&gt; &lt;= &lt;Pron head type wh&gt;
 	&lt;NP option&gt; = 6bsAbs
 </rule>
@@ -2950,7 +3194,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2962,7 +3206,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2974,7 +3218,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<or/>
 		<whenValue element="np" attr="possMarked" value="yesClitic" negateValue="no"/>
 		<and/>
@@ -2986,7 +3230,7 @@ NP = {N'' / N'} {DP / Pron}
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<!-- ******************************************************-->
 	<rule show="NPoption7a">
@@ -3000,16 +3244,17 @@ NP = {Pron / Dem / Q / Num / Deg} (PP)
 	&lt;NP head&gt; = &lt;Q head&gt;
 	&lt;NP head&gt; = &lt;Num head&gt;
 	&lt;NP head&gt; = &lt;Deg head&gt;
+	&lt;NP head type no_N&gt; = +
 	&lt;Deg head type quantifier&gt; = +
 	&lt;Q head type quantifier&gt; = +
 	&lt;Num head type quantifier&gt; = +
 	&lt;Dem head type wh &gt; = -		| so "which" not separate
 	&lt;PP head type stranded&gt; = -	| PP must have overt complement
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-|	&lt;PP head type partitive&gt; = +
+	&lt;PP head type partitive&gt; = +
 	&lt;NP head type prefix poss&gt; = -  |can't be possessors
 	&lt;NP head type suffix poss&gt; = -  |can't be possessors
-	&lt;Pron head&gt; == ~[case:genitive]
+	&lt;NP head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;NP option&gt; = 7a
 </rule>
 	<showWhen id="NPoption7a">
@@ -3028,16 +3273,17 @@ NP = (PP) {Pron / Dem / Q / Num / Deg}
 	&lt;NP head&gt; = &lt;Q head&gt;
 	&lt;NP head&gt; = &lt;Num head&gt;
 	&lt;NP head&gt; = &lt;Deg head&gt;
+	&lt;NP head type no_N&gt; = +
 	&lt;Deg head type quantifier&gt; = +
 	&lt;Q head type quantifier&gt; = +
 	&lt;Num head type quantifier&gt; = +
 	&lt;Dem head type wh &gt; = -		| so "which" not separate
 	&lt;PP head type stranded&gt; = -	| PP must have overt complement
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
-|	&lt;PP head type partitive&gt; = +
+	&lt;PP head type partitive&gt; = +
 	&lt;NP head type prefix poss&gt; = -  |can't be possessors
 	&lt;NP head type suffix poss&gt; = -  |can't be possessors
-	&lt;Pron head&gt; == ~[case:genitive]
+	&lt;PP head type comma&gt; = -
 	&lt;NP option&gt; = 7b
 </rule>
 	<showWhen id="NPoption7b">
@@ -3052,6 +3298,7 @@ N'' = QP N'
 	&lt;N'' head&gt; = &lt;N' head&gt;
 	&lt;QP head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP head type DP-initial&gt; = +
+	&lt;QP head type comma&gt; = -
 	&lt;N'' head type prefix&gt; &lt;= &lt;QP head type prefix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP head type wh&gt;
 	&lt;N'' option&gt; = 1
@@ -3071,6 +3318,8 @@ N'' = N' QP
 	&lt;N'' head&gt; = &lt;N' head&gt;
 	&lt;QP head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP head type DP-final&gt; = +
+	&lt;N' head type comma&gt; = -
+	&lt;N'' head type comma&gt; &lt;= &lt;QP head type comma&gt;
 	&lt;N'' head type suffix&gt; &lt;= &lt;QP head type suffix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP head type wh&gt;
 	&lt;N'' option&gt; = 2
@@ -3092,6 +3341,9 @@ N'' = QP_1 N' QP_2
 	&lt;QP_2 head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP_1 head type DP-initial&gt; = +
 	&lt;QP_2 head type DP-final&gt;   = +
+	&lt;QP_1 head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;N'' head type comma&gt; &lt;= &lt;QP_2 head type comma&gt;
 	&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
 	&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_1 head type wh&gt;
@@ -3122,6 +3374,9 @@ N'' = QP_1 N' QP_2
 	&lt;QP_2 head agr&gt; = &lt;N' head agr&gt;
 	&lt;QP_1 head type DP-initial&gt; = +
 	&lt;QP_2 head type DP-final&gt;   = +
+	&lt;QP_1 head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;N'' head type comma&gt; &lt;= &lt;QP_2 head type comma&gt;
 	&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
 	&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_2 head type wh&gt;
@@ -3153,6 +3408,9 @@ N'' = QP_1 N' QP_2
 	&lt;QP_1 head type DP-initial&gt; = +
 	&lt;QP_2 head type DP-final&gt;   = +
 	&lt;QP_1 head type wh&gt; = &lt;QP_2 head type wh&gt;
+	&lt;QP_1 head type comma&gt; = -
+	&lt;N' head type comma&gt; = -
+	&lt;N'' head type comma&gt; &lt;= &lt;QP_2 head type comma&gt;
 	&lt;N'' head type wh&gt; &lt;= &lt;QP_1 head type wh&gt;
 	&lt;N'' head type prefix&gt; &lt;= &lt;QP_1 head type prefix&gt;
 	&lt;N'' head type suffix&gt; &lt;= &lt;QP_2 head type suffix&gt;
@@ -3185,8 +3443,9 @@ N'_1 = AdjP N'_2
 	&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;AdjP head type suffix copular&gt; = -
 	&lt;AdjP head type clausal-comp&gt; = -
+	&lt;AdjP head type comma&gt; = -
 	&lt;N'_1 head type prefix&gt; &lt;= &lt;AdjP head type prefix&gt; | N case marking can be overridden by AdjP, if AdjP also marked then another modifier required.
-	&lt;N' option&gt; = 1a
+	&lt;N'_1 option&gt; = 1a
 </rule>
 	<showWhen id="NBaroption1a">
 		<whenValue element="np" attr="adjpPos" value="before" negateValue="no"/>
@@ -3203,8 +3462,10 @@ N'_1 = N'_2 AdjP
 	&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
 	&lt;AdjP head type suffix copular&gt; = -
 	&lt;AdjP head type clausal-comp&gt; = -
+	&lt;N'_2 head type comma&gt; = -
+	&lt;N'_1 head type comma&gt; &lt;= &lt;AdjP head type comma&gt;
 	&lt;N'_1 head type suffix&gt; &lt;= &lt;AdjP head type suffix&gt; | N case marking can be overridden by AdjP, if AdjP also marked then another modifier required.
-	&lt;N' option&gt; = 1b
+	&lt;N'_1 option&gt; = 1b
 </rule>
 	<showWhen id="NBaroption1b">
 		<whenValue element="np" attr="adjpPos" value="after" negateValue="no"/>
@@ -3216,14 +3477,17 @@ rule {NBar option 1aPart - participle initial, recursive}
 N'_1 = VP N'_2
 	&lt;N'_1 head&gt; = &lt;N'_2 head&gt;
 	&lt;VP head type participle&gt; = +
-	&lt;N' option&gt; = 1aPart
+	&lt;VP head type comma&gt; = -
+	&lt;N'_1 option&gt; = 1aPart
 </rule>
 	<rule>
 rule {NBar option 1bPart - participle final, recursive}
 N'_1 = N'_2 VP
 	&lt;N'_1 head&gt; = &lt;N'_2 head&gt;
 	&lt;VP head type participle&gt; = +
-	&lt;N' option&gt; = 1bPart
+	&lt;N'_2 head type comma&gt; = -
+	&lt;N'_1 head type comma&gt; &lt;= &lt;VP head type comma&gt;
+	&lt;N'_1 option&gt; = 1bPart
 </rule>
 	<rule show="NBaroption2a">
 rule {NBar option 2a - left-most noun head}
@@ -3231,7 +3495,8 @@ N' = N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
-		&lt;N' option&gt; = 2a
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' option&gt; = 2a
 </rule>
 	<showWhen id="NBaroption2a">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -3243,13 +3508,15 @@ rule {NBar option 2b - left-most noun head, PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:genitive]
-		&lt;N' option&gt; = 2b
+	&lt;N' option&gt; = 2b
 </rule>
 	<showWhen id="NBaroption2b">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -3274,7 +3541,7 @@ N' = PP N_1 (N_2 (N_3))
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
 		<and/>
@@ -3282,7 +3549,7 @@ N' = PP N_1 (N_2 (N_3))
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
 		<and/>
@@ -3290,7 +3557,7 @@ N' = PP N_1 (N_2 (N_3))
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
 		<and/>
@@ -3298,21 +3565,23 @@ N' = PP N_1 (N_2 (N_3))
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 	</showWhen>
 	<rule show="NBaroption2bgen">
 rule {NBar option 2bgen - left-most noun head, genitive PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 2bgen
+	&lt;N' option&gt; = 2bgen
 </rule>
 	<showWhen id="NBaroption2bgen">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -3337,7 +3606,7 @@ N' = PP N_1 (N_2 (N_3))
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
 		<and/>
@@ -3345,7 +3614,7 @@ N' = PP N_1 (N_2 (N_3))
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
 		<and/>
@@ -3353,7 +3622,7 @@ N' = PP N_1 (N_2 (N_3))
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
 		<and/>
@@ -3361,20 +3630,22 @@ N' = PP N_1 (N_2 (N_3))
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 	</showWhen>
 	<rule show="NBaroption2bnoterg">
 rule {NBar option 2bnoterg - left-most noun head, PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:ergative]
-		&lt;N' option&gt; = 2bnoterg
+	&lt;N' option&gt; = 2bnoterg
 </rule>
 	<showWhen id="NBaroption2bnoterg">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -3398,12 +3669,14 @@ rule {NBar option 2berg - left-most noun head, ergative PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;N' option&gt; = 2berg
 </rule>
@@ -3429,10 +3702,12 @@ rule {NBar option 2bnotabs - left-most noun head, PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
 		&lt;N' option&gt; = 2bnotabs
@@ -3459,14 +3734,16 @@ rule {NBar option 2babs - left-most noun head, absolutive PP initial}
 N' = PP N_1 (N_2 (N_3))
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 2babs
+	&lt;N' option&gt; = 2babs
 </rule>
 	<showWhen id="NBaroption2babs">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -3490,11 +3767,15 @@ rule {NBar option 2c - left-most noun head, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 2c
 </rule>
@@ -3525,7 +3806,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -3535,7 +3816,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -3545,7 +3826,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -3555,7 +3836,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -3589,7 +3870,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3601,7 +3882,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3613,7 +3894,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3625,7 +3906,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3636,9 +3917,13 @@ rule {NBar option 2cs - left-most noun head, poss_suffix, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 2cs
 </rule>
@@ -3673,7 +3958,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3685,7 +3970,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3697,7 +3982,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3709,7 +3994,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3720,13 +4005,17 @@ rule {NBar option 2cgen - left-most noun head, genitive PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' option&gt; = 2cgen
 </rule>
 	<showWhen id="NBaroption2cgen">
@@ -3756,7 +4045,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -3766,7 +4055,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -3776,7 +4065,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -3786,7 +4075,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -3820,7 +4109,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3832,7 +4121,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3844,7 +4133,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3856,7 +4145,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3867,10 +4156,14 @@ rule {NBar option 2cgens - left-most noun head, poss_suffix, genitive PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 2cgens
 </rule>
@@ -3905,7 +4198,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3917,7 +4210,7 @@ N' = N_1 (N_2 (N_3)) PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -3928,11 +4221,15 @@ rule {NBar option 2cnoterg - left-most noun head, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 2cnoterg
 </rule>
@@ -3986,9 +4283,13 @@ rule {NBar option 2cnotergs - left-most noun head, poss_suffix, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 2cnotergs
 </rule>
@@ -4022,14 +4323,18 @@ rule {NBar option 2cerg - left-most noun head, ergative PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
-		&lt;N' option&gt; = 2cerg
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
+	&lt;N' option&gt; = 2cerg
 </rule>
 	<showWhen id="NBaroption2cerg">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -4081,10 +4386,14 @@ rule {NBar option 2cergs - left-most noun head, poss_suffix, ergative PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 2cergs
 </rule>
@@ -4118,11 +4427,15 @@ rule {NBar option 2cnotabs - left-most noun head, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 2cnotabs
 </rule>
@@ -4176,9 +4489,13 @@ rule {NBar option 2cnotabss - left-most noun head, poss_suffix, PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 2cnotabss
 </rule>
@@ -4212,13 +4529,17 @@ rule {NBar option 2cabs - left-most noun head, absolutive PP final}
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type prefix poss&gt; = -
 	&lt;N_2 head type prefix poss&gt; = -
 	&lt;N_3 head type prefix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' option&gt; = 2cabs
 </rule>
 	<showWhen id="NBaroption2cabs">
@@ -4271,10 +4592,14 @@ rule {NBar option 2cabss - left-most noun head, poss_suffix, absolutive PP final
 N' = N_1 (N_2 (N_3)) PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 2cabss
 </rule>
@@ -4309,7 +4634,9 @@ N' = ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
-		&lt;N' option&gt; = 3a
+	&lt;N_3 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N' option&gt; = 3a
 </rule>
 	<showWhen id="NBaroption3a">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -4321,11 +4648,14 @@ rule {NBar option 3b - right-most noun head, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;PP head&gt; == ~[case:genitive]
 		&lt;N' option&gt; = 3b
 </rule>
@@ -4356,7 +4686,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -4366,7 +4696,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -4376,7 +4706,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -4386,7 +4716,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -4420,7 +4750,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4432,7 +4762,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4444,7 +4774,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4456,7 +4786,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4467,8 +4797,11 @@ rule {NBar option 3bp - right-most noun head, poss_prefix, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:genitive]
 		&lt;N' option&gt; = 3bp
@@ -4504,7 +4837,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4516,7 +4849,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4528,7 +4861,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4540,7 +4873,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4551,14 +4884,17 @@ rule {NBar option 3bgen - right-most noun head, genitive PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
-		&lt;N' option&gt; = 3bgen
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' option&gt; = 3bgen
 </rule>
 	<showWhen id="NBaroption3bgen">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -4587,7 +4923,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -4597,7 +4933,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix" negateValue="yes"/>
 		<or/>
@@ -4631,7 +4967,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4643,7 +4979,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4654,12 +4990,15 @@ rule {NBar option 3bgenp - right-most noun head, poss_prefix, genitive PP initia
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 3bgenp
+	&lt;N' option&gt; = 3bgenp
 </rule>
 	<showWhen id="NBaroption3bgenp">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -4692,7 +5031,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4704,7 +5043,7 @@ N' = PP ((N_3) N_2) N_1
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="np" attr="possMarked" value="yesAffix"/>
 		<and/>
@@ -4715,13 +5054,16 @@ rule {NBar option 3bnoterg - right-most noun head, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;PP head&gt; == ~[case:ergative]
-		&lt;N' option&gt; = 3bnoterg
+	&lt;N' option&gt; = 3bnoterg
 </rule>
 	<showWhen id="NBaroption3bnoterg">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -4773,11 +5115,14 @@ rule {NBar option 3bnotergp - right-most noun head, poss_prefix, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;PP head&gt; == ~[case:ergative]
-		&lt;N' option&gt; = 3bnotergp
+	&lt;N' option&gt; = 3bnotergp
 </rule>
 	<showWhen id="NBaroption3bnotergp">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -4809,14 +5154,17 @@ rule {NBar option 3berg - right-most noun head, ergative PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
-		&lt;N' option&gt; = 3berg
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' option&gt; = 3berg
 </rule>
 	<showWhen id="NBaroption3berg">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -4868,12 +5216,15 @@ rule {NBar option 3bergp - right-most noun head, poss_prefix, ergative PP initia
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 3bergp
+	&lt;N' option&gt; = 3bergp
 </rule>
 	<showWhen id="NBaroption3bergp">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -4905,13 +5256,16 @@ rule {NBar option 3bnotabs - right-most noun head, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;PP head&gt; == ~[case:absolutive]
-		&lt;N' option&gt; = 3bnotabs
+	&lt;N' option&gt; = 3bnotabs
 </rule>
 	<showWhen id="NBaroption3bnotabs">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -4963,11 +5317,14 @@ rule {NBar option 3bnotabsp - right-most noun head, poss_prefix, PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
-		&lt;N' option&gt; = 3bnotabsp
+	&lt;N' option&gt; = 3bnotabsp
 </rule>
 	<showWhen id="NBaroption3bnotabsp">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -4999,14 +5356,17 @@ rule {NBar option 3babs - right-most noun head, absolutive PP initial}
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;PP head type suffix poss&gt; = -
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
-		&lt;N' option&gt; = 3babs
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' option&gt; = 3babs
 </rule>
 	<showWhen id="NBaroption3babs">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -5058,12 +5418,15 @@ rule {NBar option 3babsp - right-most noun head, poss_prefix, absolutive PP init
 N' = PP ((N_3) N_2) N_1
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active   	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 3babsp
+	&lt;N' option&gt; = 3babsp
 </rule>
 	<showWhen id="NBaroption3babsp">
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
@@ -5095,10 +5458,14 @@ rule {NBar option 3c - right-most noun head, PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 3c
@@ -5126,7 +5493,7 @@ N' = ((N_3) N_2) N_1 PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
 		<and/>
@@ -5134,7 +5501,7 @@ N' = ((N_3) N_2) N_1 PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
 		<and/>
@@ -5142,7 +5509,7 @@ N' = ((N_3) N_2) N_1 PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
 		<and/>
@@ -5150,19 +5517,23 @@ N' = ((N_3) N_2) N_1 PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 	</showWhen>
 	<rule show="NBaroption3cgen">
 rule {NBar option 3cgen - right-most noun head, genitive PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 3cgen
 </rule>
@@ -5189,7 +5560,7 @@ N' = ((N_3) N_2) N_1 PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="yes" negateValue="no"/>
 		<and/>
@@ -5197,17 +5568,21 @@ N' = ((N_3) N_2) N_1 PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NBaroption3cnoterg">
 rule {NBar option 3cnoterg - right-most noun head, PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 3cnoterg
@@ -5234,12 +5609,16 @@ rule {NBar option 3cerg - right-most noun head, ergative PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 3cerg
 </rule>
@@ -5265,10 +5644,14 @@ rule {NBar option 3cnotabs - right-most noun head, PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 3cnotabs
@@ -5295,12 +5678,16 @@ rule {NBar option 3cabs - right-most noun head, absolutive PP final}
 N' = ((N_3) N_2) N_1 PP
 	&lt;N' head&gt; = &lt;N_1 head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
 	&lt;N_2 head type suffix poss&gt; = -
 	&lt;N_3 head type suffix poss&gt; = -
+	&lt;N_1 head type comma&gt; = -
+	&lt;N_2 head type comma&gt; = -
+	&lt;N_3 head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 3cabs
 </rule>
@@ -5336,11 +5723,12 @@ rule {NBar option 4b - no compounds, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:genitive]
-		&lt;N' option&gt; = 4b
+	&lt;N' option&gt; = 4b
 </rule>
 	<showWhen id="NBaroption4b">
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
@@ -5359,35 +5747,36 @@ N' = PP N
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 	</showWhen>
 	<rule show="NBaroption4bgen">
 rule {NBar option 4bgen - no compounds, genitive PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 		&lt;N' option&gt; = 4bgen
 </rule>
@@ -5408,21 +5797,22 @@ N' = PP N
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NBaroption4bnoterg">
 rule {NBar option 4bnoterg - no compounds, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:ergative]
 		&lt;N' option&gt; = 4bnoterg
@@ -5445,12 +5835,13 @@ rule {NBar option 4berg - no compounds, ergative PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 4berg
+	&lt;N' option&gt; = 4berg
 </rule>
 	<showWhen id="NBaroption4berg">
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
@@ -5470,11 +5861,12 @@ rule {NBar option 4bnotabs - no compounds, PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
-		&lt;N' option&gt; = 4bnotabs
+	&lt;N' option&gt; = 4bnotabs
 </rule>
 	<showWhen id="NBaroption4bnotabs">
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
@@ -5494,12 +5886,13 @@ rule {NBar option 4babs - no compounds, absolutive PP initial}
 N' = PP N
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;PP head type comma&gt; = -
 	&lt;N' head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
-		&lt;N' option&gt; = 4babs
+	&lt;N' option&gt; = 4babs
 </rule>
 	<showWhen id="NBaroption4babs">
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
@@ -5519,8 +5912,10 @@ rule {NBar option 4e - no compounds, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix poss&gt; &lt;= &lt;PP head type suffix poss&gt;
 	&lt;PP head&gt; == ~[case:genitive]
 	&lt;N' option&gt; = 4e
@@ -5542,35 +5937,37 @@ N' = N PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 	</showWhen>
 	<rule show="NBaroption4egen">
 rule {NBar option 4egen - no compounds, genitive PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = genitive
 	&lt;N' head type genitive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 4egen
 </rule>
@@ -5591,21 +5988,23 @@ N' = N PP
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="after"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<or/>
 		<whenValue element="np" attr="comp" value="no" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="compHeadPPPos" value="either"/>
 		<and/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 	</showWhen>
 	<rule show="NBaroption4enoterg">
 rule {NBar option 4enoterg - no compounds, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;PP head&gt; == ~[case:ergative]
 	&lt;N' option&gt; = 4enoterg
@@ -5628,10 +6027,12 @@ rule {NBar option 4eerg - no compounds, ergative PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = ergative
 	&lt;N' head type ergative_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 4eerg
 </rule>
@@ -5653,8 +6054,10 @@ rule {NBar option 4enotabs - no compounds, PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;PP head&gt; == ~[case:absolutive]
 	&lt;N' option&gt; = 4enotabs
@@ -5677,10 +6080,12 @@ rule {NBar option 4eabs - no compounds, absolutive PP final}
 N' = N PP
 	&lt;N' head&gt; = &lt;N head&gt;
 	&lt;PP head type stranded&gt; = -	| P must have overt complement
-	&lt;PP head type passive&gt; = -	| by-phrase not within NP
+	&lt;PP head infl valence&gt; = active	| passive by-phrase not within NP
 	&lt;PP head type sentential&gt; = -	| sentential not within NP
 	&lt;PP head case&gt; = absolutive
 	&lt;N' head type absolutive_PP&gt; = +  | to restrict cooccurrence w/ possessor
+	&lt;N head type comma&gt; = -
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
 	&lt;N' option&gt; = 4eabs
 </rule>
@@ -5715,13 +6120,13 @@ N' = {Pron / Dem / Q / Num / Deg} (PP)
 |	&lt;PP head type partitive&gt; = +
 	&lt;N' head type prefix poss&gt; = -  |can't be possessors
 	&lt;N' head type suffix poss&gt; = -  |can't be possessors
-	&lt;Pron head&gt; == ~[case:genitive]
+	&lt;N' head type comma&gt; &lt;= &lt;PP head type comma&gt;
 	&lt;N' option&gt; = 5a
 </rule>
 	<showWhen id="NBaroption5a">
-		<whenValue element="pron" attr="pronounCat" value="N"/>
+		<whenValue element="pron" attr="pronMod" value="all"/>
 		<and/>
-		<whenValue element="pron" attr="partitive" value="after"/>
+		<whenValue element="pron" attr="partitivePos" value="after"/>
 	</showWhen>
 	<rule show="NBaroption5b">
 rule {NBar option 5b - pronoun,dem,quantifiers w/o head noun (optional PP before)}
@@ -5741,18 +6146,20 @@ N' = (PP) {Pron / Dem / Q / Num / Deg}
 |	&lt;PP head type partitive&gt; = +
 	&lt;N' head type prefix poss&gt; = -  |can't be possessors
 	&lt;N' head type suffix poss&gt; = -  |can't be possessors
-	&lt;Pron head&gt; == ~[case:genitive]
+	&lt;PP head type comma&gt; = -
 	&lt;N' option&gt; = 5b
 </rule>
 	<showWhen id="NBaroption5b">
-		<whenValue element="pron" attr="pronounCat" value="N"/>
+		<whenValue element="pron" attr="pronMod" value="all"/>
 		<and/>
-		<whenValue element="pron" attr="partitive" value="before"/>
+		<whenValue element="pron" attr="partitivePos" value="before"/>
 	</showWhen>
 	<rule>
-rule {NBar option Part - participle (phrase) as NBar}
+rule {NBar option gerund - gerund (phrase) as NBar}
 N' = VP
 	&lt;N' head&gt; = &lt;VP head&gt;
-	&lt;VP head type participle&gt; = +
+	&lt;VP head type gerund&gt; = +
+	&lt;N' head type comma&gt; &lt;= &lt;VP head type comma&gt;
+	&lt;N' option&gt; = gerund
 </rule>
 </masterGrammar>

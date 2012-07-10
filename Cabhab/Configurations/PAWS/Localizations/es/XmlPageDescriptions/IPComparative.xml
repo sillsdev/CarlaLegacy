@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPComparative" count="2/3">
+   <title level="2">Las oraciones básicas - Comparativos</title>
+   <introduction>Los comparativos son un subtipo de oraciones copulativas. Consideraremos dos tipos que clasifiquen dos entidades (objetos o personas) como igual, después los comparativos donde una entidad (objeto o persona) está mejor que la otra, entonces superlativos. Todos estos tipos pueden utilizar normalmente un verbo copulativo o un verbo de percepción.
+	  <br></br><br/>
+	  La comparación de iguales puede utilizar un sustantivo o un adjetivo para la comparación.  La construcción de la igualdad del sustantivo utiliza una fórmula que significa ‘el mismo Sustantivo que’ entre dos frases nominales. Algunos ejemplos de español son:
+   </introduction>
+   <EnglishExample>
+	  <exItem label="1.">Las cortinas se ven del mismo color que las paredes.</exItem>
+	  <exItem label="2.">Su mochilal es del mismo tamaño que la mía.</exItem>
+	  <exItem label="3.">Susana tiene el mismo peinado que Maria.</exItem>
+   </EnglishExample>
+   <form section="ip">
+	  <prompt>Escriba ejemplos similares de su lengua aquí:</prompt>
+	  <textBox id="IPComparativeSameExample" dataItem="sameExample" cols="50"/>
+	  <br/><br/>
+	  <radioGroup>
+		 <groupName dataItem="same" default="yes">RIPCopComparativeSame</groupName>
+		 <prompt>¿Tiene su lengua una palabra independiente que significa ‘mismo’ usada en este tipo de comparativo entre dos entidades (objetos o personas) iguales?</prompt>
+		 <radio id="IPCopComparativeSameYes" dataValue="yes">Sí</radio>
+		 <radio id="IPCopComparativeSameAttaches" dataValue="attaches">Es un clítico o un afijo en el sustantivo de la comparación, no una palabra independiente</radio>
+		 <radio id="IPCopComparativeSameNo" dataValue="no">No, solamente la presencia de las dos frases nominales y el sustantivo con el predicado copulativo señalan un comparativo de igualdad de este tipo</radio>
+	  </radioGroup>
+	  <prompt id="IPCopComparativeSameWord" show="swIPCopComparativeSameYes">Escriba la(s) palabra(s) que significa ‘mismo’ aquí: </prompt>
+	  <textBox id="IPExamplesComparativeSameWordExample" dataItem="sameWordExample" rows="3" show="swIPCopComparativeSameYes"/>
+	  <prompt id="IPCopComparativeSameAffix" show="swIPCopComparativeSameAttaches">Escriba los afijos o clíticos que significa ‘mismo’ aquí, con una indicación del guión en el lado que se une al sustantivo:</prompt>
+	  <textBox id="IPExamplesComparativeSameAffixExample" dataItem="sameAffixExample" rows="3" show="swIPCopComparativeSameAttaches"/>
+	  <br/><br/>
+	  <radioGroup>
+		 <groupName dataItem="compareN" default="yes">RIPCopCompareN</groupName>
+		 <prompt>¿Tiene su lengua una conjunción comparativa que significa ‘que’ utilizado antes de la segunda frase nominal en este tipo de comparativo entre dos entidades (objetos o personas) iguales?</prompt>
+		 <radio id="IPCopCompareNYes" dataValue="yes">Sí</radio>
+		 <radio id="IPCopCompareNNo" dataValue="no">No</radio>
+	  </radioGroup>
+	  <prompt id="IPCopCompareNWord" show="swIPCopCompareNYes">Escriba la conjunción comparativa que significa ‘que’ aquí:</prompt>
+	  <textBox id="IPExamplesCompareNWordExample" dataItem="compareNExample" rows="3" show="swIPCopCompareNYes"/>
+	  <instruction id="IPCopCompareNWordInstruction" show="swIPCopCompareNYes">In the lexicon, key the feature <feature>compareN</feature> on the comparative conjunction words meaning “as” used in this construction.  This entry also needs to have the category <category>Conj</category>, either by entering it directly into the category field or by using the feature <feature>makeConj</feature>.</instruction>
+	  <br/><br/>
+	  <introduction>El segundo tipo de comparación de iguales utiliza un adjetivo para la comparación. Esta construcción utiliza una fórmula que significa ‘es tan Adjetivo como’ entre dos frases nominales. Algunos ejemplos de español son:</introduction>
+	  <EnglishExample>
+		 <exItem label="4.">Juan es tan amistoso como Guillermo.</exItem>
+		 <exItem label="5.">Susana es tan veloz como Maria.</exItem>
+		 <exItem label="6.">David parece tan alto como Miguel.</exItem>
+	  </EnglishExample>
+	  <br/><br/>
+	  <prompt>Escriba ejemplos similares de su lengua aquí:</prompt>
+	  <textBox id="IPComparativeAsExample" dataItem="asExample" cols="50"/>
+	  <br/><br/>
+	  <radioGroup>
+		 <groupName dataItem="as" default="yes">RIPCopComparativeAs</groupName>
+		 <prompt>¿Tiene su lengua una palabra independiente que significa ‘tan’ utilizado en los comparativos entre dos entidades (objetos o personas) iguales?</prompt>
+		 <radio id="IPCopComparativeAsYes" dataValue="yes">Sí</radio>
+		 <radio id="IPCopComparativeAsNo" dataValue="no">No, el significado ‘tan’ está implícito</radio>
+	  </radioGroup>
+	  <prompt id="IPCopComparativeAsWord" show="swIPCopComparativeAsYes">Escriba la(s) palabra(s) comparativa(s) que significa ‘tan’ aquí:</prompt>
+	  <textBox id="IPComparativeAsWordExample" dataItem="asWordExample" rows="3" show="swIPCopComparativeAsYes"/>
+	  <br/><br/>
+	  <radioGroup>
+		 <groupName dataItem="compareAdj" default="yes">RIPCopCompareAdj</groupName>
+		 <prompt>¿Tiene su lengua una conjunción comparativa que significa ‘como’ utilizado antes de la segunda parte en este tipo de comparativas entre dos partes iguales?</prompt>
+		 <radio id="IPCopCompareAdjYes" dataValue="yes">Sí</radio>
+		 <radio id="IPCopCompareAdjNo" dataValue="no">No</radio>
+	  </radioGroup>
+	  <prompt id="IPCopCompareAdjWord" show="swIPCopCompareAdjYes">Escriba la conjunción comparativa que significa ‘como’ utilizado antes de la segunda parte aquí:</prompt>
+	  <textBox id="IPExamplesCompareAdjWordExample" dataItem="compareAdjExample" rows="3" show="swIPCopCompareAdjYes"/>
+	  <instruction id="IPCopCompareAdjWordInstruction" show="swIPCopCompareAdjYes">In the lexicon, key the feature <feature>compareAdj</feature> on the word(s) meaning “as” used in the second part of this construction.  The entry also needs to have the category <category>Conj</category>.  If this comparative conjunction is the same one used in the previous construction, you may simply add the feature <feature>compareAdj</feature> to that lexical entry.</instruction>
+	  <br/><br/>
+	  <introduction>Los comparativos donde una entidad (objeto o persona) está mejor que la otra comparan dos frases nominales utilizando una palabra comparativa que significa ‘que’ , e incluya cualquier cópula que la lengua utiliza, o un verbo de percepción, junto con un indicador de grado en el adjetivo predicativo o la frase nominal.
+		 Los ejemplos de inglés en 7-11 muestran que el indicador de grado puede ser una palabra independiente o un afijo en el adjetivo predicativo.
+		 <br/><br/>Observe que hay una cópula implicada que sigue la frase nominal final en los ejemplos. Un tipo más complejo de comparativo tiene una oración en el lugar de la segunda frase nominal. Éstos serán cubiertos en <section number="15.">Las construcciones coordinativas - Comparativos</section>.</introduction>
+	  <EnglishExample>
+		 <exItem label="7.">John is more handsome than Bill. ‘Juan es más guapo que Guillermo.’</exItem>
+		 <exItem label="8.">Sue is a better runner than Mary. ‘Susana es mejor corredora que Maria.’</exItem>
+		 <exItem label="9.">David appears taller than Michael. ‘David parece más alto que Miguel.’</exItem>
+		 <exItem label="10.">Mary looks prettier than Julie. ‘Maria parece más bonita que Julia.’</exItem>
+		 <exItem label="11.">John seems more certain of his answers than Sue. ‘Juan parece más seguro de sus respuestas que Susana.’</exItem>
+	  </EnglishExample>
+	  <prompt>Escriba ejemplos similares de su lengua aquí:</prompt>
+	  <textBox id="IPExamplesComparativeExample" dataItem="comparativeExample" cols="50"/>
+	  <br/><br/>
+	  <radioGroup>
+		 <groupName dataItem="comparative" default="yes">RIPCopComparative</groupName>
+		 <prompt>¿Tiene su lengua una palabra independiente que significa ‘que’ utilizada en los comparativos?</prompt>
+		 <radio id="IPCopComparativeYes" dataValue="yes">Sí</radio>
+		 <radio id="IPCopComparativeNo" dataValue="no">No, solamente la presencia de las dos frases nominales y la palabra de grado con el predicado copulativo señalan un comparativo </radio>
+	  </radioGroup>
+	  <prompt id="IPCopComparativeWord" show="swIPCopComparativeYes">Escriba la(s) palabra(s) comparativa(s) que significa ‘que’ aquí:</prompt>
+	  <textBox id="IPExamplesComparativeWordExample" dataItem="comparativeWordExample" rows="3" show="swIPCopComparativeYes"/>
+	  <br/><br/>
+	  <radioGroup>
+		 <groupName dataItem="comparativeAdj" default="no">RIPCopComparativeAdj</groupName>
+		 <prompt>¿Tiene su lengua un afijo que pueda expresar el grado de comparación en adjetivos?</prompt>
+		 <radio id="IPCopComparativeAdjNo" dataValue="no">No, solamente una palabra independiente de grado se utiliza con adjetivos predicativos y frases nominales</radio>
+		 <radio id="IPCopComparativeAdjYes" dataValue="yes">Sí, y se utiliza siempre con adjetivos predicativos en comparativos</radio>
+		 <radio id="IPCopComparativeAdjBoth" dataValue="both">Sí, pero como en inglés, algunos adjetivos predicativos utilizan los afijos y otros utilizan la palabra independiente de grado en comparativos</radio>
+	  </radioGroup>
+	  <prompt id="IPCopComparativeAffix" show="swIPCopComparativeAdjYes">Escriba los afijos comparativos utilizados en adjetivos aquí (con una indicación del guión en el lado que se une): </prompt>
+	  <textBox id="IPExamplesComparativeAffixExample" dataItem="comparativeAffixExample" rows="3" show="swIPCopComparativeAdjYes"/>
+	  <instruction id="IPCopComparativeAffixInstruction" show="swIPCopComparativeAdjYesOrBoth">Key the feature <feature>comparative_prefix</feature> or the feature <feature>comparative_suffix</feature> on the appropriate lexical entries.</instruction>
+	  <br/>
+	  <prompt id="IPCopComparativeDegBoth" show="swIPCopComparativeAdjDeg">Escriba las palabras de grado comparativas utilizadas con adjetivos predicativos y nominales predicativos aquí:</prompt>
+	  <prompt id="IPCopComparativeDeg" show="swIPCopComparativeAdjYes">Escriba las palabras de grado comparativas utilizadas con nominales predicativos aquí:</prompt>
+	  <textBox id="IPExamplesComparativeDegExample" dataItem="comparativeDegExample" rows="3"/>
+	  <instruction id="IPCopComparativeDegInstruction">Key the feature <feature>comparative</feature> on the appropriate degree words in the lexicon. The lexical entry or entires also needs to have the category <category>Deg</category>, either by entering it directly into the category field or by using the feature <feature>makeDeg</feature>.</instruction>
+	  <br/>
+	  <br/>
+	  <introduction>Los superlativos son otro subtipo de oraciones copulativos, directamente relacionados a los comparativos. Comparan una frase nominal con algo plural, que puede ser expresado como frase preposicional o posposicional o simplemente estar implícito. Como son comparativos, los superlativos incluyen cualquier cópula la lengua utiliza o un verbo de percepción, junto con el indicador de grado en el adjetivo predicativo o la frase nominal. Los ejemplos de inglés en 12-16 muestran que el indicador de grado puede ser una palabra independiente o un afijo en el adjetivo predicativo. </introduction>
+	  <EnglishExample>
+		 <exItem label="12.">John is the most handsome of the boys. ‘Juan es el más guapo de los muchachos.’</exItem>
+		 <exItem label="13.">Sue is the best runner (in the class). ‘Susana es el mejor corredora (en la clase).’</exItem>
+		 <exItem label="14.">David appears (to be) the tallest (of all). ‘David aparece (ser) el más alto (de todos).’</exItem>
+		 <exItem label="15.">Mary looks prettiest. ‘Maria parece la más bonita.’</exItem>
+		 <exItem label="16.">John seems the most certain of his answers of all my students. ‘Juan parece el más seguro de sus respuestas de todos mis estudiantes.’</exItem>
+	  </EnglishExample>
+	  <prompt>Escriba ejemplos similares de su lengua aquí:</prompt>
+	  <textBox id="IPExamplesSuperlativeExample" dataItem="superlativeExample" cols="50"/>
+	  <br/>
+	  <prompt id="IPCopSuperlativeAffix" show="swIPCopComparativeAdjYes">Escriba los afijos superlativos usados en adjetivos aquí (con una indicación del guión en el lado que se une):</prompt>
+	  <textBox id="IPExamplesSuperlativeAffixExample" dataItem="superlativeAffixExample" rows="3" show="swIPCopComparativeAdjYes"/>
+	  <instruction id="IPCopSuperlativeAffixInstruction" show="swIPCopComparativeAdjYesOrBoth">Key the feature <feature>superlative_prefix</feature> or the feature <feature>superlative_suffix</feature> on the appropriate lexical entries.</instruction>
+	  <br/>
+	  <prompt id="IPCopSuperlativeDegBoth" show="swIPCopComparativeAdjDeg">Escriba las palabras de grado superlativas utilizadas con adjetivos predicativos y nominales predicativos aquí:</prompt>
+	  <prompt id="IPCopSuperlativeDeg" show="swIPCopComparativeAdjYes">Escriba las palabras de grado superlativas utilizadas con nominales predicativos aquí:</prompt>
+	  <textBox id="IPExamplesSuperlativeDegExample" dataItem="superlativeDegExample" rows="3"/>
+	  <instruction id="IPCopSuperlativeDegInstruction">Key the feature <feature>superlative</feature> on the appropriate degree words in the lexicon. The lexical entry or entires also needs to have the category <category>Deg</category>, either by entering it directly into the category field or by using the feature <feature>makeDeg</feature>.</instruction>
+	  <br/>
+	  <br/>
+	  <buttons>
+		 <button id="IPComparativeBack" value="Back" goto="IPCop.xml"/>
+		 <button id="IPComparativeNext" value="Next" goto="IPExist.xml"/>
+	  </buttons>
+   </form>
+   <showWhen id="swHeadInitial">
+	  <whenValue element="typology" attr="wordOrder" value="SVO"/>
+	  <or/>
+	  <whenValue element="typology" attr="wordOrder" value="VOS"/>
+	  <or/>
+	  <whenValue element="typology" attr="wordOrder" value="VSO"/>
+   </showWhen>
+   <showWhen id="swHeadFinal">
+	  <whenValue element="typology" attr="wordOrder" value="SOV"/>
+	  <or/>
+	  <whenValue element="typology" attr="wordOrder" value="OVS"/>
+	  <or/>
+	  <whenValue element="typology" attr="wordOrder" value="OSV"/>
+   </showWhen>
+   <showWhen id="swIPCopComparativeSameYes">
+	  <whenRadio button="IPCopComparativeSameYes"/>
+   </showWhen>
+   <showWhen id="swIPCopComparativeSameAttaches">
+	  <whenRadio button="IPCopComparativeSameAttaches"/>
+   </showWhen>
+   <showWhen id="swIPCopCompareNYes">
+	  <whenRadio button="IPCopCompareNYes"/>
+   </showWhen>
+   <showWhen id="swIPCopComparativeAsYes">
+	  <whenRadio button="IPCopComparativeAsYes"/>
+   </showWhen>
+   <showWhen id="swIPCopCompareAdjYes">
+	  <whenRadio button="IPCopCompareAdjYes"/>
+   </showWhen>
+   <showWhen id="swIPCopComparativeYes">
+	  <whenRadio button="IPCopComparativeYes"/>
+   </showWhen>
+   <showWhen id="swIPCopComparativeAdjYesOrBoth">
+	  <not/><whenRadio button="IPCopComparativeAdjNo"/>
+   </showWhen>
+   <showWhen id="swIPCopComparativeAdjYes">
+	  <whenRadio button="IPCopComparativeAdjYes"/>
+   </showWhen>
+   <showWhen id="swIPCopComparativeAdjDeg">
+	  <whenRadio button="IPCopComparativeAdjNo"/>
+	  <or/>
+	  <whenRadio button="IPCopComparativeAdjBoth"/>
+   </showWhen>
+</page>

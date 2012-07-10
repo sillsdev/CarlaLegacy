@@ -2,21 +2,21 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QMainYN" count="2/9">
-	<title level="2">Las preguntas - Las preguntas con respuesta afirmativa/negativa de la cláusula principal</title>
-	<form section="q">
+   <title level="2">Las preguntas - Las preguntas de respuesta sí/no de la cláusula principal</title>
+   <introduction>Mientras que en español simplemente hay un cambio en la entonación para señalar una pregunta de respuesta sí/no de la cláusula principal, otras lenguas utilizan indicadores y/o cambios especiales del orden de las palabras. Algunos ejemplos en inglés de las preguntas de respuesta sí/no de la cláusula principal que muestran el desplazamiento requerido de un auxiliar son:</introduction>
 		<EnglishExample>
-			<exItem>Algunos ejemplos en inglés de las preguntas polares de la cláusula principal son:</exItem>
-			<exItem label="1.">Are you going to the store? '¿Usted va al almacén?'</exItem>
-			<exItem label="2.">Will Sue buy the present for her mother? '¿Compra Susana el regalo para su madre?'</exItem>
-			<exItem label="3.">Could the boy have hit the ball? '¿Habría podido el muchacho golpear el beísbol?'</exItem>
+		   <exItem label="1.">Are you going to the store? ‘¿Usted va al almacén?’</exItem>
+		   <exItem label="2.">Will Sue buy the present for her mother? ‘¿Compra Susana el regalo para su madre?’</exItem>
+		   <exItem label="3.">Could the boy have hit the ball? ‘¿Habría podido el muchacho golpear el beísbol?’</exItem>
 		</EnglishExample>
-		<prompt>Escriba ejemplos similares de las preguntas polares de la cláusula principal en su idioma aquí:</prompt>
+   <form section="q">
+	  <prompt>Escriba ejemplos similares de las preguntas de respuesta sí/no  de la cláusula principal en su lengua aquí:</prompt>
 		<textBox id="QExample" dataItem="example" cols="50"/>
 		<br/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="mainYN" default="no">RQMainYN</groupName>
-			<prompt>Para las preguntas polares de la cláusula principal, ¿hay uno o más indicadores o complementizadores de la pregunta (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
+		   <prompt>Para las preguntas de respuesta sí/no de la cláusula principal, ¿hay uno o más indicadores o complementizadores de la pregunta (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
 			<radio id="QMainYNYes" dataValue="yes">Sí</radio>
 			<radioGroup id="QMainYNWordTable" show="swQMainYNYes">
 				<groupName dataItem="mainYNWord" default="yes">RQMainYNWord</groupName>
@@ -31,8 +31,8 @@
 				</radioGroup>
 				<radioGroup id="QMainYNCliticTypeTable" show="swQMainYNWordNo">
 					<groupName dataItem="mainYNCliticAttaches" default="edge">RQMainYNCliticAttaches</groupName>
-					<prompt>¿Dónde se une el clítico a la pregunta polar?</prompt>
-					<radio id="QMainYNCliticAttachesEdge" dataValue="edge">En el extremo</radio>
+				   <prompt>¿Dónde se une el clítico a la pregunta de respuesta sí/no?</prompt>
+					<radio id="QMainYNCliticAttachesEdge" dataValue="edge">A la orilla</radio>
 					<radio id="QMainYNCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
 				<radio id="QMainYNWordYes" dataValue="yes">Sí</radio>
@@ -40,8 +40,8 @@
 			<radioGroup id="QMainYNPosTable" show="swQMainYNWordYes">
 				<groupName dataItem="mainYNPos" default="unknown" position="yesHead">RQMainYNPos</groupName>
 				<prompt>¿Dónde se presenta el indicador o complementizador de la pregunta con respecto al resto de la pregunta?</prompt>
-				<radio id="QMainYNPosBefore" dataValue="before">Antes</radio>
-				<radio id="QMainYNPosAfter" dataValue="after">Después</radio>
+				<radio id="QMainYNPosBefore" dataValue="before">Antes de la pregunta</radio>
+				<radio id="QMainYNPosAfter" dataValue="after">Después de la pregunta</radio>
 				<radio id="QMainYNPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
 				<radio id="QMainYNPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
 				<radio id="QMainYNPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados en la misma oración</radio>
@@ -54,14 +54,14 @@
 					<radio id="QMainYNEitherRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
 				</radioGroup>
 			</radioGroup>
-			<radio id="QMainYNNoAux" dataValue="noAux">No, pero un auxiliar se desplaza, al igual que en inglés</radio>
+			<radio id="QMainYNNoAux" dataValue="noAux">No, pero un auxiliar se desplaza, como en inglés</radio>
 			<radioGroup id="QMainYNAuxPosTable" show="swQMainYNNoAux">
 				<groupName dataItem="mainYNAuxPos" default="unknown" position="yesHead">RQMainYNAuxPos</groupName>
 				<prompt>¿Dónde se presenta el auxiliar con respecto al resto de la pregunta?</prompt>
-				<radio id="QMainYNAuxPosBefore" dataValue="before">Antes</radio>
-				<radio id="QMainYNAuxPosAfter" dataValue="after">Después</radio>
+				<radio id="QMainYNAuxPosBefore" dataValue="before">Antes de la pregunta</radio>
+				<radio id="QMainYNAuxPosAfter" dataValue="after">Después de la pregunta</radio>
 			</radioGroup>
-			<radio id="QMainYNNo" dataValue="no">No, no hay ni indicador ni cambio del orden de las palabras, apenas la diferencia en la entonación o el tono o otra indicación que no es sintáctica</radio>
+			<radio id="QMainYNNo" dataValue="no">No, no existe ni indicador ni cambio del orden de las palabras, se de con un cambio en la entonación o el tono u otra indicación que no es sintáctica</radio>
 		</radioGroup>
 		<instruction id="QMainYNHeadCliticInstruction" show="swQMainYNHeadClitic">In the lexicon, add the feature <feature>YNQ</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QMainYNEdgeCliticPrefixInstruction" show="swQMainYNEdgeCliticPrefix">In the lexicon, add the feature <feature>YNQ_prefix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>

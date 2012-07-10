@@ -4,7 +4,7 @@
 	<section1 id="sNP">
 		<secTitle>Nominal Phrases</secTitle>
 		<p>
-			<content>Nominal phrases can be very complex.  This section concentrates on those with common nouns as the lexical head.  Modification by articles, demonstratives, possessors, quantifiers and degree words, adjective phrases, pre/post-positional phrases and noun compounds is considered.  Participles are also covered, but nominal phrases headed by proper names are handled in section </content>
+			<content>Nominal phrases can be very complex.  This section concentrates on those with common nouns as the lexical head.  Modification by articles, demonstratives, possessors, quantifiers and degree words, adjective phrases, pre/post-positional phrases and noun compounds is considered.  Participles and gerunds are also covered, but nominal phrases headed by proper names are handled in section </content>
 			<sectionRef sec="sProp"/>
 			<content> and those headed by pronouns, demonstratives, and quantifiers are handled in section </content>
 			<sectionRef sec="sPron"/>
@@ -17,7 +17,7 @@
 			<langName/>
 			<content> is:</content>
 		</p>
-		<example show="swPossDemAndArtCooccurYes">
+	   <example show="swPossDemAndArtCooccurYesOrSome">
 			<table>
 				<row>
 					<col show="swQPNPDegreeYesBefore">
@@ -74,7 +74,7 @@
 				</row>
 			</table>
 		</example>
-		<example show="swPossDemOrArtCooccurYes">
+		<example show="swPossDemOrArtCooccurYesOrSome">
 			<table>
 				<row>
 					<col show="swQPNPDegreeYesBefore">
@@ -317,7 +317,7 @@
 					<caseText value="yesClass">the modifiers and the head noun may/must agree in class number.</caseText>
 					<caseText value="yesGender">the modifiers and the head noun may/must agree in gender.</caseText>
 				</case>
-				<content/>
+				<text show="swNPAgreeYesClassAndClassifiersNo"><content>(Note that this class agreement needs to be reviewed, as no classifier system was documented in </content><sectionRef sec="sTypology"/><content>.)</content></text><content/>
 			</p>
 			<p show="swNPAgreeYesNumber">
 				<content>Examples showing number agreement in </content><langName/><content> nominal phrases include:</content>
@@ -336,55 +336,316 @@
 			</p>
 			<example show="swNPAgreeYesGender"><interlinear exampleLoc="np/agreeGenderExample"/></example>
 		</section2>
-		<section2 id="sNPCase">
-			<secTitle>Case</secTitle>
-			<p>
-				<content>Nouns and their modifiers may also be marked for case.  The most common case system is nominative-accusative.  This is the system English has, though only pronouns are marked for case in English.  In a nominative-accusative system, subjects of both transitive and intransitive verbs are in nominative case, while direct objects are accusative case.  Possessors are genitive case.  The nominative pronouns in English are: </content>
-				<langData>I, we, you, he, she, they</langData>
-				<content>.  The accusative pronouns are: </content>
-				<langData>me, us, you, him, her, them</langData>
-				<content>.  The genitive pronouns include: </content>
-				<langData>my, our, your, his, her, their</langData>
-				<content>.  Therefore, we say </content>
-				<langData>They hit him</langData>
-				<content> and not </content>
-				<langData>Them hit he</langData>
-				<content>. </content>
-			</p>
-			<p>
-				<content>
-In an ergative-absolutive case system, subjects of transitive verbs are marked with the ergative case, while objects of transitive verbs and subjects of intransitive verbs are marked with the absolutive case.  The case of possessors is not set cross-linguistically.  Some languages with an ergative-absolutive system simply have different sets of verbal agreement markers, but no marking on nouns.  This type of agreement marking will be handled in section </content>
-				<sectionRef sec="sIPAgr"/>
-				<content>.</content>
-			</p>
-			<p>
-				<content>
-Some languages are even more complex in that they normally have a nominative-accusative system but under some conditions the case system switches to ergative-absolutive.  This is called "split ergativity".</content>
-			</p>
-			<p>
-				<content/>
-				<langName/>
-				<content/>
-				<case element="np" attr="case">
-					<caseText value="none"> does not have any case system.   The exact same set of pronouns may be used in any position in the sentence and there is no marking on nouns or on any noun modifiers based on their position in the sentence.</caseText>
-					<caseText value="nominative"> has a nominative-accusative case system.   Subjects of both transitive and intransitive verbs are marked in the same way and use the same set of pronouns, but objects of transitive verbs are marked differently.</caseText>
-					<caseText value="ergative"> has an ergative-absolutive case system.   Subjects of intransitive verbs and objects of transitive verbs are marked in the same way and use the same set of pronouns, but subjects of transitive verbs are marked differently.</caseText>
-					<caseText value="split"> has a split case system.    The language normally follows the nominative-accusative case system, but the ergative-absolutive system is used under certain conditions.</caseText>
-				</case>
-				<content/>
-				<text show="swNPCaseDefaultNom">
-					<content>  Nominative case is the default (unmarked) case.</content>
+	   <section2 id="sNPCase">
+		  <secTitle>Case</secTitle>
+		  <p>
+			 <content>Nouns and their modifiers may be marked for case.  The most common case system is nominative-accusative.  This is the system English has, though only pronouns are marked for case in English.  In a nominative-accusative system, subjects of both transitive and intransitive verbs are in nominative case, while direct objects are accusative case.  Possessors are genitive case.  The nominative pronouns in English are: </content>
+			 <langData>I, we, you, he, she, they</langData>
+			 <content>.  The accusative pronouns are: </content>
+			 <langData>me, us, you, him, her, them</langData>
+			 <content>.  The genitive pronouns include: </content>
+			 <langData>my, our, your, his, her, their</langData>
+			 <content>.  Therefore, we say </content>
+			 <langData>They hit him</langData>
+			 <content> and not </content>
+			 <langData>Them hit he</langData>
+			 <content>. </content>
+		  </p>
+		  <p>
+			 <content> A language with a basic nominative-accusative case system may have different case marking for Experiencer subjects than for Agent subjects.  Some verbs with Experiencer subjects are </content><langData>appear, see, fear, be found, want, like</langData><content> and </content><langData>laugh</langData><content>. </content>
+		  </p>
+		  <p>
+			 <content>
+				In an ergative-absolutive case system, subjects of transitive verbs are marked with the ergative case, while objects of transitive verbs and subjects of intransitive verbs are marked with the absolutive case.  The case of possessors is not set cross-linguistically.  Some languages with an ergative-absolutive system simply have different sets of verbal agreement markers, but no marking on nouns.  This type of agreement marking will be handled in section </content>
+			 <sectionRef sec="sIPAgr"/>
+			 <content>.</content>
+		  </p>
+		  <p>
+			 <content>
+				Some languages are even more complex in that they normally have a nominative-accusative system but under some grammatical conditions, such as a particular tense or aspect or a particular person agreement feature, the case system switches to ergative-absolutive.  This is called “split ergativity”.</content>
+		  </p>
+		  <p>
+			 <content/>
+			 <langName/>
+			 <content/>
+			 <case element="typology" attr="case">
+				<caseText value="none"> does not have any case system.   The exact same set of pronouns may be used in any position in the sentence and there is no marking on nouns or on any noun modifiers based on their position in the sentence.</caseText>
+				<caseText value="nominative"> has a nominative-accusative case system.   Subjects of both transitive and intransitive verbs are marked in the same way and use the same set of pronouns, but objects of transitive verbs are marked differently.</caseText>
+				<caseText value="ergative"> has an ergative-absolutive case system.   Subjects of intransitive verbs and objects of transitive verbs are marked in the same way and use the same set of pronouns, but subjects of transitive verbs are marked differently.</caseText>
+				<caseText value="split"> has a split case system.    The language normally follows the nominative-accusative case system, but the ergative-absolutive system is used under certain grammatical conditions.</caseText>
+			 </case></p>
+
+		  <p><content>This is shown in the following examples of transitive sentences with Agent subjects where the subject and object are nominal phrases:</content></p>
+		  <example>
+			 <interlinear exampleLoc="typology/example"/>
+		  </example>
+		  <p><content>Note the forms of the pronouns used for the Agent subject and object in these transitive sentences:</content></p>
+		  <example>
+			 <interlinear exampleLoc="typology/pnExample"/>
+		  </example>
+		  <p show="swNPCaseNYes"><content>In the intransitive examples with nominal phrases as the subjects, </content>
+			 <case element="typology" attr="case">
+				<caseText value="nominative">the case marking matches that of the subejcts in the transitive sentences above.</caseText>
+				<caseText value="ergative">the case marking matches that of the objects in the transitive sentences above.</caseText>
+				<caseText value="split">the case marking on most of the subjects matches that of the subjects in the transitive sentences above, but in certain situations, it matches that of the objects in trantitive sentences.</caseText>
+			 </case></p>
+		  <example show="swNPCaseNYes">
+			 <interlinear exampleLoc="typology/intExample"/>
+		  </example>
+		  <p><content>The examples of intransitive sentences with independent pronouns as subjects verify that </content>
+			 <case element="typology" attr="case">
+				<caseText value="none">there is no case distinction, as the same pronouns can appear as subjects of both transitive and intransitive verbs and as objects of transitive verbs.</caseText>
+				<caseText value="nominative">the same set of pronouns can appear as subjects of both transitive and intransitive verbs, while different pronouns are used as objects of transitive verbs.</caseText>
+				<caseText value="ergative">the same set of pronouns can appear as subjects of intransitive verbs and objects of transitive verbs, while different pronouns are used as subjects of transitive verbs.</caseText>
+				<caseText value="split">the same set of pronouns can normally appear as subjects of both transitive and intransitive verbs, while different pronouns are used as objects of transitive verbs.  However, in certain cases, the same set of pronouns can appear as subjects of intransitive verbs and objects of transitive verbs, while different pronouns are used as subjects of transitive verbs.</caseText>
+			 </case></p>
+		  <example>
+			 <interlinear exampleLoc="typology/intPnExample"/>
+		  </example>
+
+		  <p show="swNPCaseNomOrSplitAndCaseNYes"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+			 <caseText value="no">the same case marking and pronoun set is used for both Agent and Experiencer subjects.</caseText>
+			 <caseText value="yesObj">Experiencer subjects use the same case marking and pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so accusative case and dative case are marked the same in this language.</caseText>
+			 <caseText value="yesDat">Experiencer subjects use a case marking and pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  This is the dative case, also used for indirect objects.</caseText>
+		  </case>
+		  </p>
+		  <p show="swNPCaseNomOrSplitAndCaseNNo"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+			 <caseText value="no">the same pronoun set is used for both Agent and Experiencer subjects.</caseText>
+			 <caseText value="yesObj">Experiencer subjects use the same pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so the accusative and dative pronouns are the same in this language.</caseText>
+			 <caseText value="yesDat">Experiencer subjects use a pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  These are the dative pronouns, also used for indirect objects.</caseText>
+		  </case>
+		  </p>
+		  <p show="swNPCaseErgAndCaseNYes"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+			 <caseText value="no">the same case marking and pronoun set is used for both Agent and Experiencer subjects.</caseText>
+			 <caseText value="yesObj">Experiencer subjects use the same case marking and pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so absolutive case and dative case are marked the same in this language.</caseText>
+			 <caseText value="yesDat">Experiencer subjects use a case marking and pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  This is the dative case, also used for indirect objects.</caseText>
+		  </case>
+		  </p>
+		  <p show="swNPCaseErgAndCaseNNo"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+			 <caseText value="no">the same pronoun set is used for both Agent and Experiencer subjects.</caseText>
+			 <caseText value="yesObj">Experiencer subjects use the same pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so the absolutive and dative pronouns are the same in this language.</caseText>
+			 <caseText value="yesDat">Experiencer subjects use a pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  These are the dative pronouns, also used for indirect objects.</caseText>
+		  </case>
+		  </p>
+		  <p><content>This is shown in the following examples of transitive sentences with verbs which have Experiencer subjects, where the subject and object are nominal phrases:</content></p>
+		  <example>
+			 <interlinear exampleLoc="typology/experiencerExample"/>
+		  </example>
+		  <p><content>Note the forms of the pronouns used for the Experiencer subjects and the objects in these transitive sentences:</content></p>
+		  <example>
+			 <interlinear exampleLoc="typology/experiencerPnExample"/>
+		  </example>
+
+		  <p><content>There are more cases to consider beyond that of the subject and object, also.  These may include ablative case for a source or origin, genitive case for kinds or possessors, dative case for indirect objects, instrumental case for means or instruments, locative case for locations, vocative case for direct address, and oblique case is sometimes used for the minor grammatical relations.
+			 These additional cases are usually marked via case markers on the nominal phrases themselves in languages which normally mark case on nouns or nominal phrases as well as pronouns.  For languages without any case marking and those which only show case in the pronouns, these additional grammatical relations are normally expressed via prepositional or postpositional phrases.
+		  </content>
+		  </p>
+		  <p show="swNPCaseNone"><content>In </content><langName/><content>, there are not any kind of case distinctions.  Therefore, the minor grammatical relations are expressed by </content><case element="pp" attr="pPos">
+			 <caseText value="before">prepositional</caseText>
+			 <caseText value="after">postpositional</caseText>
+			 <caseText value="both">prepositional or postpositional</caseText>
+			 <caseText value="unknown">prepositional and/or postpositional</caseText>
+		  </case><content> phrases, rather than by nominal phrases.</content>
+		  </p>
+		  <p show="swNPCaseNotNoneAndCaseNNo"><content>In </content><langName/><content>, case distinctions are not marked on nouns or nominal phrases; only the pronoun sets distinguish case.  Therefore, the minor grammatical relations are expressed by </content><case element="pp" attr="pPos">
+				<caseText value="before">prepositional</caseText>
+				<caseText value="after">postpositional</caseText>
+				<caseText value="both">prepositional or postpositional</caseText>
+				<caseText value="unknown">prepositional and/or postpositional</caseText>
+		  </case><content> phrases, rather than by nominal phrases.   The case distinctions in the pronouns will be delineated in </content><sectionRef sec="sPronPersonal"/><content>.</content>
+		  </p>
+		  <p show="swNPCaseNotNoneAndCaseNYes"><content>In </content><langName/><content>, case is marked on both pronouns and nouns or nominal phrases. </content>
+			 <text show="swNPCaseDefaultNom">
+				<content>  Nominative case is the default (unmarked) case. </content>
+			 </text>
+
+		  <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordYes">
+
+			 <content>The case marker is written as a separate word and occurs </content>
+			 <case element="np" attr="caseWordPos">
+				<caseText value="before">before</caseText>
+				<caseText value="after">after</caseText>
+				<caseText value="either">on either side of</caseText>
+				<caseText value="unknown">________</caseText>
+			 </case>
+			 <content> the rest of the nominal phrase.  </content>
+			 <text show="swNPCaseWordEitherUnrestricted">
+				<content>All of the case markers can occur on either side of the nominal phrase. </content>
+			 </text>
+			 <content/>
+			 <text show="swNPCaseWordEitherRestricted">
+				<content>There are restrictions as to which of the case markers can occur on each side of the nominal phrase. </content>
+			 </text>
+
+			 </text>
+			 <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordNo">  <content></content>
+			<case element="np" attr="caseCliticPos">
+			   <caseText value="before">The case markers attach to the beginning of the initial word in the nominal phrase.</caseText>
+			   <caseText value="after">The case markers attach to the end of the final word in the nominal phrase.</caseText>
+			   <caseText value="either">Some of the case markers attach to the beginning of the initial word and some attach to the end of the final word in the nominal phrase.</caseText>
+			   <caseText value="prefixN">The case markers are prefixes which attach to the head noun.</caseText>
+			   <caseText value="suffixN">The case markers are suffixes which attach to the head noun.</caseText>
+			   <caseText value="eitherN">Some of the case markers are prefixes and some are suffixes which attach to the head noun.</caseText>
+			</case>
 				</text>
-				<content/>
-			</p>
-			<p>
-				<content>The pronoun sets will be given in section </content>
-				<sectionRef sec="sPron"/>
-				<content>.</content>
-			</p>
-		</section2>
+		   </p>
+		  <p show="swNPCaseNotNoneAndCaseNYes"><content>The case markers used on nouns or nominal phrases in </content>
+		  <langName/>
+		  <content> are shown in the following chart.</content>
+		  </p>
+		  <example num="xCase" show="swNPCaseNotNoneAndCaseNYes">
+			 <table border="1">
+				<caption>
+				   <content>Case markers</content>
+				</caption>
+				<headerRow>
+				   <headerCol>
+					  <langName/>
+				   </headerCol>
+				   <headerCol>Case</headerCol>
+				   <headerCol>Use</headerCol>
+				</headerRow>
+				<row show="swNPCaseNomOrSplit">
+				   <col exampleLoc="np/nominative"/>
+				   <col>
+					  <content>nominative</content>
+				   </col>
+				   <col>
+					  <content>subjects</content>
+				   </col>
+				</row>
+				<row show="swNPCaseNomOrSplit">
+				   <col exampleLoc="np/accusative"/>
+				   <col>
+					  <content>accusative</content>
+				   </col>
+				   <col>
+					  <content>direct objects and other uses</content>
+				   </col>
+				</row>
+				<row show="swNPCaseErgOrSplitNotPossErg">
+				   <col exampleLoc="np/ergative"/>
+				   <col>
+					  <content>ergative</content>
+				   </col>
+				   <col>
+					  <content>subjects of transitive verbs</content>
+				   </col>
+				</row>
+				<row show="swNPCaseErgOrSplitPossErg">
+				   <col exampleLoc="np/ergative"/>
+				   <col>
+					  <content>ergative</content>
+				   </col>
+				   <col>
+					  <content>subjects of transitive verbs and possessors</content>
+				   </col>
+				</row>
+				<row show="swNPCaseErgOrSplitNotPossAbs">
+				   <col exampleLoc="np/absolutive"/>
+				   <col>
+					  <content>absolutive</content>
+				   </col>
+				   <col>
+					  <content>subjects of intransitive verbs and objects of transitive verbs</content>
+				   </col>
+				</row>
+				<row show="swNPCaseErgOrSplitPossAbs">
+				   <col exampleLoc="np/absolutive"/>
+				   <col>
+					  <content>absolutive</content>
+				   </col>
+				   <col>
+					  <content>subjects of intransitive verbs and objects of transitive verbs and possessors</content>
+				   </col>
+				</row>
+				<row show="swNPCaseNomOrSplitOrErgPossGen">
+				   <col exampleLoc="np/genitive"/>
+				   <col>
+					  <content>genitive</content>
+				   </col>
+				   <col>
+					  <content>possessors</content>
+				   </col>
+				</row>
+				<row show="swExperiencerNo">
+				   <col exampleLoc="np/dative"/>
+				   <col>
+					  <content>dative</content>
+				   </col>
+				   <col>
+					  <content>indirect objects</content>
+				   </col>
+				</row>
+				<row show="swExperiencerNotNo">
+				   <col exampleLoc="np/dative"/>
+				   <col>
+					  <content>dative</content>
+				   </col>
+				   <col>
+					  <content>indirect objects and Experiencer subjects</content>
+				   </col>
+				</row>
+				<row>
+				   <col exampleLoc="np/ablative"/>
+				   <col>
+					  <content>ablative</content>
+				   </col>
+				   <col>
+					  <content>source or origin</content>
+				   </col>
+				</row>
+				   <row>
+					  <col exampleLoc="np/instrumental"/>
+					  <col>
+						 <content>instrumental</content>
+					  </col>
+					  <col>
+						 <content>instrument, means or agency</content>
+					  </col>
+					  </row>
+					  <row>
+						 <col exampleLoc="np/locative"/>
+						 <col>
+							<content>locative</content>
+						 </col>
+						 <col>
+							<content>location</content>
+						 </col>
+						 </row>
+						 <row>
+							<col exampleLoc="np/vocative"/>
+							<col>
+							   <content>vocative</content>
+							</col>
+							<col>
+							   <content>direct address</content>
+							</col>
+							</row>
+							<row>
+							   <col exampleLoc="np/oblique"/>
+							   <col>
+								  <content>oblique</content>
+							   </col>
+							   <col>
+								  <content>general minor grammatical relation</content>
+							   </col>
+							   </row>
+							   <row>
+								  <col exampleLoc="np/other"/>
+								  <col>
+									 <content>other</content>
+								  </col>
+								  <col>
+									 <content>any other specific markers</content>
+								  </col>
+								  </row>
+			 </table>
+		  </example>
+	   </section2>
+
 		<section2 id="sNPDegree">
-			<secTitle>Special Degree Words including "All" and "Not"</secTitle>
+			<secTitle>Special Degree Words including “All” and “Not”</secTitle>
 			<p>
 				<content>
 The outer or top level of the nominal phrase is occupied by those degree words that modify the whole phrase, such as </content>
@@ -399,16 +660,37 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<langData>not</langData>
 				<content>.  These were discussed in section </content>
 				<sectionRef sec="sQPAll"/>
-				<content>.  To review the facts for </content>
-				<langName/>
-				<content>,  </content>
-				<text show="swQPNPDegreeNo">
-					<content>these are not expressed as separate words which modify the whole nominal phrase, so they will not have a position in the phrase structure.  Instead, they all attach to another word in the nominal phrase.</content>
-				</text>
-				<content/>
-				<text show="swQPNPDegreeYes">
-					<content>these are expressed as separate words which occur </content>
-					<case element="qp" attr="npDegreePos">
+				<content>.</content>
+			</p>
+
+				  <p show="swQPNPDegreeNo">
+					 <content>To review the facts for </content>
+					 <langName/>
+					 <content>, the positive forms are not expressed as separate words which modify the whole nominal phrase.  Instead, they all attach to another word in the nominal phrase.  The positive special degree elements are </content>
+					 <case element="qp" attr="npDegreeType">
+						<caseText value="proclitic">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</caseText>
+						<caseText value="enclitic">phrasal enclitics which attach to the end of whatever word ends the nominal phrase.</caseText>
+						<caseText value="clitic">phrasal clitics which attach either to the front of whatever word begins the nominal phrase or to the end of whatever word ends the nominal phrase.</caseText>
+						<caseText value="prefix">prefixes which attach to the head noun of the nominal phrase.</caseText>
+						<caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
+						<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
+					 </case>
+					 <content/>
+				  </p>
+				  <p show="swQPNPDegreeSome">
+					 <content>To review the facts for  </content>
+					 <langName/>
+					 <content>, some of the positive forms are separate words but some of these are not expressed as separate words which modify the whole nominal phrase.  Instead, some of the positive special degree elements are </content>
+					 <case element="qp" attr="npDegreeType">
+						<caseText value="proclitic">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</caseText>
+						<caseText value="enclitic">phrasal enclitics which attach to the end of whatever word ends the nominal phrase.</caseText>
+						<caseText value="clitic">phrasal clitics which attach either to the front of whatever word begins the nominal phrase or to the end of whatever word ends the nominal phrase.</caseText>
+						<caseText value="prefix">prefixes which attach to the head noun of the nominal phrase.</caseText>
+						<caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
+						<caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
+					 </case>
+					 <content>  The positive special degree elements which are expressed as separate words occur </content>
+					 <case element="qp" attr="npDegreePos">
 						<caseText value="before">before</caseText>
 						<caseText value="after">after</caseText>
 						<caseText value="either">on either side (but not both sides) of</caseText>
@@ -417,13 +699,15 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 						<caseText value="afterOrBoth">after or on both sides of</caseText>
 						<caseText value="both">on both sides of</caseText>
 						<caseText value="unknown">_______</caseText>
-					</case>
-					<content> the rest of the nominal phrase.</content>
-				</text>
-				<content/>
-				<text show="swQPNPDegreeYesPos">
-					<content>the positive special degree elements are expressed as separate words which occur </content>
-					<case element="qp" attr="npDegreePos">
+					 </case>
+					 <content> the rest of the nominal phrase.  </content>
+				  </p>
+
+				  <p show="swQPNPDegreeYes">
+					 <content>To review the facts for  </content>
+					 <langName/>
+					 <content>, the positive special degree elements are expressed as separate words which modify the whole nominal phrase.    They  occur </content>
+					 <case element="qp" attr="npDegreePos">
 						<caseText value="before">before</caseText>
 						<caseText value="after">after</caseText>
 						<caseText value="either">on either side (but not both sides) of</caseText>
@@ -432,43 +716,119 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 						<caseText value="afterOrBoth">after or on both sides of</caseText>
 						<caseText value="both">on both sides of</caseText>
 						<caseText value="unknown">_______</caseText>
-					</case>
-					<content> the rest of the nominal phrase.  The negative special degree elements, however, are not expressed as separate words which modify the whole nominal phrase, so they will not have a place in the phrase structure.  Instead, they attach to another word in the nominal phrase.</content>
-				</text>
-				<content/>
-				<text show="swQPNPDegreeYesNeg">
-					<content>the negative special degree elements are expressed as separate words which occur </content>
-					<case element="qp" attr="npDegreePos">
-						<caseText value="before">before</caseText>
-						<caseText value="after">after</caseText>
-						<caseText value="either">on either side (but not both sides) of</caseText>
-						<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
-						<caseText value="beforeOrBoth">before or on both sides of</caseText>
-						<caseText value="afterOrBoth">after or on both sides of</caseText>
-						<caseText value="both">on both sides of</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content> the rest of the nominal phrase.  The positive special degree elements, however, are not expressed as separate words which modify the whole nominal phrase, so they will not have a place in the phrase structure.  Instead, they attach to another word in the nominal phrase.</content>
-				</text>
-				<content/>
-			</p>
-			<p show="swQPNPDegreeYesOrYesPos">
-				<content>Examples of the positive special degree words in nominal phrases include:</content>
-			</p>
-			<example show="swQPNPDegreeYesOrYesPos">
-				<interlinear exampleLoc="qp/example"/>
-			</example>
-			<p show="swQPNPDegreeYesOrYesNeg">
-				<content>Examples of the negative special degree elements in nominal phrases include:</content>
-			</p>
-			<example show="swQPNPDegreeYesOrYesNeg">
-				<interlinear exampleLoc="qp/negExample"/>
-			</example>
+					 </case>
+					 <content> the rest of the nominal phrase.  </content>
+				  </p>
+
+		   <p show="swQPNPDegreeNegNone">
+			  <content>For the negative version in </content>
+			  <langName/>
+			  <content>, there does not seem to be any way to express </content><langData>not</langData><content> as modifying a whole nominal phrase.</content>
+		   </p>
+		   <p show="swQPNPDegreeNegNo">
+			  <content>For the negative version in </content>
+			  <langName/>
+			  <content>, these are not expressed as separate words which modify the whole nominal phrase.  Instead, they all attach to another word in the nominal phrase.  The negative special degree elements are </content>
+			  <case element="qp" attr="npDegreeNegType">
+				 <caseText value="proclitic">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</caseText>
+				 <caseText value="enclitic">phrasal enclitics which attach to the end of whatever word ends the nominal phrase.</caseText>
+				 <caseText value="clitic">phrasal clitics which attach either to the front of whatever word begins the nominal phrase or to the end of whatever word ends the nominal phrase.</caseText>
+				 <caseText value="prefix">prefixes which attach to the head noun of the nominal phrase.</caseText>
+				 <caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
+				 <caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
+			  </case>
+			  <content/>
+		   </p>
+		   <p show="swQPNPDegreeNegSome">
+			  <content>For the negative version in </content>
+			  <langName/>
+			  <content>, some are separate words but some of these are not expressed as separate words which modify the whole nominal phrase.  Instead, some of the negative special degree elements are </content>
+			  <case element="qp" attr="npDegreeNegType">
+				 <caseText value="proclitic">phrasal proclitics which attach to the front of whatever word begins the nominal phrase.</caseText>
+				 <caseText value="enclitic">phrasal enclitics which attach to the end of whatever word ends the nominal phrase.</caseText>
+				 <caseText value="clitic">phrasal clitics which attach either to the front of whatever word begins the nominal phrase or to the end of whatever word ends the nominal phrase.</caseText>
+				 <caseText value="prefix">prefixes which attach to the head noun of the nominal phrase.</caseText>
+				 <caseText value="suffix">suffixes which attach to the head noun of the nominal phrase.</caseText>
+				 <caseText value="affix">either prefixes or suffixes which attach to the head noun of the nominal phrase.</caseText>
+			  </case>
+			  <content>  The negative special degree elements which are expressed as separate words occur </content>
+			  <case element="qp" attr="npDegreeNegPos">
+				 <caseText value="before">before</caseText>
+				 <caseText value="after">after</caseText>
+				 <caseText value="either">on either side (but not both sides) of</caseText>
+				 <caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+				 <caseText value="beforeOrBoth">before or on both sides of</caseText>
+				 <caseText value="afterOrBoth">after or on both sides of</caseText>
+				 <caseText value="both">on both sides of</caseText>
+				 <caseText value="unknown">_______</caseText>
+			  </case>
+			  <content> the rest of the nominal phrase.  </content>
+		   </p>
+
+		   <p show="swQPNPDegreeNegYes">
+			  <content>For the negative version in </content>
+			  <langName/>
+			  <content>, the negative special degree elements are expressed as separate words which modify the whole nominal phrase.    They  occur </content>
+			  <case element="qp" attr="npDegreeNegPos">
+				 <caseText value="before">before</caseText>
+				 <caseText value="after">after</caseText>
+				 <caseText value="either">on either side (but not both sides) of</caseText>
+				 <caseText value="eitherOrBoth">on either side or on both sides of</caseText>
+				 <caseText value="beforeOrBoth">before or on both sides of</caseText>
+				 <caseText value="afterOrBoth">after or on both sides of</caseText>
+				 <caseText value="both">on both sides of</caseText>
+				 <caseText value="unknown">_______</caseText>
+			  </case>
+			  <content> the rest of the nominal phrase.  </content>
+		   </p>
+		   <p show="swQPNPDegreeClassifierYes">
+			  <content>The following chart summarizes how all the special degree elements are expressed in </content><langName/>
+			  <content>.  The forms shown in the chart are the roots; each one may surface with the apropriate classifier attached.</content>
+		   </p>
+		   <p show="swQPNPDegreeClassifierNo">
+			  <content>The following chart summarizes how all the special degree elements are expressed in </content><langName/>
+			  <content>:</content>
+		   </p>
+		   <example>
+			  <table border="1">
+				 <headerRow>
+					<headerCol>
+					   <langName/>
+					</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="qp/all"/>
+					<col>
+					   <content>all</content>
+					</col>
+				 </row>
+				 <row>
+					<col exampleLoc="qp/almost"/>
+					<col>
+					   <content>almost</content>
+					</col>
+				 </row>
+				 <row>
+					<col exampleLoc="qp/only"/>
+					<col>
+					   <content>only or just</content>
+					</col>
+				 </row>
+				 <row show="swQPNPDegreeNegNotNone">
+					<col exampleLoc="qp/not"/>
+					<col>
+					   <content>not</content>
+					</col>
+				 </row>
+			  </table>
+		   </example>
+
 		</section2>
 		<section2 id="sNPArtDem">
 			<secTitle>Articles and Demonstratives</secTitle>
 			<p>
-				<content>In English, the articles are </content>
+			   <content>Articles and/or demonstratives normally comprise the next level moving inward towards the noun.   In English, the articles are </content>
 				<langData>a</langData>
 				<content>, </content>
 				<langData>an</langData>
@@ -502,22 +862,78 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<caseText value="both"> has both articles and demonstratives that are realized as separate words.</caseText>
 				</case>
 				<content/>
-				<text show="swNPArtAndOrDem">
-					<content> The </content>
-					<case element="np" attr="artAndDem">
-						<caseText value="article">articles</caseText>
-						<caseText value="demonstrative">demonstratives</caseText>
-						<caseText value="both">articles and demonstratives</caseText>
-					</case>
-					<content> are </content>
-					<text show="swNPArtCaseNo">
-						<content>not </content>
-					</text>
-					<content>marked for case.</content>
-				</text>
-				<content/>
 			</p>
-			<p show="swNPArtAndDemArt">
+
+		   <p show="swNPArtAndDemArt">
+			  <content>In </content><langName/><content>, </content>
+			  <case element="np" attr="artDefOnly">
+				 <caseText value="no"> both the definite and indefinite articles are overt words.</caseText>
+				 <caseText value="yes"> only the definite article is overt; indefinite nouns are unmarked.</caseText>
+			  </case>
+			  <content>  Further, there </content>
+			  <case element="np" attr="artPl">
+				 <caseText value="no">is only one set of articles which are used with both singular and plural nouns.</caseText>
+				 <caseText value="yes">are separate forms of articles for singular and plural to agree with the noun.</caseText>
+			  </case>
+		   </p>
+
+		   <p show="swNPArtAndDemArtDefOnlyNoPlNoAndClassifierNo">
+			  <content>The articles in </content><langName/><content> are:</content>
+		   </p>
+		   <p show="swNPArtAndDemArtDefOnlyNoPlNoAndClassifierYes">
+			  <content>The roots of the articles in </content><langName/><content> are shown here.  Each one may surface with the appropriate classifier attached.</content>
+		   </p>
+		   <p show="swNPArtAndDemArtDefOnlyYesPlNoAndClassifierNo">
+			  <content>The definite articles in </content><langName/><content> are:</content>
+		   </p>
+		   <p show="swNPArtAndDemArtDefOnlyYesPlNoAndClassifierYes">
+			  <content>The roots of the definite articles in </content><langName/><content> are shown here.  Each one may surface with the appropriate classifier attached.</content>
+		   </p>
+<example show="swNPArtAndDemArtPlNo">
+   <table border="1">
+	  <headerRow>
+		 <headerCol>Articles</headerCol>
+		 <headerCol>Gloss</headerCol>
+	  </headerRow>
+	  <row>
+		 <col exampleLoc="np/articleExample"/>
+		 <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+	  </row>
+   </table>
+</example>
+		   <p show="swNPArtAndDemArtDefOnlyNoPlYesAndClassifierNo">
+			  <content>The articles in </content><langName/><content> are:</content>
+		   </p>
+		   <p show="swNPArtAndDemArtDefOnlyNoPlYesAndClassifierYes">
+			  <content>The roots of the articles in </content><langName/><content> are shown here.  Each one may surface with the appropriate classifier attached.</content>
+		   </p>
+		   <p show="swNPArtAndDemArtDefOnlyYesPlYesAndClassifierNo">
+			  <content>The definite articles in </content><langName/><content> are:</content>
+		   </p>
+		   <p show="swNPArtAndDemArtDefOnlyYesPlYesAndClassifierYes">
+			  <content>The roots of the definite articles in </content><langName/><content> are shown here.  Each one may surface with the appropriate classifier attached.</content>
+		   </p>
+		   <example show="swNPArtAndDemArtPlYes">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Number</headerCol>
+					<headerCol>Articles</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col><content>singular</content></col>
+					<col exampleLoc="np/articleSgExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+				 <row>
+					<col><content>plural</content></col>
+					<col exampleLoc="np/articlePlExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swNPArtAndDemArt">
 				<content>The article occurs </content>
 				<case element="np" attr="artPos">
 					<caseText value="before">before</caseText>
@@ -541,7 +957,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content/>
 				<text show="swNPArtAndDemArtPosBothSidesRequiredMass">
-					<content>In the singular forms, an article is required </content>
+					<content> In the singular forms, an article is required </content>
 					<case element="np" attr="artBothRequiredPos">
 						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
 						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
@@ -552,7 +968,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</text>
 				<content/>
 				<text show="swNPArtAndDemArtPosBothSidesRequiredYes">
-					<content>An article is required to appear </content>
+					<content> An article is required to appear </content>
 					<case element="np" attr="artBothRequiredPos">
 						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
 						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
@@ -562,7 +978,55 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<content/>
 				</text>
 				<content/>
-			</p>
+		   </p>
+
+		   <p show="swNPArtAndDemDem">
+			  <content>In </content><langName/><content>, there </content>
+			  <case element="np" attr="demPl">
+				 <caseText value="no">is only one set of demonstratives which are used with both singular and plural nouns.</caseText>
+				 <caseText value="yes">are separate forms of demonstratives for singular and plural to agree with the noun.</caseText>
+			  </case>
+		   </p>
+
+		   <p show="swNPArtAndDemDemAndClassifierNo">
+			  <content>The demonstratives in </content><langName/><content> are:</content>
+		   </p>
+		   <p show="swNPArtAndDemDemAndClassifierYes">
+			  <content>The roots of the demonstratives in </content><langName/><content> are shown here.  Each one may surface with the appropriate classifier attached.</content>
+		   </p>
+		   <example show="swNPArtAndDemDemPlNo">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Demonstratives</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="np/demonstrativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <example show="swNPArtAndDemDemPlYes">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Number</headerCol>
+					<headerCol>Demonstratives</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col><content>singular</content></col>
+					<col exampleLoc="np/demonstrativeSgExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+				 <row>
+					<col><content>plural</content></col>
+					<col exampleLoc="np/demonstrativePlExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
 			<p show="swNPArtAndDemDem">
 				<content>The demonstrative occurs </content>
 				<case element="np" attr="demPos">
@@ -587,7 +1051,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content/>
 				<text show="swNPArtAndDemDemPosBothSidesRequiredMass">
-					<content>In the singular forms, a demonstrative is required </content>
+					<content> In the singular forms, a demonstrative is required </content>
 					<case element="np" attr="demBothRequiredPos">
 						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
 						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
@@ -598,7 +1062,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</text>
 				<content/>
 				<text show="swNPArtAndDemDemPosBothSidesRequiredYes">
-					<content>A demonstrative is required to appear </content>
+					<content> A demonstrative is required to appear </content>
 					<case element="np" attr="demBothRequiredPos">
 						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
 						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
@@ -609,6 +1073,124 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</text>
 				<content/>
 			</p>
+
+		   <p show="swNPArtAndDemBoth">
+			  <content>In </content><langName/><content>, </content>
+			  <case element="np" attr="artDefOnly">
+				 <caseText value="no"> both the definite and indefinite articles are overt words.</caseText>
+				 <caseText value="yes"> only the definite article is overt; indefinite nouns are unmarked.</caseText>
+			  </case>
+			  <content>  Further, there </content>
+			  <case element="np" attr="artPl">
+				 <caseText value="no">is only one set of articles which are used with both singular and plural nouns.</caseText>
+				 <caseText value="yes">are separate forms of articles for singular and plural to agree with the noun.</caseText>
+			  </case>
+		   </p>
+
+		   <p show="swNPArtAndDemBothArtDefOnlyNoPlNoAndClassifierNo">
+			  <content>The articles in </content><langName/><content> are:</content>
+		   </p>
+		   <p show="swNPArtAndDemBothArtDefOnlyNoPlNoAndClassifierYes">
+			  <content>The roots of the articles in </content><langName/><content> are shown here.  Each one may surface with the appropriate classifier attached.</content>
+		   </p>
+		   <p show="swNPArtAndDemBothArtDefOnlyYesPlNoAndClassifierNo">
+			  <content>The definite articles in </content><langName/><content> are:</content>
+		   </p>
+		   <p show="swNPArtAndDemBothArtDefOnlyYesPlNoAndClassifierYes">
+			  <content>The roots of the definite articles in </content><langName/><content> are shown here.  Each one may surface with the appropriate classifier attached.</content>
+		   </p>
+		   <example show="swNPArtAndDemBothArtPlNo">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Articles</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="np/articleExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+		   <p show="swNPArtAndDemBothArtDefOnlyNoPlYesAndClassifierNo">
+			  <content>The articles in </content><langName/><content> are:</content>
+		   </p>
+		   <p show="swNPArtAndDemBothArtDefOnlyNoPlYesAndClassifierYes">
+			  <content>The roots of the articles in </content><langName/><content> are shown here.  Each one may surface with the appropriate classifier attached.</content>
+		   </p>
+		   <p show="swNPArtAndDemBothArtDefOnlyYesPlYesAndClassifierNo">
+			  <content>The definite articles in </content><langName/><content> are:</content>
+		   </p>
+		   <p show="swNPArtAndDemBothArtDefOnlyYesPlYesAndClassifierYes">
+			  <content>The roots of the definite articles in </content><langName/><content> are shown here.  Each one may surface with the appropriate classifier attached.</content>
+		   </p>
+		   <example show="swNPArtAndDemBothArtPlYes">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Number</headerCol>
+					<headerCol>Articles</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col><content>singular</content></col>
+					<col exampleLoc="np/articleSgExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+				 <row>
+					<col><content>plural</content></col>
+					<col exampleLoc="np/articlePlExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <p show="swNPArtAndDemBoth">
+			  <content>In </content><langName/><content>, there </content>
+			  <case element="np" attr="demPl">
+				 <caseText value="no">is only one set of demonstratives which are used with both singular and plural nouns.</caseText>
+				 <caseText value="yes">are separate forms of demonstratives for singular and plural to agree with the noun.</caseText>
+			  </case>
+		   </p>
+
+		   <p show="swNPArtAndDemBothAndClassifierNo">
+			  <content>The demonstratives in </content><langName/><content> are:</content>
+		   </p>
+		   <p show="swNPArtAndDemBothAndClassifierYes">
+			  <content>The roots of the demonstratives in </content><langName/><content> are shown here.  Each one may surface with the appropriate classifier attached.</content>
+		   </p>
+		   <example show="swNPArtAndDemBothDemPlNo">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Demonstratives</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="np/demonstrativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+		   <example show="swNPArtAndDemBothDemPlYes">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Number</headerCol>
+					<headerCol>Demonstratives</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col><content>singular</content></col>
+					<col exampleLoc="np/demonstrativeSgExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+				 <row>
+					<col><content>plural</content></col>
+					<col exampleLoc="np/demonstrativePlExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+
+
 			<p show="swNPArtAndDemBothCooccurNo">
 				<content>The articles and demonstratives both appear in the same position, so they do not co-occur in the same nominal phrase.  Articles or demonstratives appear </content>
 				<case element="np" attr="demOrArtPos">
@@ -633,7 +1215,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurNoRequiredMass">
-					<content>In the singular forms, an article or a demonstrative is required </content>
+					<content> In the singular forms, an article or a demonstrative is required </content>
 					<case element="np" attr="demOrArtBothRequiredPos">
 						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
 						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
@@ -644,7 +1226,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</text>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurNoRequiredYes">
-					<content>An article or a demonstrative is required to appear </content>
+					<content> An article or a demonstrative is required to appear </content>
 					<case element="np" attr="demOrArtBothRequiredPos">
 						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
 						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
@@ -655,13 +1237,63 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</text>
 				<content/>
 			</p>
+
+
 			<p show="swNPArtAndDemBothCooccurYes">
 				<content>The articles and demonstratives do not appear in the same position with respect to the noun, </content>
 				<case element="np" attr="artBothCooccur">
 					<caseText value="different">but both may not </caseText>
 					<caseText value="yes">and both may </caseText>
 				</case>
-				<content>co-occur in the same nominal phrase.  The demonstrative occurs </content>
+				<content>co-occur in the same nominal phrase.</content></p>
+
+		   <p show="swNPArtAndDemBothCooccurYes"><content>  The article occurs </content>
+		   <case element="np" attr="demAndArtArtPos">
+			  <caseText value="before">before</caseText>
+			  <caseText value="after">after</caseText>
+			  <caseText value="either">on either side of</caseText>
+			  <caseText value="unknown">_______</caseText>
+		   </case>
+		   <content> the noun.  </content>
+		   <text show="swNPArtAndDemBothCooccurYesArtPosEitherUnrestricted">
+			  <content>All of the articles may appear on either side of the noun.</content>
+		   </text>
+		   <content/>
+		   <text show="swNPArtAndDemBothCooccurYesArtPosEitherRestricted">
+			  <content>There are restrictions as to which of the articles may appear on either side of the noun.</content>
+		   </text>
+		   <content>  The presence of an article is </content>
+		   <case element="np" attr="demAndArtArtRequired">
+			  <caseText value="no">always optional.</caseText>
+			  <caseText value="mass">optional with plural or mass nouns, but is required with singular nouns.</caseText>
+			  <caseText value="yes">always required.</caseText>
+		   </case>
+		   <content/>
+		   <text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMass">
+			  <content> In the singular forms, an article is required </content>
+			  <case element="np" attr="demAndArtArtBothRequiredPos">
+				 <caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+				 <caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+				 <caseText value="both">to appear both before and after the noun.</caseText>
+				 <caseText value="unknown">_______</caseText>
+			  </case>
+			  <content/>
+		   </text>
+		   <content/>
+		   <text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredYes">
+			  <content> An article is required to appear </content>
+			  <case element="np" attr="demAndArtArtBothRequiredPos">
+				 <caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
+				 <caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
+				 <caseText value="both">both before and after the noun.</caseText>
+				 <caseText value="unknown">_______</caseText>
+			  </case>
+			  <content/>
+		   </text>
+		   <content/>
+		   </p>
+
+		   <p show="swNPArtAndDemBothCooccurYes"><content>The demonstrative occurs </content>
 				<case element="np" attr="demAndArtDemPos">
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
@@ -684,8 +1316,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMass">
-					<content>In the singular forms, a demonstrative is required </content>
-					<case element="np" attr="demAndArtDemRequiredPos">
+					<content> In the singular forms, a demonstrative is required </content>
+					<case element="np" attr="demAndArtDemBothRequiredPos">
 						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
 						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
 						<caseText value="both">to appear both before and after the noun.</caseText>
@@ -695,7 +1327,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</text>
 				<content/>
 				<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredYes">
-					<content>A demonstrative is required to appear </content>
+					<content> A demonstrative is required to appear </content>
 					<case element="np" attr="demAndArtDemBothRequiredPos">
 						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
 						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
@@ -703,112 +1335,53 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 						<caseText value="unknown">_______</caseText>
 					</case>
 					<content/>
-				</text>
-				<content>  The article occurs </content>
-				<case element="np" attr="demAndArtArtPos">
-					<caseText value="before">before</caseText>
-					<caseText value="after">after</caseText>
-					<caseText value="either">on either side of</caseText>
-					<caseText value="unknown">_______</caseText>
-				</case>
-				<content> the noun.  </content>
-				<text show="swNPArtAndDemBothCooccurYesArtPosEitherUnrestricted">
-					<content>All of the articles may appear on either side of the noun.</content>
-				</text>
-				<content/>
-				<text show="swNPArtAndDemBothCooccurYesArtPosEitherRestricted">
-					<content>There are restrictions as to which of the articles may appear on either side of the noun.</content>
-				</text>
-				<content>  The presence of an article is </content>
-				<case element="np" attr="demAndArtArtRequired">
-					<caseText value="no">always optional.</caseText>
-					<caseText value="mass">optional with plural or mass nouns, but is required with singular nouns.</caseText>
-					<caseText value="yes">always required.</caseText>
-				</case>
-				<content/>
-				<text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMass">
-					<content>In the singular forms, an article is required </content>
-					<case element="np" attr="demAndArtArtRequiredPos">
-						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">to appear both before and after the noun.</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
-				<text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredYes">
-					<content>An article is required to appear </content>
-					<case element="np" attr="demAndArtArtBothRequiredPos">
-						<caseText value="before">before the noun and one may also optionally appear after the noun.</caseText>
-						<caseText value="after">after the noun and one may also optionally appear before the noun.</caseText>
-						<caseText value="both">both before and after the noun.</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
-			</p>
-			<p show="swNPArt">
-				<content>Examples of articles in </content>
-				<langName/>
-				<content> include:</content>
-			</p>
-			<example show="swNPArt">
-				<table border="1">
-					<headerRow>
-						<headerCol>Articles</headerCol>
-						<headerCol>Gloss</headerCol>
-					</headerRow>
-					<row>
-						<col exampleLoc="np/articleExample"/>
-						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
-					</row>
-				</table>
-			</example>
-			<p show="swNPDem">
-				<content>Examples of demonstratives in </content>
-				<langName/>
-				<content> include:</content>
-			</p>
-			<example show="swNPDem">
-				<table border="1">
-					<headerRow>
-						<headerCol>Demonstratives</headerCol>
-						<headerCol>Gloss</headerCol>
-					</headerRow>
-					<row>
-						<col exampleLoc="np/demonstrativeExample"/>
-						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
-					</row>
-				</table>
-			</example>
+				</text></p>
+
+
+		   <p show="swNPArtAndOrDem">
+			  <content> The </content>
+			  <case element="np" attr="artAndDem">
+				 <caseText value="article">articles</caseText>
+				 <caseText value="demonstrative">demonstratives</caseText>
+				 <caseText value="both">articles and demonstratives</caseText>
+			  </case>
+			  <content> are </content>
+			  <text show="swNPArtCaseNo">
+				 <content>not </content>
+			  </text>
+			  <content>marked for case.</content>
+		   </p>
+
+
 			<p show="swNPArtAndOrDem">
-				<content>Examples of nominal phrases including articles and/or demonstratives as allowed in </content>
+				<content>Examples of nominal phrases including </content><case element="np" attr="artAndDem">
+				   <caseText value="article">articles</caseText>
+				   <caseText value="demonstrative">demonstratives</caseText>
+				   <caseText value="both">articles and/or demonstratives</caseText>
+				</case><content> as allowed in </content>
 				<langName/>
 				<content> include:</content>
 			</p>
 			<example show="swNPArtAndOrDem">
 				<interlinear exampleLoc="np/example"/>
 			</example>
+
 		</section2>
 		<section2 id="sNPPoss">
 			<secTitle>Possessors</secTitle>
 			<p>
-				<content>Possession can normally be expressed by a possessive pronoun (as seen in section </content>
-				<sectionRef sec="sPronPoss"/>
-				<content>), by a simple noun, or by a full nominal phrase.
-					However, Spanish only allows possessive pronouns in the possessor position before the noun, with all noun and full nominal phrase possessors expressed in a prepositional phrase with </content><langData>de</langData><content> after the noun.</content></p>
-			<p><content>Within the languages which express possessors by nouns or full nominal phrases as well as by possessive pronouns, many also add some kind of marking, such as the </content>
-				<langData>'s</langData>
+			   <content>In many languages, possessors comprise the next level moving inward towards the noun.   Possession can normally be expressed by a pronoun, by a simple noun, or by a full nominal phrase.
+					However, Spanish only allows pronouns in the possessor position before the noun, with all noun and full nominal phrase possessors expressed in a prepositional phrase with </content><langData>de</langData><content> after the noun.</content></p>
+			<p><content>Within the languages which express possessors by nouns or full nominal phrases as well as by pronouns, many also add some kind of marking, such as the </content>
+				<langData>’s</langData>
 				<content> in English, as an indication of possession.  These markings are either affixes (or clitics) on the head noun or phrase-level clitics which attach to one end of the whole phrase.  The English marking is this second type, because alongside phrases where the </content>
-				<langData>'s</langData>
+				<langData>’s</langData>
 				<content> appears to attach to the head noun, as in </content>
-				<langData>the boy's mother</langData>
+				<langData>the boy’s mother</langData>
 				<content>, there are phrases which clearly show that the clitic attaches to the end of the whole nominal phrase, such as </content>
-				<langData>the boy that I just talked to's mother</langData>
+				<langData>the boy that I just talked to’s mother</langData>
 				<content> or </content>
-				<langData>the girl in green's wonderful speech</langData>
+				<langData>the girl in green’s wonderful speech</langData>
 				<content>.  These examples show that possessors can include </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">prepositional</caseText>
@@ -817,7 +1390,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					<caseText value="unknown">prepositional and/or postpositional</caseText>
 				</case>
 				<content> phrases and relative clauses.  Possessors can also be embedded in one another, as in </content>
-				<langData>the boy's sister's dog</langData>
+				<langData>the boy’s sister’s dog</langData>
 				<content>.  This is allowed in Spanish within the prepositional phrase after the noun.</content>
 			</p>
 			<p>
@@ -847,7 +1420,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<case element="np" attr="possMarked">
 					<caseText value="no"> does not have any special marking to distinguish possessors from any other nominal phrase.</caseText>
 					<caseText value="yesAffix"> marks the head noun within the possessor with an affix to distinguish possessors from any other nominal phrase.</caseText>
-					<caseText value="yesClitic"> marks the whole possessive phrase with a phrasal clitic to distinguish possessors from any other nominal phrase.</caseText>
+					<caseText value="yesClitic"> marks the whole phrase with a phrasal clitic to distinguish possessors from any other nominal phrase.</caseText>
 				</case>
 				<content/>
 				<text show="swNPPossMarkedYesCliticWordNoSuffix">
@@ -876,7 +1449,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<content/>
 			</p>
 			<p>
-				<content>The possessor (especially the possessive pronoun form, if  </content><langName/><content> is like Spanish) occurs </content>
+				<content>The possessor (especially the pronoun form, if  </content><langName/><content> is like Spanish) occurs </content>
 				<case element="np" attr="possNounPos">
 					<caseText value="before">before</caseText>
 					<caseText value="after">after</caseText>
@@ -885,25 +1458,49 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content> the noun being possessed.</content>
 			</p>
-			<section3 id="sNPPossCooccur" show="swNPArtAndOrDem">
+
+		   <section3 id="sNPPossCooccur" show="swNPArtAndOrDem">
 				<secTitle>Possessors and Articles Or Demonstratives Occuring Together</secTitle>
 				<p>
 					<content>In English, possessors and articles or demonstratives do not co-occur in the same nominal phrase, unless the possessor is expressed in a prepositional phrase.  For example, </content>
-					<langData>those [the boy's] books</langData>
+					<langData>those [the boy’s] books</langData>
 					<content> is ungrammatical; instead one would use </content>
 					<langData>those books [of his]</langData>
 					<content> to express the same thought.  Some other languages allow both possessors and articles or demonstratives to occur in the same phrase, so the first example above would be grammatical.</content>
 				</p>
-				<p>
-					<content>In </content>
-					<langName/>
-					<content>, nominal possessors </content>
-					<case element="np" attr="possCooccur">
-						<caseText value="yes">may</caseText>
-						<caseText value="no">may not</caseText>
-					</case>
-					<content> occur in the same phrase as articles or demonstratives.</content>
-				</p>
+			   <p>
+				  <content>In </content>
+				  <langName/>
+				  <content>, </content><case element="np" attr="possCooccur">
+					 <caseText value="some">some </caseText>
+				  </case><content>nominal possessors </content>
+				  <case element="np" attr="possCooccur">
+					 <caseText value="yes">may</caseText>
+					 <caseText value="some">may</caseText>
+					 <caseText value="no">may not</caseText>
+				  </case>
+				  <content> occur in the same phrase as </content>
+				  <case element="np" attr="artAndDem">
+					 <caseText value="article">articles</caseText>
+					 <caseText value="demonstrative">demonstratives</caseText>
+					 <caseText value="both">articles and/or demonstratives</caseText>
+				  </case>
+				  <content> in the normal possessor position</content>
+				  <case element="np" attr="possCooccur">
+					 <caseText value="yes">.</caseText>
+					 <caseText value="some"> but some may not.  In that case, </caseText>
+					 <caseText value="no">.  Instead, </caseText>
+				  </case>
+				  <text show="swNPPossCooccurNoOrSome"><content>the possessor is expressed in a </content>
+					 <case element="pp" attr="pPos">
+						<caseText value="before">prepositional</caseText>
+						<caseText value="after">postpositional</caseText>
+						<caseText value="both">prepositional or postpositional</caseText>
+						<caseText value="unknown">prepositional or postpositional</caseText>
+					 </case>
+					 <content> phrase.</content>
+				  </text>
+			   </p>
 			</section3>
 			<section3 id="sNPPossCase">
 				<secTitle>Possessor Case</secTitle>
@@ -949,6 +1546,81 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					</case>
 					<content/>
 				</p>
+
+				  <p show="swNPPossNounCaseChangeYes">
+					 <content>Languages like </content>
+					 <langName/>
+					 <content> which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.</content>
+				  </p>
+			   <p show="swNPPossNounCaseChangeYes">
+					 <content>In </content>
+					 <langName/>
+					 <content>, the case of the head noun </content>
+					 <case element="np" attr="adjpCaseChange">
+						<caseText value="no">only changes when a possessor is present, though in that situation an intervening adjective may/must also carry that case.</caseText>
+						<caseText value="yes">changes to match the normal case of a possessor even if just an adjectival modifier is present.</caseText>
+					 </case>
+					 <content/>
+				  </p>
+				  <p show="swNPAdjPCaseChangeYes">
+					 <content>Further, some languages of this latter type have an overt affix which marks the genitive case (or the normal case of possessors) on the head noun to indicate that there must be either an adjective or a possessor in that nominal phrase.  In this situation, the adjective and/or possessor will also be in genitive case (or the normal case of possessors), though the case marking will not be overt on the highest modifier in the nominal phrase.</content>
+				  </p>
+				  <p show="swNPAdjPCaseChangeYes">
+					 <content>In </content>
+					 <langName/>
+					 <content>, the case marking </content>
+					 <case element="np" attr="adjpCaseAffix">
+						<caseText value="no">is not</caseText>
+						<caseText value="yesPrefix">is</caseText>
+						<caseText value="yesSuffix">is</caseText>
+					 </case>
+					 <content> handled in this distinctive way.  </content>
+					 <text show="swNPAdjPCaseAffixNotNo">
+						<content>When the overt </content>
+						<text show="swNPPossCaseGen">
+						   <content>genitive </content>
+						</text>
+						<text show="swNPCaseSplitNotGen">
+						   <content>or </content>
+						</text>
+						<content/>
+						<text show="swNPPossCaseErg">
+						   <content>ergative </content>
+						</text>
+						<content/>
+						<text show="swNPPossCaseAbs">
+						   <content>absolutive </content>
+						</text>
+						<content/>
+						<case element="np" attr="adjpCaseAffix">
+						   <caseText value="yesSuffix">suffix</caseText>
+						   <caseText value="yesPrefix">prefix</caseText>
+						</case>
+						<content> is present on the head noun, it indicates that an adjectival modifier and/or a possessor must be present in the phrase.  If the adjective is marked with this </content>
+						<text show="swNPPossCaseGen">
+						   <content>genitive </content>
+						</text>
+						<text show="swNPCaseSplitNotGen">
+						   <content>or </content>
+						</text>
+						<content/>
+						<text show="swNPPossCaseErg">
+						   <content>ergative </content>
+						</text>
+						<content/>
+						<text show="swNPPossCaseAbs">
+						   <content>absolutive </content>
+						</text>
+						<content/>
+						<case element="np" attr="adjpCaseAffix">
+						   <caseText value="yesSuffix">suffix,</caseText>
+						   <caseText value="yesPrefix">prefix,</caseText>
+						</case>
+						<content> then another adjective and/or a possessor must also be present.</content>
+					 </text>
+					 <content/>
+				  </p>
+
 			</section3>
 			<section3 id="sNPPossAgreement">
 				<secTitle>Possessor Agreement</secTitle>
@@ -999,7 +1671,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 					</case>
 					<content> marked with an affix which either agrees with the possessor or expresses the possessor by itself.  </content>
 					<text show="swNPPossAgrYes">
-						<content>These affixes mark the following features of the possessor:</content>
+					   <content>See the dependent personal pronouns used for possessors, given in section </content><sectionRef sec="sPronPersonal"/><content>. These affixes mark the following features of the possessor:</content>
 					</text>
 					<content/>
 				</p>
@@ -1191,7 +1863,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<example>
 				<interlinear exampleLoc="np/qpExample"/>
 			</example>
-			<p show="swNPQPAgreeYes">
+		   <p show="swNPQPAgreeYesandNotYesClassandClassifiersNo">
 				<content>Like other modifiers within the nominal phrase, quantifier phrases in </content>
 				<langName/>
 				<content> show agreement with the head noun in </content>
@@ -1245,7 +1917,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<example>
 				<interlinear exampleLoc="np/adjpExample"/>
 			</example>
-			<p show="swNPAdjPAgreeYes">
+			<p show="swNPAdjPAgreeYesandNotYesClassandClassifiersNo">
 				<content>Like other modifiers within the nominal phrase, adjective phrases in </content>
 				<langName/>
 				<content> show agreement with the head noun in </content>
@@ -1256,7 +1928,10 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				</case>
 				<content/>
 			</p>
-			<p>
+		</section2>
+	   <section2 id="sNPParticiples">
+		  <secTitle>Participles and Gerunds</secTitle>
+	   <p>
 				<content>Participles or participle phrases may also act as adjectives in modifying a noun.  Some English examples with the participle or participle phrase bracketed  include: </content>
 				<langData>the bright, [shining] sun, my [crying] child</langData>
 				<content> and </content>
@@ -1270,82 +1945,31 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 			<example>
 				<interlinear exampleLoc="np/partExample"/>
 			</example>
-			<section3 id="sNPAdjPCaseChange" show="swNPPossNounCaseChangeYes">
-				<secTitle>Case Change with Adjective Phrase Modifiers</secTitle>
-				<p>
-					<content>Languages like </content>
-					<langName/>
-					<content> which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.</content>
-				</p>
-				<p>
-					<content>In </content>
-					<langName/>
-					<content>, the case of the head noun </content>
-					<case element="np" attr="adjpCaseChange">
-						<caseText value="no">only changes when a possessor is present, though in that situation an intervening adjective may/must also carry that case.</caseText>
-						<caseText value="yes">changes to match the normal case of a possessor even if just an adjectival modifier is present.</caseText>
-					</case>
-					<content/>
-				</p>
-				<p show="swNPAdjPCaseChangeYes">
-					<content>Further, some languages of this latter type have an overt affix which marks the genitive case (or the normal case of possessors) on the head noun to indicate that there must be either an adjective or a possessor in that nominal phrase.  In this situation, the adjective and/or possessor will also be in genitive case (or the normal case of possessors), though the case marking will not be overt on the highest modifier in the nominal phrase.</content>
-				</p>
-				<p show="swNPAdjPCaseChangeYes">
-					<content>In </content>
-					<langName/>
-					<content>, the case marking </content>
-					<case element="np" attr="adjpCaseAffix">
-						<caseText value="no">is not</caseText>
-						<caseText value="yesPrefix">is</caseText>
-						<caseText value="yesSuffix">is</caseText>
-					</case>
-					<content> handled in this distinctive way.  </content>
-					<text show="swNPAdjPCaseAffixNotNo">
-						<content>When the overt </content>
-						<text show="swNPPossCaseGen">
-							<content>genitive </content>
-						</text>
-						<text show="swNPCaseSplitNotGen">
-							<content>or </content>
-						</text>
-						<content/>
-						<text show="swNPPossCaseErg">
-							<content>ergative </content>
-						</text>
-						<content/>
-						<text show="swNPPossCaseAbs">
-							<content>absolutive </content>
-						</text>
-						<content/>
-						<case element="np" attr="adjpCaseAffix">
-							<caseText value="yesSuffix">suffix</caseText>
-							<caseText value="yesPrefix">prefix</caseText>
-						</case>
-						<content> is present on the head noun, it indicates that an adjectival modifier and/or a possessor must be present in the phrase.  If the adjective is marked with this </content>
-						<text show="swNPPossCaseGen">
-							<content>genitive </content>
-						</text>
-						<text show="swNPCaseSplitNotGen">
-							<content>or </content>
-						</text>
-						<content/>
-						<text show="swNPPossCaseErg">
-							<content>ergative </content>
-						</text>
-						<content/>
-						<text show="swNPPossCaseAbs">
-							<content>absolutive </content>
-						</text>
-						<content/>
-						<case element="np" attr="adjpCaseAffix">
-							<caseText value="yesSuffix">suffix,</caseText>
-							<caseText value="yesPrefix">prefix,</caseText>
-						</case>
-						<content> then another adjective and/or a possessor must also be present.</content>
-					</text>
-					<content/>
-				</p>
-			</section3>
+		  <p>
+			 <content>Another case which may look like a noun and a complement may actually be a gerund or gerund phrase.  This whole phrase occupies a normal argument position, such as subject, object, indirect object or the object of a preposition.  Some English examples in full sentences with the gerund phrase bracketed include: </content>
+			 <langData>[Studying participles] is challenging, He likes [reading Latin poetry]</langData>
+			 <content> and </content>
+			 <langData>The receiver showed his worth by [making the catch].</langData>
+			 <content>  Such phrases may be possessed or be modified as well, and sometimes only the gerund stands alone as the head of a nominal phrase, as in </content>
+			 <langData>the badly wounded, the dying</langData>
+			 <content> and </content>
+			 <langData>your following.</langData>
+			 <content> Therefore, we will allow gerund phrases to occupy the head of the nominal phrase.</content>
+		  </p>
+		  <p>
+			 <content>Examples from </content>
+			 <langName/>
+			 <content> of gerunds or gerund phrases that can take the place of a noun in a nominal phrase include:</content>
+		  </p>
+		  <example>
+			 <interlinear exampleLoc="np/partHeadExample"/>
+		  </example>
+		  <p>
+			 <content>These gerund phrases can be used in full sentences as shown here:</content>
+		  </p>
+		  <example>
+			 <interlinear exampleLoc="np/partHeadSentExample"/>
+		  </example>
 		</section2>
 		<section2 id="sNPCompounds">
 			<secTitle>Noun Compounds</secTitle>
@@ -1396,7 +2020,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<content>.  In addition, genitive pre/post-positional phrases may take the place of the possessor, such as </content>
 				<langData>those dogs [of his]</langData>
 				<content> and </content>
-				<langData>the tablecloth [of my mother's]</langData>
+				<langData>the tablecloth [of my mother’s]</langData>
 				<content>.    In English, the PP always comes after the noun.</content>
 			</p>
 			<p>
@@ -1423,31 +2047,7 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 				<langName/>
 				<content>.</content>
 			</p>
-			<p>
-				<content>Another case which may look like a noun and a complement may actually be a participle phrase (also called a gerund).  This whole phrase occupies a normal argument position, such as subject, object, indirect object or the object of a preposition.  Some English examples in full sentences with the participle phrase bracketed include: </content>
-				<langData>[Studying participles] is challenging, He likes [reading Latin poetry]</langData>
-				<content> and </content>
-				<langData>The receiver showed his worth by [making the catch].</langData>
-				<content>  Such phrases may be possessed or be modified as well, and sometimes only the participle stands alone as the head of a nominal phrase, as in </content>
-				<langData>the badly wounded, the dying</langData>
-				<content> and </content>
-				<langData>your following.</langData>
-				<content> Therefore, our grammar rules will allow participle phrases to occupy the head position in the nominal phrase.</content>
-			</p>
-			<p>
-				<content>Examples from </content>
-				<langName/>
-				<content> of participles or participle phrases that can take the place of a noun in a nominal phrase include:</content>
-			</p>
-			<example>
-				<interlinear exampleLoc="np/partHeadExample"/>
-			</example>
-			<p>
-				<content>These participle phrases can be used in full sentences as shown here:</content>
-			</p>
-			<example>
-				<interlinear exampleLoc="np/partHeadSentExample"/>
-			</example>
+
 		</section2>
 	</section1>
 	<showWhen id="swNPAgreeYesNumber">
@@ -1472,30 +2072,348 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<or/>
 		<whenValue element="np" attr="artAndDem" value="both"/>
 	</showWhen>
-	<showWhen id="swPossDemAndArtCooccurYes">
+
+
+
+
+
+
+	  <showWhen id="swNPArtAndDemArtDefOnlyNoPlNoAndClassifierNo">
+		 <whenValue element="np" attr="artAndDem" value="article"/>
+		 <and/>
+		 <whenValue element="np" attr="artDefOnly" value="no"/>
+		 <and/>
+		 <whenValue element="np" attr="artPl" value="no"/>
+		 <and/>
+		 <whenValue element="np" attr="artDemClassifier" value="no"/>
+		 <or/>
+		 <whenValue element="np" attr="artAndDem" value="article"/>
+		 <and/>
+		 <whenValue element="np" attr="artDefOnly" value="no"/>
+		 <and/>
+		 <whenValue element="np" attr="artPl" value="no"/>
+		 <and/>
+		 <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+	  </showWhen>
+	  <showWhen id="swNPArtAndDemArtDefOnlyNoPlNoAndClassifierYes">
+		 <whenValue element="np" attr="artAndDem" value="article"/>
+		 <and/>
+		 <whenValue element="np" attr="artDefOnly" value="no"/>
+		 <and/>
+		 <whenValue element="np" attr="artPl" value="no"/>
+		 <and/>
+		 <whenValue element="np" attr="artDemClassifier" value="yes"/>
+		 <and/>
+		 <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  </showWhen>
+   <showWhen id="swNPArtAndDemArtDefOnlyYesPlNoAndClassifierNo">
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="no"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="no"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArtDefOnlyYesPlNoAndClassifierYes">
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArtPlNo">
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="no"/>
+   </showWhen>
+
+   <showWhen id="swNPArtAndDemArtDefOnlyNoPlYesAndClassifierNo">
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="no"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArtDefOnlyNoPlYesAndClassifierYes">
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArtDefOnlyYesPlYesAndClassifierNo">
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="no"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArtDefOnlyYesPlYesAndClassifierYes">
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArtPlYes">
+	  <whenValue element="np" attr="artAndDem" value="article"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+   </showWhen>
+
+   <showWhen id="swNPArtAndDemDemAndClassifierNo">
+	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="no"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDemAndClassifierYes">
+	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDemPlNo">
+	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+	  <and/>
+	  <whenValue element="np" attr="demPl" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDemPlYes">
+	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+	  <and/>
+	  <whenValue element="np" attr="demPl" value="yes"/>
+   </showWhen>
+
+   <showWhen id="swNPArtAndDemBothArtDefOnlyNoPlNoAndClassifierNo">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="no"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="no"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+   </showWhen>
+
+   <showWhen id="swNPArtAndDemBothArtDefOnlyNoPlNoAndClassifierYes">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothArtDefOnlyYesPlNoAndClassifierNo">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="no"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="no"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothArtDefOnlyYesPlNoAndClassifierYes">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothArtPlNo">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="no"/>
+   </showWhen>
+
+   <showWhen id="swNPArtAndDemBothArtDefOnlyNoPlYesAndClassifierNo">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="no"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothArtDefOnlyNoPlYesAndClassifierYes">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="no"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothArtDefOnlyYesPlYesAndClassifierNo">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="no"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothArtDefOnlyYesPlYesAndClassifierYes">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDefOnly" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothArtPlYes">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artPl" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBoth">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothAndClassifierNo">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="no"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothAndClassifierYes">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="artDemClassifier" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothDemPlNo">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="demPl" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothDemPlYes">
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+	  <and/>
+	  <whenValue element="np" attr="demPl" value="yes"/>
+   </showWhen>
+
+
+   <showWhen id="swNPPossCooccurNoOrSome">
+	  <whenValue element="np" attr="possCooccur" value="no"/>
+	  <or/>
+	  <whenValue element="np" attr="possCooccur" value="some"/>
+   </showWhen>
+	<showWhen id="swPossDemAndArtCooccurYesOrSome">
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
 		<and/>
-		<whenValue element="np" attr="possCooccur" value="yes"/>
+		<whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
-		<whenValue element="np" attr="possCooccur" value="yes"/>
+		<whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
 		<and/>
-		<whenValue element="np" attr="possCooccur" value="yes"/>
+		<whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
 		<or/>
 		<whenValue element="np" attr="artAndDem" value="no"/>
 	</showWhen>
-	<showWhen id="swPossDemOrArtCooccurYes">
+	<showWhen id="swPossDemOrArtCooccurYesOrSome">
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
 		<and/>
-		<whenValue element="np" attr="possCooccur" value="yes"/>
+		<whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
 	</showWhen>
+
 	<showWhen id="swPossDemAndOrArtCooccurNoBefore">
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
@@ -1645,7 +2563,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<whenValue element="np" attr="demPos" value="either" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before" negateValue="no"/>
-	</showWhen>	<showWhen id="swPossArtOnlyCooccurNo">
+	</showWhen>
+   <showWhen id="swPossArtOnlyCooccurNo">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -1667,7 +2586,8 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<whenValue element="np" attr="artPos" value="either" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after" negateValue="no"/>
-	</showWhen>	<showWhen id="swPossArtOnlyCooccurNoAfter">
+	</showWhen>
+   <showWhen id="swPossArtOnlyCooccurNoAfter">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -1685,33 +2605,35 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="before" negateValue="no"/>
 	</showWhen>
-	<showWhen id="swQPNPDegreeYesBefore">
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<and/>
-		<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
-		<and/>
-		<whenValue element="qp" attr="npDegreePos" value="after" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeYesAfter">
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-		<and/>
-		<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
-		<and/>
-		<whenValue element="qp" attr="npDegreePos" value="before" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swNPDemOrArtBefore">
+
+   <showWhen id="swQPNPDegreeNo">
+	  <whenValue element="qp" attr="npDegree" value="no"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeSome">
+	  <whenValue element="qp" attr="npDegree" value="some"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegNone">
+	  <whenValue element="qp" attr="npDegreeNeg" value="none"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegNotNone">
+	  <whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegNo">
+	  <whenValue element="qp" attr="npDegreeNeg" value="no"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegSome">
+	  <whenValue element="qp" attr="npDegreeNeg" value="some"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNegYes">
+	  <whenValue element="qp" attr="npDegreeNeg" value="yes"/>
+   </showWhen>
+
+   <showWhen id="swQPNPDegreeYes">
+	  <whenValue element="qp" attr="npDegree" value="yes"/>
+   </showWhen>
+
+
+   <showWhen id="swNPDemOrArtBefore">
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
@@ -1829,39 +2751,9 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<whenValue element="np" attr="comp" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPCaseNone">
-		<whenValue element="np" attr="case" value="none"/>
+		<whenValue element="typology" attr="case" value="none"/>
 	</showWhen>
-	<showWhen id="swNPCaseDefaultNom">
-		<whenValue element="np" attr="case" value="nominative"/>
-		<and/>
-		<whenValue element="np" attr="caseDefault" value="nominative"/>
-		<or/>
-		<whenValue element="np" attr="case" value="split"/>
-		<and/>
-		<whenValue element="np" attr="caseDefault" value="nominative"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeNo">
-		<whenValue element="qp" attr="npDegree" value="no"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeYes">
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeYesPos">
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeYesNeg">
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeYesOrYesPos">
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesPos"/>
-	</showWhen>
-	<showWhen id="swQPNPDegreeYesOrYesNeg">
-		<whenValue element="qp" attr="npDegree" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="npDegree" value="yesNeg"/>
-	</showWhen>
+
 	<showWhen id="swNPArtAndOrDem">
 		<whenValue element="np" attr="artAndDem" value="no" negateValue="yes"/>
 	</showWhen>
@@ -2046,19 +2938,19 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
 	</showWhen>
 	<showWhen id="swNPCaseErg">
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 	</showWhen>
 	<showWhen id="swNPCaseYes">
-		<whenValue element="np" attr="case" value="none" negateValue="yes"/>
+		<whenValue element="typology" attr="case" value="none" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPCaseNom">
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 	</showWhen>
 	<showWhen id="swNPCaseSplit">
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<showWhen id="swNPCaseSplitNotGen">
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive" negateValue="yes"/>
 	</showWhen>
@@ -2150,9 +3042,6 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<and/>
 		<whenValue element="np" attr="qpPos" value="after" negateValue="yes"/>
 	</showWhen>
-	<showWhen id="swNPQPAgreeYes">
-		<whenValue element="np" attr="qpAgree" value="yes"/>
-	</showWhen>
 	<showWhen id="swNPAdjPPosEitherOrBothRestricted">
 		<whenValue element="np" attr="adjpEither" value="restricted"/>
 		<and/>
@@ -2169,41 +3058,68 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 		<and/>
 		<whenValue element="np" attr="adjpPos" value="unknown" negateValue="yes"/>
 	</showWhen>
-	<showWhen id="swNPAdjPAgreeYes">
+   <showWhen id="swNPQPAgreeYesandNotYesClassandClassifiersNo">
+	  <whenValue element="np" attr="qpAgree" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="agreeOther" value="yesClass"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="no" negateValue="yes"/>
+	  <or/>
+	  <whenValue element="np" attr="qpAgree" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
+	  <or/>
+	  <whenValue element="np" attr="qpAgree" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="agreeOther" value="yesGender"/>
+   </showWhen>
+   <showWhen id="swNPAdjPAgreeYesandNotYesClassandClassifiersNo">
 		<whenValue element="np" attr="adjpAgree" value="yes"/>
-	</showWhen>
+	  <and/>
+	  <whenValue element="np" attr="agreeOther" value="yesClass"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="no" negateValue="yes"/>
+	  <or/>
+	  <whenValue element="np" attr="adjpAgree" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
+	  <or/>
+	  <whenValue element="np" attr="adjpAgree" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="agreeOther" value="yesGender"/>
+   </showWhen>
 	<showWhen id="swNPAdjPCaseChangeYes">
 		<whenValue element="np" attr="adjpCaseChange" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPPossNounCaseChangeYes">
-	<whenValue element="np" attr="case" value="none" negateValue="yes"/>
+	<whenValue element="typology" attr="case" value="none" negateValue="yes"/>
 	<and/>
 		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPPossCaseGen">
-	<whenValue element="np" attr="case" value="none" negateValue="yes"/>
+	<whenValue element="typology" attr="case" value="none" negateValue="yes"/>
 	<and/>
 		<whenValue element="np" attr="possCaseErg" value="genitive"/>
 		<or/>
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 	</showWhen>
 	<showWhen id="swNPPossCaseErg">
 	<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<or/>
 	<whenValue element="np" attr="possCaseErg" value="ergative"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<showWhen id="swNPPossCaseAbs">
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 <or/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
 	<showWhen id="swNPAdjPCaseAffixNotNo">
 		<whenValue element="np" attr="adjpCaseAffix" value="no" negateValue="yes"/>
@@ -2216,4 +3132,245 @@ The outer or top level of the nominal phrase is occupied by those degree words t
 	<showWhen id="swNPCompYes">
 		<whenValue element="np" attr="comp" value="yes"/>
 	</showWhen>
-</portion>
+   <showWhen id="swNPCaseNYes">
+	  <whenValue element="np" attr="caseN" value="yes"/>
+	  <and/>
+	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNone">
+	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseDefaultNom">
+	  <whenValue element="typology" attr="case" value="nominative"/>
+	  <and/>
+	  <whenValue element="np" attr="caseDefault" value="nominative"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+	  <and/>
+	  <whenValue element="np" attr="caseDefault" value="nominative"/>
+   </showWhen>
+
+   <showWhen id="swQPNPDegreeYesAfter">
+	  <whenValue element="qp" attr="npDegree" value="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="after"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="some"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="after"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="either"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="some"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="either"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="some"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="afterOrBoth"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="some"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="afterOrBoth"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="both"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="some"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="both"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeYesBefore">
+	  <whenValue element="qp" attr="npDegree" value="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="before"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="some"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="before"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="either"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="some"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="either"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="some"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="beforeOrBoth"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="some"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="beforeOrBoth"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="yes"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="both"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegree" value="some"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreePos" value="both"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeClassifierYes">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="qp" attr="npDegreeClassifier" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeClassifierNo">
+	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+	  <or/>
+	  <whenValue element="qp" attr="npDegreeClassifier" value="yes" negateValue="yes"/>
+   </showWhen>
+
+   <showWhen id="swNPCaseNomOrSplitAndCaseNYes">
+	  <whenValue element="typology" attr="case" value="nominative"/>
+	  <and/>
+	  <whenValue element="np" attr="caseN" value="yes"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+	  <and/>
+	  <whenValue element="np" attr="caseN" value="yes"/>
+   </showWhen>
+	  <showWhen id="swNPCaseNomOrSplitAndCaseNNo">
+		 <whenValue element="typology" attr="case" value="nominative"/>
+		 <and/>
+		 <whenValue element="np" attr="caseN" value="no"/>
+		 <or/>
+		 <whenValue element="typology" attr="case" value="split"/>
+		 <and/>
+		 <whenValue element="np" attr="caseN" value="no"/>
+	  </showWhen>
+   <showWhen id="swNPCaseErgAndCaseNYes">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <and/>
+	  <whenValue element="np" attr="caseN" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgAndCaseNNo">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <and/>
+	  <whenValue element="np" attr="caseN" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndCaseNNo">
+	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="caseN" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndCaseNYes">
+	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="caseN" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordYes">
+	  <whenValue element="np" attr="caseWord" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordEitherRestricted">
+	  <whenValue element="np" attr="caseWordEither" value="restricted"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordEitherUnrestricted">
+	  <whenValue element="np" attr="caseWordEither" value="unrestricted"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordNo">
+	  <whenValue element="np" attr="caseWord" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplit">
+	  <whenValue element="typology" attr="case" value="nominative"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplit">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swExperiencerNotNo">
+	  <whenValue element="typology" attr="caseExperiencer" value="no" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swExperiencerNo">
+	  <whenValue element="typology" attr="caseExperiencer" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplitPossAbs">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <and/>
+	  <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+	  <and/>
+	  <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplitNotPossAbs">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <and/>
+	  <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+	  <and/>
+	  <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplitPossErg">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <and/>
+	  <whenValue element="np" attr="possCaseErg" value="ergative"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+	  <and/>
+	  <whenValue element="np" attr="possCaseErg" value="ergative"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplitNotPossErg">
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <and/>
+	  <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+	  <and/>
+	  <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplitOrErgPossGen">
+	  <whenValue element="typology" attr="case" value="nominative"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="split"/>
+	  <or/>
+	  <whenValue element="typology" attr="case" value="ergative"/>
+	  <and/>
+	  <whenValue element="np" attr="possCaseErg" value="genitive"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndCaseNYesAndCaseWordYes">
+	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="caseN" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="caseWord" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndCaseNYesAndCaseWordNo">
+	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="caseN" value="yes"/>
+	  <and/>
+	  <whenValue element="np" attr="caseWord" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgreeYesClassAndClassifiersNo">
+	  <whenValue element="np" attr="agreeOther" value="yesClass"/>
+	  <and/>
+	  <whenValue element="typology" attr="classifier" value="no"/>
+   </showWhen>
+ </portion>

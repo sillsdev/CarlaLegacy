@@ -8,24 +8,24 @@
 		</p>
 		<ul>
 			<li>
-				<content>al igual que una cláusula de complemento con el complementizador 'que' , como en  </content>
+				<content>al igual que una cláusula de complemento con el complementizador ‘que’ , como en  </content>
 				<langData>el hombre que vino a la reunión tarde</langData>
 				<content>;</content>
 			</li>
 			<li>
-				<content>al igual que una pregunta abierta subordinada con 'quien' o 'cual' desplazado a la izquierda, como en </content>
+				<content>al igual que una pregunta abierta subordinada con ‘quien’ o ‘cual’ desplazado a la izquierda, como en </content>
 				<langData>el hombre quien vino a la reunión tarde</langData>
 				<content>;</content>
 			</li>
 			<li>
-				<content>(o para algunos idiomas con excepción del español) al igual que una cláusula de complemento pero con un indicador relativo especial que se presenta en la posición del complementizador, o posiblemente con dos indicadores que se presentan en cada lado de la cláusula relativa;</content>
+				<content>(o para algunas lenguas con excepción del español) al igual que una cláusula de complemento pero con un indicador relativo especial que se presenta en la posición del complementizador, o posiblemente con dos indicadores que se presentan en cada lado de la cláusula relativa;</content>
 			</li>
 			<li>
-				<content>(o para algunos idiomas con excepción del español) al igual que una oración regular con un indicador relativo unido al verbo.</content>
+				<content>(o para algunas lenguas con excepción del español) al igual que una oración regular con un indicador relativo unido al verbo.</content>
 			</li>
 		</ul>
 		<p>
-			<content>Algunos idiomas también permiten que una de las estructuras antedichas se presente por sí mismo como frase nominal sin un sustantivo principal para modificarse, generalmente llamado cláusulas relativas "sin núcleo". </content>
+		   <content>Algunas lenguas también permiten que una de las estructuras antedichas se presente por sí mismo como frase nominal sin un sustantivo principal para modificarse, generalmente llamado cláusulas relativas “sin núcleo”.  Por ejemplo, </content><langData>Julie brought [the food that we ate today]</langData><gloss><content> ‘Julia trajo [el alimento que comimos hoy]’</content></gloss><content> tiene una cláusula relativa completa en la posición del objeto, mientras que </content><langData>Julie brought [what we ate today]</langData><gloss><content> ‘Julia trajo [lo que comimos hoy]’</content></gloss><content>  tiene una cláusula relativa sin núcleo como el objeto.</content>
 		</p>
 		<p>
 			<text show="swRelClExistNo">
@@ -59,7 +59,7 @@
 						<content>son </content>
 						<case element="relcl" attr="relWord">
 							<caseText value="yes">escritos como palabras independientes.</caseText>
-							<caseText value="no">clíticos que se unen a otra palabra en el extremo de la cláusula relativa.</caseText>
+							<caseText value="no">clíticos que se unen a otra palabra en la orilla de la cláusula relativa.</caseText>
 						</case>
 						<text show="swRelClTypeCPCompClitic">
 							<case element="relcl" attr="relCliticPos">
@@ -135,8 +135,8 @@
 			<langName/>
 			<content> se </content>
 			<case element="relcl" attr="headless">
-				<caseText value="no">requiere un sustantivo principal estar presente en todas las cláusulas relativas, así que no se permite ninguna cláusula relativa sin núcleo.</caseText>
-				<caseText value="yes">permite que un sustantivo principal no estar presente en cláusulas relativas, así que se permiten las cláusulas relativas sin núcleo.</caseText>
+			   <caseText value="no">requiere un sustantivo principal esté presente en todas las cláusulas relativas, así que no se permite ninguna cláusula relativa sin núcleo.</caseText>
+			   <caseText value="yes">permite que un sustantivo principal no esté presente en cláusulas relativas, así que se permiten las cláusulas relativas sin núcleo.</caseText>
 			</case>
 			<content>&#x20;</content>
 		</p>
@@ -150,7 +150,7 @@
 	<section1 id="sTexts">
 		<secTitle>Los textos</secTitle>
 		<p><comment>Incluya varios textos aquí para mostrar cómo se forman las construcciones más grandes tales como párrafos, conversaciones e historias narrativas. Incluya los ejemplos de varios tipos literarios.</comment></p>
-		<p><comment>  Un formato sugerido para presentar los textos es presente el texto completo en el idioma vernáculo primero, así que los nativos pueden apreciarla. Después presenta la forma interlineal, como en los ejemplos a través de la gramática. Finalmente, dé una traducción libre completo, así que el altavoz extranjero puede apreciar más sobre la cultura.</comment></p>
+		<p><comment>  Un formato sugerido para presentar los textos es presente el texto completo en la lengua vernáculo primero, así que los nativos pueden apreciarla. Después presenta la forma interlineal, como en los ejemplos a través de la gramática. Finalmente, dé una traducción libre completo, así que el altavoz extranjero puede apreciar más sobre la cultura.</comment></p>
 	</section1>
 
 	<showWhen id="swRelClExistNo">

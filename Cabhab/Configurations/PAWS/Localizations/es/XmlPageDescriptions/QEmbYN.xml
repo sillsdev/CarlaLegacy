@@ -2,23 +2,23 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QEmbYN" count="3/9">
-	<title level="2">Las preguntas - Las preguntas con respuesta afirmativa/negativa de la cláusula subordinada</title>
-	<form section="q">
-		<EnglishExample>
-			<exItem>Algunos ejemplos en español de las preguntas polares en las cláusulas subordinadas, mostrando la presencia de el indicador o complementizador de la pregunta, son:</exItem>
+   <title level="2">Las preguntas - Las preguntas de respuesta sí/no de la cláusula subordinada</title>
+   <introduction>En las preguntas de respuesta sí/no de la cláusula subordinada en español, un indicador o complementizador de la pregunta (<example>si</example>) se presenta antes de la pregunta.  Otras lenguas pueden tener otras maneras de indicar esta tipo de pregunta. Algunos ejemplos en español de las preguntas de respuesta sí/no en las cláusulas subordinadas son:</introduction>
+   <EnglishExample>
 			<exItem label="1.">Me pregunto si ella vendrá.</exItem>
 			<exItem label="2.">Yo sabré si ella va.</exItem>
 			<exItem label="3.">Susana se pregunta si el muchacho habría podido golpear el beísbol..</exItem>
-		</EnglishExample>
-		<prompt>Escriba ejemplos similares de las preguntas sí/no de la cláusula subordinada en su idioma aquí:</prompt>
+   </EnglishExample>
+   <form section="q">
+	  <prompt>Escriba ejemplos similares de las preguntas de respuesta sí/no de la cláusula subordinada en su lengua aquí:</prompt>
 		<textBox id="QEmbYNExample" dataItem="embYNExample" cols="50"/>
 		<br/>
-		<instruction id="QEmbYNInstruction">Only certain verbs can take a question complement. In the lexicon, mark the verbs from your examples and any others that come to mind with the features <feature>sentential embedded_question</feature> if they can only take an embedded question complement (like 'wonder'), but use the features <feature>sentential embedded_question_allowed</feature> if they can take an embedded question as well as a non-question complement (like 'know').
+	  <instruction id="QEmbYNInstruction">Only certain verbs can take a question complement. In the lexicon, mark the verbs from your examples and any others that come to mind with the features <feature>sentential embedded_question</feature> if they can only take an embedded question complement (like ‘wonder’), but use the features <feature>sentential embedded_question_allowed</feature> if they can take an embedded question as well as a non-question complement (like ‘know’).
 		</instruction>
 		<radioGroup>
 			<groupName dataItem="embYN" default="no">RQEmbYN</groupName>
-			<prompt>Para las preguntas polares de la cláusula subordinada, ¿Hay uno o más indicadores o complementizadores de la pregunta (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
-			<radio id="QEmbYNYes" dataValue="yes">Sí, al igual que <example>si</example> en español</radio>
+		   <prompt>Para las preguntas de respuesta sí/no de la cláusula subordinada, ¿Hay uno o más indicadores o complementizadores de la pregunta (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
+			<radio id="QEmbYNYes" dataValue="yes">Sí, como <example>si</example> en español</radio>
 			<radioGroup id="QEmbYNWordTable" show="swQEmbYNYes">
 				<groupName dataItem="embYNWord" default="yes">RQEmbYNWord</groupName>
 				<prompt>¿Se escribe como una palabra independiente?</prompt>
@@ -32,8 +32,8 @@
 				</radioGroup>
 				<radioGroup id="QEmbYNCliticTypeTable" show="swQEmbYNWordNo">
 					<groupName dataItem="embYNCliticAttaches" default="edge">RQEmbYNCliticAttaches</groupName>
-					<prompt>¿Dónde se une el clítico a la pregunta polar subordinada?</prompt>
-					<radio id="QEmbYNCliticAttachesEdge" dataValue="edge">En el extremo</radio>
+				   <prompt>¿Dónde se une el clítico a la pregunta de respuesta sí/no subordinada?</prompt>
+					<radio id="QEmbYNCliticAttachesEdge" dataValue="edge">A la orilla</radio>
 					<radio id="QEmbYNCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
 				<radio id="QEmbYNWordYes" dataValue="yes">Sí</radio>
@@ -41,8 +41,8 @@
 			<radioGroup id="QEmbYNPosTable" show="swQEmbYNWordYes">
 				<groupName dataItem="embYNPos" default="unknown" position="yesHead">RQEmbYNPos</groupName>
 				<prompt>¿Dónde se presenta el indicador o complementizador de la pregunta con respecto al resto de la pregunta subordinada?</prompt>
-				<radio id="QEmbYNPosBefore" dataValue="before">Antes</radio>
-				<radio id="QEmbYNPosAfter" dataValue="after">Después</radio>
+				<radio id="QEmbYNPosBefore" dataValue="before">Antes de la pregunta</radio>
+				<radio id="QEmbYNPosAfter" dataValue="after">Después de la pregunta</radio>
 				<radio id="QEmbYNPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
 				<radio id="QEmbYNPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
 				<radio id="QEmbYNPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados en la misma oración</radio>
@@ -59,10 +59,10 @@
 			<radioGroup id="QEmbYNAuxPosTable" show="swQEmbYNNoAux">
 				<groupName dataItem="embYNAuxPos" default="unknown" position="yesHead">RQEmbYNAuxPos</groupName>
 				<prompt>¿Dónde se presenta al auxiliar con respecto al resto de la pregunta subordinada?</prompt>
-				<radio id="QEmbYNAuxPosBefore" dataValue="before">Antes</radio>
-				<radio id="QEmbYNAuxPosAfter" dataValue="after">Después</radio>
+				<radio id="QEmbYNAuxPosBefore" dataValue="before">Antes de la pregunta</radio>
+				<radio id="QEmbYNAuxPosAfter" dataValue="after">Después de la pregunta</radio>
 			</radioGroup>
-			<radio id="QEmbYNNo" dataValue="no">No, no hay indicador ni cambio del orden de las palabras en las preguntas polares subordinadas, apenas la diferencia en la entonación o el tono o otra indicación que no es sintáctica</radio>
+		   <radio id="QEmbYNNo" dataValue="no">No, no hay indicador ni cambio del orden de las palabras en las preguntas de respuesta sí/no subordinadas, se da con un cambio en la entonación o el tono u otra indicación que no es sintáctica</radio>
 		</radioGroup>
 		<instruction id="QEmbYNHeadCliticInstruction" show="swQEmbYNHeadClitic">In the lexicon, add the feature <feature>YNQ</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>-root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QEmbYNEdgeCliticPrefixInstruction" show="swQEmbYNEdgeCliticPrefix">In the lexicon, add the feature <feature>YNQ_prefix</feature> to these clitics.   If a different marker is used in main clause questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in main clause questions, do not add any <feature>root</feature> feature.</instruction>

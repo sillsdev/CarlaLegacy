@@ -2,127 +2,134 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="FocusMain" count="1/2">
-	<title>Las construcciones de enfoque y asunto</title>
-	<introduction>Esta sección considera dos tipos de construcciones que dibujen la atención a un elemento particular.  De acuerdo con lo definido aquí, las construcciones de asunto consisten en una frase de asunto seguida por una oración o una pregunta completa y generalmente son fijados aparte por la puntuación. Ciertos indicadores se pueden utilizar para los asuntos, como en los ejemplos en español siguientes:</introduction>
+   <title>Las construcciones de foco y tópico</title>
+   <introduction>Esta sección considera dos tipos de construcciones que dibujen la atención a un elemento particular. Puesto que los tópicos se presentan fuera de construcciones de foco, serán considerados primero.<br/><br/>
+	  De acuerdo con lo definido aquí, las construcciones de tópico consisten en una frase de tópico seguida por una oración o una pregunta completa y generalmente son fijados aparte por la puntuación. Ciertos indicadores se pueden utilizar para los tópicos, como en los ejemplos en español siguientes:</introduction>
 	<EnglishExample>
 		<exItem label="1.">En cuanto a Juan, pienso que él hará a un buen doctor.</exItem>
 		<exItem label="2.">El discurso de Juliana, ¿dónde está ella?</exItem>
 	</EnglishExample>
-	<introduction>En contraste con asuntos, mientras que las construcciones de enfoque también tienen un elemento desplazado que se pueda ser indicado por la puntuación, la frase enfocada se mueve desde su posición normal en la oración, dejando un agujero.
-		Ciertos indicadores,  como 'solamente' en español, se pueden utilizar para indicar la frase enfocada. Las construcciones de enfoque no se utilizan con frecuencia en idiomas del orden SVO, puesto que el sujeto es generalmente en foco y es ya primer en el orden normal.
-		Los idiomas con otros órdenes de la palabra, tales como idiomas del orden VSO, pueden hacer el uso extenso de construcciones de enfoque. Algunos ejemplos en español de las construcciones de enfoque son:
+   <introduction>En contraste con tópicos, mientras que las construcciones de foco también tienen un elemento desplazado que se pueda ser indicado por la puntuación, la frase enfocada se mueve desde su posición normal en la oración, dejando un agujero.
+	  Ciertos indicadores, como ‘solamente’ en español, se pueden utilizar para indicar la frase enfocada. Las construcciones de foco no se utilizan con frecuencia en lenguas del orden SVO, puesto que el sujeto es generalmente en foco y es ya primer en el orden normal.
+		Las lenguas con otros órdenes de la palabra, tales como lenguas del orden VSO, pueden hacer el uso extenso de construcciones de foco. Algunos ejemplos en español de las construcciones de foco son:
 	</introduction>
 	<EnglishExample>
 		<exItem label="1.">De las muchachas, tengo gusto  __.</exItem>
 		<exItem label="2.">El fútbol, Guillermo juega __ fantástico.</exItem>
 		<exItem label="3.">A solamente ese muchacho, Juan golpeó  __ .</exItem>
 	</EnglishExample>
-	<introduction>El ejemplo siguiente muestra que una sola oración puede tener un asunto y una frase enfocada. En este caso, la frase de asunto está siempre fuera de (o primer o final de la oración) de la frase de foco, como en:    </introduction>
+   <introduction>El ejemplo siguiente muestra que una sola oración puede tener un tópico y una frase enfocada. En este caso, la frase de tópico está siempre fuera de (o inicial o final de la oración) de la frase de foco, como en:    </introduction>
 	<EnglishExample>
 		<exItem label="1.">En cuanto a Guillermo, el fútbol él juega ___ fantástico. </exItem>
 	</EnglishExample>
 	<form section="focus" transparent="no">
 <radioGroup id="TopicTable">
 	<groupName dataItem="topic" default="no">RTopic</groupName>
-	<prompt>¿Permite su idioma una frase de asunto antes o después de una oración o de una pregunta completa, como en los ejemplos en español anteriores? </prompt>
+   <prompt>¿Permite su lengua un tópico antes o después de una oración o de una pregunta completa, como en los ejemplos en español anteriores? </prompt>
 	<radio id="TopicNo" dataValue="no">No</radio>
 	<radio id="TopicYes" dataValue="yes">Sí</radio>
 </radioGroup>
-<prompt id="TopicYesInstruction" show="swTopicYes">Escriba algunos ejemplos de construcciones de asunto en su idioma aquí: </prompt>
+	   <prompt id="TopicYesInstruction" show="swTopicYes">Escriba algunos ejemplos de construcciones de tópico en su lengua aquí: </prompt>
 		<textBox id="Topic" show="swTopicYes" dataItem="topicExample" rows="5"/>
 <br/>
 <radioGroup id="TopicPosTable" show="swTopicYes">
 	<groupName dataItem="topicPos" default="unknown" position="yesHead">RTopicPos</groupName>
-	<prompt>En vista de los ejemplos usted escribió, ¿dónde se presenta la frase de asunto con respecto a la oración o a la pregunta principal?</prompt>
+   <prompt>En vista de los ejemplos usted escribió, ¿dónde se presenta la frase de tópico con respecto a la oración o a la pregunta principal?</prompt>
 	<radio id="TopicPosBefore" dataValue="before">Antes de la oración</radio>
 	<radio id="TopicPosAfter" dataValue="after">Después de la oración</radio>
 </radioGroup>
 <radioGroup id="TopicMarkerTable" show="swTopicYes">
 	<groupName dataItem="topicMarker" default="no">RTopicMarker</groupName>
-	<prompt>En su idioma, ¿hay una o más palabras especiales o clíticos o afijos que marquen asuntos?</prompt>
-	<radio id="TopicMarkerNo" dataValue="no">No, no es indicado por un indicador de asunto. Solamente la posición en la oración y posiblemente la puntuación distingue a la frase de asunto</radio>
-	<radio id="TopicMarkerYesWord" dataValue="yesWord">Sí, como en español, las ciertas palabras o frases indican el asunto</radio>
-	<radio id="TopicMarkerYesClitic" dataValue="yesClitic">Sí, el asunto es indicado por un clítico</radio>
-	<radio id="TopicMarkerYesAffix" dataValue="yesAffix">Sí, el asunto es indicado por un afijo</radio>
+   <prompt>En su lengua, ¿hay una o más palabras especiales o clíticos o afijos que marquen el tópico?</prompt>
+   <radio id="TopicMarkerNo" dataValue="no">No, no es marcado por un indicador de tópico. Solamente la posición en la oración y posiblemente la puntuación distingue el tópico</radio>
+   <radio id="TopicMarkerYesWord" dataValue="yesWord">Sí, como en español, ciertas palabras o frases indican el tópico</radio>
+   <radio id="TopicMarkerYesClitic" dataValue="yesClitic">Sí, el tópico es indicado por un clítico</radio>
+   <radio id="TopicMarkerYesAffix" dataValue="yesAffix">Sí, el tópico es indicado por un afijo</radio>
 </radioGroup>
-		<prompt id="TopicMarkerYesInstruction" show="swTopicMarkerYes">Escriba los indicadores de asunto que su idioma utiliza en la caja siguiente. Si el indicador es una frase, tal como 'en cuanto a' o 'el discurso de' en español, escribalo junto en la misma línea. Si el indicador es un clítico o un afijo, escriba un guión con el indicador para mostrar en qué lado se une al asunto.</prompt>
-		<textBox id="TopicMarker" show="swTopicMarkerYes" dataItem="topicMarkerExample" rows="4"/>
+	   <prompt id="TopicMarkerYesWordInstruction" show="swTopicMarkerYesWord">Escriba los indicadores de tópico que su lengua utiliza en el cuadro siguiente. Si el indicador es una frase, tal como ‘en cuanto a’ o ‘el discurso de’ en español, escribalo junto en la misma línea.</prompt>
+	   <prompt id="TopicMarkerYesCliticInstruction" show="swTopicMarkerYesClitic">Escriba los clíticos que su lengua utiliza para indicadores de tópico en el cuadro siguiente, con un guión para mostrar en qué lado se une al tópico.</prompt>
+	   <prompt id="TopicMarkerYesAffixInstruction" show="swTopicMarkerYesAffix">Escriba los afijos que su lengua utiliza para indicadores de tópico en el cuadro siguiente, con un guión para mostrar en qué lado se une al tópico.</prompt>
+	   <textBox id="TopicMarker" show="swTopicMarkerYes" dataItem="topicMarkerExample" rows="4"/>
 <br/>
 <radioGroup id="TopicMarkerPosTable" show="swTopicMarkerYesWord">
 	<groupName dataItem="topicMarkerPos" default="unknown" position="yesHead">RTopicMarkerPos</groupName>
-	<prompt>¿Dónde se presenta el indicador de asunto con respecto al asunto sí mismo?</prompt>
-	<radio id="TopicMarkerPosBefore" dataValue="before">Antes de la frase sí mismo de asunto</radio>
-	<radio id="TopicMarkerPosAfter" dataValue="after">Después de la frase sí mismo de asunto</radio>
-	<radio id="TopicMarkerPosEither" dataValue="either">De cualquier lado de la frase sí mismo de asunto, pero no en ambos lados en la misma oración</radio>
-	<radio id="TopicMarkerPosBoth" dataValue="both">En ambos lados de la frase de asunto sí mismo</radio>
+   <prompt>¿Dónde se presenta el indicador de tópico con respecto al tópico sí mismo?</prompt>
+   <radio id="TopicMarkerPosBefore" dataValue="before">Antes de la frase sí mismo de tópico</radio>
+   <radio id="TopicMarkerPosAfter" dataValue="after">Después de la frase sí mismo de tópico</radio>
+   <radio id="TopicMarkerPosEither" dataValue="either">De cualquier lado de la frase sí mismo de tópico, pero no en ambos lados en la misma oración</radio>
+   <radio id="TopicMarkerPosBoth" dataValue="both">En ambos lados de la frase de tópico sí mismo</radio>
 <radioGroup id="TopicMarkerRequiredTable" show="swTopicMarkerYesWord">
 	<groupName dataItem="topicMarkerRequired" default="no">RTopicMarkerRequired</groupName>
-	<prompt>¿Se requiere un indicador de asunto siempre que haya una frase de asunto?</prompt>
+   <prompt>¿Se requiere un indicador de tópico siempre que haya una frase de tópico?</prompt>
 	<radio id="TopicMarkerRequiredNo" dataValue="no">No, es opcional</radio>
-	<radio id="TopicMarkerRequiredYes" dataValue="yes">Sí, un indicador de asunto se requiere en cada frase de asunto</radio>
+   <radio id="TopicMarkerRequiredYes" dataValue="yes">Sí, un indicador de tópico se requiere en cada frase de tópico</radio>
 </radioGroup>
 <radioGroup id="TopicMarkerEitherOrBothTable" show="swTopicMarkerYesWordEitherOrBoth">
 	<groupName dataItem="topicMarkerEither" default="no">RTopicMarkerEither</groupName>
-	<prompt>¿Pueden todos los indicadores de asunto presentarse de cualquier lado de asunto?</prompt>
+   <prompt>¿Pueden todos los indicadores de tópico presentarse de cualquier lado de tópico?</prompt>
 	<radio id="TopicMarkerEitherNo" dataValue="no">No, hay distintos grupos para cada lado</radio>
 	<radio id="TopicMarkerEitherYes" dataValue="yes">Sí, no hay restricción</radio>
 </radioGroup>
 </radioGroup>
 <instruction id="TopicMarkerEitherNoInstruction" show="swTopicMarkerYesWordEitherNo">In the lexicon, add the feature <feature>topic-initial</feature> to the topic markers which can only appear before the topic itself.  Add the feature <feature>topic-final</feature> to the topic markers which can only appear after the topic itself.  Do not add either feature to topic markers which can appear on either side of the topic. </instruction>
-<instruction id="TopicMarkerYesWordInstruction" show="swTopicMarkerYesWord">In the lexicon, add the feature <feature>makeTopicM</feature> to each topic marker to change the category for the syntax.  (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, such as 'as for' or 'speaking of' in English, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
-<instruction id="TopicMarkerYesCliticInstruction" show="swTopicMarkerYesClitic">In the lexicon, add the feature <feature>topic</feature> to each topic marker clitic.</instruction>
-<instruction id="TopicMarkerYesAffixInstruction" show="swTopicMarkerYesAffix">In the lexicon, add the feature <feature>topic</feature> to each topic marker affix.</instruction>
-<br/>
-<radioGroup id="FocusTable">
+	   <instruction id="TopicMarkerYesWordInstruction2" show="swTopicMarkerYesWord">In the lexicon, add the feature <feature>makeTopicM</feature> to each topic marker to change the category for the syntax.  (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, such as ‘as for’ or ‘speaking of’ in English, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
+<instruction id="TopicMarkerYesCliticInstruction2" show="swTopicMarkerYesClitic">In the lexicon, add the feature <feature>topic</feature> to each topic marker clitic.</instruction>
+<instruction id="TopicMarkerYesAffixInstruction2" show="swTopicMarkerYesAffix">In the lexicon, add the feature <feature>topic</feature> to each topic marker affix.</instruction>
+	   <br/>
+	   <instruction id="TopicCommaInstruction">Note that the comma is important in topic constructions and may be useful in disambiguating topics from other types of constructions.  As mentioned in <section number="15">Coordination Constructions - Lists and Appositives</section>, you can choose to make the comma (,) a word-formation character in <tool>CarlaStudio</tool>. Then make it a suffix or enclitic that can go on any word category and give it the feature <feature>comma</feature>.  The PC-Patr grammar constraints to disambiguate via commas are already provided, but you will need to activate them by removing the comment character in the S rule(s) including a TopicP.</instruction>
+	   <br/>
+	   <radioGroup id="FocusTable">
 	<groupName dataItem="focus" default="no">RFocus</groupName>
-	<prompt>Ahora para las construcciones de enfoque, ¿permite su idioma que una frase de enfoque sea desplazada antes o después del resto de la oración de su posición normal?</prompt>
+	<prompt>Ahora para las construcciones de foco, ¿permite su lengua que una frase enfocada sea desplazada antes o después del resto de la oración de su posición normal?</prompt>
 	<radio id="FocusNo" dataValue="no">No</radio>
 	<radio id="FocusYes" dataValue="yes">Sí</radio>
 </radioGroup>
-<prompt id="FocusYesInstruction" show="swFocusYes">Escriba algunos ejemplos de construcciones de enfoque en su idioma aquí:</prompt>
+<prompt id="FocusYesInstruction" show="swFocusYes">Escriba algunos ejemplos de construcciones de foco en su lengua aquí:</prompt>
 		<textBox id="Focus" show="swFocusYes" dataItem="focusExample" rows="5"/>
 <br/>
 <radioGroup id="FocusPosTable" show="swFocusYes">
 	<groupName dataItem="focusPos" default="unknown" position="yesHead">RFocusPos</groupName>
 	<prompt>En vista de los ejemplos usted escribió, ¿dónde se presenta la frase enfocada con respecto al resto de la oración?</prompt>
-	<radio id="FocusPosBefore" dataValue="before">Antes</radio>
-	<radio id="FocusPosAfter" dataValue="after">Después</radio>
+   <radio id="FocusPosBefore" dataValue="before">Antes de la oración</radio>
+   <radio id="FocusPosAfter" dataValue="after">Después de la oración</radio>
 </radioGroup>
 <radioGroup id="FocusMarkerTable" show="swFocusYes">
 	<groupName dataItem="focusMarker" default="no">RFocusMarker</groupName>
-	<prompt>En su idioma, ¿hay una o más palabras especiales o clíticos o afijos que indican palabras o frases de enfoque?</prompt>
-	<radio id="FocusMarkerNo" dataValue="no">No, no es indicado por un indicador de enfoque. Solamente la posición en la oración y posiblemente la puntuación distingue a la frase enfocada</radio>
+	<prompt>En su lengua, ¿hay una o más palabras especiales o clíticos o afijos que indican palabras o frases enfocadas?</prompt>
+	<radio id="FocusMarkerNo" dataValue="no">No, no es marcado por un indicador de foco. Solamente la posición en la oración y posiblemente la puntuación distingue a la frase enfocada</radio>
 	<radio id="FocusMarkerYesWord" dataValue="yesWord">Sí, como en español, las ciertas palabras o frases pueden indicar la frase enfocada</radio>
 	<radio id="FocusMarkerYesClitic" dataValue="yesClitic">Sí, la frase enfocada es indicado por un clítico</radio>
 	<radio id="FocusMarkerYesAffix" dataValue="yesAffix">Sí, la frase enfocada es indicado por un afijo</radio>
 </radioGroup>
-		<prompt id="FocusMarkerYesInstruction" show="swFocusMarkerYes">Escriba los indicadores de enfoque que su idioma utiliza en la caja siguiente. Si el indicador es una frase escribalo junto en la misma línea. Si el indicador es un clítico o un afijo, escriba un guión con el indicador para mostrar en qué lado se une a la frase enfoque.</prompt>
-		<textBox id="FocusMarker" show="swFocusMarkerYes" dataItem="focusMarkerExample" rows="4"/>
+	   <prompt id="FocusMarkerYesWordInstruction" show="swFocusMarkerYesWord">Escriba los indicadores de foco que su lengua utiliza en el cuadro siguiente. Si el indicador es una frase, escribalo junto en la misma línea.</prompt>
+	   <prompt id="FocusMarkerYesCliticInstruction" show="swFocusMarkerYesClitic">Escriba los clíticos que su lengua utiliza para indicadores de foco en el cuadro siguiente, con un guión para mostrar en qué lado se une a la frase enfocada.</prompt>
+	   <prompt id="FocuswMarkerYesAffixInstruction" show="swFocusMarkerYesAffix">Escriba los afijos que su lengua utiliza para indicadores de foco en el cuadro siguiente, con un guión para mostrar en qué lado se une a la frase enfocada.</prompt>
+	   <textBox id="FocusMarker" show="swFocusMarkerYes" dataItem="focusMarkerExample" rows="4"/>
 <br/>
 <radioGroup id="FocusMarkerPosTable" show="swFocusMarkerYesWord">
 	<groupName dataItem="focusMarkerPos" default="unknown" position="yesHead">RFocusMarkerPos</groupName>
-	<prompt>¿Dónde se presenta el indicador de enfoque con respecto a la frase enfocada sí mismo?</prompt>
+	<prompt>¿Dónde se presenta el indicador de foco con respecto a la frase enfocada sí mismo?</prompt>
 	<radio id="FocusMarkerPosBefore" dataValue="before">Antes de la frase enfocada sí mismo</radio>
 	<radio id="FocusMarkerPosAfter" dataValue="after">Después de la frase enfocada sí mismo</radio>
 	<radio id="FocusMarkerPosEither" dataValue="either">De cualquier lado de la frase enfocada sí mismo, pero no en ambos lados en la misma oración</radio>
 	<radio id="FocusMarkerPosBoth" dataValue="both">En ambos lados</radio>
 <radioGroup id="FocusMarkerRequiredTable" show="swFocusMarkerYesWord">
 	<groupName dataItem="focusMarkerRequired" default="no">RFocusMarkerRequired</groupName>
-	<prompt>¿Se requiere un indicador de de enfoque siempre que haya una frase enfocada?</prompt>
+	<prompt>¿Se requiere un indicador de foco siempre que haya una frase enfocada?</prompt>
 	<radio id="FocusMarkerRequiredNo" dataValue="no">No, es opcional</radio>
-	<radio id="FocusMarkerRequiredYes" dataValue="yes">Sí, un indicador de enfoque se requiere en cada frase de enfoque</radio>
+	<radio id="FocusMarkerRequiredYes" dataValue="yes">Sí, un indicador de foco se requiere en cada frase enfocada</radio>
 </radioGroup>
 <radioGroup id="FocusMarkerEitherOrBothTable" show="swFocusMarkerYesWordEitherOrBoth">
 	<groupName dataItem="focusMarkerEither" default="no">RFocusMarkerEither</groupName>
-	<prompt>¿Pueden todos los indicadores de enfoque presentarse de cualquier lado de la frase enfocada?</prompt>
+	<prompt>¿Pueden todos los indicadores de foco presentarse de cualquier lado de la frase enfocada?</prompt>
 	<radio id="FocusMarkerEitherNo" dataValue="no">No, hay distintos grupos para cada lado</radio>
 	<radio id="FocusMarkerEitherYes" dataValue="yes">Sí, no hay restricción</radio>
 </radioGroup>
 </radioGroup>
 <instruction id="FocusMarkerEitherNoInstruction" show="swFocusMarkerYesWordEitherNo">In the lexicon, add the feature <feature>focus-initial</feature> to the focus markers which can only appear before the focused phrase or word itself.  Add the feature <feature>focus-final</feature> to the focus markers which can only appear after the focused phrase or word  itself.  Do not add either feature to focus markers which can appear on either side of the focused phrase or word. </instruction>
-<instruction id="FocusMarkerYesWordInstruction" show="swFocusMarkerYesWord">In the lexicon, add the feature <feature>makeFocusM</feature> to each focus marker to change the category for the syntax. (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
-<instruction id="FocusMarkerYesCliticInstruction" show="swFocusMarkerYesClitic">In the lexicon, add the feature <feature>focus</feature> to each focus marker clitic.</instruction>
-<instruction id="FocusMarkerYesAffixInstruction" show="swFocusMarkerYesAffix">In the lexicon, add the feature <feature>focus</feature> to each focus marker affix.</instruction>
+<instruction id="FocusMarkerYesWordInstruction2" show="swFocusMarkerYesWord">In the lexicon, add the feature <feature>makeFocusM</feature> to each focus marker to change the category for the syntax. (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
+<instruction id="FocusMarkerYesCliticInstruction2" show="swFocusMarkerYesClitic">In the lexicon, add the feature <feature>focus</feature> to each focus marker clitic.</instruction>
+<instruction id="FocusMarkerYesAffixInstruction2" show="swFocusMarkerYesAffix">In the lexicon, add the feature <feature>focus</feature> to each focus marker affix.</instruction>
 		<br/>
 		<buttons>
 			<button id="FocusMainBack" value="Back" goto="Contents.htm"/>

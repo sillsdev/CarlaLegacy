@@ -6,153 +6,152 @@
 		  <script language="jscript" id="clientEventHandlersJS" src="Contents.js">
 </script>
    </head>
-   <body onload="Initialize()">
-<h1>Contenido</h1>
-	   <p>Empuje<A href="purpose.htm">aquí</A> para ver una declaración del propósito.<p>
-		   <p>Compruebe por favor cada sección según lo terminado para no perder de vista su progreso. Para comprobar una sección, empuje la caja blanca a la izquierda de ella.</p>
-<table align="left" border="0" cellpadding="3" width="100%" >
-	<tbody>
-		<tr>
-			<th align="left">Estado</th>
-			<th align="left" valign="top">No.</th>
-			<th align="left" valign="top">Descripción</th>
-			<th>&nbsp;</th>
-		</tr>
-		<tr>
-			<td id="ContentsOverallTypologyQuestionsStatus" onclick="StatusClicked(ContentsOverallTypologyQuestionsStatus,'typology')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+	<body onload="Initialize()">
+		<h1>Contenido</h1>
+		<p>Dando click <A href="purpose.htm">aquí</A> para ver una declaración del propósito.<p>
+			<p>Compruebe por favor cada sección según lo terminado para no perder de vista su progreso. Para comprobar una sección, marque (dando click) a la izquierda de ella.</p>
+			<table align="left" border="0" cellpadding="3" width="100%" >
+				<tbody>
+					<tr>
+						<th align="left">Estado</th>
+						<th align="left" valign="top">No.</th>
+						<th align="left" valign="top">Descripción</th>
+						<th>&nbsp;</th>
+					</tr>
+					<tr>
+						<td id="ContentsOverallTypologyQuestionsStatus" onclick="StatusClicked(ContentsOverallTypologyQuestionsStatus,'typology')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">1.</td>
-			<td valign="top"><A id=ContentsOverallTypologyQuestions href="OverallTypology.xml" >La tipología</A></td>
-			<td rowspan="18" width="50%" class="instruction" valign="top">
-				<div>
-					<p>Seleccione las salidas que usted quiere empujando la caja antes de cada uno. Observe por favor que por lo menos una gramática debe estar presente. Si no escoje uno, va a recibir la comparativa. Solamente la opción de la gramática práctica en español y las instrucciones relevantes a ella está disponible en español ahora.</p>
-					<table>
-						<tr style="display:none">
-							<td><input type="checkbox" name="OutputGrammar" id="OutputGrammar" onclick="SetOutput('grammar')" value="grammar"></td>
-							<td onclick="SetOutputViaDescription('grammar')">Haga salir el archivo para análisis sintáctico en PC-PATR y los archivos de ejemplos para probar.</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="OutputWriter" id="OutputWriter" onclick="SetOutput('writer')" value="writer"></td>
-							<td onclick="SetOutputViaDescription('writer')">Haga salir el archivo para la gramática comparativa en inglés.</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="OutputWriterPractical" id="OutputWriterPractical" onclick="SetOutput('writerPractical')" value="writerPractical"></td>
-							<td onclick="SetOutputViaDescription('writerPractical')">Haga salir el archivo para la gramática práctica en inglés.</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="OutputWriterPracticalSpanish" id="OutputWriterPracticalSpanish" onclick="SetOutput('writerPracticalSpanish')" value="writerPracticalSpanish"></td>
-							<td onclick="SetOutputViaDescription('writerPracticalSpanish')">Haga salir el archivo para la gramática práctica en español.</td>
-						</tr>
-					</table>
-				</div>
-				<br/>
-				Para cada sección:<br>
-<ol>
-	<li>Piense en los datos relevantes para su idioma, escogiendo datos sin construcciones especiales específico a su idioma,  a menos que se pidan alrededor en las preguntas (ésas tendrán que ser ocupadas después de la terminación del programa PAWS). </li>
+						<td valign="top"><A id=ContentsOverallTypologyQuestions href="OverallTypology.xml" >La tipología</A></td>
+						<td rowspan="18" width="50%" class="instruction" valign="top">
+							<div>
+								<p>Seleccione las salidas que usted quiere dando click antes de cada salida. Observe por favor que por lo menos una gramática debe estar presente. Si no escoje una, va a recibir la comparativa. Solamente la opción de la gramática práctica en español y las instrucciones relevantes a ella está disponible en español ahora.</p>
+								<table>
+									<tr>
+										<td><input type="checkbox" name="OutputGrammar" id="OutputGrammar" onclick="SetOutput('grammar')" value="grammar"></td>
+										<td onclick="SetOutputViaDescription('grammar')">Producir el archivo para análisis sintáctico en PC-PATR y los archivos de ejemplos para probar.</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" name="OutputWriter" id="OutputWriter" onclick="SetOutput('writer')" value="writer"></td>
+										<td onclick="SetOutputViaDescription('writer')">Prodicir el archivo para la gramática comparativa en inglés.</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" name="OutputWriterPractical" id="OutputWriterPractical" onclick="SetOutput('writerPractical')" value="writerPractical"></td>
+										<td onclick="SetOutputViaDescription('writerPractical')">Producir el archivo para la gramática práctica en inglés.</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" name="OutputWriterPracticalSpanish" id="OutputWriterPracticalSpanish" onclick="SetOutput('writerPracticalSpanish')" value="writerPracticalSpanish"></td>
+										<td onclick="SetOutputViaDescription('writerPracticalSpanish')">Producir el archivo para la gramática práctica en español.</td>
+									</tr>
+								</table>
+							</div>
+							<br/>
+							Para cada sección:<br>
+								<ol>
+									<li>Piense en los datos relevantes para su lengua, escogiendo datos sin construcciones especiales específico a su lengua, a menos que se pidan alrededor en las preguntas (ésas tendrán que ser ocupadas después de la terminación del programa PATAS (PAWS en inglés). </li>
 
-	<li>Complete la respuesta a cada pregunta, basada en los datos. Este programa se ocupa del análisis sintáctico, entonces las preguntas están preguntando casi siempre acerca de categorías que se escriben como palabras independientes, a menos que estén indicada específicamente.</li>
+									<li>Escoja la respuesta a cada pregunta, basada en los datos. Este programa se ocupa del análisis sintáctico, entonces las preguntas están preguntando casi siempre acerca de categorías que se escriben como palabras independientes, a menos que estén indicada específicamente.</li>
 
-<li id="InstructionsAddFeatures">Add the feature names to the appropriate entries in the lexicon, as directed.
-	Please note that both feature names and category names are sensitive to capitalization and are limited to a single word for each.
-	A space indicates a separate feature name.
-	Therefore, whenever you are instructed to add a feature to a lexical entry,
-	simply list the feature name (with a space between it and any other features) in the feature field (normally \f).
-	You also need to be sure CARLAStudio knows about the feature field by keying an f (or the marker you are using) in the box by *features (one of the Optional Markers) in all the Analysis SFM Markers sections under the Dictionary tab in the Language Model.</li>
+								   <li id="InstructionsAddFeatures">Agregar los nombres de las caraterísticas a las entradas correspondientes en el léxico, como se indica.
+									  Tenga en cuenta que ambos nombres de caraterísticas y nombres de categorías son sensibles a mayúsculas y se limitan a una sola palabra para cada uno.
+									  Un espacio indica un nombre de caraterística independiente.
+									  Por lo tanto, cada vez que se le indique para añadir una caraterística a una entrada léxica,
+									  simplemente escriba el nombre de caraterística (con un espacio entre ella y otras caraterísticas) en el campo de caraterística (normalmente \f).
+									  También necesita asegurarse de CARLAStudio sabe el campo de caraterística tecleando una f (o el marcador que está usando) en el cuadro por *características (uno de los marcadores opcionales) en todas las secciones de análisis marcadores SFM en la ficha de diccionario en el modelo de lengua.</li>
 
-	<li>Escriba sus datos relevantes en la caja de texto, según lo dirigido, con un punto y una nueva línea después de cada ejemplo. (Si está cumpliendo PAWS solamente para la gramática práctica, puede poner  después del ejemplo una traduccion libre o la página donde se encuentra, para ayudarle en el proceso de editar la grámatica más tarde.)</li>
+									<li>Escriba sus datos relevantes en la caja de texto, según lo dirigido, con un punto y una nueva línea después de cada ejemplo. (Si está cumpliendo PATAS solamente para la gramática práctica, puede poner después del ejemplo una traduccion libre o la página donde se encuentra, para ayudarle en el proceso de editar la grámatica más tarde.)</li>
 
-<li id="InstructionsSaveResultsWriterOnly">At the end of each section, save the results so that the output files will be generated.</li>
-	<li id="InstructionsSaveResultsParser">At the end of each section, save the results so that the output files will be generated. then run the parser on the test file indicated and check the output.  Click <A href="CarlaStudioSetup.htm">here</A> to see how to modify a CARLAStudio setup to use the grammar. </li>
+								   <li id="InstructionsSaveResultsParser">Al final de cada sección, guardar los resultados para producirse los archivos de salida. Vuelva a ejecutar el analizador en el archivo de prueba indicado y compruebe los resultados. Dando click <A un href="CarlaStudioSetup.htm" >aquí </A> para ver cómo modificar una instalación de CARLAStudio para usar la gramática.</li>
 
-	<li id="InstructionsMakeChanges">Make any changes to the starter kit questions
-		(to change the phrase structure) or to the lexicon feature names needed,
-		then save and re-run. Note any details the starter kit is not able to handle, so
-		that they can be dealt with later. </li>
+								   <li id="InstructionsMakeChanges">Hace los cambios necesarios en las preguntas de PATAS
+									  (para cambiar la estructura de la frase) o a los nombres de caraterísticas en el léxico,
+									  a continuación, guardar y volver a ejecutar otra vez.   Nota cualquiera detalla que no es correcto para
+									  tratar más tarde. </li>
 
-	<li>Compruebe que usted ha terminado esa sección, después empieza al siguiente. (Para comprobar una sección, empuje la caja blanca a la izquierda de ella.) Usted puede también salir el programa en cualquier momento y volverle más adelante.  </li>
-</ol>
-</td>
-		</tr>
-		<tr>
-			<td id="ContentsQuantifiersStatus" onclick="StatusClicked(ContentsQuantifiersStatus, 'qp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+									<li>Indica que usted ha terminado esa sección, después empieza al siguiente. (Para indicar que una sección está completa, dando click a la izquierda de ella.) Usted puede también salir el programa en cualquier momento y volverle más adelante.  </li>
+								</ol>
+						</td>
+					</tr>
+					<tr>
+						<td id="ContentsQuantifiersStatus" onclick="StatusClicked(ContentsQuantifiersStatus, 'qp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">2.</td>
-			<td valign="top"><A id=ContentsQuantifiers href="QPMain.xml" >Los cuantificadores y sus frases</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsAdverbsStatus" onclick="StatusClicked(ContentsAdverbsStatus,'advp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsQuantifiers href="QPMain.xml" >Las frases cuantificadoras</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsAdverbsStatus" onclick="StatusClicked(ContentsAdverbsStatus,'advp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">3.</td>
-			<td valign="top"><A id=ContentsAdverbs href="AdvPMain.xml">Los adverbios y sus frases</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsAdjectivesStatus" onclick="StatusClicked(ContentsAdjectivesStatus,'adjp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsAdverbs href="AdvPMain.xml">Las frases adverbiales</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsAdjectivesStatus" onclick="StatusClicked(ContentsAdjectivesStatus,'adjp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">4.</td>
-			<td valign="top"><A id=ContentsAdjectives href="AdjPMain.xml">Los adjetivos y sus frases</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsSimpleNPStatus" onclick="StatusClicked(ContentsSimpleNPStatus,'np')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsAdjectives href="AdjPMain.xml">Las frases adjetivales</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsSimpleNPStatus" onclick="StatusClicked(ContentsSimpleNPStatus,'np')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">5.</td>
-			<td valign="top"><A id=ContentsSimpleNP href="NPContents.htm" >Las frases nominales simples y poseídas</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsProperNamesStatus" onclick="StatusClicked(ContentsProperNamesStatus,'prop')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsSimpleNP href="NPContents.htm" >Las frases nominales simples y posesivas</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsProperNamesStatus" onclick="StatusClicked(ContentsProperNamesStatus,'prop')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">6.</td>
-			<td valign="top"><A id=ContentsProperNames href="PNMain.xml">Los nombres propios</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsPronounsStatus" onclick="StatusClicked(ContentsPronounsStatus,'pron')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsProperNames href="PNMain.xml">Los nombres propios</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsPronounsStatus" onclick="StatusClicked(ContentsPronounsStatus,'pron')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">7.</td>
-			<td valign="top"><A id=ContentsPronouns href="PronMain.xml">Los pronombres</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsPrepositionsStatus" onclick="StatusClicked(ContentsPrepositionsStatus,'pp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsPronouns href="PronMain.xml">Los pronombres</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsPrepositionsStatus" onclick="StatusClicked(ContentsPrepositionsStatus,'pp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">8.</td>
-			<td valign="top"><A id=ContentsPrepositions href="PPMain.xml">Las frases preposicionales y/o posposicionales</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsSingleClausesStatus" onclick="StatusClicked(ContentsSingleClausesStatus,'ip')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsPrepositions href="PPMain.xml">Las frases preposicionales y/o posposicionales</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsSingleClausesStatus" onclick="StatusClicked(ContentsSingleClausesStatus,'ip')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">9.</td>
-			<td valign="top"><A id=ContentsSingleClauses href="IPContents.htm">Las oraciones básicas</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsCompsStatus" onclick="StatusClicked(ContentsCompsStatus,'comp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsSingleClauses href="IPContents.htm">Las oraciones básicas</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsCompsStatus" onclick="StatusClicked(ContentsCompsStatus,'comp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">10.</td>
-			<td valign="top"><A id=ContentsComps href="CompMain.xml">Las cláusulas de complemento</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsQuestionsStatus" onclick="StatusClicked(ContentsQuestionsStatus,'q')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsComps href="CompMain.xml">Las cláusulas de complemento</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsQuestionsStatus" onclick="StatusClicked(ContentsQuestionsStatus,'q')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">11.</td>
-			<td valign="top"><A id=ContentsQuestions href="QMain.xml">Las preguntas</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsRelClStatus" onclick="StatusClicked(ContentsRelClStatus,'relcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsQuestions href="QMain.xml">Las preguntas</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsRelClStatus" onclick="StatusClicked(ContentsRelClStatus,'relcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">12.</td>
-			<td valign="top"><A id=ContentsRelCl href="RelClMain.xml">Las cláusulas relativas</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsAdvClsStatus" onclick="StatusClicked(ContentsAdvClsStatus,'advcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsRelCl href="RelClMain.xml">Las cláusulas relativas</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsAdvClsStatus" onclick="StatusClicked(ContentsAdvClsStatus,'advcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">13.</td>
-			<td valign="top"><A id=ContentsAdvCls href="AdvClMain.xml">Las cláusulas adverbiales</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsNegativeStatus" onclick="StatusClicked(ContentsNegativeStatus,'neg')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsAdvCls href="AdvClMain.xml">Las cláusulas adverbiales</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsNegativeStatus" onclick="StatusClicked(ContentsNegativeStatus,'neg')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">14.</td>
-			<td valign="top"><A id=ContentsNegative href="NegMain.xml">Las construcciones negativas</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsCoordStatus" onclick="StatusClicked(ContentsCoordStatus,'coord')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsNegative href="NegMain.xml">Las construcciones negativas</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsCoordStatus" onclick="StatusClicked(ContentsCoordStatus,'coord')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">15.</td>
-			<td valign="top"><A id=ContentsCoord href="CoordMain.xml">Las construcciones coordinativas</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsFocusStatus" onclick="StatusClicked(ContentsFocusStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsCoord href="CoordMain.xml">Las construcciones coordinativas</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsFocusStatus" onclick="StatusClicked(ContentsFocusStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">16.</td>
-			<td valign="top"><A id=ContentsFocus href="FocusMain.xml">Las construcciones de enfoque y asunto</A></td>
-		</tr>
-		<tr>
-			<td id="ContentsExclamationsStatus" onclick="StatusClicked(ContentsExclamationsStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+						<td valign="top"><A id=ContentsFocus href="FocusMain.xml">Las construcciones de foco y tópico</A></td>
+					</tr>
+					<tr>
+						<td id="ContentsExclamationsStatus" onclick="StatusClicked(ContentsExclamationsStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">17.</td>
-			<td valign="top"><A id=ContentsExclamations href="ExclMain.xml">Las exclamaciones y los saludos</A></td>
-		</tr>
-	</tbody>
-</table>
-   </body>
+						<td valign="top"><A id=ContentsExclamations href="ExclMain.xml">Las exclamaciones, saludos e interjecciones</A></td>
+					</tr>
+				</tbody>
+			</table>
+	</body>
 </html>

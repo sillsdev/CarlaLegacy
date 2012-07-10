@@ -4,7 +4,7 @@
 	<section1 id="sPron">
 		<secTitle>Pronouns</secTitle>
 		<p>
-			<content>Pronouns come in various types, including personal pronouns, possessives, reflexives, reciprocals, and indefinites.  These pronouns normally stand alone in the place of a nominal phrase, but they can also be modified by a partitive phrase and in some languages may be modified by determiners and quantifiers.  Each of these types and issues will be looked at in turn, after covering the agreement features on all types of pronouns.
+			<content>Pronouns come in various types, including personal pronouns, possessives, reflexives, reciprocals, demonstratives and indefinites.  These pronouns normally stand alone in the place of a nominal phrase, but they can also be modified by a partitive phrase and in some languages may be modified by determiners and quantifiers.  Each of these types and issues will be looked at in turn, after covering the agreement features on all types of pronouns.
 </content>
 		</p>
 		<section2 id="sPronAgreement">
@@ -150,15 +150,23 @@
 					</row>
 				</table>
 			</example>
+
+		   <p show="swClassifierYesPronNo"><content>Even though there is a concord agreement system of classifiers in </content><langName/><content>, the pronouns are not marked with classifiers.</content></p>
+
 		</section2>
-		<section2 id="sPnPersonal">
+		<section2 id="sPronPersonal">
 			<secTitle>Personal Pronouns</secTitle>
 			<p><content>All languages have independent personal pronouns which are separate words that may appear in all the positions that nouns or nominal phrases may.  Some languages also have dependent forms of the personal pronouns which attach to another word in the sentence.</content></p>
 			<p><content></content><langName/><content/><case element="pron" attr="dependentPron">
 				<caseText value="no"> does not have a separate set of dependent personal pronouns.</caseText>
 				<caseText value="yes"> has dependent personal pronouns as well as the independent personal pronouns.  Both sets of personal pronouns will be presented here, with the independent forms covered first.</caseText>
 			</case><content/></p>
-			<p>
+
+		   <p show="swClassifierYesPronYes"><content>The independent pronouns in </content><langName/><content> are marked with classifiers as part of the concord agreement system.  The forms given in this section for the pronouns may be just the root, or the classifier may be shown attached.</content></p>
+
+
+
+		   <p>
 				<content>Personal pronouns normally have either more than or the same number of case features as nouns have.</content>
 			</p>
 			<p show="swNPCaseNone">
@@ -193,14 +201,23 @@
 			<p show="swNPCaseNom">
 				<content/>
 				<langName/>
-				<content> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors.  The independent personal pronouns which can appear in subject position are: </content>
+				<content> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors. </content><case element="typology" attr="caseExperiencer">
+				   <caseText value="no">Both Agent subjects and Experiencer subjects use the nominative pronouns, while both direct and indirect objects use the accusative pronouns.  There is not a distinct set of dative pronouns.</caseText>
+				   <caseText value="yesObj">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for both direct and indirect objects.  There is not a distinct set of dative pronouns.</caseText>
+				   <caseText value="yesDat">Agent subjects use the nominative pronouns, while Experiencer subjects use the dative pronouns also used for indirect objects.  Direct objects use the accusative pronouns.</caseText>
+				</case>
 			</p>
+		   <p show="swNPCaseNom"><content>  The independent personal pronouns which are used for </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">subjects are: </caseText>
+			  <caseText value="yesObj">Agent subjects are:</caseText>
+			  <caseText value="yesDat">Agent subjects are:</caseText>
+		   </case></p>
 			<example show="swNPCaseNom">
 				<table border="1">
 					<caption><content>Independent Nominative Personal Pronouns</content></caption>
 					<headerRow>
 						<headerCol>Person</headerCol>
-						<headerCol>Subject Pronouns</headerCol>
+						<headerCol>Nominative Pronouns</headerCol>
 						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
@@ -219,14 +236,19 @@
 					</row>				</table>
 			</example>
 			<p show="swNPCaseNom">
-				<content>The independent personal pronouns which can appear in object position are:</content>
+			   <content>The independent personal pronouns which are used for </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">direct or indirect objects are:</caseText>
+				  <caseText value="yesObj">direct or indirect objects, or for Experiencer subjects are:</caseText>
+				  <caseText value="yesDat">direct objects are:</caseText>
+			   </case>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
 					<caption><content>Independent Accusative Personal Pronouns</content></caption>
 					<headerRow>
 						<headerCol>Person</headerCol>
-						<headerCol>Object Pronouns</headerCol>
+						<headerCol>Accusative Pronouns</headerCol>
 						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
@@ -244,8 +266,34 @@
 						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>				</table>
 			</example>
-			<p show="swNPCaseNom">
-				<content>The independent personal pronouns which can appear in possessor position are:</content>
+		   <p show="swNPCaseNomAndYesDat">
+			  <content>The independent personal pronouns which are used for Experiencer subjects or for indirect objects are:</content>
+		   </p>
+		   <example show="swNPCaseNomAndYesDat">
+			  <table border="1">
+				 <caption><content>Independent Dative Personal Pronouns</content></caption>
+				 <headerRow>
+					<headerCol>Person</headerCol>
+					<headerCol>Dative Pronouns</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col rowspan="1"><content>First</content></col>
+					<col exampleLoc="pron/personalFirstNomDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+				 <row>
+					<col rowspan="1"><content>Second</content></col>
+					<col exampleLoc="pron/personalSecondNomDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>					<row>
+					<col rowspan="1"><content>Third</content></col>
+					<col exampleLoc="pron/personalThirdNomDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>				</table>
+		   </example>
+		   <p show="swNPCaseNom">
+				<content>The independent personal pronouns which are used for possessors are:</content>
 			</p>
 			<example show="swNPCaseNom">
 				<table border="1">
@@ -273,8 +321,22 @@
 			<p show="swNPCaseErg">
 				<content/>
 				<langName/>
-				<content> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The independent personal pronouns which can appear in subject position of transitive verbs are: </content>
+			   <content> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs. </content><case element="typology" attr="caseExperiencer">
+				  <caseText value="no">Both Agent subjects and Experiencer subjects of transitive verbs use the ergative pronouns, while both Agent and Experiencer subjects of intransitive verbs and direct and indirect objects of transitive verbs use the absolutive pronouns.  There is not a distinct set of dative pronouns.</caseText>
+				  <caseText value="yesObj">Agent subjects of transitive verbs use the ergative pronouns, while Experiencer subjects of transitive verbs use the same set of absolutive pronouns that are also used for subjects of intransitive verbs and both direct and indirect objects.  There is not a distinct set of dative pronouns.</caseText>
+				  <caseText value="yesDat">Agent subjects of transitive verbs use the ergative pronouns, while Agent subjects of intransitive verbs and direct objects of transitive verbs use the absolutive pronouns.  Experiencer subjects use the dative pronouns also used for indirect objects.</caseText>
+			   </case>
+			   <content> Possessors use the </content><case element="np" attr="possCaseErg">
+				  <caseText value="ergative">ergative pronouns also.</caseText>
+				  <caseText value="absolutive">absolutive pronouns also.</caseText>
+				  <caseText value="genitive">genitive pronouns, a distinct set.</caseText>
+			   </case>
 			</p>
+		   <p show="swNPCaseErg"><content> The independent personal pronouns which are used for </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">subjects of transitive verbs are: </caseText>
+			  <caseText value="yesObj">Agent subjects of transitive verbs are:</caseText>
+			  <caseText value="yesDat">Agent subjects of transitive verbs are:</caseText>
+		   </case></p>
 			<example show="swNPCaseErg">
 				<table border="1">
 					<caption><content>Independent Ergative Personal Pronouns</content></caption>
@@ -300,8 +362,13 @@
 					</row>
 				</table>
 			</example>
-			<p show="swNPCaseErg">
-				<content>The independent personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs are:</content>
+		   <p show="swNPCaseErg">
+			  <content>The independent personal pronouns which are used for   </content>
+			  <case element="typology" attr="caseExperiencer">
+				 <caseText value="no">subjects of intransitive verbs or for direct or indirect objects of transitive verbs are:</caseText>
+				 <caseText value="yesObj">direct or indirect objects, or for Experiencer subjects are:</caseText>
+				 <caseText value="yesDat">Agent subjects of intransitive verbs or for direct objects of transitive verbs are:</caseText>
+			  </case>
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
@@ -328,12 +395,42 @@
 					</row>
 				</table>
 			</example>
-			<p show="swNPCaseErg">
-				<content>The independent personal pronouns which can appear in possessor position are:</content>
+		   <p show="swNPCaseErgAndYesDat">
+			  <content>The independent personal pronouns which are used for Experiencer subjects or for indirect objects are:</content>
+		   </p>
+		   <example show="swNPCaseErgAndYesDat">
+			  <table border="1">
+				 <caption><content>Independent Dative Personal Pronouns</content></caption>
+				 <headerRow>
+					<headerCol>Person</headerCol>
+					<headerCol>Dative Pronouns</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col rowspan="1"><content>First</content></col>
+					<col exampleLoc="pron/personalFirstErgDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+				 <row>
+					<col rowspan="1"><content>Second</content></col>
+					<col exampleLoc="pron/personalSecondErgDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>					<row>
+					<col rowspan="1"><content>Third</content></col>
+					<col exampleLoc="pron/personalThirdErgDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>				</table>
+		   </example>
+		   <p show="swNPCaseErg">
+				<content>The independent personal pronouns which are used as possessors are:</content>
 			</p>
 			<example show="swNPCaseErg">
 				<table border="1">
-					<caption><content>Independent Genitive Personal Pronouns</content></caption>
+					<caption><content>Independent </content><case element="np" attr="possCaseErg">
+					   <caseText value="ergative">Ergative</caseText>
+					   <caseText value="absolutive">Absolutive</caseText>
+					   <caseText value="genitive">Genitive</caseText>
+					</case><content> Personal Pronouns</content></caption>
 					<headerRow>
 						<headerCol>Person</headerCol>
 						<headerCol>Possessor Pronouns</headerCol>
@@ -359,14 +456,23 @@
 			<p show="swNPCaseSplit">
 				<content/>
 				<langName/>
-				<content> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  The independent personal pronouns which normally appear in subject position are: </content>
+			   <content> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  In the nominative-accusative cases, </content><case element="typology" attr="caseExperiencer">
+				  <caseText value="no">both Agent subjects and Experiencer subjects use the nominative pronouns, while both direct and indirect objects use the accusative pronouns.  There is not a distinct set of dative pronouns.</caseText>
+				  <caseText value="yesObj">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for both direct and indirect objects.  There is not a distinct set of dative pronouns.</caseText>
+				  <caseText value="yesDat">Agent subjects use the nominative pronouns, while Experiencer subjects use the dative pronouns also used for indirect objects.  Direct objects use the accusative pronouns.</caseText>
+			   </case>
 			</p>
+		   <p show="swNPCaseSplit"><content>  The independent personal pronouns which are used for </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">subjects are: </caseText>
+			  <caseText value="yesObj">Agent subjects are:</caseText>
+			  <caseText value="yesDat">Agent subjects are:</caseText>
+		   </case></p>
 			<example show="swNPCaseSplit">
 				<table border="1">
 					<caption><content>Independent Nominative Personal Pronouns</content></caption>
 					<headerRow>
 						<headerCol>Person</headerCol>
-						<headerCol>Subject Pronouns</headerCol>
+						<headerCol>Nominative Pronouns</headerCol>
 						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
@@ -387,14 +493,20 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplit">
-				<content>The independent personal pronouns which normally appear in object position are:</content>
+			   <content>The independent personal pronouns which are used for </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">direct or indirect objects are:</caseText>
+				  <caseText value="yesObj">direct or indirect objects, or for Experiencer subjects are:</caseText>
+				  <caseText value="yesDat">direct objects are:</caseText>
+			   </case>
 			</p>
+
 			<example show="swNPCaseSplit">
 				<table border="1">
 					<caption><content>Independent Accusative Personal Pronouns</content></caption>
 					<headerRow>
 						<headerCol>Person</headerCol>
-						<headerCol>Object Pronouns</headerCol>
+						<headerCol>Accusative Pronouns</headerCol>
 						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
@@ -414,8 +526,34 @@
 					</row>
 				</table>
 			</example>
-			<p show="swNPCaseSplit">
-				<content>The independent personal pronouns which normally appear in possessor position are:</content>
+		   <p show="swNPCaseSplitAndYesDat">
+			  <content>The independent personal pronouns which are used for Experiencer subjects or for indirect objects are:</content>
+		   </p>
+		   <example show="swNPCaseSplitAndYesDat">
+			  <table border="1">
+				 <caption><content>Independent Dative Personal Pronouns</content></caption>
+				 <headerRow>
+					<headerCol>Person</headerCol>
+					<headerCol>Dative Pronouns</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col rowspan="1"><content>First</content></col>
+					<col exampleLoc="pron/personalFirstSplitDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+				 <row>
+					<col rowspan="1"><content>Second</content></col>
+					<col exampleLoc="pron/personalSecondSplitDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>					<row>
+					<col rowspan="1"><content>Third</content></col>
+					<col exampleLoc="pron/personalThirdSplitDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>				</table>
+		   </example>
+		   <p show="swNPCaseSplit">
+				<content>The independent personal pronouns which are normally used as possessors are:</content>
 			</p>
 			<example show="swNPCaseSplit">
 				<table border="1">
@@ -443,8 +581,11 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplit">
-				<content>The independent personal pronouns which can appear in subject position of transitive verbs in the special cases of split ergativity are:</content>
-			</p>
+			   <content>The independent personal pronouns which are used for </content><case element="typology" attr="caseExperiencer">
+				  <caseText value="no">subjects of transitive verbs</caseText>
+				  <caseText value="yesObj">Agent subjects of transitive verbs</caseText>
+				  <caseText value="yesDat">Agent subjects of transitive verbs</caseText>
+			   </case><content> in the special cases of split ergativity are:</content></p>
 			<example show="swNPCaseSplit">
 				<table border="1">
 				<caption><content>Independent Ergative Personal Pronouns</content></caption>
@@ -471,9 +612,14 @@
 			</table>
 			</example>
 			<p show="swNPCaseSplit">
-				<content>The independent personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity are:</content>
+			   <content>The independent personal pronouns which are used for   </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">subjects of intransitive verbs or for direct or indirect objects of transitive verbs</caseText>
+				  <caseText value="yesObj">direct or indirect objects, or for Experiencer subjects</caseText>
+				  <caseText value="yesDat">Agent subjects of intransitive verbs or for direct objects of transitive verbs</caseText>
+			   </case><content> in the special cases of split ergativity are:</content>
 			</p>
-			<example show="swNPCaseSplit">
+		   <example show="swNPCaseSplit">
 				<table border="1">
 					<caption><content>Independent Absolutive Personal Pronouns</content></caption>
 					<headerRow>
@@ -497,10 +643,34 @@
 						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
-			</example>
+		   </example>
+		   <p show="swNPCaseSplit">
+			 <case element="typology" attr="caseExperiencer">
+				<caseText value="yesDat">The dative pronouns given above are used for Experiencer subjects and for indirect objects, even in the special cases of split ergativity. </caseText></case>
+			  <content> Possessors use the </content><case element="np" attr="possCaseErg">
+				 <caseText value="ergative">ergative pronouns in the special cases of split ergativity.</caseText>
+				 <caseText value="absolutive">absolutive pronouns in the special cases of split ergativity.</caseText>
+				 <caseText value="genitive">genitive pronouns given above in the special cases of split ergativity as well.</caseText>
+			  </case>
+		   </p>
 
-			<p show="swNPCaseNoneandDependentYes">
-				<content>Turning now to the dependent pronouns, as seen above </content>
+		   <p show="swDependentPronYes">
+			  <content>Turning now to the dependent pronouns, in </content><langName/><content> the dependent pronouns attach to the verb or noun or other words as </content>
+			  <case element="pron" attr="dependentPos">
+				 <caseText value="before">prefixes or proclitics. </caseText>
+				 <caseText value="after">suffixes or enclitics. </caseText>
+				 <caseText value="either">prefixes or proclitics with some word categories but as suffixes or enclitics with other categories of words.</caseText>
+				 <caseText value="unknown">________.</caseText>
+			  </case>
+			  <text show="swClassifiersYesAgrOrType"><content> The dependent pronouns</content>
+				 <case element="pron" attr="pronDepClassifier">
+					<caseText value="no"> are distinct from the classifiers.</caseText>
+					<caseText value="yes">, especially for third person, are either identical or closely related to the appropriate classifiers.</caseText>
+				 </case></text>
+			  </p>
+
+		   <p show="swNPCaseNoneandDependentYes">
+				<content>As seen above, </content>
 				<langName/>
 				<content> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here.</content>
 			</p>
@@ -532,17 +702,26 @@
 					</row>
 				</table>
 			</example>
-			<p show="swNPCaseNomandDependentYes">
-				<content>Turning now to the dependent pronouns, as seen above </content>
+		   <p show="swNPCaseNomandDependentYes">
+				<content>As seen above, </content>
 				<langName/>
-				<content> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors.  The dependent personal pronouns which can appear in subject position are: </content>
-			</p>
+			  <content> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors. </content><case element="typology" attr="caseExperiencer">
+				 <caseText value="no">Both Agent subjects and Experiencer subjects use the nominative pronouns, while both direct and indirect objects use the accusative pronouns.  There is not a distinct set of dative pronouns.</caseText>
+				 <caseText value="yesObj">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for both direct and indirect objects.  There is not a distinct set of dative pronouns.</caseText>
+				 <caseText value="yesDat">Agent subjects use the nominative pronouns, while Experiencer subjects use the dative pronouns also used for indirect objects.  Direct objects use the accusative pronouns.</caseText>
+			  </case>
+		   </p>
+		   <p show="swNPCaseNomandDependentYes"><content>The dependent personal pronouns which are used for </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">subjects are: </caseText>
+			  <caseText value="yesObj">Agent subjects are:</caseText>
+			  <caseText value="yesDat">Agent subjects are:</caseText>
+		   </case></p>
 			<example show="swNPCaseNomandDependentYes">
 				<table border="1">
 					<caption><content>Dependent Nominative Personal Pronouns</content></caption>
 					<headerRow>
 						<headerCol>Person</headerCol>
-						<headerCol>Subject Pronouns</headerCol>
+						<headerCol>Nominative Pronouns</headerCol>
 						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
@@ -560,15 +739,20 @@
 						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>				</table>
 			</example>
-			<p show="swNPCaseNomandDependentYes">
-				<content>The dependent personal pronouns which can appear in object position are:</content>
-			</p>
+		   <p show="swNPCaseNomandDependentYes">
+			  <content>The dependent personal pronouns which are used for </content>
+			  <case element="typology" attr="caseExperiencer">
+				 <caseText value="no">direct or indirect objects are:</caseText>
+				 <caseText value="yesObj">direct or indirect objects, or for Experiencer subjects are:</caseText>
+				 <caseText value="yesDat">direct objects are:</caseText>
+			  </case>
+		   </p>
 			<example show="swNPCaseNomandDependentYes">
 				<table border="1">
 					<caption><content>Dependent Accusative Personal Pronouns</content></caption>
 					<headerRow>
 						<headerCol>Person</headerCol>
-						<headerCol>Object Pronouns</headerCol>
+						<headerCol>Accusative Pronouns</headerCol>
 						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
@@ -586,8 +770,34 @@
 						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>				</table>
 			</example>
-			<p show="swNPCaseNomandDependentYes">
-				<content>The dependent personal pronouns which can appear in possessor position are:</content>
+		   <p show="swNPCaseNomAndYesDatandDependentYes">
+			  <content>The dependent personal pronouns which are used for Experiencer subjects or for indirect objects are:</content>
+		   </p>
+		   <example show="swNPCaseNomAndYesDatandDependentYes">
+			  <table border="1">
+				 <caption><content>Dependent Dative Personal Pronouns</content></caption>
+				 <headerRow>
+					<headerCol>Person</headerCol>
+					<headerCol>Dative Pronouns</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col rowspan="1"><content>First</content></col>
+					<col exampleLoc="pron/personalDependentFirstNomDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+				 <row>
+					<col rowspan="1"><content>Second</content></col>
+					<col exampleLoc="pron/personalDependentSecondNomDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>					<row>
+					<col rowspan="1"><content>Third</content></col>
+					<col exampleLoc="pron/personalDependentThirdNomDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>				</table>
+		   </example>
+		   <p show="swNPCaseNomandDependentYes">
+				<content>The dependent personal pronouns which are used for possessors are:</content>
 			</p>
 			<example show="swNPCaseNomandDependentYes">
 				<table border="1">
@@ -612,12 +822,27 @@
 						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>				</table>
 			</example>
-			<p show="swNPCaseErgandDependentYes">
-				<content>Turning now to the dependent pronouns, as seen above </content>
+
+		   <p show="swNPCaseErgandDependentYes">
+				<content>As seen above, </content>
 				<langName/>
-				<content> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The dependent personal pronouns which can appear in subject position of transitive verbs are: </content>
-			</p>
-			<example show="swNPCaseErgandDependentYes">
+			  <content> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs. </content><case element="typology" attr="caseExperiencer">
+				 <caseText value="no">Both Agent subjects and Experiencer subjects of transitive verbs use the ergative pronouns, while both Agent and Experiencer subjects of intransitive verbs and direct and indirect objects of transitive verbs use the absolutive pronouns.  There is not a distinct set of dative pronouns.</caseText>
+				 <caseText value="yesObj">Agent subjects of transitive verbs use the ergative pronouns, while Experiencer subjects of transitive verbs use the same set of absolutive pronouns that are also used for subjects of intransitive verbs and both direct and indirect objects.  There is not a distinct set of dative pronouns.</caseText>
+				 <caseText value="yesDat">Agent subjects of transitive verbs use the ergative pronouns, while Agent subjects of intransitive verbs and direct objects of transitive verbs use the absolutive pronouns.  Experiencer subjects use the dative pronouns also used for indirect objects.</caseText>
+			  </case>
+			  <content> Possessors use the </content><case element="np" attr="possCaseErg">
+				 <caseText value="ergative">ergative pronouns also.</caseText>
+				 <caseText value="absolutive">absolutive pronouns also.</caseText>
+				 <caseText value="genitive">genitive pronouns, a distinct set.</caseText>
+			  </case>
+		   </p>
+		   <p show="swNPCaseErg"><content> The dependent personal pronouns which are used for </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">subjects of transitive verbs are: </caseText>
+			  <caseText value="yesObj">Agent subjects of transitive verbs are:</caseText>
+			  <caseText value="yesDat">Agent subjects of transitive verbs are:</caseText>
+		   </case></p>
+		   <example show="swNPCaseErgandDependentYes">
 				<table border="1">
 					<caption><content>Dependent Ergative Personal Pronouns</content></caption>
 					<headerRow>
@@ -643,9 +868,14 @@
 				</table>
 			</example>
 			<p show="swNPCaseErgandDependentYes">
-				<content>The dependent personal pronouns which can appear in subject position of intransitive verbs or in object position of transitive verbs are:</content>
+			   <content>The dependent personal pronouns which are used for   </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">subjects of intransitive verbs or for direct or indirect objects of transitive verbs are:</caseText>
+				  <caseText value="yesObj">direct or indirect objects, or for Experiencer subjects are:</caseText>
+				  <caseText value="yesDat">Agent subjects of intransitive verbs or for direct objects of transitive verbs are:</caseText>
+			   </case>
 			</p>
-			<example show="swNPCaseErgandDependentYes">
+		   <example show="swNPCaseErgandDependentYes">
 				<table border="1">
 					<caption><content>Dependent Absolutive Personal Pronouns</content></caption>
 					<headerRow>
@@ -670,13 +900,43 @@
 					</row>
 				</table>
 			</example>
-			<p show="swNPCaseErgandDependentYes">
-				<content>The dependent personal pronouns which can appear in possessor position are:</content>
+		   <p show="swNPCaseErgAndYesDatandDependentYes">
+			  <content>The dependent personal pronouns which are used for Experiencer subjects or for indirect objects are:</content>
+		   </p>
+		   <example show="swNPCaseErgAndYesDatandDependentYes">
+			  <table border="1">
+				 <caption><content>Dependent Dative Personal Pronouns</content></caption>
+				 <headerRow>
+					<headerCol>Person</headerCol>
+					<headerCol>Dative Pronouns</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col rowspan="1"><content>First</content></col>
+					<col exampleLoc="pron/personalDependentFirstErgDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+				 <row>
+					<col rowspan="1"><content>Second</content></col>
+					<col exampleLoc="pron/personalDependentSecondErgDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>					<row>
+					<col rowspan="1"><content>Third</content></col>
+					<col exampleLoc="pron/personalDependentThirdErgDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>				</table>
+		   </example>
+		   <p show="swNPCaseErgandDependentYes">
+				<content>The dependent personal pronouns which are used as possessors are:</content>
 			</p>
 			<example show="swNPCaseErgandDependentYes">
 				<table border="1">
-					<caption><content>Dependent Genitive Personal Pronouns</content></caption>
-					<headerRow>
+				   <caption><content>Dependent </content><case element="np" attr="possCaseErg">
+					  <caseText value="ergative">Ergative</caseText>
+					  <caseText value="absolutive">Absolutive</caseText>
+					  <caseText value="genitive">Genitive</caseText>
+				   </case><content> Personal Pronouns</content></caption>
+				   <headerRow>
 						<headerCol>Person</headerCol>
 						<headerCol>Possessor Pronouns</headerCol>
 						<headerCol>Gloss</headerCol>
@@ -699,16 +959,25 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplitandDependentYes">
-				<content>Turning now to the dependent pronouns, as seen above </content>
+				<content>As seen above, </content>
 				<langName/>
-				<content> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  The dependent personal pronouns which normally appear in subject position are: </content>
+			   <content> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  In the nominative-accusative cases, </content><case element="typology" attr="caseExperiencer">
+				  <caseText value="no">both Agent subjects and Experiencer subjects use the nominative pronouns, while both direct and indirect objects use the accusative pronouns.  There is not a distinct set of dative pronouns.</caseText>
+				  <caseText value="yesObj">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for both direct and indirect objects.  There is not a distinct set of dative pronouns.</caseText>
+				  <caseText value="yesDat">Agent subjects use the nominative pronouns, while Experiencer subjects use the dative pronouns also used for indirect objects.  Direct objects use the accusative pronouns.</caseText>
+			   </case>
 			</p>
-			<example show="swNPCaseSplitandDependentYes">
+		   <p show="swNPCaseSplit"><content>  The dependent personal pronouns which are used for </content><case element="typology" attr="caseExperiencer">
+			  <caseText value="no">subjects are: </caseText>
+			  <caseText value="yesObj">Agent subjects are:</caseText>
+			  <caseText value="yesDat">Agent subjects are:</caseText>
+		   </case></p>
+		   <example show="swNPCaseSplitandDependentYes">
 				<table border="1">
 					<caption><content>Dependent Nominative Personal Pronouns</content></caption>
 					<headerRow>
 						<headerCol>Person</headerCol>
-						<headerCol>Subject Pronouns</headerCol>
+						<headerCol>Nominative Pronouns</headerCol>
 						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
@@ -729,14 +998,19 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplitandDependentYes">
-				<content>The dependent personal pronouns which normally appear in object position are:</content>
+			   <content>The dependent personal pronouns which are used for </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">direct or indirect objects are:</caseText>
+				  <caseText value="yesObj">direct or indirect objects, or for Experiencer subjects are:</caseText>
+				  <caseText value="yesDat">direct objects are:</caseText>
+			   </case>
 			</p>
-			<example show="swNPCaseSplitandDependentYes">
+		   <example show="swNPCaseSplitandDependentYes">
 				<table border="1">
 					<caption><content>Dependent Accusative Personal Pronouns</content></caption>
 					<headerRow>
 						<headerCol>Person</headerCol>
-						<headerCol>Object Pronouns</headerCol>
+						<headerCol>Accusative Pronouns</headerCol>
 						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
@@ -756,8 +1030,34 @@
 					</row>
 				</table>
 			</example>
-			<p show="swNPCaseSplitandDependentYes">
-				<content>The dependent personal pronouns which normally appear in possessor position are:</content>
+		   <p show="swNPCaseSplitAndYesDatandDependentYes">
+			  <content>The dependent personal pronouns which are used for Experiencer subjects or for indirect objects are:</content>
+		   </p>
+		   <example show="swNPCaseSplitAndYesDatandDependentYes">
+			  <table border="1">
+				 <caption><content>Dependent Dative Personal Pronouns</content></caption>
+				 <headerRow>
+					<headerCol>Person</headerCol>
+					<headerCol>Dative Pronouns</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col rowspan="1"><content>First</content></col>
+					<col exampleLoc="pron/personalDependentFirstSplitDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+				 <row>
+					<col rowspan="1"><content>Second</content></col>
+					<col exampleLoc="pron/personalDependentSecondSplitDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>					<row>
+					<col rowspan="1"><content>Third</content></col>
+					<col exampleLoc="pron/personalDependentThirdSplitDativeExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>				</table>
+		   </example>
+		   <p show="swNPCaseSplitandDependentYes">
+				<content>The dependent personal pronouns which are normally used as possessors are:</content>
 			</p>
 			<example show="swNPCaseSplitandDependentYes">
 				<table border="1">
@@ -785,9 +1085,12 @@
 				</table>
 			</example>
 			<p show="swNPCaseSplitandDependentYes">
-				<content>The dependent personal pronouns which can appear in subject position of transitive verbs in the special cases of split ergativity are:</content>
-			</p>
-			<example show="swNPCaseSplitandDependentYes">
+			   <content>The dependent personal pronouns which are used for </content><case element="typology" attr="caseExperiencer">
+				  <caseText value="no">subjects of transitive verbs</caseText>
+				  <caseText value="yesObj">Agent subjects of transitive verbs</caseText>
+				  <caseText value="yesDat">Agent subjects of transitive verbs</caseText>
+			   </case><content> in the special cases of split ergativity are:</content></p>
+		   <example show="swNPCaseSplitandDependentYes">
 				<table border="1">
 				<caption><content>Dependent Ergative Personal Pronouns</content></caption>
 				<headerRow>
@@ -813,9 +1116,14 @@
 			</table>
 			</example>
 			<p show="swNPCaseSplitandDependentYes">
-				<content>The dependent personal pronouns which appear as subjects of intransitive verbs and objects of transitive verbs in the special cases of split ergativity are:</content>
+			   <content>The dependent personal pronouns which are used for   </content>
+			   <case element="typology" attr="caseExperiencer">
+				  <caseText value="no">subjects of intransitive verbs or for direct or indirect objects of transitive verbs</caseText>
+				  <caseText value="yesObj">direct or indirect objects, or for Experiencer subjects</caseText>
+				  <caseText value="yesDat">Agent subjects of intransitive verbs or for direct objects of transitive verbs</caseText>
+			   </case><content> in the special cases of split ergativity are:</content>
 			</p>
-			<example show="swNPCaseSplitandDependentYes">
+		   <example show="swNPCaseSplitandDependentYes">
 				<table border="1">
 					<caption><content>Dependent Absolutive Personal Pronouns</content></caption>
 					<headerRow>
@@ -839,7 +1147,18 @@
 						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
 				</table>
-			</example>
+		   </example>
+		   <p show="swNPCaseSplitandDependentYes">
+			  <case element="typology" attr="caseExperiencer">
+				 <caseText value="yesDat">The dependent dative pronouns given above are used for Experiencer subjects and for indirect objects, even in the special cases of split ergativity. </caseText></case>
+			  <content> Possessors use the </content><case element="np" attr="possCaseErg">
+				 <caseText value="ergative">dependent ergative pronouns in the special cases of split ergativity.</caseText>
+				 <caseText value="absolutive">dependent absolutive pronouns in the special cases of split ergativity.</caseText>
+				 <caseText value="genitive">dependent genitive pronouns given above in the special cases of split ergativity as well.</caseText>
+			  </case>
+		   </p>
+
+
 			<p show="swDependentPronYes"><content>For further details about how the dependent pronouns may be used, see sections </content><sectionRef sec="sIPAgr"/><content> and </content><sectionRef sec="sIPProDrop"/><content> where verbal agreement and missing subjects (pro-drop) are discussed.</content></p>
 
 		</section2>
@@ -926,6 +1245,8 @@
 						<caseText value="yes">are built by adding an affix to another pronoun.</caseText>
 						<caseText value="noWord">are a distinct set of pronouns.</caseText>
 						<caseText value="noNoun">are phrases consisting of a certain noun with a pronoun as the possessor.</caseText>
+					   <caseText value="noQP">are special quantified nominal phrases.</caseText>
+					   <caseText value="some">are sometimes distinct words but others are phrases and some may use a reflexive affix.</caseText>
 					</case>
 					<content>  The forms used for reflexives are given here, beginning with first person, then second person, then third person:</content>
 				</text>
@@ -979,9 +1300,10 @@
 						<caseText value="yes">are built by adding an affix to another pronoun.</caseText>
 						<caseText value="noWord">are a distinct set of pronouns.</caseText>
 						<caseText value="noNoun">are phrases consisting of a certain noun with a pronoun as the possessor.</caseText>
-						<caseText value="noQP">are special quantified noun phrases.</caseText>
+					   <caseText value="noQP">are special quantified nominal phrases.</caseText>
+					   <caseText value="some">are sometimes distinct words but others are phrases and some may use a reciprocal affix.</caseText>
 					</case>
-					<content/>
+				   <content>  The forms used for reciprocals are given here, beginning with first person, then second person, then third person:</content>
 				</text></p>
 
 				<example show="swPronRecipYes">
@@ -1015,6 +1337,260 @@
 				<interlinear exampleLoc="pron/recipSentExample"/>
 			</example>
 		</section2>
+
+	   <section2 id="sPronDem">
+		  <secTitle>Demonstrative Pronouns</secTitle>
+		  <p><content>Most languages have demonstrative pronouns that are related either to the demonstratives that modify a noun or to the locative adverbs.  The demonstrative pronouns specify the distance from the speaker and may have singular and plural forms.  English examples are </content><langData>this</langData><content>, </content><langData>that</langData><content>, </content><langData>these</langData><content> and </content><langData>those</langData><content>, which are identical to the demonstratives which modify a noun.  Demonstrative pronouns stand alone as the subject or object of a sentence, as in: </content>
+			 <langData>Those are the books I asked for</langData><content>, </content><langData>Julie choose those</langData><content>, </content><langData>This is it</langData><content> and </content><langData>We like that.</langData>
+		  </p>
+		  <p><content>As seen in the examples above, English only has a single set of demonstratives to use in both subject and object position.  Some languages have distinct sets of demonstrative pronouns based on their case system.</content></p>
+
+	   <p><content>In </content><langName/><content>, the forms of the demonstrative pronouns are </content><case element="advp" attr="advLocDem">
+				<caseText value="no">completely distinct from the locative adverbs. </caseText>
+				<caseText value="same">identical to the locative adverbs, though they are used in different positions in the sentence. </caseText>
+				<caseText value="affix">related to the locative adverbs.  An affix is added to a demonstrative to form a locative adverb. </caseText>
+	   </case><content> See section </content><sectionRef sec="sAdvPLocative"/><content> for information on the locative adverbs</content><text show="swNPArtAndDemDemOrBoth"><content> and section </content><sectionRef sec="sNPArtDem"/><content> for details about the demonstratives that modifiy a noun</content></text>
+	   <content>.</content></p>
+
+		  <p show="swCaseNotNone"><content>The demonstrative pronouns in </content><langName/><case element="pron" attr="demCase">
+			 <caseText value="no"> are not distinguished for case.  The same forms can be used in all positions.</caseText>
+			 <caseText value="yes"> have separate sets for the different positions based on case.</caseText>
+		  </case></p>
+
+		  <p show="swCaseNoneOrDemCaseNo"><content>The demonstrative pronouns in </content><langName/><content> are shown in the following chart, based on the distance from the speaker:</content></p>
+		  <example show="swCaseNoneOrDemCaseNo">
+			 <table border="1">
+				<headerRow>
+				   <headerCol>Distance</headerCol>
+				   <headerCol>Demonstrative Pronouns</headerCol>
+				   <headerCol>Gloss</headerCol>
+				</headerRow>
+				<row>
+				   <col><content>Proximal</content></col>
+				   <col exampleLoc="pron/demProximalExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Medial</content></col>
+				   <col exampleLoc="pron/demMedialExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Distal</content></col>
+				   <col exampleLoc="pron/demDistalExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+			 </table>
+		  </example>
+
+		  <p show="swCaseNomAndDemCaseYes"><content>Since </content><langName/><content> has a nominative-accusative case system, there are separate sets of demonstrative pronouns for subjects versus objects.  The demonstrative pronouns which can be used as subjects in </content><langName/><content> are shown in the following chart, based on the distance from the speaker:</content></p>
+		  <example show="swCaseNomAndDemCaseYes">
+			 <table border="1">
+				<headerRow>
+				   <headerCol>Distance</headerCol>
+				   <headerCol>Demonstrative Pronouns for Subjects</headerCol>
+				   <headerCol>Gloss</headerCol>
+				</headerRow>
+				<row>
+				   <col><content>Proximal</content></col>
+				   <col exampleLoc="pron/demProximalNomExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Medial</content></col>
+				   <col exampleLoc="pron/demMedialNomExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Distal</content></col>
+				   <col exampleLoc="pron/demDistalNomExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+			 </table>
+		  </example>
+		  <p show="swCaseNomAndDemCaseYes"><content>The demonstrative pronouns which can be used as objects in </content><langName/><content> are shown in the following chart, based on the distance from the speaker:</content></p>
+		  <example show="swCaseNomAndDemCaseYes">
+			 <table border="1">
+				<headerRow>
+				   <headerCol>Distance</headerCol>
+				   <headerCol>Demonstrative Pronouns for Objects</headerCol>
+				   <headerCol>Gloss</headerCol>
+				</headerRow>
+				<row>
+				   <col><content>Proximal</content></col>
+				   <col exampleLoc="pron/demProximalAccExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Medial</content></col>
+				   <col exampleLoc="pron/demMedialAccExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Distal</content></col>
+				   <col exampleLoc="pron/demDistalAccExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+			 </table>
+		  </example>
+
+		  <p show="swCaseErgAndDemCaseYes"><content>Since </content><langName/><content> has an ergative-absolutive case system, there are separate sets of demonstrative pronouns for subjects ot transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.  The demonstrative pronouns which can be used as subjects of transitive verbs in </content><langName/><content> are shown in the following chart, based on the distance from the speaker:</content></p>
+		  <example show="swCaseErgAndDemCaseYes">
+			 <table border="1">
+				<headerRow>
+				   <headerCol>Distance</headerCol>
+				   <headerCol>Ergative Demonstrative Pronouns</headerCol>
+				   <headerCol>Gloss</headerCol>
+				</headerRow>
+				<row>
+				   <col><content>Proximal</content></col>
+				   <col exampleLoc="pron/demProximalErgExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Medial</content></col>
+				   <col exampleLoc="pron/demMedialErgExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Distal</content></col>
+				   <col exampleLoc="pron/demDistalErgExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+			 </table>
+		  </example>
+		  <p show="swCaseErgAndDemCaseYes"><content>The demonstrative pronouns which can be used as subjects of intransitive verbs or as objects of transitive verbs in </content><langName/><content> are shown in the following chart, based on the distance from the speaker:</content></p>
+		  <example show="swCaseErgAndDemCaseYes">
+			 <table border="1">
+				<headerRow>
+				   <headerCol>Distance</headerCol>
+				   <headerCol>Absolutive Demonstrative Pronouns</headerCol>
+				   <headerCol>Gloss</headerCol>
+				</headerRow>
+				<row>
+				   <col><content>Proximal</content></col>
+				   <col exampleLoc="pron/demProximalAbsExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Medial</content></col>
+				   <col exampleLoc="pron/demMedialAbsExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Distal</content></col>
+				   <col exampleLoc="pron/demDistalAbsExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+			 </table>
+		  </example>
+
+		  <p show="swCaseSplitAndDemCaseYes"><content>Since </content><langName/><content> has a split case system, there four separate sets of demonstrative pronouns: two for the normal nominative-accusative case system, to distinguish subjects versus objects, and two for the special cases when the ergative-absolutive case system is used, to distinguish subjects ot transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.</content></p>
+		  <p show="swCaseSplitAndDemCaseYes"><content>The demonstrative pronouns which can be used as subjects in the normal nominative-accusative system in </content><langName/><content> are shown in the following chart, based on the distance from the speaker:</content></p>
+		  <example show="swCaseSplitAndDemCaseYes">
+			 <table border="1">
+				<headerRow>
+				   <headerCol>Distance</headerCol>
+				   <headerCol>Nominative Demonstrative Pronouns</headerCol>
+				   <headerCol>Gloss</headerCol>
+				</headerRow>
+				<row>
+				   <col><content>Proximal</content></col>
+				   <col exampleLoc="pron/demProximalNomExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Medial</content></col>
+				   <col exampleLoc="pron/demMedialNomExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Distal</content></col>
+				   <col exampleLoc="pron/demDistalNomExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+			 </table>
+		  </example>
+		  <p show="swCaseSplitAndDemCaseYes"><content>The demonstrative pronouns which can be used as objects in the normal nominative-accusative system in </content><langName/><content> are shown in the following chart, based on the distance from the speaker:</content></p>
+		  <example show="swCaseSplitAndDemCaseYes">
+			 <table border="1">
+				<headerRow>
+				   <headerCol>Distance</headerCol>
+				   <headerCol>Accusative Demonstrative Pronouns</headerCol>
+				   <headerCol>Gloss</headerCol>
+				</headerRow>
+				<row>
+				   <col><content>Proximal</content></col>
+				   <col exampleLoc="pron/demProximalAccExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Medial</content></col>
+				   <col exampleLoc="pron/demMedialAccExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Distal</content></col>
+				   <col exampleLoc="pron/demDistalAccExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+			 </table>
+		  </example>
+
+		  <p show="swCaseSplitAndDemCaseYes"><content>The demonstrative pronouns that can be used as subjects ot transitive verbs in the split ergativity situations in </content><langName/><content> are shown in the following chart, based on the distance from the speaker:</content></p>
+		  <example show="swCaseSplitAndDemCaseYes">
+			 <table border="1">
+				<headerRow>
+				   <headerCol>Distance</headerCol>
+				   <headerCol>Ergative Demonstrative Pronouns</headerCol>
+				   <headerCol>Gloss</headerCol>
+				</headerRow>
+				<row>
+				   <col><content>Proximal</content></col>
+				   <col exampleLoc="pron/demProximalErgExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Medial</content></col>
+				   <col exampleLoc="pron/demMedialErgExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Distal</content></col>
+				   <col exampleLoc="pron/demDistalErgExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+			 </table>
+		  </example>
+		  <p show="swCaseSplitAndDemCaseYes"><content>The demonstrative pronouns which can be used as subjects of intransitive verbs or as objects of transitive verbs n the split ergativity situations in </content><langName/><content> are shown in the following chart, based on the distance from the speaker:</content></p>
+		  <example show="swCaseSplitAndDemCaseYes">
+			 <table border="1">
+				<headerRow>
+				   <headerCol>Distance</headerCol>
+				   <headerCol>Absolutive Demonstrative Pronouns</headerCol>
+				   <headerCol>Gloss</headerCol>
+				</headerRow>
+				<row>
+				   <col><content>Proximal</content></col>
+				   <col exampleLoc="pron/demProximalAbsExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Medial</content></col>
+				   <col exampleLoc="pron/demMedialAbsExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+				<row>
+				   <col><content>Distal</content></col>
+				   <col exampleLoc="pron/demDistalAbsExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				</row>
+			 </table>
+		  </example>
+
+
+	   </section2>
+
 		<section2 id="sPronIndef">
 			<secTitle>Indefinites</secTitle>
 			<p>
@@ -1039,7 +1615,7 @@
 				<content> for English.</content>
 			</p>
 			<p>
-				<content>In </content>
+				<content>Beginning with the positive forms, in </content>
 				<langName/>
 				<content>, </content>
 				<case element="pron" attr="indef">
@@ -1060,8 +1636,20 @@
 					</row>
 				</table>
 			</example>
+
+		   <p>
+			  <content>Examples of positive indefinite nominal phrases </content>
+			  <text show="swPronIndefYes">
+				 <content>(if any) </content>
+			  </text>
+			  <content>include:</content>
+		   </p>
+		   <example>
+			  <interlinear exampleLoc="pron/indefNPExample"/>
+		   </example>
+
 			<p show="swNotPosOnly">
-				<content>In </content>
+				<content>For the negative forms, in </content>
 				<langName/>
 				<content>, </content>
 				<case element="pron" attr="negIndef">
@@ -1070,8 +1658,9 @@
 				</case>
 				<content/>
 			</p>
-			<p show="swPosOnly">
-				<content>In </content>
+
+		   <p show="swPosOnly">
+			  <content>For the negative forms, in </content>
 				<langName/>
 				<content>, </content>
 				<case element="pron" attr="negIndef">
@@ -1080,29 +1669,19 @@
 				</case>
 				<content/>
 			</p>
-			<example show="swPronNegIndefYes">
-				<table border="1">
-					<headerRow>
-						<headerCol>Negative Indefinite Pronouns</headerCol>
-						<headerCol>Gloss</headerCol>
-					</headerRow>
-					<row>
-						<col exampleLoc="pron/negIndefExample"/>
-						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
-					</row>
-				</table>
-			</example>
-			<p>
-				<content>Examples of positive indefinite nominal phrases </content>
-				<text show="swPronIndefYes">
-					<content>(if any) </content>
-				</text>
-				<content>include:</content>
-			</p>
-			<example>
-				<interlinear exampleLoc="pron/indefNPExample"/>
-			</example>
-			<p show="swNotPosOnly">
+		   <example show="swPronNegIndefYes">
+			  <table border="1">
+				 <headerRow>
+					<headerCol>Negative Indefinite Pronouns</headerCol>
+					<headerCol>Gloss</headerCol>
+				 </headerRow>
+				 <row>
+					<col exampleLoc="pron/negIndefExample"/>
+					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				 </row>
+			  </table>
+		   </example>
+		   <p show="swNotPosOnly">
 				<content>Examples of negative indefinite nominal phrases </content>
 				<text show="swPronNegIndefYes">
 					<content>(if any) </content>
@@ -1121,9 +1700,10 @@
 			</p>
 		</section2>
 		<section2 id="sPronNP">
-			<secTitle>Pronouns as the Head of a Nominal Phrase</secTitle>
+			<secTitle>Pronouns as Nominal Phrases</secTitle>
 			<p>
-				<content>Though pronouns and also demonstratives, quantifiers, and numbers can stand alone as a nominal phrase in the right context, sometimes modifiers are also allowed.  In most languages, these elements cannot be modified by possessors, adjectives, or other quantifiers, although they can be modified by a degree word, an article and/or a demonstrative. English examples of this type include the following: </content>
+			   <content>Pronouns normally stand alone in the place of an entire nominal phrase (DP), but they can also be modified by a partitive phrase and in some languages pronouns may be modified by determiners and quantifiers, thus filling the NP level.
+				  English examples of modified pronouns, demonstratives or quantifiers include the following: </content>
 				<langData>all twelve</langData>
 				<content>, </content>
 				<langData>only he</langData>
@@ -1131,30 +1711,58 @@
 				<langData>just two</langData>
 				<content> and </content>
 				<langData>just those few</langData>
-				<content>.</content>
+			   <content>. In fewer languages, these elements can also be modified by adjectives and possessors, acting just like nouns.</content>
 			</p>
-			<p>
+		   <p><content>In </content><langName/><content>, </content><case element="pron" attr="pronMod">
+			  <caseText value="no">examples such as those given above are not allowed. These elements only appear by themselves without any modifiers when they take the place of a nominal phrase.  They cannot be modified by a relative clause or by a partitive phrase when acting as the head of a nominal phrase either.</caseText>
+			  <caseText value="det">these elements can be modified by the special degree words and by <case element="np" attr="artAndDem">
+				 <caseText value="article">articles</caseText>
+				  <caseText value="demonstrative">demonstratives</caseText>
+				 <caseText value="both">articles and demonstratives</caseText>
+			  </case>.</caseText>
+			  <caseText value="all">these elements can be modified by all the same modifiers as nouns can, including adjectives and possessors.</caseText>
+		   </case></p>
+
+		   <p show="swPronModNotNo">
 				<content>Examples of this type in </content>
 				<langName/>
 				<content> include:</content>
 			</p>
-			<example>
+			<example show="swPronModNotNo">
 				<interlinear exampleLoc="pron/standAloneNPExample"/>
 			</example>
-			<p>
+		   <p show="swPronModNotNo">
+			  <content>Sentences with the above examples used as subjects or objects in </content>
+			  <langName/>
+			  <content> include:</content>
+		   </p>
+		   <example show="swPronModNotNo">
+			  <interlinear exampleLoc="pron/sentExample"/>
+		   </example>
+		   <p show="swPronModNo">
+			  <content>Some example sentences with pronouns, demonstratives, quantifiers and/or numbers used as subjects or objects in </content>
+			  <langName/>
+			  <content> are:</content>
+		   </p>
+		   <example show="swPronModNo">
+			  <interlinear exampleLoc="pron/sentExample"/>
+		   </example>
+
+			<p show="swPronModNotNo">
 				<content>In addition, it is possible to have a pronoun, demonstrative, or quantifier modified by a relative clause, as in </content>
 				<langData>all those who are going with us</langData>
 				<content> and </content>
 				<langData>only these two that I saw</langData>
-				<content>.  Examples of this type in </content>
-				<langName/>
-				<content>, included in full sentences are:</content>
+			   <content>.    </content></p>
+		   <p show="swPronModNotNo"><content>Examples of this type in </content>
+			  <langName/>
+			  <content>, included in full sentences are:</content>
 			</p>
-			<example>
+			<example show="swPronModNotNo">
 				<interlinear exampleLoc="pron/pronRelClExample"/>
 			</example>
-			<p>
-				<content>Finally, these categories can also be modified by a partitive phrase (or other PP), as in </content>
+			<p show="swPronModNotNo">
+				<content>Finally, these categories can also be modified by a partitive phrase (or other prepositional or postpositional phrase), as in </content>
 				<langData>only a few of you</langData>
 				<content>, </content>
 				<langData>just that many of those</langData>
@@ -1164,40 +1772,24 @@
 				<langData>all of us</langData>
 				<content> and </content>
 				<langData>all by himself</langData>
-				<content>.   Examples of this type in </content>
-				<langName/>
-				<content> include:</content>
+			   <content>.  </content></p>
+		   <p show="swPronModNotNo"><content>Examples of this type in </content>
+			  <langName/>
+			  <content> are:</content>
 			</p>
-			<example>
+			<example show="swPronModNotNo">
 				<interlinear exampleLoc="pron/partitiveExample"/>
 			</example>
-			<p>
-				<content>This distribution discussed for English can be accounted for by classifying allow pronouns, demonstratives, quantifiers, and numbers as NPs (rather than DPs) in the expanded DP tree structure for nominal phrases.  However, some languages allow pronouns to be modified by possessors and adjectives as well, so the correct category in that case is N.  A few languages may require pronouns to stand alone without any modification at all, making them only DPs.  (Possessive, reflexive, and reciprocal pronouns are always DPs, since they must stand alone.)</content>
-			</p>
-			<p>
-				<content>For </content>
-				<langName/>
-				<content>, the correct category or level in the tree structure for personal pronouns and other elements which can occur without a head noun is </content>
-				<case element="pron" attr="pronounCat">
-					<caseText value="NP">NP, like in English, because they can be modified by </caseText>
-					<caseText value="N">N, because they can be modified by all the same categories as nouns can, including adjectives and possessors.</caseText>
-					<caseText value="DP">DP, because they must stand alone in the place of a whole nominal phrase, with no modifiers allowed.</caseText>
-				</case>
-				<text show="swPronPronounCatNP">
-					<case element="qp" attr="npDegree">
-						<caseText value="yes"> degree words,</caseText>
-						<caseText value="no"/>
-					</case>
-					<case element="np" attr="artAndDem">
-						<caseText value="demonstrative"> demonstratives,</caseText>
-						<caseText value="article"> articles,</caseText>
-						<caseText value="both"> demonstratives, articles,</caseText>
-						<caseText value="no"/>
-					</case>
-					<content> relative clauses and PPs, but not by possessors or adjectives.</content>
-				</text>
 
-					<content> The optional PP occurs </content>
+			<p show="swPronModNotNo">
+				<content>In </content>
+				<langName/>
+				<content>, the optional </content><case element="pp" attr="pPos">
+				   <caseText value="before">prepositional</caseText>
+				   <caseText value="after">postpositional</caseText>
+				   <caseText value="either">prepositional or postpositional</caseText>
+				   <caseText value="unknown">prepositional or postpositional</caseText>
+				</case><content> phrase occurs </content>
 					<case element="pron" attr="partitivePos">
 						<caseText value="before">before</caseText>
 						<caseText value="after">after</caseText>
@@ -1259,35 +1851,73 @@
 	<showWhen id="swPronAgrFeatClassNumber">
 		<whenValue element="pron/pronAgrFeatClassNumber" attr="checked" value="yes"/>
 	</showWhen>
-	<showWhen id="swNPCaseNone">
-		<whenValue element="np" attr="case" value="none"/>
+
+
+   <showWhen id="swNPCaseNone">
+		<whenValue element="typology" attr="case" value="none"/>
 	</showWhen>
 	<showWhen id="swNPCaseNom">
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 	</showWhen>
+   <showWhen id="swNPCaseNomAndYesDat">
+	  <whenValue element="typology"  attr="case" value="nominative"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomAndYesDatandDependentYes">
+	  <whenValue element="typology"  attr="case" value="nominative"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+   <and/>
+	  <whenValue element="pron" attr="dependentPron" value="yes"/>
+   </showWhen>
 	<showWhen id="swNPCaseErg">
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 	</showWhen>
-	<showWhen id="swNPCaseSplit">
-		<whenValue element="np" attr="case" value="split"/>
+   <showWhen id="swNPCaseErgAndYesDat">
+	  <whenValue element="typology"  attr="case" value="ergative"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgAndYesDatandDependentYes">
+	  <whenValue element="typology"  attr="case" value="ergative"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="pron" attr="dependentPron" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplit">
+		<whenValue element="typology" attr="case" value="split"/>
 	</showWhen>
-	<showWhen id="swNPCaseNoneandDependentYes">
-		<whenValue element="np" attr="case" value="none"/>
+   <showWhen id="swNPCaseSplitAndYesDat">
+	  <whenValue element="typology"  attr="case" value="split"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplitAndYesDatandDependentYes">
+	  <whenValue element="typology"  attr="case" value="split"/>
+	  <and/>
+	  <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+	  <and/>
+	  <whenValue element="pron" attr="dependentPron" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneandDependentYes">
+		<whenValue element="typology" attr="case" value="none"/>
 		<and/>
 		<whenValue element="pron"  attr="dependentPron" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPCaseNomandDependentYes">
-		<whenValue element="np" attr="case" value="nominative"/>
+		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
 		<whenValue element="pron"  attr="dependentPron" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPCaseErgandDependentYes">
-		<whenValue element="np" attr="case" value="ergative"/>
+		<whenValue element="typology" attr="case" value="ergative"/>
 		<and/>
 		<whenValue element="pron"  attr="dependentPron" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPCaseSplitandDependentYes">
-		<whenValue element="np" attr="case" value="split"/>
+		<whenValue element="typology" attr="case" value="split"/>
 		<and/>
 		<whenValue element="pron"  attr="dependentPron" value="yes"/>
 	</showWhen>
@@ -1322,78 +1952,77 @@
 		<whenValue element="pron" attr="negIndef" value="yes"/>
 	</showWhen>
 	<showWhen id="swNotPosOnlyAndNo">
-		<whenValue element="qp" attr="determiner" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesNo"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-		<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<and/>
-		<whenValue element="pron" attr="negIndef" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+	   <whenValue element="qp" attr="determinerNeg" value="none" negateValue="yes"/>
+	   <and/>
+	   <whenValue element="pron" attr="negIndef" value="yes"/>
+	   <or/>
+	   <whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
 		<and/>
 		<whenValue element="pron" attr="negIndef" value="yes"/>
 	</showWhen>
 	<showWhen id="swNotPosOnly">
-		<whenValue element="qp" attr="determiner" value="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesNo"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly" negateValue="yes"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly" negateValue="yes"/>
+	   <whenValue element="qp" attr="determinerNeg" value="none" negateValue="yes"/>
+	   <or/>
+	   <whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swPosOnly">
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
+		<whenValue element="qp" attr="determinerNeg" value="none"/>
 		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="yesSome"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="noPosOnly"/>
-		<or/>
-		<whenValue element="qp" attr="determiner" value="no"/>
-		<and/>
-		<whenValue element="qp" attr="npDegree" value="yesPosOnly"/>
+		<whenValue element="qp" attr="npDegreeNeg" value="none"/>
 	</showWhen>
+
+   <showWhen id="swClassifierYesPronYes">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="pron" attr="pronounClassifier" value="yes"/>
+   </showWhen>
+   <showWhen id="swClassifierYesPronNo">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="pron" attr="pronounClassifier" value="no"/>
+	  </showWhen>
+   <showWhen id="swClassifiersYesAgrOrType">
+	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+	  <or/>
+	  <whenValue element="typology" attr="classifier" value="yesType"/>
+   </showWhen>
+
+
+   <showWhen id="swNPArtAndDemDemOrBoth">
+	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+	  <or/>
+	  <whenValue element="np" attr="artAndDem" value="both"/>
+   </showWhen>
+   <showWhen id="swCaseNotNone">
+	  <whenValue element="typology"  attr="case" value="none" negateValue="yes" />
+   </showWhen>
+   <showWhen id="swCaseNoneOrDemCaseNo">
+	  <whenValue element="typology"  attr="case" value="none" />
+	  <or/>
+	  <whenValue element="pron" attr="demCase" value="no"/>
+   </showWhen>
+   <showWhen id="swCaseNomAndDemCaseYes">
+	  <whenValue element="typology"  attr="case" value="nominative" />
+	  <and/>
+	  <whenValue element="pron" attr="demCase" value="yes"/>
+   </showWhen>
+   <showWhen id="swCaseErgAndDemCaseYes">
+	  <whenValue element="typology"  attr="case" value="ergative" />
+	  <and/>
+	  <whenValue element="pron" attr="demCase" value="yes"/>
+   </showWhen>
+   <showWhen id="swCaseSplitAndDemCaseYes">
+	  <whenValue element="typology"  attr="case" value="split" />
+	  <and/>
+	  <whenValue element="pron" attr="demCase" value="yes"/>
+   </showWhen>
+
+   <showWhen id="swPronModNotNo">
+	  <whenValue element="pron"  attr="pronMod" value="no" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swPronModNo">
+	  <whenValue element="pron"  attr="pronMod" value="no" />
+   </showWhen>
+
+
 </portion>

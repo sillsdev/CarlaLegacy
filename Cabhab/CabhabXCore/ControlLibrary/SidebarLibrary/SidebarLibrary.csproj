@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
 	<ProjectType>Local</ProjectType>
-	<ProductVersion>9.0.30729</ProductVersion>
+	<ProductVersion>9.0.21022</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<ProjectGuid>{EF17DE45-C757-48BF-BE3B-FD8E1D72E154}</ProjectGuid>
 	<SccProjectName>
@@ -239,82 +239,112 @@
 	<Content Include="licenses.licx" />
 	<EmbeddedResource Include="CommandBarUnused\ChevronMenu.resx">
 	  <DependentUpon>ChevronMenu.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="CommandBarUnused\CommandBarMenu.resx">
 	  <DependentUpon>CommandBarMenu.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="CommandBarUnused\Rebar.resx">
 	  <DependentUpon>Rebar.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="CommandBarUnused\ToolBarEx.resx">
 	  <DependentUpon>ToolBarEx.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="MenuUnused\MenuCommand.resx">
 	  <DependentUpon>MenuCommand.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="MenuUnused\MenuControl.resx">
 	  <DependentUpon>MenuControl.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="MenuUnused\MenuItemEx.resx">
 	  <DependentUpon>MenuItemEx.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
-	<EmbeddedResource Include="Resources\Controls.resX" />
+	<EmbeddedResource Include="Resources\Controls.resX">
+	  <SubType>Designer</SubType>
+	</EmbeddedResource>
 	<EmbeddedResource Include="Resources\DragCursor.cur" />
-	<EmbeddedResource Include="Resources\ImagesColorPicker.resX" />
+	<EmbeddedResource Include="Resources\ImagesColorPicker.resX">
+	  <SubType>Designer</SubType>
+	</EmbeddedResource>
 	<EmbeddedResource Include="Resources\ImagesMenu.resX">
 	  <SubType>Designer</SubType>
 	</EmbeddedResource>
-	<EmbeddedResource Include="Resources\SortedListView.resX" />
+	<EmbeddedResource Include="Resources\SortedListView.resX">
+	  <SubType>Designer</SubType>
+	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\BorderLabel.resx">
 	  <DependentUpon>BorderLabel.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\ButtonEx.resx">
 	  <DependentUpon>ButtonEx.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\CheckBoxEx.resx">
 	  <DependentUpon>CheckBoxEx.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\ColorComboBox.resx">
 	  <DependentUpon>ColorComboBox.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\ColorListBox.resx">
 	  <DependentUpon>ColorListBox.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\ColorPicker.resx">
 	  <DependentUpon>ColorPicker.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\ColorPickerDropDown.resx">
 	  <DependentUpon>ColorPickerDropDown.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\ComboBoxBase.resx">
 	  <DependentUpon>ComboBoxBase.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\CustomColorDlg.resx">
 	  <DependentUpon>CustomColorDlg.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\ListViewEx.resx">
 	  <DependentUpon>ListViewEx.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\NumericTextBox.resx">
 	  <DependentUpon>NumericTextBox.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\OutlookBar.resx">
 	  <DependentUpon>OutlookBar.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\ProgressBarEx.resx">
 	  <DependentUpon>ProgressBarEx.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\RadioButtonEx.resx">
 	  <DependentUpon>RadioButtonEx.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\TextBoxEx.resx">
 	  <DependentUpon>TextBoxEx.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\TextComboBox.resx">
 	  <DependentUpon>TextComboBox.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
 	<EmbeddedResource Include="WinControls\TreeViewEx.resx">
 	  <DependentUpon>TreeViewEx.cs</DependentUpon>
+	  <SubType>Designer</SubType>
 	</EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

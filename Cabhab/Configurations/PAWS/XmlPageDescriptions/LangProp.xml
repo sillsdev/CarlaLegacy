@@ -12,7 +12,7 @@ below.</introduction>
 		<prompt>Enter an abbreviation for your language (we suggest using the Ethnologue or ISO639-3 code):</prompt>
 		<textBox id="LangPropLangAbbr" dataItem="langAbbr" cols="4" rows="1"/>
 		<font id="LangPropFont" dataItem="font">
-		<prompt>The name of the font that will be used to display your language data is shown below.  Click on the 'Change font' button to change it.</prompt></font>
+		<prompt>The name of the font that will be used to display your language data is shown below.  Click on the ‘Change font’ button to change it.</prompt></font>
 		<radioGroup>
 			<groupName dataItem="rtl" default="False">RLangPropRTL</groupName>
 			<prompt>In what direction is your language written?</prompt>

@@ -2,31 +2,31 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QMainCont" count="6/9">
-	<title level="2">Las preguntas - Las preguntas abiertas de la cláusula principal</title>
-	<form section="q">
-		<EnglishExample>
-			<exItem>Algunos ejemplos de las preguntas abiertas de la cláusula principal, mostrando el desplazamiento de una frase interrogativa requerido, son:</exItem>
-			<exItem label="1.">Which boy hit the ball? '¿Cuál muchacho golpeó el beísbol?'</exItem>
-			<exItem label="2.">Who hit the ball? '¿Quién golpeó el beísbol?'</exItem>
-			<exItem label="3.">Who might have hit the ball? '¿Quién pudo haber golpeado el beísbol?'</exItem>
-			<exItem label="4.">What did the boy hit? '¿Qué el muchacho golpeó?'</exItem>
-			<exItem label="5.">When is she coming? '¿Cuándo viene ella?'</exItem>
-			<exItem label="6.">Where is the leader? '¿Dónde está el líder?'</exItem>
+	<title level="2">Las preguntas - Las preguntas de respuesta abierta de la cláusula principal</title>
+   <introduction>En las preguntas de respuesta abierta de la cláusula principal en español, se requiere el desplazamiento a la izquierda de una frase interrogativa.  Algunas lenguas, como inglés, requiere el desplazamiento de un auxiliar también.  Algunos ejemplos de las preguntas de respuesta abierta de la cláusula principal son:</introduction>
+   <EnglishExample>
+			<exItem label="1.">¿Cuál muchacho golpeó el beísbol?</exItem>
+			<exItem label="2.">¿Quién golpeó el beísbol?</exItem>
+			<exItem label="3.">¿Quién pudo haber golpeado el beísbol?</exItem>
+	  <exItem label="4.">¿Qué golpeó el muchacho?</exItem>
+			<exItem label="5.">¿Cuándo viene ella?</exItem>
+			<exItem label="6.">¿Dónde está el líder?</exItem>
 		</EnglishExample>
-		<prompt>Escriba ejemplos similares de su idioma, independientemente de si el desplazamiento está requerido, aquí:</prompt>
+   <form section="q">
+	  <prompt>Escriba ejemplos similares de su lengua, independientemente si el desplazamiento es requerido, aquí:</prompt>
 		<textBox id="QContExample" dataItem="contentExample" cols="50"/>
 		<br/>
 		<br/>
 		<radioGroup>
 			<groupName dataItem="contFront" default="unknown" position="yesHead">RQContFront</groupName>
-			<prompt>¿Se requiere una frase interrogativa ser desplazada en preguntas abiertas en su idioma?</prompt>
-			<radio id="QContFrontYes" dataValue="before">Sí, al igual que en inglés y español</radio>
+			<prompt>¿Se requiere una frase interrogativa ser desplazada en preguntas de respuesta abierta en su lengua?</prompt>
+			<radio id="QContFrontYes" dataValue="before">Sí, como en inglés y español</radio>
 			<radio id="QContFrontOptional" dataValue="after">No, puede permanecer en su posición normal o puede desplazarse a la posición inmediatamente antes del verbo</radio>
 			<radio id="QContFrontNo" dataValue="no">No, permanece simplemente en su posición normal</radio>
 		</radioGroup>
 		<radioGroup>
 			<groupName dataItem="mainCont" default="no">RQMainCont</groupName>
-			<prompt>En preguntas abiertas de la cláusula principal, ¿hay uno o más indicadores o complementizadores de la pregunta que pueden presentarse además de las frases interrogativas (incluya los afijos o los clíticos en la contestación de esta pregunta)?</prompt>
+			<prompt>En preguntas de respuesta abierta de la cláusula principal, ¿existe uno o más indicadores o complementizadores de la pregunta que pueden presentarse además de las frases interrogativas (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
 			<radio id="QMainContYes" dataValue="yes">Sí</radio>
 			<radioGroup id="QMainContWordTable" show="swQMainContYes">
 				<groupName dataItem="mainContWord" default="yes">RQMainContWord</groupName>
@@ -42,7 +42,7 @@
 				<radioGroup id="QMainContCliticTypeTable" show="swQMainContWordNo">
 					<groupName dataItem="mainContCliticAttaches" default="edge">RQMainYNCliticAttaches</groupName>
 					<prompt>¿Dónde se une el clítico a la pregunta?</prompt>
-					<radio id="QMainContCliticAttachesEdge" dataValue="edge">En el extremo</radio>
+					<radio id="QMainContCliticAttachesEdge" dataValue="edge">A la orilla</radio>
 					<radio id="QMainContCliticAttachesBetween" dataValue="between" show="swQContFrontYes">Entre la frase interrogativa desplazada y el resto de la pregunta</radio>
 					<radio id="QMainContCliticAttachesHead" dataValue="head">Al verbo</radio>
 				</radioGroup>
@@ -65,8 +65,8 @@
 			<radioGroup id="QMainContPosTable" show="swQMainContWordNotVSOFrontYes">
 				<groupName dataItem="mainContPos" default="unknown" position="yesHead">RQMainContPos</groupName>
 				<prompt>¿Dónde se presentan los indicadores o complementizadores de la pregunta con respecto al resto de la pregunta<span id="QMainContFrontingSpan" show="swQContFrontYes"> (con excepción de una frase interrogativa desplazada)</span>?</prompt>
-				<radio id="QMainContPosBefore" dataValue="before">Antes</radio>
-				<radio id="QMainContPosAfter" dataValue="after">Después</radio>
+				<radio id="QMainContPosBefore" dataValue="before">Antesde la pregunta</radio>
+				<radio id="QMainContPosAfter" dataValue="after">Después de la pregunta</radio>
 				<radio id="QMainContPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
 				<radio id="QMainContPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
 				<radio id="QMainContPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados en la misma oración</radio>
@@ -81,24 +81,24 @@
 			</radioGroup>
 			<radioGroup id="QMainContRequiredTable" show="swQMainContWordYes">
 				<groupName dataItem="mainContRequired" default="no">RQMainContRequired</groupName>
-				<prompt>¿Se requiere un indicador o complementizador de la pregunta en cada pregunta abierta?</prompt>
+				<prompt>¿Se requiere un indicador o complementizador de la pregunta en cada pregunta de respuesta abierta?</prompt>
 				<radio id="QMainContRequiredYes" dataValue="yes">Sí</radio>
-				<radio id="QMainContRequiredNo" dataValue="no">No, algunas preguntas abiertas no requieren un indicador o complementizador de la pregunta</radio>
+				<radio id="QMainContRequiredNo" dataValue="no">No, algunas preguntas de respuesta abierta no requieren un indicador o complementizador de la pregunta</radio>
 			</radioGroup>
 			<radio id="QMainContNoAux" dataValue="noAux">No, pero un auxiliar se desplaza</radio>
 			<radioGroup id="QMainContAuxPosTable" show="swQMainContNoAux">
 				<groupName dataItem="mainContAuxPos" default="unknown" position="yesHead">RQMainContAuxPos</groupName>
 				<prompt>¿Dónde se presenta el auxiliar con respecto al resto de la pregunta?</prompt>
-				<radio id="QMainContAuxPosBefore" dataValue="before">Antes</radio>
-				<radio id="QMainContAuxPosAfter" dataValue="after">Después</radio>
+				<radio id="QMainContAuxPosBefore" dataValue="before">Antes de la pregunta</radio>
+				<radio id="QMainContAuxPosAfter" dataValue="after">Después de la pregunta</radio>
 			</radioGroup>
 			<radioGroup id="QMainContAuxTable" show="swQMainContNoAux">
 				<groupName dataItem="mainContAuxRequired" default="no">RQMainContAux</groupName>
-				<prompt>¿Se requiere un auxiliar desplazado en cada pregunta abierta?</prompt>
+				<prompt>¿Se requiere un auxiliar desplazado en cada pregunta de respuesta abierta?</prompt>
 				<radio id="QMainContAuxRequiredYes" dataValue="yes">Sí</radio>
-				<radio id="QMainContAuxRequiredNo" dataValue="no">No, algunas preguntas abiertas no requieren a un auxiliar desplazado, tal como preguntas que pregunten al sujeto en inglés</radio>
+				<radio id="QMainContAuxRequiredNo" dataValue="no">No, algunas preguntas de respuesta abierta no requieren a un auxiliar desplazado, tal como preguntas que hacer sobre el sujeto en inglés</radio>
 			</radioGroup>
-			<radio id="QMainContNo" dataValue="no">No, no hay indicador ni auxiliar que desplaza a la izquierda en preguntas abiertas de la cláusula principal, apenas <span id="QMainContNoFrontYesSpan" show="swQContFrontYes">el desplazamiento a la izquierda de una frase interrogativa y posiblemente </span><span id="QMainContNoFrontOptionalSpan" show="swQContFrontOptional">el desplazamiento opcional de una frase interrogativa y posiblemente </span>una diferencia de la entonación o el tono o otra indicación que no es sintáctica</radio>
+			<radio id="QMainContNo" dataValue="no">No, no hay indicador ni auxiliar que desplaza a la izquierda en preguntas de respuesta abierta de la cláusula principal, solamente <span id="QMainContNoFrontYesSpan" show="swQContFrontYes">el desplazamiento a la izquierda de una frase interrogativa y posiblemente </span><span id="QMainContNoFrontOptionalSpan" show="swQContFrontOptional">el desplazamiento opcional de una frase interrogativa y posiblemente </span>un cambio en la entonación o el tono u otra indicación que no es sintáctica</radio>
 		</radioGroup>
 		<instruction id="QMainContHeadCliticInstruction" show="swQMainContHeadClitic">In the lexicon, add the feature <feature>whQ</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
 		<instruction id="QMainContEdgeCliticPrefixInstruction" show="swQMainContEdgeCliticPrefix">In the lexicon, add the feature <feature>whQ_prefix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>

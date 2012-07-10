@@ -3,21 +3,25 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="IPProDrop" count="1/1">
 	<title level="2">Las oraciones básicas - Los sujetos que no deben estar presentes</title>
-	<introduction>En algunos idiomas un sujeto, o a veces un objeto, no debe estar presente en su posición normal sintáctica.  Por ejemplo, en español la manera normal de decir el ejemplo en inglés "I buy a book" es <example>Compro un libro</example> en vez de algo con el pronombre sujeto abierto incluido: <example>Yo compro un libro</example>.
+   <introduction>En algunas lenguas un sujeto, o a veces un objeto, no debe estar presente en su posición normal sintáctica.  Por ejemplo, en español la manera normal de decir el ejemplo en inglés “I buy a book” es <example>Compro un libro</example> en vez de algo con el pronombre sujeto abierto incluido: <example>Yo compro un libro</example>.
 		Esto no se permite en inglés, con excepción de imperativos. (El sujeto de infinitivos que no estar presente en complementos subordinados se tratan en  <section number="10">Las cláusulas de complemento</section>.)  <br/>
 		<br/>
-		Algunos idiomas no en realidad son idiomas que permiten los sujetos que no deben estar presentes, pero por lo menos algunos de los pronombres son clíticos que se pueden unir al verbo. Cuando sucede esto, no hay pronombre o frase nominal en la posición del sujeto, así que la oración se ve igual que en un idioma verdadero que permite los sujetos que no deben estar presentes.</introduction>
+		Algunas lenguas no en realidad son lenguas que permiten los sujetos que no deben estar presentes, pero por lo menos algunos de los pronombres son clíticos que se pueden unir al verbo. Cuando sucede esto, no hay pronombre o frase nominal en la posición del sujeto, así que la oración se ve igual que en una lengua verdadero que permite los sujetos que no deben estar presentes.</introduction>
 	<form section="ip">
-		<prompt>Escriba ejemplos sin un sujeto expresado en su lidioma aquí, incluyendo imperativos y casos donde no hay pronombre o frase nominal en la posición del sujeto:</prompt>
-		<textBox id="IPExamplesProDropExample" dataItem="proDropExample" cols="50"/>
-		<radioGroup>
+	   <prompt>Escriba ejemplos (si permite en su lengua) que muestran que el sujeto y/o objeto no debe estar presente aquí:</prompt>
+	   <textBox id="IPExamplesProDropExample" dataItem="proDropExample" cols="50"/><br/>
+	   <prompt>Escriba ejemplos de imperativos en su lengua aquí:</prompt>
+	   <textBox id="IPExamplesImpExample" dataItem="impExample" cols="50"/><br/>
+	   <prompt>Escriba ejemplos (si permite en su lengua) que parecen como que el sujeto no debe estar presente porque hay pronombres clíticos unidos a los verbos aquí:</prompt>
+	   <textBox id="IPExamplesCliticPnExample" dataItem="cliticPnExample" cols="50"/><br/>
+	   <radioGroup>
 			<groupName dataItem="proDrop" default="no">RIPProDrop</groupName>
 			<prompt>
-				<br/>¿Permite su idioma los sujetos que no deben estar presentes?</prompt>
-			<radio id="IPProDropNoImp" dataValue="noImp">No, al igual que inglés, el sujeto debe está presente excepto en imperativos</radio>
+				<br/>¿Permite su lengua los sujetos que no deben estar presentes?</prompt>
+			<radio id="IPProDropNoImp" dataValue="noImp">No, como inglés, el sujeto debe está presente excepto en imperativos</radio>
 			<radio id="IPProDropNo" dataValue="no">No, el sujeto debe está presente incluso en imperativos</radio>
 			<radio id="IPProDropYes" dataValue="yes">Sí, un sujeto no debe estar presente en cualquier tipo de oración</radio>
-			<radio id="IPProDropYesClitic" dataValue="yesClitic">El sujeto puede parecer que no está presente debido a un pronombre dependiente (clítico pronominal) que se une al verbo, pero no es un idioma verdadero que permite un sujeto que no está presente.</radio>
+			<radio id="IPProDropYesClitic" dataValue="yesClitic">El sujeto puede parecer como que no está presente debido a los pronombres dependientes (clíticos pronominales) que se unen al verbo, pero en realidad no es una lengua verdadero que permite un sujeto ausente.</radio>
 		</radioGroup>
 		<instruction id="IPProDropImpInstruction">In the lexicon, mark any affixes that indicate imperative and any inherently imperative verbs with the feature <feature>imperative</feature>.</instruction>
 		<instruction id="IPProDropYesCliticInstruction" show="swIPProDropYesClitic">All of the pronouns that may attach as subject clitics need to have the appropriate agreement features added in the lexicon.  If a particular pronoun can stand alone in subject position and also may attach to the verb, add both sets of features, e.g. <feature>first singular first_subject singular_subject</feature>.</instruction>
@@ -25,7 +29,7 @@
 			<groupName dataItem="proDropObject" default="no">RIPProDropObject</groupName>
 			<prompt>¿Hay indicadores de concordancia en el verbo con el objeto que permite que el objeto no está presente?</prompt>
 			<radio id="IPProDropObjectNo" dataValue="no">No</radio>
-			<radio id="IPProDropObjectYes" dataValue="yes">Sí, permiteun objeto que no está presente también</radio>
+			<radio id="IPProDropObjectYes" dataValue="yes">Sí, permite un objeto que no está presente también</radio>
 		</radioGroup>
 		<br/>
 		<buttons>

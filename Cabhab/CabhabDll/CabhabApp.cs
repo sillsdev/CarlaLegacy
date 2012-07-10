@@ -247,9 +247,22 @@ namespace SIL.Cabhab
 			Control[] ctrls = Controls.Find("StatusBar", true);
 			if (ctrls.Length > 0)
 				m_statusBar = (StatusBar)ctrls[0];
-			ctrls = Controls.Find("Standard", true);
+			ctrls = Controls.Find("CommandBarManager", true);
 			if (ctrls.Length > 0)
-				m_toolbar = ctrls[0];
+			{
+				var ctrl = ctrls[0] as CommandBarManager;
+				if (ctrl != null)
+				{
+					var bars = ctrl.CommandBars;
+					if (bars.Count == 2)
+					{
+						var toolbar = bars[1];
+						if (toolbar != null)
+							m_toolbar = toolbar;
+					}
+				}
+
+			}
 		}
 		protected override void XWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
 		{

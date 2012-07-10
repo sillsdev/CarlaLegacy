@@ -2,8 +2,8 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="ExclMain" count="1/2">
-	<title>Las exclamaciones y los saludos</title>
-	<introduction>Esta sección considera los varios tipos de locuciones comunes que no son oraciones completas. Los saludos, las interjecciones y las exclamaciones, cada uno se trata en su order correspondiente.</introduction>
+	<title>Las exclamaciones, saludos e interjecciones</title>
+   <introduction>Esta sección considera los varios tipos de locuciones comunes que no son oraciones completas. Los saludos, las interjecciones y las exclamaciones serán vistas como corresponde.</introduction>
 	<form section="excl" transparent="no">
 		<introduction>Los saludos consisten típicamente en una palabra o una frase particular, que puede ser seguido por un nombre o una frase nominal que describe la persona o el animal que es saludado.
 			Algunos son las oraciones completas o las preguntas completas, tales como <example>¿Cómo está usted? </example> y <example>¡Tenga un buen día!</example>  Las cuáles no necesitan ser tratadas por separado.  Estamos interesados en los tipos de saludos siguientes, ejemplificados en español:</introduction>
@@ -18,7 +18,7 @@
 		<exItem label="8.">Buenas noches.</exItem>
 		<exItem label="9.">Buenas noches, dulce bebé.</exItem>
 	</EnglishExample>
-<prompt>Escriba ejemplos similares de saludos en su idioma aquí:</prompt>
+<prompt>Escriba ejemplos similares de saludos en su lengua aquí:</prompt>
 		<textBox id="ExclGreet" dataItem="greetExample" rows="5"/>
 		<br/>
 <instruction id="ExclGreetLexiconInstruction">All of these words or phrases (not including the nominal phrases or names) need to be entries in your lexicon.  Those that are phrases need to be entered in the lexicon with underscores between the words so <tool>Join Compound</tool> will parse them as units within <tool>CARLA Studio</tool>.  Either give each one the category <category>Greet</category> in the lexicon, or add the feature <feature>makeGreet</feature> to the entry to assure the proper category for the syntax.</instruction>
@@ -32,45 +32,45 @@
 		<exItem label="4.">¡Cuidado!</exItem>
 		<exItem label="5.">¡Jesús, María y José!</exItem>
 	</EnglishExample>
-<prompt>Escriba ejemplos similares de interjecciones en su idioma aquí:</prompt>
+<prompt>Escriba ejemplos similares de interjecciones en su lengua aquí:</prompt>
 		<textBox id="ExclIntj" dataItem="intjExample" rows="5"/>
 		<br/>
-<prompt>Respuestas de "Sí" y "No" a las preguntas sea similar a las interjecciones.  Escriba las palabras independientes que significan "sí", por ejemplo 'yes' y 'yeah' en inglés, aquí:</prompt>
+	   <prompt>Respuestas de “Sí” y “No” a las preguntas sea similar a las interjecciones.  Escriba las palabras independientes que significan “sí”, por ejemplo ‘yes’ y ‘yeah’ en inglés, aquí:</prompt>
 		<textBox id="ExclYes" dataItem="yesExample" rows="3"/>
 		<br/>
-<prompt> Escriba las palabras independientes que significan "no", por ejemplo 'no' y 'naw' y 'nope' en inglés, aquí:</prompt>
+	   <prompt> Escriba las palabras independientes que significan “no”, por ejemplo ‘no’ y ‘naw’ y ‘nope’ en inglés, aquí:</prompt>
 		<textBox id="ExclNo" dataItem="noExample" rows="3"/>
 		<br/>
-<instruction id="ExclYesNoInstruction">All of these words or phrases meaning 'yes' and 'no' and the interjections need to be entries in your lexicon.  Those that are phrases need to be entered in the lexicon with underscores between the words so <tool>Join Compound</tool> will parse them as units within <tool>CARLA Studio</tool>.  Any which are not regular adjectives need to either have the category <category>Intj</category> in the lexicon or have the feature <feature>makeIntj</feature> to assure the proper category for the syntax.</instruction>
+	   <instruction id="ExclYesNoInstruction">All of these words or phrases meaning ‘yes’ and ‘no’ and the interjections need to be entries in your lexicon.  Those that are phrases need to be entered in the lexicon with underscores between the words so <tool>Join Compound</tool> will parse them as units within <tool>CARLA Studio</tool>.  Any which are not regular adjectives need to either have the category <category>Intj</category> in the lexicon or have the feature <feature>makeIntj</feature> to assure the proper category for the syntax.</instruction>
 <br/>
-		<introduction>Las exclamaciones típicamente consisten en una palabra particular, tal como <example>qué</example> o <example>cómo</example> en español, seguida por una frase adjetival y puntuada generalmente con puntos de exclamación.  Algunos ejemplos en español son:</introduction>
+	   <introduction>Las exclamaciones consisten típicamente en una palabra particular, tal como <example>qué</example> o <example>cómo</example> en español, seguida por una frase adjetival y puntuada generalmente con puntos de exclamación.  Algunos ejemplos en español son:</introduction>
 	<EnglishExample>
 		<exItem label="1.">¡Qué tremendo para usted!</exItem>
 		<exItem label="2.">¡Qué agradable!</exItem>
 		<exItem label="3.">¡Cómo es maravilloso que su familia podría venir!</exItem>
 	</EnglishExample>
-<prompt>Escriba ejemplos similares de exclamaciones en su idioma aquí:</prompt>
+<prompt>Escriba ejemplos similares de exclamaciones en su lengua aquí:</prompt>
 		<textBox id="ExclExcl" dataItem="exclExample" rows="5"/>
 		<br/>
 <radioGroup id="ExclMTable">
 	<groupName dataItem="exclM" default="no">RExclM</groupName>
-	<prompt>¿Hay una palabra o las palabras particular que señalen una exclamación (así haciéndolas diferentes que los adjetivos simples tratados en la sección de las interjecciones anteriormente)?</prompt>
+	<prompt>¿Existe una palabra o las palabras especiales que señalen una exclamación (así haciéndolas diferentes que los adjetivos simples tratados en la sección de las interjecciones arriba)?</prompt>
 	<radio id="ExclMNo" dataValue="no">No</radio>
 	<radio id="ExclMYes" dataValue="yes">Sí</radio>
 </radioGroup>
-<prompt id="ExclMPrompt" show="swExclMYes">Escriba las palabras particulares que señalan una exclamación aquí:</prompt>
+<prompt id="ExclMPrompt" show="swExclMYes">Escriba las palabras especiales que señalan una exclamación aquí:</prompt>
 		<textBox id="ExclExclM" dataItem="exclMExample" show="swExclMYes" rows="3"/>
 		<br/>
 <radioGroup id="ExclMPosTable" show="swExclMYes">
 	<groupName dataItem="exclMPos" default="unknown" position="yesSpec">RExclMPos</groupName>
-	<prompt>¿Dónde se presenta la palabra particular o las palabras que señalan una exclamación con respecto a la frase del adjetivo?</prompt>
-	<radio id="ExclMPosBefore" dataValue="before">Antes de la frase del adjetivo</radio>
-	<radio id="ExclMPosAfter" dataValue="after">Después de la frase del adjetivo</radio>
+	<prompt>¿Dónde se presenta la palabra especial que señala una exclamación con respecto a la frase adjetival?</prompt>
+	<radio id="ExclMPosBefore" dataValue="before">Antes de la frase adjetival</radio>
+	<radio id="ExclMPosAfter" dataValue="after">Después de la frase adjetival</radio>
 	<radio id="ExclMPosEither" dataValue="either">De cualquier lado, pero no en ambos lados en la misma exclamación</radio>
 	<radio id="ExclMPosBoth" dataValue="both">En ambos lados</radio>
 <radioGroup id="ExclMEitherOrBothTable" show="swExclMYesEitherOrBoth">
 	<groupName dataItem="exclMEither" default="no">RExclMEither</groupName>
-	<prompt>¿Pueden todas las palabras que señalan una exclamación presentarse de cualquier lado de la frase del adjetivo?</prompt>
+	<prompt>¿Pueden todas las palabras que señalan una exclamación presentarse de cualquier lado de la frase adjetival?</prompt>
 	<radio id="ExclMEitherNo" dataValue="no">No, hay distintos grupos para cada lado</radio>
 	<radio id="ExclMEitherYes" dataValue="yes">Sí, no hay restricción</radio>
 </radioGroup>

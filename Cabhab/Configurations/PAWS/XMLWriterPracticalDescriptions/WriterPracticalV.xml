@@ -56,7 +56,29 @@
 							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
-					<row show="swIPInflFeatCompletive">
+				   <row show="swIPInflFeatContemplative">
+					  <col>
+						 <content>aspect</content>
+					  </col>
+					  <col>
+						 <content>contemplative</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatContrafactual">
+					  <col>
+						 <content>aspect</content>
+					  </col>
+					  <col>
+						 <content>contrafactual</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatCompletive">
 						<col>
 							<content>aspect</content>
 						</col>
@@ -111,7 +133,17 @@
 							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
-					<row show="swIPInflFeatPerfective">
+				   <row show="swIPInflFeatPerfect">
+					  <col>
+						 <content>aspect</content>
+					  </col>
+					  <col>
+						 <content>perfect</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>					<row show="swIPInflFeatPerfective">
 						<col>
 							<content>aspect</content>
 						</col>
@@ -155,7 +187,18 @@
 							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
-					<row show="swIPInflFeatDeclarative">
+				   <row show="swIPInflFeatUnreal">
+					  <col>
+						 <content>aspect</content>
+					  </col>
+					  <col>
+						 <content>unreal</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatDeclarative">
 						<col>
 							<content>mood</content>
 						</col>
@@ -210,9 +253,75 @@
 							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
-					<row show="swIPInflFeatPassive">
+							   <row show="swIPInflFeatFinite">
+					  <col>
+						 <content>other</content>
+					  </col>
+					  <col>
+						 <content>finite</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatMinusFinite">
+					  <col>
+						 <content>other</content>
+					  </col>
+					  <col>
+						 <content>nonfinite</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatGerund">
+					  <col>
+						 <content>other</content>
+					  </col>
+					  <col>
+						 <content>gerund</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatParticiple">
+					  <col>
+						 <content>other</content>
+					  </col>
+					  <col>
+						 <content>participle</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatAntipassive">
+					  <col>
+						 <content>voice</content>
+					  </col>
+					  <col>
+						 <content>antipassive</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatCausative">
+					  <col>
+						 <content>voice</content>
+					  </col>
+					  <col>
+						 <content>causative</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatPassive">
 						<col>
-							<content>other</content>
+							<content>voice</content>
 						</col>
 						<col>
 							<content>passive</content>
@@ -221,39 +330,72 @@
 							<langData>ENTER_POSSIBLE_FORMS</langData>
 						</col>
 					</row>
-					<row show="swIPInflFeatParticiple">
-						<col>
-							<content>other</content>
-						</col>
-						<col>
-							<content>participle</content>
-						</col>
-						<col>
-							<langData>ENTER_POSSIBLE_FORMS</langData>
-						</col>
-					</row>
-					<row show="swIPInflFeatFinite">
-						<col>
-							<content>other</content>
-						</col>
-						<col>
-							<content>finite</content>
-						</col>
-						<col>
-							<langData>ENTER_POSSIBLE_FORMS</langData>
-						</col>
-					</row>
-					<row show="swIPInflFeatMinusFinite">
-						<col>
-							<content>other</content>
-						</col>
-						<col>
-							<content>nonfinite</content>
-						</col>
-						<col>
-							<langData>ENTER_POSSIBLE_FORMS</langData>
-						</col>
-					</row>
+				   <row show="swIPInflFeatActorVoice">
+					  <col>
+						 <content>voice</content>
+					  </col>
+					  <col>
+						 <content>actor voice</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatDativeVoice">
+					  <col>
+						 <content>voice</content>
+					  </col>
+					  <col>
+						 <content>dative voice</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatGoalVoice">
+					  <col>
+						 <content>voice</content>
+					  </col>
+					  <col>
+						 <content>goal voice</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatInstrumentalVoice">
+					  <col>
+						 <content>voice</content>
+					  </col>
+					  <col>
+						 <content>instrumental voice</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatLocativeVoice">
+					  <col>
+						 <content>voice</content>
+					  </col>
+					  <col>
+						 <content>locative voice</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatObjectVoice">
+					  <col>
+						 <content>voice</content>
+					  </col>
+					  <col>
+						 <content>object voice</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
 				</table>
 			</example>
 		</section2>
@@ -785,13 +927,304 @@
 							<content>class ## absolutive argument</content>
 						</col>
 					</row>
+				   <row show="swIPAgrFeatClassClassTypeAnimalSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type animal subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeInsectSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type insect subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeLiquidSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type liquid subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeRoundSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type round subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeCylinderSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type cylinder subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeSphericalSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type spherical subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeTreeSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type tree subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeWoodSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type wooden subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeOtherSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type other subject</content>
+					  </col>
+				   </row>
+
+				   <row show="swIPAgrFeatClassClassTypeAnimalObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type animal object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeInsectObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type insect object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeLiquidObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type liquid object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeRoundObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type round object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeCylinderObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type cylinder object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeSphericalObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type spherical object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeTreeObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type tree object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeWoodObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type wooden object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeOtherObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type other object</content>
+					  </col>
+				   </row>
+
+				   <row show="swIPAgrFeatClassClassTypeAnimalErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type animal ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeInsectErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type insect ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeLiquidErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type liquid ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeRoundErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type round ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeCylinderErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type cylinder ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeSphericalErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type spherical ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeTreeErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type tree ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeWoodErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type wooden ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeOtherErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type other ergative argument</content>
+					  </col>
+				   </row>
+
+				   <row show="swIPAgrFeatClassClassTypeAnimalAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type animal absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeInsectAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type insect absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeLiquidAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type liquid absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeRoundAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type round absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeCylinderAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type cylinder absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeSphericalAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type spherical absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeTreeAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type tree absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeWoodAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type wooden absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeOtherAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type other absolutive argument</content>
+					  </col>
+				   </row>
 				</table>
 			</example>
 		</section2>
 		<section2 id="sIPProDrop">
 			<secTitle>Missing Subjects</secTitle>
 			<p>
-				<content>Some languages are called pro-drop languages because they allow a subject and/or object to be missing or unexpressed in their normal syntactic position.  For example, in Spanish the normal way to say "I buy a book" is </content>
+				<content>Some languages are called pro-drop languages because they allow a subject and/or object to be missing or unexpressed in their normal syntactic position.  For example, in Spanish the normal way to say “I buy a book” is </content>
 				<langData>Compro un libro</langData>
 				<content> rather than with the overt subject pronoun included: </content>
 				<langData>Yo compro un libro</langData>
@@ -823,27 +1256,43 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<content> allowed.</content>
 				</text>
 				<content/>
-				<text show="swIPProDropNoImp">
+			   </p>
+				<p show="swIPProDropNoImp">
 					<content>  Examples showing a missing subject in imperatives include:</content>
-				</text>
-				<content/>
-				<text show="swIPProDropYes">
+				</p>
+		   <example show="swIPProDropNoImp">
+			  <interlinear exampleLoc="ip/impExample"/>
+		   </example>
+		   <p show="swIPProDropNo">
+			  <content>  Examples of imperatives showing the overt subject include:</content>
+		   </p>
+		   <example show="swIPProDropNo">
+			  <interlinear exampleLoc="ip/impExample"/>
+		   </example>
+		   <p show="swIPProDropYes">
 					<content>  Examples with pro-drop include:</content>
-				</text>
-				<content/>
-				<text show="swIPProDropYesClitic">
-					<content>  Examples that look like pro-drop include:</content>
-				</text>
-				<content/>
-			</p>
-			<example show="swIPProDropNotNo">
-				<interlinear exampleLoc="ip/proDropExample"/>
-			</example>
+				</p>
+		   <example show="swIPProDropYes">
+			  <interlinear exampleLoc="ip/proDropExample"/>
+		   </example>
+				<p show="swIPProDropYesClitic">
+					<content>  Examples that look like pro-drop due to clitic pronouns attached to the verb include:</content>
+				</p>
+		   <example show="swIPProDropYesClitic">
+			  <interlinear exampleLoc="ip/cliticPnExample"/>
+		   </example>
+
 		</section2>
 		<section2 id="sIPAux">
 			<secTitle>Auxiliaries</secTitle>
 			<p>
-				<content>Some languages have auxiliary elements that are separate words, and some can have more than one auxiliary element before the main verb.  Examples for English transitive single-clause sentences include: </content>
+				<content>There are several kinds of auxiliary elements, including positive and negative varieties, as well as nonfinite, motion and other types.  Each type will be covered in turn.</content></p>
+
+		   <section3 id="sIPAuxPositive">
+			  <secTitle>Positive Auxuliary words</secTitle>
+
+		   <p><content>
+		   Some languages have positive auxiliary elements that are separate words, and some can have more than one auxiliary element before the main verb.  Examples for English transitive sentences include: </content>
 				<langData>The boy will hit the ball</langData>
 				<content>, </content>
 				<langData>The boy might have hit the ball</langData>
@@ -858,7 +1307,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 					<caseText value="no"> does not have any </caseText>
 					<caseText value="yes"> has some</caseText>
 				</case>
-				<content> auxiliaries which are written as separate words.  </content>
+				<content> positive auxiliaries which are written as separate words.  </content>
 				<text show="swIPAuxYes">
 					<content>An auxiliary is </content>
 					<case element="ip" attr="auxRequired">
@@ -914,16 +1363,20 @@ Some languages are not really pro-drop languages, but at least some of the prono
 
 				<example show="swIPAuxYes">
 				<interlinear exampleLoc="ip/auxExample"/>
-			</example>
-			<p>
+				</example>
+		   </section3>
+		   <section3 id="sIPAuxNegative">
+			  <secTitle>Negative Auxiliaries</secTitle>
+
+		   <p>
 				<content>In some languages verbal negation is an auxiliary element, while in others it is simply a verbal affix. English has both the negative auxiliary </content>
 				<langData>not</langData>
 				<content>, which is a separate word that must always follow another auxiliary, and the contraction form </content>
-				<langData>-n't</langData>
-				<content>, which is written as a suffix on the auxiliary.  Examples of English negative transitive single-clause sentences include:</content>
+				<langData>-n’t</langData>
+				<content>, which is written as a suffix on the auxiliary.  Examples of English negative transitive sentences include:</content>
 				<langData>The boy did not hit the ball</langData>
 				<content>, </content>
-				<langData>The boy won't hit the ball</langData>
+				<langData>The boy didn’t hit the ball</langData>
 				<content> and </content>
 				<langData>The boy might not have hit the ball</langData>
 				<content>.</content>
@@ -932,96 +1385,72 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<langName/>
 				<content/>
 				<case element="ip" attr="negAux">
-					<caseText value="yesOnly"> has one or more</caseText>
-					<caseText value="yesAffix"> has one or more</caseText>
-					<caseText value="yesVerb"> has one or more</caseText>
-					<caseText value="yesAll"> has one or more</caseText>
-					<caseText value="noAffixOnly"> does not have any</caseText>
-					<caseText value="noAffixAndVerb"> does not have any</caseText>
-					<caseText value="noVerb"> does not have any</caseText>
+					<caseText value="yes"> has one or more</caseText>
+					<caseText value="no"> does not have any</caseText>
 				</case>
-				<content> negative auxiliaries which are written as separate words, </content>
-				<case element="ip" attr="negAux">
-					<caseText value="yesOnly">and that is the only type of verbal negation in the language.  There is no negative verbal affix nor negative auxiliary affix. </caseText>
-					<caseText value="yesAffix">and there is also a negative auxiliary affix, but no negative verbal affix. </caseText>
-					<caseText value="yesVerb">and there is also a negative verbal affix, but no negative auxiliary affix. </caseText>
-					<caseText value="yesAll">and there is also a negative auxiliary affix and a negative verbal affix. </caseText>
-					<caseText value="noAffixOnly">but there is a negative affix which goes on the auxiliary and that is the only type of verbal negation in the language.  There is no negative verbal affix.</caseText>
-					<caseText value="noAffixAndVerb">but there is a negative affix which goes on the auxiliary and a negative verbal affix as well.</caseText>
-					<caseText value="noVerb">nor any negative affix which goes on an auxiliary.  The only way to express verbal negation is by one or more negative verbal affixes.</caseText>
+				<content> negative auxiliaries which are written as separate words. </content>
+			   <text show="swIPNegAuxWord">
+				  <content> The negative auxiliary </content>
+				  <case element="ip" attr="negAuxRequiresAux">
+					 <caseText value="no">may</caseText>
+					 <caseText value="yes">may not</caseText>
+				  </case>
+				  <content> be the only auxiliary in the phrase; </content>
+				  <case element="ip" attr="negAuxRequiresAux">
+					 <caseText value="no">no other</caseText>
+					 <caseText value="yes">the presence of another</caseText>
+				  </case>
+				  <content> auxiliary is required.</content>
+			   </text>
+			</p>
+
+	<p>
+	   <content>In </content><langName/>
+	   <content/>			<case element="ip" attr="negAuxAffix">
+					<caseText value="yes"> there is <case element="ip" attr="negAux"><caseText value="yes">also</caseText></case> a negative affix which attaches to a positive auxiliary to make it negative, </caseText>
+		  <caseText value="no"> there is not any negative affix which attaches to a positive auxiliary to make it negative, </caseText>
+	   </case>
+	   <case element="ip" attr="negVAffix">
+
+					<caseText value="yes"><case element="ip" attr="negAuxAffix"><caseText value="yes">and</caseText>
+					   <caseText value="no">but there is</caseText></case> a negative verbal affix. </caseText>
+
+		  <caseText value="no"><case element="ip" attr="negAuxAffix"><caseText value="yes">but not</caseText>
+			 <caseText value="no">nor</caseText></case> any negative verbal affix.</caseText>
 				</case>
 				<content/>
-				<text show="swIPNegAuxWord">
-					<content> The negative auxiliary </content>
-					<case element="ip" attr="negAuxRequiresAux">
-						<caseText value="no">may</caseText>
-						<caseText value="yes">may not</caseText>
-					</case>
-					<content> be the only auxiliary in the phrase; </content>
-					<case element="ip" attr="negAuxRequiresAux">
-						<caseText value="no">no other</caseText>
-						<caseText value="yes">the presence of another</caseText>
-					</case>
-					<content> auxiliary is required.</content>
-				</text>
-			</p>
-			<p show="swIPNegAuxWord">
-				<content>Examples of the negative auxiliaries in </content>
+	</p>
+			<p show="swIPNegAuxNotNo">
+				<content>The following chart summarizes the negative auxiliaries in </content>
 				<langName/>
-				<content> include:</content>
+				<content>:</content>
 			</p>
-			<example show="swIPNegAuxWord">
+			<example show="swIPNegAuxNotNo">
 				<table border="1">
 				<headerRow>
-					<headerCol>Negative Auxiliary Words</headerCol>
+					<headerCol>Type</headerCol>
+				   <headerCol><langName/></headerCol>
 					<headerCol>Gloss</headerCol>
 				</headerRow>
 
-					<row >
-
+					<row show="swIPNegAuxWord">
+					   <col><content>Negative Auxiliary Word</content></col>
 						<col exampleLoc="ip/negAuxExample"/>
 						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
 					</row>
+				   <row show="swIPNegAuxAffix">
+				   <col><content>Negative Affix attached to an  Auxiliary</content></col>
+				   <col exampleLoc="ip/negAuxAffixExample"/>
+				   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				   </row>
+				   <row show="swIPNegVAffix">
+					  <col><content>Negative Affix attached to a Verb</content></col>
+					  <col exampleLoc="ip/negVerbExample"/>
+					  <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+				   </row>
 				</table>
 			</example>
-			<p show="swIPNegAuxAffix">
-				<content>Examples of the negative affix(es) attached to an auxiliary word in </content>
-				<langName/>
-				<content> include:</content>
-			</p>
-			<example show="swIPNegAuxAffix">
-				<table border="1">
-					<headerRow>
-						<headerCol>Negative-Marked Auxiliaries</headerCol>
-						<headerCol>Gloss</headerCol>
-					</headerRow>
-					<row >
 
-						<col exampleLoc="ip/negAuxAffixExample"/>
-						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
-					</row>
-				</table>
-			</example>
-			<p show="swIPNegVerb">
-				<content>Examples of the negative verbal affixes attached to a verb in </content>
-				<langName/>
-				<content> include:</content>
-			</p>
-			<example show="swIPNegVerb">
-				<table border="1">
-				<headerRow>
-
-					<headerCol>Negative-Marked Verbs</headerCol>
-					<headerCol>Gloss</headerCol>
-				</headerRow>
-
-				<row>
-
-					<col exampleLoc="ip/negVerbExample"/>
-					<col ><gloss><content>ENTER GLOSS</content></gloss></col>
-				</row>
-			</table>
-			</example>
 			<p>
 				<content>See section </content>
 				<sectionRef sec="sNegVerbal"/>
@@ -1029,7 +1458,12 @@ Some languages are not really pro-drop languages, but at least some of the prono
 				<langName/>
 				<content>.</content>
 			</p>
-			<p>
+		   </section3>
+		   <section3 id="sIPAuxNonfinite">
+			  <secTitle>Nonfinite Auxiliary</secTitle>
+
+
+		   <p>
 				<content>The nonfinite word </content>
 				<langData>to</langData>
 				<content> used in English embedded clauses also acts as an auxiliary in that it fills the same position and can occur before other auxiliaries.  For example, </content>
@@ -1093,10 +1527,13 @@ Some languages are not really pro-drop languages, but at least some of the prono
 			</p>
 
 			<example show="swIPAuxNonfiniteYes">
-				<interlinear exampleLoc="ip/auxNoonfiniteExample"/>
+				<interlinear exampleLoc="ip/auxNonfiniteExample"/>
 			</example>
+		   </section3>
+		   <section3 id="sIPAuxOther">
+			  <secTitle>Other types of Auxiliaries</secTitle>
 
-			<p>
+		   <p>
 				<content>Some languages have other words that act like auxiliaries, such as motion auxiliaries or loan markers, which share the same subject and complements as the main verb.</content>
 			</p>
 			<p>
@@ -1150,7 +1587,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 			<example show="swIPAuxOtherYes">
 				<interlinear exampleLoc="ip/auxOtherExample"/>
 			</example>
-
+		   </section3>
 
 		</section2>
 	</section1>
@@ -1168,7 +1605,13 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	<showWhen id="swIPInflFeatFuture">
 		<whenValue element="ip/ipInflFeatFuture" attr="checked" value="yes"/>
 	</showWhen>
-	<showWhen id="swIPInflFeatCompletive">
+   <showWhen id="swIPInflFeatContemplative">
+	  <whenValue element="ip/ipInflFeatContemplative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatContrafactual">
+	  <whenValue element="ip/ipInflFeatContrafactual" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatCompletive">
 		<whenValue element="ip/ipInflFeatCompletive" attr="checked" value="yes"/>
 	</showWhen>
 	<showWhen id="swIPInflFeatContinuative">
@@ -1183,6 +1626,9 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	<showWhen id="swIPInflFeatIncompletive">
 		<whenValue element="ip/ipInflFeatIncompletive" attr="checked" value="yes"/>
 	</showWhen>
+   <showWhen id="swIPInflFeatPerfect">
+	  <whenValue element="ip/ipInflFeatPerfect" attr="checked" value="yes"/>
+   </showWhen>
 	<showWhen id="swIPInflFeatPerfective">
 		<whenValue element="ip/ipInflFeatPerfective" attr="checked" value="yes"/>
 	</showWhen>
@@ -1195,6 +1641,9 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	<showWhen id="swIPInflFeatStative">
 		<whenValue element="ip/ipInflFeatStative" attr="checked" value="yes"/>
 	</showWhen>
+   <showWhen id="swIPInflFeatUnreal">
+	  <whenValue element="ip/ipInflFeatUnreal" attr="checked" value="yes"/>
+   </showWhen>
 	<showWhen id="swIPInflFeatDeclarative">
 		<whenValue element="ip/ipInflFeatDeclarative" attr="checked" value="yes"/>
 	</showWhen>
@@ -1210,18 +1659,47 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	<showWhen id="swIPInflFeatRealis">
 		<whenValue element="ip/ipInflFeatRealis" attr="checked" value="yes"/>
 	</showWhen>
-	<showWhen id="swIPInflFeatPassive">
+   <showWhen id="swIPInflFeatAntipassive">
+	  <whenValue element="ip/ipInflFeatAntipassive" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatCausative">
+	  <whenValue element="ip/ipInflFeatCausative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatFinite">
+	  <whenValue element="ip/ipInflFeatFinite" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatMinusFinite">
+	  <whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatGerund">
+	  <whenValue element="ip/ipInflFeatGerund" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatPassive">
 		<whenValue element="ip/ipInflFeatPassive" attr="checked" value="yes"/>
 	</showWhen>
 	<showWhen id="swIPInflFeatParticiple">
 		<whenValue element="ip/ipInflFeatParticiple" attr="checked" value="yes"/>
 	</showWhen>
-	<showWhen id="swIPInflFeatFinite">
-		<whenValue element="ip/ipInflFeatFinite" attr="checked" value="yes"/>
-	</showWhen>
-	<showWhen id="swIPInflFeatMinusFinite">
-		<whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="yes"/>
-	</showWhen>
+   <showWhen id="swIPInflFeatActorVoice">
+	  <whenValue element="ip/ipInflFeatActorVoice" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatDativeVoice">
+	  <whenValue element="ip/ipInflFeatDativeVoice" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatGoalVoice">
+	  <whenValue element="ip/ipInflFeatGoalVoice" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatInstrumentalVoice">
+	  <whenValue element="ip/ipInflFeatInstrumentalVoice" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatLocativeVoice">
+	  <whenValue element="ip/ipInflFeatLocativeVoice" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPInflFeatObjectVoice">
+	  <whenValue element="ip/ipInflFeatObjectoice" attr="checked" value="yes"/>
+   </showWhen>
+
+
 	<showWhen id="swIPAgrFeatFirstSubject">
 		<whenValue element="ip/ipAgrFeatFirstSubject" attr="checked" value="yes"/>
 	</showWhen>
@@ -1414,12 +1892,129 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	<showWhen id="swIPAgrFeatClassClassNumberAbsolutive">
 		<whenValue element="ip/ipAgrFeatClassClassNumberAbsolutive" attr="checked" value="yes"/>
 	</showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeAnimalSubject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeAnimalSubject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeInsectSubject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeInsectSubject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeLiquidSubject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeLiquidSubject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeRoundSubject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeRoundSubject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeCylinderSubject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeCylinderSubject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeSphericalSubject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeSphericalSubject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeTreeSubject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeTreeSubject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeWoodSubject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeWoodSubject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeOtherSubject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeOtherSubject" attr="checked" value="yes"/>
+   </showWhen>
+
+   <showWhen id="swIPAgrFeatClassClassTypeAnimalObject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeAnimalObject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeInsectObject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeInsectObject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeLiquidObject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeLiquidObject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeRoundObject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeRoundObject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeCylinderObject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeCylinderObject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeSphericalObject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeSphericalObject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeTreeObject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeTreeObject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeWoodObject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeWoodObject" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeOtherObject">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeOtherObject" attr="checked" value="yes"/>
+   </showWhen>
+
+   <showWhen id="swIPAgrFeatClassClassTypeAnimalErgative">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeAnimalErgative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeInsectErgative">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeInsectErgative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeLiquidErgative">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeLiquidErgative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeRoundErgative">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeRoundErgative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeCylinderErgative">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeCylinderErgative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeSphericalErgative">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeSphericalErgative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeTreeErgative">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeTreeErgative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeWoodErgative">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeWoodErgative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeOtherErgative">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeOtherErgative" attr="checked" value="yes"/>
+   </showWhen>
+
+   <showWhen id="swIPAgrFeatClassClassTypeAnimalAbsolutive">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeAnimalAbsolutive" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeInsectAbsolutive">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeInsectAbsolutive" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeLiquidAbsolutive">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeLiquidAbsolutive" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeRoundAbsolutive">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeRoundAbsolutive" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeCylinderAbsolutive">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeCylinderAbsolutive" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeSphericalAbsolutive">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeSphericalAbsolutive" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeTreeAbsolutive">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeTreeAbsolutive" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeWoodAbsolutive">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeWoodAbsolutive" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatClassClassTypeOtherAbsolutive">
+	  <whenValue element="ip/ipAgrFeatClassClassTypeOtherAbsolutive" attr="checked" value="yes"/>
+   </showWhen>
+
+
+
 	<showWhen id="swIPProDropYes">
 		<whenValue element="ip" attr="proDrop" value="yes"/>
 	</showWhen>
 	<showWhen id="swIPProDropNoImp">
 		<whenValue element="ip" attr="proDrop" value="noImp"/>
 	</showWhen>
+   <showWhen id="swIPProDropNo">
+	  <whenValue element="ip" attr="proDrop" value="no"/>
+   </showWhen>
 	<showWhen id="swIPProDropNotNo">
 		<whenValue element="ip" attr="proDrop" value="no" negateValue="yes"/>
 	</showWhen>
@@ -1435,36 +2030,24 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	<showWhen id="swIPAuxOtherYes">
 		<whenValue element="ip" attr="auxOther" value="yes"/>
 	</showWhen>
+
 	<showWhen id="swIPNegAuxWord">
-		<whenValue element="ip" attr="negAux" value="yesOnly"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAffix"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAll"/>
+		<whenValue element="ip" attr="negAux" value="yes"/>
 	</showWhen>
 	<showWhen id="swIPNegAuxAffix">
-		<whenValue element="ip" attr="negAux" value="noAffixOnly"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAffix"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAll"/>
+		<whenValue element="ip" attr="negAuxAffix" value="yes"/>
 	</showWhen>
-	<showWhen id="swIPNegAuxNotNoVerb">
-		<whenValue element="ip" attr="negAux" value="noVerb" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swIPNegVerb">
-		<whenValue element="ip" attr="negAux" value="noVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="noAffixAndVerb"/>
-		<or/>
-		<whenValue element="ip" attr="negAux" value="yesAll"/>
-	</showWhen>
+   <showWhen id="swIPNegVAffix">
+	  <whenValue element="ip" attr="negVAffix" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPNegAuxNotNo">
+	  <whenValue element="ip" attr="negAux" value="yes"/>
+	  <or/>
+	  <whenValue element="ip" attr="negAuxAffix" value="yes"/>
+	  <or/>
+	  <whenValue element="ip" attr="negVAffix" value="yes"/>
+   </showWhen>
+
 	<showWhen id="swIPAuxOrderVSO">
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 	</showWhen>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPIntran" count="1/1">
+   <title level="2">Las oraciones básicas - Las oraciones intransitivas y de movimiento</title>
+   <introduction>Los intransitivos simples no tienen ningún complemento después del verbo, como en <example>La muchacha flota.</example> </introduction>
+   <form section="ip">
+	  <prompt>Los ejemplos que usted escribió en <section number="1.">La tipología - Sistema de caso</section> de oraciones intransitivas con frases nominales simples o nombres propios como sujetos de verbos que tienen un sujeto-agente se muestran aquí.  Ahora, puede escribir ejemplos adicionales si lo desea.</prompt>
+	  <textBox id="IPExamplesIntranExample"  section="typology" dataItem="intExample" cols="50"/>
+	  <prompt>Los ejemplos que usted escribió en <section number="1.">La tipología - Sistema de caso</section> de oraciones intransitivas con pronombres independientes como sujetos de verbos que tienen un sujeto-agente se muestran aquí.  Ahora, puede escribir ejemplos adicionales si lo desea.</prompt>
+	  <textBox id="IPExamplesIntranPnExample"  section="typology" dataItem="pnIntExample" cols="50"/>
+	  <prompt>Los ejemplos que usted escribió en <section number="1.">La tipología - Sistema de caso</section> de oraciones intransitivas con sujetos-experimentadores, con frases nominales simples o nombres propios en la posición del sujeto se muestran aquí.   Ahora, puede escribir ejemplos adicionales si lo desea.</prompt>
+	  <textBox id="IPExperiencerIntExample"  section="typology" dataItem="experiencerIntExample" cols="50"/>
+	  <prompt>Los ejemplos que usted escribió en <section number="1.">La tipología - Sistema de caso</section>  de oraciones intransitivas con sujetos-experimentadores, con pronombres independientes en la posición del sujeto se muestran aquí.  Ahora, puede escribir ejemplos adicionales si lo desea.</prompt>
+	  <textBox id="IPExperiencerPnIntExample"  section="typology" dataItem="experiencerPnIntExample" cols="50"/>
+	  <br/>
+	  <instruction id="IPIntranExpInstruction" show="swExpNotNo">Since Experiencer subjects are distinct from Agent subjects in your language, add the feature <feature>experiencer</feature> to the verbs which have an Experiencer subject.</instruction>
+	  <br/>
+	  <introduction> Los verbos de movimiento incluyen un lugar en la forma de una frase preposicional o posposicional o adverbio.  Algunos ejemplos en español con los verbos de movimiento son</introduction>
+	  <EnglishExample>
+		 <exItem label="1.">La muchacha corrió alrededor de la pista.</exItem>
+		 <exItem label="2.">Mi madre fue a la tienda.</exItem>
+		 <exItem label="3.">Mi profesor vino aquí.</exItem>
+	  </EnglishExample>
+	  <prompt>Escriba algunos ejemplos con verbos de movimiento aquí:</prompt>
+	  <textBox id="IPExamplesMotionExample" dataItem="motionExample" cols="50"/>
+	  <instruction id="IPIntranInstruction">Partial subcategorization can be done as follows, without entering a feature on every verb: if a particular verb is intransitive and can never have anything but a subject, mark it with the feature <feature>intransitive</feature>.  (Don’t consider temporal elements.)  If it is an intransitive motion verb that can have a locative PP or AdvP <span id="IPIntranFollow" show="swHeadInitial">following</span>
+		 <span id="IPIntranPrecede" show="swHeadFinal">preceding</span> it, add the feature <feature>motion</feature> to its lexical entry.  Since the motion verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-motion</feature>.</instruction>
+	  <br/>
+	  <br/>
+	  <buttons>
+		 <button id="IPIntranBack" value="Back" goto="IPContents.htm"/>
+		 <button id="IPIntranNext" value="Next" goto="IPContents.htm"/>
+	  </buttons>
+   </form>
+   <showWhen id="swExpNotNo">
+	  <not/> <whenValue element="typology" attr="caseExperiencer" value="no"/>
+   </showWhen>
+   <showWhen id="swHeadInitial">
+	  <whenValue element="typology" attr="wordOrder" value="SVO"/>
+	  <or/>
+	  <whenValue element="typology" attr="wordOrder" value="VOS"/>
+	  <or/>
+	  <whenValue element="typology" attr="wordOrder" value="VSO"/>
+   </showWhen>
+   <showWhen id="swHeadFinal">
+	  <whenValue element="typology" attr="wordOrder" value="SOV"/>
+	  <or/>
+	  <whenValue element="typology" attr="wordOrder" value="OVS"/>
+	  <or/>
+	  <whenValue element="typology" attr="wordOrder" value="OSV"/>
+   </showWhen>
+</page>

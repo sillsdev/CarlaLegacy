@@ -25,9 +25,9 @@
 		<xsl:processing-instruction name="xml-stylesheet">
 			<xsl:text>type="text/xsl" href="XLingPap1.xsl"</xsl:text>
 		</xsl:processing-instruction>
-		<lingPaper>
+		<lingPaper automaticallywrapinterlinears="yes" sortRefsAbbrsByDocumentLanguage="yes">
 			<frontMatter>
-				<title>Una Gramática del  <xsl:value-of select="//language/langName"/>
+				<title>Una Gramática del  <xsl:value-of select="//language/langNames/langName[@lang='es']"/>
 				</title>
 				<xsl:call-template name="OutputCommonFrontmatter"/>
 			</frontMatter>

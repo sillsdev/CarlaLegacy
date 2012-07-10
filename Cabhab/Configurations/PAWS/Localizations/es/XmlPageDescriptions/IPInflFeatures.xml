@@ -4,8 +4,8 @@
 <page id="IPInflFeatures" count="1/2">
 	<title level="2">Las oraciones básicas - Las características de la inflexión</title>
 	<introduction>Las oraciones incluyen normalmente la inflexión en los verbos y posiblemente la concordancia entre el sujeto, el objeto y el verbo.</introduction>
-	<instruction>Los verbos y los auxiliares generalmente tienen características de la inflexión, tales como tiempo, aspecto, y/o modo.  En la mayoría de los casos, estas características se agregan con afijos, pero también pueden ser parte de los verbos irregulares.  Mire a las características en la carta abajo y compruebe cualquiera que su idioma utiliza. <span id="IPInflFeaturesNotPracticalSpan" show="swNotPractical"> In the lexicon, add the appropriate features to the relevant affixes and also to any auxiliaries or irregular verb forms.</span> <br/>
-		<featureChart explanations="no">
+	<instruction>Los verbos y los auxiliares generalmente tienen características de la inflexión, tales como tiempo, aspecto, y/o modo.  En la mayoría de los casos, estas características se agregan con afijos, pero también pueden ser parte de los verbos irregulares.  Mire las características en el cuadro abajo y dando click a la izquierda de cualquiera que su lengua utiliza. <span id="IPInflFeaturesNotPracticalSpan" show="swNotPractical"> In the lexicon, add the appropriate features to the relevant affixes and also to any auxiliaries or irregular verb forms.</span> <br/>
+		<featureChart>
 			<featureRow>
 				<featureType rowspan="3">tiempo</featureType>
 				<featureItem dataValue="ipInflFeatPresent" name="IPInflFeatPresent">present</featureItem>
@@ -20,8 +20,16 @@
 				<featureExplanation>futuro</featureExplanation>
 			</featureRow>
 			<featureRow>
-				<featureType rowspan="9">aspecto</featureType>
-				<featureItem dataValue="ipInflFeatCompletive" name="IPInflFeatCompletive">completive</featureItem>
+				<featureType rowspan="13">aspecto</featureType>
+			   <featureItem dataValue="ipInflFeatContemplative" name="IPInflFeatContemplative">contemplative</featureItem>
+			   <featureExplanation>contemplativo</featureExplanation>
+			</featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatContrafactual" name="IPInflFeatContrafactual">contrafactual</featureItem>
+			  <featureExplanation>contrariamente al hecho</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatCompletive" name="IPInflFeatCompletive">completive</featureItem>
 				<featureExplanation>completivo</featureExplanation>
 			</featureRow>
 			<featureRow>
@@ -40,7 +48,11 @@
 				<featureItem dataValue="ipInflFeatIncompletive" name="IPInflFeatIncompletive">incompletive</featureItem>
 				<featureExplanation>incompletivo</featureExplanation>
 			</featureRow>
-			<featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatPerfect" name="IPInflFeatPerfect">perfect</featureItem>
+			  <featureExplanation>perfecto</featureExplanation>
+		   </featureRow>
+		   <featureRow>
 				<featureItem dataValue="ipInflFeatPerfective" name="IPInflFeatPerfective">perfective</featureItem>
 				<featureExplanation>perfectivo</featureExplanation>
 			</featureRow>
@@ -56,7 +68,11 @@
 				<featureItem dataValue="ipInflFeatStative" name="IPInflFeatStative">stative</featureItem>
 				<featureExplanation>estativo</featureExplanation>
 			</featureRow>
-			<featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatUnreal" name="IPInflFeatUnreal">unreal</featureItem>
+			  <featureExplanation>no realidad</featureExplanation>
+		   </featureRow>
+		   <featureRow>
 				<featureType rowspan="5">modo</featureType>
 				<featureItem dataValue="ipInflFeatDeclarative" name="IPInflFeatDeclarative">declarative</featureItem>
 				<featureExplanation>declarativo</featureExplanation>
@@ -79,14 +95,6 @@
 			</featureRow>
 			<featureRow>
 				<featureType rowspan="4">otro</featureType>
-				<featureItem dataValue="ipInflFeatPassive" name="IPInflFeatPassive">passive</featureItem>
-				<featureExplanation>pasivo</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipInflFeatParticiple" name="IPInflFeatParticiple">participial</featureItem>
-				<featureExplanation>participio</featureExplanation>
-			</featureRow>
-			<featureRow>
 				<featureItem dataValue="ipInflFeatFinite" name="IPInflFeatFinite">finite</featureItem>
 				<featureExplanation>finito</featureExplanation>
 			</featureRow>
@@ -94,6 +102,51 @@
 				<featureItem dataValue="ipInflFeatMinusFinite" name="IPInflFeatMinusFinite">-finite</featureItem>
 				<featureExplanation>infinitivo</featureExplanation>
 			</featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatGerund" name="IPInflFeatGerund">gerund</featureItem>
+			  <featureExplanation>gerundio</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatParticiple" name="IPInflFeatParticiple">participle</featureItem>
+			  <featureExplanation>participio</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureType rowspan="9">voz</featureType>
+			  <featureItem dataValue="ipInflFeatAntipassive" name="IPInflFeatAntipassive">antipassive</featureItem>
+			  <featureExplanation>antipasivo</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatCausative" name="IPInflFeatCausative">causative</featureItem>
+			  <featureExplanation>causativo</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatPassive" name="IPInflFeatPassive">passive</featureItem>
+			  <featureExplanation>pasivo</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatActorVoice" name="IPInflFeatActorVoice">actorVoice</featureItem>
+			  <featureExplanation>de actor</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatDativeVoice" name="IPInflFeatDativeVoice">dativeVoice</featureItem>
+			  <featureExplanation>de dativo</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatGoalVoice" name="IPInflFeatGoalVoice">goalVoice</featureItem>
+			  <featureExplanation>de meta</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatinstrumentalVoice" name="IPInflFeatInstrumentalVoice">instrumentalVoice</featureItem>
+			  <featureExplanation>de instrumento</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatLocativeVoice" name="IPInflFeatLocativeVoice">locativeVoice</featureItem>
+			  <featureExplanation>de locativo</featureExplanation>
+		   </featureRow>
+		   <featureRow>
+			  <featureItem dataValue="ipInflFeatObjectVoice" name="IPInflFeatObjectVoice">objectVoice</featureItem>
+			  <featureExplanation>de objeto</featureExplanation>
+		   </featureRow>
 		</featureChart>
 	</instruction>
 	<form section="ip" transparent="yes">

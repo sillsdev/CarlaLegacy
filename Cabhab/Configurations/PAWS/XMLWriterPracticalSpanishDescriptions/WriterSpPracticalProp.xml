@@ -19,9 +19,9 @@
 			</case>
 			<content>, como en </content>
 			<langData>los Estados Unidos de América</langData>
-			<content>.  Muchos idiomas requieren un artículo antes de un nombre. También se presentan los apositivos.  En algunos casos aparecen con un poseedor, como en </content>
+			<content>.  Muchas lenguas requieren un artículo antes de un nombre. También se presentan los apositivos.  En algunos casos aparecen con un poseedor, como en </content>
 			<langData>mi hijo, David</langData>
-			<content>.  Además, los nombres propios se pueden modificar con los adjetivos y cláusulas relativas, como en </content>
+		   <content>, pero apositivos será discutido luego en la sección </content><sectionRef sec="sCoordAppositive"/><content>.  Además, los nombres propios se pueden modificar con los adjetivos y cláusulas relativas, como en </content>
 			<langData>México fuerte y orgulloso</langData>
 			<content> o </content>
 			<langData>la Susana que conozco</langData>
@@ -35,7 +35,16 @@
 		<example>
 			<interlinear exampleLoc="prop/example"/>
 		</example>
-		<p>
+	   <p show="swClassifiersYesPropYes"><content>En </content><langName/><content>, los nombres propios se marcan con clasificadores lo mismo que sustantivos como parte del sistema de concordancia.</content></p>
+	   <p show="swClassifiersYesPropNo"><content>En </content><langName/><content>, los nombres propios no se marcan con clasificadores al contrario que sustantivos.</content></p>
+	   <p show="swNPArtAndDemNotNo"><content>Los nombres propios en </content><langName/><case element="prop" attr="pnDeterminer">
+		  <caseText value="no"> pueden, pero no es requirido,</caseText>
+		  <caseText value="yes"> deben</caseText>
+	   </case><content> contener un </content><case element="np" attr="artAndDem">
+		  <caseText value="article">artículo</caseText>
+		  <caseText value="demonstrative">demostrativo</caseText>
+		  <caseText value="both">artículo y/o demostrativo</caseText></case><content> o un poseedor.</content></p>
+	   <p>
 			<content>Algunos ejemplos de nombres propios con frases </content>
 			<case element="pp" attr="pPos">
 				<caseText value="before">preposicionales</caseText>
@@ -59,4 +68,17 @@
 			<interlinear exampleLoc="prop/relClExample"/>
 		</example>
 	</section1>
+   <showWhen id="swClassifiersYesPropYes">
+	  <whenValue element="typology"  attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="prop" attr="pnClassifier" value="yes"/>
+   </showWhen>
+   <showWhen id="swClassifiersYesPropNo">
+	  <whenValue element="typology"  attr="classifier" value="yesAgr"/>
+	  <and/>
+	  <whenValue element="prop" attr="pnClassifier" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemNotNo">
+	  <whenValue element="np" attr="artAndDem" value="no" negateValue="yes"/>
+   </showWhen>
 </portion>
