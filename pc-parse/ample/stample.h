@@ -711,7 +711,9 @@ extern AmpleEnvConstraint *	parseAmpleNeverEnvConstraint P((
 #ifdef _MSC_VER
 #define isascii __isascii
 #else
+#ifndef __APPLE_CC__
 extern int isascii P((int));
+#endif
 #endif
 #endif
 /*

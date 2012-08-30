@@ -55,11 +55,14 @@ typedef struct ample_cat_class {
  *
  *    All of the string classes in a partial reduplication allomorph description  are stored in a single linked list.
  *    Each node of this list has a pointer to the string class and its index.
+ *    For cases where there are overt characters between string classes in the
+ *    pattern, we also store those characters.
  */
 typedef struct partial_redup_indexed_class {
 	StringClass *	pStringClass;	/* string class  */
 	char *		pszMember;	/* current string from class */
 	int                 iIndex ;  /* index of string class */
+	char *              pszCharacters;  /* character(s) if no string class */
 	struct partial_redup_indexed_class * pNext;	    /* pointer to next item in list */
 	} PartialRedupIndexedClass;
 
@@ -708,7 +711,9 @@ extern AmpleEnvConstraint *	parseAmpleNeverEnvConstraint P((
 #ifdef _MSC_VER
 #define isascii __isascii
 #else
+#ifndef __APPLE_CC__
 extern int isascii P((int));
+#endif
 #endif
 #endif
 /*

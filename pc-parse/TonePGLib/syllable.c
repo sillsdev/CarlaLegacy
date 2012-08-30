@@ -252,7 +252,7 @@ printf(" syllable: syllable");
 	sp->syl_mora[i] = (struct mora *)NULL;
   sp->syl_ft    = (struct foot *)NULL;
   sp->syl_tbu   = (struct tbu *)NULL;
-  sp->syl_wt    = (int)NULL;
+  sp->syl_wt    = 0;
   sp->syl_pr    = UNSTRESSED;
   sp->syl_right = (struct syllable *)NULL;
   sp->syl_left  = sp_last;

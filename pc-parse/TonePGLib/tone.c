@@ -280,17 +280,17 @@ struct tone *add_tone()
 
   tp               = structalloc( tone );
   tp->tone_tbul    = (struct tbu_list *)NULL;
-  tp->tone_domain  = (int)NULL;
+  tp->tone_domain  = 0;
   for (i = 0; i < MAX_LOC; i++)
-	tp->tone_ul_loc[i] = (char)NULL;
+	tp->tone_ul_loc[i] = 0;
   tp->tone_left    = (struct tone *)NULL;
   tp->tone_right   = (struct tone *)NULL;
   for (i = 0; i < TIERS; i++)
 	{
 	  tp->tone_tonel[i]   = (struct tone_list *)NULL;
-	  tp->tone_value[i]   = (int)NULL;
-	  tp->tone_ul_type[i] = (int)NULL;
-	  tp->tone_status[i]  = (int)NULL;
+	  tp->tone_value[i]   = 0;
+	  tp->tone_ul_type[i] = 0;
+	  tp->tone_status[i]  = 0;
 	}
 
   return( tp );
@@ -565,8 +565,8 @@ struct tval_list *add_tval_list(tv_head)
   tvl->tvl_next            = (struct tval_list *)NULL;
   for (tier = 0; tier < TIERS; tier++)
 	{
-	  tvl->tvl_value[tier]  = (int)NULL;
-	  tvl->tvl_status[tier] = (int)NULL;
+	  tvl->tvl_value[tier]  = 0;
+	  tvl->tvl_status[tier] = 0;
 	}
 
   tvl2 = end_of_tval_list(tv_head);
@@ -1213,9 +1213,9 @@ void  delink_tone_from_tbu(tp, tier, tbu)
 	return;
 				/* if the other tier contains a value, only */
 				/* remove the value for this tier */
-  if (tp->tone_value[(tier + 1) % 2] != (int)NULL)
+  if (tp->tone_value[(tier + 1) % 2] != 0)
 	{
-	  tp->tone_value[tier] = (int)NULL;
+	  tp->tone_value[tier] = 0;
 	  return;
 	}
 				/* look for the tbu in the tone's tbu list */
@@ -1648,7 +1648,7 @@ long find_edge_cond(cp)
  *    check string to see if it is a valid tone domain
  * RETURN VALUE
  *    tone domain if valid
- *    NULL otherwise
+ *    zero otherwise
  */
 int find_tone_domain(cp)
 	 char *cp;
@@ -1663,7 +1663,7 @@ int find_tone_domain(cp)
 	return(tdp->td_domain);
 	}
 
-  return((int)NULL);
+  return(0);
 
 }	/* end find_tone_domain */
 
@@ -1754,7 +1754,7 @@ static char *find_tone_seg_rep(tslp, tbp, build_flags)
  *    check string to see if it is a valid tone type
  * RETURN VALUE
  *    tone type if valid
- *    NULL otherwise
+ *    zero otherwise
  */
 int find_tone_type(cp)
 	 char *cp;
@@ -1769,7 +1769,7 @@ int find_tone_type(cp)
 	return(ttp->tt_type);
 	}
 
-  return((int)NULL);
+  return(0);
 
 }	/* end find_tone_type */
 
@@ -1783,7 +1783,7 @@ int find_tone_type(cp)
  *    check string to see if it is a valid tone value
  * RETURN VALUE
  *    tone value if valid
- *    NULL otherwise
+ *    zero otherwise
  *	(in addition, tier is set)
  */
 int find_tone_value(cp, tier)
@@ -1803,7 +1803,7 @@ int find_tone_value(cp, tier)
 	}
 	}
 
-  return((int)NULL);
+  return(0);
 
 }	/* end find_tone_value */
 
@@ -2173,7 +2173,7 @@ struct tone *get_morphs_nearest_tone(ap, edge)
  *     (there's probably a better way to do this...)
  * RETURN VALUE
  *    the next location number
- *    NULL if there is no next number
+ *    zero if there is no next number
  */
 int get_next_loc(bitmap, loc)
 	 char *bitmap;
@@ -2218,7 +2218,7 @@ int get_next_loc(bitmap, loc)
 	  bitmask = 0200;
 	}
 				/* none found; return NULL */
-  return( (int)NULL );
+  return( 0 );
 
 }	/* end get_next_loc */
 
@@ -2414,7 +2414,7 @@ struct tone_list *insert_tone_list(tl_headp, tier, tp)
 	   tp2 != (struct tone *)NULL;
 	   tp2 = tp2->tone_left)
 	{
-	  if (tp2->tone_value[tier] != (int)NULL)
+	  if (tp2->tone_value[tier] != 0)
 	{
 	  for (tlp = tl_headp;
 		   tlp != (struct tone_list *)NULL &&
@@ -2928,7 +2928,7 @@ void set_edge_cond(lp, pOutputFP_in)
   if ((long)Max_Number_Of_Edge_Conds >= MAX_EDGE_CONDS)
 	{
 	  fprintf(pOutputFP_in,
-		  "%sMaximum number of edge conditions exceeded!  Max is %u",
+		  "%sMaximum number of edge conditions exceeded!  Max is %lu",
 		  errhead, MAX_EDGE_CONDS);
 	  fprintf(pOutputFP_in,
 		  "\n\t\t%s will be ignored.",lp);
@@ -3434,7 +3434,7 @@ void show_tone(FILE *pOutputFP_in, struct tone *tp)
 		  tone_type_name(tp->tone_status[tier]),
 		  tone_type_name(tp->tone_ul_type[tier]),
 		  tone_value_name(tp->tone_value[tier]));
-	  if ((tloc = get_next_loc(tp->tone_ul_loc, (int)NULL)))
+	  if ((tloc = get_next_loc(tp->tone_ul_loc, 0)))
 		{
 		  fprintf(pOutputFP_in, " @ tbu");	/* show all locations */
 		  for (;
@@ -3456,7 +3456,7 @@ void show_tone(FILE *pOutputFP_in, struct tone *tp)
 	  fprintf(pOutputFP_in, "\n\t\tvalue[PRIMARY] = %s; value[REGISTER] = %s",
 		  (tp->tone_value[PRIMARY]) ? tone_value_name(tp->tone_value[PRIMARY]) : "0",
 		  (tp->tone_value[REGISTER]) ? tone_value_name(tp->tone_value[REGISTER]) : "0");
-	  if ((tloc = get_next_loc(tp->tone_ul_loc, (int)NULL)))
+	  if ((tloc = get_next_loc(tp->tone_ul_loc, 0)))
 		{
 		  fprintf(pOutputFP_in, " @ tbu");	/* show all locations */
 		  for (;
@@ -3497,7 +3497,7 @@ void show_tone_seg_list(FILE *pOutputFP_in, struct tone_seg_list *tsl)
 	   tvp != (struct tval_list *)NULL;
 	   tvp = tvp->tvl_next)
 	for (tier = 0; tier < TIERS; tier++)
-	  if (tvp->tvl_value[tier] != (int)NULL)
+	  if (tvp->tvl_value[tier] != 0)
 		{
 				/* determine if need floating symbol */
 		  if (streq("right-floating",
@@ -3863,13 +3863,13 @@ int tone_id(tp, tier, type, value)
   if (tp == (struct tone *)NULL)
 	return(FALSE);
 				/* see if value is correct */
-  is_value = tp->tone_value[tier] != (int)NULL &&
-			 value != (char *)NULL             &&
+  is_value = tp->tone_value[tier] != 0 &&
+			 value != (char *)NULL     &&
 			 streq(value, tone_value_name(tp->tone_value[tier]));
 
 				/* see if type is correct */
-  is_type  = tp->tone_status[tier] != (int)NULL &&
-			 type != (char *)NULL               &&
+  is_type  = tp->tone_status[tier] != 0 &&
+			 type != (char *)NULL       &&
 			 streq(type, tone_type_name(tp->tone_status[tier]));
 
 				/* return appropriate combination */

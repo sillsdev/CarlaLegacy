@@ -557,7 +557,7 @@ morpheme.iOrderClass = 0;
 morpheme.pAllomorphs = NULL;
 #ifdef TONEPARS
 morpheme.pTones = (struct tone_list *)NULL;
-morpheme.iDomain = (int)NULL;
+morpheme.iDomain = 0;
 #endif /* TONEPARS */
 /*
  *  other things need to cleared for each affix entry as well
@@ -817,7 +817,7 @@ morpheme.iOrderClass = 0;                /* (unused for roots, actually */
 morpheme.pAllomorphs = NULL;
 #ifdef TONEPARS
 morpheme.pTones = (struct tone_list *)NULL;
-morpheme.iDomain = (int)NULL;
+morpheme.iDomain = 0;
 #endif /* TONEPARS */
 /*
  *  other things need to cleared for each root entry as well

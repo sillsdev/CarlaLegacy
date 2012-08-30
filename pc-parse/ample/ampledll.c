@@ -2917,7 +2917,7 @@ if (setjmp(sAbortPoint) != 0)
 if (pSetup_io->pszLogFilename != NULL)
 	{
 	pSetup_io->sData.pLogFP = fopen(pSetup_io->pszLogFilename, "a");
-	print_header(pSetup_io->sData.pLogFP, NULL);
+	print_header(pSetup_io->sData.pLogFP);
 	fclose(pSetup_io->sData.pLogFP);
 	pSetup_io->sData.pLogFP = NULL;
 	}

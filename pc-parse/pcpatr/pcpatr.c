@@ -463,9 +463,9 @@ if (emergency_memory != (char *)NULL)
 	emergency_memory = (char *)NULL;
 	}
 if (!bPCPATRSilent_g)
-	fprintf(stderr, nomem_msg);
+	fprintf(stderr, "%s", nomem_msg);
 if (sPCPATRData_g.pLogFP != (FILE *)NULL)
-	fprintf(sPCPATRData_g.pLogFP, nomem_msg);
+	fprintf(sPCPATRData_g.pLogFP, "%s", nomem_msg);
 
 exit_pcpatr(2);
 }
