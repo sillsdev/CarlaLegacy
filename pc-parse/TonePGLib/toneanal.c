@@ -811,7 +811,7 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 	  tp = add_tone();
 	  tier = acp->ac_tone->ti_value->tv_tier;
 	  tp->tone_value[tier]   = acp->ac_tone->ti_value->tv_value;
-	  tp->tone_ul_type[tier] = (int)NULL;
+	  tp->tone_ul_type[tier] = 0;
 	  tp->tone_status[tier]  = acp->ac_tone->ti_status;
 				/* insert it in list of tones */
 	  pwp->wd_tones = insert_tone(pwp->wd_tones, tp, last_tp);
@@ -1019,7 +1019,7 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 				/* add the tone */
 		  tp = add_tone();
 		  tp->tone_value[tier]   = acp->ac_tone->ti_value->tv_value;
-		  tp->tone_ul_type[tier] = (int)NULL;
+		  tp->tone_ul_type[tier] = 0;
 		  tp->tone_status[tier]  = acp->ac_tone->ti_status;
 				/* insert it in list of tones */
 		  pwp->wd_tones = insert_tone(pwp->wd_tones, tp,
@@ -1039,11 +1039,11 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 		  for (;
 			   tlp != (struct tone_list *)NULL;
 			   tlp = tlp->tonl_right)
-			if ((tp = tlp->tonl_tone)->tone_value[tier] == (int)NULL)
+			if ((tp = tlp->tonl_tone)->tone_value[tier] == 0)
 			  {
 			tp->tone_value[tier]   = acp->ac_tone->ti_value
 													   ->tv_value;
-			tp->tone_ul_type[tier] = (int)NULL;
+			tp->tone_ul_type[tier] = 0;
 			tp->tone_status[tier]  = tp->tone_status[(tier+1)%2];
 				/* insert it in tier */
 			pwp->wd_tier[tier]=insert_tone_list(pwp->wd_tier[tier],
@@ -1078,7 +1078,7 @@ static void apply_rule(trp, ap_orig, word, pwp, dp, tbu_type, edge_conds,
 	  fprintf(pStamp_in->pLogFP,
 		  "\n\t\t%s", build_word_with_tone_marked(pwp->wd_rn, tbu_type,
 							 SHOW_DERIVATION,
-							 (int)NULL, pStamp_in->pLogFP));
+							 0, pStamp_in->pLogFP));
 	}
 	}
 
@@ -1241,7 +1241,7 @@ static void apply_tone_rules(ap_head, word, pwp, dp, tbu_type, edge_conds,
 	  fprintf(pStamp_in->pLogFP,
 		  "\n\t\t%s", build_word_with_tone_marked(pwp->wd_rn, tbu_type,
 							 SHOW_DERIVATION,
-							 (int)NULL, pStamp_in->pLogFP));
+							 0, pStamp_in->pLogFP));
 	}
 
 }	/* end apply_tone_rules */
@@ -1387,7 +1387,7 @@ static void assign_lexical_tone_to_tbus(ap, tp, tbu_type, pStamp_in)
 				/* find leftmost tbu in morpheme */
 	  tbup = get_edge_tbu(ap->pRNBeg, ap->pRNEnd, tbu_type, LEFT);
 				/* get tbu location of tone: default is 1 */
-	  for (tloc = max(1, get_next_loc(tp->tone_ul_loc, (int)NULL));
+	  for (tloc = max(1, get_next_loc(tp->tone_ul_loc, 0));
 		   tloc > 0;
 		   tloc = get_next_loc(tp->tone_ul_loc, tloc))
 		{
@@ -2387,10 +2387,10 @@ static struct tone_list *extract_reg_tone_tier(t_tier_prim, do_trace,
 	  ttpr = ttp->tonl_right;
 				/* see if the tone has a register element */
 	  if ((tp = ttp->tonl_tone)    != (struct tone *)NULL &&
-	  tp->tone_value[REGISTER] != (int)NULL)
+	  tp->tone_value[REGISTER] != 0)
 	{
 				/* if there is no primary tone, ... */
-	  if (tp->tone_value[PRIMARY] == (int)NULL)
+	  if (tp->tone_value[PRIMARY] == 0)
 		{
 				/* ... delink the tone list element from */
 				/* the primary tier ... */
@@ -2900,7 +2900,7 @@ static void macrostem_high_tone_spread(t_tier_headp, dp, tbu_type, do_trace)
 	{
 				/* link it to the tbu to the left */
 	  tbu_orig = spread_tone(tp, PRIMARY, FEATURE_CHANGING, LEFT,
-				 NON_ITERATIVE, (int)NULL, OCP_IGNORED,
+				 NON_ITERATIVE, 0, OCP_IGNORED,
 				 (char *)NULL);
 	}
 	}
@@ -3534,7 +3534,7 @@ static int tone_anal(anal_head, word, decompstring,
 	  fprintf(pStamp_in->pLogFP, "\n\t\t%s",
 		  build_word_with_tone_marked(PWord.wd_rn, pStamp_in->iTbuType,
 					  SHOW_DERIVATION,
-					  (int)NULL, pStamp_in->pLogFP));
+					  0, pStamp_in->pLogFP));
 	  Max_Edge_Conds = get_max_edge_conds();
 	}
 

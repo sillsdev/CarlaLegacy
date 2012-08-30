@@ -73,7 +73,7 @@ char *		pszBuffer_out;	/* pointer to input character buffer */
 unsigned	uiBufferSize_in;
 {
 if (!bQuiet_m || (pCommandFileFP_m == NULL))
-	fprintf(stderr, pszPrompt_in);
+	fprintf(stderr, "%s", pszPrompt_in);
 
 if (pCommandFileFP_m != NULL)		/* If a command file is open */
 	{

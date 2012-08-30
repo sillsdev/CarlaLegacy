@@ -1,7 +1,7 @@
 # Master Makefile for the OPAC/PC-PARSE programs and libraries.
 # Steve McConnel, 21-Mar-2009
 
-datestamp=20090321
+datestamp=20120829
 
 @SET_MAKE@
 # the next line requires GNU make ...
@@ -50,6 +50,10 @@ libs: config.h Makefile
 	-@chmod u+w include/patr.h
 	-@$(COPY) pckimmo/kimmo.h include
 	-@chmod u+w include/kimmo.h
+	-@$(COPY) ample/stample.h include
+	-@chmod u+w include/stample.h
+	-@$(COPY) ample/ample.h include
+	-@chmod u+w include/ample.h
 	@if [ ! -d lib ]; then mkdir lib; fi
 	@for subdir in $(LIBDIRS); do \
 	  echo making library in $$subdir; \

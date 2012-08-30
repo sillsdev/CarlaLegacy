@@ -63,7 +63,7 @@ if (pUnion_in->pInputAtom)
 	{
 	if (pUnion_in->pInputAtom->eType == PATR_ATOM)
 	{
-	fprintf(pOutputFP_in, pUnion_in->pInputAtom->u.pszAtom);
+	fprintf(pOutputFP_in, "%s", pUnion_in->pInputAtom->u.pszAtom);
 	}
 	else
 	{

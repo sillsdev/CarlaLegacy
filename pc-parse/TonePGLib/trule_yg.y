@@ -476,7 +476,7 @@ Entity
 		  {
 			fprintf(pStamp_m->pLogFP, "\nDefault: DOMAIN: domain");
 			fprintf(pStamp_m->pLogFP,
-				" [domain = 0x%x, default = 0x%x)]", (unsigned)$3,
+				" [domain = 0x%lx, default = 0x%x)]", (unsigned long)$3,
 			   (unsigned)default_action_params);
 		  }
 		  }
@@ -500,8 +500,8 @@ Cycle_Default
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP, "\nDefault: CYCLE: domain");
-			fprintf(pStamp_m->pLogFP, " [0x%x mkcycle(0, NULL)]",
-			   (unsigned)default_cycle);
+			fprintf(pStamp_m->pLogFP, " [0x%lx mkcycle(0, NULL)]",
+			   (unsigned long)default_cycle);
 		  }
 		  }
 			/* Indicates that all  "lexical" rules should be */
@@ -517,8 +517,8 @@ Cycle_Default
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP, "\nDefault: CYCLE: direction");
-			fprintf(pStamp_m->pLogFP, " [0x%x mkcycle(%d, NULL)]", $3,
-			   (unsigned)default_cycle);
+			fprintf(pStamp_m->pLogFP, " [0x%x mkcycle(%ld, NULL)]", $3,
+			   (unsigned long)default_cycle);
 		  }
 		  }
 			/* Apply "lexical" rules in the specified direction */
@@ -534,8 +534,8 @@ Tone_Rule
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone_Rule:=name (optional) %s",
-				(unsigned)trule, "Tone_Rule_Body (set name = ");
+				"\n0x%lx\tTone_Rule:=name (optional) %s",
+				(unsigned long)trule, "Tone_Rule_Body (set name = ");
 			fprintf(pStamp_m->pLogFP, "\"%s\" and optional flag)",
 				ltname );
 		  }
@@ -546,8 +546,8 @@ Tone_Rule
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone_Rule:=name Tone_Rule_Body %s",
-				(unsigned)trule, "(set name = ");
+				"\n0x%lx\tTone_Rule:=name Tone_Rule_Body %s",
+				(unsigned long)trule, "(set name = ");
 			fprintf(pStamp_m->pLogFP, "\"%s\")", ltname);
 		  }
 		  }
@@ -582,11 +582,11 @@ Tone_Rule_Body
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone_Rule_Body:=Rule_Body Rule_End %s",
-				(unsigned)trule, "Condition ");
+				"\n0x%lx\tTone_Rule_Body:=Rule_Body Rule_End %s",
+				 (unsigned long)trule, "Condition ");
 			fprintf(pStamp_m->pLogFP,
-				"[mkrule(0x%x, 0x%x, 0x%x)]", (unsigned)$1,
-				(unsigned)$2, (unsigned)$3);
+				"[mkrule(0x%lx, 0x%lx, 0x%lx)]", (unsigned long)$1,
+				(unsigned long)$2, (unsigned long)$3);
 		  }
 		  }
 		| Rule_Body Rule_End
@@ -595,11 +595,11 @@ Tone_Rule_Body
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone_Rule_Body:=Rule_Body Rule_End ",
-				(unsigned)trule);
+				"\n0x%lx\tTone_Rule_Body:=Rule_Body Rule_End ",
+				(unsigned long)trule);
 			fprintf(pStamp_m->pLogFP,
-				"[mkrule(0x%x, 0x%x, NULL)]", (unsigned)$1,
-				(unsigned)$2);
+				"[mkrule(0x%lx, 0x%lx, NULL)]", (unsigned long)$1,
+				(unsigned long)$2);
 		  }
 		  }
 			/* The body of a tone rule consists of three parts: */
@@ -621,11 +621,11 @@ Rule_Body
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Body:=Rule_Body ; Rule_Action ",
-				(unsigned)$$);
+				"\n0x%lx\tRule_Body:=Rule_Body ; Rule_Action ",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				"[link_action(0x%x, 0x%x)]", (unsigned)$1,
-				(unsigned)$3);
+				"[link_action(0x%lx, 0x%lx)]", (unsigned long)$1,
+				(unsigned long)$3);
 		  }
 		  }
 			/* A Rule_Body is consists of one or more rule */
@@ -653,12 +653,12 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=operation Tone %s",
-				(unsigned)$$, "Dir_Iter_Mode OCP Domain");
+				"\n0x%lx\tRule_Action:=operation Tone %s",
+				(unsigned long)$$, "Dir_Iter_Mode OCP Domain");
 			fprintf(pStamp_m->pLogFP,
-			   "\n\t\t\t[mkaction(%d, 0x%x, 0x%x, 0x%x, 0x%x, 0)]",
-			   $1, (unsigned)$2, (unsigned)$3, (unsigned)$4,
-			   (unsigned)$5);
+			   "\n\t\t\t[mkaction(%d, 0x%lx, 0x%lx, 0x%lx, 0x%lx, 0)]",
+			   $1, (unsigned long)$2, (unsigned long)$3, (unsigned long)$4,
+			   (unsigned long)$5);
 		  }
 		  }
 	| operation Tone Dir_Iter_Mode OCP Location
@@ -667,12 +667,12 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=operation Tone %s",
-				(unsigned)$$, "Dir_Iter_Mode OCP Location");
+				"\n0x%lx\tRule_Action:=operation Tone %s",
+				(unsigned long)$$, "Dir_Iter_Mode OCP Location");
 			fprintf(pStamp_m->pLogFP,
-			   "\n\t\t\t[mkaction(%d, 0x%x, 0x%x, 0x%x, 0x%x, 0)]",
-			   $1, (unsigned)$2, (unsigned)$3, (unsigned)$4,
-			   (unsigned)$5);
+			   "\n\t\t\t[mkaction(%d, 0x%lx, 0x%lx, 0x%lx, 0x%lx, 0)]",
+			   $1, (unsigned long)$2, (unsigned long)$3, (unsigned long)$4,
+			   (unsigned long)$5);
 		  }
 		  }
 	| operation Tone Dir_Iter_Mode OCP
@@ -681,11 +681,11 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=operation Tone %s",
-				(unsigned)$$, "Dir_Iter_Mode OCP");
+				"\n0x%lx\tRule_Action:=operation Tone %s",
+				(unsigned long)$$, "Dir_Iter_Mode OCP");
 			fprintf(pStamp_m->pLogFP,
-			   "\n\t\t\t[mkaction(%d, 0x%x, 0x%x, 0x%x, NULL, 0)]",
-			   $1, (unsigned)$2, (unsigned)$3, (unsigned)$4);
+			   "\n\t\t\t[mkaction(%d, 0x%lx, 0x%lx, 0x%lx, NULL, 0)]",
+			   $1, (unsigned long)$2, (unsigned long)$3, (unsigned long)$4);
 		  }
 		  }
 	| operation Tone Dir_Iter_Mode Domain
@@ -694,11 +694,11 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=operation Tone %s",
-				(unsigned)$$, "Dir_Iter_Mode Domain");
+				"\n0x%lx\tRule_Action:=operation Tone %s",
+				(unsigned long)$$, "Dir_Iter_Mode Domain");
 			fprintf(pStamp_m->pLogFP,
-				"\n\t\t\t[mkaction(%d, 0x%x, 0x%x, 0, 0x%x, 0)]",
-				$1, (unsigned)$2, (unsigned)$3, (unsigned)$4);
+				"\n\t\t\t[mkaction(%d, 0x%lx, 0x%lx, 0, 0x%lx, 0)]",
+				$1, (unsigned long)$2, (unsigned long)$3, (unsigned long)$4);
 		  }
 		  }
 	| operation Tone Dir_Iter_Mode Location
@@ -707,11 +707,11 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=operation Tone %s",
-				(unsigned)$$, "Dir_Iter_Mode Location");
+				"\n0x%lx\tRule_Action:=operation Tone %s",
+				(unsigned long)$$, "Dir_Iter_Mode Location");
 			fprintf(pStamp_m->pLogFP,
-				"\n\t\t\t[mkaction(%d, 0x%x, 0x%x, 0, 0x%x, 0)]",
-				$1, (unsigned)$2, (unsigned)$3, (unsigned)$4);
+				"\n\t\t\t[mkaction(%d, 0x%lx, 0x%lx, 0, 0x%lx, 0)]",
+				$1, (unsigned long)$2, (unsigned long)$3, (unsigned long)$4);
 		  }
 		  }
 	| operation Tone Dir_Iter_Mode
@@ -720,11 +720,11 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-			   "\n0x%x\tRule_Action:=operation Tone Dir_Iter_Mode",
-			   (unsigned)$$);
+			   "\n0x%lx\tRule_Action:=operation Tone Dir_Iter_Mode",
+			   (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				"\n\t\t\t[mkaction(%d, 0x%x, 0x%x, 0, NULL, 0)]",
-				$1, (unsigned)$2, (unsigned)$3);
+				"\n\t\t\t[mkaction(%d, 0x%lx, 0x%lx, 0, NULL, 0)]",
+				$1, (unsigned long)$2, (unsigned long)$3);
 		  }
 		  }
 	| operation Tone OCP Domain
@@ -733,11 +733,11 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=operation Tone OCP Domain",
-				(unsigned)$$);
+				"\n0x%lx\tRule_Action:=operation Tone OCP Domain",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				"\n\t\t\t[mkaction(%d, 0x%x, 0, 0x%x, 0x%x, 0)]",
-				$1, (unsigned)$2, (unsigned)$3, (unsigned)$4);
+				"\n\t\t\t[mkaction(%d, 0x%lx, 0, 0x%lx, 0x%lx, 0)]",
+				$1, (unsigned long)$2, (unsigned long)$3, (unsigned long)$4);
 		  }
 		  }
 	| operation Tone OCP Location
@@ -746,11 +746,11 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=operation Tone OCP Location",
-				(unsigned)$$);
+				"\n0x%lx\tRule_Action:=operation Tone OCP Location",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				"\n\t\t\t[mkaction(%d, 0x%x, 0, 0x%x, 0x%x, 0)]",
-				$1, (unsigned)$2, (unsigned)$3, (unsigned)$4);
+				"\n\t\t\t[mkaction(%d, 0x%lx, 0, 0x%lx, 0x%lx, 0)]",
+				$1, (unsigned long)$2, (unsigned long)$3, (unsigned long)$4);
 		  }
 		  }
 	| operation Tone OCP
@@ -759,11 +759,11 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=operation Tone OCP",
-				(unsigned)$$);
+				"\n0x%lx\tRule_Action:=operation Tone OCP",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				"\n\t\t\t[mkaction(%d, 0x%x, 0, 0x%x, NULL, 0)]",
-				$1, (unsigned)$2, (unsigned)$3);
+				"\n\t\t\t[mkaction(%d, 0x%lx, 0, 0x%lx, NULL, 0)]",
+				$1, (unsigned long)$2, (unsigned long)$3);
 		  }
 		  }
 	| operation Tone Domain
@@ -772,11 +772,11 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=operation Tone Domain",
-				(unsigned)$$);
+				"\n0x%lx\tRule_Action:=operation Tone Domain",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				"\n\t\t\t[mkaction(%d, 0x%x, 0, 0, 0x%x, 0)]",
-				$1, (unsigned)$2, (unsigned)$3);
+				"\n\t\t\t[mkaction(%d, 0x%lx, 0, 0, 0x%lx, 0)]",
+				$1, (unsigned long)$2, (unsigned long)$3);
 		  }
 		  }
 	| operation Tone Location
@@ -785,11 +785,11 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=operation Tone Location",
-				(unsigned)$$);
+				"\n0x%lx\tRule_Action:=operation Tone Location",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				"\n\t\t\t[mkaction(%d, 0x%x, 0, 0, 0x%x, 0)]",
-				$1, (unsigned)$2, (unsigned)$3);
+				"\n\t\t\t[mkaction(%d, 0x%lx, 0, 0, 0x%lx, 0)]",
+				$1, (unsigned long)$2, (unsigned long)$3);
 		  }
 		  }
 	| operation Tone
@@ -798,11 +798,11 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=operation Tone",
-				(unsigned)$$);
+				"\n0x%lx\tRule_Action:=operation Tone",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				"\n\t\t\t[mkaction(%d, 0x%x, 0, 0, NULL, 0)]",
-				$1, (unsigned)$2);
+				"\n\t\t\t[mkaction(%d, 0x%lx, 0, 0, NULL, 0)]",
+				$1, (unsigned long)$2);
 		  }
 		  }
 			/* The action of a rule consists of an operation to */
@@ -824,8 +824,8 @@ Rule_Action
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tRule_Action:=set edge condition to COND",
-				(unsigned)$$);
+				"\n0x%lx\tRule_Action:=set edge condition to COND",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
 				"\n\t\t\t[mkaction(%d, NULL, 0, 0, NULL, %ld)]",
 				SET_EDGE_COND, templ);
@@ -921,11 +921,11 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=a tone_status TONE tone",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=a tone_status TONE tone",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				" [mktoneid(%d, SINGLE, 0, 0x%x)]",
-				$2, (unsigned)tmp_tone);
+				" [mktoneid(%d, SINGLE, 0, 0x%lx)]",
+				$2, (unsigned long)tmp_tone);
 		  }
 		  }
 			/* Indicates a tone with a particular value (such */
@@ -941,11 +941,11 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=a position tone_status TONE tone",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=a position tone_status TONE tone",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				" [mktoneid(%d, SINGLE, %d, 0x%x)]",
-				$3, $2, (unsigned)tmp_tone);
+				" [mktoneid(%d, SINGLE, %d, 0x%lx)]",
+				$3, $2, (unsigned long)tmp_tone);
 		  }
 		  }
 			/* Indicates a tone with a particular value (such */
@@ -963,8 +963,8 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=a tone_status tone",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=a tone_status tone",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
 				" [mktoneid(%d, SINGLE, 0, NULL)]", $2);
 		  }
@@ -979,8 +979,8 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=a position tone_status tone",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=a position tone_status tone",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
 				" [mktoneid(%d, SINGLE, %d, NULL)]", $3, $2);
 		  }
@@ -1002,11 +1002,11 @@ Tone
 		$$ = mktoneid(0, SINGLE, 0, tmp_tone);
 		if (rule_debug)
 		  {
-			fprintf(pStamp_m->pLogFP, "\n0x%x\tTone:=a TONE tone",
-			   (unsigned)$$);
+			fprintf(pStamp_m->pLogFP, "\n0x%lx\tTone:=a TONE tone",
+			   (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				" [mktoneid(0, SINGLE, 0, 0x%x)]",
-				(unsigned)tmp_tone);
+				" [mktoneid(0, SINGLE, 0, 0x%lx)]",
+				(unsigned long)tmp_tone);
 		  }
 		  }
 			/* Indicates a tone with a particular value (such */
@@ -1022,11 +1022,11 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=a position TONE tone",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=a position TONE tone",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				" [mktoneid(0, SINGLE, %d, 0x%x)]",
-				$2, (unsigned)tmp_tone);
+				" [mktoneid(0, SINGLE, %d, 0x%lx)]",
+				$2, (unsigned long)tmp_tone);
 		  }
 		  }
 			/* Indicates a tone with a particular value (such */
@@ -1047,11 +1047,11 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=tone_status TONE tones",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=tone_status TONE tones",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				" [mktoneid(%d, PLURAL, 0, 0x%x)]",
-				$1, (unsigned)tmp_tone);
+				" [mktoneid(%d, PLURAL, 0, 0x%lx)]",
+				$1, (unsigned long)tmp_tone);
 		  }
 		  }
 			/* Indicates tones with a particular value (such */
@@ -1067,11 +1067,11 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=position tone_status TONE tones",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=position tone_status TONE tones",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				" [mktoneid(%d, PLURAL, %d, 0x%x)]",
-				$2, $1, (unsigned)tmp_tone);
+				" [mktoneid(%d, PLURAL, %d, 0x%lx)]",
+				$2, $1, (unsigned long)tmp_tone);
 		  }
 		  }
 			/* Indicates several tones with a particular value */
@@ -1085,8 +1085,8 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=tone_status tones",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=tone_status tones",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
 				" [mktoneid(%d, PLURAL, 0, NULL)]", $1);
 		  }
@@ -1102,8 +1102,8 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=position tone_status tones",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=position tone_status tones",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
 				" [mktoneid(%d, PLURAL, %d, NULL)]", $2, $1);
 		  }
@@ -1122,11 +1122,11 @@ Tone
 		$$ = mktoneid(0, PLURAL, 0, tmp_tone);
 		if (rule_debug)
 		  {
-			fprintf(pStamp_m->pLogFP, "\n0x%x\tTone:=TONE tones",
-			   (unsigned)$$);
+			fprintf(pStamp_m->pLogFP, "\n0x%lx\tTone:=TONE tones",
+			   (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				" [mktoneid(0, PLURAL, 0, 0x%x)]",
-				(unsigned)tmp_tone);
+				" [mktoneid(0, PLURAL, 0, 0x%lx)]",
+				(unsigned long)tmp_tone);
 		  }
 		  }
 			/* Indicates tones with a particular value (such */
@@ -1142,11 +1142,11 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=position TONE tones",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=position TONE tones",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				" [mktoneid(0, SINGLE, %d, 0x%x)]",
-				$1, (unsigned)tmp_tone);
+				" [mktoneid(0, SINGLE, %d, 0x%lx)]",
+				$1, (unsigned long)tmp_tone);
 		  }
 		  }
 			/* Indicates tones with a particular value (such */
@@ -1163,11 +1163,11 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=default TONE tone",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=default TONE tone",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				" [mktoneid(0, DEFAULT, 0, 0x%x)]",
-				(unsigned)tmp_tone);
+				" [mktoneid(0, DEFAULT, 0, 0x%lx)]",
+				(unsigned long)tmp_tone);
 		  }
 		  }
 			/* Indicates the default tone value. */
@@ -1181,11 +1181,11 @@ Tone
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone:=position default TONE tone",
-				(unsigned)$$);
+				"\n0x%lx\tTone:=position default TONE tone",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				" [mktoneid(0, DEFAULT, %d, 0x%x)]",
-				$1, (unsigned)tmp_tone);
+				" [mktoneid(0, DEFAULT, %d, 0x%lx)]",
+				$1, (unsigned long)tmp_tone);
 		  }
 		  }
 			/* Indicates the default tone value. */
@@ -1377,7 +1377,7 @@ Domain
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-			   "\n0x%x\tDomain:=within edge entity", (unsigned)$$);
+			   "\n0x%lx\tDomain:=within edge entity", (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, " (set edge = %d)", $2);
 		  }
 		  }
@@ -1388,7 +1388,7 @@ Domain
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tDomain:=within entity", (unsigned)$$);
+				"\n0x%lx\tDomain:=within entity", (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, " (set edge = 0)");
 		  }
 		  }
@@ -1405,7 +1405,7 @@ Location
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-			   "\n0x%x\tLocation:=within edge location", (unsigned)$$);
+			   "\n0x%lx\tLocation:=within edge location", (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, " (set edge = %d)", $2);
 		  }
 		  }
@@ -1416,7 +1416,7 @@ Location
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tLocation:=within location", (unsigned)$$);
+				"\n0x%lx\tLocation:=within location", (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, " (set edge = 0)");
 		  }
 		  }
@@ -1447,7 +1447,7 @@ entity
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tentity:=DOMAIN domain", (unsigned)$$);
+				"\n0x%lx\tentity:=DOMAIN domain", (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
 				" [mkdomainid(%d, %d)]", DI_DOMAIN, temp);
 		  }
@@ -1458,7 +1458,7 @@ entity
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tentity:=morpheme", (unsigned)$$);
+				"\n0x%lx\tentity:=morpheme", (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
 				" [mkdomainid(%d, 0)]", DI_MORPHEME);
 		  }
@@ -1469,7 +1469,7 @@ entity
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tentity:=word", (unsigned)$$);
+				"\n0x%lx\tentity:=word", (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, " [mkdomainid(%d, 0)]", DI_WORD);
 		  }
 		  }
@@ -1484,8 +1484,8 @@ location
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tlocation:=word_position syllable",
-				(unsigned)$$);
+				"\n0x%lx\tlocation:=word_position syllable",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
 				" [mkdomainid(%d, %d)]", DI_SYLLABLE, 0);
 		  }
@@ -1496,8 +1496,8 @@ location
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tlocation:=word_position tbu",
-				(unsigned)$$);
+				"\n0x%lx\tlocation:=word_position tbu",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
 				" [mkdomainid(%d, 0)]", DI_TBU);
 		  }
@@ -1513,10 +1513,10 @@ Cycle
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tCycle:=applies cyclically direction %s",
-				(unsigned)$$, "within Domain_cycle");
+				"\n0x%lx\tCycle:=applies cyclically direction %s",
+				(unsigned long)$$, "within Domain_cycle");
 			fprintf(pStamp_m->pLogFP,
-				" [mkcycle(%d, 0x%x)]", $3, (unsigned)$5);
+				" [mkcycle(%d, 0x%lx)]", $3, (unsigned long)$5);
 		  }
 		  }
 			/* The rule actions apply cyclically with the */
@@ -1527,8 +1527,8 @@ Cycle
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tCycle:=applies cyclically direction",
-				(unsigned)$$);
+				"\n0x%lx\tCycle:=applies cyclically direction",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, " [mkcycle(%d, NULL)]", $3);
 		  }
 		  }
@@ -1540,10 +1540,10 @@ Cycle
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tCycle:=applies cyclically %s",
-				(unsigned)$$, "within Domain_cycle");
+				"\n0x%lx\tCycle:=applies cyclically %s",
+				(unsigned long)$$, "within Domain_cycle");
 			fprintf(pStamp_m->pLogFP,
-				" [mkcycle(0, 0x%x)]", (unsigned)$4);
+				" [mkcycle(0, 0x%lx)]", (unsigned long)$4);
 		  }
 		  }
 			/* The rule actions apply cyclically with the */
@@ -1559,7 +1559,7 @@ Domain_cycle
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-			   "\n0x%x\tDomain_cycle:=DOMAIN domain",(unsigned)$$);
+			   "\n0x%lx\tDomain_cycle:=DOMAIN domain",(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, " [mkdomainlist(%d)]", temp);
 		  }
 		  }
@@ -1581,11 +1581,11 @@ Multi_domains
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tMulti_domains:=More_domains Two_domains",
-				(unsigned)$$);
+				"\n0x%lx\tMulti_domains:=More_domains Two_domains",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP,
-				" [link_domain_list(0x%x, 0x%x)]",
-				(unsigned)$1, (unsigned)$2);
+				" [link_domain_list(0x%lx, 0x%lx)]",
+				(unsigned long)$1, (unsigned long)$2);
 		  }
 		  }
 			/* Indicates two or more domains. */
@@ -1604,13 +1604,13 @@ Two_domains
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTwo_domains:=DOMAIN and DOMAIN",
-				(unsigned)$$);
+				"\n0x%lx\tTwo_domains:=DOMAIN and DOMAIN",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, " [mkdomainlist(%d)]", temp);
 			fprintf(pStamp_m->pLogFP, " [mkdomainlist(%d)]", temp2);
 			fprintf(pStamp_m->pLogFP,
-				" [link_domain_list(0x%x, 0x%x)]",
-				(unsigned)tmp_dl, (unsigned)tmp_dl2);
+				" [link_domain_list(0x%lx, 0x%lx)]",
+				(unsigned long)tmp_dl, (unsigned long)tmp_dl2);
 		  }
 		  }
 			/* Indicates two domains. */
@@ -1626,12 +1626,12 @@ More_domains
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tMore_domains:=More_domains DOMAIN ,",
-				(unsigned)$$);
+				"\n0x%lx\tMore_domains:=More_domains DOMAIN ,",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, " [mkdomainlist(%d)]", temp);
 			fprintf(pStamp_m->pLogFP,
-				" [link_domain_list(0x%x, 0x%x)]",
-				(unsigned)$1, (unsigned)tmp_dl);
+				" [link_domain_list(0x%lx, 0x%lx)]",
+				(unsigned long)$1, (unsigned long)tmp_dl);
 		  }
 		  }
 	| LX_IDENTIFIER ','
@@ -1641,8 +1641,8 @@ More_domains
 		$$ = mkdomainlist(temp);
 		if (rule_debug)
 		  {
-			fprintf(pStamp_m->pLogFP, "\n0x%x\tMore_domains:=DOMAIN ,",
-				(unsigned)$$);
+			fprintf(pStamp_m->pLogFP, "\n0x%lx\tMore_domains:=DOMAIN ,",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, " [mkdomainlist(%d)]", temp);
 		  }
 		  }
@@ -1663,8 +1663,8 @@ Condition_Body
 		  {
 		if (rule_debug)
 		  fprintf(pStamp_m->pLogFP,
-			  "\n0x%x\tCondition_Body:=Factor [0x%x]",
-			  (unsigned)$$, (unsigned)$1);
+			  "\n0x%lx\tCondition_Body:=Factor [0x%lx]",
+			  (unsigned long)$$, (unsigned long)$1);
 		  }
 	| Condition_Body logop Factor
 		  {
@@ -1672,11 +1672,11 @@ Condition_Body
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tCondition_Body:=Condition_Body logop %s",
-				(unsigned)$$, "Factor ");
+				"\n0x%lx\tCondition_Body:=Condition_Body logop %s",
+				(unsigned long)$$, "Factor ");
 			fprintf(pStamp_m->pLogFP,
-				"[mknode(%d, 0x%x, 0x%x)]", (unsigned)$2,
-				(unsigned)$1, (unsigned)$3);
+				"[mknode(%u, 0x%lx, 0x%lx)]", (unsigned)$2,
+				(unsigned long)$1, (unsigned long)$3);
 		  }
 		  }
 	| LX_IF Factor LX_THEN Factor
@@ -1685,9 +1685,9 @@ Condition_Body
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tIF factor THEN factor", (unsigned)$$);
-			fprintf(pStamp_m->pLogFP, "[mknode(%d, 0x%x, 0x%x)]",
-				LOGIF, (unsigned)$2, (unsigned)$4);
+				"\n0x%lx\tIF factor THEN factor", (unsigned long)$$);
+			fprintf(pStamp_m->pLogFP, "[mknode(%d, 0x%lx, 0x%lx)]",
+				LOGIF, (unsigned long)$2, (unsigned long)$4);
 		  }
 		  }
 		| ForLeft Factor
@@ -1759,8 +1759,8 @@ Factor
 				$$->cn_opcode ^= OP_NOT;
 		if (rule_debug)
 		  fprintf(pStamp_m->pLogFP,
-			 "\n0x%x\tFactor:=NOT Factor (set flag for node 0x%x)",
-			  (unsigned)$$, (unsigned)$$);
+			 "\n0x%lx\tFactor:=NOT Factor (set flag for node 0x%lx)",
+			  (unsigned long)$$, (unsigned long)$$);
 		  }
 			/* A condition can be negated. */
 	| '(' Condition_Body ')'
@@ -1768,16 +1768,16 @@ Factor
 		$$ = $2;
 		if (rule_debug)
 		  fprintf(pStamp_m->pLogFP,
-			  "\n0x%x\tFactor:='(' Condition_Body ')' [0x%x]",
-			  (unsigned)$$, (unsigned)$2);
+			  "\n0x%lx\tFactor:='(' Condition_Body ')' [0x%lx]",
+			  (unsigned long)$$, (unsigned long)$2);
 		  }
 	| Edge_expr
 		  {
 		$$ = $1;
 		if (rule_debug)
 		  fprintf(pStamp_m->pLogFP,
-			  "\n0x%x\tFactor:=Edge_expr [0x%x]",
-			  (unsigned)$$, (unsigned)$1);
+			  "\n0x%lx\tFactor:=Edge_expr [0x%lx]",
+			  (unsigned long)$$, (unsigned long)$1);
 		  }
 	| Morpheme_expr
 		  {
@@ -1793,45 +1793,45 @@ Factor
 		  }
 		if (rule_debug)
 		  fprintf(pStamp_m->pLogFP,
-			  "\n0x%x\tFactor:=Morpheme_expr [0x%x]",
-			  (unsigned)$$, (unsigned)$1);
+			  "\n0x%lx\tFactor:=Morpheme_expr [0x%lx]",
+			  (unsigned long)$$, (unsigned long)$1);
 		  }
 	| Prosodic_expr
 		  {
 		$$ = $1;
 		if (rule_debug)
 		  fprintf(pStamp_m->pLogFP,
-			  "\n0x%x\tFactor:=Prosodic_expr [0x%x]",
-			  (unsigned)$$, (unsigned)$1);
+			  "\n0x%lx\tFactor:=Prosodic_expr [0x%lx]",
+			  (unsigned long)$$, (unsigned long)$1);
 		  }
 	| Segment_expr
 		  {
 		$$ = $1;
 		if (rule_debug)
 		  fprintf(pStamp_m->pLogFP,
-			  "\n0x%x\tFactor:=Segment_expr [0x%x]",
-			  (unsigned)$$, (unsigned)$1);
+			  "\n0x%lx\tFactor:=Segment_expr [0x%lx]",
+			  (unsigned long)$$, (unsigned long)$1);
 		  }
 	| Tbu_expr
 		  {
 		$$ = $1;
 		if (rule_debug)
-		  fprintf(pStamp_m->pLogFP, "\n0x%x\tFactor:=Tbu_expr [0x%x]",
-			 (unsigned)$$, (unsigned)$1);
+		  fprintf(pStamp_m->pLogFP, "\n0x%lx\tFactor:=Tbu_expr [0x%lx]",
+			 (unsigned long)$$, (unsigned long)$1);
 		  }
 	| Tone_expr
 		  {
 		$$ = $1;
 		if (rule_debug)
-		  fprintf(pStamp_m->pLogFP, "\n0x%x\tFactor:=Tone_expr [0x%x]",
-			 (unsigned)$$, (unsigned)$1);
+		  fprintf(pStamp_m->pLogFP, "\n0x%lx\tFactor:=Tone_expr [0x%lx]",
+			 (unsigned long)$$, (unsigned long)$1);
 		  }
 	| Type_expr
 		  {
 		$$ = $1;
 		if (rule_debug)
-		  fprintf(pStamp_m->pLogFP, "\n0x%x\tFactor:=Type_expr [0x%x]",
-			 (unsigned)$$, (unsigned)$1);
+		  fprintf(pStamp_m->pLogFP, "\n0x%lx\tFactor:=Type_expr [0x%lx]",
+			 (unsigned long)$$, (unsigned long)$1);
 		  }
 	;
 
@@ -1844,8 +1844,8 @@ Edge_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tEdge_expr:=edge condition is EDGE_COND ",
-				(unsigned)$$);
+				"\n0x%lx\tEdge_expr:=edge condition is EDGE_COND ",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, "[mklfli(%d, 0, %ld)]",
 				EDGE_COND_IS, templ);
 		  }
@@ -1863,8 +1863,8 @@ Morpheme_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tMorpheme_expr:=position category is %s",
-			   (unsigned)$$, "CATEGORY");
+				"\n0x%lx\tMorpheme_expr:=position category is %s",
+			   (unsigned long)$$, "CATEGORY");
 			fprintf(pStamp_m->pLogFP, "[mklfi(%d, %d, %d \"%s\")]",
 				CATEGORY_IS, $1, temp, $4);
 		  }
@@ -1881,11 +1881,11 @@ Morpheme_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tMorpheme_expr:=position category is %s",
-				(unsigned)$$, "member CATEGORY_CLASS ");
+				"\n0x%lx\tMorpheme_expr:=position category is %s",
+				(unsigned long)$$, "member CATEGORY_CLASS ");
 			fprintf(pStamp_m->pLogFP,
-				"[mklfcc(%d, %d, 0x%x \"%s\")]", CATEGORY_MEMBER,
-				$1, (unsigned)tmp_ccp, $5);
+				"[mklfcc(%d, %d, 0x%lx \"%s\")]", CATEGORY_MEMBER,
+				$1, (unsigned long)tmp_ccp, $5);
 		  }
 		  }
 			/* This checks to see if the category of the */
@@ -1897,8 +1897,8 @@ Morpheme_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tMorpheme_expr:=position morphname is %s",
-				(unsigned)$$, "MORPHNAME ");
+				"\n0x%lx\tMorpheme_expr:=position morphname is %s",
+				(unsigned long)$$, "MORPHNAME ");
 			fprintf(pStamp_m->pLogFP,
 				"[mklfs(%d, %d, \"%s\")]", MORPH_IS, $1, $4 );
 		  }
@@ -1914,11 +1914,11 @@ Morpheme_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tMorpheme_expr:=position morphname is %s",
-				(unsigned)$$, "member MORPHCLASS ");
+				"\n0x%lx\tMorpheme_expr:=position morphname is %s",
+				(unsigned long)$$, "member MORPHCLASS ");
 			fprintf(pStamp_m->pLogFP,
-				"[mklfmc(%d, %d, 0x%x \"%s\")]", MORPH_MEMBER,
-				$1, (unsigned)tmp_mcp, $5 );
+				"[mklfmc(%d, %d, 0x%lx \"%s\")]", MORPH_MEMBER,
+				$1, (unsigned long)tmp_mcp, $5 );
 		  }
 		  }
 			/* This checks to see if the morphname of the */
@@ -1932,8 +1932,8 @@ Morpheme_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tMorpheme_expr:=position property is %s",
-				(unsigned)$$, "PROPERTY ");
+				"\n0x%lx\tMorpheme_expr:=position property is %s",
+				(unsigned long)$$, "PROPERTY ");
 			fprintf(pStamp_m->pLogFP,
 				"[mklflg(%d, %d, 0x%08x \"%s\")]", PROP_IS, $1,
 				tmp_prop, $4 );
@@ -1950,8 +1950,8 @@ Prosodic_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tProsodic_expr:=position syllable has %s",
-				(unsigned)$$, "ONSET/CODA ");
+				"\n0x%lx\tProsodic_expr:=position syllable has %s",
+				(unsigned long)$$, "ONSET/CODA ");
 			fprintf(pStamp_m->pLogFP, "[mklfi(%d, %d, %d)]",
 				SYLLABLE_HAS, $1, $4);
 		  }
@@ -1965,8 +1965,8 @@ Prosodic_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tProsodic_expr:=position morpheme is %s",
-				(unsigned)$$, "PROSODY ");
+				"\n0x%lx\tProsodic_expr:=position morpheme is %s",
+				(unsigned long)$$, "PROSODY ");
 			fprintf(pStamp_m->pLogFP, "[mklfi(%d, %d, %d)]",
 				MORPH_PROSODY, $1, $4);
 		  }
@@ -1982,8 +1982,8 @@ Segment_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tSegment_expr:=position segment is %s",
-				(unsigned)$$, "SEGMENT ");
+				"\n0x%lx\tSegment_expr:=position segment is %s",
+				(unsigned long)$$, "SEGMENT ");
 			fprintf(pStamp_m->pLogFP,
 				"[mklfs(%d, %d, \"%s\")]", SEGMENT_IS, $1, $4 );
 		  }
@@ -1999,11 +1999,11 @@ Segment_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tSegment_expr:=position segment is %s",
-				(unsigned)$$, "member STRINGCLASS ");
-			fprintf(pStamp_m->pLogFP, "[mklfsc(%d, %d, 0x%x \"%s\")]",
+				"\n0x%lx\tSegment_expr:=position segment is %s",
+				(unsigned long)$$, "member STRINGCLASS ");
+			fprintf(pStamp_m->pLogFP, "[mklfsc(%d, %d, 0x%lx \"%s\")]",
 				SEGMENT_MEMBER,
-				$1, (unsigned)tmp_scp, $5 );
+				$1, (unsigned long)tmp_scp, $5 );
 		  }
 		  }
 			/* This checks to see if any segment of the */
@@ -2018,11 +2018,11 @@ Tbu_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTbu_expr:=position tbu is DOMAIN ",
-				(unsigned)$$);
-			fprintf(pStamp_m->pLogFP, "[mklfdi(%d, %d, 0x%x)]",
+				"\n0x%lx\tTbu_expr:=position tbu is DOMAIN ",
+				(unsigned long)$$);
+			fprintf(pStamp_m->pLogFP, "[mklfdi(%d, %d, 0x%lx)]",
 				TBU_DOMAIN, $1,
-				(unsigned)$4);
+				(unsigned long)$4);
 		  }
 		  }
 			/* This checks to see if the morpheme indicated by */
@@ -2034,8 +2034,8 @@ Tbu_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTbu_expr:=position tbu is extrametrical ",
-				(unsigned)$$);
+				"\n0x%lx\tTbu_expr:=position tbu is extrametrical ",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, "[mklfi(%d, %d, 0)]",
 				TBU_EXTRAMET, $1);
 		  }
@@ -2050,10 +2050,10 @@ Tbu_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTbu_expr:=position tbu has TONE ",
-				(unsigned)$$);
-			fprintf(pStamp_m->pLogFP, "[mklfti(%d, %d, 0x%x)]",
-				TBU_HAS, $1, (unsigned)$4);
+				"\n0x%lx\tTbu_expr:=position tbu has TONE ",
+				(unsigned long)$$);
+			fprintf(pStamp_m->pLogFP, "[mklfti(%d, %d, 0x%lx)]",
+				TBU_HAS, $1, (unsigned long)$4);
 		  }
 		  }
 			/* This checks to see if the morpheme indicated by */
@@ -2089,10 +2089,10 @@ Tbu_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-			   "\n0x%x\tTbu_expr:=position morpheme tbu NUMBER %s",
-			   (unsigned)$$, "has TONE ");
-			fprintf(pStamp_m->pLogFP, "[mklfti(%d, %d, 0x%x)]",
-				TBU_NUMBER, $1, (unsigned)$4);
+			   "\n0x%lx\tTbu_expr:=position morpheme tbu NUMBER %s",
+			   (unsigned long)$$, "has TONE ");
+			fprintf(pStamp_m->pLogFP, "[mklfti(%d, %d, 0x%lx)]",
+				TBU_NUMBER, $1, (unsigned long)$4);
 			fprintf(pStamp_m->pLogFP, " and set tbu num = %d]", temp);
 		  }
 		  }
@@ -2122,11 +2122,11 @@ Tbu_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-			   "\n0x%x\tTbu_expr:=position morpheme underlying %s",
-			   (unsigned)$$, " tbu NUMBER has TONE ");
-			fprintf(pStamp_m->pLogFP, "[mklfti(%d, %d, 0x%x)]",
+			   "\n0x%lx\tTbu_expr:=position morpheme underlying %s",
+			   (unsigned long)$$, " tbu NUMBER has TONE ");
+			fprintf(pStamp_m->pLogFP, "[mklfti(%d, %d, 0x%lx)]",
 				TBU_UNDER_NUMBER, $1,
-			   (unsigned)$7);
+			   (unsigned long)$7);
 			fprintf(pStamp_m->pLogFP, " and set tbu num = %d]", temp);
 		  }
 		  }
@@ -2154,8 +2154,8 @@ Tbu_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-			   "\n0x%x\tTbu_expr:=position morpheme has NUMBER %s",
-			   (unsigned)$$, "tbus ");
+			   "\n0x%lx\tTbu_expr:=position morpheme has NUMBER %s",
+			   (unsigned long)$$, "tbus ");
 			fprintf(pStamp_m->pLogFP, "[mklfi(%d, %d, %d)]",
 				MORPH_HAS_N_TBUS, $1, temp);
 		  }
@@ -2199,11 +2199,11 @@ Tone_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone_expr:=position tone is TONE ",
-			   (unsigned)$$);
-			fprintf(pStamp_m->pLogFP, "[mklfti(%d, %d, 0x%x)]",
+				"\n0x%lx\tTone_expr:=position tone is TONE ",
+			   (unsigned long)$$);
+			fprintf(pStamp_m->pLogFP, "[mklfti(%d, %d, 0x%lx)]",
 				TONE_IS, $1,
-			   (unsigned)$4);
+			   (unsigned long)$4);
 		  }
 		  }
 			/* This checks to see if the tone indicated by */
@@ -2231,11 +2231,11 @@ Tone_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-			   "\n0x%x\tTone_expr:=position tonestatus tone is %s",
-			   (unsigned)$$, "TONE");
-			fprintf(pStamp_m->pLogFP, " [mklfti(%d, %d, 0x%x)]",
+			   "\n0x%lx\tTone_expr:=position tonestatus tone is %s",
+			   (unsigned long)$$, "TONE");
+			fprintf(pStamp_m->pLogFP, " [mklfti(%d, %d, 0x%lx)]",
 				TONESTATUS_TONE_IS, $1,
-			   (unsigned)$5);
+			   (unsigned long)$5);
 		  }
 		  }
 			/* This scans the tones in the position for a tone */
@@ -2263,11 +2263,11 @@ Tone_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-			   "\n0x%x\tTone_expr:=position morpheme tone is TONE",
-			   (unsigned)$$);
-			fprintf(pStamp_m->pLogFP, " [mklfti(%d, %d, 0x%x)]",
+			   "\n0x%lx\tTone_expr:=position morpheme tone is TONE",
+			   (unsigned long)$$);
+			fprintf(pStamp_m->pLogFP, " [mklfti(%d, %d, 0x%lx)]",
 				MORPH_TONE_IS, $1,
-			   (unsigned)$5);
+			   (unsigned long)$5);
 		  }
 		  }
 			/* This checks to see if the morpheme indicated by */
@@ -2278,12 +2278,12 @@ Tone_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone_expr:=position morpheme underlying ",
-				(unsigned)$$);
+				"\n0x%lx\tTone_expr:=position morpheme underlying ",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, "tone is TONE");
-			fprintf(pStamp_m->pLogFP, " [mklfti(%d, %d, 0x%x)]",
+			fprintf(pStamp_m->pLogFP, " [mklfti(%d, %d, 0x%lx)]",
 				MORPH_UL_TONE_IS, $1,
-			   (unsigned)$6);
+			   (unsigned long)$6);
 		  }
 		  }
 			/* This checks to see if the morpheme indicated by */
@@ -2294,11 +2294,11 @@ Tone_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone_expr:=position tone pattern is %s",
-				(unsigned)$$, "TONEPATTERN ");
+				"\n0x%lx\tTone_expr:=position tone pattern is %s",
+				(unsigned long)$$, "TONEPATTERN ");
 			fprintf(pStamp_m->pLogFP,
-				"[mklftp(%d, %d, 0x%x)]", TONE_PATTERN_IS, $1,
-				(unsigned)$5);
+				"[mklftp(%d, %d, 0x%lx)]", TONE_PATTERN_IS, $1,
+				(unsigned long)$5);
 		  }
 		  }
 			/* This checks to see if the tone indicated by */
@@ -2314,12 +2314,12 @@ Tone_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-			   "\n0x%x\tTone_expr:=position morpheme tone pattern",
-			   (unsigned)$$);
+			   "\n0x%lx\tTone_expr:=position morpheme tone pattern",
+			   (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, "is TONEPATTERN");
-			fprintf(pStamp_m->pLogFP, " [mklfti(%d, %d, 0x%x)]",
+			fprintf(pStamp_m->pLogFP, " [mklfti(%d, %d, 0x%lx)]",
 				MORPH_TONE_PAT_IS, $1,
-			   (unsigned)$5);
+			   (unsigned long)$5);
 		  }
 		  }
 			/* This checks to see if the morpheme indicated by */
@@ -2330,12 +2330,12 @@ Tone_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone_expr:=position morpheme underlying ",
-			   (unsigned)$$);
+				"\n0x%lx\tTone_expr:=position morpheme underlying ",
+			   (unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, "tone pattern is TONEPATTERN ");
 			fprintf(pStamp_m->pLogFP,
-				"[mklftp(%d, %d, 0x%x)]", MORPH_UL_TONE_PAT_IS, $1,
-			   (unsigned)$7);
+				"[mklftp(%d, %d, 0x%lx)]", MORPH_UL_TONE_PAT_IS, $1,
+			   (unsigned long)$7);
 		  }
 		  }
 			/* This checks to see if the morpheme indicated by */
@@ -2347,11 +2347,11 @@ Tone_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone_expr:=word tone pattern is %s",
-			   (unsigned)$$, "TONEPATTERN ");
-			fprintf(pStamp_m->pLogFP, "[mklftp(%d, %d, 0x%x)]",
+				"\n0x%lx\tTone_expr:=word tone pattern is %s",
+			   (unsigned long)$$, "TONEPATTERN ");
+			fprintf(pStamp_m->pLogFP, "[mklftp(%d, %d, 0x%lx)]",
 				WORD_TONE_IS, $1,
-			   (unsigned)$5);
+			   (unsigned long)$5);
 		  }
 		  }
 			/* This checks to see if the word's tone pattern is */
@@ -2365,8 +2365,8 @@ Type_expr
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tType_expr:=position type is TYPE ",
-				(unsigned)$$);
+				"\n0x%lx\tType_expr:=position type is TYPE ",
+				(unsigned long)$$);
 			fprintf(pStamp_m->pLogFP, "[mklfi(%d, %d, %d)]", TYPE_IS,
 				$1, $4);
 		  }
@@ -2410,12 +2410,12 @@ Tone_Pat
 		if (rule_debug)
 		  {
 			fprintf(pStamp_m->pLogFP,
-				"\n0x%x\tTone_Pat:=Tone_Pat Tone ",
-			   (unsigned)$$);
-			fprintf(pStamp_m->pLogFP, "[mktonepattern(0x%x)]",
-				(unsigned)$2);
-			fprintf(pStamp_m->pLogFP,"[link_tone_pattern(0x%x, 0x%x)]",
-			   (unsigned)$1, (unsigned)tmp_tp);
+				"\n0x%lx\tTone_Pat:=Tone_Pat Tone ",
+			   (unsigned long)$$);
+			fprintf(pStamp_m->pLogFP, "[mktonepattern(0x%lx)]",
+				(unsigned long)$2);
+			fprintf(pStamp_m->pLogFP,"[link_tone_pattern(0x%lx, 0x%lx)]",
+			   (unsigned long)$1, (unsigned long)tmp_tp);
 		  }
 		  }
 	| Tone
@@ -2423,10 +2423,10 @@ Tone_Pat
 				$$ = mktonepattern($1);
 		if (rule_debug)
 		  {
-			fprintf(pStamp_m->pLogFP, "\n0x%x\tTone_Pattern:=Tone ",
-			   (unsigned)$$);
-			fprintf(pStamp_m->pLogFP, "[mktonepattern(0x%x)]",
-				(unsigned)$1);
+			fprintf(pStamp_m->pLogFP, "\n0x%lx\tTone_Pattern:=Tone ",
+			   (unsigned long)$$);
+			fprintf(pStamp_m->pLogFP, "[mktonepattern(0x%lx)]",
+				(unsigned long)$1);
 		  }
 		  }
 	;
@@ -4360,7 +4360,7 @@ switch (condp->cn_opcode & OP_MASK)
 	break;
 	case PROP_IS:       /* 'property' 'is' IDENTIFIER */
 	show_where( condp->cl.l_pos );
-	p =  findAmplePropertyName((unsigned int)condp->cr.r_prop,
+	p =  findAmplePropertyName((unsigned int)condp->cr.r_int,
 				   &pStamp_m->sProperties);
 	fprintf( pStamp_m->pLogFP, "property is %s\n",	p ? p : "??UNKNOWN??");
 	break;

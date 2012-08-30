@@ -205,8 +205,10 @@ setsd.ox setsd.oxp version.ox version.oxp: ../include/patr.h
 
 #############################################################################
 
-libs: installdirs ../lib/libample.a ../lib/libxample.a ../lib/libxample.so\
+libs: installdirs ../lib/libample.a ../lib/libxample.a\
 	  ../include/ample.h ../include/stample.h ../include/punclass.h
+
+shlibs: libs ../lib/libxample.so
 
 profile_libs: installdirs ../lib/libample_p.a ../lib/libxample_p.a \
 			  ../include/ample.h ../include/stample.h ../include/punclass.h
@@ -245,7 +247,7 @@ installdirs:
 	$(COPY) punclass.h ../include
 	chmod u+w $@
 
-all: libs ample xample
+all: libs ample xample shlibs
 
 profile: profile_libs ample_p xample_p
 

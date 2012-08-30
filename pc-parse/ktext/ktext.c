@@ -1582,9 +1582,9 @@ if (emergency_memory != (char *)NULL)
 	emergency_memory = (char *)NULL;
 	}
 if (!sLang_g.bSilent)
-	fprintf(stderr, nomem_msg);
+	fprintf(stderr, "%s", nomem_msg);
 if (sLang_g.pLogFP != (FILE *)NULL)
-	fprintf(sLang_g.pLogFP, nomem_msg);
+	fprintf(sLang_g.pLogFP, "%s", nomem_msg);
 exit_ktext(2);
 }
 
