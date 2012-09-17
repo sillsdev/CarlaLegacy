@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 15		/* bug fix or other minor change */
-#define DATE "March 23, 2012"	/* date of release version */
+#define PATCHLEVEL 16		/* bug fix or other minor change */
+#define DATE "September 17, 2012"	/* date of release version */
 #define YEAR "2012"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 17-Sep-2012  hab  - Fix bug: when using allomorph IDs and a record had
+ * [3.12.16]             two or more morph types, the allomorph ID was lost.
  * 23-Mar-2012  hab  - Fix bug: when a partial reduplication allomorph was an
  * [3.12.15]             infix and one was tracing using SGML or XML output,
  *                       the environment shown for a failed infix location

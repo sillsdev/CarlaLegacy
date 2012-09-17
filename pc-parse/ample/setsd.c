@@ -1108,6 +1108,7 @@ char *			pszMorph     = NULL;
 int			i;
 int			iAlloCount;
 AmpleAllomorphList *	pPrevAllos  = NULL;
+char *                  pszAlloID = NULL;
 
 initalist(pAmple_in);
 mproperties.pProperties = NULL;
@@ -1218,6 +1219,13 @@ while (*rp != NUL)
 					mde,
 					&bBadAllomorph,
 					pAmple_in);
+		/* If there is an allomorph ID, replace the NUL with a space
+		 * so that if this record gets processed again due to there
+		 * being more than one morph type, the allomorph ID will be
+		 * found. */
+		pszAlloID = rp + strlen(rp);
+		if (pszAlloID < end)
+		  *pszAlloID = ' ';
 		for ( alp = head ; alp && (alp != pPrevAllos) ; alp = alp->pNext )
 		{
 		alp->pAllomorph->pAFFIX = de;	/* set affix_info pointer */
