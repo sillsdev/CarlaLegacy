@@ -1,5 +1,11 @@
 AMPLE CHANGE HISTORY
 
+3.12.16 (17-Sep-2012)
+---------------------
+
+1. Fix bug: when using allomorph IDs and a record had two or more morph types,
+   the allomorph ID was lost.
+
 3.12.15 (23-Mar-2012)
 ---------------------
 
