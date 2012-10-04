@@ -54,15 +54,11 @@
 			<xsl:attribute name="class24agr">irrelevant</xsl:attribute>
 			<xsl:attribute name="class25agr">irrelevant</xsl:attribute>
 			<xsl:attribute name="classifierTypeNumAgr">no</xsl:attribute>
-			<example>
-				<xsl:value-of select="//ip/example"/>
-			</example>
+			<xsl:copy-of select="example"/>
 			<pnExample/>
 			<experiencerExample/>
 			<experiencerPnExample/>
-			<intExample>
-				<xsl:value-of select="//ip/intransExample"/>
-			</intExample>
+			<intExample/>
 			<pnIntExample/>
 			<experiencerIntExample/>
 			<experiencerPnIntExample/>

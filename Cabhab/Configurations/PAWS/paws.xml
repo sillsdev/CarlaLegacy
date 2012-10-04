@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- both the label and settingsId are specific to PAWS -->
 <window label="PAWS Starter Kit" settingsId="paws">
-	<version>0.8.0.0 Beta</version>
+	<version>0.8.1.0 Beta</version>
 	<!--
 Following are common to all Cabhab Applications
 -->
@@ -253,6 +253,15 @@ Following are specific to PAWS
 				</xsltParameters>
 			</transform>
 			<transform file="Transforms/XLingPap1.xsl" resultFileFromAnswerFile="//language/writerPracticalSpanishFile" ext="htm" applyTransformWhenXPath="/paws/@outputWriterPracticalSpanish[.='True']"/>
+		</answerFileTransformSet>
+		<answerFileTransformSet>
+			<transform file="Transforms/ExtractGrammarInterlinearExamplesFromPawFile.xsl" resultFileFromAnswerFile="//language/writerFile" ext="sfm" applyTransformWhenXPath="/paws/@outputWriter[.='True']" />
+		</answerFileTransformSet>
+		<answerFileTransformSet>
+			<transform file="Transforms/ExtractPracticalGrammarInterlinearExamplesFromPawFile.xsl" resultFileFromAnswerFile="//language/writerPracticalFile" ext="sfm" applyTransformWhenXPath="/paws/@outputWriterPractical[.='True']" />
+		</answerFileTransformSet>
+		<answerFileTransformSet>
+			<transform file="Transforms/ExtractPracticalGrammarInterlinearExamplesFromPawFile.xsl" resultFileFromAnswerFile="//language/writerPracticalSpanishFile" ext="sfm" applyTransformWhenXPath="/paws/@outputWriterPracticalSpanish[.='True']" />
 		</answerFileTransformSet>
 		<answerFileTransformSet>
 			<transform file="Transforms/PAWSSKParameterizedExample.xsl" resultPathFromAnswerFile="//language/exampleFilesPath" resultFile1="prmIdTitle" resultFile2="Test" ext="txt" removeBOM="true" applyTransformWhenXPath="/paws/@outputGrammar[.='True']">
