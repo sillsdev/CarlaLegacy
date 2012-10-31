@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="advcl">
-	<section1 id="sAdvCl">
-		<secTitle>Adverbial Clauses</secTitle>
-		<p>
+    <section1 id="sAdvCl">
+        <secTitle>Adverbial Clauses</secTitle>
+        <p>
 <xsl:text>This section considers the complements that can follow temporal and reason adverbs, which were introduced in sections </xsl:text>
 <sectionRef sec="sAdvPTemporal" />
 <xsl:text> and </xsl:text>
 <sectionRef sec="sAdvPReason" />
 <xsl:text>.  All of these adverbial clauses (or phrases) act the same as simple adverbs, so they will be considered adverbial phrases with the appropriate type of complement.  Adverbial clauses of these types normally may occur either sentence-initially or sentence-finally.</xsl:text>
 </p>
-		<section2 id="sAdvClTemporal">
-			<secTitle>Complements of Temporal Adverbs</secTitle>
-			<p>
+        <section2 id="sAdvClTemporal">
+            <secTitle>Complements of Temporal Adverbs</secTitle>
+            <p>
 <xsl:text>English examples of temporal adverbs with complements used in full sentences include: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -63,7 +63,7 @@
 </xsl:attribute>now</langData>
 <xsl:text> has a finite clausal complement with a complementizer.</xsl:text>
 </p>
-			<p>
+            <p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
@@ -75,11 +75,11 @@
 </xsl:choose>
 <xsl:text>, the complements occur </xsl:text>
 <xsl:choose>
-					<xsl:when test="//advcl/@advOrNPPos='before'">before</xsl:when>
-					<xsl:when test="//advcl/@advOrNPPos='after'">after</xsl:when>
-					<xsl:when test="//advcl/@advOrNPPos='either'">on either side of</xsl:when>
-					<xsl:when test="//advcl/@advOrNPPos='unknown'">_______</xsl:when>
-				</xsl:choose>
+                    <xsl:when test="//advcl/@advOrNPPos='before'">before</xsl:when>
+                    <xsl:when test="//advcl/@advOrNPPos='after'">after</xsl:when>
+                    <xsl:when test="//advcl/@advOrNPPos='either'">on either side of</xsl:when>
+                    <xsl:when test="//advcl/@advOrNPPos='unknown'">_______</xsl:when>
+                </xsl:choose>
 <xsl:text> the adverb.  Examples of temporal adverbial clauses in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
@@ -91,7 +91,7 @@
 </xsl:choose>
 <xsl:text>, included in full sentences are:</xsl:text>
 </p>
-			<example num="xAdvCl.AdvClTemporal.10">
+            <example num="xAdvCl.AdvClTemporal.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advcl/tempSentExample" />
 </xsl:variable>
@@ -129,10 +129,10 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-		</section2>
-		<section2 id="sAdvClReason">
-			<secTitle>Complements of Reason Adverbs</secTitle>
-			<p>
+        </section2>
+        <section2 id="sAdvClReason">
+            <secTitle>Complements of Reason Adverbs</secTitle>
+            <p>
 <xsl:text>Adverbial phrases or clauses which express reason or purpose consist of adverbs which stand alone, such as </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -169,7 +169,7 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>The troops threw grenades at the enemy [in order for the prisoners to escape]</langData>
 </p>
-			<p>
+            <p>
 <xsl:text>In the examples above, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -204,7 +204,7 @@
 <sectionRef sec="sCompTypeNonfiniteCP" />
 <xsl:text>.</xsl:text>
 </p>
-			<p>
+            <p>
 <xsl:text>Examples of reason or purpose adverbial clauses in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
@@ -216,7 +216,7 @@
 </xsl:choose>
 <xsl:text>, included in full sentences are:</xsl:text>
 </p>
-			<example num="xAdvCl.AdvClReason.10">
+            <example num="xAdvCl.AdvClReason.10">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advp/reasonExample" />
 </xsl:variable>
@@ -254,7 +254,7 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-		</section2>
-	</section1>
+        </section2>
+    </section1>
 </xsl:template>
 </xsl:stylesheet>

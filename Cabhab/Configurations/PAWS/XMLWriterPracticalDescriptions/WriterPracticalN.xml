@@ -28,328 +28,328 @@
 			   <text show="swNPAgreeYesClassAndClassifiersNo"><content>(Note that this class agreement needs to be reviewed, as no classifier system was documented in </content><sectionRef sec="sTypology"/><content>.)</content></text><content/>
 			</p>
 			<p show="swNPAgreeYesNumber">
-				<content>Examples showing number agreement in </content><langName/><content> nominal phrases include:</content>
+				<content>Examples showing number agreement in </content><langName/><content> nominal phrases include:</content>	
 			</p>
 <example show="swNPAgreeYesNumber"><interlinear exampleLoc="np/agreeNumberExample"/></example>
 			<p show="swNPAgreeYesAnimacy">
-				<content>Examples showing animacy agreement in </content><langName/><content> nominal phrases include:</content>
+				<content>Examples showing animacy agreement in </content><langName/><content> nominal phrases include:</content>	
 			</p>
 			<example show="swNPAgreeYesAnimacy"><interlinear exampleLoc="np/agreeAnimacyExample"/></example>
 			<p show="swNPAgreeYesClass">
-				<content>Examples showing class agreement in </content><langName/><content> nominal phrases include:</content>
+				<content>Examples showing class agreement in </content><langName/><content> nominal phrases include:</content>	
 			</p>
 			<example show="swNPAgreeYesClass"><interlinear exampleLoc="np/agreeClassExample"/></example>
 			<p show="swNPAgreeYesGender">
-				<content>Examples showing gender agreement in </content><langName/><content> nominal phrases include:</content>
+				<content>Examples showing gender agreement in </content><langName/><content> nominal phrases include:</content>	
 			</p>
 			<example show="swNPAgreeYesGender"><interlinear exampleLoc="np/agreeGenderExample"/></example>
 		</section2>
 	   <section2 id="sNPCase">
 	   <secTitle>Case</secTitle>
-		  <p>
-			 <content>Nouns and their modifiers may be marked for case.  The most common case system is nominative-accusative.  This is the system English has, though only pronouns are marked for case in English.  In a nominative-accusative system, subjects of both transitive and intransitive verbs are in nominative case, while direct objects are accusative case.  Possessors are genitive case.  The nominative pronouns in English are: </content>
-			 <langData>I, we, you, he, she, they</langData>
-			 <content>.  The accusative pronouns are: </content>
-			 <langData>me, us, you, him, her, them</langData>
-			 <content>.  The genitive pronouns include: </content>
-			 <langData>my, our, your, his, her, their</langData>
-			 <content>.  Therefore, we say </content>
-			 <langData>They hit him</langData>
-			 <content> and not </content>
-			 <langData>Them hit he</langData>
-			 <content>. </content>
-		  </p>
-		  <p>
-			 <content> A language with a basic nominative-accusative case system may have different case marking for Experiencer subjects than for Agent subjects.  Some verbs with Experiencer subjects are </content><langData>appear, see, fear, be found, want, like</langData><content> and </content><langData>laugh</langData><content>. </content>
-		  </p>
-		  <p>
-			 <content>
-				In an ergative-absolutive case system, subjects of transitive verbs are marked with the ergative case, while objects of transitive verbs and subjects of intransitive verbs are marked with the absolutive case.  The case of possessors is not set cross-linguistically.  Some languages with an ergative-absolutive system simply have different sets of verbal agreement markers, but no marking on nouns.  This type of agreement marking will be handled in section </content>
-			 <sectionRef sec="sIPAgr"/>
-			 <content>.</content>
-		  </p>
-		  <p>
-			 <content>
-				Some languages are even more complex in that they normally have a nominative-accusative system but under some grammatical conditions, such as a particular tense or aspect or a particular person agreement feature, the case system switches to ergative-absolutive.  This is called “split ergativity”.</content>
-		  </p>
-		  <p>
-			 <content/>
-			 <langName/>
-			 <content/>
-			 <case element="typology" attr="case">
-				<caseText value="none"> does not have any case system.   The exact same set of pronouns may be used in any position in the sentence and there is no marking on nouns or on any noun modifiers based on their position in the sentence.</caseText>
-				<caseText value="nominative"> has a nominative-accusative case system.   Subjects of both transitive and intransitive verbs are marked in the same way and use the same set of pronouns, but objects of transitive verbs are marked differently.</caseText>
-				<caseText value="ergative"> has an ergative-absolutive case system.   Subjects of intransitive verbs and objects of transitive verbs are marked in the same way and use the same set of pronouns, but subjects of transitive verbs are marked differently.</caseText>
-				<caseText value="split"> has a split case system.    The language normally follows the nominative-accusative case system, but the ergative-absolutive system is used under certain grammatical conditions.</caseText>
-			 </case></p>
+	      <p>
+	         <content>Nouns and their modifiers may be marked for case.  The most common case system is nominative-accusative.  This is the system English has, though only pronouns are marked for case in English.  In a nominative-accusative system, subjects of both transitive and intransitive verbs are in nominative case, while direct objects are accusative case.  Possessors are genitive case.  The nominative pronouns in English are: </content>
+	         <langData>I, we, you, he, she, they</langData>
+	         <content>.  The accusative pronouns are: </content>
+	         <langData>me, us, you, him, her, them</langData>
+	         <content>.  The genitive pronouns include: </content>
+	         <langData>my, our, your, his, her, their</langData>
+	         <content>.  Therefore, we say </content>
+	         <langData>They hit him</langData>
+	         <content> and not </content>
+	         <langData>Them hit he</langData>
+	         <content>. </content>
+	      </p>
+	      <p>
+	         <content> A language with a basic nominative-accusative case system may have different case marking for Experiencer subjects than for Agent subjects.  Some verbs with Experiencer subjects are </content><langData>appear, see, fear, be found, want, like</langData><content> and </content><langData>laugh</langData><content>. </content> 
+	      </p>
+	      <p>
+	         <content>
+	            In an ergative-absolutive case system, subjects of transitive verbs are marked with the ergative case, while objects of transitive verbs and subjects of intransitive verbs are marked with the absolutive case.  The case of possessors is not set cross-linguistically.  Some languages with an ergative-absolutive system simply have different sets of verbal agreement markers, but no marking on nouns.  This type of agreement marking will be handled in section </content>
+	         <sectionRef sec="sIPAgr"/>
+	         <content>.</content>
+	      </p>
+	      <p>
+	         <content>
+	            Some languages are even more complex in that they normally have a nominative-accusative system but under some grammatical conditions, such as a particular tense or aspect or a particular person agreement feature, the case system switches to ergative-absolutive.  This is called “split ergativity”.</content>
+	      </p>
+	      <p>
+	         <content/>
+	         <langName/>
+	         <content/>
+	         <case element="typology" attr="case">
+	            <caseText value="none"> does not have any case system.   The exact same set of pronouns may be used in any position in the sentence and there is no marking on nouns or on any noun modifiers based on their position in the sentence.</caseText>
+	            <caseText value="nominative"> has a nominative-accusative case system.   Subjects of both transitive and intransitive verbs are marked in the same way and use the same set of pronouns, but objects of transitive verbs are marked differently.</caseText>
+	            <caseText value="ergative"> has an ergative-absolutive case system.   Subjects of intransitive verbs and objects of transitive verbs are marked in the same way and use the same set of pronouns, but subjects of transitive verbs are marked differently.</caseText>
+	            <caseText value="split"> has a split case system.    The language normally follows the nominative-accusative case system, but the ergative-absolutive system is used under certain grammatical conditions.</caseText>
+	         </case></p>
+	      
+	      <p><content>This is shown in the following examples of transitive sentences with Agent subjects where the subject and object are nominal phrases:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/example"/>
+	      </example>    
+	      <p><content>Note the forms of the pronouns used for the Agent subject and object in these transitive sentences:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/pnExample"/>
+	      </example>
+	      <p show="swNPCaseNYes"><content>In the intransitive examples with nominal phrases as the subjects, </content>
+	         <case element="typology" attr="case">
+	            <caseText value="nominative">the case marking matches that of the subejcts in the transitive sentences above.</caseText>
+	            <caseText value="ergative">the case marking matches that of the objects in the transitive sentences above.</caseText>
+	            <caseText value="split">the case marking on most of the subjects matches that of the subjects in the transitive sentences above, but in certain situations, it matches that of the objects in trantitive sentences.</caseText>
+	         </case></p>
+	      <example show="swNPCaseNYes">
+	         <interlinear exampleLoc="typology/intExample"/>
+	      </example>
+	      <p><content>The examples of intransitive sentences with independent pronouns as subjects verify that </content>
+	         <case element="typology" attr="case">
+	            <caseText value="none">there is no case distinction, as the same pronouns can appear as subjects of both transitive and intransitive verbs and as objects of transitive verbs.</caseText>
+	            <caseText value="nominative">the same set of pronouns can appear as subjects of both transitive and intransitive verbs, while different pronouns are used as objects of transitive verbs.</caseText>
+	            <caseText value="ergative">the same set of pronouns can appear as subjects of intransitive verbs and objects of transitive verbs, while different pronouns are used as subjects of transitive verbs.</caseText>
+	            <caseText value="split">the same set of pronouns can normally appear as subjects of both transitive and intransitive verbs, while different pronouns are used as objects of transitive verbs.  However, in certain cases, the same set of pronouns can appear as subjects of intransitive verbs and objects of transitive verbs, while different pronouns are used as subjects of transitive verbs.</caseText>
+	         </case></p>
+	      <example>
+	         <interlinear exampleLoc="typology/pnIntExample"/>
+	      </example>
+	      
+	      <p show="swNPCaseNomOrSplitAndCaseNYes"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+	         <caseText value="no">the same case marking and pronoun set is used for both Agent and Experiencer subjects.</caseText>
+	         <caseText value="yesObj">Experiencer subjects use the same case marking and pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so accusative case and dative case are marked the same in this language.</caseText>
+	         <caseText value="yesDat">Experiencer subjects use a case marking and pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  This is the dative case, also used for indirect objects.</caseText>
+	      </case>	
+	      </p>
+	      <p show="swNPCaseNomOrSplitAndCaseNNo"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+	         <caseText value="no">the same pronoun set is used for both Agent and Experiencer subjects.</caseText>
+	         <caseText value="yesObj">Experiencer subjects use the same pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so the accusative and dative pronouns are the same in this language.</caseText>
+	         <caseText value="yesDat">Experiencer subjects use a pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  These are the dative pronouns, also used for indirect objects.</caseText>
+	      </case>	
+	      </p>
+	      <p show="swNPCaseErgAndCaseNYes"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+	         <caseText value="no">the same case marking and pronoun set is used for both Agent and Experiencer subjects.</caseText>
+	         <caseText value="yesObj">Experiencer subjects use the same case marking and pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so absolutive case and dative case are marked the same in this language.</caseText>
+	         <caseText value="yesDat">Experiencer subjects use a case marking and pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  This is the dative case, also used for indirect objects.</caseText>
+	      </case>	
+	      </p>
+	      <p show="swNPCaseErgAndCaseNNo"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+	         <caseText value="no">the same pronoun set is used for both Agent and Experiencer subjects.</caseText>
+	         <caseText value="yesObj">Experiencer subjects use the same pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so the absolutive and dative pronouns are the same in this language.</caseText>
+	         <caseText value="yesDat">Experiencer subjects use a pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  These are the dative pronouns, also used for indirect objects.</caseText>
+	      </case>	
+	      </p>
+	      <p><content>This is shown in the following examples of transitive sentences with verbs which have Experiencer subjects, where the subject and object are nominal phrases:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/experiencerExample"/>
+	      </example>    
+	      <p><content>Note the forms of the pronouns used for the Experiencer subjects and the objects in these transitive sentences:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/experiencerPnExample"/>
+	      </example>
 
-		  <p><content>This is shown in the following examples of transitive sentences with Agent subjects where the subject and object are nominal phrases:</content></p>
-		  <example>
-			 <interlinear exampleLoc="typology/example"/>
-		  </example>
-		  <p><content>Note the forms of the pronouns used for the Agent subject and object in these transitive sentences:</content></p>
-		  <example>
-			 <interlinear exampleLoc="typology/pnExample"/>
-		  </example>
-		  <p show="swNPCaseNYes"><content>In the intransitive examples with nominal phrases as the subjects, </content>
-			 <case element="typology" attr="case">
-				<caseText value="nominative">the case marking matches that of the subejcts in the transitive sentences above.</caseText>
-				<caseText value="ergative">the case marking matches that of the objects in the transitive sentences above.</caseText>
-				<caseText value="split">the case marking on most of the subjects matches that of the subjects in the transitive sentences above, but in certain situations, it matches that of the objects in trantitive sentences.</caseText>
-			 </case></p>
-		  <example show="swNPCaseNYes">
-			 <interlinear exampleLoc="typology/intExample"/>
-		  </example>
-		  <p><content>The examples of intransitive sentences with independent pronouns as subjects verify that </content>
-			 <case element="typology" attr="case">
-				<caseText value="none">there is no case distinction, as the same pronouns can appear as subjects of both transitive and intransitive verbs and as objects of transitive verbs.</caseText>
-				<caseText value="nominative">the same set of pronouns can appear as subjects of both transitive and intransitive verbs, while different pronouns are used as objects of transitive verbs.</caseText>
-				<caseText value="ergative">the same set of pronouns can appear as subjects of intransitive verbs and objects of transitive verbs, while different pronouns are used as subjects of transitive verbs.</caseText>
-				<caseText value="split">the same set of pronouns can normally appear as subjects of both transitive and intransitive verbs, while different pronouns are used as objects of transitive verbs.  However, in certain cases, the same set of pronouns can appear as subjects of intransitive verbs and objects of transitive verbs, while different pronouns are used as subjects of transitive verbs.</caseText>
-			 </case></p>
-		  <example>
-			 <interlinear exampleLoc="typology/intPnExample"/>
-		  </example>
-
-		  <p show="swNPCaseNomOrSplitAndCaseNYes"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
-			 <caseText value="no">the same case marking and pronoun set is used for both Agent and Experiencer subjects.</caseText>
-			 <caseText value="yesObj">Experiencer subjects use the same case marking and pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so accusative case and dative case are marked the same in this language.</caseText>
-			 <caseText value="yesDat">Experiencer subjects use a case marking and pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  This is the dative case, also used for indirect objects.</caseText>
-		  </case>
-		  </p>
-		  <p show="swNPCaseNomOrSplitAndCaseNNo"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
-			 <caseText value="no">the same pronoun set is used for both Agent and Experiencer subjects.</caseText>
-			 <caseText value="yesObj">Experiencer subjects use the same pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so the accusative and dative pronouns are the same in this language.</caseText>
-			 <caseText value="yesDat">Experiencer subjects use a pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  These are the dative pronouns, also used for indirect objects.</caseText>
-		  </case>
-		  </p>
-		  <p show="swNPCaseErgAndCaseNYes"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
-			 <caseText value="no">the same case marking and pronoun set is used for both Agent and Experiencer subjects.</caseText>
-			 <caseText value="yesObj">Experiencer subjects use the same case marking and pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so absolutive case and dative case are marked the same in this language.</caseText>
-			 <caseText value="yesDat">Experiencer subjects use a case marking and pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  This is the dative case, also used for indirect objects.</caseText>
-		  </case>
-		  </p>
-		  <p show="swNPCaseErgAndCaseNNo"><content>In </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
-			 <caseText value="no">the same pronoun set is used for both Agent and Experiencer subjects.</caseText>
-			 <caseText value="yesObj">Experiencer subjects use the same pronoun set as objects of  transitive verbs with an Agent subject do.  We assume that Experiencer subjects have dative case, like indirect objects, so the absolutive and dative pronouns are the same in this language.</caseText>
-			 <caseText value="yesDat">Experiencer subjects use a pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  These are the dative pronouns, also used for indirect objects.</caseText>
-		  </case>
-		  </p>
-		  <p><content>This is shown in the following examples of transitive sentences with verbs which have Experiencer subjects, where the subject and object are nominal phrases:</content></p>
-		  <example>
-			 <interlinear exampleLoc="typology/experiencerExample"/>
-		  </example>
-		  <p><content>Note the forms of the pronouns used for the Experiencer subjects and the objects in these transitive sentences:</content></p>
-		  <example>
-			 <interlinear exampleLoc="typology/experiencerPnExample"/>
-		  </example>
-
-		  <p><content>There are more cases to consider beyond that of the subject and object, also.  These may include ablative case for a source or origin, genitive case for kinds or possessors, dative case for indirect objects, instrumental case for means or instruments, locative case for locations, vocative case for direct address, and oblique case is sometimes used for the minor grammatical relations.
-			 These additional cases are usually marked via case markers on the nominal phrases themselves in languages which normally mark case on nouns or nominal phrases as well as pronouns.  For languages without any case marking and those which only show case in the pronouns, these additional grammatical relations are normally expressed via prepositional or postpositional phrases.
-		  </content>
-		  </p>
-		  <p show="swNPCaseNone"><content>In </content><langName/><content>, there are not any kind of case distinctions.  Therefore, the minor grammatical relations are expressed by </content><case element="pp" attr="pPos">
-			 <caseText value="before">prepositional</caseText>
-			 <caseText value="after">postpositional</caseText>
-			 <caseText value="both">prepositional or postpositional</caseText>
-			 <caseText value="unknown">prepositional and/or postpositional</caseText>
-		  </case><content> phrases, rather than by nominal phrases.</content>
-		  </p>
-		  <p show="swNPCaseNotNoneAndCaseNNo"><content>In </content><langName/><content>, case distinctions are not marked on nouns or nominal phrases; only the pronoun sets distinguish case.  Therefore, the minor grammatical relations are expressed by </content><case element="pp" attr="pPos">
-				<caseText value="before">prepositional</caseText>
-				<caseText value="after">postpositional</caseText>
-				<caseText value="both">prepositional or postpositional</caseText>
-				<caseText value="unknown">prepositional and/or postpositional</caseText>
-		  </case><content> phrases, rather than by nominal phrases.   The case distinctions in the pronouns will be delineated in </content><sectionRef sec="sPronPersonal"/><content>.</content>
-		  </p>
-		  <p show="swNPCaseNotNoneAndCaseNYes"><content>In </content><langName/><content>, case is marked on both pronouns and nouns or nominal phrases. </content>
-			 <text show="swNPCaseDefaultNom">
-				<content>  Nominative case is the default (unmarked) case. </content>
-			 </text>
-		  <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordYes">
-			 <content>The case marker is written as a separate word and occurs </content>
-			 <case element="np" attr="caseWordPos">
-				<caseText value="before">before</caseText>
-				<caseText value="after">after</caseText>
-				<caseText value="either">on either side of</caseText>
-				<caseText value="unknown">________</caseText>
-			 </case>
-			 <content> the rest of the nominal phrase.  </content>
-			 <text show="swNPCaseWordEitherUnrestricted">
-				<content>All of the case markers can occur on either side of the nominal phrase. </content>
-			 </text>
-			 <content/>
-			 <text show="swNPCaseWordEitherRestricted">
-				<content>There are restrictions as to which of the case markers can occur on each side of the nominal phrase. </content>
-			 </text>
-
-			 </text>
-			 <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordNo">  <content></content>
-			<case element="np" attr="caseCliticPos">
-			   <caseText value="before">The case markers attach to the beginning of the initial word in the nominal phrase.</caseText>
-			   <caseText value="after">The case markers attach to the end of the final word in the nominal phrase.</caseText>
-			   <caseText value="either">Some of the case markers attach to the beginning of the initial word and some attach to the end of the final word in the nominal phrase.</caseText>
-			   <caseText value="prefixN">The case markers are prefixes which attach to the head noun.</caseText>
-			   <caseText value="suffixN">The case markers are suffixes which attach to the head noun.</caseText>
-			   <caseText value="eitherN">Some of the case markers are prefixes and some are suffixes which attach to the head noun.</caseText>
-			</case>
-				</text>
-		   </p>
-		  <p show="swNPCaseNotNoneAndCaseNYes"><content>The case markers used on nouns or nominal phrases in </content>
-		  <langName/>
-		  <content> are shown in the following chart.</content>
-		  </p>
-		  <example num="xCase" show="swNPCaseNotNoneAndCaseNYes">
-			 <table border="1">
-				<caption>
-				   <content>Case markers</content>
-				</caption>
-				<headerRow>
-				   <headerCol>
-					  <langName/>
-				   </headerCol>
-				   <headerCol>Case</headerCol>
-				   <headerCol>Use</headerCol>
-				</headerRow>
-				<row show="swNPCaseNomOrSplit">
-				   <col exampleLoc="np/nominative"/>
-				   <col>
-					  <content>nominative</content>
-				   </col>
-				   <col>
-					  <content>subjects</content>
-				   </col>
-				</row>
-				<row show="swNPCaseNomOrSplit">
-				   <col exampleLoc="np/accusative"/>
-				   <col>
-					  <content>accusative</content>
-				   </col>
-				   <col>
-					  <content>direct objects and other uses</content>
-				   </col>
-				</row>
-				<row show="swNPCaseErgOrSplitNotPossErg">
-				   <col exampleLoc="np/ergative"/>
-				   <col>
-					  <content>ergative</content>
-				   </col>
-				   <col>
-					  <content>subjects of transitive verbs</content>
-				   </col>
-				</row>
-				<row show="swNPCaseErgOrSplitPossErg">
-				   <col exampleLoc="np/ergative"/>
-				   <col>
-					  <content>ergative</content>
-				   </col>
-				   <col>
-					  <content>subjects of transitive verbs and possessors</content>
-				   </col>
-				</row>
-				<row show="swNPCaseErgOrSplitNotPossAbs">
-				   <col exampleLoc="np/absolutive"/>
-				   <col>
-					  <content>absolutive</content>
-				   </col>
-				   <col>
-					  <content>subjects of intransitive verbs and objects of transitive verbs</content>
-				   </col>
-				</row>
-				<row show="swNPCaseErgOrSplitPossAbs">
-				   <col exampleLoc="np/absolutive"/>
-				   <col>
-					  <content>absolutive</content>
-				   </col>
-				   <col>
-					  <content>subjects of intransitive verbs and objects of transitive verbs and possessors</content>
-				   </col>
-				</row>
-				<row show="swNPCaseNomOrSplitOrErgPossGen">
-				   <col exampleLoc="np/genitive"/>
-				   <col>
-					  <content>genitive</content>
-				   </col>
-				   <col>
-					  <content>possessors</content>
-				   </col>
-				</row>
-				<row show="swExperiencerNo">
-				   <col exampleLoc="np/dative"/>
-				   <col>
-					  <content>dative</content>
-				   </col>
-				   <col>
-					  <content>indirect objects</content>
-				   </col>
-				</row>
-				<row show="swExperiencerNotNo">
-				   <col exampleLoc="np/dative"/>
-				   <col>
-					  <content>dative</content>
-				   </col>
-				   <col>
-					  <content>indirect objects and Experiencer subjects</content>
-				   </col>
-				</row>
-				<row>
-				   <col exampleLoc="np/ablative"/>
-				   <col>
-					  <content>ablative</content>
-				   </col>
-				   <col>
-					  <content>source or origin</content>
-				   </col>
-				</row>
-				   <row>
-					  <col exampleLoc="np/instrumental"/>
-					  <col>
-						 <content>instrumental</content>
-					  </col>
-					  <col>
-						 <content>instrument, means or agency</content>
-					  </col>
-					  </row>
-					  <row>
-						 <col exampleLoc="np/locative"/>
-						 <col>
-							<content>locative</content>
-						 </col>
-						 <col>
-							<content>location</content>
-						 </col>
-						 </row>
-						 <row>
-							<col exampleLoc="np/vocative"/>
-							<col>
-							   <content>vocative</content>
-							</col>
-							<col>
-							   <content>direct address</content>
-							</col>
-							</row>
-							<row>
-							   <col exampleLoc="np/oblique"/>
-							   <col>
-								  <content>oblique</content>
-							   </col>
-							   <col>
-								  <content>general minor grammatical relation</content>
-							   </col>
-							   </row>
-							   <row>
-								  <col exampleLoc="np/other"/>
-								  <col>
-									 <content>other</content>
-								  </col>
-								  <col>
-									 <content>any other specific markers</content>
-								  </col>
-								  </row>
-			 </table>
-		  </example>
+	      <p><content>There are more cases to consider beyond that of the subject and object, also.  These may include ablative case for a source or origin, genitive case for kinds or possessors, dative case for indirect objects, instrumental case for means or instruments, locative case for locations, vocative case for direct address, and oblique case is sometimes used for the minor grammatical relations.
+	         These additional cases are usually marked via case markers on the nominal phrases themselves in languages which normally mark case on nouns or nominal phrases as well as pronouns.  For languages without any case marking and those which only show case in the pronouns, these additional grammatical relations are normally expressed via prepositional or postpositional phrases.
+	      </content>   
+	      </p>
+	      <p show="swNPCaseNone"><content>In </content><langName/><content>, there are not any kind of case distinctions.  Therefore, the minor grammatical relations are expressed by </content><case element="pp" attr="pPos">
+	         <caseText value="before">prepositional</caseText>
+	         <caseText value="after">postpositional</caseText>
+	         <caseText value="both">prepositional or postpositional</caseText>
+	         <caseText value="unknown">prepositional and/or postpositional</caseText>
+	      </case><content> phrases, rather than by nominal phrases.</content>
+	      </p>
+	      <p show="swNPCaseNotNoneAndCaseNNo"><content>In </content><langName/><content>, case distinctions are not marked on nouns or nominal phrases; only the pronoun sets distinguish case.  Therefore, the minor grammatical relations are expressed by </content><case element="pp" attr="pPos">
+	            <caseText value="before">prepositional</caseText>
+	            <caseText value="after">postpositional</caseText>
+	            <caseText value="both">prepositional or postpositional</caseText>
+	            <caseText value="unknown">prepositional and/or postpositional</caseText>
+	      </case><content> phrases, rather than by nominal phrases.   The case distinctions in the pronouns will be delineated in </content><sectionRef sec="sPronPersonal"/><content>.</content>	         
+	      </p>
+	      <p show="swNPCaseNotNoneAndCaseNYes"><content>In </content><langName/><content>, case is marked on both pronouns and nouns or nominal phrases. </content>
+	         <text show="swNPCaseDefaultNom">
+	            <content>  Nominative case is the default (unmarked) case. </content>
+	         </text>	        
+	      <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordYes">	            
+	         <content>The case marker is written as a separate word and occurs </content>
+	         <case element="np" attr="caseWordPos">
+	            <caseText value="before">before</caseText>
+	            <caseText value="after">after</caseText>
+	            <caseText value="either">on either side of</caseText>
+	            <caseText value="unknown">________</caseText>
+	         </case>
+	         <content> the rest of the nominal phrase.  </content>
+	         <text show="swNPCaseWordEitherUnrestricted">
+	            <content>All of the case markers can occur on either side of the nominal phrase. </content>
+	         </text>
+	         <content/>
+	         <text show="swNPCaseWordEitherRestricted">
+	            <content>There are restrictions as to which of the case markers can occur on each side of the nominal phrase. </content>
+	         </text>
+	         
+	         </text>
+	         <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordNo">  <content></content>
+	        <case element="np" attr="caseCliticPos">
+	           <caseText value="before">The case markers attach to the beginning of the initial word in the nominal phrase.</caseText>
+	           <caseText value="after">The case markers attach to the end of the final word in the nominal phrase.</caseText>
+	           <caseText value="either">Some of the case markers attach to the beginning of the initial word and some attach to the end of the final word in the nominal phrase.</caseText>
+	           <caseText value="prefixN">The case markers are prefixes which attach to the head noun.</caseText>
+	           <caseText value="suffixN">The case markers are suffixes which attach to the head noun.</caseText>
+	           <caseText value="eitherN">Some of the case markers are prefixes and some are suffixes which attach to the head noun.</caseText>
+	        </case>
+	            </text>
+	       </p>
+	      <p show="swNPCaseNotNoneAndCaseNYes"><content>The case markers used on nouns or nominal phrases in </content>
+	      <langName/>
+	      <content> are shown in the following chart.</content>
+	      </p>
+	      <example num="xCase" show="swNPCaseNotNoneAndCaseNYes">
+	         <table border="1">
+	            <caption>
+	               <content>Case markers</content>
+	            </caption>
+	            <headerRow>
+	               <headerCol>
+	                  <langName/>
+	               </headerCol>
+	               <headerCol>Case</headerCol>
+	               <headerCol>Use</headerCol>
+	            </headerRow>
+	            <row show="swNPCaseNomOrSplit">
+	               <col exampleLoc="np/nominative"/>
+	               <col>
+	                  <content>nominative</content>
+	               </col>
+	               <col>
+	                  <content>subjects</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseNomOrSplit">
+	               <col exampleLoc="np/accusative"/>
+	               <col>
+	                  <content>accusative</content>
+	               </col>
+	               <col>
+	                  <content>direct objects and other uses</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitNotPossErg">
+	               <col exampleLoc="np/ergative"/>
+	               <col>
+	                  <content>ergative</content>
+	               </col>
+	               <col>
+	                  <content>subjects of transitive verbs</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitPossErg">
+	               <col exampleLoc="np/ergative"/>
+	               <col>
+	                  <content>ergative</content>
+	               </col>
+	               <col>
+	                  <content>subjects of transitive verbs and possessors</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitNotPossAbs">
+	               <col exampleLoc="np/absolutive"/>
+	               <col>
+	                  <content>absolutive</content>
+	               </col>
+	               <col>
+	                  <content>subjects of intransitive verbs and objects of transitive verbs</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitPossAbs">
+	               <col exampleLoc="np/absolutive"/>
+	               <col>
+	                  <content>absolutive</content>
+	               </col>
+	               <col>
+	                  <content>subjects of intransitive verbs and objects of transitive verbs and possessors</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseNomOrSplitOrErgPossGen">
+	               <col exampleLoc="np/genitive"/>
+	               <col>
+	                  <content>genitive</content>
+	               </col>
+	               <col>
+	                  <content>possessors</content>
+	               </col>
+	            </row>
+	            <row show="swExperiencerNo">
+	               <col exampleLoc="np/dative"/>
+	               <col>
+	                  <content>dative</content>
+	               </col>
+	               <col>
+	                  <content>indirect objects</content>
+	               </col>
+	            </row>
+	            <row show="swExperiencerNotNo">
+	               <col exampleLoc="np/dative"/>
+	               <col>
+	                  <content>dative</content>
+	               </col>
+	               <col>
+	                  <content>indirect objects and Experiencer subjects</content>
+	               </col>
+	            </row>
+	            <row>
+	               <col exampleLoc="np/ablative"/>
+	               <col>
+	                  <content>ablative</content>
+	               </col>
+	               <col>
+	                  <content>source or origin</content>
+	               </col>
+	            </row>
+	               <row>
+	                  <col exampleLoc="np/instrumental"/>
+	                  <col>
+	                     <content>instrumental</content>
+	                  </col>
+	                  <col>
+	                     <content>instrument, means or agency</content>
+	                  </col>
+	                  </row>
+	                  <row>
+	                     <col exampleLoc="np/locative"/>
+	                     <col>
+	                        <content>locative</content>
+	                     </col>
+	                     <col>
+	                        <content>location</content>
+	                     </col>
+	                     </row>
+	                     <row>
+	                        <col exampleLoc="np/vocative"/>
+	                        <col>
+	                           <content>vocative</content>
+	                        </col>
+	                        <col>
+	                           <content>direct address</content>
+	                        </col>
+	                        </row>
+	                        <row>
+	                           <col exampleLoc="np/oblique"/>
+	                           <col>
+	                              <content>oblique</content>
+	                           </col>
+	                           <col>
+	                              <content>general minor grammatical relation</content>
+	                           </col>
+	                           </row>
+	                           <row>
+	                              <col exampleLoc="np/other"/>
+	                              <col>
+	                                 <content>other</content>
+	                              </col>
+	                              <col>
+	                                 <content>any other specific markers</content>
+	                              </col>
+	                              </row>
+	         </table>
+	      </example>	      
 	   </section2>
-
+	   
 		<section2 id="sNPoss">
 			<secTitle>Possessors</secTitle>
 			<p>
@@ -471,7 +471,7 @@
 					<content/>
 				</p>
 			</section3>
-
+			
 			<section3 id="sNPPossAgreement">
 				<secTitle>Possessor Agreement</secTitle>
 				<p>
@@ -783,7 +783,7 @@
 	</showWhen>
 	<showWhen id="swNPCaseSplitNotGen">
 		<whenValue element="typology" attr="case" value="split"/>
-		<and/>
+		<and/> 
 		<whenValue element="np" attr="possCaseErg" value="genitive" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPAdjPCaseChangeYes">
@@ -887,154 +887,154 @@
 		<whenValue element="np" attr="comp" value="yes"/>
 	</showWhen>
    <showWhen id="swNPCaseNYes">
-	  <whenValue element="np" attr="caseN" value="yes"/>
-	  <and/>
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
    </showWhen>
    <showWhen id="swNPCaseNotNone">
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
    </showWhen>
    <showWhen id="swNPCaseDefaultNom">
-	  <whenValue element="typology" attr="case" value="nominative"/>
-	  <and/>
-	  <whenValue element="np" attr="caseDefault" value="nominative"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="caseDefault" value="nominative"/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseDefault" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseDefault" value="nominative"/>
    </showWhen>
-
+   
    <showWhen id="swNPCaseNomOrSplitAndCaseNYes">
-	  <whenValue element="typology" attr="case" value="nominative"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
    </showWhen>
    <showWhen id="swNPCaseNomOrSplitAndCaseNNo">
-	  <whenValue element="typology" attr="case" value="nominative"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="no"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="no"/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseErgAndCaseNYes">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
    </showWhen>
    <showWhen id="swNPCaseErgAndCaseNNo">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="no"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseNotNoneAndCaseNNo">
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="no"/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseNotNoneAndCaseNYes">
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
    </showWhen>
    <showWhen id="swNPCaseWordYes">
-	  <whenValue element="np" attr="caseWord" value="yes"/>
+      <whenValue element="np" attr="caseWord" value="yes"/>
    </showWhen>
    <showWhen id="swNPCaseWordEitherRestricted">
-	  <whenValue element="np" attr="caseWordEither" value="restricted"/>
+      <whenValue element="np" attr="caseWordEither" value="restricted"/>
    </showWhen>
    <showWhen id="swNPCaseWordEitherUnrestricted">
-	  <whenValue element="np" attr="caseWordEither" value="unrestricted"/>
+      <whenValue element="np" attr="caseWordEither" value="unrestricted"/>
    </showWhen>
    <showWhen id="swNPCaseWordNo">
-	  <whenValue element="np" attr="caseWord" value="no"/>
+      <whenValue element="np" attr="caseWord" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseNomOrSplit">
-	  <whenValue element="typology" attr="case" value="nominative"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
    </showWhen>
    <showWhen id="swNPCaseErgOrSplit">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
    </showWhen>
    <showWhen id="swExperiencerNotNo">
-	  <whenValue element="typology" attr="caseExperiencer" value="no" negateValue="yes"/>
+      <whenValue element="typology" attr="caseExperiencer" value="no" negateValue="yes"/>
    </showWhen>
    <showWhen id="swExperiencerNo">
-	  <whenValue element="typology" attr="caseExperiencer" value="no"/>
+      <whenValue element="typology" attr="caseExperiencer" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseErgOrSplitPossAbs">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="absolutive"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
    </showWhen>
    <showWhen id="swNPCaseErgOrSplitNotPossAbs">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
    </showWhen>
    <showWhen id="swNPCaseErgOrSplitPossErg">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="ergative"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="ergative"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
    </showWhen>
    <showWhen id="swNPCaseErgOrSplitNotPossErg">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
    </showWhen>
    <showWhen id="swNPCaseNomOrSplitOrErgPossGen">
-	  <whenValue element="typology" attr="case" value="nominative"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="genitive"/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="genitive"/>
    </showWhen>
    <showWhen id="swNPCaseNotNoneAndCaseNYesAndCaseWordYes">
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseWord" value="yes"/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseWord" value="yes"/>
    </showWhen>
    <showWhen id="swNPCaseNotNoneAndCaseNYesAndCaseWordNo">
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseWord" value="no"/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseWord" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseNone" >
-	  <whenValue element="typology" attr="case" value="none"/>
+      <whenValue element="typology" attr="case" value="none"/>
    </showWhen>
    <showWhen id="swNPAgreeYesClassAndClassifiersNo">
-	  <whenValue element="np" attr="agreeOther" value="yesClass"/>
-	  <and/>
-	  <whenValue element="typology" attr="classifier" value="no"/>
+      <whenValue element="np" attr="agreeOther" value="yesClass"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="no"/>
    </showWhen>
 </portion>

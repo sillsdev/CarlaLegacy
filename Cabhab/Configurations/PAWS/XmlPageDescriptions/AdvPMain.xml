@@ -41,8 +41,8 @@ adverbial clauses <example>while you are working</example>, <example>when Sue ar
 		<radioGroup>
 			<groupName dataItem="temporalDegree" default="no">RAdvPTemporalDegree</groupName>
 			<prompt>Does your language have any degree words which modify the temporal adverbs?</prompt>
-			<radio id="AdvPTemporalDegreeYesBefore" dataValue="yesBefore">Yes, a degree word many appear before the temporal adverb</radio>
-			<radio id="AdvPTemporalDegreeYesAfter" dataValue="yesAfter">Yes, a degree word many appear after the temporal adverb</radio>
+			<radio id="AdvPTemporalDegreeYesBefore" dataValue="yesBefore">Yes, a degree word may appear before the temporal adverb</radio>
+			<radio id="AdvPTemporalDegreeYesAfter" dataValue="yesAfter">Yes, a degree word may appear after the temporal adverb</radio>
 			<radio id="AdvPTemporalDegreeAttaches" dataValue="attaches">There is an affix or clitic that attaches to the temporal adverb to intensify it</radio>
 			<radio id="AdvPTemporalDegreeNoRedup" dataValue="noRedup">No, but reduplication is used to intensify the meaning of the temporal adverb</radio>
 			<radio id="AdvPTemporalDegreeNo" dataValue="no">No, temporal adverbs are not modified or intensified</radio>

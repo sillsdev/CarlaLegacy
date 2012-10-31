@@ -3,17 +3,17 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="NegVerbal" count="2/4">
     <title level="2">Negative Constructions - Adverbial and Auxiliary elements</title>
-	<introduction>
-	 In this section, the examples you gave earlier of negative temporal and locative advebs and auxiliaries are repeated below.  Then you are asked to put these words into sentences.  We are interested in examples without any negative nominal phrases or negative pronouns, such as the following:
-	</introduction>
-	<EnglishExample>
-		<exItem label="1.">John never found the treasure.</exItem>
-		<exItem label="2.">Nowhere he looked did he find the box.</exItem>
-		<exItem label="3.">John could not find the treasure.</exItem>
-	</EnglishExample>
-
+    <introduction>
+     In this section, the examples you gave earlier of negative temporal and locative advebs and auxiliaries are repeated below.  Then you are asked to put these words into sentences.  We are interested in examples without any negative nominal phrases or negative pronouns, such as the following:
+    </introduction>
+    <EnglishExample>
+        <exItem label="1.">John never found the treasure.</exItem>
+        <exItem label="2.">Nowhere he looked did he find the box.</exItem>
+        <exItem label="3.">John could not find the treasure.</exItem>
+    </EnglishExample>
+    
     <form section="neg">
-		<prompt id="NegAdvPTemporalTypeAffixInstruction" show="swAdvPNegTemporalTypeAffix">In <section number="3">Adverbs and AdvP</section> you stated that your language does not express the negative temporal adverbs (meaning  ‘no when’) as a separate word, but rather as a verbal affix.  In that section, you gave the following examples of the negative temporal affix(es) attached to verbs.  You may add any additional data that you think of now.</prompt>
+        <prompt id="NegAdvPTemporalTypeAffixInstruction" show="swAdvPNegTemporalTypeAffix">In <section number="3">Adverbs and AdvP</section> you stated that your language does not express the negative temporal adverbs (meaning  ‘no when’) as a separate word, but rather as a verbal affix.  In that section, you gave the following examples of the negative temporal affix(es) attached to verbs.  You may add any additional data that you think of now.</prompt>
         <prompt id="NegAdvPTemporalTypeVerbInstruction" show="swAdvPNegTemporalTypeVerb">In <section number="3">Adverbs and AdvP</section> you stated that your language only expresses the negative temporal ideas by using a positive temporal adverb written as a separate word along with the negative verbal affix.  In that section, you gave the following examples of such temporal adverbs and negative verbs.  You may add any additional data that you think of now.</prompt>
         <prompt id="NegAdvPTemporalTypeWordInstruction" show="swAdvPNegTemporalTypeWord">In <section number="3">Adverbs and AdvP</section> you keyed the following examples of negative temporal adverbs.  You may add any additional data that you think of now.</prompt>
         <prompt id="NegAdvPTemporalTypeAffixPrompt" show="swAdvPNegTemporalTypeAffix">Examples of the negative temporal affix(es) attached to verbs:</prompt>
@@ -28,25 +28,25 @@ on any new affix(es) that express negation on the verb that you added.</instruct
         <instruction id="NegAdvPTemporalTypeWordInstruction2" show="swAdvPNegTemporalTypeWord">Be sure to key the features <feature>negative temporal</feature>
 on any new words that you added, and also make sure they will have the category <category>Adv</category>.</instruction>
 
-
-	   <prompt id="NegAdvPTemporalTypeAdverbWordPrompt" show="swAdvPNegTemporalTypeAdverbWord">
-	   In <section number="3">Adverbs and AdvP</section> you stated that your language expresses the negative temporal adverbs (meaning  ‘no when’) using a negative word that occurs with the positive temporal adverbs.  In that section, you gave the following examples.  You may add any additional data that you think of now.</prompt>
-	   <textBox id="NegAdvPTemporalAdverbWordExample" dataItem="negTemporalAdverbWordExample" show="swAdvPNegTemporalTypeAdverbWord" rows="3"/>
-	   <prompt id="NegAdvPTemporalTypeAdverbWordPrompt2" show="swAdvPNegTemporalTypeAdverbWord">Examples of the negative temporal adverb phrases formed by adding the negative word to the positive temporal adverbs:</prompt>
-	   <textBox id="NegAdvPTemporalAdverbWordsExample" dataItem="negTemporalAdverbWordsExample" show="swAdvPNegTemporalTypeAdverbWord" rows="5"/>
-	   <prompt id="NegAdvPTemporalTypeAdverbPrompt" show="swAdvPNegTemporalTypeAdverb">
-	   In <section number="3">Adverbs and AdvP</section> you stated that your language expresses the negative temporal adverbs (meaning  ‘no when’) using a negative affix atached to the positive temporal adverbs.  In that section, you gave the following examples.  You may add any additional data that you think of now.</prompt>
-	   <textBox id="NegAdvPTemporalAdverbAffixExample" dataItem="negTemporalAdverbAffixExample" show="swAdvPNegTemporalTypeAdverb" rows="3"/>
-	   <prompt id="NegAdvPTemporalTypeAdverbPrompt2" show="swAdvPNegTemporalTypeAdverb">Examples of the negative temporal adverbs formed by adding the negative affix to the positive temporal adverbs:</prompt>
-	   <textBox id="NegAdvpTemporalAdverbExample" dataItem="negTemporalAdverbExample" show="swAdvPNegTemporalTypeAdverb" rows="5"/>
-
-
-
-	   <prompt>Now take at least one of the negative temporal examples in the above box and use it in a complete sentence where the subject and object are positive here:</prompt>
+       
+       <prompt id="NegAdvPTemporalTypeAdverbWordPrompt" show="swAdvPNegTemporalTypeAdverbWord">
+       In <section number="3">Adverbs and AdvP</section> you stated that your language expresses the negative temporal adverbs (meaning  ‘no when’) using a negative word that occurs with the positive temporal adverbs.  In that section, you gave the following examples.  You may add any additional data that you think of now.</prompt>
+       <textBox id="NegAdvPTemporalAdverbWordExample" dataItem="negTemporalAdverbWordExample" show="swAdvPNegTemporalTypeAdverbWord" rows="3"/>
+       <prompt id="NegAdvPTemporalTypeAdverbWordPrompt2" show="swAdvPNegTemporalTypeAdverbWord">Examples of the negative temporal adverb phrases formed by adding the negative word to the positive temporal adverbs:</prompt>
+       <textBox id="NegAdvPTemporalAdverbWordsExample" dataItem="negTemporalAdverbWordsExample" show="swAdvPNegTemporalTypeAdverbWord" rows="5"/>
+       <prompt id="NegAdvPTemporalTypeAdverbPrompt" show="swAdvPNegTemporalTypeAdverb">
+       In <section number="3">Adverbs and AdvP</section> you stated that your language expresses the negative temporal adverbs (meaning  ‘no when’) using a negative affix atached to the positive temporal adverbs.  In that section, you gave the following examples.  You may add any additional data that you think of now.</prompt>
+       <textBox id="NegAdvPTemporalAdverbAffixExample" dataItem="negTemporalAdverbAffixExample" show="swAdvPNegTemporalTypeAdverb" rows="3"/>
+       <prompt id="NegAdvPTemporalTypeAdverbPrompt2" show="swAdvPNegTemporalTypeAdverb">Examples of the negative temporal adverbs formed by adding the negative affix to the positive temporal adverbs:</prompt>
+       <textBox id="NegAdvpTemporalAdverbExample" dataItem="negTemporalAdverbExample" show="swAdvPNegTemporalTypeAdverb" rows="5"/>
+       
+       
+       
+       <prompt>Now take at least one of the negative temporal examples in the above box and use it in a complete sentence where the subject and object are positive here:</prompt>
         <textBox id="NegAdvPTemporalExample" dataItem="advTemporalExample" rows="4" cols="50"/>
         <br/>
         <br/>
-		<prompt id="NegAdvPLocativeTypeAffixInstruction" show="swAdvPNegLocativeTypeAffix">In <section number="3">Adverbs and AdvP - Locative Adverbs</section> you stated that your language does not express the negative locative adverbs (meaning  ‘nowhere’) as a separate word, but rather as a verbal affix.  In that section, you gave the following examples of the negative locative affix(es) attached to verbs.  You may add any additional data that you think of now.</prompt>
+        <prompt id="NegAdvPLocativeTypeAffixInstruction" show="swAdvPNegLocativeTypeAffix">In <section number="3">Adverbs and AdvP - Locative Adverbs</section> you stated that your language does not express the negative locative adverbs (meaning  ‘nowhere’) as a separate word, but rather as a verbal affix.  In that section, you gave the following examples of the negative locative affix(es) attached to verbs.  You may add any additional data that you think of now.</prompt>
         <prompt id="NegAdvPLocativeTypeVerbInstruction" show="swAdvPNegLocativeTypeVerb">In <section number="3">Adverbs and AdvP - Locative Adverbs</section> you stated that your language only expresses the negative locative ideas by using a positive locative adverb written as a separate word along with the negative verbal affix.  In that section, you gave the following examples of such locative adverbs and negative verbs.  You may add any additional data that you think of now.</prompt>
         <prompt id="NegAdvPLocativeTypeWordInstruction" show="swAdvPNegLocativeTypeWord">In <section number="3">Adverbs and AdvP - Locative Adverbs</section> you keyed the following examples of negative locative adverbs.  You may add any additional data that you think of now.</prompt>
         <prompt id="NegAdvPLocativeTypeAffixPrompt" show="swAdvPNegLocativeTypeAffix">Examples of the negative locative affix(es) attached to verbs:</prompt>
@@ -60,24 +60,24 @@ on any new affix(es) that you added.</instruction>
 on any new affix(es) that express negation on the verb that you added.</instruction>
         <instruction id="NegAdvPLocativeTypeWordInstruction2" show="swAdvPNegLocativeTypeWord">Be sure to key the features <feature>negative locative</feature>
 on any new words that you added, and also make sure they will have the category <category>Adv</category>.</instruction>
-
-	   <prompt id="NegAdvPLocativeTypeAdverbWordPrompt" show="swAdvPNegLocativeTypeAdverbWord">
-		  In <section number="3">Adverbs and AdvP</section> you stated that your language expresses the negative locative adverbs (meaning  ‘nowhere’) using a negative word that occurs with the positive locative adverbs.  In that section, you gave the following examples.  You may add any additional data that you think of now.</prompt>
-	   <textBox id="NegAdvPLocativeAdverbWordExample" dataItem="negLocativeAdverbWordExample" show="swAdvPNegLocativeTypeAdverbWord" rows="3"/>
-	   <prompt id="NegAdvPLocativeTypeAdverbWordPrompt2" show="swAdvPNegLocativeTypeAdverbWord">Examples of the negative locative adverb phrases formed by adding the negative word to the positive locative adverbs:</prompt>
-	   <textBox id="NegAdvPLocativeAdverbWordsExample" dataItem="negLocativeAdverbWordsExample" show="swAdvPNegLocativeTypeAdverbWord" rows="5"/>
-	   <prompt id="NegAdvPLocativeTypeAdverbPrompt" show="swAdvPNegLocativeTypeAdverb">
-		  In <section number="3">Adverbs and AdvP</section> you stated that your language expresses the negative locative adverbs (meaning  ‘nowhere’) using a negative affix atached to the positive locative adverbs.  In that section, you gave the following examples.  You may add any additional data that you think of now.</prompt>
-	   <textBox id="NegAdvPLocativeAdverbAffixExample" dataItem="negLocativeAdverbAffixExample" show="swAdvPNegLocativeTypeAdverb" rows="3"/>
-	   <prompt id="NegAdvPLocativeTypeAdverbPrompt2" show="swAdvPNegLocativeTypeAdverb">Examples of the negative locative adverbs formed by adding the negative affix to the positive locative adverbs:</prompt>
-	   <textBox id="NegAdvpLocativeAdverbExample" dataItem="negLocativeAdverbExample" show="swAdvPNegLocativeTypeAdverb" rows="5"/>
-
-
-		<prompt>Now take at least one of the negative locative examples in the above box and use it in a complete sentence where the subject and object are positive here:</prompt>
+       
+       <prompt id="NegAdvPLocativeTypeAdverbWordPrompt" show="swAdvPNegLocativeTypeAdverbWord">
+          In <section number="3">Adverbs and AdvP</section> you stated that your language expresses the negative locative adverbs (meaning  ‘nowhere’) using a negative word that occurs with the positive locative adverbs.  In that section, you gave the following examples.  You may add any additional data that you think of now.</prompt>
+       <textBox id="NegAdvPLocativeAdverbWordExample" section="advp" dataItem="negLocativeAdverbWordExample" show="swAdvPNegLocativeTypeAdverbWord" rows="3"/>
+       <prompt id="NegAdvPLocativeTypeAdverbWordPrompt2" show="swAdvPNegLocativeTypeAdverbWord">Examples of the negative locative adverb phrases formed by adding the negative word to the positive locative adverbs:</prompt>
+       <textBox id="NegAdvPLocativeAdverbWordsExample" section="advp" dataItem="negLocativeAdverbWordsExample" show="swAdvPNegLocativeTypeAdverbWord" rows="5"/>
+       <prompt id="NegAdvPLocativeTypeAdverbPrompt" show="swAdvPNegLocativeTypeAdverb">
+          In <section number="3">Adverbs and AdvP</section> you stated that your language expresses the negative locative adverbs (meaning  ‘nowhere’) using a negative affix atached to the positive locative adverbs.  In that section, you gave the following examples.  You may add any additional data that you think of now.</prompt>
+       <textBox id="NegAdvPLocativeAdverbAffixExample" section="advp" dataItem="negLocativeAdverbAffixExample" show="swAdvPNegLocativeTypeAdverb" rows="3"/>
+       <prompt id="NegAdvPLocativeTypeAdverbPrompt2" show="swAdvPNegLocativeTypeAdverb">Examples of the negative locative adverbs formed by adding the negative affix to the positive locative adverbs:</prompt>
+       <textBox id="NegAdvpLocativeAdverbExample" section="advp" dataItem="negLocativeAdverbExample" show="swAdvPNegLocativeTypeAdverb" rows="5"/>
+       
+       
+        <prompt>Now take at least one of the negative locative examples in the above box and use it in a complete sentence where the subject and object are positive here:</prompt>
         <textBox id="NegAdvPLocativeExample" dataItem="advLocativeExample" rows="4" cols="50"/>
         <br/>
         <br/>
-		<radioGroup id="NegAdvVerbRequiredTable" show="swAdvPNegTypeWordorAdverb">
+        <radioGroup id="NegAdvVerbRequiredTable" show="swAdvPNegTypeWordorAdverb">
             <groupName dataItem="advVerbRequired" default="no">RAdvVerbRequired</groupName>
             <prompt>Looking back at the full sentence examples you have given, is the verb or auxiliary required to be negative when there is a separate negative adverb?</prompt>
             <radio id="NegAdvVerbRequiredYes" dataValue="yes">Yes, a negative adverb is not allowed without also having a negative verb or auxiliary</radio>
@@ -86,27 +86,27 @@ on any new words that you added, and also make sure they will have the category 
         <br/>
         <br/>
         <prompt id="NegAuxWordInstruction" show="swIPNegAuxWord">In <section number="9.4">Basic, Single-clause Sentences - Auxiliaries</section> you keyed the following examples of negative auxiliaries that are written as separate words.  You may add any additional data that you think of now.</prompt>
-        <prompt id="IPNegAuxWordPrompt" show="swIPNegAuxWord">Examples of the negative auxiliary
+        <prompt id="IPNegAuxWordPrompt" show="swIPNegAuxWord">Examples of the negative auxiliary 
 word(s) alone:</prompt>
         <textBox id="IPNegAuxWordExample" section="ip" dataItem="negAuxExample" rows="3" show="swIPNegAuxWord"/>
         <instruction id="NegAuxWordInstruction2" show="swIPNegAuxWord">Be sure to key the feature <feature>negative</feature>
 on any new words that you added, and also make sure they will have the category <category>Aux</category>.</instruction>
-	   <prompt id="NegAuxWordSentPrompt" show="swIPNegAuxWord">Now use at least one of the above negative auxiliaries in a complete sentence where the subject and object are positive and key it here:</prompt>
+       <prompt id="NegAuxWordSentPrompt" show="swIPNegAuxWord">Now use at least one of the above negative auxiliaries in a complete sentence where the subject and object are positive and key it here:</prompt>
         <textBox id="NegAuxWordSentExample" dataItem="auxExample" rows="4" cols="50" show="swIPNegAuxWord"/>
         <prompt id="NegAuxAffixInstruction" show="swIPNegAuxAffix">In <section number="9.4">Basic, Single-clause Sentences - Auxiliaries</section> you keyed the following examples of negative auxiliary affixes attached to an auxiliary.  You may add any additional data that you think of now.</prompt>
-        <prompt id="IPNegAuxAffixPrompt" show="swIPNegAuxAffix">Examples of the negative auxiliary
+        <prompt id="IPNegAuxAffixPrompt" show="swIPNegAuxAffix">Examples of the negative auxiliary 
 affix(es) attached to an auxiliary:</prompt>
         <textBox id="IPNegAuxAffixExample" section="ip" dataItem="negAuxAffixExample" rows="3" show="swIPNegAuxAffix"/>
         <instruction id="NegAuxAffixInstruction2" show="swIPNegAuxAffix">Be sure to key the feature <feature>negative</feature>
 on any new affix(es) that you added.</instruction>
-		<prompt id="NegAuxAffixSentPrompt" show="swIPNegAuxAffix">Now use at least one of the above examples of a negative auxiliary affix attached to an auxiliary in a complete sentence where the subject and object are positive and key it here:</prompt>
+        <prompt id="NegAuxAffixSentPrompt" show="swIPNegAuxAffix">Now use at least one of the above examples of a negative auxiliary affix attached to an auxiliary in a complete sentence where the subject and object are positive and key it here:</prompt>
         <textBox id="NegAuxAffixSentExample" dataItem="auxAffixExample" rows="4" cols="50" show="swIPNegAuxAffix"/>
         <prompt id="NegVerbInstruction" show="swIPNegVerb">In <section number="9.4">Basic, Single-clause Sentences - Auxiliaries</section> you keyed the following examples of the negative verbal affix(es) attached to a verb.  You may add any additional data that you think of now.</prompt>
         <prompt id="IPNegVerbPrompt" show="swIPNegVerb">Examples of the negative verbal affix(es) attached to a verb:</prompt>
         <textBox id="IPNegVerbExample" section="ip" dataItem="negVerbExample" rows="3" show="swIPNegVerb"/>
         <instruction id="NegVerbInstruction2" show="swIPNegVerb">Be sure to key the feature <feature>negative</feature>
 on any new affix(es) that you added.</instruction>
-		<prompt id="NegVerbPrompt" show="swIPNegVerb">Now take several of the examples of negative verbs above and use each in a complete sentence where it is the only negative word or phrase here:</prompt>
+        <prompt id="NegVerbPrompt" show="swIPNegVerb">Now take several of the examples of negative verbs above and use each in a complete sentence where it is the only negative word or phrase here:</prompt>
         <textBox id="NegVerbSentExample" dataItem="verbAffixExample" rows="4" cols="50" show="swIPNegVerb"/>
         <br/>
         <br/>
@@ -124,10 +124,10 @@ on any new affix(es) that you added.</instruction>
         </buttons>
     </form>
    <showWhen id="swAdvPNegTemporalTypeAdverbWord">
-	  <whenValue element="advp" attr="negTemporalType" value="adverbWord"/>
+      <whenValue element="advp" attr="negTemporalType" value="adverbWord"/>
    </showWhen>
    <showWhen id="swAdvPNegTemporalTypeAdverb">
-	  <whenValue element="advp" attr="negTemporalType" value="adverb"/>
+      <whenValue element="advp" attr="negTemporalType" value="adverb"/>
    </showWhen>
    <showWhen id="swAdvPNegTemporalTypeAffix">
         <whenValue element="advp" attr="negTemporalType" value="affix"/>
@@ -144,10 +144,10 @@ on any new affix(es) that you added.</instruction>
         <whenValue element="advp" attr="negTemporalType" value="verb"/>
     </showWhen>
    <showWhen id="swAdvPNegLocativeTypeAdverbWord">
-	  <whenValue element="advp" attr="negLocativeType" value="adverbWord"/>
+      <whenValue element="advp" attr="negLocativeType" value="adverbWord"/>
    </showWhen>
    <showWhen id="swAdvPNegLocativeTypeAdverb">
-	  <whenValue element="advp" attr="negLocativeType" value="adverb"/>
+      <whenValue element="advp" attr="negLocativeType" value="adverb"/>
    </showWhen>
    <showWhen id="swAdvPNegLocativeTypeAffix">
         <whenValue element="advp" attr="negLocativeType" value="affix"/>
@@ -163,31 +163,31 @@ on any new affix(es) that you added.</instruction>
 <or/>
         <whenValue element="advp" attr="negLocativeType" value="verb"/>
     </showWhen>
-	<showWhen id="swAdvPNegTypeWordorAdverb">
+    <showWhen id="swAdvPNegTypeWordorAdverb">
         <whenValue element="advp" attr="negTemporalType" value="word"/>
         <or/>
         <whenValue element="advp" attr="negLocativeType" value="word"/>
-	  <or/>
-	   <whenValue element="advp" attr="negTemporalType" value="adverb"/>
-	   <or/>
-	   <whenValue element="advp" attr="negLocativeType" value="adverb"/>
-	   <or/>
-	   <whenValue element="advp" attr="negTemporalType" value="adverbWord"/>
-	   <or/>
-	   <whenValue element="advp" attr="negLocativeType" value="adverbWord"/>
+      <or/>
+       <whenValue element="advp" attr="negTemporalType" value="adverb"/>
+       <or/>
+       <whenValue element="advp" attr="negLocativeType" value="adverb"/>
+       <or/>
+       <whenValue element="advp" attr="negTemporalType" value="adverbWord"/>
+       <or/>
+       <whenValue element="advp" attr="negLocativeType" value="adverbWord"/>
     </showWhen>
     <showWhen id="swIPNegAuxWord">
-		<whenValue element="ip" attr="negAux" value="yes"/>
+        <whenValue element="ip" attr="negAux" value="yes"/>
     </showWhen>
     <showWhen id="swIPNegAuxAffix">
-		<whenValue element="ip" attr="negAuxAffix" value="yes"/>
+        <whenValue element="ip" attr="negAuxAffix" value="yes"/>
     </showWhen>
     <showWhen id="swIPNegVerb">
-		<whenValue element="ip" attr="negVAffix" value="yes"/>
+        <whenValue element="ip" attr="negVAffix" value="yes"/>
     </showWhen>
     <showWhen id="swIPNegAuxAndVerb">
-		<whenValue element="ip" attr="negAux" value="yes"/>
+        <whenValue element="ip" attr="negAux" value="yes"/>
         <or/>
-		<whenValue element="ip" attr="negAuxAffix" value="yes"/>
+        <whenValue element="ip" attr="negAuxAffix" value="yes"/>
     </showWhen>
 </page>

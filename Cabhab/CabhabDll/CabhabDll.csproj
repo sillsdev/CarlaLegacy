@@ -1,185 +1,185 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
-	<ProjectType>Local</ProjectType>
-	<ProductVersion>9.0.30729</ProductVersion>
-	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{3E4CB95B-C04F-4ACE-BF09-5FA742637400}</ProjectGuid>
-	<!--    <SccProjectName>Perforce Project</SccProjectName>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E4CB95B-C04F-4ACE-BF09-5FA742637400}</ProjectGuid>
+    <!--    <SccProjectName>Perforce Project</SccProjectName>
 	<SccLocalPath>.</SccLocalPath>
 	<SccProvider>MSSCCI:Perforce SCM</SccProvider>
 -->
-	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-	<ApplicationIcon>
-	</ApplicationIcon>
-	<AssemblyKeyContainerName>
-	</AssemblyKeyContainerName>
-	<AssemblyName>CabhabDll</AssemblyName>
-	<AssemblyOriginatorKeyFile>
-	</AssemblyOriginatorKeyFile>
-	<DefaultClientScript>JScript</DefaultClientScript>
-	<DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
-	<DefaultTargetSchema>IE50</DefaultTargetSchema>
-	<DelaySign>false</DelaySign>
-	<OutputType>Library</OutputType>
-	<RootNamespace>SIL.Cabhab</RootNamespace>
-	<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-	<StartupObject>
-	</StartupObject>
-	<FileUpgradeFlags>
-	</FileUpgradeFlags>
-	<UpgradeBackupLocation>
-	</UpgradeBackupLocation>
-	<OldToolsVersion>2.0</OldToolsVersion>
-	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>CabhabDll</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SIL.Cabhab</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	<OutputPath>..\bin\Debug\</OutputPath>
-	<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-	<BaseAddress>285212672</BaseAddress>
-	<CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-	<ConfigurationOverrideFile>
-	</ConfigurationOverrideFile>
-	<DefineConstants>TRACE;DEBUG;UsingMSXML2Transforms</DefineConstants>
-	<DocumentationFile>
-	</DocumentationFile>
-	<DebugSymbols>true</DebugSymbols>
-	<FileAlignment>4096</FileAlignment>
-	<NoStdLib>false</NoStdLib>
-	<NoWarn>
-	</NoWarn>
-	<Optimize>false</Optimize>
-	<RegisterForComInterop>false</RegisterForComInterop>
-	<RemoveIntegerChecks>false</RemoveIntegerChecks>
-	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-	<WarningLevel>4</WarningLevel>
-	<DebugType>full</DebugType>
-	<ErrorReport>prompt</ErrorReport>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG;UsingMSXML2Transforms</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<OutputPath>..\bin\Release\</OutputPath>
-	<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-	<BaseAddress>285212672</BaseAddress>
-	<CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-	<ConfigurationOverrideFile>
-	</ConfigurationOverrideFile>
-	<DefineConstants>TRACE;UsingMSXML2Transforms</DefineConstants>
-	<DocumentationFile>
-	</DocumentationFile>
-	<DebugSymbols>true</DebugSymbols>
-	<FileAlignment>4096</FileAlignment>
-	<NoStdLib>false</NoStdLib>
-	<NoWarn>
-	</NoWarn>
-	<Optimize>true</Optimize>
-	<RegisterForComInterop>false</RegisterForComInterop>
-	<RemoveIntegerChecks>false</RemoveIntegerChecks>
-	<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-	<WarningLevel>4</WarningLevel>
-	<DebugType>full</DebugType>
-	<ErrorReport>prompt</ErrorReport>
-	<PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;UsingMSXML2Transforms</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="BasicUtils, Version=7.1.0.28665, Culture=neutral, processorArchitecture=MSIL">
-	  <SpecificVersion>False</SpecificVersion>
-	</Reference>
-	<Reference Include="CommandBar, Version=7.1.0.19923, Culture=neutral, processorArchitecture=MSIL">
-	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\bin\Release\CommandBar.dll</HintPath>
-	</Reference>
-	<Reference Include="IKVM.Runtime, Version=0.42.0.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\bin\IKVM.Runtime.dll</HintPath>
-	</Reference>
-	<Reference Include="Interop.MSXML2, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\bin\Interop.MSXML2.dll</HintPath>
-	</Reference>
-	<Reference Include="MsHtmHstInterop, Version=0.0.0.0, Culture=neutral">
-	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\..\..\..\fw\Bin\MsHtmHstInterop.dll</HintPath>
-	</Reference>
-	<Reference Include="saxon9he, Version=9.3.0.5, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
-	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\bin\saxon9he.dll</HintPath>
-	</Reference>
-	<Reference Include="saxon9he-api, Version=9.3.0.5, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
-	  <SpecificVersion>False</SpecificVersion>
-	  <HintPath>..\bin\saxon9he-api.dll</HintPath>
-	</Reference>
-	<Reference Include="System">
-	  <Name>System</Name>
-	</Reference>
-	<Reference Include="System.Core">
-	  <RequiredTargetFramework>3.5</RequiredTargetFramework>
-	</Reference>
-	<Reference Include="System.Data">
-	  <Name>System.Data</Name>
-	</Reference>
-	<Reference Include="System.Drawing">
-	  <Name>System.Drawing</Name>
-	</Reference>
-	<Reference Include="System.Windows.Forms">
-	  <Name>System.Windows.Forms</Name>
-	</Reference>
-	<Reference Include="System.Xml">
-	  <Name>System.XML</Name>
-	</Reference>
-	<Reference Include="xCore, Version=7.1.0.14560, Culture=neutral, processorArchitecture=MSIL">
-	  <SpecificVersion>False</SpecificVersion>
-	</Reference>
-	<Reference Include="xCoreInterfaces, Version=7.1.0.40707, Culture=neutral, processorArchitecture=MSIL">
-	  <SpecificVersion>False</SpecificVersion>
-	</Reference>
-	<Reference Include="XMLUtils, Version=7.1.0.26620, Culture=neutral, processorArchitecture=MSIL">
-	  <SpecificVersion>False</SpecificVersion>
-	</Reference>
+    <Reference Include="BasicUtils, Version=7.1.0.28665, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="CommandBar, Version=7.1.0.19923, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Release\CommandBar.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=0.42.0.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MSXML2, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Interop.MSXML2.dll</HintPath>
+    </Reference>
+    <Reference Include="MsHtmHstInterop, Version=0.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\fw\Bin\MsHtmHstInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="saxon9he, Version=9.3.0.5, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\saxon9he.dll</HintPath>
+    </Reference>
+    <Reference Include="saxon9he-api, Version=9.3.0.5, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\saxon9he-api.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="xCore, Version=7.1.0.14560, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="xCoreInterfaces, Version=7.1.0.40707, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="XMLUtils, Version=7.1.0.26620, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="AnswerFileTransform.cs" />
-	<Compile Include="DataMigrationTransform.cs" />
-	<Compile Include="DotNetCompiledTransform.cs" />
-	<Compile Include="HtmlViewer.cs">
-	  <SubType>UserControl</SubType>
-	</Compile>
-	<Compile Include="AssemblyInfo.cs">
-	  <SubType>Code</SubType>
-	</Compile>
-	<Compile Include="ImageHolder.cs">
-	  <SubType>Form</SubType>
-	</Compile>
-	<Compile Include="CabhabApp.cs">
-	  <SubType>Form</SubType>
-	</Compile>
-	<Compile Include="Language.cs" />
-	<Compile Include="MSXML2Transform.cs" />
-	<Compile Include="SaxonDotNetTransform.cs" />
-	<Compile Include="Transform.cs" />
-	<Compile Include="XMLUtilities.cs" />
-	<EmbeddedResource Include="ImageHolder.resx">
-	  <DependentUpon>ImageHolder.cs</DependentUpon>
-	  <SubType>Designer</SubType>
-	</EmbeddedResource>
+    <Compile Include="AnswerFileTransform.cs" />
+    <Compile Include="DataMigrationTransform.cs" />
+    <Compile Include="DotNetCompiledTransform.cs" />
+    <Compile Include="HtmlViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImageHolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CabhabApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Language.cs" />
+    <Compile Include="MSXML2Transform.cs" />
+    <Compile Include="SaxonDotNetTransform.cs" />
+    <Compile Include="Transform.cs" />
+    <Compile Include="XMLUtilities.cs" />
+    <EmbeddedResource Include="ImageHolder.resx">
+      <DependentUpon>ImageHolder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-	<COMReference Include="SHDocVw">
-	  <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
-	  <VersionMajor>1</VersionMajor>
-	  <VersionMinor>1</VersionMinor>
-	  <Lcid>0</Lcid>
-	  <WrapperTool>tlbimp</WrapperTool>
-	  <Isolated>False</Isolated>
-	</COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <ItemGroup>
-	<Folder Include="Configurations\" />
+    <Folder Include="Configurations\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-	<PreBuildEvent>
-	</PreBuildEvent>
-	<PostBuildEvent>
-	</PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="prop">
-	<section1 id="sProp">
-		<secTitle>Proper Names</secTitle>
-		<p>
+    <section1 id="sProp">
+        <secTitle>Proper Names</secTitle>
+        <p>
 <xsl:text>Proper names are a special kind of noun or phrase that acts syntactically just like other nouns or nominal phrases.  In English, some proper names can stand alone, like </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -21,11 +21,11 @@
 </xsl:attribute>George Washington</langData>
 <xsl:text>.  Proper names may also contain articles and/or </xsl:text>
 <xsl:choose>
-				<xsl:when test="//pp/@pPos='before'">prepositional</xsl:when>
-				<xsl:when test="//pp/@pPos='after'">postpositional</xsl:when>
-				<xsl:when test="//pp/@pPos='both'">prepositional and/or postpositional</xsl:when>
-				<xsl:when test="//pp/@pPos='unknown'">prepositional and/or postpositional</xsl:when>
-			</xsl:choose>
+                <xsl:when test="//pp/@pPos='before'">prepositional</xsl:when>
+                <xsl:when test="//pp/@pPos='after'">postpositional</xsl:when>
+                <xsl:when test="//pp/@pPos='both'">prepositional and/or postpositional</xsl:when>
+                <xsl:when test="//pp/@pPos='unknown'">prepositional and/or postpositional</xsl:when>
+            </xsl:choose>
 <xsl:text> phrases, as in </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -50,7 +50,7 @@
 </xsl:attribute>the Susan Welch that I know</langData>
 <xsl:text>.</xsl:text>
 </p>
-		<p>
+        <p>
 <xsl:text>Examples with simple and compound proper names, or those including articles, demonstratives, adjectives, and/or possessors in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
@@ -62,7 +62,7 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-		<example num="xProp.8">
+        <example num="xProp.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/example" />
 </xsl:variable>
@@ -155,11 +155,11 @@
 	   <p>
 <xsl:text>Examples of proper names with </xsl:text>
 <xsl:choose>
-				<xsl:when test="//pp/@pPos='before'">prepositional</xsl:when>
-				<xsl:when test="//pp/@pPos='after'">postpositional</xsl:when>
-				<xsl:when test="//pp/@pPos='both'">prepositional and/or postpositional</xsl:when>
-				<xsl:when test="//pp/@pPos='unknown'">prepositional and/or postpositional</xsl:when>
-			</xsl:choose>
+                <xsl:when test="//pp/@pPos='before'">prepositional</xsl:when>
+                <xsl:when test="//pp/@pPos='after'">postpositional</xsl:when>
+                <xsl:when test="//pp/@pPos='both'">prepositional and/or postpositional</xsl:when>
+                <xsl:when test="//pp/@pPos='unknown'">prepositional and/or postpositional</xsl:when>
+            </xsl:choose>
 <xsl:text> phrases in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
@@ -171,7 +171,7 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-		<example num="xProp.18">
+        <example num="xProp.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/ppExample" />
 </xsl:variable>
@@ -209,7 +209,7 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-		<p>
+        <p>
 <xsl:text>Examples of proper names modified by relative clauses included in simple full sentences in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
@@ -221,7 +221,7 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-		<example num="xProp.22">
+        <example num="xProp.22">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//prop/relClExample" />
 </xsl:variable>
@@ -259,19 +259,19 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-	</section1>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </section1>
+   
+	  
+	  
+	  
+   
+   
+	  
+	  
+	  
+   
+   
+	  
+   
 </xsl:template>
 </xsl:stylesheet>

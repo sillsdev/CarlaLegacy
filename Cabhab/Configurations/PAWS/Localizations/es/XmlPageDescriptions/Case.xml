@@ -13,7 +13,7 @@
 	   <prompt>Considerando los ejemplos arriba, observe si existen distinctos grupos de pronombres para el sujeto y el objeto directo. </prompt>
 	   <br/>
 	   <introduction>Algunas lenguas tiene indicadores de caso distintos y un sistema de pronombes distinto para sujetos-experimentadores que sujetos-agentes.
-		  En algunas lenguas esta distinción es solamente para el pronombre primera singular “yo”.  Algunos verbos transitivos con sujetos-experimentadores son: ‘aparecer’, ‘ver’, ‘emer’, ‘encontrarse’, ‘desear’ y ‘oír’.</introduction>
+		  En algunas lenguas esta distinción es solamente para el pronombre primera singular “yo”.  Algunos verbos transitivos con sujetos-experimentadores son: ‘aparecer’, ‘ver’, ‘temer’, ‘encontrarse’, ‘desear’ y ‘oír’.</introduction>
 	   <br/><br/>
 	   <prompt>Escriba ejemplos de oraciones transitivas con un sujeto-experimentador, utilizando frase nominales simples para el sujeto y el objeto directo aquí:</prompt>
 	   <textBox id="OTExperiencerExample" dataItem="experiencerExample" cols="50"/>

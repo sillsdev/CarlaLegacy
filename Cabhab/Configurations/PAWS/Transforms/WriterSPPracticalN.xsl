@@ -283,12 +283,12 @@
 </xsl:if>
 		</section2>
 	   <section2 id="sNPCase">
-		  <secTitle>Caso</secTitle>
-		  <p>
-<xsl:text>En los sustantivos y sus modificadores también se pueden indicar el caso. El sistema de caso más común es el nominativo-acusativo.
-				Éste es el sistema que español tiene, aunque solamente se indica el caso en los pronombres y los poseedores.
-				En un sistema del nominativo-acusativo, los sujetos de los verbos intransitivos y transitivos son casos del nominativo, mientras que los objetos directos son casos del acusativo.
-				Los poseedores son casos del genitivo. Los pronombres del nominativo en español son: </xsl:text>
+	      <secTitle>Caso</secTitle>
+	      <p>
+<xsl:text>En los sustantivos y sus modificadores también se pueden indicar el caso. El sistema de caso más común es el nominativo-acusativo. 
+	            Éste es el sistema que español tiene, aunque solamente se indica el caso en los pronombres y los poseedores.  
+	            En un sistema del nominativo-acusativo, los sujetos de los verbos intransitivos y transitivos son casos del nominativo, mientras que los objetos directos son casos del acusativo. 
+	            Los poseedores son casos del genitivo. Los pronombres del nominativo en español son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -315,9 +315,9 @@
 </xsl:attribute>Les golpearon él</langData>
 <xsl:text>. </xsl:text>
 </p>
-		  <p>
+	      <p>
 <xsl:text> Una lengua con un sistema de caso básico nominativo-accusativo puede usar un indicador differente para sujeto-experimentador en vez de sujeto-agente.  Algunos verbos de sujeto-experimentador  son
-			   </xsl:text>
+	           </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -329,19 +329,19 @@
 </xsl:attribute>sonreir</langData>
 <xsl:text>. </xsl:text>
 </p>
-		  <p>
+	      <p>
 <xsl:text>
-				En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se indican con el caso del ergativo, mientras que los objetos de verbos transitivos y los sujetos de verbos intransitivos se indican con el caso del absolutivo.
-				El caso de poseedores no se fija en todos las lenguas de este tipo.  Algunas lenguas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de indicadores verbales de la concordancia, pero ningún indicador en sustantivos.
-				Este tipo de indicador en la concordancia será considerado en la sección </xsl:text>
+	            En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se indican con el caso del ergativo, mientras que los objetos de verbos transitivos y los sujetos de verbos intransitivos se indican con el caso del absolutivo.
+	            El caso de poseedores no se fija en todos las lenguas de este tipo.  Algunas lenguas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de indicadores verbales de la concordancia, pero ningún indicador en sustantivos. 
+	            Este tipo de indicador en la concordancia será considerado en la sección </xsl:text>
 <sectionRef sec="sIPAgr" />
 <xsl:text>.</xsl:text>
 </p>
-		  <p>
+	      <p>
 <xsl:text>
-				Algunas lenguas son aún más complejas en que tienen normalmente un sistema de caso del nominativo-acusativo pero bajo ciertas condiciones gramaticales, como un aspecto particular o una característica de persona particular, el sistema de caso cambia a ergativo-absolutivo. Esto se llama “ergatividad escindida”.</xsl:text>
+	            Algunas lenguas son aún más complejas en que tienen normalmente un sistema de caso del nominativo-acusativo pero bajo ciertas condiciones gramaticales, como un aspecto particular o una característica de persona particular, el sistema de caso cambia a ergativo-absolutivo. Esto se llama “ergatividad escindida”.</xsl:text>
 </p>
-		  <p>
+	      <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
@@ -353,17 +353,17 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-				<xsl:when test="//typology/@case='none'"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición de la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición de la oración.</xsl:when>
-				<xsl:when test="//typology/@case='nominative'"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se indican de una manera diferente.</xsl:when>
-				<xsl:when test="//typology/@case='ergative'"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se indican de una manera diferente.</xsl:when>
-				<xsl:when test="//typology/@case='split'"> tiene un sistema de caso de ergatividad escindida. La lengua sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones gramaticales.</xsl:when>
-			 </xsl:choose>
+	            <xsl:when test="//typology/@case='none'"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición de la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición de la oración.</xsl:when>
+	            <xsl:when test="//typology/@case='nominative'"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se indican de una manera diferente.</xsl:when>
+	            <xsl:when test="//typology/@case='ergative'"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se indican de una manera diferente.</xsl:when>
+	            <xsl:when test="//typology/@case='split'"> tiene un sistema de caso de ergatividad escindida. La lengua sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones gramaticales.</xsl:when>
+	         </xsl:choose>
 <xsl:text></xsl:text>
 </p>
-		  <p>
+	      <p>
 <xsl:text>Esto se muestran en los ejemplos siguientes de oraciones transitivas con frases nominales como sujetos y objetos:</xsl:text>
 </p>
-		  <example num="xN.NPCase.16">
+	      <example num="xN.NPCase.16">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//typology/example" />
 </xsl:variable>
@@ -400,11 +400,11 @@
 </listInterlinear>
 </xsl:otherwise>
 </xsl:choose>
-</example>
-		  <p>
+</example>    
+	      <p>
 <xsl:text>Observe las formas de los pronombres que se presentan como sujetos y objetos en estas oraciones transitivas:</xsl:text>
 </p>
-		  <example num="xN.NPCase.20">
+	      <example num="xN.NPCase.20">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//typology/pnExample" />
 </xsl:variable>
@@ -442,17 +442,17 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-		  <xsl:if test="normalize-space(//np/@caseN)='yes' and normalize-space(//typology/@case)!='none'">
+	      <xsl:if test="normalize-space(//np/@caseN)='yes' and normalize-space(//typology/@case)!='none'">
 <p>
 <xsl:text>En los ejemplos de oraciones intransitivas con frases nominales como sujetos, </xsl:text>
 <xsl:choose>
-				<xsl:when test="//typology/@case='nominative'">los indicadores de caso son los mismos que los sujetos de los verbos transitivos arriba.</xsl:when>
-				<xsl:when test="//typology/@case='ergative'">los indicadores de caso son los mismos que los objetos de los verbos transitivos arriba.</xsl:when>
-				<xsl:when test="//typology/@case='split'">en la mayoría de situaciones los indicadores de caso son los mismos que los sujetos de los verbos transitivos arriba, pero bajo ciertas condicciones los indicadores de caso son los mismos que los objetos de los verbos transitivos.</xsl:when>
-			 </xsl:choose>
+	            <xsl:when test="//typology/@case='nominative'">los indicadores de caso son los mismos que los sujetos de los verbos transitivos arriba.</xsl:when>
+	            <xsl:when test="//typology/@case='ergative'">los indicadores de caso son los mismos que los objetos de los verbos transitivos arriba.</xsl:when>
+	            <xsl:when test="//typology/@case='split'">en la mayoría de situaciones los indicadores de caso son los mismos que los sujetos de los verbos transitivos arriba, pero bajo ciertas condicciones los indicadores de caso son los mismos que los objetos de los verbos transitivos.</xsl:when>
+	         </xsl:choose>
 </p>
 </xsl:if>
-		  <xsl:if test="normalize-space(//np/@caseN)='yes' and normalize-space(//typology/@case)!='none'">
+	      <xsl:if test="normalize-space(//np/@caseN)='yes' and normalize-space(//typology/@case)!='none'">
 <example num="xN.NPCase.24">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//typology/intExample" />
@@ -492,28 +492,28 @@
 </xsl:choose>
 </example>
 </xsl:if>
-		  <p>
+	      <p>
 <xsl:text>Los ejemplos de oraciones intransitivas con pronombres independientes como sujetos verifican que </xsl:text>
 <xsl:choose>
-				<xsl:when test="//typology/@case='none'">no hay ningún sistema de caso, así que los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos y como objetos de verbos trnasitivos.</xsl:when>
-				<xsl:when test="//typology/@case='nominative'">los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos, pero los pronombres para objetos de verbos transitivos son differentes.</xsl:when>
-				<xsl:when test="//typology/@case='ergative'">los mismos pronombres pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos, pero los pronombres para subjetos de verbos transitivos son differentes.</xsl:when>
-				<xsl:when test="//typology/@case='split'">normalmente los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos, pero los pronombres para objetos de verbos transitivos son differentes.  Sin embargo, bajo ciertas condiciones, los mismos pronombres pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos, pero los pronombres para subjetos de verbos transitivos son differentes.</xsl:when>
-			 </xsl:choose>
+	            <xsl:when test="//typology/@case='none'">no hay ningún sistema de caso, así que los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos y como objetos de verbos transitivos.</xsl:when>
+	            <xsl:when test="//typology/@case='nominative'">los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos, pero los pronombres para objetos de verbos transitivos son differentes.</xsl:when>
+	            <xsl:when test="//typology/@case='ergative'">los mismos pronombres pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos, pero los pronombres para subjetos de verbos transitivos son differentes.</xsl:when>
+	            <xsl:when test="//typology/@case='split'">normalmente los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos, pero los pronombres para objetos de verbos transitivos son differentes.  Sin embargo, bajo ciertas condiciones, los mismos pronombres pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos, pero los pronombres para subjetos de verbos transitivos son differentes.</xsl:when>
+	         </xsl:choose>
 </p>
-		  <example num="xN.NPCase.28">
+	      <example num="xN.NPCase.28">
 <xsl:variable name="sExampleValue">
-<xsl:value-of select="//typology/intPnExample" />
+<xsl:value-of select="//typology/pnIntExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//typology/intPnExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//typology/pnIntExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="//typology/intPnExample" />
+<xsl:value-of select="//typology/pnIntExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//typology/intPnExample))" />
+<xsl:value-of select="string-length(normalize-space(//typology/pnIntExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xN.NPCase.28</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -539,8 +539,8 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-
-		  <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//np/@caseN)='yes' or normalize-space(//typology/@case)='split' and normalize-space(//np/@caseN)='yes'">
+	      
+	      <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//np/@caseN)='yes' or normalize-space(//typology/@case)='split' and normalize-space(//np/@caseN)='yes'">
 <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
@@ -553,13 +553,13 @@
 </xsl:choose>
 <xsl:text>, </xsl:text>
 <xsl:choose>
-			 <xsl:when test="//typology/@caseExperiencer='no'">el mismo indicador de caso y sistema de pronombres se utilizan para ambos sujetos-experimentadores y sujetos-agentes.</xsl:when>
-			 <xsl:when test="//typology/@caseExperiencer='yesObj'">se utilizan el mismo indicador de caso y sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso caso accusativo y caso dativo se marcan lo mismo en esa lengua.</xsl:when>
-			 <xsl:when test="//typology/@caseExperiencer='yesDat'">se utilizan un indicador de caso y sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Este es el caso dativo que se utiliza también para un objeto indirecto.</xsl:when>
-		  </xsl:choose>
+	         <xsl:when test="//typology/@caseExperiencer='no'">el mismo indicador de caso y sistema de pronombres se utilizan para ambos sujetos-experimentadores y sujetos-agentes.</xsl:when>
+	         <xsl:when test="//typology/@caseExperiencer='yesObj'">se utilizan el mismo indicador de caso y sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso caso accusativo y caso dativo se marcan lo mismo en esa lengua.</xsl:when>
+	         <xsl:when test="//typology/@caseExperiencer='yesDat'">se utilizan un indicador de caso y sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Este es el caso dativo que se utiliza también para un objeto indirecto.</xsl:when>
+	      </xsl:choose>
 </p>
 </xsl:if>
-		  <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//np/@caseN)='no' or normalize-space(//typology/@case)='split' and normalize-space(//np/@caseN)='no'">
+	      <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//np/@caseN)='no' or normalize-space(//typology/@case)='split' and normalize-space(//np/@caseN)='no'">
 <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
@@ -572,13 +572,13 @@
 </xsl:choose>
 <xsl:text>, </xsl:text>
 <xsl:choose>
-			 <xsl:when test="//typology/@caseExperiencer='no'">el mismo sistema de pronombres se utiliza para ambos sujetos-experimentadores y sujetos-agentes.</xsl:when>
-			 <xsl:when test="//typology/@caseExperiencer='yesObj'">se utiliza el mismo sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso los pronombres accusativos y dativos son los mismos en esa lengua.</xsl:when>
-			 <xsl:when test="//typology/@caseExperiencer='yesDat'">se utiliza un sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Estos son los pronombres dativos que se utilizan también para un objeto indirecto.</xsl:when>
-		  </xsl:choose>
+	         <xsl:when test="//typology/@caseExperiencer='no'">el mismo sistema de pronombres se utiliza para ambos sujetos-experimentadores y sujetos-agentes.</xsl:when>
+	         <xsl:when test="//typology/@caseExperiencer='yesObj'">se utiliza el mismo sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso los pronombres accusativos y dativos son los mismos en esa lengua.</xsl:when>
+	         <xsl:when test="//typology/@caseExperiencer='yesDat'">se utiliza un sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Estos son los pronombres dativos que se utilizan también para un objeto indirecto.</xsl:when>
+	      </xsl:choose>
 </p>
 </xsl:if>
-		  <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@caseN)='yes'">
+	      <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@caseN)='yes'">
 <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
@@ -591,13 +591,13 @@
 </xsl:choose>
 <xsl:text>, </xsl:text>
 <xsl:choose>
-			 <xsl:when test="//typology/@caseExperiencer='no'">el mismo indicador de caso y sistema de pronombres se utilizan para ambos sujetos-experimentadores y sujetos-agentes.</xsl:when>
-			 <xsl:when test="//typology/@caseExperiencer='yesObj'">se utilizan el mismo indicador de caso y sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso caso absolutivo y caso dativo se marcan lo mismo en esa lengua.</xsl:when>
-			 <xsl:when test="//typology/@caseExperiencer='yesDat'">se utilizan un indicador de caso y sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Este es el caso dativo que se utiliza también para un objeto indirecto.</xsl:when>
-		  </xsl:choose>
+	         <xsl:when test="//typology/@caseExperiencer='no'">el mismo indicador de caso y sistema de pronombres se utilizan para ambos sujetos-experimentadores y sujetos-agentes.</xsl:when>
+	         <xsl:when test="//typology/@caseExperiencer='yesObj'">se utilizan el mismo indicador de caso y sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso caso absolutivo y caso dativo se marcan lo mismo en esa lengua.</xsl:when>
+	         <xsl:when test="//typology/@caseExperiencer='yesDat'">se utilizan un indicador de caso y sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Este es el caso dativo que se utiliza también para un objeto indirecto.</xsl:when>
+	      </xsl:choose>
 </p>
 </xsl:if>
-		  <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@caseN)='no'">
+	      <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@caseN)='no'">
 <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
@@ -610,16 +610,16 @@
 </xsl:choose>
 <xsl:text>, </xsl:text>
 <xsl:choose>
-			 <xsl:when test="//typology/@caseExperiencer='no'">el mismo sistema de pronombres se utiliza para ambos sujetos-experimentadores y sujetos-agentes.</xsl:when>
-			 <xsl:when test="//typology/@caseExperiencer='yesObj'">se utiliza el mismo sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso los pronombres absolutivos y dativos son los mismos en esa lengua.</xsl:when>
-			 <xsl:when test="//typology/@caseExperiencer='yesDat'">se utiliza un sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Estos son los pronombres dativos que se utilizan también para un objeto indirecto.</xsl:when>
-		  </xsl:choose>
+	         <xsl:when test="//typology/@caseExperiencer='no'">el mismo sistema de pronombres se utiliza para ambos sujetos-experimentadores y sujetos-agentes.</xsl:when>
+	         <xsl:when test="//typology/@caseExperiencer='yesObj'">se utiliza el mismo sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso los pronombres absolutivos y dativos son los mismos en esa lengua.</xsl:when>
+	         <xsl:when test="//typology/@caseExperiencer='yesDat'">se utiliza un sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Estos son los pronombres dativos que se utilizan también para un objeto indirecto.</xsl:when>
+	      </xsl:choose>
 </p>
 </xsl:if>
-		  <p>
+	      <p>
 <xsl:text>Esto se muestran en los ejemplos siguientes de oraciones transitivas con verbos de experimentador, con frases nominales como sujetos y objetos:</xsl:text>
 </p>
-		  <example num="xN.NPCase.40">
+	      <example num="xN.NPCase.40">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//typology/experiencerExample" />
 </xsl:variable>
@@ -656,11 +656,11 @@
 </listInterlinear>
 </xsl:otherwise>
 </xsl:choose>
-</example>
-		  <p>
+</example>    
+	      <p>
 <xsl:text>Observe las formas de los pronombres que se presentan como sujetos y objetos de los verbos de experimentador en estas oraciones transitivas:</xsl:text>
 </p>
-		  <example num="xN.NPCase.44">
+	      <example num="xN.NPCase.44">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//typology/experiencerPnExample" />
 </xsl:variable>
@@ -698,13 +698,13 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-
-		  <p>
-<xsl:text>Hay más casos a considerar además de el del sujeto y del objeto.  Éstos pueden incluir el caso ablativo para una fuente o el origen, el caso genitivo para las clases o los poseedores, el caso dativo para los objetos indirectos, el caso instrumental para los medios o los instrumentos, el caso locativo para las localizaciones, el caso vocativo para discurso directo, y el caso oblicuo que se utiliza a veces para las relaciones gramaticales de menor importancia en general.
-			 Estos casos adicionales se indican generalmente con indicadores de caso en la frase nominal en las lenguas que indican normalmente el caso en sustantivos o frases nominales así como pronombres.  Para las lenguas sin cualquier indica del caso y las que solamente indican el caso en los pronombres, estas relaciones gramaticales adicionales se expresan normalmente por frases preposicionales o posposicionales.
-		  </xsl:text>
+	      
+	      <p>
+<xsl:text>Hay más casos a considerar además de el del sujeto y del objeto.  Éstos pueden incluir el caso ablativo para una fuente o el origen, el caso genitivo para las clases o los poseedores, el caso dativo para los objetos indirectos, el caso instrumental para los medios o los instrumentos, el caso locativo para las localizaciones, el caso vocativo para discurso directo, y el caso oblicuo que se utiliza a veces para las relaciones gramaticales de menor importancia en general. 
+	         Estos casos adicionales se indican generalmente con indicadores de caso en la frase nominal en las lenguas que indican normalmente el caso en sustantivos o frases nominales así como pronombres.  Para las lenguas sin cualquier indica del caso y las que solamente indican el caso en los pronombres, estas relaciones gramaticales adicionales se expresan normalmente por frases preposicionales o posposicionales.
+	      </xsl:text>
 </p>
-		  <xsl:if test="normalize-space(//typology/@case)='none'">
+	      <xsl:if test="normalize-space(//typology/@case)='none'">
 <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
@@ -717,15 +717,15 @@
 </xsl:choose>
 <xsl:text>, no hay indicadores de caso de cualquier tipo.  Por eso, las relaciones gramaticales adicionales se expresan normalmente por frases </xsl:text>
 <xsl:choose>
-			 <xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
-			 <xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
-			 <xsl:when test="//pp/@pPos='both'">preposicionales o posposicionales</xsl:when>
-			 <xsl:when test="//pp/@pPos='unknown'">preposicionales y/o posposicionales</xsl:when>
-		  </xsl:choose>
+	         <xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
+	         <xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
+	         <xsl:when test="//pp/@pPos='both'">preposicionales o posposicionales</xsl:when>
+	         <xsl:when test="//pp/@pPos='unknown'">preposicionales y/o posposicionales</xsl:when>
+	      </xsl:choose>
 <xsl:text>, en vez de por frases nominales.</xsl:text>
 </p>
 </xsl:if>
-		  <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@caseN)='no'">
+	      <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@caseN)='no'">
 <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
@@ -738,19 +738,19 @@
 </xsl:choose>
 <xsl:text>, no se inidcan el caso en los sustantivos o las frase nominales, solamente en los pronombres.  Por eso, las relaciones gramaticales adicionales se expresan normalmente por frases </xsl:text>
 <xsl:choose>
-			 <xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
-			 <xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
-			 <xsl:when test="//pp/@pPos='both'">preposicionales o posposicionales</xsl:when>
-			 <xsl:when test="//pp/@pPos='unknown'">preposicionales y/o posposicionales</xsl:when>
-		  </xsl:choose>
+	         <xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>
+	         <xsl:when test="//pp/@pPos='after'">posposicionales</xsl:when>
+	         <xsl:when test="//pp/@pPos='both'">preposicionales o posposicionales</xsl:when>
+	         <xsl:when test="//pp/@pPos='unknown'">preposicionales y/o posposicionales</xsl:when>
+	      </xsl:choose>
 <xsl:text>, en vez de por frases nominales.   Los sistemas del pronombre se proporcionan en la sección </xsl:text>
 <sectionRef sec="sPronPersonal" />
 <xsl:text>.</xsl:text>
 </p>
 </xsl:if>
-
-
-		  <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@caseN)='yes'">
+	      
+	      
+	      <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@caseN)='yes'">
 <p>
 <xsl:text>  En </xsl:text>
 <xsl:choose>
@@ -763,40 +763,40 @@
 </xsl:choose>
 <xsl:text>, los sustantivos y posiblements sus modificadores en las frases nominales se indican el caso así como los pronombres. </xsl:text>
 <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//np/@caseDefault)='nominative' or normalize-space(//typology/@case)='split' and normalize-space(//np/@caseDefault)='nominative'">
-			 <xsl:text>  El caso nominativo es un caso predeterminado (no indicado). </xsl:text>
-		  </xsl:if>
+	         <xsl:text>  El caso nominativo es un caso predeterminado (no indicado). </xsl:text>
+	      </xsl:if>
 <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='yes'">
-
-				<xsl:text>El indicador de caso se escriba como una palabra independiente y se presenta </xsl:text>
-				<xsl:choose>
-				   <xsl:when test="//np/@caseWordPos='before'">antes</xsl:when>
-				   <xsl:when test="//np/@caseWordPos='after'">después</xsl:when>
-				   <xsl:when test="//np/@caseWordPos='either'">de cualquier lado</xsl:when>
-				   <xsl:when test="//np/@caseWordPos='unknown'">________</xsl:when>
-				</xsl:choose>
-				<xsl:text> del resto de la frase nominal.  </xsl:text>
-				<xsl:if test="normalize-space(//np/@caseWordEither)='unrestricted'">
-				   <xsl:text>Todos los indicadores de caso pueden presentarse de cualquier lado de la frase nominal. </xsl:text>
-				</xsl:if>
-				<xsl:text></xsl:text>
-				<xsl:if test="normalize-space(//np/@caseWordEither)='restricted'">
-				   <xsl:text>Hay restricciones en cuanto a cuáles de los indicadores de caso pueden presentarse en cualquier lado de la frase nominal. </xsl:text>
-				</xsl:if>
-
-			 </xsl:if>
+	            
+	            <xsl:text>El indicador de caso se escriba como una palabra independiente y se presenta </xsl:text>
+	            <xsl:choose>
+	               <xsl:when test="//np/@caseWordPos='before'">antes</xsl:when>
+	               <xsl:when test="//np/@caseWordPos='after'">después</xsl:when>
+	               <xsl:when test="//np/@caseWordPos='either'">de cualquier lado</xsl:when>
+	               <xsl:when test="//np/@caseWordPos='unknown'">________</xsl:when>
+	            </xsl:choose>
+	            <xsl:text> del resto de la frase nominal.  </xsl:text>
+	            <xsl:if test="normalize-space(//np/@caseWordEither)='unrestricted'">
+	               <xsl:text>Todos los indicadores de caso pueden presentarse de cualquier lado de la frase nominal. </xsl:text>
+	            </xsl:if>
+	            <xsl:text></xsl:text>
+	            <xsl:if test="normalize-space(//np/@caseWordEither)='restricted'">
+	               <xsl:text>Hay restricciones en cuanto a cuáles de los indicadores de caso pueden presentarse en cualquier lado de la frase nominal. </xsl:text>
+	            </xsl:if>
+	            
+	         </xsl:if>
 <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@caseN)='yes' and normalize-space(//np/@caseWord)='no'">  <xsl:text></xsl:text>
-				<xsl:choose>
-				   <xsl:when test="//np/@caseCliticPos='before'">Los indicadores de caso se unen al principio de la palabra inicial en la frase nominal.</xsl:when>
-				   <xsl:when test="//np/@caseCliticPos='after'">Los indicadores de caso se unen al final de la palabra final en la frase nominal.</xsl:when>
-				   <xsl:when test="//np/@caseCliticPos='either'">Algunos de los indicadores de caso se unen al principio de la palabra inicial y algunos se unen al final de la palabra final en la frase nominal.</xsl:when>
-				   <xsl:when test="//np/@caseCliticPos='prefixN'">Los indicadores de case son prefijos que se unen al sustantivo principal.</xsl:when>
-				   <xsl:when test="//np/@caseCliticPos='suffixN'">Los indicadores de case son sufijos que se unen al sustantivo principal.</xsl:when>
-				   <xsl:when test="//np/@caseCliticPos='eitherN'">Algunos de los indicadores de caso son prefijos y algunos son sufijos que se unen al sustantivo principal.</xsl:when>
-				</xsl:choose>
-			 </xsl:if>
+	            <xsl:choose>
+	               <xsl:when test="//np/@caseCliticPos='before'">Los indicadores de caso se unen al principio de la palabra inicial en la frase nominal.</xsl:when>
+	               <xsl:when test="//np/@caseCliticPos='after'">Los indicadores de caso se unen al final de la palabra final en la frase nominal.</xsl:when>
+	               <xsl:when test="//np/@caseCliticPos='either'">Algunos de los indicadores de caso se unen al principio de la palabra inicial y algunos se unen al final de la palabra final en la frase nominal.</xsl:when>
+	               <xsl:when test="//np/@caseCliticPos='prefixN'">Los indicadores de case son prefijos que se unen al sustantivo principal.</xsl:when>
+	               <xsl:when test="//np/@caseCliticPos='suffixN'">Los indicadores de case son sufijos que se unen al sustantivo principal.</xsl:when>
+	               <xsl:when test="//np/@caseCliticPos='eitherN'">Algunos de los indicadores de caso son prefijos y algunos son sufijos que se unen al sustantivo principal.</xsl:when>
+	            </xsl:choose>
+	         </xsl:if>
 </p>
 </xsl:if>
-		  <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@caseN)='yes'">
+	      <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@caseN)='yes'">
 <p>
 <xsl:text>Los indicadores de caso que se utilizan con sustantivos o frases nominales en </xsl:text>
 <xsl:choose>
@@ -810,15 +810,15 @@
 <xsl:text> se muestran en el cuadro siguiente.</xsl:text>
 </p>
 </xsl:if>
-		  <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@caseN)='yes'">
+	      <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@caseN)='yes'">
 <example num="xCase">
 <table border="1">
-				<caption>
-				   <xsl:text>Indicadores de caso</xsl:text>
-				</caption>
-				<tr>
-				   <th>
-					  <xsl:choose>
+	            <caption>
+	               <xsl:text>Indicadores de caso</xsl:text>
+	            </caption>
+	            <tr>
+	               <th>
+	                  <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
@@ -826,11 +826,11 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-				   </th>
-				   <th>Caso</th>
-				   <th>Uso</th>
-				</tr>
-				<xsl:if test="normalize-space(//typology/@case)='nominative' or normalize-space(//typology/@case)='split'">
+	               </th>
+	               <th>Caso</th>
+	               <th>Uso</th>
+	            </tr>
+	            <xsl:if test="normalize-space(//typology/@case)='nominative' or normalize-space(//typology/@case)='split'">
 <xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//np/nominative),'.','')" />
 </xsl:variable>
@@ -854,11 +854,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>nominativo</xsl:text>
-				   </td>
+	                  <xsl:text>nominativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>sujetos</xsl:text>
-				   </td>
+	                  <xsl:text>sujetos</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -871,16 +871,16 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>nominativo</xsl:text>
-				   </td>
+	                  <xsl:text>nominativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>sujetos</xsl:text>
-				   </td>
+	                  <xsl:text>sujetos</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				<xsl:if test="normalize-space(//typology/@case)='nominative' or normalize-space(//typology/@case)='split'">
+	            <xsl:if test="normalize-space(//typology/@case)='nominative' or normalize-space(//typology/@case)='split'">
 <xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//np/accusative),'.','')" />
 </xsl:variable>
@@ -904,11 +904,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>accusativo</xsl:text>
-				   </td>
+	                  <xsl:text>accusativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>objetos directos y otros usos</xsl:text>
-				   </td>
+	                  <xsl:text>objetos directos y otros usos</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -921,16 +921,16 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>accusativo</xsl:text>
-				   </td>
+	                  <xsl:text>accusativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>objetos directos y otros usos</xsl:text>
-				   </td>
+	                  <xsl:text>objetos directos y otros usos</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				<xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@possCaseErg)!='ergative' or normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)!='ergative'">
+	            <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@possCaseErg)!='ergative' or normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)!='ergative'">
 <xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//np/ergative),'.','')" />
 </xsl:variable>
@@ -954,11 +954,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>ergativo</xsl:text>
-				   </td>
+	                  <xsl:text>ergativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>sujetos de verbos transitivos</xsl:text>
-				   </td>
+	                  <xsl:text>sujetos de verbos transitivos</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -971,16 +971,16 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>ergativo</xsl:text>
-				   </td>
+	                  <xsl:text>ergativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>sujetos de verbos transitivos</xsl:text>
-				   </td>
+	                  <xsl:text>sujetos de verbos transitivos</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				<xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@possCaseErg)='ergative' or normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)='ergative'">
+	            <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@possCaseErg)='ergative' or normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)='ergative'">
 <xsl:variable name="sExampleValue3">
 <xsl:value-of select="translate(string(//np/ergative),'.','')" />
 </xsl:variable>
@@ -1004,11 +1004,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>ergativo</xsl:text>
-				   </td>
+	                  <xsl:text>ergativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>sujetos de verbos transitivos y poseedores</xsl:text>
-				   </td>
+	                  <xsl:text>sujetos de verbos transitivos y poseedores</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1021,16 +1021,16 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>ergativo</xsl:text>
-				   </td>
+	                  <xsl:text>ergativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>sujetos de verbos transitivos y poseedores</xsl:text>
-				   </td>
+	                  <xsl:text>sujetos de verbos transitivos y poseedores</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				<xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@possCaseErg)!='absolutive' or normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)!='absolutive'">
+	            <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@possCaseErg)!='absolutive' or normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)!='absolutive'">
 <xsl:variable name="sExampleValue4">
 <xsl:value-of select="translate(string(//np/absolutive),'.','')" />
 </xsl:variable>
@@ -1054,11 +1054,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>absolutivo</xsl:text>
-				   </td>
+	                  <xsl:text>absolutivo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>sujetos de verbos intransitivos y objetos de verbos transitivos</xsl:text>
-				   </td>
+	                  <xsl:text>sujetos de verbos intransitivos y objetos de verbos transitivos</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1071,16 +1071,16 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>absolutivo</xsl:text>
-				   </td>
+	                  <xsl:text>absolutivo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>sujetos de verbos intransitivos y objetos de verbos transitivos</xsl:text>
-				   </td>
+	                  <xsl:text>sujetos de verbos intransitivos y objetos de verbos transitivos</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				<xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@possCaseErg)='absolutive' or normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)='absolutive'">
+	            <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//np/@possCaseErg)='absolutive' or normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)='absolutive'">
 <xsl:variable name="sExampleValue5">
 <xsl:value-of select="translate(string(//np/absolutive),'.','')" />
 </xsl:variable>
@@ -1104,11 +1104,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>absolutivo</xsl:text>
-				   </td>
+	                  <xsl:text>absolutivo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>sujetos de verbos intransitivos y objetos de verbos transitivos y poseedores</xsl:text>
-				   </td>
+	                  <xsl:text>sujetos de verbos intransitivos y objetos de verbos transitivos y poseedores</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1121,16 +1121,16 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>absolutivo</xsl:text>
-				   </td>
+	                  <xsl:text>absolutivo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>sujetos de verbos intransitivos y objetos de verbos transitivos y poseedores</xsl:text>
-				   </td>
+	                  <xsl:text>sujetos de verbos intransitivos y objetos de verbos transitivos y poseedores</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				<xsl:if test="normalize-space(//typology/@case)='nominative' or normalize-space(//typology/@case)='split' or normalize-space(//typology/@case)='ergative' and normalize-space(//np/@possCaseErg)='genitive'">
+	            <xsl:if test="normalize-space(//typology/@case)='nominative' or normalize-space(//typology/@case)='split' or normalize-space(//typology/@case)='ergative' and normalize-space(//np/@possCaseErg)='genitive'">
 <xsl:variable name="sExampleValue6">
 <xsl:value-of select="translate(string(//np/genitive),'.','')" />
 </xsl:variable>
@@ -1154,11 +1154,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>genitivo</xsl:text>
-				   </td>
+	                  <xsl:text>genitivo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>poseedores</xsl:text>
-				   </td>
+	                  <xsl:text>poseedores</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1171,16 +1171,16 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>genitivo</xsl:text>
-				   </td>
+	                  <xsl:text>genitivo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>poseedores</xsl:text>
-				   </td>
+	                  <xsl:text>poseedores</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				<xsl:if test="normalize-space(//typology/@caseExperiencer)='no'">
+	            <xsl:if test="normalize-space(//typology/@caseExperiencer)='no'">
 <xsl:variable name="sExampleValue7">
 <xsl:value-of select="translate(string(//np/dative),'.','')" />
 </xsl:variable>
@@ -1204,11 +1204,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>dativo</xsl:text>
-				   </td>
+	                  <xsl:text>dativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>objetos indirectos</xsl:text>
-				   </td>
+	                  <xsl:text>objetos indirectos</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1221,16 +1221,16 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>dativo</xsl:text>
-				   </td>
+	                  <xsl:text>dativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>objetos indirectos</xsl:text>
-				   </td>
+	                  <xsl:text>objetos indirectos</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				<xsl:if test="normalize-space(//typology/@caseExperiencer)!='no'">
+	            <xsl:if test="normalize-space(//typology/@caseExperiencer)!='no'">
 <xsl:variable name="sExampleValue8">
 <xsl:value-of select="translate(string(//np/dative),'.','')" />
 </xsl:variable>
@@ -1254,11 +1254,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>dativo</xsl:text>
-				   </td>
+	                  <xsl:text>dativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>objetos indirectos y sujetos-experimentadores</xsl:text>
-				   </td>
+	                  <xsl:text>objetos indirectos y sujetos-experimentadores</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1271,16 +1271,16 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>dativo</xsl:text>
-				   </td>
+	                  <xsl:text>dativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>objetos indirectos y sujetos-experimentadores</xsl:text>
-				   </td>
+	                  <xsl:text>objetos indirectos y sujetos-experimentadores</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				<xsl:variable name="sExampleValue9">
+	            <xsl:variable name="sExampleValue9">
 <xsl:value-of select="translate(string(//np/ablative),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength9" select="string-length(normalize-space($sExampleValue9))" />
@@ -1303,11 +1303,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>ablativo</xsl:text>
-				   </td>
+	                  <xsl:text>ablativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>fuentes o origen</xsl:text>
-				   </td>
+	                  <xsl:text>fuentes o origen</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1320,15 +1320,15 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>ablativo</xsl:text>
-				   </td>
+	                  <xsl:text>ablativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>fuentes o origen</xsl:text>
-				   </td>
+	                  <xsl:text>fuentes o origen</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-				<xsl:variable name="sExampleValue10">
+	            <xsl:variable name="sExampleValue10">
 <xsl:value-of select="translate(string(//np/instrumental),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength10" select="string-length(normalize-space($sExampleValue10))" />
@@ -1351,11 +1351,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>instrumento</xsl:text>
-				   </td>
+	                  <xsl:text>instrumento</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>medios o instrumentos</xsl:text>
-				   </td>
+	                  <xsl:text>medios o instrumentos</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1368,15 +1368,15 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>instrumento</xsl:text>
-				   </td>
+	                  <xsl:text>instrumento</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>medios o instrumentos</xsl:text>
-				   </td>
+	                  <xsl:text>medios o instrumentos</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-				<xsl:variable name="sExampleValue11">
+	            <xsl:variable name="sExampleValue11">
 <xsl:value-of select="translate(string(//np/locative),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength11" select="string-length(normalize-space($sExampleValue11))" />
@@ -1399,11 +1399,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>locativo</xsl:text>
-				   </td>
+	                  <xsl:text>locativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>localizaciones</xsl:text>
-				   </td>
+	                  <xsl:text>localizaciones</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1416,15 +1416,15 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>locativo</xsl:text>
-				   </td>
+	                  <xsl:text>locativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>localizaciones</xsl:text>
-				   </td>
+	                  <xsl:text>localizaciones</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-				<xsl:variable name="sExampleValue12">
+	            <xsl:variable name="sExampleValue12">
 <xsl:value-of select="translate(string(//np/vocative),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength12" select="string-length(normalize-space($sExampleValue12))" />
@@ -1447,11 +1447,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>vocativo</xsl:text>
-				   </td>
+	                  <xsl:text>vocativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>discursos directos</xsl:text>
-				   </td>
+	                  <xsl:text>discursos directos</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1464,15 +1464,15 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>vocativo</xsl:text>
-				   </td>
+	                  <xsl:text>vocativo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>discursos directos</xsl:text>
-				   </td>
+	                  <xsl:text>discursos directos</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-				<xsl:variable name="sExampleValue13">
+	            <xsl:variable name="sExampleValue13">
 <xsl:value-of select="translate(string(//np/oblique),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength13" select="string-length(normalize-space($sExampleValue13))" />
@@ -1495,11 +1495,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>oblicuo</xsl:text>
-				   </td>
+	                  <xsl:text>oblicuo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>relaciones gramaticales de menor importancia en general</xsl:text>
-				   </td>
+	                  <xsl:text>relaciones gramaticales de menor importancia en general</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1512,15 +1512,15 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>oblicuo</xsl:text>
-				   </td>
+	                  <xsl:text>oblicuo</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>relaciones gramaticales de menor importancia en general</xsl:text>
-				   </td>
+	                  <xsl:text>relaciones gramaticales de menor importancia en general</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-				<xsl:variable name="sExampleValue14">
+	            <xsl:variable name="sExampleValue14">
 <xsl:value-of select="translate(string(//np/other),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength14" select="string-length(normalize-space($sExampleValue14))" />
@@ -1543,11 +1543,11 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-					  <xsl:text>otro</xsl:text>
-				   </td>
+	                  <xsl:text>otro</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>cualquier otro indicador específico</xsl:text>
-				   </td>
+	                  <xsl:text>cualquier otro indicador específico</xsl:text>
+	               </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -1560,19 +1560,19 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-					  <xsl:text>otro</xsl:text>
-				   </td>
+	                  <xsl:text>otro</xsl:text>
+	               </td>
 <td align="left">
-					  <xsl:text>cualquier otro indicador específico</xsl:text>
-				   </td>
+	                  <xsl:text>cualquier otro indicador específico</xsl:text>
+	               </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-			 </table>
+	         </table>
 </example>
-</xsl:if>
+</xsl:if>	      
 	   </section2>
-
+	   
 		<section2 id="sNPoss">
 			<secTitle>Poseedores</secTitle>
 			<p>
@@ -1778,7 +1778,7 @@
 </p>
 </xsl:if>
 			</section3>
-
+			
 			<section3 id="sNPPossAgreement">
 				<secTitle>Concordancia del poseedor</secTitle>
 				<p>
@@ -2074,7 +2074,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>de</langData>
-<xsl:text> en esta situación, muchos otras lenguas son al igual que inglés y tienen modificadores del sustantivo.
+<xsl:text> en esta situación, muchos otras lenguas son al igual que inglés y tienen modificadores del sustantivo.  
 					Pareciera que todos los sustantivos también se pueden utilizar al igual que adjetivos, pero un estudio más detallada revela que los adjetivos verdaderos se presentan antes del modificador del sustantivo, como en </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -2200,338 +2200,338 @@
 
 	</section1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+
+	
+		
+		
+		
+	
+	
+		
+		
+		
+		
+		
+	
+	
+		
+		
+		
+		
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+		 
+		
+	
+	
+		
+		
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+	
+	
+		
+	
+	
+	
+	
+		
+		
+		
+	
+	
+	
+		
+		
+		
+	
+		
+		
+	
+	
+		
+		
+		
+
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+	
+	
+		
+	
+   
+      
+      
+      
+   
+   
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+   
+   
+      
+      
+      
+   
+   
 </xsl:template>
 </xsl:stylesheet>

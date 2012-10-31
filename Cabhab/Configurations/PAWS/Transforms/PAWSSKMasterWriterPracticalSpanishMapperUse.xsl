@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:import href="PAWSSKMasterWriterMapperCommon.xsl"/>
 	<xsl:import href="PAWSSKMasterWriterPracticalSpanishMapperOverrides.xsl"/>
-	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="C:/carla/Dev/Cabhab/Configurations/PAWS/Transforms/XLingPap.dtd"/>
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="C:/carlarepo/CarlaLegacy/Cabhab/Configurations/PAWS/Transforms/XLingPap.dtd"/>
 
 	<!--
 		================================================================
@@ -49,7 +49,10 @@
 			<xsl:apply-templates select="/" mode="comp"/>
 			<xsl:apply-templates select="/" mode="advcl"/>
 			<xsl:apply-templates select="/" mode="relcl"/>
-			<xsl:call-template name="OutputCommonBackmatterLanguagesAndTypes"/>
+			<xsl:call-template name="OutputCommonBackmatterLanguagesAndTypes">
+				<xsl:with-param name="sEndnoteLabel" select="'Notas'"/>
+				<xsl:with-param name="sReferencesLabel" select="'Referéncias'"/>
+			</xsl:call-template>
 		</lingPaper>
 	</xsl:template>
 	<!--

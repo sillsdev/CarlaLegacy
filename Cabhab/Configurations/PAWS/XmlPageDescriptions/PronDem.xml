@@ -2,153 +2,154 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="PronDem" count="5/9">
-	<title level="2">Pronouns - Demonstrative Pronouns</title>
-	<introduction>Most languages have demonstrative pronouns that are related either to the demonstratives that modify a noun or to the locative adverbials.  The demonstrative pronouns specify the distance from the speaker and may have singular and plural forms.  English examples are <example>this, that, these</example> and <example>those</example>, which are identical to the demonstratives which modify a noun.  Demonstrative pronouns stand alone as the subject or object of a sentence, as in:
-	</introduction>
-	<EnglishExample>
-		<exItem label="1.">Those are the books I asked for.</exItem>
-		<exItem label="2.">Julie choose those.</exItem>
-		<exItem label="3.">This is it.</exItem>
-		<exItem label="4.">We like that.</exItem>
-	</EnglishExample>
-	<introduction>As seen in the examples above, English only has a single set of demonstratives to use in both subject and object position.  Some languages have distinct sets of demonstrative pronouns based on their case system.</introduction>
-	<form section="pron">
-		<prompt>Think about how your language would express examples similar to those given for English above, looking especially at the forms of the demonstrative pronouns that can appear in each position in the sentence.</prompt>
+    <title level="2">Pronouns - Demonstrative Pronouns</title>
+    <introduction>Most languages have demonstrative pronouns that are related either to the demonstratives that modify a noun or to the locative adverbials.  The demonstrative pronouns specify the distance from the speaker and may have singular and plural forms.  English examples are <example>this, that, these</example> and <example>those</example>, which are identical to the demonstratives which modify a noun.  Demonstrative pronouns stand alone as the subject or object of a sentence, as in:
+    </introduction>
+    <EnglishExample>
+        <exItem label="1.">Those are the books I asked for.</exItem>
+        <exItem label="2.">Julie choose those.</exItem>
+        <exItem label="3.">This is it.</exItem>
+        <exItem label="4.">We like that.</exItem>
+    </EnglishExample>
+    <introduction>As seen in the examples above, English only has a single set of demonstratives to use in both subject and object position.  Some languages have distinct sets of demonstrative pronouns based on their case system.</introduction>
+    <form section="pron">
+        <prompt>Think about how your language would express examples similar to those given for English above, looking especially at the forms of the demonstrative pronouns that can appear in each position in the sentence.</prompt>
  <radioGroup>
-	 <groupName dataItem="demCase" default="no">RPronDemCase</groupName>
-	 <prompt>Does your language have different forms for the demonstrative pronouns when they are acting as subjects versus objects?</prompt>
-	 <radio id="PronDemCaseNo" dataValue="no">No, like English, the same forms can be used in either position</radio>
-	 <radio id="PronDemCaseYes" dataValue="yes">Yes, there are separate sets of demonstratives for the different positions based on case</radio>
+     <groupName dataItem="demCase" default="no">RPronDemCase</groupName>
+     <prompt>Does your language have different forms for the demonstrative pronouns when they are acting as subjects versus objects?</prompt>
+     <radio id="PronDemCaseNo" dataValue="no">No, like English, the same forms can be used in either position</radio>
+     <radio id="PronDemCaseYes" dataValue="yes">Yes, there are separate sets of demonstratives for the different positions based on case</radio>
  </radioGroup>
  <br/>
-   <prompt id="PronDemProximalCaseNo" show="swPronDemCaseNo">Key the demonstrative pronouns that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemProximalCaseNoExample" dataItem="demProximalExample" rows="3" show="swPronDemCaseNo"/>
-		<prompt id="PronDemMedialCaseNo" show="swPronDemCaseNo">Key the demonstrative pronouns that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemMedialCaseNoExample" dataItem="demMedialExample" rows="3" show="swPronDemCaseNo"/>
-		<prompt id="PronDemDistalCaseNo" show="swPronDemCaseNo">Key the demonstrative pronouns that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemDistalCaseNoExample" dataItem="demDistalExample" rows="3" show="swPronDemCaseNo"/>
-
-		<prompt id="PronDemProximalCaseNone" show="swPronDemCaseNone">Since your language does not distinguish case, you should have only a single set of demonstrative pronouns that can be used in any position in the sentence.<br/><br/>
-			Key the demonstrative pronouns that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemProximalCaseNoneExample" dataItem="demProximalExample" rows="3" show="swPronDemCaseNone"/>
-		<prompt id="PronDemMedialCaseNone" show="swPronDemCaseNone">Key the demonstrative pronouns that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemMedialCaseNoneExample" dataItem="demMedialExample" rows="3" show="swPronDemCaseNone"/>
-		<prompt id="PronDemDistalCaseNone" show="swPronDemCaseNone">Key the demonstrative pronouns that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemDistalCaseNoneExample" dataItem="demDistalExample" rows="3" show="swPronDemCaseNone"/>
-
-		<prompt id="PronDemProximalCaseNom" show="swPronDemCaseNom">Since your language has a nominative-accusative case system, you should have distinct sets of demonstrative pronouns that can be used as subjects and objects.<br/><br/>
-			Key the demonstrative pronouns which can appear as subjects that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemProximalCaseNomExample" dataItem="demProximalNomExample" rows="3" show="swPronDemCaseNom"/>
-		<prompt id="PronDemProximalCaseAcc" show="swPronDemCaseNom">Key the demonstrative pronouns which can appear as objects that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemProximalCaseAccExample" dataItem="demProximalAccExample" rows="3" show="swPronDemCaseNom"/>
-		<prompt id="PronDemMedialCaseNom" show="swPronDemCaseNom">Key the demonstrative pronouns which can appear as subjects that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemMedialCaseNomExample" dataItem="demMedialNomExample" rows="3" show="swPronDemCaseNom"/>
-		<prompt id="PronDemMedialCaseAcc" show="swPronDemCaseNom">Key the demonstrative pronouns which can appear as objects that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemMedialCaseAccExample" dataItem="demMedialAccExample" rows="3" show="swPronDemCaseNom"/>
-		<prompt id="PronDemDistalCaseNom" show="swPronDemCaseNom">Key the demonstrative pronouns which can appear as subjects that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemDistalCaseNomExample" dataItem="demDistalNomExample" rows="3" show="swPronDemCaseNom"/>
-		<prompt id="PronDemDistalCaseAcc" show="swPronDemCaseNom">Key the demonstrative pronouns which can appear as objects that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemDistalCaseAccExample" dataItem="demDistalAccExample" rows="3" show="swPronDemCaseNom"/>
-		<instruction id="PronDemCaseNomInstruction" show="swPronDemCaseNom">
-			<br/>In the lexicon:
+   <prompt id="PronDemProximalCaseNo" show="swPronDemCaseNo">Key the demonstrative pronouns that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt> 
+        <prompt id="PronDemProximalCaseNone" show="swPronDemCaseNone">Since your language does not distinguish case, you should have only a single set of demonstrative pronouns that can be used in any position in the sentence.<br/><br/>
+            Key the demonstrative pronouns that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemProximalCaseNoExample" dataItem="demProximalExample" rows="3" show="swPronDemCaseNoOrNone"/>
+        <prompt id="PronDemMedialCaseNo" show="swPronDemCaseNoOrNone">Key the demonstrative pronouns that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemMedialCaseNoExample" dataItem="demMedialExample" rows="3" show="swPronDemCaseNoOrNone"/>
+        <prompt id="PronDemDistalCaseNo" show="swPronDemCaseNoOrNone">Key the demonstrative pronouns that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemDistalCaseNoExample" dataItem="demDistalExample" rows="3" show="swPronDemCaseNoOrNone"/>
+        
+        <prompt id="PronDemProximalCaseNom" show="swPronDemCaseNom">Since your language has a nominative-accusative case system, you should have distinct sets of demonstrative pronouns that can be used as subjects and objects.<br/><br/>
+            Key the demonstrative pronouns which can appear as subjects that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemProximalCaseNomExample" dataItem="demProximalNomExample" rows="3" show="swPronDemCaseNom"/>
+        <prompt id="PronDemProximalCaseAcc" show="swPronDemCaseNom">Key the demonstrative pronouns which can appear as objects that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemProximalCaseAccExample" dataItem="demProximalAccExample" rows="3" show="swPronDemCaseNom"/>
+        <prompt id="PronDemMedialCaseNom" show="swPronDemCaseNom">Key the demonstrative pronouns which can appear as subjects that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemMedialCaseNomExample" dataItem="demMedialNomExample" rows="3" show="swPronDemCaseNom"/>
+        <prompt id="PronDemMedialCaseAcc" show="swPronDemCaseNom">Key the demonstrative pronouns which can appear as objects that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemMedialCaseAccExample" dataItem="demMedialAccExample" rows="3" show="swPronDemCaseNom"/>
+        <prompt id="PronDemDistalCaseNom" show="swPronDemCaseNom">Key the demonstrative pronouns which can appear as subjects that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemDistalCaseNomExample" dataItem="demDistalNomExample" rows="3" show="swPronDemCaseNom"/>
+        <prompt id="PronDemDistalCaseAcc" show="swPronDemCaseNom">Key the demonstrative pronouns which can appear as objects that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemDistalCaseAccExample" dataItem="demDistalAccExample" rows="3" show="swPronDemCaseNom"/>
+        <instruction id="PronDemCaseNomInstruction" show="swPronDemCaseNom">
+            <br/>In the lexicon:
 <ul>
-				<li>Add the feature <feature>nominative</feature> to all the demonstrative pronouns that occur as subjects.</li>
-				<li>Add the feature <feature>accusative</feature> to all the demonstrative pronouns that occur as objects.</li>
-				<li>If a particular demonstrative pronoun can show up in any position, do not add any feature.</li>
-			</ul>
-		</instruction>
-
-		<prompt id="PronDemProximalCaseErg" show="swPronDemCaseErg">Since your language has an ergative-absolutive case system, you should have distinct sets of demonstrative pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.<br/><br/>
-			Key the demonstrative pronouns which can appear as subjects of transitive verbs that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemProximalCaseErgExample" dataItem="demProximalErgExample" rows="3" show="swPronDemCaseErg"/>
-		<prompt id="PronDemProximalCaseAbs" show="swPronDemCaseErg">Key the demonstrative pronouns which can appear as subjects of intransitive verbs or as objects of transitive verbs that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemProximalCaseAbsExample" dataItem="demProximalAbsExample" rows="3" show="swPronDemCaseErg"/>
-		<prompt id="PronDemMedialCaseErg" show="swPronDemCaseErg">Key the demonstrative pronouns which can appear as subjects of transitive verbs that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemMedialCaseErgExample" dataItem="demMedialErgExample" rows="3" show="swPronDemCaseErg"/>
-		<prompt id="PronDemMedialCaseAbs" show="swPronDemCaseErg">Key the demonstrative pronouns which can appear as subjects of intransitive verbs or as objects of transitive verbs that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemMedialCaseAbsExample" dataItem="demMedialAbsExample" rows="3" show="swPronDemCaseErg"/>
-		<prompt id="PronDemDistalCaseErg" show="swPronDemCaseErg">Key the demonstrative pronouns which can appear as subjects of transitive verbs that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemDistalCaseErgExample" dataItem="demDistalErgExample" rows="3" show="swPronDemCaseErg"/>
-		<prompt id="PronDemDistalCaseAbs" show="swPronDemCaseErg">Key the demonstrative pronouns which can appear as subjects of intransitive verbs or as objects of transitive verbs that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemDistalCaseAbsExample" dataItem="demDistalAbsExample" rows="3" show="swPronDemCaseErg"/>
-		<instruction id="PronDemCaseErgInstruction" show="swPronDemCaseErg">
-			<br/>In the lexicon:
+                <li>Add the feature <feature>nominative</feature> to all the demonstrative pronouns that occur as subjects.</li>
+                <li>Add the feature <feature>accusative</feature> to all the demonstrative pronouns that occur as objects.</li>
+                <li>If a particular demonstrative pronoun can show up in any position, do not add any feature.</li>
+            </ul>
+        </instruction>
+        
+        <prompt id="PronDemProximalCaseErg" show="swPronDemCaseErg">Since your language has an ergative-absolutive case system, you should have distinct sets of demonstrative pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.<br/><br/>
+            Key the demonstrative pronouns which can appear as subjects of transitive verbs that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemProximalCaseErgExample" dataItem="demProximalErgExample" rows="3" show="swPronDemCaseErg"/>
+        <prompt id="PronDemProximalCaseAbs" show="swPronDemCaseErg">Key the demonstrative pronouns which can appear as subjects of intransitive verbs or as objects of transitive verbs that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemProximalCaseAbsExample" dataItem="demProximalAbsExample" rows="3" show="swPronDemCaseErg"/>
+        <prompt id="PronDemMedialCaseErg" show="swPronDemCaseErg">Key the demonstrative pronouns which can appear as subjects of transitive verbs that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemMedialCaseErgExample" dataItem="demMedialErgExample" rows="3" show="swPronDemCaseErg"/>
+        <prompt id="PronDemMedialCaseAbs" show="swPronDemCaseErg">Key the demonstrative pronouns which can appear as subjects of intransitive verbs or as objects of transitive verbs that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemMedialCaseAbsExample" dataItem="demMedialAbsExample" rows="3" show="swPronDemCaseErg"/>
+        <prompt id="PronDemDistalCaseErg" show="swPronDemCaseErg">Key the demonstrative pronouns which can appear as subjects of transitive verbs that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemDistalCaseErgExample" dataItem="demDistalErgExample" rows="3" show="swPronDemCaseErg"/>
+        <prompt id="PronDemDistalCaseAbs" show="swPronDemCaseErg">Key the demonstrative pronouns which can appear as subjects of intransitive verbs or as objects of transitive verbs that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemDistalCaseAbsExample" dataItem="demDistalAbsExample" rows="3" show="swPronDemCaseErg"/>
+        <instruction id="PronDemCaseErgInstruction" show="swPronDemCaseErg">
+            <br/>In the lexicon:
 <ul>
-				<li>Add the feature <feature>ergative</feature> to all the demonstrative pronouns that occur as subjects of transitive verbs.</li>
-				<li>Add the feature <feature>absolutive</feature> to all the demonstrative pronouns that occur as objects of transitive verbs and as subjects of intransitive verbs.</li>
-				<li>If a particular demonstrative pronoun can show up in any position, do not add any feature.</li>
-			</ul>
-		</instruction>
+                <li>Add the feature <feature>ergative</feature> to all the demonstrative pronouns that occur as subjects of transitive verbs.</li>
+                <li>Add the feature <feature>absolutive</feature> to all the demonstrative pronouns that occur as objects of transitive verbs and as subjects of intransitive verbs.</li>
+                <li>If a particular demonstrative pronoun can show up in any position, do not add any feature.</li>
+            </ul>
+        </instruction>
+        
+        <prompt id="PronDemProximalCaseSplitNom" show="swPronDemCaseSplit">Since your language has a split case system, you should have distinct sets of demonstrative pronouns that are normally used as subjects and objects, plus some special sets which are used in the split ergativity cases.<br/><br/>
+            Key the demonstrative pronouns which normally appear as subjects that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemProximalCaseSplitNomExample" dataItem="demProximalNomExample" rows="3" show="swPronDemCaseSplit"/>
+        <prompt id="PronDemProximalCaseSplitAcc" show="swPronDemCaseSplit">Key the demonstrative pronouns which normally appear as objects that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemProximalCaseSplitAccExample" dataItem="demProximalAccExample" rows="3" show="swPronDemCaseSplit"/>
+        <prompt id="PronDemMedialCaseSplitNom" show="swPronDemCaseSplit">Key the demonstrative pronouns which normally appear as subjects that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemMedialCaseSplitNomExample" dataItem="demMedialNomExample" rows="3" show="swPronDemCaseSplit"/>
+        <prompt id="PronDemMedialCaseSplitAcc" show="swPronDemCaseSplit">Key the demonstrative pronouns which normally appear as objects that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemMedialCaseSplitAccExample" dataItem="demMedialAccExample" rows="3" show="swPronDemCaseSplit"/>
+        <prompt id="PronDemDistalCaseSplitNom" show="swPronDemCaseSplit">Key the demonstrative pronouns which normally appear as subjects that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemDistalCaseSplitNomExample" dataItem="demDistalNomExample" rows="3" show="swPronDemCaseSplit"/>
+        <prompt id="PronDemDistalCaseSplitAcc" show="swPronDemCaseSplit">Key the demonstrative pronouns which normally appear as objects that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemDistalCaseSplitAccExample" dataItem="demDistalAccExample" rows="3" show="swPronDemCaseSplit"/>
 
-		<prompt id="PronDemProximalCaseSplitNom" show="swPronDemCaseSplit">Since your language has a split case system, you should have distinct sets of demonstrative pronouns that are normally used as subjects and objects, plus some special sets which are used in the split ergativity cases.<br/><br/>
-			Key the demonstrative pronouns which normally appear as subjects that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemProximalCaseSplitNomExample" dataItem="demProximalNomExample" rows="3" show="swPronDemCaseSplit"/>
-		<prompt id="PronDemProximalCaseSplitAcc" show="swPronDemCaseSplit">Key the demonstrative pronouns which normally appear as objects that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemProximalCaseSplitAccExample" dataItem="demProximalAccExample" rows="3" show="swPronDemCaseSplit"/>
-		<prompt id="PronDemMedialCaseSplitNom" show="swPronDemCaseSplit">Key the demonstrative pronouns which normally appear as subjects that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemMedialCaseSplitNomExample" dataItem="demMedialNomExample" rows="3" show="swPronDemCaseSplit"/>
-		<prompt id="PronDemMedialCaseSplitAcc" show="swPronDemCaseSplit">Key the demonstrative pronouns which normally appear as objects that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemMedialCaseSplitAccExample" dataItem="demMedialAccExample" rows="3" show="swPronDemCaseSplit"/>
-		<prompt id="PronDemDistalCaseSplitNom" show="swPronDemCaseSplit">Key the demonstrative pronouns which normally appear as subjects that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemDistalCaseSplitNomExample" dataItem="demDistalNomExample" rows="3" show="swPronDemCaseSplit"/>
-		<prompt id="PronDemDistalCaseSplitAcc" show="swPronDemCaseSplit">Key the demonstrative pronouns which normally appear as objects that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemDistalCaseSplitAccExample" dataItem="demDistalAccExample" rows="3" show="swPronDemCaseSplit"/>
-
-		<prompt id="PronDemProximalCaseSplitErg" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear as subjects of transitive verbs in the special cases of split ergativity that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemProximalCaseSplitErgExample" dataItem="demProximalErgExample" rows="3" show="swPronDemCaseSplit"/>
-		<prompt id="PronDemProximalCaseSplitAbs" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear in as subjects of intransitive verbs or as objects of transitive verbs in the special cases of split ergativity that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemProximalCaseSplitAbsExample" dataItem="demProximalAbsExample" rows="3" show="swPronDemCaseSplit"/>
-		<prompt id="PronDemMedialCaseSplitErg" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear as subjects of transitive verbs in the special cases of split ergativity that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemMedialCaseSplitErgExample" dataItem="demMedialErgExample" rows="3" show="swPronDemCaseSplit"/>
-		<prompt id="PronDemMedialCaseSplitAbs" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear as subjects of intransitive verbs or as objects of transitive verbs in the special cases of split ergativity that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemMedialCaseSplitAbsExample" dataItem="demMedialAbsExample" rows="3" show="swPronDemCaseSplit"/>
-		<prompt id="PronDemDistalCaseSplitErg" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear as subjects of transitive verbs in the special cases of split ergativity that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemDistalCaseSplitErgExample" dataItem="demDistalErgExample" rows="3" show="swPronDemCaseSplit"/>
-		<prompt id="PronDemDistalCaseSplitAbs" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear as subjects of intransitive verbs or as objects of transitive verbs in the special cases of split ergativity that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt>
-		<textBox id="PronDemDistalCaseSplitAbsExample" dataItem="demDistalAbsExample" rows="3" show="swPronDemCaseSplit"/>
-
-
-		<instruction id="PronDemCaseSplitInstruction" show="swPronDemCaseSplit">
-			<br/>In the lexicon:
-			<ul>
-				<li>Add the feature <feature>nominative</feature> to all the demonstrative pronouns that occur as subjects.</li>
-				<li>Add the feature <feature>accusative</feature> to all the demonstrative pronouns that occur as objects.</li>
-				<li>For the split ergativity cases, add the feature <feature>ergative</feature> to all the demonstrative pronouns that can only occur as subjects of transitive verbs and add the feature <feature>absolutive</feature> to all the demonstrative pronouns that can only occur as subjects of intransitive verbs and objects of transitive verbs.  Note that if there is some overlap between the pronoun sets for nominative-accusative versus ergative-absolutive, you will probably need to have two entries in your lexicon for those demonstrative pronouns, each marked with the appropriate case feature.</li>
-				<li>If a particular demonstrative pronoun can show up in any position, do not add any feature.</li>
-			</ul>
-		</instruction>
+        <prompt id="PronDemProximalCaseSplitErg" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear as subjects of transitive verbs in the special cases of split ergativity that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemProximalCaseSplitErgExample" dataItem="demProximalErgExample" rows="3" show="swPronDemCaseSplit"/>
+        <prompt id="PronDemProximalCaseSplitAbs" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear in as subjects of intransitive verbs or as objects of transitive verbs in the special cases of split ergativity that are used for referring to items that are closest to the speaker (proximal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemProximalCaseSplitAbsExample" dataItem="demProximalAbsExample" rows="3" show="swPronDemCaseSplit"/>
+        <prompt id="PronDemMedialCaseSplitErg" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear as subjects of transitive verbs in the special cases of split ergativity that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemMedialCaseSplitErgExample" dataItem="demMedialErgExample" rows="3" show="swPronDemCaseSplit"/>
+        <prompt id="PronDemMedialCaseSplitAbs" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear as subjects of intransitive verbs or as objects of transitive verbs in the special cases of split ergativity that are used for referring to items that are farther from the speaker but within view (medial forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemMedialCaseSplitAbsExample" dataItem="demMedialAbsExample" rows="3" show="swPronDemCaseSplit"/>
+        <prompt id="PronDemDistalCaseSplitErg" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear as subjects of transitive verbs in the special cases of split ergativity that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemDistalCaseSplitErgExample" dataItem="demDistalErgExample" rows="3" show="swPronDemCaseSplit"/>
+        <prompt id="PronDemDistalCaseSplitAbs" show="swPronDemCaseSplit">Key the demonstrative pronouns which can appear as subjects of intransitive verbs or as objects of transitive verbs in the special cases of split ergativity that are used for referring to items that are farthest from the speaker or unseen (distal forms) in the text box, each on a separate line:</prompt> 
+        <textBox id="PronDemDistalCaseSplitAbsExample" dataItem="demDistalAbsExample" rows="3" show="swPronDemCaseSplit"/>
+        
+        
+        <instruction id="PronDemCaseSplitInstruction" show="swPronDemCaseSplit">
+            <br/>In the lexicon:
+            <ul>
+                <li>Add the feature <feature>nominative</feature> to all the demonstrative pronouns that occur as subjects.</li>
+                <li>Add the feature <feature>accusative</feature> to all the demonstrative pronouns that occur as objects.</li>
+                <li>For the split ergativity cases, add the feature <feature>ergative</feature> to all the demonstrative pronouns that can only occur as subjects of transitive verbs and add the feature <feature>absolutive</feature> to all the demonstrative pronouns that can only occur as subjects of intransitive verbs and objects of transitive verbs.  Note that if there is some overlap between the pronoun sets for nominative-accusative versus ergative-absolutive, you will probably need to have two entries in your lexicon for those demonstrative pronouns, each marked with the appropriate case feature.</li>
+                <li>If a particular demonstrative pronoun can show up in any position, do not add any feature.</li>
+            </ul>
+        </instruction>  
 <instruction id="PronDemFeaturesInstruction">Each of these demonstrative pronouns needs to have the feature <feature>demonstrative</feature> and have the category <category>Pron</category> or have a category that will be mapped to it via the category mapper at the end of this section.  Note that if your langauge is like English and uses the same demonstratives as both stand-alone pronouns and nominal modifiers, they will each need two entries in the lexicon.</instruction>
  <br/>
-		<br/>
-		<buttons>
-			<button id="PronDemBack" value="Back" goto="PronReciprocal.xml"/>
-			<button id="PronDemNext" value="Next" goto="PronIndefinite.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swPronDemCaseNo">
-		<whenRadio button="PronDemCaseNo"/>
-	</showWhen>
-	<showWhen id="swPronDemCaseNone">
-		<whenRadio button="PronDemCaseYes"/>
-		<and/>
-		<whenValue element="typology" attr="case" value="none"/>
-	</showWhen>
-	<showWhen id="swPronDemCaseNom">
-		<whenRadio button="PronDemCaseYes"/>
-		<and/>
-		<whenValue element="typology" attr="case" value="nominative"/>
-	</showWhen>
-	<showWhen id="swPronDemCaseErg">
-		<whenRadio button="PronDemCaseYes"/>
-		<and/>
-		<whenValue element="typology" attr="case" value="ergative"/>
-	</showWhen>
-	<showWhen id="swPronDemCaseSplit">
-		<whenRadio button="PronDemCaseYes"/>
-		<and/>
-		<whenValue element="typology" attr="case" value="split"/>
-	</showWhen>
-	<showWhen id="swNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-	</showWhen>
+        <br/>
+        <buttons>
+            <button id="PronDemBack" value="Back" goto="PronReciprocal.xml"/>
+            <button id="PronDemNext" value="Next" goto="PronIndefinite.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swPronDemCaseNo">
+        <whenRadio button="PronDemCaseNo"/>
+    </showWhen>
+    <showWhen id="swPronDemCaseNone">
+        <whenRadio button="PronDemCaseYes"/>   
+        <and/>
+        <whenValue element="typology" attr="case" value="none"/>
+    </showWhen>
+    <showWhen id="swPronDemCaseNoOrNone">
+        <whenRadio button="PronDemCaseNo"/>
+        <or/>
+        <whenRadio button="PronDemCaseYes"/>   
+        <and/>
+        <whenValue element="typology" attr="case" value="none"/>
+    </showWhen>
+    <showWhen id="swPronDemCaseNom">
+        <whenRadio button="PronDemCaseYes"/>   
+        <and/>
+        <whenValue element="typology" attr="case" value="nominative"/>
+    </showWhen>
+    <showWhen id="swPronDemCaseErg">
+        <whenRadio button="PronDemCaseYes"/>   
+        <and/>
+        <whenValue element="typology" attr="case" value="ergative"/>
+    </showWhen>
+    <showWhen id="swPronDemCaseSplit">
+        <whenRadio button="PronDemCaseYes"/>   
+        <and/>
+        <whenValue element="typology" attr="case" value="split"/>
+    </showWhen>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>   
 </page>

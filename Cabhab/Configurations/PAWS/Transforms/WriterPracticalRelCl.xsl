@@ -45,7 +45,7 @@
 </p>
 	  <p>
 <xsl:if test="normalize-space(//relcl/@exist)='no'">
-			<xsl:choose>
+            <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
@@ -73,7 +73,7 @@
 			   <xsl:when test="//relcl/@clausePos='unknown'"> _______ </xsl:when>
 			</xsl:choose>
 			<xsl:text> the head noun.   </xsl:text>
-			<xsl:choose>
+            <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
 </xsl:when>
@@ -81,12 +81,12 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-			<xsl:text> </xsl:text>
+            <xsl:text> </xsl:text>
 			<xsl:choose>
 			   <xsl:when test="//relcl/@type='IP'"> relative clauses are like a regular sentence with a relative marker attached to the verb.</xsl:when>
 			   <xsl:when test="//relcl/@type='CP'"> relative clauses </xsl:when>
-			</xsl:choose>
-			<xsl:text> </xsl:text>
+            </xsl:choose>
+            <xsl:text> </xsl:text>
 			<xsl:if test="normalize-space(//relcl/@type)='CP'">
 			   <xsl:text> </xsl:text>
 			   <xsl:choose>
@@ -332,91 +332,91 @@
 </p>
    </section1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+        
+    
+    
+        
+    
+    
+        
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+        
+        
+        
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+        
+        
+        
+    
 </xsl:template>
 </xsl:stylesheet>

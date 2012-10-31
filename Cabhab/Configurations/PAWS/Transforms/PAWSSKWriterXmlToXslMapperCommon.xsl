@@ -124,6 +124,14 @@ category template
 	</xsl:template>
 	<!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+citation template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	-->
+	<xsl:template match="//citation">
+			<xsl:copy-of select="."/>
+	</xsl:template>
+	<!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 col template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
@@ -322,6 +330,16 @@ content template
 		<xsl:element name="xsl:text">
 			<xsl:value-of select="."/>
 		</xsl:element>
+	</xsl:template>
+	<!--
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+endnote template
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	-->
+	<xsl:template match="//endnote">
+		<endnote id="{@id}">
+			<xsl:apply-templates/>
+		</endnote>
 	</xsl:template>
 	<!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

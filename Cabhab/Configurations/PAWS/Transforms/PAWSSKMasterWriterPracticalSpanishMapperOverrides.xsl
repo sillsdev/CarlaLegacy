@@ -69,8 +69,5 @@
 	<xsl:template name="OutputContentsElement">
 		<contents showLevel="3" label="Contenido"/>
 	</xsl:template>
-	<xsl:template name="OutputReferencesElement">
-		<references label="Referencias"/>
 
-	</xsl:template>
 </xsl:stylesheet>

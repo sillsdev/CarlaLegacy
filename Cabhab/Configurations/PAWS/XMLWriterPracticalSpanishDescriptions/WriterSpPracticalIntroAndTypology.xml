@@ -4,9 +4,17 @@
 	<section1 id="sIntro">
 		<secTitle>Introducción</secTitle>
 		<p>
-			<content>Ésta es una descripción del sintaxis de </content>
-			<langName/>
-		   <content> basada en las respuestas dadas al programa de PATAS </content><comment>Pone una cita para Las Referencias aquí</comment><content>. Esta gramática descriptiva está escrita como una gramática práctica que puede ser útil para la comunidad de la lengua así como para documentar la mayor parte de la lengua.</content>
+			<content>Esta gramática descriptiva</content><endnote id="nPATAS">
+				<p>
+					<content>La primera versión de esta gramática estaba creada por el programa de PATAS </content>
+					<citation paren="initial" ref="rPAWS"/>
+					<content>, </content>
+					<citation author="no" paren="final" ref="rGrammaticography"/>
+					<content>.</content>
+				</p>
+			</endnote>
+			<content> del sintaxis de </content>
+			<langName/><content> está escrita como una gramática práctica que puede ser útil para la comunidad de la lengua así como para documentar la mayor parte de la lengua.</content>
 		</p>
 		<p>
 			<comment>Una vez que se termina de ingresar los datos al programa de PATAS, este archivo puede servir como borrador para preparar una gramática más completa.</comment>
@@ -630,7 +638,7 @@
 	  <p><content>
 		 Algunas lenguas tiene un sistema de clasificadores para sustantivos que indican su forma, posición u otras características.  En muchos de estas lenguas, el clasificador es un tipo de concordancia que es requerido entre todos los modificadores en la frase nominal y también con el verbo.  Por eso, los quantificadores, artículos, demostrativs, adjetivos y verbos posiblemente necesitan ser marcado con un clasificador appropriado.</content></p>
 	  <p><content>Las lenguas Bantu que se habla en Africa tienen el sistema de clasificadores para sustantivos más conocido en el mundo.  Estas lenguas tienen hasta 22 clases distintas, que son representadas por números.  Aproximadamente la mitad está para los sustantivos singulares solamente y un número igual para los nombres en plural solamente. Otros están para los sustantivos  totales o abstractos o para los lugares.</content></p>
-	  <p><content>Hay también un sistema de clasificadores más simple donde hay clasificador afijos que son derivados de un sustantivo genérico o de un pronombre y estos debe aparecer con muchos de los sustantivos que refiere a animales, insectos, líquidos, árboles, objetos de madera o objetos que están básicamente redondos. En este sistema simple, normalmente no hay concordancia de clasificador en la frase nominal ni en la oración, entonces estos prefijos solamente marcan los sustantivos y tal vez son más derivativo.  Este tipo de sistema típicamente utiliza tipos en vez de números para identificar los clasificadores.</content></p>
+	  <p><content>Hay también un sistema de clasificadores más simple donde hay clasificador afijos que son derivados de un sustantivo genérico o de un pronombre y estos debe aparecer con muchos de los sustantivos que refiere a animales, insectos, líquidos, árboles, objetos de madera u objetos que están básicamente redondos. En este sistema simple, normalmente no hay concordancia de clasificador en la frase nominal ni en la oración, entonces estos prefijos solamente marcan los sustantivos y tal vez son más derivativo.  Este tipo de sistema típicamente utiliza tipos en vez de números para identificar los clasificadores.</content></p>
 
 	  <p show="swClassifiersYesType"><langName/><content> tiene un sistema de clasificadores simple en que los tipos de sustantivos son distinguidos, pero no hay concordancia en la frase nominal o la oración.</content></p>
 	  <p show="swClassifiersYesAgr"><langName/><content> tiene un sistema de clasificadores con la concordancia en todas partes de la frase nominal y en el verbo.  En </content><langName/><content>, los clasificadores son identificaos por </content>

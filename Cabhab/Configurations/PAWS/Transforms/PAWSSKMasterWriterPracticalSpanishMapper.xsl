@@ -49,7 +49,10 @@
 			<xsl:apply-templates select="/" mode="comp"/>
 			<xsl:apply-templates select="/" mode="advcl"/>
 			<xsl:apply-templates select="/" mode="relcl"/>
-			<xsl:call-template name="OutputCommonBackmatterLanguagesAndTypes"/>
+			<xsl:call-template name="OutputCommonBackmatterLanguagesAndTypes">
+				<xsl:with-param name="sEndnoteLabel" select="'Notas'"/>
+				<xsl:with-param name="sReferencesLabel" select="'Referéncias'"/>
+			</xsl:call-template>
 		</lingPaper>
 	</xsl:template>
 	<!--

@@ -3,7 +3,7 @@
 <!-- DTD for PAWS Starter Kit Writer Page Description  -->
 <!-- Entity definitions -->
 <!ENTITY % chunk "p | example | table | ol | ul | dl">
-<!ENTITY % embedded "case | text | langData | langName | gloss | exampleRef | sectionRef | appendixRef | comment | object | br | category | feature | img | translatorInstruction">
+<!ENTITY % embedded "case | text | langData | langName | gloss | exampleRef | sectionRef | appendixRef | comment | object | br | category | feature | img | translatorInstruction | citation | endnote">
 <!ENTITY nbsp "&#160;">
 <!ELEMENT and EMPTY>
 <!ELEMENT appendix (secTitle, (%chunk; | section1 | section2)*)>
@@ -29,6 +29,13 @@
 >
 <!ELEMENT category (#PCDATA)>
 <!-- content is the name of the syntactic category -->
+<!ELEMENT citation EMPTY>
+<!ATTLIST citation
+    ref IDREF #REQUIRED
+    page CDATA #IMPLIED
+    author (yes | no) "yes"
+    paren (both | none | initial | final) #IMPLIED
+>
 <!ELEMENT col (content | langData | gloss | case)*>
 <!-- the content of rowspan actually gets calculated ono the fly; so just use any number in the description page -->
 <!ATTLIST col
@@ -59,6 +66,10 @@
 <!-- content -->
 <!ATTLIST dt
   show IDREF #IMPLIED
+>
+<!ELEMENT endnote (p)*>
+<!ATTLIST endnote
+    id ID #REQUIRED
 >
 <!ELEMENT example (interlinear | table)>
 <!ATTLIST example

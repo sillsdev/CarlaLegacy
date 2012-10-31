@@ -152,9 +152,10 @@
 										<xsl:with-param name="iRowsToSpan" select="$iRowsToSpan"/>
 									</xsl:apply-templates>
 								</xsl:when>
-								<xsl:otherwise>                                    <xsl:apply-templates select="$columnsBefore" mode="processRowSpans">
-									<xsl:with-param name="iRowsToSpan" select="$iRowsToSpan"/>
-								</xsl:apply-templates>
+								<xsl:otherwise>
+									<xsl:apply-templates select="$columnsBefore" mode="processRowSpans">
+										<xsl:with-param name="iRowsToSpan" select="$iRowsToSpan"/>
+									</xsl:apply-templates>
 								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:when>
@@ -255,11 +256,21 @@
 		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	-->
 	<xsl:template name="OutputCommonBackmatterLanguagesAndTypes">
+		<xsl:param name="sEndnoteLabel"/>
+		<xsl:param name="sReferencesLabel"/>
 		<backMatter>
 			<xsl:apply-templates select="/" mode="appdx"/>
 			<xsl:call-template name="HandleAnyAbbreviations"/>
-			<endnotes/>
-			<xsl:call-template name="OutputReferencesElement"/>
+			<endnotes>
+				<xsl:if test="string-length($sEndnoteLabel) &gt; 0">
+					<xsl:attribute name="label">
+						<xsl:value-of select="$sEndnoteLabel"/>
+					</xsl:attribute>
+				</xsl:if>
+			</endnotes>
+			<xsl:call-template name="OutputReferencesElement">
+				<xsl:with-param name="sReferencesLabel" select="$sReferencesLabel"/>
+			</xsl:call-template>
 		</backMatter>
 		<languages>
 			<language id="lPAWSSKEnglish" name="PAWSSKEnglish" color="black" font-style="italic"/>
@@ -271,8 +282,8 @@
 				<xsl:attribute name="font-family">
 					<xsl:value-of select="'Charis SIL'"/>
 				</xsl:attribute>
-				</language>
-				<language name="vernacular">
+			</language>
+			<language name="vernacular">
 				<xsl:attribute name="id">
 					<xsl:text>lVernacular</xsl:text>
 					<!-- Now we want to use lVernacular so XXE works well
@@ -281,13 +292,14 @@
 				<xsl:attribute name="font-family">
 					<xsl:value-of select="//language/font/fontName"/>
 				</xsl:attribute>
-<!--
+				<!--
 	Do not use the font-size for PAWS in the XLingPaper output;  The user can adjust it as needed for XLingPaper (e.g. using a %)
 	<xsl:attribute name="font-size">
 					<xsl:value-of select="//language/font/fontSize"/>
 					<xsl:text>pt</xsl:text>
 				</xsl:attribute>
--->                <xsl:attribute name="color">
+-->
+				<xsl:attribute name="color">
 					<xsl:value-of select="//language/font/fontColor"/>
 				</xsl:attribute>
 				<xsl:if test="//language/font/@bold='True'">
@@ -316,7 +328,7 @@
 						<xsl:text>yes</xsl:text>
 					</xsl:attribute>
 				</xsl:if>
-				</language>
+			</language>
 			<xsl:call-template name="HandleAnyAbbreviationLanguage"/>
 		</languages>
 		<types>
@@ -324,8 +336,36 @@
 		</types>
 	</xsl:template>
 	<xsl:template name="OutputReferencesElement">
-		<references/>
-
+		<xsl:param name="sReferencesLabel"/>
+		<references>
+			<xsl:if test="string-length($sReferencesLabel) &gt; 0">
+				<xsl:attribute name="label">
+					<xsl:value-of select="$sReferencesLabel"/>
+				</xsl:attribute>
+			</xsl:if>
+			<refAuthor citename="Black &amp; Black" name="Black, Cheryl A. and H. Andrew Black">
+				<refWork id="rPAWS">
+					<refDate>2012</refDate>
+					<refTitle>PAWS Starter Kit</refTitle>
+					<webPage>
+						<url>http://carla.sil.org/paws.htm</url>
+					</webPage>
+				</refWork>
+				<refWork id="rGrammaticography">
+					<refDate>2012</refDate>
+					<refTitle>Grammars for the people, by the people, made easier using PAWS and XLingPaper</refTitle>
+					<collection>
+						<collEd>Sebastian Nordoff</collEd>
+						<collTitle>Electronic Grammaticography</collTitle>
+						<collPages>103-128</collPages>
+						<series>Language Documentation &amp; Conservation Special Publication No. 4</series>
+						<location>Manoa, Hawaii</location>
+						<publisher>University of Hawaii Press</publisher>
+						<url>http://hdl.handle.net/10125/4532</url>
+					</collection>
+				</refWork>
+			</refAuthor>
+		</references>
 	</xsl:template>
 	<!--
 		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

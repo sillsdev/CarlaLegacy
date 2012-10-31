@@ -94,8 +94,8 @@
 				<featureExplanation/>
 			</featureRow>
 		   <featureRow>
-			  <featureType rowspan="4">other</featureType>
-			  <featureItem dataValue="ipInflFeatFinite" name="IPInflFeatFinite">finite</featureItem>
+		      <featureType rowspan="4">other</featureType>
+		      <featureItem dataValue="ipInflFeatFinite" name="IPInflFeatFinite">finite</featureItem>
 				<featureExplanation/>
 			</featureRow>
 			<featureRow>
@@ -103,22 +103,22 @@
 				<featureExplanation/>
 			</featureRow>
 		   <featureRow>
-			  <featureItem dataValue="ipInflFeatGerund" name="IPInflFeatGerund">gerund</featureItem>
-			  <featureExplanation/>
+		      <featureItem dataValue="ipInflFeatGerund" name="IPInflFeatGerund">gerund</featureItem>
+		      <featureExplanation/>
 		   </featureRow>
 		   <featureRow>
-			  <featureItem dataValue="ipInflFeatParticiple" name="IPInflFeatParticiple">participle</featureItem>
-			  <featureExplanation/>
+		      <featureItem dataValue="ipInflFeatParticiple" name="IPInflFeatParticiple">participle</featureItem>
+		      <featureExplanation/>
 		   </featureRow>
 		   <featureRow>
-			  <featureType rowspan="9">voice</featureType>
-			  <featureItem dataValue="ipInflFeatAntipassive" name="IPInflFeatAntipassive">antipassive</featureItem>
-			  <featureExplanation/>
+		      <featureType rowspan="9">voice</featureType>
+		      <featureItem dataValue="ipInflFeatAntipassive" name="IPInflFeatAntipassive">antipassive</featureItem>
+		      <featureExplanation/>
 		   </featureRow>
 		   <featureRow>
-			  <featureItem dataValue="ipInflFeatCausative" name="IPInflFeatCausative">causative</featureItem>
-			  <featureExplanation/>
-		   </featureRow>
+		      <featureItem dataValue="ipInflFeatCausative" name="IPInflFeatCausative">causative</featureItem>
+		      <featureExplanation/>
+		   </featureRow>	
 		   <featureRow>
 				<featureItem dataValue="ipInflFeatPassive" name="IPInflFeatPassive">passive</featureItem>
 				<featureExplanation/>
@@ -130,23 +130,23 @@
 			<featureRow>
 				<featureItem dataValue="ipInflFeatDativeVoice" name="IPInflFeatDativeVoice">dativeVoice</featureItem>
 				<featureExplanation/>
-			</featureRow>
+			</featureRow>			
 			<featureRow>
 				<featureItem dataValue="ipInflFeatGoalVoice" name="IPInflFeatGoalVoice">goalVoice</featureItem>
 				<featureExplanation/>
-			</featureRow>
+			</featureRow>			
 		   <featureRow>
-			  <featureItem dataValue="ipInflFeatinstrumentalVoice" name="IPInflFeatInstrumentalVoice">instrumentalVoice</featureItem>
-			  <featureExplanation/>
-		   </featureRow>
+		      <featureItem dataValue="ipInflFeatInstrumentalVoice" name="IPInflFeatInstrumentalVoice">instrumentalVoice</featureItem>
+		      <featureExplanation/>
+		   </featureRow>		
 		   <featureRow>
 				<featureItem dataValue="ipInflFeatLocativeVoice" name="IPInflFeatLocativeVoice">locativeVoice</featureItem>
 				<featureExplanation/>
-			</featureRow>
+			</featureRow>			
 			<featureRow>
 				<featureItem dataValue="ipInflFeatObjectVoice" name="IPInflFeatObjectVoice">objectVoice</featureItem>
 				<featureExplanation/>
-				</featureRow>
+				</featureRow>		
 		</featureChart>
 	</instruction>
 	<form section="ip" transparent="yes">

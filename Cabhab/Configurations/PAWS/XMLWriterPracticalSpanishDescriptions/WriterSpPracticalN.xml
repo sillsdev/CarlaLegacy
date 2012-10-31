@@ -28,340 +28,340 @@
 			   <text show="swNPAgreeYesClassAndClassifiersNo"><content>(Tenga en cuenta que esta concordancia de clase debe revisarse, como ningún sistema de clasificadores fue documentado en </content><sectionRef sec="sTypology"/><content>.)</content></text><content/>
 			</p>
 			<p show="swNPAgreeYesNumber">
-				<content>Algunos ejemplos que muestran la concordancia de número en las frases nominales en </content><langName/><content> son:</content>
+				<content>Algunos ejemplos que muestran la concordancia de número en las frases nominales en </content><langName/><content> son:</content>	
 			</p>
 <example show="swNPAgreeYesNumber"><interlinear exampleLoc="np/agreeNumberExample"/></example>
 			<p show="swNPAgreeYesAnimacy">
-				<content>Algunos ejemplos que muestran la concordancia del animado en las frases nominales en </content><langName/><content> son:</content>
+				<content>Algunos ejemplos que muestran la concordancia del animado en las frases nominales en </content><langName/><content> son:</content>	
 			</p>
 			<example show="swNPAgreeYesAnimacy"><interlinear exampleLoc="np/agreeAnimacyExample"/></example>
 			<p show="swNPAgreeYesClass">
-				<content>Algunos ejemplos que muestran la concordancia de clase en las frases nominales en </content><langName/><content> son:</content>
+				<content>Algunos ejemplos que muestran la concordancia de clase en las frases nominales en </content><langName/><content> son:</content>	
 			</p>
 			<example show="swNPAgreeYesClass"><interlinear exampleLoc="np/agreeClassExample"/></example>
 			<p show="swNPAgreeYesGender">
-				<content>Algunos ejemplos que muestran la concordancia de género en las frases nominales en </content><langName/><content> son:</content>
+				<content>Algunos ejemplos que muestran la concordancia de género en las frases nominales en </content><langName/><content> son:</content>	
 			</p>
 			<example show="swNPAgreeYesGender"><interlinear exampleLoc="np/agreeGenderExample"/></example>
 		</section2>
 	   <section2 id="sNPCase">
-		  <secTitle>Caso</secTitle>
-		  <p>
-			 <content>En los sustantivos y sus modificadores también se pueden indicar el caso. El sistema de caso más común es el nominativo-acusativo.
-				Éste es el sistema que español tiene, aunque solamente se indica el caso en los pronombres y los poseedores.
-				En un sistema del nominativo-acusativo, los sujetos de los verbos intransitivos y transitivos son casos del nominativo, mientras que los objetos directos son casos del acusativo.
-				Los poseedores son casos del genitivo. Los pronombres del nominativo en español son: </content>
-			 <langData>yo, nosotros, usted, ustedes, él, ella, ellos, ellas</langData>
-			 <content>.  Los pronombres del acusativo son: </content>
-			 <langData>me, nos, te, le, les</langData>
-			 <content>.  Los pronombres del genitivo incluyen: </content>
-			 <langData>mi, nuestro, su, suyo, suya</langData>
-			 <content>.  Por lo tanto, decimos </content>
-			 <langData>Ellos le golpearon a él</langData>
-			 <content> y no </content>
-			 <langData>Les golpearon él</langData>
-			 <content>. </content>
-		  </p>
-		  <p>
-			 <content> Una lengua con un sistema de caso básico nominativo-accusativo puede usar un indicador differente para sujeto-experimentador en vez de sujeto-agente.  Algunos verbos de sujeto-experimentador  son
-			   </content><langData>aparecer, ver, temer, encontrar, querer, gustar</langData><content> y </content><langData>sonreir</langData><content>. </content>
-		  </p>
-		  <p>
-			 <content>
-				En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se indican con el caso del ergativo, mientras que los objetos de verbos transitivos y los sujetos de verbos intransitivos se indican con el caso del absolutivo.
-				El caso de poseedores no se fija en todos las lenguas de este tipo.  Algunas lenguas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de indicadores verbales de la concordancia, pero ningún indicador en sustantivos.
-				Este tipo de indicador en la concordancia será considerado en la sección </content>
-			 <sectionRef sec="sIPAgr"/>
-			 <content>.</content>
-		  </p>
-		  <p>
-			 <content>
-				Algunas lenguas son aún más complejas en que tienen normalmente un sistema de caso del nominativo-acusativo pero bajo ciertas condiciones gramaticales, como un aspecto particular o una característica de persona particular, el sistema de caso cambia a ergativo-absolutivo. Esto se llama “ergatividad escindida”.</content>
-		  </p>
-		  <p>
-			 <content>En </content>
-			 <langName/>
-			 <content/>
-			 <case element="typology" attr="case">
-				<caseText value="none"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición de la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición de la oración.</caseText>
-				<caseText value="nominative"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se indican de una manera diferente.</caseText>
-				<caseText value="ergative"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se indican de una manera diferente.</caseText>
-				<caseText value="split"> tiene un sistema de caso de ergatividad escindida. La lengua sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones gramaticales.</caseText>
-			 </case>
-			 <content/>
-		  </p>
-		  <p><content>Esto se muestran en los ejemplos siguientes de oraciones transitivas con frases nominales como sujetos y objetos:</content></p>
-		  <example>
-			 <interlinear exampleLoc="typology/example"/>
-		  </example>
-		  <p><content>Observe las formas de los pronombres que se presentan como sujetos y objetos en estas oraciones transitivas:</content></p>
-		  <example>
-			 <interlinear exampleLoc="typology/pnExample"/>
-		  </example>
-		  <p show="swNPCaseNYes"><content>En los ejemplos de oraciones intransitivas con frases nominales como sujetos, </content>
-			 <case element="typology" attr="case">
-				<caseText value="nominative">los indicadores de caso son los mismos que los sujetos de los verbos transitivos arriba.</caseText>
-				<caseText value="ergative">los indicadores de caso son los mismos que los objetos de los verbos transitivos arriba.</caseText>
-				<caseText value="split">en la mayoría de situaciones los indicadores de caso son los mismos que los sujetos de los verbos transitivos arriba, pero bajo ciertas condicciones los indicadores de caso son los mismos que los objetos de los verbos transitivos.</caseText>
-			 </case></p>
-		  <example show="swNPCaseNYes">
-			 <interlinear exampleLoc="typology/intExample"/>
-		  </example>
-		  <p><content>Los ejemplos de oraciones intransitivas con pronombres independientes como sujetos verifican que </content>
-			 <case element="typology" attr="case">
-				<caseText value="none">no hay ningún sistema de caso, así que los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos y como objetos de verbos trnasitivos.</caseText>
-				<caseText value="nominative">los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos, pero los pronombres para objetos de verbos transitivos son differentes.</caseText>
-				<caseText value="ergative">los mismos pronombres pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos, pero los pronombres para subjetos de verbos transitivos son differentes.</caseText>
-				<caseText value="split">normalmente los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos, pero los pronombres para objetos de verbos transitivos son differentes.  Sin embargo, bajo ciertas condiciones, los mismos pronombres pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos, pero los pronombres para subjetos de verbos transitivos son differentes.</caseText>
-			 </case></p>
-		  <example>
-			 <interlinear exampleLoc="typology/intPnExample"/>
-		  </example>
-
-		  <p show="swNPCaseNomOrSplitAndCaseNYes"><content>En </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
-			 <caseText value="no">el mismo indicador de caso y sistema de pronombres se utilizan para ambos sujetos-experimentadores y sujetos-agentes.</caseText>
-			 <caseText value="yesObj">se utilizan el mismo indicador de caso y sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso caso accusativo y caso dativo se marcan lo mismo en esa lengua.</caseText>
-			 <caseText value="yesDat">se utilizan un indicador de caso y sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Este es el caso dativo que se utiliza también para un objeto indirecto.</caseText>
-		  </case>
-		  </p>
-		  <p show="swNPCaseNomOrSplitAndCaseNNo"><content>En </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
-			 <caseText value="no">el mismo sistema de pronombres se utiliza para ambos sujetos-experimentadores y sujetos-agentes.</caseText>
-			 <caseText value="yesObj">se utiliza el mismo sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso los pronombres accusativos y dativos son los mismos en esa lengua.</caseText>
-			 <caseText value="yesDat">se utiliza un sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Estos son los pronombres dativos que se utilizan también para un objeto indirecto.</caseText>
-		  </case>
-		  </p>
-		  <p show="swNPCaseErgAndCaseNYes"><content>En </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
-			 <caseText value="no">el mismo indicador de caso y sistema de pronombres se utilizan para ambos sujetos-experimentadores y sujetos-agentes.</caseText>
-			 <caseText value="yesObj">se utilizan el mismo indicador de caso y sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso caso absolutivo y caso dativo se marcan lo mismo en esa lengua.</caseText>
-			 <caseText value="yesDat">se utilizan un indicador de caso y sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Este es el caso dativo que se utiliza también para un objeto indirecto.</caseText>
-		  </case>
-		  </p>
-		  <p show="swNPCaseErgAndCaseNNo"><content>En </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
-			 <caseText value="no">el mismo sistema de pronombres se utiliza para ambos sujetos-experimentadores y sujetos-agentes.</caseText>
-			 <caseText value="yesObj">se utiliza el mismo sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso los pronombres absolutivos y dativos son los mismos en esa lengua.</caseText>
-			 <caseText value="yesDat">se utiliza un sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Estos son los pronombres dativos que se utilizan también para un objeto indirecto.</caseText>
-		  </case>
-		  </p>
-		  <p><content>Esto se muestran en los ejemplos siguientes de oraciones transitivas con verbos de experimentador, con frases nominales como sujetos y objetos:</content></p>
-		  <example>
-			 <interlinear exampleLoc="typology/experiencerExample"/>
-		  </example>
-		  <p><content>Observe las formas de los pronombres que se presentan como sujetos y objetos de los verbos de experimentador en estas oraciones transitivas:</content></p>
-		  <example>
-			 <interlinear exampleLoc="typology/experiencerPnExample"/>
-		  </example>
-
-		  <p><content>Hay más casos a considerar además de el del sujeto y del objeto.  Éstos pueden incluir el caso ablativo para una fuente o el origen, el caso genitivo para las clases o los poseedores, el caso dativo para los objetos indirectos, el caso instrumental para los medios o los instrumentos, el caso locativo para las localizaciones, el caso vocativo para discurso directo, y el caso oblicuo que se utiliza a veces para las relaciones gramaticales de menor importancia en general.
-			 Estos casos adicionales se indican generalmente con indicadores de caso en la frase nominal en las lenguas que indican normalmente el caso en sustantivos o frases nominales así como pronombres.  Para las lenguas sin cualquier indica del caso y las que solamente indican el caso en los pronombres, estas relaciones gramaticales adicionales se expresan normalmente por frases preposicionales o posposicionales.
-		  </content>
-		  </p>
-		  <p show="swNPCaseNone"><content>En </content><langName/><content>, no hay indicadores de caso de cualquier tipo.  Por eso, las relaciones gramaticales adicionales se expresan normalmente por frases </content><case element="pp" attr="pPos">
-			 <caseText value="before">preposicionales</caseText>
-			 <caseText value="after">posposicionales</caseText>
-			 <caseText value="both">preposicionales o posposicionales</caseText>
-			 <caseText value="unknown">preposicionales y/o posposicionales</caseText>
-		  </case><content>, en vez de por frases nominales.</content>
-		  </p>
-		  <p show="swNPCaseNotNoneAndCaseNNo"><content>En </content><langName/><content>, no se inidcan el caso en los sustantivos o las frase nominales, solamente en los pronombres.  Por eso, las relaciones gramaticales adicionales se expresan normalmente por frases </content><case element="pp" attr="pPos">
-			 <caseText value="before">preposicionales</caseText>
-			 <caseText value="after">posposicionales</caseText>
-			 <caseText value="both">preposicionales o posposicionales</caseText>
-			 <caseText value="unknown">preposicionales y/o posposicionales</caseText>
-		  </case><content>, en vez de por frases nominales.   Los sistemas del pronombre se proporcionan en la sección </content>
-			 <sectionRef sec="sPronPersonal"/>
-			 <content>.</content>
-		  </p>
-
-
-		  <p show="swNPCaseNotNoneAndCaseNYes"><content>  En </content><langName/><content>, los sustantivos y posiblements sus modificadores en las frases nominales se indican el caso así como los pronombres. </content>
-		  <text show="swNPCaseDefaultNom">
-			 <content>  El caso nominativo es un caso predeterminado (no indicado). </content>
-		  </text>
-			 <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordYes">
-
-				<content>El indicador de caso se escriba como una palabra independiente y se presenta </content>
-				<case element="np" attr="caseWordPos">
-				   <caseText value="before">antes</caseText>
-				   <caseText value="after">después</caseText>
-				   <caseText value="either">de cualquier lado</caseText>
-				   <caseText value="unknown">________</caseText>
-				</case>
-				<content> del resto de la frase nominal.  </content>
-				<text show="swNPCaseWordEitherUnrestricted">
-				   <content>Todos los indicadores de caso pueden presentarse de cualquier lado de la frase nominal. </content>
-				</text>
-				<content/>
-				<text show="swNPCaseWordEitherRestricted">
-				   <content>Hay restricciones en cuanto a cuáles de los indicadores de caso pueden presentarse en cualquier lado de la frase nominal. </content>
-				</text>
-
-			 </text>
-			 <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordNo">  <content></content>
-				<case element="np" attr="caseCliticPos">
-				   <caseText value="before">Los indicadores de caso se unen al principio de la palabra inicial en la frase nominal.</caseText>
-				   <caseText value="after">Los indicadores de caso se unen al final de la palabra final en la frase nominal.</caseText>
-				   <caseText value="either">Algunos de los indicadores de caso se unen al principio de la palabra inicial y algunos se unen al final de la palabra final en la frase nominal.</caseText>
-				   <caseText value="prefixN">Los indicadores de case son prefijos que se unen al sustantivo principal.</caseText>
-				   <caseText value="suffixN">Los indicadores de case son sufijos que se unen al sustantivo principal.</caseText>
-				   <caseText value="eitherN">Algunos de los indicadores de caso son prefijos y algunos son sufijos que se unen al sustantivo principal.</caseText>
-				</case>
-			 </text>
-		  </p>
-		  <p show="swNPCaseNotNoneAndCaseNYes"><content>Los indicadores de caso que se utilizan con sustantivos o frases nominales en </content>
-			 <langName/>
-			 <content> se muestran en el cuadro siguiente.</content>
-		  </p>
-		  <example num="xCase" show="swNPCaseNotNoneAndCaseNYes">
-			 <table border="1">
-				<caption>
-				   <content>Indicadores de caso</content>
-				</caption>
-				<headerRow>
-				   <headerCol>
-					  <langName/>
-				   </headerCol>
-				   <headerCol>Caso</headerCol>
-				   <headerCol>Uso</headerCol>
-				</headerRow>
-				<row show="swNPCaseNomOrSplit">
-				   <col exampleLoc="np/nominative"/>
-				   <col>
-					  <content>nominativo</content>
-				   </col>
-				   <col>
-					  <content>sujetos</content>
-				   </col>
-				</row>
-				<row show="swNPCaseNomOrSplit">
-				   <col exampleLoc="np/accusative"/>
-				   <col>
-					  <content>accusativo</content>
-				   </col>
-				   <col>
-					  <content>objetos directos y otros usos</content>
-				   </col>
-				</row>
-				<row show="swNPCaseErgOrSplitNotPossErg">
-				   <col exampleLoc="np/ergative"/>
-				   <col>
-					  <content>ergativo</content>
-				   </col>
-				   <col>
-					  <content>sujetos de verbos transitivos</content>
-				   </col>
-				</row>
-				<row show="swNPCaseErgOrSplitPossErg">
-				   <col exampleLoc="np/ergative"/>
-				   <col>
-					  <content>ergativo</content>
-				   </col>
-				   <col>
-					  <content>sujetos de verbos transitivos y poseedores</content>
-				   </col>
-				</row>
-				<row show="swNPCaseErgOrSplitNotPossAbs">
-				   <col exampleLoc="np/absolutive"/>
-				   <col>
-					  <content>absolutivo</content>
-				   </col>
-				   <col>
-					  <content>sujetos de verbos intransitivos y objetos de verbos transitivos</content>
-				   </col>
-				</row>
-				<row show="swNPCaseErgOrSplitPossAbs">
-				   <col exampleLoc="np/absolutive"/>
-				   <col>
-					  <content>absolutivo</content>
-				   </col>
-				   <col>
-					  <content>sujetos de verbos intransitivos y objetos de verbos transitivos y poseedores</content>
-				   </col>
-				</row>
-				<row show="swNPCaseNomOrSplitOrErgPossGen">
-				   <col exampleLoc="np/genitive"/>
-				   <col>
-					  <content>genitivo</content>
-				   </col>
-				   <col>
-					  <content>poseedores</content>
-				   </col>
-				</row>
-				<row show="swExperiencerNo">
-				   <col exampleLoc="np/dative"/>
-				   <col>
-					  <content>dativo</content>
-				   </col>
-				   <col>
-					  <content>objetos indirectos</content>
-				   </col>
-				</row>
-				<row show="swExperiencerNotNo">
-				   <col exampleLoc="np/dative"/>
-				   <col>
-					  <content>dativo</content>
-				   </col>
-				   <col>
-					  <content>objetos indirectos y sujetos-experimentadores</content>
-				   </col>
-				</row>
-				<row>
-				   <col exampleLoc="np/ablative"/>
-				   <col>
-					  <content>ablativo</content>
-				   </col>
-				   <col>
-					  <content>fuentes o origen</content>
-				   </col>
-				</row>
-				<row>
-				   <col exampleLoc="np/instrumental"/>
-				   <col>
-					  <content>instrumento</content>
-				   </col>
-				   <col>
-					  <content>medios o instrumentos</content>
-				   </col>
-				</row>
-				<row>
-				   <col exampleLoc="np/locative"/>
-				   <col>
-					  <content>locativo</content>
-				   </col>
-				   <col>
-					  <content>localizaciones</content>
-				   </col>
-				</row>
-				<row>
-				   <col exampleLoc="np/vocative"/>
-				   <col>
-					  <content>vocativo</content>
-				   </col>
-				   <col>
-					  <content>discursos directos</content>
-				   </col>
-				</row>
-				<row>
-				   <col exampleLoc="np/oblique"/>
-				   <col>
-					  <content>oblicuo</content>
-				   </col>
-				   <col>
-					  <content>relaciones gramaticales de menor importancia en general</content>
-				   </col>
-				</row>
-				<row>
-				   <col exampleLoc="np/other"/>
-				   <col>
-					  <content>otro</content>
-				   </col>
-				   <col>
-					  <content>cualquier otro indicador específico</content>
-				   </col>
-				</row>
-			 </table>
-		  </example>
+	      <secTitle>Caso</secTitle>
+	      <p>
+	         <content>En los sustantivos y sus modificadores también se pueden indicar el caso. El sistema de caso más común es el nominativo-acusativo. 
+	            Éste es el sistema que español tiene, aunque solamente se indica el caso en los pronombres y los poseedores.  
+	            En un sistema del nominativo-acusativo, los sujetos de los verbos intransitivos y transitivos son casos del nominativo, mientras que los objetos directos son casos del acusativo. 
+	            Los poseedores son casos del genitivo. Los pronombres del nominativo en español son: </content>
+	         <langData>yo, nosotros, usted, ustedes, él, ella, ellos, ellas</langData>
+	         <content>.  Los pronombres del acusativo son: </content>
+	         <langData>me, nos, te, le, les</langData>
+	         <content>.  Los pronombres del genitivo incluyen: </content>
+	         <langData>mi, nuestro, su, suyo, suya</langData>
+	         <content>.  Por lo tanto, decimos </content>
+	         <langData>Ellos le golpearon a él</langData>
+	         <content> y no </content>
+	         <langData>Les golpearon él</langData>
+	         <content>. </content>
+	      </p>
+	      <p>
+	         <content> Una lengua con un sistema de caso básico nominativo-accusativo puede usar un indicador differente para sujeto-experimentador en vez de sujeto-agente.  Algunos verbos de sujeto-experimentador  son
+	           </content><langData>aparecer, ver, temer, encontrar, querer, gustar</langData><content> y </content><langData>sonreir</langData><content>. </content> 
+	      </p>
+	      <p>
+	         <content>
+	            En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se indican con el caso del ergativo, mientras que los objetos de verbos transitivos y los sujetos de verbos intransitivos se indican con el caso del absolutivo.
+	            El caso de poseedores no se fija en todos las lenguas de este tipo.  Algunas lenguas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de indicadores verbales de la concordancia, pero ningún indicador en sustantivos. 
+	            Este tipo de indicador en la concordancia será considerado en la sección </content>
+	         <sectionRef sec="sIPAgr"/>
+	         <content>.</content>
+	      </p>
+	      <p>
+	         <content>
+	            Algunas lenguas son aún más complejas en que tienen normalmente un sistema de caso del nominativo-acusativo pero bajo ciertas condiciones gramaticales, como un aspecto particular o una característica de persona particular, el sistema de caso cambia a ergativo-absolutivo. Esto se llama “ergatividad escindida”.</content>
+	      </p>
+	      <p>
+	         <content>En </content>
+	         <langName/>
+	         <content/>
+	         <case element="typology" attr="case">
+	            <caseText value="none"> no hay ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición de la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición de la oración.</caseText>
+	            <caseText value="nominative"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se indican de una manera diferente.</caseText>
+	            <caseText value="ergative"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se indican de una manera diferente.</caseText>
+	            <caseText value="split"> tiene un sistema de caso de ergatividad escindida. La lengua sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones gramaticales.</caseText>
+	         </case>
+	         <content/>
+	      </p>
+	      <p><content>Esto se muestran en los ejemplos siguientes de oraciones transitivas con frases nominales como sujetos y objetos:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/example"/>
+	      </example>    
+	      <p><content>Observe las formas de los pronombres que se presentan como sujetos y objetos en estas oraciones transitivas:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/pnExample"/>
+	      </example>
+	      <p show="swNPCaseNYes"><content>En los ejemplos de oraciones intransitivas con frases nominales como sujetos, </content>
+	         <case element="typology" attr="case">
+	            <caseText value="nominative">los indicadores de caso son los mismos que los sujetos de los verbos transitivos arriba.</caseText>
+	            <caseText value="ergative">los indicadores de caso son los mismos que los objetos de los verbos transitivos arriba.</caseText>
+	            <caseText value="split">en la mayoría de situaciones los indicadores de caso son los mismos que los sujetos de los verbos transitivos arriba, pero bajo ciertas condicciones los indicadores de caso son los mismos que los objetos de los verbos transitivos.</caseText>
+	         </case></p>
+	      <example show="swNPCaseNYes">
+	         <interlinear exampleLoc="typology/intExample"/>
+	      </example>
+	      <p><content>Los ejemplos de oraciones intransitivas con pronombres independientes como sujetos verifican que </content>
+	         <case element="typology" attr="case">
+	            <caseText value="none">no hay ningún sistema de caso, así que los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos y como objetos de verbos transitivos.</caseText>
+	            <caseText value="nominative">los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos, pero los pronombres para objetos de verbos transitivos son differentes.</caseText>
+	            <caseText value="ergative">los mismos pronombres pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos, pero los pronombres para subjetos de verbos transitivos son differentes.</caseText>
+	            <caseText value="split">normalmente los mismos pronombres pueden presentarse como sujetos de ambos verbos transitivos e intransitivos, pero los pronombres para objetos de verbos transitivos son differentes.  Sin embargo, bajo ciertas condiciones, los mismos pronombres pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos, pero los pronombres para subjetos de verbos transitivos son differentes.</caseText>
+	         </case></p>
+	      <example>
+	         <interlinear exampleLoc="typology/pnIntExample"/>
+	      </example>
+	      
+	      <p show="swNPCaseNomOrSplitAndCaseNYes"><content>En </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+	         <caseText value="no">el mismo indicador de caso y sistema de pronombres se utilizan para ambos sujetos-experimentadores y sujetos-agentes.</caseText>
+	         <caseText value="yesObj">se utilizan el mismo indicador de caso y sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso caso accusativo y caso dativo se marcan lo mismo en esa lengua.</caseText>
+	         <caseText value="yesDat">se utilizan un indicador de caso y sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Este es el caso dativo que se utiliza también para un objeto indirecto.</caseText>
+	      </case>	
+	      </p>
+	      <p show="swNPCaseNomOrSplitAndCaseNNo"><content>En </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+	         <caseText value="no">el mismo sistema de pronombres se utiliza para ambos sujetos-experimentadores y sujetos-agentes.</caseText>
+	         <caseText value="yesObj">se utiliza el mismo sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso los pronombres accusativos y dativos son los mismos en esa lengua.</caseText>
+	         <caseText value="yesDat">se utiliza un sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Estos son los pronombres dativos que se utilizan también para un objeto indirecto.</caseText>
+	      </case>	
+	      </p>
+	      <p show="swNPCaseErgAndCaseNYes"><content>En </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+	         <caseText value="no">el mismo indicador de caso y sistema de pronombres se utilizan para ambos sujetos-experimentadores y sujetos-agentes.</caseText>
+	         <caseText value="yesObj">se utilizan el mismo indicador de caso y sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso caso absolutivo y caso dativo se marcan lo mismo en esa lengua.</caseText>
+	         <caseText value="yesDat">se utilizan un indicador de caso y sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Este es el caso dativo que se utiliza también para un objeto indirecto.</caseText>
+	      </case>	
+	      </p>
+	      <p show="swNPCaseErgAndCaseNNo"><content>En </content><langName/><content>, </content><case element="typology" attr="caseExperiencer">
+	         <caseText value="no">el mismo sistema de pronombres se utiliza para ambos sujetos-experimentadores y sujetos-agentes.</caseText>
+	         <caseText value="yesObj">se utiliza el mismo sistema de pronombres para ambos sujetos-experimentadores y objetos de verbos transitivos.  Assumimos que un sujeto-experimentador tiene caso dativo, como un objeto indirecto, y por eso los pronombres absolutivos y dativos son los mismos en esa lengua.</caseText>
+	         <caseText value="yesDat">se utiliza un sistema de pronombres para un sujeto-experimentador distincto que ambos un sujeto-agente y objeto directo.  Estos son los pronombres dativos que se utilizan también para un objeto indirecto.</caseText>
+	      </case>	
+	      </p>
+	      <p><content>Esto se muestran en los ejemplos siguientes de oraciones transitivas con verbos de experimentador, con frases nominales como sujetos y objetos:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/experiencerExample"/>
+	      </example>    
+	      <p><content>Observe las formas de los pronombres que se presentan como sujetos y objetos de los verbos de experimentador en estas oraciones transitivas:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/experiencerPnExample"/>
+	      </example>
+	      
+	      <p><content>Hay más casos a considerar además de el del sujeto y del objeto.  Éstos pueden incluir el caso ablativo para una fuente o el origen, el caso genitivo para las clases o los poseedores, el caso dativo para los objetos indirectos, el caso instrumental para los medios o los instrumentos, el caso locativo para las localizaciones, el caso vocativo para discurso directo, y el caso oblicuo que se utiliza a veces para las relaciones gramaticales de menor importancia en general. 
+	         Estos casos adicionales se indican generalmente con indicadores de caso en la frase nominal en las lenguas que indican normalmente el caso en sustantivos o frases nominales así como pronombres.  Para las lenguas sin cualquier indica del caso y las que solamente indican el caso en los pronombres, estas relaciones gramaticales adicionales se expresan normalmente por frases preposicionales o posposicionales.
+	      </content>   
+	      </p>
+	      <p show="swNPCaseNone"><content>En </content><langName/><content>, no hay indicadores de caso de cualquier tipo.  Por eso, las relaciones gramaticales adicionales se expresan normalmente por frases </content><case element="pp" attr="pPos">
+	         <caseText value="before">preposicionales</caseText>
+	         <caseText value="after">posposicionales</caseText>
+	         <caseText value="both">preposicionales o posposicionales</caseText>
+	         <caseText value="unknown">preposicionales y/o posposicionales</caseText>
+	      </case><content>, en vez de por frases nominales.</content>
+	      </p>
+	      <p show="swNPCaseNotNoneAndCaseNNo"><content>En </content><langName/><content>, no se inidcan el caso en los sustantivos o las frase nominales, solamente en los pronombres.  Por eso, las relaciones gramaticales adicionales se expresan normalmente por frases </content><case element="pp" attr="pPos">
+	         <caseText value="before">preposicionales</caseText>
+	         <caseText value="after">posposicionales</caseText>
+	         <caseText value="both">preposicionales o posposicionales</caseText>
+	         <caseText value="unknown">preposicionales y/o posposicionales</caseText>
+	      </case><content>, en vez de por frases nominales.   Los sistemas del pronombre se proporcionan en la sección </content>
+	         <sectionRef sec="sPronPersonal"/>
+	         <content>.</content>	         
+	      </p>
+	      
+	      
+	      <p show="swNPCaseNotNoneAndCaseNYes"><content>  En </content><langName/><content>, los sustantivos y posiblements sus modificadores en las frases nominales se indican el caso así como los pronombres. </content>
+	      <text show="swNPCaseDefaultNom">
+	         <content>  El caso nominativo es un caso predeterminado (no indicado). </content>
+	      </text>
+	         <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordYes">
+	            
+	            <content>El indicador de caso se escriba como una palabra independiente y se presenta </content>
+	            <case element="np" attr="caseWordPos">
+	               <caseText value="before">antes</caseText>
+	               <caseText value="after">después</caseText>
+	               <caseText value="either">de cualquier lado</caseText>
+	               <caseText value="unknown">________</caseText>
+	            </case>
+	            <content> del resto de la frase nominal.  </content>
+	            <text show="swNPCaseWordEitherUnrestricted">
+	               <content>Todos los indicadores de caso pueden presentarse de cualquier lado de la frase nominal. </content>
+	            </text>
+	            <content/>
+	            <text show="swNPCaseWordEitherRestricted">
+	               <content>Hay restricciones en cuanto a cuáles de los indicadores de caso pueden presentarse en cualquier lado de la frase nominal. </content>
+	            </text>
+	            
+	         </text>
+	         <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordNo">  <content></content>
+	            <case element="np" attr="caseCliticPos">
+	               <caseText value="before">Los indicadores de caso se unen al principio de la palabra inicial en la frase nominal.</caseText>
+	               <caseText value="after">Los indicadores de caso se unen al final de la palabra final en la frase nominal.</caseText>
+	               <caseText value="either">Algunos de los indicadores de caso se unen al principio de la palabra inicial y algunos se unen al final de la palabra final en la frase nominal.</caseText>
+	               <caseText value="prefixN">Los indicadores de case son prefijos que se unen al sustantivo principal.</caseText>
+	               <caseText value="suffixN">Los indicadores de case son sufijos que se unen al sustantivo principal.</caseText>
+	               <caseText value="eitherN">Algunos de los indicadores de caso son prefijos y algunos son sufijos que se unen al sustantivo principal.</caseText>
+	            </case>
+	         </text>
+	      </p>
+	      <p show="swNPCaseNotNoneAndCaseNYes"><content>Los indicadores de caso que se utilizan con sustantivos o frases nominales en </content>
+	         <langName/>
+	         <content> se muestran en el cuadro siguiente.</content>
+	      </p>
+	      <example num="xCase" show="swNPCaseNotNoneAndCaseNYes">
+	         <table border="1">
+	            <caption>
+	               <content>Indicadores de caso</content>
+	            </caption>
+	            <headerRow>
+	               <headerCol>
+	                  <langName/>
+	               </headerCol>
+	               <headerCol>Caso</headerCol>
+	               <headerCol>Uso</headerCol>
+	            </headerRow>
+	            <row show="swNPCaseNomOrSplit">
+	               <col exampleLoc="np/nominative"/>
+	               <col>
+	                  <content>nominativo</content>
+	               </col>
+	               <col>
+	                  <content>sujetos</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseNomOrSplit">
+	               <col exampleLoc="np/accusative"/>
+	               <col>
+	                  <content>accusativo</content>
+	               </col>
+	               <col>
+	                  <content>objetos directos y otros usos</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitNotPossErg">
+	               <col exampleLoc="np/ergative"/>
+	               <col>
+	                  <content>ergativo</content>
+	               </col>
+	               <col>
+	                  <content>sujetos de verbos transitivos</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitPossErg">
+	               <col exampleLoc="np/ergative"/>
+	               <col>
+	                  <content>ergativo</content>
+	               </col>
+	               <col>
+	                  <content>sujetos de verbos transitivos y poseedores</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitNotPossAbs">
+	               <col exampleLoc="np/absolutive"/>
+	               <col>
+	                  <content>absolutivo</content>
+	               </col>
+	               <col>
+	                  <content>sujetos de verbos intransitivos y objetos de verbos transitivos</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitPossAbs">
+	               <col exampleLoc="np/absolutive"/>
+	               <col>
+	                  <content>absolutivo</content>
+	               </col>
+	               <col>
+	                  <content>sujetos de verbos intransitivos y objetos de verbos transitivos y poseedores</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseNomOrSplitOrErgPossGen">
+	               <col exampleLoc="np/genitive"/>
+	               <col>
+	                  <content>genitivo</content>
+	               </col>
+	               <col>
+	                  <content>poseedores</content>
+	               </col>
+	            </row>
+	            <row show="swExperiencerNo">
+	               <col exampleLoc="np/dative"/>
+	               <col>
+	                  <content>dativo</content>
+	               </col>
+	               <col>
+	                  <content>objetos indirectos</content>
+	               </col>
+	            </row>
+	            <row show="swExperiencerNotNo">
+	               <col exampleLoc="np/dative"/>
+	               <col>
+	                  <content>dativo</content>
+	               </col>
+	               <col>
+	                  <content>objetos indirectos y sujetos-experimentadores</content>
+	               </col>
+	            </row>
+	            <row>
+	               <col exampleLoc="np/ablative"/>
+	               <col>
+	                  <content>ablativo</content>
+	               </col>
+	               <col>
+	                  <content>fuentes o origen</content>
+	               </col>
+	            </row>
+	            <row>
+	               <col exampleLoc="np/instrumental"/>
+	               <col>
+	                  <content>instrumento</content>
+	               </col>
+	               <col>
+	                  <content>medios o instrumentos</content>
+	               </col>
+	            </row>
+	            <row>
+	               <col exampleLoc="np/locative"/>
+	               <col>
+	                  <content>locativo</content>
+	               </col>
+	               <col>
+	                  <content>localizaciones</content>
+	               </col>
+	            </row>
+	            <row>
+	               <col exampleLoc="np/vocative"/>
+	               <col>
+	                  <content>vocativo</content>
+	               </col>
+	               <col>
+	                  <content>discursos directos</content>
+	               </col>
+	            </row>
+	            <row>
+	               <col exampleLoc="np/oblique"/>
+	               <col>
+	                  <content>oblicuo</content>
+	               </col>
+	               <col>
+	                  <content>relaciones gramaticales de menor importancia en general</content>
+	               </col>
+	            </row>
+	            <row>
+	               <col exampleLoc="np/other"/>
+	               <col>
+	                  <content>otro</content>
+	               </col>
+	               <col>
+	                  <content>cualquier otro indicador específico</content>
+	               </col>
+	            </row>
+	         </table>
+	      </example>	      
 	   </section2>
-
+	   
 		<section2 id="sNPoss">
 			<secTitle>Poseedores</secTitle>
 			<p>
@@ -483,7 +483,7 @@
 					<content/>
 				</p>
 			</section3>
-
+			
 			<section3 id="sNPPossAgreement">
 				<secTitle>Concordancia del poseedor</secTitle>
 				<p>
@@ -678,7 +678,7 @@
 		<section2 id="sNPCompounds">
 			<secTitle>Sustantivos compuestos</secTitle>
 			<p>
-				<content>Mientras que el español requiere una frase con </content><langData>de</langData><content> en esta situación, muchos otras lenguas son al igual que inglés y tienen modificadores del sustantivo.
+				<content>Mientras que el español requiere una frase con </content><langData>de</langData><content> en esta situación, muchos otras lenguas son al igual que inglés y tienen modificadores del sustantivo.  
 					Pareciera que todos los sustantivos también se pueden utilizar al igual que adjetivos, pero un estudio más detallada revela que los adjetivos verdaderos se presentan antes del modificador del sustantivo, como en </content>
 				<langData>large, round [syrup bottle]</langData><gloss><content> ‘grande, redondo [botella del jarabe]’</content></gloss>
 				<content> pero no </content>
@@ -794,7 +794,7 @@
 	</showWhen>
 	<showWhen id="swNPCaseSplitNotGen">
 		<whenValue element="typology" attr="case" value="split"/>
-		<and/>
+		<and/> 
 		<whenValue element="np" attr="possCaseErg" value="genitive" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPAdjPCaseChangeYes">
@@ -898,155 +898,155 @@
 		<whenValue element="np" attr="comp" value="yes"/>
 	</showWhen>
    <showWhen id="swNPCaseNYes">
-	  <whenValue element="np" attr="caseN" value="yes"/>
-	  <and/>
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
    </showWhen>
    <showWhen id="swNPCaseNotNone">
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
    </showWhen>
    <showWhen id="swNPCaseDefaultNom">
-	  <whenValue element="typology" attr="case" value="nominative"/>
-	  <and/>
-	  <whenValue element="np" attr="caseDefault" value="nominative"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="caseDefault" value="nominative"/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseDefault" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseDefault" value="nominative"/>
    </showWhen>
-
+   
    <showWhen id="swNPCaseNomOrSplitAndCaseNYes">
-	  <whenValue element="typology" attr="case" value="nominative"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
    </showWhen>
    <showWhen id="swNPCaseNomOrSplitAndCaseNNo">
-	  <whenValue element="typology" attr="case" value="nominative"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="no"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="no"/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseErgAndCaseNYes">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
    </showWhen>
    <showWhen id="swNPCaseErgAndCaseNNo">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="no"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseNotNoneAndCaseNNo">
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="no"/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseNotNoneAndCaseNYes">
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
    </showWhen>
    <showWhen id="swNPCaseWordYes">
-	  <whenValue element="np" attr="caseWord" value="yes"/>
+      <whenValue element="np" attr="caseWord" value="yes"/>
    </showWhen>
    <showWhen id="swNPCaseWordEitherRestricted">
-	  <whenValue element="np" attr="caseWordEither" value="restricted"/>
+      <whenValue element="np" attr="caseWordEither" value="restricted"/>
    </showWhen>
    <showWhen id="swNPCaseWordEitherUnrestricted">
-	  <whenValue element="np" attr="caseWordEither" value="unrestricted"/>
+      <whenValue element="np" attr="caseWordEither" value="unrestricted"/>
    </showWhen>
    <showWhen id="swNPCaseWordNo">
-	  <whenValue element="np" attr="caseWord" value="no"/>
+      <whenValue element="np" attr="caseWord" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseNomOrSplit">
-	  <whenValue element="typology" attr="case" value="nominative"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
    </showWhen>
    <showWhen id="swNPCaseErgOrSplit">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
    </showWhen>
    <showWhen id="swExperiencerNotNo">
-	  <whenValue element="typology" attr="caseExperiencer" value="no" negateValue="yes"/>
+      <whenValue element="typology" attr="caseExperiencer" value="no" negateValue="yes"/>
    </showWhen>
    <showWhen id="swExperiencerNo">
-	  <whenValue element="typology" attr="caseExperiencer" value="no"/>
+      <whenValue element="typology" attr="caseExperiencer" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseErgOrSplitPossAbs">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="absolutive"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
    </showWhen>
    <showWhen id="swNPCaseErgOrSplitNotPossAbs">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
    </showWhen>
    <showWhen id="swNPCaseErgOrSplitPossErg">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="ergative"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="ergative"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
    </showWhen>
    <showWhen id="swNPCaseErgOrSplitNotPossErg">
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
    </showWhen>
    <showWhen id="swNPCaseNomOrSplitOrErgPossGen">
-	  <whenValue element="typology" attr="case" value="nominative"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="split"/>
-	  <or/>
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="genitive"/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="genitive"/>
    </showWhen>
    <showWhen id="swNPCaseNotNoneAndCaseNYesAndCaseWordYes">
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseWord" value="yes"/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseWord" value="yes"/>
    </showWhen>
    <showWhen id="swNPCaseNotNoneAndCaseNYesAndCaseWordNo">
-	  <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseN" value="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="caseWord" value="no"/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseWord" value="no"/>
    </showWhen>
    <showWhen id="swNPCaseNone" >
-	  <whenValue element="typology" attr="case" value="none"/>
+      <whenValue element="typology" attr="case" value="none"/>
    </showWhen>
    <showWhen id="swNPAgreeYesClassAndClassifiersNo">
-	  <whenValue element="np" attr="agreeOther" value="yesClass"/>
-	  <and/>
-	  <whenValue element="typology" attr="classifier" value="no"/>
+      <whenValue element="np" attr="agreeOther" value="yesClass"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="no"/>
    </showWhen>
-
+   
 </portion>

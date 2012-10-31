@@ -4,13 +4,13 @@
 	<section1 id="sV">
 		<secTitle>Los verbos</secTitle>
 		<p>
-<xsl:text>Los verbos expresan acciones, estados, o emociones. Primers se analizarán los tipos de la inflexión verbal y la concordancia de los verbos.
+<xsl:text>Los verbos expresan acciones, estados, o emociones. Primers se analizarán los tipos de la inflexión verbal y la concordancia de los verbos. 
 				Las condiciones de cuando un sujeto no debe estar presente se analizan en la sección </xsl:text>
 <sectionRef sec="sIPProDrop" />
-<xsl:text>, y los auxiliares se tratan en la sección
+<xsl:text>, y los auxiliares se tratan en la sección 
 			</xsl:text>
 <sectionRef sec="sIPAux" />
-<xsl:text>.  Los ejemplos de los verbos usados en oraciones básicas se encuentran en la sección
+<xsl:text>.  Los ejemplos de los verbos usados en oraciones básicas se encuentran en la sección 
 			</xsl:text>
 <sectionRef sec="sIP" />
 <xsl:text>.  Las construcciones más complejas incluyendo los verbos se tratan en las secciones </xsl:text>
@@ -88,36 +88,36 @@
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
 						</td>					</tr>
 </xsl:if>
-				   <xsl:if test="normalize-space(//ip/ipinflFeatContemplative/@checked)='yes'">
+				   <xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>aspecto</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>contemplativo</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>aspecto</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>contemplativo</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>
-				   <xsl:if test="normalize-space(//ip/ipinflFeatContrafactual/@checked)='yes'">
+				   <xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>aspecto</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>contrariamente al hecho</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>aspecto</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>contrariamente al hecho</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
@@ -150,7 +150,7 @@
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
 						</td>					</tr>
 </xsl:if>
-					<xsl:if test="normalize-space(//ip/ipInflFeattHabitual/@checked)='yes'">
+					<xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
 <tr>
 						<td align="left">
 							<xsl:text>aspecto</xsl:text>
@@ -197,18 +197,18 @@
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>aspecto</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>perfecto</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>aspecto</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>perfecto</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
@@ -274,18 +274,18 @@
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>aspecto</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>no realidad</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>aspecto</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>no realidad</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatDeclarative/@checked)='yes'">
@@ -365,33 +365,33 @@
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatFinite/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>otro</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>finito</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>otro</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>finito</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>					</tr>
+				      </td>					</tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatMinusFinite/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>otro</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>infinitivo</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>otro</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>infinitivo</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>					</tr>
+				      </td>					</tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatGerund/@checked)='yes'">
 <tr>
@@ -410,159 +410,159 @@
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatParticiple/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>otro</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>participio</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>otro</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>participio</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>					</tr>
+				      </td>					</tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatAntipassive/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>voz</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>antipasivo</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>voz</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>antipasivo</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatCausative/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>voz</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>causativo</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>voz</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>causativo</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>				   <xsl:if test="normalize-space(//ip/ipInflFeatPassive/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>voz</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>pasivo</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>voz</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>pasivo</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>					</tr>
+				      </td>					</tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatActorVoice/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>voz</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>de actor</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>voz</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>de actor</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatDativeVoice/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>voz</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>de dativo</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>voz</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>de dativo</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatGoalVoice/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>voz</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>de meta</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>voz</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>de meta</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatInstrumentalVoice/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>voz</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>de instrumento</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>voz</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>de instrumento</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatLocativeVoice/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>voz</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>de locativo</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>voz</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>de locativo</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatObjectoice/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>voz</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>de objeto</xsl:text>
-					  </td>
-					  <td align="left">
-						 <langData>
+				      <td align="left">
+				         <xsl:text>voz</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>de objeto</xsl:text>
+				      </td>
+				      <td align="left">
+				         <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>ESCRIBA_LOS_MORFEMAS</langData>
-					  </td>
+				      </td>
 				   </tr>
 </xsl:if>
 				</table>
@@ -1233,365 +1233,365 @@
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeAnimalSubject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>sujeto de tipo animal</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>sujeto de tipo animal</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeInsectSubject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>sujeto de tipo insecto</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>sujeto de tipo insecto</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeLiquidSubject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>sujeto de tipo líquido</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>sujeto de tipo líquido</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeRoundSubject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>sujeto de tipo redondo</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>sujeto de tipo redondo</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeCylinderSubject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>sujeto de tipo cilíndrico</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>sujeto de tipo cilíndrico</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeSphericalSubject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>sujeto de tipo esférico</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>sujeto de tipo esférico</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeTreeSubject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>sujeto de tipo árbol</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>sujeto de tipo árbol</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeWoodSubject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>sujeto de tipo madera</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>sujeto de tipo madera</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeOtherSubject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>sujeto de otro tipo u inanimado general</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>sujeto de otro tipo u inanimado general</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
-
+				   
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeAnimalObject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>objeto de tipo animal</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>objeto de tipo animal</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeInsectObject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>objeto de tipo insecto</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>objeto de tipo insecto</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeLiquidObject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>objeto de tipo líquido</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>objeto de tipo líquido</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeRoundObject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>objeto de tipo redondo</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>objeto de tipo redondo</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeCylinderObject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>objeto de tipo cilíndrico</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>objeto de tipo cilíndrico</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeSphericalObject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>objeto de tipo esférico</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>objeto de tipo esférico</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeTreeObject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>objeto de tipo árbol</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>objeto de tipo árbol</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeWoodObject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>objeto de tipo madera</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>objeto de tipo madera</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeOtherObject/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>objeto de otro tipo u inanimado general</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>objeto de otro tipo u inanimado general</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
-
+				   
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeAnimalErgative/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>ergativo de tipo animal</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>ergativo de tipo animal</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeInsectErgative/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>ergativo de tipo insecto</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>ergativo de tipo insecto</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeLiquidErgative/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>ergativo de tipo líquido</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>ergativo de tipo líquido</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeRoundErgative/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>ergativo de tipo redondo</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>ergativo de tipo redondo</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeCylinderErgative/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>ergativo de tipo cilíndrico</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>ergativo de tipo cilíndrico</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeSphericalErgative/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>ergativo de tipo esférico</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>ergativo de tipo esférico</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeTreeErgative/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>ergativo de tipo árbol</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>ergativo de tipo árbol</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeWoodErgative/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>ergativo de tipo madera</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>ergativo de tipo madera</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeOtherErgative/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>ergativo de otro tipo u inanimado general</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>ergativo de otro tipo u inanimado general</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
-
+				   
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeAnimalAbsolutive/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>absolutivo de tipo animal</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>absolutivo de tipo animal</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeInsectAbsolutive/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>absolutivo de tipo insecto</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>absolutivo de tipo insecto</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeLiquidAbsolutive/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>absolutivo de tipo líquido</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>absolutivo de tipo líquido</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeRoundAbsolutive/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>absolutivo de tipo redondo</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>absolutivo de tipo redondo</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeCylinderAbsolutive/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>absolutivo de tipo cilíndrico</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>absolutivo de tipo cilíndrico</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeSphericalAbsolutive/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>absolutivo de tipo esférico</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>absolutivo de tipo esférico</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeTreeAbsolutive/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>absolutivo de tipo árbol</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>absolutivo de tipo árbol</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeWoodAbsolutive/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>absolutivo de tipo madera</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>absolutivo de tipo madera</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipAgrFeatClassClassTypeOtherAbsolutive/@checked)='yes'">
 <tr>
-					  <td align="left">
-						 <xsl:text>clase</xsl:text>
-					  </td>
-					  <td align="left">
-						 <xsl:text>absolutivo de otro tipo u inanimado general</xsl:text>
-					  </td>
+				      <td align="left">
+				         <xsl:text>clase</xsl:text>
+				      </td>
+				      <td align="left">
+				         <xsl:text>absolutivo de otro tipo u inanimado general</xsl:text>
+				      </td>
 				   </tr>
 </xsl:if>
 				</table>
@@ -1649,7 +1649,7 @@
 					<xsl:text> se permite.</xsl:text>
 				</xsl:if>
 </p>
-
+				
 				<xsl:if test="normalize-space(//ip/@proDrop)='noImp'">
 <p>
 <xsl:text>  Algunos ejemplos que muestran que el sujeto no debe estar presente en imperativos son:</xsl:text>
@@ -1740,7 +1740,7 @@
 </xsl:choose>
 </example>
 </xsl:if>
-
+		   
 		   <xsl:if test="normalize-space(//ip/@proDrop)='yes'">
 <p>
 <xsl:text>  Algunos ejemplos que muestran que el sujeto no debe estar presente son:</xsl:text>
@@ -1830,17 +1830,17 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-</xsl:if>
+</xsl:if>				
 		</section2>
 		<section2 id="sIPAux">
 			<secTitle>Los auxiliares</secTitle>
 		   <p>
 <xsl:text>Hay varias clases de elementos auxiliares, incluyendo variedades positivas y negativas, así como el indicador de infinito, el movimiento y otros tipos. Cada tipo será cubierto en orden.</xsl:text>
 </p>
-
+		   
 		   <section3 id="sIPAuxPositive">
-			  <secTitle>Auxuliares positivos</secTitle>
-			  <p>
+		      <secTitle>Auxuliares positivos</secTitle>
+		      <p>
 <xsl:text>Algunas lenguas tienen elementos auxiliares que son palabras independientes, y algunos pueden tener más de un elemento auxiliar con el verbo principal. Algunos ejemplos de las oraciones transitivas en inglés son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -2004,7 +2004,7 @@
 <xsl:text>Algunos ejemplos de oraciones que incluyen estos auxiliares son:</xsl:text>
 </p>
 </xsl:if>
-
+			
 				<xsl:if test="normalize-space(//ip/@aux)='yes'">
 <example num="xV.IPAux.IPAuxPositive.14">
 <xsl:variable name="sExampleValue">
@@ -2047,16 +2047,16 @@
 </xsl:if>
 		   </section3>
 		   <section3 id="ipAuxNegative">
-			  <secTitle>Auxilares negativos</secTitle>
-
-
+		      <secTitle>Auxilares negativos</secTitle>
+		
+		   
 		   <p>
 <xsl:text>En algunas lenguas la negación verbal es un elemento auxiliar, mientras que en otras lenguas es simplemente un afijo verbal. El español utiliza el auxiliar verbal negativo </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>no</langData>
-<xsl:text> antes del verbo.
+<xsl:text> antes del verbo.  
 					El inglés tiene el auxiliar negativo </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -2100,7 +2100,7 @@
 </gloss>
 <xsl:text>.</xsl:text>
 </p>
-			  <p>
+		      <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
@@ -2112,25 +2112,25 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@negAux='yes'"> hay uno o más</xsl:when>
-					<xsl:when test="//ip/@negAux='no'"> no hay</xsl:when>
-				 </xsl:choose>
+		            <xsl:when test="//ip/@negAux='yes'"> hay uno o más</xsl:when>				
+		            <xsl:when test="//ip/@negAux='no'"> no hay</xsl:when>			
+		         </xsl:choose>
 <xsl:text> auxiliares negativos que se escriben como palabras independientes. </xsl:text>
 <xsl:if test="normalize-space(//ip/@negAux)='yes'">
-					<xsl:text> El auxiliar negativo </xsl:text>
-					<xsl:choose>
-					   <xsl:when test="//ip/@negAuxRequiresAux='no'">puede</xsl:when>
-					   <xsl:when test="//ip/@negAuxRequiresAux='yes'">no puede</xsl:when>
-					</xsl:choose>
-					<xsl:text> ser el único auxiliar en la frase; </xsl:text>
-					<xsl:choose>
-					   <xsl:when test="//ip/@negAuxRequiresAux='no'">ningún otro</xsl:when>
-					   <xsl:when test="//ip/@negAuxRequiresAux='yes'">la presencia de otro</xsl:when>
-					</xsl:choose>
-					<xsl:text> auxiliar es requerido.</xsl:text>
-				 </xsl:if>
+		            <xsl:text> El auxiliar negativo </xsl:text>
+		            <xsl:choose>
+		               <xsl:when test="//ip/@negAuxRequiresAux='no'">puede</xsl:when>
+		               <xsl:when test="//ip/@negAuxRequiresAux='yes'">no puede</xsl:when>
+		            </xsl:choose>
+		            <xsl:text> ser el único auxiliar en la frase; </xsl:text>
+		            <xsl:choose>
+		               <xsl:when test="//ip/@negAuxRequiresAux='no'">ningún otro</xsl:when>
+		               <xsl:when test="//ip/@negAuxRequiresAux='yes'">la presencia de otro</xsl:when>
+		            </xsl:choose>
+		            <xsl:text> auxiliar es requerido.</xsl:text>
+		         </xsl:if>
 </p>
-			  <p>
+		      <p>
 <xsl:text>En </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
@@ -2142,28 +2142,28 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-					<xsl:when test="//ip/@negAuxAffix='yes'"> hay <xsl:choose>
+		            <xsl:when test="//ip/@negAuxAffix='yes'"> hay <xsl:choose>
 <xsl:when test="//ip/@negAux='yes'">también</xsl:when>
 </xsl:choose> un afijo negativo que se une con un auxiliar positivo, </xsl:when>
-					<xsl:when test="//ip/@negAuxAffix='no'"> no hay un afijo negativo que se une con un auxiliar positivo, </xsl:when>
-				 </xsl:choose>
+		            <xsl:when test="//ip/@negAuxAffix='no'"> no hay un afijo negativo que se une con un auxiliar positivo, </xsl:when>
+		         </xsl:choose>
 <xsl:choose>
-
-					<xsl:when test="//ip/@negVAffix='yes'">
+		            
+		            <xsl:when test="//ip/@negVAffix='yes'">
 <xsl:choose>
 <xsl:when test="//ip/@negAuxAffix='yes'">y</xsl:when>
-					   <xsl:when test="//ip/@negAuxAffix='no'">pero hay</xsl:when>
+		               <xsl:when test="//ip/@negAuxAffix='no'">pero hay</xsl:when>
 </xsl:choose> un afijo verbal negativo. </xsl:when>
-
-					<xsl:when test="//ip/@negVAffix='no'">
+		            
+		            <xsl:when test="//ip/@negVAffix='no'">
 <xsl:choose>
 <xsl:when test="//ip/@negAuxAffix='yes'">pero no hay</xsl:when>
-					   <xsl:when test="//ip/@negAuxAffix='no'">ni</xsl:when>
+		               <xsl:when test="//ip/@negAuxAffix='no'">ni</xsl:when>
 </xsl:choose> un afijo verbal negativo.</xsl:when>
-				 </xsl:choose>
+		         </xsl:choose>
 <xsl:text></xsl:text>
 </p>
-			  <xsl:if test="normalize-space(//ip/@negAux)='yes' or normalize-space(//ip/@negAuxAffix)='yes' or normalize-space(//ip/@negVAffix)='yes'">
+		      <xsl:if test="normalize-space(//ip/@negAux)='yes' or normalize-space(//ip/@negAuxAffix)='yes' or normalize-space(//ip/@negVAffix)='yes'">
 <p>
 <xsl:text>El cuadro siguiente da un resumen de los auxiliares negativos en </xsl:text>
 <xsl:choose>
@@ -2177,12 +2177,12 @@
 <xsl:text>:</xsl:text>
 </p>
 </xsl:if>
-			  <xsl:if test="normalize-space(//ip/@negAux)='yes' or normalize-space(//ip/@negAuxAffix)='yes' or normalize-space(//ip/@negVAffix)='yes'">
+		      <xsl:if test="normalize-space(//ip/@negAux)='yes' or normalize-space(//ip/@negAuxAffix)='yes' or normalize-space(//ip/@negVAffix)='yes'">
 <example num="xV.IPAux..12">
 <table border="1">
-					<tr>
-					   <th>Tipo</th>
-					   <th>
+		            <tr>
+		               <th>Tipo</th>
+		               <th>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -2192,10 +2192,10 @@
 </xsl:otherwise>
 </xsl:choose>
 </th>
-					   <th>Glosa</th>
-					</tr>
-
-					<xsl:if test="normalize-space(//ip/@negAux)='yes'">
+		               <th>Glosa</th>
+		            </tr>
+		            
+		            <xsl:if test="normalize-space(//ip/@negAux)='yes'">
 <xsl:variable name="sExampleValue0">
 <xsl:value-of select="translate(string(//ip/negAuxExample),'.','')" />
 </xsl:variable>
@@ -2252,7 +2252,7 @@
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-					<xsl:if test="normalize-space(//ip/@negAuxAffix)='yes'">
+		            <xsl:if test="normalize-space(//ip/@negAuxAffix)='yes'">
 <xsl:variable name="sExampleValue1">
 <xsl:value-of select="translate(string(//ip/negAuxAffixExample),'.','')" />
 </xsl:variable>
@@ -2309,7 +2309,7 @@
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-					<xsl:if test="normalize-space(//ip/@negVAffix)='yes'">
+		            <xsl:if test="normalize-space(//ip/@negVAffix)='yes'">
 <xsl:variable name="sExampleValue2">
 <xsl:value-of select="translate(string(//ip/negVerbExample),'.','')" />
 </xsl:variable>
@@ -2366,10 +2366,10 @@
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				 </table>
+		         </table>
 </example>
 </xsl:if>
-
+		      
 
 			<p>
 <xsl:text>Véase a sección </xsl:text>
@@ -2387,9 +2387,9 @@
 </p>
 		   </section3>
 		   <section3 id="ipAuxNonfinite">
-			  <secTitle>Auxilar para infinitivo</secTitle>
-
-
+		      <secTitle>Auxilar para infinitivo</secTitle>
+		
+		   
 		   <p>
 <xsl:text>En  inglés la palabra que indica el infinitivo, </xsl:text>
 <langData>
@@ -2536,7 +2536,7 @@
 <xsl:text>Algunos ejemplos con cláusulas subordinadas infinitivas incluyendo esto(s) indicador(es) del infinitivo son:</xsl:text>
 </p>
 </xsl:if>
-
+			
 			<xsl:if test="normalize-space(//ip/@auxNonfinite)='yes'">
 <example num="xV.IPAux..14">
 <xsl:variable name="sExampleValue">
@@ -2580,8 +2580,8 @@
 
 		   </section3>
 		   <section3 id="ipAuxOther">
-			  <secTitle>Otros auxialares</secTitle>
-
+		      <secTitle>Otros auxialares</secTitle>
+		  
 		   <p>
 <xsl:text>En algunas lenguas hay otras palabras que funcionan al igual que auxiliares, tales como auxiliares del movimiento o indicadores del préstamo, que comparten el mimso sujeto y complementos con el verbo principal.</xsl:text>
 </p>
@@ -2699,7 +2699,7 @@
 <xsl:text>Algunos ejemplos de oraciones incluyendo estos otros auxiliares son:</xsl:text>
 </p>
 </xsl:if>
-
+			
 			<xsl:if test="normalize-space(//ip/@auxOther)='yes'">
 <example num="xV.IPAux..14">
 <xsl:variable name="sExampleValue">
@@ -2740,516 +2740,516 @@
 </xsl:choose>
 </example>
 </xsl:if>
-		   </section3>
+		   </section3>	
 
 		</section2>
 	</section1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+		
+		
+		
+	
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+   
+	
+		
+	
+	
+		
+	
+   
+      
+   
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+   
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+		
+		
+		
+		
+	
+	
+		
+		
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
 </xsl:template>
 </xsl:stylesheet>

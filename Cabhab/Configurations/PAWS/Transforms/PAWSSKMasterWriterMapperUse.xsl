@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="C:/carla/Dev/Cabhab/Configurations/PAWS/Transforms/XLingPap.dtd"/>
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="C:/carlarepo/CarlaLegacy/Cabhab/Configurations/PAWS/Transforms/XLingPap.dtd"/>
 	<!--
 		================================================================
 		Convert PAWS answers xml file to an XLingPap xml file
