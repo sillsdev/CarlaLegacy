@@ -399,11 +399,11 @@ Let completive	                be      &lt;head infl aspect&gt; = completive
 Let compound                    be      &lt;head type compound&gt;		= +
 Let -compound                   be      &lt;head type compound&gt;		= -
 Let conj_prefix                 be      &lt;head type prefix conj&gt;		= +
-Let conj_prefix_neg                 be      &lt;head type prefix conj head infl polarity&gt;		= negative
-Let conj_prefix_pl                be      &lt;head type prefix conj head agr number&gt;		= plural
+Let conj_prefix_neg                 be      &lt;head conj head infl polarity&gt;		= negative
+Let conj_prefix_pl                be      &lt;head conj head agr number&gt;		= plural
 Let conj_suffix	                be      &lt;head type suffix conj&gt;		= +
-Let conj_suffix_neg                 be      &lt;head type suffix conj head infl polarity&gt; = negative
-Let conj_suffix_pl                be      &lt;head type suffix conj head agr number&gt;		= plural
+Let conj_suffix_neg                 be      &lt;head conj head infl polarity&gt; = negative
+Let conj_suffix_pl                be      &lt;head conj head agr number&gt;		= plural
 Let conjoins_DP                 be      &lt;head type conjoins_DP&gt;		= +
 Let conjoins_IP                 be      &lt;head type conjoins_IP&gt;		= +
 Let -conjoins_DP                be      &lt;head type conjoins_DP&gt;		= -
@@ -1733,7 +1733,7 @@ rule {S option start.symbol  - optional elements initial}
 S = (Conj) (PP_1) ((AdvP_2) AdvP_1)  (PP_2) {IP / CP}
 	&lt;S head&gt; = &lt;IP head&gt;
 	&lt;S head&gt; = &lt;CP head&gt;
-	&lt;S head topicP&gt; = &lt;none&gt;
+	&lt;S head type topic&gt; = -
 	&lt;IP head type root&gt; = +
 	&lt;IP head type question&gt; = -
 	&lt;IP head fronted cat&gt; = none
@@ -1810,7 +1810,7 @@ rule {S option start.NegVAdvRequired  - optional elements initial}
 S = (Conj) (PP_1) ((AdvP_2) AdvP_1)  (PP_2) {IP / CP}
 		&lt;S head&gt; = &lt;IP head&gt;
 		&lt;S head&gt; = &lt;CP head&gt;
-		&lt;S head topicP&gt; = &lt;none&gt;
+		&lt;S head type topic&gt; = -
 		&lt;IP head type root&gt; = +
 		&lt;IP head type question&gt; = -
 		&lt;IP head fronted cat&gt; = none
@@ -1894,8 +1894,8 @@ S = (Conj) (PP_1) ((AdvP_2) AdvP_1) (PP_2) {IP / CP}  TopicP
 rule {S option conjoinedS containing a topic}
 S = S_1 Conj S_2
 		&lt;S head&gt; = &lt;S_2 head&gt;
-		{&lt;S_1 head topicP&gt; = &lt;TopicP&gt;
-		/&lt;S_2 head topicP&gt; = &lt;TopicP&gt;
+		{&lt;S_1 head type topic&gt; = +
+		/&lt;S_2 head type topic&gt; = +
 		}
 		&lt;Conj head type conjoins_IP&gt; = +
 		&lt;S_2 head type verbheaded&gt; = +
@@ -1913,8 +1913,8 @@ S = S_1 Conj S_2
 	  rule {S option conjPrefix - conjoined S  containing a topic}
 	  S = S_1  S_2
 	  &lt;S head&gt; = &lt;S_2 head&gt;
-	  {&lt;S_1 head topicP&gt; = &lt;TopicP&gt;
-	  /&lt;S_2 head topicP&gt; = &lt;TopicP&gt;
+	  {&lt;S_1 head type topic&gt; = +
+	  /&lt;S_2 head type topic&gt; = +
 	  }
 	  &lt;S conjoined&gt; = +
 	  &lt;S_1 conjoined&gt; = -	|limit recursion
@@ -1939,8 +1939,8 @@ S = S_1 Conj S_2
 	  rule {S option conjSuffix - conjoined S  containing a topic}
 	  S = S_1  S_2
 	  &lt;S head&gt; = &lt;S_2 head&gt;
-	  {&lt;S_1 head topicP&gt; = &lt;TopicP&gt;
-	  /&lt;S_2 head topicP&gt; = &lt;TopicP&gt;
+	  {&lt;S_1 head type topic&gt; = +
+	  /&lt;S_2 head type topic&gt; = +
 	  }
 	  &lt;S conjoined&gt; = +
 	  &lt;S_1 conjoined&gt; = -	|limit recursion
@@ -1965,8 +1965,8 @@ S = S_1 Conj S_2
 	  rule {S option conjNone - conjoined S  containing a topic}
 	  S = S_1  S_2
 	  &lt;S head&gt; = &lt;S_2 head&gt;
-	  {&lt;S_1 head topicP&gt; = &lt;TopicP&gt;
-	  /&lt;S_2 head topicP&gt; = &lt;TopicP&gt;
+	  {&lt;S_1 head type topic&gt; = +
+	  /&lt;S_2 head type topic&gt; = +
 	  }
 	  &lt;S conjoined&gt; = +
 	  &lt;S_1 conjoined&gt; = -	|limit recursion

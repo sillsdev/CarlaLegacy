@@ -76,8 +76,8 @@ DP = (InitConj) DP_1 Conj DP_2
 	  &lt;DP_1 conjoined&gt; = -	|limit recursion
 	  &lt;DP_2 head type prefix conj&gt; = +
 	  &lt;DP_2 head type relative&gt; = -
-	  &lt;DP head infl polarity&gt; &lt;= &lt;DP_2 head type prefix conj head infl polarity&gt;
-	  &lt;DP head agr number&gt; &lt;= &lt;DP_2 head type prefix conj head agr number&gt;
+	  &lt;DP head infl polarity&gt; &lt;= &lt;DP_2 head conj head infl polarity&gt;
+	  &lt;DP head agr number&gt; &lt;= &lt;DP_2 head conj head agr number&gt;
 	  &lt;DP option&gt; = conjPrefix
    </rule>
    <showWhen id="DPoptionconjPrefix">
@@ -97,8 +97,8 @@ DP = (InitConj) DP_1 Conj DP_2
 	  &lt;DP_1 conjoined&gt; = -	|limit recursion
 	  &lt;DP_1 head type suffix conj&gt; = +
 	  &lt;DP_2 head type relative&gt; = -
-	  &lt;DP head infl polarity&gt; &lt;= &lt;DP_1 head type suffix conj head infl polarity&gt;
-	  &lt;DP head agr number&gt; &lt;= &lt;DP_1 head type suffix conj head agr number&gt;
+	  &lt;DP head infl polarity&gt; &lt;= &lt;DP_1 head conj head infl polarity&gt;
+	  &lt;DP head agr number&gt; &lt;= &lt;DP_1 head conj head agr number&gt;
 	  &lt;DP option&gt; = conjSuffix
    </rule>
    <showWhen id="DPoptionconjSuffix">
