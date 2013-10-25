@@ -1,0 +1,30 @@
+<!-- Content control-related elements:
+       These are used to filter out or exclude selected elements from an XLingPaper document.
+-->
+<!-- contentControl has two containers, one for the set of content control choices 
+        and the other for the types of content.
+-->
+<!ELEMENT contentControl (contentTypes, contentControlChoices) >
+<!ATTLIST contentControl 
+   showOnlyChosenItemsInEditor (yes | no ) "no"
+>
+
+<!-- contentControlChoices has at least one contentControlChoice -->
+<!ELEMENT contentControlChoices (contentControlChoice+) >
+<!-- a contentControlChoice has a name (the PCDATA) and
+        zero or more excluded items, each of which refers to the id of a contentType
+-->
+<!ELEMENT contentControlChoice (#PCDATA) >
+<!ATTLIST contentControlChoice
+   exclude IDREFS #IMPLIED
+   active (yes | no ) "no"
+>
+
+<!-- contentTypes is a container with one or more contentType elements. -->
+<!ELEMENT contentTypes (contentType+) >
+
+<!-- a contentType has a name (the PCDATA) and an identifier -->
+<!ELEMENT contentType (#PCDATA) >
+<!ATTLIST contentType
+  id ID #REQUIRED
+>

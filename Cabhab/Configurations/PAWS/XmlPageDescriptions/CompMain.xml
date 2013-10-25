@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="CompMain" count="1/4">
     <title>Complement Clauses</title>
-	<introduction>This section considers various types of embedded clauses which are complements of main verbs or of adjectives which are functioning as the predicate of the sentence, such as the following examples from English. </introduction>
+    <introduction>This section considers various types of embedded clauses which are <technicalTermRef term="ttComplements"/> of main verbs or of adjectives which are functioning as <technicalTermRef term="ttPredicates"/>, such as the following examples from English. </introduction>
     <EnglishExample>
         <exItem label="1.">I believe that Jill is my friend.</exItem>
         <exItem label="2.">Jill insists that she is my friend.</exItem>
@@ -13,19 +15,19 @@
         <exItem label="6.">I will persuade Joe to come to the party.</exItem>
         <exItem label="7.">Joe would hate for Sue to be at the party.</exItem>
         <exItem label="8.">Joe tried to come to the party.</exItem>
-	   <exItem label="9.">John seemed to like the tortillas.</exItem>
-	   <exItem label="10.">It seems likely that Joe will come.</exItem>
+       <exItem label="9.">John seemed to like the tortillas.</exItem>
+       <exItem label="10.">It seems likely that Joe will come.</exItem>
     </EnglishExample>
-   <introduction>Causatives that consist of two clauses, as exemplified in 11-12, are also covered here. (Morphological causatives consisting of a single clause were discussed in <section number="9.8">Basic, Single-Clause Sentences - Causatives</section>.)</introduction>
+   <introduction>The <technicalTermRef term="ttCausative"/> constructions which consist of two clauses, as exemplified in 11-12, are also covered here. (Causatives consisting of a single clause with a causative affix on the verb were discussed in <section number="9.8">Basic Sentences - Causatives and Antipassives</section>.)</introduction>
    <EnglishExample>
-	  <exItem label="11.">My mother made me clean my room.</exItem>
-	  <exItem label="12.">The other girl caused us to break up.</exItem>
+      <exItem label="11.">My mother made me clean my room.</exItem>
+      <exItem label="12.">The other girl caused us to break up.</exItem>
    </EnglishExample>
    <introduction>Direct and indirect speech, as shown in 13-14, are also complement clauses to be covered in this section.  However, embedded questions will be handled in <section number="11">Questions</section>.</introduction>
   <EnglishExample>
-	 <exItem label="13.">Sue said, “I will come to your house tomorrow.”</exItem>
-	 <exItem label="14."> Sue said that she would come here tomorrow.</exItem>
-  </EnglishExample>
+     <exItem label="13.">Sue said, “I will come to your house tomorrow.”</exItem>
+     <exItem label="14."> Sue said that she would come here tomorrow.</exItem>
+  </EnglishExample>  
    <introduction id="CompIntroNotPractical" show="swNotPractical">The examples illustrate that the main verb selects one or more particular types of complement clauses which can occur gramatically.  For example, <example>try</example> cannot have a complement clause beginning with <example>that</example> and the subject of the embedded clause must be coreferent to the main clause subject and pro-dropped.  Further, <example>believe, insist</example> and <example>persuade</example> cannot have a complement clause beginning with <example>for</example> and none of the verbs above can have an embedded question complement.
 <br/>
         <br/>
@@ -42,14 +44,14 @@ There is an important difference between <example>expect</example> (in examples 
 <br/>
 Next, a tree for example 8 with a nonfinite IP complement and required pro-drop is shown here:
 <tree img="TreeDescriptions/PawsCompIPprodrop.png"/>
-	  <br/>
-	  Finally, verbs like <example>seem</example> ( including other perception verbs and copulas) are called ‘raising’ verbs, since <example>seem</example> doesn’t really have its own subject, and takes either a nonfinite sentence as a complement or an adjective which can have a finite sentence with a complementizer as its complement.  In the nonfinite case (9), the subject of the complement appears in the subject postion of <example>seem</example>.  In the finite complement case, there is no overt subject for <example>seem</example>, so a “dummy” word <example>it</example> fills that position in English.  Some languages simply leave the main clause subject postion empty.
- <br/><br/>     A tree for example 9 with a nonfinite IP complement and  coreferent subjects due to raising will look just like the tree for example 8 with <example>try</example>, since we are not modelling the null elements.  Similarly,
-	  a tree for example 10 would be vey similar to the tree above for example 1 with <example>believe</example>, except for the adjective complement and the dummy <example>it</example> in the main clause subject position.
+      <br/>
+      Finally, verbs like <example>seem</example> ( including other perception verbs and copulas) are called ‘raising’ verbs, since <example>seem</example> doesn’t really have its own subject, and takes either a nonfinite sentence as a complement or an adjective which can have a finite sentence with a complementizer as its complement.  In the nonfinite case (9), the subject of the complement appears in the subject postion of <example>seem</example>.  In the finite complement case, there is no overt subject for <example>seem</example>, so a “dummy” word <example>it</example> fills that position in English.  Some languages simply leave the main clause subject postion empty.
+ <br/><br/>     A tree for example 9 with a nonfinite IP complement and  coreferent subjects due to raising will look just like the tree for example 8 with <example>try</example>, since we are not modelling the null elements.  Similarly, 
+      a tree for example 10 would be vey similar to the tree above for example 1 with <example>believe</example>, except for the adjective complement and the dummy <example>it</example> in the main clause subject position.
   <br/>    <br/>
         <help href="Help/Cbgbtext.doc#ClausalComplements">Click here for more information about the CP phrase structure of embedded clauses.</help>
     </introduction>
-    <introduction id="CompIntroPractical" show="swPractical">The examples illustrate that the main verb selects one or more particular types of complement clauses which can occur gramatically.  For example, <example>try</example> cannot have a complement clause beginning with <example>that</example> and the subject of the embedded clause must be coreferent to the main clause subject and pro-dropped.  Further, <example>believe, insist</example> and <example>persuade</example> cannot have a complement clause beginning with <example>for</example> and none of the verbs above can have an embedded question complement.
+    <introduction id="CompIntroPractical" show="swPractical">The examples illustrate that the main verb selects one or more particular types of complement clauses which can occur gramatically.  For example, <example>try</example> cannot have a complement clause beginning with <example>that</example> and the subject of the embedded clause must be coreferent to the main clause subject and not expressed.  Further, <example>believe, insist</example> and <example>persuade</example> cannot have a complement clause beginning with <example>for</example> and none of the verbs above can have an embedded question complement.
     </introduction>
     <form section="comp" transparent="yes">
         <br/>
@@ -64,4 +66,5 @@ Next, a tree for example 8 with a nonfinite IP complement and required pro-drop 
     <showWhen id="swPractical">
         <whenValue  element="paws" attr="outputGrammar" value="False"/>
     </showWhen>
+   &TechnicalTerms; 
 </page>

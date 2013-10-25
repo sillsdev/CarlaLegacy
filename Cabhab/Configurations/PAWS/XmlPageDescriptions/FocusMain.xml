@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="FocusMain" count="1/2">
     <title>Focus and Topic Constructions</title>
-	<introduction>This section considers two types of constructions which draw attention to a particular element.  Since topic phrases occur outside of focus phrase, we will consider topics first. <br/><br/>
-	   As defined here, topic constructions consist of a topic phrase followed by a complete sentence or question and usually set apart by a comma.  Certain marker morphemes may also be used to set off topics, as shown in the following English examples:</introduction>
+    <introduction>This section considers two types of constructions which draw attention to a particular element.  We will consider topics first since they have greater scope and therefore occur outside of focus constructions. <br/><br/>
+       Example 1 shows that a single sentence may have both a topic phrase and a focus phrase.  In this case, the topic <example>Bill</example> is introduced by the topic marker <example>as for</example>, and the focus phrase <example>soccer</example>, which has been moved from its normal position after the verb, follows the topic phrase.
+       </introduction>
+       <EnglishExample>
+          <exItem label="1.">As for Bill, soccer he plays __ best.</exItem>
+       </EnglishExample>
+   <introduction> 
+       As defined here, <technicalTermRef term="ttTopic"/> constructions consist of a topic phrase followed by a complete sentence or question and usually set apart by a comma.  Certain marker words or phrases may also be used to set off topics, as shown in the following English examples:</introduction>
     <EnglishExample>
-        <exItem label="1.">As for John, I think he will make a good doctor.</exItem>
-        <exItem label="2.">Speaking of Jill, where is she?</exItem>
-    </EnglishExample>
-	<introduction>In contrast, while focus constructions also have an element fronted which may be set off by punctuation, the phrase in focus is moved from its normal position in the sentence, leaving a gap.  Certain markers, such as ‘only’ in English, may be used to mark the focused phrase.  Focus constructions are not used frequently in SVO languages, since the subject is usually in focus and is already first in the normal order.  Other word orders, such as VSO languages, may make extensive use of focus constructions.  English examples of focus constructions include:
-    </introduction>
-    <EnglishExample>
-        <exItem label="1.">Girls, I like __.</exItem>
-        <exItem label="2.">Soccer, Bill plays __ best.</exItem>
-        <exItem label="3.">Only that boy, Jerry hit  __ .</exItem>
-    </EnglishExample>
-	<introduction>It is possible to have both a topic phrase and a focus phrase in the same sentence.  In this case, the topic phrase is always closer to the edge of the sentence (either first or last) than the focus phrase, as in:
-    </introduction>
-    <EnglishExample>
-        <exItem label="1.">As for Bill, soccer he plays __ best.</exItem>
+        <exItem label="2.">As for John, I think he will make a good doctor.</exItem>
+        <exItem label="3.">Speaking of Jill, where is she?</exItem>
     </EnglishExample>
     <form section="focus" transparent="no">
 <radioGroup id="TopicTable">
     <groupName dataItem="topic" default="no">RTopic</groupName>
-    <prompt>Does your language allow a topic phrase before or after a full sentence or question, as in the English examples above?</prompt>
+    <prompt><br/>Does your language allow a topic phrase before or after a full sentence or question, as in examples above 1-2 and 6?</prompt>
     <radio id="TopicNo" dataValue="no">No</radio>
     <radio id="TopicYes" dataValue="yes">Yes</radio>
 </radioGroup>
@@ -33,7 +29,7 @@
 <br/>
 <radioGroup id="TopicPosTable" show="swTopicYes">
     <groupName dataItem="topicPos" default="unknown" position="yesHead">RTopicPos</groupName>
-    <prompt>Considering the examples you keyed, where does the topic phrase occur with respect to the main sentence or question?</prompt>
+    <prompt><br/>Considering the examples you keyed, where does the topic phrase occur with respect to the main sentence or question?</prompt>
     <radio id="TopicPosBefore" dataValue="before">Before it</radio>
     <radio id="TopicPosAfter" dataValue="after">After it</radio>
 </radioGroup>
@@ -41,45 +37,52 @@
     <groupName dataItem="topicMarker" default="no">RTopicMarker</groupName>
     <prompt>In your language, are there one or more special words or clitics or affixes that mark topics?</prompt>
     <radio id="TopicMarkerNo" dataValue="no">No, the topic is unmarked except for position</radio>
-    <radio id="TopicMarkerYesWord" dataValue="yesWord">Yes, like in English, certain words or phrases indicate the topic</radio>
-    <radio id="TopicMarkerYesClitic" dataValue="yesClitic">Yes, the topic is marked by a clitic</radio>
-    <radio id="TopicMarkerYesAffix" dataValue="yesAffix">Yes, the topic is marked by an affix</radio>
+    <radio id="TopicMarkerYesWord" dataValue="yesWord">Yes, certain words or phrases indicate the topic</radio>
+    <radio id="TopicMarkerYesClitic" dataValue="yesClitic">Yes, the topic phrase is marked by a clitic</radio>
+    <radio id="TopicMarkerYesAffix" dataValue="yesAffix">Yes, the topic is marked by an affix which attaches to the head noun</radio>
 </radioGroup>
 <prompt id="TopicMarkerYesWordInstruction" show="swTopicMarkerYesWord">Key the topic markers your language uses in the following box.  If  the marker is a phrase, such as ‘as for’ or ‘speaking of’ in English, key it together on the same line.</prompt>
-	   <prompt id="TopicMarkerYesCliticInstruction" show="swTopicMarkerYesClitic">Key the topic marker clitic(s) your language uses in the following box, with a hyphen to show which side it attaches on.</prompt>
-	   <prompt id="TopicMarkerYesAffixInstruction" show="swTopicMarkerYesAffix">Key the topic marker affix(es) your language uses in the following box, with a hyphen to show which side it attaches on.</prompt>
-	   <textBox id="TopicMarker" show="swTopicMarkerYes" dataItem="topicMarkerExample" rows="4"/>
-<br/>
-<radioGroup id="TopicMarkerPosTable" show="swTopicMarkerYesWord">
-    <groupName dataItem="topicMarkerPos" default="unknown" position="yesHead">RTopicMarkerPos</groupName>
-    <prompt>Where does the topic marker occur with respect to the topic itself?</prompt>
-    <radio id="TopicMarkerPosBefore" dataValue="before">Before it</radio>
-    <radio id="TopicMarkerPosAfter" dataValue="after">After it</radio>
-    <radio id="TopicMarkerPosEither" dataValue="either">On either side but not both sides at the same time</radio>
-    <radio id="TopicMarkerPosBoth" dataValue="both">On both sides</radio>
+       <textBox id="TopicMarker" show="swTopicMarkerYesWord" dataItem="topicMarkerExample" rows="4"/>
+       <checkboxGroup id="TopicMarkerPosTable" show="swTopicMarkerYesWord">
+   <prompt><br/>Where does the topic marker occur with respect to the topic itself? Check all options that are allowed</prompt>
+   <checkbox id="TopicMarkerPosBefore" dataItem="topicMarkerBefore">Before it</checkbox>
+      <checkbox id="TopicMarkerPosAfter" dataItem="topicMarkerAfter">After it</checkbox>
+            <checkbox id="TopicMarkerPosBoth" dataItem="topicMarkerBoth">On both sides of the same topic phrase</checkbox>
+               <checkbox id="TopicMarkerPosOther" dataItem="topicMarkerOther">In my language, the topic marker may occur in this other position: <textBox  id="TopicMarkerOtherContent" dataItem="topicMarkerOther" rows="2"/></checkbox>
+</checkboxGroup>
+       <prompt id="TopicMarkerPosNoCheckPrompt" show="swTopicMarkerYesWordAndNoCheck">WARNING: You did not check any boxes to describe where the topic marker may occur with respect to the topic phrase in your language.  Please check one or more boxes, or change your answer to ‘No, the topic is unmarked except for position’ above, in which case you should not have any examples of topic markers in the box either.</prompt>
+       
 <radioGroup id="TopicMarkerRequiredTable" show="swTopicMarkerYesWord">
     <groupName dataItem="topicMarkerRequired" default="no">RTopicMarkerRequired</groupName>
     <prompt>Is a topic marker required whenever there is a topic phrase?</prompt>
     <radio id="TopicMarkerRequiredNo" dataValue="no">No, it is optional</radio>
     <radio id="TopicMarkerRequiredYes" dataValue="yes">Yes, a topic marker is required in every topic phrase</radio>
 </radioGroup>
-<radioGroup id="TopicMarkerEitherOrBothTable" show="swTopicMarkerYesWordEitherOrBoth">
-    <groupName dataItem="topicMarkerEither" default="no">RTopicMarkerEither</groupName>
-    <prompt>Can all the topic markers appear on either side of the topic?</prompt>
-    <radio id="TopicMarkerEitherNo" dataValue="no">No, there are separate sets for each side</radio>
-    <radio id="TopicMarkerEitherYes" dataValue="yes">Yes, there is no restriction</radio>
-</radioGroup>
-</radioGroup>
-<instruction id="TopicMarkerEitherNoInstruction" show="swTopicMarkerYesWordEitherNo">In the lexicon, add the feature <feature>topic-initial</feature> to the topic markers which can only appear before the topic itself.  Add the feature <feature>topic-final</feature> to the topic markers which can only appear after the topic itself.  Do not add either feature to topic markers which can appear on either side of the topic. </instruction>
+
+<instruction id="TopicMarkerEitherInstruction" show="swTopicMarkerYesWordEitherSide">In the lexicon, add the feature <feature>topic-initial</feature> to the topic markers which can only appear before the topic itself.  Add the feature <feature>topic-final</feature> to the topic markers which can only appear after the topic itself.  Do not add either feature to topic markers which can appear on either side of the topic. </instruction>
 <instruction id="TopicMarkerYesWordInstruction2" show="swTopicMarkerYesWord">In the lexicon, add the feature <feature>makeTopicM</feature> to each topic marker to change the category for the syntax.  (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, such as ‘as for’ or ‘speaking of’ in English, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
-<instruction id="TopicMarkerYesCliticInstruction2" show="swTopicMarkerYesClitic">In the lexicon, add the feature <feature>topic</feature> to each topic marker clitic.</instruction>
-<instruction id="TopicMarkerYesAffixInstruction2" show="swTopicMarkerYesAffix">In the lexicon, add the feature <feature>topic</feature> to each topic marker affix.</instruction>
+       <prompt id="TopicMarkerYesCliticInstruction" show="swTopicMarkerYesClitic"><br/>Key the topic marker clitic(s) your language uses in the following box, with an equal sign to show which side it attaches to the topic phrase on.</prompt>
+       <textBox id="TopicMarkerClitic" show="swTopicMarkerYesClitic" dataItem="topicMarkerCliticExample" rows="4"/>
+       <instruction id="TopicMarkerYesCliticInstruction2" show="swTopicMarkerYesClitic">In the lexicon, add the feature <feature>topic_prefix</feature> to each topic marker proclitic and the feature <feature>topic_suffix</feature> to each topic marker enclitic.</instruction>
+       
+       <br/>      
+       <prompt id="TopicMarkerYesAffixInstruction" show="swTopicMarkerYesAffix"><br/>Key the topic marker affix(es) your language uses in the following box, with a hyphen to show which side it attaches to the head noun on.</prompt>
+       <textBox id="TopicMarkerAffix" show="swTopicMarkerYesAffix" dataItem="topicMarkerAffixExample" rows="4"/>
+ <instruction id="TopicMarkerYesAffixInstruction2" show="swTopicMarkerYesAffix">In the lexicon, add the feature <feature>topic</feature> to each topic marker affix.</instruction>
 <br/>
-	   <instruction id="TopicCommaInstruction">Note that the comma is important in topic constructions and may be useful in disambiguating topics from other types of constructions.  As mentioned in <section number="15">Coordination Constructions - Lists and Appositives</section>, you can choose to make the comma (,) a word-formation character in <tool>CarlaStudio</tool>. Then make it a suffix or enclitic that can go on any word category and give it the feature <feature>comma</feature>.  The PC-Patr grammar constraints to disambiguate via commas are already provided, but you will need to activate them by removing the comment character in the S rule(s) including a TopicP.</instruction>
-	   <br/>
-	   <radioGroup id="FocusTable">
+       <br/>
+       <instruction id="TopicCommaInstruction" show="swTopicYes">Note that the comma is important in topic constructions and may be useful in disambiguating topics from other types of constructions.  As mentioned in <section number="15">Coordination Constructions - Lists and Appositives</section>, you can choose to make the comma (,) a word-formation character in <tool>CarlaStudio</tool>. Then make it a suffix or enclitic that can go on any word category and give it the feature <feature>comma</feature>.  The PC-Patr grammar constraints to disambiguate via commas are already provided, but you will need to activate them by removing the comment character in the S rule(s) including a TopicP.</instruction>
+       <br/>
+       <introduction>In contrast, while <technicalTermRef term="ttFocus"/> constructions also have an element fronted which may be set off by punctuation, the phrase in focus is moved from its normal position in the sentence, leaving a gap.  Certain markers, such as ‘only’ in English, may be used to mark the focused phrase.  Focus constructions are not used frequently in SVO languages, since the subject is usually in focus and is already first in the normal order.  Other word orders, such as VSO languages, may make extensive use of focus constructions.  English examples of focus constructions include:
+       </introduction>
+       <EnglishExample>
+          <exItem label="4.">Girls, I like __.</exItem>
+          <exItem label="5.">Soccer, Bill plays __ best.</exItem>
+          <exItem label="6.">Only that boy, Jerry hit  __ .</exItem>
+       </EnglishExample>
+       <radioGroup id="FocusTable">
     <groupName dataItem="focus" default="no">RFocus</groupName>
-    <prompt>Moving now to focus constructions, does your language allow a focus phrase to be moved before or after the rest of the sentence out of its normal position?</prompt>
+    <prompt><br/>Does your language allow a focus phrase to be moved before or after the rest of the sentence out of its normal position?</prompt>
     <radio id="FocusNo" dataValue="no">No</radio>
     <radio id="FocusYes" dataValue="yes">Yes</radio>
 </radioGroup>
@@ -88,46 +91,44 @@
 <br/>
 <radioGroup id="FocusPosTable" show="swFocusYes">
     <groupName dataItem="focusPos" default="unknown" position="yesHead">RFocusPos</groupName>
-    <prompt>Considering the examples you keyed, where does the focus phrase occur with respect to the rest of the sentence?</prompt>
+    <prompt><br/>Considering the examples you keyed, where does the focus phrase occur with respect to the rest of the sentence?</prompt>
     <radio id="FocusPosBefore" dataValue="before">Before it</radio>
     <radio id="FocusPosAfter" dataValue="after">After it</radio>
 </radioGroup>
 <radioGroup id="FocusMarkerTable" show="swFocusYes">
     <groupName dataItem="focusMarker" default="no">RFocusMarker</groupName>
-    <prompt>In your language, are there one or more special words or clitics or affixes that mark the phrase or word in focus?</prompt>
+    <prompt><br/>In your language, are there one or more special words or clitics or affixes that mark the phrase or word in focus?</prompt>
     <radio id="FocusMarkerNo" dataValue="no">No, the focused phrase is unmarked except for position</radio>
-    <radio id="FocusMarkerYesWord" dataValue="yesWord">Yes, like in English, certain words or phrases may indicate focus</radio>
-    <radio id="FocusMarkerYesClitic" dataValue="yesClitic">Yes, focus is marked by a clitic</radio>
-    <radio id="FocusMarkerYesAffix" dataValue="yesAffix">Yes, focus is marked by an affix</radio>
+    <radio id="FocusMarkerYesWord" dataValue="yesWord">Yes, certain words or phrases may indicate a phrase is in focus</radio>
+    <radio id="FocusMarkerYesClitic" dataValue="yesClitic">Yes, the focused phrase is marked by a clitic</radio>
+    <radio id="FocusMarkerYesAffix" dataValue="yesAffix">Yes, focus is marked by an affix which attaches to the head noun</radio>
 </radioGroup>
-<prompt id="FocusMarkerYesWordInstruction" show="swFocusMarkerYesWord">Key the focus markers your language uses in the following box.  If  the marker is a phrase, key it together on the same line.</prompt>
-	   <prompt id="FocusMarkerYesCliticInstruction" show="swFocusMarkerYesClitic">Key the focus marker clitic(s) your language uses in the following box, with a hyphen to show which side it attaches on.</prompt>
-	   <prompt id="FocusMarkerYesAffixInstruction" show="swFocusMarkerYesAffix">Key the focus marker affix(es) your language uses in the following box, with a hyphen to show which side it attaches on.</prompt>
-	   <textBox id="FocusMarker" show="swFocusMarkerYes" dataItem="focusMarkerExample" rows="4"/>
-<br/>
-<radioGroup id="FocusMarkerPosTable" show="swFocusMarkerYesWord">
-    <groupName dataItem="focusMarkerPos" default="unknown" position="yesHead">RFocusMarkerPos</groupName>
-    <prompt>Where does the focus marker occur with respect to the focused phrase or word itself?</prompt>
-    <radio id="FocusMarkerPosBefore" dataValue="before">Before it</radio>
-    <radio id="FocusMarkerPosAfter" dataValue="after">After it</radio>
-    <radio id="FocusMarkerPosEither" dataValue="either">On either side but not both sides at the same time</radio>
-    <radio id="FocusMarkerPosBoth" dataValue="both">On both sides</radio>
+<prompt id="FocusMarkerYesWordInstruction" show="swFocusMarkerYesWord"><br/>Key the focus markers your language uses in the following box.  If  the marker is a phrase, key it together on the same line.</prompt>
+       <textBox id="FocusMarker" show="swFocusMarkerYesWord" dataItem="focusMarkerExample" rows="4"/>
+       <checkboxGroup id="FocusMarkerPosTable" show="swFocusMarkerYesWord">
+          <prompt><br/>Where does the focus marker occur with respect to the topic itself? Check all options that are allowed</prompt>
+          <checkbox id="FocusMarkerPosBefore" dataItem="focusMarkerBefore">Before it</checkbox>
+          <checkbox id="FocusMarkerPosAfter" dataItem="focusMarkerAfter">After it</checkbox>
+          <checkbox id="FocusMarkerPosBoth" dataItem="focusMarkerBoth">On both sides of the same focus phrase</checkbox>
+          <checkbox id="FocusMarkerPosOther" dataItem="focusMarkerOther">In my language, the focus marker may occur in this other position: <textBox  id="FocusMarkerOtherContent" dataItem="focusMarkerOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="FocusMarkerPosNoCheckPrompt" show="swFocusMarkerYesWordAndNoCheck">WARNING: You did not check any boxes to describe where the focus marker may occur with respect to the focus phrase in your language.  Please check one or more boxes, or change your answer to ‘No, the focused phrase is unmarked except for position’ above, in which case you should not have any examples of focus markers in the box either.</prompt>
+       
 <radioGroup id="FocusMarkerRequiredTable" show="swFocusMarkerYesWord">
     <groupName dataItem="focusMarkerRequired" default="no">RFocusMarkerRequired</groupName>
     <prompt>Is a focus marker required whenever there is a focused phrase?</prompt>
     <radio id="FocusMarkerRequiredNo" dataValue="no">No, it is optional</radio>
     <radio id="FocusMarkerRequiredYes" dataValue="yes">Yes, a focus marker is required in every focused phrase</radio>
 </radioGroup>
-<radioGroup id="FocusMarkerEitherOrBothTable" show="swFocusMarkerYesWordEitherOrBoth">
-    <groupName dataItem="focusMarkerEither" default="no">RFocusMarkerEither</groupName>
-    <prompt>Can all the focus markers appear on either side of the focused phrase or word?</prompt>
-    <radio id="FocusMarkerEitherNo" dataValue="no">No, there are separate sets for each side</radio>
-    <radio id="FocusMarkerEitherYes" dataValue="yes">Yes, there is no restriction</radio>
-</radioGroup>
-</radioGroup>
-<instruction id="FocusMarkerEitherNoInstruction" show="swFocusMarkerYesWordEitherNo">In the lexicon, add the feature <feature>focus-initial</feature> to the focus markers which can only appear before the focused phrase or word itself.  Add the feature <feature>focus-final</feature> to the focus markers which can only appear after the focused phrase or word  itself.  Do not add either feature to focus markers which can appear on either side of the focused phrase or word. </instruction>
+<instruction id="FocusMarkerEitherInstruction" show="swFocusMarkerYesWordEitherSide">In the lexicon, add the feature <feature>focus-initial</feature> to the focus markers which can only appear before the focused phrase or word itself.  Add the feature <feature>focus-final</feature> to the focus markers which can only appear after the focused phrase or word  itself.  Do not add either feature to focus markers which can appear on either side of the focused phrase or word. </instruction>
 <instruction id="FocusMarkerYesWordInstruction2" show="swFocusMarkerYesWord">In the lexicon, add the feature <feature>makeFocusM</feature> to each focus marker to change the category for the syntax. (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
-<instruction id="FocusMarkerYesCliticInstruction2" show="swFocusMarkerYesClitic">In the lexicon, add the feature <feature>focus</feature> to each focus marker clitic.</instruction>
+
+       <prompt id="FocusMarkerYesCliticInstruction" show="swFocusMarkerYesClitic"><br/>Key the focus marker clitic(s) your language uses in the following box, with an equal sign to show which side it attaches to the focused phrase on.</prompt>
+       <textBox id="FocusMarkerClitic" show="swFocusMarkerYesClitic" dataItem="focusMarkerCliticExample" rows="4"/>
+       <br/><instruction id="FocusMarkerYesCliticInstruction2" show="swFocusMarkerYesClitic">In the lexicon, add the feature <feature>focus_prefix</feature> to each focus marker proclitic and the feature <feature>focus_suffix</feature> to each focus marker enclitic.</instruction>
+       <prompt id="FocusMarkerYesAffixInstruction" show="swFocusMarkerYesAffix"><br/>Key the focus marker affix(es) your language uses in the following box, with a hyphen to show which side it attaches to the head noun on.</prompt>
+       <textBox id="FocusMarkerAffix" show="swFocusMarkerYesAffix" dataItem="focusMarkerAffixExample" rows="4"/>
+       <br/>
 <instruction id="FocusMarkerYesAffixInstruction2" show="swFocusMarkerYesAffix">In the lexicon, add the feature <feature>focus</feature> to each focus marker affix.</instruction>
         <br/>
         <buttons>
@@ -138,55 +139,52 @@
     <showWhen id="swTopicYes">
         <whenRadio button="TopicYes"/>
     </showWhen>
-    <showWhen id="swTopicMarkerYes">
-         <whenRadio button="TopicYes"/>
-<and/>      <not/> <whenRadio button="TopicMarkerNo"/>
-    </showWhen>
     <showWhen id="swTopicMarkerYesWord">
           <whenRadio button="TopicYes"/>
-<and/>       <whenRadio button="TopicMarkerYesWord"/>
+<and/>
+       <whenRadio button="TopicMarkerYesWord"/>
     </showWhen>
     <showWhen id="swTopicMarkerYesClitic">
           <whenRadio button="TopicYes"/>
-<and/>       <whenRadio button="TopicMarkerYesClitic"/>
+<and/>
+       <whenRadio button="TopicMarkerYesClitic"/>
     </showWhen>
     <showWhen id="swTopicMarkerYesAffix">
            <whenRadio button="TopicYes"/>
-<and/>      <whenRadio button="TopicMarkerYesAffix"/>
-    </showWhen>
-    <showWhen id="swTopicMarkerYesWordEitherOrBoth">
-            <whenRadio button="TopicYes"/>
-<and/>     <whenRadio button="TopicMarkerYesWord"/>
 <and/>
-<whenRadio button="TopicMarkerPosEither"/>
-<or/>
+       <whenRadio button="TopicMarkerYesAffix"/>
+    </showWhen>
+    <showWhen id="swTopicMarkerYesWordEitherSide">
          <whenRadio button="TopicYes"/>
-<and/>        <whenRadio button="TopicMarkerYesWord"/>
-<and/>
-<whenRadio button="TopicMarkerPosBoth"/>
+<and/>        
+       <whenRadio button="TopicMarkerYesWord"/>
+<and/> 
+<whenCheckbox button="TopicMarkerPosBoth"/>
+<or/> 
+       <whenRadio button="TopicYes"/>
+       <and/>        
+       <whenRadio button="TopicMarkerYesWord"/>
+       <and/> 
+       <whenCheckbox button="TopicMarkerPosBefore"/>
+       <and/>
+       <whenCheckbox button="TopicMarkerPosAfter"/>
     </showWhen>
-    <showWhen id="swTopicMarkerYesWordEitherNo">
-         <whenRadio button="TopicYes"/>
-<and/>        <whenRadio button="TopicMarkerYesWord"/>
-<and/>
-<whenRadio button="TopicMarkerPosEither"/>
-<and/>
-<whenRadio button="TopicMarkerEitherNo"/>
-<or/>
-           <whenRadio button="TopicYes"/>
-<and/>      <whenRadio button="TopicMarkerYesWord"/>
-<and/>
-<whenRadio button="TopicMarkerPosBoth"/>
-<and/>
-<whenRadio button="TopicMarkerEitherNo"/>
-    </showWhen>
+   <showWhen id="swTopicMarkerYesWordAndNoCheck">
+      <whenRadio button="TopicYes"/>
+      <and/>
+      <whenRadio button="TopicMarkerYesWord"/>
+      <and/><not/>
+      <whenCheckbox button="TopicMarkerPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="TopicMarkerPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="TopicMarkerPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="TopicMarkerPosOther"/>
+   </showWhen>
 
     <showWhen id="swFocusYes">
         <whenRadio button="FocusYes"/>
-    </showWhen>
-    <showWhen id="swFocusMarkerYes">
-        <whenRadio button="FocusYes"/>
-<and/>       <not/> <whenRadio button="FocusMarkerNo"/>
     </showWhen>
     <showWhen id="swFocusMarkerYesWord">
           <whenRadio button="FocusYes"/>
@@ -200,31 +198,34 @@
          <whenRadio button="FocusYes"/>
 <and/>       <whenRadio button="FocusMarkerYesAffix"/>
     </showWhen>
-    <showWhen id="swFocusMarkerYesWordEitherOrBoth">
-         <whenRadio button="FocusYes"/>
-<and/>       <whenRadio button="FocusMarkerYesWord"/>
-<and/>
-<whenRadio button="FocusMarkerPosEither"/>
-<or/>
-        <whenRadio button="FocusYes"/>
-<and/>        <whenRadio button="FocusMarkerYesWord"/>
-<and/>
-<whenRadio button="FocusMarkerPosBoth"/>
-    </showWhen>
-    <showWhen id="swFocusMarkerYesWordEitherNo">
-         <whenRadio button="FocusYes"/>
-<and/>       <whenRadio button="FocusMarkerYesWord"/>
-<and/>
-<whenRadio button="FocusMarkerPosEither"/>
-<and/>
-<whenRadio button="FocusMarkerEitherNo"/>
-<or/>
-          <whenRadio button="FocusYes"/>
-<and/>      <whenRadio button="FocusMarkerYesWord"/>
-<and/>
-<whenRadio button="FocusMarkerPosBoth"/>
-<and/>
-<whenRadio button="FocusMarkerEitherNo"/>
-    </showWhen>
-
+   <showWhen id="swFocusMarkerYesWordEitherSide">
+      <whenRadio button="FocusYes"/>
+      <and/>        
+      <whenRadio button="FocusMarkerYesWord"/>
+      <and/> 
+      <whenCheckbox button="FocusMarkerPosBoth"/>
+      <or/> 
+      <whenRadio button="FocusYes"/>
+      <and/>        
+      <whenRadio button="FocusMarkerYesWord"/>
+      <and/> 
+      <whenCheckbox button="FocusMarkerPosBefore"/>
+      <and/>
+      <whenCheckbox button="FocusMarkerPosAfter"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerYesWordAndNoCheck">
+      <whenRadio button="FocusYes"/>
+      <and/>
+      <whenRadio button="FocusMarkerYesWord"/>
+      <and/><not/>
+      <whenCheckbox button="FocusMarkerPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="FocusMarkerPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="FocusMarkerPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="FocusMarkerPosOther"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
 </page>

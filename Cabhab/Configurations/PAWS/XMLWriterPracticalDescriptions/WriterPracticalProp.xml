@@ -3,7 +3,10 @@
 <portion>
     <section1 id="sProp">
         <secTitle>Proper Names</secTitle>
-        <p>
+       <p contentType="ctPracticalIntro">
+          <content>Proper names are a special kind of noun or phrase that acts syntactically just like other nouns or nominal phrases.</content>
+       </p>
+       <p contentType="ctComparativeIntro">
             <content>Proper names are a special kind of noun or phrase that acts syntactically just like other nouns or nominal phrases.  In English, some proper names can stand alone, like </content>
             <langData>Sue</langData>
             <content> and </content>
@@ -14,8 +17,8 @@
             <case element="pp" attr="pPos">
                 <caseText value="before">prepositional</caseText>
                 <caseText value="after">postpositional</caseText>
-                <caseText value="both">prepositional and/or postpositional</caseText>
-                <caseText value="unknown">prepositional and/or postpositional</caseText>
+                <caseText value="both">prepositional or postpositional</caseText>
+                <caseText value="unknown">adpositional</caseText>
             </case>
             <content> phrases, as in </content>
             <langData>the United States of America</langData>
@@ -27,7 +30,16 @@
             <langData>the Susan Welch that I know</langData>
             <content>.</content>
         </p>
-        <p>
+       <p show="swClassifiersYesPropYes"><content>In </content><langName/><content>, proper names carry classifiers just like nouns as part of the concord agreement system.</content></p>
+       <p show="swClassifiersYesPropNo"><content>In </content><langName/><content>, proper names do not carry classifiers as nouns do as part of the concord agreement system.</content></p>
+       <p show="swNPArtAndDemNotNo"><content>Proper names in </content><langName/><case element="prop" attr="pnDeterminer">
+          <caseText value="no"> may but are not required to</caseText>
+          <caseText value="yes"> must</caseText>
+       </case><content> contain </content><case element="np" attr="artAndDem">
+          <caseText value="article">an article</caseText>
+          <caseText value="demonstrative">a demonstrative</caseText>
+          <caseText value="both">an article and/or demonstrative</caseText></case><content> or a possessor.</content></p>
+       <p>
             <content>Examples with simple and compound proper names, or those including articles, demonstratives, adjectives, and/or possessors in </content>
             <langName/>
             <content> include:</content>
@@ -49,8 +61,8 @@
             <case element="pp" attr="pPos">
                 <caseText value="before">prepositional</caseText>
                 <caseText value="after">postpositional</caseText>
-                <caseText value="both">prepositional and/or postpositional</caseText>
-                <caseText value="unknown">prepositional and/or postpositional</caseText>
+                <caseText value="both">prepositional or postpositional</caseText>
+                <caseText value="unknown">adpositional</caseText>
             </case>
             <content> phrases in </content>
             <langName/>
@@ -60,9 +72,7 @@
             <interlinear exampleLoc="prop/ppExample"/>
         </example>
         <p>
-            <content>Examples of proper names modified by relative clauses included in simple full sentences in </content>
-            <langName/>
-            <content> include:</content>
+            <content>Some examples of proper names modified by relative clauses included in simple full sentences are:</content>
         </p>
         <example>
             <interlinear exampleLoc="prop/relClExample"/>

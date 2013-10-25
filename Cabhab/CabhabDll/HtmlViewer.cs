@@ -843,6 +843,14 @@ namespace SIL.Cabhab
 			else
 				m_sOutValue = "Cancel";
 		}
+		public void ShowTermDefinition(string sMsg)
+		{
+			using (var dlg = new TermDefinitionDialog())
+			{
+				dlg.LabelMessage = sMsg;
+				dlg.ShowDialog();
+			}
+		}
 		public void ChangeFontInfo()
 		{
 			const string ksFontName = "//language/font/fontName";

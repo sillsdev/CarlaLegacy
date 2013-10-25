@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="QPTesting" count="6/6">
+<page id="QPTesting" count="7/7">
 	<title level="2">Quantifiers and QP - Testing</title>
 	<form section="qp">
 		<instruction>To test what you have done so far, save your work now.  This will generate the test file and grammar rules file created to this point.

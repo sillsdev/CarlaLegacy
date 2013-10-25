@@ -8,45 +8,48 @@
 	</p>
 <section2 id="sExclGreet">
 	<secTitle>Greetings</secTitle>
-<p><content>Greetings typically consist of a particular word or phrase, either standing alone or followed by a name or nominal phrase describing the person or animal being greeted.  Some are full sentences or full questions, such as </content> <langData>How do you do? </langData><langData>How are you? </langData> <content> and </content><langData>Have a good day!</langData> <content> which do not need to be treated separately. </content></p>
-   <p><content>Some examples of English greetings are:
+   <p contentType="ctComparativeIntro"><content>Greetings typically consist of a particular word or phrase, either standing alone or followed by a name or nominal phrase describing the person or animal being greeted.  Some are full sentences or full questions, such as </content> <langData>How do you do? </langData><langData>How are you? </langData> <content> and </content><langData>Have a good day!</langData> <content> which do not need to be treated separately. </content></p>
+   <p contentType="ctComparativeIntro"><content>Some examples of English greetings are:
    </content><langData>Hi!</langData><content>&#x20;</content><langData>Howdy!</langData><content>&#x20;</content><langData>Goodby</langData><content>, </content><langData>Good day, sir</langData><content> and </content><langData>Good night, sweet baby</langData>
- <content>.</content>
+      <content>.</content>
    </p>
-<p><content>Examples of greetings in </content><langName/> <content> include:</content></p>
+   <p contentType="ctPracticalIntro"><content>Greetings typically consist of a particular word or phrase, either standing alone or followed by a name or nominal phrase describing the person or animal being greeted.</content></p>
+ <p><content>Examples of greetings in </content><langName/> <content> include:</content></p>
 			<example>
 				<interlinear exampleLoc="excl/greetExample"/>
 			</example>
 </section2>
 <section2 id="sExclIntj">
 	<secTitle>Interjections</secTitle>
-<p><content>Interjections typically consist of a particular word or phrase that is used alone, usually with an exclamation point following it.  Though many of the words in interjections are not used in any other situation, regular adjectives are also used in this way.  Some examples of interjections in English are:
+<p contentType="ctComparativeIntro"><content>Interjections typically consist of a particular word or phrase that is used alone, usually with an exclamation point following it.  Though many of the words in interjections are not used in any other situation, regular adjectives are also used in this way.  Some examples of interjections in English are:
 </content><langData>Ouch!</langData><content>&#x20;</content><langData>Gross!</langData><content>&#x20;</content><langData>Cool!</langData><content> and </content><langData>Jimminy Cricket!</langData>
 </p>
-
+   <p contentType="ctPracticalIntro"><content>Interjections typically consist of a particular word or phrase that is used alone, usually with an exclamation point following it.  Though many of the words in interjections are not used in any other situation, regular adjectives are also used in this way.</content></p>
+      
 <p><content>Examples of interjections in </content><langName/> <content> include:</content></p>
 			<example>
 				<interlinear exampleLoc="excl/intjExample"/>
 			</example>
-<p><content>Yes and No answers to questions are similar to interjections.  </content><langName/><content> uses the following words to express these answers:</content></p>
+   <p><content/><langData>‘Yes’</langData><content> and </content><langData>‘No’</langData><content> answers to questions are similar to interjections.  </content><langName/><content> uses the following words to express these answers:</content></p>
 <example>
 <table border="1">
 					<headerRow>
-						<headerCol>
-							<langName/>
-						</headerCol>
+						<headerCol>Morphemes</headerCol>
 						<headerCol>Gloss</headerCol>
+					   <headerCol>Significance</headerCol>
 					</headerRow>
 					<row>
 						<col exampleLoc="excl/yesExample"/>
-						<col>
-							<content>yes</content>
+					   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					   <col rowspan="1">
+						   <gloss><content>yes</content></gloss>
 						</col>
 					</row>
 					<row>
 						<col exampleLoc="excl/noExample"/>
-						<col>
-							<content>no</content>
+					   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					   <col rowspan="1">
+						   <gloss><content>no</content></gloss>
 						</col>
 					</row>
 </table>
@@ -54,20 +57,23 @@
 </section2>
 <section2 id="sExclExcl">
 	<secTitle>Exclamations</secTitle>
-<p><content>Exclamations typically consist of a particular word, such as </content><langData>how</langData><content> in English, followed by an adjective phrase and usually punctuated with an exclamation point.  English examples include:</content>
+<p contentType="ctComparativeIntro"><content>Exclamations typically consist of a particular word, such as </content><langData>how</langData><content> in English, followed by an adjective phrase and usually punctuated with an exclamation point.  English examples include:</content>
    <langData>How awful for you!</langData><content>&#x20;</content><langData>How nice!</langData><content> and </content><langData>How wonderful that your family could come!</langData>
 </p>
-
+   <p contentType="ctPracticalIntro"><content>Exclamations typically consist of a particular word followed by an adjective phrase and usually punctuated with an exclamation point.</content></p>  
 <p show="swExclMNo"><langName/><content> does not have a special word which marks exclamations of this type, so they are no different than the interjections consisting of adjectives in the previous section.</content></p>
-<p show="swExclMYes"><langName/> <content> has one or more special words which signal an exclamation which occur </content><case element="excl" attr="exclMPos">
-<caseText value="before">before</caseText>
-<caseText value="after">after</caseText>
-<caseText value="either">on either side of</caseText>
-<caseText value="both">on both sides of</caseText>
-   <caseText value="unknown">________</caseText>
-</case><content> the adjective phrase.  </content>
-   <text show="swExclMYesEitherNo"><content>There are separate sets words which can occur on each side of the adjective phrase. </content></text>
-   <text show="swExclMYesEitherYes"><content>All of the words may occur on either side of the adjective phrase. </content></text>
+   <p show="swExclMYes"><langName/> <content> has one or more special words which signal an exclamation which occur </content>
+      <text show="swExclMBefore"><content>before</content></text>
+      <text show="swExclMAfter"><content>after</content></text>
+      <text show="swExclMBoth"><content>on both sides of</content></text>
+      <text show="swExclMEither"><content>on either side of</content></text>
+      <text show="swExclMBeforeOrBoth"><content>before or on both sides of</content></text>
+      <text show="swExclMAfterOrBoth"><content>after or on both sides of</content></text>
+      <text show="swExclMEitherOrBoth"><content>on either side or on both sides of</content></text>
+      <text show="swExclMNotOther"><content> the adjective phrase.  </content></text>
+      <text show="swExclMOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="excl/exclMOther"/><content>.    </content></text>
+      <text show="swExclMPosAndOther"><content> the adjective phrase and it may also occur ___</content><contentCheckBoxOther contentLoc="excl/exclMOther"/><content>.  </content></text>
+      
    <content>These exclamation marker words are:</content></p>
 <example show="swExclMYes"><table border="1">
 <headerRow>
@@ -93,30 +99,78 @@
 <showWhen id="swExclMNo">
 	<whenValue element="excl" attr="exclM" value="no"></whenValue>
 </showWhen>
-<showWhen id="swExclMYesEitherNo">
-	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMPos" value="either"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMEither" value="no"></whenValue>
-<or/>
-	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMPos" value="both"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMEither" value="no"></whenValue>
-</showWhen>
-<showWhen id="swExclMYesEitherYes">
-	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMPos" value="either"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMEither" value="yes"></whenValue>
-<or/>
-	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMPos" value="both"></whenValue>
-<and/>
-	<whenValue element="excl" attr="exclMEither" value="yes"></whenValue>
-</showWhen>
+   <showWhen id="swExclMBefore">
+      <whenValue element="excl/exclMBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swExclMAfter">
+      <whenValue element="excl/exclMBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swExclMBoth">
+      <whenValue element="excl/exclMBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swExclMEither">
+      <whenValue element="excl/exclMBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swExclMBeforeOrBoth">
+      <whenValue element="excl/exclMBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swExclMAfterOrBoth">
+      <whenValue element="excl/exclMBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swExclMEitherOrBoth">
+      <whenValue element="excl/exclMBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swExclMNotOther">
+      <whenValue element="excl/exclMOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swExclMOtherOnly">
+      <whenValue element="excl/exclMBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/NPDegreePosOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swExclMPosAndOther">
+      <whenValue element="excl/exclMBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMOther" attr="checked" value="yes"/>
+   </showWhen>
 </portion>

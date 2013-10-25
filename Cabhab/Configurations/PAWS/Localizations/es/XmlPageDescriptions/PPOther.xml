@@ -2,61 +2,59 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PPOther" count="3/5">
-	<title level="2">Las frases preposicionales y/o posposicionales - Los otros complementos</title>
-   <introduction> Además, algunas preposiciones o posposiciones pueden colocarse solas sin un complemento, por ejemplo en las oraciones  <example>Come [in] ‘Viene [adentro]’</example> y <example>John turned the light [on/off] ‘Juan apaga la luz [conectada/desconectada]’</example>.
-	  También, algunas lenguas permiten preposiciones o posposiciones dejar aisladas en preguntas cuando el complemento desplaza a la izquierda, como en , como en <example>Whom did you give the book [to _]? ‘¿Quién usted dio el libro [al _ ]?’</example> (No se permite en español.)
+	<title level="2">Las frases adposicionales - Los otros complementos</title>
+   <introduction> Además, algunas preposiciones o posposiciones pueden colocarse solas sin un complemento por razón de movimiento de una partícula, por ejemplo en las oraciones  <example>Come [in] ‘Viene [adentro]'</example> y <example>John turned the light [on/off] ‘Juan apaga la luz [conectada/desconectada]'</example>.  
+      También, algunas lenguas permiten preposiciones o posposiciones dejar aisladas en preguntas cuando el complemento desplaza hacia la izquierda, como en <example>Whom did you give the book [to _]? ‘¿Quién usted dio el libro [al _ ]?'</example> (No se permite en español.)
 	</introduction>
 	<form section="pp">
 		<radioGroup>
 			<groupName dataItem="alone" default="no">RPPAlone</groupName>
 			<prompt>¿Hay en su lengua algunas <span id="PPPrepSpanO2" show="swPPPosPrep">preposiciones</span>
 				<span id="PPPostSpanO2" show="swPPPosPost">posposiciones</span>
-				<span id="PPBothSpanO2" show="swPPPosBoth">preposiciones y/o posposiciones</span> que pueden colocarse solas como en ejemplos similares de los arriba?</prompt>
+				<span id="PPBothSpanO2" show="swPPPosBoth">adposiciones</span> que pueden colocarse solas como en ejemplos similares de los arriba?</prompt>
 			<radio id="PPAloneNo" dataValue="no">No</radio>
 			<radio id="PPAloneYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="PPAloneYesPrompt" show="swPPAloneYes">Escriba algunos ejemplos de las <span id="PPPrepSpanO1" show="swPPPosPrep">preposiciones</span>
+	   <prompt id="PPAloneYesPrompt" show="swPPAloneYes">Escriba algunos ejemplos de oraciones completas simples con las <span id="PPPrepSpanO1" show="swPPPosPrep">preposiciones</span>
 			<span id="PPPostSpanO1" show="swPPPosPost">posposiciones</span>
-			<span id="PPBothSpanO1" show="swPPPosBoth">preposiciones y posposiciones</span> que pueden colocarse solas en su lengua incluidas en oraciones completas simples aquí:</prompt>
+			<span id="PPBothSpanO1" show="swPPPosBoth">adposiciones</span> que pueden colocarse solas en su lengua aquí:</prompt>
 		<textBox id="PPCompAloneExample" dataItem="aloneExample" show="swPPAloneYes"/>
 		<br/>
 		<br/>
-		<prompt id="PPCliticOnlyAloneInstruction" show="swPPTypeCliticAloneYes">Puesto que en su lengua hay solamente <span id="PPPrepSpanO3" show="swPPPosPrep">preposiciones</span>
+		<prompt id="PPCliticOnlyAloneInstruction" show="swPPTypeCliticAloneYes">ADVERTENCIA: Puesto que en su lengua hay solamente <span id="PPPrepSpanO3" show="swPPPosPrep">preposiciones</span>
 			<span id="PPPostSpanO3" show="swPPPosPost">posposiciones</span>
-		   <span id="PPBothSpanO3" show="swPPPosBoth">preposiciones y posposiciones</span> clíticos, no debe ser posible que pueden colocarse solas.  Si hay algunas formas que pueden colocarse solas, por favor regresa a la página anterior y cambia su respuesta a ‘Se escriben algunas como palabras independientes, pero algunas son clíticos que se escriben unidos a otra palabra’.</prompt>
-	   <introduction>La mayoría de las lenguas permiten adverbios de lugar como complementos de las preposiciones o posposiciones, por ejemplo <example>por allá</example> y <example>in here ‘aquí adentro’</example>.</introduction>
+		   <span id="PPBothSpanO3" show="swPPPosBoth">adposiciones</span> clíticos, no debe ser posible que pueden colocarse solas.  Si hay algunas formas que pueden colocarse solas, por favor regresa a la página anterior y cambia su respuesta a ‘Se escriben algunas como palabras independientes, pero algunas son clíticos que se escriben unidos a otra palabra'.</prompt>
+	   <introduction>La mayoría de las lenguas permiten adverbios de lugar como complementos de las adposiciones, por ejemplo <example>por allá</example> y <example>in here ‘aquí adentro'</example>.</introduction>
 		<radioGroup>
 			<groupName dataItem="locative" default="no">RPPLocative</groupName>
 			<prompt>¿Permite su lengua adverbios de lugar como complementos de <span id="PPPrepSpanO5" show="swPPPosPrep">preposiciones?</span>
 				<span id="PPPostSpanO5" show="swPPPosPost">posposiciones?</span>
-				<span id="PPBothSpanO5" show="swPPPosBoth">preposiciones y/o posposiciones?</span>
+				<span id="PPBothSpanO5" show="swPPPosBoth">adposiciones?</span>
 			</prompt>
 			<radio id="PPLocativeNo" dataValue="no">No</radio>
 			<radio id="PPLocativeYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="PPLocativeYesPrompt" show="swPPLocativeYes">Escriba algunos ejemplos con adverbios de lugar como complementos aquí:</prompt>
+		<prompt id="PPLocativeYesPrompt" show="swPPLocativeYes">Escriba algunos ejemplos de frases adposicionales con adverbios de lugar como complementos aquí:</prompt>
 		<textBox id="PPCompLocExample" dataItem="locExample" show="swPPLocativeYes"/>
 		<br/>
 		<br/>
 		<instruction id="PPCliticOnlyLocativeInstruction" show="swPPTypeCliticLocativeYes">Since your language has only clitic <span id="PPPrepSpanO6" show="swPPPosPrep">prepositions,</span>
 			<span id="PPPostSpanO6" show="swPPPosPost">postpositions,</span>
 			<span id="PPBothSpanO6" show="swPPPosBoth">prepositions and postpositions,</span> we will assume that they can attach to adverbs, but the phrasal category in this situation wll remain AdvP, not change to PP.</instruction>
-	   <introduction>Las preposiciones y posposiciones de lugar forman una categoría especial porque en algunas lenguas pueden tener otra frase preposicional o posposicional de lugar como su complemento. Algunos ejemplos en inglés son:  <example>up [to the top] ‘encima [al borde]’</example>, <example>around [behind the shed] ‘alrededor [detrás del cobertizo]’</example> y <example>over [by the table] ‘sobre [cerca de la mesa]’</example>.</introduction>
+	   <introduction>Las adposiciones de lugar forman una categoría especial porque en algunas lenguas pueden tener otra frase adposicional de lugar como complemento. Algunos ejemplos en inglés son:  <example>up [to the top] ‘encima [al borde]'</example>, <example>around [behind the shed] ‘alrededor [detrás del cobertizo]'</example> y <example>over [by the table] ‘sobre [cerca de la mesa]'</example>.</introduction>
 		<radioGroup>
 			<groupName dataItem="ppComp" default="no">RPPCompPP</groupName>
 			<prompt>¿Existen en su lengua algunas <span id="PPPrepSpanO9" show="swPPPosPrep">preposiciones</span>
 				<span id="PPPostSpanO9" show="swPPPosPost">posposiciones</span>
-				<span id="PPBothSpanO9" show="swPPPosBoth">preposiciones y/o posposiciones</span> de lugar que pueden tener otra frase <span id="PPPrepSpanO9a" show="swPPPosPrep">preposicional</span>
+				<span id="PPBothSpanO9" show="swPPPosBoth">adposiciones</span> de lugar que pueden tener otra frase <span id="PPPrepSpanO9a" show="swPPPosPrep">preposicional</span>
 				<span id="PPPostSpanO9a" show="swPPPosPost">posposicional</span>
-				<span id="PPBothSpanO9a" show="swPPPosBoth">preposicional y/o posposicional</span> de lugar como su complemento?</prompt>
+				<span id="PPBothSpanO9a" show="swPPPosBoth">adposicional</span> de lugar como complemento?</prompt>
 			<radio id="PPCompPPNo" dataValue="no">No</radio>
 			<radio id="PPCompPPYes" dataValue="yes">Sí</radio>
 		</radioGroup>
-		<prompt id="PPCompPPYesPrompt" show="swPPCompPPYes">Escriba algunos ejemplos de las frases <span id="PPPrepSpanO8a" show="swPPPosPrep">preposicionales</span>
-			<span id="PPPostSpanO8a" show="swPPPosPost">posposicionales</span>
-			<span id="PPBothSpanO8a" show="swPPPosBoth">preposicionales y/o posposicionales</span> de lugar que son complementos de <span id="PPPrepSpanO8" show="swPPPosPrep">preposiciones</span>
+		<prompt id="PPCompPPYesPrompt" show="swPPCompPPYes">Escriba algunos ejemplos de las frases adposicionales de lugar que son complementos de <span id="PPPrepSpanO8" show="swPPPosPrep">preposiciones</span>
 			<span id="PPPostSpanO8" show="swPPPosPost">posposiciones</span>
-			<span id="PPBothSpanO8" show="swPPPosBoth">preposiciones y/o posposiciones</span>de lugar aquí:</prompt>
+			<span id="PPBothSpanO8" show="swPPPosBoth">adposiciones</span>de lugar aquí:</prompt>
 		<textBox id="PPCompPPExample" dataItem="compPPExample" show="swPPCompPPYes"/>
 		<br/>
 		<br/>
@@ -68,78 +66,80 @@
 			<span id="PPBothSpanO10" show="swPPPosBoth">prepositions and postpositions,</span> if two locative <span id="PPPrepSpanO11" show="swPPPosPrep">prepositions</span>
 			<span id="PPPostSpanO11" show="swPPPosPost">postpositions</span>
 			<span id="PPBothSpanO11" show="swPPPosBoth">prepositions or postpositions</span> attach, it will still come out as a single locative PP (or locative AdvP if the head is an adverb).</instruction>
-
+	
 	   <br/>
-	   <introduction>Palabras de tiempo como <example>before ‘antes’</example> y <example>after ‘después’</example> son preposiciones de tiempo cuando llevan una frase nominal como complemento, por ejemplo en <example>before you ‘antes de usted’</example> o <example>after that ‘después de esto’</example>.
-		  También pueden llevar un gerundio como complemento, por ejemplo en <example>before [signing the contract] ‘antes de [firmar el contrato]’</example>
-		  y <example>after [buying our new house] ‘después de [comprar nuestra casa nueva]’</example>, puesto que los gerundios son un tipo especial de frase nominal.<br/><br/>
-		  Las mismas palabras de tiempo pueden llevar oraciones como complementos, por ejemplo <example>before [the rain stops] ‘antes de que [la lluvia cese]’</example> y <example>after [John returns home] ‘después de que [Juan volvió a casa]’</example>.
-		  En este uso, son adverbios de tiempo en vez de preposiciones, y la frase completa es una cláusula adverbial que normalmente modifica la oración principal. Tales ejemplos serán detallados en <section number="13.">Las cláusulas adverbiales</section>. </introduction>
+	   <introduction>Palabras de tiempo como <example>before ‘antes'</example> y <example>after ‘después'</example> son preposiciones de tiempo cuando llevan una frase nominal como complemento, por ejemplo en <example>before you ‘antes de usted'</example> o <example>after that ‘después de esto'</example>. 
+	      También pueden llevar un gerundio como complemento, por ejemplo en <example>before [signing the contract] ‘antes de [firmar el contrato]'</example> 
+	      y <example>after [buying our new house] ‘después de [comprar nuestra casa nueva]'</example>, puesto que los gerundios son un tipo especial de frase nominal.<br/><br/>
+	      Las mismas palabras de tiempo pueden llevar oraciones como complementos, por ejemplo <example>before [the rain stops] ‘antes de que [la lluvia cese]'</example> y <example>after [John returns home] ‘después de que [Juan volvió a casa]'</example>.  
+	      Cuando se usan así, se consideran adverbios de tiempo en vez de preposiciones, y la frase completa es una cláusula adverbial que normalmente modifica a la oración principal. Tales ejemplos se detallan en <section number="13.">Las cláusulas adverbiales</section>. </introduction>
 	   <radioGroup>
-		  <groupName dataItem="tempComp" default="no">RPPTempComp</groupName>
-		  <prompt>¿Hay en su lengua algunas <span id="PPPrepSpanO13" show="swPPPosPrep">preposiciones</span>
-			 <span id="PPPostSpanO13" show="swPPPosPost">posposiciones</span>
-			 <span id="PPBothSpanO13" show="swPPPosBoth">preposiciones y/o posposiciones</span> de tiempo que pueden tener frases nominales o gerundios como complementos?</prompt>
-		  <radio id="PPTempCompNo" dataValue="no">No</radio>
-		  <radio id="PPTempCompYes" dataValue="yes">Yes</radio>
+	      <groupName dataItem="tempComp" default="no">RPPTempComp</groupName>
+	      <prompt><br/>¿Hay en su lengua algunas <span id="PPPrepSpanO13" show="swPPPosPrep">preposiciones</span>
+	         <span id="PPPostSpanO13" show="swPPPosPost">posposiciones</span>
+	         <span id="PPBothSpanO13" show="swPPPosBoth">adposiciones</span> de tiempo que pueden tener frases nominales o gerundios como complementos?</prompt>
+	      <radio id="PPTempCompNo" dataValue="no">No</radio>
+	      <radio id="PPTempCompYes" dataValue="yes">Sí</radio>
 	   </radioGroup>
-	   <prompt id="PPTempCompYesPrompt" show="swPPTempCompYes">Escriba algunos ejemplos de de las frases <span id="PPPrepSpanO13a" show="swPPPosPrep">preposicionales</span>
-		  <span id="PPPostSpanO13a" show="swPPPosPost">posposicionales</span>
-		  <span id="PPBothSpanO13a" show="swPPPosBoth">preposicionales y/o posposicionales</span> de tiempo, incluidos en oraciones completas simples aquí:</prompt>
+	   <prompt id="PPTempCompYesPrompt" show="swPPTempCompYes">Escriba algunos ejemplos de oraciones completas simples con las frases <span id="PPPrepSpanO13a" show="swPPPosPrep">preposicionales</span>
+	      <span id="PPPostSpanO13a" show="swPPPosPost">posposicionales</span>
+	      <span id="PPBothSpanO13a" show="swPPPosBoth">adposicionales</span> de tiempo aquí:</prompt>
 	   <textBox id="PPTempCompExample" dataItem="tempExample" show="swPPTempCompYes"/>
 	   <br/>
 	   <br/>
-
+	   
 	   <instruction id="PPTempCompYesInstruction" show="swPPTempCompYes">In the lexicon, mark the temporal <span id="PPPrepSpanO15" show="swPPPosPrep">prepositions </span>
-		  <span id="PPPostSpanO15" show="swPPPosPost">postpositions </span>
-		  <span id="PPBothSpanO15" show="swPPPosBoth">prepositions and postpositions </span>with the feature <feature>temporal</feature>.  If  these same words can also take a sentential complement, you will need two separate entries so one can have the category <category>P</category> and the other the category <category>Adv</category>.  The adverb entry will also need the features <feature>temporal sentential</feature> as will be discussied further in <section number="13.">Las cláusulas adverbiales</section>.</instruction>
+	      <span id="PPPostSpanO15" show="swPPPosPost">postpositions </span>
+	      <span id="PPBothSpanO15" show="swPPPosBoth">prepositions and postpositions </span>with the feature <feature>temporal</feature>.  If  these same words can also take a sentential complement, you will need two separate entries so one can have the category <category>P</category> and the other the category <category>Adv</category>.  The adverb entry will also need the features <feature>temporal sentential</feature> as will be discussied further in <section number="13.">Las cláusulas adverbiales</section>.</instruction>
 	   <br/>
 	   <buttons>
-		  <button id="PPOtherBack" value="Back" goto="PPComps.xml"/>
-		  <button id="PPOtherNext" value="Next" goto="PPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+	      <button id="PPOtherBack" value="Back" goto="PPComps.xml"/>
+	      <button id="PPOtherNext" value="Next" goto="PPCatMap.xml" gotoNoGrammar="Contents.htm"/>
 	   </buttons>
 	</form>
    <showWhen id="swPPCompPPYesExceptClitic">
-	  <whenRadio button="PPCompPPYes"/>
-	  <and/>
-	  <not/>
-	  <whenValue element="pp" attr="pType" value="clitic"/>
+      <whenRadio button="PPCompPPYes"/>
+      <and/>
+      <not/>
+      <whenValue element="pp" attr="pType" value="clitic"/>
    </showWhen>
-
+   
    <showWhen id="swPPCompPPYes">
-	  <whenRadio button="PPCompPPYes"/>
+      <whenRadio button="PPCompPPYes"/>
    </showWhen>
    <showWhen id="swPPPosPrep">
-	  <whenValue element="pp" attr="pPos" value="before"/>
+      <whenValue element="pp" attr="pPos" value="before"/>
    </showWhen>
    <showWhen id="swPPPosPost">
-	  <whenValue element="pp" attr="pPos" value="after"/>
+      <whenValue element="pp" attr="pPos" value="after"/>
    </showWhen>
    <showWhen id="swPPPosBoth">
-	  <whenValue element="pp" attr="pPos" value="both"/>
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
    </showWhen>
    <showWhen id="swPPAloneYes">
-	  <whenRadio button="PPAloneYes"/>
+      <whenRadio button="PPAloneYes"/>
    </showWhen>
    <showWhen id="swPPTypeCliticAloneYes">
-	  <whenValue element="pp" attr="pType" value="clitic"/>
-	  <and/>
-	  <whenRadio button="PPAloneYes"/>
+      <whenValue element="pp" attr="pType" value="clitic"/>
+      <and/>
+      <whenRadio button="PPAloneYes"/>
    </showWhen>
    <showWhen id="swPPLocativeYes">
-	  <whenRadio button="PPLocativeYes"/>
+      <whenRadio button="PPLocativeYes"/>
    </showWhen>
    <showWhen id="swPPTypeCliticLocativeYes">
-	  <whenValue element="pp" attr="pType" value="clitic"/>
-	  <and/>
-	  <whenRadio button="PPLocativeYes"/>
+      <whenValue element="pp" attr="pType" value="clitic"/>
+      <and/>
+      <whenRadio button="PPLocativeYes"/>
    </showWhen>
    <showWhen id="swPPTypeCliticCompPPYes">
-	  <whenValue element="pp" attr="pType" value="clitic"/>
-	  <and/>
-	  <whenRadio button="PPCompPPYes"/>
+      <whenValue element="pp" attr="pType" value="clitic"/>
+      <and/>
+      <whenRadio button="PPCompPPYes"/>
    </showWhen>
    <showWhen id="swPPTempCompYes">
-	  <whenRadio button="PPTempCompYes"/>
+      <whenRadio button="PPTempCompYes"/>
    </showWhen>
 </page>

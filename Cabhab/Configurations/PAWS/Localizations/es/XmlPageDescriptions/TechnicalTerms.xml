@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<technicalTerms version="1.0">
+   <technicalTerm id="ttAbsolutive">
+      <termInLang lang="es">
+         <term>absolutivo</term>
+         <termDefinition>El absolutivo es el nombre del caso que se usa para marcar los sujetos de verbos intransitivos y los  objetos directos de verbos transitivos en lenguas que utilizan un sistema de caso ergativo-absolutivo.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAccusative">
+      <termInLang lang="es">
+         <term>acusativo</term>
+         <termDefinition>El acusativo es el nombre del caso que se usa para marcar los objetos de los verbos transitivos en lenguas que utilizan un sistema de caso nominativo-acusativo.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAdposition">
+      <termInLang lang="es">
+         <term>adposición</term>
+         <termDefinition>Una adposición normalmente tiene una frase nominal como complemento. Se llama preposición si viene antes de la frase nominal o posposición si viene después. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDerivational">
+      <termInLang lang="es">
+         <term>afijo derivativo</term>
+         <termDefinition>Un afijo derivativo cambia la categoría de la palabra a la que se une.  Por ejemplo, el sufijo ‘-mente’ cambia un adjetivo feminino como ‘clara’ al adverbio ‘claramente’.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAgent">
+   <termInLang lang="es">
+      <term>agente</term>
+      <termDefinition>El agente, una función semántica, es el argumento que realiza la acción expresada por el verbo.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttScope">
+      <termInLang>
+         <term>ámbito</term>
+         <termDefinition>El ámbito o alcance de un cuantificador, de una negación  o de otro modificador se refiere a cuánto se puede cuantificar, negar o modificar en una misma frase. Entre más amplio es su ámbito, más puede cuantificar, negar o modificar en la frase.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAlienably">
+      <termInLang lang="es">
+         <term>alienable</term>
+         <termDefinition>En lingüística se les llama sustantivos de posesión alienable a los que se refieren a cosas que pueden pertenecer temporalmente a alguien o algo. Por ejemplo, ‘mi dinero’. Algunas lenguas añaden un afijo a estos sustantivos cuando son poseídos para indicar que se tiene que expresar el poseedor.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAllomorph">
+      <termInLang lang="es">
+         <term>alomorfo</term>
+         <termDefinition>Un alomorfo es una pronunciación variante de un morfema.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAntipassive">
+      <termInLang lang="es">
+         <term>antipasivo</term>
+         <termDefinition>La voz del verbo antipasiva es en la que no se expresa el objeto de un verbo transitivo. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttArgument">
+      <termInLang lang="es">
+         <term>argumento</term>
+         <termDefinition>El argumento de un verbo puede ser el  sujeto, el objeto directo o el indirecto.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttArticles">
+      <termInLang lang="es">
+         <term>artículo</term>
+         <termDefinition>Un artículo es una palabra que se presenta con un sustantivo para mostrar si esta se utiliza en sentido determinado (definido) o en sentido general (indefinido).</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDefinite">
+      <termInLang lang="es">
+         <term>artículo definido</term>
+         <termDefinition>El artículo definido señala de alguna persona o cosa. Por ejemplo, ‘el hombre’ significa alguien en particular.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAuxiliary">
+      <termInLang lang="es">
+         <term>auxiliar</term>
+         <termDefinition>Un verbo auxiliar, tal como ‘haber’, ‘estar’ o ‘poder’ acompaña a un verbo principal. Ayuda a hacer distinciones de modo, voz,  aspecto y tiempo. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCardinal">
+   <termInLang lang="es">
+      <term>cardinal</term>
+      <termDefinition>Un número cardinal muestra cantidad; dice ‘cuánto’. Los números cardinales también se conocen como ‘números enteros’.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttCase">
+      <termInLang lang="es">
+         <term>caso</term>
+         <termDefinition>El caso se refiere a las formas que adopta un sustantivo cuando desempeña una determinada función, ya sea de sujeto, objeto o poseedor. Se expresa en la frase mediante flexión. Hay diferentes  sistemas de marcación de caso. Algunas lenguas no presentan marcación de caso, otras utilizan uno de los principales sistemas de caso y otras utilizan una combinación de diferentes sistemas. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCausative">
+      <termInLang lang="es">
+         <term>causativo</term>
+         <termDefinition>Una palabra o afijo causativo agrega un argumento adicional a un verbo intransitivo o transitivo. Este argumento es el agente si es que no hay un agente presente, o es el causante de la acción. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+ <technicalTerm id="ttClassifier">
+    <termInLang lang="es">
+       <term>clasificador</term>
+       <termDefinition>Un clasificador es un afijo o una palabra independiente que marca sustantivos según su forma, posición, color, animacidad u otras características. Los clasificadores pueden identificarse con grupos enumerados   o por clases, es decir, según la característica que tienen en común , y pueden o no ser parte del sistema de concordancia. </termDefinition>
+    </termInLang>
+ </technicalTerm>
+   <technicalTerm id="ttClitic">
+      <termInLang lang="es">
+         <term>clítico</term>
+         <termDefinition> Se define el clítico como un elemento sintáctico que depende fonológicamente  de una palabra, por lo tanto, se une a esta o a una frase. Los clíticos de la oración pueden ser proclíticos que se unen al principio de cualquier palabra que inicia una frase, o enclíticos que se unen al final de cualquier palabra que termina una frase. Elementos que se escriben como palabras independientes en su ortografía no deben ser considerados clíticos en el programa PATAS. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttComplements">
+      <termInLang lang="es">
+         <term>complemento</term>
+         <termDefinition>Los complementos del verbo incluyen aquellos elementos que se presentan en la frase verbal: el objeto directo y el objeto indirecto y un locativo para verbos de movimiento, así como como los diferentes tipos de cláusulas subordinadas menos las adverbiales. El sujeto no es un complemento. El complemento de un adverbio o adjetivo es normalmente una cláusula subordinada. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCopular">
+      <termInLang lang="es">
+         <term>copulativo</term>
+         <termDefinition>Un verbo copulativo es un verbo de enlace, por ejemplo, el verbo ‘ser ’. Las oraciones copulativas tienen un adjetivo o frase nominal en lugar de un verbo de acción como predicado. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttQuantifiers">
+      <termInLang lang="es">
+         <term>cuantificador</term>
+         <termDefinition>Los cuantificadores expresan la cantidad del sustantivo que se modifican. Incluyen números y palabras como ‘todo’, ‘muchos’ y ‘algunos’. </termDefinition>
+      </termInLang>
+      </technicalTerm>
+   <technicalTerm id="ttDative">
+      <termInLang lang="es">
+         <term>dativo</term>
+         <termDefinition>El dativo es el nombre del caso que normalmente se usa  para marcar el objeto indirecto en lenguas que usan un sistema de caso nominativo-acusativo y también en las que usan un sistema ergativo-absolutivo.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDemonstratives">
+      <termInLang lang="es">
+         <term>demostrativo</term>
+         <termDefinition>Los demostrativos señalan qué elemento, objeto, persona o concepto es mostrado (señalado) e incluyen un sentido de distancia desde el punto de vista del  hablante. Por ejemplo, ‘esto’, ‘eso’ o ‘aquello’. Los demostrativos que modifican a un sustantivo se consideran un tipo de adjetivo, mientras que los que se presentan solos como una frase nominal son un tipo de pronombre. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDeterminers">
+      <termInLang lang="es">
+         <term>determinante</term>
+         <termDefinition>Un determinante es un elemento que modifica a sustantivos.  Entre los determinantes se incluyen artículos,  demostrativos y a veces posesivos.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDitransitive">
+      <termInLang lang="es">
+         <term>ditransitivo</term>
+         <termDefinition>Una oración ditransitiva tiene un sujeto, y un objeto directo y un objeto indirecto.  </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttNegativePolarityItem">
+      <termInLang lang="es">
+         <term>elemento especial de polaridad negativa</term>
+         <termDefinition>En esta gramática se clasifican los pronombres indefinidos y adverbios según su polaridad: positiva o negativa. Un elemento especial de polaridad negativa es un pronombre indefinido, adverbio o determinante que se utiliza en lugar de un pronombre indefinido, adverbio o determinante de negación en algunas lenguas. Los elementos de polaridad negativa pueden requerirse en posición de objeto cuando existe un elemento de negación antes del objeto en la oración. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttErgative">
+      <termInLang lang="es">
+         <term>ergativo</term>
+         <termDefinition>El ergativo es el nombre del caso que se usa para marcar los sujetos de verbos transitivos en lenguas que utilizan un sistema de caso ergativo-absolutivo. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttExclusive">
+      <termInLang lang="es">
+         <term>exclusivo</term>
+         <termDefinition>Un pronombre exclusivo se refiere al hablante y otros (si es plural), pero excluye al oyente.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttExistential">
+      <termInLang lang="es">
+         <term>existencial</term>
+         <termDefinition>Las oraciones existenciales solo expresan que algo existe o no y por lo general incluyen un locativo.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttExperiencer">
+      <termInLang lang="es">
+         <term>experimentador</term>
+         <termDefinition>El experimentador, una función semántica, es el sujeto de los verbos que expresan una experiencia en lugar de una acción. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttOvert">
+      <termInLang lang="es">
+         <term>explícito</term>
+         <termDefinition>Un elemento, ya sea clítico, afijo o palabra, está explícito cuando se expresa por escrito o se pronuncia en el habla. Su significado no es implícito.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttFinite">
+		<termInLang lang="es">
+			<term>finito</term>
+		   <termDefinition>El verbo finito (o una cláusula) es aquel que tiene marcación de tiempo o aspecto. Lo opuesto es un verbo infinitivo que es una forma no finita que no marca tiempo o aspecto.  </termDefinition>
+		</termInLang>
+	</technicalTerm>
+   <technicalTerm id="ttInflection">
+      <termInLang lang="es">
+         <term>flexión</term>
+         <termDefinition>La flexión se expresa mediante morfemas que señalan las posibilidades gramaticales de una palabra. Por ejemplo, la flexión ‘-s’ al final de ‘libros’ indica que el sustantivo es plural; la flexión ‘-s’ al final de ‘haces’ indica que el verbo es de segunda persona del singular.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttFocus">
+      <termInLang lang="es">
+         <term>foco</term>
+         <termDefinition>En una construcción de foco, hay una palabra o frase que se enfatiza. Puede ser desplazado de su posición normal en la oración, generalmente a la posición inicial o final. Algunas lenguas tienen afijos o palabras que marcan el foco también. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAdpositionalPhrases">
+      <termInLang lang="es">
+         <term>frases adposicionales</term>
+         <termDefinition>Las frases adposicionales son frases compuestas de una preposición o una  posposición y un complemento nominal.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttGenitive">
+      <termInLang lang="es">
+         <term>genitivo</term>
+         <termDefinition>El genitivo es el nombre del caso que se usa para marcar posesivos.</termDefinition>
+      </termInLang >
+   </technicalTerm>
+   <technicalTerm id="ttGerund">
+      <termInLang lang="es">
+         <term>gerundio</term>
+         <termDefinition>Un gerundio es un verbo o una frase verbal que actúa como un sustantivo o frase nominal en algunas lenguas. Por ejemplo, ‘jugando fútbol’ es una frase de gerundio que funciona como el sujeto de la oración: ‘Jugando fútbol es divertido’. En español se usa la forma infinitiva del verbo, no el gerundio: ‘Jugar fútbol es divertido’. </termDefinition>
+      </termInLang >
+   </technicalTerm>
+   <technicalTerm id="ttImperative">
+     <termInLang lang="es">
+        <term>imperativo</term>
+        <termDefinition>Los imperativos son mandatos, que pueden expresarse fuerte o más suavemente.</termDefinition>
+     </termInLang>
+  </technicalTerm>
+   <technicalTerm id="ttInalienably">
+      <termInLang lang="es">
+         <term>inalienable</term>
+         <termDefinition>Un sustantivo de posesión inalienable es aquel que es poseído obligatoriamente. Por ejemplo, ‘una mano’ implica ‘la mano de alguien’, incluso si está separada del cuerpo. En algunas lenguas siempre debe mencionarse el poseedor. Ocurre también con términos de parentesco. Por ejemplo, ‘padre’ siempre implica ‘el padre de alguien’. .</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttInclusive">
+      <termInLang lang="es">
+         <term>inclusivo</term>
+         <termDefinition>El pronombre inclusivo se refiere al hablante, el oyente y posiblemente otros.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttIndefinite">
+      <termInLang lang="es">
+         <term>indefinido</term>
+         <termDefinition>El artículo o el pronombre indefinido no se refiere a alguna persona o cosa en particular, sino que tiene un sentido más amplio. Por ejemplo, en ‘un hombre’, el artículo  significa ‘algún hombre’, sin especificar cuál.  Ejemplos de pronombres indefinidos incluyen:  ‘alguien’, ‘algo’, ‘cualquier cosa’, y  palabras que implican una forma de negación como ‘nadie’, ‘nada’ y ‘ninguno’.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttInfinitive">
+      <termInLang lang="es">
+         <term>infinitivo</term>
+         <termDefinition>El infinitivo es una forma básica del verbo, que no marca tiempo ni aspecto. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+<technicalTerm id="ttInterrogative">
+    <termInLang lang="es">
+       <term>interrogativo</term>
+       <termDefinition>Las oraciones interrogativas son preguntas que incluyen el tipo normal de la pregunta directa y la pregunta indirecta que es complemento de un verbo como ‘preguntar’, ‘pedir’ o ‘saber’. </termDefinition>
+    </termInLang>
+ </technicalTerm>
+<technicalTerm id="ttIntransitive">
+   <termInLang lang="es">
+      <term>intransitivo</term>
+      <termDefinition>Una oración intransitiva solo tiene un sujeto, no objeto directo.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttMorphemes">
+      <termInLang lang="es">
+         <term>morfema</term>
+         <termDefinition>Un morfema es la unidad más pequeña que tiene significado. Puede ser un afijo, un clítico, una palabra, o incluso un tono o una característica como la nasalización. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttNegation">
+   <termInLang lang="es">
+      <term>negación</term>
+      <termDefinition>La oración negativa contiene un elemento de negación en el verbo, uno de los argumentos o un elemento adverbial.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttMass">
+      <termInLang lang="es">
+         <term>no contable</term>
+         <termDefinition>Los sustantivos no contables denotan algo que no se puede contar (por ejemplo, una sustancia o calidad), generalmente son sustantivos que no tienen una forma plural. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttNonfinite">
+      <termInLang lang="es">
+         <term>no finito</term>
+         <termDefinition>Una cláusula o verbo no finito no tiene marcación de tiempo o aspecto, a diferencia de una forma finita.  </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttNominative">
+    <termInLang lang="es">
+       <term>nominativo</term>
+       <termDefinition>El nominativo es el nombre del caso que se usa para marcarlos sujetos en lenguas que utilizan un sistema de caso nominativo-acusativo. </termDefinition>
+    </termInLang>
+ </technicalTerm>
+ <technicalTerm id="ttOblique">
+   <termInLang lang="es">
+      <term>oblícuo</term>
+      <termDefinition>Un argumento oblicuo es uno que no es un argumento principal de un verbo, es decir, no es sujeto ni objeto directo ni objeto indirecto.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttOrdinal">
+      <termInLang lang="es">
+         <term>ordinal</term>
+         <termDefinition>Los números ordinales definen el orden de las cosas en un conjunto: primero, segundo, tercero, etc. Estos números no indican cantidad. Solo demuestran el rango o la posición de algo. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttParadigms">
+      <termInLang lang="es">
+         <term>paradigma</term>
+         <termDefinition>Un paradigma es una tabla que muestra las diferentes formas de cierto verbo  según la persona, número y marcadores de tiempo o aspecto. Puede ofrecer al lector una manera de averiguar qué forma usar en una frase determinada. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttParticiple">
+      <termInLang lang="es">
+         <term>participio</term>
+         <termDefinition>Un participio se deriva de un verbo y normalmente funciona como adjetivo. Por ejemplo ‘hablada’ en ‘la palabra hablada’ que se deriva de ‘hablar’.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPartitive">
+      <termInLang lang="es">
+         <term>partitivo</term>
+         <termDefinition>Un partitivo o una frase partitiva expresa que algo es parte de un todo o la división de un todo en partes. Por ejemplo: ‘mitad de una manzana’ o ‘medio pastel’.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPassive">
+      <termInLang lang="es">
+         <term>pasivo</term>
+         <termDefinition>En una oración pasiva, el tema o paciente ocupa la posición del sujeto, en lugar de un agente. En algunas lenguas, el agente puede expresarse opcionalmente como argumento oblicuo. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPatient">
+   <termInLang lang="es">
+      <term>paciente</term>
+      <termDefinition>El paciente, una función semántica,  es el argumento que recibe la acción expresada por el verbo. Se utiliza generalmente para  personas  o por lo menos para argumentos animados; para los inanimados se utiliza el tema. </termDefinition>
+   </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPerception">
+      <termInLang lang="es">
+         <term>percepción</term>
+         <termDefinition>Los verbos de percepción expresan cómo percibimos algo con nuestros sentidos. Por ejemplo: ver, tocar, oler, sentir, etc.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPolarity">
+      <termInLang lang="es">
+         <term>polaridad</term>
+         <termDefinition>La polaridad tiene un valor positivo o negativo. Nos dice si la oración expresa un significado afirmativo o negativo.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPossessors">
+      <termInLang lang="es">
+         <term>posesivo</term>
+         <termDefinition>El posesivo es el elemento que identifica a un poseedor:  la persona, animal o cosa que posee algo o a alguien. Este programa considera al posesivo como una frase nominal independiente, no un afijo pronominal. Si se presenta, el afijo pronominal concuerda con el posesivo independiente de la frase nominal, aunque lenguas con afijos pronominales permiten un posesivo independiente tácito (no explícito). </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPredicates">
+      <termInLang lang="es">
+         <term>predicado</term>
+         <termDefinition>El predicado consiste normalmente en el verbo y sus modificadores, y expresa la acción del sujeto. En una oración copulativa, el predicado puede ser un adjetivo o un sustantivo que  expresa una cualidad o la posición del sujeto.  </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPossessives">
+      <termInLang lang="es">
+         <term>pronombre posesivo</term>
+         <termDefinition>Los pronombres posesivos expresan una relación de propiedad, por ejemplo, ‘suyo’, ‘mío’, ‘nuestro’. Son distintos de los pronombres que pueden utilizarse para expresar el poseedor de un sustantivo dentro de una frase nominal como en ‘tu casa’.  </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttReciprocals">
+      <termInLang lang="es">
+         <term>recíproco</term>
+         <termDefinition>Una cláusula recíproca prototípica es una cláusula en la que dos participantes igualmente actúan el uno sobre el otro, es decir, los dos son igualmente agente (sujeto) y paciente (objeto).  </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttReduplication">
+      <termInLang lang="es">
+         <term>reduplicación</term>
+         <termDefinition>A veces un morfema se puede expresar con reduplicación que consiste en repetir una vocal, parte de o toda una raíz o una palabra completa.  </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttReflexives">
+      <termInLang lang="es">
+         <term>reflexivo</term>
+         <termDefinition>En oraciones reflexivas, el sujeto y el objeto del verbo se refieren a la misma persona o cosa, lo que sirve para indicar que la acción del verbo se dirige hacia el sujeto, como en ‘José se dañó a sí mismo’. En español, el verbo también puede expresar reflexividad como en: ‘María se bañó.’  </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttSemantics">
+      <termInLang lang="es">
+         <term>semántica</term>
+         <termDefinition>La semántica es el estudio del significado de las palabras. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttSyntax">
+      <termInLang lang="es">
+         <term>sintaxis</term>
+         <termDefinition>La sintaxis es el estudio del orden de palabras y frases para crear oraciones bien formadas en una lengua.  </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttSubjunctive">
+      <termInLang lang="es">
+         <term>subjuntivo</term>
+         <termDefinition>El subjuntivo es un modo verbal que se utiliza para expresar algo que es contrario a la realidad, suposiciones, dudas, temores, deseos o posibilidades. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttProDrop">
+      <termInLang lang="es">
+         <term>sujeto tácito</term>
+         <termDefinition>El sujeto tácito se permite más a menudo en lenguas que tienen afijos pronominales en el verbo para expresar el sujeto y el objeto; y en el sustantivo para expresar el poseedor. Estos afijos concuerdan gramaticalmente con las frases nominales que se presentan como sujeto, objeto o poseedor. Si en estas posiciones el argumento está enfatizado, se presenta un pronombre independiente. De lo contrario en la posición del argumento no se presenta nada.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+ <technicalTerm id="ttTheme">
+      <termInLang lang="es">
+         <term>tema</term>
+         <termDefinition>El tema, una función semántica,  es el argumento que recibe la acción expresada por el verbo. Es un término general que puede ser utilizado para argumentos animados e inanimados, pero algunos limitan su uso para argumentos inanimados; y usan el término ‘paciente’ para argumentos animados. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttTopic">
+	   <termInLang lang="es">
+	      <term>tópico</term>
+	      <termDefinition>Construcciones de tópico consisten en frases que expresan algo de lo que ya se ha hablado (el tópico). Generalmente se separan con una coma a la que sigue una oración o pregunta completa. Por ejemplo: ‘Con respecto a Pedro, no sabemos nada de él.’  Algunas lenguas también usan sufijos o palabras para marcar tópico. </termDefinition>
+	   </termInLang>
+	</technicalTerm>
+   <technicalTerm id="ttTransitive">
+      <termInLang lang="es">
+         <term>transitivo</term>
+         <termDefinition>Una oración transitiva tiene un sujeto y un objeto directo obligatorio. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttVoice">
+      <termInLang lang="es">
+         <term>voz</term>
+         <termDefinition>La voz es un accidente gramatical que expresa si el sujeto del verbo es, por ejemplo, agente (voz activa) o paciente (voz pasiva). Otros tipos son la causativa y la antipasiva, y algunas lenguas tienen más  aparte de los mencionados.   </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   
+</technicalTerms>
+	

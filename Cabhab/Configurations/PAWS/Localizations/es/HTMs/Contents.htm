@@ -24,23 +24,23 @@
 						<td valign="top"><A id=ContentsOverallTypologyQuestions href="OverallTypology.xml" >La tipología</A></td>
 						<td rowspan="18" width="50%" class="instruction" valign="top">
 							<div>
-								<p>Seleccione las salidas que usted quiere dando click antes de cada salida. Observe por favor que por lo menos una gramática debe estar presente. Si no escoje una, va a recibir la comparativa. Solamente la opción de la gramática práctica en español y las instrucciones relevantes a ella está disponible en español ahora.</p>
+							   <p>Seleccione las salidas que usted quiere dando click antes de cada salida. Observe por favor que por lo menos una gramática debe estar presente. El escritor que produce una gramática de la lengua nacional del país donde se habla la lengua, si está disponible, será más útil para la comunidad de lengua. Si no escoje una, va a recibir la gramática en inglés. Las instrucciones relevantes a PC-PATR no están disponibles en español ahora.</p>
 								<table>
 									<tr>
 										<td><input type="checkbox" name="OutputGrammar" id="OutputGrammar" onclick="SetOutput('grammar')" value="grammar"></td>
 										<td onclick="SetOutputViaDescription('grammar')">Producir el archivo para análisis sintáctico en PC-PATR y los archivos de ejemplos para probar.</td>
 									</tr>
-									<tr>
+									<!--<tr>
 										<td><input type="checkbox" name="OutputWriter" id="OutputWriter" onclick="SetOutput('writer')" value="writer"></td>
-										<td onclick="SetOutputViaDescription('writer')">Prodicir el archivo para la gramática comparativa en inglés.</td>
-									</tr>
+									   <td onclick="SetOutputViaDescription('writer')">Prodicir el archivo para la gramática comparativa en inglés. ***WANT TO REMOVE THIS OPTION***</td>
+									</tr>-->
 									<tr>
 										<td><input type="checkbox" name="OutputWriterPractical" id="OutputWriterPractical" onclick="SetOutput('writerPractical')" value="writerPractical"></td>
-										<td onclick="SetOutputViaDescription('writerPractical')">Producir el archivo para la gramática práctica en inglés.</td>
+										<td onclick="SetOutputViaDescription('writerPractical')">Producir el archivo para la gramática en inglés.</td>
 									</tr>
 									<tr>
 										<td><input type="checkbox" name="OutputWriterPracticalSpanish" id="OutputWriterPracticalSpanish" onclick="SetOutput('writerPracticalSpanish')" value="writerPracticalSpanish"></td>
-										<td onclick="SetOutputViaDescription('writerPracticalSpanish')">Producir el archivo para la gramática práctica en español.</td>
+										<td onclick="SetOutputViaDescription('writerPracticalSpanish')">Producir el archivo para la gramática en español.</td>
 									</tr>
 								</table>
 							</div>
@@ -49,7 +49,7 @@
 								<ol>
 									<li>Piense en los datos relevantes para su lengua, escogiendo datos sin construcciones especiales específico a su lengua, a menos que se pidan alrededor en las preguntas (ésas tendrán que ser ocupadas después de la terminación del programa PATAS (PAWS en inglés). </li>
 
-									<li>Escoja la respuesta a cada pregunta, basada en los datos. Este programa se ocupa del análisis sintáctico, entonces las preguntas están preguntando casi siempre acerca de categorías que se escriben como palabras independientes, a menos que estén indicada específicamente.</li>
+								   <li>Escoja la respuesta a cada pregunta, basada en los datos. Las preguntas son en forma de botones de radio, donde usted puede sólo elegir una de las opciones, o casillas de verificación donde usted puede marcar todas las opciones que se utilizan en su lengua. La mayoría de las preguntas con las casillas de verificación incluyen una otra opción donde se puede describir cualquier otra forma que su lengua utiliza para esa pregunta.</li>
 
 								   <li id="InstructionsAddFeatures">Agregar los nombres de las caraterísticas a las entradas correspondientes en el léxico, como se indica.
 									  Tenga en cuenta que ambos nombres de caraterísticas y nombres de categorías son sensibles a mayúsculas y se limitan a una sola palabra para cada uno.
@@ -89,7 +89,7 @@
 					<tr>
 						<td id="ContentsSimpleNPStatus" onclick="StatusClicked(ContentsSimpleNPStatus,'np')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">5.</td>
-						<td valign="top"><A id=ContentsSimpleNP href="NPContents.htm" >Las frases nominales simples y posesivas</A></td>
+						<td valign="top"><A id=ContentsSimpleNP href="NPContents.htm" >Las frases nominales</A></td>
 					</tr>
 					<tr>
 						<td id="ContentsProperNamesStatus" onclick="StatusClicked(ContentsProperNamesStatus,'prop')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
@@ -104,7 +104,7 @@
 					<tr>
 						<td id="ContentsPrepositionsStatus" onclick="StatusClicked(ContentsPrepositionsStatus,'pp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">8.</td>
-						<td valign="top"><A id=ContentsPrepositions href="PPMain.xml">Las frases preposicionales y/o posposicionales</A></td>
+						<td valign="top"><A id=ContentsPrepositions href="PPMain.xml">Las frases adposicionales</A></td>
 					</tr>
 					<tr>
 						<td id="ContentsSingleClausesStatus" onclick="StatusClicked(ContentsSingleClausesStatus,'ip')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
@@ -134,12 +134,12 @@
 					<tr>
 						<td id="ContentsNegativeStatus" onclick="StatusClicked(ContentsNegativeStatus,'neg')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">14.</td>
-						<td valign="top"><A id=ContentsNegative href="NegMain.xml">Las construcciones negativas</A></td>
+						<td valign="top"><A id=ContentsNegative href="NegMain.xml">Las construcciones de negación</A></td>
 					</tr>
 					<tr>
 						<td id="ContentsCoordStatus" onclick="StatusClicked(ContentsCoordStatus,'coord')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">15.</td>
-						<td valign="top"><A id=ContentsCoord href="CoordMain.xml">Las construcciones coordinativas</A></td>
+						<td valign="top"><A id=ContentsCoord href="CoordMain.xml">Las construcciones coordinadas</A></td>
 					</tr>
 					<tr>
 						<td id="ContentsFocusStatus" onclick="StatusClicked(ContentsFocusStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
@@ -149,8 +149,13 @@
 					<tr>
 						<td id="ContentsExclamationsStatus" onclick="StatusClicked(ContentsExclamationsStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
 						<td valign="top">17.</td>
-						<td valign="top"><A id=ContentsExclamations href="ExclMain.xml">Las exclamaciones, saludos e interjecciones</A></td>
+						<td valign="top"><A id=ContentsExclamations href="ExclMain.xml">Los saludos, las interjecciones y las exclamaciones</A></td>
 					</tr>
+				   <tr>
+				      <td id="ContentsFinalStatus" onclick="StatusClicked(ContentsFinalStatus,'final')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+				      <td valign="top">18.</td>
+				      <td valign="top"><A id=ContentsFinal href="Final.xml">Verificación final</A></td>
+				   </tr>
 				</tbody>
 			</table>
 	</body>

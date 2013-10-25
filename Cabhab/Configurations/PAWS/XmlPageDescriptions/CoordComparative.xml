@@ -3,40 +3,42 @@
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="CoordComparative" count="3/5">
 	<title level="2">Coordination Constructions - Comparatives</title>
-   <introduction>This section considers comparatives which have two sentences surrounding the comparative word, though the second sentence may be missing the adjective.  We already covered the comparatives which are a subtype of copular sentences in <section number="9.5">Basic, Single-Clause Sentences - Comparatives</section>.  Like the shorter comparatives, these compare the qualities or actions of the subjects of the sentences and may have a copular verb or a perception verb or an action verb, along with an adjective that is modified by a degree word or affix.  Some English examples are:</introduction>
+   <introduction>This section considers comparatives which have two sentences surrounding the comparative word, though the second sentence may be missing the adjective.  We already covered the comparatives which are a subtype of copular sentences in <section number="9.5">Basic Sentences - Comparatives</section>.  Like the shorter comparatives, these compare the qualities or actions of the subjects of the sentences and may have a copular verb or a perception verb or an action verb, along with an adjective that is modified by a degree word or affix.  Some English examples are:</introduction>
    <EnglishExample>
-	  <exItem label="1.">John is more handsome than Bill is.</exItem>
-	  <exItem label="2.">Sue runs much faster than Mary can run.</exItem>
-	  <exItem label="3.">David appears lots taller than Michael does.</exItem>
-	  <exItem label="4.">Mary looks prettier than Julie looks.</exItem>
-	  <exItem label="5.">John seems more certain of his answers than Sue seems.</exItem>
+      <exItem label="1.">John is more handsome than Bill is.</exItem>
+      <exItem label="2.">Sue runs much faster than Mary can run.</exItem>
+      <exItem label="3.">David appears lots taller than Michael does.</exItem>  
+      <exItem label="4.">Mary looks prettier than Julie looks.</exItem>
+      <exItem label="5.">John seems more certain of his answers than Sue seems.</exItem>
    </EnglishExample>
-   <introduction>Some languages do not allow any part of the second sentence to be omitted and instead always have two full sentences being compared.  Also, languages which do not have a separate comparative word meaning ‘than’ for the shorter comparative constructions will simply have the two sentence parts following one another in this construction.</introduction>
+   <introduction>Some languages do not allow any part of the second sentence to be omitted and instead always have two full sentences being compared.  Also, languages which do not have an independent comparative word meaning ‘than’ for the shorter comparative constructions will simply have the two sentence parts following one another in this construction.</introduction>
    <form section="coord" transparent="no">
 		<prompt>Key examples of comparative sentences in your language here:</prompt>
 		<textBox id="CoordComparativeSentExample" dataItem="comparativeSentExample" cols="50"/>
 <br/>
-	  <br/>
-	  <radioGroup>
-		 <groupName dataItem="gap" default="yes">RCoordGap</groupName>
-		 <prompt>Does your language allow the adjective to be missing  in the second part of these fuller comparative constructions?</prompt>
-		 <radio id="CoordGapYes" dataValue="yes">Yes, it can be missing as in the English examples</radio>
-		 <radio id="CoordGapNo" dataValue="no">No, the full sentence is repeated after the comparative</radio>
-	  </radioGroup>
-	  <br/>
+      <br/>
+      <radioGroup>
+         <groupName dataItem="gap" default="yes">RCoordGap</groupName>
+         <prompt>Does your language allow the adjective to be missing  in the second part of these fuller comparative constructions?</prompt>
+         <radio id="CoordGapYes" dataValue="yes">Yes, it can be missing as in the English examples</radio>
+         <radio id="CoordGapNo" dataValue="no">No, the full sentence is repeated after the comparative</radio>
+      </radioGroup>    
+      <br/>
 		<br/>
 		<buttons>
 			<button id="CoordComparativeBack" value="Back" goto="CoordDP.xml"/>
-			<button id="CoordComparativeNext" value="Next" goto="CoordCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		    <button id="CoordComparativeNext" value="Next" goto="CoordCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
    <showWhen id="swPPPosPrep">
-	  <whenValue element="pp" attr="pPos" value="before"/>
+      <whenValue element="pp" attr="pPos" value="before"/>
    </showWhen>
    <showWhen id="swPPPosPost">
-	  <whenValue element="pp" attr="pPos" value="after"/>
+      <whenValue element="pp" attr="pPos" value="after"/>
    </showWhen>
    <showWhen id="swPPPosBoth">
-	  <whenValue element="pp" attr="pPos" value="both"/>
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
    </showWhen>
 </page>

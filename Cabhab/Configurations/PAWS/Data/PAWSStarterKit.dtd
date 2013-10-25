@@ -2,34 +2,34 @@
 <!-- edited with XML Spy v3.0.7 (http://www.xmlspy.com) by Andy Black (SIL International) -->
 <!-- PAWS Starter Kit DTD -->
 <!-- The dbversion attribute is used in order to be able to automatically migrate data from one version to another
-	   outputGrammar attribute means output the PC-PATR grammar
+       outputGrammar attribute means output the PC-PATR grammar
 -->
-<!ELEMENT paws (leftOffAt, language, typology, qp, advp, adjp, np, prop, pron, pp, ip, comp, q, relcl, advcl, neg, coord, focus, excl)>
+<!ELEMENT paws (leftOffAt, language, typology, qp, advp, adjp, np, prop, pron, pp, ip, comp, q, relcl, advcl, neg, coord, focus, excl, final)>
 <!ATTLIST paws
-	dbversion CDATA #IMPLIED
-	outputGrammar (True | False) "True"
-	outputWriter (True | False) "True"
-	outputWriterPractical (True | False) "True"
-	outputWriterPracticalSpanish (True | False) "False"
+    dbversion CDATA #IMPLIED
+    outputGrammar (True | False) "True"
+    outputWriter (True | False) "True"
+    outputWriterPractical (True | False) "True"
+    outputWriterPracticalSpanish (True | False) "False"
 >
 <!-- leftOffAt is the html page where the user last performed a save operation -->
 <!ELEMENT leftOffAt (#PCDATA)>
 <!-- Language has the language name, abbreviation and font information.  It
-	 also has the SFM field code to use for examples (textSFM).  -->
+     also has the SFM field code to use for examples (textSFM).  -->
 <!ELEMENT language (langNames, langAbbr, font, textSFM, answerFile, grammarFile, writerFile, writerPracticalFile, writerPracticalSpanishFile, exampleFilesPath)>
-<!ELEMENT langNames (langName+) >
+<!ELEMENT langNames (langName) >
 <!ELEMENT langName (#PCDATA)>
 <!ATTLIST langName
-	lang CDATA #REQUIRED
-	>
+    lang CDATA #REQUIRED
+    >
 <!ELEMENT langAbbr (#PCDATA)>
 <!ELEMENT font (fontName, fontSize, fontColor)>
 <!ATTLIST font
-	bold (True | False) "False"
-	italic (True | False) "False"
-	under (True | False) "False"
-	strike (True | False) "False"
-	rtl (True | False) "False"
+    bold (True | False) "False"
+    italic (True | False) "False"
+    under (True | False) "False"
+    strike (True | False) "False"
+    rtl (True | False) "False"
 >
 <!ELEMENT fontName (#PCDATA)>
 <!ELEMENT fontSize (#PCDATA)>
@@ -42,45 +42,44 @@
 <!ELEMENT writerPracticalSpanishFile (#PCDATA)>
 <!ELEMENT exampleFilesPath (#PCDATA)>
 <!-- Typology has the basic word order and some examples.
-Then the case system is determined with some intransitive and pronoun examples.
-	The case system (case) may be "none, nominative, ergative, split".
-Subjects which are Agents and distinguished from Experiencers for case system and examples
+Then the case system is determined with some transitive, intransitive and pronoun examples.
+ Subjects which are Agents and distinguished from Experiencers for case system and examples
 Finally, if the language has classifiers, the details of the system are extracted for the writer.-->
-<!ELEMENT typology (example, pnExample, experiencerExample, experiencerPnExample, intExample, pnIntExample, experiencerIntExample, experiencerPnIntExample, class1Example, class2Example, class3Example, class4Example, class5Example, class6Example, class7Example, class8Example, class9Example, class10Example, class11Example, class12Example, class13Example, class14Example, class15Example, class16Example, class17Example, class18Example, class19Example, class20Example, class21Example, class22Example, class23Example, class24Example, class25Example, classAnimalSgExample, classAnimalPlExample, classInsectSgExample, classInsectPlExample, classLiquidSgExample, classLiquidPlExample, classRoundSgExample, classRoundPlExample, classCylinderSgExample, classCylinderPlExample, classSphereSgExample, classSpherePlExample, classTreeSgExample, classTreePlExample, classWoodSgExample, classWoodPlExample, classOtherSgExample, classOtherPlExample, classAnimalExample, classInsectExample, classLiquidExample, classRoundExample, classCylinderExample, classSphereExample, classTreeExample, classWoodExample, classOtherExample, classifierAgrExample, classifierTypeExample)>
+<!ELEMENT typology (example, pnExample, experiencerExample, experiencerPnExample, intExample, pnIntExample, experiencerIntExample, experiencerPnIntExample, splitConditions, class1Example, class2Example, class3Example, class4Example, class5Example, class6Example, class7Example, class8Example, class9Example, class10Example, class11Example, class12Example, class13Example, class14Example, class15Example, class16Example, class17Example, class18Example, class19Example, class20Example, class21Example, class22Example, class23Example, class24Example, class25Example, classAnimalSgExample, classAnimalPlExample, classInsectSgExample, classInsectPlExample, classLiquidSgExample, classLiquidPlExample, classRoundSgExample, classRoundPlExample, classCylinderSgExample, classCylinderPlExample, classSphereSgExample, classSpherePlExample, classTreeSgExample, classTreePlExample, classWoodSgExample, classWoodPlExample, classOtherSgExample, classOtherPlExample, classAnimalExample, classInsectExample, classLiquidExample, classRoundExample, classCylinderExample, classSphereExample, classTreeExample, classWoodExample, classOtherExample, classifierAgrExample, classifierTypeExample)>
 <!ATTLIST typology
-	checkedOff (yes | no) "no"
-	wordOrder (SVO | SOV | VSO | VOS | OVS | OSV) "SVO"
-	case (none | nominative | ergative | split) "nominative"
-	caseExperiencer (no | yesObj | yesDat) "no"
-	classifier (no | yesAgr | yesType) "no"
-	classifierNum (number | type) "number"
-	class1agr (sg | pl | irrelevant) "irrelevant"
-	class2agr (sg | pl | irrelevant) "irrelevant"
-	class3agr (sg | pl | irrelevant) "irrelevant"
-	class4agr (sg | pl | irrelevant) "irrelevant"
-	class5agr (sg | pl | irrelevant) "irrelevant"
-	class6agr (sg | pl | irrelevant) "irrelevant"
-	class7agr (sg | pl | irrelevant) "irrelevant"
-	class8agr (sg | pl | irrelevant) "irrelevant"
-	class9agr (sg | pl | irrelevant) "irrelevant"
-	class10agr (sg | pl | irrelevant) "irrelevant"
-	class11agr (sg | pl | irrelevant) "irrelevant"
-	class12agr (sg | pl | irrelevant) "irrelevant"
-	class13agr (sg | pl | irrelevant) "irrelevant"
-	class14agr (sg | pl | irrelevant) "irrelevant"
-	class15agr (sg | pl | irrelevant) "irrelevant"
-	class16agr (sg | pl | irrelevant) "irrelevant"
-	class17agr (sg | pl | irrelevant) "irrelevant"
-	class18agr (sg | pl | irrelevant) "irrelevant"
-	class19agr (sg | pl | irrelevant) "irrelevant"
-	class20agr (sg | pl | irrelevant) "irrelevant"
-	class21agr (sg | pl | irrelevant) "irrelevant"
-	class22agr (sg | pl | irrelevant) "irrelevant"
-	class23agr (sg | pl | irrelevant) "irrelevant"
-	class24agr (sg | pl | irrelevant) "irrelevant"
-	class25agr (sg | pl | irrelevant) "irrelevant"
-	classifierTypeNumAgr (no | yes) "no"
-	>
+    checkedOff (yes | no) "no"
+    wordOrder (SVO | SOV | VSO | VOS | OVS | OSV) "SVO"
+    case (none | nominative | ergative | split) "nominative"
+    caseExperiencer (no | yesObj | yesDat) "no"
+    classifier (no | yesAgr | yesType) "no"
+    classifierNum (number | type) "number"
+    class1agr (sg | pl | irrelevant) "irrelevant"
+    class2agr (sg | pl | irrelevant) "irrelevant"
+    class3agr (sg | pl | irrelevant) "irrelevant"
+    class4agr (sg | pl | irrelevant) "irrelevant"
+    class5agr (sg | pl | irrelevant) "irrelevant"
+    class6agr (sg | pl | irrelevant) "irrelevant"
+    class7agr (sg | pl | irrelevant) "irrelevant"
+    class8agr (sg | pl | irrelevant) "irrelevant"
+    class9agr (sg | pl | irrelevant) "irrelevant"
+    class10agr (sg | pl | irrelevant) "irrelevant"
+    class11agr (sg | pl | irrelevant) "irrelevant"
+    class12agr (sg | pl | irrelevant) "irrelevant"
+    class13agr (sg | pl | irrelevant) "irrelevant"
+    class14agr (sg | pl | irrelevant) "irrelevant"
+    class15agr (sg | pl | irrelevant) "irrelevant"
+    class16agr (sg | pl | irrelevant) "irrelevant"
+    class17agr (sg | pl | irrelevant) "irrelevant"
+    class18agr (sg | pl | irrelevant) "irrelevant"
+    class19agr (sg | pl | irrelevant) "irrelevant"
+    class20agr (sg | pl | irrelevant) "irrelevant"
+    class21agr (sg | pl | irrelevant) "irrelevant"
+    class22agr (sg | pl | irrelevant) "irrelevant"
+    class23agr (sg | pl | irrelevant) "irrelevant"
+    class24agr (sg | pl | irrelevant) "irrelevant"
+    class25agr (sg | pl | irrelevant) "irrelevant"
+    classifierTypeNumAgr (no | yes) "no"
+    >
 <!ELEMENT pnExample (#PCDATA)>
 <!ELEMENT experiencerExample (#PCDATA)>
 <!ELEMENT experiencerPnExample (#PCDATA)>
@@ -88,6 +87,7 @@ Finally, if the language has classifiers, the details of the system are extracte
 <!ELEMENT pnIntExample (#PCDATA)>
 <!ELEMENT experiencerIntExample (#PCDATA)>
 <!ELEMENT experiencerPnIntExample (#PCDATA)>
+<!ELEMENT splitConditions (#PCDATA)>
 <!ELEMENT class1Example (#PCDATA)>
 <!ELEMENT class2Example (#PCDATA)>
 <!ELEMENT class3Example (#PCDATA)>
@@ -142,286 +142,821 @@ Finally, if the language has classifiers, the details of the system are extracte
 <!ELEMENT classOtherExample (#PCDATA)>
 <!ELEMENT classifierAgrExample (#PCDATA)>
 <!ELEMENT classifierTypeExample (#PCDATA)>
-<!-- Quantifier Phrases consist of many kinds of examples, plus a possible category mapping.
-	 Degree words modifying the whole NP may or may not appear (npDegree)
-	 If so, they may appear before, after, or on either side or both sides at the same time.
-	 If either side, they may appear (npDegreeEither) unrestricted or restricted.
-	 Degree words within QPs may or may not appear (degree).
-	 If so, they have a position (degreePos) with respect to the quantifier.
-	 If they can appear either before or after, then either there are sets
-		for each side (degreeEither="restricted") or not.
-	 Ordinal numbers are formed by affixation or are independent
-	   (ordinalFormation).
-	 Ordinal numbers appear before, after, or on either side of the
-	   cardinal number they may modify (ordinalPos).
-	  If they can appear either before or after, then either there are sets
-		for each side (ordinalEither="restricted") or not.
-	 Compound cardinal numbers are either head-initial or head-final (cardinalHead).
+<!-- Quantifier Phrases consist of many kinds of examples.
+Cardinal and ordinal numbers are included.
 -->
-<!ELEMENT qp (all, almost, only, not, example, negExample, negCooccurExample, determinerExample, determinerNPExample, determinerNegExample, determinerNegNPExample, quantifierExample, degreeWordExample, degreeExample, cardinalNumbers1to10, cardinalNumbers11to20, cardinalNumbers30to100, ordinalNumbers, ordinalExample, cardinalCompoundExample, cardinalNumberCategory, conjunctionCategory)>
+<!ELEMENT qp (npDegreeTypeProclitic, npDegreeTypeEnclitic, npDegreeTypePrefix, npDegreeTypeSuffix, npDegreeTypeOther, npDegreePosBefore, npDegreePosAfter, npDegreePosBoth, npDegreePosOther, determinerPosBefore, determinerPosAfter, determinerPosBoth, determinerPosOther, determinerTypeProclitic, determinerTypeEnclitic, determinerTypePrefix, determinerTypeSuffix, determinerTypeOther, degreeBefore, degreeAfter, degreeBoth, degreeOther, degreeTypePrefix, degreeTypeSuffix, degreeTypeOther, ordinalAffix, ordinalIndependent, ordinalWord, ordinalOther, ordinalWordBefore, ordinalWordAfter, ordinalWordBoth, ordinalWordOther, ordinalBefore, ordinalAfter, ordinalBoth, ordinalNumOther,
+all, almost, only, npDegreeCliticExample, npDegreeAffixExample, npDegreeOtherExample, example, some, any, every, determinerExample, determinerCliticExample, determinerAffixExample, determinerOtherExample, many, much, few, otherQ, degreeWordExample, degreeExample, degreeAttachesExample, degreeAttachesNPExample, cardinalNumbers1, cardinalNumbers2, cardinalNumbers3, cardinalNumbers4, cardinalNumbers5, cardinalNumbers6, cardinalNumbers7, cardinalNumbers8, cardinalNumbers9, cardinalNumbers10, cardinalNumbers11, cardinalNumbers12, cardinalNumbers13, cardinalNumbers14, cardinalNumbers15, cardinalNumbers16, cardinalNumbers17, cardinalNumbers18, cardinalNumbers19, cardinalNumbers20, cardinalNumbers30, cardinalNumbers40, cardinalNumbers50, cardinalNumbers60, cardinalNumbers70, cardinalNumbers80, cardinalNumbers90, cardinalNumbers100, ordinalNumbers1, ordinalNumbers2, ordinalNumbers3, ordinalNumbers4, ordinalNumbers5, ordinalNumbers6, ordinalNumbers7, ordinalNumbers8, ordinalNumbers9, ordinalNumbers10, ordinalAffixExample, ordinalWordExample, ordinalExample, ordinalCardinalExample, nextExample, lastExample, nextlastNPExample, cardinalCompoundExample, partitiveQExample, partitiveOf, cardinalNumberCategory, conjunctionCategory)>
 <!ATTLIST qp
-	checkedOff (yes | no) "no"
-	 npDegreeClassifier (no | yes ) "no"
-	 npDegree (yes | some | no ) "yes"
-	npDegreeType (proclitic | enclitic | clitic | prefix | suffix | affix) "proclitic"
-	npDegreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	npDegreeEither (unrestricted | restricted) "unrestricted"
-	 npDegreeNeg (yes | some | no | none) "yes"
-	 npDegreeNegType (proclitic | enclitic | clitic | prefix | suffix | affix) "proclitic"
-	npDegreeNegPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	npDegreeNegEither (unrestricted | restricted) "unrestricted"
-	 npDegreeNegCooccur (yes | no) "no"
-	 npDegreeNegNPPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	 determiner (yes | some | attaches | no) "yes"
-	 determinerClassifier (no | yes) "no"
-	determinerPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	determinerEither (unrestricted | restricted) "unrestricted"
-	 determinerNeg (yes | some | attaches | no | none) "yes"
-	determinerNegPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	determinerNegEither (unrestricted | restricted) "unrestricted"
-	quantifierClassifier (no | yes) "no"
-	degree (yes | no) "no"
-	degreeClassifier (no | yes) "no"
-	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	degreeEither (unrestricted | restricted) "unrestricted"
-	numberClassifier (no | yes) "no"
-	ordinalFormation (affix | independent | word | both) "affix"
-	ordinalWordPos (before | after | unknown) "unknown"
-	ordinalPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	ordinalEither (unrestricted | restricted) "unrestricted"
-	cardinalHead (before | after) "after"
+    checkedOff (yes | no) "no"
+     npDegreeClassifier (no | yes ) "no"
+     npDegree (yes | some | no ) "yes"
+     determinerType (yes | some | no) "yes"
+     determinerClassifier (no | yes) "no"
+    determiner (yes | some | noAll | noQ) "yes"
+    quantifierClassifier (no | yes) "no"
+    degree (yes | some | attaches | no) "no"
+    degreeClassifier (no | yes) "no"
+    numberClassifier (no | yes) "no"
+    cardinalHead (initial | final) "final"
+    partitive (yes | no | other) "no"
+    partitivePPPos (before | after | either | unknown) "unknown"
 >
+<!ELEMENT npDegreeTypeProclitic EMPTY >
+<!ATTLIST npDegreeTypeProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeTypeEnclitic EMPTY >
+<!ATTLIST npDegreeTypeEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeTypePrefix EMPTY >
+<!ATTLIST npDegreeTypePrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeTypeSuffix EMPTY >
+<!ATTLIST npDegreeTypeSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeTypeOther (#PCDATA) >
+<!ATTLIST npDegreeTypeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreePosBefore EMPTY >
+<!ATTLIST npDegreePosBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreePosAfter EMPTY >
+<!ATTLIST npDegreePosAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreePosBoth EMPTY >
+<!ATTLIST npDegreePosBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreePosOther (#PCDATA) >
+<!ATTLIST npDegreePosOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT determinerPosBefore EMPTY >
+<!ATTLIST determinerPosBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT determinerPosAfter EMPTY >
+<!ATTLIST determinerPosAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT determinerPosBoth EMPTY >
+<!ATTLIST determinerPosBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT determinerPosOther (#PCDATA) >
+<!ATTLIST determinerPosOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT determinerTypeProclitic EMPTY >
+<!ATTLIST determinerTypeProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT determinerTypeEnclitic EMPTY >
+<!ATTLIST determinerTypeEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT determinerTypePrefix EMPTY >
+<!ATTLIST determinerTypePrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT determinerTypeSuffix EMPTY >
+<!ATTLIST determinerTypeSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT determinerTypeOther (#PCDATA) >
+<!ATTLIST determinerTypeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT degreeBefore EMPTY >
+<!ATTLIST degreeBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT degreeAfter EMPTY >
+<!ATTLIST degreeAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT degreeBoth EMPTY >
+<!ATTLIST degreeBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT degreeOther (#PCDATA) >
+<!ATTLIST degreeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT degreeTypePrefix EMPTY >
+<!ATTLIST degreeTypePrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT degreeTypeSuffix EMPTY >
+<!ATTLIST degreeTypeSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT degreeTypeOther (#PCDATA) >
+<!ATTLIST degreeTypeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalAffix EMPTY >
+<!ATTLIST ordinalAffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalIndependent EMPTY >
+<!ATTLIST ordinalIndependent
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalWord EMPTY >
+<!ATTLIST ordinalWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalOther (#PCDATA) >
+<!ATTLIST ordinalOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalWordBefore EMPTY >
+<!ATTLIST ordinalWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalWordAfter EMPTY >
+<!ATTLIST ordinalWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalWordBoth EMPTY >
+<!ATTLIST ordinalWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalWordOther (#PCDATA) >
+<!ATTLIST ordinalWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalBefore EMPTY >
+<!ATTLIST ordinalBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalAfter EMPTY >
+<!ATTLIST ordinalAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalBoth EMPTY >
+<!ATTLIST ordinalBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT ordinalNumOther (#PCDATA) >
+<!ATTLIST ordinalNumOther
+  checked (yes | no ) "no"
+>
+
 <!ELEMENT all (#PCDATA)>
 <!ELEMENT almost (#PCDATA)>
 <!ELEMENT only (#PCDATA)>
-<!ELEMENT not (#PCDATA)>
+<!ELEMENT npDegreeCliticExample (#PCDATA)>
+<!ELEMENT npDegreeAffixExample (#PCDATA)>
+<!ELEMENT npDegreeOtherExample (#PCDATA)>
 <!ELEMENT example (#PCDATA)>
-<!ELEMENT negExample (#PCDATA)>
-<!ELEMENT negCooccurExample (#PCDATA)>
+<!ELEMENT some (#PCDATA)>
+<!ELEMENT any (#PCDATA)>
+<!ELEMENT every (#PCDATA)>
 <!ELEMENT determinerExample (#PCDATA)>
-<!ELEMENT determinerNPExample (#PCDATA)>
-<!ELEMENT determinerNegExample (#PCDATA)>
-<!ELEMENT determinerNegNPExample (#PCDATA)>
-<!ELEMENT quantifierExample (#PCDATA)>
+<!ELEMENT determinerCliticExample (#PCDATA)>
+<!ELEMENT determinerAffixExample (#PCDATA)>
+<!ELEMENT determinerOtherExample (#PCDATA)>
+<!ELEMENT many (#PCDATA)>
+<!ELEMENT much (#PCDATA)>
+<!ELEMENT few (#PCDATA)>
+<!ELEMENT otherQ (#PCDATA)>
 <!ELEMENT degreeWordExample (#PCDATA)>
 <!ELEMENT degreeExample (#PCDATA)>
-<!ELEMENT cardinalNumbers1to10 (#PCDATA)>
-<!ELEMENT cardinalNumbers11to20 (#PCDATA)>
-<!ELEMENT cardinalNumbers30to100 (#PCDATA)>
-<!ELEMENT ordinalNumbers (#PCDATA)>
+<!ELEMENT degreeAttachesExample (#PCDATA)>
+<!ELEMENT degreeAttachesNPExample (#PCDATA)>
+<!ELEMENT cardinalNumbers1 (#PCDATA)>
+<!ELEMENT cardinalNumbers2 (#PCDATA)>
+<!ELEMENT cardinalNumbers3 (#PCDATA)>
+<!ELEMENT cardinalNumbers4 (#PCDATA)>
+<!ELEMENT cardinalNumbers5 (#PCDATA)>
+<!ELEMENT cardinalNumbers6 (#PCDATA)>
+<!ELEMENT cardinalNumbers7 (#PCDATA)>
+<!ELEMENT cardinalNumbers8 (#PCDATA)>
+<!ELEMENT cardinalNumbers9 (#PCDATA)>
+<!ELEMENT cardinalNumbers10 (#PCDATA)>
+<!ELEMENT cardinalNumbers11 (#PCDATA)>
+<!ELEMENT cardinalNumbers12 (#PCDATA)>
+<!ELEMENT cardinalNumbers13 (#PCDATA)>
+<!ELEMENT cardinalNumbers14 (#PCDATA)>
+<!ELEMENT cardinalNumbers15 (#PCDATA)>
+<!ELEMENT cardinalNumbers16 (#PCDATA)>
+<!ELEMENT cardinalNumbers17 (#PCDATA)>
+<!ELEMENT cardinalNumbers18 (#PCDATA)>
+<!ELEMENT cardinalNumbers19 (#PCDATA)>
+<!ELEMENT cardinalNumbers20 (#PCDATA)>
+<!ELEMENT cardinalNumbers30 (#PCDATA)>
+<!ELEMENT cardinalNumbers40 (#PCDATA)>
+<!ELEMENT cardinalNumbers50 (#PCDATA)>
+<!ELEMENT cardinalNumbers60 (#PCDATA)>
+<!ELEMENT cardinalNumbers70 (#PCDATA)>
+<!ELEMENT cardinalNumbers80 (#PCDATA)>
+<!ELEMENT cardinalNumbers90 (#PCDATA)>
+<!ELEMENT cardinalNumbers100 (#PCDATA)>
+<!ELEMENT ordinalNumbers1 (#PCDATA)>
+<!ELEMENT ordinalNumbers2 (#PCDATA)>
+<!ELEMENT ordinalNumbers3 (#PCDATA)>
+<!ELEMENT ordinalNumbers4 (#PCDATA)>
+<!ELEMENT ordinalNumbers5 (#PCDATA)>
+<!ELEMENT ordinalNumbers6 (#PCDATA)>
+<!ELEMENT ordinalNumbers7 (#PCDATA)>
+<!ELEMENT ordinalNumbers8 (#PCDATA)>
+<!ELEMENT ordinalNumbers9 (#PCDATA)>
+<!ELEMENT ordinalNumbers10 (#PCDATA)>
+<!ELEMENT ordinalAffixExample (#PCDATA)>
+<!ELEMENT ordinalWordExample (#PCDATA)>
 <!ELEMENT ordinalExample (#PCDATA)>
+<!ELEMENT ordinalCardinalExample (#PCDATA)>
+<!ELEMENT nextExample (#PCDATA)>
+<!ELEMENT lastExample (#PCDATA)>
+<!ELEMENT nextlastNPExample (#PCDATA)>
 <!ELEMENT cardinalCompoundExample (#PCDATA)>
+<!ELEMENT partitiveQExample (#PCDATA)>
+<!ELEMENT partitiveOf (#PCDATA)>
 <!ELEMENT cardinalNumberCategory (#PCDATA)>
 <!ELEMENT conjunctionCategory (#PCDATA)>
-<!-- Adverb Phrases consist of various kinds of examples, plus a possible category mapping.
-	Manner adverbs may be words or affixes (mannerType).
-	 Degree words may or may not appear (degree).
-	 If so, they have a position (degreePos) with respect to the adverb.
-	 If they can appear either before or after, then either there are sets
-		for each side (degreeEither="restricted") or not.
-	 The set of degree words which can modify the four kinds of adverbs
-	   (degreeSet) can modify all four kinds ("unrestricted"), all but reason ("exceptReason"),
-	   or they are different ("restricted").
+<!-- Adverb Phrases consist of various kinds of examples, with various kinds of modifiers.
 -->
-<!ELEMENT advp (temporalExample, temporalDegreeExample, temporalDegreeAffixExample, temporalDegreeRedupExample, temporalPhraseAffixExample, temporalPhraseExample, negTemporalAdverbWordExample, negTemporalAdverbWordsExample, negTemporalAdverbAffixExample, negTemporalAdverbExample, negTemporalExample, negTemporalAffixExample, negTemporalVerbExample, locativeExample, locativeDegreeExample, locativeDegreeAffixExample, locativeDegreeRedupExample, locativePhraseAffixExample, locativePhraseExample, negLocativeAdverbWordExample, negLocativeAdverbWordsExample, negLocativeAdverbAffixExample, negLocativeAdverbExample, negLocativeExample, negLocativeAffixExample, negLocativeVerbExample, mannerExample, mannerDegreeAffixExample, mannerDegreeExample, mannerAffixDegreeExample, mannerPhraseAffixExample, mannerDegreePhraseExample, mannerAffixDegreePhraseExample, mannerDegreeRedupExample, mannerAffixDegreeRedupExample, reasonExample, reasonPPExample, reasonSentExample, adverbCategory)>
+<!ELEMENT advp (temporalDegreeWord, temporalDegreeAttaches, temporalDegreeRedup, temporalDegreeOther, temporalDegreeWordBefore, temporalDegreeWordAfter, temporalDegreeWordBoth, temporalDegreeWordOther, temporalIndefQWord, temporalIndefQPhrase, temporalIndefQOther, temporalIndefTypeQPQBefore, temporalIndefTypeQPQAfter, temporalIndefTypeQPQBoth, temporalIndefTypeQPQOther, temporalIndefIntWord, temporalIndefIntPhrase, temporalIndefIntOther, temporalIndefTypeIntBefore, temporalIndefTypeIntAfter, temporalIndefTypeIntBoth, temporalIndefTypeIntOther,
+locativeDegreeWord, locativeDegreeAttaches, locativeDegreeRedup, locativeDegreeOther, locativeDegreeWordBefore, locativeDegreeWordAfter, locativeDegreeWordBoth, locativeDegreeWordOther, locativeIndefQWord, locativeIndefQPhrase, locativeIndefQOther, locativeIndefTypeQPQBefore, locativeIndefTypeQPQAfter, locativeIndefTypeQPQBoth, locativeIndefTypeQPQOther, locativeIndefIntWord, locativeIndefIntPhrase, locativeIndefIntOther, locativeIndefTypeIntBefore, locativeIndefTypeIntAfter, locativeIndefTypeIntBoth, locativeIndefTypeIntOther, mannerWordDegreeWord, mannerWordDegreeAttaches, mannerWordDegreeRedup, mannerWordDegreeOther, mannerDegreeWordBefore, mannerDegreeWordAfter, mannerDegreeWordBoth, mannerDegreeWordOther, mannerAffixDegreeYesBefore, mannerAffixDegreeYesAfter, mannerAffixDegreeRedup, mannerAffixDegreeOther,
+temporalExample, temporalDegreeExample, temporalPhraseExample, temporalDegreeAffixExample, temporalPhraseAffixExample, temporalDegreeRedupExample, temporalDegreeOtherExample, temporalNounExample, temporalNounModifierExample, temporalIndefTypeQWordExample, temporalIndefTypeQPhraseExample, temporalIndefTypeQOtherExample, temporalIndefTypeIntWordExample, temporalIndefTypeIntPhraseExample, temporalIndefTypeIntOtherExample,
+locativeExample, locativeDemOther, locativeDegreeExample, locativePhraseExample, locativeDegreeAffixExample, locativePhraseAffixExample, locativeDegreeRedupExample, locativeOtherExample, locativeIndefTypeQWordExample, locativeIndefTypeQPhraseExample, locativeIndefTypeQOtherExample, locativeIndefTypeIntWordExample, locativeIndefTypeIntPhraseExample, locativeIndefTypeIntOtherExample,
+mannerExample, mannerDegreeExample, mannerDegreePhraseExample, mannerDegreeAffixExample, mannerPhraseAffixExample, mannerDegreeRedupExample, mannerDegreeOtherExample, mannerAffixDegreeExample, mannerAffixDegreePhraseExample, mannerAffixDegreeRedupExample, mannerAffixDegreeOtherExample, reasonExample, reasonPPExample, reasonSentExample, adverbCategory)>
 <!ATTLIST advp
-	checkedOff (yes | no) "no"
-	temporalDegree (yesBefore | yesAfter | attaches | noRedup | no) "no"
-	negTemporalType (word | adverb | adverbWord | affix | verb) "word"
-	negTemporalWordPos (before | after | unknown) "unknown"
-	locativeClassifier (no | yes) "no"
-	advLocDem (no | same | affix) "no"
-	locativeDegree (yesBefore | yesAfter | attaches | noRedup | no) "no"
-	negLocativeType (word | adverb | adverbWord | affix | verb) "word"
-	negLocativeWordPos (before | after | unknown) "unknown"
-	mannerType (word | affix) "word"
-	mannerDegree (yesBefore | yesAfter | attaches | noRedup | no ) "no"
-	mannerAffixDegree (yesBefore | yesAfter | noRedup | no) "no"
+    checkedOff (yes | no) "no"
+    temporalDegree (yes | no) "no"
+    locativeClassifier (no | yes) "no"
+    locativeDem (distinct | same |someSame | demAffix | locativeAffix | other) "distinct"
+    locativeDegree (yes | no) "no"
+    mannerType (word | affix | both) "word"
+    mannerDegree (yes | no) "no"
+    mannerAffixDegree (yes | no) "no"
+>
+<!ELEMENT temporalDegreeWord EMPTY >
+<!ATTLIST temporalDegreeWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalDegreeAttaches EMPTY >
+<!ATTLIST temporalDegreeAttaches
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalDegreeRedup EMPTY >
+<!ATTLIST temporalDegreeRedup
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalDegreeOther (#PCDATA) >
+<!ATTLIST temporalDegreeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalDegreeWordBefore EMPTY >
+<!ATTLIST temporalDegreeWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalDegreeWordAfter EMPTY >
+<!ATTLIST temporalDegreeWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalDegreeWordBoth EMPTY >
+<!ATTLIST temporalDegreeWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalDegreeWordOther (#PCDATA) >
+<!ATTLIST temporalDegreeWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefQWord EMPTY >
+<!ATTLIST temporalIndefQWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefQPhrase EMPTY >
+<!ATTLIST temporalIndefQPhrase
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefQOther (#PCDATA) >
+<!ATTLIST temporalIndefQOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefTypeQPQBefore EMPTY >
+<!ATTLIST temporalIndefTypeQPQBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefTypeQPQAfter EMPTY >
+<!ATTLIST temporalIndefTypeQPQAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefTypeQPQBoth EMPTY >
+<!ATTLIST temporalIndefTypeQPQBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefTypeQPQOther (#PCDATA) >
+<!ATTLIST temporalIndefTypeQPQOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefIntWord EMPTY >
+<!ATTLIST temporalIndefIntWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefIntPhrase EMPTY >
+<!ATTLIST temporalIndefIntPhrase
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefIntOther (#PCDATA) >
+<!ATTLIST temporalIndefIntOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefTypeIntBefore EMPTY >
+<!ATTLIST temporalIndefTypeIntBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefTypeIntAfter EMPTY >
+<!ATTLIST temporalIndefTypeIntAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefTypeIntBoth EMPTY >
+<!ATTLIST temporalIndefTypeIntBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT temporalIndefTypeIntOther (#PCDATA) >
+<!ATTLIST temporalIndefTypeIntOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeDegreeWord EMPTY >
+<!ATTLIST locativeDegreeWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeDegreeAttaches EMPTY >
+<!ATTLIST locativeDegreeAttaches
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeDegreeRedup EMPTY >
+<!ATTLIST locativeDegreeRedup
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeDegreeOther (#PCDATA) >
+<!ATTLIST locativeDegreeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeDegreeWordBefore EMPTY >
+<!ATTLIST locativeDegreeWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeDegreeWordAfter EMPTY >
+<!ATTLIST locativeDegreeWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeDegreeWordBoth EMPTY >
+<!ATTLIST locativeDegreeWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeDegreeWordOther (#PCDATA) >
+<!ATTLIST locativeDegreeWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefQWord EMPTY >
+<!ATTLIST locativeIndefQWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefQPhrase EMPTY >
+<!ATTLIST locativeIndefQPhrase
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefQOther (#PCDATA) >
+<!ATTLIST locativeIndefQOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefTypeQPQBefore EMPTY >
+<!ATTLIST locativeIndefTypeQPQBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefTypeQPQAfter EMPTY >
+<!ATTLIST locativeIndefTypeQPQAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefTypeQPQBoth EMPTY >
+<!ATTLIST locativeIndefTypeQPQBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefTypeQPQOther (#PCDATA) >
+<!ATTLIST locativeIndefTypeQPQOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefIntWord EMPTY >
+<!ATTLIST locativeIndefIntWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefIntPhrase EMPTY >
+<!ATTLIST locativeIndefIntPhrase
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefIntOther (#PCDATA) >
+<!ATTLIST locativeIndefIntOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefTypeIntBefore EMPTY >
+<!ATTLIST locativeIndefTypeIntBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefTypeIntAfter EMPTY >
+<!ATTLIST locativeIndefTypeIntAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefTypeIntBoth EMPTY >
+<!ATTLIST locativeIndefTypeIntBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT locativeIndefTypeIntOther (#PCDATA) >
+<!ATTLIST locativeIndefTypeIntOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerWordDegreeWord EMPTY >
+<!ATTLIST mannerWordDegreeWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerWordDegreeAttaches EMPTY >
+<!ATTLIST mannerWordDegreeAttaches
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerWordDegreeRedup EMPTY >
+<!ATTLIST mannerWordDegreeRedup
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerWordDegreeOther (#PCDATA) >
+<!ATTLIST mannerWordDegreeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerDegreeWordBefore EMPTY >
+<!ATTLIST mannerDegreeWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerDegreeWordAfter EMPTY >
+<!ATTLIST mannerDegreeWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerDegreeWordBoth EMPTY >
+<!ATTLIST mannerDegreeWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerDegreeWordOther (#PCDATA) >
+<!ATTLIST mannerDegreeWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerAffixDegreeYesBefore EMPTY >
+<!ATTLIST mannerAffixDegreeYesBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerAffixDegreeYesAfter EMPTY >
+<!ATTLIST mannerAffixDegreeYesAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerAffixDegreeRedup EMPTY >
+<!ATTLIST mannerAffixDegreeRedup
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerAffixDegreeOther (#PCDATA) >
+<!ATTLIST mannerAffixDegreeOther
+  checked (yes | no ) "no"
 >
 <!ELEMENT temporalExample (#PCDATA)>
 <!ELEMENT temporalDegreeExample (#PCDATA)>
-<!ELEMENT temporalDegreeAffixExample (#PCDATA)>
-<!ELEMENT temporalDegreeRedupExample (#PCDATA)>
-<!ELEMENT temporalPhraseAffixExample (#PCDATA)>
 <!ELEMENT temporalPhraseExample (#PCDATA)>
-<!ELEMENT negTemporalAdverbWordExample (#PCDATA)>
-<!ELEMENT negTemporalAdverbWordsExample (#PCDATA)>
-<!ELEMENT negTemporalAdverbAffixExample (#PCDATA)>
-<!ELEMENT negTemporalAdverbExample (#PCDATA)>
-<!ELEMENT negTemporalExample (#PCDATA)>
-<!ELEMENT negTemporalAffixExample (#PCDATA)>
-<!ELEMENT negTemporalVerbExample (#PCDATA)>
+<!ELEMENT temporalDegreeAffixExample (#PCDATA)>
+<!ELEMENT temporalPhraseAffixExample (#PCDATA)>
+<!ELEMENT temporalDegreeRedupExample (#PCDATA)>
+<!ELEMENT temporalDegreeOtherExample (#PCDATA)>
+<!ELEMENT temporalNounExample (#PCDATA)>
+<!ELEMENT temporalNounModifierExample (#PCDATA)>
+<!ELEMENT temporalIndefTypeQWordExample (#PCDATA)>
+<!ELEMENT temporalIndefTypeQPhraseExample (#PCDATA)>
+<!ELEMENT temporalIndefTypeQOtherExample (#PCDATA)>
+<!ELEMENT temporalIndefTypeIntWordExample (#PCDATA)>
+<!ELEMENT temporalIndefTypeIntPhraseExample (#PCDATA)>
+<!ELEMENT temporalIndefTypeIntOtherExample (#PCDATA)>
 <!ELEMENT locativeExample (#PCDATA)>
+<!ELEMENT locativeDemOther (#PCDATA)>
 <!ELEMENT locativeDegreeExample (#PCDATA)>
-<!ELEMENT locativeDegreeAffixExample (#PCDATA)>
-<!ELEMENT locativeDegreeRedupExample (#PCDATA)>
-<!ELEMENT locativePhraseAffixExample (#PCDATA)>
 <!ELEMENT locativePhraseExample (#PCDATA)>
-<!ELEMENT negLocativeAdverbWordExample (#PCDATA)>
-<!ELEMENT negLocativeAdverbWordsExample (#PCDATA)>
-<!ELEMENT negLocativeAdverbAffixExample (#PCDATA)>
-<!ELEMENT negLocativeAdverbExample (#PCDATA)>
-<!ELEMENT negLocativeExample (#PCDATA)>
-<!ELEMENT negLocativeAffixExample (#PCDATA)>
-<!ELEMENT negLocativeVerbExample (#PCDATA)>
+<!ELEMENT locativeDegreeAffixExample (#PCDATA)>
+<!ELEMENT locativePhraseAffixExample (#PCDATA)>
+<!ELEMENT locativeDegreeRedupExample (#PCDATA)>
+<!ELEMENT locativeOtherExample (#PCDATA)>
+<!ELEMENT locativeIndefTypeQWordExample (#PCDATA)>
+<!ELEMENT locativeIndefTypeQPhraseExample (#PCDATA)>
+<!ELEMENT locativeIndefTypeQOtherExample (#PCDATA)>
+<!ELEMENT locativeIndefTypeIntWordExample (#PCDATA)>
+<!ELEMENT locativeIndefTypeIntPhraseExample (#PCDATA)>
+<!ELEMENT locativeIndefTypeIntOtherExample (#PCDATA)>
 <!ELEMENT mannerExample (#PCDATA)>
-<!ELEMENT mannerDegreeAffixExample (#PCDATA)>
 <!ELEMENT mannerDegreeExample (#PCDATA)>
-<!ELEMENT mannerAffixDegreeExample (#PCDATA)>
-<!ELEMENT mannerPhraseAffixExample (#PCDATA)>
 <!ELEMENT mannerDegreePhraseExample (#PCDATA)>
-<!ELEMENT mannerAffixDegreePhraseExample (#PCDATA)>
+<!ELEMENT mannerDegreeAffixExample (#PCDATA)>
+<!ELEMENT mannerPhraseAffixExample (#PCDATA)>
 <!ELEMENT mannerDegreeRedupExample (#PCDATA)>
+<!ELEMENT mannerDegreeOtherExample (#PCDATA)>
+<!ELEMENT mannerAffixDegreeExample (#PCDATA)>
+<!ELEMENT mannerAffixDegreePhraseExample (#PCDATA)>
 <!ELEMENT mannerAffixDegreeRedupExample (#PCDATA)>
+<!ELEMENT mannerAffixDegreeOtherExample (#PCDATA)>
 <!ELEMENT reasonExample (#PCDATA)>
 <!ELEMENT reasonPPExample (#PCDATA)>
 <!ELEMENT reasonSentExample (#PCDATA)>
 <!ELEMENT adverbCategory (#PCDATA)>
-<!-- Adjective Phrases have one set of examples and an optional category mapping.
-	 Modifiers may or may not appear (modifiers).
-	 If so and it is degree words only (modifiers="yesDegree"), then they
-		have a position (degreePos) with respect to the adjective.
-		If they can appear either before or after, then either there are sets
-		  for each side (degreeEither="restricted") or not.
-	 If so and it is degree words & manner adverbials (modifiers="yesManner"),
-		then the modifiers may have a position (mannerPos) with respect to
-		the adjective.
-		If they can appear either before or after, then either there are sets
-		  for each side (mannerEither="restricted") or not.
-
+<!-- Adjective Phrases have examples.
+     Modifiers may or may not appear.
 -->
-<!ELEMENT adjp (example, adjectiveDegreeExample, adjectiveDegreeAffixExample, adjectiveDegreeRedupExample, adjectivePhraseAffixExample, adjectivePhraseExample, adjectiveCategory)>
+<!ELEMENT adjp (modifiersDegree, modifiersManner, modifiersAttaches, modifiersRedup, modifiersOther, degreeBefore, degreeAfter, degreeBoth, degreeOther, mannerBefore, mannerAfter, mannerBoth, mannerOther, example, adjectiveDegreeExample, adjectiveDegreePhraseExample, adjectiveMannerPhraseExample, adjectiveDegreeAffixExample, adjectiveDegreeAffixPhraseExample, adjectiveDegreeRedupExample, adjectiveDegreeOtherExample, adjectiveCategory)>
 <!ATTLIST adjp
-	checkedOff (yes | no) "no"
-	adjectiveClassifier (no | yes) "no"
-	modifiers (yes | yesManner | attaches | noRedup | no) "no"
-	adjectiveDegreeClassifier (no | yes) "no"
-	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	degreeEither (unrestricted | restricted) "unrestricted"
-	mannerPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	mannerEither (unrestricted | restricted) "unrestricted"
+    checkedOff (yes | no) "no"
+    adjectiveClassifier (no | yes) "no"
+    modifiers (yes | no) "no"
+    adjectiveDegreeClassifier (no | yes) "no"
+>
+<!ELEMENT modifiersDegree EMPTY >
+<!ATTLIST modifiersDegree
+  checked (yes | no ) "no"
+>
+<!ELEMENT modifiersManner EMPTY >
+<!ATTLIST modifiersManner
+  checked (yes | no ) "no"
+>
+<!ELEMENT modifiersAttaches EMPTY >
+<!ATTLIST modifiersAttaches
+  checked (yes | no ) "no"
+>
+<!ELEMENT modifiersRedup EMPTY >
+<!ATTLIST modifiersRedup
+  checked (yes | no ) "no"
+>
+<!ELEMENT modifiersOther (#PCDATA) >
+<!ATTLIST modifiersOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerBefore EMPTY >
+<!ATTLIST mannerBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerAfter EMPTY >
+<!ATTLIST mannerAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerBoth EMPTY >
+<!ATTLIST mannerBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT mannerOther (#PCDATA) >
+<!ATTLIST mannerOther
+  checked (yes | no ) "no"
 >
 <!ELEMENT adjectiveDegreeExample (#PCDATA)>
+<!ELEMENT adjectiveDegreePhraseExample (#PCDATA)>
+<!ELEMENT adjectiveMannerPhraseExample (#PCDATA)>
 <!ELEMENT adjectiveDegreeAffixExample (#PCDATA)>
+<!ELEMENT adjectiveDegreeAffixPhraseExample (#PCDATA)>
 <!ELEMENT adjectiveDegreeRedupExample (#PCDATA)>
-<!ELEMENT adjectivePhraseAffixExample (#PCDATA)>
-<!ELEMENT adjectivePhraseExample (#PCDATA)>
+<!ELEMENT adjectiveDegreeOtherExample (#PCDATA)>
 <!ELEMENT adjectiveCategory (#PCDATA)>
 <!-- Nominal phrases have examples with articles and demonstratives, embedded
-	   possessors, prepositional phrases within the possessor, relative
-	   clauses within the possessor, quantifier modifiers, adjective
-	   phrase modifiers, compounds, and compounds containing PPs.  There also
-	   is a series of table of contents items.
-	 The question of which features are involved in agreement within NP is settled first
-	  (agreeNumber) and (agreeOther, which can be animacy, class, or gender).
-	  If agreeNumber=no, we assume that number is
-	 marked for the nominal phrase by numbers and quantifiers.
-	 The phrase may have articles and/or demonstratives (artAndDem).
-	 The article/demonstrative may have case (artCase).
-  If articles only, the article has a position (artPos) which may be restricted if it can occur on
-	 either side (artEither).  It may be required (artRequired) or optional always,
-	or it may have a split based on number and mass.  The requirement is further divided
-   if articles may appear on both sides (artRequiredBothPos)
-   The same options are available for demonstratives only (dem), both but do not
-cooccur (demOrArt) or both and cooccur (demAndArt).
-	 The phrase may have a possessor.
-	   The possessor may or may not be marked (possMarked).
-	   If it is a phrasal clitic, it may be written as a distinct word
-		  (possCliticWord) or not (in which case the affix type is needed (possCliticAffix).
-	   The clitic word may be required on all possessors
-	  (possCliticRequired).  It has a position with respect to the
-	  possessor (possCliticPossPos).
-	 The possessor has a position with respect to the head noun (possNounPos).
-	The possessor may or may not cooccur
-	with articles or demonstratives (possCooccur).
-	(possCaseErg) asks about the case of possessors for egrative/absolutive languages.
-	(possNounCaseChange) asks if the presence of a possessor affects the case of the
-	head noun.
-	The language may distinguish alienable and inalienble possession (possAlienable).
-	   The possessor may agree with the head noun (possAgr).
-	(possNounAgrKeyed) asks if noun agreement features were keyed in Art/Dem section.
-	 If the phrase has a quantifier phrase (at the N'' level), then it has a
-	   position with respect to the noun (qpPos) which may be before, after, or on either side
-	 or both sides at the same time.
-	 If either or both sides, they may appear (qpEither) unrestricted or restricted.  Numbers only may
-	 have a reqtricted position (qpEitherRestrictedNumPos).
-	QPs may or may not agree with the noun they modify (qpAgree).
-	If either side, they may appear (adjpEither) unrestricted  or  restricted.
-	Languages which change the case for a possessor may also do so just for an adjective (adjpCaseChange).
-	Some of these languages have a phrase delimiting case afix (adjpCaseAffix), which
-	may be either a prefix or a suffix (adjpCaseAffixType).
-	 Adjective phrases have a position with respect to the noun (adjpPos).
-	Adjective Phrases may or may not agree with the noun they modify (adjpAgree).
-	 Noun-noun compounds may or may not occur (comp).  If yes, they have a head (compHead)
-	and any PP occurs in a position with respect to that head (compHeadPPPos).
+       possessors, prepositional phrases within the possessor, relative
+       clauses within the possessor, quantifier modifiers, adjective
+       phrase modifiers, compounds, and compounds containing PPs.
 -->
-<!ELEMENT np (agreeNumberExample, agreeAnimacyExample, agreeClassExample, agreeGenderExample, nominative, accusative, ergative, absolutive, genitive, dative, ablative, instrumental, locative, vocative, oblique, otherCase, articleExample, demonstrativeExample, articleSgExample, demonstrativeSgExample, articlePlExample, demonstrativePlExample, example, possessorExample, embeddedExample, ppExample, relClExample, possAlienableAffixExample, qpExample, adjpExample, partExample, compExample, compPPExample, compPPPossessorExample, partHeadExample, partHeadSentExample, articleCategory, demonstrativeCategory, nounCategory, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8, npContents9, npPossAgrPossFirst, npPossAgrPossExclusive, npPossAgrPossInclusive, npPossAgrPossSecond, npPossAgrPossThird, npPossAgrPossSingular, npPossAgrPossPlural, npPossAgrPossDual, npPossAgrPossMasculine, npPossAgrPossFeminine, npPossAgrPossNeuter, npPossAgrPossAnimate, npPossAgrPossInanimate, npPossAgrPossHuman, npPossAgrPossNonHuman, npPossAgrPossClassClassNumber)>
+<!ELEMENT np (agreeClass, agreeGender, agreeAnimacy, agreeOtherFeat, caseWordBefore, caseWordAfter, caseWordBoth, caseWordOther, caseAttachesProclitic, caseAttachesEnclitic, caseAttachesPrefix, caseAttachesSuffix, caseAttachesOther, artOnlyBefore, artOnlyAfter, artOnlyBoth, artOnlyOther, demOnlyBefore, demOnlyAfter, demOnlyBoth, demOnlyOther, demOrArtPosBefore, demOrArtPosAfter, demOrArtPosBoth, demOrArtPosOther, demAndArtDemBefore, demAndArtDemAfter, demAndArtDemBoth, demAndArtDemOther, demOrArtPosOther, demAndArtArtBefore, demAndArtArtAfter, demAndArtArtBoth, demAndArtArtOther, possWordBefore, possWordAfter, possWordBoth, possWordOther, qpPosBefore, qpPosAfter, qpPosBoth, qpPosOther, adjBefore, adjAfter, adjBoth, adjPosOther,
+agreeNumberExample, agreeClassExample, agreeGenderExample, agreeAnimacyExample, agreeOtherExample, caseNPExample, nominative, accusative, ergative, absolutive, genitive, dative, ablative, instrumental, locative, vocative, oblique, otherCase, articleExample,     articlePlExample, articleIndefExample, articleIndefPlExample, articleNomExample, articlePlNomExample, articleIndefNomExample, articleIndefPlNomExample, articleAccExample, articlePlAccExample, articleIndefAccExample, articleIndefPlAccExample, articleGenExample, articlePlGenExample, articleIndefGenExample, articleIndefPlGenExample, articleErgExample, articlePlErgExample, articleIndefErgExample, articleIndefPlErgExample, articleAbsExample, articlePlAbsExample, articleIndefAbsExample, articleIndefPlAbsExample, articleDatExample, articlePlDatExample, articleIndefDatExample, articleIndefPlDatExample, demProximalExample, demMedialExample, demDistalExample, demProximalPlExample, demMedialPlExample, demDistalPlExample, demProximalNomExample, demMedialNomExample, demDistalNomExample, demProximalPlNomExample, demMedialPlNomExample, demDistalPlNomExample, demProximalAccExample, demMedialAccExample, demDistalAccExample, demProximalPlAccExample, demMedialPlAccExample, demDistalPlAccExample, demProximalGenExample, demMedialGenExample, demDistalGenExample, demProximalPlGenExample, demMedialPlGenExample, demDistalPlGenExample, demProximalErgExample, demMedialErgExample, demDistalErgExample, demProximalPlErgExample, demMedialPlErgExample, demDistalPlErgExample, demProximalAbsExample, demMedialAbsExample, demDistalAbsExample, demProximalPlAbsExample, demMedialPlAbsExample, demDistalPlAbsExample, demProximalDatExample, demMedialDatExample, demDistalDatExample, demProximalPlDatExample, demMedialPlDatExample, demDistalPlDatExample, example, possessorExample, embeddedExample, ppExample, relClExample, possMarkerAffix, possMarkerClitic, possMarkerWord, possAlienableAffixExample, possAbsolutiveAffixExample, qpExample, adjpExample, partExample, compBodyPartExample, compKinshipExample, compFoodExample, compMaterialExample, compExample, compPPExample, partHeadExample, partHeadSentExample, articleCategory, demonstrativeCategory, nounCategory, npContents1, npContents2, npContents3, npContents4, npContents5, npContents6, npContents7, npContents8, npContents9, npPossAgrPossFirst, npPossAgrPossExclusive, npPossAgrPossInclusive, npPossAgrPossSecond, npPossAgrPossThird, npPossAgrPossSingular, npPossAgrPossPlural, npPossAgrPossDual, npPossAgrPossMasculine, npPossAgrPossFeminine, npPossAgrPossNeuter, npPossAgrPossAnimate, npPossAgrPossInanimate, npPossAgrPossHuman, npPossAgrPossNonHuman)>
 <!ATTLIST np
-	checkedOff (yes | no) "no"
-	agreeNumber (no | yes) "no"
-	agreeOther (no | yesAnimacy | yesClass | yesGender) "no"
-	caseN (no | yes) "no"
-	caseDefault (no | nominative) "no"
-	caseWord (yes | no) "yes"
-	caseWordPos (before | after | either | unknown) "unknown"
-	caseWordEither (unrestricted | restricted) "unrestricted"
-	caseCliticPos (before | after | either | prefixN | suffixN | eitherN | unknown) "unknown"
-	possCaseErg (ergative | absolutive | genitive) "genitive"
-	artAndDem (no | article | demonstrative | both) "no"
-	artDefOnly (no | yes) "no"
-	artPl (no | yes) "no"
-	demPl (no | yes) "no"
-	artDemClassifier (no | yes) "no"
-	artCase (yes | no) "no"
-	artPos (before | after | either | unknown) "unknown"
-	artEither (unrestricted | restricted) "unrestricted"
-	artRequired (no | mass | yes) "no"
-	artBothRequiredPos (before | after | both | unknown) "unknown"
-	demPos (before | after | either | unknown) "unknown"
-	demEither (unrestricted | restricted) "unrestricted"
-	demRequired (no | mass | yes) "no"
-	demBothRequiredPos (before | after | both | unknown) "unknown"
-	artBothCooccur (no | different | yes) "different"
-	demOrArtPos (before | after | either | unknown) "unknown"
-	demOrArtEither (unrestricted | restricted) "unrestricted"
-	demOrArtRequired (no | mass | yes) "no"
-	demOrArtBothRequiredPos (before | after | both | unknown) "unknown"
-	demAndArtDemPos (before | after | either | unknown) "unknown"
-	demAndArtDemEither (unrestricted | restricted) "unrestricted"
-	demAndArtDemRequired (no | mass | yes) "no"
-	demAndArtDemBothRequiredPos (before | after | both | unknown) "unknown"
-	demAndArtArtPos (before | after | either | unknown) "unknown"
-	demAndArtArtEither (unrestricted | restricted) "unrestricted"
-	demAndArtArtRequired (no | mass | yes) "no"
-	demAndArtArtBothRequiredPos (before | after | both | unknown) "unknown"
-	possNounPos (before | after | either | unknown) "unknown"
-	possMarked (no | yesAffix | yesClitic) "no"
-	possCliticWord (no | yes) "no"
-	possCliticAffix (suffix | prefix) "suffix"
-	possCliticRequired (no | yes) "no"
-	possCliticPossPos (before | after | unknown) "unknown"
-	possCooccur (yes | some | no) "yes"
-	possNounCaseChange (no | yes) "no"
-	possAlienable (no | yes) "no"
-	possAgr (yes | no) "no"
-	qpPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	qpEither (unrestricted | restricted) "unrestricted"
-	qpEitherRestrictedNumPos (before | after | no | unknown) "unknown"
-	qpAgree (no | yes) "no"
-	adjpPos (before | after | either | unknown) "unknown"
-	adjpEither (unrestricted | restricted) "unrestricted"
-	adjpCaseChange (no | yes) "no"
-	adjpCaseAffix (no | yesPrefix | yesSuffix) "no"
-	adjpAgree (no | yes) "no"
-	comp (no | yes) "no"
-	compHead (left | right) "right"
-	compHeadMorpheme (left | right) "right"
-	ppPos (before | after | either | unknown) "unknown"
+    checkedOff (yes | no) "no"
+    agreeNumber (no | yes) "no"
+    agreeOther (no | yes) "no"
+    caseN (no | yes) "no"
+    caseDefault (no | nominative) "no"
+    caseWord (yes | some | no) "yes"
+    possCaseErg (ergative | absolutive | genitive) "genitive"
+    artAndDem (no | article | demonstrative | both) "no"
+    artDefOnly (no | yes | indef) "no"
+    artPl (no | yes) "no"
+    demPl (no | yes) "no"
+    artDemClassifier (no | yes) "no"
+    artCase (yes | no) "no"
+    artRequired (no | mass | yes) "no"
+    demRequired (no | mass | yes) "no"
+    artBothCooccur (no | different | yes) "different"
+    demOrArtRequired (no | mass | yes) "no"
+    demAndArtDemRequired (no | mass | yes) "no"
+    demAndArtArtRequired (no | mass | yes) "no"
+    possNP (yes | yesOnly | no | none) "yes"
+    possPronPos (before | after | either | unknown) "unknown"
+    possPPPos (before | after | either | unknown) "unknown"
+    possNounPos (before | after | either | unknown) "unknown"
+    possMarked (no | yesAffix | yesProclitic | yesEnclitic | yesWord) "no"
+    possWordRequired (no | yes) "no"
+    possCooccur (yes | some | no) "yes"
+    possNounCaseChange (no | yes) "no"
+    possAlienable (no | yes) "no"
+    possAgr (yes | no) "no"
+    possAbsolutive (yes | no) "no"
+    qpEitherRestrictedNumPos (before | after | no | unknown) "unknown"
+    adjPPart (yes | no | other) "no"
+    adjpCaseChange (no | yes) "no"
+    adjpCaseAffix (no | yesPrefix | yesSuffix) "no"
+    comp (no | yes) "no"
+    compHead (left | right | either) "right"
+    compHeadMorpheme (left | right | either) "right"
+    ppComp (yes | no | other) "no"
+    ppPos (before | after | either | unknown) "unknown"
+    partNP (yes | no | other) "no"
+>
+<!ELEMENT agreeClass EMPTY >
+<!ATTLIST agreeClass
+  checked (yes | no ) "no"
+>
+<!ELEMENT agreeGender EMPTY >
+<!ATTLIST agreeGender
+  checked (yes | no ) "no"
+>
+<!ELEMENT agreeAnimacy EMPTY >
+<!ATTLIST agreeAnimacy
+  checked (yes | no ) "no"
+>
+<!ELEMENT agreeOtherFeat (#PCDATA) >
+<!ATTLIST agreeOtherFeat
+  checked (yes | no ) "no"
+>
+<!ELEMENT caseWordBefore EMPTY >
+<!ATTLIST caseWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT caseWordAfter EMPTY >
+<!ATTLIST caseWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT caseWordBoth EMPTY >
+<!ATTLIST caseWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT caseWordOther (#PCDATA) >
+<!ATTLIST caseWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT caseAttachesProclitic EMPTY >
+<!ATTLIST caseAttachesProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT caseAttachesEnclitic EMPTY >
+<!ATTLIST caseAttachesEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT caseAttachesPrefix EMPTY >
+<!ATTLIST caseAttachesPrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT caseAttachesSuffix EMPTY >
+<!ATTLIST caseAttachesSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT caseAttachesOther (#PCDATA) >
+<!ATTLIST caseAttachesOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT artOnlyBefore EMPTY >
+<!ATTLIST artOnlyBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT artOnlyAfter EMPTY >
+<!ATTLIST artOnlyAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT artOnlyBoth EMPTY >
+<!ATTLIST artOnlyBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT artOnlyOther (#PCDATA) >
+<!ATTLIST artOnlyOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT demOnlyBefore EMPTY >
+<!ATTLIST demOnlyBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT demOnlyAfter EMPTY >
+<!ATTLIST demOnlyAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT demOnlyBoth EMPTY >
+<!ATTLIST demOnlyBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT demOnlyOther (#PCDATA) >
+<!ATTLIST demOnlyOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT demOrArtPosBefore EMPTY >
+<!ATTLIST demOrArtPosBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT demOrArtPosAfter EMPTY >
+<!ATTLIST demOrArtPosAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT demOrArtPosBoth EMPTY >
+<!ATTLIST demOrArtPosBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT demOrArtPosOther (#PCDATA) >
+<!ATTLIST demOrArtPosOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT demAndArtDemBefore EMPTY >
+<!ATTLIST demAndArtDemBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT demAndArtDemAfter EMPTY >
+<!ATTLIST demAndArtDemAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT demAndArtDemBoth EMPTY >
+<!ATTLIST demAndArtDemBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT demAndArtDemOther (#PCDATA) >
+<!ATTLIST demAndArtDemOther
+  checked (yes | no ) "no"
+  >
+<!ELEMENT demAndArtArtBefore EMPTY >
+<!ATTLIST demAndArtArtBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT demAndArtArtAfter EMPTY >
+<!ATTLIST demAndArtArtAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT demAndArtArtBoth EMPTY >
+<!ATTLIST demAndArtArtBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT demAndArtArtOther (#PCDATA) >
+<!ATTLIST demAndArtArtOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT possWordBefore EMPTY >
+<!ATTLIST possWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT possWordAfter EMPTY >
+<!ATTLIST possWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT possWordBoth EMPTY >
+<!ATTLIST possWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT possWordOther (#PCDATA) >
+<!ATTLIST possWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT qpPosBefore EMPTY >
+<!ATTLIST qpPosBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT qpPosAfter EMPTY >
+<!ATTLIST qpPosAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT qpPosBoth EMPTY >
+<!ATTLIST qpPosBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT qpPosOther (#PCDATA) >
+<!ATTLIST qpPosOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT adjBefore EMPTY >
+<!ATTLIST adjBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT adjAfter EMPTY >
+<!ATTLIST adjAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT adjBoth EMPTY >
+<!ATTLIST adjBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT adjPosOther (#PCDATA) >
+<!ATTLIST adjPosOther
+  checked (yes | no ) "no"
 >
 <!ELEMENT agreeNumberExample (#PCDATA)>
-<!ELEMENT agreeAnimacyExample (#PCDATA)>
 <!ELEMENT agreeClassExample (#PCDATA)>
 <!ELEMENT agreeGenderExample (#PCDATA)>
+<!ELEMENT agreeAnimacyExample (#PCDATA)>
+<!ELEMENT agreeOtherExample (#PCDATA)>
+<!ELEMENT caseNPExample (#PCDATA)>
 <!ELEMENT nominative (#PCDATA)>
 <!ELEMENT accusative (#PCDATA)>
 <!ELEMENT ergative (#PCDATA)>
@@ -435,22 +970,51 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT oblique (#PCDATA)>
 <!ELEMENT otherCase (#PCDATA)>
 <!ELEMENT articleExample (#PCDATA)>
-<!ELEMENT demonstrativeExample (#PCDATA)>
-<!ELEMENT articleSgExample (#PCDATA)>
-<!ELEMENT demonstrativeSgExample (#PCDATA)>
 <!ELEMENT articlePlExample (#PCDATA)>
-<!ELEMENT demonstrativePlExample (#PCDATA)>
+<!ELEMENT articleIndefExample (#PCDATA)>
+<!ELEMENT articleIndefPlExample (#PCDATA)>
+<!ELEMENT articleNomExample (#PCDATA)>
+<!ELEMENT articlePlNomExample (#PCDATA)>
+<!ELEMENT articleIndefNomExample (#PCDATA)>
+<!ELEMENT articleIndefPlNomExample (#PCDATA)>
+<!ELEMENT articleAccExample (#PCDATA)>
+<!ELEMENT articlePlAccExample (#PCDATA)>
+<!ELEMENT articleIndefAccExample (#PCDATA)>
+<!ELEMENT articleIndefPlAccExample (#PCDATA)>
+<!ELEMENT articleGenExample (#PCDATA)>
+<!ELEMENT articlePlGenExample (#PCDATA)>
+<!ELEMENT articleIndefGenExample (#PCDATA)>
+<!ELEMENT articleIndefPlGenExample (#PCDATA)>
+<!ELEMENT articleErgExample (#PCDATA)>
+<!ELEMENT articlePlErgExample (#PCDATA)>
+<!ELEMENT articleIndefErgExample (#PCDATA)>
+<!ELEMENT articleIndefPlErgExample (#PCDATA)>
+<!ELEMENT articleAbsExample (#PCDATA)>
+<!ELEMENT articlePlAbsExample (#PCDATA)>
+<!ELEMENT articleIndefAbsExample (#PCDATA)>
+<!ELEMENT articleIndefPlAbsExample (#PCDATA)>
+<!ELEMENT articleDatExample (#PCDATA)>
+<!ELEMENT articlePlDatExample (#PCDATA)>
+<!ELEMENT articleIndefDatExample (#PCDATA)>
+<!ELEMENT articleIndefPlDatExample (#PCDATA)>
 <!ELEMENT possessorExample (#PCDATA)>
 <!ELEMENT embeddedExample (#PCDATA)>
 <!ELEMENT ppExample (#PCDATA)>
 <!ELEMENT relClExample (#PCDATA)>
+<!ELEMENT possMarkerAffix (#PCDATA)>
+<!ELEMENT possMarkerClitic (#PCDATA)>
+<!ELEMENT possMarkerWord (#PCDATA)>
 <!ELEMENT possAlienableAffixExample (#PCDATA)>
+<!ELEMENT possAbsolutiveAffixExample (#PCDATA)>
 <!ELEMENT qpExample (#PCDATA)>
 <!ELEMENT adjpExample (#PCDATA)>
 <!ELEMENT partExample (#PCDATA)>
+<!ELEMENT compBodyPartExample (#PCDATA)>
+<!ELEMENT compKinshipExample (#PCDATA)>
+<!ELEMENT compFoodExample (#PCDATA)>
+<!ELEMENT compMaterialExample (#PCDATA)>
 <!ELEMENT compExample (#PCDATA)>
 <!ELEMENT compPPExample (#PCDATA)>
-<!ELEMENT compPPPossessorExample (#PCDATA)>
 <!ELEMENT partHeadExample (#PCDATA)>
 <!ELEMENT partHeadSentExample (#PCDATA)>
 <!ELEMENT articleCategory (#PCDATA)>
@@ -458,298 +1022,628 @@ cooccur (demOrArt) or both and cooccur (demAndArt).
 <!ELEMENT nounCategory (#PCDATA)>
 <!ELEMENT npContents1 EMPTY>
 <!ATTLIST npContents1
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents2 EMPTY>
 <!ATTLIST npContents2
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents3 EMPTY>
 <!ATTLIST npContents3
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents4 EMPTY>
 <!ATTLIST npContents4
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents5 EMPTY>
 <!ATTLIST npContents5
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents6 EMPTY>
 <!ATTLIST npContents6
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents7 EMPTY>
 <!ATTLIST npContents7
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents8 EMPTY>
 <!ATTLIST npContents8
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT npContents9 EMPTY>
 <!ATTLIST npContents9
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossFirst EMPTY>
 <!ATTLIST npPossAgrPossFirst
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossExclusive EMPTY>
 <!ATTLIST npPossAgrPossExclusive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossInclusive EMPTY>
 <!ATTLIST npPossAgrPossInclusive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossSecond EMPTY>
 <!ATTLIST npPossAgrPossSecond
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossThird EMPTY>
 <!ATTLIST npPossAgrPossThird
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossSingular EMPTY>
 <!ATTLIST npPossAgrPossSingular
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossPlural EMPTY>
 <!ATTLIST npPossAgrPossPlural
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossDual EMPTY>
 <!ATTLIST npPossAgrPossDual
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossMasculine EMPTY>
 <!ATTLIST npPossAgrPossMasculine
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossFeminine EMPTY>
 <!ATTLIST npPossAgrPossFeminine
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossNeuter EMPTY>
 <!ATTLIST npPossAgrPossNeuter
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossAnimate EMPTY>
 <!ATTLIST npPossAgrPossAnimate
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossInanimate EMPTY>
 <!ATTLIST npPossAgrPossInanimate
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossHuman EMPTY>
 <!ATTLIST npPossAgrPossHuman
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT npPossAgrPossNonHuman EMPTY>
 <!ATTLIST npPossAgrPossNonHuman
-	checked (yes | no) "no"
->
-<!ELEMENT npPossAgrPossClassClassNumber EMPTY>
-<!ATTLIST npPossAgrPossClassClassNumber
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!-- Proper names.  Proper Names have examples, including ones
-	   with PPs and relative clauses.
-	 Proper Names may be marked in the morphological parser by N or one or more other
-	   categories, so three category mappings are allowed (propAnimate1Category, propAnimate2Category and    propInanimateCategory).
+       with PPs and relative clauses.
  -->
 <!ELEMENT prop (example, ppExample, relClExample, propAnimate1Category, propAnimate2Category, propInanimateCategory)>
 <!ATTLIST prop
-	pnClassifier (no | yes) "no"
-	pnDeterminer (no | yes) "no"
-	checkedOff (yes | no) "no"
+    pnClassifier (no | yes) "no"
+    pnDeterminer (no | yes) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT propAnimate1Category (#PCDATA)>
 <!ELEMENT propAnimate2Category (#PCDATA)>
 <!ELEMENT propInanimateCategory (#PCDATA)>
 <!-- Pronouns. Pronoun examples include personal pronouns in each position as determined by the
-	  case system, possessives,  reflexives, reciprocals, demonstratives,
-	   indefinites as NPs and/or indefinites as words, stand
-	   alone NPs, partitives, and pronominals with relative clauses.
-	 Stand alone possessives may exist (poss) and if so, may be formed by an affix
-	   (possAffix).
-	 Reflexives may exist (refl) and if so, may be formed by an affix
-	   (reflAffix).
-	 Reciprocals may exist (recip) and if so, may be formed by an affix
-	   (recipAffix).
-	 Demonstratives may be determined by case
-	 Indefinites may be positive or negative and formed by an NP or a word (indef).
-	 Partitives may come before or after the head (partitivePos).
+      case system, possessives,  reflexives, reciprocals, demonstratives,
+       indefinites as NPs and/or indefinites as words, stand
+       alone NPs, partitives, and pronominals with relative clauses.
 -->
-<!ELEMENT pron (personalFirstNoCaseExample, personalSecondNoCaseExample, personalThirdNoCaseExample,
-personalFirstNomSubjectExample, personalSecondNomSubjectExample, personalThirdNomSubjectExample,
-personalFirstNomObjectExample, personalSecondNomObjectExample, personalThirdNomObjectExample,
-personalFirstNomPossessorExample, personalSecondNomPossessorExample, personalThirdNomPossessorExample,
-personalFirstNomDativeExample, personalSecondNomDativeExample, personalThirdNomDativeExample,
-personalFirstErgSubjectTransExample, personalSecondErgSubjectTransExample, personalThirdErgSubjectTransExample,
-personalFirstErgSubjectIntransExample, personalSecondErgSubjectIntransExample, personalThirdErgSubjectIntransExample,
-personalFirstErgPossessorExample, personalSecondErgPossessorExample, personalThirdErgPossessorExample,
-personalFirstErgDativeExample, personalSecondErgDativeExample, personalThirdErgDativeExample,
-personalFirstSplitSubjectExample, personalSecondSplitSubjectExample, personalThirdSplitSubjectExample,
-personalFirstSplitObjectExample, personalSecondSplitObjectExample, personalThirdSplitObjectExample,
-personalFirstSplitPossessorExample, personalSecondSplitPossessorExample, personalThirdSplitPossessorExample,
-personalFirstSplitDativeExample, personalSecondSplitDativeExample, personalThirdSplitDativeExample,
-personalFirstSplitErgExample, personalSecondSplitErgExample, personalThirdSplitErgExample,
-personalFirstSplitAbsExample, personalSecondSplitAbsExample, personalThirdSplitAbsExample,
-personalDependentFirstNoCaseExample, personalDependentSecondNoCaseExample, personalDependentThirdNoCaseExample,
-personalDependentFirstNomSubjectExample, personalDependentSecondNomSubjectExample, personalDependentThirdNomSubjectExample,
-personalDependentFirstNomObjectExample, personalDependentSecondNomObjectExample, personalDependentThirdNomObjectExample,
-personalDependentFirstNomPossessorExample, personalDependentSecondNomPossessorExample, personalDependentThirdNomPossessorExample,
-personalDependentFirstNomDativeExample, personalDependentSecondNomDativeExample, personalDependentThirdNomDativeExample,
-personalDependentFirstErgSubjectTransExample, personalDependentSecondErgSubjectTransExample, personalDependentThirdErgSubjectTransExample,
-personalDependentFirstErgSubjectIntransExample, personalDependentSecondErgSubjectIntransExample, personalDependentThirdErgSubjectIntransExample,
-personalDependentFirstErgPossessorExample, personalDependentSecondErgPossessorExample, personalDependentThirdErgPossessorExample,
-personalDependentFirstErgDativeExample, personalDependentSecondErgDativeExample, personalDependentThirdErgDativeExample,
-personalDependentFirstSplitSubjectExample, personalDependentSecondSplitSubjectExample, personalDependentThirdSplitSubjectExample,
-personalDependentFirstSplitObjectExample, personalDependentSecondSplitObjectExample, personalDependentThirdSplitObjectExample,
-personalDependentFirstSplitPossessorExample, personalDependentSecondSplitPossessorExample, personalDependentThirdSplitPossessorExample,
-personalDependentFirstSplitDativeExample, personalDependentSecondSplitDativeExample, personalDependentThirdSplitDativeExample,
-personalDependentFirstSplitErgExample, personalDependentSecondSplitErgExample, personalDependentThirdSplitErgExample,
-personalDependentFirstSplitAbsExample, personalDependentSecondSplitAbsExample, personalDependentThirdSplitAbsExample,
-possExample, reflExample, reflSentExample, recipExample, recipSentExample,
-demProximalExample, demMedialExample, demDistalExample, demProximalNomExample, demMedialNomExample, demDistalNomExample, demProximalAccExample, demMedialAccExample, demDistalAccExample, demProximalErgExample, demMedialErgExample, demDistalErgExample, demProximalAbsExample, demMedialAbsExample, demDistalAbsExample,
-indefExample, negIndefExample, indefNPExample, negIndefNPExample, standAloneNPExample, pronSentExample, pronRelClExample, partitiveExample,
-pronounCategory, pronAgrFeatFirst, pronAgrFeatFirstExclusive, pronAgrFeatFirstInclusive, pronAgrFeatSecond, pronAgrFeatThird, pronAgrFeatSingular, pronAgrFeatDual, pronAgrFeatPlural, pronAgrFeatMasculine, pronAgrFeatFeminine, pronAgrFeatNeuter, pronAgrFeatAnimate, pronAgrFeatMinusAnimate, pronAgrFeatHuman, pronAgrFeatMinusHuman, pronAgrFeatClassNumber)>
+<!ELEMENT pron (dependentTypeProclitic, dependentTypeEnclitic, dependentTypePrefix, dependentTypeSuffix, dependentTypeOther, possDistinct, possAffixPron, possAffixWord, possPhrase, possOther, reflDistinct, reflAffix, reflNounPoss, reflQP, reflOther, recipDistinct, recipAffix, recipNounPoss, recipQP, recipOther, indefQWord, indefQPhrase, indefQOther, indefTypeQPQBefore, indefTypeQPQAfter, indefTypeQPQBoth, indefTypeQPQOther, indefIntWord, indefIntPhrase, indefIntOther, indefTypeIntBefore, indefTypeIntAfter, indefTypeIntBoth, indefTypeIntOther,
+personalFirstSgNoCaseExample, personalFirstPlNoCaseExample, personalFirstExclNoCaseExample, personalFirstInclNoCaseExample, personalSecondSgNoCaseExample, personalSecondPlNoCaseExample, personalThirdSgNoCaseExample, personalThirdPlNoCaseExample,
+personalFirstSgNomSubjectExample, personalFirstPlNomSubjectExample, personalFirstExclNomSubjectExample, personalFirstInclNomSubjectExample, personalSecondSgNomSubjectExample, personalSecondPlNomSubjectExample, personalThirdSgNomSubjectExample, personalThirdPlNomSubjectExample,
+personalFirstSgNomObjectExample, personalFirstPlNomObjectExample, personalFirstExclNomObjectExample, personalFirstInclNomObjectExample, personalSecondSgNomObjectExample, personalSecondPlNomObjectExample, personalThirdSgNomObjectExample, personalThirdPlNomObjectExample,
+personalFirstSgNomPossessorExample, personalFirstPlNomPossessorExample, personalFirstExclNomPossessorExample, personalFirstInclNomPossessorExample, personalSecondSgNomPossessorExample, personalSecondPlNomPossessorExample, personalThirdSgNomPossessorExample, personalThirdPlNomPossessorExample,
+personalFirstSgNomDativeExample, personalFirstPlNomDativeExample, personalFirstExclNomDativeExample, personalFirstInclNomDativeExample, personalSecondSgNomDativeExample, personalSecondPlNomDativeExample, personalThirdSgNomDativeExample, personalThirdPlNomDativeExample,
+personalFirstSgErgSubjectTransExample, personalFirstPlErgSubjectTransExample, personalFirstExclErgSubjectTransExample, personalFirstInclErgSubjectTransExample, personalSecondSgErgSubjectTransExample, personalSecondPlErgSubjectTransExample, personalThirdSgErgSubjectTransExample, personalThirdPlErgSubjectTransExample,
+personalFirstSgErgSubjectIntransExample, personalFirstPlErgSubjectIntransExample, personalFirstExclErgSubjectIntransExample, personalFirstInclErgSubjectIntransExample, personalSecondSgErgSubjectIntransExample, personalSecondPlErgSubjectIntransExample, personalThirdSgErgSubjectIntransExample, personalThirdPlErgSubjectIntransExample,
+personalFirstSgErgPossessorExample, personalFirstPlErgPossessorExample, personalFirstExclErgPossessorExample, personalFirstInclErgPossessorExample, personalSecondSgErgPossessorExample, personalSecondPlErgPossessorExample, personalThirdSgErgPossessorExample, personalThirdPlErgPossessorExample,
+personalFirstSgErgDativeExample, personalFirstPlErgDativeExample, personalFirstExclErgDativeExample, personalFirstInclErgDativeExample, personalSecondSgErgDativeExample, personalSecondPlErgDativeExample, personalThirdSgErgDativeExample, personalThirdPlErgDativeExample,
+personalFirstSgSplitSubjectExample, personalFirstPlSplitSubjectExample, personalFirstExclSplitSubjectExample, personalFirstInclSplitSubjectExample, personalSecondSgSplitSubjectExample, personalSecondPlSplitSubjectExample, personalThirdSgSplitSubjectExample, personalThirdPlSplitSubjectExample,
+personalFirstSgSplitObjectExample, personalFirstPlSplitObjectExample, personalFirstExclSplitObjectExample, personalFirstInclSplitObjectExample, personalSecondSgSplitObjectExample, personalSecondPlSplitObjectExample, personalThirdSgSplitObjectExample, personalThirdPlSplitObjectExample,
+personalFirstSgSplitPossessorExample, personalFirstPlSplitPossessorExample, personalFirstExclSplitPossessorExample, personalFirstInclSplitPossessorExample, personalSecondSgSplitPossessorExample, personalSecondPlSplitPossessorExample, personalThirdSgSplitPossessorExample, personalThirdPlSplitPossessorExample,
+personalFirstSgSplitDativeExample, personalFirstPlSplitDativeExample, personalFirstExclSplitDativeExample, personalFirstInclSplitDativeExample, personalSecondSgSplitDativeExample, personalSecondPlSplitDativeExample, personalThirdSgSplitDativeExample, personalThirdPlSplitDativeExample,
+personalFirstSgSplitErgExample, personalFirstPlSplitErgExample, personalFirstExclSplitErgExample, personalFirstInclSplitErgExample, personalSecondSgSplitErgExample, personalSecondPlSplitErgExample, personalThirdSgSplitErgExample, personalThirdPlSplitErgExample,
+personalFirstSgSplitAbsExample, personalFirstPlSplitAbsExample, personalFirstExclSplitAbsExample, personalFirstInclSplitAbsExample, personalSecondSgSplitAbsExample, personalSecondPlSplitAbsExample, personalThirdSgSplitAbsExample, personalThirdPlSplitAbsExample,
+personalDependentFirstSgNoCaseExample, personalDependentFirstPlNoCaseExample, personalDependentFirstExclNoCaseExample, personalDependentFirstInclNoCaseExample, personalDependentSecondSgNoCaseExample, personalDependentSecondPlNoCaseExample, personalDependentThirdSgNoCaseExample, personalDependentThirdPlNoCaseExample,
+personalDependentFirstSgNomSubjectExample, personalDependentFirstPlNomSubjectExample, personalDependentFirstExclNomSubjectExample, personalDependentFirstInclNomSubjectExample, personalDependentSecondSgNomSubjectExample, personalDependentSecondPlNomSubjectExample, personalDependentThirdSgNomSubjectExample, personalDependentThirdPlNomSubjectExample, personalDependentFirstSgNomObjectExample, personalDependentFirstPlNomObjectExample, personalDependentFirstExclNomObjectExample, personalDependentFirstInclNomObjectExample, personalDependentSecondSgNomObjectExample, personalDependentSecondPlNomObjectExample, personalDependentThirdSgNomObjectExample, personalDependentThirdPlNomObjectExample,
+personalDependentFirstSgNomPossessorExample, personalDependentFirstPlNomPossessorExample, personalDependentFirstExclNomPossessorExample, personalDependentFirstInclNomPossessorExample, personalDependentSecondSgNomPossessorExample, personalDependentSecondPlNomPossessorExample, personalDependentThirdSgNomPossessorExample, personalDependentThirdPlNomPossessorExample,
+personalDependentFirstSgNomDativeExample, personalDependentFirstPlNomDativeExample, personalDependentFirstExclNomDativeExample, personalDependentFirstInclNomDativeExample, personalDependentSecondSgNomDativeExample, personalDependentSecondPlNomDativeExample, personalDependentThirdSgNomDativeExample, personalDependentThirdPlNomDativeExample,
+personalDependentFirstSgErgSubjectTransExample, personalDependentFirstPlErgSubjectTransExample, personalDependentFirstExclErgSubjectTransExample, personalDependentFirstInclErgSubjectTransExample, personalDependentSecondSgErgSubjectTransExample, personalDependentSecondPlErgSubjectTransExample, personalDependentThirdSgErgSubjectTransExample, personalDependentThirdPlErgSubjectTransExample,
+personalDependentFirstSgErgSubjectIntransExample, personalDependentFirstPlErgSubjectIntransExample, personalDependentFirstExclErgSubjectIntransExample, personalDependentFirstInclErgSubjectIntransExample, personalDependentSecondSgErgSubjectIntransExample, personalDependentSecondPlErgSubjectIntransExample, personalDependentThirdSgErgSubjectIntransExample, personalDependentThirdPlErgSubjectIntransExample,
+personalDependentFirstSgErgPossessorExample, personalDependentFirstPlErgPossessorExample, personalDependentFirstExclErgPossessorExample, personalDependentFirstInclErgPossessorExample, personalDependentSecondSgErgPossessorExample, personalDependentSecondPlErgPossessorExample, personalDependentThirdSgErgPossessorExample, personalDependentThirdPlErgPossessorExample,
+personalDependentFirstSgErgDativeExample, personalDependentFirstPlErgDativeExample, personalDependentFirstExclErgDativeExample, personalDependentFirstInclErgDativeExample, personalDependentSecondSgErgDativeExample, personalDependentSecondPlErgDativeExample, personalDependentThirdSgErgDativeExample, personalDependentThirdPlErgDativeExample,
+personalDependentFirstSgSplitSubjectExample, personalDependentFirstPlSplitSubjectExample, personalDependentFirstExclSplitSubjectExample, personalDependentFirstInclSplitSubjectExample, personalDependentSecondSgSplitSubjectExample, personalDependentSecondPlSplitSubjectExample, personalDependentThirdSgSplitSubjectExample, personalDependentThirdPlSplitSubjectExample, personalDependentFirstSgSplitObjectExample, personalDependentFirstPlSplitObjectExample, personalDependentFirstExclSplitObjectExample, personalDependentFirstInclSplitObjectExample, personalDependentSecondSgSplitObjectExample, personalDependentSecondPlSplitObjectExample, personalDependentThirdSgSplitObjectExample, personalDependentThirdPlSplitObjectExample,
+personalDependentFirstSgSplitPossessorExample, personalDependentFirstPlSplitPossessorExample, personalDependentFirstExclSplitPossessorExample, personalDependentFirstInclSplitPossessorExample, personalDependentSecondSgSplitPossessorExample, personalDependentSecondPlSplitPossessorExample, personalDependentThirdSgSplitPossessorExample, personalDependentThirdPlSplitPossessorExample,
+personalDependentFirstSgSplitDativeExample, personalDependentFirstPlSplitDativeExample, personalDependentFirstExclSplitDativeExample, personalDependentFirstInclSplitDativeExample, personalDependentSecondSgSplitDativeExample, personalDependentSecondPlSplitDativeExample, personalDependentThirdSgSplitDativeExample, personalDependentThirdPlSplitDativeExample,
+personalDependentFirstSgSplitErgExample, personalDependentFirstPlSplitErgExample, personalDependentFirstExclSplitErgExample, personalDependentFirstInclSplitErgExample, personalDependentSecondSgSplitErgExample, personalDependentSecondPlSplitErgExample, personalDependentThirdSgSplitErgExample, personalDependentThirdPlSplitErgExample,
+personalDependentFirstSgSplitAbsExample, personalDependentFirstPlSplitAbsExample, personalDependentFirstExclSplitAbsExample, personalDependentFirstInclSplitAbsExample, personalDependentSecondSgSplitAbsExample, personalDependentSecondPlSplitAbsExample, personalDependentThirdSgSplitAbsExample, personalDependentThirdPlSplitAbsExample,
+possFirstSgExample, possFirstPlExample, possFirstExclExample, possFirstInclExample, possSecondSgExample, possSecondPlExample, possThirdSgExample, possThirdPlExample, pronPossAffixExample, pronPossAffixWordExample, pronPossAffixWordAffixesExample, pronPossPhraseWordExample,
+reflVerbAffixExample, reflVerbSentExample, reflFirstSgExample, reflFirstPlExample, reflFirstExclExample, reflFirstInclExample, reflSecondSgExample, reflSecondPlExample, reflThirdSgExample, reflThirdPlExample, reflSentExample, pronReflAffixExample, pronReflNounPossExample, pronReflQExample, recipVerbAffixExample, recipVerbSentExample, recipFirstPlExample, recipFirstExclExample, recipFirstInclExample, recipSecondExample, recipThirdExample, pronRecipAffixExample, pronRecipNounPossExample, pronRecipQExample, recipSentExample,
+demProximalExample, demMedialExample, demDistalExample, demProximalPlExample, demMedialPlExample, demDistalPlExample, demProximalNomExample, demMedialNomExample, demDistalNomExample, demProximalPlNomExample, demMedialPlNomExample, demDistalPlNomExample, demProximalAccExample, demMedialAccExample, demDistalAccExample, demProximalPlAccExample, demMedialPlAccExample, demDistalPlAccExample, demProximalGenExample, demMedialGenExample, demDistalGenExample, demProximalPlGenExample, demMedialPlGenExample, demDistalPlGenExample, demProximalErgExample, demMedialErgExample, demDistalErgExample, demProximalPlErgExample, demMedialPlErgExample, demDistalPlErgExample, demProximalAbsExample, demMedialAbsExample, demDistalAbsExample, demProximalPlAbsExample, demMedialPlAbsExample, demDistalPlAbsExample, demProximalDatExample, demMedialDatExample, demDistalDatExample, demProximalPlDatExample, demMedialPlDatExample, demDistalPlDatExample, indefTypeQWordExample, indefTypeQPhraseExample, indefTypeQOtherExample, indefTypeIntWordExample, indefTypeIntPhraseExample, indefTypeIntOtherExample,
+standAloneNPExample, pronSentExample, pronRelClExample, partitiveExample,
+pronounCategory)>
 <!ATTLIST pron
-	checkedOff (yes | no) "no"
-	pronounClassifier (no | yes) "no"
-	dependentPron (no | yes) "no"
-	dependentPos (before | after | either | unknown) "unknown"
-	pronDepClassifier (no | yes) "no"
-	poss (no | yes) "no"
-	possAffix (no | yes | both) "no"
-	refl (yes | no | yesVerbal) "no"
-	reflAffix (noWord | noNoun | noQP | yes | some) "yes"
-	recip (no | verbal | yes) "no"
-	recipAffix (noWord | noNoun | noQP | yes | some) "yes"
-	demCase (no | yes) "no"
-	indef (yes | no) "no"
-	negIndef (yes | no) "no"
-	pronMod (no | det | all) "no"
-	partitivePos (before | after | unknown) "unknown"
+    checkedOff (yes | no) "no"
+    pronounClassifier (no | yes) "no"
+    pronounNumber (no | yes) "no"
+    pronounExcl (no | yes) "no"
+    dependentPron (no | yes) "no"
+    pronDepClassifier (no | yes) "no"
+    poss (no | yes) "no"
+    refl (yes | no | yesVerbal) "no"
+    recip (yes | no | yesVerbal ) "no"
+    demAdjSame (yes | some | no) "no"
+    demNumber (no | yes) "no"
+    demCase (no | yes) "no"
+    pronMod (no | rel | part | det | all) "no"
+    partitivePos (before | after | either | unknown) "unknown"
 >
-<!ELEMENT personalFirstNoCaseExample (#PCDATA)>
-<!ELEMENT personalSecondNoCaseExample (#PCDATA)>
-<!ELEMENT personalThirdNoCaseExample (#PCDATA)>
-<!ELEMENT personalFirstNomSubjectExample (#PCDATA)>
-<!ELEMENT personalSecondNomSubjectExample (#PCDATA)>
-<!ELEMENT personalThirdNomSubjectExample (#PCDATA)>
-<!ELEMENT personalFirstNomObjectExample (#PCDATA)>
-<!ELEMENT personalSecondNomObjectExample (#PCDATA)>
-<!ELEMENT personalThirdNomObjectExample (#PCDATA)>
-<!ELEMENT personalFirstNomPossessorExample (#PCDATA)>
-<!ELEMENT personalSecondNomPossessorExample (#PCDATA)>
-<!ELEMENT personalThirdNomPossessorExample (#PCDATA)>
-<!ELEMENT personalFirstNomDativeExample (#PCDATA)>
-<!ELEMENT personalSecondNomDativeExample (#PCDATA)>
-<!ELEMENT personalThirdNomDativeExample (#PCDATA)>
-<!ELEMENT personalFirstErgSubjectTransExample (#PCDATA)>
-<!ELEMENT personalSecondErgSubjectTransExample (#PCDATA)>
-<!ELEMENT personalThirdErgSubjectTransExample (#PCDATA)>
-<!ELEMENT personalFirstErgSubjectIntransExample (#PCDATA)>
-<!ELEMENT personalSecondErgSubjectIntransExample (#PCDATA)>
-<!ELEMENT personalThirdErgSubjectIntransExample (#PCDATA)>
-<!ELEMENT personalFirstErgPossessorExample (#PCDATA)>
-<!ELEMENT personalSecondErgPossessorExample (#PCDATA)>
-<!ELEMENT personalThirdErgPossessorExample (#PCDATA)>
-<!ELEMENT personalFirstErgDativeExample (#PCDATA)>
-<!ELEMENT personalSecondErgDativeExample (#PCDATA)>
-<!ELEMENT personalThirdErgDativeExample (#PCDATA)>
-<!ELEMENT personalFirstSplitSubjectExample (#PCDATA)>
-<!ELEMENT personalSecondSplitSubjectExample (#PCDATA)>
-<!ELEMENT personalThirdSplitSubjectExample (#PCDATA)>
-<!ELEMENT personalFirstSplitObjectExample (#PCDATA)>
-<!ELEMENT personalSecondSplitObjectExample (#PCDATA)>
-<!ELEMENT personalThirdSplitObjectExample (#PCDATA)>
-<!ELEMENT personalFirstSplitPossessorExample (#PCDATA)>
-<!ELEMENT personalSecondSplitPossessorExample (#PCDATA)>
-<!ELEMENT personalThirdSplitPossessorExample (#PCDATA)>
-<!ELEMENT personalFirstSplitDativeExample (#PCDATA)>
-<!ELEMENT personalSecondSplitDativeExample (#PCDATA)>
-<!ELEMENT personalThirdSplitDativeExample (#PCDATA)>
-<!ELEMENT personalFirstSplitErgExample (#PCDATA)>
-<!ELEMENT personalSecondSplitErgExample (#PCDATA)>
-<!ELEMENT personalThirdSplitErgExample (#PCDATA)>
-<!ELEMENT personalFirstSplitAbsExample (#PCDATA)>
-<!ELEMENT personalSecondSplitAbsExample (#PCDATA)>
-<!ELEMENT personalThirdSplitAbsExample (#PCDATA)>
-<!ELEMENT personalDependentFirstNoCaseExample (#PCDATA)>
-<!ELEMENT personalDependentSecondNoCaseExample (#PCDATA)>
-<!ELEMENT personalDependentThirdNoCaseExample (#PCDATA)>
-<!ELEMENT personalDependentFirstNomSubjectExample (#PCDATA)>
-<!ELEMENT personalDependentSecondNomSubjectExample (#PCDATA)>
-<!ELEMENT personalDependentThirdNomSubjectExample (#PCDATA)>
-<!ELEMENT personalDependentFirstNomObjectExample (#PCDATA)>
-<!ELEMENT personalDependentSecondNomObjectExample (#PCDATA)>
-<!ELEMENT personalDependentThirdNomObjectExample (#PCDATA)>
-<!ELEMENT personalDependentFirstNomPossessorExample (#PCDATA)>
-<!ELEMENT personalDependentSecondNomPossessorExample (#PCDATA)>
-<!ELEMENT personalDependentThirdNomPossessorExample (#PCDATA)>
-<!ELEMENT personalDependentFirstNomDativeExample (#PCDATA)>
-<!ELEMENT personalDependentSecondNomDativeExample (#PCDATA)>
-<!ELEMENT personalDependentThirdNomDativeExample (#PCDATA)>
-<!ELEMENT personalDependentFirstErgSubjectTransExample (#PCDATA)>
-<!ELEMENT personalDependentSecondErgSubjectTransExample (#PCDATA)>
-<!ELEMENT personalDependentThirdErgSubjectTransExample (#PCDATA)>
-<!ELEMENT personalDependentFirstErgSubjectIntransExample (#PCDATA)>
-<!ELEMENT personalDependentSecondErgSubjectIntransExample (#PCDATA)>
-<!ELEMENT personalDependentThirdErgSubjectIntransExample (#PCDATA)>
-<!ELEMENT personalDependentFirstErgPossessorExample (#PCDATA)>
-<!ELEMENT personalDependentSecondErgPossessorExample (#PCDATA)>
-<!ELEMENT personalDependentThirdErgPossessorExample (#PCDATA)>
-<!ELEMENT personalDependentFirstErgDativeExample (#PCDATA)>
-<!ELEMENT personalDependentSecondErgDativeExample (#PCDATA)>
-<!ELEMENT personalDependentThirdErgDativeExample (#PCDATA)>
-<!ELEMENT personalDependentFirstSplitSubjectExample (#PCDATA)>
-<!ELEMENT personalDependentSecondSplitSubjectExample (#PCDATA)>
-<!ELEMENT personalDependentThirdSplitSubjectExample (#PCDATA)>
-<!ELEMENT personalDependentFirstSplitObjectExample (#PCDATA)>
-<!ELEMENT personalDependentSecondSplitObjectExample (#PCDATA)>
-<!ELEMENT personalDependentThirdSplitObjectExample (#PCDATA)>
-<!ELEMENT personalDependentFirstSplitPossessorExample (#PCDATA)>
-<!ELEMENT personalDependentSecondSplitPossessorExample (#PCDATA)>
-<!ELEMENT personalDependentThirdSplitPossessorExample (#PCDATA)>
-<!ELEMENT personalDependentFirstSplitDativeExample (#PCDATA)>
-<!ELEMENT personalDependentSecondSplitDativeExample (#PCDATA)>
-<!ELEMENT personalDependentThirdSplitDativeExample (#PCDATA)>
-<!ELEMENT personalDependentFirstSplitErgExample (#PCDATA)>
-<!ELEMENT personalDependentSecondSplitErgExample (#PCDATA)>
-<!ELEMENT personalDependentThirdSplitErgExample (#PCDATA)>
-<!ELEMENT personalDependentFirstSplitAbsExample (#PCDATA)>
-<!ELEMENT personalDependentSecondSplitAbsExample (#PCDATA)>
-<!ELEMENT personalDependentThirdSplitAbsExample (#PCDATA)>
-<!ELEMENT possExample (#PCDATA)>
-<!ELEMENT reflExample (#PCDATA)>
+<!ELEMENT dependentTypeProclitic EMPTY >
+<!ATTLIST dependentTypeProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT dependentTypeEnclitic EMPTY >
+<!ATTLIST dependentTypeEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT dependentTypePrefix EMPTY >
+<!ATTLIST dependentTypePrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT dependentTypeSuffix EMPTY >
+<!ATTLIST dependentTypeSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT dependentTypeOther (#PCDATA) >
+<!ATTLIST dependentTypeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT possDistinct EMPTY >
+<!ATTLIST possDistinct
+  checked (yes | no ) "no"
+>
+<!ELEMENT possAffixPron EMPTY >
+<!ATTLIST possAffixPron
+  checked (yes | no ) "no"
+>
+<!ELEMENT possAffixWord EMPTY >
+<!ATTLIST possAffixWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT possPhrase EMPTY >
+<!ATTLIST possPhrase
+  checked (yes | no ) "no"
+>
+<!ELEMENT possOther (#PCDATA) >
+<!ATTLIST possOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT reflDistinct EMPTY >
+<!ATTLIST reflDistinct
+  checked (yes | no ) "no"
+>
+<!ELEMENT reflAffix EMPTY >
+<!ATTLIST reflAffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT reflNounPoss EMPTY >
+<!ATTLIST reflNounPoss
+  checked (yes | no ) "no"
+>
+<!ELEMENT reflQP EMPTY >
+<!ATTLIST reflQP
+  checked (yes | no ) "no"
+>
+<!ELEMENT reflOther (#PCDATA) >
+<!ATTLIST reflOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT recipDistinct EMPTY >
+<!ATTLIST recipDistinct
+  checked (yes | no ) "no"
+>
+<!ELEMENT recipAffix EMPTY >
+<!ATTLIST recipAffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT recipNounPoss EMPTY >
+<!ATTLIST recipNounPoss
+  checked (yes | no ) "no"
+>
+<!ELEMENT recipQP EMPTY >
+<!ATTLIST recipQP
+  checked (yes | no ) "no"
+>
+<!ELEMENT recipOther (#PCDATA) >
+<!ATTLIST recipOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefQWord EMPTY >
+<!ATTLIST indefQWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefQPhrase EMPTY >
+<!ATTLIST indefQPhrase
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefQOther (#PCDATA) >
+<!ATTLIST indefQOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefTypeQPQBefore EMPTY >
+<!ATTLIST indefTypeQPQBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefTypeQPQAfter EMPTY >
+<!ATTLIST indefTypeQPQAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefTypeQPQBoth EMPTY >
+<!ATTLIST indefTypeQPQBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefTypeQPQOther (#PCDATA) >
+<!ATTLIST indefTypeQPQOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefIntWord EMPTY >
+<!ATTLIST indefIntWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefIntPhrase EMPTY >
+<!ATTLIST indefIntPhrase
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefIntOther (#PCDATA) >
+<!ATTLIST indefIntOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefTypeIntBefore EMPTY >
+<!ATTLIST indefTypeIntBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefTypeIntAfter EMPTY >
+<!ATTLIST indefTypeIntAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefTypeIntBoth EMPTY >
+<!ATTLIST indefTypeIntBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT indefTypeIntOther (#PCDATA) >
+<!ATTLIST indefTypeIntOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT personalFirstSgNoCaseExample (#PCDATA)>
+<!ELEMENT personalFirstPlNoCaseExample (#PCDATA)>
+<!ELEMENT personalFirstExclNoCaseExample (#PCDATA)>
+<!ELEMENT personalFirstInclNoCaseExample (#PCDATA)>
+<!ELEMENT personalSecondSgNoCaseExample (#PCDATA)>
+<!ELEMENT personalSecondPlNoCaseExample (#PCDATA)>
+<!ELEMENT personalThirdSgNoCaseExample (#PCDATA)>
+<!ELEMENT personalThirdPlNoCaseExample (#PCDATA)>
+<!ELEMENT personalFirstSgNomSubjectExample (#PCDATA)>
+<!ELEMENT personalFirstPlNomSubjectExample (#PCDATA)>
+<!ELEMENT personalFirstExclNomSubjectExample (#PCDATA)>
+<!ELEMENT personalFirstInclNomSubjectExample (#PCDATA)>
+<!ELEMENT personalSecondSgNomSubjectExample (#PCDATA)>
+<!ELEMENT personalSecondPlNomSubjectExample (#PCDATA)>
+<!ELEMENT personalThirdSgNomSubjectExample (#PCDATA)>
+<!ELEMENT personalThirdPlNomSubjectExample (#PCDATA)>
+<!ELEMENT personalFirstSgNomObjectExample (#PCDATA)>
+<!ELEMENT personalFirstPlNomObjectExample (#PCDATA)>
+<!ELEMENT personalFirstExclNomObjectExample (#PCDATA)>
+<!ELEMENT personalFirstInclNomObjectExample (#PCDATA)>
+<!ELEMENT personalSecondSgNomObjectExample (#PCDATA)>
+<!ELEMENT personalSecondPlNomObjectExample (#PCDATA)>
+<!ELEMENT personalThirdSgNomObjectExample (#PCDATA)>
+<!ELEMENT personalThirdPlNomObjectExample (#PCDATA)>
+<!ELEMENT personalFirstSgNomPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstPlNomPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstExclNomPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstInclNomPossessorExample (#PCDATA)>
+<!ELEMENT personalSecondSgNomPossessorExample (#PCDATA)>
+<!ELEMENT personalSecondPlNomPossessorExample (#PCDATA)>
+<!ELEMENT personalThirdSgNomPossessorExample (#PCDATA)>
+<!ELEMENT personalThirdPlNomPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstSgNomDativeExample (#PCDATA)>
+<!ELEMENT personalFirstPlNomDativeExample (#PCDATA)>
+<!ELEMENT personalFirstExclNomDativeExample (#PCDATA)>
+<!ELEMENT personalFirstInclNomDativeExample (#PCDATA)>
+<!ELEMENT personalSecondSgNomDativeExample (#PCDATA)>
+<!ELEMENT personalSecondPlNomDativeExample (#PCDATA)>
+<!ELEMENT personalThirdSgNomDativeExample (#PCDATA)>
+<!ELEMENT personalThirdPlNomDativeExample (#PCDATA)>
+<!ELEMENT personalFirstSgErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalFirstPlErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalFirstExclErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalFirstInclErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalSecondSgErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalSecondPlErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalThirdSgErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalThirdPlErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalFirstSgErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalFirstPlErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalFirstExclErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalFirstInclErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalSecondSgErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalSecondPlErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalThirdSgErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalThirdPlErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalFirstSgErgPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstPlErgPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstExclErgPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstInclErgPossessorExample (#PCDATA)>
+<!ELEMENT personalSecondSgErgPossessorExample (#PCDATA)>
+<!ELEMENT personalSecondPlErgPossessorExample (#PCDATA)>
+<!ELEMENT personalThirdSgErgPossessorExample (#PCDATA)>
+<!ELEMENT personalThirdPlErgPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstSgErgDativeExample (#PCDATA)>
+<!ELEMENT personalFirstPlErgDativeExample (#PCDATA)>
+<!ELEMENT personalFirstExclErgDativeExample (#PCDATA)>
+<!ELEMENT personalFirstInclErgDativeExample (#PCDATA)>
+<!ELEMENT personalSecondSgErgDativeExample (#PCDATA)>
+<!ELEMENT personalSecondPlErgDativeExample (#PCDATA)>
+<!ELEMENT personalThirdSgErgDativeExample (#PCDATA)>
+<!ELEMENT personalThirdPlErgDativeExample (#PCDATA)>
+<!ELEMENT personalFirstSgSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalFirstPlSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalFirstExclSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalFirstInclSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalSecondSgSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalSecondPlSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalThirdSgSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalThirdPlSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalFirstSgSplitObjectExample (#PCDATA)>
+<!ELEMENT personalFirstPlSplitObjectExample (#PCDATA)>
+<!ELEMENT personalFirstExclSplitObjectExample (#PCDATA)>
+<!ELEMENT personalFirstInclSplitObjectExample (#PCDATA)>
+<!ELEMENT personalSecondSgSplitObjectExample (#PCDATA)>
+<!ELEMENT personalSecondPlSplitObjectExample (#PCDATA)>
+<!ELEMENT personalThirdSgSplitObjectExample (#PCDATA)>
+<!ELEMENT personalThirdPlSplitObjectExample (#PCDATA)>
+<!ELEMENT personalFirstSgSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstPlSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstExclSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstInclSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalSecondSgSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalSecondPlSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalThirdSgSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalThirdPlSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalFirstSgSplitDativeExample (#PCDATA)>
+<!ELEMENT personalFirstPlSplitDativeExample (#PCDATA)>
+<!ELEMENT personalFirstExclSplitDativeExample (#PCDATA)>
+<!ELEMENT personalFirstInclSplitDativeExample (#PCDATA)>
+<!ELEMENT personalSecondSgSplitDativeExample (#PCDATA)>
+<!ELEMENT personalSecondPlSplitDativeExample (#PCDATA)>
+<!ELEMENT personalThirdSgSplitDativeExample (#PCDATA)>
+<!ELEMENT personalThirdPlSplitDativeExample (#PCDATA)>
+<!ELEMENT personalFirstSgSplitErgExample (#PCDATA)>
+<!ELEMENT personalFirstPlSplitErgExample (#PCDATA)>
+<!ELEMENT personalFirstExclSplitErgExample (#PCDATA)>
+<!ELEMENT personalFirstInclSplitErgExample (#PCDATA)>
+<!ELEMENT personalSecondSgSplitErgExample (#PCDATA)>
+<!ELEMENT personalSecondPlSplitErgExample (#PCDATA)>
+<!ELEMENT personalThirdSgSplitErgExample (#PCDATA)>
+<!ELEMENT personalThirdPlSplitErgExample (#PCDATA)>
+<!ELEMENT personalFirstSgSplitAbsExample (#PCDATA)>
+<!ELEMENT personalFirstPlSplitAbsExample (#PCDATA)>
+<!ELEMENT personalFirstExclSplitAbsExample (#PCDATA)>
+<!ELEMENT personalFirstInclSplitAbsExample (#PCDATA)>
+<!ELEMENT personalSecondSgSplitAbsExample (#PCDATA)>
+<!ELEMENT personalSecondPlSplitAbsExample (#PCDATA)>
+<!ELEMENT personalThirdSgSplitAbsExample (#PCDATA)>
+<!ELEMENT personalThirdPlSplitAbsExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgNoCaseExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlNoCaseExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclNoCaseExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclNoCaseExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgNoCaseExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlNoCaseExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgNoCaseExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlNoCaseExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgNomSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlNomSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclNomSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclNomSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgNomSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlNomSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgNomSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlNomSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgNomObjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlNomObjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclNomObjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclNomObjectExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgNomObjectExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlNomObjectExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgNomObjectExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlNomObjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgNomPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlNomPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclNomPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclNomPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgNomPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlNomPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgNomPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlNomPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgNomDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlNomDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclNomDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclNomDativeExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgNomDativeExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlNomDativeExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgNomDativeExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlNomDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlErgSubjectTransExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlErgSubjectIntransExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgErgPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlErgPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclErgPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclErgPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgErgPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlErgPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgErgPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlErgPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgErgDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlErgDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclErgDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclErgDativeExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgErgDativeExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlErgDativeExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgErgDativeExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlErgDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlSplitSubjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgSplitObjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlSplitObjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclSplitObjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclSplitObjectExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgSplitObjectExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlSplitObjectExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgSplitObjectExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlSplitObjectExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlSplitPossessorExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgSplitDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlSplitDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclSplitDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclSplitDativeExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgSplitDativeExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlSplitDativeExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgSplitDativeExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlSplitDativeExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgSplitErgExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlSplitErgExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclSplitErgExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclSplitErgExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgSplitErgExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlSplitErgExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgSplitErgExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlSplitErgExample (#PCDATA)>
+<!ELEMENT personalDependentFirstSgSplitAbsExample (#PCDATA)>
+<!ELEMENT personalDependentFirstPlSplitAbsExample (#PCDATA)>
+<!ELEMENT personalDependentFirstExclSplitAbsExample (#PCDATA)>
+<!ELEMENT personalDependentFirstInclSplitAbsExample (#PCDATA)>
+<!ELEMENT personalDependentSecondSgSplitAbsExample (#PCDATA)>
+<!ELEMENT personalDependentSecondPlSplitAbsExample (#PCDATA)>
+<!ELEMENT personalDependentThirdSgSplitAbsExample (#PCDATA)>
+<!ELEMENT personalDependentThirdPlSplitAbsExample (#PCDATA)>
+<!ELEMENT possFirstSgExample (#PCDATA)>
+<!ELEMENT possFirstPlExample (#PCDATA)>
+<!ELEMENT possFirstExclExample (#PCDATA)>
+<!ELEMENT possFirstInclExample (#PCDATA)>
+<!ELEMENT possSecondSgExample (#PCDATA)>
+<!ELEMENT possSecondPlExample (#PCDATA)>
+<!ELEMENT possThirdSgExample (#PCDATA)>
+<!ELEMENT possThirdPlExample (#PCDATA)>
+<!ELEMENT pronPossAffixExample (#PCDATA)>
+<!ELEMENT pronPossAffixWordExample (#PCDATA)>
+<!ELEMENT pronPossAffixWordAffixesExample (#PCDATA)>
+<!ELEMENT pronPossPhraseWordExample (#PCDATA)>
+<!ELEMENT reflVerbAffixExample (#PCDATA)>
+<!ELEMENT reflVerbSentExample (#PCDATA)>
+<!ELEMENT reflFirstSgExample (#PCDATA)>
+<!ELEMENT reflFirstPlExample (#PCDATA)>
+<!ELEMENT reflFirstExclExample (#PCDATA)>
+<!ELEMENT reflFirstInclExample (#PCDATA)>
+<!ELEMENT reflSecondSgExample (#PCDATA)>
+<!ELEMENT reflSecondPlExample (#PCDATA)>
+<!ELEMENT reflThirdSgExample (#PCDATA)>
+<!ELEMENT reflThirdPlExample (#PCDATA)>
 <!ELEMENT reflSentExample (#PCDATA)>
-<!ELEMENT recipExample (#PCDATA)>
+<!ELEMENT pronReflAffixExample (#PCDATA)>
+<!ELEMENT pronReflNounPossExample (#PCDATA)>
+<!ELEMENT pronReflQExample (#PCDATA)>
+<!ELEMENT recipVerbAffixExample (#PCDATA)>
+<!ELEMENT recipVerbSentExample (#PCDATA)>
+<!ELEMENT recipFirstPlExample (#PCDATA)>
+<!ELEMENT recipFirstExclExample (#PCDATA)>
+<!ELEMENT recipFirstInclExample (#PCDATA)>
+<!ELEMENT recipSecondExample (#PCDATA)>
+<!ELEMENT recipThirdExample (#PCDATA)>
+<!ELEMENT pronRecipAffixExample (#PCDATA)>
+<!ELEMENT pronRecipNounPossExample (#PCDATA)>
+<!ELEMENT pronRecipQExample (#PCDATA)>
 <!ELEMENT recipSentExample (#PCDATA)>
 <!ELEMENT demProximalExample (#PCDATA)>
 <!ELEMENT demMedialExample (#PCDATA)>
 <!ELEMENT demDistalExample (#PCDATA)>
+<!ELEMENT demProximalPlExample (#PCDATA)>
+<!ELEMENT demMedialPlExample (#PCDATA)>
+<!ELEMENT demDistalPlExample (#PCDATA)>
 <!ELEMENT demProximalNomExample (#PCDATA)>
 <!ELEMENT demMedialNomExample (#PCDATA)>
 <!ELEMENT demDistalNomExample (#PCDATA)>
+<!ELEMENT demProximalPlNomExample (#PCDATA)>
+<!ELEMENT demMedialPlNomExample (#PCDATA)>
+<!ELEMENT demDistalPlNomExample (#PCDATA)>
 <!ELEMENT demProximalAccExample (#PCDATA)>
 <!ELEMENT demMedialAccExample (#PCDATA)>
 <!ELEMENT demDistalAccExample (#PCDATA)>
+<!ELEMENT demProximalPlAccExample (#PCDATA)>
+<!ELEMENT demMedialPlAccExample (#PCDATA)>
+<!ELEMENT demDistalPlAccExample (#PCDATA)>
+<!ELEMENT demProximalGenExample (#PCDATA)>
+<!ELEMENT demMedialGenExample (#PCDATA)>
+<!ELEMENT demDistalGenExample (#PCDATA)>
+<!ELEMENT demProximalPlGenExample (#PCDATA)>
+<!ELEMENT demMedialPlGenExample (#PCDATA)>
+<!ELEMENT demDistalPlGenExample (#PCDATA)>
 <!ELEMENT demProximalErgExample (#PCDATA)>
 <!ELEMENT demMedialErgExample (#PCDATA)>
 <!ELEMENT demDistalErgExample (#PCDATA)>
+<!ELEMENT demProximalPlErgExample (#PCDATA)>
+<!ELEMENT demMedialPlErgExample (#PCDATA)>
+<!ELEMENT demDistalPlErgExample (#PCDATA)>
 <!ELEMENT demProximalAbsExample (#PCDATA)>
 <!ELEMENT demMedialAbsExample (#PCDATA)>
 <!ELEMENT demDistalAbsExample (#PCDATA)>
-<!ELEMENT indefExample (#PCDATA)>
-<!ELEMENT indefNPExample (#PCDATA)>
-<!ELEMENT negIndefExample (#PCDATA)>
-<!ELEMENT negIndefNPExample (#PCDATA)>
+<!ELEMENT demProximalPlAbsExample (#PCDATA)>
+<!ELEMENT demMedialPlAbsExample (#PCDATA)>
+<!ELEMENT demDistalPlAbsExample (#PCDATA)>
+<!ELEMENT demProximalDatExample (#PCDATA)>
+<!ELEMENT demMedialDatExample (#PCDATA)>
+<!ELEMENT demDistalDatExample (#PCDATA)>
+<!ELEMENT demProximalPlDatExample (#PCDATA)>
+<!ELEMENT demMedialPlDatExample (#PCDATA)>
+<!ELEMENT demDistalPlDatExample (#PCDATA)>
+<!ELEMENT indefTypeQWordExample (#PCDATA)>
+<!ELEMENT indefTypeQPhraseExample (#PCDATA)>
+<!ELEMENT indefTypeQOtherExample (#PCDATA)>
+<!ELEMENT indefTypeIntWordExample (#PCDATA)>
+<!ELEMENT indefTypeIntPhraseExample (#PCDATA)>
+<!ELEMENT indefTypeIntOtherExample (#PCDATA)>
 <!ELEMENT standAloneNPExample (#PCDATA)>
 <!ELEMENT pronSentExample (#PCDATA)>
 <!ELEMENT pronRelClExample (#PCDATA)>
@@ -757,179 +1651,460 @@ pronounCategory, pronAgrFeatFirst, pronAgrFeatFirstExclusive, pronAgrFeatFirstIn
 <!ELEMENT pronounCategory (#PCDATA)>
 <!ELEMENT pronAgrFeatFirst EMPTY>
 <!ATTLIST pronAgrFeatFirst
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
-<!ELEMENT pronAgrFeatFirstExclusive EMPTY>
-<!ATTLIST pronAgrFeatFirstExclusive
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatFirstInclusive EMPTY>
-<!ATTLIST pronAgrFeatFirstInclusive
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatSecond EMPTY>
-<!ATTLIST pronAgrFeatSecond
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatThird EMPTY>
-<!ATTLIST pronAgrFeatThird
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatSingular EMPTY>
-<!ATTLIST pronAgrFeatSingular
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatDual EMPTY>
-<!ATTLIST pronAgrFeatDual
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatPlural EMPTY>
-<!ATTLIST pronAgrFeatPlural
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatMasculine EMPTY>
-<!ATTLIST pronAgrFeatMasculine
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatFeminine EMPTY>
-<!ATTLIST pronAgrFeatFeminine
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatNeuter EMPTY>
-<!ATTLIST pronAgrFeatNeuter
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatAnimate EMPTY>
-<!ATTLIST pronAgrFeatAnimate
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatMinusAnimate EMPTY>
-<!ATTLIST pronAgrFeatMinusAnimate
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatHuman EMPTY>
-<!ATTLIST pronAgrFeatHuman
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatMinusHuman EMPTY>
-<!ATTLIST pronAgrFeatMinusHuman
-	checked (yes | no) "no"
->
-<!ELEMENT pronAgrFeatClassNumber EMPTY>
-<!ATTLIST pronAgrFeatClassNumber
-	checked (yes | no) "no"
->
-<!-- Pre/post-positional phrases have examples of six kinds.
-	 They may have modifiers (modifiers) or not of (modifierType) degree words, ordinals,
-	  manner adverbials or any combination of those.
-	Each of the three types have a position, and if either or both sides, they may have restricted
-	sets which can occur on each side
-	The language may take prepositions,
-	   postpositions, or both (pPos).  These may be words or clitics (pType), and the clitics may attach
-	  (attaches) to the edge of the complement or to its head.
-	Pre/post-positions may be stand alone (alone).  They may take locative adverbs as complements (locative).
-  Some locative Ps may take locative PPs as complements (ppComp).  Some may take sentential
-	   complements (sentComp).
-	 A category mapping is allowed.
+<!-- Pre/post-positional phrases have examples of various kinds.
+     They may have modifiers (modifiers) or not of (modifierType) degree words, ordinals,
+      manner adverbials or any combination of those.
+    The language may take prepositions,
+       postpositions, or both (pPos).  These may be words or clitics.
 -->
-<!ELEMENT pp (example, ppExample, aloneExample, locExample, compPPExample, tempExample, pCategory)>
+<!ELEMENT pp (ppModifierDegree, ppModifierOrdinal, ppModifierManner, ppModifierLocative, ppModifierOther,
+ppDegreePosBefore, ppDegreePosAfter, ppDegreePosBoth, ppDegreePosOther, ppOrdinalPosBefore, ppOrdinalPosAfter, ppOrdinalPosBoth, ppOrdinalPosOther, ppMannerPosBefore, ppMannerPosAfter, ppMannerPosBoth, ppMannerPosOther, ppLocativePosBefore, ppLocativePosAfter, ppLocativePosBoth, ppLocativePosOther,
+ppExample, degree, degreeWithPP, ordinal, ordinalWithPP, manner, mannerWithPP, locative, locativeWithPP, otherMod, otherModWithPP, locativePrepExample, locativePostExample, locativePrepPPExample, locativePostPPExample, bodyPartPrepExample, bodyPartPostExample, bodyPartPrepPPExample, bodyPartPostPPExample, genitiveP, dativeP, ablativeP, instrumentalP, vocativeP, obliqueP,
+aloneExample, locExample, compPPExample, tempExample, pCategory)>
 <!ATTLIST pp
-	checkedOff (yes | no) "no"
-	modifiers (no | yes) "no"
-	modifierType (degree | ordinal | manner | locative | degreeAndOrdinal | degreeAndManner | mannerAndOrdinal | mannerAndLocative | all | all4) "degree"
-	degreePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	degreeRestricted (unrestricted | restricted) "unrestricted"
-	ordinalPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	ordinalRestricted (unrestricted | restricted) "unrestricted"
-	mannerPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	mannerRestricted (unrestricted | restricted) "unrestricted"
-	locativePos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	locativeRestricted (unrestricted | restricted) "unrestricted"
-	pPos (before | after | both | unknown) "unknown"
-	ppClassifier (yes | no) "no"
-	pType (word | clitic | both) "word"
-	attaches (edge | head) "edge"
-	alone (no | yes) "no"
-	locative (no | yes) "no"
-	ppComp (no | yes) "no"
-	tempComp (no | yes) "no"
+    checkedOff (yes | no) "no"
+    pPos (before | after | both | unknown) "unknown"
+    pType (word | clitic | both) "word"
+    attaches (edge | head) "edge"
+    modifiers (no | yes) "no"
+    ppClassifier (yes | no) "no"
+    bodyPart (yes | no) "no"
+    alone (no | yes) "no"
+    locative (no | yes) "no"
+    ppComp (no | yes) "no"
+    tempComp (no | yes) "no"
 >
+<!ELEMENT ppModifierDegree EMPTY >
+<!ATTLIST ppModifierDegree
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppModifierOrdinal EMPTY >
+<!ATTLIST ppModifierOrdinal
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppModifierManner EMPTY >
+<!ATTLIST ppModifierManner
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppModifierLocative EMPTY >
+<!ATTLIST ppModifierLocative
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppModifierOther (#PCDATA) >
+<!ATTLIST ppModifierOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppDegreePosBefore EMPTY >
+<!ATTLIST ppDegreePosBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppDegreePosAfter EMPTY >
+<!ATTLIST ppDegreePosAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppDegreePosBoth EMPTY >
+<!ATTLIST ppDegreePosBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppDegreePosOther (#PCDATA) >
+<!ATTLIST ppDegreePosOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppOrdinalPosBefore EMPTY >
+<!ATTLIST ppOrdinalPosBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppOrdinalPosAfter EMPTY >
+<!ATTLIST ppOrdinalPosAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppOrdinalPosBoth EMPTY >
+<!ATTLIST ppOrdinalPosBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppOrdinalPosOther (#PCDATA) >
+<!ATTLIST ppOrdinalPosOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppMannerPosBefore EMPTY >
+<!ATTLIST ppMannerPosBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppMannerPosAfter EMPTY >
+<!ATTLIST ppMannerPosAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppMannerPosBoth EMPTY >
+<!ATTLIST ppMannerPosBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppMannerPosOther (#PCDATA) >
+<!ATTLIST ppMannerPosOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppLocativePosBefore EMPTY >
+<!ATTLIST ppLocativePosBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppLocativePosAfter EMPTY >
+<!ATTLIST ppLocativePosAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppLocativePosBoth EMPTY >
+<!ATTLIST ppLocativePosBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT ppLocativePosOther (#PCDATA) >
+<!ATTLIST ppLocativePosOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT degree (#PCDATA)>
+<!ELEMENT degreeWithPP (#PCDATA)>
+<!ELEMENT ordinal (#PCDATA)>
+<!ELEMENT ordinalWithPP (#PCDATA)>
+<!ELEMENT manner (#PCDATA)>
+<!ELEMENT mannerWithPP (#PCDATA)>
+<!ELEMENT locativeWithPP (#PCDATA)>
+<!ELEMENT otherMod (#PCDATA)>
+<!ELEMENT otherModWithPP (#PCDATA)>
+<!ELEMENT locativePrepExample (#PCDATA)>
+<!ELEMENT locativePostExample (#PCDATA)>
+<!ELEMENT locativePrepPPExample (#PCDATA)>
+<!ELEMENT locativePostPPExample (#PCDATA)>
+<!ELEMENT bodyPartPrepExample (#PCDATA)>
+<!ELEMENT bodyPartPostExample (#PCDATA)>
+<!ELEMENT bodyPartPrepPPExample (#PCDATA)>
+<!ELEMENT bodyPartPostPPExample (#PCDATA)>
+<!ELEMENT genitiveP (#PCDATA)>
+<!ELEMENT dativeP (#PCDATA)>
+<!ELEMENT ablativeP (#PCDATA)>
+<!ELEMENT instrumentalP (#PCDATA)>
+<!ELEMENT vocativeP (#PCDATA)>
+<!ELEMENT obliqueP (#PCDATA)>
 <!ELEMENT aloneExample (#PCDATA)>
 <!ELEMENT locExample (#PCDATA)>
 <!ELEMENT tempExample (#PCDATA)>
 <!ELEMENT pCategory (#PCDATA)>
 <!-- Single clause sentences have examples for transitives, auxiliaries, nonfinite aux,
-	 pro-drop, ditransitives, intransitives, motion, copular constructions, comparatives,
-	 superlatives, existentials, passives, causatives and other voice changes..
-	 There may be pro-drop of the subject or not or just imperatives or clitics.
-	 If yes, pro-drop of the object is questioned.
-	 Auxiliaries may be present (aux) and may be required (auxRequired).
-	   More than one aux may be present (auxMany).  VSO and OSV have an order
-	   issue (auxOrder).
-	 Copular constructions can have verbs or aux or neither (copular).
-	 Ditransitives take a DP or PP category (diCat).
-	 Passives may exist (passive).  If so, there may be an agent (passiveAgent)
-	   and it will have a category (passiveAgentCat).  Auxiliaries may also be
-	   required (passiveAux).  Causative and other voice changes are covered.
-	 Category mappings for Aux and V are available.
+     pro-drop, ditransitives, intransitives, motion, copular constructions, comparatives,
+     superlatives, existentials, passives, causatives and other voice changes..
+     There may be pro-drop of the subject or not or just imperatives or clitics.
 -->
-<!ELEMENT ip (proDropExample, impExample, cliticPnExample, auxExample, auxiliaryExample, negAuxExample, negAuxAffixExample, negVerbExample, auxNonfiniteExample, auxiliaryNonfiniteExample, auxOtherExample, auxiliaryOtherExample, copularExample, perceptionExample, sameExample, sameWordExample, sameAffixExample, compareNExample, asExample, compareAdjExample, asWordExample, comparativeExample, comparativeWordExample, comparativeAffixExample, comparativeDegExample, superlativeExample, superlativeAffixExample, superlativeDegExample, existExample, existVerbExample, existWordExample, motionExample, diExample, passiveExample, passiveAgentPExample, passiveAuxExample, causativeExample, causativeAffixExample, antipassiveExample, antipassiveAffixExample, voiceExample, actorVoiceExample,  objectVoiceExample, dativeVoiceExample, goalVoiceExample, instrumentalVoiceExample, locativeVoiceExample,
-auxCategory, verbCategory, ipContents1, ipContents2, ipContents3, ipContents4, ipContents5, ipContents6, ipContents7, ipContents8, ipContents9, ipContents10, ipAgrFeatFirstSubject, ipAgrFeatFirstObject, ipAgrFeatFirstErgative, ipAgrFeatFirstAbsolutive, ipAgrFeatFirstExclusiveSubject, ipAgrFeatFirstExclusiveObject, ipAgrFeatFirstExclusiveErgative, ipAgrFeatFirstExclusiveAbsolutive, ipAgrFeatFirstInclusiveSubject, ipAgrFeatFirstInclusiveObject, ipAgrFeatFirstInclusiveErgative, ipAgrFeatFirstInclusiveAbsolutive, ipAgrFeatSecondSubject, ipAgrFeatSecondObject, ipAgrFeatSecondErgative, ipAgrFeatSecondAbsolutive, ipAgrFeatThirdSubject, ipAgrFeatThirdObject, ipAgrFeatThirdErgative, ipAgrFeatThirdAbsolutive, ipAgrFeatSingularSubject, ipAgrFeatSingularObject, ipAgrFeatSingularErgative, ipAgrFeatSingularAbsolutive, ipAgrFeatDualSubject, ipAgrFeatDualObject, ipAgrFeatDualErgative, ipAgrFeatDualAbsolutive, ipAgrFeatPluralSubject, ipAgrFeatPluralObject, ipAgrFeatPluralErgative, ipAgrFeatPluralAbsolutive, ipAgrFeatMasculineSubject, ipAgrFeatMasculineObject, ipAgrFeatMasculineErgative, ipAgrFeatMasculineAbsolutive, ipAgrFeatFeminineSubject, ipAgrFeatFeminineObject, ipAgrFeatFeminineErgative, ipAgrFeatFeminineAbsolutive, ipAgrFeatNeuterSubject, ipAgrFeatNeuterObject, ipAgrFeatNeuterErgative, ipAgrFeatNeuterAbsolutive, ipAgrFeatAnimateSubject, ipAgrFeatAnimateObject, ipAgrFeatAnimateErgative, ipAgrFeatAnimateAbsolutive, ipAgrFeatMinusAnimateSubject, ipAgrFeatMinusAnimateObject, ipAgrFeatMinusAnimateErgative, ipAgrFeatMinusAnimateAbsolutive, ipAgrFeatHumanSubject, ipAgrFeatHumanObject, ipAgrFeatHumanErgative, ipAgrFeatHumanAbsolutive, ipAgrFeatMinusHumanSubject, ipAgrFeatMinusHumanObject, ipAgrFeatMinusHumanErgative, ipAgrFeatMinusHumanAbsolutive, ipAgrFeatClassClassNumberSubject, ipAgrFeatClassClassNumberObject, ipAgrFeatClassClassNumberErgative, ipAgrFeatClassClassNumberAbsolutive,
-ipAgrFeatClassClassTypeAnimalSubject, ipAgrFeatClassClassTypeInsectSubject, ipAgrFeatClassClassTypeLiquidSubject, ipAgrFeatClassClassTypeRoundSubject, ipAgrFeatClassClassTypeCylinderSubject, ipAgrFeatClassClassTypeSphericalSubject, ipAgrFeatClassClassTypeTreeSubject, ipAgrFeatClassClassTypeWoodSubject, ipAgrFeatClassClassTypeOtherSubject,
-ipAgrFeatClassClassTypeAnimalObject, ipAgrFeatClassClassTypeInsectObject, ipAgrFeatClassClassTypeLiquidObject, ipAgrFeatClassClassTypeRoundObject, ipAgrFeatClassClassTypeCylinderObject, ipAgrFeatClassClassTypeSphericalObject, ipAgrFeatClassClassTypeTreeObject, ipAgrFeatClassClassTypeWoodObject, ipAgrFeatClassClassTypeOtherObject,
-ipAgrFeatClassClassTypeAnimalErgative, ipAgrFeatClassClassTypeInsectErgative, ipAgrFeatClassClassTypeLiquidErgative, ipAgrFeatClassClassTypeRoundErgative, ipAgrFeatClassClassTypeCylinderErgative, ipAgrFeatClassClassTypeSphericalErgative, ipAgrFeatClassClassTypeTreeErgative, ipAgrFeatClassClassTypeWoodErgative, ipAgrFeatClassClassTypeOtherErgative,
-ipAgrFeatClassClassTypeAnimalAbsolutive, ipAgrFeatClassClassTypeInsectAbsolutive, ipAgrFeatClassClassTypeLiquidAbsolutive, ipAgrFeatClassClassTypeRoundAbsolutive, ipAgrFeatClassClassTypeCylinderAbsolutive, ipAgrFeatClassClassTypeSphericalAbsolutive, ipAgrFeatClassClassTypeTreeAbsolutive, ipAgrFeatClassClassTypeWoodAbsolutive, ipAgrFeatClassClassTypeOtherAbsolutive,
-ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatContemplative, ipInflFeatContrafactual, ipInflFeatCompletive, ipInflFeatContinuative, ipInflFeatHabitual, ipInflFeatImperfective, ipInflFeatIncompletive, ipInflFeatPerfect, ipInflFeatPerfective, ipInflFeatPotential, ipInflFeatProgressive, ipInflFeatStative, ipInflFeatUnreal, ipInflFeatDeclarative, ipInflFeatImperative, ipInflFeatInterrogative, ipInflFeatIrrealis, ipInflFeatRealis, ipInflFeatAntipassive, ipInflFeatCausative, ipInflFeatFinite, ipInflFeatMinusFinite, ipInflFeatGerund, ipInflFeatPassive, ipInflFeatParticiple, ipInflFeatActorVoice, ipInflFeatDativeVoice, ipInflFeatGoalVoice, ipInflFeatInstrumentalVoice, ipInflFeatLocativeVoice, ipInflFeatObjectVoice)>
+<!ELEMENT ip (proDropYes, proDropClitic, proDropImp, proDropOther, proDropNone, conditionProclitic, conditionEnclitic, conditionPrefix, conditionSuffix, conditionOther, conditionWordBefore, conditionWordAfter, conditionWordBoth, conditionWordOther, subjunctiveCondProclitic, subjunctiveCondEnclitic, subjunctiveCondPrefix, subjunctiveCondSuffix, subjunctiveCondOther, subjunctiveCondWordBefore, subjunctiveCondWordAfter, subjunctiveCondWordBoth, subjunctiveCondWordOther, existWord, existVerb, existPosition, existOther, existNone,
+causativeAffix, causativeMake, causativeOther, antipassiveErg, antipassiveAgr, antipassiveAffix, antipassiveOther,
+presentTense, pastTense, futureTense, nonPastTense, nonFutureTense, completiveAspect, contemplativeAspect, continuativeAspect, contrafactualAspect, habitualAspect, imperfectAspect, imperfectiveAspect, incompletiveAspect, perfectAspect, perfectiveAspect, potentialAspect, progressiveAspect, stativeAspect, unrealAspect, declarativeMood, indicativeMood, realisMood, imperativeMood, interrogativeMood, conditionalMood, subjunctiveMood, irrealisMood, finiteOther, nonfiniteOther, gerundOther, participleOther, antipassiveVoice, causativeVoice, passiveVoice, actorVoice, dativeVoice, goalVoice, instrumentalVoice, locativeVoice, objectVoice, firstSubjectPerson, firstObjectPerson, firstErgativePerson, firstExclusiveSubjectPerson, firstExclusiveObjectPerson, firstExclusiveErgativePerson, firstExclusiveAbsolutivePerson, firstInclusiveSubjectPerson, firstInclusiveObjectPerson, firstInclusiveErgativePerson, firstInclusiveAbsolutivePerson, secondSubjectPerson, secondObjectPerson, secondErgativePerson, secondAbsolutivePerson, thirdSubjectPerson, thirdObjectPerson, thirdErgativePerson, thirdAbsolutivePerson, singularSubjectNumber, singularObjectNumber, singularErgativeNumber, singularAbsolutiveNumber, dualSubjectNumber, dualObjectNumber, dualErgativeNumber, dualAbsolutiveNumber, pluralSubjectNumber, pluralObjectNumber, pluralErgativeNumber, pluralAbsolutiveNumber, masculineSubjectGender, masculineObjectGender, masculineErgativeGender, masculineAbsolutiveGender, feminineSubjectGender, feminineObjectGender, feminineErgativeGender, feminineAbsolutiveGender, neuterSubjectGender, neuterObjectGender, neuterErgativeGender, neuterAbsolutiveGender, animateSubjectAnimacy, animateObjectAnimacy, animateErgativeAnimacy, animateAbsolutiveAnimacy, inanimateSubjectAnimacy, inanimateObjectAnimacy, inanimateErgativeAnimacy, inanimateAbsolutiveAnimacy, humanSubjectAnimacy, humanObjectAnimacy, humanErgativeAnimacy, humanAbsolutiveAnimacy, nonhumanSubjectAnimacy, nonhumanObjectAnimacy, nonhumanErgativeAnimacy, nonhumanAbsolutiveAnimacy, proDropExample, cliticPnExample, proDropOtherExample, impExample, impPoliteExample, conditionalExample, conditionCliticExample, conditionAffixExample, conditionOtherExample, conditionWordExample, subjunctiveExample, subjunctiveCondCliticExample, subjunctiveCondAffixExample, subjunctiveCondOtherExample, subjunctiveCondWordExample, auxExample, auxiliaryExample, auxNonfiniteExample, auxiliaryNonfiniteExample, auxOtherExample, auxiliaryOtherExample, heartCompoundExample, bodypartCompoundExample, verbNCompoundExample, verbNCompoundSentExample, verbOtherCompoundExample, verbOtherCompoundSentExample, idiomExample, copularExample,     copularVerb, copularAffix, perceptionExample, sameExample, sameWordExample, sameAffixExample, compareNExample, asExample, compareAdjExample, asWordExample, comparativeExample, comparativeWordExample, comparativeAffixExample, comparativeDegExample, comparativeSentExample, superlativeExample, superlativeAffixExample, superlativeDegExample, existExample, existWordExample, existVerbExample, existPositionExample, existOtherExample, motionExample, diExample, passiveExample, passiveAgentPExample, passiveAuxExample, causativeAffixExample, causativeExample, causativeMakeExample, causativeOtherExample, antipassiveExample, antipassiveAffixExample, voiceExample,
+auxCategory, verbCategory, ipContents1, ipContents2, ipContents3, ipContents4, ipContents5, ipContents6, ipContents7, ipContents8, ipContents9, ipContents10, ipAgrFeatFirstSubject, ipAgrFeatFirstObject, ipAgrFeatFirstErgative, ipAgrFeatFirstAbsolutive, ipAgrFeatFirstExclusiveSubject, ipAgrFeatFirstExclusiveObject, ipAgrFeatFirstExclusiveErgative, ipAgrFeatFirstExclusiveAbsolutive, ipAgrFeatFirstInclusiveSubject, ipAgrFeatFirstInclusiveObject, ipAgrFeatFirstInclusiveErgative, ipAgrFeatFirstInclusiveAbsolutive, ipAgrFeatSecondSubject, ipAgrFeatSecondObject, ipAgrFeatSecondErgative, ipAgrFeatSecondAbsolutive, ipAgrFeatThirdSubject, ipAgrFeatThirdObject, ipAgrFeatThirdErgative, ipAgrFeatThirdAbsolutive, ipAgrFeatSingularSubject, ipAgrFeatSingularObject, ipAgrFeatSingularErgative, ipAgrFeatSingularAbsolutive, ipAgrFeatDualSubject, ipAgrFeatDualObject, ipAgrFeatDualErgative, ipAgrFeatDualAbsolutive, ipAgrFeatPluralSubject, ipAgrFeatPluralObject, ipAgrFeatPluralErgative, ipAgrFeatPluralAbsolutive, ipAgrFeatMasculineSubject, ipAgrFeatMasculineObject, ipAgrFeatMasculineErgative, ipAgrFeatMasculineAbsolutive, ipAgrFeatFeminineSubject, ipAgrFeatFeminineObject, ipAgrFeatFeminineErgative, ipAgrFeatFeminineAbsolutive, ipAgrFeatNeuterSubject, ipAgrFeatNeuterObject, ipAgrFeatNeuterErgative, ipAgrFeatNeuterAbsolutive, ipAgrFeatAnimateSubject, ipAgrFeatAnimateObject, ipAgrFeatAnimateErgative, ipAgrFeatAnimateAbsolutive, ipAgrFeatMinusAnimateSubject, ipAgrFeatMinusAnimateObject, ipAgrFeatMinusAnimateErgative, ipAgrFeatMinusAnimateAbsolutive, ipAgrFeatHumanSubject, ipAgrFeatHumanObject, ipAgrFeatHumanErgative, ipAgrFeatHumanAbsolutive, ipAgrFeatMinusHumanSubject, ipAgrFeatMinusHumanObject, ipAgrFeatMinusHumanErgative, ipAgrFeatMinusHumanAbsolutive, ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatNonPast, ipInflFeatNonFuture, ipInflFeatCompletive, ipInflFeatContemplative, ipInflFeatContinuative, ipInflFeatContrafactual, ipInflFeatHabitual, ipInflFeatImperfect, ipInflFeatImperfective, ipInflFeatIncompletive, ipInflFeatPerfect, ipInflFeatPerfective, ipInflFeatPotential, ipInflFeatProgressive, ipInflFeatStative, ipInflFeatUnreal, ipInflFeatDeclarative, ipInflFeatIndicative, ipInflFeatRealis, ipInflFeatImperative, ipInflFeatInterrogative, ipInflFeatConditional, ipInflFeatSubjunctive, ipInflFeatIrrealis, ipInflFeatAntipassive, ipInflFeatCausative, ipInflFeatFinite, ipInflFeatMinusFinite, ipInflFeatGerund, ipInflFeatPassive, ipInflFeatParticiple, ipInflFeatActorVoice, ipInflFeatDativeVoice, ipInflFeatGoalVoice, ipInflFeatInstrumentalVoice, ipInflFeatLocativeVoice, ipInflFeatObjectVoice)>
 <!ATTLIST ip
-	checkedOff (yes | no) "no"
-	proDrop (noImp | no | yes | yesClitic) "noImp"
-	proDropObject (no | yes) "no"
-	aux (no | yes) "no"
-	auxRequired (no | yes) "no"
-	auxMany (no | yes) "no"
-	auxOrder (no | yes) "yes"
-	negAux (yes | no) "no"
-	 negAuxAffix (yes | no) "no"
-	 negVAffix (yes | no) "no"
-	 negAuxRequiresAux (no | yes) "no"
-	auxNonfinite (no | yes) "no"
-	auxNonfiniteRequired (no | yes) "no"
-	auxNonfiniteOrder (no | yes) "yes"
-	auxOther (no | yes) "no"
-	auxOtherOrder (no | yes) "yes"
-	copular (yes | yesOptional | yesAux | noAux | noNeither) "yes"
-	copularAffix (no | yesPrefix | yesSuffix | yesEither) "no"
-	same (yes | attaches | no) "yes"
-	compareN (yes | no) "yes"
-	as (yes | no) "yes"
-	compareAdj (yes | no) "yes"
-	comparative (yes | no) "yes"
-	comparativeAdj (no | yes | both) "no"
-	existVerb (yes | yesOnly | noCop | no) "no"
-	diCat (pp | dp | both) "pp"
-	diOrder (direct | indirect) "direct"
-	passive (no | yes) "no"
-	passiveAgent (no | yes) "no"
-	passiveAux (no | yes) "no"
-	passiveAgentCat (dp | pp) "pp"
-	causative (no | yes | yesBoth) "no"
-	antipassive (no | yesErg | yesAgr | yesAffix) "no"
-	voice (no | yes) "no"
-	voiceCase (no | yesNom | yesAbs) "no"
+    checkedOff (yes | no) "no"
+    proDropObject (no | yes) "no"
+    impPolite (yes | no) "no"
+    conditionWord (yes | some | no | mood) "yes"
+    consequence (yes | no) "no"
+    consequencePos (before | after | unknown) "unknown"
+    subjunctiveCondWord (yes | some | no | mood) "yes"
+    aux (no | yes) "no"
+    auxRequired (no | yes) "no"
+    auxMany (no | yes) "no"
+    auxOrder (no | yes) "yes"
+    auxNonfinite (no | yes | none) "no"
+    auxNonfiniteRequired (no | yes) "no"
+    auxNonfiniteOrder (no | yes) "yes"
+    auxOther (no | yes) "no"
+    auxOtherOrder (no | yes) "yes"
+    heartCompound (no | yes) "no"
+    bodypartCompound (no | yes) "no"
+    copular (yes | optional | no) "yes"
+    copularAffix (no | yesPrefix | yesSuffix | yesEither) "no"
+    same (yes | attaches | no) "yes"
+    compareN (yes | no) "yes"
+    as (yes | no) "yes"
+    compareAdj (yes | no) "yes"
+    comparative (yes | no) "yes"
+    comparativeAdj (no | yes | both) "no"
+    gap (yes | no) "yes"
+    diCat (pp | dp | both) "pp"
+    diOrder (direct | indirect) "direct"
+    passive (no | yes) "no"
+    passiveAgent (no | yes) "no"
+    passiveAux (no | yes) "no"
+    passiveAgentCat (dp | pp) "pp"
+    antipassive (no | yes) "no"
+    voice (no | yes) "no"
+    voiceCase (no | yesNom | yesAbs) "no"
 >
+<!ELEMENT proDropYes EMPTY >
+<!ATTLIST proDropYes
+  checked (yes | no ) "no"
+>
+<!ELEMENT proDropClitic EMPTY >
+<!ATTLIST proDropClitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT proDropImp EMPTY >
+<!ATTLIST proDropImp
+  checked (yes | no ) "no"
+>
+<!ELEMENT proDropOther (#PCDATA) >
+<!ATTLIST proDropOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT proDropNone EMPTY >
+<!ATTLIST proDropNone
+  checked (yes | no ) "no"
+>
+<!ELEMENT conditionProclitic EMPTY >
+<!ATTLIST conditionProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT conditionEnclitic EMPTY >
+<!ATTLIST conditionEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT conditionPrefix EMPTY >
+<!ATTLIST conditionPrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT conditionSuffix EMPTY >
+<!ATTLIST conditionSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT conditionOther (#PCDATA) >
+<!ATTLIST conditionOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT conditionWordBefore EMPTY >
+<!ATTLIST conditionWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT conditionWordAfter EMPTY >
+<!ATTLIST conditionWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT conditionWordBoth EMPTY >
+<!ATTLIST conditionWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT conditionWordOther (#PCDATA) >
+<!ATTLIST conditionWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT subjunctiveCondProclitic EMPTY >
+<!ATTLIST subjunctiveCondProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT subjunctiveCondEnclitic EMPTY >
+<!ATTLIST subjunctiveCondEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT subjunctiveCondPrefix EMPTY >
+<!ATTLIST subjunctiveCondPrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT subjunctiveCondSuffix EMPTY >
+<!ATTLIST subjunctiveCondSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT subjunctiveCondOther (#PCDATA) >
+<!ATTLIST subjunctiveCondOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT subjunctiveCondWordBefore EMPTY >
+<!ATTLIST subjunctiveCondWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT subjunctiveCondWordAfter EMPTY >
+<!ATTLIST subjunctiveCondWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT subjunctiveCondWordBoth EMPTY >
+<!ATTLIST subjunctiveCondWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT subjunctiveCondWordOther (#PCDATA) >
+<!ATTLIST subjunctiveCondWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT existWord EMPTY >
+<!ATTLIST existWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT existVerb EMPTY >
+<!ATTLIST existVerb
+  checked (yes | no ) "no"
+>
+<!ELEMENT existPosition EMPTY >
+<!ATTLIST existPosition
+  checked (yes | no ) "no"
+>
+<!ELEMENT existOther (#PCDATA) >
+<!ATTLIST existOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT existNone EMPTY >
+<!ATTLIST existNone
+  checked (yes | no ) "no"
+>
+<!ELEMENT causativeAffix EMPTY >
+<!ATTLIST causativeAffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT causativeMake EMPTY >
+<!ATTLIST causativeMake
+  checked (yes | no ) "no"
+>
+<!ELEMENT causativeOther (#PCDATA) >
+<!ATTLIST causativeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT antipassiveErg EMPTY >
+<!ATTLIST antipassiveErg
+  checked (yes | no ) "no"
+>
+<!ELEMENT antipassiveAgr EMPTY >
+<!ATTLIST antipassiveAgr
+  checked (yes | no ) "no"
+>
+<!ELEMENT antipassiveAffix EMPTY >
+<!ATTLIST antipassiveAffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT antipassiveOther (#PCDATA) >
+<!ATTLIST antipassiveOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT presentTense (#PCDATA)>
+<!ELEMENT pastTense (#PCDATA)>
+<!ELEMENT futureTense (#PCDATA)>
+<!ELEMENT nonPastTense (#PCDATA)>
+<!ELEMENT nonFutureTense (#PCDATA)>
+<!ELEMENT completiveAspect (#PCDATA)>
+<!ELEMENT contemplativeAspect (#PCDATA)>
+<!ELEMENT continuativeAspect (#PCDATA)>
+<!ELEMENT contrafactualAspect (#PCDATA)>
+<!ELEMENT habitualAspect (#PCDATA)>
+<!ELEMENT imperfectAspect (#PCDATA)>
+<!ELEMENT imperfectiveAspect (#PCDATA)>
+<!ELEMENT incompletiveAspect (#PCDATA)>
+<!ELEMENT perfectAspect (#PCDATA)>
+<!ELEMENT perfectiveAspect (#PCDATA)>
+<!ELEMENT potentialAspect (#PCDATA)>
+<!ELEMENT progressiveAspect (#PCDATA)>
+<!ELEMENT stativeAspect (#PCDATA)>
+<!ELEMENT unrealAspect (#PCDATA)>
+<!ELEMENT declarativeMood (#PCDATA)>
+<!ELEMENT indicativeMood (#PCDATA)>
+<!ELEMENT realisMood (#PCDATA)>
+<!ELEMENT imperativeMood (#PCDATA)>
+<!ELEMENT interrogativeMood (#PCDATA)>
+<!ELEMENT conditionalMood (#PCDATA)>
+<!ELEMENT subjunctiveMood (#PCDATA)>
+<!ELEMENT irrealisMood (#PCDATA)>
+<!ELEMENT finiteOther (#PCDATA)>
+<!ELEMENT nonfiniteOther (#PCDATA)>
+<!ELEMENT gerundOther (#PCDATA)>
+<!ELEMENT participleOther (#PCDATA)>
+<!ELEMENT antipassiveVoice (#PCDATA)>
+<!ELEMENT causativeVoice (#PCDATA)>
+<!ELEMENT passiveVoice (#PCDATA)>
+<!ELEMENT actorVoice (#PCDATA)>
+<!ELEMENT dativeVoice (#PCDATA)>
+<!ELEMENT goalVoice (#PCDATA)>
+<!ELEMENT instrumentalVoice (#PCDATA)>
+<!ELEMENT locativeVoice (#PCDATA)>
+<!ELEMENT objectVoice (#PCDATA)>
+<!ELEMENT firstSubjectPerson (#PCDATA)>
+<!ELEMENT firstObjectPerson (#PCDATA)>
+<!ELEMENT firstErgativePerson (#PCDATA)>
+<!ELEMENT firstAbsolutivePerson (#PCDATA)>
+<!ELEMENT firstExclusiveSubjectPerson (#PCDATA)>
+<!ELEMENT firstExclusiveObjectPerson (#PCDATA)>
+<!ELEMENT firstExclusiveErgativePerson (#PCDATA)>
+<!ELEMENT firstExclusiveAbsolutivePerson (#PCDATA)>
+<!ELEMENT firstInclusiveSubjectPerson (#PCDATA)>
+<!ELEMENT firstInclusiveObjectPerson (#PCDATA)>
+<!ELEMENT firstInclusiveErgativePerson (#PCDATA)>
+<!ELEMENT firstInclusiveAbsolutivePerson (#PCDATA)>
+<!ELEMENT secondSubjectPerson (#PCDATA)>
+<!ELEMENT secondObjectPerson (#PCDATA)>
+<!ELEMENT secondErgativePerson (#PCDATA)>
+<!ELEMENT secondAbsolutivePerson (#PCDATA)>
+<!ELEMENT thirdSubjectPerson (#PCDATA)>
+<!ELEMENT thirdObjectPerson (#PCDATA)>
+<!ELEMENT thirdErgativePerson (#PCDATA)>
+<!ELEMENT thirdAbsolutivePerson (#PCDATA)>
+<!ELEMENT singularSubjectNumber (#PCDATA)>
+<!ELEMENT singularObjectNumber (#PCDATA)>
+<!ELEMENT singularErgativeNumber (#PCDATA)>
+<!ELEMENT singularAbsolutiveNumber (#PCDATA)>
+<!ELEMENT dualSubjectNumber (#PCDATA)>
+<!ELEMENT dualObjectNumber (#PCDATA)>
+<!ELEMENT dualErgativeNumber (#PCDATA)>
+<!ELEMENT dualAbsolutiveNumber (#PCDATA)>
+<!ELEMENT pluralSubjectNumber (#PCDATA)>
+<!ELEMENT pluralObjectNumber (#PCDATA)>
+<!ELEMENT pluralErgativeNumber (#PCDATA)>
+<!ELEMENT pluralAbsolutiveNumber (#PCDATA)>
+<!ELEMENT masculineSubjectGender (#PCDATA)>
+<!ELEMENT masculineObjectGender (#PCDATA)>
+<!ELEMENT masculineErgativeGender (#PCDATA)>
+<!ELEMENT masculineAbsolutiveGender (#PCDATA)>
+<!ELEMENT feminineSubjectGender (#PCDATA)>
+<!ELEMENT feminineObjectGender (#PCDATA)>
+<!ELEMENT feminineErgativeGender (#PCDATA)>
+<!ELEMENT feminineAbsolutiveGender (#PCDATA)>
+<!ELEMENT neuterSubjectGender (#PCDATA)>
+<!ELEMENT neuterObjectGender (#PCDATA)>
+<!ELEMENT neuterErgativeGender (#PCDATA)>
+<!ELEMENT neuterAbsolutiveGender (#PCDATA)>
+<!ELEMENT animateSubjectAnimacy (#PCDATA)>
+<!ELEMENT animateObjectAnimacy (#PCDATA)>
+<!ELEMENT animateErgativeAnimacy (#PCDATA)>
+<!ELEMENT animateAbsolutiveAnimacy (#PCDATA)>
+<!ELEMENT inanimateSubjectAnimacy (#PCDATA)>
+<!ELEMENT inanimateObjectAnimacy (#PCDATA)>
+<!ELEMENT inanimateErgativeAnimacy (#PCDATA)>
+<!ELEMENT inanimateAbsolutiveAnimacy (#PCDATA)>
+<!ELEMENT humanSubjectAnimacy (#PCDATA)>
+<!ELEMENT humanObjectAnimacy (#PCDATA)>
+<!ELEMENT humanErgativeAnimacy (#PCDATA)>
+<!ELEMENT humanAbsolutiveAnimacy (#PCDATA)>
+<!ELEMENT nonhumanSubjectAnimacy (#PCDATA)>
+<!ELEMENT nonhumanObjectAnimacy (#PCDATA)>
+<!ELEMENT nonhumanErgativeAnimacy (#PCDATA)>
+<!ELEMENT nonhumanAbsolutiveAnimacy (#PCDATA)>
 <!ELEMENT proDropExample (#PCDATA)>
-<!ELEMENT impExample (#PCDATA)>
 <!ELEMENT cliticPnExample (#PCDATA)>
+<!ELEMENT proDropOtherExample (#PCDATA)>
+<!ELEMENT impExample (#PCDATA)>
+<!ELEMENT impPoliteExample (#PCDATA)>
+<!ELEMENT conditionalExample (#PCDATA)>
+<!ELEMENT conditionCliticExample (#PCDATA)>
+<!ELEMENT conditionAffixExample (#PCDATA)>
+<!ELEMENT conditionOtherExample (#PCDATA)>
+<!ELEMENT conditionWordExample (#PCDATA)>
+<!ELEMENT subjunctiveExample (#PCDATA)>
+<!ELEMENT subjunctiveCondCliticExample (#PCDATA)>
+<!ELEMENT subjunctiveCondAffixExample (#PCDATA)>
+<!ELEMENT subjunctiveCondOtherExample (#PCDATA)>
+<!ELEMENT subjunctiveCondWordExample (#PCDATA)>
 <!ELEMENT auxExample (#PCDATA)>
 <!ELEMENT auxiliaryExample (#PCDATA)>
-<!ELEMENT negAuxExample (#PCDATA)>
-<!ELEMENT negAuxAffixExample (#PCDATA)>
-<!ELEMENT negVerbExample (#PCDATA)>
 <!ELEMENT auxNonfiniteExample (#PCDATA)>
 <!ELEMENT auxiliaryNonfiniteExample (#PCDATA)>
 <!ELEMENT auxOtherExample (#PCDATA)>
 <!ELEMENT auxiliaryOtherExample (#PCDATA)>
+<!ELEMENT heartCompoundExample (#PCDATA)>
+<!ELEMENT bodypartCompoundExample (#PCDATA)>
+<!ELEMENT verbNCompoundExample (#PCDATA)>
+<!ELEMENT verbNCompoundSentExample (#PCDATA)>
+<!ELEMENT verbOtherCompoundExample (#PCDATA)>
+<!ELEMENT verbOtherCompoundSentExample (#PCDATA)>
+<!ELEMENT idiomExample (#PCDATA)>
 <!ELEMENT copularExample (#PCDATA)>
+<!ELEMENT copularVerb (#PCDATA)>
+<!ELEMENT copularAffix (#PCDATA)>
 <!ELEMENT perceptionExample (#PCDATA)>
 <!ELEMENT sameExample (#PCDATA)>
 <!ELEMENT sameWordExample (#PCDATA)>
@@ -942,626 +2117,515 @@ ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatContemplative, ip
 <!ELEMENT comparativeWordExample (#PCDATA)>
 <!ELEMENT comparativeAffixExample (#PCDATA)>
 <!ELEMENT comparativeDegExample (#PCDATA)>
+<!ELEMENT comparativeSentExample (#PCDATA)>
 <!ELEMENT superlativeExample (#PCDATA)>
 <!ELEMENT superlativeAffixExample (#PCDATA)>
 <!ELEMENT superlativeDegExample (#PCDATA)>
 <!ELEMENT existExample (#PCDATA)>
-<!ELEMENT existVerbExample (#PCDATA)>
 <!ELEMENT existWordExample (#PCDATA)>
+<!ELEMENT existVerbExample (#PCDATA)>
+<!ELEMENT existPositionExample (#PCDATA)>
+<!ELEMENT existOtherExample (#PCDATA)>
 <!ELEMENT motionExample (#PCDATA)>
 <!ELEMENT diExample (#PCDATA)>
 <!ELEMENT passiveExample (#PCDATA)>
 <!ELEMENT passiveAgentPExample (#PCDATA)>
 <!ELEMENT passiveAuxExample (#PCDATA)>
-<!ELEMENT causativeExample (#PCDATA)>
 <!ELEMENT causativeAffixExample (#PCDATA)>
+<!ELEMENT causativeExample (#PCDATA)>
+<!ELEMENT causativeMakeExample (#PCDATA)>
+<!ELEMENT causativeOtherExample (#PCDATA)>
 <!ELEMENT antipassiveExample (#PCDATA)>
 <!ELEMENT antipassiveAffixExample (#PCDATA)>
 <!ELEMENT voiceExample (#PCDATA)>
-<!ELEMENT actorVoiceExample (#PCDATA)>
-<!ELEMENT objectVoiceExample (#PCDATA)>
-<!ELEMENT dativeVoiceExample (#PCDATA)>
-<!ELEMENT goalVoiceExample (#PCDATA)>
-<!ELEMENT instrumentalVoiceExample (#PCDATA)>
-<!ELEMENT locativeVoiceExample (#PCDATA)>
 <!ELEMENT auxCategory (#PCDATA)>
 <!ELEMENT verbCategory (#PCDATA)>
 <!ELEMENT ipContents1 EMPTY>
 <!ATTLIST ipContents1
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents2 EMPTY>
 <!ATTLIST ipContents2
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents3 EMPTY>
 <!ATTLIST ipContents3
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents4 EMPTY>
 <!ATTLIST ipContents4
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents5 EMPTY>
 <!ATTLIST ipContents5
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents6 EMPTY>
 <!ATTLIST ipContents6
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents7 EMPTY>
 <!ATTLIST ipContents7
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents8 EMPTY>
 <!ATTLIST ipContents8
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents9 EMPTY>
 <!ATTLIST ipContents9
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT ipContents10 EMPTY>
 <!ATTLIST ipContents10
-	checkedOff (yes | no) "no"
+    checkedOff (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstSubject EMPTY>
 <!ATTLIST ipAgrFeatFirstSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstObject EMPTY>
 <!ATTLIST ipAgrFeatFirstObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstErgative EMPTY>
 <!ATTLIST ipAgrFeatFirstErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatFirstAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstExclusiveSubject EMPTY>
 <!ATTLIST ipAgrFeatFirstExclusiveSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstExclusiveObject EMPTY>
 <!ATTLIST ipAgrFeatFirstExclusiveObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstExclusiveErgative EMPTY>
 <!ATTLIST ipAgrFeatFirstExclusiveErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstExclusiveAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatFirstExclusiveAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstInclusiveSubject EMPTY>
 <!ATTLIST ipAgrFeatFirstInclusiveSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstInclusiveObject EMPTY>
 <!ATTLIST ipAgrFeatFirstInclusiveObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstInclusiveErgative EMPTY>
 <!ATTLIST ipAgrFeatFirstInclusiveErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFirstInclusiveAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatFirstInclusiveAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSecondSubject EMPTY>
 <!ATTLIST ipAgrFeatSecondSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSecondObject EMPTY>
 <!ATTLIST ipAgrFeatSecondObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSecondErgative EMPTY>
 <!ATTLIST ipAgrFeatSecondErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSecondAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatSecondAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatThirdSubject EMPTY>
 <!ATTLIST ipAgrFeatThirdSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatThirdObject EMPTY>
 <!ATTLIST ipAgrFeatThirdObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatThirdErgative EMPTY>
 <!ATTLIST ipAgrFeatThirdErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatThirdAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatThirdAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSingularSubject EMPTY>
 <!ATTLIST ipAgrFeatSingularSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSingularObject EMPTY>
 <!ATTLIST ipAgrFeatSingularObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSingularErgative EMPTY>
 <!ATTLIST ipAgrFeatSingularErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatSingularAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatSingularAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatDualSubject EMPTY>
 <!ATTLIST ipAgrFeatDualSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatDualObject EMPTY>
 <!ATTLIST ipAgrFeatDualObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatDualErgative EMPTY>
 <!ATTLIST ipAgrFeatDualErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatDualAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatDualAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatPluralSubject EMPTY>
 <!ATTLIST ipAgrFeatPluralSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatPluralObject EMPTY>
 <!ATTLIST ipAgrFeatPluralObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatPluralErgative EMPTY>
 <!ATTLIST ipAgrFeatPluralErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatPluralAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatPluralAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMasculineSubject EMPTY>
 <!ATTLIST ipAgrFeatMasculineSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMasculineObject EMPTY>
 <!ATTLIST ipAgrFeatMasculineObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMasculineErgative EMPTY>
 <!ATTLIST ipAgrFeatMasculineErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMasculineAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatMasculineAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFeminineSubject EMPTY>
 <!ATTLIST ipAgrFeatFeminineSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFeminineObject EMPTY>
 <!ATTLIST ipAgrFeatFeminineObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFeminineErgative EMPTY>
 <!ATTLIST ipAgrFeatFeminineErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatFeminineAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatFeminineAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatNeuterSubject EMPTY>
 <!ATTLIST ipAgrFeatNeuterSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatNeuterObject EMPTY>
 <!ATTLIST ipAgrFeatNeuterObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatNeuterErgative EMPTY>
 <!ATTLIST ipAgrFeatNeuterErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatNeuterAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatNeuterAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatAnimateSubject EMPTY>
 <!ATTLIST ipAgrFeatAnimateSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatAnimateObject EMPTY>
 <!ATTLIST ipAgrFeatAnimateObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatAnimateErgative EMPTY>
 <!ATTLIST ipAgrFeatAnimateErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatAnimateAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatAnimateAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusAnimateSubject EMPTY>
 <!ATTLIST ipAgrFeatMinusAnimateSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusAnimateObject EMPTY>
 <!ATTLIST ipAgrFeatMinusAnimateObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusAnimateErgative EMPTY>
 <!ATTLIST ipAgrFeatMinusAnimateErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusAnimateAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatMinusAnimateAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatHumanSubject EMPTY>
 <!ATTLIST ipAgrFeatHumanSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatHumanObject EMPTY>
 <!ATTLIST ipAgrFeatHumanObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatHumanErgative EMPTY>
 <!ATTLIST ipAgrFeatHumanErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatHumanAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatHumanAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusHumanSubject EMPTY>
 <!ATTLIST ipAgrFeatMinusHumanSubject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusHumanObject EMPTY>
 <!ATTLIST ipAgrFeatMinusHumanObject
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusHumanErgative EMPTY>
 <!ATTLIST ipAgrFeatMinusHumanErgative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipAgrFeatMinusHumanAbsolutive EMPTY>
 <!ATTLIST ipAgrFeatMinusHumanAbsolutive
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassNumberSubject EMPTY>
-<!ATTLIST ipAgrFeatClassClassNumberSubject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassNumberObject EMPTY>
-<!ATTLIST ipAgrFeatClassClassNumberObject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassNumberErgative EMPTY>
-<!ATTLIST ipAgrFeatClassClassNumberErgative
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassNumberAbsolutive EMPTY>
-<!ATTLIST ipAgrFeatClassClassNumberAbsolutive
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeAnimalSubject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeAnimalSubject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeInsectSubject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeInsectSubject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeLiquidSubject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeLiquidSubject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeRoundSubject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeRoundSubject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeCylinderSubject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeCylinderSubject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeSphericalSubject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeSphericalSubject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeTreeSubject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeTreeSubject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeWoodSubject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeWoodSubject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeOtherSubject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeOtherSubject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeAnimalObject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeAnimalObject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeInsectObject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeInsectObject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeLiquidObject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeLiquidObject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeRoundObject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeRoundObject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeCylinderObject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeCylinderObject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeSphericalObject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeSphericalObject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeTreeObject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeTreeObject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeWoodObject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeWoodObject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeOtherObject EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeOtherObject
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeAnimalErgative EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeAnimalErgative
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeInsectErgative EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeInsectErgative
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeLiquidErgative EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeLiquidErgative
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeRoundErgative EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeRoundErgative
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeCylinderErgative EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeCylinderErgative
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeSphericalErgative EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeSphericalErgative
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeTreeErgative EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeTreeErgative
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeWoodErgative EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeWoodErgative
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeOtherErgative EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeOtherErgative
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeAnimalAbsolutive EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeAnimalAbsolutive
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeInsectAbsolutive EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeInsectAbsolutive
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeLiquidAbsolutive EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeLiquidAbsolutive
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeRoundAbsolutive EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeRoundAbsolutive
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeCylinderAbsolutive EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeCylinderAbsolutive
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeSphericalAbsolutive EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeSphericalAbsolutive
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeTreeAbsolutive EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeTreeAbsolutive
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeWoodAbsolutive EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeWoodAbsolutive
-	checked (yes | no) "no"
->
-<!ELEMENT ipAgrFeatClassClassTypeOtherAbsolutive EMPTY>
-<!ATTLIST ipAgrFeatClassClassTypeOtherAbsolutive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatPresent EMPTY>
 <!ATTLIST ipInflFeatPresent
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatPast EMPTY>
 <!ATTLIST ipInflFeatPast
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatFuture EMPTY>
 <!ATTLIST ipInflFeatFuture
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
-<!ELEMENT ipInflFeatContemplative EMPTY>
-<!ATTLIST ipInflFeatContemplative
-	checked (yes | no) "no"
+<!ELEMENT ipInflFeatNonPast EMPTY>
+<!ATTLIST ipInflFeatNonPast
+    checked (yes | no) "no"
 >
-<!ELEMENT ipInflFeatContrafactual EMPTY>
-<!ATTLIST ipInflFeatContrafactual
-	checked (yes | no) "no"
+<!ELEMENT ipInflFeatNonFuture EMPTY>
+<!ATTLIST ipInflFeatNonFuture
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatCompletive EMPTY>
 <!ATTLIST ipInflFeatCompletive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatContemplative EMPTY>
+<!ATTLIST ipInflFeatContemplative
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatContinuative EMPTY>
 <!ATTLIST ipInflFeatContinuative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatContrafactual EMPTY>
+<!ATTLIST ipInflFeatContrafactual
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatHabitual EMPTY>
 <!ATTLIST ipInflFeatHabitual
-	checked (yes | no) "no"
+    checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatImperfect EMPTY>
+<!ATTLIST ipInflFeatImperfect
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatImperfective EMPTY>
 <!ATTLIST ipInflFeatImperfective
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatIncompletive EMPTY>
 <!ATTLIST ipInflFeatIncompletive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatPerfect EMPTY>
 <!ATTLIST ipInflFeatPerfect
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatPerfective EMPTY>
 <!ATTLIST ipInflFeatPerfective
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatPotential EMPTY>
 <!ATTLIST ipInflFeatPotential
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatProgressive EMPTY>
 <!ATTLIST ipInflFeatProgressive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatStative EMPTY>
 <!ATTLIST ipInflFeatStative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatUnreal EMPTY>
 <!ATTLIST ipInflFeatUnreal
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatDeclarative EMPTY>
 <!ATTLIST ipInflFeatDeclarative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
-<!ELEMENT ipInflFeatImperative EMPTY>
-<!ATTLIST ipInflFeatImperative
-	checked (yes | no) "no"
->
-<!ELEMENT ipInflFeatInterrogative EMPTY>
-<!ATTLIST ipInflFeatInterrogative
-	checked (yes | no) "no"
->
-<!ELEMENT ipInflFeatIrrealis EMPTY>
-<!ATTLIST ipInflFeatIrrealis
-	checked (yes | no) "no"
+<!ELEMENT ipInflFeatIndicative EMPTY>
+<!ATTLIST ipInflFeatIndicative
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatRealis EMPTY>
 <!ATTLIST ipInflFeatRealis
-	checked (yes | no) "no"
+    checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatImperative EMPTY>
+<!ATTLIST ipInflFeatImperative
+    checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatInterrogative EMPTY>
+<!ATTLIST ipInflFeatInterrogative
+    checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatConditional EMPTY>
+<!ATTLIST ipInflFeatConditional
+    checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatSubjunctive EMPTY>
+<!ATTLIST ipInflFeatSubjunctive
+    checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatIrrealis EMPTY>
+<!ATTLIST ipInflFeatIrrealis
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatAntipassive EMPTY>
 <!ATTLIST ipInflFeatAntipassive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatCausative EMPTY>
 <!ATTLIST ipInflFeatCausative
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatFinite EMPTY>
 <!ATTLIST ipInflFeatFinite
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatMinusFinite EMPTY>
 <!ATTLIST ipInflFeatMinusFinite
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatGerund EMPTY>
 <!ATTLIST ipInflFeatGerund
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatPassive EMPTY>
 <!ATTLIST ipInflFeatPassive
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatParticiple EMPTY>
 <!ATTLIST ipInflFeatParticiple
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatActorVoice EMPTY>
 <!ATTLIST ipInflFeatActorVoice
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatDativeVoice EMPTY>
 <!ATTLIST ipInflFeatDativeVoice
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatGoalVoice EMPTY>
 <!ATTLIST ipInflFeatGoalVoice
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatInstrumentalVoice EMPTY>
 <!ATTLIST ipInflFeatInstrumentalVoice
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatLocativeVoice EMPTY>
 <!ATTLIST ipInflFeatLocativeVoice
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatObjectVoice EMPTY>
 <!ATTLIST ipInflFeatObjectVoice
-	checked (yes | no) "no"
+    checked (yes | no) "no"
 >
 <!-- Complement clauses have various type of examples of the
-	 types of complement clauses they can take: finiteExample,
-	finiteOrNonfiniteExample, DPCPExample, nonfiniteExample,
-	nonfiniteProDropExample, nonfiniteCPOrProDropExample,
-	otherExample.       Complement Clauses may have
-	  complementizers (comp).  These may be written as separate words
-	  (compWord).  These have a position with respect to the rest of the
-	  embedded clause (compPos).  If they can appear on either side, then all of
-	  them may do so (compEitherRestricted) or not.  If a clitic questions of pre/post clitic
-	 (compCliticPos) and type are asked (compCliticAttaches).
--->
-<!ELEMENT comp (finiteExample, finiteOrNonfiniteExample, DPCPExample, nonfiniteExample, nonfiniteProDropExample, nonfiniteCPOrProDropExample, raisingExample, causeExample, quotationExample, otherExample)>
+     types of complement clauses they can take.
+     -->
+<!ELEMENT comp (compProclitic, compEnclitic, compPrefix, compSuffix, compAttachesOther, compBefore, compAfter, compBoth, compOther, finiteExample, finiteOrNonfiniteExample, DPCPExample, nonfiniteExample, nonfiniteProDropExample, nonfiniteCPOrProDropExample, raisingExample, causeExample, quotationExample, otherRestrictions, otherExample, compCliticExample, compAffixExample, compOtherExample, compExample)>
 <!ATTLIST comp
-	checkedOff (yes | no) "no"
-	comp (yes | no) "no"
-	compWord (no | yes) "yes"
-	compCliticPos (before | after | both | unknown) "unknown"
-	compCliticAttaches (edge | head) "edge"
-	compPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	compEitherRestricted (unrestricted | restricted) "unrestricted"
+    checkedOff (yes | no) "no"
+    compTypeOther (yes | no) "no"
+    comp (yes | no) "no"
+    compNonfinite (yes | no) "no"
+    compWord (no | yes | some) "yes"
+ >
+<!ELEMENT compProclitic EMPTY >
+<!ATTLIST compProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT compEnclitic EMPTY >
+<!ATTLIST compEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT compPrefix EMPTY >
+<!ATTLIST compPrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT compSuffix EMPTY >
+<!ATTLIST compSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT compAttachesOther (#PCDATA) >
+<!ATTLIST compAttachesOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT compBefore EMPTY >
+<!ATTLIST compBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT compAfter EMPTY >
+<!ATTLIST compAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT compBoth EMPTY >
+<!ATTLIST compBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT compOther (#PCDATA) >
+<!ATTLIST compOther
+  checked (yes | no ) "no"
 >
 <!ELEMENT finiteExample (#PCDATA)>
 <!ELEMENT finiteOrNonfiniteExample (#PCDATA)>
@@ -1572,108 +2636,242 @@ ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatContemplative, ip
 <!ELEMENT raisingExample (#PCDATA)>
 <!ELEMENT causeExample (#PCDATA)>
 <!ELEMENT quotationExample (#PCDATA)>
+<!ELEMENT otherRestrictions (#PCDATA)>
 <!ELEMENT otherExample (#PCDATA)>
+<!ELEMENT compCliticExample (#PCDATA)>
+<!ELEMENT compAffixExample (#PCDATA)>
+<!ELEMENT compOtherExample (#PCDATA)>
 <!-- Questions have main clause Yes/No examples (example),
-	  embedded Yes/No examples (embYNExample),
-	  main clause content examples (contentExample),
-	  embedded content examples (embContentExample), and
-	  eight examples of whWords or phrases (who, etc.).
-	 There is a category mapping for wh-pronouns.
-	 Main clause Yes/No questions may have complementizers (mainYN).
-	 These may be written as separate words
-	  (mainYNWord).  These have a position with respect to the rest of the
-	  question (mainYNPos).  If they can appear on either or both sides, then all of
-	  them may do so or not (mainYNEitherRestricted).  If a clitic questions of pre/post clitic
-	 (mainYNCliticPos) and type are asked (mainYNCliticAttaches).
-	  If only an Aux is fronted, then it has a position (mainYNAuxPos).
-	 Embedded Yes/No questions may have
-	  complementizers (embYN).  These may be written as separate words
-	  (embYNWord).  These have a position with respect to the rest of the
-	  question (embYNPos).  If they can appear on either side, then all of
-	  them may do so (embYNEitherRestricted) or not.  If a clitic questions of pre/post clitic
-	 (embYNCliticPos) and type are asked (embYNCliticAttaches).
-	  If only an Aux is fronted, then it
-	  has a position (embYNAuxPos).
-	 Within interrogative phrases for languages which allow modifiers on either side,
-	the position of the wh demonstrative (whDemPos) article (whArtPos) or
-	 degree word (whDegAdjPos), (whDegQPos) is needed
-	 Content questions may require interrogative phrases to be fronted
-	  (contFront) (before=yes; after=no so head position can be used to predict).
-	 Main content questions may have
-	  complementizers (mainCont).  These may be written as separate words
-	  (mainContWord).  These have a position with
-	  respect to the rest of the question (mainContPos).  If they can appear
-	  on either side, then all of them may do so (mainContEither) or there may be sets.
-	  A question marker may be required (mainContRequired).
-	  For VSO languages with fronting, they may occur before a fronted interrogative phrase
-	  (mainContVSOBeforeWh).
-	  If a clitic questions of pre/post clitic
-	 (mainContCliticPos) and type are asked (mainContCliticAttaches).
-	  An Aux may front after the fronted phrase
-	  (mainContAux).  If only an Aux is fronted,
-	  then it may be required (mainContAuxRequired).
-	 Embedded content questions may have
-	  complementizers (embCont).  These may be written as separate words
-	  (embContWord).  These have a position with
-	  respect to the rest of the question (embContPos).  If they can appear
-	  on either side, then all of them may do so (embContEither) or not.  A question
-	  marker may be required (embContRequired).
-	 For VSO languages with fronting, they may occur before a fronted interrogative phrase
-	  (embContVSOBeforeWh).
-	  If a clitic questions of pre/post clitic
-	 (embContCliticPos) and type are asked (embContCliticAttaches).
-	  An Aux may front after the fronted phrase
-	  (embContAux).   If only an Aux is fronted,
-	  then it may be required (embContAux).
+      embedded Yes/No examples (embYNExample),
+      main clause content examples (contentExample),
+      embedded content examples (embContentExample), and
+      eight examples of whWords or phrases (who, etc.).
 -->
-<!ELEMENT q (example, embYNExample, contentExample, embContentExample, who, what, why, where, when, how, howMany, which, whose, other, whPronCategory)>
+<!ELEMENT q (mainYNProclitic, mainYNEnclitic, mainYNPrefix, mainYNSuffix, mainYNCliticOther, mainYNWordBefore, mainYNWordAfter, mainYNWordBoth, mainYNWordOther, embYNProclitic, embYNEnclitic, embYNPrefix, embYNSuffix, embYNCliticOther, embYNWordBefore, embYNWordAfter, embYNWordBoth, embYNWordOther, mainContProclitic, mainContBetweenProclitic, mainContEnclitic, mainContBetweenEnclitic, mainContPrefix, mainContSuffix, mainContCliticOther, mainContWordBefore, mainContWordAfter, mainContWordBoth, mainContWordOther, mainContVSOAfterWh, mainContVSOBeforeWh, mainContVSOEnd, mainContVSOOther, embContProclitic, embContBetweenProclitic, embContEnclitic, embContBetweenEnclitic, embContPrefix, embContSuffix, embContCliticOther, embContWordBefore, embContWordAfter, embContWordBoth, embContWordOther, embContVSOAfterWh, embContVSOBeforeWh, embContVSOEnd, embContVSOOther, example, mainYNCliticExample, mainYNAffixExample, mainYNWordExample, embYNExample, embYNCliticExample, embYNAffixExample, embYNWordExample, who, what, why, where, when, how, howMany, which, whose, other, contentExample, mainContCliticExample, mainContAffixExample, mainContWordExample, mainContSpecialConditions, embContentExample, embContCliticExample, embContAffixExample, embContWordExample, embContSpecialConditions, whPronCategory)>
 <!ATTLIST q
-	checkedOff (yes | no) "no"
-	mainYN (yes | noAux | no) "no"
-	mainYNWord (no | yes) "no"
-	mainYNCliticPos (before | after | both | unknown) "unknown"
-	mainYNCliticAttaches (edge | head) "edge"
-	mainYNPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	mainYNEitherRestricted (unrestricted | restricted) "unrestricted"
-	mainYNAuxPos (before | after | unknown) "unknown"
-	embYN (yes | noAux | no) "no"
-	embYNWord (no | yes) "no"
-	embYNCliticPos (before | after | both | unknown) "unknown"
-	embYNCliticAttaches (edge | head) "edge"
-	embYNPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	embYNEitherRestricted (unrestricted | restricted) "unrestricted"
-	embYNAuxPos (before | after | unknown) "unknown"
-	whDemPos (before | after | agree | unknown) "unknown"
-	whArtPos (before | after | agree | unknown) "unknown"
-	whDegAdjPos (before | after | agree | unknown) "unknown"
-	whDegQPos (before | after | agree | unknown) "unknown"
-	contFront (before | after | no | unknown) "unknown"
-	mainCont (yes | noAux | no) "no"
-	mainContWord (yes | no) "no"
-	mainContCliticPos (before | after | both | unknown) "unknown"
-	mainContCliticAttaches (edge | between | head) "edge"
-	mainContPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	mainContEitherRestricted (unrestricted | restricted) "unrestricted"
-	mainContVSOBeforeWh (no | noEnd | yes | some) "no"
-	mainContVSOBeforeWhNoEndRestricted (unrestricted | restricted) "unrestricted"
-	mainContRequired (no | yes) "no"
-	mainContAuxPos (before | after | unknown) "unknown"
-	mainContAuxRequired (no | yes) "no"
-	embCont (yes | noAux | no) "no"
-	embContWord (no | yes) "no"
-	embContCliticPos (before | after | both | unknown) "unknown"
-	embContCliticAttaches (edge | between | head) "edge"
-	embContPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	embContEitherRestricted (unrestricted | restricted) "unrestricted"
-	embContVSOBeforeWh (no | noEnd | yes | some) "no"
-	embContVSOBeforeWhNoEndRestricted (unrestricted | restricted) "unrestricted"
-	embContRequired (no | yes) "no"
-	embContAuxPos (before | after | unknown) "unknown"
-	embContAuxRequired (no | yes) "no"
+    checkedOff (yes | no) "no"
+    mainYN (yes | noAux | no) "no"
+    mainYNWord (no | some | yes) "no"
+    mainYNAuxPos (before | after | unknown) "unknown"
+    embYN (yes | noAux | no) "no"
+    embYNWord (no | some | yes) "no"
+    embYNAuxPos (before | after | unknown) "unknown"
+    whDemPos (before | after | agree | unknown) "unknown"
+    whArtPos (before | after | agree | unknown) "unknown"
+    whDegAdjPos (before | after | agree | unknown) "unknown"
+    whDegQPos (before | after | agree | unknown) "unknown"
+    contFront (before | after | no | unknown) "unknown"
+    mainCont (yes | noAux | no) "no"
+    mainContWord (yes | some | no) "no"
+    mainContRequired (no | yes | special) "no"
+    mainContAuxPos (before | after | unknown) "unknown"
+    mainContAuxRequired (no | yes | object) "no"
+    embCont (yes | noAux | no) "no"
+    embContWord (no | some | yes) "no"
+    embContRequired (no | yes | special) "no"
+    embContAuxPos (before | after | unknown) "unknown"
+    embContAuxRequired (no | yes | object) "no"
 >
+<!ELEMENT mainYNProclitic EMPTY >
+<!ATTLIST mainYNProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainYNEnclitic EMPTY >
+<!ATTLIST mainYNEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainYNPrefix EMPTY >
+<!ATTLIST mainYNPrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainYNSuffix EMPTY >
+<!ATTLIST mainYNSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainYNCliticOther (#PCDATA) >
+<!ATTLIST mainYNCliticOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainYNWordBefore EMPTY >
+<!ATTLIST mainYNWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainYNWordAfter EMPTY >
+<!ATTLIST mainYNWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainYNWordBoth EMPTY >
+<!ATTLIST mainYNWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainYNWordOther (#PCDATA) >
+<!ATTLIST mainYNWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT embYNProclitic EMPTY >
+<!ATTLIST embYNProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT embYNEnclitic EMPTY >
+<!ATTLIST embYNEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT embYNPrefix EMPTY >
+<!ATTLIST embYNPrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT embYNSuffix EMPTY >
+<!ATTLIST embYNSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT embYNCliticOther (#PCDATA) >
+<!ATTLIST embYNCliticOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT embYNWordBefore EMPTY >
+<!ATTLIST embYNWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT embYNWordAfter EMPTY >
+<!ATTLIST embYNWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT embYNWordBoth EMPTY >
+<!ATTLIST embYNWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT embYNWordOther (#PCDATA) >
+<!ATTLIST embYNWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContProclitic EMPTY >
+<!ATTLIST mainContProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContBetweenProclitic EMPTY >
+<!ATTLIST mainContBetweenProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContEnclitic EMPTY >
+<!ATTLIST mainContEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContBetweenEnclitic EMPTY >
+<!ATTLIST mainContBetweenEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContPrefix EMPTY >
+<!ATTLIST mainContPrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContSuffix EMPTY >
+<!ATTLIST mainContSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContCliticOther (#PCDATA) >
+<!ATTLIST mainContCliticOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContWordBefore EMPTY >
+<!ATTLIST mainContWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContWordAfter EMPTY >
+<!ATTLIST mainContWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContWordBoth EMPTY >
+<!ATTLIST mainContWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContWordOther (#PCDATA) >
+<!ATTLIST mainContWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContVSOAfterWh EMPTY >
+<!ATTLIST mainContVSOAfterWh
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContVSOBeforeWh EMPTY >
+<!ATTLIST mainContVSOBeforeWh
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContVSOEnd EMPTY >
+<!ATTLIST mainContVSOEnd
+  checked (yes | no ) "no"
+>
+<!ELEMENT mainContVSOOther (#PCDATA) >
+<!ATTLIST mainContVSOOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContProclitic EMPTY >
+<!ATTLIST embContProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContBetweenProclitic EMPTY >
+<!ATTLIST embContBetweenProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContEnclitic EMPTY >
+<!ATTLIST embContEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContBetweenEnclitic EMPTY >
+<!ATTLIST embContBetweenEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContPrefix EMPTY >
+<!ATTLIST embContPrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContSuffix EMPTY >
+<!ATTLIST embContSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContCliticOther (#PCDATA) >
+<!ATTLIST embContCliticOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContWordBefore EMPTY >
+<!ATTLIST embContWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContWordAfter EMPTY >
+<!ATTLIST embContWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContWordBoth EMPTY >
+<!ATTLIST embContWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContWordOther (#PCDATA) >
+<!ATTLIST embContWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContVSOAfterWh EMPTY >
+<!ATTLIST embContVSOAfterWh
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContVSOBeforeWh EMPTY >
+<!ATTLIST embContVSOBeforeWh
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContVSOEnd EMPTY >
+<!ATTLIST embContVSOEnd
+  checked (yes | no ) "no"
+>
+<!ELEMENT embContVSOOther (#PCDATA) >
+<!ATTLIST embContVSOOther
+  checked (yes | no ) "no"
+>
+
+<!ELEMENT mainYNCliticExample (#PCDATA)>
+<!ELEMENT mainYNAffixExample (#PCDATA)>
+<!ELEMENT mainYNWordExample (#PCDATA)>
 <!ELEMENT embYNExample (#PCDATA)>
-<!ELEMENT contentExample (#PCDATA)>
-<!ELEMENT embContentExample (#PCDATA)>
+<!ELEMENT embYNCliticExample (#PCDATA)>
+<!ELEMENT embYNAffixExample (#PCDATA)>
+<!ELEMENT embYNWordExample (#PCDATA)>
 <!ELEMENT who (#PCDATA)>
 <!ELEMENT what (#PCDATA)>
 <!ELEMENT why (#PCDATA)>
@@ -1684,58 +2882,275 @@ ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatContemplative, ip
 <!ELEMENT which (#PCDATA)>
 <!ELEMENT whose (#PCDATA)>
 <!ELEMENT other (#PCDATA)>
+<!ELEMENT contentExample (#PCDATA)>
+<!ELEMENT mainContCliticExample (#PCDATA)>
+<!ELEMENT mainContAffixExample (#PCDATA)>
+<!ELEMENT mainContWordExample (#PCDATA)>
+<!ELEMENT mainContSpecialConditions (#PCDATA)>
+<!ELEMENT embContentExample (#PCDATA)>
+<!ELEMENT embContCliticExample (#PCDATA)>
+<!ELEMENT embContAffixExample (#PCDATA)>
+<!ELEMENT embContWordExample (#PCDATA)>
+<!ELEMENT embContSpecialConditions (#PCDATA)>
 <!ELEMENT whPronCategory (#PCDATA)>
 <!-- Relative clauses have examples and full sentence examples of headed relatives, plus
-	  examples of headless relatives if allowed. They can be of type CP, IP(with marker on V)
-	  or none at all.  If type CP, they can have complementizer (compCP) or just wh-relatives or both.
-	  If there is a complementizer, it can be the same as in verbal CPs or not (relCompSame).
-	 The relative marker (C) has a position and, if either or both sides, there may be restricted sets.
-	 Headless relatives may or may not be allowed (headless).
+      examples of headless relatives if allowed.
 -->
-<!ELEMENT relcl (example, sentExample, headlessExample)>
+<!ELEMENT relcl (relTypeCPComp, relTypeCPWh, relTypeCPRel, relTypeIPRel, relTypeIP, relTypeOther, relWordBefore, relWordAfter, relWordBoth, relWordOther, example, sentExample, relCliticExample, relWordExample, relAffixExample, headlessExample)>
 <!ATTLIST relcl
-	checkedOff (yes | no) "no"
-	exist (yes | no) "no"
-	clausePos (before | after | either | unknown) "unknown"
-	type (CP | IP) "IP"
-	compCP (yes | yesBoth | no) "no"
-	whAndComp (no | yes | optional) "no"
-	relWord (no | yes) "yes"
-	relCliticPos (before | after | both | unknown) "unknown"
-	relCompSame (yes | no) "no"
-	relCompPos (before | after | either | eitherOrBoth | beforeOrBoth | afterOrBoth | both | unknown) "unknown"
-	relCompEitherRestricted (unrestricted | restricted) "unrestricted"
-	headless (no | yes) "no"
+    checkedOff (yes | no) "no"
+    exist (yes | no) "no"
+    clausePos (before | after | either | unknown) "unknown"
+    whAndComp (no | yes | optional) "no"
+    relWord (no | yes) "yes"
+    relCliticPos (before | after | both | unknown) "unknown"
+    headless (no | yes) "no"
 >
+<!ELEMENT relTypeCPComp EMPTY >
+<!ATTLIST relTypeCPComp
+  checked (yes | no ) "no"
+>
+<!ELEMENT relTypeCPWh EMPTY >
+<!ATTLIST relTypeCPWh
+  checked (yes | no ) "no"
+>
+<!ELEMENT relTypeCPRel EMPTY >
+<!ATTLIST relTypeCPRel
+  checked (yes | no ) "no"
+>
+<!ELEMENT relTypeIPRel EMPTY >
+<!ATTLIST relTypeIPRel
+  checked (yes | no ) "no"
+>
+<!ELEMENT relTypeIP EMPTY >
+<!ATTLIST relTypeIP
+  checked (yes | no ) "no"
+>
+<!ELEMENT relTypeOther (#PCDATA) >
+<!ATTLIST relTypeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT relWordBefore EMPTY >
+<!ATTLIST relWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT relWordAfter EMPTY >
+<!ATTLIST relWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT relWordBoth EMPTY >
+<!ATTLIST relWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT relWordOther (#PCDATA) >
+<!ATTLIST relWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT relCliticExample (#PCDATA)>
+<!ELEMENT relWordExample (#PCDATA)>
+<!ELEMENT relAffixExample (#PCDATA)>
 <!ELEMENT headlessExample (#PCDATA)>
 <!-- Adverbial clauses have temporal and reason/purpose examples in full sentences.
 -->
 <!ELEMENT advcl (tempSentExample)>
 <!ATTLIST advcl
-	checkedOff (yes | no) "no"
-	advOrNPPos (before | after | either | unknown) "unknown"
+    checkedOff (yes | no) "no"
+    advOrNPPos (before | after | either | unknown) "unknown"
 >
 <!ELEMENT tempSentExample (#PCDATA)>
-<!-- Negative Constructions have examples of all the previously noted negative elements in full sentences with the negative arguments in subject position.  The negation type is determined along with questions about co-occurrence restrictions and polarity items as well as any movement in negation constructions.  Examples in full sentences with the negative arguments in object position follow.
+<!-- Negative Constructions have examples of all negative elements in full sentences with the negative arguments in subject position.  The negation type is determined along with questions about co-occurrence restrictions and polarity items as well as any movement in negation constructions.  Examples in full sentences with the negative arguments in object position follow.
 -->
-<!ELEMENT neg (degreeSubjExample, determinerSubjExample, pronounSubjExample, advTemporalExample, advLocativeExample, auxExample, auxAffixExample, verbAffixExample, npiPronounExample, npiDeterminerExample, npiTemporalExample, npiLocativeExample, objectExample, indirectObjectExample, subjectObjectExample)>
+<!ELEMENT neg (npDegreeNegProclitic, npDegreeNegEnclitic, npDegreeNegPrefix, npDegreeNegSuffix, npDegreeNegOther, npDegreeNegWordBefore, npDegreeNegWordAfter, npDegreeNegWordBoth, npDegreeNegWordOther, negTemporalTypeWord, negTemporalTypeAdverb, negTemporalTypeAdverbWord, negTemporalTypeAffix, negTemporalTypeVerb, negTemporalTypeOther, negTemporalAdverbWordBefore, negTemporalAdverbWordAfter, negTemporalAdverbWordBoth, negTemporalAdverbWordOther,
+negLocativeTypeWord, negLocativeTypeAdverb, negLocativeTypeAdverbWord, negLocativeTypeAffix, negLocativeTypeVerb, negLocativeTypeOther, negLocativeAdverbWordBefore, negLocativeAdverbWordAfter, negLocativeAdverbWordBoth, negLocativeAdverbWordOther, negAuxWord, negAuxAffix, negVAffix, negVerbalOther,
+not, negCliticExample, negAffixExample, negOtherExample, negExample, negCooccurExample, npDegreeSubjExample, negIndefExample, negIndefNPExample, negIndefSubjExample, negTemporalExample, negTemporalAdverbAffixExample, negTemporalAdverbExample, negTemporalAdverbWordExample, negTemporalAdverbWordsExample, negTemporalAffixExample, negTemporalAffixVerbExample, negTemporalVerbExample, negTemporalOtherExample,
+advTemporalExample, negLocativeExample, negLocativeAdverbAffixExample, negLocativeAdverbExample, negLocativeAdverbWordExample, negLocativeAdverbWordsExample, negLocativeAffixExample, negLocativeAffixVerbExample, negLocativeVerbExample, negLocativeOtherExample,
+advLocativeExample, negAuxExample, negAuxAffixExample, negVerbExample, negVerbalOtherExample, auxExample, auxAffixExample, verbAffixExample, negVerbalOtherSentExample, npiPronounExample, npiDeterminerExample, npiTemporalExample, npiLocativeExample, objectExample, indirectObjectExample, subjectObjectExample)>
 <!ATTLIST neg
-	checkedOff (yes | no) "no"
-	subjVerbRequired (yes | no) "no"
-	advVerbRequired (yes | no) "no"
-	auxVerbRequired (yes | no) "no"
-	type (changing | concord) "changing"
-	polarityItems (yes | no) "no"
-	objVerbRequired (yes | other | no) "other"
-	negFront (yes | optional | beforeVerb | no) "no"
+    checkedOff (yes | no) "no"
+    npDegreeNeg (yes | some | no | none) "yes"
+    npDegreeNegCooccur (yes | no) "no"
+    negIndef (yes | no | some) "yes"
+    subjVerbRequired (yes | no) "no"
+    advVerbRequired (yes | no) "no"
+    negVerbal (yes | no) "yes"
+    negAuxRequiresAux (yes | no) "no"
+    auxVerbRequired (yes | no) "no"
+    type (changing | concord) "changing"
+    polarityItems (yes | no) "no"
+    negFront (yes | optional | beforeVerb | no) "no"
+    negTwoAllowed (yes | oneOnly) "yes"
+    negFrontTwo (yes | optional | beforeVerb | no | oneOnly) "no"
+    objVerbRequired (yes | other | no) "other"
 >
-<!ELEMENT degreeSubjExample (#PCDATA)>
-<!ELEMENT determinerSubjExample (#PCDATA)>
-<!ELEMENT pronounSubjExample (#PCDATA)>
+<!ELEMENT npDegreeNegProclitic EMPTY >
+<!ATTLIST npDegreeNegProclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeNegEnclitic EMPTY >
+<!ATTLIST npDegreeNegEnclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeNegPrefix EMPTY >
+<!ATTLIST npDegreeNegPrefix
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeNegSuffix EMPTY >
+<!ATTLIST npDegreeNegSuffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeNegOther (#PCDATA) >
+<!ATTLIST npDegreeNegOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeNegWordBefore EMPTY >
+<!ATTLIST npDegreeNegWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeNegWordAfter EMPTY >
+<!ATTLIST npDegreeNegWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeNegWordBoth EMPTY >
+<!ATTLIST npDegreeNegWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT npDegreeNegWordOther (#PCDATA) >
+<!ATTLIST npDegreeNegWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT negTemporalTypeWord EMPTY >
+<!ATTLIST negTemporalTypeWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT negTemporalTypeAdverb EMPTY >
+<!ATTLIST negTemporalTypeAdverb
+  checked (yes | no ) "no"
+>
+<!ELEMENT negTemporalTypeAdverbWord EMPTY >
+<!ATTLIST negTemporalTypeAdverbWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT negTemporalTypeAffix EMPTY >
+<!ATTLIST negTemporalTypeAffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT negTemporalTypeVerb EMPTY >
+<!ATTLIST negTemporalTypeVerb
+  checked (yes | no ) "no"
+>
+<!ELEMENT negTemporalTypeOther (#PCDATA) >
+<!ATTLIST negTemporalTypeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT negTemporalAdverbWordBefore EMPTY >
+<!ATTLIST negTemporalAdverbWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT negTemporalAdverbWordAfter EMPTY >
+<!ATTLIST negTemporalAdverbWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT negTemporalAdverbWordBoth EMPTY >
+<!ATTLIST negTemporalAdverbWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT negTemporalAdverbWordOther (#PCDATA) >
+<!ATTLIST negTemporalAdverbWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT negLocativeTypeWord EMPTY >
+<!ATTLIST negLocativeTypeWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT negLocativeTypeAdverb EMPTY >
+<!ATTLIST negLocativeTypeAdverb
+  checked (yes | no ) "no"
+>
+<!ELEMENT negLocativeTypeAdverbWord EMPTY >
+<!ATTLIST negLocativeTypeAdverbWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT negLocativeTypeAffix EMPTY >
+<!ATTLIST negLocativeTypeAffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT negLocativeTypeVerb EMPTY >
+<!ATTLIST negLocativeTypeVerb
+  checked (yes | no ) "no"
+>
+<!ELEMENT negLocativeTypeOther (#PCDATA) >
+<!ATTLIST negLocativeTypeOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT negLocativeAdverbWordBefore EMPTY >
+<!ATTLIST negLocativeAdverbWordBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT negLocativeAdverbWordAfter EMPTY >
+<!ATTLIST negLocativeAdverbWordAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT negLocativeAdverbWordBoth EMPTY >
+<!ATTLIST negLocativeAdverbWordBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT negLocativeAdverbWordOther (#PCDATA) >
+<!ATTLIST negLocativeAdverbWordOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT negAuxWord EMPTY >
+<!ATTLIST negAuxWord
+  checked (yes | no ) "no"
+>
+<!ELEMENT negAuxAffix EMPTY >
+<!ATTLIST negAuxAffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT negVAffix EMPTY >
+<!ATTLIST negVAffix
+  checked (yes | no ) "no"
+>
+<!ELEMENT negVerbalOther (#PCDATA) >
+<!ATTLIST negVerbalOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT not (#PCDATA)>
+<!ELEMENT negCliticExample (#PCDATA)>
+<!ELEMENT negAffixExample (#PCDATA)>
+<!ELEMENT negOtherExample (#PCDATA)>
+<!ELEMENT negExample (#PCDATA)>
+<!ELEMENT negCooccurExample (#PCDATA)>
+<!ELEMENT npDegreeSubjExample (#PCDATA)>
+<!ELEMENT negIndefExample (#PCDATA)>
+<!ELEMENT negIndefNPExample (#PCDATA)>
+<!ELEMENT negIndefSubjExample (#PCDATA)>
+<!ELEMENT negTemporalExample (#PCDATA)>
+<!ELEMENT negTemporalAdverbAffixExample (#PCDATA)>
+<!ELEMENT negTemporalAdverbExample (#PCDATA)>
+<!ELEMENT negTemporalAdverbWordExample (#PCDATA)>
+<!ELEMENT negTemporalAdverbWordsExample (#PCDATA)>
+<!ELEMENT negTemporalAffixExample (#PCDATA)>
+<!ELEMENT negTemporalAffixVerbExample (#PCDATA)>
+<!ELEMENT negTemporalVerbExample (#PCDATA)>
+<!ELEMENT negTemporalOtherExample (#PCDATA)>
 <!ELEMENT advTemporalExample (#PCDATA)>
+<!ELEMENT negLocativeExample (#PCDATA)>
+<!ELEMENT negLocativeAdverbAffixExample (#PCDATA)>
+<!ELEMENT negLocativeAdverbExample (#PCDATA)>
+<!ELEMENT negLocativeAdverbWordExample (#PCDATA)>
+<!ELEMENT negLocativeAdverbWordsExample (#PCDATA)>
+<!ELEMENT negLocativeAffixExample (#PCDATA)>
+<!ELEMENT negLocativeAffixVerbExample (#PCDATA)>
+<!ELEMENT negLocativeVerbExample (#PCDATA)>
+<!ELEMENT negLocativeOtherExample (#PCDATA)>
 <!ELEMENT advLocativeExample (#PCDATA)>
+<!ELEMENT negAuxExample (#PCDATA)>
+<!ELEMENT negAuxAffixExample (#PCDATA)>
+<!ELEMENT negVerbExample (#PCDATA)>
+<!ELEMENT negVerbalOtherExample (#PCDATA)>
 <!ELEMENT auxAffixExample (#PCDATA)>
 <!ELEMENT verbAffixExample (#PCDATA)>
+<!ELEMENT negVerbalOtherSentExample (#PCDATA)>
 <!ELEMENT npiPronounExample (#PCDATA)>
 <!ELEMENT npiDeterminerExample (#PCDATA)>
 <!ELEMENT npiTemporalExample (#PCDATA)>
@@ -1743,15 +3158,25 @@ ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatContemplative, ip
 <!ELEMENT objectExample (#PCDATA)>
 <!ELEMENT indirectObjectExample (#PCDATA)>
 <!ELEMENT subjectObjectExample (#PCDATA)>
-<!-- Coordinate structures have examples of the conjunctions and sentence level, VP, DP, PP and AdjP coordination.  Then lists, appositives and comparatives are also exmeplified
+<!-- Coordinate structures have examples of the conjunctions and sentence level, VP, DP, PP and AdjP coordination.  Then lists, appositives and comparatives are also exemplified
 -->
-<!ELEMENT coord (and, or, but, andOr, with, other, either, neither, nor, sentExample, vpExample, dpExample, coordppExample, adjExample, listExample, appositiveExample, comparativeSentExample, conjunctionCategory)>
+<!ELEMENT coord (proclitic, enclitic, attachesOther, and, or, but, andOr, with, other, either, eitherOr, neither, nor, sentExample, vpExample, dpExample, coordppExample, adjExample, listExample, appositiveExample, conjunctionCategory)>
 <!ATTLIST coord
-	checkedOff (yes | no) "no"
-	conjWord (yes | some | no) "yes"
-	conjPos (before | after | either | other) "before"
-	noConj (no | yes) "no"
-	gap (yes | no) "yes"
+    checkedOff (yes | no) "no"
+    conjWord (yes | some | no) "yes"
+    noConj (no | yes) "no"
+>
+<!ELEMENT proclitic EMPTY >
+<!ATTLIST proclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT enclitic EMPTY >
+<!ATTLIST enclitic
+  checked (yes | no ) "no"
+>
+<!ELEMENT attachesOther (#PCDATA) >
+<!ATTLIST attachesOther
+  checked (yes | no ) "no"
 >
 <!ELEMENT and (#PCDATA)>
 <!ELEMENT or (#PCDATA)>
@@ -1759,6 +3184,7 @@ ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatContemplative, ip
 <!ELEMENT andOr (#PCDATA)>
 <!ELEMENT with (#PCDATA)>
 <!ELEMENT either (#PCDATA)>
+<!ELEMENT eitherOr (#PCDATA)>
 <!ELEMENT neither (#PCDATA)>
 <!ELEMENT nor (#PCDATA)>
 <!ELEMENT sentExample (#PCDATA)>
@@ -1768,37 +3194,82 @@ ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatContemplative, ip
 <!ELEMENT adjExample (#PCDATA)>
 <!ELEMENT listExample (#PCDATA)>
 <!ELEMENT appositiveExample (#PCDATA)>
-<!ELEMENT comparativeSentExample (#PCDATA)>
-<!-- Focus/topic constuctions have examples of topic constructions and topic markers and focus constructions and focus markers.  The position of each is determined.
+<!-- Focus or topic constuctions have examples of topic constructions and topic markers and focus constructions and focus markers.  The position of each is determined.
 -->
-<!ELEMENT focus (topicExample, topicMarkerExample, focusExample, focusMarkerExample)>
+<!ELEMENT focus (topicMarkerBefore, topicMarkerAfter, topicMarkerBoth, topicMarkerOther, focusMarkerBefore, focusMarkerAfter, focusMarkerBoth, focusMarkerOther, topicExample, topicMarkerExample, topicMarkerCliticExample, topicMarkerAffixExample, focusExample, focusMarkerExample, focusMarkerCliticExample, focusMarkerAffixExample)>
 <!ATTLIST focus
-	checkedOff (yes | no) "no"
-	topic (no | yes) "no"
-	topicPos (before | after | unknown) "unknown"
-	topicMarker (no | yesWord | yesClitic | yesAffix) "no"
-	topicMarkerPos (before | after | either | both | unknown) "unknown"
-	topicMarkerRequired (no | yes) "no"
-	topicMarkerEither (no | yes) "no"
-	focus (no | yes) "no"
-	focusPos (before | after | unknown) "unknown"
-	focusMarker (no | yesWord | yesClitic | yesAffix) "no"
-	focusMarkerPos (before | after | either | both | unknown) "unknown"
-	focusMarkerRequired (no | yes) "no"
-	focusMarkerEither (no | yes) "no"
+    checkedOff (yes | no) "no"
+    topic (no | yes) "no"
+    topicPos (before | after | unknown) "unknown"
+    topicMarker (no | yesWord | yesClitic | yesAffix) "no"
+    topicMarkerRequired (no | yes) "no"
+    focus (no | yes) "no"
+    focusPos (before | after | unknown) "unknown"
+    focusMarker (no | yesWord | yesClitic | yesAffix) "no"
+    focusMarkerRequired (no | yes) "no"
+ >
+<!ELEMENT topicMarkerBefore EMPTY >
+<!ATTLIST topicMarkerBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT topicMarkerAfter EMPTY >
+<!ATTLIST topicMarkerAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT topicMarkerBoth EMPTY >
+<!ATTLIST topicMarkerBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT topicMarkerOther (#PCDATA) >
+<!ATTLIST topicMarkerOther
+  checked (yes | no ) "no"
+>
+<!ELEMENT focusMarkerBefore EMPTY >
+<!ATTLIST focusMarkerBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT focusMarkerAfter EMPTY >
+<!ATTLIST focusMarkerAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT focusMarkerBoth EMPTY >
+<!ATTLIST focusMarkerBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT focusMarkerOther (#PCDATA) >
+<!ATTLIST focusMarkerOther
+  checked (yes | no ) "no"
 >
 <!ELEMENT topicExample (#PCDATA)>
 <!ELEMENT topicMarkerExample (#PCDATA)>
+<!ELEMENT topicMarkerCliticExample (#PCDATA)>
+<!ELEMENT topicMarkerAffixExample (#PCDATA)>
 <!ELEMENT focusExample (#PCDATA)>
 <!ELEMENT focusMarkerExample (#PCDATA)>
+<!ELEMENT focusMarkerCliticExample (#PCDATA)>
+<!ELEMENT focusMarkerAffixExample (#PCDATA)>
 <!-- Exclamations and greetings have examples of greetings, interjections, words meaning yes and no, exclamations and exclamation marker words.  The position of the marker is determined.
 -->
-<!ELEMENT excl (greetExample, intjExample, yesExample, noExample, exclExample, exclMExample)>
+<!ELEMENT excl (exclMBefore, exclMAfter, exclMBoth, exclMOther, greetExample, intjExample, yesExample, noExample, exclExample, exclMExample)>
 <!ATTLIST excl
-	checkedOff (yes | no) "no"
-	exclM (no | yes) "no"
-	exclMPos (before | after | either | both | unknown) "unknown"
-	exclMEither (no | yes) "no"
+    checkedOff (yes | no) "no"
+    exclM (no | yes) "no"
+>
+<!ELEMENT exclMBefore EMPTY >
+<!ATTLIST exclMBefore
+  checked (yes | no ) "no"
+>
+<!ELEMENT exclMAfter EMPTY >
+<!ATTLIST exclMAfter
+  checked (yes | no ) "no"
+>
+<!ELEMENT exclMBoth EMPTY >
+<!ATTLIST exclMBoth
+  checked (yes | no ) "no"
+>
+<!ELEMENT exclMOther (#PCDATA) >
+<!ATTLIST exclMOther
+  checked (yes | no ) "no"
 >
 <!ELEMENT greetExample (#PCDATA)>
 <!ELEMENT intjExample (#PCDATA)>
@@ -1806,3 +3277,8 @@ ipInflFeatPresent, ipInflFeatPast, ipInflFeatFuture, ipInflFeatContemplative, ip
 <!ELEMENT noExample (#PCDATA)>
 <!ELEMENT exclExample (#PCDATA)>
 <!ELEMENT exclMExample (#PCDATA)>
+
+<!ELEMENT final EMPTY >
+<!ATTLIST final
+    checkedOff (yes | no) "no"
+    >

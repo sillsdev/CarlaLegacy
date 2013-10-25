@@ -8,11 +8,11 @@
 <sectionRef sec="sAdvPTemporal" />
 <xsl:text> and </xsl:text>
 <sectionRef sec="sAdvPReason" />
-<xsl:text>.  All of these adverbial clauses (or phrases) act the same as simple adverbs, so they will be considered adverbial phrases with the appropriate type of complement.  Adverbial clauses of these types normally may occur either sentence-initially or sentence-finally.</xsl:text>
+<xsl:text>.  All of these adverbial clauses act the same as simple adverbs, so they will be considered adverbial phrases with the appropriate type of complement.  Adverbial clauses may normally occur either sentence-initially or sentence-finally.</xsl:text>
 </p>
         <section2 id="sAdvClTemporal">
             <secTitle>Complements of Temporal Adverbs</secTitle>
-            <p>
+            <p contentType="ctComparativeIntro">
 <xsl:text>English examples of temporal adverbs with complements used in full sentences include: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -43,10 +43,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>[When she returned from college], the dog followed Sue everywhere</langData>
-<xsl:text>.</xsl:text>
-</p>
-		   <p>
-<xsl:text>These examples show that particular temporal adverbs allow certain types of complements.  For example, </xsl:text>
+<xsl:text>. These examples show that particular temporal adverbs allow certain types of complements.  For example, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -73,25 +70,18 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>, the complements occur </xsl:text>
+<xsl:text>, the temporal adverbs allow complements similar to those discussed in section </xsl:text>
+<sectionRef sec="sComp" />
+<xsl:text>.  The complements occur </xsl:text>
 <xsl:choose>
                     <xsl:when test="//advcl/@advOrNPPos='before'">before</xsl:when>
                     <xsl:when test="//advcl/@advOrNPPos='after'">after</xsl:when>
                     <xsl:when test="//advcl/@advOrNPPos='either'">on either side of</xsl:when>
                     <xsl:when test="//advcl/@advOrNPPos='unknown'">_______</xsl:when>
                 </xsl:choose>
-<xsl:text> the adverb.  Examples of temporal adverbial clauses in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text>, included in full sentences are:</xsl:text>
+<xsl:text> the temporal adverb.  Examples of temporal adverbial clauses included in full sentences are:</xsl:text>
 </p>
-            <example num="xAdvCl.AdvClTemporal.10">
+            <example num="xAdvCl.AdvClTemporal.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//advcl/tempSentExample" />
 </xsl:variable>
@@ -105,7 +95,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//advcl/tempSentExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xAdvCl.AdvClTemporal.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdvCl.AdvClTemporal.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -114,7 +104,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xAdvCl.AdvClTemporal.10.1</xsl:text>
+<xsl:text>xAdvCl.AdvClTemporal.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -132,7 +122,7 @@
         </section2>
         <section2 id="sAdvClReason">
             <secTitle>Complements of Reason Adverbs</secTitle>
-            <p>
+            <p contentType="ctComparativeIntro">
 <xsl:text>Adverbial phrases or clauses which express reason or purpose consist of adverbs which stand alone, such as </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -168,9 +158,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>The troops threw grenades at the enemy [in order for the prisoners to escape]</langData>
-</p>
-            <p>
-<xsl:text>In the examples above, </xsl:text>
+<xsl:text>.  In the examples, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -201,10 +189,25 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>hate</langData>
 <xsl:text> in section </xsl:text>
-<sectionRef sec="sCompTypeNonfiniteCP" />
+<sectionRef sec="sComp" />
 <xsl:text>.</xsl:text>
 </p>
-            <p>
+           <p contentType="ctPracticalIntro">
+<xsl:text>Adverbial phrases or clauses which express reason or purpose consist of adverbs which stand alone, such as </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>therefore</langData>
+<xsl:text> and </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>so</langData>
+<xsl:text> (which are sometimes considered sentential conjunctions), along with those that take various types of complement clauses similar to those discussed for verbs in section </xsl:text>
+<sectionRef sec="sComp" />
+<xsl:text>.</xsl:text>
+</p>
+           <p>
 <xsl:text>Examples of reason or purpose adverbial clauses in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">

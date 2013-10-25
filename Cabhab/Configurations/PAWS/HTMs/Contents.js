@@ -24,9 +24,10 @@ function Initialize() {
 	displayStatus(ContentsCoordStatus, "coord");
 	displayStatus(ContentsFocusStatus, "focus");
 	displayStatus(ContentsExclamationsStatus, "excl");
+	displayStatus(ContentsFinalStatus, "final");
 
 	displayCheckBoxValue(OutputGrammar, "/paws/@outputGrammar");
-	displayCheckBoxValue(OutputWriter, "/paws/@outputWriter");
+	/* displayCheckBoxValue(OutputWriter, "/paws/@outputWriter"); */
 	displayCheckBoxValue(OutputWriterPractical, "/paws/@outputWriterPractical");
 	displayCheckBoxValue(OutputWriterPracticalSpanish, "/paws/@outputWriterPracticalSpanish");
 
@@ -54,7 +55,7 @@ function displayStatus(idOfItem, strElem) {
 function saveData() {
 	window.external.SetAnswerValue("/paws/@outputGrammar", OutputGrammar.value);
 
-	window.external.SetAnswerValue("/paws/@outputWriter", OutputWriter.value);
+	/*window.external.SetAnswerValue("/paws/@outputWriter", OutputWriter.value);*/
 
 	window.external.SetAnswerValue("/paws/@outputWriterPractical", OutputWriterPractical.value);
 
@@ -71,13 +72,13 @@ function SetOutputViaDescription(item) {
 			OutputGrammar.checked = true;
 		}
 		break;
-		case "writer":
+		/*case "writer":
 		if (OutputWriter.checked) {
 			OutputWriter.checked = false;
 		} else {
 			OutputWriter.checked = true;
 		}
-		break;
+		break;*/
 		case "writerPractical":
 		if (OutputWriterPractical.checked) {
 			OutputWriterPractical.checked = false;
@@ -104,13 +105,13 @@ function SetOutput(item) {
 			OutputGrammar.value = "False";
 		}
 		break;
-		case "writer":
+		/*case "writer":
 		if (OutputWriter.checked) {
 			OutputWriter.value = "True";
 		} else {
 			OutputWriter.value = "False";
 		}
-		break;
+		break;*/
 		case "writerPractical":
 		if (OutputWriterPractical.checked) {
 			OutputWriterPractical.value = "True";
@@ -146,10 +147,13 @@ function StatusClicked(idOfItem, strElem) {
 }
 function Refresh() {
 
-	if (! OutputWriter.checked && ! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked) {
+	/*if (! OutputWriter.checked && ! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked) {
 		OutputWriter.checked = true;
-	}
+	}*/
 
+	if (! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked) {
+		OutputWriterPractical.checked = true;
+	}
 	if (OutputGrammar.checked) {
 		InstructionsAddFeatures.style.display = "";
 		InstructionsSaveResultsParser.style.display = "";

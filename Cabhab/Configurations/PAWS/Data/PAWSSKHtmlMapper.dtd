@@ -4,7 +4,10 @@
 <!ENTITY nbsp "&#160;">
 <!ENTITY % embedded "#PCDATA | a | br | category | catMap | contents | example | feature |
 						 featureChart | file | help | i | ol | p | section | span |
-			 template | templateName | tool | tree | u | ul">
+			 technicalTermRef | template | templateName | tool | tree | u | ul">
+<!ENTITY % TechnicalTerms SYSTEM  "PAWSTechnicalTerms.dtd">
+%TechnicalTerms;
+
 <!ELEMENT a (%embedded;)*>
 <!ATTLIST a
 	href CDATA #REQUIRED
@@ -26,6 +29,18 @@
 <!ATTLIST catMap
 	id ID #REQUIRED
 	dataItem CDATA #REQUIRED
+>
+<!ELEMENT checkbox (#PCDATA | textBox)* >
+<!ATTLIST checkbox
+	id ID #REQUIRED
+	dataItem CDATA #REQUIRED
+	checked (yes) #IMPLIED
+	show IDREF #IMPLIED
+>
+<!ELEMENT checkboxGroup (prompt, checkbox+)>
+<!ATTLIST checkboxGroup
+	id ID #IMPLIED
+	show IDREF #IMPLIED
 >
 <!ELEMENT closeParen EMPTY>
 <!ELEMENT codeInfo (#PCDATA)>
@@ -53,7 +68,11 @@
 	dataValue CDATA #REQUIRED
 	name CDATA #REQUIRED
 >
-<!ELEMENT featureRow (featureType?, featureItem, featureExplanation)+>
+<!ELEMENT featureRow (featureType?, featureItem, featureExplanation, textBox?)+>
+<!ATTLIST featureRow
+	id ID #IMPLIED
+	show IDREF #IMPLIED
+>
 <!ELEMENT featureType (#PCDATA)>
 <!ATTLIST featureType
 	rowspan CDATA #IMPLIED
@@ -66,7 +85,7 @@
 <!--
 transparent = 'yes' means do not show yellow background, let the grey background come through.
 -->
-<!ELEMENT form ((textBox | prompt | radioGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | table | br | div)*, br?, buttons)>
+<!ELEMENT form ((textBox | prompt | radioGroup | checkboxGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | table | br | div)*, br?, buttons)>
 <!ATTLIST form
 	transparent (yes | no) "no"
 	section CDATA #REQUIRED
@@ -106,7 +125,7 @@ transparent = 'yes' means do not show yellow background, let the grey background
 >
 <!ELEMENT openParen EMPTY>
 <!ELEMENT or EMPTY>
-<!ELEMENT page (title, (introduction | EnglishExample | table | instruction)*, form, showWhen*)>
+<!ELEMENT page (title, (introduction | EnglishExample | table | instruction)*, form, showWhen*, technicalTerms?)>
 <!ATTLIST page
 	id ID #REQUIRED
 	count CDATA #IMPLIED
@@ -123,7 +142,7 @@ transparent = 'yes' means do not show yellow background, let the grey background
 	checked (yes) #IMPLIED
 	show IDREF #IMPLIED
 >
-<!ELEMENT radioGroup (groupName, prompt, radio, (radio | codeInfo | ruleInfo | radioGroup)*)>
+<!ELEMENT radioGroup (groupName, prompt, radio, (radio | codeInfo | ruleInfo | radioGroup | checkboxGroup)*)>
 <!ATTLIST radioGroup
 	id ID #IMPLIED
 	show IDREF #IMPLIED
@@ -138,7 +157,7 @@ transparent = 'yes' means do not show yellow background, let the grey background
 <!ATTLIST section
 	number CDATA #REQUIRED
 >
-<!ELEMENT showWhen (openParen*, not?, (whenRadio | whenValue), ((or | and), openParen*, not?, (whenRadio | whenValue), closeParen*)*, closeParen*)>
+<!ELEMENT showWhen (openParen*, not?, (whenRadio | whenValue | whenCheckbox), ((or | and), openParen*, not?, (whenRadio | whenValue | whenCheckbox), closeParen*)*, closeParen*)>
 <!ATTLIST showWhen
 	id ID #REQUIRED
 >
@@ -176,6 +195,10 @@ transparent = 'yes' means do not show yellow background, let the grey background
 >
 <!ELEMENT u (#PCDATA)>
 <!ELEMENT ul (li+)>
+<!ELEMENT whenCheckbox EMPTY>
+<!ATTLIST whenCheckbox
+	button IDREF #REQUIRED
+>
 <!ELEMENT whenRadio EMPTY>
 <!ATTLIST whenRadio
 	button IDREF #REQUIRED

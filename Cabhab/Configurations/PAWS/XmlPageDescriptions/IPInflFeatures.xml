@@ -1,156 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPInflFeatures" count="1/2">
-	<title level="2">Basic, Single-Clause Sentences - Inflection Features</title>
-	<introduction>Sentences normally include some kind of inflection on the verbs and possibly agreement between the subject, object and verb.</introduction>
-	<instruction>Verbs and auxiliaries usually carry inflection features, such as tense, aspect, voice and/or mood.  In most cases, these features are added by affixes, but they can also be part of irregular verbs.  Look through the features in the chart below and check any that your language uses.  <span id="IPInflFeaturesNotPracticalSpan" show="swNotPractical"> In the lexicon, add the appropriate features (as given in the chart) to the relevant affixes and also to any auxiliaries or irregular verb forms.</span> <br/>
+	<title level="2">Basic Sentences - Inflection Features</title>
+	<introduction>Sentences normally include some kind of <technicalTermRef term="ttInflection"/> on the verbs and possibly agreement between the subject, object and verb.  We will begin with inflection and then cover agreement on the following page.</introduction>
+   <form section="ip">
+      <prompt><br/>Verbs and auxiliaries usually carry inflection features, such as tense, aspect, voice and/or mood.  In most cases, these features are added by affixes, but they can also be part of irregular verbs.  Look through the features in the chart below and check any that your language uses. Please note in the mood section that <feature>declarative</feature>, <feature>indicative</feature> and <feature>realis</feature> are synonyms, so you should only check one of them.  Similarly, <feature>conditional</feature> and <feature>subjunctive</feature> are types of <feature>irrealis</feature>, so you should choose either the general <feature>irrealis</feature> feature or one or both of the subtypes. Please be sure to check <feature>-finite</feature> if your language has an infinitive form for verbs, as this will be important in <section number="10.">Complement Clauses</section>. Key in the <technicalTermRef term="ttMorphemes"/> representing those features in the third column.</prompt>
+      <instruction>  <span id="IPInflFeaturesNotPracticalSpan" show="swNotPractical"> In the lexicon, add the appropriate features (as given in the chart) to the relevant affixes and also to any auxiliaries or irregular verb forms.</span> <br/>
 		<featureChart explanations="no">
 			<featureRow>
-				<featureType rowspan="3">tense</featureType>
+				<featureType rowspan="5">tense</featureType>
 				<featureItem dataValue="ipInflFeatPresent" name="IPInflFeatPresent">present</featureItem>
 				<featureExplanation/>
+			        <textBox id="TBTensePresent" dataItem="presentTense" rows="1"/>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipInflFeatPast" name="IPInflFeatPast">past</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBTensePast" dataItem="pastTense" rows="1"/>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipInflFeatFuture" name="IPInflFeatFuture">future</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBTenseFuture" dataItem="futureTense" rows="1"/>
 			</featureRow>
-			<featureRow>
-				<featureType rowspan="13">aspect</featureType>
+		   <featureRow>
+		      <featureItem dataValue="ipInflFeatNonPast" name="IPInflFeatNonPast">-past</featureItem>
+		      <featureExplanation/>
+		      <textBox id="TBTenseNonPast" dataItem="nonPastTense" rows="1"/>
+		   </featureRow>
+		   <featureRow>
+		      <featureItem dataValue="ipInflFeatNonFuture" name="IPInflFeatNonFuture">-future</featureItem>
+		      <featureExplanation/>
+		      <textBox id="TBTenseNonFuture" dataItem="nonFutureTense" rows="1"/>
+		   </featureRow>
+		   <featureRow>
+		      <featureType rowspan="14">aspect</featureType>
+		      <featureItem dataValue="ipInflFeatCompletive" name="IPInflFeatCompletive">completive</featureItem>
+		      <featureExplanation/>
+		      <textBox id="TBAspectCompletive" dataItem="completiveAspect" rows="1"/>
+		   </featureRow>
+		   <featureRow>
 				<featureItem dataValue="ipInflFeatContemplative" name="IPInflFeatContemplative">contemplative</featureItem>
 				<featureExplanation/>
-			</featureRow>
-			<featureRow>
+		      <textBox id="TBAspectContemplative" dataItem="contemplativeAspect" rows="1"/>
+		   </featureRow>
+		   <featureRow>
+		      <featureItem dataValue="ipInflFeatContinuative" name="IPInflFeatContinuative">continuative</featureItem>
+		      <featureExplanation/>
+		      <textBox id="TBAspectContinuative" dataItem="continuativeAspect" rows="1"/>
+		   </featureRow>
+		   <featureRow>
 				<featureItem dataValue="ipInflFeatContrafactual" name="IPInflFeatContrafactual">contrafactual</featureItem>
 				<featureExplanation/>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipInflFeatCompletive" name="IPInflFeatCompletive">completive</featureItem>
-				<featureExplanation/>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipInflFeatContinuative" name="IPInflFeatContinuative">continuative</featureItem>
-				<featureExplanation/>
-			</featureRow>
+		      <textBox id="TBAspectContrafactual" dataItem="contrafactualAspect" rows="1"/>
+		   </featureRow>
 			<featureRow>
 				<featureItem dataValue="ipInflFeatHabitual" name="IPInflFeatHabitual">habitual</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBAspectHabitual" dataItem="habitualAspect" rows="1"/>
 			</featureRow>
 			<featureRow>
-				<featureItem dataValue="ipInflFeatImperfective" name="IPInflFeatImperfective">imperfective</featureItem>
+				<featureItem dataValue="ipInflFeatImperfect" name="IPInflFeatImperfect">imperfect</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBAspectImperfect" dataItem="imperfectAspect" rows="1"/>
 			</featureRow>
-			<featureRow>
+		   <featureRow>
+		      <featureItem dataValue="ipInflFeatImperfective" name="IPInflFeatImperfective">imperfective</featureItem>
+		      <featureExplanation/>
+		      <textBox id="TBAspectImperfective" dataItem="imperfectiveAspect" rows="1"/>
+		   </featureRow>
+		   <featureRow>
 				<featureItem dataValue="ipInflFeatIncompletive" name="IPInflFeatIncompletive">incompletive</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBAspectIncompletive" dataItem="incompletiveAspect" rows="1"/>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipInflFeatPerfect" name="IPInflFeatPerfect">perfect</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBAspectPerfect" dataItem="perfectAspect" rows="1"/>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipInflFeatPerfective" name="IPInflFeatPerfective">perfective</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBAspectPerfective" dataItem="perfectiveAspect" rows="1"/>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipInflFeatPotential" name="IPInflFeatPotential">potential</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBAspectPotential" dataItem="potentialAspect" rows="1"/>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipInflFeatProgressive" name="IPInflFeatProgressive">progressive</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBAspectProgressive" dataItem="progressiveAspect" rows="1"/>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipInflFeatStative" name="IPInflFeatStative">stative</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBAspectStative" dataItem="stativeAspect" rows="1"/>
 			</featureRow>
 			<featureRow>
 				<featureItem dataValue="ipInflFeatUnreal" name="IPInflFeatUnreal">unreal</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBAspectUnreal" dataItem="unrealAspect" rows="1"/>
 			</featureRow>
 			<featureRow>
-				<featureType rowspan="5">mood</featureType>
+				<featureType rowspan="8">mood</featureType>
 				<featureItem dataValue="ipInflFeatDeclarative" name="IPInflFeatDeclarative">declarative</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBMoodDeclarative" dataItem="declarativeMood" rows="1"/>
 			</featureRow>
-			<featureRow>
+		   <featureRow>
+		      <featureItem dataValue="ipInflFeatIndicative" name="IPInflFeatIndicative">indicative</featureItem>
+		      <featureExplanation/>
+		      <textBox id="TBMoodIndicative" dataItem="indicativeMood" rows="1"/>
+		   </featureRow>
+		   <featureRow>
+		      <featureItem dataValue="ipInflFeatRealis" name="IPInflFeatRealis">realis</featureItem>
+		      <featureExplanation/>
+		      <textBox id="TBMoodRealis" dataItem="realisMood" rows="1"/>
+		   </featureRow>
+		      <featureRow>
 				<featureItem dataValue="ipInflFeatImperative" name="IPInflFeatImperative">imperative</featureItem>
 				<featureExplanation/>
-			</featureRow>
+		         <textBox id="TBMoodImperative" dataItem="imperativeMood" rows="1"/>
+		      </featureRow>
 			<featureRow>
 				<featureItem dataValue="ipInflFeatInterrogative" name="IPInflFeatInterrogative">interrogative</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBMoodInterrogative" dataItem="interrogativeMood" rows="1"/>
 			</featureRow>
 			<featureRow>
-				<featureItem dataValue="ipInflFeatIrrealis" name="IPInflFeatIrrealis">irrealis</featureItem>
+				<featureItem dataValue="ipInflFeatConditional" name="IPInflFeatConditional">conditional</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBMoodConditional" dataItem="conditionalMood" rows="1"/>
 			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipInflFeatRealis" name="IPInflFeatRealis">realis</featureItem>
-				<featureExplanation/>
-			</featureRow>
+		   <featureRow>
+		      <featureItem dataValue="ipInflFeatSubjunctive" name="IPInflFeatSubjunctive">subjunctive</featureItem>
+		      <featureExplanation/>
+		      <textBox id="TBMoodSubjunctive" dataItem="subjunctiveMood" rows="1"/>
+		   </featureRow>
+		   <featureRow>
+		      <featureItem dataValue="ipInflFeatIrrealis" name="IPInflFeatIrrealis">irrealis</featureItem>
+		      <featureExplanation/>
+		      <textBox id="TBMoodIrrealis" dataItem="irrealisMood" rows="1"/>
+		   </featureRow>
 		   <featureRow>
 		      <featureType rowspan="4">other</featureType>
 		      <featureItem dataValue="ipInflFeatFinite" name="IPInflFeatFinite">finite</featureItem>
 				<featureExplanation/>
-			</featureRow>
+		      <textBox id="TBOtherFinite" dataItem="finiteOther" rows="1"/>
+		   </featureRow>
 			<featureRow>
 				<featureItem dataValue="ipInflFeatMinusFinite" name="IPInflFeatMinusFinite">-finite</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBOtherMinusFinite" dataItem="nonfiniteOther" rows="1"/>
 			</featureRow>
 		   <featureRow>
 		      <featureItem dataValue="ipInflFeatGerund" name="IPInflFeatGerund">gerund</featureItem>
 		      <featureExplanation/>
+		      <textBox id="TBOtherGerund" dataItem="gerundOther" rows="1"/>
 		   </featureRow>
 		   <featureRow>
 		      <featureItem dataValue="ipInflFeatParticiple" name="IPInflFeatParticiple">participle</featureItem>
 		      <featureExplanation/>
+		      <textBox id="TBOtherParticiple" dataItem="participleOther" rows="1"/>
 		   </featureRow>
 		   <featureRow>
 		      <featureType rowspan="9">voice</featureType>
 		      <featureItem dataValue="ipInflFeatAntipassive" name="IPInflFeatAntipassive">antipassive</featureItem>
 		      <featureExplanation/>
+		      <textBox id="TBVoiceAntipassive" dataItem="antipassiveVoice" rows="1"/>
 		   </featureRow>
 		   <featureRow>
 		      <featureItem dataValue="ipInflFeatCausative" name="IPInflFeatCausative">causative</featureItem>
 		      <featureExplanation/>
+		      <textBox id="TBVoiceCausative" dataItem="causativeVoice" rows="1"/>
 		   </featureRow>	
 		   <featureRow>
 				<featureItem dataValue="ipInflFeatPassive" name="IPInflFeatPassive">passive</featureItem>
 				<featureExplanation/>
-			</featureRow>
+		      <textBox id="TBVoicePassive" dataItem="passiveVoice" rows="1"/>
+		   </featureRow>
 			<featureRow>
 		   <featureItem dataValue="ipInflFeatActorVoice" name="IPInflFeatActorVoice">actorVoice</featureItem>
 				<featureExplanation/>
+		   <textBox id="TBVoiceActor" dataItem="actorVoice" rows="1"/>
 			</featureRow>
-			<featureRow>
+		   <featureRow>
 				<featureItem dataValue="ipInflFeatDativeVoice" name="IPInflFeatDativeVoice">dativeVoice</featureItem>
 				<featureExplanation/>
-			</featureRow>			
+		      <textBox id="TBVoiceDative" dataItem="dativeVoice" rows="1"/>
+		   </featureRow>			
 			<featureRow>
 				<featureItem dataValue="ipInflFeatGoalVoice" name="IPInflFeatGoalVoice">goalVoice</featureItem>
 				<featureExplanation/>
+			   <textBox id="TBVoiceGoal" dataItem="goalVoice" rows="1"/>
 			</featureRow>			
 		   <featureRow>
-		      <featureItem dataValue="ipInflFeatInstrumentalVoice" name="IPInflFeatInstrumentalVoice">instrumentalVoice</featureItem>
+		      <featureItem dataValue="ipInflFeatinstrumentalVoice" name="IPInflFeatInstrumentalVoice">instrumentalVoice</featureItem>
 		      <featureExplanation/>
+		      <textBox id="TBVoiceInstrumental" dataItem="instrumentalVoice" rows="1"/>
 		   </featureRow>		
 		   <featureRow>
 				<featureItem dataValue="ipInflFeatLocativeVoice" name="IPInflFeatLocativeVoice">locativeVoice</featureItem>
 				<featureExplanation/>
-			</featureRow>			
+		      <textBox id="TBVoiceLocative" dataItem="locativeVoice" rows="1"/>
+		   </featureRow>			
 			<featureRow>
 				<featureItem dataValue="ipInflFeatObjectVoice" name="IPInflFeatObjectVoice">objectVoice</featureItem>
 				<featureExplanation/>
-				</featureRow>		
+			   <textBox id="TBVoiceObject" dataItem="objectVoice" rows="1"/>
+			</featureRow>		
 		</featureChart>
-	</instruction>
-	<form section="ip" transparent="yes">
-		<br/>
+      </instruction>
+      <prompt id="IPRealisMoodPrompt" show="swIPRealisMoodMultiple">Declarative, indicative and realis are synonyms; please choose only one.</prompt>
+      <prompt id="IPIrrealisMoodPrompt" show="swIPIrrealisMoodMultiple">Conditional and subjunctive are types of irrealis; please choose either the general irreals term or one or both of the subtypes.</prompt>
+      <br/><br/>
 		<buttons>
 			<button id="IPInflFeaturesBack" value="Back" goto="IPContents.htm"/>
 			<button id="IPInflFeaturesNext" value="Next" goto="IPAgrFeatures.xml"/>
@@ -159,4 +228,50 @@
 	<showWhen id="swNotPractical">
 		<whenValue  element="paws" attr="outputGrammar" value="True"/>
 	</showWhen>
+   <showWhen id="swIPRealisMoodMultiple">
+      <whenValue element="ip/ipInflFeatDeclarative" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatIndicative" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatRealis" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="ip/ipInflFeatDeclarative" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatRealis" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatIndicative" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="ip/ipInflFeatIndicative" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatRealis" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatDeclarative" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="ip/ipInflFeatDeclarative" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatIndicative" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatRealis" attr="checked" value="yes"/>
+   </showWhen>   
+   <showWhen id="swIPIrrealisMoodMultiple">
+      <whenValue element="ip/ipInflFeatConditional" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatSubjunctive" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatIrrealis" attr="checked" value="yes"/>
+     <or/>
+      <whenValue element="ip/ipInflFeatConditional" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatSubjunctive" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatIrrealis" attr="checked" value="yes"/>
+  <or/>
+      <whenValue element="ip/ipInflFeatConditional" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatSubjunctive" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatIrrealis" attr="checked" value="yes"/>
+   </showWhen>
+   
+   &TechnicalTerms; 
 </page>

@@ -1,972 +1,2169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
-	<section1 id="sAdvP">
-		<secTitle>Los adverbios</secTitle>
-		<p>
-			<content>Los adverbios expresan cuatro tipos básicos de información:</content>
-		</p>
-		<ul>
-			<li>
-				<content> tiempo,</content>
-			</li>
-			<li>
-				<content> lugar,</content>
-			</li>
-			<li>
-				<content>modo, y</content>
-			</li>
-			<li>
-				<content>razón o propósito.</content>
-			</li>
-		</ul>
-		<p>
-			<content>Estos tipos tienen diversas características en cuanto a qué posiciones pueden presentarse y cómo pueden ser modificados. Cada tipo será considerado en su orden correspondiente.
+    <section1 id="sAdvP">
+        <secTitle>Los adverbios</secTitle>
+       <p>
+          <content>Los adverbios expresan cuatro tipos básicos de información: tiempo, lugar, modo, y razón o propósito.  También se presentan los adverbios indefinidos.  Los adverbios interrogativos se presentan en </content><sectionRef sec="sQuesContent"/><content>.</content>
+        </p>
+        <section2 id="sAdvPTemporal">
+            <secTitle>Adverbios de tiempo</secTitle>
+            <p contentType="ctComparativeIntro">
+                <content>Los adverbios de tiempo son las siguientes palabras en español: </content>
+                <langData>ya</langData>
+                <content>, </content>
+                <langData>entonces</langData>
+                <content>, </content>
+                <langData>pronto</langData>
+                <content>, </content>
+                <langData>ahora</langData>
+                <content>, </content>
+                <langData>luego</langData>
+                <content>, y </content>
+                <langData>siempre</langData>
+                <content>. </content>
+            </p>
+           <p>
+              <content>Los adverbios de tiempo en el </content>
+              <langName/>
+              <content> son: 
+              </content>
+           </p>           
+           <example>
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Adverbios de tiempo</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/temporalExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>
+
+           <p contentType="ctComparativeIntro"><content>En muchas lenguas los abverbios de tiempo puenden ser modificado por palabras de grado.  Algunos ejemplos en español son: </content>
+              <langData>muy pronto</langData>
+              <content>, </content>
+              <langData>más luego</langData>
+              <content> y </content>
+              <langData>solamente ahora</langData>
+              <content>.  </content></p>
+           
+           <p show="swAdvPTemporalDegreeNo">
+              <content>En el </content>
+              <langName/>
+              <content> los adverbios de tiempo no se modifican ni intensifican.</content>
+           </p>
+           <p show="swAdvPTemporalDegreeYesWord">
+              <content>En el </content>
+              <langName/>
+              <content>, los adverbios de tiempo pueden ser modificados por palabras de grado que se presentan  </content>
+              <text show="swAdvPTemporalDegreeWordBefore"><content>antes</content></text>
+              <text show="swAdvPTemporalDegreeWordAfter"><content>después</content></text>
+              <text show="swAdvPTemporalDegreeWordBoth"><content>en ambos lados</content></text>
+              <text show="swAdvPTemporalDegreeWordEither"><content>de cualquier lado</content></text>
+              <text show="swAdvPTemporalDegreeWordBeforeOrBoth"><content>antes o en ambos lados</content></text>
+              <text show="swAdvPTemporalDegreeWordAfterOrBoth"><content>después o en ambos lados</content></text>
+              <text show="swAdvPTemporalDegreeWordEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+              <text show="swAdvPTemporalDegreeWordNotOther"><content> del adverbio.  </content></text>
+              <text show="swAdvPTemporalDegreeWordOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="advp/temporalDegreeWordOther"/><content>.  </content></text>
+              <text show="swAdvPTemporalDegreeWordPosAndOther"><content> del adverbio y también pueden presentarse  ___</content><contentCheckBoxOther contentLoc="advp/temporalDegreeWordOther"/><content>.  </content></text>
+              <content>Las palabras de grado que pueden modificar a un adverbio de tiempo en el  </content><langName/><content> son:</content></p>
+           <example show="swAdvPTemporalDegreeYesWord">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Palabras de grado</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/temporalDegreeExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>     
+           <p show="swAdvPTemporalDegreeYesWord"><content>Algunos ejemplos de los adverbios de tiempo con una palabra de grado que los modifica son::</content></p>          
+           <example show="swAdvPTemporalDegreeYesWord">
+              <interlinear exampleLoc="advp/temporalPhraseExample"/>
+           </example>            
+           <p show="swAdvPTemporalDegreeYesAttaches">
+              <text show="swAdvPTemporalDegreeYesWord"><content>Los adverbios de tiempo también pueden tener afijos o clíticos que se unen al adverbio para intensificarlo.</content></text>
+              <text show="swAdvPTemporalDegreeYesNotWord"><content>En el </content>
+                 <langName/><content>, hay afijos o clíticos que se unen al adverbio de tiempo para intensificarlo.</content></text>
+              <content>  Los afijos o clíticos de grado que pueden modificar a un adverbio de tiempo son:</content></p>
+           <example show="swAdvPTemporalDegreeYesAttaches">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Afijos o clíticos de grado</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/temporalDegreeAffixExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>
+           <p show="swAdvPTemporalDegreeYesAttaches"><content>Algunos ejemplos de los afijos o clíticos de grado unidos con un adverbio de tiempo son:</content></p>
+           <example show="swAdvPTemporalDegreeYesAttaches">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Adverbios de tiempo modificados</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/temporalPhraseAffixExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>
+
+           <p show="swAdvPTemporalDegreeYesRedup">
+              <text show="swAdvPTemporalDegreeYesWordOrAttaches"><content>Además, los adverbios de tiempo pueden utilizar reduplicación para intensificar el significado del adverbio.</content></text>
+              <text show="swAdvPTemporalDegreeYesNotWordOrAttaches"><content>En el </content>
+                 <langName/><content>, utiliza reduplicación para intensificar el significado del adverbio de tiempo.</content></text><content>  Algunos ejemplos de los adverbios de tiempo con reduplicación son:</content></p>
+           <example show="swAdvPTemporalDegreeYesRedup">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Adverbios de tiempo con reduplicación</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/temporalDegreeRedupExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>
+           
+           <p show="swAdvPTemporalDegreeYesOther">
+              <text show="swAdvPTemporalDegreeYesWordOrAttachesOrRedup"><content>Además, los adverbios de tiempo pueden ser </content></text>
+              <text show="swAdvPTemporalDegreeYesOtherOnly"><content>En el </content>
+                 <langName/><content>, los adverbios de tiempo son </content></text><content>modificados o intensificados por ___ </content><contentCheckBoxOther contentLoc="advp/temporalDegreeOther"/><content>.  Algunos ejemplos son:</content></p>
+           <example show="swAdvPTemporalDegreeYesOther">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Adverbios de tiempo modificados</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/temporalDegreeOtherExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>
+           
+           <p>
+              <content>A menudo, información de tiempo en una oración se expresa con sustantivos.  Algunos ejemplos son: </content>
+           </p>
+           <example>
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Sustantivos de tiempo</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/temporalNounExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>
+           <p>
+              <content>Los sustantivos de tiempo también pueden ser modificados, como se muestra en estas frases nominales de tiempo: </content>
+           </p>
+           <example>
+              <interlinear exampleLoc="advp/temporalNounModifierExample"/>
+           </example>
+           
+           <p contentType="ctPracticalIntro">
+              <content>Otra forma de expresar ‘tiempo’ en una oración es con otros tipos de palabras o de frases, como frases adposicionales y cláusulas adverbiales.  Estas frases se presentan en las mismas posiciones que los adverbios de tiempo, normalmente al inicio o al final de la cláusula. Véase la sección </content>
+              <sectionRef sec="sNP"/>
+              <content> para la estructura de las frases nominales y la sección </content>
+              <sectionRef sec="sPP"/>
+              <content> para un análisis de las frases </content><case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="before">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case><content>.  Véase también la sección </content>
+              <sectionRef sec="sAdvClTemporal"/>
+              <content> para ejemplos de cláusulas adverbiales de tiempo. </content>
+           </p>
+           <p contentType="ctComparativeIntro">
+              <content>Otra forma de expresar ‘tiempo’ en una oración es con otros tipos de palabras o de frases, como frases adposicionales </content>
+                 <langData>durante mucho tiempo</langData>
+                 <content>, </content>
+                 <langData>en poco tiempo</langData>
+                 <content>, </content>
+                 <langData>a las diez por la noche</langData>
+                 <content>; y
+                    cláusulas adverbiales </content>
+                 <langData>mientras que usted está trabajando</langData>
+                 <content>, y </content>
+                 <langData>cuando llegó Susana</langData>
+              <content>.  Estas frases se presentan en las mismas posiciones que los adverbios de tiempo, normalmente al inicio o al final de la cláusula. Véase la sección </content>
+              <sectionRef sec="sNP"/>
+              <content> para la estructura de las frases nominales y la sección </content>
+              <sectionRef sec="sPP"/>
+              <content> para un análisis de las frases </content><case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="before">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case><content>.  Véase también la sección </content>
+              <sectionRef sec="sAdvClTemporal"/>
+              <content> para ejemplos de cláusulas adverbiales de tiempo. </content>
+           </p>
+        </section2>
+        <section2 id="sAdvPLocative">
+            <secTitle>Adverbios de lugar</secTitle>
+            <p contentType="ctComparativeIntro">
+                <content>Los adverbios de lugar son las siguientes palabras en español: </content>
+                <langData>aquí</langData>
+                <content>, </content>
+                <langData>allí</langData>
+                <content>, y </content>
+                <langData>allá</langData>
+                <content>.</content>
+            </p>
+ 
+           <p show="swAdvPLocativeClassifierYes">
+              <content>Las raíces de los adverbios de lugar en el </content>
+              <langName/>
+              <content> se muestran aquí.  Cada adverbio puede presentarse con el clasificador apropiado.</content>
+           </p>           
+           <p show="swAdvPLocativeClassifierNo">
+              <content>Los adverbios de lugar en el </content>
+              <langName/>
+              <content> se muestran aquí:</content>
+           </p>                   
+           <example>
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Adverbios de lugar</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/locativeExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>
+           
+           <p><content>En el </content><langName/><content>, </content><text  show="swAdvPLocativeDemSomeSame"><content>algunas de </content></text><content>las formas de los adverbios de lugar </content>
+              <case element="advp" attr="locativeDem">
+                 <caseText value="distinct">son completemente diferentes de los pronombres demostrativos. </caseText>
+                 <caseText value="same">son idénticas a los pronombres demostrativos, pero se presentan en posiciones distintos en la oración. </caseText>
+                 <caseText value="someSame">son idénticas a los pronombres demostrativos, pero otras son diferentes. </caseText>
+                 <caseText value="demAffix">se relacionan a los pronombres demostrativos por medio de un afijo que se une a un pronombre demostrativo para formar un adverbio de lugar. </caseText>
+                 <caseText value="locativeAffix">se relacionan a los pronombres demostrativos por medio de un afijo que se une a un adverbio de lugar para formar un pronombre demostrativo. </caseText>
+                 <caseText value="other">se relacionan a los pronombres demostrativos en esta manera: </caseText>
+              </case>
+              <text show="swAdvPLocativeDemOther"><content>___</content><contentCheckBoxOther contentLoc="advp/locativeDemOther"/><content>.</content></text>
+              <content> Véase la  sección </content><sectionRef sec="sPronDem"/><content> para información acerca de los pronombres demostrativos.</content></p>
+           
+           <p contentType="ctComparativeIntro"><content>En muchas lenguas los abverbios de lugar pueden ser modificados por palabras de grado.  Los adverbios de lugar en español se pueden modificar por </content>
+           <langData>solamente</langData>
+           <content> y </content>
+           <langData>mero o mismo</langData>
+           <content>, como en: </content>
+           <langData>solamente aquí</langData>
+           <content>, </content>
+           <langData>aquí mismo</langData>
+           <content> y </content>
+           <langData>allí mero</langData></p>
+ 
+           <p show="swAdvPLocativeDegreeNo">
+              <content>Los adverbios de lugar no se modifican ni intensifican en.el </content><langName/><content>.</content>
+           </p>
+           <p show="swAdvPLocativeDegreeYesWord">
+              <content>En el </content><langName/><content>, los adverbios de lugar pueden ser modificados por palabras de grado que se presentan  </content>
+              <text show="swAdvPLocativeDegreeWordBefore"><content>antes</content></text>
+              <text show="swAdvPLocativeDegreeWordAfter"><content>después</content></text>
+              <text show="swAdvPLocativeDegreeWordBoth"><content>en ambos lados</content></text>
+              <text show="swAdvPLocativeDegreeWordEither"><content>de cualquier lado</content></text>
+              <text show="swAdvPLocativeDegreeWordBeforeOrBoth"><content>antes o en ambos lados</content></text>
+              <text show="swAdvPLocativeDegreeWordAfterOrBoth"><content>después o en ambos lados</content></text>
+              <text show="swAdvPLocativeDegreeWordEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+              <text show="swAdvPLocativeDegreeWordNotOther"><content> del adverbio.  </content></text>
+              <text show="swAdvPLocativeDegreeWordOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="advp/locativeDegreeWordOther"/><content>.  </content></text>
+              <text show="swAdvPLocativeDegreeWordPosAndOther"><content> del adverbio y también pueden presentarse  ___</content><contentCheckBoxOther contentLoc="advp/locativeDegreeWordOther"/><content>.  </content></text>
+              <content>Las palabras de grado que pueden modificar a un adverbio de lugar son:</content></p>
+           <example show="swAdvPLocativeDegreeYesWord">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Palabras de grado</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/locativeDegreeExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>     
+           <p show="swAdvPLocativeDegreeYesWord"><content>Algunos ejemplos de los adverbios de lugar con una palabra de grado que los modifica son:</content></p>        
+           <example show="swAdvPLocativeDegreeYesWord">
+              <interlinear exampleLoc="advp/locativePhraseExample"/>
+           </example>     
+
+           <p show="swAdvPLocativeDegreeYesAttaches">
+              <text show="swAdvPLocativeDegreeYesWord"><content>Los adverbios de lugar también pueden tener afijos o clíticos que se unen al adverbio para intensificarlo.</content></text>
+              <text show="swAdvPLocativeDegreeYesNotWord"><content>En el </content>
+                 <langName/><content>, hay afijos o clíticos que se unen al adverbio de lugar para intensificarlo.</content></text>
+              <content>  Los afijos o clíticos de grado que pueden modificar a un adverbio de lugar son:</content></p>
+           <example show="swAdvPLocativeDegreeYesAttaches">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Afijos o clíticos de grado</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/locativeDegreeAffixExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>
+           <p show="swAdvPLocativeDegreeYesAttaches"><content>Algunos ejemplos de los afijos o clíticos de grado unidos con un adverbio de lugar son:</content></p>
+           <example show="swAdvPLocativeDegreeYesAttaches">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Adverbios de lugar modificados</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/locativePhraseAffixExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>
+           
+           <p show="swAdvPLocativeDegreeYesRedup">
+              <text show="swAdvPLocativeDegreeYesWordOrAttaches"><content>Además, los adverbios de lugar pueden utilizar reduplicación para intensificar el significado del adverbio.</content></text>
+              <text show="swAdvPLocativeDegreeYesNotWordOrAttaches"><content>En el </content>
+                 <langName/><content>, utiliza reduplicación para intensificar el significado del adverbio de lugar.</content></text><content>  Algunos ejemplos de los adverbios de lugar con reduplicación son:</content></p>
+           <example show="swAdvPLocativeDegreeYesRedup">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Adverbios de lugar con reduplicación</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/locativeDegreeRedupExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>
+           
+           <p show="swAdvPLocativeDegreeYesOther">
+              <text show="swAdvPLocativeDegreeYesWordOrAttachesOrRedup"><content>Además, los adverbios de lugar pueden ser </content></text>
+              <text show="swAdvPLocativeDegreeYesOtherOnly"><content>En el </content>
+                 <langName/><content>, los adverbios de lugar son </content></text><content>modificados o intensificados por ___ </content><contentCheckBoxOther contentLoc="advp/locativeDegreeOther"/><content>.  Algunos ejemplos son:</content></p>
+           <example show="swAdvPLocativeDegreeYesOther">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Adverbios de lugar modificados</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/locativeDegreeOtherExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>  
+           
+            <p contentType="ctPracticalIntro">
+                <content>Un lugar también se puede expresar con una frase adposicional o solo una frase nominal, la cual consiste en un nombre propio o una descripción del lugar. Las expresiones de lugar normalmente pueden presentarse al inicio o al final de una cláusula, o como complementos de verbos de movimiento. Véase la sección </content>
+                <sectionRef sec="sIPMotion"/>
+                <content> para otros ejemplos con verbos de movimiento. 
 </content>
-		</p>
-		<section2 id="sAdvPTemporal">
-			<secTitle>Adverbios de tiempo</secTitle>
-			<p>
-				<content>Los adverbios de tiempo son las siguientes palabras en español: </content>
-				<langData>ya</langData>
-				<content>, </content>
-				<langData>entonces</langData>
-				<content>, </content>
-				<langData>pronto</langData>
-				<content>, </content>
-				<langData>ahora</langData>
-				<content>, </content>
-				<langData>luego</langData>
-				<content>, y </content>
-				<langData>siempre</langData>
-				<content>. Muchas lenguas también tienen un adverbio negativo de tiempo, como </content>
-				<langData>nunca</langData>
-				<content> en español.</content>
-			</p>
-		   <p><content>Empezamos con los adverbios positivos de tiempo.</content></p>
-		   <p>
-			  <content>Los adverbios positivos de tiempo en </content>
-			  <langName/>
-			  <content> son:
-			  </content>
-		   </p>
-		   <example>
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbios positivos de tiempo</headerCol>
-					<headerCol>Gloss</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/temporalExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p><content>En muchos idioimas los abverbios de tiempo puenden ser modificado con palabras de grado.  Algunos ejemplos en español son: </content>
-			  <langData>muy pronto</langData>
-			  <content>, </content>
-			  <langData>más luego</langData>
-			  <content> y </content>
-			  <langData>solamente ahora</langData>
-			  <content>.  </content></p>
-
-		   <p><content>En </content><langName/><content>, </content>
-			  <case element="advp" attr="temporalDegree">
-				 <caseText value="yesBefore">una palabra de grado puede presentarse antes del adverbio positivo de tiempo.</caseText>
-				 <caseText value="yesAfter">una palabra de grado puede presentarse después del adverbio positivo de tiempo.</caseText>
-				 <caseText value="attaches">hay un afijo o clítico que se une al adverbio positivo de tiempo para intensificarlo.</caseText>
-				 <caseText value="noRedup">no hay palabras de grado independientes, pero utiliza reduplicación para intensificar el significado del adverbio positivo de tiempo.</caseText>
-				 <caseText value="no">los adverbios positivos de tiempo no se modifican ni intensifican.</caseText>
-			  </case>
-		   </p>
-
-		   <p show="swAdvPTemporalDegreeYes"><content>Las palabras de grado que pueden modificar un adverbio positivo de tiempo en </content><langName/><content> son:</content></p>
-		   <example show="swAdvPTemporalDegreeYes">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Palabras de grado</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/temporalDegreeExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPTemporalDegreeAttaches"><content>Los afijos o clíticos de grado que pueden modificar un adverbio positivo de tiempo en </content><langName/><content> son:</content></p>
-		   <example show="swAdvPTemporalDegreeAttaches">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Afijos o clíticos de grado</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/temporalDegreeAffixExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPTemporalDegreeNoRedup"><content>Algunos ejemplos de los adverbios positivos de tiempo con reduplicación son:</content></p>
-		   <example show="swAdvPTemporalDegreeNoRedup">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbiois de tiempo con reduplicación</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/temporalDegreeRedupExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPTemporalDegreeAttaches"><content>Algunos ejemplos de los afijos o clíticos de grado unido con un adverbio de tiempo son:</content></p>
-		   <example show="swAdvPTemporalDegreeAttaches">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbios positivos de tiempo intensificados</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/temporalPhraseAffixExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPTemporalDegreeYes"><content>Algunos ejemplos de un adverbio positivo de tiempo con una palabra de grado modificandolo son:</content></p>
-		   <example show="swAdvPTemporalDegreeYes">
-			  <interlinear exampleLoc="advp/temporalPhraseExample"/>
-		   </example>
-
-		   <p><content>Moviendo ahora al adverbio negativo de tiempo </content><langData>nunca</langData><content> que expresa el concepto de </content><gloss><content>‘no tiempo’</content></gloss><content>.</content></p>
-
-		   <p show="swAdvPNegTemporalTypeWord">
-			  <content>En </content>
-			  <langName/>
-			  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con una o más palabras independientes que no se relacionan con los adverbios positivos de tiempo.</content>
-		   </p>
-		   <p show="swAdvPNegTemporalTypeAdverb">
-			  <content>En </content>
-			  <langName/>
-			  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con un afijo negativo que se une con un adverbio positivo de tiempo para formar un adverbio negativo de tiempo.</content>
-		   </p>
-		   <p show="swAdvPNegTemporalTypeAdverbWord">
-			  <content>En </content>
-			  <langName/>
-			  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con una palabra negativa independiente que se presenta </content><case element="advp" attr="negTemporalWordPos">
-				 <caseText value="before">antes</caseText>
-				 <caseText value="after">después</caseText>
-				 <caseText value="unknown">________</caseText>
-			  </case><content> de un adverbio positivo de tiempo para formar una frase adverbial negativo de tiempo.</content>
-		   </p>
-		   <p show="swAdvPNegTemporalTypeAffix">
-			  <content>En </content>
-			  <langName/>
-			  <content>, el concepto negativo de tiempo de </content><langData>nunca</langData><content> se expresa con uno o más afijos verbales, en lugar de palabras independientes.</content>
-		   </p>
-
-		   <p show="swAdvPNegTemporalTypeVerb">
-			  <content>En </content>
-			  <langName/>
-			  <content>, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios positivos de tiempo para dar un significado negativo de tiempo.</content>
-		   </p>
-
-		   <p show="swAdvPNegTemporalTypeAdverbWord"><content>La palabra negativa que se presenta con los adverbios positivos de tiempo es:</content></p>
-		   <example show="swAdvPNegTemporalTypeAdverbWord">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Palabra negativa</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negTemporalAdverbWordExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-		   <p show="swAdvPNegTemporalTypeAdverbWord"><content>Algunos ejemplos de frases de adverbios negativos de tiempo formadas por la palabra negativa presentarse </content><case element="advp" attr="negTemporalWordPos">
-			  <caseText value="before">antes</caseText>
-			  <caseText value="after">después</caseText>
-			  <caseText value="unknown">________</caseText>
-		   </case><content> de un adverbio positivo de tiempo son:</content></p>
-		   <example show="swAdvPNegTemporalTypeAdverbWord">
-			  <interlinear exampleLoc="advp/negTemporalAdverbWordsExample"/>
-		   </example>
-
-		   <p show="swAdvPNegTemporalTypeAdverb"><content>El afijo negativo que se une con un adverbio positivo de tiempo es:</content></p>
-		   <example show="swAdvPNegTemporalTypeAdverb">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Afijo negativo</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negTemporalAdverbAffixExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-		   <p show="swAdvPNegTemporalTypeAdverb"><content>Algunos ejemplos de adverbios negativos de tiempo formados por unirse el afijo negativo con un adverbio positivo de tiempo son:</content></p>
-		   <example show="swAdvPNegTemporalTypeAdverb">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbios negativos de tiempo</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negTemporalAdverbExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPNegTemporalTypeWord"><content>Los adverbios negativos de tiempo en </content><langName/><content> son:</content></p>
-		   <example show="swAdvPNegTemporalTypeWord">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbios negativos de tiempo</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negTemporalExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPNegTemporalTypeVerb"><content>Algunos ejemplos de adverbios positivos de tiempo con un verbo negativo son:</content></p>
-		   <example show="swAdvPNegTemporalTypeVerb">
-			  <interlinear exampleLoc="advp/negTemporalExample"/>
-		   </example>
-
-		   <p show="swAdvPNegTemporalTypeAffix"><content>Los afijos adverbiales negativos de tiempo que se unen a los verbos son:</content></p>
-		   <example show="swAdvPNegTemporalTypeAffix">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Afijos adverbiales negativos de tiempo</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negTemporalAffixExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPNegTemporalTypeAffix"><content>Algunos ejemplos de afijos adverbiales negativos de tiempo unidos a los verbos son:</content></p>
-		   <example show="swAdvPNegTemporalTypeAffix">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Verbos con un afijo adverbial negativo de tiempo</headerCol>
-					<headerCol>Gloss</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negTemporalVerbExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-			<p>
-				<content>Véase la sección </content>
-				<sectionRef sec="sNegAdverb"/>
-				<content> para considerar otros ejemplos de expresiones negativas de tiempo en oraciones completas.</content>
-			</p>
-			<p>
-				<content>El tiempo de una oración también se puede expresar por otros tipos de palabras o de frases, por ejemplo: frases nominales </content>
-				<langData>ayer</langData>
-				<content>,
+            </p>
+           <p contentType="ctComparativeIntro">
+              <content>El lugar también se puede expresar con una frase adposicional, por ejemplo: </content>
+              <langData>en las montañas</langData>
+              <content>, </content>
+              <langData>hasta San José</langData>
+              <content> y </content>
+              <langData>a través del río</langData>
+              <content>.  Muchas lenguas permiten solo una frase nominal, la cual consiste en un nombre propio o una descripción del lugar. Las expresiones de lugar normalmente pueden presentarse al inicio o al final de una cláusula, o como complementos de verbos de movimiento. Véase la sección </content>
+              <sectionRef sec="sIPMotion"/>
+              <content> para otros ejemplos con verbos de movimiento. 
+              </content>
+           </p>
+        
+        </section2>
+       
+        <section2 id="sAdvPManner">
+            <secTitle>Adverbios de modo</secTitle>
+           <p contentType="ctPracticalIntro">
+              <content>Los adverbios de modo modifican al verbo directamente y se pueden escribir como palabras independientes o como afijos en el verbo.</content>
+           </p>
+           <p contentType="ctComparativeIntro">
+              <content>Los adverbios de modo modifican al verbo directamente y generalmente terminan con el sufijo </content>
+                <langData>-mente</langData>
+               <content> en español.  En algunas lenguas, los adverbios de modo se escriben como afijos en el verbo, en vez de como palabras independientes.</content>
+            </p>
+           
+           <p show="swAdvPMannerTypeWord"><content>Los adverbios de modo en el </content>
+              <langName/><content> se escriben como palabras independientes. Algunos ejemplos son:</content></p>
+           <example show="swAdvPMannerTypeWord">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Alverbios de modo</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/mannerExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>             
+           </example>
+           <p show="swAdvPMannerTypeBoth"><content>Algunos de los adverbios de modo en el </content>
+              <langName/><content> se escriben como palabras independientes, pero otros se unen con el verbo.  Los afijos se muestran con un guion en el siguiente cuadro:</content></p>
+           <example show="swAdvPMannerTypeBoth">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Alverbios de modo</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/mannerExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>             
+           </example>
+           
+           <p show="swAdvPMannerTypeAffix"><content>Los adverbios de modo en </content>
+              <langName/><content> se escriben como afijos en el verbo.  Ejemplos de estos afijos son:</content></p>
+           <example show="swAdvPMannerTypeAffix">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Afijos adverbiales de modo</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/mannerExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>             
+           </example>         
+           
+           <p contentType="ctComparativeIntro"><content>Los adverbios de modo normalmente se pueden modificar por palabras de grado.  En español, los adverbios de modo se pueden modificar por </content>
+              <langData>muy</langData>
+              <content>
+                 y </content>
+              <langData>tan</langData>
+              <content>, como en: </content>
+              <langData>muy rápidamente</langData>
+              <content>, </content>
+              <langData>tan lentamente</langData>
+              <content> y </content>
+              <langData>muy bien</langData>
+              <content>.</content>
+           </p>
+           
+           <p show="swAdvPMannerTypeWordDegreeNo">
+              <content>Los adverbios de modo no se modifican ni intensifican en.el </content><langName/><content>.</content>
+              </p>
+           <p show="swAdvPMannerTypeBothDegreeNo">
+              <content>Los adverbios de modo que se escriben como palabras independientes no se modifican ni intensifican en.el </content><langName/><content>.</content>
+           </p>
+           <p show="swAdvPMannerTypeWordOrBothDegreeYesWord">
+              <content>En el </content><langName/><content>, los adverbios de modo </content><text show="swAdvPMannerTypeBoth"><content>que se escriben como palabras independientes </content></text><content>pueden ser modificados por palabras de grado que se presentan </content>
+              <text show="swAdvPMannerDegreeWordBefore"><content>antes</content></text>
+              <text show="swAdvPMannerDegreeWordAfter"><content>después</content></text>
+              <text show="swAdvPMannerDegreeWordBoth"><content>en ambos lados</content></text>
+              <text show="swAdvPMannerDegreeWordEither"><content>de cualquier lado</content></text>
+              <text show="swAdvPMannerDegreeWordBeforeOrBoth"><content>antes o en ambos lados</content></text>
+              <text show="swAdvPMannerDegreeWordAfterOrBoth"><content>después o en ambos lados</content></text>
+              <text show="swAdvPMannerDegreeWordEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+              <text show="swAdvPMannerDegreeWordNotOther"><content> del adverbio.  </content></text>
+              <text show="swAdvPMannerDegreeWordOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="advp/mannerDegreeWordOther"/><content>.  </content></text>
+              <text show="swAdvPMannerDegreeWordPosAndOther"><content> del adverbio y también pueden presentarse  ___</content><contentCheckBoxOther contentLoc="advp/mannerDegreeWordOther"/><content>.  </content></text>
+              <content>Las palabras de grado que pueden modificar a un adverbio de modo son:</content></p>
+           <example show="swAdvPMannerTypeWordOrBothDegreeYesWord">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Palabras de grado</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/mannerDegreeExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>     
+              <p show="swAdvPMannerTypeWordOrBothDegreeYesWord"><content>Algunos ejemplos de los adverbios de modo con una palabra de grado que los modifica son:</content></p>        
+           <example show="swAdvPMannerTypeWordOrBothDegreeYesWord">
+              <interlinear exampleLoc="advp/mannerPhraseExample"/>
+           </example>            
+           
+              <p show="swAdvPMannerTypeWordOrBothDegreeYesAttaches">
+                 <text show="swAdvPMannerDegreeYesWord"><content>Los adverbios de modo también pueden tener afijos o clíticos que se unen al adverbio para intensificarlo.</content></text>
+                 <text show="swAdvPMannerDegreeYesNotWord"><content>En el </content>
+                    <langName/><content>, hay afijos o clíticos que se unen al adverbio de modo para intensificarlo.</content></text>
+                 <content>  Los afijos o clíticos de grado que pueden modificar a un adverbio de modo son:</content></p>
+              <example show="swAdvPMannerTypeWordOrBothDegreeYesAttaches">
+                 <table border="1">
+                    <headerRow>
+                       <headerCol>Afijos o clíticos de grado</headerCol>
+                       <headerCol>Glosa</headerCol>
+                    </headerRow>
+                    <row>
+                       <col exampleLoc="advp/mannerDegreeAffixExample"/>
+                       <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                    </row>
+                 </table>
+              </example>
+              <p show="swAdvPMannerTypeWordOrBothDegreeYesAttaches"><content>Algunos ejemplos de los afijos o clíticos de grado unidos con un adverbio de modo son:</content></p>
+              <example show="swAdvPMannerTypeWordOrBothDegreeYesAttaches">
+                 <table border="1">
+                    <headerRow>
+                       <headerCol>Adverbios de modo modificados</headerCol>
+                       <headerCol>Glosa</headerCol>
+                    </headerRow>
+                    <row>
+                       <col exampleLoc="advp/mannerPhraseAffixExample"/>
+                       <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                    </row>
+                 </table>
+              </example>
+              
+              <p show="swAdvPMannerTypeWordOrBothDegreeYesRedup">
+                 <text show="swAdvPMannerDegreeYesWordOrAttaches"><content>Además, los adverbios de modo pueden utilizar reduplicación para intensificar el significado del adverbio.</content></text>
+                 <text show="swAdvPMannerDegreeYesNotWordOrAttaches"><content>En el para intensificar el significado del adverbio de modo.</content>
+                    <langName/><content>, utiliza reduplicación </content></text><content>  Algunos ejemplos de los adverbios de modo con reduplicación son:</content></p>
+              <example show="swAdvPMannerTypeWordOrBothDegreeYesRedup">
+                 <table border="1">
+                    <headerRow>
+                       <headerCol>Adverbios de modo con reduplicación</headerCol>
+                       <headerCol>Glosa</headerCol>
+                    </headerRow>
+                    <row>
+                       <col exampleLoc="advp/mannerDegreeRedupExample"/>
+                       <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                    </row>
+                 </table>
+              </example>
+              
+              <p show="swAdvPMannerTypeWordOrBothDegreeYesOther">
+                 <text show="swAdvPMannerDegreeYesWordOrAttachesOrRedup"><content>Además, los adverbios de modo pueden ser </content></text>
+                 <text show="swAdvPMannerDegreeYesOtherOnly"><content>En el </content>
+                    <langName/><content>, los adverbios de modo son </content></text><content>modificados o intensificados por ___ </content><contentCheckBoxOther contentLoc="advp/mannerDegreeOther"/><content>.  Algunos ejemplos son:</content></p>
+              <example show="swAdvPMannerTypeWordOrBothDegreeYesOther">
+                 <table border="1">
+                    <headerRow>
+                       <headerCol>Adverbiois de modo modificados</headerCol>
+                       <headerCol>Glosa</headerCol>
+                    </headerRow>
+                    <row>
+                       <col exampleLoc="advp/mannerDegreeOtherExample"/>
+                       <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                    </row>
+                 </table>
+              </example>  
+              
+           <p show="swAdvPMannerTypeAffixDegreeNo">
+              <content>Los afijos adverbiales de modo no se modifican ni intensifican en.el </content><langName/><content>.</content>
+           </p>        <p show="swAdvPMannerTypeBothAffixDegreeNo">
+              <content>Los afijos adverbiales de modo no se modifican ni intensifican en.el </content><langName/><content>.</content>
+           </p>
+           <p show="swAdvPMannerTypeAffixOrBothDegreeYesAffix">
+              <content>Los afijos adverbiales de modo pueden ser modificados por afijos de grado que se presentan </content>
+              <text show="swAdvPMannerDegreeAffixBefore"><content>antes</content></text>
+              <text show="swAdvPMannerDegreeAffixAfter"><content>después</content></text>
+              <text show="swAdvPMannerDegreeAffixEither"><content>de cualquier lado</content></text>
+              <content> del afijo adverbial.  Los afijos de grado que pueden modificar a un afijo adverbial de modo en el  </content><langName/><content> son:</content></p>
+           <example show="swAdvPMannerTypeAffixOrBothDegreeYesAffix">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Afijos de grado</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/mannerAffixDegreeExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>     
+           <p show="swAdvPMannerTypeAffixOrBothDegreeYesAffix"><content>Algunos ejemplos de los afijos adverbiales de modo unidoa a un verbo con afijos de grado que también los modifican son:</content></p>          
+           <example show="swAdvPMannerTypeAffixOrBothDegreeYesAffix">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Verbos modificados</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/mannerAffixDegreePhraseExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>            
+           
+           <p show="swAdvPMannerTypeAffixOrBothDegreeYesRedup">
+              <text show="swAdvPMannerDegreeYesAffix"><content>Además, los afijos adverbiales de modo pueden utilizar reduplicación para intensificar el significado del afijo adverbial.</content></text>
+              <text show="swAdvPMannerDegreeYesNotAffix"><content>En el </content>
+                 <langName/><content>, utiliza reduplicación para intensificar el significado del afijo adverbial de modo.</content></text><content>  Algunos ejemplos de los afijos adverbiales de modo unidos a un verbo con reduplicación son:</content></p>
+           <example show="swAdvPMannerTypeAffixOrBothDegreeYesRedup">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Afijos adverbiales de modo en verbos con reduplicación</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/mannerAffixDegreeRedupExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>
+           
+           <p show="swAdvPMannerTypeAffixOrBothDegreeYesOther">
+              <text show="swAdvPMannerAffixDegreeYesAffixOrRedup"><content>Además, los afijos adverbiales de modo pueden ser </content></text>
+              <text show="swAdvPMannerAffixDegreeYesOtherOnly"><content>En el </content>
+                 <langName/><content>, los afijos adverbiales de modo son </content></text><content>modificados o intensificados por ___ </content><contentCheckBoxOther contentLoc="advp/mannerDegreeOther"/><content>.  Algunos ejemplos son:</content></p>
+           <example show="swAdvPMannerTypeAffixOrBothDegreeYesOther">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Afijos adverbiales de modo modificados</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/mannerAffixDegreeOtherExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>  
+           
+           <p contentType="ctComparativeIntro"><content>Los adverbios de modo no parecen tener el mismo significado que otros tipos de frases, con la excepción de oraciones comparativas como </content>
+              <langData>tan rápido como puede</langData><content>.  Las oraciones comparativas se tratan en la sección </content><sectionRef sec="sIPComparatives"/><content>. </content></p>          
+           <p contentType="ctPracticalIntro"><content>Los adverbios de modo no parecen tener el mismo significado que otros tipos de frases, con la excepción de oraciones comparativas que se discuten en la sección </content><sectionRef sec="sIPComparatives"/><content>. </content></p>                  
+           
+        </section2>
+       
+        <section2 id="sAdvPReason">
+            <secTitle>Adverbios que expresan razón o propósito</secTitle>
+           <p contentType="ctPracticalIntro"><content>Los adverbios que expresan razón o propósito se pueden expresar con un adverbio, una cláusula adverbial o una frase adposicional.</content></p>
+           <p contentType="ctComparativeIntro">
+                <content>Los adverbios que expresan razón o propósito son los siguientes: </content>
+                <langData>por lo tanto</langData>
+                <content> y </content>
+                <langData>pues</langData>
+                <content>.  Estos adverbios normalmente no permiten modificadores.</content></p>
+           <p><content>La razón o el propósito también se puede expresar con una cláusula adverbial que empieza con </content>
+                <langData>porque</langData>
+                <content>, </content>
+                <langData>desde que</langData>
+                <content>, </content>
+              <langData>ya que</langData>
+              <content> o </content>
+              <langData>para</langData>
+               <content>.  Estas frases o cláusulas adverbiales se presentan al inicio o al final de la oración.  La estructura de las cláusulas adverbiales se analiza en la sección </content>
+               <sectionRef sec="sAdvClReason"/>
+               <content>. </content>
+            </p>
+ 
+           <p>
+              <content>Los adverbios independientes que expresan razón o propósito o están al inicio de una cláusula adverbial que expresa razón o propósito en el </content>
+              <langName/>
+              <content> son: 
+              </content>
+           </p>
+           <example>
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Adverbios que expresan razón o propósito</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/reasonExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>           
+           <p contentType="ctComparativeIntro">
+              <content> La razón o el propósito también se pueden expresar con una frase preposicional en español, por ejemplo </content>
+              <langData>por esta razón</langData>
+              <content> o </content>
+              <langData>en propósito</langData>
+              <content>.  Las frases adposicionales se analizan en la sección </content>
+              <sectionRef sec="sPP"/>
+              <content>.
+              </content>
+           </p>
+           <p><content>Las frases </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case><content> que expresan razón o propósito son:  </content>
+           </p>
+           <example>
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Otros expresiones de razón o propósito</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="advp/reasonPPExample"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>           
+           
+           <p>
+              <content>Algunos ejemplos de oraciones con adverbios que expresan razón o propósito o de cláusulas adverbiales o frases </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case><content> que expresan razón o propósito son:
 </content>
-				<langData>anoche</langData>
-				<content>, </content>
-			   <langData>el año próximo</langData>
-				<content>, </content>
-				<langData>mañana</langData>
-				<content>, </content>
-				<langData>hace mucho tiempo</langData>
-				<content>; frases preposicionales </content>
-				<langData>durante mucho tiempo</langData>
-				<content>, </content>
-				<langData>en poco tiempo</langData>
-				<content>, </content>
-				<langData>a las diez por la noche</langData>
-				<content>; y
-					cláusulas adverbiales </content>
-				<langData>mientras que usted está trabajando</langData>
-				<content>, y </content>
-				<langData>cuando llegó Susana</langData>
-				<content>.  Estas frases se presentan en las mismas posiciones que los adverbios de tiempo, normalmente inicialmente o finalmente en la cláusula. Véase la sección </content>
-				<sectionRef sec="sNP"/>
-				<content> para la estructura de las frases nominales y la sección </content>
-				<sectionRef sec="sPP"/>
-				<content> para el análisis de las frases </content><case element="pp" attr="pPos">
-					<caseText value="before">preposicionales</caseText>
-					<caseText value="after">posposicionales</caseText>
-					<caseText value="before">preposicionales y posposicionales</caseText>
-					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
-				</case><content>.  Véase también la sección </content>
-				<sectionRef sec="sAdvClTemporal"/>
-				<content> para considerar ejemplos de cláusulas adverbiales de tiempo. </content>
-			</p>
-		</section2>
-		<section2 id="sAdvPLocative">
-			<secTitle>Adverbios de lugar</secTitle>
-			<p>
-				<content>Los adverbios de lugar son las siguientes palabras en español: </content>
-				<langData>aquí</langData>
-				<content>, </content>
-				<langData>allí</langData>
-				<content>, y </content>
-				<langData>allá</langData>
-				<content>.  Muchas lenguas también tienen un adverbio negativo de lugar que significa </content>
-				<gloss><content>‘en ninguna parte’</content></gloss>
-				<content>.</content>
-			</p>
-
-		   <p><content>Empezamos con los adverbios positivos de lugar.</content></p>
-		   <p show="swAdvPLocativeClassifierYes">
-			  <content>Los raíces de los adverbios positivos de lugar en </content>
-			  <langName/>
-			  <content> se muestran aquí.  Cada uno puede presentarse con su clasificador apropriado.</content>
-		   </p>
-		   <p show="swAdvPLocativeClassifierNo">
-			  <content>Los adverbios positivos de lugar en </content>
-			  <langName/>
-			  <content> se muestran aquí:</content>
-		   </p>
-		   <example>
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbios positivos de lugar</headerCol>
-					<headerCol>Gloss</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/locativeExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p><content>Las formas de los adverbios positivos de lugar </content>
-			  <case element="advp" attr="advLocDem">
-				 <caseText value="no">son completemente distintos de los pronombres demostrativos. </caseText>
-				 <caseText value="same">son idénticos que los pronombres demostrativos, pero se presentan en posiciones distintos en la oración. </caseText>
-				 <caseText value="affix">se relacionan con los pronombres demostrativos por medio de un afijo que se une a un pronombre demostrativo para formar un adverbio de lugar. </caseText>
-			  </case><content> Véase la  sección </content><sectionRef sec="sPronDem"/><content> para información acerca de los pronombres demostrativos.</content></p>
-
-		   <p><content>En muchos idioimas los abverbios de lugar puenden ser modificado con palabras de grado.  Los adverbios de lugar en español se pueden modificar por </content>
-		   <langData>solamente</langData>
-		   <content> y </content>
-		   <langData>mero o mismo</langData>
-		   <content>, como en: </content>
-		   <langData>solamente aquí</langData>
-		   <content>, </content>
-		   <langData>aquí mismo</langData>
-		   <content> y </content>
-		   <langData>allí mero</langData></p>
-
-		   <p><content>En </content><langName/><content>, </content>
-			  <case element="advp" attr="locativeDegree">
-				 <caseText value="yesBefore">una palabra de grado puede presentarse antes del adverbio positivo de lugar.</caseText>
-				 <caseText value="yesAfter">una palabra de grado puede presentarse después del adverbio positivo de lugar.</caseText>
-				 <caseText value="attaches">hay un afijo o clítico que se une al adverbio positivo de lugar para intensificarlo.</caseText>
-				 <caseText value="noRedup">no hay palabras de grado independientes, pero utiliza reduplicación para intensificar el significado del adverbio positivo de lugar.</caseText>
-				 <caseText value="no">los adverbios positivos de lugar no se modifican ni intensifican.</caseText>
-			  </case>
-		   </p>
-
-		   <p show="swAdvPLocativeDegreeYes"><content>Las palabras de grado que pueden modificar un adverbio positivo de lugar en </content><langName/><content> son:</content></p>
-		   <example show="swAdvPLocativeDegreeYes">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Palabras de grado</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/locativeDegreeExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPLocativeDegreeAttaches"><content>Los afijos o clíticos de grado que pueden modificar un adverbio positivo de lugar en </content><langName/><content> son:</content></p>
-		   <example show="swAdvPLocativeDegreeAttaches">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Afijos o clíticos de grado</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/locativeDegreeAffixExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPLocativeDegreeNoRedup"><content>Algunos ejemplos de los adverbios positivos de lugar con reduplicación son:</content></p>
-		   <example show="swAdvPLocativeDegreeNoRedup">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbiois de lugar con reduplicación</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/locativeDegreeRedupExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPLocativeDegreeAttaches"><content>Algunos ejemplos de los afijos o clíticos de grado unido con un adverbio de lugar son:</content></p>
-		   <example show="swAdvPLocativeDegreeAttaches">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbios positivos de lugar intensificados</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/locativePhraseAffixExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPLocativeDegreeYes"><content>Algunos ejemplos de un adverbio positivo de lugar con una palabra de grado modificandolo son:</content></p>
-		   <example show="swAdvPLocativeDegreeYes">
-			  <interlinear exampleLoc="advp/locativePhraseExample"/>
-		   </example>
-
-		   <p><content>Moviendo ahora al adverbio negativo de lugar </content><langData>en ninguna parte</langData><content> que expresa el concepto de </content><gloss><content>‘no lugar’</content></gloss><content>.</content></p>
-
-		   <p show="swAdvPNegLocativeTypeWord">
-			  <content>En </content>
-			  <langName/>
-			  <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con una o más palabras independientes que no se relacionan con los adverbios positivos de lugar.</content>
-		   </p>
-		   <p show="swAdvPNegLocativeTypeAdverb">
-			  <content>En </content>
-			  <langName/>
-			  <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con un afijo negativo que se une con un adverbio positivo de lugar para formar un adverbio negativo de lugar.</content>
-		   </p>
-		   <p show="swAdvPNegLocativeTypeAdverbWord">
-			  <content>En </content>
-			  <langName/>
-			  <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con una palabra negativa independiente que se presenta </content><case element="advp" attr="negLocativeWordPos">
-				 <caseText value="before">antes</caseText>
-				 <caseText value="after">después</caseText>
-				 <caseText value="unknown">________</caseText>
-			  </case><content> de un adverbio positivo de lugar para formar una adverbio negativo de lugar frase.</content>
-		   </p>
-		   <p show="swAdvPNegLocativeTypeAffix">
-			  <content>En </content>
-			  <langName/>
-			  <content>, el concepto negativo de lugar de </content><gloss><content>‘no lugar’</content></gloss><content> se expresa con uno o más afijos verbales, en vez de palabras independientes.</content>
-		   </p>
-
-		   <p show="swAdvPNegLocativeTypeVerb">
-			  <content>En </content>
-			  <langName/>
-			  <content>, hay solamente un afijo negativo verbal, pero puede presentarse con adverbios positivos de lugar para dar un significado negativo de lugar.</content>
-		   </p>
-
-		   <p show="swAdvPNegLocativeTypeAdverbWord"><content>La palabra negativa que se presenta con los adverbios positivos de lugar es:</content></p>
-		   <example show="swAdvPNegLocativeTypeAdverbWord">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Palabra negativa</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negLocativeAdverbWordExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-		   <p show="swAdvPNegLocativeTypeAdverbWord"><content>Algunos ejemplos de frases de adverbios negativos de lugar formado por la palabra negativa presentarse </content><case element="advp" attr="negLocativeWordPos">
-			  <caseText value="before">antes</caseText>
-			  <caseText value="after">después</caseText>
-			  <caseText value="unknown">________</caseText>
-		   </case><content> de un adverbio positivo de lugar son:</content></p>
-		   <example show="swAdvPNegLocativeTypeAdverbWord">
-			  <interlinear exampleLoc="advp/negLocativeAdverbWordsExample"/>
-		   </example>
-
-		   <p show="swAdvPNegLocativeTypeAdverb"><content>El afijo negativo que se une con un adverbio positivo de lugar es:</content></p>
-		   <example show="swAdvPNegLocativeTypeAdverb">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Afijo negativo</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negLocativeAdverbAffixExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-		   <p show="swAdvPNegLocativeTypeAdverb"><content>Algunos ejemplos de adverbios negativos de lugar formados por unirse el afijo negativo con un adverbio positivo de lugar son:</content></p>
-		   <example show="swAdvPNegLocativeTypeAdverb">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbios negativos de lugar</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negLocativeAdverbExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPNegLocativeTypeWord"><content>Los adverbios negativos de lugar en </content><langName/><content> son:</content></p>
-		   <example show="swAdvPNegLocativeTypeWord">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbios negativos de lugar</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negLocativeExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPNegLocativeTypeVerb"><content>Algunos ejemplos de adverbios positivos de lugar con un verbo negativo son:</content></p>
-		   <example show="swAdvPNegLocativeTypeVerb">
-			  <interlinear exampleLoc="advp/negLocativeExample"/>
-		   </example>
-
-		   <p show="swAdvPNegLocativeTypeAffix"><content>Los afijos adverbiales negativos de lugar que se unen a los verbos son:</content></p>
-		   <example show="swAdvPNegLocativeTypeAffix">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Afijos adverbiales negativos de lugar</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negLocativeAffixExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPNegLocativeTypeAffix"><content>Algunos ejemplos de afijos adverbiales negativos de lugar unidos a los verbos son:</content></p>
-		   <example show="swAdvPNegLocativeTypeAffix">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Verbos con un afijo adverbial negativo de lugar</headerCol>
-					<headerCol>Gloss</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/negLocativeVerbExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-			<p>
-				<content>Véase la sección </content>
-				<sectionRef sec="sNegAdverb"/>
-				<content> para considerar otros ejemplos de expresiones negativas de lugar en oraciones completas.</content>
-			</p>
-			<p>
-				<content>El lugar también se puede expresar con una frase preposicional, por ejemplo: </content>
-				<langData>en las montañas</langData>
-				<content>, </content>
-				<langData>hasta San José</langData>
-				<content> y </content>
-				<langData>a través del río</langData>
-				<content>.  Muchas lenguas permiten sólo una frase nominal, la cual consiste en un nombre propio o una descripción del lugar. Las expresiones del lugar normalmente pueden presentarse al inicio o al final en una cláusula, o como complementos para verbos de movimiento. Véase la sección </content>
-				<sectionRef sec="sIPMotion"/>
-				<content> para considerar otros ejemplos con verbos del movimiento.
-</content>
-			</p>
-		</section2>
-
-		<section2 id="sAdvPManner">
-			<secTitle>Adverbios de modo</secTitle>
-			<p>
-				<content>Los adverbios de modo directamente modifican el verbo y generalmente terminan con el sufijo </content>
-				<langData>-mente</langData>
-			   <content> en español.  En algunas lenguas, los adverbios de modo son todos escritos como afijos en el verbo, en lugar de como palabras independientes.</content>
-			</p>
-
-		   <p show="swAdvPMannerTypeWord"><content>Los adverbios de modo en </content>
-			  <langName/><content> son escritos como palabras independientes.</content></p>
-		   <p show="swAdvPMannerTypeWord"><content>Algunos ejemplos de adverbios de modo en </content>
-			  <langName/><content> son:</content></p>
-		   <example show="swAdvPMannerTypeWord">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Alverbios de modo</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/mannerExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPMannerTypeAffix"><content>Los adverbios de modo en </content>
-			  <langName/><content> son todos escritos como afijos en el verbo.</content></p>
-		   <p show="swAdvPMannerTypeAffix"><content>Algunos ejemplos de afijos adverbiales de modo en </content>
-			  <langName/><content> son:</content></p>
-		   <example show="swAdvPMannerTypeAffix">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Afijos adverbiales de modo</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/mannerExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p><content>Los adverbios de modo normalmente se pueden modificar con palabras de grado.  En español, los adverbios de modo se pueden modificar con </content>
-			  <langData>muy</langData>
-			  <content>
-				 y </content>
-			  <langData>tan</langData>
-			  <content>, como en: </content>
-			  <langData>muy rápidamente</langData>
-			  <content>, </content>
-			  <langData>tan lentamente</langData>
-			  <content> y </content>
-			  <langData>muy bien</langData>
-			  <content>.</content>
-		   </p>
-
-		   <p show="swAdvPMannerTypeWord"><content>En </content><langName/><content>, </content>
-			  <case element="advp" attr="mannerDegree">
-				 <caseText value="yesBefore">una palabra de grado puede presentarse antes de un adverbio de modo.</caseText>
-				 <caseText value="yesAfter">una palabra de grado puede presentarse después de un adverbio de modo.</caseText>
-				 <caseText value="attaches">hay un afijo o clítico que se une al adverbio de modo para intensificarlo.</caseText>
-				 <caseText value="noRedup">no hay palabras de grado independientes, pero utiliza reduplicación para intensificar el significado del adverbio de modo.</caseText>
-				 <caseText value="no">los adverbios de modo no se modifican ni intensifican.</caseText>
-			  </case>
-		   </p>
-
-		   <p show="swAdvPMannerTypeWordAndDegreeYes"><content>Las palabras de grado que puede modificar los adverbios de modo en </content><langName/><content> son:</content></p>
-		   <example show="swAdvPMannerTypeWordAndDegreeYes">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Palabras de grado</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/mannerDegreeExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPMannerTypeWordAndDegreeAttaches"><content>Los afijos o clíticos que pueden modificar los adverbios de modo en </content><langName/><content> son:</content></p>
-		   <example show="swAdvPMannerTypeWordAndDegreeAttaches">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Afijos o clíticos de grado</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/mannerDegreeAffixExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPMannerTypeWordAndDegreeNoRedup"><content>Algunos ejemplos de los adverbios de modo con reduplicación son:</content></p>
-		   <example show="swAdvPMannerTypeWordAndDegreeNoRedup">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbios de modo con reduplicación</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/mannerDegreeRedupExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPMannerTypeWordAndDegreeAttaches"><content>Algunos ejemplos de los afijos o clíticos de grado unidos a un adverbio de modo son:</content></p>
-		   <example show="swAdvPMannerTypeWordAndDegreeAttaches">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbios de modo con afijos o clíticos de grado</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/mannerPhraseAffixExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPMannerTypeWordAndDegreeYes"><content>Algunos ejemplos de los adverbios de modo con una palabra de grado modificándolos son:</content></p>
-		   <example show="swAdvPMannerTypeWordAndDegreeYes">
-			  <interlinear exampleLoc="advp/mannerDegreePhraseExample"/>
-		   </example>
-
-		   <p show="swAdvPMannerTypeAffix"><content>En </content><langName/><content>, </content>
-			  <case element="advp" attr="mannerAffixDegree">
-				 <caseText value="yesBefore">un afijo de grado puede presentarse antes de un afijo adverbial de modo.</caseText>
-				 <caseText value="yesAfter">un afijo de grado puede presentarse después de un afijo adverbial de modo.</caseText>
-				 <caseText value="noRedup">utiliza reduplicación para intensificar el significado del afijo adverbial de modo.</caseText>
-				 <caseText value="no">los afijos adverbiales de modo no se modifican ni intensifican.</caseText>
-			  </case>
-		   </p>
-
-		   <p show="swAdvPMannerTypeAffixAndDegreeYes"><content>Los afijos o clíticos de grado que pueden modificar los afijos adverbiales de modo en </content><langName/><content> son:</content></p>
-		   <example show="swAdvPMannerTypeAffixAndDegreeYes">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Afijos o clíticos de grado</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/mannerAffixDegreeExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPMannerTypeAffixAndDegreeNoRedup"><content>Algunos ejemplos de los afijos adverbiales de modo con reduplicación unidos a los verbos son:</content></p>
-		   <example show="swAdvPMannerTypeAffixAndDegreeNoRedup">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Afijos adverbiales de modo con reduplicación</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/mannerAffixDegreeRedupExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p show="swAdvPMannerTypeAffixAndDegreeYes"><content>Algunos ejemplos de los afijos adverbiales de modo con afijos de grado unidos a los verbos son:</content></p>
-		   <example show="swAdvPMannerTypeAffixAndDegreeYes">
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Afijos adverbiales de modo con afijos de grado</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/mannerAffixPhraseExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-		   <p><content>Los adverbios de modo no parece tener el  mismo significado que otros tipos de frases, con la excepción de oraciones comparativas como </content>
-			  <langData>tan rápido como puede</langData><content>.  Las oraciones comparativas se discuten en las secciones </content><sectionRef sec="sIPComparatives"/><content> y </content><sectionRef sec="sCoordComparative"/><content>. </content></p>
-
-		</section2>
-
-		<section2 id="sAdvPReason">
-			<secTitle>Adverbios que expresan razón o propósito</secTitle>
-			<p>
-				<content>Los adverbios que expresan razón o propósito son los siguientes: </content>
-				<langData>por lo tanto</langData>
-				<content> y </content>
-				<langData>pues</langData>
-				<content>.  Estos adverbios normalmente no permiten modificadores.</content></p>
-		   <p><content>La razón o el propósito también se puede expresar con una cláusula adverbial empezando con </content>
-				<langData>porque</langData>
-				<content> o </content>
-				<langData>desde que</langData>
-				<content> o </content>
-				<langData>en orden que</langData>
-			   <content>.  Estas frases o cláusulas adverbiales se presentan al inicio o al final en la oración.  La estructura de las cláusulas adverbiales será analizada en la sección </content>
-			   <sectionRef sec="sAdvClReason"/>
-			   <content>. </content>
-			</p>
-		   <p>
-			  <content>Los adverbios que expresan razón o propósito por sí mismos o que empiezan una cláusula adverbial que expresa razón o propósito en </content>
-			  <langName/>
-			  <content> son:
-			  </content>
-		   </p>
-		   <example>
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Adverbios que expresan razón o propósito</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/reasonExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-		   <p>
-			  <content> La razón o el propósito también se pueden expresar por una frase preposicional en español, por ejemplo </content>
-			  <langData>por esta razón</langData>
-			  <content> o </content>
-			  <langData>en propósito</langData>
-			  <content>.  Tales frases se analizan en la sección </content>
-			  <sectionRef sec="sPP"/>
-			  <content>.
-			  </content>
-		   </p>
-		   <p><content>Frases </content>
-			  <case element="pp" attr="pPos">
-				 <caseText value="before">preposicionales</caseText>
-				 <caseText value="after">posposicionales</caseText>
-				 <caseText value="both">preposicionales o posposicionales</caseText>
-				 <caseText value="unknown">preposicionales o posposicionales</caseText>
-			  </case><content> en </content><langName/><content> que expresan razón o propósito son:  </content>
-		   </p>
-		   <example>
-			  <table border="1">
-				 <headerRow>
-					<headerCol>Otros expresiones de razón o propósito</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="advp/reasonPPExample"/>
-					<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
-				 </row>
-			  </table>
-		   </example>
-
-		   <p>
-			  <content>Algunos ejemplos de los adverbios que expresan razón o propósito o de las cláusulas adverbiales o de frases </content>
-			  <case element="pp" attr="pPos">
-				 <caseText value="before">preposicionales</caseText>
-				 <caseText value="after">posposicionales</caseText>
-				 <caseText value="both">preposicionales o posposicionales</caseText>
-				 <caseText value="unknown">preposicionales o posposicionales</caseText>
-			  </case><content> que expresan razón o propósito en </content>
-				<langName/>
-				<content>, incluidos en oraciones completas son:
-</content>
-			</p>
-			<example>
-				<interlinear exampleLoc="advp/reasonSentExample"/>
-			</example>
-
-		</section2>
-	</section1>
-   <showWhen id="swAdvPTemporalDegreeYes">
-	  <whenValue element="advp" attr="temporalDegree" value="yesBefore"/>
-	  <or/>
-	  <whenValue element="advp" attr="temporalDegree" value="yesAfter"/>
+            </p>
+            <example>
+                <interlinear exampleLoc="advp/reasonSentExample"/>
+            </example>
+           <p contentType="ctPracticalIntro"><content>Véase la sección </content><sectionRef sec="sPP"/><content> para más información acerca de las frases </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case><content> y la sección </content><sectionRef sec="sAdvClReason"/><content> para cláusulas adverbiales que expresan razón o propósito. </content></p>
+           
+        </section2>
+        <section2 id="sAdvPIndef">
+          <secTitle>Adverbios indefinidos</secTitle>
+           <p contentType="ctComparativeIntro"><content>Hay dos sistemas básicas de adverbios indefinidos, aunque no todas las lenguas fusionan en una sola palabra: aquellos que constan de un cuantificador y un sustantivo genérico, como </content><langData>cada vez</langData><content>, </content><langData>por todas partes</langData><content>, </content><langData>en cualquier momento</langData><content>, </content><langData>en cualquier lugar</langData><content>, </content><langData>en algún momento</langData> <content>,</content> <langData>en algún lugar</langData><content> y aquellos construídos de una palabra interrogativa y una palabra indefinida, como </content><langData>cuandoquiera</langData><content> y </content><langData>dondequiera</langData><content>.</content></p>	   
+           <p contentType="ctPracticalIntro"><content>Los adverbios indefinidos se utilizan para referirse a un tiempo o un lugar no especificado. Normalmente constan de un cuantificador y un sustantivo genérico o una palabra interrogativa y una palabra indefinida, y no se pueden fusionar en una sola palabra.</content></p>
+          <p>
+             <content>El primer tipo, los adverbios indefinidos de tiempo que incluyen un cuantificador y un sustantivo genérico, en el </content>
+             <langName/>
+             <content/>
+             <text show="swTemporalIndefQWordOnly"><content> se expresan con un cuantificador y un sustantivo genérico de tiempo que se fusionan en una sola palabra. </content></text>
+             <text show="swTemporallndefQWordAndQPhrase"><content> se expresan a veces con un cuantificador y un sustantivo genérico de tiempo que se fusionan en una sola palabra, pero otros se permanecen independientes como una frase.</content></text>
+             <text show="swTemporalIndefQWordAndOther"><content> se expresan a veces con un cuantificador y un sustantivo genérico de tiempo que se fusionan en una sola palabra, pero otros se expresan con  ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefQOther"/><content>. </content></text>
+             <text show="swTemporalIndefQPhraseOnly"><content> se expresan con un cuantificador y un sustantivo genérico de tiempo que no se pueden fusionar en una sola palabra sino que se permanecen independientes como una frase. </content></text>
+             <text show="swTemporalIndefQPhraseAndOther"><content> se expresan con un cuantificador y un sustantivo genérico de tiempo que no se pueden fusionar en una sola palabra sino que se permanecen independientes como una frase, pero otros se expresan con  ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefQOther"/><content>. </content></text>
+             <text show="swTemporalIndefQWordAndQPhraseAndOther"><content> se expresan con un cuantificador y un sustantivo genérico de tiempo que a veces se fusionan en una sola palabra y otros veces se permanecen independientes como una frase, pero otros se expresan con  ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefQOther"/><content>. </content></text>
+             <content> Los adverbio indefinidos de lugar </content>
+             <text show="swLocativeIndefQWordOnly"><content>se expresan con un cuantificador y un sustantivo genérico de lugar que se fusionan en una sola palabra. </content></text>
+             <text show="swLocativeIndefQWordAndQPhrase"><content>se expresan a veces con un cuantificador y un sustantivo genérico de lugar que se fusionan en una sola palabra, pero otros se permanecen independientes como una frase.</content></text>
+             <text show="swLocativeIndefQWordAndOther"><content>se expresan a veces con un cuantificador y un sustantivo genérico de lugar que se fusionan en una sola palabra, pero otros se expresan con ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefQOther"/><content>. </content></text>
+             <text show="swLocativeIndefQPhraseOnly"><content>se expresan con un cuantificador y un sustantivo genérico de lugar que no se pueden fusionar en una sola palabra sino que se permanecen independientes como una frase. </content></text>
+             <text show="swLocativeIndefQPhraseAndOther"><content>se expresan con un cuantificador y un sustantivo genérico de lugar que no se pueden fusionar en una sola palabra sino que se permanecen independientes como una frase, pero otros se expresan con ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefQOther"/><content>.</content></text>
+             <text show="swLocativeIndefQWordAndQPhraseAndOther"><content>se expresan con un cuantificador y un sustantivo genérico de lugar que a veces se fusionan en una sola palabra y otros veces se permanecen independientes como una frase, pero otros se expresan con  ___</content><contentCheckBoxOther contentLoc="avdp/locativeIndefQOther"/><content>.</content></text>
+          </p>
+          <p show="swTemporalOrLocativeIndefQWord">
+             <content>Algunos ejemplos de los adverbios indefinidos de este tipo que se escriben como una sola palabra son:</content>
+          </p>
+          <example show="swTemporalOrLocativeIndefQWord">
+             <table border="1">
+                <caption><content>Adverbios indefinidos con cuantificadores</content></caption> 
+                <headerRow>
+                   <headerCol>Tipo</headerCol>
+                   <headerCol>Adverbio</headerCol>
+                   <headerCol>Glosa</headerCol>
+                </headerRow>				
+                <row show="swTemporalIndefQWord">
+                   <col><content>Tiempo</content></col>
+                   <col exampleLoc="advp/temporalIndefTypeQWordExample"/>
+                   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                </row>
+                <row show="swLocativeIndefQWord">
+                   <col><content>Lugar</content></col>
+                   <col exampleLoc="advp/locativeIndefTypeQWordExample"/>
+                   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                </row>
+             </table>
+          </example>
+          <p show="swTemporalOrLocativeIndefQPhrase">   
+             <text show="swTemporalIndefQPhraseAndNotOther">
+                <content>En los adverbios indefinidos de tiempo que son frases, el cuantificador se presenta </content>
+                <text show="swTemporalIndefQPQBefore"><content>antes</content></text>
+                <text show="swTemporalIndefQPQAfter"><content>después</content></text>
+                <text show="swTemporalIndefQPQBoth"><content>en ambos lados</content></text>
+                <text show="swTemporalIndefQPQEither"><content>de cualquier lado</content></text>
+                <text show="swTemporalIndefQPQBeforeOrBoth"><content>antes o en ambos lados</content></text>
+                <text show="swTemporalIndefQPQAfterOrBoth"><content>después o en ambos lados</content></text>
+                <text show="swTemporalIndefQPQEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+                <content> del sustantivo genérico. </content></text>
+             <text show="swLocativeIndefQPhraseAndNotOther">
+                <content>En los adverbios indefinidos de lugar que son frases, el cuantificador se presenta </content>
+                <text show="swLocativeIndefQPQBefore"><content>antes</content></text>
+                <text show="swLocativeIndefQPQAfter"><content>después</content></text>
+                <text show="swLocativeIndefQPQBoth"><content>en ambos lados</content></text>
+                <text show="swLocativeIndefQPQEither"><content>de cualquier lado</content></text>
+                <text show="swLocativeIndefQPQBeforeOrBoth"><content>antes o en ambos lados</content></text>
+                <text show="swLocativeIndefQPQAfterOrBoth"><content>después o en ambos lados</content></text>
+                <text show="swLocativeIndefQPQEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+                <content> del sustantivo genérico. </content></text>
+             
+             <text show="swTemporalIndefQPQOtherOnly"> 
+                <content>En los adverbios indefinidos de tiempo que son frases, el cuantificador se presenta  ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefTypeQPQOther"/>
+                <content>. </content>
+             </text>
+             <text show="swLocativeIndefQPQOtherOnly"> 
+                <content>En los adverbios indefinidos de lugar que son frases, el cuantificador se presenta  ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefTypeQPQOther"/>
+                <content>. </content>
+             </text>
+             <text show="swTemporalIndefQPhraseAndOtherAnd">
+                <content>En los adverbios indefinidos de tiempo que son frases, el cuantificador se presenta </content>
+                <text show="swTemporalIndefQPQBefore"><content>antes</content></text>
+                <text show="swTemporalIndefQPQAfter"><content>después</content></text>
+                <text show="swTemporalIndefQPQBoth"><content>en ambos lados</content></text>
+                <text show="swTemporalIndefQPQEither"><content>de cualquier lado</content></text>
+                <text show="swTemporalIndefQPQBeforeOrBoth"><content>antes o en ambos lados</content></text>
+                <text show="swTemporalIndefQPQAfterOrBoth"><content>después o en ambos lados</content></text>
+                <text show="swTemporalIndefQPQEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+                <content> del sustantivo genérico, y también puede presentarse ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefTypeQPQOther"/><content>. </content>
+             </text>
+             <text show="swLocativeIndefQPhraseAndOtherAnd">
+                <content>En los adverbios indefinidos de lugar que son frases, el cuantificador se presenta </content>
+                <text show="swLocativeIndefQPQBefore"><content>antes</content></text>
+                <text show="swLocativeIndefQPQAfter"><content>después</content></text>
+                <text show="swLocativeIndefQPQBoth"><content>en ambos lados</content></text>
+                <text show="swLocativeIndefQPQEither"><content>de cualquier lado</content></text>
+                <text show="swLocativeIndefQPQBeforeOrBoth"><content>antes o en ambos lados</content></text>
+                <text show="swLocativeIndefQPQAfterOrBoth"><content>después o en ambos lados</content></text>
+                <text show="swLocativeIndefQPQEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+                <content> del sustantivo genérico, y también puede presentarse ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefTypeQPQOther"/><content>. </content>
+             </text>
+             
+             <content>  Algunos ejemplos de frases indefinidas son:</content>
+          </p>
+          <example show="swTemporalOrLocativeIndefQPhrase">
+             <table border="1">
+                <caption><content>Frases adverbiales indefinidas con cuantificadores</content></caption> 
+                <headerRow>
+                   <headerCol>Tipo</headerCol>
+                   <headerCol>Adverbio</headerCol>
+                   <headerCol>Glosa</headerCol>
+                </headerRow>				
+                <row show="swTemporalIndefQPhrase">
+                   <col><content>Tiempo</content></col>
+                   <col exampleLoc="advp/temporalIndefTypeQPhraseExample"/>
+                   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                </row>
+                <row show="swLocativeIndefQPhrase">
+                   <col><content>Lugar</content></col>
+                   <col exampleLoc="advp/locativeIndefTypeQPhraseExample"/>
+                   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                </row>
+             </table>
+          </example>
+          <p show="swTemporalOrLocativeIndefQOther"><content>Algunos ejemplos de los indefinidos como se permite en el </content><langName/><content> son:</content>
+          </p>
+          <example show="swTemporalOrLocativeIndefQOther">
+             <table border="1">
+                <caption><content>Adverbios indefinidos con cuantificadores</content></caption> 
+             <headerRow>
+                <headerCol>Tipo</headerCol>
+                <headerCol>Adverbio</headerCol>
+                <headerCol>Glosa</headerCol>
+             </headerRow>				
+             <row show="swTemporalIndefQOther">
+                <col><content>Tiempo</content></col>
+                <col exampleLoc="advp/temporalIndefTypeQOtherExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+             <row show="swLocativeIndefQOther">
+                <col><content>Lugar</content></col>
+                <col exampleLoc="advp/locativeIndefTypeQOtherExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+             </table>
+          </example>
+          <p>
+             <content>Para el segundo tipo de indefinido que incluye una palabra interrogativa y una palabra indefinida, en el </content>
+             <langName/>
+             <content> los adverbios indefinidos de tiempo </content>
+             <text show="swTemporalIndefIntWordOnly"><content>se expresan con una palabra interrogativa de tiempo y un indefinido unidos en una sola palabra. </content></text>
+             <text show="swTemporalIndefIntWordAndIntPhrase"><content>se expresan a veces con una palabra interrogativa de tiempo y un indefinido unidos en una sola palabra, pero otros se escriben como frases. </content></text>
+             <text show="swTemporalIndefIntWordAndOther"><content>se expresan a veces con una palabra interrogativa de tiempo y un indefinido unidos en una sola palabra, pero otros se expresan por ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefIntOther"/><content>. </content></text>
+             <text show="swTemporalIndefIntPhraseOnly"><content>se expresan con una palabra interrogativa de tiempo y un indefinido que no se pueden fusionar en una sola palabra sino que  permanecen independientes como una frase. </content></text>
+             <text show="swTemporalIndefIntPhraseAndOther"><content>se expresan a veces con una palabra interrogativa de tiempo y un indefinido que no se pueden fusionar en una sola palabra sino que  permanecen independientes como una frase, pero otros se expresan por ___</content><contentCheckBoxOther contentLoc="advp/temporralIndefIntOther"/><content>. </content></text>
+             <text show="swTemporalIndefIntWordAndIntPhraseAndOther"><content>se expresan con una palabra interrogativa de tiempo y un indefinido que a veces se fusionan en una sola palabra y otros veces se permanecen independientes en una frase, pero otros se expresan por ___</content><contentCheckBoxOther contentLoc="avdp/temporalIndefIntOther"/><content>. </content></text>
+             <content> Los adverbios indefinidos de lugar </content>
+             <text show="swLocativeIndefIntWordOnly"><content>se expresan con una palabra interrogativa de lugar y un indefinido unidos en una sola palabra. </content></text>
+             <text show="swLocativeIndefIntWordAndIntPhrase"><content>se expresan a veces con una palabra interrogativa de lugar y un indefinido unidos en una sola palabra, pero otros se escriben como frases. </content></text>
+             <text show="swLocativeIndefIntWordAndOther"><content>se expresan a veces con una palabra interrogativa de lugar y un indefinido unidos en una sola palabra, pero otros se expresan por ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefIntOther"/><content>. </content></text>
+             <text show="swLocativeIndefIntPhraseOnly"><content>se expresan con una palabra interrogativa de lugar y un indefinido que no se pueden fusionar en una sola palabra sino que  permanecen independientes como una frase. </content></text>
+             <text show="swLocativeIndefIntPhraseAndOther"><content>se exprrsan a veces con una palabra interrogativa de lugar y un indefinido que no se pueden fusionar en una sola palabra sino que  permanecen independientes como una frase, pero otros se expresan por ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefIntOther"/><content>.</content></text>
+                <text show="swTemporalIndefIntWordAndIntPhraseAndOther"><content>se expresan con una palabra interrogativa de lugar y un indefinido que a veces se fusionan en una sola palabra y otros veces se permanecen independientes en una frase, pero otros se expresan por ___</content><contentCheckBoxOther contentLoc="avdp/locativeIndefIntOther"/><content>.</content></text>
+          </p>
+          <p show="swTemporalOrLocativeIndefIntWord">
+             <content>Algunos ejemplos de los adverbios indefinidos de este tipo que se escriben como una sola palabra son:</content>
+             </p>
+             <example show="swTemporalOrLocativeIndefIntWord">
+             <table border="1">
+                <caption><content>Adverbios indefinidos con interrogativos</content></caption> 
+                <headerRow>
+                   <headerCol>Tipo</headerCol>
+                   <headerCol>Adverbio</headerCol>
+                   <headerCol>Glosa</headerCol>
+                </headerRow>				
+                <row show="swTemporalIndefIntWord">
+                   <col><content>Tiempo</content></col>
+                   <col exampleLoc="advp/temporalIndefTypeIntWordExample"/>
+                   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                </row>
+                <row show="swLocativeIndefIntWord">
+                   <col><content>Lugar</content></col>
+                   <col exampleLoc="advp/locativeIndefTypeIntWordExample"/>
+                   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                </row>
+             </table>
+          </example>
+          <p show="swTemporalOrLocativeIndefIntPhrase">   
+             <text show="swTemporalIndefIntPhraseAndNotOther">
+                <content>En los adverbios indefinidos de tiempo que son frases, la palabra interrogativa se presenta </content>
+                <text show="swTemporalIndefTypeIntBefore"><content>antes</content></text>
+                <text show="swTemporalIndefTypeIntAfter"><content>después</content></text>
+                <text show="swTemporalIndefTypeIntBoth"><content>en ambos lados</content></text>
+                <text show="swTemporalIndefTypeIntEither"><content>de cualquier lado</content></text>
+                <text show="swTemporalIndefTypeIntBeforeOrBoth"><content>antes o en ambos lados</content></text>
+                <text show="swTemporalIndefTypeIntAfterOrBoth"><content>después o en ambos lados</content></text>
+                <text show="swTemporalIndefTypeIntEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+                <content> del indefinido. </content></text>
+             <text show="swLocativeIndefIntPhraseAndNotOther">
+                <content>En los adverbios indefinidos de lugar que son frases, la palabra interrogativa se presenta </content>
+                <text show="swLocativeIndefTypeIntBefore"><content>antes</content></text>
+                <text show="swLocativeIndefTypeIntAfter"><content>después</content></text>
+                <text show="swLocativeIndefTypeIntBoth"><content>en ambos lados</content></text>
+                <text show="swLocativeIndefTypeIntEither"><content>de cualquier lado</content></text>
+                <text show="swLocativeIndefTypeIntBeforeOrBoth"><content>antes o en ambos lados</content></text>
+                <text show="swLocativeIndefTypeIntAfterOrBoth"><content>después o en ambos lados</content></text>
+                <text show="swLocativeIndefTypeIntEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+                <content> del indefinido. </content></text>
+             
+             <text show="swTemporalIndefTypeIntOtherOnly"> 
+                <content>En los adverbios indefinidos de tiempo que son frases, la palabra interrogativa se presenta ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefTypeIntOther"/>
+                <content>. </content>
+             </text>
+             <text show="swLocativeIndefTypeIntOtherOnly"> 
+                <content>En los adverbios indefinidos de lugar que son frases, la palabral interrogativa se presenta ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefTypeIntOther"/>
+                <content>. </content>
+             </text>
+             <text show="swTemporalIndefIntPhraseAndOtherAnd">
+                <content>En los adverbios indefinidos de tiempo que son frases, la palabra interrogativa se presenta </content>
+                <text show="swTemporalIndefTypeIntBefore"><content>antes</content></text>
+                <text show="swTemporalIndefTypeIntAfter"><content>después</content></text>
+                <text show="swTemporalIndefTypeIntBoth"><content>en ambos lados</content></text>
+                <text show="swTemporalIndefTypeIntEither"><content>de cualquier lado</content></text>
+                <text show="swTemporalIndefTypeIntBeforeOrBoth"><content>antes o en ambos lados</content></text>
+                <text show="swTemporalIndefTypeIntAfterOrBoth"><content>después o en ambos lados</content></text>
+                <text show="swTemporalIndefTypeIntEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+                <content> del indefinido, y también puede presentarse ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefTypeIntOther"/><content>. </content>
+             </text>
+             <text show="swLocativeIndefIntPhraseAndOtherAnd">
+                <content>En los adverbios indefinidos de lugar que son frases, la palabra interrogativa se presenta </content>
+                <text show="swLocativeIndefTypeIntBefore"><content>antes</content></text>
+                <text show="swLocativeIndefTypeIntAfter"><content>después</content></text>
+                <text show="swLocativeIndefTypeIntBoth"><content>en ambos lados</content></text>
+                <text show="swLocativeIndefTypeIntEither"><content>de cualquier lado</content></text>
+                <text show="swLocativeIndefTypeIntBeforeOrBoth"><content>antes o en ambos lados</content></text>
+                <text show="swLocativeIndefTypeIntAfterOrBoth"><content>después o en ambos lados</content></text>
+                <text show="swLocativeIndefTypeIntEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+                <content> del indefinido, y también puede presentarse ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefTypeIntOther"/><content>. </content>
+             </text>
+             
+             <content>  Algunos ejemplos de las frases indefinidas son:</content>
+          </p>
+          <example show="swTemporalOrLocativeIndefIntPhrase">
+             <table border="1">
+                <caption><content>Frases adverbiales indefinidas con palabras interrogativas</content></caption> 
+                <headerRow>
+                   <headerCol>Tipo</headerCol>
+                   <headerCol>Adverbio</headerCol>
+                   <headerCol>Glosa</headerCol>
+                </headerRow>			
+                <row show="swTemporalIndefIntPhrase">
+                   <col><content>Tiempo</content></col>
+                   <col exampleLoc="advp/temporalIndefTypeIntPhraseExample"/>
+                   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                </row>
+                <row show="swLocativeIndefIntPhrase">
+                   <col><content>Lugar</content></col>
+                   <col exampleLoc="advp/locativeIndefTypeIntPhraseExample"/>
+                   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                </row>
+             </table>
+          </example>
+           <p show="swTemporalOrLocativeIndefIntOther"><content>Algunos ejemplos de los indefinidos formados como se permiten en el </content><langName/><content> son:</content>
+          </p>
+          <example show="swTemporalOrLocativeIndefIntOther">
+             <table border="1">
+                <caption><content>Adverbios indefinidos con palabras interrogativas</content></caption> 
+                <headerRow>
+                   <headerCol>Tipo</headerCol>
+                   <headerCol>Adverbio</headerCol>
+                   <headerCol>Glosa</headerCol>
+                </headerRow>				
+                <row show="swTemporalIndefIntOther">
+                   <col><content>Tiempo</content></col>
+                   <col exampleLoc="advp/temporalIndefTypeIntOtherExample"/>
+                   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                </row>
+                <row show="swLocativeIndefIntOther">
+                   <col><content>Lugar</content></col>
+                   <col exampleLoc="advp/locativeIndefTypeIntOtherExample"/>
+                   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                </row>
+             </table>
+          </example>
+       </section2>
+       
+    </section1>
+   
+   <showWhen id="swAdvPTemporalDegreeNo">
+      <whenValue element="advp" attr="temporalDegree" value="no"/>
    </showWhen>
-   <showWhen id="swAdvPTemporalDegreeAttaches">
-	  <whenValue element="advp" attr="temporalDegree" value="attaches"/>
+   <showWhen id="swAdvPTemporalDegreeYesWord">
+      <whenValue element="advp" attr="temporalDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWord" attr="checked" value="yes"/>
    </showWhen>
-   <showWhen id="swAdvPTemporalDegreeNoRedup">
-	  <whenValue element="advp" attr="temporalDegree" value="noRedup"/>
+   <showWhen id="swAdvPTemporalDegreeYesAttaches">
+      <whenValue element="advp" attr="temporalDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeAttaches" attr="checked" value="yes"/>
    </showWhen>
-   <showWhen id="swAdvPNegTemporalTypeAdverbWord">
-	  <whenValue element="advp"  attr="negTemporalType" value="adverbWord"/>
+   <showWhen id="swAdvPTemporalDegreeYesRedup">
+      <whenValue element="advp" attr="temporalDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeRedup" attr="checked" value="yes"/>
    </showWhen>
-   <showWhen id="swAdvPNegTemporalTypeAdverb">
-	  <whenValue element="advp"  attr="negTemporalType" value="adverb"/>
+   <showWhen id="swAdvPTemporalDegreeYesOther">
+      <whenValue element="advp" attr="temporalDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeOther" attr="checked" value="yes"/>
    </showWhen>
-   <showWhen id="swAdvPNegTemporalTypeAffix">
-	  <whenValue element="advp" attr="negTemporalType" value="affix"/>
+   <showWhen id="swAdvPTemporalDegreeWordBefore">
+      <whenValue element="advp/temporalDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swAdvPTemporalDegreeWordAfter">
+      <whenValue element="advp/temporalDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swAdvPTemporalDegreeWordBoth">
+      <whenValue element="advp/temporalDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPTemporalDegreeWordEither">
+      <whenValue element="advp/temporalDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swAdvPTemporalDegreeWordBeforeOrBoth">
+      <whenValue element="advp/temporalDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPTemporalDegreeWordAfterOrBoth">
+      <whenValue element="advp/temporalDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPTemporalDegreeWordEitherOrBoth">
+      <whenValue element="advp/temporalDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPTemporalDegreeWordNotOther">
+      <whenValue element="advp/temporalDegreeWordOther" attr="checked" value="no"/>
    </showWhen>
-   <showWhen id="swAdvPNegTemporalTypeWord">
-	  <whenValue element="advp" attr="negTemporalType" value="word"/>
+   <showWhen id="swAdvPTemporalDegreeWordOtherOnly">
+      <whenValue element="advp/temporalDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordOther" attr="checked" value="yes"/>
    </showWhen>
-   <showWhen id="swAdvPNegTemporalTypeVerb">
-	  <whenValue element="advp" attr="negTemporalType" value="verb"/>
+   <showWhen id="swAdvPTemporalDegreeWordPosAndOther">
+      <whenValue element="advp/temporalDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/temporalDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/temporalDegreeWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordOther" attr="checked" value="yes"/>      
    </showWhen>
-   <showWhen id="swAdvPNegTemporalTypeWordOrVerb">
-	  <whenValue element="advp" attr="negTemporalType" value="word"/>
-	  <or/>
-	  <whenValue element="advp" attr="negTemporalType" value="verb"/>
+   
+   <showWhen id="swAdvPTemporalDegreeYesNotWord">
+      <whenValue element="advp" attr="temporalDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWord" attr="checked" value="no"/>
    </showWhen>
+   <showWhen id="swAdvPTemporalDegreeYesNotWordOrAttaches">
+      <whenValue element="advp" attr="temporalDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeAttaches" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalDegreeYesOtherOnly">
+      <whenValue element="advp" attr="temporalDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeAttaches" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeRedup" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalDegreeYesWordOrAttaches">
+      <whenValue element="advp/temporalDegreeWord" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/temporalDegreeAttaches" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalDegreeYesWordOrAttachesOrRedup">
+      <whenValue element="advp/temporalDegreeWord" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/temporalDegreeAttaches" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/temporalDegreeRedup" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swAdvPLocativeDemOther">
+      <whenValue element="advp" attr="locativeDem" value="other"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDemSomeSame">
+      <whenValue element="advp" attr="locativeDem" value="someSame"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeNo">
+      <whenValue element="advp" attr="locativeDegree" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeYesWord">
+      <whenValue element="advp" attr="locativeDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWord" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeYesAttaches">
+      <whenValue element="advp" attr="locativeDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeAttaches" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeYesRedup">
+      <whenValue element="advp" attr="locativeDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeRedup" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeYesOther">
+      <whenValue element="advp" attr="locativeDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeWordBefore">
+      <whenValue element="advp/locativeDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swAdvPLocativeDegreeWordAfter">
+      <whenValue element="advp/locativeDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swAdvPLocativeDegreeWordBoth">
+      <whenValue element="advp/locativeDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPLocativeDegreeWordEither">
+      <whenValue element="advp/locativeDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swAdvPLocativeDegreeWordBeforeOrBoth">
+      <whenValue element="advp/locativeDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPLocativeDegreeWordAfterOrBoth">
+      <whenValue element="advp/locativeDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPLocativeDegreeWordEitherOrBoth">
+      <whenValue element="advp/locativeDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPLocativeDegreeWordNotOther">
+      <whenValue element="advp/locativeDegreeWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeWordOtherOnly">
+      <whenValue element="advp/locativeDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeWordPosAndOther">
+      <whenValue element="advp/locativeDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeDegreeWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordOther" attr="checked" value="yes"/>      
+   </showWhen>
+   
+   <showWhen id="swAdvPLocativeDegreeYesNotWord">
+      <whenValue element="advp" attr="locativeDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWord" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeYesNotWordOrAttaches">
+      <whenValue element="advp" attr="locativeDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeAttaches" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeYesOtherOnly">
+      <whenValue element="advp" attr="locativeDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeAttaches" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeRedup" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeYesWordOrAttaches">
+      <whenValue element="advp/locativeDegreeWord" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeDegreeAttaches" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeYesWordOrAttachesOrRedup">
+      <whenValue element="advp/locativeDegreeWord" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeDegreeAttaches" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeDegreeRedup" attr="checked" value="yes"/>
+   </showWhen>
+   
 
-   <showWhen id="swAdvPLocativeDegreeYes">
-	  <whenValue element="advp" attr="locativeDegree" value="yesBefore"/>
-	  <or/>
-	  <whenValue element="advp" attr="locativeDegree" value="yesAfter"/>
-   </showWhen>
-   <showWhen id="swAdvPLocativeDegreeAttaches">
-	  <whenValue element="advp" attr="locativeDegree" value="attaches"/>
-   </showWhen>
-   <showWhen id="swAdvPLocativeDegreeNoRedup">
-	  <whenValue element="advp" attr="locativeDegree" value="noRedup"/>
-   </showWhen>
-   <showWhen id="swAdvPNegLocativeTypeAdverbWord">
-	  <whenValue element="advp"  attr="negLocativeType" value="adverbWord"/>
-   </showWhen>
-   <showWhen id="swAdvPNegLocativeTypeAdverb">
-	  <whenValue element="advp"  attr="negLocativeType" value="adverb"/>
-   </showWhen>
-   <showWhen id="swAdvPNegLocativeTypeAffix">
-	  <whenValue element="advp" attr="negLocativeType" value="affix"/>
-   </showWhen>
-   <showWhen id="swAdvPNegLocativeTypeWord">
-	  <whenValue element="advp" attr="negLocativeType" value="word"/>
-   </showWhen>
-   <showWhen id="swAdvPNegLocativeTypeVerb">
-	  <whenValue element="advp" attr="negLocativeType" value="verb"/>
-   </showWhen>
-   <showWhen id="swAdvPNegLocativeTypeWordOrVerb">
-	  <whenValue element="advp" attr="negLocativeType" value="word"/>
-	  <or/>
-	  <whenValue element="advp" attr="negLocativeType" value="verb"/>
-   </showWhen>
-
-   <showWhen id="swAdvPMannerTypeWord">
-	  <whenValue element="advp" attr="mannerType" value="word"/>
-   </showWhen>
-   <showWhen id="swAdvPMannerTypeWordAndDegreeYes">
-	  <whenValue element="advp" attr="mannerType" value="word"/>
-	  <and/>
-	  <whenValue element="advp" attr="mannerDegree" value="yesBefore"/>
-	  <or/>
-	  <whenValue element="advp" attr="mannerType" value="word"/>
-	  <and/>
-	  <whenValue element="advp" attr="mannerDegree" value="yesAfter"/>
-   </showWhen>
-   <showWhen id="swAdvPMannerTypeWordAndDegreeAttaches">
-	  <whenValue element="advp" attr="mannerType" value="word"/>
-	  <and/>
-	  <whenValue element="advp" attr="mannerDegree" value="attaches"/>
-   </showWhen>
-   <showWhen id="swAdvPMannerTypeWordAndDegreeNoRedup">
-	  <whenValue element="advp" attr="mannerType" value="word"/>
-	  <and/>
-	  <whenValue element="advp" attr="mannerDegree" value="noRedup"/>
+<showWhen id="swAdvPMannerTypeWord">
+   <whenValue element="advp" attr="mannerType" value="word"/>
+</showWhen>
+   <showWhen id="swAdvPMannerTypeBoth">
+      <whenValue element="advp" attr="mannerType" value="both"/>
    </showWhen>
    <showWhen id="swAdvPMannerTypeAffix">
-	  <whenValue element="advp" attr="mannerType" value="affix"/>
+      <whenValue element="advp" attr="mannerType" value="Affix"/>
    </showWhen>
-   <showWhen id="swAdvPMannerTypeAffixAndDegreeYes">
-	  <whenValue element="advp" attr="mannerType" value="affix"/>
-	  <and/>
-	  <whenValue element="advp" attr="mannerAffixDegree" value="yesBefore"/>
-	  <or/>
-	  <whenValue element="advp" attr="mannerType" value="affix"/>
-	  <and/>
-	  <whenValue element="advp" attr="mannerAffixDegree" value="yesAfter"/>
+   <showWhen id="swAdvPMannerTypeWordDegreeNo">
+      <whenValue element="advp" attr="mannerType" value="word"/>
+      <and/>
+      <whenValue element="advp" attr="mannerDegree" value="no"/>
    </showWhen>
-   <showWhen id="swAdvPMannerTypeAffixAndDegreeNoRedup">
-	  <whenValue element="advp" attr="mannerType" value="affix"/>
-	  <and/>
-	  <whenValue element="advp" attr="mannerAffixDegree" value="noRedup"/>
+   <showWhen id="swAdvPMannerTypeBothDegreeNo">
+      <whenValue element="advp" attr="mannerType" value="both"/>
+      <and/>
+      <whenValue element="advp" attr="mannerDegree" value="no"/>
+   </showWhen>   
+   <showWhen id="swAdvPMannerTypeWordOrBothDegreeYesWord">
+      <whenValue element="advp" attr="mannerType" value="word"/>
+      <and/>
+      <whenValue element="advp" attr="mannerDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeWord" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp" attr="mannerType" value="both"/>
+      <and/>
+      <whenValue element="advp" attr="mannerDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeWord" attr="checked" value="yes"/>
    </showWhen>
-
+   <showWhen id="swAdvPMannerDegreeWordBefore">
+      <whenValue element="advp/mannerDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swAdvPMannerDegreeWordAfter">
+      <whenValue element="advp/mannerDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swAdvPMannerDegreeWordBoth">
+      <whenValue element="advp/mannerDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPMannerDegreeWordEither">
+      <whenValue element="advp/mannerDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swAdvPMannerDegreeWordBeforeOrBoth">
+      <whenValue element="advp/mannerDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPMannerDegreeWordAfterOrBoth">
+      <whenValue element="advp/mannerDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPMannerDegreeWordEitherOrBoth">
+      <whenValue element="advp/mannerDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swAdvPMannerDegreeWordNotOther">
+      <whenValue element="advp/mannerDegreeWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeWordOtherOnly">
+      <whenValue element="advp/mannerDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeWordPosAndOther">
+      <whenValue element="advp/mannerDegreeWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/mannerDegreeWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/mannerDegreeWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordOther" attr="checked" value="yes"/>      
+   </showWhen>
+    <showWhen id="swAdvPMannerDegreeYesWord">
+       <whenValue element="advp/mannerWordDegreeWord" attr="checked" value="yes"/>
+    </showWhen>     
+   <showWhen id="swAdvPMannerDegreeYesNotWord">
+      <whenValue element="advp/mannerWordDegreeWord" attr="checked" value="no"/>
+   </showWhen>     
+   <showWhen id="swAdvPMannerTypeWordOrBothDegreeYesAttaches">
+      <whenValue element="advp" attr="mannerType" value="word"/>
+      <and/>
+      <whenValue element="advp" attr="mannerDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeAttaches" attr="checked" value="yes"/>
+   <or/>
+      <whenValue element="advp" attr="mannerType" value="both"/>
+      <and/>
+      <whenValue element="advp" attr="mannerDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeAttaches" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordOrBothDegreeYesRedup">
+      <whenValue element="advp" attr="mannerType" value="word"/>
+      <and/>
+      <whenValue element="advp" attr="mannerDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeRedup" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp" attr="mannerType" value="both"/>
+      <and/>
+      <whenValue element="advp" attr="mannerDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeRedup" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeYesWordOrAttaches">
+      <whenValue element="advp/mannerWordDegreeWord" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/mannerWordDegreeAttaches" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeYesNotWordOrAttaches">
+      <whenValue element="advp/mannerWordDegreeWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeAttaches" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordOrBothDegreeYesOther">
+      <whenValue element="advp" attr="mannerType" value="word"/>
+      <and/>
+      <whenValue element="advp" attr="mannerDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp" attr="mannerType" value="both"/>
+      <and/>
+      <whenValue element="advp" attr="mannerDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeYesWordOrAttachesOrRedup">
+      <whenValue element="advp/mannerWordDegreeWord" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/mannerWordDegreeAttaches" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/mannerWordDegreeRedup" attr="checked" value="yes"/>
+   </showWhen>
+      <showWhen id="swAdvPMannerDegreeYesOtherOnly">
+         <whenValue element="advp/mannerWordDegreeWord" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="advp/mannerWordDegreeAttaches" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="advp/mannerWordDegreeRedup" attr="checked" value="no"/>
+         </showWhen>
+   <showWhen id="swAdvPMannerTypeAffixDegreeNo">
+      <whenValue element="advp" attr="mannerType" value="affix"/>
+      <and/>
+      <whenValue element="advp"  attr="mannerAffixDegree" value="no"/>
+   </showWhen>      
+   <showWhen id="swAdvPMannerTypeBothAffixDegreeNo">
+      <whenValue element="advp" attr="mannerType" value="both"/>
+      <and/>
+      <whenValue element="advp"  attr="mannerAffixDegree" value="no"/>
+   </showWhen>      
+   <showWhen id="swAdvPMannerTypeAffixOrBothDegreeYesAffix">
+      <whenValue element="advp" attr="mannerType" value="affix"/>
+      <and/>
+      <whenValue element="advp"  attr="mannerAffixDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeYesBefore"  attr="checked" value="yes"/>
+<or/>
+      <whenValue element="advp" attr="mannerType" value="both"/>
+      <and/>
+      <whenValue element="advp"  attr="mannerAffixDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeYesBefore"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp" attr="mannerType" value="affix"/>
+      <and/>
+      <whenValue element="advp"  attr="mannerAffixDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeYesAfter"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp" attr="mannerType" value="both"/>
+      <and/>
+      <whenValue element="advp"  attr="mannerAffixDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeYesAfter"  attr="checked" value="yes"/>
+   </showWhen>      
+   <showWhen id="swAdvPMannerDegreeAffixBefore">
+      <whenValue element="advp/mannerAffixDegreeYesBefore"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeYesAfter"  attr="checked" value="no"/>
+   </showWhen>   
+   <showWhen id="swAdvPMannerDegreeAffixAfter">
+      <whenValue element="advp/mannerAffixDegreeYesAfter"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeYesBefore"  attr="checked" value="no"/>
+   </showWhen>   
+   <showWhen id="swAdvPMannerDegreeAffixEither">
+      <whenValue element="advp/mannerAffixDegreeYesBefore"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeYesAfter"  attr="checked" value="yes"/>
+   </showWhen>   
+   <showWhen id="swAdvPMannerTypeAffixOrBothDegreeYesRedup">
+      <whenValue element="advp" attr="mannerType" value="affix"/>
+      <and/>
+      <whenValue element="advp"  attr="mannerAffixDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeRedup"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp" attr="mannerType" value="both"/>
+      <and/>
+      <whenValue element="advp"  attr="mannerAffixDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeRedup"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeYesAffix">
+      <whenValue element="advp/mannerAffixDegreeYesBefore"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/mannerAffixDegreeYesAfter"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeYesNotAffix">
+      <whenValue element="advp/mannerAffixDegreeYesBefore"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeYesAfter"  attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffixOrBothDegreeYesOther">
+      <whenValue element="advp" attr="mannerType" value="affix"/>
+      <and/>
+      <whenValue element="advp"  attr="mannerAffixDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeOther"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp" attr="mannerType" value="both"/>
+      <and/>
+      <whenValue element="advp"  attr="mannerAffixDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeOther"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerAffixDegreeYesAffixOrRedup">
+      <whenValue element="advp/mannerAffixDegreeYesBefore"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/mannerAffixDegreeYesAfter"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/mannerAffixDegreeRedup"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerAffixDegreeYesOtherOnly">
+      <whenValue element="advp/mannerAffixDegreeYesBefore"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeYesAfter"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeRedup"  attr="checked" value="no"/>
+   </showWhen>
+         
+ 
    <showWhen id="swAdvPLocativeClassifierYes">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
-	  <and/>
-	  <whenValue element="advp"  attr="locativeClassifier" value="yes"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenValue element="advp"  attr="locativeClassifier" value="yes"/>
    </showWhen>
    <showWhen id="swAdvPLocativeClassifierNo">
-	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
-	  <or/>
-	  <whenValue element="advp"  attr="locativeClassifier" value="yes" negateValue="yes"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+      <or/>
+      <whenValue element="advp"  attr="locativeClassifier" value="yes" negateValue="yes"/>
    </showWhen>
+   
+   <showWhen id="swTemporalIndefQPQBefore">
+      <whenValue element="advp/temporalIndefTypeQPQBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQPQAfter">
+      <whenValue element="advp/temporalIndefTypeQPQBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQPQBoth">
+      <whenValue element="advp/temporalIndefTypeQPQBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQPQBeforeOrBoth">
+      <whenValue element="advp/temporalIndefTypeQPQBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQPQAfterOrBoth">
+      <whenValue element="advp/temporalIndefTypeQPQBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQPQEither">
+      <whenValue element="advp/temporalIndefTypeQPQBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQPQEitherOrBoth">
+      <whenValue element="advp/temporalIndefTypeQPQBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQPhraseOnly">
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQPhraseAndNotOther">
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQOther">
+      <whenValue element="advp/temporalIndefQOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQWordAndQPhraseAndOther">
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swTemporalIndefQWordOnly">
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporallndefQWordAndQPhrase">
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQOther" attr="checked" value="no"/>
+   </showWhen>
+   
+   <showWhen id="swTemporalIndefQWordAndOther">
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swTemporalIndefQPhraseAndOther">
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQWord">
+      <whenValue element="advp/temporalIndefQWord" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swTemporalIndefQPQOtherOnly"> 
+      <whenValue element="advp/temporalIndefTypeQPQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQPhraseAndOtherAnd">
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBefore" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQAfter" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefQPhrase">
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swLocativeIndefQPQBefore">
+      <whenValue element="advp/locativeIndefTypeQPQBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQPQAfter">
+      <whenValue element="advp/locativeIndefTypeQPQBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQPQBoth">
+      <whenValue element="advp/locativeIndefTypeQPQBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQPQBeforeOrBoth">
+      <whenValue element="advp/locativeIndefTypeQPQBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQPQAfterOrBoth">
+      <whenValue element="advp/locativeIndefTypeQPQBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQPQEither">
+      <whenValue element="advp/locativeIndefTypeQPQBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQPQEitherOrBoth">
+      <whenValue element="advp/locativeIndefTypeQPQBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQPhraseOnly">
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQPhraseAndNotOther">
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQOther">
+      <whenValue element="advp/locativeIndefQOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQWordAndQPhraseAndOther">
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swLocativeIndefQWordOnly">
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQWordAndQPhrase">
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQOther" attr="checked" value="no"/>
+   </showWhen>
+   
+   <showWhen id="swLocativeIndefQWordAndOther">
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swLocativeIndefQPhraseAndOther">
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQWord">
+      <whenValue element="advp/locativeIndefQWord" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swLocativeIndefQPQOtherOnly"> 
+      <whenValue element="advp/locativeIndefTypeQPQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQPhraseAndOtherAnd">
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBefore" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQAfter" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefQPhrase">
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swTemporalOrLocativeIndefQWord">
+      <whenValue element="advp/temporalIndefQWord"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeIndefQWord"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalOrLocativeIndefQPhrase">
+      <whenValue element="advp/temporalIndefQPhrase"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeIndefQPhrase"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalOrLocativeIndefQOther">
+      <whenValue element="advp/temporalIndefQOther"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeIndefQOther"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalOrLocativeIndefIntWord">
+      <whenValue element="advp/temporalIndefIntWord"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeIndefIntWord"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalOrLocativeIndefIntPhrase">
+      <whenValue element="advp/temporalIndefIntPhrase"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeIndefIntPhrase"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalOrLocativeIndefIntOther">
+      <whenValue element="advp/temporalIndefIntOther"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeIndefIntOther"  attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swTemporalIndefTypeIntBefore">
+      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefTypeIntAfter">
+      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefTypeIntBoth">
+      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefTypeIntBeforeOrBoth">
+      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefTypeIntAfterOrBoth">
+      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefTypeIntEither">
+      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefTypeIntEitherOrBoth">
+      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefIntPhraseOnly">
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefIntPhraseAndNotOther">
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefIntOther">
+      <whenValue element="advp/temporalIndefIntOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefIntWordAndIntPhraseAndOther">
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swTemporalIndefIntWordOnly">
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefIntWordAndIntPhrase">
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntOther" attr="checked" value="no"/>
+   </showWhen>
+   
+   <showWhen id="swTemporalIndefIntWordAndOther">
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swTemporalIndefIntPhraseAndOther">
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefIntWord">
+      <whenValue element="advp/temporalIndefIntWord" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swTemporalIndefTypeIntOtherOnly">
+      <whenValue element="advp/temporalIndefTypeIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefIntOtherOnly"> 
+      <whenValue element="advp/temporalIndefTypeIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefIntPhraseAndOtherAnd">
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefIntPhrase">
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swLocativeIndefTypeIntBefore">
+      <whenValue element="advp/locativeIndefTypeIntBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeIntAfter">
+      <whenValue element="advp/locativeIndefTypeIntBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeIntBoth">
+      <whenValue element="advp/locativeIndefTypeIntBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeIntBeforeOrBoth">
+      <whenValue element="advp/locativeIndefTypeIntBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeIntAfterOrBoth">
+      <whenValue element="advp/locativeIndefTypeIntBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeIntEither">
+      <whenValue element="advp/locativeIndefTypeIntBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeIntEitherOrBoth">
+      <whenValue element="advp/locativeIndefTypeIntBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefIntPhraseOnly">
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefIntPhraseAndNotOther">
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefIntOther">
+      <whenValue element="advp/locativeIndefIntOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefIntWordAndIntPhraseAndOther">
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swLocativeIndefIntWordOnly">
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefIntWordAndIntPhrase">
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntOther" attr="checked" value="no"/>
+   </showWhen>
+   
+   <showWhen id="swLocativeIndefIntWordAndOther">
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swLocativeIndefIntPhraseAndOther">
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefIntWord">
+      <whenValue element="advp/locativeIndefIntWord" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swLocativeIndefTypeIntOtherOnly"> 
+      <whenValue element="advp/locativeIndefTypeIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefIntPhraseAndOtherAnd">
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBefore" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntAfter" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefIntPhrase">
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+   </showWhen>
+   
+   
 </portion>

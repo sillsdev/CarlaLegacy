@@ -2,11 +2,11 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="IPMain" count="1/1">
-    <title level="2">Basic, Single-Clause Sentences</title>
+    <title level="2">Basic Sentences</title>
    <introduction id="IPMainIntroNotPractical" show="swNotPractical">In this section, we want to handle copular, intransitive, transitive and ditransitive sentences in their basic word order (i.e. not changed by focus, topic, interrogative, or negation constructions).  Inflection and agreement features on verbs, cases when a subject may be missing, auxiliaries, and sentences with passive and other voice changes are also covered.
-	  <br/>
-	  <br/>
-		The data is in surface form, so the grammar must model surface structure, not the underlying structure before any derivational movement.<br/>
+      <br/>
+      <br/>
+        The data is in surface form, so the grammar must model surface structure, not the underlying structure before any derivational movement.<br/>
         <br/>
 The trees you see will be in an X-bar theory form, as much as is possible for modelling the surface structure without movement.  This means that sentences are Inflectional Phrases (IPs) rather than the traditional S.  The subject usually occupies the specifier position, the head is an inflectional or auxiliary element, and the complement is the VP predicate.  For example, the tree for a transitive sentence in an SVO language, like English will be:
 <tree img="TreeDescriptions/PawsIPSVO.png"/>
@@ -19,10 +19,10 @@ SOV, VOS, and OVS word orders can be handled by taking the mirror image of the a
         <br/>
 The basic issues to be dealt with are presented here for your consideration and gathering of appropriate data, then the questions relevant to the basic word order of your language (as determined in section <section number="1">Overall Typology Questions</section>) will deal with the details of setting up the phrase structure rules and lexical features and constraints.
 </introduction>
-	<introduction id="IPMainIntroPractical" show="swPractical">In this section, we want to handle copular, intransitive, transitive and ditransitive sentences in their basic word order (i.e. not changed by focus, topic, interrogative, or negation constructions).
+    <introduction id="IPMainIntroPractical" show="swPractical">In this section, we want to handle copular, intransitive, transitive and ditransitive sentences in their basic word order (i.e. not changed by focus, topic, interrogative, or negation constructions).
         <br/>
         <br/>
-		Inflection and agreement features on verbs, cases when a subject may be missing, auxiliaries, and sentences with passive and other voice changes are also covered.
+        Inflection and agreement features on verbs, cases when a subject may be missing, auxiliaries, and sentences with passive and other voice changes are also covered.
     </introduction>
     <form section="ip" transparent="yes">
         <br/>

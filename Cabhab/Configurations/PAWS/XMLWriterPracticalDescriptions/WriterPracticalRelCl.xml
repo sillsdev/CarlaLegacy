@@ -2,244 +2,679 @@
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
    <section1 id="sRelCl">
-	  <secTitle>Relative Clauses</secTitle>
-	  <p>
-		 <content>Relative clauses normally modify a head noun and have one of four structures:</content>
-	  </p>
-	  <ul>
-		 <li>
-			<content>like a complement clause headed by ‘that’, as in </content>
-			<langData>the man that came to the meeting late</langData>
-			<content>;</content>
-		 </li>
-		 <li>
-			<content>like a content question with ‘who’ or ‘which’ fronted, as in </content>
-			<langData>the man who came to the meeting late</langData>
-			<content>;</content>
-		 </li>
-		 <li>
-			<content>(or for some languages other than English) like a complement clause but with a special relative marker occurring in the complementizer position, or possibly with two markers which occur on each sides of the relative clause;</content>
-		 </li>
-		 <li>
-			<content>(or for some languages other than English) like a regular sentence with a relative marker attached to the verb.</content>
-		 </li>
-	  </ul>
-	  <p>
-		 <content>Some languages also allow one of the above structures to occur by itself as a nominal phrase without a head noun to modify, usually called “headless” relative clauses.  For example, </content><langData>Julie brought [the food that we ate today]</langData><content> has a full relative clause in the object position, while </content><langData>Julie brought [what we ate today]</langData><content> has a headless relative clause as the object.</content>
-	  </p>
-	  <p>
-		 <text show="swRelClExistNo">
+      <secTitle>Relative Clauses</secTitle>
+      <p contentType="ctComparativeIntro">
+         <content>Relative clauses normally modify a head noun and have one of four structures: like a complement clause headed by the verbal complementizer </content><langData>that</langData><content>, as in </content>
+         <langData>the man that came to the meeting late</langData>
+         <content>; like a content question with </content><langData>who</langData><content> or </content><langData>which</langData><content> fronted, as in </content>
+         <langData>the man who came to the meeting late</langData>
+         <content>; (or for some languages other than English) like a complement clause but with a special relative marker occurring in the complementizer position, or possibly with two markers which occur on each sides of the relative clause; (or for some languages other than English) like a regular sentence with a relative marker attached to the verb.</content>
+         </p>
+      <p contentType="ctPracticalIntro">
+         <content>Relative clauses normally modify a head noun and have one of four structures: like a complement clause with the normal verbal complementizer; like a content question with an interrogative word fronted; like a complement clause but with a special relative marker; or like a regular sentence with a relative marker attached to the verb.</content>
+      </p>
+      <p show="swRelClExistNo">
+         <langName/>
+         <content> does not have any type of relative clause.</content>
+      </p>
+      <p show="swRelClExistYes">
+         <content>In </content>
             <langName/>
-			<content> does not have any type of relative clause.</content>
-		 </text>
-		 <text show="swRelClExistYes">
-			<content>In </content>
-			<langName/>
-			<content>, relative clauses occur </content>
-			<case element="relcl" attr="clausePos">
-			   <caseText value="before">before</caseText>
-			   <caseText value="after">after</caseText>
-			   <caseText value="either">on either side of</caseText>
-			   <caseText value="unknown"> _______ </caseText>
-			</case>
-			<content> the head noun.   </content>
-            <langName/>
-            <content>&#x20;</content>
-			<case element="relcl" attr="type">
-			   <caseText value="IP"> relative clauses are like a regular sentence with a relative marker attached to the verb.</caseText>
-			   <caseText value="CP"> relative clauses </caseText>
+            <content>, relative clauses occur </content>
+            <case element="relcl" attr="clausePos">
+               <caseText value="before">before</caseText>
+               <caseText value="after">after</caseText>
+               <caseText value="either">on either side of</caseText>
+               <caseText value="unknown"> _______ </caseText>
             </case>
-            <content>&#x20;</content>
-			<text show="swRelClTypeCP">
-			   <content>&#x20;</content>
-			   <case element="relcl" attr="compCP">
-				  <caseText value="no">are like questions because a “wh” word is fronted.</caseText>
-				  <caseText value="yes">are like complement clauses with relative markers that </caseText>
-				  <caseText value="yesBoth">are like questions because a “wh” word is fronted and some are like complement clauses with relative markers that </caseText>
-			   </case>
-			   <text show="swRelClCompCPNotNo">
-				  <content>are </content>
-				  <case element="relcl" attr="relWord">
-					 <caseText value="yes">written as a separate word.</caseText>
-					 <caseText value="no">clitics which attach to another word at the edge of the relative clause.</caseText>
-				  </case>
-				  <content>&#x20;</content>
-				  <text show="swRelClTypeCPCompClitic">
-					 <content>&#x20;</content>
-					 <case element="relcl" attr="relCliticPos">
-						<caseText value="before">These clitics are proclitics.</caseText>
-						<caseText value="after">These clitics are enclitics.</caseText>
-						<caseText value="both">Some of the clitics are proclitics and some are enclitics.</caseText>
-						<caseText value="unknown"> _______ </caseText>
-					 </case>
-					 <content>&#x20;</content>
-				  </text>
-				  <content>&#x20;</content>
-				  <text show="swRelClTypeCPCompWord">
-					 <content>&#x20;</content>
-					 <case element="relcl" attr="relCompSame">
-						<caseText value="yes">Some of</caseText>
-						<caseText value="no">None of</caseText>
-					 </case>
-					 <content> the relative markers are the same as the complementizer(s) used in verbal complement clauses.  The relative marker occurs </content>
-					 <case element="relcl" attr="relCompPos">
-						<caseText value="before">before</caseText>
-						<caseText value="after">after</caseText>
-						<caseText value="either">on either side (but not both sides) of</caseText>
-						<caseText value="eitherOrBoth">on either side or on both sides of</caseText>
-						<caseText value="beforeOrBoth">before or on both sides of</caseText>
-						<caseText value="afterOrBoth">after or on both sides of</caseText>
-						<caseText value="both">on both sides of</caseText>
-						<caseText value="unknown"> _______ </caseText>
-					 </case>
-					 <content> the sentence part of the relative clause.</content>
-					 <text show="swRelClTypeCPCompEitherUnrestricted">
-						<content>All of the relative markers can occur on either side.</content>
-					 </text>
-					 <content>&#x20;</content>
-					 <text show="swRelClTypeCPCompEitherRestricted">
-						<content>There are restrictions as to which of the relative markers can occur on each side.</content>
-					 </text>
-					 <content>&#x20;</content>
-				  </text>
-				  <content>&#x20;</content>
-			   </text>
-			   <content>&#x20;</content>
-			</text>
-			<content>&#x20;</content>
-			<text show="swRelClTypeCPWh">
-			   <content>In the “wh”-relative clauses, </content>
-			   <case element="relcl" attr="whAndComp">
-				  <caseText value="no">only the “wh”-word occurs without any type of relative marker.</caseText>
-				  <caseText value="yes">the “wh”-word and the relative marker(s) are required to both be present.</caseText>
-				  <caseText value="optional">a relative marker may optionally co-occur along with the “wh”-word.</caseText>
-			   </case>
-			   <content>&#x20;</content>
-			</text>
-			<content>&#x20;</content>
-		 </text>
-		 <content>&#x20;</content>
-	  </p>
-	  <p show="swRelClExistYes">
-		 <content>Examples of relative clauses in </content>
-		 <langName/>
-		 <content> include:</content>
-	  </p>
-	  <example show="swRelClExistYes">
-		 <interlinear exampleLoc="relcl/example"/>
-	  </example>
-	  <p show="swRelClExistYes">
-		 <content>Full sentence examples of the above relative clauses include:</content>
-	  </p>
-	  <example show="swRelClExistYes">
-		 <interlinear exampleLoc="relcl/sentExample"/>
-	  </example>
-	  <p show="swRelClExistYes">
-		 <content>&#x20;</content>
-		 <langName/>
-		 <content>&#x20;</content>
-		 <case element="relcl" attr="headless">
-			<caseText value="no">requires a head noun to be present in all relative clauses, so no headless relative clauses are allowed.</caseText>
-			<caseText value="yes">allows a head noun to be missing in relative clauses, so headless relative clauses are allowed.</caseText>
-		 </case>
-		 <content>&#x20;</content>
-	  </p>
-	  <p show="swRelClHeadlessYes">
-		 <content>Examples of headless relative clauses included in full sentences include:</content>
-	  </p>
-	  <example show="swRelClHeadlessYes">
-		 <interlinear exampleLoc="relcl/headlessExample"/>
-	  </example>
+            <content> the head noun as shown in the following examples:</content>
+      </p>
+      <example show="swRelClExistYes">
+         <interlinear exampleLoc="relcl/example"/>
+      </example>
+      
+      <p show="swRelClExistYesAndRelTypeCPCompAndNotCompNoOrTypeCPRelOrTypeCPWh">
+           <text show="swRelTypeCPComp"> <text show="swRelTypeCPCompOnly"><content>The </content></text>
+         <text show="swRelTypeCPCompAnd"><content>Some of the </content></text><content>relative clauses in </content><langName/>
+              <content> are like a complement clause which uses the normal verbal complementizer.  </content></text>
+         <text show="swRelTypeCPRel"><text show="swRelTypeCPRelOnly"><content>The </content></text>
+            <text show="swRelTypeCPCompAndRel"><content>Other </content></text>
+            <text show="swRelTypeCPRelNotCompAnd"><content>Some of the </content></text><content>relative clauses in </content><langName/>
+            <content> are like a complement clause with special relative markers.  </content></text>
+         <text show="swRelTypeCPWh"><text show="swRelTypeCPWhOnly"><content>The </content></text>
+            <text show="swRelTypeCPWhAndCompOrRel"><content>Other </content></text>
+            <text show="swRelTypeCPWhNotCompNotRelAnd"><content>Some of the </content></text><content>relative clauses in </content><langName/>
+            <content> are like a content question with an interrogative word fronted.  </content><case element="relcl" attr="whAndComp">
+               <caseText value="no">Only the fronted interrogative word occurs in this type of relative clause; there is no relative marker.</caseText>  
+               <caseText value="yes">A relative marker and the fronted interrogative word are both required in this type of relative clause. </caseText>
+               <caseText value="optional">A relative marker may optionally occur along with the fronted interrogative word in this type of relative clause. </caseText>
+            </case></text>
+         
+         <text show="swRelClRelWordSome"><content>Some of the </content></text>
+         <text show="swRelClRelWordNotSome"><content>The </content></text>  
+               <content>relative markers or complementizers </content>
+         <case element="relcl" attr="relWord">
+            <caseText value="yes">are written as independent words.  </caseText>
+            <caseText value="some">are written as independent words but some attach </caseText>
+            <caseText value="no">attach </caseText>
+         </case>
+         <case element="relcl" attr="relCliticPos">
+            <caseText value="before">to the beginning of the first word in the sentence part of the relative clause as a phrasal proclitic. These clitics are:</caseText>
+            <caseText value="after">to the end of the final word in the sentence part of the relative clause as a phrasal enclitic. These clitics are:</caseText>
+            <caseText value="both">on both sides to surround the sentence part of the relative clause as a phrasal clitics. These clitics are:</caseText>
+            <caseText value="unknown">to the ________ in the sentence part of the relative clause as a phrasal clitic. These clitics are:</caseText>
+         </case>
+      </p>     
+      <example show="swRelClExistYesAndRelTypeCPCompAndNotCompNoOrTypeCPRelOrTypeCPWhNotWhCompNoAndRelWordNoOrSome">
+         <table border="1">
+            <headerRow>
+               <headerCol>Relative Marker Clitics</headerCol>
+               <headerCol>Gloss</headerCol>
+            </headerRow>
+            <row>
+               <col exampleLoc="relcl/relCliticExample"/>
+               <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+            </row>
+         </table>
+      </example>
+      <p show="swRelClExistYesAndRelTypeCPCompAndNotCompNoOrTypeCPRelOrTypeCPWhNotWhCompNoAndRelWordYesOrSome">
+         <content>The relative marker words occur </content>
+         <text show="swRelWordBefore"><content>before</content></text>
+         <text show="swRelWordAfter"><content>after</content></text>
+         <text show="swRelWordBoth"><content>on both sides of</content></text>
+         <text show="swRelWordEither"><content>on either side of</content></text>
+         <text show="swRelWordBeforeOrBoth"><content>before or on both sides of</content></text>
+         <text show="swRelWordAfterOrBoth"><content>after or on both sides of</content></text>
+         <text show="swRelWordEitherOrBoth"><content>on either side or on both sides of</content></text>
+         <text show="swRelWordNotOther"><content> the sentence part of the relative clause.  </content></text>
+         <text show="swRelWordOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="relcl/relWordOther"/><content>.  </content></text>
+         <text show="swRelWordPosAndOther"><content> the sentence part of the relative clause and may also occur ___</content><contentCheckBoxOther contentLoc="relcl/relWordOther"/><content>.  </content></text>
+         <content>The relative marker words are: </content>
+      </p>
+      <example show="swRelClExistYesAndRelTypeCPCompAndNotCompNoOrTypeCPRelOrTypeCPWhNotWhCompNoAndRelWordYesOrSome">
+            <table border="1">
+               <headerRow>
+                  <headerCol>Relative Marker Words</headerCol>
+                  <headerCol>Gloss</headerCol>
+               </headerRow>
+               <row>
+                  <col exampleLoc="relcl/relWordExample"/>
+                  <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+               </row>
+            </table>
+         </example>
+         
+      <p show="swRelClExistYesAndRelTypeIPRel">
+          <text show="swRelTypeIPRelOnly"><content>The </content></text>
+         <text show="swRelTypeIPRelAndSomeCP"><content>Other </content></text>
+         <text show="swRelTypeIPRelAndNotCPAnd"><content>Some of the </content></text><content>relative clauses in </content><langName/>
+            <content> are like a regular sentence with a special relative marker attached to the verb.  The relative affix is:</content>  
+         </p>
+         <example show="swRelClExistYesAndRelTypeIPRel">
+            <table border="1">
+               <headerRow>
+                  <headerCol>Relative Affix</headerCol>
+                  <headerCol>Gloss</headerCol>
+               </headerRow>
+               <row>
+                  <col exampleLoc="relcl/relAffixExample"/>
+                  <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+               </row>
+            </table>
+         </example>
+         
+      <p show="swRelClExistYesAndRelTypeIP">
+         <text show="swRelTypeIPOnly"><content>The </content></text>
+         <text show="swRelTypeIPAndSomeCPOrIPRel"><content>Other </content></text>
+         <text show="swRelTypeIPAndOtherOnly"><content>Some of the </content></text><content>relative clauses in </content><langName/>
+         <content> are like a regular sentence modifying the head noun, with no special marking.  </content>  
+      </p>
+      
+      <p show="swRelClExistYesAndRelTypeOther">
+         <text show="swRelTypeOtherOnly"><content>The relative clauses in </content><langName/>
+            <content> are formed by ___</content><contentCheckBoxOther contentLoc="relcl/relTypeOther"/><content>.</content></text>
+         <text show="swRelTypeOtherAnd"><content>There are also relative clauses which are formed by ___</content><contentCheckBoxOther contentLoc="relcl/relTypeOther"/><content>.</content></text>  
+      </p>    
+      
+      <p show="swRelClExistYes">
+         <content>Full sentence examples of the above relative clauses include:</content>
+      </p>
+      <example show="swRelClExistYes">
+         <interlinear exampleLoc="relcl/sentExample"/>
+      </example>
+      <p contentType="ctComparativeIntro" show="swRelClExistYes">
+         <content>Some languages also allow a relative clause to occur by itself as a nominal phrase without a head noun to modify, usually called “headless” relative clauses.  For example, </content><langData>Julie brought [the food that we ate today]</langData><content> has a full relative clause in the object position, while </content><langData>Julie brought [what we ate today]</langData><content> has a headless relative clause as the object.</content>
+      </p>
+      <p contentType="ctPracticalIntro" show="swRelClExistYes">
+         <content>In “headless” relative clauses, a relative clause occurs by itself as a nominal phrase, without a head noun to modify.</content>
+      </p>
+      
+      <p show="swRelClExistYes">
+         <content>&#x20;</content>
+         <langName/>
+         <content>&#x20;</content>
+         <case element="relcl" attr="headless">
+            <caseText value="no">requires a head noun to be present in all relative clauses, so no headless relative clauses are allowed.</caseText>
+            <caseText value="yes">allows a head noun to be missing in relative clauses, so headless relative clauses are allowed.</caseText>
+         </case>
+         <content>&#x20;</content>
+      </p>
+      <p show="swRelClHeadlessYes">
+         <content>Examples of headless relative clauses included in full sentences include:</content>
+      </p>
+      <example show="swRelClHeadlessYes">
+         <interlinear exampleLoc="relcl/headlessExample"/>
+      </example>
    </section1>
-
+   
    <section1 id="sTexts">
-	  <secTitle>Texts</secTitle>
-	  <p><comment>Include several texts here to demonstrate how larger constructions such as paragraphs, conversations, and narrative stories are formed.  Include examples of various literary types.</comment></p>
-	  <p><comment>  A suggested format for presenting the texts is to present it in the vernacular language as a whole first, so the native speakers can appreciate it.  Then present the interlinear form, as in the examples throughout the grammar.  Finally, give a free translation as a whole, so the non-native speaker can appreciate more about the culture.</comment></p>
-   </section1>
-
+      <secTitle>Texts</secTitle>
+      <p><comment>Include several texts here to demonstrate how larger constructions such as paragraphs, conversations, and narrative stories are formed.  Include examples of various literary types.</comment></p>
+      <p><comment>  A suggested format for presenting the texts is to present it in the vernacular language as a whole first, so the native speakers can appreciate it.  Then present the interlinear form, as in the examples throughout the grammar.  Finally, give a free translation as a whole, so the non-native speaker can appreciate more about the culture.</comment></p>
+   </section1>    
+   
     <showWhen id="swRelClExistNo">
         <whenValue element="relcl" attr="exist" value="no"/>
     </showWhen>
     <showWhen id="swRelClExistYes">
         <whenValue element="relcl" attr="exist" value="yes"/>
     </showWhen>
-    <showWhen id="swRelClTypeCP">
-        <whenValue element="relcl" attr="type" value="CP"/>
-    </showWhen>
-    <showWhen id="swRelClTypeCPCompClitic">
-        <whenValue element="relcl" attr="relWord" value="no"/>
-        <and/>
-        <whenValue element="relcl" attr="type" value="CP"/>
-        <and/>
-        <whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
-        <or/>
-        <whenValue element="relcl" attr="relWord" value="no"/>
-        <and/>
-        <whenValue element="relcl" attr="type" value="CP"/>
-        <and/>
-        <whenValue element="relcl" attr="compCP" value="no"/>
-        <and/>
-        <whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
-    </showWhen>
-    <showWhen id="swRelClCompCPNotNo">
-        <whenValue element="relcl" attr="type" value="CP"/>
-        <and/>
-        <whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
-        <or/>
-        <whenValue element="relcl" attr="type" value="CP"/>
-        <and/>
-        <whenValue element="relcl" attr="compCP" value="no"/>
-        <and/>
-        <whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
-    </showWhen>
-    <showWhen id="swRelClTypeCPCompWord">
-        <whenValue element="relcl" attr="relWord" value="yes"/>
-        <and/>
-        <whenValue element="relcl" attr="type" value="CP"/>
-        <and/>
-        <whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
-        <or/>
-        <whenValue element="relcl" attr="relWord" value="yes"/>
-        <and/>
-        <whenValue element="relcl" attr="type" value="CP"/>
-        <and/>
-        <whenValue element="relcl" attr="compCP" value="no"/>
-        <and/>
-        <whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
-    </showWhen>
-    <showWhen id="swRelClTypeCPWh">
-        <whenValue element="relcl" attr="type" value="CP"/>
-        <and/>
-        <whenValue element="relcl" attr="compCP" value="yes" negateValue="yes"/>
-    </showWhen>
-    <showWhen id="swRelClTypeCPCompEitherRestricted">
-        <whenValue element="relcl" attr="relWord" value="yes"/>
-        <and/>
-        <whenValue element="relcl" attr="relCompEitherRestricted" value="restricted"/>
-        <and/>
-        <whenValue element="relcl" attr="type" value="CP"/>
-        <and/>
-        <whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
-        <and/>
-        <whenValue element="relcl" attr="relCompPos" value="before" negateValue="yes"/>
-        <and/>
-        <whenValue element="relcl" attr="relCompPos" value="after" negateValue="yes"/>
-    </showWhen>
-    <showWhen id="swRelClTypeCPCompEitherUnrestricted">
-        <whenValue element="relcl" attr="relWord" value="yes"/>
-        <and/>
-        <whenValue element="relcl" attr="relCompEitherRestricted" value="unrestricted"/>
-        <and/>
-        <whenValue element="relcl" attr="type" value="CP"/>
-        <and/>
-        <whenValue element="relcl" attr="compCP" value="no" negateValue="yes"/>
-        <and/>
-        <whenValue element="relcl" attr="relCompPos" value="before" negateValue="yes"/>
-        <and/>
-        <whenValue element="relcl" attr="relCompPos" value="after" negateValue="yes"/>
-    </showWhen>
-    <showWhen id="swRelClHeadlessYes">
+   <showWhen id="swRelTypeCPComp">
+      <whenValue element="relcl/relTypeCPComp" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelTypeCPRel">
+      <whenValue element="relcl/relTypeCPRel" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelTypeCPWh">
+      <whenValue element="relcl/relTypeCPWh" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelClExistYesAndRelTypeCPCompAndNotCompNoOrTypeCPRelOrTypeCPWh">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="no" negateValue="yes"/>
+      <or/>
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelClExistYesAndRelTypeCPCompAndNotCompNoOrTypeCPRelOrTypeCPWhNotWhCompNoAndRelWordYesOrSome">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="relWord" value="no" negateValue="yes"/>
+      <or/>
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="relWord" value="no" negateValue="yes"/>
+      <or/>
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="relWord" value="no" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swRelClExistYesAndRelTypeCPCompAndNotCompNoOrTypeCPRelOrTypeCPWhNotWhCompNoAndRelWordNoOrSome">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="relWord" value="yes" negateValue="yes"/>
+      <or/>
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="relWord" value="yes" negateValue="yes"/>
+      <or/>
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="whAndComp" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="relWord" value="yes" negateValue="yes"/>
+   </showWhen>
+   
+   <showWhen id="swRelClExistYesAndRelTypeCPCompAndNotCompNo">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+   <and/>
+   <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+   <and/>
+      <whenValue element="comp" attr="comp" value="no" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swRelClExistYesAndRelTypeCPCompAndNotCompNoAndRelWordNoOrSome">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="relWord" value="yes" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swRelClExistYesAndRelTypeCPCompAndNotCompNoAndRelWordYesOrSome">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="relWord" value="no" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swRelTypeCPCompOnly">
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeIPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeOther"  attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swRelTypeCPCompAnd">
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelTypeCPCompAndRel">
+      <whenValue element="relcl/relTypeCPComp" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelTypeCPWhOnly">
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeIPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeOther"  attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swRelTypeCPWhAnd">
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelTypeCPWhNotCompNotRelAnd">
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+      </showWhen>
+   <showWhen id="swRelTypeCPWhAndCompOrRel">
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelTypeCPRelOnly">
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeOther"  attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swRelTypeCPRelNotCompAnd">
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelClRelWordSome">
+      <whenValue element="relcl" attr="relWord" value="some"/>
+   </showWhen>   
+   <showWhen id="swRelClRelWordNotSome">
+      <whenValue element="relcl" attr="relWord" value="some" negateValue="yes"/>
+   </showWhen>   
+   <showWhen id="swRelWordBefore">
+      <whenValue element="relcl/relWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swRelWordAfter">
+      <whenValue element="relcl/relWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swRelWordBoth">
+      <whenValue element="relcl/relWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swRelWordEither">
+      <whenValue element="relcl/relWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relWordBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swRelWordBeforeOrBoth">
+      <whenValue element="relcl/relWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swRelWordAfterOrBoth">
+      <whenValue element="relcl/relWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swRelWordEitherOrBoth">
+      <whenValue element="relcl/relWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relWordBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swRelWordNotOther">
+      <whenValue element="relcl/relWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swRelWordOtherOnly">
+      <whenValue element="relcl/relWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelWordPosAndOther">
+      <whenValue element="relcl/relWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relWordOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relWordOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relWordOther" attr="checked" value="yes"/>      
+   </showWhen>
+   <showWhen id="swRelClExistYesAndRelTypeCPCompAndNotCompNoAndRelTypeCPWh">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelClExistYesAndRelTypeCPWhAndNotRelTypeCPComp">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelClExistYesAndRelTypeCPWhAndNotRelTypeCPCompAndRelWordNoOrSome">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="relWord" value="yes" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swRelClExistYesAndRelTypeCPWhAndNotRelTypeCPCompAndRelWordYesOrSome">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl" attr="relWord" value="no" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swCompNotNo">
+   <whenValue element="comp" attr="comp" value="no" negateValue="yes"/>
+   </showWhen>
+   
+   <showWhen id="swRelClExistYesAndRelTypeIPRel">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+</showWhen>      
+   <showWhen id="swRelClExistYesAndRelTypeIP">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+   </showWhen>      
+   <showWhen id="swRelTypeIPRelOnly">
+         <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeCPWh"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeCPRel"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="relcl/relTypeIP"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeOther"  attr="checked" value="no"/>
+      </showWhen> 
+      <showWhen id="swRelTypeIPRelAndSomeCP">
+         <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+         <or/>
+         <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+         <or/>
+         <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+      </showWhen>
+      <showWhen id="swRelTypeIPRelAndNotCPAnd">
+         <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeCPWh"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeCPRel"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+         <or/>
+         <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeCPWh"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeCPRel"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+      </showWhen>   
+   <showWhen id="swRelClExistYesAndRelTypeOther">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swRelTypeIPOnly">
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeIPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeOther"  attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swRelTypeIPAndSomeCPOrIPRel">
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swRelTypeIPAndOtherOnly">
+      <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeIPRel"  attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+   </showWhen> 
+   
+      <showWhen id="swRelTypeOtherOnly">
+         <whenValue element="relcl/relTypeCPComp"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeCPWh"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeCPRel"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeIPRel"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeIP"  attr="checked" value="no"/>
+         <and/>
+         <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+      </showWhen> 
+      <showWhen id="swRelTypeOtherAnd">
+         <whenValue element="relcl/relTypeCPComp"  attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+         <or/>
+         <whenValue element="relcl/relTypeCPWh"  attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+         <or/>
+         <whenValue element="relcl/relTypeCPRel"  attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+         <or/>
+         <whenValue element="relcl/relTypeIPRel"  attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+         <or/>
+         <whenValue element="relcl/relTypeIP"  attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="relcl/relTypeOther"  attr="checked" value="yes"/>
+      </showWhen>
+   <showWhen id="swRelClHeadlessYes">
         <whenValue element="relcl" attr="headless" value="yes"/>
         <and/>
         <whenValue element="relcl" attr="exist" value="yes"/>

@@ -1,81 +1,88 @@
 <!-- XLingPapEntities.dtd
-	 XML/XSLT-based Linguistic paper document type definition
-	 Entity definitioins used by various DTDs
-	 Version 2.6.0
-	   -->
-<!-- fontinfo contains attributes common to elements dealing with font or other special issues.
-	   Note that we need to allow for xsl-foSpecial even for langData items in the cases where Charis SIL or Doulos SIL
-	   are used and one needs to add a line-height parameter to get things to come out correctly.
-	   TeXSpecial may be needed for things like fine-adjusting of the positioning of an image.
-	   -->
+     XML/XSLT-based Linguistic paper document type definition
+     Entity definitioins used by various DTDs
+     Version 2.20.0
+       -->
+<!-- fontinfo contains attributes common to elements dealing with font or other special issues.  
+       Note that we need to allow for xsl-foSpecial even for langData items in the cases where Charis SIL or Doulos SIL
+       are used and one needs to add a line-height parameter to get things to come out correctly. 
+       TeXSpecial may be needed for things like fine-adjusting of the positioning of an image.
+       -->
 <!ENTITY % special "
-	cssSpecial CDATA #IMPLIED
-	XeLaTeXSpecial CDATA #IMPLIED
-	xsl-foSpecial CDATA #IMPLIED"
+    cssSpecial CDATA #IMPLIED
+    XeLaTeXSpecial CDATA #IMPLIED
+    xsl-foSpecial CDATA #IMPLIED"
 >
 <!ENTITY % fontinfo "
-	 color CDATA #IMPLIED
-	 backgroundcolor CDATA #IMPLIED
-	%special;
-	font-family CDATA #IMPLIED
-	font-size CDATA #IMPLIED
-	font-style (normal | italic | oblique | backslant | inherit) #IMPLIED
-	font-variant (normal | small-caps | inherit) #IMPLIED
-	font-weight (normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | inherit) #IMPLIED
-	text-transform (none | capitalize | lowercase | uppercase) #IMPLIED
-	">
-
+     color CDATA #IMPLIED
+     backgroundcolor CDATA #IMPLIED
+    %special;
+    font-family CDATA #IMPLIED
+    font-size CDATA #IMPLIED
+    font-style (normal | italic | oblique | backslant | inherit) #IMPLIED
+    font-variant (normal | small-caps | inherit) #IMPLIED
+    font-weight (normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | inherit) #IMPLIED
+    text-transform (none | capitalize | lowercase | uppercase) #IMPLIED
+    ">
+    
 <!-- format info layout attributes
-	   textafter = canned text to appear after the item
-	   textbefore = canned text to appear before the item
-	   -->
+       textafter = canned text to appear after the item
+       textbefore = canned text to appear before the item
+       -->
 <!ENTITY % formatinfo "
-	%fontinfo;
-	textafter CDATA #IMPLIED
-	textbefore CDATA #IMPLIED"
+    %fontinfo;
+    textafter CDATA #IMPLIED
+    textbefore CDATA #IMPLIED"
  >
 <!-- pagebreak layout attributes
-	   pagebreakbefore = yes will force a new page before the item
-	   startonoddpage = yes will force a page break and start on an odd-numbered page
-	   -->
+       pagebreakbefore = yes will force a new page before the item
+       startonoddpage = yes will force a page break and start on an odd-numbered page
+       useblankextrapage only is in effect when startonoddpage = yes; when it is set to yes and
+           there is an extra (even) page inserted, that extra page will not have any running header or footer.
+       -->
 <!ENTITY % pagebreakformatinfo "
-	 pagebreakbefore (yes | no) 'no'
-	 startonoddpage  (yes | no) 'no'"
-	 >
+     pagebreakbefore (yes | no) 'no'
+     startonoddpage  (yes | no) 'no'
+     useblankextrapage  (yes | no) 'no'"
+     >
 <!-- front matter layout attributes
-	   spaceafter = extra  vertical space after the item
-	   spacebefore = extra  vertical space before the item
-	   verticalfillafter = level of vertical fill to use after the item (default is none = 0; 2 is stronger than 1)
-	   verticalfillbefore = level of vertical fill to use before the item (default is none = 0; 2 is stronger than 1)
-	   textalign = horizontal alignment (in left-to-right flow, start is left and end is right)
-	   usetitleinheader = yes will put the title (or shortTitle) in header
-
-	   Note: if vertical fill is used, space is ignored (not all formatters allow vertical fill)
-	   -->
+       spaceafter = extra  vertical space after the item
+       spacebefore = extra  vertical space before the item
+       verticalfillafter = level of vertical fill to use after the item (default is none = 0; 2 is stronger than 1)
+       verticalfillbefore = level of vertical fill to use before the item (default is none = 0; 2 is stronger than 1)
+       textalign = horizontal alignment (in left-to-right flow, start is left and end is right)
+       usetitleinheader = yes will put the title (or shortTitle) in header
+       
+       Note: if vertical fill is used, space is ignored (not all formatters allow vertical fill)
+       -->
 <!ENTITY % frontmatterformatinfo "
-	 spaceafter CDATA #IMPLIED
-	 spacebefore CDATA #IMPLIED
-	 verticalfillafter (0 | 1 | 2) '0'
-	 verticalfillbefore (0 | 1 | 2) '0'
-	 textalign (start | left | center | end | right) 'start'
-	 %formatinfo;"
-	 >
+     spaceafter CDATA #IMPLIED
+     spacebefore CDATA #IMPLIED
+     verticalfillafter (0 | 1 | 2) '0'
+     verticalfillbefore (0 | 1 | 2) '0'
+     textalign (start | left | center | end | right) 'start'
+     %formatinfo;"
+     >
+<!ENTITY % headertextalign "
+     textalign (start | left | center | end | right | justify) 'justify'"
+     >
 <!-- title layout attributes
-	   usetitleinheader = yes will put the title (or shortTitle) in header
-	   -->
+       usetitleinheader = yes will put the title (or shortTitle) in header
+       -->
 <!ENTITY % titleformatinfo "
-	 usetitleinheader (yes | no) 'yes'
-	 %pagebreakformatinfo;
-	 %frontmatterformatinfo;"
-	 >
+     usetitleinheader (yes | no) 'yes'
+     useemptyheaderfooter (yes | no) 'no'
+     %pagebreakformatinfo;
+     %frontmatterformatinfo;"
+     >
 <!-- part, chapter, and section layout attributes
-	   ignore means to do no special formatting (e.g. for section4, section5, and/or section6)
-	   numberfont-size indicates the font size of the number of the part, chapter or letter of appendix
-	   -->
+       ignore means to do no special formatting (e.g. for section4, section5, and/or section6)
+       numberfont-size indicates the font size of the number of the part, chapter or letter of appendix
+       -->
 <!ENTITY % sectionformatinfo "
-	 beginsparagraph (yes | no) 'no'
-	 ignore (yes | no) 'no'
-	 showNumber (yes | no) 'yes'
-	 firstParagraphHasIndent (yes | no) 'yes'
-	 "
-	 >
+     beginsparagraph (yes | no) 'no' 
+     ignore (yes | no) 'no'
+     showNumber (yes | no) 'yes'
+     firstParagraphHasIndent (yes | no) 'yes' 
+     "
+     >

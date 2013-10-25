@@ -3,7 +3,7 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="IPTesting" count="1/1">
-	<title level="2">Basic, Single-Clause Sentences - Testing</title>
+	<title level="2">Basic Sentences - Testing</title>
 	<form section="ip">
 	<instruction>To test what you have done so far, save your work now.  This will generate the test file and grammar rules file created to this point.
 <br/>

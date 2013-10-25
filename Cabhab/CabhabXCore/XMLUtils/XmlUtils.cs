@@ -58,6 +58,17 @@ namespace SIL.Utils
 		}
 
 		/// <summary>
+		/// Returns true if value of attrName is 'true' or 'yes' (case ignored)
+		/// </summary>
+		/// <param name="node">The XmlNode to look in.</param>
+		/// <param name="attrName">The optional attribute to find.</param>
+		/// <returns></returns>
+		public static bool GetBooleanAttributeValue(XmlNode node, string attrName,string defaultValue)
+		{
+			return GetBooleanAttributeValue(GetOptionalAttributeValue(node, attrName, defaultValue));
+		}
+
+		/// <summary>
 		/// Returns true if sValue is 'true' or 'yes' (case ignored)
 		/// </summary>
 		public static bool GetBooleanAttributeValue(string sValue)

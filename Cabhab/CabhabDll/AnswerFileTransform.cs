@@ -62,7 +62,7 @@ namespace SIL.Cabhab
 			m_sResultFile2 = XmlUtils.GetOptionalAttributeValue(transformConfigurationNode, "resultFile2", null);
 			m_sReplaceDOCTYPE = XmlUtils.GetOptionalAttributeValue(transformConfigurationNode, "replaceDOCTYPE", null);
 			m_fRemoveBOM = XmlUtils.GetBooleanAttributeValue(transformConfigurationNode, "removeBOM");
-			m_fSaveResult = XmlUtils.GetBooleanAttributeValue(transformConfigurationNode, "saveResult");
+			m_fSaveResult = XmlUtils.GetBooleanAttributeValue(transformConfigurationNode, "saveResult", "true");
 			m_sApplyTransformWhenXPath = XmlUtils.GetOptionalAttributeValue(transformConfigurationNode, "applyTransformWhenXPath", null);
 			m_fInsertConfigPathInTransformDOCTYPE = XmlUtils.GetBooleanAttributeValue(transformConfigurationNode, "insertConfigPathInTransformDOCTYPE");
 			if (m_fInsertConfigPathInTransformDOCTYPE)

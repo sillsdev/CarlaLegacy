@@ -2,13 +2,13 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PPOther" count="3/5">
-	<title level="2">Pre/Post-Positional Phrases - Other Complements</title>
-	<introduction> In addition, some prepositions or postpositions can stand alone without a complement due to particle movement, such as in the sentences <example>Come [right in]</example> and <example>John turned the light [on/off]</example>.  Also, consider whether your language allows prepositions or postpositions to be stranded when its complement is fronted with questions, as in <example>Who(m) did you give the book [to _ ]?</example>
+	<title level="2">Adpositional Phrases - Other Complements</title>
+	<introduction> In addition, some prepositions or postpositions can stand alone without a complement due to particle movement, such as in the sentences <example>Come [right in]</example> and <example>John turned the light [on/off]</example>.  Also, some languages allow prepositions or postpositions to be stranded when its complement is fronted with questions, as in <example>Who(m) did you give the book [to _ ]?</example>
 	</introduction>
 	<form section="pp">
 		<radioGroup>
 			<groupName dataItem="alone" default="no">RPPAlone</groupName>
-			<prompt>Does your language allow any <span id="PPPrepSpanO2" show="swPPPosPrep">prepositions</span>
+			<prompt><br/>Does your language allow any <span id="PPPrepSpanO2" show="swPPPosPrep">prepositions</span>
 				<span id="PPPostSpanO2" show="swPPPosPost">postpositions</span>
 				<span id="PPBothSpanO2" show="swPPPosBoth">prepositions and postpositions</span> to stand alone due to movement or stranding as in any of the English examples above?</prompt>
 			<radio id="PPAloneNo" dataValue="no">No</radio>
@@ -20,14 +20,14 @@
 		<textBox id="PPCompAloneExample" dataItem="aloneExample" show="swPPAloneYes"/>
 		<br/>
 		<br/>
-		<prompt id="PPCliticOnlyAloneInstruction" show="swPPTypeCliticAloneYes">Since your language has only clitic <span id="PPPrepSpanO3" show="swPPPosPrep">prepositions,</span>
+		<prompt id="PPCliticOnlyAloneInstruction" show="swPPTypeCliticAloneYes">WARNING: Since your language has only clitic <span id="PPPrepSpanO3" show="swPPPosPrep">prepositions,</span>
 			<span id="PPPostSpanO3" show="swPPPosPost">postpositions,</span>
-			<span id="PPBothSpanO3" show="swPPPosBoth">prepositions and postpositions,</span> it should not be possible for them to stand alone.  If you do have forms which can stand alone, go back and change the earlier answer to ‘Some are written as separate words, but some are clitics written attached to another word’.</prompt>
+			<span id="PPBothSpanO3" show="swPPPosBoth">prepositions and postpositions,</span> it should not be possible for them to stand alone.  If you do have forms which can stand alone, go back to the first page of this section and change the answer to ‘Some are written as independent words, but some are clitics written attached to another word’.</prompt>
 <br/>
 	   <introduction>Most languages will allow locative adverbs as complements of prepositions or postpositions, such as <example>over there</example> and <example>in here</example>.</introduction>
 		<radioGroup>
 			<groupName dataItem="locative" default="no">RPPLocative</groupName>
-			<prompt>Does your language allow locative adverbs as complements of <span id="PPPrepSpanO5" show="swPPPosPrep">prepositions?</span>
+			<prompt><br/>Does your language allow locative adverbs as complements of <span id="PPPrepSpanO5" show="swPPPosPrep">prepositions?</span>
 				<span id="PPPostSpanO5" show="swPPPosPost">postpositions?</span>
 				<span id="PPBothSpanO5" show="swPPPosBoth">prepositions and postpositions?</span>
 			</prompt>
@@ -44,7 +44,7 @@
 		<introduction>Locative prepositions and postpositions are a special group in that they can take another locative PP as their complement.  English examples of this type include: <example>up [to the top]</example>, <example>around [behind the shed]</example> and <example>over [by the table]</example>.</introduction>
 		<radioGroup>
 			<groupName dataItem="ppComp" default="no">RPPCompPP</groupName>
-			<prompt>Does your language have any locative <span id="PPPrepSpanO9" show="swPPPosPrep">prepositions</span>
+			<prompt><br/>Does your language have any locative <span id="PPPrepSpanO9" show="swPPPosPrep">prepositions</span>
 				<span id="PPPostSpanO9" show="swPPPosPost">postpositions</span>
 				<span id="PPBothSpanO9" show="swPPPosBoth">prepositions and postpositions</span> which take a locative PP complement?</prompt>
 			<radio id="PPCompPPNo" dataValue="no">No</radio>
@@ -66,10 +66,10 @@
 			<span id="PPBothSpanO11" show="swPPPosBoth">prepositions or postpositions</span> attach, it will still come out as a single locative PP (or locative AdvP if the head is an adverb).</instruction>
 	<br/>
 	   <introduction>Temporals such as <example>before</example> and <example>after</example> are prepositions or postpositions when they take a nominal phrase complement, as in <example>before you</example> or <example>after that</example>.  They can also have a gerund complement, as in <example>before [signing the contract]</example> and <example>after [buying our new house]</example>, since gerunds are a special type of nominal phrase.
-		  <br/><br/>These same words can also have full sentences as their complements, as in <example>before [the rain stops]</example> and <example>after [John came home]</example>.  In this usage, they are temporal adverbs instead of prepositions or postpositions, and the whole phrase is an adverbial clause which normally modifies the main sentence.  Such examples will be handled in <section number="13.">Adverbial Clauses</section>.</introduction>
+	      <br/><br/>These same words can also have full sentences as their complements, as in <example>before [the rain stops]</example> and <example>after [John came home]</example>.  In this usage, they are temporal adverbs instead of prepositions or postpositions, and the whole phrase is an adverbial clause which normally modifies the main sentence.  Such examples will be handled in <section number="13.">Adverbial Clauses</section>.</introduction>
 		<radioGroup>
 			<groupName dataItem="tempComp" default="no">RPPTempComp</groupName>
-			<prompt>Does your language have any temporal <span id="PPPrepSpanO13" show="swPPPosPrep">prepositions</span>
+			<prompt><br/>Does your language have any temporal <span id="PPPrepSpanO13" show="swPPPosPrep">prepositions</span>
 				<span id="PPPostSpanO13" show="swPPPosPost">postpositions</span>
 				<span id="PPBothSpanO13" show="swPPPosBoth">prepositions and postpositions</span> which take a nominal phrase or gerund complement?</prompt>
 			<radio id="PPTempCompNo" dataValue="no">No</radio>
@@ -86,7 +86,7 @@
 		<br/>
 		<buttons>
 			<button id="PPOtherBack" value="Back" goto="PPComps.xml"/>
-			<button id="PPOtherNext" value="Next" goto="PPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		    <button id="PPOtherNext" value="Next" goto="PPCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swPPCompPPYesExceptClitic">
@@ -105,10 +105,12 @@
 	<showWhen id="swPPPosPost">
 		<whenValue element="pp" attr="pPos" value="after"/>
 	</showWhen>
-	<showWhen id="swPPPosBoth">
-		<whenValue element="pp" attr="pPos" value="both"/>
-	</showWhen>
-	<showWhen id="swPPAloneYes">
+   <showWhen id="swPPPosBoth">
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
+   </showWhen>
+   <showWhen id="swPPAloneYes">
 		<whenRadio button="PPAloneYes"/>
 	</showWhen>
 	<showWhen id="swPPTypeCliticAloneYes">
@@ -130,6 +132,6 @@
 		<whenRadio button="PPCompPPYes"/>
 	</showWhen>
    <showWhen id="swPPTempCompYes">
-	  <whenRadio button="PPTempCompYes"/>
+      <whenRadio button="PPTempCompYes"/>
    </showWhen>
 </page>

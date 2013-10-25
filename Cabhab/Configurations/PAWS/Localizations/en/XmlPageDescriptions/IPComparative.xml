@@ -2,179 +2,201 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPComparative" count="2/3">
-	<title level="2">Basic, Single-Clause Sentences - Comparatives</title>
+    <title level="2">Basic Sentences - Comparatives</title>
    <introduction>Comparatives are a subtype of copular sentences.  We will consider two types which rate two parts as equal, then comparatives where one part is better than the other, then superlatives.  All of these types may normally use either a copular verb or a perception verb.
 <br></br><br/>
-  Comparison of equals can use a noun or an adjective for comparison.  The noun equality construction uses a formula meaning ‘is the same Noun as’ between two nominal phrases.  Some English examples are:
-	  </introduction>
+  Comparison of equals can use a noun or an adjective for comparison.  The noun equality construction uses a formula meaning ‘is the same Noun as’ between two nominal phrases.  Some English examples are:    
+      </introduction>
    <EnglishExample>
-	  <exItem label="1.">The curtains look the same color as the walls.</exItem>
-	  <exItem label="2.">Your backpack is the same size as mine.</exItem>
-	  <exItem label="3.">Sue has the same hairstyle as Mary.</exItem>
+      <exItem label="1.">The curtains look the same color as the walls.</exItem>
+      <exItem label="2.">Your backpack is the same size as mine.</exItem>
+      <exItem label="3.">Sue has the same hairstyle as Mary.</exItem>  
    </EnglishExample>
-	<form section="ip">
-	   <prompt>Key similar examples from your language here:</prompt>
-	   <textBox id="IPComparativeSameExample" dataItem="sameExample" cols="50"/>
-	   <br/><br/>
-	   <radioGroup>
-		  <groupName dataItem="same" default="yes">RIPCopComparativeSame</groupName>
-		  <prompt>Does your language have a separate comparative degree word meaning “same” used in this type of comparative between two equal parts?</prompt>
-		  <radio id="IPCopComparativeSameYes" dataValue="yes">Yes</radio>
-		  <radio id="IPCopComparativeSameAttaches" dataValue="attaches">It is a clitic or affix on the noun of comparison, not a separate word</radio>
-		  <radio id="IPCopComparativeSameNo" dataValue="no">No, only the presence of the two nominal phrases and the noun with the copular predicate signal a comparative of equality of this type</radio>
-	   </radioGroup>
-	   <prompt id="IPCopComparativeSameWord" show="swIPCopComparativeSameYes">Key the comparative degree word(s) meaning “same” here:</prompt>
-	   <textBox id="IPExamplesComparativeSameWordExample" dataItem="sameWordExample" rows="3" show="swIPCopComparativeSameYes"/>
-	   <prompt id="IPCopComparativeSameAffix" show="swIPCopComparativeSameAttaches">Key the comparative degree affix(es) or clitic(s) meaning “same” here, with a hyphen to show which side it attaches on:</prompt>
-	   <textBox id="IPExamplesComparativeSameAffixExample" dataItem="sameAffixExample" rows="3" show="swIPCopComparativeSameAttaches"/>
-	   <instruction id="IPCopComparativeSameWordInstruction" show="swIPCopComparativeSameYes">In the lexicon, key the feature <feature>equalN</feature> on the comparative degree words meaning “same”.  Since these words can most likely also be used as regular adjectives, you will need to make a separate lexical entry for this form and give it the category <category>Deg</category>.</instruction>
-	   <instruction id="IPCopComparativeSameAffixInstruction" show="swIPCopComparativeSameAttaches">In the lexicon, key the feature <feature>equalN</feature> on the comparative degree affixes or clitics meaning “same”.</instruction>
-	   <br/><br/>
-	   <radioGroup>
-		  <groupName dataItem="compareN" default="yes">RIPCopCompareN</groupName>
-		  <prompt>Does your language have a comparative conjunction word like “as” which is used before the second part in this type of comparative between two equal parts?</prompt>
-		  <radio id="IPCopCompareNYes" dataValue="yes">Yes</radio>
-		  <radio id="IPCopCompareNNo" dataValue="no">No</radio>
-	   </radioGroup>
-	   <prompt id="IPCopCompareNWord" show="swIPCopCompareNYes">Key the comparative conjunction word(s) meaning “as” here:</prompt>
-	   <textBox id="IPExamplesCompareNWordExample" dataItem="compareNExample" rows="3" show="swIPCopCompareNYes"/>
-	   <instruction id="IPCopCompareNWordInstruction" show="swIPCopCompareNYes">In the lexicon, key the feature <feature>compareN</feature> on the comparative conjunction words meaning “as” used in this construction.  This entry also needs to have the category <category>Conj</category>, either by entering it directly into the category field or by using the feature <feature>makeConj</feature>.</instruction>
-	   <br/><br/>
- <introduction>The second type of comparison of equals uses an adjective for comparison.  This construction uses a formula meaning ‘is as Adjective as’ between the two nominal phrases.  Some English examples are:</introduction>
-	   <EnglishExample>
-		  <exItem label="4.">John is as friendly as Bill.</exItem>
-		  <exItem label="5.">Sue is as fast as Mary.</exItem>
-		  <exItem label="6.">David appears as tall as Michael.</exItem>
-	   </EnglishExample>
-	   <br/><br/>
-	   <prompt>Key similar examples from your language here:</prompt>
-	   <textBox id="IPComparativeAsExample" dataItem="asExample" cols="50"/>
-	   <br/><br/>
-	   <radioGroup>
-		  <groupName dataItem="as" default="yes">RIPCopComparativeAs</groupName>
-		  <prompt>Does your language have a separate comparative degree word meaning “as” used before the adjective in comparatives expressing equality?</prompt>
-		  <radio id="IPCopComparativeAsYes" dataValue="yes">Yes</radio>
-		  <radio id="IPCopComparativeAsNo" dataValue="no">No, the meaning ‘as’ is simply implied</radio>
-	   </radioGroup>
-	   <prompt id="IPCopComparativeAsWord" show="swIPCopComparativeAsYes">Key the comparative degree word(s) meaning “as” which are used before the adjective here:</prompt>
-	   <textBox id="IPComparativeAsWordExample" dataItem="asWordExample" rows="3" show="swIPCopComparativeAsYes"/>
-	   <instruction id="IPCopComparativeAsWordInstruction" show="swIPCopComparativeAsYes">In the lexicon, key the feature <feature>equalAdj</feature> on the comparative degree words meaning “as” which are used before the adjective.  These words also need to have the category <category>Deg</category> and are dictinct lexical entries from the comparative conjunctions.</instruction>
-	   <br/><br/>
-	   <radioGroup>
-		  <groupName dataItem="compareAdj" default="yes">RIPCopCompareAdj</groupName>
-		  <prompt>Does your language have a comparative conjunction word like “as” used before the second part in this type of comparative between two equal parts?</prompt>
-		  <radio id="IPCopCompareAdjYes" dataValue="yes">Yes</radio>
-		  <radio id="IPCopCompareAdjNo" dataValue="no">No</radio>
-	   </radioGroup>
-	   <prompt id="IPCopCompareAdjWord" show="swIPCopCompareAdjYes">Key the comparative conjunction word(s) meaning “as” which are used directly before the second part here:</prompt>
-	   <textBox id="IPExamplesCompareAdjWordExample" dataItem="compareAdjExample" rows="3" show="swIPCopCompareAdjYes"/>
-	   <instruction id="IPCopCompareAdjWordInstruction" show="swIPCopCompareAdjYes">In the lexicon, key the feature <feature>compareAdj</feature> on the word(s) meaning “as” used in the second part of this construction.  The entry also needs to have the category <category>Conj</category>.  If this comparative conjunction is the same one used in the previous construction, you may simply add the feature <feature>compareAdj</feature> to that lexical entry.</instruction>
-	   <br/><br/>
-	   <introduction>Comparatives where one part is better than the other compare two nominal phrases using a comparative conjunction word meaning ‘than’, and include whatever copula the language uses, or a perception verb, along with degree marking on the predicate adjective or nominal phrase.  The English examples in 7-11 show that the degree marking may either be an independent degree word or an affix on the predicate adjective.
-		  <br/><br/>Note that there is an implied copula following the final nominal phrase in the examples.  A more complex type of comparative has an overt sentence in the place of the second noun phrase.  These will be covered in <section number="15.">Coordination Constructions - Comparatives</section>.</introduction>
-	   <EnglishExample>
-		  <exItem label="7.">John is more handsome than Bill.</exItem>
-		  <exItem label="8.">Sue is a better runner than Mary.</exItem>
-		  <exItem label="9.">David appears taller than Michael.</exItem>
-		  <exItem label="10.">Mary looks prettier than Julie.</exItem>
-		  <exItem label="11.">John seems more certain of his answers than Sue.</exItem>
-	   </EnglishExample>
-	   <prompt>Key similar examples from your language here:</prompt>
-	   <textBox id="IPExamplesComparativeExample" dataItem="comparativeExample" cols="50"/>
-	   <br/><br/>
-	   <radioGroup>
-		  <groupName dataItem="comparative" default="yes">RIPCopComparative</groupName>
-		  <prompt>Does your language have a separate comparative conjunction word meaning “than” used in comparatives?</prompt>
-		  <radio id="IPCopComparativeYes" dataValue="yes">Yes</radio>
-		  <radio id="IPCopComparativeNo" dataValue="no">No, only the presence of the two noun phrases and the degree word with the copular predicate signal a comparative</radio>
-	   </radioGroup>
-	   <prompt id="IPCopComparativeWord" show="swIPCopComparativeYes">Key the comparative conjunction word(s) meaning “than” here:</prompt>
-	   <textBox id="IPExamplesComparativeWordExample" dataItem="comparativeWordExample" rows="3" show="swIPCopComparativeYes"/>
-	   <instruction id="IPCopComparativeWordInstruction" show="swIPCopComparativeYes">In the lexicon, key the feature <feature>comparative</feature> on the words meaning “than”.  The lexical entry or entires also needs to have the category <category>Conj</category>, either by entering it directly into the category field or by using the feature <feature>makeConj</feature>.</instruction>
-	   <br/><br/>
-	   <radioGroup>
-		  <groupName dataItem="comparativeAdj" default="no">RIPCopComparativeAdj</groupName>
-		  <prompt>Does your language have an affix that can express the degree of comparison on adjectives?</prompt>
-		  <radio id="IPCopComparativeAdjNo" dataValue="no">No, only a separate degree word is used with both predicate adjectives and nominal phrases</radio>
-		  <radio id="IPCopComparativeAdjYes" dataValue="yes">Yes, and it is always used with predicate adjectives in comparatives</radio>
-		  <radio id="IPCopComparativeAdjBoth" dataValue="both">Yes, but like in English, some predicate adjectives use the affix(es) and some use the separate degree words in comparatives</radio>
-	   </radioGroup>
-	   <prompt id="IPCopComparativeAffix" show="swIPCopComparativeAdjYesOrBoth">Key the comparative affix(es) used on predicate adjectives here (with a hyphen to indicate which side it attaches on):</prompt>
-	   <textBox id="IPExamplesComparativeAffixExample" dataItem="comparativeAffixExample" rows="3" show="swIPCopComparativeAdjYesOrBoth"/>
-	   <instruction id="IPCopComparativeAffixInstruction" show="swIPCopComparativeAdjYesOrBoth">Key the feature <feature>comparative_prefix</feature> or the feature <feature>comparative_suffix</feature> on the appropriate lexical entries.</instruction>
-	   <br/>
-	   <prompt id="IPCopComparativeDegBoth" show="swIPCopComparativeAdjDeg">Key the comparative degree words used with predicate adjectives and predicate nominals here:</prompt>
-	   <prompt id="IPCopComparativeDeg" show="swIPCopComparativeAdjYes">Key the comparative degree words used with predicate nominals here:</prompt>
-	   <textBox id="IPExamplesComparativeDegExample" dataItem="comparativeDegExample" rows="3"/>
-	   <instruction id="IPCopComparativeDegInstruction">Key the feature <feature>comparative</feature> on the appropriate degree words in the lexicon. The lexical entry or entires also needs to have the category <category>Deg</category>, either by entering it directly into the category field or by using the feature <feature>makeDeg</feature>.</instruction>
-	   <br/>
-	   <introduction>Superlatives are another subtype of copular sentences, directly related to comparatives.  They compare a nominal phrase to a group, which may be expressed as a prepositional or postpositional phrase or simply implied.  Like comparatives, superlatives include whatever copula the language uses, or a perception verb, along with special superlative degree marking on the predicate adjective or nominal phrase.  The  English examples in 12-16 show that the superlative degree marking may either be an independent degree word or an affix on the predicate adjective.</introduction>
-	   <EnglishExample>
-		  <exItem label="12.">John is the most handsome of the boys.</exItem>
-		  <exItem label="13.">Sue is the best runner (in the class).</exItem>
-		  <exItem label="14.">David appears the tallest (of all).</exItem>
-		  <exItem label="15.">Mary looks prettiest.</exItem>
-		  <exItem label="16.">John seems the most certain of his answers of all my students.</exItem>
-	   </EnglishExample>
-	   <prompt>Key similar examples from your language here:</prompt>
-	   <textBox id="IPExamplesSuperlativeExample" dataItem="superlativeExample" cols="50"/>
-	   <br/>
-	   <prompt id="IPCopSuperlativeAffix" show="swIPCopComparativeAdjYesOrBoth">Key the superlative affix(es) used on predicate adjectives here (with a hyphen to indicate which side it attaches on):</prompt>
-	   <textBox id="IPExamplesSuperlativeAffixExample" dataItem="superlativeAffixExample" rows="3" show="swIPCopComparativeAdjYesOrBoth"/>
-	   <instruction id="IPCopSuperlativeAffixInstruction" show="swIPCopComparativeAdjYesOrBoth">Key the feature <feature>superlative_prefix</feature> or the feature <feature>superlative_suffix</feature> on the appropriate lexical entries.</instruction>
-	   <br/>
-	   <prompt id="IPCopSuperlativeDegBoth" show="swIPCopComparativeAdjDeg">Key the superlative degree words used with predicate adjectives and predicate nominals here:</prompt>
-	   <prompt id="IPCopSuperlativeDeg" show="swIPCopComparativeAdjYes">Key the superlative degree words used with predicate nominals here:</prompt>
-	   <textBox id="IPExamplesSuperlativeDegExample" dataItem="superlativeDegExample" rows="3"/>
-	   <instruction id="IPCopSuperlativeDegInstruction">Key the feature <feature>superlative</feature> on the appropriate degree words in the lexicon. The lexical entry or entires also needs to have the category <category>Deg</category>, either by entering it directly into the category field or by using the feature <feature>makeDeg</feature>.</instruction>
-	   <br/>
-	   <br/>
-		<buttons>
-			<button id="IPComparativeBack" value="Back" goto="IPCop.xml"/>
-			<button id="IPComparativeNext" value="Next" goto="IPExist.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swHeadInitial">
-		<whenValue element="typology" attr="wordOrder" value="SVO"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-	</showWhen>
-	<showWhen id="swHeadFinal">
-		<whenValue element="typology" attr="wordOrder" value="SOV"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OSV"/>
-	</showWhen>
+    <form section="ip">
+       <prompt><br/>Key similar examples from your language here:</prompt>
+       <textBox id="IPComparativeSameExample" dataItem="sameExample" cols="50"/>   
+       <br/><br/>
+       <radioGroup>
+          <groupName dataItem="same" default="yes">RIPCopComparativeSame</groupName>
+          <prompt>Does your language have an independent comparative degree word meaning ‘same’ used in this type of comparative between two equal parts?</prompt>
+          <radio id="IPCopComparativeSameYes" dataValue="yes">Yes</radio>
+          <radio id="IPCopComparativeSameAttaches" dataValue="attaches">It is a clitic or affix on the noun of comparison, not an independent word</radio>
+          <radio id="IPCopComparativeSameNo" dataValue="no">No, only the presence of the two nominal phrases and the noun with the copular or perception verb signal a comparative of equality of this type</radio>
+       </radioGroup>
+       <prompt id="IPCopComparativeSameWord" show="swIPCopComparativeSameYes">Key the comparative degree word(s) meaning ‘same’ here:</prompt>     
+       <textBox id="IPExamplesComparativeSameWordExample" dataItem="sameWordExample" rows="3" show="swIPCopComparativeSameYes"/>
+       <prompt id="IPCopComparativeSameAffix" show="swIPCopComparativeSameAttaches">Key the comparative degree affix(es) or clitic(s) meaning ‘same’ here, with a hyphen or equal sign to show which side it attaches on:</prompt>     
+       <textBox id="IPExamplesComparativeSameAffixExample" dataItem="sameAffixExample" rows="3" show="swIPCopComparativeSameAttaches"/>   
+       <instruction id="IPCopComparativeSameWordInstruction" show="swIPCopComparativeSameYes">In the lexicon, key the feature <feature>equalN</feature> on the comparative degree words meaning ‘same’.  Since these words can most likely also be used as regular adjectives, you will need to make a separate lexical entry for this form and give it the category <category>Deg</category>.</instruction>
+       <instruction id="IPCopComparativeSameAffixInstruction" show="swIPCopComparativeSameAttaches">In the lexicon, key the feature <feature>equalN</feature> on the comparative degree affixes or clitics meaning ‘same’.</instruction>
+       <br/><br/>
+       <radioGroup>
+          <groupName dataItem="compareN" default="yes">RIPCopCompareN</groupName>
+          <prompt>Does your language have a comparative conjunction word like ‘as’ which is used before the second part in this type of comparative between two equal parts?</prompt>
+          <radio id="IPCopCompareNYes" dataValue="yes">Yes</radio>
+          <radio id="IPCopCompareNNo" dataValue="no">No</radio>
+       </radioGroup>
+       <prompt id="IPCopCompareNWord" show="swIPCopCompareNYes">Key the comparative conjunction word(s) meaning ‘as’ here:</prompt>     
+       <textBox id="IPExamplesCompareNWordExample" dataItem="compareNExample" rows="3" show="swIPCopCompareNYes"/>
+       <instruction id="IPCopCompareNWordInstruction" show="swIPCopCompareNYes">In the lexicon, key the feature <feature>compareN</feature> on the comparative conjunction words meaning ‘as’ used in this construction.  This entry also needs to have the category <category>Conj</category>, either by entering it directly into the category field or by using the feature <feature>makeConj</feature>.</instruction>
+       <br/><br/>       
+ <introduction>The second type of comparison of equals uses an adjective for comparison.  This construction uses a formula meaning ‘is as Adjective as’ between the two nominal phrases.  Some English examples are:</introduction>  
+       <EnglishExample>
+          <exItem label="4.">John is as friendly as Bill.</exItem>
+          <exItem label="5.">Sue is as fast as Mary.</exItem>
+          <exItem label="6.">David appears as tall as Michael.</exItem> 
+       </EnglishExample>
+       <br/><br/>       
+       <prompt>Key similar examples from your language here:</prompt>
+       <textBox id="IPComparativeAsExample" dataItem="asExample" cols="50"/>   
+       <br/><br/>
+       <radioGroup>
+          <groupName dataItem="as" default="yes">RIPCopComparativeAs</groupName>
+          <prompt>Does your language have an independent comparative degree word meaning ‘as’ used before the adjective in comparatives expressing equality?</prompt>
+          <radio id="IPCopComparativeAsYes" dataValue="yes">Yes</radio>
+          <radio id="IPCopComparativeAsNo" dataValue="no">No, the meaning ‘as’ is simply implied</radio>
+       </radioGroup>
+       <prompt id="IPCopComparativeAsWord" show="swIPCopComparativeAsYes">Key the comparative degree word(s) meaning ‘as’ which are used before the adjective here:</prompt>     
+       <textBox id="IPComparativeAsWordExample" dataItem="asWordExample" rows="3" show="swIPCopComparativeAsYes"/>
+       <instruction id="IPCopComparativeAsWordInstruction" show="swIPCopComparativeAsYes">In the lexicon, key the feature <feature>equalAdj</feature> on the comparative degree words meaning ‘as’ which are used before the adjective.  These words also need to have the category <category>Deg</category> and are dictinct lexical entries from the comparative conjunctions.</instruction>
+       <br/><br/>
+       <radioGroup>
+          <groupName dataItem="compareAdj" default="yes">RIPCopCompareAdj</groupName>
+          <prompt>Does your language have a comparative conjunction word like ‘as’ used before the second part in this type of comparative between two equal parts?</prompt>
+          <radio id="IPCopCompareAdjYes" dataValue="yes">Yes</radio>
+          <radio id="IPCopCompareAdjNo" dataValue="no">No</radio>
+       </radioGroup>
+       <prompt id="IPCopCompareAdjWord" show="swIPCopCompareAdjYes">Key the comparative conjunction word(s) meaning ‘as’ which are used directly before the second part here:</prompt>     
+       <textBox id="IPExamplesCompareAdjWordExample" dataItem="compareAdjExample" rows="3" show="swIPCopCompareAdjYes"/>
+       <instruction id="IPCopCompareAdjWordInstruction" show="swIPCopCompareAdjYes">In the lexicon, key the feature <feature>compareAdj</feature> on the word(s) meaning ‘as’ used in the second part of this construction.  The entry also needs to have the category <category>Conj</category>.  If this comparative conjunction is the same one used in the previous construction, you may simply add the feature <feature>compareAdj</feature> to that lexical entry.</instruction>
+       <br/><br/>
+       <introduction>Comparatives where one part is better than the other compare two nominal phrases using a comparative conjunction word meaning ‘than’, and include whatever copula the language uses, or a perception verb, along with degree marking on the predicate adjective or nominal phrase.  The English examples in 7-11 show that the degree marking may either be an independent degree word or an affix on the predicate adjective.
+          <br/><br/>Note that there is an implied copula following the final nominal phrase in the examples.  A more complex type of comparative has an overt sentence in the place of the second noun phrase.  These will be covered below.</introduction>
+       <EnglishExample>
+          <exItem label="7.">John is more handsome than Bill.</exItem>
+          <exItem label="8.">Sue is a poorer runner than Mary.</exItem>
+          <exItem label="9.">David appears taller than Michael.</exItem>  
+          <exItem label="10.">Mary looks prettier than Julie.</exItem>
+          <exItem label="11.">John seems less certain of his answers than Sue.</exItem>
+       </EnglishExample>
+       <prompt>Key similar examples from your language here:</prompt>
+       <textBox id="IPExamplesComparativeExample" dataItem="comparativeExample" cols="50"/>   
+       <br/><br/>
+       <radioGroup>
+          <groupName dataItem="comparative" default="yes">RIPCopComparative</groupName>
+          <prompt>Does your language have a separate comparative conjunction word meaning ‘than’ used in comparatives?</prompt>
+          <radio id="IPCopComparativeYes" dataValue="yes">Yes</radio>
+          <radio id="IPCopComparativeNo" dataValue="no">No, only the presence of the two noun phrases and the degree word with the copular or perception verb signal a comparative</radio>
+       </radioGroup>
+       <prompt id="IPCopComparativeWord" show="swIPCopComparativeYes">Key the comparative conjunction word(s) meaning ‘than’ here:</prompt>     
+       <textBox id="IPExamplesComparativeWordExample" dataItem="comparativeWordExample" rows="3" show="swIPCopComparativeYes"/>
+       <instruction id="IPCopComparativeWordInstruction" show="swIPCopComparativeYes">In the lexicon, key the feature <feature>comparative</feature> on the words meaning ‘than’.  The lexical entry or entires also needs to have the category <category>Conj</category>, either by entering it directly into the category field or by using the feature <feature>makeConj</feature>.</instruction>
+       <br/><br/>
+       <radioGroup>
+          <groupName dataItem="comparativeAdj" default="no">RIPCopComparativeAdj</groupName>
+          <prompt>Does your language have an affix that can express the degree of comparison on adjectives?</prompt>
+          <radio id="IPCopComparativeAdjNo" dataValue="no">No, only an independent degree word is used with both predicate adjectives and nominal phrases</radio>
+          <radio id="IPCopComparativeAdjYes" dataValue="yes">Yes, and it is always used with predicate adjectives in comparatives</radio>
+          <radio id="IPCopComparativeAdjBoth" dataValue="both">Yes, but some predicate adjectives use the affix(es) and some use the independent degree words in comparatives</radio>           
+       </radioGroup>
+       <prompt id="IPCopComparativeAffix" show="swIPCopComparativeAdjYesOrBoth">Key the comparative affix(es) used on predicate adjectives here (with a hyphen to indicate which side it attaches on):</prompt>     
+       <textBox id="IPExamplesComparativeAffixExample" dataItem="comparativeAffixExample" rows="3" show="swIPCopComparativeAdjYesOrBoth"/>       
+       <instruction id="IPCopComparativeAffixInstruction" show="swIPCopComparativeAdjYesOrBoth">Key the feature <feature>comparative_prefix</feature> or the feature <feature>comparative_suffix</feature> on the appropriate lexical entries.</instruction>
+       <br/>
+       <prompt id="IPCopComparativeDegBoth" show="swIPCopComparativeAdjDeg">Key the comparative degree words used with predicate adjectives and predicate nominals here, including those meaning ‘more’, ‘much’, ‘lots’, ‘less’ and ‘worse’:</prompt>     
+       <prompt id="IPCopComparativeDeg" show="swIPCopComparativeAdjYes">Key the comparative degree words used with predicate nominals here, including those meaning ‘more’, ‘less’ and ‘worse’:</prompt>     
+       <textBox id="IPExamplesComparativeDegExample" dataItem="comparativeDegExample" rows="3"/>       
+       <instruction id="IPCopComparativeDegInstruction">Key the feature <feature>comparative</feature> on the appropriate degree words in the lexicon. The lexical entry or entires also needs to have the category <category>Deg</category>, either by entering it directly into the category field or by using the feature <feature>makeDeg</feature>.</instruction>
+       <br/>
+       
+       <introduction>Now consider comparatives which have two sentences surrounding the comparative word, though the second sentence may be missing the adjective.  Like the shorter comparatives, these compare the qualities or actions of the subjects of the sentences and may have a copular verb or a perception verb or an action verb along with an adjective that is modified by a degree word or affix.  Some English examples are:</introduction>
+       <EnglishExample>
+          <exItem label="12.">John is more handsome than Bill is.</exItem>
+          <exItem label="13.">Sue runs much faster than Mary can run.</exItem>
+          <exItem label="14.">David appears lots shorter than Michael does.</exItem>  
+          <exItem label="15.">Mary looks prettier than Julie looks.</exItem>
+          <exItem label="16.">John seems less certain of his answers than Sue seems.</exItem>
+       </EnglishExample>
+       <introduction>Some languages do not allow any part of the second sentence to be omitted and instead always have two full sentences being compared.  Also, languages which do not have an independent comparative word meaning ‘than’ for the shorter comparative constructions will simply have the two sentence parts following one another in this construction.</introduction>
+          <prompt><br/>Key examples of comparative sentences in your language here:</prompt>
+          <textBox id="CoordComparativeSentExample" dataItem="comparativeSentExample" cols="50"/>
+          
+          <radioGroup>
+             <groupName dataItem="gap" default="yes">RCoordGap</groupName>
+             <prompt><br/>Does your language allow the adjective to be missing  in the second part of these fuller comparative constructions?</prompt>
+             <radio id="IPCompGapYes" dataValue="yes">Yes, it can be missing as in the English examples</radio>
+             <radio id="IPCompGapNo" dataValue="no">No, the full sentence is repeated after the comparative</radio>
+          </radioGroup>    
+       
+       
+       <br/><br/>
+       <introduction>Superlatives are another subtype of copular sentences, directly related to comparatives.  They compare a nominal phrase to a group, which may be expressed as a prepositional or postpositional phrase or simply implied.  Like comparatives, superlatives include whatever copula the language uses, or a perception verb, along with special superlative degree marking on the predicate adjective or nominal phrase.  The  English examples in 17-21 show that the superlative degree marking may either be an independent degree word or an affix on the predicate adjective.</introduction>
+       <EnglishExample>
+          <exItem label="17.">John is the most handsome of the boys.</exItem>
+          <exItem label="18.">Sue is the worst runner (in the class).</exItem>
+          <exItem label="19.">David appears the tallest (of all).</exItem>  
+          <exItem label="20.">Mary looks prettiest.</exItem>
+          <exItem label="21.">John seems the least certain of his answers of all my students.</exItem>
+       </EnglishExample>
+       <prompt>Key similar examples from your language here:</prompt>
+       <textBox id="IPExamplesSuperlativeExample" dataItem="superlativeExample" cols="50"/>     
+       <br/>
+       <prompt id="IPCopSuperlativeAffix" show="swIPCopComparativeAdjYesOrBoth">Key the superlative affix(es) used on predicate adjectives here (with a hyphen to indicate which side it attaches on):</prompt>     
+       <textBox id="IPExamplesSuperlativeAffixExample" dataItem="superlativeAffixExample" rows="3" show="swIPCopComparativeAdjYesOrBoth"/>     
+       <instruction id="IPCopSuperlativeAffixInstruction" show="swIPCopComparativeAdjYesOrBoth">Key the feature <feature>superlative_prefix</feature> or the feature <feature>superlative_suffix</feature> on the appropriate lexical entries.</instruction>
+       <br/>
+       <prompt id="IPCopSuperlativeDegBoth" show="swIPCopComparativeAdjDeg">Key the superlative degree words used with predicate adjectives and predicate nominals here, including those meaning ‘most’, ‘best’, ‘least’ and ‘worst’:</prompt>     
+       <prompt id="IPCopSuperlativeDeg" show="swIPCopComparativeAdjYes">Key the superlative degree words used with predicate nominals here, including those meaning ‘best’ and ‘worst’:</prompt>     
+       <textBox id="IPExamplesSuperlativeDegExample" dataItem="superlativeDegExample" rows="3"/>       
+       <instruction id="IPCopSuperlativeDegInstruction">Key the feature <feature>superlative</feature> on the appropriate degree words in the lexicon. The lexical entry or entires also needs to have the category <category>Deg</category>, either by entering it directly into the category field or by using the feature <feature>makeDeg</feature>.</instruction>
+       <br/>
+       <br/>              
+        <buttons>
+            <button id="IPComparativeBack" value="Back" goto="IPCop.xml"/>
+            <button id="IPComparativeNext" value="Next" goto="IPExist.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swHeadInitial">
+        <whenValue element="typology" attr="wordOrder" value="SVO"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="VOS"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+    </showWhen>
+    <showWhen id="swHeadFinal">
+        <whenValue element="typology" attr="wordOrder" value="SOV"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OVS"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+    </showWhen>
    <showWhen id="swIPCopComparativeSameYes">
-	  <whenRadio button="IPCopComparativeSameYes"/>
+      <whenRadio button="IPCopComparativeSameYes"/>
    </showWhen>
    <showWhen id="swIPCopComparativeSameAttaches">
-	  <whenRadio button="IPCopComparativeSameAttaches"/>
+      <whenRadio button="IPCopComparativeSameAttaches"/>
    </showWhen>
    <showWhen id="swIPCopCompareNYes">
-	  <whenRadio button="IPCopCompareNYes"/>
+      <whenRadio button="IPCopCompareNYes"/>
    </showWhen>
    <showWhen id="swIPCopComparativeAsYes">
-	  <whenRadio button="IPCopComparativeAsYes"/>
-   </showWhen>
+      <whenRadio button="IPCopComparativeAsYes"/>
+   </showWhen> 
    <showWhen id="swIPCopCompareAdjYes">
-	  <whenRadio button="IPCopCompareAdjYes"/>
+      <whenRadio button="IPCopCompareAdjYes"/>
    </showWhen>
    <showWhen id="swIPCopComparativeYes">
-		<whenRadio button="IPCopComparativeYes"/>
-	</showWhen>
-	<showWhen id="swIPCopComparativeAdjYesOrBoth">
-		<not/><whenRadio button="IPCopComparativeAdjNo"/>
-	</showWhen>
+        <whenRadio button="IPCopComparativeYes"/>
+    </showWhen>
+    <showWhen id="swIPCopComparativeAdjYesOrBoth">
+        <not/><whenRadio button="IPCopComparativeAdjNo"/>
+    </showWhen>
    <showWhen id="swIPCopComparativeAdjYes">
-	  <whenRadio button="IPCopComparativeAdjYes"/>
+      <whenRadio button="IPCopComparativeAdjYes"/>
    </showWhen>
    <showWhen id="swIPCopComparativeAdjDeg">
-	  <whenRadio button="IPCopComparativeAdjNo"/>
-	  <or/>
-	  <whenRadio button="IPCopComparativeAdjBoth"/>
+      <whenRadio button="IPCopComparativeAdjNo"/>
+      <or/>
+      <whenRadio button="IPCopComparativeAdjBoth"/>
   </showWhen>
 </page>

@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" mode="ques">
-	<section1 id="sQues">
-		<secTitle>Las preguntas</secTitle>
-		<p>
-<xsl:text>Hay dos tipos de preguntas: las que requieren una respuesta afirmativa o negativa y las que se contestan con información. En esta sección se consideran las preguntas de la cláusula principal y las variedades subordinadas de ambos tipos de preguntas, comenzando con las preguntas que requieren una respuesta “sí/no”.</xsl:text>
+    <section1 id="sQues">
+        <secTitle>Las preguntas</secTitle>
+        <p>
+<xsl:text>Hay dos tipos de preguntas: las que requieren una respuesta afirmativa o negativa y las que se contestan con información. En esta sección se consideran las preguntas como cláusula principal y las variedades de cláusulas subordinadas de ambos tipos de preguntas.</xsl:text>
 </p>
-		<section2 id="sQuesYN">
-		   <secTitle>Preguntas de respuesta sí/no</secTitle>
-			<p>
-<xsl:text>El español no tiene ningún indicador especial ni ningún cambio del orden de las palabras para las preguntas de respuesta sí/no de la cláusula principal.
-					Hay simplemente un cambio en la entonación. Otras lenguas pueden utilizar indicadores y/o cambios especiales del orden de las palabras.
-					En las preguntas de respuesta sí/no de la cláusula principal en inglés, un verbo auxiliar desplaza delante del sujeto. Otras lenguas utilizan un indicador o un complementizador especial en vez del auxiliar desplazado a la izquierda. Éste es el caso en preguntas de respuesta sí/no en las cláusulas subordinadas en inglés; no se permite el desplazamiento del auxiliar pero </xsl:text>
+        <section2 id="sQuesYN">
+           <secTitle>Preguntas de respuesta sí/no</secTitle>
+           <p contentType="ctPracticalIntro">
+<xsl:text>Las preguntas de respuesta sí/no como cláusula principal o subordinada pueden formarse de una manera diferente en los indicadores o complementadores de pregunta y/o cambios especiales del orden de las palabras.</xsl:text>
+</p>
+           <p contentType="ctComparativeIntro">
+<xsl:text>El español no tiene ningún indicador especial ni ningún cambio del orden de las palabras para las preguntas de respuesta sí/no como cláusula principal. 
+                    Hay simplemente un cambio en la entonación. Otras lenguas pueden utilizar indicadores y/o cambios especiales del orden de las palabras. 
+                    En las preguntas de respuesta sí/no como cláusula principal en inglés, un verbo auxiliar desplaza hacia la izquierda delante del sujeto. Otras lenguas utilizan un indicador o un complementador especial en vez de movimiento del auxiliar. Este es el caso en preguntas de respuesta sí/no como cláusulas subordinadas en inglés; no se permite el desplazamiento del auxiliar pero </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -29,12 +32,12 @@
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text> ‘si’</xsl:text>
 </gloss>
-<xsl:text> ocupa la posición del complementizador. Puesto que las lenguas pueden funcionar diferentemente en preguntas de respuesta sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será analizado por separado. </xsl:text>
+<xsl:text> ocupa la posición del complementador. Puesto que las preguntas de respuesta sí/no como cláusula principal o subordinada cláusulas se pueden formar en una manera distinta, cada uno se analiza por separado.</xsl:text>
 </p>
-			<section3 id="sQuesYNMain">
-			   <secTitle>Preguntas de respuesta sí/no de la cláusula principal</secTitle>
-				<p>
-<xsl:text>Mientras que en español simplemente hay un cambio en la entonación para señalar una pregunta de respuesta sí/no de la cláusula principal, otras lenguas utilizan indicadores y/o cambios especiales del orden de las palabras. Algunos ejemplos en inglés de las preguntas de respuesta sí/no de la cláusula principal que muestran el desplazamiento requerido de un auxiliar son: </xsl:text>
+            <section3 id="sQuesYNMain">
+               <secTitle>Preguntas de respuesta sí/no como cláusula principal</secTitle>
+                <p contentType="ctComparativeIntro">
+<xsl:text>Mientras que en español simplemente hay un cambio en la entonación para señalar una pregunta de respuesta sí/no como cláusula principal, otras lenguas utilizan indicadores y/o cambios especiales del orden de las palabras. Algunos ejemplos en inglés de las preguntas de respuesta sí/no como cláusula principal que muestran el desplazamiento que se requiere a un auxiliar son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -63,82 +66,8 @@
 </gloss>
 <xsl:text></xsl:text>
 </p>
-				<p>
-<xsl:text>En </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> preguntas de respuesta sí/no de la cláusula principal, </xsl:text>
-<xsl:choose>
-					   <xsl:when test="//q/@mainYN='no'"> no hay ni indicador ni cambio del orden de las palabras, se da con un cambio en la entonación o el tono u otra indicación que no es sintáctica.</xsl:when>
-						<xsl:when test="//q/@mainYN='noAux'">el movimiento de un auxiliar</xsl:when>
-						<xsl:when test="//q/@mainYN='yes'">hay por lo menos un indicador o complementizador de la pregunta.</xsl:when>
-					</xsl:choose>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@mainYN)='noAux'">
-						<xsl:text> al </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@mainYNAuxPos='before'">frente</xsl:when>
-							<xsl:when test="//q/@mainYNAuxPos='after'">extremo</xsl:when>
-							<xsl:when test="//q/@mainYNAuxPos='unknown'">_______</xsl:when>
-						</xsl:choose>
-						<xsl:text> de la pregunta se requiere.</xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@mainYN)='yes'">
-						<xsl:text>El indicador o complementizador de la pregunta es  </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@mainYNWord='yes'">escrito como una palabra independiente.</xsl:when>
-							<xsl:when test="//q/@mainYNWord='no'">un clítico que se une</xsl:when>
-						</xsl:choose>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//q/@mainYNWord)='no'">
-							<xsl:text> </xsl:text>
-							<xsl:choose>
-								<xsl:when test="//q/@mainYNCliticAttaches='edge'"> a la orilla de la pregunta.</xsl:when>
-								<xsl:when test="//q/@mainYNCliticAttaches='head'"> al verbo en la pregunta.</xsl:when>
-							</xsl:choose>
-							<xsl:choose>
-								<xsl:when test="//q/@mainYNCliticPos='before'">Estos clíticos son proclíticos.</xsl:when>
-								<xsl:when test="//q/@mainYNCliticPos='after'">Estos clíticos son enclíticos.</xsl:when>
-								<xsl:when test="//q/@mainYNCliticPos='both'">Hay algunos clíticos que son proclíticos y algunos que son enclíticos.</xsl:when>
-							   <xsl:when test="//q/@mainYNCliticPos='unknown'">_______</xsl:when>
-						   </xsl:choose>
-							<xsl:text> </xsl:text>
-						</xsl:if>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYN)='yes'">
-						<xsl:text>El indicador o complementizador de la pregunta se presenta  </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@mainYNPos='before'">antes</xsl:when>
-							<xsl:when test="//q/@mainYNPos='after'">después</xsl:when>
-							<xsl:when test="//q/@mainYNPos='either'">de cualquier lado (pero no en ambos lados)</xsl:when>
-							<xsl:when test="//q/@mainYNPos='eitherOrBoth'">de cualquier lado o en ambos lados</xsl:when>
-							<xsl:when test="//q/@mainYNPos='beforeOrBoth'">antes o en ambos lados</xsl:when>
-							<xsl:when test="//q/@mainYNPos='afterOrBoth'">después o en ambos lados</xsl:when>
-							<xsl:when test="//q/@mainYNPos='both'">en ambos lados</xsl:when>
-							<xsl:when test="//q/@mainYNPos='unknown'">_______</xsl:when>
-						</xsl:choose>
-						<xsl:text> del resto de la pregunta.  </xsl:text>
-						<xsl:if test="normalize-space(//q/@mainYNEitherRestricted)='unrestricted' and normalize-space(//q/@mainYNPos)!='before' and normalize-space(//q/@mainYNPos)!='after'">
-							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse de cualquier lado de la pregunta.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//q/@mainYNEitherRestricted)='restricted' and normalize-space(//q/@mainYNPos)!='before' and normalize-space(//q/@mainYNPos)!='after'">
-							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada lado de la pregunta.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-</p>
-				<p>
-<xsl:text> Algunos ejemplos de las preguntas de respuesta sí/no de la cláusula principal en </xsl:text>
+               <p>
+<xsl:text> Algunos ejemplos de las preguntas de respuesta sí/no como cláusula principal en el </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -149,7 +78,7 @@
 </xsl:choose>
 <xsl:text> son: </xsl:text>
 </p>
-				<example num="xQues.QuesYN.QuesYNMain.10">
+               <example num="xQues.QuesYN.QuesYNMain.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//q/example" />
 </xsl:variable>
@@ -163,7 +92,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//q/example))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xQues.QuesYN.QuesYNMain.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xQues.QuesYN.QuesYNMain.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -172,7 +101,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xQues.QuesYN.QuesYNMain.10.1</xsl:text>
+<xsl:text>xQues.QuesYN.QuesYNMain.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -187,11 +116,292 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			</section3>
-			<section3 id="sQuesYNEmb">
-			   <secTitle>Preguntas de respuesta sí/no de la cláusula subordinada</secTitle>
-				<p>
-<xsl:text>Algunos ejemplos en español de las preguntas de respuesta sí/no en las cláusulas subordinadas que muestran la presencia de los indicadores o complementizadores de la pregunta son: </xsl:text>
+               <p>
+<xsl:text>De acuerdo con los ejemplos, </xsl:text>
+<xsl:choose>
+                       <xsl:when test="//q/@mainYN='no'"> no hay ni indicador ni cambio del orden de las palabras, solamente un cambio en la entonación o el tono u otra indicación que no es sintáctica.</xsl:when>
+                       <xsl:when test="//q/@mainYN='noAux'">se requiere el movimiento de un auxiliar</xsl:when>
+                       <xsl:when test="//q/@mainYN='yes'">hay por lo menos un indicador o complementador de pregunta en las preguntas de respuesta sí/no.</xsl:when>
+                    </xsl:choose>
+<xsl:text> </xsl:text>
+<xsl:if test="normalize-space(//q/@mainYN)='noAux'">
+                        <xsl:text> al </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="//q/@mainYNAuxPos='before'">inicio</xsl:when>
+                            <xsl:when test="//q/@mainYNAuxPos='after'">final</xsl:when>
+                            <xsl:when test="//q/@mainYNAuxPos='unknown'">_______</xsl:when>
+                        </xsl:choose>
+                        <xsl:text> de la pregunta.</xsl:text>
+                    </xsl:if>
+<xsl:text> </xsl:text>
+<xsl:if test="normalize-space(//q/@mainYN)='yes'">
+                        <xsl:text></xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="//q/@mainYNWord='yes'">Se escriben como palabras independientes.</xsl:when>
+                           <xsl:when test="//q/@mainYNWord='some'">Algunos se escriben como palabras independientes pero otros se unen </xsl:when>
+                           <xsl:when test="//q/@mainYNWord='no'">Se unen </xsl:when>
+                        </xsl:choose>
+                       <xsl:if test="normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='some' and normalize-space(//q/@mainYN)='yes'">
+                          <xsl:if test="normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/mainYNEnclitic/@checked)='no' and normalize-space(//q/mainYNPrefix/@checked)='no' and normalize-space(//q/mainYNSuffix/@checked)='no' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>como proclíticos al principio de la palabra inicial en la pregunta.  </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/mainYNProclitic/@checked)='no' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/mainYNPrefix/@checked)='no' and normalize-space(//q/mainYNSuffix/@checked)='no' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>como enclíticos al final de la última palabra en la pregunta.    </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/mainYNPrefix/@checked)='no' and normalize-space(//q/mainYNSuffix/@checked)='no' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>al principio de la palabra inicial en la pregunta o al final de la última palabra en la pregunta como clíticos.   </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/mainYNProclitic/@checked)='no' and normalize-space(//q/mainYNEnclitic/@checked)='no' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/mainYNSuffix/@checked)='no' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>al verbo en la pregunta como prefijos.  </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/mainYNProclitic/@checked)='no' and normalize-space(//q/mainYNEnclitic/@checked)='no' and normalize-space(//q/mainYNPrefix/@checked)='no' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>al verbo en la pregunta como sufijos.   </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/mainYNProclitic/@checked)='no' and normalize-space(//q/mainYNEnclitic/@checked)='no' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>al verbo en la pregunta, algunos como prefijos y otros como sufijos.   </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/mainYNEnclitic/@checked)='no' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/mainYNSuffix/@checked)='no' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/mainYNEnclitic/@checked)='no' and normalize-space(//q/mainYNPrefix/@checked)='no' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/mainYNEnclitic/@checked)='no' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNProclitic/@checked)='no' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/mainYNSuffix/@checked)='no' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNProclitic/@checked)='no' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/mainYNPrefix/@checked)='no' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNProclitic/@checked)='no' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/mainYNEnclitic/@checked)='no' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/mainYNSuffix/@checked)='no' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/mainYNPrefix/@checked)='no' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>al principio o final de la pregunta como clíticos, o al verbo en la pregunta como afijos.  </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/mainYNProclitic/@checked)='no' and normalize-space(//q/mainYNEnclitic/@checked)='no' and normalize-space(//q/mainYNPrefix/@checked)='no' and normalize-space(//q/mainYNSuffix/@checked)='no' and normalize-space(//q/mainYNCliticOther/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//q/mainYNCliticOther" />
+<xsl:text>.  </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/mainYNCliticOther/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/mainYNCliticOther/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/mainYNCliticOther/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/mainYNCliticOther/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>  Otros se unen ___</xsl:text>
+<xsl:value-of select="//q/mainYNCliticOther" />  <xsl:text>.</xsl:text>
+</xsl:if>              
+                       </xsl:if>  <xsl:text></xsl:text>
+                    </xsl:if>
+</p>   
+               <xsl:if test="normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='some' and normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='some' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<p>
+<xsl:text>Los clíticos que se marcan las preguntas de respuesta sí/no como cláusula principal son:</xsl:text>
+</p>
+</xsl:if>      
+               <xsl:if test="normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='some' and normalize-space(//q/mainYNProclitic/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='some' and normalize-space(//q/mainYNEnclitic/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<example num="xQues.QuesYN.QuesYNMain.14">
+<table border="1">
+                     <tr>
+                        <th>Clíticos de respuesta sí/no </th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/mainYNCliticExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>     
+               <xsl:if test="normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='some' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='some' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<p>
+<xsl:text>Los afijos que se marcan las preguntas de respuesta sí/no como cláusula principal son:</xsl:text>
+</p>
+</xsl:if>      
+               <xsl:if test="normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='no' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='some' and normalize-space(//q/mainYNPrefix/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='some' and normalize-space(//q/mainYNSuffix/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<example num="xQues.QuesYN.QuesYNMain.18">
+<table border="1">
+                     <tr>
+                        <th>Afijos de respuesta sí/no </th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/mainYNAffixExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>     
+               <xsl:if test="normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='some' and normalize-space(//q/@mainYN)='yes'">
+<p>
+<xsl:text> Los indicadores o complementadores que se escriben como palabras independientes se presentan </xsl:text>
+<xsl:if test="normalize-space(//q/mainYNWordBefore/@checked)='yes' and normalize-space(//q/mainYNWordAfter/@checked)='no' and normalize-space(//q/mainYNWordBoth/@checked)='no' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>antes</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/mainYNWordBefore/@checked)='no' and normalize-space(//q/mainYNWordAfter/@checked)='yes' and normalize-space(//q/mainYNWordBoth/@checked)='no' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>después</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/mainYNWordBefore/@checked)='no' and normalize-space(//q/mainYNWordAfter/@checked)='no' and normalize-space(//q/mainYNWordBoth/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>en ambos lados</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/mainYNWordBefore/@checked)='yes' and normalize-space(//q/mainYNWordAfter/@checked)='yes' and normalize-space(//q/mainYNWordBoth/@checked)='no' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>de cualquier lado</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/mainYNWordBefore/@checked)='yes' and normalize-space(//q/mainYNWordAfter/@checked)='no' and normalize-space(//q/mainYNWordBoth/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>antes o en ambos lados</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/mainYNWordBefore/@checked)='no' and normalize-space(//q/mainYNWordAfter/@checked)='yes' and normalize-space(//q/mainYNWordBoth/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>después o en ambos lados</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/mainYNWordBefore/@checked)='yes' and normalize-space(//q/mainYNWordAfter/@checked)='yes' and normalize-space(//q/mainYNWordBoth/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>de cualquier lado o en ambos lados</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/mainYNWordOther/@checked)='no' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text> del resto de la pregunta.  </xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/mainYNWordBefore/@checked)='no' and normalize-space(//q/mainYNWordAfter/@checked)='no' and normalize-space(//q/mainYNWordBoth/@checked)='no' and normalize-space(//q/mainYNWordOther/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//q/mainYNWordOther" />
+<xsl:text>.  </xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/mainYNWordBefore/@checked)='yes' and normalize-space(//q/mainYNWordOther/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNWordAfter/@checked)='yes' and normalize-space(//q/mainYNWordOther/@checked)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/mainYNWordBoth/@checked)='yes' and normalize-space(//q/mainYNWordOther/@checked)='yes' and normalize-space(//q/@mainYN)='yes'">
+<xsl:text>del resto de la pregunta y también pueden presentarse ___</xsl:text> <xsl:value-of select="//q/mainYNWordOther" /> <xsl:text>. </xsl:text>
+</xsl:if>
+<xsl:text> Estos indicadores son:</xsl:text>
+</p>
+</xsl:if>
+               <xsl:if test="normalize-space(//q/@mainYNWord)='yes' and normalize-space(//q/@mainYN)='yes' or normalize-space(//q/@mainYNWord)='some' and normalize-space(//q/@mainYN)='yes'">
+<example num="xQues.QuesYN.QuesYNMain.22">
+<table border="1">
+                     <tr>
+                        <th>Indicadores de respuesta sí/no </th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/mainYNWordExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>     
+            </section3>
+            <section3 id="sQuesYNEmb">
+               <secTitle>Preguntas de respuesta sí/no como cláusula subordinada</secTitle>
+                <p contentType="ctComparativeIntro">
+<xsl:text>Algunos ejemplos en español de preguntas de respuesta sí/no como cláusulas subordinadas que muestran la presencia de los indicadores o complementadores de la pregunta son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -208,82 +418,8 @@
 </xsl:attribute>Susana se pregunta si el muchacho habría podido golpear el beísbol.</langData>
 <xsl:text>.</xsl:text>
 </p>
-				<p>
-<xsl:text>En las preguntas de respuesta sí/no de la cláusula subordinada en </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text>, </xsl:text>
-<xsl:choose>
-					   <xsl:when test="//q/@embYN='no'"> no hay indicador ni cambio del orden de las palabras, se da con un cambio en la entonación o el tono u otra indicación que no es sintáctica.</xsl:when>
-						<xsl:when test="//q/@embYN='noAux'">el desplazamiento de un auxiliar</xsl:when>
-						<xsl:when test="//q/@embYN='yes'">hay por lo menos un indicador o complementizador de la pregunta.</xsl:when>
-					</xsl:choose>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@embYN)='noAux'">
-						<xsl:text> al </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@embYNAuxPos='before'">frente</xsl:when>
-							<xsl:when test="//q/@embYNAuxPos='after'">extremo</xsl:when>
-							<xsl:when test="//q/@embYNAuxPos='unknown'">_______</xsl:when>
-					   </xsl:choose>
-						<xsl:text> de la pregunta subordinada se requiere.</xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@embYN)='yes'">
-						<xsl:text>El indicador o complementizador de la pregunta es </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@embYNWord='yes'">escrito como una palabra independiente.</xsl:when>
-							<xsl:when test="//q/@embYNWord='no'">un clítico que se une</xsl:when>
-						</xsl:choose>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//q/@embYNWord)='no'">
-							<xsl:text> </xsl:text>
-							<xsl:choose>
-								<xsl:when test="//q/@embYNCliticAttaches='edge'"> a la orilla de la pregunta subordinada.</xsl:when>
-								<xsl:when test="//q/@embYNCliticAttaches='head'"> al verbo en la pregunta subordinada.</xsl:when>
-							</xsl:choose>
-							<xsl:choose>
-								<xsl:when test="//q/@embYNCliticPos='before'">Estos clíticos son proclíticos.</xsl:when>
-								<xsl:when test="//q/@embYNCliticPos='after'">Estos clíticos son enclíticos.</xsl:when>
-								<xsl:when test="//q/@embYNCliticPos='both'">Hay algunos clíticos que son proclíticos y algunos que son enclíticos.</xsl:when>
-								<xsl:when test="//q/@embYNCliticPos='unknown'">_______</xsl:when>
-						   </xsl:choose>
-							<xsl:text> </xsl:text>
-						</xsl:if>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYN)='yes'">
-						<xsl:text>El indicador o complementizador de la pregunta se presenta </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@embYNPos='before'">antes</xsl:when>
-							<xsl:when test="//q/@embYNPos='after'">después</xsl:when>
-							<xsl:when test="//q/@embYNPos='either'">de cualquier lado (pero no en ambos lados)</xsl:when>
-							<xsl:when test="//q/@embYNPos='eitherOrBoth'">de cualquier lado o en ambos lados</xsl:when>
-							<xsl:when test="//q/@embYNPos='beforeOrBoth'">antes o en ambos lados</xsl:when>
-							<xsl:when test="//q/@embYNPos='afterOrBoth'">después o en ambos lados</xsl:when>
-							<xsl:when test="//q/@embYNPos='both'">en ambos lados</xsl:when>
-							<xsl:when test="//q/@embYNPos='unknown'">_______</xsl:when>
-					   </xsl:choose>
-						<xsl:text> del resto de la pregunta subordinada.  </xsl:text>
-						<xsl:if test="normalize-space(//q/@embYNEitherRestricted)='unrestricted' and normalize-space(//q/@embYNPos)!='before' and normalize-space(//q/@embYNPos)!='after' and normalize-space(//q/@embYN)='yes'">
-							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse de cualquier lado de la pregunta subordinada.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//q/@embYNEitherRestricted)='restricted' and normalize-space(//q/@embYNPos)!='before' and normalize-space(//q/@embYNPos)!='after' and normalize-space(//q/@embYN)='yes'">
-							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada lado de la pregunta subordinada.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-</p>
-				<p>
-<xsl:text> Algunos ejemplos de las preguntas de respuesta sí/no de la cláusula subordinada  en </xsl:text>
+               <p>
+<xsl:text> Algunos ejemplos de preguntas de respuesta sí/no como cláusula subordinada en el </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -294,7 +430,7 @@
 </xsl:choose>
 <xsl:text> son: </xsl:text>
 </p>
-				<example num="xQues.QuesYN.QuesYNEmb.10">
+               <example num="xQues.QuesYN.QuesYNEmb.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//q/embYNExample" />
 </xsl:variable>
@@ -308,7 +444,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//q/embYNExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xQues.QuesYN.QuesYNEmb.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xQues.QuesYN.QuesYNEmb.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -317,7 +453,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xQues.QuesYN.QuesYNEmb.10.1</xsl:text>
+<xsl:text>xQues.QuesYN.QuesYNEmb.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -332,12 +468,294 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			</section3>
-		</section2>
-		<section2 id="sQuesContent">
-		   <secTitle>Preguntas de respuesta abierta</secTitle>
-			<p>
-<xsl:text>Las preguntas de respuesta abierta diferencian de preguntas de respuesta sí/no en que contienen una palabra o una frase interrogativa.  En algunos idiomas, algunos o todos estos interrogativos se expresan como afijos.  Las palabras o las frases o los afijos interrogativos correspondientes en </xsl:text>
+               <p>
+<xsl:text>De acuerdo con los ejemplos, </xsl:text>
+<xsl:choose>
+                       <xsl:when test="//q/@embYN='no'">no hay indicador ni cambio del orden de las palabras, solamente un cambio en la entonación o el tono u otra indicación que no es sintáctica.</xsl:when>
+                       <xsl:when test="//q/@embYN='noAux'">se requiere el desplazamiento de un auxiliar</xsl:when>
+                       <xsl:when test="//q/@embYN='yes'">hay por lo menos un indicador o complementador de pregunta en las preguntas de respuesta sí/no. </xsl:when>
+                    </xsl:choose>
+<xsl:text> </xsl:text>
+<xsl:if test="normalize-space(//q/@embYN)='noAux'">
+                        <xsl:text> al </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="//q/@embYNAuxPos='before'">inicio</xsl:when>
+                            <xsl:when test="//q/@embYNAuxPos='after'">final</xsl:when>
+                            <xsl:when test="//q/@embYNAuxPos='unknown'">_______</xsl:when>
+                       </xsl:choose>
+                        <xsl:text> de la pregunta subordinada.</xsl:text>
+                    </xsl:if>
+<xsl:text> </xsl:text>
+<xsl:if test="normalize-space(//q/@embYN)='yes'">
+                       <xsl:text></xsl:text>
+                        <xsl:choose>
+                           <xsl:when test="//q/@embYNWord='yes'">Se escriben como palabras independientes.</xsl:when>
+                           <xsl:when test="//q/@embYNWord='some'">Algunos se escriben como palabras independientes pero otros se unen </xsl:when>
+                           <xsl:when test="//q/@embYNWord='no'">Se unen </xsl:when>
+                        </xsl:choose>
+                       <xsl:if test="normalize-space(//q/@embYNWord)='no' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='some' and normalize-space(//q/@embYN)='yes'">
+                          <xsl:if test="normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/embYNEnclitic/@checked)='no' and normalize-space(//q/embYNPrefix/@checked)='no' and normalize-space(//q/embYNSuffix/@checked)='no' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>como proclíticos al principio de la palabra inicial en la pregunta subordinada.  </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/embYNProclitic/@checked)='no' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/embYNPrefix/@checked)='no' and normalize-space(//q/embYNSuffix/@checked)='no' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>como enclíticos al final de la última palabra en la pregunta subordinada.    </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/embYNPrefix/@checked)='no' and normalize-space(//q/embYNSuffix/@checked)='no' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>al principio de la palabra inicial en la pregunta subordinada o al final de la última palabra en la pregunta como clíticos.   </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/embYNProclitic/@checked)='no' and normalize-space(//q/embYNEnclitic/@checked)='no' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/embYNSuffix/@checked)='no' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>al verbo en la pregunta subordinada como prefijos.  </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/embYNProclitic/@checked)='no' and normalize-space(//q/embYNEnclitic/@checked)='no' and normalize-space(//q/embYNPrefix/@checked)='no' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>al verbo en la pregunta subordinada como sufijos.   </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/embYNProclitic/@checked)='no' and normalize-space(//q/embYNEnclitic/@checked)='no' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>al verbo en la pregunta subordinada, algunos como prefijos y otros como sufijos.   </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/embYNEnclitic/@checked)='no' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/embYNSuffix/@checked)='no' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/embYNEnclitic/@checked)='no' and normalize-space(//q/embYNPrefix/@checked)='no' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/embYNEnclitic/@checked)='no' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNProclitic/@checked)='no' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/embYNSuffix/@checked)='no' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNProclitic/@checked)='no' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/embYNPrefix/@checked)='no' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNProclitic/@checked)='no' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/embYNEnclitic/@checked)='no' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/embYNSuffix/@checked)='no' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/embYNPrefix/@checked)='no' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>al principio o final de la pregunta subordinada como clíticos, o al verbo en la pregunta como afijos.  </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/embYNProclitic/@checked)='no' and normalize-space(//q/embYNEnclitic/@checked)='no' and normalize-space(//q/embYNPrefix/@checked)='no' and normalize-space(//q/embYNSuffix/@checked)='no' and normalize-space(//q/embYNCliticOther/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//q/embYNCliticOther" />
+<xsl:text>.  </xsl:text>
+</xsl:if>
+                          <xsl:if test="normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/embYNCliticOther/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/embYNCliticOther/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/embYNCliticOther/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/embYNCliticOther/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>  Otros se unen ___</xsl:text>
+<xsl:value-of select="//q/embYNCliticOther" />  <xsl:text>.</xsl:text>
+</xsl:if>              
+                       </xsl:if>  <xsl:text></xsl:text>
+                    </xsl:if>
+</p>   
+               <xsl:if test="normalize-space(//q/@embYNWord)='no' and normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='no' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='some' and normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='some' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<p>
+<xsl:text>Los clíticos que se indican las preguntas de respuesta sí/no como cláusula subordinada son:</xsl:text>
+</p>
+</xsl:if>      
+               <xsl:if test="normalize-space(//q/@embYNWord)='no' and normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='no' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='some' and normalize-space(//q/embYNProclitic/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='some' and normalize-space(//q/embYNEnclitic/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<example num="xQues.QuesYN.QuesYNEmb.14">
+<table border="1">
+                     <tr>
+                        <th>Clíticos de respuesta sí/no </th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/embYNCliticExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>     
+               <xsl:if test="normalize-space(//q/@embYNWord)='no' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='no' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='some' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='some' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<p>
+<xsl:text>Los afijos que se indican las preguntas de respuesta sí/no como cláusula subordinada son:</xsl:text>
+</p>
+</xsl:if>      
+               <xsl:if test="normalize-space(//q/@embYNWord)='no' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='no' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='some' and normalize-space(//q/embYNPrefix/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='some' and normalize-space(//q/embYNSuffix/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<example num="xQues.QuesYN.QuesYNEmb.18">
+<table border="1">
+                     <tr>
+                        <th>Afijos de respuesta sí/no </th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/embYNAffixExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>     
+               <xsl:if test="normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='some' and normalize-space(//q/@embYN)='yes'">
+<p>
+<xsl:text> Los indicadores o complementadores que se escriben como palabras independientes se presentan </xsl:text>
+<xsl:if test="normalize-space(//q/embYNWordBefore/@checked)='yes' and normalize-space(//q/embYNWordAfter/@checked)='no' and normalize-space(//q/embYNWordBoth/@checked)='no' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>antes</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/embYNWordBefore/@checked)='no' and normalize-space(//q/embYNWordAfter/@checked)='yes' and normalize-space(//q/embYNWordBoth/@checked)='no' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>después</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/embYNWordBefore/@checked)='no' and normalize-space(//q/embYNWordAfter/@checked)='no' and normalize-space(//q/embYNWordBoth/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>en ambos lados</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/embYNWordBefore/@checked)='yes' and normalize-space(//q/embYNWordAfter/@checked)='yes' and normalize-space(//q/embYNWordBoth/@checked)='no' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>de cualquier lado</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/embYNWordBefore/@checked)='yes' and normalize-space(//q/embYNWordAfter/@checked)='no' and normalize-space(//q/embYNWordBoth/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>antes o en ambos lados</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/embYNWordBefore/@checked)='no' and normalize-space(//q/embYNWordAfter/@checked)='yes' and normalize-space(//q/embYNWordBoth/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>después o en ambos lados</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/embYNWordBefore/@checked)='yes' and normalize-space(//q/embYNWordAfter/@checked)='yes' and normalize-space(//q/embYNWordBoth/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>de cualquier lado o en ambos lados</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/embYNWordOther/@checked)='no' and normalize-space(//q/@embYN)='yes'">
+<xsl:text> del resto de la pregunta subordinada.  </xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/embYNWordBefore/@checked)='no' and normalize-space(//q/embYNWordAfter/@checked)='no' and normalize-space(//q/embYNWordBoth/@checked)='no' and normalize-space(//q/embYNWordOther/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//q/embYNWordOther" />
+<xsl:text>.  </xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//q/embYNWordBefore/@checked)='yes' and normalize-space(//q/embYNWordOther/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNWordAfter/@checked)='yes' and normalize-space(//q/embYNWordOther/@checked)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/embYNWordBoth/@checked)='yes' and normalize-space(//q/embYNWordOther/@checked)='yes' and normalize-space(//q/@embYN)='yes'">
+<xsl:text>del resto de la pregunta subordinada y también pueden presentarse ___</xsl:text> <xsl:value-of select="//q/embYNWordOther" /> <xsl:text>. </xsl:text>
+</xsl:if>
+<xsl:text> Estos indicadores son:</xsl:text>
+</p>
+</xsl:if>
+               <xsl:if test="normalize-space(//q/@embYNWord)='yes' and normalize-space(//q/@embYN)='yes' or normalize-space(//q/@embYNWord)='some' and normalize-space(//q/@embYN)='yes'">
+<example num="xQues.QuesYN.QuesYNEmb.22">
+<table border="1">
+                     <tr>
+                        <th>Indicadores de respuesta sí/no </th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/embYNWordExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>     
+               
+            </section3>
+        </section2>
+        <section2 id="sQuesContent">
+           <secTitle>Preguntas de respuesta abierta</secTitle>
+           <p contentType="ctComparativeIntro">
+<xsl:text>Las preguntas de respuesta abierta se diferencian de las de respuesta sí/no en que aquellas contienen una palabra o una frase interrogativa.  En algunas lenguas, algunos o todos estos interrogativos se expresan como afijos.  Las palabras, las frases o los afijos interrogativos en el </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -346,16 +764,13 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> se muestran en la tabla siguiente.</xsl:text>
+<xsl:text> se muestran en </xsl:text>
+<exampleRef num="xWh" equal="no" letterOnly="no" />
+<xsl:text>.</xsl:text>
 </p>
-			<example num="xWh">
-<table border="1">
-					<caption>
-					   <xsl:text>Interrogativos usados en preguntas de respuesta abierta </xsl:text>
-					</caption>
-					<tr>
-						<th>
-							<xsl:choose>
+           <p contentType="ctPracticalIntro">
+<xsl:text>Las preguntas de respuesta abierta se diferencian de las de respuesta sí/no en que aquellas contienen una palabra o una frase interrogativa.  Las palabras, las frases o los afijos interrogativos en el </xsl:text>
+<xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
@@ -363,34 +778,44 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-						</th>
-						<th>Glosa</th>
-					</tr>
-					<xsl:variable name="sExampleValue0">
+<xsl:text> se muestran en </xsl:text>
+<exampleRef num="xWh" equal="no" letterOnly="no" />
+<xsl:text>.</xsl:text>
+</p>
+            <example num="xWh">
+<table border="1">
+                    <caption>
+                       <xsl:text>Interrogativos usados en preguntas de respuesta abierta </xsl:text>
+                    </caption>
+                    <tr>
+                        <th>Morfemas</th>
+                        <th>Glosa</th>
+                    </tr>
+                    <xsl:variable name="sExampleValue0.0">
 <xsl:value-of select="translate(string(//q/who),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue0" />
+<xsl:value-of select="$sExampleValue0.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue0" />
+<xsl:value-of select="$sExampleValue0.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength0" />
+<xsl:value-of select="$iExampleLength0.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>quién</xsl:text>
-						</td>
+                            <xsl:text>quién</xsl:text>
+                        </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -403,36 +828,36 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>quién</xsl:text>
-						</td>
+                            <xsl:text>quién</xsl:text>
+                        </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-					<xsl:variable name="sExampleValue1">
+                    <xsl:variable name="sExampleValue1.0">
 <xsl:value-of select="translate(string(//q/what),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength1" select="string-length(normalize-space($sExampleValue1))" />
+<xsl:variable name="iExampleLength1.0" select="string-length(normalize-space($sExampleValue1.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength1 != 0 and $sExampleValue1 != ' '">
+<xsl:when test="$iExampleLength1.0 != 0 and $sExampleValue1.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue1" />
+<xsl:value-of select="$sExampleValue1.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue1" />
+<xsl:value-of select="$sExampleValue1.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength1" />
+<xsl:value-of select="$iExampleLength1.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>qué</xsl:text>
-						</td>
+                            <xsl:text>qué</xsl:text>
+                        </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -445,36 +870,36 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>qué</xsl:text>
-						</td>
+                            <xsl:text>qué</xsl:text>
+                        </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-					<xsl:variable name="sExampleValue2">
+                    <xsl:variable name="sExampleValue2.0">
 <xsl:value-of select="translate(string(//q/why),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
+<xsl:variable name="iExampleLength2.0" select="string-length(normalize-space($sExampleValue2.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
+<xsl:when test="$iExampleLength2.0 != 0 and $sExampleValue2.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue2" />
+<xsl:value-of select="$sExampleValue2.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue2" />
+<xsl:value-of select="$sExampleValue2.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength2" />
+<xsl:value-of select="$iExampleLength2.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>por qué</xsl:text>
-						</td>
+                            <xsl:text>por qué</xsl:text>
+                        </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -487,36 +912,36 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>por qué</xsl:text>
-						</td>
+                            <xsl:text>por qué</xsl:text>
+                        </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-					<xsl:variable name="sExampleValue3">
+                    <xsl:variable name="sExampleValue3.0">
 <xsl:value-of select="translate(string(//q/where),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength3" select="string-length(normalize-space($sExampleValue3))" />
+<xsl:variable name="iExampleLength3.0" select="string-length(normalize-space($sExampleValue3.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength3 != 0 and $sExampleValue3 != ' '">
+<xsl:when test="$iExampleLength3.0 != 0 and $sExampleValue3.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue3" />
+<xsl:value-of select="$sExampleValue3.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue3" />
+<xsl:value-of select="$sExampleValue3.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength3" />
+<xsl:value-of select="$iExampleLength3.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>dónde</xsl:text>
-						</td>
+                            <xsl:text>dónde</xsl:text>
+                        </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -529,36 +954,36 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>dónde</xsl:text>
-						</td>
+                            <xsl:text>dónde</xsl:text>
+                        </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-					<xsl:variable name="sExampleValue4">
+                    <xsl:variable name="sExampleValue4.0">
 <xsl:value-of select="translate(string(//q/when),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength4" select="string-length(normalize-space($sExampleValue4))" />
+<xsl:variable name="iExampleLength4.0" select="string-length(normalize-space($sExampleValue4.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength4 != 0 and $sExampleValue4 != ' '">
+<xsl:when test="$iExampleLength4.0 != 0 and $sExampleValue4.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue4" />
+<xsl:value-of select="$sExampleValue4.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue4" />
+<xsl:value-of select="$sExampleValue4.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength4" />
+<xsl:value-of select="$iExampleLength4.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>cuándo</xsl:text>
-						</td>
+                            <xsl:text>cuándo</xsl:text>
+                        </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -571,36 +996,36 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>cuándo</xsl:text>
-						</td>
+                            <xsl:text>cuándo</xsl:text>
+                        </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-					<xsl:variable name="sExampleValue5">
+                    <xsl:variable name="sExampleValue5.0">
 <xsl:value-of select="translate(string(//q/how),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength5" select="string-length(normalize-space($sExampleValue5))" />
+<xsl:variable name="iExampleLength5.0" select="string-length(normalize-space($sExampleValue5.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength5 != 0 and $sExampleValue5 != ' '">
+<xsl:when test="$iExampleLength5.0 != 0 and $sExampleValue5.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue5" />
+<xsl:value-of select="$sExampleValue5.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue5" />
+<xsl:value-of select="$sExampleValue5.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength5" />
+<xsl:value-of select="$iExampleLength5.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-						   <xsl:text>cómo o cuán</xsl:text>
-						</td>
+                           <xsl:text>cómo o cuán</xsl:text>
+                        </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -613,36 +1038,36 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-						   <xsl:text>cómo o cuán</xsl:text>
-						</td>
+                           <xsl:text>cómo o cuán</xsl:text>
+                        </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-				   <xsl:variable name="sExampleValue6">
+                   <xsl:variable name="sExampleValue6.0">
 <xsl:value-of select="translate(string(//q/howMany),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength6" select="string-length(normalize-space($sExampleValue6))" />
+<xsl:variable name="iExampleLength6.0" select="string-length(normalize-space($sExampleValue6.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength6 != 0 and $sExampleValue6 != ' '">
+<xsl:when test="$iExampleLength6.0 != 0 and $sExampleValue6.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue6" />
+<xsl:value-of select="$sExampleValue6.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue6" />
+<xsl:value-of select="$sExampleValue6.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength6" />
+<xsl:value-of select="$iExampleLength6.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-						 <xsl:text>cuánto o cuántos</xsl:text>
-					  </td>
+                         <xsl:text>cuánto o cuántos</xsl:text>
+                      </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -655,36 +1080,36 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-						 <xsl:text>cuánto o cuántos</xsl:text>
-					  </td>
+                         <xsl:text>cuánto o cuántos</xsl:text>
+                      </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-				   <xsl:variable name="sExampleValue7">
+                   <xsl:variable name="sExampleValue7.0">
 <xsl:value-of select="translate(string(//q/which),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength7" select="string-length(normalize-space($sExampleValue7))" />
+<xsl:variable name="iExampleLength7.0" select="string-length(normalize-space($sExampleValue7.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength7 != 0 and $sExampleValue7 != ' '">
+<xsl:when test="$iExampleLength7.0 != 0 and $sExampleValue7.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue7" />
+<xsl:value-of select="$sExampleValue7.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue7" />
+<xsl:value-of select="$sExampleValue7.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength7" />
+<xsl:value-of select="$iExampleLength7.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>cuál</xsl:text>
-						</td>
+                            <xsl:text>cuál</xsl:text>
+                        </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -697,36 +1122,36 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>cuál</xsl:text>
-						</td>
+                            <xsl:text>cuál</xsl:text>
+                        </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-					<xsl:variable name="sExampleValue8">
+                    <xsl:variable name="sExampleValue8.0">
 <xsl:value-of select="translate(string(//q/whose),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength8" select="string-length(normalize-space($sExampleValue8))" />
+<xsl:variable name="iExampleLength8.0" select="string-length(normalize-space($sExampleValue8.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength8 != 0 and $sExampleValue8 != ' '">
+<xsl:when test="$iExampleLength8.0 != 0 and $sExampleValue8.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue8" />
+<xsl:value-of select="$sExampleValue8.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue8" />
+<xsl:value-of select="$sExampleValue8.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength8" />
+<xsl:value-of select="$iExampleLength8.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-						   <xsl:text>de quién o cuyo</xsl:text>
-						</td>
+                           <xsl:text>de quién o cuyo(s)</xsl:text>
+                        </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -739,36 +1164,36 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-						   <xsl:text>de quién o cuyo</xsl:text>
-						</td>
+                           <xsl:text>de quién o cuyo(s)</xsl:text>
+                        </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-					<xsl:variable name="sExampleValue9">
+                    <xsl:variable name="sExampleValue9.0">
 <xsl:value-of select="translate(string(//q/other),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength9" select="string-length(normalize-space($sExampleValue9))" />
+<xsl:variable name="iExampleLength9.0" select="string-length(normalize-space($sExampleValue9.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength9 != 0 and $sExampleValue9 != ' '">
+<xsl:when test="$iExampleLength9.0 != 0 and $sExampleValue9.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue9" />
+<xsl:value-of select="$sExampleValue9.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue9" />
+<xsl:value-of select="$sExampleValue9.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength9" />
+<xsl:value-of select="$iExampleLength9.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>otros interrogativos</xsl:text>
-						</td>
+                            <xsl:text>otros interrogativos</xsl:text>
+                        </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -781,213 +1206,24 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-							<xsl:text>otros interrogativos</xsl:text>
-						</td>
+                            <xsl:text>otros interrogativos</xsl:text>
+                        </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-				</table>
+                </table>
 </example>
-			<p>
-<xsl:text>De los ejemplos de palabras interrogativas en el cuadro </xsl:text>
-<exampleRef num="xWh" equal="no" letterOnly="no" />
-<xsl:text>, la mayoría simplemente funcionan como pronombres o adverbios, pero hay excepciones.  La palabra </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>cómo</langData>
-<xsl:text> es un adverbio de modo por sí mismo pero </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>cómo</langData>
-<xsl:text> es una palabra de grado que modifica un adjetivo, como en </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>¿cuán grande?</langData>
-<xsl:text>; </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>qué</langData>
-<xsl:text> puede ser un pronombre por sí mismo o un demostrativo modificando un sustantivo, como en </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>¿qué libros?</langData>
-<xsl:text>; </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>cuál</langData>
-<xsl:text> nunca se coloca solamente pero modifica siempre un sustantivo como un demostrativo, como en </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>¿cuál muchacho?</langData>
-<xsl:text>; </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>cuánto o cuántos</langData>
-<xsl:text> es un cuantificador, como en </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>¿cuántos niños?</langData>
-<xsl:text>; y </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>de quién</langData>
-<xsl:text> puede ser un pronombre posesivo por sí mismo, como en </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>¿de quién es eso?</langData>
-<xsl:text>, pero </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>cuyo</langData>
-<xsl:text> puede ocupar la posición del poseedor en una frase nominal, como en </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>¿cuyos jugetes son estos?</langData>
-</p>
-			<p>
-<xsl:text>Se asumen que estas mismas posibilidades ser verdades en </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> también. </xsl:text>
-<xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demPos)='either' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demOrArtPos)='either' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@demAndArtDemPos)='either' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demPos)='either' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demOrArtPos)='either' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@demAndArtDemPos)='either'">
-					<xsl:text>Los demonstrativos se permiten presentarse de cualquier lado del sustantivo en </xsl:text>
-					<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-					<xsl:text>.  Las palabras que significan </xsl:text>
-<gloss>
-<xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>‘cuál’</xsl:text>
-</gloss>
-<xsl:text> y </xsl:text>
-<gloss>
-<xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>‘qué’</xsl:text>
-</gloss>
-<xsl:text> se presentan </xsl:text>
-					<xsl:choose>
-						<xsl:when test="//q/@whDemPos='before'">solamente antes del sustantivo, incluso si otro demostrativo se presenta después del sustantivo.</xsl:when>
-						<xsl:when test="//q/@whDemPos='after'">solamente después del sustantivo, incluso si otro demostrativo se presenta antes del sustantivo.</xsl:when>
-						<xsl:when test="//q/@whDemPos='agree'">de cualquier lado el sustantivo, pero cuando hay un demostrativo en cada lado en la misma oración, estos deben concordar en características (por ejemplo, ambas son palabras interrogativas o no).</xsl:when>
-					<xsl:when test="//q/@whDemPos='unknown'">_______</xsl:when>
-					</xsl:choose>
-					<xsl:text> </xsl:text>
-				</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artPos)='either'">
-					<xsl:text>Los artículos se permiten presentarse de cualquier lado del sustantivo en </xsl:text>
-					<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-					<xsl:text>.  Las palabras que significan </xsl:text>
-<gloss>
-<xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>‘cuál’</xsl:text>
-</gloss>
-<xsl:text> y </xsl:text>
-<gloss>
-<xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>‘qué’</xsl:text>
-</gloss>
-<xsl:text> se presentan </xsl:text>
-					<xsl:choose>
-						<xsl:when test="//q/@whArtPos='before'">solamente antes del sustantivo, incluso si otro artículo se presenta después del sustantivo.</xsl:when>
-						<xsl:when test="//q/@whArtPos='after'">solamente después del sustantivo, incluso si otro artículo se presenta antes del sustantivo.</xsl:when>
-						<xsl:when test="//q/@whArtPos='agree'">de cualquier lado el sustantivo, pero cuando hay un artículo en cada lado en la misma oración, estos deben concordar en características (por ejemplo, ambas son palabras interrogativas o no).</xsl:when>
-						<xsl:when test="//q/@whArtPos='unknown'">_______</xsl:when>
-					</xsl:choose>
-					<xsl:text> </xsl:text>
-				</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//adjp/@modifiers)='yes' and normalize-space(//adjp/@degreePos)!='before' and normalize-space(//adjp/@degreePos)!='after' or normalize-space(//adjp/@modifiers)='yesManner' and normalize-space(//adjp/@mannerPos)!='before' and normalize-space(//adjp/@mannerPos)!='after'">
-					<xsl:text>Las palabras de grado se permiten presentarse de cualquier lado del adjetivo en </xsl:text>
-					<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-					<xsl:text>.  La palabra que significa </xsl:text>
-<gloss>
-<xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>‘cómo’</xsl:text>
-</gloss>
-<xsl:text> se presenta </xsl:text>
-					<xsl:choose>
-						<xsl:when test="//q/@whDegAdjPos='before'">solamente antes del adjetivo, incluso si otra palabra de grado se presenta después del adjetivo.</xsl:when>
-						<xsl:when test="//q/@whDegAdjPos='after'">solamente después del adjetivo, incluso si otra palabra de grado se presenta antes del adjetivo.</xsl:when>
-						<xsl:when test="//q/@whDegAdjPos='agree'">de cualquier lado el adjetivo, pero cuando hay una palabra de grado en cada lado en la misma oración, estas deben concordar en características (por ejemplo, ambas son palabras interrogativas o no).</xsl:when>
-					<xsl:when test="//q/@whDegAdjPos='unknown'">_______</xsl:when>
-					</xsl:choose>
-					<xsl:text> </xsl:text>
-				</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//qp/@degree)='yes' and normalize-space(//qp/@degreePos)!='before' and normalize-space(//qp/@degreePos)!='after'">
-					<xsl:text>Las palabras de grado se permiten presentarse de cualquier lado del cuantificador en </xsl:text>
-					<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-					<xsl:text>.  La palabra que significa </xsl:text>
-<gloss>
-<xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>‘cómo’</xsl:text>
-</gloss>
-<xsl:text> se presenta </xsl:text>
-					<xsl:choose>
-						<xsl:when test="//q/@whDegQPos='before'">solamente antes del cuantificador, incluso si otra palabra de grado se presenta después del cuantificador.</xsl:when>
-						<xsl:when test="//q/@whDegQPos='after'">solamente después del cuantificador, incluso si otra palabra de grado se presenta antes del cuantificador.</xsl:when>
-						<xsl:when test="//q/@whDegQPos='agree'">de cualquier lado el cuantificador, pero cuando hay una palabra de grado en cada lado en la misma oración, estas deben concordar en características (por ejemplo, ambas son palabras interrogativas o no).</xsl:when>
-					 <xsl:when test="//q/@whDegQPos='unknown'">_______</xsl:when>
-				   </xsl:choose>
-					<xsl:text> </xsl:text>
-				</xsl:if>
-<xsl:text> </xsl:text>
-</p>
-			<p>
-<xsl:text>Dependiendo del orden de las palabras básico de la lengua, las preguntas de respuesta abierta pueden ser formadas con o sin el desplazamiento a la izquierda de una frase interrogativa.
-					Las lenguas con núcleo final (SOV, OVS, y OSV) no tienen generalmente desplazamiento de una frase interrogativa en preguntas, mientras que las lenguas con núcleo inicial (SVO, VOS, y VSO) generalmente requieren el desplazamiento a la izquierda de una frase interrogativa.
-					En lenguas sin el desplazamiento a la izquierda para los interrogativos, la estructura de una pregunta de respuesta abierta será al igual que una pregunta de respuesta sí/no con un indicador de la pregunta o un auxiliar en la posición del complementizador o apenas al igual que una oración normal.
-					En cualquier caso, la frase interrogativa se presenta en su posición normal.  Muchas lenguas del orden SOV permiten opcionalmente el desplazamiento de una frase interrogativa a la posición inmediatamente antes del verbo.
+           <p contentType="ctComparativeIntro">
+<xsl:text>Dependiendo del orden de las palabras básico de la lengua, las preguntas de respuesta abierta pueden ser formadas con o sin el desplazamiento hacia la izquierda de una frase interrogativa.  
+               Las lenguas con núcleo final (SOV, OVS, y OSV) no tienen generalmente el desplazamiento de una frase interrogativa en preguntas, mientras que las lenguas con núcleo inicial (SVO, VOS, y VSO) generalmente requieren el desplazamiento hacia la izquierda de una frase interrogativa. </xsl:text>
+</p> 
+           <p contentType="ctComparativeIntro">
+<xsl:text>En lenguas sin el desplazamiento hacia la izquierda para los interrogativos, la estructura de una pregunta de respuesta abierta es igual que una pregunta de respuesta sí/no con un indicador de la pregunta o un auxiliar en la posición del complementador o apenas igual que una oración normal. 
+                    En cualquier caso, la frase interrogativa se presenta en su posición normal.  Muchas lenguas del orden SOV permiten opcionalmente el desplazamiento de una frase interrogativa a la posición inmediatamente antes del verbo.
 </xsl:text>
 </p>
-			<p>
-<xsl:text>En las preguntas de respuesta abierta de ambos las cláusula principal y la subordinada en </xsl:text>
+            <p>
+<xsl:text>Ya sea como cláusulas principales o como subordinadas, en las preguntas de respuesta abierta en el </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -998,17 +1234,17 @@
 </xsl:choose>
 <xsl:text>, una frase interrogativa </xsl:text>
 <xsl:choose>
-					<xsl:when test="//q/@contFront='no'">no desplaza a la izquierda; permanece simplemente en su posición normal.</xsl:when>
-					<xsl:when test="//q/@contFront='after'">puede permanecer en su posición normal o puede desplazarse a la posición inmediatamente antes del verbo.</xsl:when>
-					<xsl:when test="//q/@contFront='before'">desplaza a la izquierda de la cláusula.</xsl:when>
-					<xsl:when test="//q/@contFront='unknown'">_______.</xsl:when>
-				</xsl:choose>
+                    <xsl:when test="//q/@contFront='no'">no desplaza hacia la izquierda; permanece simplemente en su posición normal.</xsl:when>
+                    <xsl:when test="//q/@contFront='after'">puede permanecer en su posición normal o puede desplazarse hacia la posición inmediatamente antes del verbo.</xsl:when>
+                    <xsl:when test="//q/@contFront='before'">se desplaza hacia la izquierda hacia al inicio de la cláusula.</xsl:when>
+                    <xsl:when test="//q/@contFront='unknown'">_______.</xsl:when>
+                </xsl:choose>
 <xsl:text> </xsl:text>
 </p>
-			<section3 id="sQuesContentMain">
-			   <secTitle>Preguntas de respuesta abierta de la cláusula principal</secTitle>
-				<p>
-<xsl:text>Algunos ejemplos en español de las preguntas de respuesta abierta de la cláusula principal, mostrando el desplazamiento a la izquierda a una frase interrogativa que es requerido, son: </xsl:text>
+            <section3 id="sQuesContentMain">
+               <secTitle>Preguntas de respuesta abierta como cláusula principal</secTitle>
+                <p contentType="ctComparativeIntro">
+<xsl:text>Algunos ejemplos en español de preguntas de respuesta abierta como cláusula principal que se muestran el desplazamiento hacia la izquierda a una frase interrogativa son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1035,132 +1271,8 @@
 </xsl:attribute>¿Dónde está el líder?</langData>
 <xsl:text> </xsl:text>
 </p>
-				<p>
-<xsl:text>En las preguntas de respuesta abierta de la cláusula principal en </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> , </xsl:text>
-<xsl:choose>
-						<xsl:when test="//q/@mainCont='no'">no hay indicador ni auxiliar que desplaza a la izquierda,</xsl:when>
-						<xsl:when test="//q/@mainCont='noAux'">desplazamiento de un auxiliar</xsl:when>
-						<xsl:when test="//q/@mainCont='yes'">hay por lo menos un indicador o complementizador de la pregunta.</xsl:when>
-					</xsl:choose>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@mainCont)='no'">
-						<xsl:text> solamente </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@contFront='no'">una diferencia de</xsl:when>
-							<xsl:when test="//q/@contFront='after'">el desplazamiento opcional de una frase interrogativa y posiblemente un cambio en</xsl:when>
-							<xsl:when test="//q/@contFront='before'">el desplazamiento a la izquierda de una frase interrogativa y posiblemente un cambio en</xsl:when>
-							<xsl:when test="//q/@contFront='unknown'">_______ de una frase interrogativa y posiblemente un cambio en</xsl:when>
-						</xsl:choose>
-						<xsl:text> la entonación o el tono u otra indicación que no es sintáctica.</xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@mainCont)='noAux'">
-						<xsl:text> al </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@mainContAuxPos='before'">frente</xsl:when>
-							<xsl:when test="//q/@mainContAuxPos='after'">extremo</xsl:when>
-							<xsl:when test="//q/@mainContAuxPos='unknown'">_______</xsl:when>
-						</xsl:choose>
-						<xsl:text> de la pregunta es </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@mainContAuxRequired='no'">permitido pero no requerido</xsl:when>
-							<xsl:when test="//q/@mainContAuxRequired='yes'">requerido</xsl:when>
-						</xsl:choose>
-						<xsl:choose>
-							<xsl:when test="//q/@contFront='no'">.</xsl:when>
-							<xsl:when test="//q/@contFront='after'">.</xsl:when>
-							<xsl:when test="//q/@contFront='before'"> solamente el desplazamiento a la izquierda de una frase interrogativa.</xsl:when>
-						</xsl:choose>
-						<xsl:text> </xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@mainCont)='yes'">
-						<xsl:text>El indicador o complementizador de la pregunta es  </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@mainContWord='yes'">escrito como una palabra independiente.</xsl:when>
-							<xsl:when test="//q/@mainContWord='no'">un clítico que se une</xsl:when>
-						</xsl:choose>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainCont)='yes'">
-							<xsl:text> </xsl:text>
-							<xsl:choose>
-								<xsl:when test="//q/@mainContCliticAttaches='edge'"> a la orilla de la pregunta.</xsl:when>
-								<xsl:when test="//q/@mainContCliticAttaches='head'"> al verbo en la pregunta.</xsl:when>
-								<xsl:when test="//q/@mainContCliticAttaches='between'"> entre la frase interrogativa afrontada y el resto de la pregunta.</xsl:when>
-							</xsl:choose>
-							<xsl:choose>
-								<xsl:when test="//q/@mainContCliticPos='before'">Estos clíticos son proclíticos.</xsl:when>
-								<xsl:when test="//q/@mainContCliticPos='after'">Estos clíticos son enclíticos.</xsl:when>
-								<xsl:when test="//q/@mainContCliticPos='both'">Hay algunos clíticos que son proclíticos y algunos que son enclíticos.</xsl:when>
-							   <xsl:when test="//q/@mainContCliticPos='unknown'">_______</xsl:when>
-							</xsl:choose>
-							<xsl:text> </xsl:text>
-						</xsl:if>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' and normalize-space(//typology/@wordOrder)!='VSO'">
-						<xsl:text>El indicador o complementizador de la pregunta se presenta </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@mainContPos='before'">antes</xsl:when>
-							<xsl:when test="//q/@mainContPos='after'">después</xsl:when>
-							<xsl:when test="//q/@mainContPos='either'">de cualquier lado (pero no en ambos lados)</xsl:when>
-							<xsl:when test="//q/@mainContPos='eitherOrBoth'">de cualquier lado o en ambos lados</xsl:when>
-							<xsl:when test="//q/@mainContPos='beforeOrBoth'">antes o en ambos lados</xsl:when>
-							<xsl:when test="//q/@mainContPos='afterOrBoth'">después o en ambos lados</xsl:when>
-							<xsl:when test="//q/@mainContPos='both'">en ambos lados</xsl:when>
-							<xsl:when test="//q/@mainContPos='unknown'">_______</xsl:when>
-					   </xsl:choose>
-						<xsl:text> del resto de la pregunta.  </xsl:text>
-						<xsl:if test="normalize-space(//q/@mainContPos)!='before' and normalize-space(//q/@mainContPos)!='after' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContEitherRestrcited)='unrestricted'">
-							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse de cualquier lado de la pregunta.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//q/@mainContPos)!='before' and normalize-space(//q/@mainContPos)!='after' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' and normalize-space(//q/@mainContEitherRestrcited)='restricted'">
-							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada lado de la pregunta.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' and normalize-space(//typology/@wordOrder)='VSO'">
-						<xsl:text>El indiador o complementizador de la pregunta se presenta </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@mainContVSOBeforeWh='no'">inmediatamente después de la frase interrogativa desplazada.</xsl:when>
-							<xsl:when test="//q/@mainContVSOBeforeWh='noEnd'">inmediatamente después de la frase interrogativa desplazada o al final de la pregunta.</xsl:when>
-							<xsl:when test="//q/@mainContVSOBeforeWh='yes'">antes de la frase interrogativa desplazada.</xsl:when>
-							<xsl:when test="//q/@mainContVSOBeforeWh='some'">o antes o después de la frase interrogativa desplazada.</xsl:when>
-						</xsl:choose>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='noEnd' and normalize-space(//q/@mainContVSONoEndRestricted)='unrestricted' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes'">
-							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse en cada posición.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='noEnd' and normalize-space(//q/@mainContVSONoEndRestricted)='restricted' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@mainContVSOBeforeWh)='some' and normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes'">
-							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada posición.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes'">
-						<xsl:text>Un indicador o complementizador de la pregunta </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@mainContRequired='yes'">es requerido</xsl:when>
-							<xsl:when test="//q/@mainContRequired='yes'">no es requerido</xsl:when>
-						</xsl:choose>
-					   <xsl:text> en cada pregunta de respuesta abierta.</xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-</p>
-				<p>
-<xsl:text> Algunos ejemplos de las preguntas de respuesta abierta de la cláusula principal en </xsl:text>
+               <p>
+<xsl:text> Algunos ejemplos de preguntas de respuesta abierta como cláusula principal en el </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -1171,7 +1283,7 @@
 </xsl:choose>
 <xsl:text> son: </xsl:text>
 </p>
-				<example num="xQues.QuesContent.QuesContentMain.10">
+               <example num="xQues.QuesContent.QuesContentMain.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//q/contentExample" />
 </xsl:variable>
@@ -1185,7 +1297,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//q/contentExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xQues.QuesContent.QuesContentMain.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xQues.QuesContent.QuesContentMain.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1194,7 +1306,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xQues.QuesContent.QuesContentMain.10.1</xsl:text>
+<xsl:text>xQues.QuesContent.QuesContentMain.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1209,11 +1321,410 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			</section3>
-			<section3 id="sQuesContentEmb">
-			   <secTitle>Preguntas de respuesta abierta de la cláusula subordinada</secTitle>
-				<p>
-<xsl:text>Algunos ejemplos en español de las preguntas subordinadas, mostrando el desplazamiento a la izquierda requerido de una frase interrogativa, son: </xsl:text>
+               
+                <p>
+<xsl:text>De acuerdo con los ejemplos, </xsl:text>
+<xsl:choose>
+                        <xsl:when test="//q/@mainCont='no'">no hay ni indicador ni auxiliar que desplaza hacia la izquierda,</xsl:when>
+                       <xsl:when test="//q/@mainCont='noAux'">el movimiento de un auxiliar</xsl:when>
+                        <xsl:when test="//q/@mainCont='yes'">hay por lo menos un indicador o complementador de pregunta en las preguntas de respuesta abierta.</xsl:when>
+                    </xsl:choose>
+<xsl:text> </xsl:text>
+<xsl:if test="normalize-space(//q/@mainCont)='no'">
+                        <xsl:text> solamente </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="//q/@contFront='no'">una diferencia de</xsl:when>
+                            <xsl:when test="//q/@contFront='after'">el desplazamiento opcional de una frase interrogativa y posiblemente un cambio en</xsl:when>
+                            <xsl:when test="//q/@contFront='before'">el desplazamiento hacia la izquierda de una frase interrogativa y posiblemente un cambio en</xsl:when>
+                            <xsl:when test="//q/@contFront='unknown'">_______ de una frase interrogativa y posiblemente un cambio en</xsl:when>
+                        </xsl:choose>
+                        <xsl:text> la entonación o el tono u otra indicación que no es sintáctica.</xsl:text>
+                    </xsl:if>
+<xsl:text> </xsl:text>
+<xsl:if test="normalize-space(//q/@mainCont)='noAux'">
+                        <xsl:text> al </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="//q/@mainContAuxPos='before'">inicio</xsl:when>
+                            <xsl:when test="//q/@mainContAuxPos='after'">final</xsl:when>
+                            <xsl:when test="//q/@mainContAuxPos='unknown'">_______</xsl:when>
+                        </xsl:choose>
+                        <xsl:text> de la pregunta </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="//q/@mainContAuxRequired='no'">es opcional</xsl:when>
+                            <xsl:when test="//q/@mainContAuxRequired='yes'">se requiere</xsl:when>
+                           <xsl:when test="//q/@mainContAuxRequired='object'"> se requiere excepto cuando se cuestiona el sujeto</xsl:when>
+                        </xsl:choose>
+                        <xsl:choose>
+                            <xsl:when test="//q/@contFront='no'">.</xsl:when>
+                            <xsl:when test="//q/@contFront='after'">.</xsl:when>
+                           <xsl:when test="//q/@contFront='before'"> además del desplazamiento hacia la izquierda de una frase interrogativa. </xsl:when>
+                        </xsl:choose>
+                        <xsl:text> </xsl:text>
+                    </xsl:if>
+<xsl:if test="normalize-space(//q/@mainCont)='yes'">
+                      <xsl:if test="normalize-space(//q/@mainContWord)='some' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text> Algunos se escriben como palabras independientes pero otros se unen, </xsl:text>
+</xsl:if>
+                      <xsl:if test="normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text> Se escriben como palabras independientes. </xsl:text>
+</xsl:if>
+                      <xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text> Se unen, </xsl:text>
+</xsl:if>
+                      <xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='some' and normalize-space(//q/@mainCont)='yes'">
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como proclíticos, a la palabra inicial en la pregunta.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como proclíticos, a la palabra inicial en la pregunta, o a la palabra inicial del resto de la pregunta y después de la frase interrogativa desplazada.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como proclíticos, a la palabra inicial en la pregunta, o  como enclíticos, a la última palabra en la frase interrogativa y antes del resto de la pregunta.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como proclíticos, a la palabra inicial en la pregunta, o a la palabra inicial del resto de la pregunta y después de la frase interrogativa desplazada, o  como enclíticos, a la última palabra en la frase interrogativa y antes del resto de la pregunta.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como proclíticos, a la palabra inicial del resto de la pregunta y después de la frase interrogativa desplazada.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como enclíticos, a la última palabra en la pregunta.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como enclíticos, a la última palabra en la pregunta, o como proclíticos, a la palabra inicial del resto de la pregunta y después de la frase interrogativa desplazada.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como enclíticos, a la última palabra en la pregunta o a la última palabra en la frase interrogativa y antes del resto de la pregunta.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como enclíticos, a la última palabra en la pregunta o a la última palabra en la frase interrogativa y antes del resto de la pregunta, o como proclíticos, a la palabra inicial del resto de la pregunta y después de la frase interrogativa desplazada.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como enclíticos, a la última palabra en la frase interrogativa y antes del resto de la pregunta.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como proclíticos, a la palabra inicial del resto de la pregunta y después de la frase interrogativa desplazada, o como enclíticos, a la última palabra en la frase interrogativa y antes del resto de la pregunta.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como clíticos, al principio de la palabra inicial en la pregunta o al final de la última palabra en la pregunta.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como clíticos, al principio de la palabra inicial en la pregunta o al final de la última palabra en la pregunta, o a la palabra inicial del resto de la pregunta y después de la frase interrogativa desplazada.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como clíticos, al principio de la palabra inicial en la pregunta o al final de la última palabra en la pregunta, o al final de la última palabra en la frase interrogativa y antes del resto de la pregunta.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>como clíticos, al principio de la palabra inicial en la pregunta o al final de la última palabra en la pregunta, o a la palabra inicial del resto de la pregunta y después de la frase interrogativa desplazada, o al final de la última palabra en la frase interrogativa y antes del resto de la pregunta.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>al verbo en la pregunta como prefijos.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>al verbo en la pregunta como sufijos.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>al verbo en la pregunta, algunos como prefijos y otros como sufijos.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>al principio o final de la pregunta como clíticos, o al verbo en la pregunta como afijos.</xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/mainContCliticOther/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//q/mainYNCliticOther" />
+<xsl:text>.  </xsl:text>
+</xsl:if>
+                         <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContCliticOther/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContCliticOther/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/mainContCliticOther/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/mainContCliticOther/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/mainContCliticOther/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/mainContCliticOther/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>  Otros se unen ___</xsl:text>
+<xsl:value-of select="//q/mainYNCliticOther" />  <xsl:text>.</xsl:text>
+</xsl:if>                            </xsl:if>
+                   </xsl:if>
+</p>
+ 
+               <xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='some' and normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='some' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<p>
+<xsl:text>Los clíticos que marcan preguntas abiertas como cláusula principal son:</xsl:text>
+</p>
+</xsl:if>      
+               <xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='some' and normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='some' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<example num="xQues.QuesContent.QuesContentMain.14">
+<table border="1">
+                     <tr>
+                        <th>Clíticos de pregunta</th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/mainContCliticExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>     
+               <xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='some' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='some' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<p>
+<xsl:text>Los afijoos que marcan preguntas abiertas como cláusula principal son:</xsl:text>
+</p>
+</xsl:if>      
+               <xsl:if test="normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='no' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='some' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='some' and normalize-space(//q/mainContSuffix/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<example num="xQues.QuesContent.QuesContentMain.18">
+<table border="1">
+                     <tr>
+                        <th>Afijos de pregunta</th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/mainContAffixExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>     
+               
+               <xsl:if test="normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='some' and normalize-space(//q/@mainCont)='yes'">
+<p>
+<xsl:if test="normalize-space(//typology/@wordOrder)!='VSO'">
+                     <xsl:text> Los indicadores o complementadores de pregunta </xsl:text>
+<xsl:if test="normalize-space(//q/@mainContWord)='some' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>que se escriben como palabras independientes </xsl:text>
+</xsl:if>
+                     <xsl:text>se presentan </xsl:text>
+                     <xsl:if test="normalize-space(//q/mainContWordBefore/@checked)='yes' and normalize-space(//q/mainContWordAfter/@checked)='no' and normalize-space(//q/mainContWordBoth/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>antes</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContWordBefore/@checked)='no' and normalize-space(//q/mainContWordAfter/@checked)='yes' and normalize-space(//q/mainContWordBoth/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>después</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContWordBefore/@checked)='no' and normalize-space(//q/mainContWordAfter/@checked)='no' and normalize-space(//q/mainContWordBoth/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>en ambos lados</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContWordBefore/@checked)='yes' and normalize-space(//q/mainContWordAfter/@checked)='yes' and normalize-space(//q/mainContWordBoth/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>de cualquier lado</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContWordBefore/@checked)='yes' and normalize-space(//q/mainContWordAfter/@checked)='no' and normalize-space(//q/mainContWordBoth/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>antes o en ambos lados</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContWordBefore/@checked)='no' and normalize-space(//q/mainContWordAfter/@checked)='yes' and normalize-space(//q/mainContWordBoth/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>después o en ambos lados</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContWordBefore/@checked)='yes' and normalize-space(//q/mainContWordAfter/@checked)='yes' and normalize-space(//q/mainContWordBoth/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>de cualquier lado o en ambos lados</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContWordOther/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text> del resto de la pregunta.  </xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContWordBefore/@checked)='no' and normalize-space(//q/mainContWordAfter/@checked)='no' and normalize-space(//q/mainContWordBoth/@checked)='no' and normalize-space(//q/mainContWordOther/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//q/mainContWordOther" />
+<xsl:text>.  </xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContWordBefore/@checked)='yes' and normalize-space(//q/mainContWordOther/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContWordAfter/@checked)='yes' and normalize-space(//q/mainContWordOther/@checked)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/mainContWordBoth/@checked)='yes' and normalize-space(//q/mainContWordOther/@checked)='yes' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text> del resto de la pregunta y también pueden presentarse ___</xsl:text> <xsl:value-of select="//q/mainContWordOther" /> <xsl:text>. </xsl:text>
+</xsl:if>
+                  </xsl:if>
+<xsl:if test="normalize-space(//typology/@wordOrder)='VSO'">
+                     <xsl:text> Los indicadores o complementadores de pregunta </xsl:text>
+<xsl:if test="normalize-space(//q/@mainContWord)='some' and normalize-space(//q/@mainCont)='yes'">
+<xsl:text>que se escriben como palabras independientes </xsl:text>
+</xsl:if>
+                     <xsl:text>se presentan </xsl:text>
+                     <xsl:if test="normalize-space(//q/mainContVSOBeforeWh/@checked)='yes' and normalize-space(//q/mainContVSOAfterWh/@checked)='no' and normalize-space(//q/mainContVSOEnd/@checked)='no'">
+<xsl:text>antes de la frase interrogativa desplazada.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContVSOBeforeWh/@checked)='no' and normalize-space(//q/mainContVSOAfterWh/@checked)='yes' and normalize-space(//q/mainContVSOEnd/@checked)='no'">
+<xsl:text>inmediatamente después de la frase interrogativa desplazada.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContVSOBeforeWh/@checked)='no' and normalize-space(//q/mainContVSOAfterWh/@checked)='no' and normalize-space(//q/mainContVSOEnd/@checked)='yes'">
+<xsl:text>al final de la pregunta.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContVSOBeforeWh/@checked)='yes' and normalize-space(//q/mainContVSOAfterWh/@checked)='yes' and normalize-space(//q/mainContVSOEnd/@checked)='no'">
+<xsl:text>o antes o inmediatamente después de la frase interrogativa desplazada.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContVSOBeforeWh/@checked)='yes' and normalize-space(//q/mainContVSOAfterWh/@checked)='no' and normalize-space(//q/mainContVSOEnd/@checked)='yes'">
+<xsl:text>o antes de la frase interrogativa desplazada o al final de la pregunta.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContVSOBeforeWh/@checked)='no' and normalize-space(//q/mainContVSOAfterWh/@checked)='yes' and normalize-space(//q/mainContVSOEnd/@checked)='yes'">
+<xsl:text>o inmediatamente después de la frase interrogativa desplazada o al final de la pregunta.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContVSOBeforeWh/@checked)='yes' and normalize-space(//q/mainContVSOAfterWh/@checked)='yes' and normalize-space(//q/mainContVSOEnd/@checked)='yes'">
+<xsl:text>o antes o inmediatamente después de la frase interrogativa desplazada o al final de la pregunta.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContVSOBeforeWh/@checked)='no' and normalize-space(//q/mainContVSOAfterWh/@checked)='no' and normalize-space(//q/mainContVSOEnd/@checked)='no' and normalize-space(//q/mainContVSOOther/@checked)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//q/mainContVSOOther" />
+<xsl:text>.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/mainContVSOBeforeWh/@checked)='yes' and normalize-space(//q/mainContVSOOther/@checked)='yes' or normalize-space(//q/mainContVSOAfterWh/@checked)='yes' and normalize-space(//q/mainContVSOOther/@checked)='yes' or normalize-space(//q/mainContVSOEnd/@checked)='yes' and normalize-space(//q/mainContVSOOther/@checked)='yes'">
+<xsl:text>  Otros se presentan  ___</xsl:text>
+<xsl:value-of select="//q/mainContVSOOther" />
+<xsl:text>.</xsl:text>
+</xsl:if>
+                  </xsl:if>
+<xsl:text>Un indicador o complementador de pregunta </xsl:text>
+<xsl:choose>
+                     <xsl:when test="//q/@mainContRequired='yes'">es requerido en cada pregunta de respuesta abierta.</xsl:when>
+                     <xsl:when test="//q/@mainContRequired='no'">es opcional en preguntas de respuesta abierta.</xsl:when>
+                  </xsl:choose>
+<xsl:text></xsl:text>
+<xsl:if test="normalize-space(//q/@mainContRequired)='special'">
+<xsl:text>no se usa cuando ___</xsl:text>
+<xsl:value-of select="//q/mainContSpecialConditions" />
+<xsl:text>.</xsl:text>
+</xsl:if>
+<xsl:text> Estos indicadores o complementadores de pregunta son:</xsl:text>
+</p>
+</xsl:if>
+               
+               <xsl:if test="normalize-space(//q/@mainContWord)='yes' and normalize-space(//q/@mainCont)='yes' or normalize-space(//q/@mainContWord)='some' and normalize-space(//q/@mainCont)='yes'">
+<example num="xQues.QuesContent.QuesContentMain.22">
+<table border="1">
+                     <tr>
+                        <th>Indicadores de pregunta</th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/mainContWordExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>                    
+            </section3>
+            <section3 id="sQuesContentEmb">
+               <secTitle>Preguntas de respuesta abierta como cláusula subordinada</secTitle>
+                <p contentType="ctComparativeIntro">
+<xsl:text>Algunos ejemplos en español de preguntas subordinadas que se muestran el desplazamiento hacia la izquierda que se requiere a una frase interrogativa son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1230,134 +1741,8 @@
 </xsl:attribute>Preguntaré qué quiere el muchacho</langData>
 <xsl:text>.</xsl:text>
 </p>
-				<p>
-<xsl:text>En las preguntas de respuesta abierta de la cláusula subordinada en </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text>, </xsl:text>
-<xsl:choose>
-						<xsl:when test="//q/@embCont='no'">no hay indicador ni auxiliar que desplaza a la izquierda,</xsl:when>
-						<xsl:when test="//q/@embCont='noAux'">desplazamiento de un auxiliar</xsl:when>
-						<xsl:when test="//q/@embCont='yes'">hay por lo menos un indicador o complementizador de la pregunta.</xsl:when>
-					</xsl:choose>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@embCont)='no'">
-						<xsl:text> apenas </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@contFront='no'">una diferencia en</xsl:when>
-							<xsl:when test="//q/@contFront='after'">el desplazamiento opcional de una frase interrogativa y posiblemente un cambio en</xsl:when>
-							<xsl:when test="//q/@contFront='before'">el desplazamiento a la izquierda de una frase interrogativa y posiblemente un cambio en</xsl:when>
-							<xsl:when test="//q/@contFront='unknown'">_______ de una frase interrogativa y posiblemente un cambio en</xsl:when>
-						</xsl:choose>
-						<xsl:text> la entonación o el tono u otra indicación que no es sintáctica.</xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@embCont)='noAux'">
-						<xsl:text> al </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@embContAuxPos='before'">frente</xsl:when>
-							<xsl:when test="//q/@embContAuxPos='after'">extremo</xsl:when>
-							<xsl:when test="//q/@embContAuxPos='unknown'">_______</xsl:when>
-					   </xsl:choose>
-						<xsl:text> de la pregunta es </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@embContAuxRequired='no'">permitido pero no requerido</xsl:when>
-							<xsl:when test="//q/@embContAuxRequired='yes'">requerido</xsl:when>
-						</xsl:choose>
-						<xsl:choose>
-							<xsl:when test="//q/@contFront='no'">.</xsl:when>
-							<xsl:when test="//q/@contFront='after'">.</xsl:when>
-							<xsl:when test="//q/@contFront='before'"> además del desplazamineto a la izquierda de una frase interrogativa.</xsl:when>
-						</xsl:choose>
-						<xsl:text> </xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@embCont)='yes'">
-						<xsl:text>El indicador o complementizador de la pregunta es </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@embContWord='yes'">escrito como una palabra independiente.</xsl:when>
-							<xsl:when test="//q/@embContWord='no'">un clítico que se une</xsl:when>
-						</xsl:choose>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embCont)='yes'">
-							<xsl:text> </xsl:text>
-							<xsl:choose>
-								<xsl:when test="//q/@embContCliticAttaches='edge'"> a la orilla de la pregunta subordinada.</xsl:when>
-								<xsl:when test="//q/@embContCliticAttaches='head'"> al verbo en la pregunta subordinada.</xsl:when>
-								<xsl:when test="//q/@embContCliticAttaches='between'"> entre la frase interrogativa desplazada y el resto de la pregunta subordinada.</xsl:when>
-							</xsl:choose>
-							<xsl:text> </xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@embContCliticPos='before'">Estos clíticos son proclíticos.</xsl:when>
-							<xsl:when test="//q/@embContCliticPos='after'">Estos clíticos son enclíticos.</xsl:when>
-							<xsl:when test="//q/@embContCliticPos='both'">Hay algunos clíticos que son proclíticos y algunos que son enclíticos. </xsl:when>
-						   <xsl:when test="//q/@embContCliticPos='unknown'">_______</xsl:when>
-						</xsl:choose>
-						<xsl:text> </xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' and normalize-space(//typology/@wordOrder)!='VSO'">
-						<xsl:text>El indicador o complementizador de la pregunta se presenta </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@embContPos='before'">antes</xsl:when>
-							<xsl:when test="//q/@embContPos='after'">después</xsl:when>
-							<xsl:when test="//q/@embContPos='either'">de cualquier lado (pero no en ambos lados)</xsl:when>
-							<xsl:when test="//q/@embContPos='eitherOrBoth'">de cualquier lado o en ambos lados</xsl:when>
-							<xsl:when test="//q/@embContPos='beforeOrBoth'">antes o en ambos lados</xsl:when>
-							<xsl:when test="//q/@embContPos='afterOrBoth'">después o en ambos lados</xsl:when>
-							<xsl:when test="//q/@embContPos='both'">en ambos lados</xsl:when>
-							<xsl:when test="//q/@embContPos='unknown'">_______</xsl:when>
-						</xsl:choose>
-						<xsl:text> del resto de la pregunta subordinada.  </xsl:text>
-						<xsl:if test="normalize-space(//q/@embContPos)!='before' and normalize-space(//q/@embContPos)!='after' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContEitherRestrcited)='unrestricted'">
-							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse de cualquier lado de la pregunta subordinada.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//q/@embContPos)!='before' and normalize-space(//q/@embContPos)!='after' and normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' and normalize-space(//q/@embContEitherRestrcited)='restricted'">
-							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada lado de la pregunta subordinada.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' and normalize-space(//typology/@wordOrder)='VSO'">
-						<xsl:text>El indicador o complementizador de la pregunta se presenta </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@embContVSOBeforeWh='no'">inmediatamente después de la frase interrogativa desplazada.</xsl:when>
-							<xsl:when test="//q/@embContVSOBeforeWh='noEnd'">inmediatamente después de la frase interrogativa desplazada oal final de la pregunta subordinada.</xsl:when>
-							<xsl:when test="//q/@embContVSOBeforeWh='yes'">antes de la frase interrogativa desplazada.</xsl:when>
-							<xsl:when test="//q/@embContVSOBeforeWh='some'">o antes o después de la frase interrogativa desplazada.</xsl:when>
-						</xsl:choose>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='noEnd' and normalize-space(//q/@embContVSONoEndRestricted)='unrestricted' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes'">
-							<xsl:text>Todos los indicadores o complementizadores de la pregunta pueden presentarse en cada posición.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-						<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='noEnd' and normalize-space(//q/@embContVSONoEndRestricted)='restricted' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//q/@embContVSOBeforeWh)='some' and normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes'">
-							<xsl:text>Hay restricciones en cuanto a cuáles indicadores o complementizadores de la pregunta pueden presentarse en cada posición.</xsl:text>
-						</xsl:if>
-						<xsl:text> </xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-<xsl:if test="normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes'">
-						<xsl:text>Un indicador o complementizador de la pregunta </xsl:text>
-						<xsl:choose>
-							<xsl:when test="//q/@mainContRequired='yes'">es requerido</xsl:when>
-							<xsl:when test="//q/@mainContRequired='yes'">no es requerido</xsl:when>
-						</xsl:choose>
-					   <xsl:text> en cada pregunta de respuesta abierta subordinada.</xsl:text>
-					</xsl:if>
-<xsl:text> </xsl:text>
-</p>
-				<p>
-<xsl:text> Algunos ejemplos de las preguntas de respuesta abierta de la cláusula subordinada en </xsl:text>
+               <p>
+<xsl:text> Algunos ejemplos de preguntas de respuesta abierta como cláusula subordinada en el </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -1368,7 +1753,7 @@
 </xsl:choose>
 <xsl:text> son: </xsl:text>
 </p>
-				<example num="xQues.QuesContent.QuesContentEmb.10">
+               <example num="xQues.QuesContent.QuesContentEmb.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//q/embContentExample" />
 </xsl:variable>
@@ -1382,7 +1767,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//q/embContentExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xQues.QuesContent.QuesContentEmb.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xQues.QuesContent.QuesContentEmb.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1391,7 +1776,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xQues.QuesContent.QuesContentEmb.10.1</xsl:text>
+<xsl:text>xQues.QuesContent.QuesContentEmb.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1406,296 +1791,2600 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			</section3>
-		</section2>
-	</section1>
-	 
-		
-	
-	
-		
-	
-	
-		
-	   
-	   
-	
-	
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-	
-	
-		
-	
-	
-		
-	
-	
-		
-	
-	
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-	
-	
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	   
-		
-		
-		
-	
-	
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-	
-	
-		
-	
-	
-		
-	
-	
-		
-		
-		
-	
-	
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-	
-	
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-		
-	
-	
-		
-	
-	
-		
-		
-		
-	
-	
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-	
-	
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
+                            
+               <p>
+<xsl:text>De acuerdo con los ejemplos, </xsl:text>
+<xsl:choose>
+                        <xsl:when test="//q/@embCont='no'">no hay indicador ni auxiliar que desplaza hacia la izquierda,</xsl:when>
+                        <xsl:when test="//q/@embCont='noAux'">el movimiento de un auxiliar</xsl:when>
+                       <xsl:when test="//q/@embCont='yes'">hay por lo menos un indicador o complementador de pregunta en las preguntas de respuesta abierta como cláusula subordinada.</xsl:when>
+                    </xsl:choose>
+<xsl:text> </xsl:text>
+<xsl:if test="normalize-space(//q/@embCont)='no'">
+                        <xsl:text> solamente </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="//q/@contFront='no'">una diferencia en</xsl:when>
+                            <xsl:when test="//q/@contFront='after'">el desplazamiento opcional de una frase interrogativa y posiblemente un cambio en</xsl:when>
+                            <xsl:when test="//q/@contFront='before'">el desplazamiento hacia la izquierda de una frase interrogativa y posiblemente un cambio en</xsl:when>
+                            <xsl:when test="//q/@contFront='unknown'">_______ de una frase interrogativa y posiblemente un cambio en</xsl:when>
+                        </xsl:choose>
+                        <xsl:text> la entonación o el tono u otra indicación que no es sintáctica.</xsl:text>
+                    </xsl:if>
+<xsl:text> </xsl:text>
+<xsl:if test="normalize-space(//q/@embCont)='noAux'">
+                        <xsl:text> al </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="//q/@embContAuxPos='before'">inicio</xsl:when>
+                            <xsl:when test="//q/@embContAuxPos='after'">final</xsl:when>
+                            <xsl:when test="//q/@embContAuxPos='unknown'">_______</xsl:when>
+                       </xsl:choose>
+                        <xsl:text> de la pregunta </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="//q/@embContAuxRequired='no'">es opcional</xsl:when>
+                            <xsl:when test="//q/@embContAuxRequired='yes'">se requiere</xsl:when>
+                           <xsl:when test="//q/@embContAuxRequired='object'">se requiere excepto cuando se cuestiona el sujeto</xsl:when>
+                        </xsl:choose>
+                        <xsl:choose>
+                            <xsl:when test="//q/@contFront='no'">.</xsl:when>
+                            <xsl:when test="//q/@contFront='after'">.</xsl:when>
+                            <xsl:when test="//q/@contFront='before'"> además del desplazamiento hacia la izquierda de una frase interrogativa.</xsl:when>
+                        </xsl:choose>
+                        <xsl:text> </xsl:text>
+                    </xsl:if>
+<xsl:if test="normalize-space(//q/@embCont)='yes'">
+                     <xsl:if test="normalize-space(//q/@embContWord)='some' and normalize-space(//q/@embCont)='yes'">
+<xsl:text> Algunos se escriben como palabras independientes pero otros se unen, </xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text> Se escriben como palabras independientes. </xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text> Se unen, </xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/@embContWord)='no' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='some' and normalize-space(//q/@embCont)='yes'">
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como proclíticos, a la palabra inicial en la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como proclíticos, a la palabra inicial en la pregunta subordinada, o después de la frase interrogativa, a la palabra inicial en el resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como proclíticos, a la palabra inicial en la pregunta subordinada, o  como enclíticos, a la última palabra en la frase interrogativa, antes del resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como proclíticos, a la palabra inicial en la pregunta subordinada, o después de la frase interrogativa, a la palabra inicial en el resto de la pregunta subordinada, o  como enclíticos, a la última palabra en la frase interrogativa, antes del resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como proclíticos, después de la frase interrogativa, a la palabra inicial en el resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como enclíticos, a la última palabra en la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como enclíticos, a la última palabra en la pregunta subordinada, o como proclíticos, después de la frase interrogativa, a la palabra inicial en el resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como enclíticos, a la última palabra en la pregunta subordinada o a la última palabra en la frase interrogativa, antes del resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como enclíticos, a la última palabra en la pregunta subordinada o a la última palabra en la frase interrogativa, antes del resto de la pregunta subordinada, o como proclíticos, después de la frase interrogativa, a la palabra inicial en el resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como enclíticos, a la última palabra en la frase interrogativa, antes del resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como proclíticos, después de la frase interrogativa, a la palabra inicial en el resto de la pregunta subordinada, o como enclíticos, a la última palabra en la frase interrogativa, antes del resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como clíticos, al principio de la palabra inicial en la pregunta subordinada o al final de la última palabra en la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como clíticos, al principio de la palabra inicial en la pregunta subordinada o al final de la última palabra en la pregunta subordinada, o después de la frase interrogativa, al principio de la palabra inicial en el resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como clíticos, al principio de la palabra inicial en la pregunta subordinada o al final de la última palabra en la pregunta subordinada, o al final de la última palabra en la frase interrogativa, antes del resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>como clíticos, al principio de la palabra inicial en la pregunta subordinada o al final de la última palabra en la pregunta subordinada, o después de la frase interrogativa, al principio de la palabra inicial en el resto de la pregunta subordinada, o al final de la última palabra en la frase interrogativa, antes del resto de la pregunta subordinada.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>al verbo en la pregunta subordinada como prefijos.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>al verbo en la pregunta subordinada como sufijos.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>al verbo en la pregunta, algunos como prefijos y otros como sufijos.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>al principio o final de la pregunta subordinada como clíticos, o al verbo en la pregunta subordinada como afijos.</xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/embContCliticOther/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//q/embYNCliticOther" />
+<xsl:text>.  </xsl:text>
+</xsl:if>
+                        <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContCliticOther/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContCliticOther/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/embContCliticOther/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/embContCliticOther/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/embContCliticOther/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/embContCliticOther/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>  Otros se unen ___</xsl:text>
+<xsl:value-of select="//q/embYNCliticOther" />  <xsl:text>.</xsl:text>
+</xsl:if>                            </xsl:if>
+                  </xsl:if>
+</p>
+               <xsl:if test="normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='some' and normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='some' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<p>
+<xsl:text>Los clíticos que marcan preguntas como cláusula subordinada son:</xsl:text>
+</p>
+</xsl:if>      
+               <xsl:if test="normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='some' and normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='some' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<example num="xQues.QuesContent.QuesContentEmb.14">
+<table border="1">
+                     <tr>
+                        <th>Clíticos de pregunta</th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/embContCliticExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>     
+               <xsl:if test="normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='some' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='some' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<p>
+<xsl:text>Los afijoos que marcan preguntas como cláusula subordinada son:</xsl:text>
+</p>
+</xsl:if>      
+               <xsl:if test="normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='no' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='some' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='some' and normalize-space(//q/embContSuffix/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<example num="xQues.QuesContent.QuesContentEmb.18">
+<table border="1">
+                     <tr>
+                        <th>Afijos de pregunta</th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/embContAffixExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>     
+               
+               <xsl:if test="normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='some' and normalize-space(//q/@embCont)='yes'">
+<p>
+<xsl:if test="normalize-space(//typology/@wordOrder)!='VSO'">
+                     <xsl:text> Los indicadores o complementizadores de pregunta subordinada </xsl:text>
+<xsl:if test="normalize-space(//q/@embContWord)='some' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>que se escriben como palabras independientes </xsl:text>
+</xsl:if>
+                     <xsl:text>se presentan </xsl:text>
+                     <xsl:if test="normalize-space(//q/embContWordBefore/@checked)='yes' and normalize-space(//q/embContWordAfter/@checked)='no' and normalize-space(//q/embContWordBoth/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>antes</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContWordBefore/@checked)='no' and normalize-space(//q/embContWordAfter/@checked)='yes' and normalize-space(//q/embContWordBoth/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>después</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContWordBefore/@checked)='no' and normalize-space(//q/embContWordAfter/@checked)='no' and normalize-space(//q/embContWordBoth/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>en ambos lados</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContWordBefore/@checked)='yes' and normalize-space(//q/embContWordAfter/@checked)='yes' and normalize-space(//q/embContWordBoth/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>de cualquier lado</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContWordBefore/@checked)='yes' and normalize-space(//q/embContWordAfter/@checked)='no' and normalize-space(//q/embContWordBoth/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>antes o en ambos lados</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContWordBefore/@checked)='no' and normalize-space(//q/embContWordAfter/@checked)='yes' and normalize-space(//q/embContWordBoth/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>después o en ambos lados</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContWordBefore/@checked)='yes' and normalize-space(//q/embContWordAfter/@checked)='yes' and normalize-space(//q/embContWordBoth/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>de cualquier lado o en ambos lados</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContWordOther/@checked)='no' and normalize-space(//q/@embCont)='yes'">
+<xsl:text> del resto de la pregunta.  </xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContWordBefore/@checked)='no' and normalize-space(//q/embContWordAfter/@checked)='no' and normalize-space(//q/embContWordBoth/@checked)='no' and normalize-space(//q/embContWordOther/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//q/embContWordOther" />
+<xsl:text>.  </xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContWordBefore/@checked)='yes' and normalize-space(//q/embContWordOther/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContWordAfter/@checked)='yes' and normalize-space(//q/embContWordOther/@checked)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/embContWordBoth/@checked)='yes' and normalize-space(//q/embContWordOther/@checked)='yes' and normalize-space(//q/@embCont)='yes'">
+<xsl:text> del resto de la pregunta subordinada y también pueden presentarse ___</xsl:text> <xsl:value-of select="//q/embContWordOther" /> <xsl:text>. </xsl:text>
+</xsl:if>
+                  </xsl:if>
+<xsl:if test="normalize-space(//typology/@wordOrder)='VSO'">
+                     <xsl:text> Los indicadores o complementadores de pregunta subordinada </xsl:text>
+<xsl:if test="normalize-space(//q/@embContWord)='some' and normalize-space(//q/@embCont)='yes'">
+<xsl:text>que se escriben como palabras independientes </xsl:text>
+</xsl:if>
+                     <xsl:text>se presentan </xsl:text>
+                     <xsl:if test="normalize-space(//q/embContVSOBeforeWh/@checked)='yes' and normalize-space(//q/embContVSOAfterWh/@checked)='no' and normalize-space(//q/embContVSOEnd/@checked)='no'">
+<xsl:text>antes de la frase interrogativa desplazada.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContVSOBeforeWh/@checked)='no' and normalize-space(//q/embContVSOAfterWh/@checked)='yes' and normalize-space(//q/embContVSOEnd/@checked)='no'">
+<xsl:text>inmediatamente después de la frase interrogativa desplazada.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContVSOBeforeWh/@checked)='no' and normalize-space(//q/embContVSOAfterWh/@checked)='no' and normalize-space(//q/embContVSOEnd/@checked)='yes'">
+<xsl:text>al final de la pregunta.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContVSOBeforeWh/@checked)='yes' and normalize-space(//q/embContVSOAfterWh/@checked)='yes' and normalize-space(//q/embContVSOEnd/@checked)='no'">
+<xsl:text>o antes o inmediatamente después de la frase interrogativa desplazada.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContVSOBeforeWh/@checked)='yes' and normalize-space(//q/embContVSOAfterWh/@checked)='no' and normalize-space(//q/embContVSOEnd/@checked)='yes'">
+<xsl:text>o antes de la frase interrogativa desplazada o al final de la pregunta.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContVSOBeforeWh/@checked)='no' and normalize-space(//q/embContVSOAfterWh/@checked)='yes' and normalize-space(//q/embContVSOEnd/@checked)='yes'">
+<xsl:text>o inmediatamente después de la frase interrogativa desplazada o al final de la pregunta.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContVSOBeforeWh/@checked)='yes' and normalize-space(//q/embContVSOAfterWh/@checked)='yes' and normalize-space(//q/embContVSOEnd/@checked)='yes'">
+<xsl:text>o antes o inmediatamente después de la frase interrogativa desplazada o al final de la pregunta.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContVSOBeforeWh/@checked)='no' and normalize-space(//q/embContVSOAfterWh/@checked)='no' and normalize-space(//q/embContVSOEnd/@checked)='no' and normalize-space(//q/embContVSOOther/@checked)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//q/embContVSOOther" />
+<xsl:text>.</xsl:text>
+</xsl:if>
+                     <xsl:if test="normalize-space(//q/embContVSOBeforeWh/@checked)='yes' and normalize-space(//q/embContVSOOther/@checked)='yes' or normalize-space(//q/embContVSOAfterWh/@checked)='yes' and normalize-space(//q/embContVSOOther/@checked)='yes' or normalize-space(//q/embContVSOEnd/@checked)='yes' and normalize-space(//q/embContVSOOther/@checked)='yes'">
+<xsl:text>  Otros se presentan  ___</xsl:text>
+<xsl:value-of select="//q/embContVSOOther" />
+<xsl:text>.</xsl:text>
+</xsl:if>
+                  </xsl:if>
+<xsl:text>Un indicador o complementador de pregunta subordinada </xsl:text>
+<xsl:choose>
+                     <xsl:when test="//q/@embContRequired='yes'">es requerido en cada pregunta subordinada de respuesta abierta.</xsl:when>
+                     <xsl:when test="//q/@embContRequired='no'">es opcional en preguntas subordinadas de respuesta abierta.</xsl:when>
+                  </xsl:choose>
+<xsl:text></xsl:text>
+<xsl:if test="normalize-space(//q/@embContRequired)='special'">
+<xsl:text>no se usa cuando ___</xsl:text>
+<xsl:value-of select="//q/embContSpecialConditions" />
+<xsl:text>.</xsl:text>
+</xsl:if>
+<xsl:text> Estos indicadores o complementadores son:</xsl:text>
+</p>
+</xsl:if>
+               
+               <xsl:if test="normalize-space(//q/@embContWord)='yes' and normalize-space(//q/@embCont)='yes' or normalize-space(//q/@embContWord)='some' and normalize-space(//q/@embCont)='yes'">
+<example num="xQues.QuesContent.QuesContentEmb.22">
+<table border="1">
+                     <tr>
+                        <th>Indicadores de pregunta</th>
+                        <th>Glosa</th>
+                     </tr>
+                     <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//q/embContWordExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                  </table>
+</example>
+</xsl:if>                                   
+            </section3>
+        </section2>
+    </section1>
+    
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+   
+      
+      
+      
+      
+      
+      
+      
+      
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+   
+      
+   
+   
+   
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+   
+      
+      
+      
+      
+      
+      
+      
+      
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+   
+      
+   
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+  
+   
+      
+      
+      
+      
+      
+   
+      
+         
+         
+         
+         
+         
+      
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+  
+   
+      
+      
+      
+      
+      
+   
+      
+         
+         
+         
+         
+         
+      
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+   
+
 </xsl:template>
 </xsl:stylesheet>

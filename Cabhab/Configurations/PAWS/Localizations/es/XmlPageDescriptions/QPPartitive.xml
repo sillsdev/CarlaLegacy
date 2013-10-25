@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="QPPartitive" count="5/7">
+   <title level="2">Las frases cuantificadoras - Las construcciones partitivas</title>
+   <introduction>Todos los cuantificadores, incluyendo números, normalmente pueden presentarse en construcciones <technicalTermRef term="ttPartitive">partitivas</technicalTermRef> que se usan para indicar que se está hablando de solo una parte de un grupo más grande. Algunos ejemplos son:
+	</introduction>
+   <EnglishExample>
+      <exItem label="1.">algunos de los niños.</exItem>
+      <exItem label="2.">varias de las niñas mayores.</exItem>
+      <exItem label="3.">muchas de las mujeres.</exItem>
+      <exItem label="4.">tanta del alimento.</exItem>
+      <exItem label="5.">solamente diez de los chicos.</exItem>
+   </EnglishExample>
+   <introduction>Como se ve en los ejemplos, las construcciones partitivas usualmente se expresan con una <technicalTermRef term="ttAdpositionalPhrases">frase adposicional</technicalTermRef> que modifica al cuantificador y esta frase indica el grupo o la cosa en total de la que se habla.  Observe que en todos estos ejemplos, el sustantivo en la frase partitiva puede ser modificada aún más por una cláusula relativa. <br/> <br/>
+      En algunas lenguas, es una cláusula relativa que indica el grupo en vez de una frase adposicional.
+   </introduction>
+	<form section="qp">
+	   <prompt><br/>Escriba cómo su lengua expresa ejemplos similares de partitivos con cuantificadores aquí:</prompt>
+	   <textBox id="QPPartitiveQExample" dataItem="partitiveQExample"/>
+<br/><br/>
+	   <radioGroup>
+	      <groupName dataItem="partitive" default="no" >RQPPartitive</groupName>
+	      <prompt>De acuerdo con los ejemplos, ¿utiliza su lengua frases adposicionales en las construcciones partitivas?</prompt>
+	      <radio id="QPPartitiveYes" dataValue="yes">Sí</radio>
+	      <radio id="QPPartitiveNo" dataValue="no">No, utiliza una cláusula relativa en su lugar</radio>
+	      <radio id="QPPartitiveOther" dataValue="other">No, mi lengua utiliza otra manera que una frase adposicional o una cláusula relativa se utiliza para expresar significados similares</radio>
+	   </radioGroup>
+	   
+	   <radioGroup id="QPPartitivePPPosTable" show="swQPPartitiveYes">
+	      <groupName dataItem="partitivePPPos" default="unknown" position="yesHeadDiff">RQPPartitivePPPos</groupName>
+	      <prompt>¿Dónde se presenta la frase adposicional con respecto al cuantificador?</prompt>
+	      <radio id="QPPartitivePPBefore" checked="yes" dataValue="before">Antes</radio>
+	      <radio id="QPPartitivePPAfter" checked="yes" dataValue="after">Después</radio>
+	      <radio id="QPPartitivePPEitherSide" checked="yes" dataValue="either">De cualquier lado</radio>
+	   </radioGroup>
+	   
+	   <prompt id="QPPartitiveOfPrompt" show="swQPPartitiveYes">Escriba las <technicalTermRef term="ttAdposition">adposiciones</technicalTermRef> que pueden utilizar para decir “de” en estas construcciones partitivas, con cada palabra en una línea separada. </prompt>
+	   <textBox id="QPPartitiveOfExample" dataItem="partitiveOf" rows="3" show="swQPPartitiveYes"/>
+	   <br/>
+	   
+	   <prompt id="QPPartitiveRelClPrompt" show="swQPPartitiveNo">La estructura de las cláusulas relativas se presenta en <section number="12">Las cláusulas relativas</section>.</prompt>
+<br/>		<br/>
+		<buttons>
+			<button id="QPPartitiveBack" value="Back" goto="QPCardinal.xml"/>
+		    <button id="QPPartitiveNext" value="Next" goto="QPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+   <showWhen id="swQPPartitiveNo">
+      <whenRadio button="QPPartitiveNo"/>  
+   </showWhen> 
+   <showWhen id="swQPPartitiveYes">
+      <whenRadio button="QPPartitiveYes"/>  
+   </showWhen> 
+   &TechnicalTerms; 
+   
+</page>

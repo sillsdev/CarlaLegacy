@@ -1,82 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
-	<section1 id="sAdvCl">
-		<secTitle>Las cláusulas adverbiales</secTitle>
-		<p>
-			<content>En esta sección se analizan los complementos de los adverbios de tiempo y de razón, que fueron introducidos en las secciones </content>
-			<sectionRef sec="sAdvPTemporal"/>
-			<content> y </content>
-			<sectionRef sec="sAdvPReason"/>
-			<content>.  Todas de estas cláusulas (o frases) adverbiales funcionan al igual que los adverbios simples, así que ellos serán considerados frases adverbiales con el tipo apropiado de complemento. Las cláusulas adverbiales de estos tipos normalmente pueden presentarse o inicial o final de la oración. </content>
-		</p>
-		<section2 id="sAdvClTemporal">
-			<secTitle>Complementos de adverbios de tiempo</secTitle>
-			<p>
-				<content>Algunos ejemplos en español de adverbios de tiempo con los complementos usados en oraciones completas son: </content>
-			   <langData>[Desde entonces], Juan ha sido cambiante</langData><content>; </content><langData>Juan ha sido en casa [desde la semana pasada]</langData><content>; </content>
-			   <langData>[Puesto que Juan vuelto a casa del hospital] él está haciendo mejor</langData><content>; </content><langData>Juan está sintiendo fino [ahora que él vuelto a casa del hospital]</langData>
-			   <content>; </content><langData>El perro siguió a Susana por todas partes [cuando ella volvió de universidad]</langData><content> y </content>
-			   <langData>[Cuando ella volvió de universidad], el perro siguió a Susana por todas partes</langData><content>.</content></p>
-			<p>
-				<content>Estos ejemplos muestran que los adverbios de tiempo permiten ciertos tipos de complementos. Por ejemplo, </content>
-				<langData>desde</langData>
-				<content> es seguido por otro adverbio de tiempo o por una frase nominal de tiempo.  Los adverbios de tiempo </content><langData>puesto</langData><content> y </content><langData>ahora</langData><content> pueden tener un complemento clausal finito con un complementizador, mientras que </content>
-			   <langData>cuando</langData>
-				<content> tiene una oración finito por su complemento.</content>
-			</p>
-			<p>
-				<content>En </content>
-				<langName/>
-				<content>, los complementos se presentan </content>
-				<case element="advcl" attr="advOrNPPos">
-					<caseText value="before">antes</caseText>
-					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado</caseText>
-					<caseText value="unknown">_______</caseText>
-				</case>
-				<content> del adverbio.  Algunos ejemplos de cláusulas adverbiales de tiempo en </content>
-				<langName/>
-				<content>, incluidos en oraciones completas son: </content>
-			</p>
-			<example>
-				<interlinear exampleLoc="advcl/tempSentExample"/>
-			</example>
-		</section2>
-		<section2 id="sAdvClReason">
-		   <secTitle>Complementos de adverbios que expresan  razón</secTitle>
-			<p>
-			   <content>Las frases o las cláusulas adverbiales que expresan razón o propósito pueden consistir en ciertos adverbios sólos, por ejemplo </content>
-				<langData>por lo tanto</langData>
-				<content> y </content>
-				<langData>pues</langData>
-				<content>(que a veces se consideran las conjunciones de oraciones), o los adverbios que tienen varios tipos de cláusulas de complemento.
-				   Algunos ejemplos en español de los adverbios que expresan  razón o propósito que tienen complementos clausales son: </content>
-			   <langData>Juan fue de prisa al hospital [porque Susana estaba en un accidente]</langData><content>; </content>
-			   <langData>[Puesto que Juliana dijo que ella tiene gusto de él], José sonríe todo el tiempo</langData><content>; </content>
-			   <langData>David fue de prisa al aeropuerto [de modo que él pudiera ver a María antes de que ella se fuera]</langData><content>; </content>
-			   <langData>Las tropas lanzaron las granadas en el enemigo [para escaparse]</langData><content> y </content>
-			   <langData>Las tropas lanzaron las granadas en el enemigo [en orden que los presos escaparse]</langData><content>.</content>
-			</p>
-			<p>
-				<content>En los ejemplos anteriores, </content>
-				<langData>porque</langData>
-				<content> puede tener una oracion finita por su complemento, pero </content>
-				<langData>puesto </langData>
-				<content>  y </content>
-				<langData>de modo</langData>
-			   <content> tienen cláusulas finitas con un complementizador por complementos.  En cambio, </content>
-				<langData>para</langData><content> o </content><langData>en orden</langData>
-			   <content> tienen una oración o cláusula infinitiva.</content>
-			</p>
-			<p>
-				<content>Algunos ejemplos de las cláusulas adverbiales que expresan razón o propósito en </content>
-				<langName/>
-				<content>, incluidos en oraciones completas son: </content>
-			</p>
-			<example>
-				<interlinear exampleLoc="advp/reasonExample"/>
-			</example>
-		</section2>
-	</section1>
+    <section1 id="sAdvCl">
+        <secTitle>Las cláusulas adverbiales</secTitle>
+        <p>
+            <content>En esta sección se analizan los complementos de los adverbios de tiempo y de razón, que fueron introducidos en las secciones </content>
+            <sectionRef sec="sAdvPTemporal"/>
+            <content> y </content>
+            <sectionRef sec="sAdvPReason"/>
+            <content>.  Todas estas cláusulas (o frases) adverbiales funcionan igual que adverbios simples, así que se consideran frases adverbiales con el tipo apropiado de complemento. Las cláusulas adverbiales normalmente pueden presentarse al inicio o al final de la oración. </content>
+        </p>
+        <section2 id="sAdvClTemporal">
+            <secTitle>Complementos de adverbios de tiempo</secTitle>
+            <p contentType="ctComparativeIntro">
+                <content>Algunos ejemplos en español de adverbios de tiempo con los complementos usados en oraciones completas son: </content>
+               <langData>[Desde entonces], Juan ha sido cambiante</langData><content>; </content><langData>Juan ha sido en casa [desde la semana pasada]</langData><content>; </content>
+               <langData>[Puesto que Juan vuelto a casa del hospital] él está haciendo mejor</langData><content>; </content><langData>Juan está sintiendo fino [ahora que él vuelto a casa del hospital]</langData>
+               <content>; </content><langData>El perro siguió a Susana por todas partes [cuando ella volvió de universidad]</langData><content> y </content>
+               <langData>[Cuando ella volvió de universidad], el perro siguió a Susana por todas partes</langData><content>.  Estos ejemplos muestran que los adverbios de tiempo permiten ciertos tipos de complementos. Por ejemplo, </content>
+                <langData>desde</langData>
+                <content> es seguido de otro adverbio de tiempo o de una frase nominal de tiempo.  Los adverbios de tiempo </content><langData>puesto</langData><content> y </content><langData>ahora</langData><content> pueden tener un complemento clausal finito con un complementizador, mientras que </content>
+               <langData>cuando</langData>
+                <content> tiene una oración finito como complemento.</content>
+            </p>
+            <p>
+                <content>En el </content>
+                <langName/>
+               <content>, los adverbios de tiempo permiten complementos similares a los discutidos en la sección </content>
+               <sectionRef sec="sComp"/>
+               <content>. Los complementos se presentan </content>
+                <case element="advcl" attr="advOrNPPos">
+                    <caseText value="before">antes</caseText>
+                    <caseText value="after">después</caseText>
+                    <caseText value="either">de cualquier lado</caseText>
+                    <caseText value="unknown">_______</caseText>
+                </case>
+               <content> del adverbio.  Algunos ejemplos de oraciones completas con cláusulas adverbiales de tiempo son: </content>
+            </p>
+            <example>
+                <interlinear exampleLoc="advcl/tempSentExample"/>
+            </example>
+        </section2>
+        <section2 id="sAdvClReason">
+           <secTitle>Complementos de adverbios que expresan razón o propósito</secTitle>
+            <p contentType="ctComparativeIntro">
+               <content>Las frases o las cláusulas adverbiales que expresan razón o propósito pueden consistir en adverbios independientes, por ejemplo </content>
+                <langData>por lo tanto</langData>
+                <content> y </content>
+                <langData>pues</langData>
+               <content> (que a veces se consideran conjunciones de oraciones), y también en los que toman varios tipos de cláusulas de complemento.  
+                   Algunos ejemplos en español de los adverbios que expresan razón o propósito que tienen complementos clausales son: </content>
+               <langData>Juan fue de prisa al hospital [porque Susana estaba en un accidente]</langData><content>; </content>
+               <langData>[Puesto que Juliana dijo que ella tiene gusto de él], José sonríe todo el tiempo</langData><content>; </content>
+               <langData>David fue de prisa al aeropuerto [de modo que él pudiera ver a María antes de que ella se fuera]</langData><content>; </content>
+               <langData>Las tropas lanzaron las granadas en el enemigo [para escaparse]</langData><content> y </content>
+               <langData>Las tropas lanzaron las granadas en el enemigo [en orden que los presos escaparse]</langData><content>.  En los ejemplos anteriores, </content>
+                <langData>porque</langData>
+                <content> puede tener una oracion finita como complemento, pero </content>
+                <langData>puesto </langData>
+                <content>  y </content>
+                <langData>de modo</langData>
+               <content> tienen cláusulas finitas con un complementador como complementos.  En cambio, </content>
+                <langData>para</langData><content> o </content><langData>en orden</langData>
+               <content> tienen una oración o cláusula no finita.  Este es el mismo sistema de complementos como se muestra para </content>
+               <langData>gustar</langData>
+               <content> y </content>
+               <langData>odiar</langData>
+               <content> en la sección </content>
+               <sectionRef sec="sComp"/>
+               <content>.</content>
+            </p>
+           <p contentType="ctPracticalIntro">
+              <content>Las frases o las cláusulas adverbiales que expresan razón o propósito pueden consistir en adverbios independientes, por ejemplo </content>
+              <langData>por lo tanto</langData>
+              <content> y </content>
+              <langData>pues</langData>
+              <content> (que a veces se consideran conjunciones de oraciones), y también en adverbios que toman varios tipos de cláusulas de complemento similares a los que toman algunos verbos presentados en la sección </content>
+              <sectionRef sec="sComp"/>
+              <content>.</content>
+           </p>
+                 <p>
+                <content>Algunos ejemplos de las cláusulas adverbiales que expresan razón o propósito en el </content>
+                <langName/>
+                <content>, incluidos en oraciones completas son: </content>
+            </p>
+            <example>
+                <interlinear exampleLoc="advp/reasonExample"/>
+            </example>
+        </section2>
+    </section1>
 </portion>

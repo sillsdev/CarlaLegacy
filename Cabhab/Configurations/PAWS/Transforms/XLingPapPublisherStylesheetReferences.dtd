@@ -1,29 +1,29 @@
 <!-- XLingPapPublisherStylesheetReferences.dtd
-	 XML/XSLT-based Linguistic paper document type definition
-	 Stylesheet  information for a particular publisher, references subsection
-	   One may reference/link/insert an XLingPap document into this template as a particular instance.
-	 Version 1.0.0
-	 (Revision history is at the end.)
+     XML/XSLT-based Linguistic paper document type definition
+     Stylesheet  information for a particular publisher, references subsection
+       One may reference/link/insert an XLingPap document into this template as a particular instance.
+     Version 1.20.0
+     (Revision history is at the end.)
   -->
 
 
 <!ENTITY % XLingPapAttributeEntities SYSTEM  "XLingPapAttributeEntities.dtd">
 %XLingPapAttributeEntities;
 
-<!--
+<!-- 
   ===================================================
 References Layouts
   ===================================================
 -->
-<!--
-	usecitationformatwhennumbereofsharedpaperis = number of shared papers required before using the citation format in
-		 collections and proceedings; a value of 0 means do not use the citation format
+<!-- 
+    usecitationformatwhennumbereofsharedpaperis = number of shared papers required before using the citation format in 
+         collections and proceedings; a value of 0 means do not use the citation format
 -->
-<!ELEMENT referencesLayout ( publisherStyleSheetReferencesName?, publisherStyleSheetReferencesVersion?, refAuthorLayouts,
-														 articleLayouts, bookLayouts, collectionLayouts, dissertationLayouts,
-														 fieldNotesLayouts, msLayouts, paperLayouts, proceedingsLayouts, thesisLayouts,
-														 webPageLayouts, publishedLayout, locationPublisherLayouts, urlDateAccessedLayouts?, iso639-3codeItem?)>
-<!ATTLIST  referencesLayout
+<!ELEMENT referencesLayout ( publisherStyleSheetReferencesName?, publisherStyleSheetReferencesVersion?, refAuthorLayouts,  
+                                                         articleLayouts, bookLayouts, collectionLayouts, dissertationLayouts, 
+                                                         fieldNotesLayouts, msLayouts, paperLayouts, proceedingsLayouts, thesisLayouts, 
+                                                         webPageLayouts, publishedLayout, locationPublisherLayouts, urlDateAccessedLayouts?, iso639-3codeItem?)>
+<!ATTLIST  referencesLayout 
    hangingindentsize CDATA #REQUIRED
    defaultfontsize CDATA #IMPLIED
    authorform (full | initials) "full"
@@ -31,27 +31,35 @@ References Layouts
    uselineforrepeatedauthor (no | yes) "no"
    removecommonhundredsdigitsinpages (yes | no) "no"
    usecitationformatwhennumberofsharedpaperis (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) "0"
+   useAuthorOverDateStyle (no | yes) "no"
+   dateIndentAuthorOverDateStyle CDATA #IMPLIED
+   dateToEntrySpaceAuthorOverDateStyle CDATA #IMPLIED
+   spaceBetweenEntryAndAuthorInAuthorOverDateStyle CDATA #IMPLIED
+   spaceBetweenEntriesAuthorOverDateStyle CDATA #IMPLIED
    >
 
 <!-- Name and version of this references stylesheet -->
 <!ELEMENT  publisherStyleSheetReferencesName (#PCDATA)>
 <!ELEMENT  publisherStyleSheetReferencesVersion (#PCDATA)>
 
-<!ELEMENT refAuthorLayouts (comment?, refAuthorLayout)+ >
-<!ELEMENT refAuthorLayout (authorRoleItem | refAuthorItem | refDateItem)+ >
+<!ELEMENT refAuthorLayouts ((comment?, refAuthorLayout)+, refAuthorLastNameLayout?) >                                                         
+<!ELEMENT refAuthorLayout (authorRoleItem | refAuthorItem | refDateItem)+ >                                                         
 <!ELEMENT  authorRoleItem EMPTY >
 <!ATTLIST authorRoleItem
    %formatinfo;
 >
+<!ELEMENT  refAuthorLastNameLayout EMPTY >
+<!ATTLIST refAuthorLastNameLayout
+   %fontinfo;>
 <!ELEMENT  refAuthorItem EMPTY >
-<!ATTLIST refAuthorItem
+<!ATTLIST refAuthorItem 
    %formatinfo;>
 <!ELEMENT  refDateItem EMPTY >
 <!ATTLIST refDateItem
    %formatinfo;
 >
 <!ELEMENT  refTitleItem EMPTY >
-<!ATTLIST refTitleItem
+<!ATTLIST refTitleItem 
    form ( capitals | lowercase) "capitals"
    %formatinfo;>
 
@@ -66,26 +74,26 @@ References Layouts
 <!ELEMENT thesisLayouts (comment?, thesisLayout)+>
 <!ELEMENT webPageLayouts (comment?, webPageLayout)+>
 
-<!ELEMENT articleLayout (refTitleItem | jTitleItem |  jVolItem | jIssueNumberItem |  jPagesItem | jArticleNumberItem |
-												locationPublisherLayoutsRef | urlDateAccessedLayoutsRef |  urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
-<!ELEMENT bookLayout (refTitleItem | translatedByItem  |  bVolItem |  editionItem | seriesEdItem | seriesItem |
-											   bookTotalPagesItem | locationPublisherLayoutsRef | urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
-<!ELEMENT collectionLayout (refTitleItem | collEdItem |  collTitleItem |  editionItem | collVolItem |  collPagesItem | bVolItem | seriesEdItem | seriesItem |  collCitationItem | authorRoleItem |
-											   locationPublisherLayoutsRef | urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
-<!ELEMENT dissertationLayout (refTitleItem | dissertationLabelItem | locationItem |  institutionItem |  publishedLayoutRef |
-											   urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
-<!ELEMENT fieldNotesLayout (refTitleItem | locationItem |  institutionItem |
-											   urlDateAccessedLayoutsRef | urlItem  |  dateAccessedItem | iso639-3codeItemRef)+>
-<!ELEMENT msLayout (refTitleItem | locationItem |  institutionItem | emptyItem |
-											   urlDateAccessedLayoutsRef | urlItem  |  dateAccessedItem | iso639-3codeItemRef)+>
-<!ELEMENT paperLayout (refTitleItem | conferenceItem |  locationItem |
-											   urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT articleLayout (refTitleItem | jTitleItem |  jVolItem | jIssueNumberItem |  jPagesItem | jArticleNumberItem |  
+                                                locationPublisherLayoutsRef | urlDateAccessedLayoutsRef |  urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT bookLayout (refTitleItem | translatedByItem  |  bVolItem |  editionItem | seriesEdItem | seriesItem |  multivolumeWorkItem |
+                                               bookTotalPagesItem | locationPublisherLayoutsRef | urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT collectionLayout (refTitleItem | collEdItem |  collTitleItem |  editionItem | collVolItem |  collPagesItem | bVolItem | seriesEdItem | seriesItem | multivolumeWorkItem |  collCitationItem | authorRoleItem |
+                                               locationPublisherLayoutsRef | urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT dissertationLayout (refTitleItem | dissertationLabelItem | locationItem |  institutionItem |  publishedLayoutRef | 
+                                               urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT fieldNotesLayout (refTitleItem | locationItem |  institutionItem | 
+                                               urlDateAccessedLayoutsRef | urlItem  |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT msLayout (refTitleItem | locationItem |  institutionItem | emptyItem | 
+                                               urlDateAccessedLayoutsRef | urlItem  |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT paperLayout (refTitleItem | conferenceItem |  locationItem | 
+                                               urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
 <!ELEMENT proceedingsLayout (refTitleItem | procEdItem |  procTitleItem |  procVolItem |  procPagesItem |  procCitationItem | authorRoleItem |
-												locationPublisherLayoutsRef | urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
-<!ELEMENT thesisLayout (refTitleItem | thesisLabelItem | locationItem |  institutionItem |  publishedLayoutRef |
-											   urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
-<!ELEMENT webPageLayout (refTitleItem | editionItem |  locationItem |  institutionItem |  publisherItem |
-											   urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+                                                locationPublisherLayoutsRef | urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT thesisLayout (refTitleItem | thesisLabelItem | locationItem |  institutionItem |  publishedLayoutRef | 
+                                               urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
+<!ELEMENT webPageLayout (refTitleItem | editionItem |  locationItem |  institutionItem |  publisherItem | 
+                                               urlDateAccessedLayoutsRef | urlItem |  dateAccessedItem | iso639-3codeItemRef)+>
 
 <!ELEMENT emptyItem EMPTY >
 <!ATTLIST emptyItem %formatinfo;>
@@ -102,9 +110,13 @@ References Layouts
 <!ELEMENT bVolItem EMPTY >
 <!ATTLIST bVolItem %formatinfo;>
 <!ELEMENT dissertationLabelItem EMPTY >
-<!ATTLIST dissertationLabelItem %formatinfo;>
+<!ATTLIST dissertationLabelItem 
+  label CDATA #IMPLIED
+  %formatinfo;>
 <!ELEMENT thesisLabelItem EMPTY >
-<!ATTLIST thesisLabelItem %formatinfo;>
+<!ATTLIST thesisLabelItem 
+  label CDATA #IMPLIED
+  %formatinfo;>
 <!ELEMENT locationItem EMPTY >
 <!ATTLIST locationItem %formatinfo;>
 <!ELEMENT publisherItem EMPTY >
@@ -122,7 +134,7 @@ References Layouts
 <!ELEMENT publishedLayoutRef EMPTY >
 
 <!ELEMENT procEdItem EMPTY >
-<!ATTLIST procEdItem
+<!ATTLIST procEdItem 
    appendEdAbbreviation (yes | no) "yes"
    %formatinfo;
 >
@@ -152,12 +164,14 @@ References Layouts
 <!ELEMENT translatedByItem EMPTY >
 <!ATTLIST translatedByItem %formatinfo;>
 <!ELEMENT seriesEdItem EMPTY >
-<!ATTLIST seriesEdItem
+<!ATTLIST seriesEdItem 
    appendEdAbbreviation (yes | no) "yes"
    %formatinfo;
 >
 <!ELEMENT seriesItem EMPTY >
 <!ATTLIST seriesItem %formatinfo;>
+<!ELEMENT multivolumeWorkItem EMPTY >
+<!ATTLIST multivolumeWorkItem %formatinfo;>
 <!ELEMENT bookTotalPagesItem EMPTY >
 <!ATTLIST bookTotalPagesItem %formatinfo;>
 

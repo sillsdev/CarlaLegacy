@@ -1,161 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="NPPossessorAgreement" count="2/2">
-	<title level="2">Nominal Phrases - Possessor Agreement</title>
-	<introduction>Possessor agreement normally comes in two basic forms:
+    <title level="2">Nominal Phrases - Possessor Agreement</title>
+    <introduction>Possessor agreement normally comes in two basic forms: 
 <ul>
-			<li>An affix that occurs on alienably possessed nouns to indicate that they are possessed and therefore must have a possessor in the nominal phrase.  Inalienably possessed nouns do not take any marking, but must always have a possessor.  These include, but are not limited to, kinship terms and body parts.</li>
-			<li>An affix that agrees with the possessor (or possibly expresses the possessor by itself).</li>
-		</ul>
+            <li>An affix that occurs on <technicalTermRef term="ttAlienably"/> possessed nouns to indicate that they are possessed and therefore must have a possessor in the nominal phrase.  <technicalTermRef term="ttInalienably" capitalize="yes"/> possessed nouns do not take any marking, but must always have a possessor.  These include, but are not limited to, kinship terms and body parts.</li>
+            <li>An affix that agrees with the possessor (or possibly expresses the possessor by itself).</li>
+        </ul>
 We will deal with each type in turn.
-		</introduction>
-	<form section="np">
-		<radioGroup>
-			<groupName dataItem="possAlienable" default="no">RNPPossAlienable</groupName>
-			<prompt>Does your language distinguish between alienably and inalienably possessed nouns?</prompt>
-			<radio id="NPPossAlienableNo" dataValue="no">No</radio>
-			<radio id="NPPossAlienableYes" dataValue="yes">Yes</radio>
-		</radioGroup>
-		<prompt id="NPPossAlienableYesPrompt" show="swNPPossAlienableYes">Enter the affix(es) which are used to mark alienably possessed nouns when they have a possessor in the box (each on a separate line if more than one).  Use a hyphen after the alphabetic characters to indicate a prefix, a hyphen before to indicate a suffix, and hyphens on both sides to indicate an infix.<br/><br/>
-		Please note that these affixes should not be the same as those that agree with or express the possessor, discussed below.</prompt>
-		<textBox id="NPPossAlienableYesAffixExample" dataItem="possAlienableAffixExample" rows="3" cols="20" show="swNPPossAlienableYes"/>
-		<br/>
-		<instruction id="NPPossAlienableYesInstruction" show="swNPPossAlienableYes">Key the feature <feature>possessed</feature> on the affix(es) that marks the alienably possessed nouns when they have a possessor.  Also, key the feature <feature>possessed</feature> on all inalienably possessed nouns so that a possessor will be required.</instruction>
-		<radioGroup id="NPPossAgrTable">
-			<groupName dataItem="possAgr" default="no">RNPPossAgr</groupName>
-		   <prompt>Are nouns marked with an affix which agrees with the possessor (or possibly expresses the possessor by itself)?  These affixes are assumed to be the set of dependent pronouns used for possessors which will be entered in <section number="7" >Pronouns</section>.</prompt>
-			<radio id="NPPossAgrNo" dataValue="no">No</radio>
-			<radio id="NPPossAgrYes" dataValue="yes">Yes</radio>
-		</radioGroup>
-		<prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYes">Look through the features in the chart below and check any that your language uses.  For class agreement, either a type or number should be used in the grammar output to replace the ## below.
-			<br/>
-			<br/>
-			<featureChart>
-				<featureRow>
-					<featureType rowspan="5">person</featureType>
-					<featureItem dataValue="npPossAgrPossFirst" name="NPPossAgrPossFirst">poss_first</featureItem>
-					<featureExplanation>the possessor must be first person</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossExclusive" name="NPPossAgrPossExclusive">poss_exclusive</featureItem>
-					<featureExplanation>the possessor must be first person exclusive</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossInclusive" name="NPPossAgrPossInclusive">poss_inclusive</featureItem>
-					<featureExplanation>the possessor must be first person inclusive</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossSecond" name="NPPossAgrPossSecond">poss_second</featureItem>
-					<featureExplanation>the possessor must be second person</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossThird" name="NPPossAgrPossThird">poss_third</featureItem>
-					<featureExplanation>the possessor must be third person</featureExplanation>
-				</featureRow>
-				<featureRow>
-				<featureType rowspan="3">number</featureType>
-					<featureItem dataValue="npPossAgrPossSingular" name="NPPossAgrPossSingular">poss_singular</featureItem>
-					<featureExplanation>the possessor must be singular in number</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossPlural" name="NPPossAgrPossPlural">poss_plural</featureItem>
-					<featureExplanation>the possessor must be plural in number</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossDual" name="NPPossAgrPossDual">poss_dual</featureItem>
-					<featureExplanation>the possessor must be dual in number</featureExplanation>
-				</featureRow>
-				<featureRow>
-				<featureType rowspan="3">gender</featureType>
-					<featureItem dataValue="npPossAgrPossMasculine" name="NPPossAgrPossMasculine">poss_masculine</featureItem>
-					<featureExplanation>the possessor must be masculine in gender</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossFeminine" name="NPPossAgrPossFeminine">poss_feminine</featureItem>
-					<featureExplanation>the possessor must be feminine in gender</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossNeuter" name="NPPossAgrPossNeuter">poss_neuter</featureItem>
-					<featureExplanation>the possessor must be neuter in gender</featureExplanation>
-				</featureRow>
-				<featureRow>
-				<featureType rowspan="4">animacy</featureType>
-					<featureItem dataValue="npPossAgrPossAnimate" name="NPPossAgrPossAnimate">poss_animate</featureItem>
-					<featureExplanation>the possessor must be animate</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossInanimate" name="NPPossAgrPossInanimate">poss_inanimate</featureItem>
-					<featureExplanation>the possessor must be inanimate</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossHuman" name="NPPossAgrPossHuman">poss_human</featureItem>
-					<featureExplanation>the possessor must be human</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossNonHuman" name="NPPossAgrPossNonHuman">poss_nonhuman</featureItem>
-					<featureExplanation>the possessor must be nonhuman</featureExplanation>
-				</featureRow>
-				<featureRow>
-				<featureType rowspan="1">class</featureType>
-					<featureItem dataValue="npPossAgrPossClassClassNumber" name="NPPossAgrPossClassClassNumber">poss_class_##</featureItem>
-					<featureExplanation>the possessor must be class ## </featureExplanation>
-				</featureRow>
-			</featureChart>
-		</prompt>
-		<instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes"> In the lexicon, add one or more features from the following list as appropriate to the affix entries.  For class agreement, replace the ## with the appropriate class type or number up to 25 on the appropriate entries in the lexicon.<br/>
-			Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="7">Pronouns</section>.</instruction>
-		<instruction id="NPPossNounAgrKeyedInstruction" show="swNPArtAndOrDem">If you followed instructions, any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.  If not, return there to complete the feature marking in the lexicon, before continuing on.</instruction>
-		<br/><br/>
-		<buttons>
-			<button id="NPPossAgrBack" value="Back" goto="NPPossessors.xml"/>
-			<button id="NPPossAgrNext" value="Next" goto="NPContents.htm"/>
-		</buttons>
-	</form>
-	 <showWhen id="swNPArtAgreementNone">
-		<whenValue element="np" attr="agreeNumber" value="no"/>
-		<and/>
-		<whenValue element="np" attr="agreeOther" value="no"/>
-	</showWhen>
-	<showWhen id="swNPArtAgreementNumberYes">
-		<whenValue element="np" attr="agreeNumber" value="yes"/>
-	</showWhen>
-	<showWhen id="swNPArtAgreementAnimacyYes">
-		<whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
-	</showWhen>
-	<showWhen id="swNPArtAgreementGenderYes">
-		<whenValue element="np" attr="agreeOther" value="yesGender"/>
-	</showWhen>
-	<showWhen id="swNPArtAgreementClassYes">
-		<whenValue element="np" attr="agreeOther" value="yesClass"/>
-	</showWhen>
-	<showWhen id="swNPArtDemMassYes">
-		<whenValue element="np" attr="artRequired" value="mass"/>
-		<or/>
-		<whenValue element="np" attr="demRequired" value="mass"/>
-		<or/>
-		<whenValue element="np" attr="demOrArtRequired" value="mass"/>
-		<or/>
-		<whenValue element="np" attr="demAndArtDem" value="mass"/>
-		<or/>
-		<whenValue element="np" attr="demAndArtArt" value="mass"/>
-	</showWhen>
-	<showWhen id="swNPPossAlienableYes">
-		<whenRadio button="NPPossAlienableYes"/>
-	</showWhen>
-	<showWhen id="swNPPossAgrYes">
-		<whenRadio button="NPPossAgrYes"/>
-	</showWhen>
-	<showWhen id="swNPArtAndOrDem">
-		<not/>
-		<whenValue element="np" attr="artAndDem" value="no"/>
-	</showWhen>
-	<showWhen id="swNPArtAndDemNeither">
-		<whenValue element="np" attr="artAndDem" value="no"/>
-	</showWhen>
-	<showWhen id="swNPArtAndOrDemandNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-		<and/><not/>
-		<whenValue element="np" attr="artAndDem" value="no"/>
-	</showWhen>
+        </introduction>
+    <form section="np">
+        <radioGroup>
+            <groupName dataItem="possAlienable" default="no">RNPPossAlienable</groupName>
+            <prompt><br/>Does your language distinguish morphologically between alienably and inalienably possessed nouns?</prompt>
+            <radio id="NPPossAlienableNo" dataValue="no">No</radio>
+            <radio id="NPPossAlienableYes" dataValue="yes">Yes</radio>
+        </radioGroup>
+        <prompt id="NPPossAlienableYesPrompt" show="swNPPossAlienableYes">Enter the affix(es) which are used to mark alienably possessed nouns when they have a possessor in the box (each on a separate line if more than one).  Use a hyphen after the alphabetic characters to indicate a prefix, a hyphen before to indicate a suffix, and hyphens on both sides to indicate an infix.<br/><br/>
+        Please note that these affixes should not be the same as those that agree with or express the possessor, discussed below.</prompt>
+        <textBox id="NPPossAlienableYesAffixExample" dataItem="possAlienableAffixExample" rows="3" cols="20" show="swNPPossAlienableYes"/>
+        <br/>
+        <instruction id="NPPossAlienableYesInstruction" show="swNPPossAlienableYes">Key the feature <feature>possessed</feature> on the affix(es) that marks the alienably possessed nouns when they have a possessor.  Also, key the feature <feature>possessed</feature> on all inalienably possessed nouns so that a possessor will be required.</instruction>
+        <radioGroup id="NPPossAgrTable">
+            <groupName dataItem="possAgr" default="no">RNPPossAgr</groupName>
+           <prompt>Are nouns marked with an affix which agrees with the possessor (or possibly expresses the possessor by itself)?  These affixes are assumed to be the set of dependent pronouns used for possessors which will be entered in <section number="7" >Pronouns</section>.</prompt>
+            <radio id="NPPossAgrNo" dataValue="no">No</radio>
+            <radio id="NPPossAgrYes" dataValue="yes">Yes</radio>
+        </radioGroup>
+        <prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYesAndNotPractical">Look through the features in the chart below and check any that your language uses.  In the lexicon, add that feature to the appropriate entires.  Class agreement was handled in <section number="1.">OverallTypology Questions - Classifiers</section>.  
+            <br/>
+            <br/>
+            <featureChart>
+                <featureRow>
+                    <featureType rowspan="5">person</featureType>
+                    <featureItem dataValue="npPossAgrPossFirst" name="NPPossAgrPossFirst">poss_first</featureItem>
+                    <featureExplanation>the possessor must be first person</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossExclusive" name="NPPossAgrPossExclusive">poss_exclusive</featureItem>
+                    <featureExplanation>the possessor must be first person exclusive</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossInclusive" name="NPPossAgrPossInclusive">poss_inclusive</featureItem>
+                    <featureExplanation>the possessor must be first person inclusive</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossSecond" name="NPPossAgrPossSecond">poss_second</featureItem>
+                    <featureExplanation>the possessor must be second person</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossThird" name="NPPossAgrPossThird">poss_third</featureItem>
+                    <featureExplanation>the possessor must be third person</featureExplanation>
+                </featureRow>
+                <featureRow>
+                <featureType rowspan="3">number</featureType>
+                    <featureItem dataValue="npPossAgrPossSingular" name="NPPossAgrPossSingular">poss_singular</featureItem>
+                    <featureExplanation>the possessor must be singular in number</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossPlural" name="NPPossAgrPossPlural">poss_plural</featureItem>
+                    <featureExplanation>the possessor must be plural in number</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossDual" name="NPPossAgrPossDual">poss_dual</featureItem>
+                    <featureExplanation>the possessor must be dual in number</featureExplanation>
+                </featureRow>
+                <featureRow>
+                <featureType rowspan="3">gender</featureType>
+                    <featureItem dataValue="npPossAgrPossMasculine" name="NPPossAgrPossMasculine">poss_masculine</featureItem>
+                    <featureExplanation>the possessor must be masculine in gender</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossFeminine" name="NPPossAgrPossFeminine">poss_feminine</featureItem>
+                    <featureExplanation>the possessor must be feminine in gender</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossNeuter" name="NPPossAgrPossNeuter">poss_neuter</featureItem>
+                    <featureExplanation>the possessor must be neuter in gender</featureExplanation>
+                </featureRow>
+                <featureRow>
+                <featureType rowspan="4">animacy</featureType>
+                    <featureItem dataValue="npPossAgrPossAnimate" name="NPPossAgrPossAnimate">poss_animate</featureItem>
+                    <featureExplanation>the possessor must be animate</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossInanimate" name="NPPossAgrPossInanimate">poss_inanimate</featureItem>
+                    <featureExplanation>the possessor must be inanimate</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossHuman" name="NPPossAgrPossHuman">poss_human</featureItem>
+                    <featureExplanation>the possessor must be human</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossNonHuman" name="NPPossAgrPossNonHuman">poss_nonhuman</featureItem>
+                    <featureExplanation>the possessor must be nonhuman</featureExplanation>
+                </featureRow>
+            </featureChart>
+        </prompt>
+        <instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes"> In the lexicon, add one or more features from the following list as appropriate to the affix entries.<br/> 
+            Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="7">Pronouns</section>.</instruction>
+        <instruction id="NPPossNounAgrKeyedInstruction" show="swNPArtAndOrDem">If you followed instructions, any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.  If not, return there to complete the feature marking in the lexicon, before continuing on.</instruction>
+       <br/><br/>
+<introduction>
+   In addition, some languages have an affix that occurs on nouns when they are not possesed or pluralized.  This affix is known as the absolutive marker, but it is not related to the absolutive case marking used in languages with an ergative-absolutive case system. 
+</introduction>
+       <radioGroup>
+          <groupName dataItem="possAbsolutive" default="no">RNPPossAbsolutive</groupName>
+          <prompt><br/>Does your language mark nouns which are not possessed or pluralized?</prompt>
+          <radio id="NPPossAbsolutiveNo" dataValue="no">No</radio>
+          <radio id="NPPossAbsolutiveYes" dataValue="yes">Yes</radio>
+       </radioGroup>
+       <prompt id="NPPossAbsolutiveYesPrompt" show="swNPPossAbsolutiveYes">Enter the affix(es) which are used to mark nouns which are not  possessed or pluralized in the box (each on a separate line if more than one).  Use a hyphen after the alphabetic characters to indicate a prefix, a hyphen before to indicate a suffix, and hyphens on both sides to indicate an infix.</prompt>
+       <textBox id="NPPossAbsolutiveAffixExample" dataItem="possAbsolutiveAffixExample" rows="3" cols="20" show="swNPPossAbsolutiveYes"/>
+       <br/><br/>
+        <buttons>
+            <button id="NPPossAgrBack" value="Back" goto="NPPossessors.xml"/>
+            <button id="NPPossAgrNext" value="Next" goto="NPContents.htm"/>
+        </buttons>
+    </form>
+     <showWhen id="swNPArtAgreementNone">
+        <whenValue element="np" attr="agreeNumber" value="no"/>
+        <and/>
+        <whenValue element="np" attr="agreeOther" value="no"/>
+    </showWhen>
+    <showWhen id="swNPArtAgreementNumberYes">
+        <whenValue element="np" attr="agreeNumber" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtAgreementAnimacyYes">
+        <whenValue element="np" attr="agreeAnimacy" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtAgreementGenderYes">
+        <whenValue element="np" attr="agreeGender" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtAgreementClassYes">
+        <whenValue element="np" attr="agreeClass" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtDemMassYes">
+        <whenValue element="np" attr="artRequired" value="mass"/>
+        <or/>
+        <whenValue element="np" attr="demRequired" value="mass"/>
+        <or/>
+        <whenValue element="np" attr="demOrArtRequired" value="mass"/>
+        <or/>
+        <whenValue element="np" attr="demAndArtDemRequired" value="mass"/>
+        <or/>
+        <whenValue element="np" attr="demAndArtArtRequired" value="mass"/>
+    </showWhen>
+    <showWhen id="swNPPossAlienableYes">
+        <whenRadio button="NPPossAlienableYes"/>
+    </showWhen>
+    <showWhen id="swNPPossAgrYes">
+        <whenRadio button="NPPossAgrYes"/>
+    </showWhen>
+   <showWhen id="swNPPossAgrYesAndNotPractical">
+      <whenRadio button="NPPossAgrYes"/>
+      <and/>
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
+   <showWhen id="swNPPossAbsolutiveYes">
+      <whenRadio button="NPPossAbsolutiveYes"/>
+   </showWhen>
+    <showWhen id="swNPArtAndOrDem">
+        <not/>
+        <whenValue element="np" attr="artAndDem" value="no"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemNeither">
+        <whenValue element="np" attr="artAndDem" value="no"/>
+    </showWhen>
+    <showWhen id="swNPArtAndOrDemandNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+        <and/><not/>
+        <whenValue element="np" attr="artAndDem" value="no"/>
+    </showWhen>
+   &TechnicalTerms; 
 </page>

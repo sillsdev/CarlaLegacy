@@ -1,995 +1,1296 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
-	<section1 id="sPP">
-		<secTitle>
-			<case  element="pp" attr="pPos">
-				<caseText value="before">Las frases preposicionales</caseText>
-				<caseText value="after">Las frases posposicionales</caseText>
-				<caseText value="both">Las frases preposicionales y posposicionales</caseText>
-				<caseText value="unknown">Las frases preposicionales y/o posposicionales</caseText>
-			</case>
-			</secTitle>
-		<p>
-		   <content>Esta sección trata sobre la estructura interna de las frases preposicionales o posposicionales, que expresan generalmente la localidad, el acompañamiento, la meta, el instrumento, el recipiente o el agente en lenguas que no indican el caso en sustantivos o frases nominales. Las lenguas que tienen marcadores de caso en sustantivos normalmente tienen frases preposionales o posposicionales de lugar y tiempo todavía.</content></p>
-	   <p><content>Las preposiciones se presentan antes de los complementos, mientras que las posposiciones se presentan después. El español tiene preposiciones, de acuerdo con los ejemplos </content>
-			<langData>para José</langData>
-			<content> y </content>
-			<langData>al lado del río</langData>
-			<content>.  Las preposiciones o las posposiciones pueden ser palabras independientes, o pueden ser clíticos que se unen a la orilla de la frase del complemento o al núcleo.</content>
-		</p>
-		<p>
-			<content>En </content>
-			<langName/>
-			<content> hay </content>
-			<case element="pp" attr="pPos">
-				<caseText value="before">solamente preposiciones.  </caseText>
-				<caseText value="after">solamente posposiciones.  </caseText>
-				<caseText value="both">preposiciones y posposiciones.  </caseText>
-				<caseText value="unknown">solamente _____-posiciones.  </caseText>
-			</case>
-			<content/>
-			<case element="pp" attr="pType">
-				<caseText value="word">Todos son palabras independientes.</caseText>
-				<caseText value="clitic">Todos son clíticos que se escriben unidos a otra palabra.</caseText>
-				<caseText value="both">Algunos se escriben como palabras independientes, pero algunos son clíticos que se escriben unidos a otra palabra.  </caseText>
-			</case>
-			<content/>
-			<text show="swPPTypeCliticOrBoth">
-				<content>Los clíticos se unen </content>
-				<case element="pp" attr="attaches">
-					<caseText value="edge">a la orilla</caseText>
-					<caseText value="head">al núcleo</caseText>
-				</case>
-				<content> de la frase del complemento.</content>
-			</text>
-			<content>  Véase los ejemplos en la sección </content><sectionRef sec="sPPComps"/><content>.</content>
-			<text show="swPPClassifierYesAndWordOrBoth"><case element="pp" attr="pPos">
-			   <caseText value="before">Los preposiciones</caseText>
-			   <caseText value="after">Los posposiciones</caseText>
-			   <caseText value="both">Los preposiciones y posposiciones</caseText>
-			   <caseText value="unknown">Los preposiciones y/o posposiciones</caseText></case>
-			   <content> se marcan con clasificadores en </content><langName/><content> como parte del sistema de concordancia.</content> </text>
-		</p>
+    <section1 id="sPP">
+        <secTitle>
+            <case  element="pp" attr="pPos">
+                <caseText value="before">Las frases preposicionales</caseText>
+                <caseText value="after">Las frases posposicionales</caseText>
+                <caseText value="both">Las frases adposicionales</caseText>
+                <caseText value="unknown">Las frases adposicionales</caseText>
+            </case>
+            </secTitle>
+       <p contentType="ctPracticalIntro" show="swNPCaseNNo"><content>Las frases adposicionales expresan generalmente lugar o tiempo, y también las relaciones gramaticales de acompañamiento, meta, instrumento, recipiente, poseedor o agente, porque, en el </content><langName/><content>, el caso no se indica en sustantivos o frases nominales.  Las preposiciones se presentan antes de los complementos, mientras que las posposiciones se presentan después, y pueden ser palabras independientes o clíticos  </content>
+       </p>
+       <p contentType="ctPracticalIntro" show="swNPCaseNYes"><content>Las frases adposicionales expresan solamente lugar o tiempo, dado que el caso se indica en sustantivos o frases nominales en el </content><langName/><content>.  Las preposiciones se presentan antes de los complementos, mientras que las posposiciones se presentan después y pueden ser palabras independientes o clíticos  </content>
+       </p>
+       <p contentType="ctComparativeIntro">
+          <content>Esta sección se trata la estructura interna de las frases adposicionales, que expresan generalmente lugar o tiempo, y también las relaciones gramaticales de acompañamiento, meta, instrumento, recipiente, poseedor o agente en lenguas que no indican el caso en sustantivos o frases nominales. Las lenguas que tienen indicadores de caso en sustantivos normalmente tienen frases adposicionales de lugar y tiempo todavía.</content></p> 
+       <p contentType="ctComparativeIntro"><content>Las preposiciones se presentan antes de los complementos, mientras que las posposiciones se presentan después. El español tiene preposiciones, de acuerdo con los ejemplos </content>
+            <langData>para José</langData>
+            <content> y </content>
+            <langData>al lado del río</langData>
+            <content>.  Las preposiciones o las posposiciones pueden ser palabras independientes, o pueden ser clíticos que se unen a la orilla de la frase del complemento o al núcleo.</content>
+        </p>
+       <p><content>Algunos ejemplos de frases </content>
+          <case element="pp" attr="pPos">
+             <caseText value="before">preposicionales</caseText>
+             <caseText value="after">posposicionales</caseText>
+             <caseText value="both">adposicionales</caseText>
+             <caseText value="unknown">adposicionales</caseText>
+          </case>
+          <content> locativas en el </content><langName/><content> son:</content>
+       </p>
+       <example>
+          <interlinear exampleLoc="pp/ppExample"/>
+       </example>
+       
+       <p>
+            <content>Como se muestra en los ejemplos,  en el </content>
+            <langName/>
+            <content> hay </content>
+            <case element="pp" attr="pPos">
+                <caseText value="before">solamente preposiciones.  </caseText>
+                <caseText value="after">solamente posposiciones.  </caseText>
+                <caseText value="both">preposiciones y posposiciones.  </caseText>
+                <caseText value="unknown">solamente _____-posiciones.  </caseText>
+            </case>
+            <content/>
+            <case element="pp" attr="pType">
+                <caseText value="word">Todas son palabras independientes.</caseText>
+                <caseText value="clitic">Todas son clíticos que se escriben unidos a otra palabra.</caseText>
+                <caseText value="both">Algunas se escriben como palabras independientes, pero algunas son clíticos que se escriben unidos a otra palabra.  </caseText>
+            </case>
+            <content/>
+            <text show="swPPTypeCliticOrBoth">
+                <content>Los clíticos se unen </content>
+                <case element="pp" attr="attaches">
+                    <caseText value="edge">a la orilla</caseText>
+                    <caseText value="head">al sustantivo principal</caseText>
+                </case>
+                <content> de la frase de complemento. </content>
+            </text>
+            <text show="swPPClassifierYesAndWordOrBoth"><case element="pp" attr="pPos">
+               <caseText value="before">Las preposiciones</caseText>
+               <caseText value="after">Las posposiciones</caseText>
+               <caseText value="both">Las adposiciones</caseText>
+               <caseText value="unknown">Las adposiciones</caseText></case>
+               <content> se marcan con clasificadores como parte del sistema de concordancia. En los cuadros solamente se muestran las raíces, pero los ejemplos de frases muestran las formas completas con clasificadores.</content> </text>
+        </p>
+       <p show="swPPPosPrep"><content>Algunos ejemplos de las preposiciones </content><text show="swPPBodypartYes"><content>regulares</content></text>
+          <content> que se usan en frases locativas son:</content></p>
+       <example show="swPPPosPrep">
+          <table border="1">
+             <headerRow>
+                <headerCol>Preposiciones</headerCol>
+                <headerCol>Glosa</headerCol>
+             </headerRow>				
+             <row>
+                <col exampleLoc="pp/locativePrepExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+          </table>
+       </example>
+       <p show="swPPPosPost"><content>Algunos ejemplos de las posposiciones </content><text show="swPPBodypartYes"><content>regulares</content></text>
+          <content> que se usan en frases locativas son:</content></p>
+       <example show="swPPPosPost">
+          <table border="1">
+             <headerRow>
+                <headerCol>Posposiciones</headerCol>
+                <headerCol>Glosa</headerCol>
+             </headerRow>				
+             <row>
+                <col exampleLoc="pp/locativePostExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+          </table>
+       </example>
+       <p show="swPPPosBothOrUnknown"><content>Algunos ejemplos de las adposiciones </content><text show="swPPBodypartYes"><content>regulares</content></text>
+          <content> que se usan en frases locativas son:</content></p>
+       <example show="swPPPosBothOrUnknown">
+          <table border="1">
+             <headerRow>
+                <headerCol>Tipo</headerCol>
+                <headerCol>Morfemas</headerCol>
+                <headerCol>Glosa</headerCol>
+             </headerRow>				
+             <row>
+                <col><content>Preposiciones</content></col>
+                <col exampleLoc="pp/locativePrepExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+             <row>
+                <col><content>Posposiciones</content></col>
+                <col exampleLoc="pp/locativePostExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+          </table>
+       </example>
+       <p show="swPPosBeforeOrBoth"><content>Algunos ejemplos de frases preposicionales locativas son:</content></p>
+       <example show="swPPosBeforeOrBoth">
+          <interlinear exampleLoc="pp/locativePrepPPExample"/>
+       </example>
+       <p show="swPPosAfterOrBoth"><content>Algunos ejemplos de frases posposicionales locativas son:</content></p>
+       <example show="swPPosAfterOrBoth">
+          <interlinear exampleLoc="pp/locativePostPPExample"/>
+       </example>
+       <p show="swPPBodypartYes"><content>En el </content><langName/><content> generalmente se usan las partes del cuerpo para expresar la posición en frases </content><case element="pp" attr="pPos">
+          <caseText value="before">preposicionales</caseText>
+          <caseText value="after">posposicionales</caseText>
+          <caseText value="both">adposicionales</caseText>
+          <caseText value="unknown">adposicionales</caseText>
+       </case>
+          <content> locativas.  Algunos ejemplos de las partes del cuerpo que se usan como </content><case element="pp" attr="pPos">
+             <caseText value="before">preposiciones</caseText>
+             <caseText value="after">posposiciones</caseText>
+             <caseText value="both">adposiciones</caseText>
+             <caseText value="unknown">adposiciones</caseText></case>
+          <content> son:</content>
+       </p>      
+       <example show="swPPPosPrepAndBodypartYes">
+          <table border="1">
+             <headerRow>
+                <headerCol>Parte del cuerpo</headerCol>
+                <headerCol>Glosa como sustantivo</headerCol>
+                <headerCol>Glosa como preposición</headerCol>
+             </headerRow>				
+             <row>
+                <col exampleLoc="pp/bodyPartPrepExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+          </table>
+       </example>
+       <example show="swPPPosPostAndBodypartYes">
+          <table border="1">
+             <headerRow>
+                <headerCol>Parte del cuerpo</headerCol>
+                <headerCol>Glosa como sustantivo</headerCol>
+                <headerCol>Glosa como posposición</headerCol>
+             </headerRow>				
+             <row>
+                <col exampleLoc="pp/bodyPartPostExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+          </table>
+       </example>
+       <example show="swPPPosBothOrUnknownAndBodypartYes">
+          <table border="1">
+             <headerRow>
+                <headerCol>Tipo</headerCol>
+                <headerCol>Parte del cuerpo</headerCol>
+                <headerCol>Glosa como sustantivo</headerCol>
+                <headerCol>Glosa como adposición</headerCol>
+             </headerRow>				
+             <row>
+                <col><content>Preposiciones</content></col>
+                <col exampleLoc="pp/bodyPartPrepExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+             <row>
+                <col><content>Posposiciones</content></col>
+                <col exampleLoc="pp/bodyPartPostExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+          </table>
+       </example>
+       <p show="swPPosBeforeOrBothAndBodypartYes"><content>Algunos ejemplos de frases preposicionales que usan las partes del cuerpo son:</content></p>
+       <example show="swPPosBeforeOrBothAndBodypartYes">
+          <interlinear exampleLoc="pp/bodyPartPrepPPExample"/>
+       </example>
+       <p show="swPPosAfterOrBothAndBodypartYes"><content>Algunos ejemplos de frases posposicionales que usan las partes del cuerpo son:</content></p>
+       <example show="swPPosAfterOrBothAndBodypartYes">
+          <interlinear exampleLoc="pp/bodyPartPostPPExample"/>
+       </example>
+       <p show="swNPCaseNNo"><content>Las </content><case element="pp" attr="pPos">
+          <caseText value="before">preposiciones</caseText>
+          <caseText value="after">posposiciones</caseText>
+          <caseText value="both">adposiciones</caseText>
+          <caseText value="unknown">adposiciones</caseText></case>
+          <content> que se usan como un indicador de caso para las relaciones gramaticales menores se muestran en </content><exampleRef num="xCaseP"/><content>.</content></p>
+       <example num="xCaseP" show="swNPCaseNNo">
+          <table border="1">
+             <caption>
+                <content>Adposiciones que indican el caso</content>
+             </caption>
+             <headerRow>
+                <headerCol>Adposiciones</headerCol>
+                <headerCol>Caso</headerCol>
+                <headerCol>Uso</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="pp/genitiveP"/>
+                <col>
+                   <content>genitivo</content>
+                </col>
+                <col>
+                   <content>posesivos</content>
+                </col>
+             </row>
+             <row>
+                <col exampleLoc="pp/dativeP"/>
+                <col>
+                   <content>dativo</content>
+                </col>
+                <col>
+                   <content>objetos indirectos</content>
+                </col>
+             </row>
+             <row>
+                <col exampleLoc="pp/ablativeP"/>
+                <col>
+                   <content>ablativo</content>
+                </col>
+                <col>
+                   <content>fuente u origen</content>
+                </col>
+             </row>
+             <row>
+                <col exampleLoc="pp/instrumentalP"/>
+                <col>
+                   <content>instrumento</content>
+                </col>
+                <col>
+                   <content>instrumento o medio</content>
+                </col>
+             </row>
+             <row>
+                <col exampleLoc="pp/vocativeP"/>
+                <col>
+                   <content>vocativo</content>
+                </col>
+                <col>
+                   <content>discurso directo</content>
+                </col>
+             </row>
+             <row>
+                <col exampleLoc="pp/obliqueP"/>
+                <col>
+                   <content>oblicuo</content>
+                </col>
+                <col>
+                   <content>relación gramatical menor o general</content>
+                </col>
+             </row>
+          </table>
+       </example>	      
+       
+       <p>
+          <content>Todos los ejemplos anteriores tienen un sustantivo, nombre propio o frase nominal como complemento.  A continuación se analizan los posibles modificadores de la frase </content><case element="pp" attr="pPos">
+             <caseText value="before">preposicional</caseText>
+             <caseText value="after">posposicional</caseText>
+             <caseText value="both">adposicional</caseText>
+             <caseText value="unknown">adposicional</caseText>
+          </case><content> completa, después, en la sección </content><sectionRef sec="sPPComps"/><content>, se presentan ejemplos de los otros complementos permitidos.</content>
+       </p>
+        <section2 id="sPPModifiers">
+            <secTitle>Modificadores</secTitle>
+           <p contentType="ctPracticalIntro">
+              <content>Normalmente hay algunas palabras de grado, números ordinales, adverbios de lugar y de modo que pueden modificar a una frase </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicional</caseText>
+                 <caseText value="after">posposicional</caseText>
+                 <caseText value="both">adposicional</caseText>
+                 <caseText value="unknown">adposicional</caseText>
+              </case>
+              <content> completa.</content>
+              </p>
+              <p contentType="ctComparativeIntro">
+                <content>Normalmente hay algunas palabras de grado que pueden modificar a una frase </content>
+                <case element="pp" attr="pPos">
+                    <caseText value="before">preposicional</caseText>
+                    <caseText value="after">posposicional</caseText>
+                    <caseText value="both">adposicional</caseText>
+                    <caseText value="unknown">adposicional</caseText>
+                </case>
+                <content> completa, por ejemplo </content>
+                <langData>just</langData><gloss><content> ‘justo’</content></gloss>
+                <content> y </content>
+                <langData>right</langData><gloss><content> ‘hasta’</content></gloss>
+                <content> en </content>
+                <langData>just around the corner</langData><gloss><content> ‘justo a la vuelta de la esquina’</content></gloss>
+                <content> y </content>
+                <langData>right to the last second</langData><gloss><content> ‘hasta el último momento’</content></gloss>
+               <content>.  En algunas lenguas hay adverbios de lugar que significa </content><gloss><content>‘right here’ ‘exactamente aquí’</content></gloss><content> y </content><gloss><content>‘right there’ ‘exactamente allí’</content></gloss><content> que pueden modificar a las frases </content>
+               <case element="pp" attr="pPos">
+                  <caseText value="before">preposicionales</caseText>
+                  <caseText value="after">posposicionales</caseText>
+                  <caseText value="both">adposicionales</caseText>
+                  <caseText value="unknown">adposicionales</caseText>
+               </case><content>.  Los números ordinales y los adjetivos también pueden modificar a las frases </content>
+                <case element="pp" attr="pPos">
+                    <caseText value="before">preposicionales</caseText>
+                    <caseText value="after">posposicionales</caseText>
+                    <caseText value="both">adposicionales</caseText>
+                    <caseText value="unknown">adposicionales</caseText>
+                </case>
+                <content>, como en </content>
+                <langData>next in line</langData><gloss><content> ‘siguiente en la linea’</content></gloss>
+                <content> y </content>
+                <langData>first out the door</langData><gloss><content> ‘el primero en salir’</content></gloss>
+                <content>.  Además, ciertos adverbios de modo pueden modificar a las frases </content>
+                <case element="pp" attr="pPos">
+                    <caseText value="before">preposicionales</caseText>
+                    <caseText value="after">posposicionales</caseText>
+                    <caseText value="both">adposicionales</caseText>
+                    <caseText value="unknown">adposicionales</caseText>
+                </case>
+                <content>, como en </content>
+                <langData>almost in the hole</langData><gloss><content> ‘casi en el agujero’</content></gloss>
+                <content>, </content>
+                <langData>mostly up the tree</langData><gloss><content> ‘la mayoría en el árbol’</content></gloss>
+                <content>, </content>
+                <langData>squarely on the table</langData><gloss><content> ‘justo en la mesa’</content></gloss>
+                <content>, y </content>
+                <langData>nearly upon the enemy</langData><gloss><content> ‘casi sobre el enemigo’</content></gloss>
+                <content>.</content>                
+            </p>
+ 
+           <p>
+              <content>En el </content>
+              <langName/>
+              <content/>
+              <case element="pp" attr="modifiers">
+                 <caseText value="no"> no hay modificadores que se presenten antes o después de la frase.</caseText>
+                 <caseText value="yes"> se permiten las siguientes categorías de palabras que modifican a la frase <case element="pp" attr="pPos">
+                    <caseText value="before">preposicional</caseText>
+                    <caseText value="after">posposicional</caseText>
+                    <caseText value="both">adposicional</caseText>
+                    <caseText value="unknown">adposicional</caseText>
+                 </case> completa.</caseText>
+              </case>
+              <text show="swPPModifiersNo"><content>  Ni palabras de grado ni los números ordinales ni los adverbios pueden modificar a las frases </content>
+                 <case element="pp" attr="pPos">
+                    <caseText value="before">preposicionales</caseText>
+                    <caseText value="after">posposicionales</caseText>
+                    <caseText value="both">adposicionales</caseText>
+                    <caseText value="unknown">adposicionales</caseText>
+                 </case>
+                 <content> como palabras independientes.</content> </text>
+              <content/>
+           </p>
+           <p show="swPPModifiersYesDegree">
+             <content>Las frases </content> <case element="pp" attr="pPos">
+                <caseText value="before">preposicionales</caseText>
+                <caseText value="after">posposicionales</caseText>
+                <caseText value="both">adposicionales</caseText>
+                <caseText value="unknown">adposicionales</caseText>
+             </case>
+              <content> se pueden modificar con palabras de grado que se presentan </content>
+              <text show="swPPDegreePosBefore"><content>antes</content></text>
+              <text show="swPPDegreePosAfter"><content>después</content></text>
+              <text show="swPPDegreePosBoth"><content>en ambos lados</content></text>
+              <text show="swPPDegreePosEither"><content>de cualquier lado</content></text>
+              <text show="swPPDegreePosBeforeOrBoth"><content>antes o en ambos lados</content></text>
+              <text show="swPPDegreePosAfterOrBoth"><content>después  de o en ambos lados</content></text>
+              <text show="swPPDegreePosEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+              <text show="swPPDegreePosNotOther"><content> de la frase completa.  </content></text>
+              <text show="swPPDegreePosOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="pp/ppDegreePosOther"/><content>.  </content></text>
+              <text show="swPPDegreePosPosAndOther"><content> de la frase completa y también pueden presentarse ___</content><contentCheckBoxOther contentLoc="pp/ppDegreePosOther"/><content>.  </content></text>
+              <content>Las palabras de grado que pueden modificar a la frase </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicional</caseText>
+                 <caseText value="after">posposicional</caseText>
+                 <caseText value="both">adposicional</caseText>
+                 <caseText value="unknown">adposicional</caseText>
+              </case>
+              <content> completa son:</content></p>
+           <example show="swPPModifiersYesDegree">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Palabras de grado</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="pp/degree"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>     
+           <p show="swPPModifiersYesDegree"><content>Algunos ejemplos de frases </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case>
+              <content> con palabras de grado que las modifican son:</content></p>          
+           <example show="swPPModifiersYesDegree">
+              <interlinear exampleLoc="pp/degreeWithPP"/>
+           </example>            
+           
+           <p show="swPPModifiersYesOrdinal">
+              <content>Las frases </content> <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case>
+              <text show="swPPModifiersYesDegree"><content> también</content></text><content> se pueden modificar con los ordinales que se presentan </content>
+              <text show="swPPOrdinalPosBefore"><content>antes</content></text>
+              <text show="swPPOrdinalPosAfter"><content>después</content></text>
+              <text show="swPPOrdinalPosBoth"><content>en ambos lados</content></text>
+              <text show="swPPOrdinalPosEither"><content>de cualquier lado</content></text>
+              <text show="swPPOrdinalPosBeforeOrBoth"><content>antes o en ambos lados</content></text>
+              <text show="swPPOrdinalPosAfterOrBoth"><content>después o en ambos lados</content></text>
+              <text show="swPPOrdinalPosEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+              <text show="swPPOrdinalPosNotOther"><content> de la frase completa.  </content></text>
+              <text show="swPPOrdinalPosOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="pp/ppOrdinalPosOther"/><content>.  </content></text>
+              <text show="swPPOrdinalPosPosAndOther"><content> de la frase completa y también pueden presentarse ___</content><contentCheckBoxOther contentLoc="pp/ppOrdinalPosOther"/><content>.  </content></text>
+              <content>Los ordinales que pueden modificar a la frase </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicional</caseText>
+                 <caseText value="after">posposicional</caseText>
+                 <caseText value="both">adposicional</caseText>
+                 <caseText value="unknown">adposicional</caseText>
+              </case>
+              <content> completa son:</content></p>
+           <example show="swPPModifiersYesOrdinal">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Palabras ordinales</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="pp/ordinal"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>     
+           <p show="swPPModifiersYesOrdinal"><content>Algunos ejemplos de frases </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case>
+              <content> con palabras ordinales que las modifican son:</content></p>          
+           <example show="swPPModifiersYesOrdinal">
+              <interlinear exampleLoc="pp/ordinalWithPP"/>
+           </example>            
+           
+           <p show="swPPModifiersYesManner">
+              <content>Las frases </content> <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case>
+              <text show="swPPModifiersYesDegreeOrOrdinal"><content> también</content></text><content> se pueden modificar con los adverbios de modo que se presentan </content>
+              <text show="swPPMannerPosBefore"><content>antes</content></text>
+              <text show="swPPMannerPosAfter"><content>después</content></text>
+              <text show="swPPMannerPosBoth"><content>en ambos lados</content></text>
+              <text show="swPPMannerPosEither"><content>de cualquier lado</content></text>
+              <text show="swPPMannerPosBeforeOrBoth"><content>antes o en ambos lados</content></text>
+              <text show="swPPMannerPosAfterOrBoth"><content>después o en ambos lados</content></text>
+              <text show="swPPMannerPosEitherOrBoth"><content>de cualquier lado en ambos lados</content></text>
+              <text show="swPPMannerPosNotOther"><content> de la frase completa.  </content></text>
+              <text show="swPPMannerPosOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="pp/ppMannerPosOther"/><content>.  </content></text>
+              <text show="swPPMannerPosPosAndOther"><content> de la frase completa y también pueden presentarse ___</content><contentCheckBoxOther contentLoc="pp/ppMannerPosOther"/><content>.  </content></text>
+              <content>Los adverbios de modo que pueden modificar a la frase </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicional</caseText>
+                 <caseText value="after">posposicional</caseText>
+                 <caseText value="both">adposicional</caseText>
+                 <caseText value="unknown">adposicional</caseText>
+              </case>
+              <content> completa son:</content></p>
+           <example show="swPPModifiersYesManner">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Adverbios de modo</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="pp/manner"/>
+                    <col ><gloss><content>ESCRIBA LA  GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>     
+           <p show="swPPModifiersYesManner"><content>Algunos ejemplos de frases </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case>
+              <content> con adverbios de modo que las modifican son:</content></p>                  
+           <example show="swPPModifiersYesManner">
+              <interlinear exampleLoc="pp/mannerWithPP"/>
+           </example>            
+ 
+           <p show="swPPModifiersYesLocative">
+              <content>Las frases </content> <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case>
+              <text show="swPPModifiersYesDegreeOrOrdinalOrManner"><content> también</content></text><content> se pueden modificar con los adverbios de lugar que se presentan </content>
+              <text show="swPPLocativePosBefore"><content>antes</content></text>
+              <text show="swPPLocativePosAfter"><content>después</content></text>
+              <text show="swPPLocativePosBoth"><content>en ambos lados</content></text>
+              <text show="swPPLocativePosEither"><content>de cualquier lado</content></text>
+              <text show="swPPLocativePosBeforeOrBoth"><content>antes o en ambos lados</content></text>
+              <text show="swPPLocativePosAfterOrBoth"><content>después o en ambos lados</content></text>
+              <text show="swPPLocativePosEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+              <text show="swPPLocativePosNotOther"><content> de la frase completa.  </content></text>
+              <text show="swPPLocativePosOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="pp/ppLocativePosOther"/><content>.  </content></text>
+              <text show="swPPLocativePosPosAndOther"><content> de la frase completa y también pueden presentarse ___</content><contentCheckBoxOther contentLoc="pp/ppLocativePosOther"/><content>.  </content></text>
+              <content>Los adverbios de lugar que pueden modificar a la frase </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicional</caseText>
+                 <caseText value="after">posposicional</caseText>
+                 <caseText value="both">adposicional</caseText>
+                 <caseText value="unknown">adposicional</caseText>
+              </case>
+              <content> completa son:</content></p>
+           <example show="swPPModifiersYesLocative">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Adverbios de lugar</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="pp/locative"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>     
+           <p show="swPPModifiersYesLocative"><content>Algunos ejemplos de frases </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case>
+              <content> con adverbios de lugar que las modifican son:</content></p>             
+           <example show="swPPModifiersYesLocative">
+              <interlinear exampleLoc="pp/locativeWithPP"/>
+           </example>            
+           
+           <p show="swPPModifiersYesOther">
+              <content>Las frases </content> <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case>
+              <text show="swPPModifiersYesNotOtherOnly"><content> también</content></text><content> se pueden modificar con ___</content><contentCheckBoxOther contentLoc="pp/ppModifierOther"/><content>.  Estos elementos que pueden modificar a la frase </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicional</caseText>
+                 <caseText value="after">posposicional</caseText>
+                 <caseText value="both">adposicional</caseText>
+                 <caseText value="unknown">adposicional</caseText>
+              </case>
+              <content> completa son:</content></p>
+           <example show="swPPModifiersYesOther">
+              <table border="1">
+                 <headerRow>
+                    <headerCol>Modificadores</headerCol>
+                    <headerCol>Glosa</headerCol>
+                 </headerRow>
+                 <row>
+                    <col exampleLoc="pp/otherMod"/>
+                    <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                 </row>
+              </table>
+           </example>     
+           <p show="swPPModifiersYesOther"><content>Algunos ejemplos de frases </content>
+              <case element="pp" attr="pPos">
+                 <caseText value="before">preposicionales</caseText>
+                 <caseText value="after">posposicionales</caseText>
+                 <caseText value="both">adposicionales</caseText>
+                 <caseText value="unknown">adposicionales</caseText>
+              </case>
+              <content> con estos modificadores son:</content></p>          
+           <example show="swPPModifiersYesOther">
+              <interlinear exampleLoc="pp/otherModWithPP"/>
+           </example>            
+        </section2>
+         <section2 id="sPPComps">
+            <secTitle>Complementos que no son frases nominales</secTitle>
+            <p contentType="ctComparativeIntro">
+                    <content>Algunas  </content>
+                    <case element="pp" attr="pPos">
+                        <caseText value="before">preposiciones</caseText>
+                        <caseText value="after">posposiciones</caseText>
+                        <caseText value="both">adposiciones</caseText>
+                        <caseText value="unknown">adposiciones</caseText>
+                    </case><content>  pueden colocarse solas sin un complemento por razón de movimiento de una partícula, por ejemplo en las oraciones </content>
+                    <langData>Come [in] ‘Viene [adentro]’</langData>
+                    <content> y </content>
+                   <langData>John turned the light [on/off]</langData><gloss><content> ‘Juan apaga la luz [conectada/desconectada]’</content></gloss>
+                    <content>.  También, algunas lenguas permiten </content>
+                    <case element="pp" attr="pPos">
+                        <caseText value="before">preposiciones</caseText>
+                        <caseText value="after">posposiciones</caseText>
+                        <caseText value="both">adposiciones</caseText>
+                        <caseText value="unknown">adposiciones</caseText>
+                    </case><content> dejar aisladas en preguntas cuando el complemento desplaza hacia la izquierda, como en </content>
+                    <langData>Whom did you give the book [to _]?</langData><gloss><content> ‘¿Quién usted dio el libro [a _ ]?’</content></gloss> 
+                   <content> (No se permite en español.)</content>
+                </p>
+                <p>
+                    <content>En el </content>
+                    <langName/>
+                    <content/>
+                    <case element="pp" attr="alone">
+                        <caseText value="no"> no se permite colocar </caseText>
+                        <caseText value="yes"> se permite colocar algunas </caseText>
+                    </case>
+                    <content></content>
+                    <text show="swPPPosPrep">
+                        <content>preposiciones</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosPost">
+                        <content>posposiciones</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosUnknown">
+                        <content>adposiciones</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosBoth">
+                        <content>adposiciones</content>
+                    </text>
+                    <content> solas sin un complemento.  </content>
+                    <text show="swPPAloneYes">
+                        <content>Algunos ejemplos en oraciones completas son:</content>
+                    </text>
+                    <content/>
+                </p>
+                <example show="swPPAloneYes">
+                    <interlinear exampleLoc="pp/aloneExample"/>
+                </example>
+ 
+            <p contentType="ctComparativeIntro">
+                    <content>La mayoría de las lenguas permiten adverbios de lugar como complementos de las </content>
+                    <case element="pp" attr="pPos">
+                        <caseText value="before">preposiciones</caseText>
+                        <caseText value="after">posposiciones</caseText>
+                        <caseText value="both">adposiciones</caseText>
+                        <caseText value="unknown">adposiciones</caseText>
+                    </case><content>, por ejemplo </content>
+                    <langData>por allá</langData>
+                    <content> y </content>
+                    <langData>in here</langData><gloss><content> ‘aquí adentro’</content></gloss>
+                    <content>.</content>
+                </p>
+                <p>
+                    <content>En el </content>
+                    <langName/>
+                    <content/>
+                    <case element="pp" attr="locative">
+                        <caseText value="no"> no se permiten</caseText>
+                        <caseText value="yes"> se permiten</caseText>
+                    </case>
+                    <content> los adverbios de lugar como complementos de </content>
+                    <text show="swPPPosPrep">
+                        <content>preposiciones.</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosPost">
+                        <content>posposiciones.</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosUnknown">
+                        <content>adposiciones.</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosBoth">
+                        <content>adposiciones.</content>
+                    </text>
+                    <content/>
+                    <text show="swPPLocativeYes">
+                        <content>  Algunos ejemplos de adverbios de lugar como complementos son:</content>
+                    </text>
+                    <content/>
+                </p>
+                <example show="swPPLocativeYes">
+                    <interlinear exampleLoc="pp/locExample"/>
+                </example>
+ 
+                <p contentType="ctComparativeIntro">
+                    <content>Las </content>
+                    <case element="pp" attr="pPos">
+                        <caseText value="before">preposiciones</caseText>
+                        <caseText value="after">posposiciones</caseText>
+                        <caseText value="both">adposiciones</caseText>
+                        <caseText value="unknown">adposiciones</caseText>
+                    </case><content> de lugar forman una categoría especial porque en algunas lenguas pueden tener otra frase  </content>
+                    <case element="pp" attr="pPos">
+                        <caseText value="before">preposicional</caseText>
+                        <caseText value="after">posposicional</caseText>
+                        <caseText value="both">adposicional</caseText>
+                        <caseText value="unknown">adposicional</caseText>
+                    </case><content> de lugar como complemento. Algunos ejemplos en inglés son: </content>
+                    <langData>up [to the top]</langData><gloss><content> ‘encima [al borde]’</content></gloss>
+                    <content>, </content>
+                    <langData>around [behind the shed]</langData><gloss><content> ‘alrededor [detrás del cobertizo]’</content></gloss>
+                    <content> y </content>
+                    <langData>over [by the table]</langData><gloss><content> ‘sobre [cerca de la mesa]’</content></gloss>
+                    <content>.</content>
+                </p>
+                <p>
+                    <content>En el </content>
+                    <langName/>
+                    <content/>
+                    <case element="pp" attr="ppComp">
+                        <caseText value="no"> no hay </caseText>
+                        <caseText value="yes"> hay </caseText>
+                    </case>
+                    <text show="swPPPosPrep">
+                        <content>preposiciones</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosPost">
+                        <content>posposiciones</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosUnknown">
+                        <content>adposiciones</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosBoth">
+                        <content>adposiciones</content>
+                    </text>
+                    <content> de lugar que pueden tener otra frase </content>
+                    <case element="pp" attr="pPos">
+                        <caseText value="before">preposicional</caseText>
+                        <caseText value="after">posposicional</caseText>
+                        <caseText value="both">adposicional</caseText>
+                        <caseText value="unknown">adposposicional</caseText>                 
+                    </case><content> de lugar como complemento.  </content>
+                    <text show="swPPCompPPYes">
+                        <content>Algunos ejemplos son:</content>
+                    </text>
+                    <content/>
+                </p>
+                <example show="swPPCompPPYes">
+                    <interlinear exampleLoc="pp/compPPExample"/>
+                </example>
 
-				<p>
-					<content>Primero se analizan los posibles modificadores de la frase, después los complementos permitidos. </content>
-		</p>
-		<section2 id="sPPModifiers">
-			<secTitle>Modificadores</secTitle>
-			<p>
-				<content>Normalmente hay algunas palabras de grado que pueden modificar una frase </content>
-				<case element="pp" attr="pPos">
-					<caseText value="before">preposicional</caseText>
-					<caseText value="after">posposicional</caseText>
-					<caseText value="both">preposicional o posposicional</caseText>
-					<caseText value="unknown">preposicional o posposicional</caseText>
-				</case>
-				<content> completa, tal como </content>
-				<langData>just</langData><gloss><content> ‘justo’</content></gloss>
-				<content> y </content>
-				<langData>right</langData><gloss><content> ‘hasta’</content></gloss>
-				<content> en </content>
-				<langData>just around the corner</langData><gloss><content> ‘justo a la vuelta de la esquina’</content></gloss>
-				<content> y </content>
-				<langData>right to the last second</langData><gloss><content> ‘hasta el último momento’</content></gloss>
-			   <content>.  En algunas lenguas hay adverbios de lugar que significa </content><gloss><content>‘right here’ ‘exactamente aquí’</content></gloss><content> y </content><gloss><content>‘right there’ ‘exactamente allí’</content></gloss><content> que pueden modificar las frases </content>
-			   <case element="pp" attr="pPos">
-				  <caseText value="before">preposicionales</caseText>
-				  <caseText value="after">posposicionales</caseText>
-				  <caseText value="both">preposicionales o posposicionales</caseText>
-				  <caseText value="unknown">preposicionales o posposicionales</caseText>
-			   </case><content>.  Los números ordinales y los adjetivos también pueden modificar las frases </content>
-				<case element="pp" attr="pPos">
-					<caseText value="before">preposicionales</caseText>
-					<caseText value="after">posposicionales</caseText>
-					<caseText value="both">preposicionales o posposicionales</caseText>
-					<caseText value="unknown">preposicionales o posposicionales</caseText>
-				</case>
-				<content>, como en </content>
-				<langData>next in line</langData><gloss><content> ‘siguiente en la linea’</content></gloss>
-				<content> y </content>
-				<langData>first out the door</langData><gloss><content> ‘el primero en salir’</content></gloss>
-				<content>.  Además, ciertos adverbios de modo pueden modificar las frases </content>
-				<case element="pp" attr="pPos">
-					<caseText value="before">preposicionales</caseText>
-					<caseText value="after">posposicionales</caseText>
-					<caseText value="both">preposicionales o posposicionales</caseText>
-					<caseText value="unknown">preposicionales o posposicionales</caseText>
-				</case>
-				<content>, como en </content>
-				<langData>almost in the hole</langData><gloss><content> ‘casi en el agujero’</content></gloss>
-				<content>, </content>
-				<langData>mostly up the tree</langData><gloss><content> ‘la mayoría en el árbol’</content></gloss>
-				<content>, </content>
-				<langData>squarely on the table</langData><gloss><content> ‘justo en la mesa’</content></gloss>
-				<content>, y </content>
-				<langData>nearly upon the enemy</langData><gloss><content> ‘casi sobre el enemigo’</content></gloss>
-				<content>.</content>
-			</p>
-			<p show="swPPModifiersYes">
-				<content>Algunos ejemplos similares  en </content>
-				<langName/>
-				<content> de acuerdo con lo expresado son:</content>
-			</p>
-			<example show="swPPModifiersYes">
-				<interlinear exampleLoc="pp/example"/>
-			</example>
-			<p>
-				<content>En </content>
-				<langName/>
-				<content/>
-				<case element="pp" attr="modifiers">
-					<caseText value="no"> no hay modificadores que se presenten sintácticamente antes o después de la frase.</caseText>
-					<caseText value="yes"> se permiten </caseText>
-				</case>
-				<text show="swPPModifiersNo"><content>  Ni palabras de grado ni los números ordinales ni los adverbios pueden modificar las frases </content>
-					<case element="pp" attr="pPos">
-						<caseText value="before">preposicionales</caseText>
-						<caseText value="after">posposicionales</caseText>
-						<caseText value="both">preposicionales o posposicionales</caseText>
-						<caseText value="unknown">preposicionales o posposicionales</caseText>
-					</case>
-					<content> como palabras independientes.</content> </text>
-				<content/>
-				<text show="swPPModifiersYes">
-					<content/>
-					<case element="pp" attr="modifierType">
-						<caseText value="degree">solamente las palabras de grado</caseText>
-						<caseText value="ordinal">solamente los números ordinales</caseText>
-						<caseText value="manner">solamente los adverbios de modo</caseText>
-					   <caseText value="locative">solamente los adverbios de lugar</caseText>
-						<caseText value="degreeAndOrdinal">las palabras de grado y los números ordinales, pero no los adverbios</caseText>
-						<caseText value="degreeAnd Manner">las palabras de grado y los adverbios de modo, pero no los números ordinales ni los adverbios de lugar</caseText>
-						<caseText value="mannerAndOrdinal">los adverbios de modo y los números ordinales, pero no las palabras de grado ni los adverbios de lugar</caseText>
-					   <caseText value="mannerAndLocative">los adverbios de modo y de lugar, pero no los números ordinales ni las palabras de grado</caseText>
-						<caseText value="all">los tres tipos principales, las palabras de grado, los adverbios de modo y los números ordinales,</caseText>
-					   <caseText value="all4">los cuatro tipos, las palabras de grado, los adverbios de modo y de lugar y los números ordinales,</caseText>
-				   </case>
-					<content> como modificadores de las frases </content>
-					<case element="pp" attr="pPos">
-						<caseText value="before">preposicionales</caseText>
-						<caseText value="after">posposicionales</caseText>
-						<caseText value="both">preposicionales o posposicionales</caseText>
-						<caseText value="unknown">preposicionales o posposicionales</caseText>
-					</case>
-					<content>.  </content>
-					<text show="swPPModifiersYesDegree">
-						<content>Las palabras de grado se presentan </content>
-						<case element="pp" attr="degreePos">
-							<caseText value="before">antes</caseText>
-							<caseText value="after">después</caseText>
-							<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-							<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
-							<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-							<caseText value="afterOrBoth">después o en ambos lados</caseText>
-							<caseText value="both">en ambos lados</caseText>
-							<caseText value="unknown">_______</caseText>
-					   </case>
-						<content> del resto de la frase </content>
-						<case element="pp" attr="pPos">
-							<caseText value="before">preposicional</caseText>
-							<caseText value="after">posposicional</caseText>
-							<caseText value="both">preposicional o posposicional</caseText>
-							<caseText value="unknown">preposicional o posposicional</caseText>
-						</case>
-						<content>.  </content>
-					</text>
-					<content/>
-					<text show="swPPDegreeEitherUnrestricted">
-						<content>Todas las palabras de grado pueden presentarse de cualquier lado de la frase </content>
-						<case element="pp" attr="pPos">
-							<caseText value="before">preposicional</caseText>
-							<caseText value="after">posposicional</caseText>
-							<caseText value="both">preposicional o posposicional</caseText>
-							<caseText value="unknown">preposicional o posposicional</caseText>
-						</case>
-						<content>.  </content>
-					</text>
-					<content/>
-					<text show="swPPDegreeEitherRestricted">
-						<content>Hay restricciones en cuanto a cuáles palabras de grado pueden presentarse en cada lado de la frase </content>
-						<case element="pp" attr="pPos">
-							<caseText value="before">preposicional</caseText>
-							<caseText value="after">posposicional</caseText>
-							<caseText value="both">preposicional o posposicional</caseText>
-							<caseText value="unknown">preposicional o posposicional</caseText>
-						</case>
-						<content>.  </content>
-					</text>
-					<content/>
-					<text show="swPPModifiersYesOrdinal">
-						<content>Los números ordinales se presentan </content>
-						<case element="pp" attr="ordinalPos">
-							<caseText value="before">antes</caseText>
-							<caseText value="after">después</caseText>
-							<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-							<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
-							<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-							<caseText value="afterOrBoth">después o en ambos lados</caseText>
-							<caseText value="both">en ambos lados</caseText>
-							<caseText value="unknown">_______</caseText>
-						</case>
-						<content> del resto de la frase </content>
-						<case element="pp" attr="pPos">
-							<caseText value="before">preposicional</caseText>
-							<caseText value="after">posposicional</caseText>
-							<caseText value="both">preposicional o posposicional</caseText>
-							<caseText value="unknown">preposicional o posposicional</caseText>
-						</case>
-						<content>.  </content>
-					</text>
-					<content/>
-					<text show="swPPOrdinalEitherUnrestricted">
-						<content>Todos los números ordinales pueden presentarse de cualquier lado de la frase </content>
-						<case element="pp" attr="pPos">
-							<caseText value="before">preposicional</caseText>
-							<caseText value="after">posposicional</caseText>
-							<caseText value="both">preposicional o posposicional</caseText>
-							<caseText value="unknown">preposicional o posposicional</caseText>
-						</case>
-						<content>.  </content>
-					</text>
-					<content/>
-					<text show="swPPOrdinalEitherRestricted">
-						<content>Hay restricciones en cuanto a cuáles  números ordinales pueden presentarse en cada lado de la frase </content>
-						<case element="pp" attr="pPos">
-							<caseText value="before">preposicional</caseText>
-							<caseText value="after">posposicional</caseText>
-							<caseText value="both">preposicional o posposicional</caseText>
-							<caseText value="unknown">preposicional o posposicional</caseText>
-						</case>
-						<content>.  </content>
-					</text>
-					<content/>
-					<text show="swPPModifiersYesManner">
-						<content>Los adverbios de modo se presentan </content>
-						<case element="pp" attr="mannerPos">
-							<caseText value="before">antes</caseText>
-							<caseText value="after">después</caseText>
-							<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-							<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
-							<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-							<caseText value="afterOrBoth">después o en ambos lados</caseText>
-							<caseText value="both">en ambos lados</caseText>
-							<caseText value="unknown">_______</caseText>
-					   </case>
-						<content> del resto de la frase </content>
-						<case element="pp" attr="pPos">
-							<caseText value="before">preposicional</caseText>
-							<caseText value="after">posposicional</caseText>
-							<caseText value="both">preposicional o posposicional</caseText>
-							<caseText value="unknown">preposicional o posposicional</caseText>
-						</case>
-						<content>.  </content>
-					</text>
-					<content/>
-					<text show="swPPMannerEitherUnrestricted">
-						<content>Todos los adverbios de modo pueden presentarse de cualquier lado de la frase </content>
-						<case element="pp" attr="pPos">
-							<caseText value="before">preposicional</caseText>
-							<caseText value="after">posposicional</caseText>
-							<caseText value="both">preposicional o posposicional</caseText>
-							<caseText value="unknown">preposicional o posposicional</caseText>
-						</case>
-						<content>.  </content>
-					</text>
-					<content/>
-					<text show="swPPMannerEitherRestricted">
-						<content>Hay restricciones en cuanto a cuáles adverbios de modo pueden presentarse en cada lado de la frase </content>
-						<case element="pp" attr="pPos">
-							<caseText value="before">preposicional</caseText>
-							<caseText value="after">posposicional</caseText>
-							<caseText value="both">preposicional o posposicional</caseText>
-							<caseText value="unknown">preposicional o posposicional</caseText>
-						</case>
-						<content>.  </content>
-					</text>
-				   <text show="swPPModifiersYesLocative">
-					  <content>Los adverbios de lugar se presentan </content>
-					  <case element="pp" attr="locativePos">
-						 <caseText value="before">antes</caseText>
-						 <caseText value="after">después</caseText>
-						 <caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-						 <caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
-						 <caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-						 <caseText value="afterOrBoth">después o en ambos lados</caseText>
-						 <caseText value="both">en ambos lados</caseText>
-						 <caseText value="unknown">_______</caseText>
-					  </case>
-					  <content> del resto de la frase </content>
-					  <case element="pp" attr="pPos">
-						 <caseText value="before">preposicional</caseText>
-						 <caseText value="after">posposicional</caseText>
-						 <caseText value="both">preposicional o posposicional</caseText>
-						 <caseText value="unknown">preposicional o posposicional</caseText>
-					  </case>
-					  <content>.  </content>
-				   </text>
-				   <content/>
-				   <text show="swPPLocativeEitherUnrestricted">
-					  <content>Todos los adverbios de lugar pueden presentarse de cualquier lado de la frase </content>
-					  <case element="pp" attr="pPos">
-						 <caseText value="before">preposicional</caseText>
-						 <caseText value="after">posposicional</caseText>
-						 <caseText value="both">preposicional o posposicional</caseText>
-						 <caseText value="unknown">preposicional o posposicional</caseText>
-					  </case>
-					  <content>.  </content>
-				   </text>
-				   <content/>
-				   <text show="swPPLocativeEitherRestricted">
-					  <content>Hay restricciones en cuanto a cuáles adverbios de lugar pueden presentarse en cada lado de la frase </content>
-					  <case element="pp" attr="pPos">
-						 <caseText value="before">preposicional</caseText>
-						 <caseText value="after">posposicional</caseText>
-						 <caseText value="both">preposicional o posposicional</caseText>
-						 <caseText value="unknown">preposicional o posposicional</caseText>
-					  </case>
-					  <content>.</content>
-				   </text>
-				   <content/>
-				</text>
-				<content/>
-			</p>
-		</section2>
-		 <section2 id="sPPComps">
-			 <secTitle><case  element="pp" attr="pPos">
-				 <caseText value="before">Complementos de las preposiciones</caseText>
-				 <caseText value="after">Complementos de las posposiciones</caseText>
-				 <caseText value="both">Complementos de las preposiciones y posposiciones</caseText>
-				 <caseText value="unknown">Complementos de las preposiciones y/o posposiciones</caseText>
-			 </case></secTitle>
-			<p>
-				<content>Las </content>
-				<case element="pp" attr="pPos">
-					<caseText value="before">preposiciones</caseText>
-					<caseText value="after">posposiciones</caseText>
-					<caseText value="both">preposiciones o posposiciones</caseText>
-					<caseText value="unknown">preposiciones o posposiciones</caseText>
-				</case><content> llevan normalmente una frase nominal como complemento, por ejemplo en </content>
-				<langData>a [la casa de Guillermo]</langData>
-				<content> y </content>
-				<langData>debajo [del árbol sicómoro gigante]</langData>
-				<content>. </content>
-			</p>
-			<p>
-				<content> Algunos ejemplos en </content>
-				<langName/>
-				<content> con complementos nominales son: </content>
-			</p>
-			<example>
-				<interlinear exampleLoc="pp/ppExample"/>
-			</example>
-			<section3 id="sPPAlone">
-				<secTitle>Sin complemento</secTitle>
-				<p>
-					<content>Algunas  </content>
-					<case element="pp" attr="pPos">
-						<caseText value="before">preposiciones</caseText>
-						<caseText value="after">posposiciones</caseText>
-						<caseText value="both">preposiciones o posposiciones</caseText>
-						<caseText value="unknown">preposiciones o posposiciones</caseText>
-					</case><content>  pueden colocarse solas sin un complemento por razón de movimiento de una partícula, por ejemplo en las oraciones </content>
-					<langData>Come [in] ‘Viene [adentro]’</langData>
-					<content> y </content>
-				   <langData>John turned the light [on/off]</langData><gloss><content> ‘Juan apaga la luz [conectada/desconectada]’</content></gloss>
-					<content>.  También, algunas lenguas permiten </content>
-					<case element="pp" attr="pPos">
-						<caseText value="before">preposiciones</caseText>
-						<caseText value="after">posposiciones</caseText>
-						<caseText value="both">preposiciones o posposiciones</caseText>
-						<caseText value="unknown">preposiciones o posposiciones</caseText>
-					</case><content> dejar aisladas en preguntas cuando el complemento desplaza a la izquierda, como en </content>
-					<langData>Whom did you give the book [to _]?</langData><gloss><content> ‘¿Quién usted dio el libro [a _ ]?’</content></gloss>
-				   <content> (No se permite en español.)</content>
-				</p>
-				<p>
-					<content>En </content>
-					<langName/>
-					<content/>
-					<case element="pp" attr="alone">
-						<caseText value="no"> no permite </caseText>
-						<caseText value="yes"> permite algunas </caseText>
-					</case>
-					<content></content>
-					<text show="swPPPosPrep">
-						<content>preposiciones</content>
-					</text>
-					<content/>
-					<text show="swPPPosPost">
-						<content>posposiciones</content>
-					</text>
-					<content/>
-					<text show="swPPPosUnknown">
-						<content>_____-posiciones</content>
-					</text>
-					<content/>
-					<text show="swPPPosBoth">
-						<content>preposiciones y posposiciones</content>
-					</text>
-					<content> colocarse solas sin un complemento.  </content>
-					<text show="swPPAloneYes">
-						<content>Algunos ejemplos incluidos en oraciones completas son:</content>
-					</text>
-					<content/>
-				</p>
-				<example show="swPPAloneYes">
-					<interlinear exampleLoc="pp/aloneExample"/>
-				</example>
-			</section3>
-			<section3 id="sPPLoc">
-				<secTitle>Adverbios de lugar como complementos</secTitle>
-				<p>
-					<content>La mayoría de las lenguas permiten adverbios de lugar como complementos de las </content>
-					<case element="pp" attr="pPos">
-						<caseText value="before">preposiciones</caseText>
-						<caseText value="after">posposiciones</caseText>
-						<caseText value="both">preposiciones o posposiciones</caseText>
-						<caseText value="unknown">preposiciones o posposiciones</caseText>
-					</case><content>, por ejemplo </content>
-					<langData>por allá</langData>
-					<content> y </content>
-					<langData>in here</langData><gloss><content> ‘aquí adentro’</content></gloss>
-					<content>.</content>
-				</p>
-				<p>
-					<content>En </content>
-					<langName/>
-					<content/>
-					<case element="pp" attr="locative">
-						<caseText value="no"> no se permiten</caseText>
-						<caseText value="yes"> se permiten</caseText>
-					</case>
-					<content> los adverbios de lugar como complementos de los </content>
-					<text show="swPPPosPrep">
-						<content>preposiciones.</content>
-					</text>
-					<content/>
-					<text show="swPPPosPost">
-						<content>posposiciones.</content>
-					</text>
-					<content/>
-					<text show="swPPPosUnknown">
-						<content>_____-posiciones.</content>
-					</text>
-					<content/>
-					<text show="swPPPosBoth">
-						<content>preposiciones y posposiciones.</content>
-					</text>
-					<content/>
-					<text show="swPPLocativeYes">
-						<content>  Algunos ejemplos con adverbios de lugar como complementos son:</content>
-					</text>
-					<content/>
-				</p>
-				<example show="swPPLocativeYes">
-					<interlinear exampleLoc="pp/locExample"/>
-				</example>
-			</section3>
-			<section3 id="sPPLocPP">
-				<secTitle>   <case  element="pp" attr="pPos">
-					<caseText value="before">Frases preposicionales de lugar como complementos</caseText>
-					<caseText value="after">Frases posposicionales de lugar como complementos</caseText>
-					<caseText value="both">Frases preposicionales y posposicionales de lugar como complementos</caseText>
-					<caseText value="unknown">Frases preposicionales y/o posposicionales de lugar como complementos</caseText>
-				</case></secTitle>
-				<p>
-					<content>Las </content>
-					<case element="pp" attr="pPos">
-						<caseText value="before">preposiciones</caseText>
-						<caseText value="after">posposiciones</caseText>
-						<caseText value="both">preposiciones y posposiciones</caseText>
-						<caseText value="unknown">preposiciones y/o posposiciones</caseText>
-					</case><content> de lugar forman una categoría especial porque en algunas lenguas pueden tener otra frase  </content>
-					<case element="pp" attr="pPos">
-						<caseText value="before">preposicional</caseText>
-						<caseText value="after">posposicional</caseText>
-						<caseText value="both">preposicional o posposicional</caseText>
-						<caseText value="unknown">preposicional o posposicional</caseText>
-					</case><content> de lugar como su complemento. Algunos ejemplos en inglés son: </content>
-					<langData>up [to the top]</langData><gloss><content> ‘encima [al borde]’</content></gloss>
-					<content>, </content>
-					<langData>around [behind the shed]</langData><gloss><content> ‘alrededor [detrás del cobertizo]’</content></gloss>
-					<content> y </content>
-					<langData>over [by the table]</langData><gloss><content> ‘sobre [cerca de la mesa]’</content></gloss>
-					<content>.</content>
-				</p>
-				<p>
-					<content>En </content>
-					<langName/>
-					<content/>
-					<case element="pp" attr="ppComp">
-						<caseText value="no"> no hay </caseText>
-						<caseText value="yes"> hay </caseText>
-					</case>
-					<text show="swPPPosPrep">
-						<content>preposiciones</content>
-					</text>
-					<content/>
-					<text show="swPPPosPost">
-						<content>posposiciones</content>
-					</text>
-					<content/>
-					<text show="swPPPosUnknown">
-						<content>_____-posiciones</content>
-					</text>
-					<content/>
-					<text show="swPPPosBoth">
-						<content>preposiciones y posposiciones</content>
-					</text>
-					<content> de lugar que pueden tener una frase </content>
-					<case element="pp" attr="pPos">
-						<caseText value="before">preposicional</caseText>
-						<caseText value="after">posposicional</caseText>
-						<caseText value="both">preposicional o posposicional</caseText>
-						<caseText value="unknown">preposicional o posposicional</caseText>
-					</case><content> de lugar como complemento.  </content>
-					<text show="swPPCompPPYes">
-						<content>Algunos ejemplos con frases </content>
-						<case element="pp" attr="pPos">
-							<caseText value="before">preposicionales</caseText>
-							<caseText value="after">posposicionales</caseText>
-							<caseText value="both">preposicionales o posposicionales</caseText>
-							<caseText value="unknown">preposicionales o posposicionales</caseText>
-						</case><content> de lugar como complementos en </content>
-						<langName/>
-						<content> son:</content>
-					</text>
-					<content/>
-				</p>
-				<example show="swPPCompPPYes">
-					<interlinear exampleLoc="pp/compPPExample"/>
-				</example>
-			</section3>
-			<section3 id="sPPTemp">
-			   <secTitle><case  element="pp" attr="pPos">
-				  <caseText value="before">Complementos de preposiciones de tiempo</caseText>
-				 <caseText value="after">Complementos de posposiciones de tiempo</caseText>
-				 <caseText value="both">Complementos de preposiciones y posposiciones de tiempo</caseText>
-				 <caseText value="unknown">Complementos de preposiciones y/o posposiciones de tiempo</caseText>
-			   </case></secTitle>
-			   <p>
-				  <content>Palabras de tiempo como </content><langData>before</langData><gloss><content> ‘antes’</content></gloss><content> y </content><langData>after</langData><gloss><content> ‘después’</content></gloss> <content> son preposiciones
+               <p contentType="ctComparativeIntro">
+                  <content>Palabras de tiempo como </content><langData>before</langData><gloss><content> ‘antes’</content></gloss><content> y </content><langData>after</langData><gloss><content> ‘después’</content></gloss> <content> son preposiciones 
  de tiempo cuando llevan una frase nominal como complemento, por ejemplo en </content><langData>before you</langData><gloss><content> ‘antes de usted’</content></gloss><content> o </content><langData>after that</langData><gloss><content> ‘después de esto’</content></gloss>
-				  <content>.  También pueden llevar un gerundio como complemento, por ejemplo en </content><langData>before [signing the contract]</langData><gloss><content> ‘antes de [firmar el contrato]’</content></gloss>
-				  <content> y </content><langData>after [buying our new house]</langData><gloss><content> ‘después de [comprar nuestra casa nueva]’</content></gloss>
-				  <content>, puesto que los gerundios son un tipo especial de frase nominal.</content> </p>
-			   <p>
-					<content>Las mismas palabras de tiempo pueden llevar oraciones como complementos, por ejemplo </content>
-					<langData>before [the rain stops]</langData><gloss><content> ‘antes de que [la lluvia cese]’</content></gloss>
-					<content> y </content>
-					<langData>after [John returns home]</langData><gloss><content> ‘después de que [Juan volvió a casa]’</content></gloss>
-				  <content>.  En este uso, son adverbios de tiempo en vez de preposiciones, y la frase completa es una cláusula adverbial que normalmente modifica la oración principal. Tales ejemplos serán detallados en la sección </content><sectionRef sec="sAdvCl"/><content>.</content>
-				</p>
-				<p>
-					<content>En </content>
-					<langName/>
-					<content/>
-					<case element="pp" attr="tempComp">
-						<caseText value="no"> no hay </caseText>
-						<caseText value="yes"> hay </caseText>
-					</case>
-					<text show="swPPPosPrep">
-						<content>preposiciones</content>
-					</text>
-					<content/>
-					<text show="swPPPosPost">
-						<content>posposiciones</content>
-					</text>
-					<content/>
-					<text show="swPPPosUnknown">
-						<content>_____-posiciones</content>
-					</text>
-					<content/>
-					<text show="swPPPosBoth">
-						<content>preposiciones and posposiciones</content>
-					</text>
-					<content> de tiempo que pueden tener una frase nominal o un gerundio como complemento.  </content>
-					<text show="swPPTempCompYes">
-					   <content>Algunos ejemplos de temporales con frases nominales o gerundios como complementos, incluidos en oraciones completas son:</content>
-					</text>
-					<content/>
-				</p>
-				<example show="swPPTempCompYes">
-					<interlinear exampleLoc="pp/tempExample"/>
-				</example>
-			</section3>
-		</section2>
-	</section1>
-	 <showWhen id="swPPModifiersYes">
-		<whenValue element="pp" attr="modifiers" value="yes"/>
-	</showWhen>
-	<showWhen id="swPPModifiersNo">
-		<whenValue element="pp" attr="modifiers" value="no"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesDegree">
-		<whenValue element="pp" attr="modifierType" value="degree"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="all"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="all4"/>
-	</showWhen>
-	<showWhen id="swPPDegreeEitherRestricted">
-		<whenValue element="pp" attr="modifierType" value="degree"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreeRestricted" value="restricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-	   <whenValue element="pp" attr="degreeRestricted" value="restricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-	   <whenValue element="pp" attr="degreeRestricted" value="restricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="all"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-	   <whenValue element="pp" attr="degreeRestricted" value="restricted"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="all4"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreeRestricted" value="restricted"/>
-	</showWhen>
-	<showWhen id="swPPDegreeEitherUnrestricted">
-		<whenValue element="pp" attr="modifierType" value="degree"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-	   <whenValue element="pp" attr="degreeRestricted" value="unrestricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-	   <whenValue element="pp" attr="degreeRestricted" value="unrestricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-	   <whenValue element="pp" attr="degreeRestricted" value="unrestricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="all"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-		<and/>
-	   <whenValue element="pp" attr="degreeRestricted" value="unrestricted"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="all4"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreeRestricted" value="unrestricted"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesOrdinal">
-		<whenValue element="pp" attr="modifierType" value="ordinal"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="all"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="all4"/>
-	</showWhen>
-	<showWhen id="swPPOrdinalEitherRestricted">
-		<whenValue element="pp" attr="modifierType" value="ordinal"/>
-		<and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalRestricted" value="restricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal"/>
-		<and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalRestricted" value="restricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
-		<and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalRestricted" value="restricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="all"/>
-		<and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalRestricted" value="restricted"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="all4"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalRestricted" value="restricted"/>
-	</showWhen>
-	<showWhen id="swPPOrdinalEitherUnrestricted">
-		<whenValue element="pp" attr="modifierType" value="ordinal"/>
-		<and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalRestricted" value="unrestricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal"/>
-		<and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalRestricted" value="unrestricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal"/>
-		<and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalRestricted" value="unrestricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="all"/>
-		<and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalRestricted" value="unrestricted"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="all4"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalRestricted" value="unrestricted"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesManner">
-		<whenValue element="pp" attr="modifierType" value="manner"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="all"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="all4"/>
-	</showWhen>
-	<showWhen id="swPPMannerEitherRestricted">
-		<whenValue element="pp" attr="modifierType" value="manner"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-		<and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner"/>
-		<and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal"/>
-		<and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="all"/>
-		<and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="all4"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="restricted"/>
-	</showWhen>
-	<showWhen id="swPPMannerEitherUnrestricted">
-		<whenValue element="pp" attr="modifierType" value="manner"/>
-		<and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner"/>
-		<and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal"/>
-		<and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
-		<or/>
-		<whenValue element="pp" attr="modifierType" value="all"/>
-		<and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifierType" value="all4"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerRestricted" value="unrestricted"/>
-	</showWhen>
-   <showWhen id="swPPModifiersYesLocative">
-	  <whenValue element="pp" attr="modifierType" value="locative"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifierType" value="all4"/>
-   </showWhen>
-   <showWhen id="swPPLocativeEitherRestricted">
-	  <whenValue element="pp" attr="modifierType" value="locative"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativeRestricted" value="restricted"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativeRestricted" value="restricted"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifierType" value="all4"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativeRestricted" value="restricted"/>
-   </showWhen>
-   <showWhen id="swPPLocativeEitherUnrestricted">
-	  <whenValue element="pp" attr="modifierType" value="locative"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativeRestricted" value="unrestricted"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativeRestricted" value="unrestricted"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifierType" value="all4"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativeRestricted" value="unrestricted"/>
-   </showWhen>
+                  <content>.  También pueden llevar un gerundio como complemento, por ejemplo en </content><langData>before [signing the contract]</langData><gloss><content> ‘antes de [firmar el contrato]’</content></gloss>
+                  <content> y </content><langData>after [buying our new house]</langData><gloss><content> ‘después de [comprar nuestra casa nueva]’</content></gloss>
+                  <content>, puesto que los gerundios son un tipo especial de frase nominal.</content> </p>
+                <p>
+                    <content>En el </content>
+                    <langName/>
+                    <content/>
+                    <case element="pp" attr="tempComp">
+                        <caseText value="no"> no hay </caseText>
+                        <caseText value="yes"> hay </caseText>
+                    </case>
+                    <text show="swPPPosPrep">
+                        <content>preposiciones</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosPost">
+                        <content>posposiciones</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosUnknown">
+                        <content>adposiciones</content>
+                    </text>
+                    <content/>
+                    <text show="swPPPosBoth">
+                        <content>preposiciones and posposiciones</content>
+                    </text>
+                    <content> de tiempo que pueden tener una frase nominal o un gerundio como complemento.  </content>
+                    <text show="swPPTempCompYes">
+                       <content>Algunos ejemplos de oraciones con </content>
+                       <case element="pp" attr="pPos">
+                          <caseText value="before">preposiciones</caseText>
+                          <caseText value="after">posposiciones</caseText>
+                          <caseText value="both">adposiciones</caseText>
+                          <caseText value="unknown">adposiciones</caseText>
+                       </case><content> de tiempo con frases nominales o gerundios como complementos son:</content>
+                    </text>
+                    <content/>
+                </p>
+                <example show="swPPTempCompYes">
+                    <interlinear exampleLoc="pp/tempExample"/>
+                </example>
+            <p contentType="ctPracticalIntro" show="swPPTempCompYes"><content>Las mismas </content>
+               <case element="pp" attr="pPos">
+                  <caseText value="before">preposiciones</caseText>
+                  <caseText value="after">posposiciones</caseText>
+                  <caseText value="both">adposiciones</caseText>
+                  <caseText value="unknown">adposiciones</caseText>
+               </case><content> de tiempo pueden tener oraciones como complementos.  Cuando se usan así, las </content>
+               <case element="pp" attr="pPos">
+                  <caseText value="before">preposiciones</caseText>
+                  <caseText value="after">posposiciones</caseText>
+                  <caseText value="both">adposiciones</caseText>
+                  <caseText value="unknown">adposiciones</caseText>
+               </case><content> se consideran adverbios de tiempo, y la frase completa es una cláusula adverbial que normalmente modifica a la oración principal. Tales ejemplos se detallan en la sección </content><sectionRef sec="sAdvCl"/><content>.</content>   
+            </p>
+            <p contentType="ctComparativeIntro" show="swPPTempCompYes"><content>Las mismos </content>
+               <case element="pp" attr="pPos">
+                  <caseText value="before">preposiciones</caseText>
+                  <caseText value="after">posposiciones</caseText>
+                  <caseText value="both">adposiciones</caseText>
+                  <caseText value="unknown">adposiciones</caseText>
+               </case><content> de tiempo pueden tener oraciones como complementos, por ejemplo </content>
+               <langData>before [the rain stops]</langData><gloss><content> ‘antes de que [la lluvia cese]’</content></gloss>
+               <content> y </content>
+               <langData>after [John returns home]</langData><gloss><content> ‘después de que [Juan volvió a casa]’</content></gloss>
+               <content>.  Cuando se usan así, las </content>
+               <case element="pp" attr="pPos">
+                  <caseText value="before">preposiciones</caseText>
+                  <caseText value="after">posposiciones</caseText>
+                  <caseText value="both">adposiciones</caseText>
+                  <caseText value="unknown">adposiciones</caseText>
+               </case><content> se consideran adverbios de tiempo, y la frase completa es una cláusula adverbial que normalmente modifica a la oración principal. Tales ejemplos se detallan en la sección </content><sectionRef sec="sAdvCl"/><content>.</content>   
+            </p>
+         </section2>
+    </section1>
    <showWhen id="swPPClassifierYesAndWordOrBoth">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
-	  <and/>
-	  <whenValue element="pp" attr="ppClassifier" value="yes"/>
-	  <and/>
-	  <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenValue element="pp" attr="ppClassifier" value="yes"/>
+      <and/>
+      <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
    </showWhen>
-
+   
    <showWhen id="swPPTypeCliticOrBoth">
-		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swPPTempCompYes">
-		<whenValue element="pp" attr="tempComp" value="yes"/>
-	</showWhen>
-	<showWhen id="swPPCompPPYes">
-		<whenValue element="pp" attr="ppComp" value="yes"/>
-	</showWhen>
-	<showWhen id="swPPPosPrep">
-		<whenValue element="pp" attr="pPos" value="before"/>
-	</showWhen>
-	<showWhen id="swPPPosPost">
-		<whenValue element="pp" attr="pPos" value="after"/>
-	</showWhen>
-	<showWhen id="swPPPosBoth">
-		<whenValue element="pp" attr="pPos" value="both"/>
-	</showWhen>
-	<showWhen id="swPPPosUnknown">
-		<whenValue element="pp" attr="pPos" value="unknown"/>
-	</showWhen>
-	<showWhen id="swPPAloneYes">
-		<whenValue element="pp" attr="alone" value="yes"/>
-	</showWhen>
-	<showWhen id="swPPLocativeYes">
-		<whenValue element="pp" attr="locative" value="yes"/>
-	</showWhen>
+        <whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
+    </showWhen>
+    <showWhen id="swPPTempCompYes">
+        <whenValue element="pp" attr="tempComp" value="yes"/>
+    </showWhen>
+    <showWhen id="swPPCompPPYes">
+        <whenValue element="pp" attr="ppComp" value="yes"/>
+    </showWhen>
+    <showWhen id="swPPPosPrep">
+        <whenValue element="pp" attr="pPos" value="before"/>
+    </showWhen>
+    <showWhen id="swPPPosPost">
+        <whenValue element="pp" attr="pPos" value="after"/>
+    </showWhen>
+    <showWhen id="swPPPosBoth">
+        <whenValue element="pp" attr="pPos" value="both"/>
+    </showWhen>
+    <showWhen id="swPPPosUnknown">
+        <whenValue element="pp" attr="pPos" value="unknown"/>
+    </showWhen>
+   <showWhen id="swPPPosBothOrUnknown">
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
+   </showWhen>
+   <showWhen id="swPPAloneYes">
+        <whenValue element="pp" attr="alone" value="yes"/>
+    </showWhen>
+    <showWhen id="swPPLocativeYes">
+        <whenValue element="pp" attr="locative" value="yes"/>
+    </showWhen>
+
+<showWhen id="swNPCaseNNo">
+   <whenValue element="np" attr="caseN" value="no"/>
+</showWhen>
+   <showWhen id="swNPCaseNYes">
+      <whenValue element="np" attr="caseN" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPBodypartYes">
+   <whenValue element="pp" attr="bodyPart" value="yes"/>   
+</showWhen>
+   <showWhen id="swPPosAfterOrBoth">
+      <whenValue element="pp" attr="pPos" value="after"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="both"/>
+   </showWhen>
+   <showWhen id="swPPosBeforeOrBoth">
+      <whenValue element="pp" attr="pPos" value="before"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="both"/>
+   </showWhen>
+   <showWhen id="swPPosAfterOrBothAndBodypartYes">
+      <whenValue element="pp" attr="pPos" value="after"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <and/>
+      <whenValue element="pp" attr="bodyPart" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPosBeforeOrBothAndBodypartYes">
+      <whenValue element="pp" attr="pPos" value="before"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <and/>
+      <whenValue element="pp" attr="bodyPart" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPPosPrepAndBodypartYes">
+      <whenValue element="pp" attr="pPos" value="before"/>
+      <and/>
+      <whenValue element="pp" attr="bodyPart" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPPosPostAndBodypartYes">
+      <whenValue element="pp" attr="pPos" value="after"/>
+      <and/>
+      <whenValue element="pp" attr="bodyPart" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPPosBothOrUnknownAndBodypartYes">
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <and/>
+      <whenValue element="pp" attr="bodyPart" value="yes"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
+      <and/>
+      <whenValue element="pp" attr="bodyPart" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swPPModifiersYes">
+      <whenValue element="pp" attr="modifiers" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPModifiersNo">
+      <whenValue element="pp" attr="modifiers" value="no"/>
+   </showWhen>
+   
+   <showWhen id="swPPModifiersYesDegree">
+      <whenValue element="pp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppModifierDegree" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesOrdinal">
+      <whenValue element="pp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppModifierOrdinal" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesManner">
+      <whenValue element="pp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppModifierManner" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesLocative">
+      <whenValue element="pp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppModifierLocative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesOther">
+      <whenValue element="pp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppModifierOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesDegreeOrOrdinal">
+      <whenValue element="pp/ppModifierDegree" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppModifierOrdinal" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesDegreeOrOrdinalOrManner">
+      <whenValue element="pp/ppModifierDegree" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppModifierOrdinal" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppModifierManner" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesNotOtherOnly">
+      <whenValue element="pp/ppModifierDegree" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppModifierOrdinal" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppModifierManner" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppModifierLocative" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swPPDegreePosBefore">
+      <whenValue element="pp/ppDegreePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPDegreePosAfter">
+      <whenValue element="pp/ppDegreePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPDegreePosBoth">
+      <whenValue element="pp/ppDegreePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPDegreePosEither">
+      <whenValue element="pp/ppDegreePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPDegreePosBeforeOrBoth">
+      <whenValue element="pp/ppDegreePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPDegreePosAfterOrBoth">
+      <whenValue element="pp/ppDegreePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPDegreePosEitherOrBoth">
+      <whenValue element="pp/ppDegreePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPDegreePosNotOther">
+      <whenValue element="pp/ppDegreePosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPPDegreePosOtherOnly">
+      <whenValue element="pp/ppDegreePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPDegreePosPosAndOther">
+      <whenValue element="pp/ppDegreePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppDegreePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppDegreePosBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosOther" attr="checked" value="yes"/>      
+   </showWhen>
+   
+   <showWhen id="swPPOrdinalPosBefore">
+      <whenValue element="pp/ppOrdinalPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPOrdinalPosAfter">
+      <whenValue element="pp/ppOrdinalPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPOrdinalPosBoth">
+      <whenValue element="pp/ppOrdinalPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPOrdinalPosEither">
+      <whenValue element="pp/ppOrdinalPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPOrdinalPosBeforeOrBoth">
+      <whenValue element="pp/ppOrdinalPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPOrdinalPosAfterOrBoth">
+      <whenValue element="pp/ppOrdinalPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPOrdinalPosEitherOrBoth">
+      <whenValue element="pp/ppOrdinalPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPOrdinalPosNotOther">
+      <whenValue element="pp/ppOrdinalPosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPPOrdinalPosOtherOnly">
+      <whenValue element="pp/ppOrdinalPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPOrdinalPosPosAndOther">
+      <whenValue element="pp/ppOrdinalPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppOrdinalPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppOrdinalPosBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosOther" attr="checked" value="yes"/>      
+   </showWhen>
+   
+   <showWhen id="swPPMannerPosBefore">
+      <whenValue element="pp/ppMannerPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPMannerPosAfter">
+      <whenValue element="pp/ppMannerPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPMannerPosBoth">
+      <whenValue element="pp/ppMannerPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPMannerPosEither">
+      <whenValue element="pp/ppMannerPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPMannerPosBeforeOrBoth">
+      <whenValue element="pp/ppMannerPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPMannerPosAfterOrBoth">
+      <whenValue element="pp/ppMannerPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPMannerPosEitherOrBoth">
+      <whenValue element="pp/ppMannerPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPMannerPosNotOther">
+      <whenValue element="pp/ppMannerPosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPPMannerPosOtherOnly">
+      <whenValue element="pp/ppMannerPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPMannerPosPosAndOther">
+      <whenValue element="pp/ppMannerPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppMannerPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppMannerPosBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosOther" attr="checked" value="yes"/>      
+   </showWhen>
+   
+   <showWhen id="swPPLocativePosBefore">
+      <whenValue element="pp/ppLocativePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPLocativePosAfter">
+      <whenValue element="pp/ppLocativePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPLocativePosBoth">
+      <whenValue element="pp/ppLocativePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPLocativePosEither">
+      <whenValue element="pp/ppLocativePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swPPLocativePosBeforeOrBoth">
+      <whenValue element="pp/ppLocativePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPLocativePosAfterOrBoth">
+      <whenValue element="pp/ppLocativePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPLocativePosEitherOrBoth">
+      <whenValue element="pp/ppLocativePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swPPLocativePosNotOther">
+      <whenValue element="pp/ppLocativePosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPPLocativePosOtherOnly">
+      <whenValue element="pp/ppLocativePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swPPLocativePosPosAndOther">
+      <whenValue element="pp/ppLocativePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppLocativePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="pp/ppLocativePosBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosOther" attr="checked" value="yes"/>      
+   </showWhen>
+   
+   
+
 </portion>

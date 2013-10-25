@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="AdjPMain" count="1/3">
-	<title>Las frases adjetivales</title>
-	<introduction>En muchas gramáticas, los números, cuantificadores, artículos y demonstratives se consideran los adjetivos, pero cada uno de estos tiene una diversa distribución de los adjetivos cualitativos, así que cada uno tendrán categorías sintácticas distintas.   
-		Esta sección se limita a considerar los adjetivos cualitativos que expresan tamaño, color, edad, textura, la forma, o la calidad. Una característica de este tipo de adjetivo es que más de uno puede modificar un sustantivo y en general la orden de los adjetivos puede cambiar (con un cambio pequeño en el significado debido al alcance de la modificación). Por ejemplo, 
-	   <example>las barras de cobre amarillo pálido duras </example>contra <example>las barras de cobre amarillo duras pálidas</example> contra <example>las barras pálidas duras de cobre amarillo</example>, etc.  
-		<span id="AdjPNotPracticalSpan" show="swNotPractical"> Esta característica de apilar adjetivos será analizada en la sección de frases nominales por una regla que permita la repetición.</span>
+   <title>Las frases adjetivales</title>
+   <introduction>En muchas gramáticas, los números, cuantificadores, artículos y demonstratives se consideran los adjetivos, pero pueden presentarse en posiciones diversas de los adjetivos calificativos, así que cada uno tiene una categoría sintáctica distinta.   
+      Esta sección solo se considera los adjetivos calificativos que expresan tamaño, color, edad, textura, forma, o calidad. Una característica de adjetivos calificativos en muchas lenguas es que se permite más de uns frase adjetival modificar a un sustantivo y en general la orden de los adjetivos puede cambiar (con un cambio pequeño en el significado debido a los cambios en <technicalTermRef term="ttScope">ámbito o alcance</technicalTermRef> de cada adjetivo). Por ejemplo, 
+	   <example>las barras de cobre amarillo pálido duras</example> contra <example>las barras de cobre amarillo duras pálidas</example> contra <example>las barras pálidas duras de cobre amarillo</example>, etc.  
+      <span id="AdjPNotPracticalSpan" show="swNotPractical"> Esta característica de apilar adjetivos se analiza en <section number="5.6">Las frases nominales - Las frases adjetivales</section> por una regla que permita la repetición.</span>
 	   <br/><br/>
-	   Por favor observe que esta sección trata con adjetivos que modifican sustantivos, en contraste con adjetivos que actúan como predicados. Las oraciones con adjetivos predicativos será cubierto en <section number="9.5">Las oraciones básicas - copulativas</section>.   
+      Por favor observe que en esta sección se tratan los adjetivos que modifican a sustantivos, en contraste con los adjetivos que funcionan como predicados. Las oraciones con adjetivos predicativos se cubren en <section number="9.5">Las oraciones básicas - Las oraciones copulativas</section>.   
 </introduction>
-   <introduction>En esta sección necesitamos considerar otra vez qué tipos de palabras pueden modificar ellos mismos a los adjetivos cualitativos.  Algunos ejemplos en español son:</introduction>
+   <introduction>En esta sección se necesita considerar otra vez qué tipos de palabras pueden modificar a los adjetivos calificativos.  Algunos ejemplos en español son:</introduction>
 	<EnglishExample>
 		<exItem label="1.">
 			<u>muy</u> grande</exItem>
@@ -23,189 +25,222 @@
 		<exItem label="5.">
 			<u>muy fácilmente</u> olvidado</exItem>
 	</EnglishExample>
-	<introduction>No todas las combinaciones de palabras suceden debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras de grado y adverbios o frases del adverbio de modo pueden modificar adjetivos.</introduction>
+   <introduction>Todas las combinaciones de palabras no se suceden debido a la <technicalTermRef term="ttSemantics"/> y a otras consideraciones, pero en general parece que ciertas palabras de grado y adverbios o frases adverbiales de modo pueden modificar a los adjetivos.</introduction>
 	<form section="adjp">
 	   <radioGroup id="AdjPClassifierAgrTable" show="swOTClassifierAgr">
 	      <groupName dataItem="adjectiveClassifier" default="no">RAdjPClassifierAgr</groupName>
-	      <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales.  ¿Utiliza su lengua los clasificadores para marcar los adjetivos cualitativos?</prompt>
+	      <prompt>Usted dijo que su lengua tiene clasificadores que indican la concordancia en las frases nominales.  ¿Utiliza su lengua los clasificadores para marcar a los adjetivos calificativos?</prompt>
 	      <radio id="AdjPClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
 	      <radio id="AdjPClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
 	   </radioGroup>
 	   <prompt id="AdjPClassifierAgrPrompt" show="swOTClassifierAgrAdjPYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada uno de los adjetivos aquí.</prompt>
 	   <br/>
-	   <prompt>Escriba ejemplos de adjetivos cualitativos (sin modificadores) aquí.  Incluye ejemplos de adjetivos cualitativos que expresan tamaño, color, edad, textura, la forma, o la calidad.</prompt>
+	   <prompt>Escriba ejemplos de adjetivos calificativos (sin modificadores) aquí.  Incluye ejemplos de adjetivos calificativos que expresan tamaño, color, edad, textura, forma o calidad.</prompt>
 		<textBox id="AdjPExamples" dataItem="example"/>
 	   <br/>
-
 	   <radioGroup>
 	      <groupName dataItem="modifiers" default="no">RAdjPModifiers</groupName>
-	      <prompt>¿Existen palabras o frases en su lengua que puedan modificar adjetivos?</prompt>
-	      <radio id="AdjPModifiersYesDegree" checked="yes" dataValue="yes">Sí - aunque solamente ciertas palabras de grado </radio>
-	      <radio id="AdjPModifiersYesManner" checked="yes" dataValue="yesManner">Sí - ambas ciertas palabras de grado y frases del adverbio de modo</radio>
-	      <radio id="AdjPModifiersAttaches" dataValue="attaches">Hay un afijo o clítico que se une al adjetivo para intensificarlo</radio>
-	      <radio id="AdjPModifiersNoRedup" dataValue="noRedup">No, pero utiliza reduplicación para intensificar el significado del adjetivo</radio>
+	      <prompt>¿Tiene su lengua alguna manera de modificar a los adjetivos?</prompt>
 	      <radio id="AdjPModifiersNo" dataValue="no">No, los adjetivos no se modifican ni intensifican</radio>
+	      <radio id="AdjPModifiersYes" dataValue="yes">Sí, los adjetivos se pueden modificar o intensificar en las siguientes maneras:</radio>
 	   </radioGroup>
+	   <checkboxGroup id="AdjPModifiersYesTable"  show="swAdjPModifiersYes">
+	      <prompt>Seleccione todas las opciones que son correctas en su lengua para su lengua</prompt>
+	      <checkbox id="AdjPModifiersDegree" checked="yes" dataItem="modifiersDegree">Con ciertas palabras de grado</checkbox>
+	      <checkbox id="AdjPModifiersManner" checked="yes" dataItem="modifiersManner">Con adverbios de modo o frases adverbiales</checkbox>
+	      <checkbox id="AdjPModifiersAttaches" dataItem="modifiersAttaches">Hay afijos o clíticos que se unen al adjetivo para intensificarlo</checkbox>
+	      <checkbox id="AdjPModifiersRedup" dataItem="modifiersRedup">Utiliza reduplicación para intensificar el significado del adjetivo</checkbox>
+	      <checkbox id="AdjPModifiersOther" dataItem="modifiersOther">En mi lengua, los adjetivos se pueden modificar por: <textBox  id="AdjPModifiersOtherContent" dataItem="modifiersOther" rows="2"/></checkbox>
+	   </checkboxGroup>	
+	   <prompt id="AdjPModifiersYesNoCheckPrompt" show="swAdjPModifiersYesAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cuáles modificadores pueden modificar o intensificar a los adjetivos en su lengua, o cambia la respuesta de arriba a “No, los adjetivos no se modifican ni intensifican”.</prompt>
 	   <br/>
 	   <radioGroup id="AdjPDegreeClassifierAgrTable" show="swOTClassifierAgrAdjPModifiersYesOrYesManner">
 	      <groupName dataItem="adjectiveDegreeClassifier" default="no">RAdjPDegreeClassifierAgr</groupName>
-	      <prompt>¿Utiliza su lengua los clasificadores para marcar los modificadores de los adjetivos cualitativos, como palabras de grado?</prompt>
+	      <prompt>¿Utiliza su lengua los clasificadores para marcar los modificadores de los adjetivos calificativos, como palabras de grado?</prompt>
 	      <radio id="AdjPDegreeClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
 	      <radio id="AdjPDegreeClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
 	   </radioGroup>
 	   <prompt id="AdjPDegreeClassifierAgrPrompt" show="swOTClassifierAgrAdjPDegreeYesOrYesManner">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada uno de los modificadores aquí.</prompt>
 	   <br/>
-	   <prompt id="AdjPModifiersYes" show="swAdjPModifiersYesDegreeorManner">Ecriba las palabras de grado que pueden modificar adjetivos aquí:</prompt>
-	   <textBox id="AdjPModifiersDegreeExample" dataItem="adjectiveDegreeExample" show="swAdjPModifiersYesDegreeorManner"/>
-	   <prompt id="AdjPModifiersAttachesPrompt" show="swAdjPModifiersAttaches">Escriba los afijos o clíticos de grado que pueden modificar adjetivos aquí, con un guión para indicar en qué lado se une al adjetivo:</prompt>
-	   <textBox id="AdjPModifiersDegreeAffixExample" dataItem="adjectiveDegreeAffixExample" show="swAdjPModifiersAttaches" rows="3"/>
-	   <prompt id="AdjPModifiersDegreeRedup" show="swAdjPModifiersNoRedup">Escriba ejemplos de adjetivos cualitativos con reduplicación aquí:</prompt>
-	   <textBox id="AdjPModifiersDegreeRedupExample" dataItem="adjectiveDegreeRedupExample" show="swAdjPModifiersNoRedup"/>              
-	   <prompt id="AdjPModifiersDegreeAffixPhrasePrompt" show="swAdjPModifiersAttaches">Ahora escriba ejemplos de los afijos o clíticos de grado unidos con adjetivos aquí:</prompt>
-	   <textBox id="AdjPModifiersPhraseAffixExample" dataItem="adjectivePhraseAffixExample" show="swAdjPModifiersAttaches"/>
-	   <prompt id="AdjPModifiersDegreePhrase" show="swAdjPModifiersYesDegreeorManner">Ahora escriba ejemplos de adjetivos con palabras de grado <span id="AdjPModifiersYesMannerSpan" show="swAdjPModifiersYesManner">o adverbios de modo o frases adverbiales </span>modificandolos aquí:</prompt>
-	   <textBox id="AdjPModifiersExample" dataItem="adjectivePhraseExample" show="swAdjPModifiersYesDegreeorManner"/>   
+	   <prompt id="AdjPModifiersYesPrompt" show="swAdjPModifiersYesDegree">Escriba las palabras de grado que pueden modificar a los adjetivos aquí:</prompt>
+	   <textBox id="AdjPModifiersDegreeExample" dataItem="adjectiveDegreeExample" show="swAdjPModifiersYesDegree"/>
+	   <prompt id="AdjPModifiersDegreePhrasePrompt" show="swAdjPModifiersYesDegree">Ahora escriba ejemplos de adjetivos con una palabra de grado que los modifica aquí:</prompt>
+	   <textBox id="AdjPModifiersDegreePhraseExample" dataItem="adjectiveDegreePhraseExample" show="swAdjPModifiersYesDegree"/>   
+	   <br/><br/>
+	   <checkboxGroup id="AdjPModifiersYesDegreeTable" show="swAdjPModifiersYesDegree">
+	      <prompt>De acuerdo con los ejemplos, ¿Dónde se presentan las palabras de grado con respecto al adjetivo? Seleccione todas las opciones que son correctas en su lengua</prompt>
+	      <checkbox id="AdjPDegreeBefore" checked="yes" dataItem="degreeBefore">Antes del adjetivo</checkbox>
+	      <checkbox id="AdjPDegreeAfter" checked="yes" dataItem="degreeAfter">Después del adjetivo</checkbox>
+	      <checkbox id="AdjPDegreeBoth" checked="yes" dataItem="degreeBoth">En ambos lados en la misma oración</checkbox>
+	      <checkbox id="AdjPDegreeOther" checked="yes" dataItem="degreeOther">En mi lengua, estas palabras de grado pueden presentarse: <textBox  id="AdjPDegreeOtherContent" dataItem="degreeOther" rows="2"/></checkbox>
+	   </checkboxGroup>	
+	   <prompt id="AdjPModifiersYesDegreeNoCheckPrompt" show="swAdjPModifiersYesDegreeAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estas palabras de grado en su lengua, o cambia su respuesta de arriba a un tipo diferente de modificador.</prompt>
+	   <instruction id="AdjPModifiersYesDegreeInstruction" show="swAdjPModifiersYesDegree">In the lexicon, mark the degree words with the feature <feature>makeDeg modifies_Adj</feature>.    (If any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier or an adverb, you can simply add the additional feature <feature>modifies_Adj</feature> to the same lexical entry.)</instruction>
+	   <instruction id="AdjPDegreeEitherRestrictedInstruction" show="swAdjPDegreeEitherRestricted">In the lexicon, mark those degree words which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</instruction>      
 	   
-	   <br/>
-	   <radioGroup id="AdjPModifiersYesDegreeTable" show="swAdjPModifiersYesDegree">
-	      <groupName dataItem="degreePos" default="unknown" position="yesSpec">RDegreePos</groupName>
-	      <prompt>De acuerdo con los ejemplos, ¿Dónde se presentan las palabras de grado con respecto al adjetivo?</prompt>
-	      <radio id="AdjPDegreeBefore" checked="yes" dataValue="before">Antes del adjetivo</radio>
-	      <radio id="AdjPDegreeAfter" checked="yes" dataValue="after">Después del adjetivo</radio>
-	      <radio id="AdjPDegreeEitherSide" checked="yes" dataValue="either">De cualquier lado del adjetivo, pero no en ambos lados en la misma oración</radio>
-	      <radio id="AdjPDegreeEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del adjetivo, o en ambos lados en la misma oración</radio>
-	      <radio id="AdjPDegreeBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del adjetivo, o en ambos lados en la misma oración</radio>
-	      <radio id="AdjPDegreeAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del adjetivo, o en ambos lados en la misma oración</radio>
-	      <radio id="AdjPDegreeBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
-	      <radioGroup id="AdjPDegreeEitherSideTable" show="swAdjPDegreeEitherorBoth">
-	         <groupName dataItem="degreeEither" default="unrestricted">RDegreeEitherSide</groupName>
-	         <prompt>¿Pueden todas las palabras de grado presentarse de cualquier lado del adjetivo?</prompt>
-	         <radio id="AdjPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-	         <radio id="AdjPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
-	      </radioGroup>
-	   </radioGroup>
-	   <radioGroup id="AdjPModifiersYesMannerTable" show="swAdjPModifiersYesManner">
-	      <groupName dataItem="mannerPos" default="unknown" position="yesSpec">RManner</groupName>
-	      <prompt>De acuerdo con los ejemplos, ¿Dónde se presentan estos modificadores con respecto al adjetivo?</prompt>
-	      <radio id="AdjPMannerBefore" checked="yes" dataValue="before">Antes del adjetivo</radio>
-	      <radio id="AdjPMannerAfter" checked="yes" dataValue="after">Después del adjetivo</radio>
-	      <radio id="AdjPMannerEitherSide" checked="yes" dataValue="either">De cualquier lado del adjetivo, pero no en ambos lados en la misma oración</radio>
-	      <radio id="AdjPMannerEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del adjetivo, o en ambos lados en la misma oración</radio>
-	      <radio id="AdjPMannerBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del adjetivo, o en ambos lados en la misma oración</radio>
-	      <radio id="AdjPMannerAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del adjetivo, o en ambos lados en la misma oración</radio>
-	      <radio id="AdjPMannerBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
-	      <radioGroup id="AdjPMannerEitherSideTable" show="swAdjPMannerEitherorBoth">
-	         <groupName dataItem="mannerEither" default="unrestricted">RMannerEitherSide</groupName>
-	         <prompt>¿Pueden todos los modificadores presentarse de cualquier lado del adjetivo?</prompt>
-	         <radio id="AdjPMannerEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-	         <radio id="AdjPMannerEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
-	      </radioGroup>
-	   </radioGroup>
-	   <instruction id="AdjPMainInstruction">
-	      <span id="AdjPModifiersYesDegreeInstruction" show="swAdjPModifiersYesDegreeorManner">In the lexicon, mark the degree words with the feature <feature>makeDeg modifies_Adj</feature>.    (If any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier or an adverb, you can simply add the additional feature <feature>modifies_Adj</feature> to the same lexical entry.)</span>
-	      <br/>
-	      <span id="AdjPModifiersYesMannerInstruction" show="swAdjPModifiersYesManner">
-	         <br/>The manner adverbs should already be marked with the feature <feature>manner</feature>.  They do not need any additional features to modify adjectives. </span>
-	      <br/>
-	      <span id="AdjPDegreeEitherRestrictedInstruction" show="swAdjPDegreeEitherRestricted">In the lexicon, mark those which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</span>
-	      <br/>
-	      <span id="AdjPMannerEitherRestrictedInstruction" show="swAdjPMannerEitherRestricted">In the lexicon, mark those which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any degree words or manner adverbs which can occur on either side.</span>
+	   <prompt id="AdjPModifiersMannerPhrasePrompt" show="swAdjPModifiersYesManner">Escriba ejemplos de adjetivos con un adverbio de modo o frase adverbial que los modifica aquí:</prompt>
+	   <textBox id="AdjPModifiersMannerPhraseExample" dataItem="adjectiveMannerPhraseExample" show="swAdjPModifiersYesManner"/>    
+	   <br/><br/>
+	   <checkboxGroup id="AdjPModifiersYesMannerTable" show="swAdjPModifiersYesManner">
+	      <prompt>De acuerdo con los ejemplos, ¿Dónde se presentan los adverbios de modo o frases adverbiales con respecto al adjetivo? Seleccione todas las opciones que son correctas en su lengua</prompt>
+	      <checkbox id="AdjPMannerBefore" checked="yes" dataItem="mannerBefore">Antes del adjetivo</checkbox>
+	      <checkbox id="AdjPMannerAfter" checked="yes" dataItem="mannerAfter">Después del adjetivo</checkbox>
+	      <checkbox id="AdjPMannerBoth" checked="yes" dataItem="mannerBoth">En ambos lados en la misma oración</checkbox>
+	      <checkbox id="AdjPMannerOther" checked="yes" dataItem="mannerOther">En mi lengua, estos adverbios de modo o frases adverbiales pueden presentarse: <textBox  id="AdjPMannerOtherContent" dataItem="mannerOther" rows="2"/></checkbox>
+	   </checkboxGroup>	
+	   <prompt id="AdjPModifiersYesMannerNoCheckPrompt" show="swAdjPModifiersYesMannerAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos adverbios de modo o frases adverbiales en su lengua, o cambia su respuesta de arriba a un tipo diferente de modificador.</prompt>
+	   <instruction id="AdjPModifiersYesMannerInstruction" show="swAdjPModifiersYesManner">
+	      The manner adverbs should already be marked with the feature <feature>manner</feature>.  They do not need any additional features to modify adjectives. </instruction>
+	   <instruction id="AdjPMannerEitherRestrictedInstruction" show="swAdjPMannerEitherRestricted">In the lexicon, mark those manner adverbs which can only occur before the adjective with the feature <feature>AdjP-initial</feature> and those which can only occur after the adjective with the feature <feature>AdjP-final</feature>.  Do not enter either feature on any manner adverbs which can occur on either side.
 	   </instruction>
-	   <br/>
+	   <prompt id="AdjPModifiersAttachesPrompt" show="swAdjPModifiersAttaches">Escriba los afijos o clíticos de grado que pueden modificar a los adjetivos aquí, con un guión o signo igual para indicar en qué lado se une al adjetivo:</prompt>
+	   <textBox id="AdjPModifiersDegreeAffixExample" dataItem="adjectiveDegreeAffixExample" show="swAdjPModifiersAttaches" rows="3"/>
+	   <prompt id="AdjPModifiersDegreeAffixPhrasePrompt" show="swAdjPModifiersAttaches">Ahora escriba ejemplos de los afijos o clíticos de grado unidos con adjetivos aquí:</prompt>
+	   <textBox id="AdjPModifiersDegreeAffixPhraseExample" dataItem="adjectiveDegreeAffixPhraseExample" show="swAdjPModifiersAttaches"/>
+	   <prompt id="AdjPModifiersDegreeRedup" show="swAdjPModifiersNoRedup">Escriba ejemplos de adjetivos calificativos con reduplicación aquí:</prompt>
+	   <textBox id="AdjPModifiersDegreeRedupExample" dataItem="adjectiveDegreeRedupExample" show="swAdjPModifiersNoRedup"/>   
+	   <prompt id="AdjPModifiersOtherPrompt" show="swAdjPModifiersOther">Escriba ejemplos de adjetivos calificativos modificados o intensificados como se permiten en su lengua aquí:</prompt>
+	   <textBox id="AdjPModifiersOtherExample" dataItem="adjectiveDegreeOtherExample" show="swAdjPModifiersOther"/>              
+	   <br/><br/>
 	   <buttons>
 	      <button id="AdjPMainBack" value="Back" goto="Contents.htm"/>
 	      <button id="AdjPMainNext" value="Next" goto="AdjPCatMap.xml" gotoNoGrammar="Contents.htm"/>
 	   </buttons>
 	</form>
-   <showWhen id="swNotPractical">
-      <whenValue  element="paws" attr="outputGrammar" value="True"/>
-   </showWhen>
-   <showWhen id="swOTClassifierAgr">
-      <whenValue element="typology" attr="classifier" value="yesAgr"/>
-   </showWhen>
-   <showWhen id="swOTClassifierAgrAdjPYes">
-      <whenValue element="typology" attr="classifier" value="yesAgr"/>
-      <and/>
-      <whenRadio button="AdjPClassifierAgrYes"/>
-   </showWhen>
-   <showWhen id="swOTClassifierAgrAdjPModifiersYesOrYesManner">
-      <whenValue element="typology" attr="classifier" value="yesAgr"/>
-      <and/>
-      <whenRadio button="AdjPModifiersYesDegree"/>
-      <or/>
-      <whenValue element="typology" attr="classifier" value="yesAgr"/>   
-      <and/>
-      <whenRadio button="AdjPModifiersYesManner"/>      
-   </showWhen>
-   <showWhen id="swOTClassifierAgrAdjPDegreeYesOrYesManner">
-      <whenValue element="typology" attr="classifier" value="yesAgr"/>
-      <and/>
-      <whenRadio button="AdjPDegreeClassifierAgrYes"/>
-      <and/>
-      <whenRadio button="AdjPModifiersYesDegree"/>
-      <or/>
-      <whenValue element="typology" attr="classifier" value="yesAgr"/>
-      <and/>
-      <whenRadio button="AdjPDegreeClassifierAgrYes"/>   
-      <and/>
-      <whenRadio button="AdjPModifiersYesManner"/>
-   </showWhen>
-   <showWhen id="swAdjPModifiersYesDegree">
-      <whenRadio button="AdjPModifiersYesDegree"/>
-   </showWhen>
-   <showWhen id="swAdjPDegreeEitherorBoth">
-      <whenRadio button="AdjPModifiersYesDegree"/>
-      <and/>
-      <not/>
-      <whenRadio button="AdjPDegreeBefore"/>
-      <and/>
-      <not/>
-      <whenRadio button="AdjPDegreeAfter"/>
-   </showWhen>
-   <showWhen id="swAdjPModifiersYesManner">
-      <whenRadio button="AdjPModifiersYesManner"/>
-   </showWhen>
-   <showWhen id="swAdjPMannerEitherorBoth">
-      <whenRadio button="AdjPModifiersYesManner"/>
-      <and/>
-      <not/>
-      <whenRadio button="AdjPMannerBefore"/>
-      <and/>
-      <not/>
-      <whenRadio button="AdjPMannerAfter"/>
-   </showWhen>
-   <showWhen id="swAdjPModifiersYesDegreeorManner">
-      <whenRadio button="AdjPModifiersYesDegree"/>
-      <or/>
-      <whenRadio button="AdjPModifiersYesManner"/>
-   </showWhen>
-   <showWhen id="swAdjPDegreeEitherRestricted">
-      <whenRadio button="AdjPModifiersYesDegree"/>
-      <and/>
-      <whenRadio button="AdjPDegreeEitherRestricted"/>
-      <and/>
-      <not/>
-      <whenRadio button="AdjPDegreeBefore"/>
-      <and/>
-      <not/>
-      <whenRadio button="AdjPDegreeAfter"/>
-   </showWhen>
-   <showWhen id="swAdjPMannerEitherRestricted">
-      <whenRadio button="AdjPModifiersYesManner"/>
-      <and/>
-      <whenRadio button="AdjPMannerEitherRestricted"/>
-      <and/>
-      <not/>
-      <whenRadio button="AdjPMannerBefore"/>
-      <and/>
-      <not/>
-      <whenRadio button="AdjPMannerAfter"/>
-   </showWhen>
-   <showWhen id="swAdjPModifiersNoRedup">
-      <whenRadio button="AdjPModifiersNoRedup"/>
-   </showWhen>
-   <showWhen id="swAdjPModifiersAttaches">
-      <whenRadio button="AdjPModifiersAttaches"/>
-   </showWhen>
-   
+<showWhen id="swNotPractical">
+   <whenValue  element="paws" attr="outputGrammar" value="True"/>
+</showWhen>
+<showWhen id="swOTClassifierAgr">
+   <whenValue element="typology" attr="classifier" value="yesAgr"/>
+</showWhen>
+<showWhen id="swOTClassifierAgrAdjPYes">
+   <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   <and/>
+   <whenRadio button="AdjPClassifierAgrYes"/>
+</showWhen>
+<showWhen id="swOTClassifierAgrAdjPModifiersYesOrYesManner">
+   <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   <and/>
+   <whenRadio button="AdjPModifiersYes"/>
+   <and/>
+   <whenCheckbox button="AdjPModifiersDegree"/>
+   <or/>
+   <whenValue element="typology" attr="classifier" value="yesAgr"/>   
+   <and/>
+   <whenRadio button="AdjPModifiersYes"/>
+   <and/>
+   <whenCheckbox button="AdjPModifiersManner"/>      
+</showWhen>
+<showWhen id="swOTClassifierAgrAdjPDegreeYesOrYesManner">
+   <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   <and/>
+   <whenRadio button="AdjPDegreeClassifierAgrYes"/>
+   <and/>
+   <whenRadio button="AdjPModifiersYes"/>
+   <and/>
+   <whenCheckbox button="AdjPModifiersDegree"/>
+   <or/>
+   <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   <and/>
+   <whenRadio button="AdjPDegreeClassifierAgrYes"/>   
+   <and/>
+   <whenRadio button="AdjPModifiersYes"/>
+   <and/>
+   <whenCheckbox button="AdjPModifiersManner"/>
+</showWhen>
+<showWhen id="swAdjPModifiersYesDegree">
+   <whenCheckbox button="AdjPModifiersDegree"/>
+   <and/>
+   <whenRadio button="AdjPModifiersYes"/>
+</showWhen>
+<showWhen id="swAdjPModifiersYesManner">
+   <whenCheckbox button="AdjPModifiersManner"/>
+   <and/>
+   <whenRadio button="AdjPModifiersYes"/>
+</showWhen>
+<showWhen id="swAdjPDegreeEitherRestricted">
+   <whenCheckbox button="AdjPModifiersDegree"/>
+   <and/>
+   <whenRadio button="AdjPModifiersYes"/>
+   <and/>
+   <openParen/>
+   <whenCheckbox button="AdjPDegreeBefore"/>
+   <and/>
+   <whenCheckbox button="AdjPDegreeAfter"/>
+   <or/>
+   <whenCheckbox button="AdjPMannerBoth"/>
+   <closeParen/>
+</showWhen>
+<showWhen id="swAdjPMannerEitherRestricted">
+   <whenCheckbox button="AdjPModifiersManner"/>
+   <and/>
+   <whenRadio button="AdjPModifiersYes"/>
+   <and/>
+   <openParen/>
+   <whenCheckbox button="AdjPMannerBefore"/>
+   <and/>
+   <whenCheckbox button="AdjPMannerAfter"/>
+   <or/>
+   <whenCheckbox button="AdjPMannerBoth"/>
+   <closeParen/>
+</showWhen>
+<showWhen id="swAdjPModifiersNoRedup">
+   <whenCheckbox button="AdjPModifiersRedup"/>
+   <and/>
+   <whenRadio button="AdjPModifiersYes"/>
+</showWhen>
+<showWhen id="swAdjPModifiersAttaches">
+   <whenCheckbox button="AdjPModifiersAttaches"/>
+   <and/>
+   <whenRadio button="AdjPModifiersYes"/>
+</showWhen>
+<showWhen id="swAdjPModifiersYes">
+   <whenRadio button="AdjPModifiersYes"/>
+</showWhen>
+<showWhen id="swAdjPModifiersOther">
+   <whenCheckbox button="AdjPModifiersOther"/>
+   <and/>
+   <whenRadio button="AdjPModifiersYes"/>
+</showWhen>
+<showWhen id="swAdjPModifiersYesAndNoCheck">
+   <whenRadio button="AdjPModifiersYes"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPModifiersDegree"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPModifiersManner"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPModifiersAttaches"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPModifiersRedup"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPModifiersOther"/>
+</showWhen>
+<showWhen id="swAdjPModifiersYesMannerAndNoCheck">
+   <whenRadio button="AdjPModifiersYes"/>
+   <and/>
+   <whenCheckbox button="AdjPModifiersManner"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPMannerBefore"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPMannerAfter"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPMannerBoth"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPMannerOther"/>
+</showWhen>
+<showWhen id="swAdjPModifiersYesDegreeAndNoCheck">
+   <whenRadio button="AdjPModifiersYes"/>
+   <and/>
+   <whenCheckbox button="AdjPModifiersDegree"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPDegreeBefore"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPDegreeAfter"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPDegreeBoth"/>
+   <and/><not/>
+   <whenCheckbox button="AdjPDegreeOther"/>
+</showWhen>
+&TechnicalTerms; 
+
 </page>

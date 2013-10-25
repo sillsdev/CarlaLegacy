@@ -25,7 +25,7 @@
 		<xsl:processing-instruction name="xml-stylesheet">
 			<xsl:text>type="text/xsl" href="XLingPap1.xsl"</xsl:text>
 		</xsl:processing-instruction>
-		<lingPaper automaticallywrapinterlinears="yes" sortRefsAbbrsByDocumentLanguage="yes">
+		<lingPaper automaticallywrapinterlinears="yes" sortRefsAbbrsByDocumentLanguage="yes" xml:lang="es">
 			<frontMatter>
 				<title>Una Gramática del  <xsl:value-of select="//language/langNames/langName[@lang='es']"/>
 				</title>
@@ -51,7 +51,7 @@
 			<xsl:apply-templates select="/" mode="relcl"/>
 			<xsl:call-template name="OutputCommonBackmatterLanguagesAndTypes">
 				<xsl:with-param name="sEndnoteLabel" select="'Notas'"/>
-				<xsl:with-param name="sReferencesLabel" select="'Referéncias'"/>
+				<xsl:with-param name="sReferencesLabel" select="'Referencias'"/>
 			</xsl:call-template>
 		</lingPaper>
 	</xsl:template>

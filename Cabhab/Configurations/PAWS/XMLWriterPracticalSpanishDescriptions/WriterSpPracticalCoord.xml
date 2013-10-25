@@ -2,313 +2,365 @@
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
   <section1 id="sCoord">
-	  <secTitle>Las construcciones coordinativas</secTitle>
-	<p>
-		<content>Esta sección empieza con las construcciones coordinativas básicas donde una conjunción se presenta entre dos oraciones conjuntivas. Esta incluye la coordinación a nivel de la oración y de la frase de verbo, la frase nominal, la frase </content><case element="pp" attr="pPos">
-		   <caseText value="before">preposicional</caseText>
-		   <caseText value="after">posposicional</caseText>
-		   <caseText value="both">preposicional y posposicional</caseText>
-		   <caseText value="unknown">preposicional y/o posposicional</caseText>
-		</case><content> y la frase adjetival.  Entonces, para el nivel de la frase nominal solamente, los elementos consecutivos  y aposiciones serán descritas. Finalmente, las construcciones comparativas que consisten en oraciones completas serán discutidas. (Los comparativos más cortos fueron analizados en la sección </content><sectionRef  sec="sIPComparatives"/><content>.)</content></p>
-
-	  <p><content>En español, las conjunciones que se pueden utilizar entre dos oraciones conjuntivas son </content><langData>y</langData><content>, </content><langData>o</langData><content>, </content><langData>pero</langData><content> e </content><langData>y/o</langData>
-		  <content>.  Además, hay las construcciones coordinativas que requieren una conjunción inicial, como </content><langData>o...o</langData><content> y </content><langData>ni...ni</langData><content> construcciones. Algunas lenguas también utilizan una palabra que significa </content><langData>con</langData><content> al igual que una conjunción entre las frases nominales. </content>
-	</p>
-			<p>
-				<content>En </content>
-				<langName/>
-				<content> hay las conjunciones siguientes que se utilizan entre las oraciones conjuntivas:</content>
-			</p>
-			<example>
-				<table border="1">
-					<headerRow>
-						<headerCol>
-							<langName/>
-						</headerCol>
-						<headerCol>Glosa</headerCol>
-					</headerRow>
-					<row>
-						<col exampleLoc="coord/and"/>
-						<col>
-							<content>y</content>
-						</col>
-					</row>
-					<row>
-						<col exampleLoc="coord/or"/>
-						<col>
-							<content>o</content>
-						</col>
-					</row>
-					<row>
-						<col exampleLoc="coord/andOr"/>
-						<col>
-							<content>y/o</content>
-						</col>
-					</row>
-					<row>
-						<col exampleLoc="coord/but"/>
-						<col>
-							<content>pero</content>
-						</col>
-					</row>
-					<row>
-						<col exampleLoc="coord/with"/>
-						<col>
-							<content>con</content>
-						</col>
-					</row>
-					<row>
-						<col exampleLoc="coord/other"/>
-						<col>
-							<content>otros (si hay)</content>
-						</col>
-					</row>
-				</table>
-			</example>
-			<p>
-				<content>En </content>
-				<langName/>
-				<content> hay las conjunciones siguientes que se utilizan solamente en </content><langData>o...o</langData><content> u </content><langData>ni...ni</langData><content> construcciones:</content>
-			</p>
-			<example>
-				<table border="1">
-					<headerRow>
-						<headerCol>
-							<langName/>
-						</headerCol>
-						<headerCol>Glosa</headerCol>
-					</headerRow>
-					<row>
-						<col exampleLoc="coord/either"/>
-						<col>
-							<content>o (cualquiera)</content>
-						</col>
-					</row>
-					<row>
-						<col exampleLoc="coord/neither"/>
-						<col>
-							<content>ni (ningunos) - elemento inicial</content>
-						</col>
-					</row>
-				   <row>
-					  <col exampleLoc="coord/nor"/>
-					  <col>
-						 <content>ni - elemento medial</content>
-					  </col>
-				   </row>
-				</table>
-			</example>
-
-	 <p><content>En </content><langName/><content>, </content><case element="coord" attr="conjWord">
-		<caseText value="yes">todas las conjunciones antedichas se escriben como palabras independientes entre las oraciones conjuntivas.</caseText>
-		<caseText value="some">algunas de las conjunciones antedichas se escriben como palabras independientes entre las oraciones conjuntivas, pero otras se unen </caseText>
-		<caseText value="no">todas las conjunciones antedichas se unen </caseText>
-	 </case>
-		<text show="swCoordConjWordNotYes"><case element="coord" attr="conjPos">
-		   <caseText value="before">al principio de la segunda oración conjuntiva. </caseText>
-		   <caseText value="after">al final de la primera oración conjuntiva. </caseText>
-		   <caseText value="either">al final de la primera oración conjuntiva o al principio de la segunda oración conjuntiva, según lo indicado por los guiones en los cuadros arriba. </caseText>
-		   <caseText value="other">como proclíticos o enclíticos, según lo indicado por los guiones en los cuadros arriba, a un cierto lugar dentro de la construcción coordinativa con excepción del final de la primera oración conjuntiva o del principio de la segunda oración conjuntiva.</caseText>
-		</case></text></p>
-	 <p show="swCoordNoConjYes"><content>Además de usar estas conjunciones, dos elementos pueden también ser coordinativas sin ninguna conjunción entre ellas en </content><langName/><content>, al menos en los niveles de la frase nominal y la oración.</content></p>
-	 <p show="swCoordNoConjNo"><content>Cuando solamente dos elementos se unen en </content><langName/><content>, una de las conjunciones antedichas debe presentarse.</content></p>
-
-
-	 <section2 id="sCoordLevels">
-		<secTitle>Niveles de coordinación</secTitle>
-
-		<p><content>Ejemplos para los varios niveles de coordinación se presentan en las secciones siguientes.</content></p>
-		<section3 id="sCoordSentence">
-			<secTitle>Coordinación a nivel de la oración</secTitle>
-		   <p>
-			  <content>En general, la coordinación está entre categorías similares. Para la coordinación a nivel de la oración, esto significa que dos oraciones declarativas pueden ser coordinativas, como en </content>
-			  <langData>Juan fue a la oficina esta mañana y él acaba de volver</langData><content> y </content><langData>O vendré a la fiesta o enviaré a mi hermana</langData>
-			  <content>, o dos preguntas, como en </content><langData>¿Cuándo vino el correo y dónde está mi paquete?</langData><content>  Cuando la conjunción significa </content><gloss><content>‘pero’</content></gloss><content>, una de las oraciones conjuntivas debe ser negativa, como en </content>
-			  <langData>Juan fue a la oficina esta mañana pero él no volvió</langData><content>.</content>  </p>
-
-			<p>
-				<content> Algunos ejemplos de la coordinación a nivel de la oración en </content>
-					<langName/><content> son: </content>
-			</p>
-			<example>
-				<interlinear exampleLoc="coord/sentExample"/>
-			</example>
-			<p><content>Véase la sección </content><sectionRef sec="sAdvCl"/><content> para considerar los ejemplos de palabras o cláusulas de introducción, designadas a veces al igual que coordinación, y los ejemplos de las cláusulas adverbiales, que son subordinación.</content></p>
+      <secTitle>Las construcciones coordinadas</secTitle>
+     <p contentType="ctComparativeIntro">
+        <content>Esta sección empieza con las construcciones coordinadas básicas en que una conjunción se presenta entre dos oraciones. Estas incluyen la coordinación a nivel de la oración, la frase verbal, la frase nominal, la frase </content><case element="pp" attr="pPos">
+           <caseText value="before">preposicional</caseText>
+           <caseText value="after">posposicional</caseText>
+           <caseText value="both">adposicional</caseText>
+           <caseText value="unknown">adposicional</caseText>
+        </case><content> y la frase adjetival.  Luego, para el nivel de la frase nominal solamente, se describen los elementos consecutivos como en una lista y las aposiciones. </content></p>
+     
+     <p contentType="ctComparativeIntro"><content>En español, las conjunciones que se pueden utilizar entre dos oraciones enlazadas son </content><langData>y</langData><content>, </content><langData>o</langData><content>, </content><langData>pero</langData><content> e </content><langData>y/o</langData>
+        <content>.  Además, hay las construcciones coordinadas que requieren una conjunción inicial, como </content><langData>o...o</langData><content> y </content><langData>ni...ni</langData><content> construcciones. Algunas lenguas también utilizan una palabra que significa </content><langData>con</langData><content> igual que una conjunción entre las frases nominales. </content>
+     </p>
+     
+     <p contentType="ctPracticalIntro">
+        <content>Se presentan ejemplos de coordinación a nivel de la oración, de la frase verbal, la frase nominal, la frase </content><case element="pp" attr="pPos">
+           <caseText value="before">preposicional</caseText>
+           <caseText value="after">posposicional</caseText>
+           <caseText value="both">adposicional</caseText>
+           <caseText value="unknown">adposicional</caseText>
+        </case><content> y la frase adjetival.  Luego, se describen los elementos consecutivos  y aposiciones. </content></p>
+     
+            <p>
+                <content>En el </content>
+                <langName/>
+               <content> usa las siguientes conjunciones entre las oraciones enlazadas:</content>
+            </p>
+            <example>
+                <table border="1">
+                    <headerRow>
+                        <headerCol>Morfemas</headerCol>
+                        <headerCol>Glosa</headerCol>
+                    </headerRow>
+                    <row>
+                        <col exampleLoc="coord/and"/>
+                        <col>
+                            <content>y</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/or"/>
+                        <col>
+                            <content>o</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/andOr"/>
+                        <col>
+                            <content>y/o</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/but"/>
+                        <col>
+                            <content>pero</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/with"/>
+                        <col>
+                            <content>con</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="coord/other"/>
+                        <col>
+                            <content>otros (si hay)</content>
+                        </col>
+                    </row>
+                </table>
+            </example>
+            <p>
+                <content>En el </content>
+                <langName/>
+               <content>, las siguientes conjunciones solo se utilizan en las construcciones </content><langData>o...o</langData><content> y </content><langData>ni...ni</langData><content>:</content>
+            </p>
+            <example>
+                <table border="1">
+                    <headerRow>
+                        <headerCol>Morfemas</headerCol>
+                        <headerCol>Glosa</headerCol>
+                    </headerRow>
+                    <row>
+                        <col exampleLoc="coord/either"/>
+                        <col>
+                            <content>o (cualquiera) - elemento inicial</content>
+                        </col>
+                    </row>
+                   <row>
+                      <col exampleLoc="coord/eitherOr"/>
+                      <col>
+                         <content>o - elemento del medio</content>
+                      </col>
+                   </row>
+                   <row>
+                        <col exampleLoc="coord/neither"/>
+                        <col>
+                            <content>ni (ningunos) - elemento inicial</content>
+                        </col>
+                    </row>
+                   <row>
+                      <col exampleLoc="coord/nor"/>
+                      <col>
+                         <content>ni - elemento del medio</content>
+                      </col>
+                   </row>
+                </table>
+            </example>
+     
+     <p><content>En el </content><langName/><content>, </content><case element="coord" attr="conjWord">
+        <caseText value="yes">todas estas conjunciones se escriben como palabras independientes entre las oraciones enlazadas.</caseText>
+        <caseText value="some">algunas de estas conjunciones se escriben como palabras independientes entre las oraciones enlazadas, pero otras se unen </caseText>
+        <caseText value="no">todas estas conjunciones se unen </caseText>
+     </case>
+        <text show="swCoordConjWordNotYes">
+           <text show="swCoordConjAttachesProclitic"><content>al principio de la segunda oración como proclíticos</content></text>
+           <text show="swCoordConjAttachesEnclitic"><content>al final de la primera oración como enclíticos</content></text>
+           <text show="swCoordConjAttachesClitic"><content>al final de la primera oración o al principio de la segunda oración como clíticos, según lo indicado con los guiones en los cuadros de arriba</content></text>
+           <text show="swCoordConjAttachesNotOther"><content>. </content></text>
+           <text show="swCoordConjAttachesOtherOnly"><content>al ___</content><contentCheckBoxOther contentLoc="coord/attachesOther"/><content>. </content></text>
+           <text show="swCoordConjAttachesPosAndOther"><content> y pueden unirse también al ___</content><contentCheckBoxOther contentLoc="coord/attachesOther"/><content>. </content></text>
+        </text>
+        <text show="swCoordNoConjYes"><content> Además de usar estas conjunciones, dos elementos pueden también ser coordinadas sin ninguna conjunción entre ellas, al menos en los niveles de la frase nominal y la oración.</content></text>
+        <text show="swCoordNoConjNo"><content> Cuando solamente se unen dos elementos, se debe presentar una de ellas.</content></text></p>
+     
+     <section2 id="sCoordLevels">        
+        <secTitle>Niveles de coordinación</secTitle>
+        
+        <p><content>En las siguientes secciones se presentan ejemplos de los varios niveles de coordinación.</content></p>
+        <section3 id="sCoordSentence">
+            <secTitle>Coordinación a nivel de la oración</secTitle>
+           <p contentType="ctComparativeIntro">
+              <content>En general, la coordinación ocurre entre categorías similares. Para la coordinación a nivel de la oración, esto significa que dos oraciones declarativas pueden ser coordinadas, como en </content>
+              <langData>Juan fue a la oficina esta mañana y él acaba de volver</langData><content> y </content><langData>O vendré a la fiesta o enviaré a mi hermana</langData>
+              <content>, o dos preguntas, como en </content><langData>¿Cuándo vino el correo y dónde está mi paquete?</langData><content>  Cuando la conjunción significa </content><langData>pero</langData><content>, una de las oraciones enlazadas debe ser negativa, como en </content>
+              <langData>Juan fue a la oficina esta mañana pero él no volvió</langData><content>.</content>  </p>
+           <p contentType="ctPracticalIntro">
+              <content>En general, la coordinación ocurre entre categorías similares. Para la coordinación a nivel de la oración, esto significa que dos oraciones declarativas o dos preguntas pueden ser coordinadas, . Cuando la conjunción significa </content><langData>pero</langData><content>, una de las oraciones enlazadas debe ser negativa.</content>  </p>
+           
+            <p>
+                <content> Algunos ejemplos de la coordinación a nivel de la oración en el </content>
+                    <langName/><content> son: </content>
+            </p>
+            <example>
+                <interlinear exampleLoc="coord/sentExample"/>
+            </example>
+            <p><content>Véase la sección </content><sectionRef sec="sAdvCl"/><content> para considerar los ejemplos de palabras o cláusulas de introducción, designadas a veces como coordinación, y los ejemplos de cláusulas adverbiales, que son subordinación.</content></p>
 </section3>
-		<section3 id="sCoordVP">
-			<secTitle>Coordinación de la frase de verbo</secTitle>
-		   <p>
-			  <content>La coordinación de la frase de verbo implica dos frases de verbo completas que compartan un solo sujeto. La coordinación de la frase de verbo se ejemplifica en las oraciones en español siguientes: </content>
-			  <langData>Guillermo corrió la carrera y ganó el premio</langData><content>, </content><langData>Susana irá a la fiesta o enviará a su hermana</langData><content> y </content>
-			  <langData>Susana ni irá a la fiesta ni enviará a su hermana</langData><content>.</content>
-		   </p>
+        <section3 id="sCoordVP">
+            <secTitle>Coordinación de la frase verbal</secTitle>
+           <p contentType="ctComparativeIntro">
+              <content>La coordinación de la frase verbal implica dos frases verbales completas que comparten un solo sujeto. Se ejemplifica en las siguientes oraciones en español: </content>
+              <langData>Guillermo corrió la carrera y ganó el premio</langData><content>, </content><langData>Susana irá a la fiesta o enviará a su hermana</langData><content> y </content>
+              <langData>Susana ni irá a la fiesta ni enviará a su hermana</langData><content>.</content>
+           </p>
+           <p contentType="ctPracticalIntro">
+              <content>La coordinación de la frase verbal implica dos frases verbales completas que comparten un solo sujeto.</content>
+           </p>
 
-			<p>
-				<content> Algunos ejemplos de la coordinación de la frase de verbo en </content><langName/><content> son: </content>
-			</p>
-			<example>
-				<interlinear exampleLoc="coord/vpExample"/>
-			</example>
+            <p>
+               <content>En el </content><langName/><content>, algunos ejemplos de coordinación de la frase verbal  son: </content>
+            </p>
+            <example>
+                <interlinear exampleLoc="coord/vpExample"/>
+            </example>
 </section3>
-		<section3 id="sCoordDP">
-			<secTitle>Coordinación de la frase nominal</secTitle>
-		<p>
-			  <content>Las frases nominales coordinadas generalmente pueden presentarse en todas las posiciones donde una frase nominal normal puede presentarse, por ejemplo sujetos, objetos, objetos indirectos y objetos de </content><case element="pp" attr="pPos">
-				 <caseText value="before">preposiciones</caseText>
-				 <caseText value="after">posposiciones</caseText>
-				 <caseText value="both">preposiciones y posposiciones</caseText>
-				 <caseText value="unknown">preposiciones y/o posposiciones</caseText>
-			  </case><content>. La coordinación de la frase nominal se ejemplifica en las oraciones en español siguientes: </content>
-		   <langData>Guillermo corrió en el maratón de Boston y las Olimpiadas</langData><content>, </content><langData>Mi hermana o yo estará allí</langData>
-		   <content>, </content><langData>Ni su hermana ni mi hermano estará allí</langData><content>, </content>
-		   <langData>Vendré al ensayo pero no a la cena</langData><content> and </content><langData>Vendré a la boda y/o la recepción</langData><content>.</content>
-		 </p>
+        <section3 id="sCoordDP">
+            <secTitle>Coordinación de la frase nominal</secTitle>
+           <p contentType="ctComparativeIntro">
+              <content>Las frases nominales coordinadas generalmente pueden presentarse como sujetos, objetos directos, objetos indirectos y objetos de </content><case element="pp" attr="pPos">
+                 <caseText value="before">preposiciones</caseText>
+                 <caseText value="after">posposiciones</caseText>
+                 <caseText value="both">adposiciones</caseText>
+                 <caseText value="unknown">adposiciones</caseText>
+              </case><content> como cualquier frase nominal. La coordinación de la frase nominal se ejemplifica en las siguientes oraciones en español: </content>
+              <langData>Guillermo corrió en el maratón de Boston y las Olimpiadas</langData><content>, </content><langData>Mi hermana o yo estará allí</langData>
+              <content>, </content><langData>Ni su hermana ni mi hermano estará allí</langData><content>, </content>
+              <langData>Vendré al ensayo pero no a la cena</langData><content> y </content><langData>Vendré a la boda y/o la recepción</langData><content>.</content>
+           </p>   
+           <p contentType="ctPracticalIntro">
+              <content>Las frases nominales coordinadas generalmente pueden presentarse como sujetos, objetos directos, objetos indirectos y objetos de </content><case element="pp" attr="pPos">
+                 <caseText value="before">preposiciones</caseText>
+                 <caseText value="after">posposiciones</caseText>
+                 <caseText value="both">adposiciones</caseText>
+                 <caseText value="unknown">adposiciones</caseText>
+              </case><content> como cualquier frase nominal.</content>
+           </p>
 
-			<p>
-				<content>Algunos ejemplos de la coordinación de la frase nominal en </content><langName/><content> son: </content>
-			</p>
-			<example>
-				<interlinear exampleLoc="coord/dpExample"/>
-			</example>
-		</section3>
-	  <section3 id="sCoordPP">
-		  <secTitle>
-		  <case  element="pp" attr="pPos">
-				<caseText value="before">Coordinación de la frase preposicional</caseText>
-				<caseText value="after">Coordinación de la frase posposcional</caseText>
-				<caseText value="both">Coordinación de la frase preposicional y/o posposcional</caseText>
-				<caseText value="unknown">Coordinación de la frase preposicional y/o posposcional</caseText>
-			</case>
-			</secTitle>
-		 <p>
-			<content>Normalmente sea posible para frases </content>          <case  element="pp" attr="pPos">
-			   <caseText value="before">preposicionales</caseText>
-			   <caseText value="after">posposicionales</caseText>
-			   <caseText value="both">preposicionales o posposicionales</caseText>
-			   <caseText value="unknown">preposicionales o posposicionales</caseText>
-			</case>
-			<content> coordinativas presentarse en todas las posiciones en que una frase de este tipo puede presentarse.  Algunos ejemplos en español de la coordinación de la frase preposicional son: </content>
-			<langData>Guillermo corrió a través del bosque y sobre el puente</langData><content>, </content><langData>Vendré con usted al ensayo pero no a su hogar</langData>
-			<content> y </content><langData>Vendré o a la boda o a la recepción</langData><content>.</content>
-		 </p>
-		  <p>
-				<content>Algunos ejemplos de la coordinación de las frases </content>
-			  <case element="pp" attr="pPos">
-				  <caseText value="before">preposicionales</caseText>
-				  <caseText value="after">posposctionales</caseText>
-				  <caseText value="both">preposicionales o posposicionales</caseText>
-				  <caseText value="unknown">preposicionales o posposicionales</caseText></case>
-			  <content> en </content><langName/><content> son:</content>
-		  </p>
-		  <example>
-			  <interlinear exampleLoc="coord/coordppExample"/>
-		  </example>
-	  </section3>
-		<section3 id="sCoordAdj">
-			<secTitle>Coordinación de la frase adjetival</secTitle>
-		   <p>
-			  <content>Finalmente, los adjetivos o frases adjetivales usualmente pueden ser coordinativas, cuando modifican un sustantivo, por ejemplo: </content>
-			  <langData>El perro blanco y negro pertenece a mi hijo</langData><content>, </content><langData>Mi hermana quiere una vela roja o azul</langData>
-			  <content> y </content><langData>Ese parece un dolor terriblemente doloroso y muy peligroso en su pierna</langData>
-			  <content>, y también cuando actúan como el adjetivo predicativo en una oración copulativo, como en: </content>
-			  <langData>El lesión en su pierna es muy feo y doloroso y peligroso</langData><content> y </content>
-			  <langData>Este material siente muy liso y sedoso</langData><content>.</content>
-		   </p>
-			<p>
-				<content>Algunos ejemplos de la coordinación del adjetivo o la frase adjetival en </content><langName/><content> son: </content>
-			</p>
-			<example>
-				<interlinear exampleLoc="coord/adjExample"/>
-			</example>
-		</section3>
-	 </section2>
-
-	 <section2 id="sCoordList">
-		<secTitle>Elementos consecutivos</secTitle>
-		<p><content>Los elementos consecutivos consisten en tres o más artículos que están coordinados para formar una sola frase nominal. Los elementos iniciales son separados normalmente por comas y una conjunción se presenta antes del elemento final en la lista, aunque existen diversas posibilidades. Algunos ejemplos en español de frases nominales con elementos consecutivos son: </content>
-		   <langData>[Juan, Guillermo, Susana y María]</langData><content>, </content><langData>[Juan, Guillermo, Susana y/o María]</langData><content>, </content>
-		   <langData>[Juan y Guillermo o Susana y María]</langData><content> y </content><langData>[un gato, dos perros y un pollo pero no un mono]</langData><content>.</content>
-		</p>
-
-		<p>
-		   <content>Algunos ejemplos de elementos consecutivos en </content>
-		   <langName/>
-		   <content> son:</content>
-		</p>
-		<example>
-		   <interlinear exampleLoc="coord/listExample"/>
-		</example>
-	 </section2>
-
-	 <section2 id="sCoordAppositive">
-		<secTitle>Aposiciones</secTitle>
-		<p><content>Las aposiciones también forman una sola frase nominal.  Las aposiciones consisten normalmente en un nombre seguido por una coma y entonces una descripción también seguida por una coma o el orden puede ser invertido. Algunos ejemplos en español son: </content>
-		   <langData>[George Washington, el primer Presidente de los Estados Unidos,]</langData><content> y </content><langData>[Mi hermano, Jaime,]</langData><content>.</content>
-		</p>
-		<p>
-		   <content>Algunos ejemplos de frases nominales que contienen aposiciones en </content>
-		   <langName/>
-		   <content> son:</content>
-		</p>
-		<example>
-		   <interlinear exampleLoc="coord/appositiveExample"/>
-		</example>
-	 </section2>
-
-	 <section2 id="sCoordComparative">
-		<secTitle>Comparativos</secTitle>
-		<p><content>Esta sección considera los comparativos que tienen dos oraciones alrededor de la palabra comparativa, aunque en la segunda oración puede faltar el adjetivo. Cubrimos ya los comparativos que son un subtipo de oraciones copulativas en la sección  </content><sectionRef sec="sIPComparatives"/><content>.
-		   Como los comparativos más cortos, éstos comparan las calidades o las acciones de los sujetos de las oraciones y pueden tener un verbo copulativo o un verbo de percepción o un verbo de acción, junto con un adjetivo que sea modificado por una palabra o un afijo de grado. Algunos ejemplos en inglés son:
-		</content><langData>John is more handsome than Bill is</langData><gloss><content> ‘Juan es más hermoso que Guillermo’</content></gloss><content>, </content>
-		   <langData>Sue runs much faster than Mary can run</langData><gloss><content> ‘Susana corre mucho más rápido de lo que María puede correr’</content></gloss><content>, </content>
-		   <langData>David appears lots taller than Michael does</langData><gloss><content> ‘David parece mucho más alto que Miguel’</content></gloss><content>, </content>
-		   <langData>Mary looks prettier than Julie looks</langData><gloss><content> ‘María se ve mucho más bonita que Julia’</content></gloss><content> y </content>
-		   <langData>John seems more certain of his answers than Sue seems</langData><gloss><content> ‘Juan parece más seguro de sus respuestas que Susana’</content></gloss><content>.</content>
-		</p>
-		<p><content>Algunas lenguas no permiten que ninguna parte de la segunda oración sea omitida, más bien aparecen dos oraciones completas, las cuales van a ser comparadas. También, algunas lenguas que no tienen una palabra comparativa independiente que significa </content><gloss><content>‘than (que)’</content></gloss><content> en las construcciones comparativas más cortas, simplemente tendrá las dos partes de la oración seguida una de la otra en esta construcción.
-		</content> </p>
-		<p><content>En estas construcciones comparativas más completas, </content><langName/><case element="coord" attr="gap">
-		   <caseText value="yes"> permite que el adjetivo falte en la segunda parte,como en los ejemplos de español y inglés. </caseText>
-		   <caseText value="no"> require que la oración completa se repite después del comparativo. </caseText>
-		</case>
-		   <content>En </content><langName/><case element="ip" attr="comparative">
-			  <caseText value="yes"> hay una palabra comparativa que significa ‘que’ que utiliza en ambos los comparativos cortos y más completos, como muestra en el cuadro suguiente.</caseText>
-			  <caseText value="no"> no hay una palabra comparativa que significa ‘que’, entonces este tipo de comparativo simplemente tendrá las dos partes de la oración seguida una de la otra.</caseText>
-		   </case>
-		</p>
-
-		<example show="swIPComparativeYes">
-		   <table border="1">
-			  <headerRow>
-				 <headerCol>Palabra Comparativa</headerCol>
-				 <headerCol>Glosa</headerCol>
-			  </headerRow>
-			  <row>
-				 <col exampleLoc="ip/comparativeWordExample"/>
-				 <col ><gloss><content>que</content></gloss></col>
-			  </row>
-		   </table>
-		</example>
-
-		<p>
-		   <content>Algunos ejemplos de las construcciones comparativas más completas en </content><langName/><content> son:</content>
-		</p>
-		<example>
-		   <interlinear exampleLoc="coord/comparativeSentExample"/>
-		</example>
-	 </section2>
+            <p>
+               <content>En el </content><langName/><content>, algunos ejemplos de coordinación de la frase nominal son: </content>
+            </p>
+            <example>
+                <interlinear exampleLoc="coord/dpExample"/>
+            </example>
+        </section3>
+      <section3 id="sCoordPP">
+          <secTitle>
+          <case  element="pp" attr="pPos">
+                <caseText value="before">Coordinación de la frase preposicional</caseText>
+                <caseText value="after">Coordinación de la frase posposcional</caseText>
+                <caseText value="both">Coordinación de la frase adposcional</caseText>
+                <caseText value="unknown">Coordinación de la frase adposcional</caseText>
+            </case>
+            </secTitle>
+         <p contentType="ctComparativeIntro">
+            <content>Usualmente también es posible para las frases </content>
+            <case  element="pp" attr="pPos">
+               <caseText value="before">preposicionales</caseText>
+               <caseText value="after">posposicionales</caseText>
+               <caseText value="both">adposicionales</caseText>
+               <caseText value="unknown">adposicionales</caseText>
+            </case>
+            <content> coordinadas presentarse en todas las posiciones en que cualquier frase </content>
+            <case  element="pp" attr="pPos">
+               <caseText value="before">preposicional</caseText>
+               <caseText value="after">posposicional</caseText>
+               <caseText value="both">adposicional</caseText>
+               <caseText value="unknown">adposicional</caseText>
+            </case>
+            <content> puede presentarse.  Algunos ejemplos en español de coordinación de la frase preposicional son: </content>
+            <langData>Guillermo corrió a través del bosque y sobre el puente</langData><content>, </content><langData>Vendré con usted al ensayo pero no a su hogar</langData>
+            <content> y </content><langData>Vendré o a la boda o a la recepción</langData><content>.</content>
+         </p> 
+         <p contentType="ctPracticalIntro">
+            <content>Usualmente también es posible para las frases </content>
+            <case  element="pp" attr="pPos">
+               <caseText value="before">preposicionales</caseText>
+               <caseText value="after">posposicionales</caseText>
+               <caseText value="both">adposicionales</caseText>
+               <caseText value="unknown">adposicionales</caseText>
+            </case>
+            <content> coordinadas presentarse en todas las posiciones en que cualquier frase </content>
+            <case  element="pp" attr="pPos">
+               <caseText value="before">preposicional</caseText>
+               <caseText value="after">posposicional</caseText>
+               <caseText value="both">adposicional</caseText>
+               <caseText value="unknown">adposicional</caseText>
+            </case>
+            <content> puede presentarse.</content>
+         </p> 
+         <p>
+                <content>Algunos ejemplos de coordinación de las frases </content>
+              <case element="pp" attr="pPos">
+                  <caseText value="before">preposicionales</caseText>
+                  <caseText value="after">posposctionales</caseText>
+                  <caseText value="both">adposicionales</caseText>
+                  <caseText value="unknown">adposicionales</caseText></case>
+              <content> en el </content><langName/><content> son:</content>
+          </p>
+          <example>
+              <interlinear exampleLoc="coord/coordppExample"/>
+          </example>
+      </section3>
+        <section3 id="sCoordAdj">
+            <secTitle>Coordinación de la frase adjetival</secTitle>
+           <p contentType="ctComparativeIntro">
+              <content>Finalmente, los adjetivos o frases adjetivales usualmente pueden ser coordinadas cuando modifican a un sustantivo, por ejemplo: </content>
+              <langData>El perro blanco y negro pertenece a mi hijo</langData><content>, </content><langData>Mi hermana quiere una vela roja o azul</langData>
+              <content> y </content><langData>Ese parece un dolor terriblemente doloroso y muy peligroso en su pierna</langData>
+              <content>, y también cuando actúan como el adjetivo predicativo en una oración copulativa, como en: </content>
+              <langData>El lesión en su pierna es muy feo y doloroso y peligroso</langData><content> y </content>
+              <langData>Este material siente muy liso y sedoso</langData><content>.</content>
+           </p>
+           <p contentType="ctPracticalIntro">
+              <content>Finalmente, los adjetivos o frases adjetivales usualmente pueden ser coordinadas cuando modifican a un sustantivo y también cuando actúan como el adjetivo predicativo en una oración copulativa.</content>
+           </p>
+           <p>
+                <content>Algunos ejemplos de coordinación del adjetivo o la frase adjetival en el </content><langName/><content> son: </content>
+            </p>
+            <example>
+                <interlinear exampleLoc="coord/adjExample"/>
+            </example>
+        </section3>
+     </section2>  
+     
+     <section2 id="sCoordList">
+        <secTitle>Elementos consecutivos</secTitle>
+        <p contentType="ctComparativeIntro"><content>Los elementos consecutivos consisten en tres o más artículos que están coordinados para formar una sola frase nominal. Los elementos iniciales normalmente se separan con comas y una conjunción se presenta antes del elemento final en la lista, aunque existen diversas posibilidades. Algunos ejemplos en español de frases nominales con elementos consecutivos son: </content>
+           <langData>[Juan, Guillermo, Susana y María]</langData><content>, </content><langData>[Juan, Guillermo, Susana y/o María]</langData><content>, </content>
+           <langData>[Juan y Guillermo o Susana y María]</langData><content> y </content><langData>[un gato, dos perros y un pollo pero no un mono]</langData><content>.</content>
+        </p>
+        <p contentType="ctPracticalIntro"><content>Los elementos consecutivos consisten en tres o más artículos que están coordinados para formar una sola frase nominal. Los elementos iniciales normalmente se separan con comas y una conjunción se presenta antes del elemento final en la lista, aunque existen diversas posibilidades. </content>
+        </p>
+        
+        <p>
+           <content>Algunos ejemplos de elementos consecutivos en el </content>
+           <langName/>
+           <content> son:</content>
+        </p>
+        <example>
+           <interlinear exampleLoc="coord/listExample"/>
+        </example>        
+     </section2>
+     
+     <section2 id="sCoordAppositive">
+        <secTitle>Aposiciones</secTitle>
+        <p contentType="ctComparativeIntro">
+           <content>Las aposiciones también forman una sola frase nominal.  Estas consisten normalmente en un nombre seguido de una coma y entonces una descripción también seguida de una coma o el orden puede invertirse. Algunos ejemplos en español son: </content>
+           <langData>[George Washington, el primer Presidente de los Estados Unidos,]</langData><content> y </content><langData>[Mi hermano, Jaime,]</langData><content>.</content>
+        </p>
+        <p contentType="ctPracticalIntro">
+           <content>Las aposiciones también forman una sola frase nominal.  Estas consisten normalmente en un nombre seguido de una coma y entonces una descripción también seguida de una coma o el orden puede invertirse.</content>
+        </p>
+        <p>
+           <content>En el </content>
+           <langName/>
+           <content>, algunos ejemplos de frases nominales que contienen aposiciones son:</content>
+        </p>
+        <example>
+           <interlinear exampleLoc="coord/appositiveExample"/>
+        </example>                
+     </section2>
+     
+     
   </section1>
-
+   
+   
    <showWhen id="swCoordConjWordNotYes">
-	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+      <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
    </showWhen>
    <showWhen id="swCoordNoConjYes">
-	  <whenValue element="coord"  attr="noConj" value="yes"/>
+      <whenValue element="coord"  attr="noConj" value="yes"/>
    </showWhen>
    <showWhen id="swCoordNoConjNo">
-	  <whenValue element="coord" attr="noConj" value="no"/>
+      <whenValue element="coord" attr="noConj" value="no"/>
    </showWhen>
-   <showWhen id="swIPComparativeYes">
-	  <whenValue element="ip" attr="comparative" value="yes"/>
-   </showWhen>
+   
+   <showWhen id="swCoordConjAttachesProclitic">
+      <whenValue element="coord/proclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swCoordConjAttachesEnclitic">
+      <whenValue element="coord/proclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swCoordConjAttachesClitic">
+      <whenValue element="coord/proclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swCoordConjAttachesNotOther">
+      <whenValue element="coord/attachesOther" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swCoordConjAttachesOtherOnly">
+      <whenValue element="coord/proclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="coord/attachesOther" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swCoordConjAttachesPosAndOther">
+      <whenValue element="coord/proclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="coord/attachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="coord/enclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="coord/attachesOther" attr="checked" value="yes"/>
+   </showWhen>  
+   
 </portion>

@@ -1,59 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="PNMain" count="1/3">
 	<title>Los nombres propios</title>
-	<introduction> Los nombres propios son una clase especial de sustantivos o frases que sintácticamente funcionan al igual que otros sustantivos o frases nominales. En español, algunos nombres propios pueden presentarse solos, como  <example>Susana</example> y <example>Oaxaca</example>.  Otros funcionan al igual que sustantivos compuestos, tales como <example>George Washington</example>.  Los nombres propios pueden también contener los artículos y/o frases
-		preposicionales y/o posposicionales, como en <example>los Estados Unidos de América</example>.  Muchas lenguas requieren un artículo antes de un nombre. También se presentan los apositivos.  En algunos casos aparecen con un poseedor, como en <example>mi hijo, David</example>.  Además, los nombres propios se pueden modificar con los adjetivos y cláusulas relativas, como en <example>México fuerte y orgulloso</example> o <example>la Susana que conozco</example>.</introduction>
+   <introduction> Los nombres propios son una clase especial de sustantivos o frases nominalesque sintácticamente funcionan igual que otros sustantivos o frases nominales. En español, algunos nombres propios pueden presentarse solos, como  <example>Susana</example> y <example>Oaxaca</example>.  Otros funcionan como sustantivos compuestos, como <example>George Washington</example>.  Los nombres propios también pueden contener los artículos y/o <technicalTermRef term="ttAdpositionalPhrases"/>, como en <example>los Estados Unidos de América</example>.  Muchas lenguas requieren un artículo antes de un nombre. Appositives, posiblemente incluyendo un posesivo, como en <example>mi hijo, David</example>, también ocurren, pero apositivos se tratan más adelante en <section number="15."> Las construcciones coordinadas</section>.  Además, los nombres propios se pueden modificar por los adjetivos y cláusulas relativas, como en <example>México fuerte y orgulloso</example> o <example>la Susana que conozco</example>.</introduction>
 	<form section="prop">
-		<prompt>Escriba sus ejemplos nombres propios simples y compuestos, o los que se presentan con artículos, demonstratives, adjetivos, y/o los poseedores aquí :</prompt>
+		<prompt>Escriba sus ejemplos nombres propios simples y compuestos, o los que se presentan con artículos, demonstratives, adjetivos o los posesivos aquí :</prompt>
 		<textBox id="PNExample" dataItem="example"/>
 	   <br/><br/>
 	   <radioGroup id="PNClassifiersTable" show="swOTClassifierAgr">
-		  <groupName dataItem="pnClassifier" default="no">RPNClassifiers</groupName>
-		  <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar los nombres propios también?</prompt>
-		  <radio id="PNClassifiersNo" dataValue="no">No, los nombres propios no se marcan con clasificadores al contrario que sustantivos</radio>
-		  <radio id="PNClassifiersYes" dataValue="yes">Sí, los nombres propios se marcan con clasificadores lo mismo que sustantivos</radio>
+	      <groupName dataItem="pnClassifier" default="no">RPNClassifiers</groupName>
+	      <prompt>Usted dijo que su lengua tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar los nombres propios también?</prompt>
+	      <radio id="PNClassifiersNo" dataValue="no">No, los nombres propios no se marcan con clasificadores</radio>
+	      <radio id="PNClassifiersYes" dataValue="yes">Sí, los nombres propios se marcan con clasificadores lo mismo que sustantivos</radio>
 	   </radioGroup>
 	   <radioGroup id="PNDeterminersTable" show="swNPArtAndDemNotNo">
-		  <groupName dataItem="pnDeterminer" default="no">RPNDeterminer</groupName>
-		  <prompt>¿Se requieren los nombres propios en su lengua contener <span id="PNArtOnlySpan" show="swNPArtAndDemArt">un artículo</span>
-			 <span id="PNDemOnlySpan" show="swNPArtAndDemDem">un demostrativo</span><span id="PNArtAndDemSpan" show="swNPArtAndDemBoth">on artículo o un demostrativo</span> o un poseedor?</prompt>
-		  <radio id="PNDeterminerNo" dataValue="no">No, pueden contener estos elementos pero no son requiridos</radio>
-		  <radio id="PNDeterminerYes" dataValue="yes">Sí, cada nombre propio debe contener al menos uno de estos elementos</radio>
+	      <groupName dataItem="pnDeterminer" default="no">RPNDeterminer</groupName>
+	      <prompt>¿Se requieren los nombres propios en su lengua contener <span id="PNArtOnlySpan" show="swNPArtAndDemArt">un artículo</span>
+	         <span id="PNDemOnlySpan" show="swNPArtAndDemDem">un demostrativo</span><span id="PNArtAndDemSpan" show="swNPArtAndDemBoth">un artículo o un demostrativo</span> o un posesivo?</prompt>
+	      <radio id="PNDeterminerNo" dataValue="no">No, pueden contener estos elementos pero no son requiridos</radio>
+	      <radio id="PNDeterminerYes" dataValue="yes">Sí, cada nombre propio debe contener al menos uno de estos elementos</radio>
 	   </radioGroup>
 	   <br/>
 		<br/>
-		<prompt>Escriba sus ejemplos de nombres propios con frases preposicionales y/o posposicionales aquí:</prompt>
+		<prompt>Escriba sus ejemplos de nombres propios con frases adposicionales aquí:</prompt>
 		<textBox id="PNPPExample" dataItem="ppExample"/>
 		<br/>
 		<br/>
-		<prompt>Escriba sus ejemplos de los nombres propios modificados con las cláusulas relativas en oraciones completas (pero simples) aquí:</prompt>
+	   <prompt>Escriba sus ejemplos de oraciones completas (pero simples) con los nombres propios modificados con las cláusulas relativas aquí:</prompt>
 		<textBox id="PNRelClExample" dataItem="relClExample"/>
 		<br/>
 		<br/>
 		<buttons>
 			<button id="PNMainBack" value="Back" goto="Contents.htm"/>
-			<button id="PNMainNext" value="Next" goto="PNCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		    <button id="PNMainNext" value="Next" goto="PNCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
    <showWhen id="swOTClassifierAgr">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>   
    </showWhen>
    <showWhen id="swNPArtAndDemArt">
-	  <whenValue element="np" attr="artAndDem" value="article"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDem">
-	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
    </showWhen>
    <showWhen id="swNPArtAndDemBoth">
-	  <whenValue element="np" attr="artAndDem" value="both"/>
+      <whenValue element="np" attr="artAndDem" value="both"/>
    </showWhen>
    <showWhen id="swNPArtAndDemNotNo">
-	  <whenValue element="np" attr="artAndDem" value="article"/>
-	  <or/>
-	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
-	  <or/>
-	  <whenValue element="np" attr="artAndDem" value="both"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
+      <or/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+      <or/>
+      <whenValue element="np" attr="artAndDem" value="both"/>
    </showWhen>
+   &TechnicalTerms; 
+   
 </page>

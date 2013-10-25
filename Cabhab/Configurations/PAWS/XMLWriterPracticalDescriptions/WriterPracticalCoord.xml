@@ -3,28 +3,34 @@
 <portion>
   <section1 id="sCoord">
 	<secTitle>Coordination Constructions</secTitle>
-	<p>
+	<p contentType="ctComparativeIntro">
 	  <content>This section begins with basic coordination constructions where there is an overt conjunction between the conjuncts.  This includes coordination at the sentence level and at the verb phrase, nominal phrase, </content><case element="pp" attr="pPos">
 		 <caseText value="before">prepositional</caseText>
 		 <caseText value="after">postpositional</caseText>
-		 <caseText value="both">prepositional and postpositional</caseText>
-		 <caseText value="unknown">prepositional and/or postpositional</caseText>
-	  </case><content> phrase and adjective phrase levels. Then, at the nominal phrase level only, lists and appositive constructions will be described.  Finally, comparative constructions involving full sentences will be discussed. (Shorter comparatives were covered in section </content><sectionRef  sec="sIPComparatives"/><content>.)</content></p>
+		 <caseText value="both">adpositional</caseText>
+		 <caseText value="unknown">adpositional</caseText>
+	  </case><content> phrase and adjective phrase levels. Then, at the nominal phrase level only, lists and appositive constructions will be described. </content></p>
 
-	  <p><content>In English, the conjunctions which can be used between two conjuncts are </content><langData>and</langData><content>, </content><langData>or</langData><content>, </content><langData>but</langData><content> and </content><langData>and/or</langData><content>.  In addition, there are coordination constructions which require an initial conjunction, such as </content><langData>either...or</langData><content> and </content><langData>neither...nor</langData><content> constructions.  Some languages also use a word meaning </content><langData>with</langData><content> as a conjunction between nominal phrases.
+	  <p contentType="ctComparativeIntro"><content>In English, the conjunctions which can be used between two conjuncts are </content><langData>and</langData><content>, </content><langData>or</langData><content>, </content><langData>but</langData><content> and </content><langData>and/or</langData><content>.  In addition, there are coordination constructions which require an initial conjunction, such as </content><langData>either...or</langData><content> and </content><langData>neither...nor</langData><content> constructions.  Some languages also use a word meaning </content><langData>with</langData><content> as a conjunction between nominal phrases.
 </content>
 	</p>
-			<p>
+     <p contentType="ctPracticalIntro">
+        <content>Coordination of sentences, verb phrases, nominal phrases, </content><case element="pp" attr="pPos">
+           <caseText value="before">prepositional</caseText>
+           <caseText value="after">postpositional</caseText>
+           <caseText value="both">apositional</caseText>
+           <caseText value="unknown">apositional</caseText>
+        </case><content> phrases and adjective phrases are exemplified. Then, lists and appositive constructions are described. </content></p>
+     
+     <p>
 				<content/>
 				<langName/>
-				<content> uses the following conjunctions between conjuncts:</content>
+				<content> uses the following conjunctions between two conjuncts:</content>
 			</p>
 			<example>
 				<table border="1">
 					<headerRow>
-						<headerCol>
-							<langName/>
-						</headerCol>
+						<headerCol>Morphemes</headerCol>
 						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
@@ -68,14 +74,12 @@
 			<p>
 				<content/>
 				<langName/>
-				<content> uses the following conjunctions only in an </content><langData>either...or</langData><content> or </content><langData>neither...nor</langData><content> type construction:</content>
+				<content> uses the following conjunctions in an </content><langData>either...or</langData><content> or </content><langData>neither...nor</langData><content> type construction:</content>
 			</p>
 			<example>
 				<table border="1">
 					<headerRow>
-						<headerCol>
-							<langName/>
-						</headerCol>
+						<headerCol>Morphemes</headerCol>
 						<headerCol>Gloss</headerCol>
 					</headerRow>
 					<row>
@@ -84,7 +88,13 @@
 							<content>either</content>
 						</col>
 					</row>
-					<row>
+				   <row>
+				      <col exampleLoc="coord/eitherOr"/>
+				      <col>
+				         <content>or</content>
+				      </col>
+				   </row>
+				   <row>
 						<col exampleLoc="coord/neither"/>
 						<col>
 							<content>neither</content>
@@ -99,35 +109,39 @@
 				</table>
 			</example>
 
-	 <p><content>In </content><langName/><content>, </content><case element="coord" attr="conjWord">
-		<caseText value="yes">all of the above conjunctions are written as separate words between the conjuncts.</caseText>
-		<caseText value="some">some of the conjunctions above are written as separate words between the conjuncts, but others attach </caseText>
-		<caseText value="no">all of the conjunctions attach </caseText>
+	 <p><content/><case element="coord" attr="conjWord">
+		<caseText value="yes">All of the above conjunctions are written as independent words between the conjuncts.</caseText>
+		<caseText value="some">Some of the conjunctions above are written as independent words between the conjuncts, but others attach </caseText>
+		<caseText value="no">All of the conjunctions attach </caseText>
 	 </case>
-	 <text show="swCoordConjWordNotYes"><case element="coord" attr="conjPos">
-		<caseText value="before">to the beginning of the second conjunct. </caseText>
-		<caseText value="after">to the end of the first conjunct. </caseText>
-		<caseText value="either">either to the end of the first conjunct or the beginning of the second conjunct, as indicated by the hyphens in the charts above. </caseText>
-		<caseText value="other">as either proclitics or enclitics, as indicated by the hyphens in the charts above, to some place within the coordination construction other than the end of the first conjunct or the beginning of the second conjunct.</caseText>
-	 </case></text></p>
-	 <p show="swCoordNoConjYes"><content>Besides using these conjunctions, two elements may also be conjoined without any conjunction between them in</content><langName/><content>, at least at the nominal phrase and sentence levels.</content></p>
-<p show="swCoordNoConjNo"><content>When only two elements are being conjoined in </content><langName/><content>, one of the above conjunctions must appear.</content></p>
+	 <text show="swCoordConjWordNotYes">
+	    <text show="swCoordConjAttachesProclitic"><content>to the beginning of the second conjunct as phrasal proclitics</content></text>
+	    <text show="swCoordConjAttachesEnclitic"><content>to the end of the first conjunct as phrasal enclitics</content></text>
+	    <text show="swCoordConjAttachesClitic"><content>either to the end of the first conjunct or the beginning of the second conjunct as phrasal clitics</content></text>
+	    <text show="swCoordConjAttachesNotOther"><content>. </content></text>
+	    <text show="swCoordConjAttachesOtherOnly"><content>to ___</content><contentCheckBoxOther contentLoc="coord/attachesOther"/><content>. </content></text>
+	    <text show="swCoordConjAttachesPosAndOther"><content> and may also attach to ___</content><contentCheckBoxOther contentLoc="coord/attachesOther"/><content>. </content></text>
+	 </text>
+	 <text show="swCoordNoConjYes"><content> Besides using these conjunctions, two elements may also be conjoined without any conjunction between them, at least at the nominal phrase and sentence levels.</content></text>
+<text show="swCoordNoConjNo"><content> When only two elements are being conjoined, one of the above conjunctions must appear.</content></text></p>
 
 	 <section2 id="sCoordLevels">
 		<secTitle>Levels of Coordination</secTitle>
 
 		<p><content>The various levels of coordination are exemplified in the following sections.</content></p>
 		<section3 id="sCoordSentence">
-			<secTitle>Sentence-level coordination</secTitle>
-			<p>
+			<secTitle>Coordination of Sentences</secTitle>
+			<p contentType="ctComparativeIntro">
 			   <content>In general, coordination is between like categories. For sentence-level coordination, this means that two declarative sentences may be conjoined, as in: </content>
 			   <langData>John went to the office this morning and he just got back</langData><content> and </content><langData>Either I will come to the party or I will send my sister</langData>
-			   <content>, or two questions, as in: </content><langData>When did the mail come and where is my package?</langData><content>  When the conjunction is the one meaning </content><gloss><content>‘but’</content></gloss><content>, one of the conjuncts must be negative, as in: </content>
+			   <content>, or two questions, as in: </content><langData>When did the mail come and where is my package?</langData><content>  When the contrastive conjunction </content><langData>but</langData><content> is used, one of the conjuncts must be negative, as in: </content>
 			   <langData>John went to the office this morning but he did not return</langData><content>.</content>  </p>
-			<p>
+		   <p contentType="ctPracticalIntro">
+		      <content>In general, coordination is between like categories. For sentences, this means that two declarative sentences may be conjoined, or two questions.  When the contrastive conjunction </content><langData>but</langData><content> is used, one of the conjuncts must be negative.</content>  </p>
+		   <p>
 				<content/>
 				<langName/>
-				<content> examples of sentence-level coordination include:</content>
+			   <content> examples of coordination of two sentences include:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="coord/sentExample"/>
@@ -135,13 +149,16 @@
 			<p><content>See section </content><sectionRef sec="sAdvCl"/><content> for examples of introductory words and clauses, sometimes referred to as coordination, and examples of adverbial clauses, which are subordination.</content></p>
 </section3>
 		<section3 id="sCoordVP">
-			<secTitle>Verb phrase coordination</secTitle>
-			<p>
+			<secTitle>Verb Phrase Coordination</secTitle>
+			<p contentType="ctComparativeIntro">
 			   <content>Verb phrase coordination involves two full verb phrases that share a single subject. English sentence examples with coordinate verb phrases  include: </content>
 			   <langData>Bill ran the race and won the prize</langData><content>, </content><langData>I will come to the party or send my sister</langData><content> and </content>
 			   <langData>I will not come to the party nor send my sister</langData><content>.</content>
 			</p>
-			<p>
+		   <p contentType="ctPracticalIntro">
+		      <content>Verb phrase coordination involves two full verb phrases that share a single subject.</content>
+		   </p>
+		   <p>
 				<content/>
 				<langName/>
 				<content> examples with verb phrase coordination include:</content>
@@ -151,19 +168,27 @@
 			</example>
 </section3>
 		<section3 id="sCoordDP">
-			<secTitle>Nominal phrase coordination</secTitle>
-			<p>
-			   <content>Coordinate nominal phrases can normally occur as subjects, objects, indirect objects and objects of a </content><case element="pp" attr="pPos">
-				  <caseText value="before">prepositioin</caseText>
-				  <caseText value="after">postposition</caseText>
-				  <caseText value="both">preposition or postposition</caseText>
-				  <caseText value="unknown">preposition or postposition</caseText>
+			<secTitle>Nominal Phrase Coordination</secTitle>
+			<p contentType="ctComparativeIntro">
+			   <content>Coordinate nominal phrases can normally occur as subjects, objects, indirect objects and objects of </content><case element="pp" attr="pPos">
+			      <caseText value="before">a prepositioin</caseText>
+			      <caseText value="after">a postposition</caseText>
+			      <caseText value="both">an adposition</caseText>
+			      <caseText value="unknown">an adposition</caseText>
 			   </case><content>, just like a regular nominal phrase. English sentence examples with coordinate nominal phrases include: </content>
 			   <langData>Bill ran in the Boston Marathon and the Olympics</langData><content>, </content><langData>My sister or I will be there</langData>
 			   <content>, </content><langData>Neither your sister nor my brother will be there</langData><content>, </content>
 			   <langData>I will come to the rehearsal but not the dinner</langData><content> and </content><langData>I will come to the wedding and/or the reception</langData><content>.</content>
 </p>
-			<p>
+		   <p contentType="ctPracticalIntro">
+		      <content>Coordinate nominal phrases can normally occur as subjects, objects, indirect objects and objects of </content><case element="pp" attr="pPos">
+		         <caseText value="before">a prepositioin</caseText>
+		         <caseText value="after">a postposition</caseText>
+		         <caseText value="both">an adposition</caseText>
+		         <caseText value="unknown">an adposition</caseText>
+		      </case><content>, just like a regular nominal phrase.</content>
+		   </p>
+		   <p>
 				<content/>
 				<langName/>
 				<content> examples with nominal phrase coordination include:</content>
@@ -175,41 +200,66 @@
 	  <section3 id="sCoordPP">
 		  <secTitle>
 		  <case  element="pp" attr="pPos">
-				<caseText value="before">Prepositional phrase coordination</caseText>
-				<caseText value="after">Postpositional phrase coordination</caseText>
-				<caseText value="both">Prepositional and/or postpositional phrase coordination</caseText>
-				<caseText value="unknown">Prepositional and/or postpositional phrase coordination</caseText>
+				<caseText value="before">Prepositional Phrase Coordination</caseText>
+				<caseText value="after">Postpositional Phrase Coordination</caseText>
+				<caseText value="both">Adpositional Phrase Coordination</caseText>
+				<caseText value="unknown">Adpositional Phrase Coordination</caseText>
 			</case>
 </secTitle>
-		  <p>
-			 <content>It is also normally possible to have coordinate </content>          <case  element="pp" attr="pPos">
+		  <p contentType="ctComparativeIntro">
+			 <content>It is also normally possible to have coordinate </content>
+		     <case  element="pp" attr="pPos">
 				<caseText value="before">prepositional</caseText>
 				<caseText value="after">postpositional</caseText>
-				<caseText value="both">prepositional or postpositional</caseText>
-				<caseText value="unknown">prepositional or postpositional</caseText>
+				<caseText value="both">adpositional</caseText>
+				<caseText value="unknown">adpositional</caseText>
 			 </case>
-			 <content> phrases in all the places that a regular such phrase normally occurs. English sentence examples with coordinate prepositional phrases include: </content>
+		     <content> phrases in all the places that a regular </content>
+		     <case  element="pp" attr="pPos">
+		        <caseText value="before">prepositional</caseText>
+		        <caseText value="after">postpositional</caseText>
+		        <caseText value="both">adpositional</caseText>
+		        <caseText value="unknown">adpositional</caseText>
+		     </case>
+		     <content>  phrase normally occurs. English sentence examples with coordinate prepositional phrases include: </content>
 			 <langData>Bill ran through the forest and over the bridge</langData><content>, </content><langData>I will come with you to the rehearsal but not back home</langData>
 			 <content> and </content><langData>I will come either to the wedding or to the reception</langData><content>.</content>
 		  </p>
-		  <p>
+	     <p contentType="ctPracticalIntro">
+	        <content>It is also normally possible to have coordinate </content>
+	        <case  element="pp" attr="pPos">
+	           <caseText value="before">prepositional</caseText>
+	           <caseText value="after">postpositional</caseText>
+	           <caseText value="both">adpositional</caseText>
+	           <caseText value="unknown">adpositional</caseText>
+	        </case>
+	        <content> phrases in all the places that a regular </content>
+	        <case  element="pp" attr="pPos">
+	           <caseText value="before">prepositional</caseText>
+	           <caseText value="after">postpositional</caseText>
+	           <caseText value="both">adpositional</caseText>
+	           <caseText value="unknown">adpositional</caseText>
+	        </case>
+	        <content>  phrase normally occurs.</content>
+	     </p>
+	     <p>
 			  <content/>
 			  <langName/>
-			  <content> examples with </content>
+			  <content> examples with coordinate </content>
 			  <case element="pp" attr="pPos">
 				  <caseText value="before">prepositional</caseText>
 				  <caseText value="after">postpositional</caseText>
 				  <caseText value="both">prepositional or postpositional</caseText>
-				  <caseText value="unknown">prepositional or postpositional</caseText></case>
-			  <content> phrase coordination include:</content>
+				  <caseText value="unknown">adpositional</caseText></case>
+			  <content> phrases include:</content>
 		  </p>
 		  <example>
 			  <interlinear exampleLoc="coord/coordppExample"/>
 		  </example>
 	  </section3>
 	  <section3 id="sCoordAdj">
-			<secTitle>Adjective phrase coordination</secTitle>
-			<p>
+			<secTitle>Adjective Phrase Coordination</secTitle>
+			<p contentType="ctComparativeIntro">
 			   <content>Finally, adjectives or adjective phrases can usually be coordinated, both when they are modifying a noun, as in: </content>
 			   <langData>The black and white dog belongs to my son</langData><content>, </content><langData>My sister wants a bright red or light blue candle</langData>
 			   <content> and </content><langData>That looks like an awfully painful and very dangerous sore on your leg</langData>
@@ -217,7 +267,10 @@
 			   <langData>The sore on your leg is awfully painful and very dangerous</langData><content> and </content>
 			   <langData>This material feels very smooth and silky</langData><content>.</content>
 		  </p>
-			<p>
+	     <p contentType="ctPracticalIntro">
+	        <content>Finally, adjectives or adjective phrases can usually be coordinated, both when they are modifying a noun and when they are acting as the predicate adjective in a copular sentence.</content>
+	     </p>
+	     <p>
 				<content/>
 				<langName/>
 				<content> examples with adjective phrase coordination include:</content>
@@ -229,11 +282,13 @@
 	 </section2>
 	 <section2 id="sCoordList">
 		<secTitle>Lists</secTitle>
-		<p><content>Lists consist of three or more items that are conjoined to form a single nominal phrase. The initial items are normally separated by commas and there is an overt conjunction before the final item in the list, though there are different possibilities. Some English examples of nominal phrases consisting of lists are: </content>
+		<p contentType="ctComparativeIntro"><content>Lists consist of three or more items that are conjoined to form a single nominal phrase. The initial items are normally separated by commas and there is an overt conjunction before the final item in the list, though there are different possibilities. Some English examples of nominal phrases consisting of lists are: </content>
 		   <langData>[John, Bill, Sue and Mary]</langData><content>, </content><langData>[John, Bill, Sue and/or Mary]</langData><content>, </content>
 		   <langData>[John and Bill or Sue and Mary]</langData><content> and </content><langData>[a cat, two dogs and a chicken but not a monkey]</langData><content>.</content>
 		</p>
-
+	    <p contentType="ctPracticalIntro"><content>Lists consist of three or more items that are conjoined to form a single nominal phrase. The initial items are normally separated by commas and there is an overt conjunction before the final item in the list, though there are different possibilities. </content>
+	    </p>
+	    
 		<p>
 		   <content/>
 		   <langName/>
@@ -247,10 +302,12 @@
 
 	 <section2 id="sCoordAppositive">
 		<secTitle>Appositives</secTitle>
-		<p><content>Appositives also form a single nominal phrase.  Appositives normally consist of a name followed by a comma and then a description also followed by a comma, or the order may be reversed. Some English examples include: </content>
+		<p contentType="ctComparativeIntro"><content>Appositives also form a single nominal phrase.  Appositives normally consist of a name followed by a comma and then a description also followed by a comma, or the order may be reversed. Some English examples include: </content>
 		   <langData>[George Washington, the first President of the United States,]</langData><content> and </content><langData>[My brother, James,]</langData><content>.</content>
 		</p>
-		<p>
+	    <p contentType="ctPracticalIntro"><content>Appositives also form a single nominal phrase.  Appositives normally consist of a name followed by a comma and then a description also followed by a comma, or the order may be reversed. </content>
+	    </p>
+	    <p>
 		   <content/>
 		   <langName/>
 		   <content> examples of appositives within a nominal phrase include:</content>
@@ -261,48 +318,6 @@
 	 </section2>
 
 
-	 <section2 id="sCoordComparative">
-		<secTitle>Comparatives</secTitle>
-		<p><content>This section considers comparatives which have two sentences surrounding the comparative word, though the second sentence may be missing the adjective.
-		Shorter comparatives, which are a subtype of copular sentences, were covered in section </content><sectionRef sec="sIPComparatives"/><content>.
-		   Like the shorter comparatives, these compare the qualities or actions of the subjects of the sentences and may have a copular verb or a perception verb or an action verb, along with an adjective that is modified by a degree word or affix. Some English examples are:
-		</content><langData>John is more handsome than Bill is</langData><content>, </content><langData>Sue runs much faster than Mary can run</langData><content>, </content>
-		   <langData>David appears lots taller than Michael does</langData><content>, </content><langData>Mary looks prettier than Julie looks</langData><content> and </content>
-		   <langData>John seems more certain of his answers than Sue seems</langData><content>.</content>
-		</p>
-		<p><content>Some languages do not allow any part of the second sentence to be omitted and instead always have two full sentences being compared.  Also, languages which do not have a separate comparative word meaning </content><gloss><content>‘than’</content></gloss><content> for the shorter comparative constructions will simply have the two sentence parts following one another in this construction.
-		</content> </p>
-		<p><content>In these fuller comparative constructions, </content><langName/><case element="coord" attr="gap">
-		   <caseText value="yes"> allows the adjective to be omitted in the second part, like in the English examples. </caseText>
-		   <caseText value="no"> requires the full sentence to be repeated for the second part, including the adjective. </caseText>
-		</case>
-		   <langName/><case element="ip" attr="comparative">
-			  <caseText value="yes"> has a comparative word meaning ‘than’ which is used in both the shorter comparatives and these fuller comparatives, as shown in the following chart.</caseText>
-			  <caseText value="no"> does not have a comparative word meaning ‘than’, so this type of comparative has the two sentence parts directly following one another.</caseText>
-		   </case>
-		</p>
-
-		<example show="swIPComparativeYes">
-		   <table border="1">
-			  <headerRow>
-				 <headerCol>Comparative Word</headerCol>
-				 <headerCol>Gloss</headerCol>
-			  </headerRow>
-			  <row>
-				 <col exampleLoc="ip/comparativeWordExample"/>
-				 <col ><gloss><content>than</content></gloss></col>
-			  </row>
-		   </table>
-		</example>
-
-		<p>
-		   <content>Examples of these fuller comparative sentences in </content><langName/><content> are:</content>
-		</p>
-		<example>
-		   <interlinear exampleLoc="coord/comparativeSentExample"/>
-		</example>
-
-	 </section2>
   </section1>
 
 
@@ -315,7 +330,40 @@
    <showWhen id="swCoordNoConjNo">
 	  <whenValue element="coord" attr="noConj" value="no"/>
    </showWhen>
-   <showWhen id="swIPComparativeYes">
-	  <whenValue element="ip" attr="comparative" value="yes"/>
-   </showWhen>
+
+      <showWhen id="swCoordConjAttachesProclitic">
+         <whenValue element="coord/proclitic" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="coord/enclitic" attr="checked" value="no"/>
+       </showWhen>  
+   <showWhen id="swCoordConjAttachesEnclitic">
+      <whenValue element="coord/proclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swCoordConjAttachesClitic">
+      <whenValue element="coord/proclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swCoordConjAttachesNotOther">
+      <whenValue element="coord/attachesOther" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swCoordConjAttachesOtherOnly">
+      <whenValue element="coord/proclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="coord/attachesOther" attr="checked" value="yes"/>
+      </showWhen>  
+   <showWhen id="swCoordConjAttachesPosAndOther">
+      <whenValue element="coord/proclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="coord/attachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="coord/enclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="coord/attachesOther" attr="checked" value="yes"/>
+   </showWhen>  
+   
 </portion>

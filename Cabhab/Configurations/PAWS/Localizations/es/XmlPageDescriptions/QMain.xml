@@ -2,39 +2,39 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QMain" count="1/9">
-	<title>Las preguntas</title>
-	<introduction id="QMainIntroNotPractical" show="swNotPractical">This section considers the main clause and embedded clause varieties of Yes/No questions and content questions.  We will begin with Yes/No questions.
+    <title>Las preguntas</title>
+    <introduction id="QMainIntroNotPractical" show="swNotPractical">This section considers the main clause and embedded clause varieties of Yes/No questions and content questions.  We will begin with Yes/No questions.
 <br/>
-		<br/>
+        <br/>
  In English, main clause Yes/No questions are formed by moving an auxiliary verb in front of the subject.  Other languages use a Yes/No question marker or special complementizer instead of the fronted auxiliary.  This is the case in embedded Yes/No questions in English; no auxiliary fronting is allowed but <example>whether</example> or <example>if</example> fills the complementizer position.<br/>
-		<br/>
+        <br/>
 As discussed in <section number="10">Complement Clauses</section>, X-bar theory takes the complementizer to be the head of the phrase, so a CP sits on top of the IP for questions even in main clauses.  Sample trees for main clause and embedded Yes/No questions in English are shown here:
 <tree img="TreeDescriptions/PawsMainYNQues.png"/>
-		<br/>
-		<tree img="TreeDescriptions/PawsEmbYNQues.png"/>
-		<br/>
-		<help href="Help/Cbgbtext.doc#CPYesNoQuestions">Click here for more information about the CP phrase structure of Yes/No questions.</help>
-	   <br/><br/>Since a language may act differently  in Yes/No questions in the main clause versus subordinate clauses, each type will be discussed separately.
-	</introduction>
-   <introduction id="QMainIntroPractical" show="swPractical">Hay dos tipos de preguntas: las que requieren una respuesta de “sí” o “no” y las de respuesta abierta.  En esta sección se consideran las preguntas de la cláusula principal y las variedades subordinadas de ambos tipos de preguntas, comenzando con las preguntas de respuesta “sí/no”.
-		<br/>
-		<br/>
-		En español no hay ningún indicador especial ni ningún cambio del orden de las palabras para las preguntas de respuesta sí/no de la cláusula principal.
-		Hay simplemente un cambio en la entonación. Otras lenguas pueden utilizar indicadores y/o cambios especiales del orden de las palabras.
-		En las preguntas de respuesta sí/no de la cláusula principal en inglés, un verbo auxiliar desplaza delante del sujeto. Otras lenguas utilizan un indicador o un complementizador especial en vez del auxiliar desplazado a la izquierda. Éste es el caso en preguntas de respuesta sí/no en las cláusulas subordinadas en inglés; no se permite el desplazamiento del auxiliar pero <example>whether ‘sea que’</example> o <example>if ‘si’</example> ocupa la posición del complementizador.
-		<br/> <br/>Puesto que las lenguas pueden funcionar diferentemente en preguntas de respuesta sí/no en la cláusula principal contra en la cláusula subordinada, cada uno será analizado por separado.
-	</introduction>
-	<form section="q" transparent="yes">
-		<br/>
-		<buttons>
-			<button id="QMainBack" value="Back" goto="Contents.htm"/>
-			<button id="QMainNext" value="Next" goto="QMainYN.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-	</showWhen>
-	<showWhen id="swPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="False"/>
-	</showWhen>
+        <br/>
+        <tree img="TreeDescriptions/PawsEmbYNQues.png"/>
+        <br/>
+        <help href="Help/Cbgbtext.doc#CPYesNoQuestions">Click here for more information about the CP phrase structure of Yes/No questions.</help>
+       <br/><br/>Since a language may act differently  in Yes/No questions in the main clause versus subordinate clauses, each type will be discussed separately.
+    </introduction>
+   <introduction id="QMainIntroPractical" show="swPractical">Hay dos tipos de preguntas: las que requieren una respuesta de “sí” o “no” (afirmativa o negativa) y las de respuesta abierta (que se contestan con información).  En esta sección se consideran las preguntas como cláusula principal y las variedades de cláusulas subordinadas de ambos tipos de preguntas, comenzando con las preguntas de respuesta “sí/no”. 
+        <br/>
+        <br/>
+        En español no hay ningún indicador especial ni ningún cambio del orden de las palabras para las preguntas de respuesta sí/no como cláusula principal. 
+        Hay simplemente un cambio en la entonación. Otras lenguas pueden utilizar indicadores y/o cambios especiales del orden de las palabras. 
+        En las preguntas de respuesta sí/no como cláusula principal en inglés, un verbo auxiliar desplaza hacia la izquierda delante del sujeto. Otras lenguas utilizan un indicador o un complementador especial en vez de movimiento del auxiliar. Este es el caso en preguntas de respuesta sí/no en las cláusulas subordinadas en inglés; no se permite el desplazamiento del auxiliar pero <example>whether ‘sea que'</example> o <example>if ‘si'</example> ocupa la posición del complementador.
+        <br/> <br/>Puesto que las preguntas de respuesta sí/no como cláusula principal contra como cláusula subordinada se pueden formar en una manera distinta, cada uno se analiza por separado.
+    </introduction>
+    <form section="q" transparent="yes">
+        <br/>
+        <buttons>
+            <button id="QMainBack" value="Back" goto="Contents.htm"/>
+            <button id="QMainNext" value="Next" goto="QMainYN.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+    <showWhen id="swPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="False"/>
+    </showWhen>
 </page>

@@ -1,113 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="NPAdjP" count="1/1">
-	<title level="2">Las frases nominales - Las frases adjetivales y los participios como modificadores</title>
-	<introduction>Las frases adjetivales fueron discutidas anteriormente en  <section number="4">Las frases adjetivales</section>.  Las frases adjetivales se presentan cerca del sustantivo.  Algunas frases nominales en inglés con adjetivos son:</introduction>
+	<title level="2">Las frases nominales - Las frases adjetivales como modificadores</title>
+	<introduction>Las frases adjetivales fueron analizadas anteriormente en  <section number="4">Las frases adjetivales</section>.  Las frases adjetivales se presentan cerca del sustantivo.  Algunas frases nominales en inglés con adjetivos son:</introduction>
 	<EnglishExample>
-	   <exItem label="1.">just those very few old, dirty books ‘solo los muy pocos libros viejos y sucios’</exItem>
-	   <exItem label="2.">all the boy’s many black dogs ‘todos los muchos perros negros del muchacho’</exItem>
-	   <exItem label="3.">only the first one hundred very eager young boys ‘solamente los primeros cien muchachos jovenes que están muy impacientes’</exItem>
+	   <exItem label="1.">just those very few old, dirty books ‘solo los muy pocos libros viejos y sucios'</exItem>
+	   <exItem label="2.">the boy's many black dogs ‘los muchos perros negros del muchacho'</exItem>
+	   <exItem label="3.">all the clean dishes ‘todos los platos limpios'</exItem>
+	   <exItem label="4.">only the first ten very eager young boys ‘solamente los primeros diez muchachos jovenes que están muy impacientes'</exItem>
 	</EnglishExample>
-   <introduction>Como se puede ver en los ejemplos en inglés, todos los adjetivos se presentan antes del sustantivo, y, al contrario de los otros modificadores, se permite más de una frase adjetival. <span id="NPAdjPRecurringIntro" show="swNotPractical">  This will be handled in the syntactic parser by a recursive rule.</span>  En español, los adjetivos se presentan después del sustantivo y se permite solamente una frase adjetival, a menos que los adjetivos son coordinados o en una cláusula relativa.</introduction>
+   <introduction>Como se puede ver en los ejemplos en inglés, todos los adjetivos se presentan antes del sustantivo, y, al contrario de los otros modificadores, se permiten más de una frase adjetival. <span id="NPAdjPRecurringIntro" show="swNotPractical">  This will be handled in the syntactic parser by a recursive rule.</span>  En español, los adjetivos se presentan después del sustantivo y solamente se permite una frase adjetival, a menos que los adjetivos son coordinados o en una cláusula relativa.</introduction>
 	<form section="np">
-		<prompt>Escriba algunos ejemplos de su lengua aquí:</prompt>
+		<prompt>Escriba algunos ejemplos de las frases nominales con modificadores adjetivales en su lengua aquí:</prompt>
 		<textBox id="NPAdjpExample" dataItem="adjpExample"/>
 		<br/>
 		<br/>
-		<radioGroup>
-			<groupName dataItem="adjpPos" default="unknown" position="yesSpec">RNPAdjPPos</groupName>
-			<prompt>¿Dónde se presentan las frases del adjetivo con respecto al sustantivo?</prompt>
-			<radio id="NPAdjPPosBefore" dataValue="before">Antes del sustantivo</radio>
-			<radio id="NPAdjPPosAfter" dataValue="after">Después del sustantivo</radio>
-			<radio id="NPAdjPPosEitherSide" dataValue="either">De cualquier lado</radio>
-			<radioGroup id="NPAdjPPosEitherSideTable" show="swNPAdjPPosEitherSide">
-				<groupName dataItem="adjpEither" default="unrestricted">RNPAdjPPosEitherSideEither</groupName>
-				<prompt>¿Pueden presentarse todas las frases del adjetivo de cualquier lado del sustantivo?</prompt>
-				<radio id="NPAdjPPosEitherSideEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="NPAdjPPosEitherSideEitherRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
-			</radioGroup>
-		</radioGroup>
-	   <instruction id="NPAdjPPosEitherSideEitherRestrictedInstruction" show="swNPAdjPPosEitherSideEitherRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
+	   <checkboxGroup>
+	      <prompt>¿Dónde se presentan las frases adjetivales con respecto al sustantivo que las modifican?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+	      <checkbox id="NPAdjPPosBefore" dataItem="adjBefore">Antes del sustantivo</checkbox>
+	      <checkbox id="NPAdjPPosAfter" dataItem="adjAfter">Después del sustantivo</checkbox>
+	      <checkbox id="NPAdjPPosBoth" dataItem="adjBoth">En ambos lados en la misma frase nominal</checkbox>
+	      <checkbox id="NPAdjPPosOther" dataItem="adjPosOther">En mi lengua, las frases adjetivales pueden presentarse: <textBox  id="NPAdjPPosOtherContent" dataItem="adjPosOther" rows="2"/></checkbox>
+	   </checkboxGroup>
+	   <prompt id="NPAdjPPosNoCheckPrompt" show="swNPAdjPPosNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan las frases adjetivales con respecto al sustantivo que las modifican.</prompt>
+	   <instruction id="NPAdjPPosEitherSideRestrictedInstruction" show="swNPAdjPPosEitherSideRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
 	   <br/>
-	   <radioGroup>
-		  <groupName dataItem="adjpAgree" default="no">RNPAdjPAgree</groupName>
-		  <prompt>¿Hay un indicador en los adjetivos que concuerda con el sustantivo que modifican?</prompt>
-		  <radio id="NPAdjPAgreeNo" dataValue="no">No</radio>
-		  <radio id="NPAdjPAgreeYes" dataValue="yes">Sí</radio>
-	   </radioGroup>
-	   <br/>
-	   <instruction id="NPAdjPNoAgreementInstruction" show="swNPAgreementNone">You said your language does not mark any agreement in <section number="5.2">Las frases nominales - La concordancia y el caso</section>, so it is unclear what agreement marking adjectives may have.  Return to <section number="5.2">Las frases nominales - La concordancia y el caso</section> and change your answer appropriately if you do have agreement marking.  If not, change your answer here to “no”.</instruction>
 	   <instruction id="NPAdjPNumberAgreementInstruction" show="swNPNumberAgreement">
-		  To handle the number agreement, in the lexicon:
-		  <ul>
-			 <li>Mark the adjectives (or appropriate affixes) that only go with singular nouns with the feature <feature>singular</feature>.</li>
-			 <li>Mark the adjectives (or appropriate affixes) that only go with plural nouns with the feature <feature>plural</feature>.</li>
-			 <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate adjectives, if any.
-			 </li>
-		  </ul>
+	      To handle the number agreement, in the lexicon:
+	      <ul>
+	         <li>Mark the adjectives (or appropriate affixes) that only go with singular nouns with the feature <feature>singular</feature>.</li>
+	         <li>Mark the adjectives (or appropriate affixes) that only go with plural nouns with the feature <feature>plural</feature>.</li>
+	         <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate adjectives, if any.
+	         </li>
+	      </ul>
 	   </instruction>
 	   <instruction id="NPAdjPAgreementAnimacyInstruction" show="swNPAgreementAnimacyYes">
-		  To handle animacy agreement:
-		  <ul>
-			 <li>Mark the adjectives (or the appropriate affixes) that can only go with animate nouns with the feature <feature>animate</feature>.</li>
-			 <li>Mark the adjectives (or the appropriate affixes) that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
-			 <li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
-		  </ul>
+	      To handle animacy agreement:
+	      <ul>
+	         <li>Mark the adjectives (or the appropriate affixes) that can only go with animate nouns with the feature <feature>animate</feature>.</li>
+	         <li>Mark the adjectives (or the appropriate affixes) that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
+	         <li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
+	      </ul>
 	   </instruction>
 	   <instruction id="NPAdjPAgreementGenderInstruction" show="swNPAgreementGenderYes">
-		  Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any adjectives (or the appropriate affixes) that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.</instruction>
+	      Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any adjectives (or the appropriate affixes) that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.</instruction>
 	   <instruction id="NPQPAgreementClassInstruction" show="swNPAgreementClassYes">
-		  To handle class marking and agreement:
-		  <ul>
-			 <li>It is most likely the case that the same affixes that mark the class number or type on nouns are also used on adjectives.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">La tipología - Los clasificadores</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
-			 <li>Any adjectives which can only appear with a certain class, yet do not have an affix which marks the class, will require marking of the class feature on the particular lexical item in the lexicon.   Mark those elements with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">La tipología - Los clasificadores</section>.</li>
-		  </ul>
+	      To handle class marking and agreement:
+	      <ul>
+	         <li>It is most likely the case that the same affixes that mark the class number or type on nouns are also used on adjectives.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">La tipología - Los clasificadores</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
+	         <li>Any adjectives which can only appear with a certain class, yet do not have an affix which marks the class, will require marking of the class feature on the particular lexical item in the lexicon.   Mark those elements with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">La tipología - Los clasificadores</section>.</li>
+	      </ul>
 	   </instruction>
 	   <br/>
 	   <br/>
-		<introduction>Los participios o las frases del participio pueden también funcionar al igual que adjetivos en la modificación de un sustantivo en muchas lenguas.  Algunos ejemplos en inglés con el participio o la frase del participio entre corchetes son: </introduction>
+	   <introduction>Los participios o las frases del <technicalTermRef term="ttParticiple"/> pueden también funcionar como adjetivos modificando a un sustantivo.  Algunos ejemplos en inglés con el participio o la frase del participio entre corchetes son: </introduction>
 		<EnglishExample>
-		   <exItem label="1.">the bright, [shining] sun ‘el brillante, [brillando] sol’</exItem>
-		   <exItem label="2.">my [crying] child ‘mi niño, [gritando]’</exItem>
-		   <exItem label="3.">the books [loved by millions] ‘los libros [amados por millones]’</exItem>
+		   <exItem label="1.">the bright, [shining] sun ‘el brillante, [brillando] sol'</exItem>
+		   <exItem label="2.">my [crying] child ‘mi niño, [gritando]'</exItem>
+		   <exItem label="3.">the books [loved by millions] ‘los libros [amados por millones]'</exItem>
 		</EnglishExample>
-		<prompt>Escriba ejemplos similares de su lengua aquí:</prompt>
+	   <introduction>Algunas lenguas no pueden utilizar un participio para expresar significados similares, pero en su lugar, utilice una cláusula relativa.</introduction>
+	   <prompt><br/>Escriba ejemplos similares en su lengua aquí:</prompt>
 		<textBox id="NPAdjPPartExample" dataItem="partExample"/>
 		<br/>
-	   <instruction id="NPAdjPInstruction">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Las oraciones básicas - Las características de inflexión</section>
+	   <radioGroup>
+	      <groupName dataItem="adjpPart" default="no" >RNPAdjPPart</groupName>
+	      <prompt>¿Su lengua permite participios o frases de participio que funcionan como adjetivos modificando a un sustantivo?</prompt>
+	      <radio id="NPAdjPPartYes" dataValue="yes">Sí</radio>
+	      <radio id="NPAdjPPartNo" dataValue="no">No, se utiliza una cláusula relativa</radio>
+	      <radio id="NPAdjPPartOther" dataValue="other">No, mi lengua utiliza otros medios que un participio o una cláusula relativa para expresar significados similares</radio>
+	   </radioGroup>
+	   <prompt id="NPAdjPPartRelClPrompt" show="swNPAdjPPartNo">La estructura y posición de las cláusulas relativas se cubren en <section number="12">Las cláusulas relativas</section>.</prompt>
+	   
+	   <instruction id="NPAdjPInstruction">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Las oraciones básicas - La flexión verbal</section>
 		</instruction>
-		<br/>
-	   <introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Las lenguas que cambian el caso del sustantivo principal cuando un poseedor está presente normalmente también cambian los casos de los adjetivos correspondientes para concordar. Algunas lenguas de este tipo también cambian el caso del sustantivo principal cuando solamente un modificar adjetival está presente, incluso cuando no hay poseedor.
+		<br/><br/>
+	   <introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Las lenguas que cambian el caso del sustantivo principal cuando un posesivo está presente normalmente también cambian los casos de los adjetivos correspondientes para concordar. Algunas lenguas de este tipo también cambian el caso del sustantivo principal cuando solamente un modificar adjetival está presente, incluso cuando no hay posesivo.  
 <br/>
 			<br/>
-			Además, algunas lenguas de este último tipo tienen un afijo que indica el caso de genitivo (o el caso normal de poseedores) en el sustantivo principal para indicar que debe haber un adjetivo o un poseedor en esa frase nominal. En esta situación, el adjetivo y/o el poseedor también estarán en caso de genitivo (o el caso normal de poseedores), aunque el indicador de caso no será evidente en el modificador más adelante en la frase nominal. </introduction>
+	      Además, algunas lenguas de este último tipo tienen un afijo que indica el caso genitivo (o el caso normal de posesivos) en el sustantivo principal para indicar que debe haber un adjetivo o un posesivo en esa frase nominal. En esta situación, el adjetivo y/o el posesivo también tienen en caso genitivo (o el caso normal de posesivos), aunque el indicador de caso no está explícito en el modificador más adelante en la frase nominal. </introduction>
 <br/>
 		<radioGroup id="NPAdjPCaseChangeTable" show="swNPPossNounCaseChangeYes">
 			<groupName dataItem="adjpCaseChange" default="no">RNPAdjPCaseChange</groupName>
 			<prompt>
-				¿La presencia de un adjetivo cambia el indicador del caso en el sustantivo principal para concordar con el caso normal de un poseedor, con o sin la presencia del poseedor también? </prompt>
-			<radio id="NPAdjPCaseChangeNo" dataValue="no">No, el caso del sustantivo principal cambia solamente cuando un poseedor está presente, aunque en esa situación un adjetivo puede/debe que también tener este caso</radio>
-			<radio id="NPAdjPCaseChangeYes" dataValue="yes">Sí, el caso del sustantivo principal cambia para concordar con el caso normal de un poseedor incluso si apenas un modificador adjetival está presente</radio>
+				¿Cuando un adjetivo se presenta, cambia el indicador del caso en el sustantivo principal para concordar con el caso normal de un posesivo, con o sin un posesivo presente también? </prompt>
+			<radio id="NPAdjPCaseChangeNo" dataValue="no">No, el caso del sustantivo principal cambia solamente cuando un posesivo está presente, aunque en esa situación un adjetivo puede/debe que también tener este caso</radio>
+			<radio id="NPAdjPCaseChangeYes" dataValue="yes">Sí, el caso del sustantivo principal cambia para concordar con el caso normal de un posesivo incluso si apenas un modificador adjetival está presente</radio>
 			<radioGroup id="NPAdjPCaseAffixTable" show="swNPAdjPCaseChangeYes">
 				<groupName dataItem="adjpCaseAffix" default="no">RNPAdjPCaseAffix</groupName>
 				<prompt>
 					¿Existe un afijo de caso que indica el caso <span id="NPAdjPCaseAffixGenPrompt" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitPrompt" show="swNPCaseSplitNotGen">o </span>
 					<span id="NPAdjPCaseAffixErgPrompt" show="swNPPossCaseErg">ergativo </span>
-					<span id="NPAdjPCaseAffixAbsPrompt" show="swNPPossCaseAbs">absolutivo </span>(el caso normal de poseedores) en el sustantivo principal que, cuando presente, indica que debe haber un adjetivo o un poseedor en esa frase nominal?</prompt>
+					<span id="NPAdjPCaseAffixAbsPrompt" show="swNPPossCaseAbs">absolutivo </span>(el caso normal de posesivos) en el sustantivo principal que, cuando presente, indica que debe haber un adjetivo o un posesivo en esa frase nominal?</prompt>
 				<radio id="NPAdjPCaseAffixNo" dataValue="no">No, el indicador de caso <span id="NPAdjPCaseAffixGenNoSpan" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitNoSpan" show="swNPCaseSplitNotGen">o </span>
 					<span id="NPAdjPCaseAffixErgNoSpan" show="swNPPossCaseErg">ergativo </span>
 					<span id="NPAdjPCaseAffixAbsNoSpan" show="swNPPossCaseAbs">absolutivo </span>no se indica con un afijo en esta manera</radio>
-				<radio id="NPAdjPCaseAffixYesPrefix" dataValue="yesPrefix">Sí, un prefijo: cuando el prefijo abierto del caso <span id="NPAdjPCaseAffixGenYesPrefixSpan" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitYesPrefixSpan" show="swNPCaseSplitNotGen">o </span>
+			   <radio id="NPAdjPCaseAffixYesPrefix" dataValue="yesPrefix">Sí, un prefijo: cuando el prefijo explícito de caso <span id="NPAdjPCaseAffixGenYesPrefixSpan" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitYesPrefixSpan" show="swNPCaseSplitNotGen">o </span>
 					<span id="NPAdjPCaseAffixErgYesPrefixSpan" show="swNPPossCaseErg">ergativo </span>
-					<span id="NPAdjPCaseAffixAbsYesPrefixSpan" show="swNPPossCaseAbs">absolutivo </span>está presente en el sustantivo principal, indica que un modificador adjetival y/o un poseedor deben estar presentes en la frase. (Si el adjetivo se indica con este prefijo <span id="NPAdjPCaseAffixGenYesPrefixSpan1" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitYesPrefixSpan1" show="swNPCaseSplitNotGen">or</span>
+			      <span id="NPAdjPCaseAffixAbsYesPrefixSpan" show="swNPPossCaseAbs">absolutivo </span>está presente en el sustantivo principal, indica que un modificador adjetival y/o un posesivo debe presentarse en la frase. Si el adjetivo está marcado con este prefijo <span id="NPAdjPCaseAffixGenYesPrefixSpan1" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitYesPrefixSpan1" show="swNPCaseSplitNotGen">or</span>
 					<span id="NPAdjPCaseAffixErgYesPrefixSpan1" show="swNPPossCaseErg">ergativo </span>
-					<span id="NPAdjPCaseAffixAbsYesPrefixSpan1" show="swNPPossCaseAbs">absolutivo </span>así que otro adjetivo y/o un poseedor debe también estar presente.) </radio>
-				<radio id="NPAdjPCaseAffixYesSuffix" dataValue="yesSuffix">Sí, un sufijo: cuando el sufijo abierto del caso <span id="NPAdjPCaseAffixGenYesSuffixSpan" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitYesSuffixSpan" show="swNPCaseSplitNotGen">o </span>
+			      <span id="NPAdjPCaseAffixAbsYesPrefixSpan1" show="swNPPossCaseAbs">absolutivo </span>entonces otro adjetivo y/o un posesivo también debe presentarse.)</radio>
+			   <radio id="NPAdjPCaseAffixYesSuffix" dataValue="yesSuffix">Sí, un sufijo: cuando el sufijo explícito de caso <span id="NPAdjPCaseAffixGenYesSuffixSpan" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitYesSuffixSpan" show="swNPCaseSplitNotGen">o </span>
 					<span id="NPAdjPCaseAffixErgYesSuffixSpan" show="swNPPossCaseErg">ergativo </span>
-					<span id="NPAdjPCaseAffixAbsYesSuffixSpan" show="swNPPossCaseAbs">absolutivo </span>está presente en el sustantivo principal, indica que un modificador adjetival y/o un poseedor deben estar presentes en la frase. (Si el adjetivo se indica con este sufijo <span id="NPAdjPCaseAffixGenYesSuffixSpan1" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitYesSuffixSpan1" show="swNPCaseSplitNotGen">o </span>
+			      <span id="NPAdjPCaseAffixAbsYesSuffixSpan" show="swNPPossCaseAbs">absolutivo </span>está presente en el sustantivo principal, indica que un modificador adjetival y/o un posesivo debe presentarse en la frase. Si el adjetivo está marcado con este sufijo <span id="NPAdjPCaseAffixGenYesSuffixSpan1" show="swNPPossCaseGen">genitivo </span><span id="NPAdjPCaseAffixSplitYesSuffixSpan1" show="swNPCaseSplitNotGen">o </span>
 					<span id="NPAdjPCaseAffixErgYesSuffixSpan1" show="swNPPossCaseErg">ergativo </span>
-					<span id="NPAdjPCaseAffixAbsYesSuffixSpan1" show="swNPPossCaseAbs">absolutivo </span>así que otro adjetivo y/o un poseedor debe también estar presente.) </radio>
+			      <span id="NPAdjPCaseAffixAbsYesSuffixSpan1" show="swNPPossCaseAbs">absolutivo </span>entonces otro adjetivo y/o un posesivo también debe presentarse. </radio>
 			</radioGroup>
 		</radioGroup>
 
@@ -140,111 +140,113 @@
 			<button id="NPAdjPNext" value="Next" goto="NPContents.htm"/>
 		</buttons>
 	</form>
-	<showWhen id="swNPCaseSplitNotGen">
-		<whenValue element="np" attr="case" value="split"></whenValue>
-		<and/><not/>
-		<whenValue element="np" attr="possCaseErg" value="genitive"/>
-	</showWhen>
-	<showWhen id="swNPAdjPCaseChangeYes">
-		<not/>
-		<whenValue element="np" attr="case" value="none"/>
-<and/>
-		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
-<and/>
-		<whenRadio button="NPAdjPCaseChangeYes"/>
-	</showWhen>
-	<showWhen id="swNPAdjPCaseAffixYesPrefix">
-		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
-<and/>
-		<whenRadio button="NPAdjPCaseAffixYesPrefix"/>
-		<and/>
-		<whenRadio button="NPAdjPCaseChangeYes"/>
-	</showWhen>
-	<showWhen id="swNPAdjPCaseAffixYesSuffix">
-		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
-<and/>
-		<whenRadio button="NPAdjPCaseAffixYesSuffix"/>
-		<and/>
-		<whenRadio button="NPAdjPCaseChangeYes"/>
-	</showWhen>
-	<showWhen id="swNPPossNounCaseChangeYes">
-		<not/>
-		<whenValue element="np" attr="case" value="none"/>
-<and/>
-		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
-	</showWhen>
-	<showWhen id="swNPPossCaseGen">
-		<openParen/>
-		<whenValue element="np" attr="possCaseErg" value="genitive"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
-		<closeParen/>
-		<or/>
-			<whenValue element="np" attr="case" value="nominative"/>
-		<or/>
-			<whenValue element="np" attr="case" value="split"/>
-	</showWhen>
-	<showWhen id="swNPPossCaseErg">
-	<openParen/>
-		<whenValue element="np" attr="possCaseErg" value="ergative"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
-		<closeParen/>
-		<or/>
-		<openParen/>
-		<whenValue element="np" attr="possCaseErg" value="ergative"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swNPPossCaseAbs">
-	<openParen/>
-	<whenValue element="np" attr="possCaseErg" value="absolutive"/>
-		<and/>
-		<whenValue element="np" attr="case" value="ergative"/>
-	<closeParen/>
-		<or/>
-	<openParen/>
-	<whenValue element="np" attr="possCaseErg" value="absolutive"/>
-		<and/>
-		<whenValue element="np" attr="case" value="split"/>
-	<closeParen/>
-	</showWhen>
-	<showWhen id="swNPAdjPPosEitherSide">
-		<whenRadio button="NPAdjPPosEitherSide"/>
-	</showWhen>
-	<showWhen id="swNPAdjPPosEitherSideEitherRestricted">
-		<whenRadio button="NPAdjPPosEitherSideEitherRestricted"/>
-		<and/>
-		<whenRadio button="NPAdjPPosEitherSide"/>
-	</showWhen>
-	<showWhen id="swNPAgreementNone">
-		<whenRadio button="NPAdjPAgreeYes"/>
-		<and/>
-		<whenValue element="np" attr="agreeNumber" value="no"/>
-		<and/>
-		<whenValue element="np" attr="agreeOther" value="no"/>
-	</showWhen>
-	<showWhen id="swNPNumberAgreement">
-		<whenRadio button="NPAdjPAgreeYes"/>
-		<and/>
-		<whenValue element="np" attr="agreeNumber" value="yes"/>
-	</showWhen>
-	<showWhen id="swNPAgreementAnimacyYes">
-		<whenRadio button="NPAdjPAgreeYes"/>
-		<and/>
-		<whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
-	</showWhen>
-	<showWhen id="swNPAgreementGenderYes">
-		<whenRadio button="NPAdjPAgreeYes"/>
-		<and/>
-		<whenValue element="np" attr="agreeOther" value="yesGender"/>
-	</showWhen>
-	<showWhen id="swNPAgreementClassYes">
-		<whenRadio button="NPAdjPAgreeYes"/>
-		<and/>
-		<whenValue element="np" attr="agreeOther" value="yesClass"/>
-	</showWhen>
-	<showWhen id="swNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-	</showWhen></page>
+   <showWhen id="swNPCaseSplitNotGen">
+      <whenValue element="typology" attr="case" value="split"></whenValue>
+      <and/><not/>
+      <whenValue element="np" attr="possCaseErg" value="genitive"/>
+   </showWhen>
+   <showWhen id="swNPAdjPCaseChangeYes">
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="np" attr="possNounCaseChange" value="yes"/>
+      <and/>
+      <whenRadio button="NPAdjPCaseChangeYes"/>
+   </showWhen>
+   <showWhen id="swNPAdjPCaseAffixYesPrefix">
+      <whenValue element="np" attr="possNounCaseChange" value="yes"/>
+      <and/>
+      <whenRadio button="NPAdjPCaseAffixYesPrefix"/>
+      <and/>
+      <whenRadio button="NPAdjPCaseChangeYes"/>
+   </showWhen>
+   <showWhen id="swNPAdjPCaseAffixYesSuffix">
+      <whenValue element="np" attr="possNounCaseChange" value="yes"/>
+      <and/>
+      <whenRadio button="NPAdjPCaseAffixYesSuffix"/>
+      <and/>
+      <whenRadio button="NPAdjPCaseChangeYes"/>
+   </showWhen>
+   <showWhen id="swNPPossNounCaseChangeYes">
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="np" attr="possNounCaseChange" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPPossCaseGen">
+      <openParen/>
+      <whenValue element="np" attr="possCaseErg" value="genitive"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <closeParen/>
+      <or/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPPossCaseErg">
+      <openParen/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <closeParen/>
+      <or/>
+      <openParen/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNPPossCaseAbs">
+      <openParen/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <closeParen/>
+      <or/>
+      <openParen/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNPAdjPPosEitherSideRestricted">
+      <whenCheckbox button="NPAdjPPosBefore"/>
+      <and/>
+      <whenCheckbox button="NPAdjPPosAfter"/>
+      <or/>
+      <whenCheckbox button="NPAdjPPosBoth"/>
+   </showWhen>
+   <showWhen id="swNPAdjPPosNoCheck">
+      <not/>
+      <whenCheckbox button="NPAdjPPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NPAdjPPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NPAdjPPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPAdjPPosOther"/>
+   </showWhen>
+   <showWhen id="swNPNumberAgreement">
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgreementAnimacyYes">
+      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgreementGenderYes">
+      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgreementClassYes">
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNotPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
+   <showWhen id="swNPAdjPPartNo">
+      <whenRadio button="NPAdjPPartNo"/>
+   </showWhen>
+   <showWhen id="swNPAdjPPartYes">
+      <whenRadio button="NPAdjPPartYes"/>
+   </showWhen>
+   &TechnicalTerms; 
+</page>

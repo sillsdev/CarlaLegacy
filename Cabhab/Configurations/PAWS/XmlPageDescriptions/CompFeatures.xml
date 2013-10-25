@@ -1,143 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="CompFeatures" count="2/4">
-	<title level="2">Complement Clauses - Examples and Features</title>
-	<introduction>The various types of complement clauses <span id="CompFeatSpanNotPractical" show="swNotPractical">shown in the trees </span>represent the argument structure of the verb<span id="CompFeatIntroSpanNotPractical" show="swNotPractical"> as well as its syntactic subcategorization</span>.  Therefore, there is some degree of cross-linguistic similarity in the types of clausal complements the <span id="CompFeaturesIntroSpan2NotPractical" show="swNotPractical">verbs subcategorize for.</span><span id="CompFeaturesIntroSpan2Practical" show="swPractical">particular verbs select.</span>  In each case presented below, you may also be able to think of adjectives which take that type of complement when they are acting as the predicate of the sentence.  Some adverbs also select similar complements to form adverbial clauses (see <section number="13.">Adverbial Clauses</section>).
+    <title level="2">Complement Clauses - Examples and Features</title>
+    <introduction>The various types of complement clauses <span id="CompFeatSpanNotPractical" show="swNotPractical">shown in the trees  represent the semantic argument structure of the verb as well as its syntactic subcategorization</span><span id="CompFeatSpanPractical" show="swPractical"> a particular verb allows is determined by <technicalTermRef term="ttSemantics"/> as well as <technicalTermRef term="ttSyntax"/></span>.  Therefore, there is some degree of cross-linguistic similarity in the types of clausal <technicalTermRef term="ttComplements"/> the <span id="CompFeaturesIntroSpan2NotPractical" show="swNotPractical">verbs subcategorize for.</span><span id="CompFeaturesIntroSpan2Practical" show="swPractical">particular verbs select.</span>  In each case presented below, you may also be able to think of adjectives which take that type of complement when they are acting as <technicalTermRef term="ttPredicates"/>.  Some adverbs also select similar complements to form adverbial clauses, as will be seen in <section number="13.">Adverbial Clauses</section>.
+       <br/><br/>
+       Even if your language does not make as many distinctions in the types of complement clauses as asked for here, please key examples in each box using verbs that are as close as possible in meaning to the examples given.  This will document how your language expresses a full range of complement clauses. 
 </introduction>
-	<form section="comp">
-	   <introduction>First, consider verbs which take only a finite complement clause with or without a complementizer, like:</introduction>
-		<EnglishExample>
-			<exItem label="1.">I believe (that) Jill is my friend.</exItem>
-			<exItem label="2.">Jill insists (that) she is my friend.</exItem>
-			<exItem label="3.">I know (that) he likes me.</exItem>
-		</EnglishExample>
-		<prompt>Think of any similar examples from your language and key them here:</prompt>
-		<textBox id="CompFiniteExample" dataItem="finiteExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompMakeInstruction">In the lexicon, add the feature <feature>makeC</feature> to the complementizer(s) so it will show up in the correct position in the tree structure.  (For a word like English <example>that</example>, which can be both a complementizer <category>C</category> and a demonstrative <category>Dem</category>, you will need to have two separate lexical entries.)
-<br/>
-			<br/>
-Add the features <feature>sentential embedded_finite</feature> to the lexical entries for the main verbs in the examples.  If one or more of your verbs require the complementizer to be present, also add the feature <feature>embedded_CP</feature> to those entries.</instruction>
-		<br/>
-	   <introduction>Next, consider verbs which take either a finite complement clause with or without a complementizer or a nonfinite sentential complement, like:</introduction>
-		<EnglishExample>
-			<exItem label="4.">I expect that Joe will come to the party.</exItem>
-			<exItem label="5.">I expect Joe to come to the party.</exItem>
-		</EnglishExample>
-		<prompt>Think of any similar examples from your language and key them here:</prompt>
-		<textBox id="CompFiniteOrNonfiniteExample" dataItem="finiteOrNonfiniteExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompSententialEmbeddedInstruction">Add the features <feature>sentential embedded_-question</feature> to the lexical entries for the main verbs in the examples.</instruction>
-		<br/>
-	   <introduction>Now consider verbs which take a direct object as well as either a finite or nonfinite complement, like:</introduction>
-		<EnglishExample>
-			<exItem label="6.">I will persuade Joe that he should come to the party.</exItem>
-			<exItem label="7.">I will persuade Joe to come to the party.</exItem>
-		</EnglishExample>
-		<prompt>Think of any similar examples from your language and key them here:</prompt>
-		<textBox id="CompDPCPExample" dataItem="DPCPExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompSententialObjectInstruction">Add the feature <feature>sentential_with_object</feature> to the lexical entries for the main verbs in the examples.</instruction>
-		<br/>
-	   <introduction>Some verbs only take a nonfinite sentential complement, but the subject may be overt when it is different that the main clause subject or dropped when it is coreferent with the main clause subject, as in:</introduction>
-		<EnglishExample>
-			<exItem label="8.">I want to come to the party.</exItem>
-			<exItem label="9.">I want Joe to come to the party.</exItem>
-		</EnglishExample>
-		<prompt>Think of any similar examples from your language and key them here:</prompt>
-		<textBox id="CompNonfiniteExample" dataItem="nonfiniteExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompSententialNonFiniteInstruction">Add the features <feature>sentential embedded_-finite embedded_IP</feature> to the lexical entries for the main verbs in the examples.</instruction>
-		<br/>
-	   <introduction>Some verbs only take a nonfinite sentential complement and the subject must be coreferent with the main clause subject and dropped, as in:</introduction>
-		<EnglishExample>
-			<exItem label="10.">Joe tried to come to the party.</exItem>
-			<exItem label="11.">I tried to think of more examples.</exItem>
-		</EnglishExample>
-		<prompt>Think of any similar examples from your language and key them here:</prompt>
-		<textBox id="CompNonfiniteProDropExample" dataItem="nonfiniteProDropExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompSententialProDropInstruction">Add the features <feature>sentential embedded_-finite embedded_pro-drop embedded_IP</feature> to the lexical entries for the main verbs in the examples.</instruction>
-		<br/>
-	   <introduction>Some verbs only take a nonfinite complement, but the complementizer ‘for’ is present when the embedded subject is overt, as in:</introduction>
-		<EnglishExample>
-			<exItem label="12.">Joe would hate for Sue to be at the party.</exItem>
-			<exItem label="13.">Joe hates to dance.</exItem>
-			<exItem label="14.">I would like to be appreciated.</exItem>
-		</EnglishExample>
-		<prompt>Think of any similar examples from your language and key them here:</prompt>
-		<textBox id="CompNonfiniteCPOrProDropExample" dataItem="nonfiniteCPOrProDropExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompMakeCInstruction">In the lexicon, add the features <feature>makeC -finite</feature> to any complementizer(s) like ‘for’ so it will show up in the correct position in the tree structure and be restricted to nonfinite clauses.  (If your complementizer can also occur in finite clauses, do not add the feature <feature>-finite</feature>.  Also, remember that if the word is like English <example>for</example>, which can be used both as a complementizer <category>C</category> and as a preposition <category>P</category>, you will need to make two separate lexical entries.)
-<br/>
-			<br/>
-		Add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature> to the lexical entries for the main verbs in the examples.</instruction>
-		<br/>
-	   <introduction>Now consider ‘raising’ verbs, which seem to include all the perception verbs and copulas.  These verbs take either a nonfinite complement or an adjective which has a finite complement with a complementizer or a nonfinite complement.  The main verb does not have its own subject, so the subject position is filled by the subject of the nonfinite complement, as in 15, 17-18, or by the dummy <example>it</example> (in some languages) when the complement clause is finite, as in 16 and 19:</introduction>
-	   <EnglishExample>
-		  <exItem label="15.">John seemed to like the tortillas.</exItem>
-		  <exItem label="16.">It seems likely that Joe will come.</exItem>
-		  <exItem label="17.">Joe is likely to come.</exItem>
-		  <exItem label="18.">The weather is certain to change soon.</exItem>
-		  <exItem label="19.">It is certain that the weather will change soon.</exItem>
-	   </EnglishExample>
-	   <prompt>Think of any similar examples from your language and key them here:</prompt>
-	   <textBox id="CompRaisingExample" dataItem="raisingExample" cols="50"/>
-	   <br/>
-	   <br/>
-		 <instruction id="CompRaisingInstruction">Add the features <feature>sentential embedded_raising</feature> to the lexical entries for the main verbs in the examples.  In the examples with adjectives, it is really the adjective that is acting as the predicate that selects the complement clause.  Therefore, add the features <feature>sentential embedded_CP embedded_-finite</feature> to their lexical entries.</instruction>
-	   <br/>
-	   <introduction>Causatives made up of two clauses have an object that also acts as the subject of the complement clause.  That complement clause is always nonfinite, but does not need the nonfinite marker with some verbs, as in 20, while it is required with others, as in 21:</introduction>
-	   <EnglishExample>
-		  <exItem label="20.">My mother made me clean my room.</exItem>
-		  <exItem label="21.">The other girl caused us to break up.</exItem>
-	   </EnglishExample>
-	   <prompt>Think of any similar examples from your language and key them here:</prompt>
-	   <textBox id="CompCausativeExample" dataItem="causeExample" cols="50"/>
-	   <br/>
-	   <br/>
-	   <instruction id="CompCausativeInstruction">Add the features <feature>sentential embedded_causative_VP</feature> to the lexical entries for the main verbs in the examples that are like <example>make</example>.
-		  Add the features <feature>sentential embedded_causative_IP</feature> to the lexical entries for the main verbs in the examples that require the nonfinite marker like <example>cause</example>.</instruction>
-	   <br/>
-	   <introduction>Finally, consider direct and indirect complements of verbs of speaking.  Direct quotations, such as in 22, can be just about any sentence or fragment.
-		  <br/><br/>Indirect quotations, as in 23-25, are more restricted.  Some speech verbs take a finite sentence complement with or without a complementizer, and an optional prepositional or postpositional phrase to express the hearer, as in 23, and some require the hearer to be expressed as an object plus either a finite sentential complement or a nonfinite sentential complement in which the subject must be coreferent with the main clause subject and dropped, as in 24-25:</introduction>
-	   <EnglishExample>
-		  <exItem label="22.">Sue said, “I will come to your house tomorrow.”</exItem>
-		  <exItem label="23."> Sue said (to me) that she would come here tomorrow.</exItem>
-		  <exItem label="24.">Sue told me that she would come here tomorrow.</exItem>
-		  <exItem label="25.">Sue told me to come here tomorrow.</exItem>
-	   </EnglishExample>
-	   <prompt>Think of any similar examples from your language and key them here:</prompt>
-	   <textBox id="CompQuotationExample" dataItem="quotationExample" cols="50"/>
-	   <br/>
-	   <br/>
-	   <instruction id="CompSpeakingInstruction">Add the feature <feature>sentential</feature> to the lexical entries for the speech verbs that are like <example>said</example>.
-		  For those speech verbs that express the hearer as an object, like <example>told</example>, add the feature <feature>sentential_with_object</feature>.</instruction>
-	   <br/>
-	   <br/>
-	   <prompt>
-  Your language may also have other restrictions on embedded clauses, such as the embedded verb being in the subjunctive mood or in the perfective aspect.  Key any of those examples here:</prompt>
-		<textBox id="CompOtherExample" dataItem="otherExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompSententialInstruction">Add the feature <feature>sentential</feature> to the lexical entries for the main verbs in the examples.  Also add the feature <feature>embedded_subjunctive</feature> or <feature>embedded_perfective</feature> if appropriate for your language.  Other specific restrictions will need to be taken care of after completion of the starter kit.</instruction>
-		<br/>
-		<buttons>
-			<button id="CompFeaturesBack" value="Back" goto="CompMain.xml"/>
-			<button id="CompFeaturesNext" value="Next" goto="CompPosition.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-	</showWhen>
-	<showWhen id="swPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="False"/>
-	</showWhen>
+    <form section="comp">
+       <introduction>First, consider verbs which take only a <technicalTermRef term="ttFinite"/> complement clause with or without a complementizer, like:</introduction>
+        <EnglishExample>
+            <exItem label="1.">I believe (that) Jill is my friend.</exItem>
+            <exItem label="2.">Jill insists (that) she is my friend.</exItem>
+            <exItem label="3.">I know (that) he likes me.</exItem>
+        </EnglishExample>
+        <prompt>Key how similar examples would be expressed in your language here:</prompt>
+        <textBox id="CompFiniteExample" dataItem="finiteExample" cols="50"/>
+        <br/>
+        <br/>
+           <instruction id="CompFiniteInstruction">Add the features <feature>sentential embedded_finite</feature> to the lexical entries for the main verbs in the examples.  If one or more of your verbs require the complementizer to be present, also add the feature <feature>embedded_CP</feature> to those entries.</instruction>
+        <br/>
+       <introduction>Next, consider verbs which take either a finite complement clause with or without a complementizer or a <technicalTermRef term="ttNonfinite"/> sentential complement, like:</introduction>
+        <EnglishExample>
+            <exItem label="4.">I expect that Joe will come to the party.</exItem>
+            <exItem label="5.">I expect Joe to come to the party.</exItem>
+        </EnglishExample>
+        <prompt>Key how similar examples would be expressed in your language here:</prompt>
+        <textBox id="CompFiniteOrNonfiniteExample" dataItem="finiteOrNonfiniteExample" cols="50"/>
+        <br/>
+        <br/>
+        <instruction id="CompSententialEmbeddedInstruction">Add the features <feature>sentential embedded_-question</feature> to the lexical entries for the main verbs in the examples.</instruction>
+        <br/>
+       <introduction>Now consider verbs which take a direct object as well as either a finite or nonfinite complement, like:</introduction>
+        <EnglishExample>
+            <exItem label="6.">I will persuade Joe that he should come to the party.</exItem>
+            <exItem label="7.">I will persuade Joe to come to the party.</exItem>
+        </EnglishExample>
+       <prompt>Key how similar examples would be expressed in your language here:</prompt>
+        <textBox id="CompDPCPExample" dataItem="DPCPExample" cols="50"/>
+        <br/>
+        <br/>
+        <instruction id="CompSententialObjectInstruction">Add the feature <feature>sentential_with_object</feature> to the lexical entries for the main verbs in the examples.</instruction>
+        <br/>
+       <introduction>Some verbs only take a nonfinite sentential complement, but the subject is <technicalTermRef term="ttOvert"/> when it is different that the main clause subject while it is not expressed when it is coreferent with the main clause subject, as in:</introduction>
+        <EnglishExample>
+            <exItem label="8.">I want to come to the party.</exItem>
+            <exItem label="9.">I want Joe to come to the party.</exItem>
+        </EnglishExample>
+       <prompt>Key how similar examples would be expressed in your language here:</prompt>
+        <textBox id="CompNonfiniteExample" dataItem="nonfiniteExample" cols="50"/>
+        <br/>
+        <br/>
+        <instruction id="CompSententialNonFiniteInstruction">Add the features <feature>sentential embedded_-finite embedded_IP</feature> to the lexical entries for the main verbs in the examples.</instruction>
+        <br/>
+       <introduction>Some verbs only take a nonfinite sentential complement and the subject must be coreferent with the main clause subject and not expressed, as in:</introduction>
+        <EnglishExample>
+            <exItem label="10.">Joe tried to come to the party.</exItem>
+            <exItem label="11.">I tried to think of more examples.</exItem>
+        </EnglishExample>
+       <prompt>Key how similar examples would be expressed in your language here:</prompt>
+        <textBox id="CompNonfiniteProDropExample" dataItem="nonfiniteProDropExample" cols="50"/>
+        <br/>
+        <br/>
+        <instruction id="CompSententialProDropInstruction">Add the features <feature>sentential embedded_-finite embedded_pro-drop embedded_IP</feature> to the lexical entries for the main verbs in the examples.</instruction>
+        <br/>
+       <introduction>Some verbs only take a nonfinite complement, but the complementizer ‘for’ is present when the embedded subject is overt, as in:</introduction>
+        <EnglishExample>
+            <exItem label="12.">Joe would hate for Sue to be at the party.</exItem>
+            <exItem label="13.">Joe hates to dance.</exItem>
+            <exItem label="14.">I would like to be appreciated.</exItem>
+        </EnglishExample>
+       <prompt>Key how similar examples would be expressed in your language here:</prompt>
+        <textBox id="CompNonfiniteCPOrProDropExample" dataItem="nonfiniteCPOrProDropExample" cols="50"/>
+        <br/>
+        <br/>
+       <instruction id="CompNonfiniteCPInstruction"> Add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature> to the lexical entries for the main verbs in the examples.</instruction>
+        <br/>
+       <introduction>Now consider ‘raising’ verbs, which seem to include all the <technicalTermRef term="ttPerception"/> verbs and <technicalTermRef term="ttCopular"/> verbs.  These verbs take either a nonfinite complement or an adjective which has a finite complement with a complementizer or a nonfinite complement.  The main verb does not have its own subject, so the subject position is filled by the subject of the nonfinite complement, as in 15, 17-18, or by the dummy <example>it</example> (in some languages) when the complement clause is finite, as in 16 and 19:</introduction>
+       <EnglishExample>
+          <exItem label="15.">John seemed to like the tortillas.</exItem>
+          <exItem label="16.">It seems likely that Joe will come.</exItem>
+          <exItem label="17.">Joe is likely to come.</exItem>
+          <exItem label="18.">The weather is certain to change soon.</exItem>
+          <exItem label="19.">It is certain that the weather will change soon.</exItem>
+       </EnglishExample>
+       <prompt>Key how similar examples would be expressed in your language here:</prompt>
+       <textBox id="CompRaisingExample" dataItem="raisingExample" cols="50"/>
+       <br/>
+       <br/>
+         <instruction id="CompRaisingInstruction">Add the features <feature>sentential embedded_raising</feature> to the lexical entries for the main verbs in the examples.  In the examples with adjectives, it is really the adjective that is acting as the predicate that selects the complement clause.  Therefore, add the features <feature>sentential embedded_CP embedded_-finite</feature> to their lexical entries.</instruction>
+       <br/>
+       <introduction>Causatives made up of two clauses have an object that also acts as the subject of the complement clause.  That complement clause is always nonfinite, but does not need the nonfinite marker with some verbs, as in 20, while it is required with others, as in 21:</introduction>
+       <EnglishExample>
+          <exItem label="20.">My mother made me clean my room.</exItem>
+          <exItem label="21.">The other girl caused us to break up.</exItem>
+       </EnglishExample>
+       <prompt>Key how similar examples would be expressed in your language here:</prompt>
+       <textBox id="CompCausativeExample" dataItem="causeExample" cols="50"/>
+       <br/>
+       <br/>
+       <instruction id="CompCausativeInstruction">Add the features <feature>sentential embedded_causative_VP</feature> to the lexical entries for the main verbs in the examples that are like <example>make</example>.
+          Add the features <feature>sentential embedded_causative_IP</feature> to the lexical entries for the main verbs in the examples that require the nonfinite marker like <example>cause</example>.</instruction>
+       <br/>        
+       <introduction>Finally, consider direct and indirect complements of verbs of speaking.  Direct quotations, such as in 22, can be just about any sentence or fragment.  
+          <br/><br/>Indirect quotations, as in 23-25, are more restricted.  Some speech verbs take a finite sentence complement with or without a complementizer, and an optional prepositional or postpositional phrase to express the hearer, as in 23, and some require the hearer to be expressed as an object plus either a finite sentential complement or a nonfinite sentential complement in which the subject must be coreferent with the main clause subject and not expressed, as in 24-25:</introduction>     
+       <EnglishExample>
+          <exItem label="22.">Sue said, “I will come to your house tomorrow.”</exItem>
+          <exItem label="23."> Sue said (to me) that she would come here tomorrow.</exItem>
+          <exItem label="24.">Sue told me that she would come here tomorrow.</exItem>
+          <exItem label="25.">Sue told me to come here tomorrow.</exItem>
+       </EnglishExample>
+       <prompt>Key how similar examples would be expressed in your language here:</prompt>
+       <textBox id="CompQuotationExample" dataItem="quotationExample" cols="50"/>
+       <br/>
+       <br/>
+       <instruction id="CompSpeakingInstruction">Add the feature <feature>sentential</feature> to the lexical entries for the speech verbs that are like <example>said</example>.  
+          For those speech verbs that express the hearer as an object, like <example>told</example>, add the feature <feature>sentential_with_object</feature>.</instruction>
+       <br/>         
+       <br/>
+       <prompt>
+  Your language may also have other restrictions on embedded clauses, such as the embedded verb being in the subjunctive mood or in the perfective aspect. </prompt>
+  <radioGroup id="CompTypeOtherTable">
+     <groupName dataItem="compTypeOther" default="no">RCompTypeOther</groupName>
+     <prompt>Does your language have other types of restrictions on complement clauses?
+     </prompt>
+  <radio id="CompTypeOtherYes" dataValue="yes">Yes</radio>
+     <radio id="CompTypeOtherNo" dataValue="no">No, I don't know of any others</radio>
+  </radioGroup>
+       <prompt id="CompTypeOtherYesRestriction" show="swCompTypeOtherYes" >Key the other type of restriction your language has here:</prompt>
+       <textBox id="CompTypeOtherYesRestrictions" dataItem="otherRestrictions" cols="50" rows="2" show="swCompTypeOtherYes"/>
+       <br/><br/>
+       
+<prompt id="CompTypeOtherExamplePrompt" show="swCompTypeOtherYes">Key examples of sentences including complement clauses with this other type of restriction here:</prompt>
+        <textBox id="CompOtherExample" dataItem="otherExample" cols="50" show="swCompTypeOtherYes"/>
+        <br/>
+        <br/>
+        <instruction id="CompSententialInstruction" show="swCompTypeOtherYes">Add the feature <feature>sentential</feature> to the lexical entries for the main verbs in the examples.  Also add the feature <feature>embedded_subjunctive</feature> or <feature>embedded_perfective</feature> if appropriate for your language.  Other specific restrictions will need to be taken care of after completion of the starter kit.</instruction>
+        <br/>
+        <buttons>
+            <button id="CompFeaturesBack" value="Back" goto="CompMain.xml"/>
+            <button id="CompFeaturesNext" value="Next" goto="CompPosition.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+    <showWhen id="swPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="False"/>
+    </showWhen>
+   <showWhen id="swCompTypeOtherYes">
+      <whenRadio button="CompTypeOtherYes"/>
+   </showWhen>
+   &TechnicalTerms; 
 </page>

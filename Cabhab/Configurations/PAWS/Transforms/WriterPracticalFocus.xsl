@@ -3,9 +3,18 @@
 <xsl:template match="/" mode="focus">
    <section1 id="sFocus">
 	  <secTitle>Topic and Focus Constructions</secTitle>
-	  <p>
+	  <p contentType="ctPracticalIntro">
 <xsl:text>
-		 This section considers two types of constructions which draw attention to a particular element.  Since topics occur outside of focus constructions, they will be considered first.  The following example shows that a single sentence may have both a topic and a focused phrase.  In this case, the topic </xsl:text>
+		 This section considers two types of constructions which draw attention to a particular element.  Since topics occur outside of focus constructions and have greater scope, they will be considered first.  It is possible for a single sentence to have both a topic and a focused phrase.</xsl:text>
+</p>
+      <p contentType="ctComparativeIntro">
+<xsl:text>
+         This section considers two types of constructions which draw attention to a particular element.  Since topics occur outside of focus constructions and have greater scope, they will be considered first.  The example </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>As for Bill, soccer he plays __ best</langData>
+<xsl:text> shows that a single sentence may have both a topic and a focused phrase.  In this case, the topic </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -22,16 +31,15 @@
 </xsl:attribute>soccer</langData>
 <xsl:text>, which has been moved out of its regular place in the sentence follows.</xsl:text>
 </p>
-	  <ul>
-		 <li>
-			<xsl:text>As for Bill, soccer he plays __ best.</xsl:text>
-		 </li>
-</ul>
-	  <section2 id="sFocusTopics">
+   <section2 id="sFocusTopics">
 		 <secTitle>Topics and Topic Markers</secTitle>
-		 <p>
+		 <p contentType="ctPracticalIntro">
 <xsl:text>
-			As defined here, topic constructions consist of a topic phrase followed by a complete sentence or question and usually set apart by punctuation.  Certain markers may be used to set off topics, as shown in the following English examples: </xsl:text>
+			As defined here, topic constructions consist of a topic phrase followed by a complete sentence or question and usually set apart by punctuation.  Certain markers may be used to set off topics. </xsl:text>
+</p>
+      <p contentType="ctComparativeIntro">
+<xsl:text>
+         As defined here, topic constructions consist of a topic phrase followed by a complete sentence or question and usually set apart by punctuation.  Certain markers may be used to set off topics, as shown in the following English examples: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -42,7 +50,7 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Speaking of Jill, where is she?</langData>
 </p>
-
+      
 		 <xsl:if test="normalize-space(//focus/@topic)='no'">
 <p>
 <xsl:choose>
@@ -76,7 +84,7 @@
 </p>
 </xsl:if>
 		 <xsl:if test="normalize-space(//focus/@topic)='yes'">
-<example num="xFocus.FocusTopics.10">
+<example num="xFocus.FocusTopics.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//focus/topicExample" />
 </xsl:variable>
@@ -90,7 +98,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//focus/topicExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xFocus.FocusTopics.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xFocus.FocusTopics.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -99,7 +107,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xFocus.FocusTopics.10.1</xsl:text>
+<xsl:text>xFocus.FocusTopics.12.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -130,59 +138,80 @@
 <xsl:choose>
 			   <xsl:when test="//focus/@topicMarker='no'">not marked by a topic marker.  Only the position in the sentence and possibly punctuation distinguish the topic phrase.</xsl:when>
 			   <xsl:when test="//focus/@topicMarker='yesWord'">marked by certain words or phrases.</xsl:when>
-			   <xsl:when test="//focus/@topicMarker='yesClitic'">marked by one or more clitics which attach to the topic phrase.</xsl:when>
-			   <xsl:when test="//focus/@topicMarker='yesAffix'">marked by one or more affixes which attach to the topic phrase.</xsl:when>
+			   <xsl:when test="//focus/@topicMarker='yesClitic'">marked by one or more clitics which attach to the topic phrase.  These clitics are: </xsl:when>
+			   <xsl:when test="//focus/@topicMarker='yesAffix'">marked by one or more affixes which attach to the head noun in the topic phrase.  These affixes are: </xsl:when>
 			</xsl:choose>
 <xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord'">
 <xsl:text>The topic markers occur </xsl:text>
-			   <xsl:choose>
-				  <xsl:when test="//focus/@topicMarkerPos='before'">before the topic phrase itself.</xsl:when>
-				  <xsl:when test="//focus/@topicMarkerPos='after'">after the topic phrase itself.</xsl:when>
-				  <xsl:when test="//focus/@topicMarkerPos='either'">on either side of the topic phrase itself, but not on both sides in the same sentence.</xsl:when>
-				  <xsl:when test="//focus/@topicMarkerPos='both'">on both sides of the topic phrase itself.</xsl:when>
-				  <xsl:when test="//focus/@topicMarkerPos='unknown'">_______.</xsl:when>
-			   </xsl:choose>
+			   <xsl:if test="normalize-space(//focus/topicMarkerBefore/@checked)='yes' and normalize-space(//focus/topicMarkerAfter/@checked)='no' and normalize-space(//focus/topicMarkerBoth/@checked)='no'">
+<xsl:text>before</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/topicMarkerBefore/@checked)='no' and normalize-space(//focus/topicMarkerAfter/@checked)='yes' and normalize-space(//focus/topicMarkerBoth/@checked)='no'">
+<xsl:text>after</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/topicMarkerBefore/@checked)='no' and normalize-space(//focus/topicMarkerAfter/@checked)='no' and normalize-space(//focus/topicMarkerBoth/@checked)='yes'">
+<xsl:text>on both sides of</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/topicMarkerBefore/@checked)='yes' and normalize-space(//focus/topicMarkerAfter/@checked)='yes' and normalize-space(//focus/topicMarkerBoth/@checked)='no'">
+<xsl:text>on either side of</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/topicMarkerBefore/@checked)='yes' and normalize-space(//focus/topicMarkerAfter/@checked)='no' and normalize-space(//focus/topicMarkerBoth/@checked)='yes'">
+<xsl:text>before or on both sides of</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/topicMarkerBefore/@checked)='no' and normalize-space(//focus/topicMarkerAfter/@checked)='yes' and normalize-space(//focus/topicMarkerBoth/@checked)='yes'">
+<xsl:text>after or on both sides of</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/topicMarkerBefore/@checked)='yes' and normalize-space(//focus/topicMarkerAfter/@checked)='yes' and normalize-space(//focus/topicMarkerBoth/@checked)='yes'">
+<xsl:text>on either side or on both sides of</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/topicMarkerOther/@checked)='no'">
+<xsl:text> the topic phrase.  </xsl:text>
+			   </xsl:if>
+			   <xsl:if test="normalize-space(//focus/topicMarkerBefore/@checked)='no' and normalize-space(//focus/topicMarkerAfter/@checked)='no' and normalize-space(//focus/topicMarkerBoth/@checked)='no' and normalize-space(//focus/topicMarkerOther/@checked)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//focus/topicMarkerOther" />
+<xsl:text>.  </xsl:text>
+			   </xsl:if>
+			   <xsl:if test="normalize-space(//focus/topicMarkerBefore/@checked)='yes' and normalize-space(//focus/topicMarkerOther/@checked)='yes' or normalize-space(//focus/topicMarkerAfter/@checked)='yes' and normalize-space(//focus/topicMarkerOther/@checked)='yes' or normalize-space(//focus/topicMarkerBoth/@checked)='yes' and normalize-space(//focus/topicMarkerOther/@checked)='yes'">
+<xsl:text> the topic phrase and may also occur ___</xsl:text>
+<xsl:value-of select="//focus/topicMarkerOther" />
+<xsl:text>.  </xsl:text>
+</xsl:if>
 			   <xsl:text> A topic marker is </xsl:text>
 <xsl:choose>
 				  <xsl:when test="//focus/@topicMarkerRequired='no'">optional</xsl:when>
 				  <xsl:when test="//focus/@topicMarkerRequired='yes'">required</xsl:when>
 </xsl:choose>
-			   <xsl:text> whenever there is a topic phrase.</xsl:text>
+			   <xsl:text> whenever there is a topic phrase.  The topic markers are:</xsl:text>
 			</xsl:if>
-<xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='either' and normalize-space(//focus/@topicMarkerEither)='no' or normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='both' and normalize-space(//focus/@topicMarkerEither)='no'">
-<xsl:text> There are separate sets of topic markers which can occur on each side of the topic phrase.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='either' and normalize-space(//focus/@topicMarkerEither)='yes' or normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord' and normalize-space(//focus/@topicMarkerPos)='both' and normalize-space(//focus/@topicMarkerEither)='yes'">
-<xsl:text> All of the topic markers may occur on either side of the topic phrase.</xsl:text>
-</xsl:if>
 </p>
 </xsl:if>
-		 <xsl:if test="normalize-space(//focus/@topicMarker)!='no' and normalize-space(//focus/@topic)='yes'">
-<example num="xFocus.FocusTopics.14">
+		 <xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesWord'">
+<example num="xFocus.FocusTopics.16">
 <table border="1">
 			   <tr>
 				  <th>Topic Markers</th>
-				  <th>Gloss or Restrictions</th>
+				  <th>Gloss</th>
 			   </tr>
-			   <xsl:variable name="sExampleValue0">
+			   <xsl:variable name="sExampleValue0.0">
 <xsl:value-of select="translate(string(//focus/topicMarkerExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue0" />
+<xsl:value-of select="$sExampleValue0.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue0" />
+<xsl:value-of select="$sExampleValue0.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength0" />
+<xsl:value-of select="$iExampleLength0.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
@@ -215,12 +244,131 @@
 			</table>
 </example>
 </xsl:if>
-	  </section2>
+      <xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesClitic'">
+<example num="xFocus.FocusTopics.18">
+<table border="1">
+            <tr>
+               <th>Topic Marker Clitics</th>
+               <th>Gloss</th>
+            </tr>
+            <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//focus/topicMarkerCliticExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+         </table>
+</example>
+</xsl:if>
+      <xsl:if test="normalize-space(//focus/@topic)='yes' and normalize-space(//focus/@topicMarker)='yesAffix'">
+<example num="xFocus.FocusTopics.20">
+<table border="1">
+            <tr>
+               <th>Topic Marker Affixes</th>
+               <th>Gloss</th>
+            </tr>
+            <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//focus/topicMarkerAffixExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+         </table>
+</example>
+</xsl:if>
+   </section2>
 
 	  <section2 id="sFocusFocus">
 		 <secTitle>Focused Phrases and Focus Markers</secTitle>
-		 <p>
-<xsl:text>In contrast to topics, while focus constructions also have an element fronted which may be set off by punctuation, the phrase in focus is moved from its normal position in the sentence, leaving a gap.  Certain markers, such as </xsl:text>
+		 <p contentType="ctPracticalIntro">
+<xsl:text>Focus constructions also have a nominal phrase which occurs either first or last and may be set off by punctuation.  However, in contrast to topics, the phrase in focus is moved from its normal position in the sentence, leaving a gap.  Certain markers may be used to mark the focused phrase.</xsl:text>
+</p>
+	     <p contentType="ctComparativeIntro">
+<xsl:text>Focus constructions also have a nominal phrase which occurs either first or last and may be set off by punctuation  However, in contrast to topics, the phrase in focus is moved from its normal position in the sentence, leaving a gap. Certain markers, such as </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -242,7 +390,7 @@
 </xsl:attribute>Only that boy, Jerry hit  __ </langData>
 <xsl:text>.</xsl:text>
 </p>
-
+	     
 		 <xsl:if test="normalize-space(//focus/@focus)='no'">
 <p>
 <xsl:choose>
@@ -253,7 +401,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> does not allow a focus phrase to be moved before or after the rest of the sentence out of its normal position. </xsl:text>
+<xsl:text> does not allow a focused phrase to be moved before or after the rest of the sentence out of its normal position. </xsl:text>
 </p>
 </xsl:if>
 		 <xsl:if test="normalize-space(//focus/@focus)='yes'">
@@ -276,7 +424,7 @@
 </p>
 </xsl:if>
 		 <xsl:if test="normalize-space(//focus/@focus)='yes'">
-<example num="xFocus.FocusFocus.10">
+<example num="xFocus.FocusFocus.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//focus/focusExample" />
 </xsl:variable>
@@ -290,7 +438,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//focus/focusExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xFocus.FocusFocus.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xFocus.FocusFocus.12</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -299,7 +447,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xFocus.FocusFocus.10.1</xsl:text>
+<xsl:text>xFocus.FocusFocus.12.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -329,60 +477,81 @@
 <xsl:text> is </xsl:text>
 <xsl:choose>
 			   <xsl:when test="//focus/@focusMarker='no'">not marked by a focus marker.  Only the position in the sentence and possibly punctuation distinguish the focused phrase.</xsl:when>
-			   <xsl:when test="//focus/@focusMarker='yesWord'">marked by certain words or phrases.</xsl:when>
-			   <xsl:when test="//focus/@focusMarker='yesClitic'">marked by one or more clitics which attach to the focused phrase.</xsl:when>
-			   <xsl:when test="//focus/@focusMarker='yesAffix'">marked by one or more affixes which attach to the focused phrase.</xsl:when>
+			   <xsl:when test="//focus/@focusMarker='yesWord'">marked by certain words or phrases. </xsl:when>
+			   <xsl:when test="//focus/@focusMarker='yesClitic'">marked by one or more clitics which attach to the focused phrase.  These clitics are:</xsl:when>
+			   <xsl:when test="//focus/@focusMarker='yesAffix'">marked by one or more affixes which attach to the heand noun in the focused phrase.  These affixes are:</xsl:when>
 			</xsl:choose>
 <xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord'">
 <xsl:text>The focus markers occur </xsl:text>
-			   <xsl:choose>
-				  <xsl:when test="//focus/@focusMarkerPos='before'">before the focused phrase itself.</xsl:when>
-				  <xsl:when test="//focus/@focusMarkerPos='after'">after the focused phrase itself.</xsl:when>
-				  <xsl:when test="//focus/@focusMarkerPos='either'">on either side of the focused phrase itself, but not on both sides in the same sentence.</xsl:when>
-				  <xsl:when test="//focus/@focusMarkerPos='both'">on both sides of the focused phrase itself.</xsl:when>
-				  <xsl:when test="//focus/@focusMarkerPos='unknown'">_______.</xsl:when>
-			   </xsl:choose>
+			   <xsl:if test="normalize-space(//focus/focusMarkerBefore/@checked)='yes' and normalize-space(//focus/topicMarkerAfter/@checked)='no' and normalize-space(//focus/topicMarkerBoth/@checked)='no'">
+<xsl:text>before</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/topicMarkerBefore/@checked)='no' and normalize-space(//focus/focusMarkerAfter/@checked)='yes' and normalize-space(//focus/focusMarkerBoth/@checked)='no'">
+<xsl:text>after</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/focusMarkerBefore/@checked)='no' and normalize-space(//focus/focusMarkerAfter/@checked)='no' and normalize-space(//focus/focusMarkerBoth/@checked)='yes'">
+<xsl:text>on both sides of</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/focusMarkerBefore/@checked)='yes' and normalize-space(//focus/focusMarkerAfter/@checked)='yes' and normalize-space(//focus/focusMarkerBoth/@checked)='no'">
+<xsl:text>on either side of</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/focusMarkerBefore/@checked)='yes' and normalize-space(//focus/focusMarkerAfter/@checked)='no' and normalize-space(//focus/focusMarkerBoth/@checked)='yes'">
+<xsl:text>before or on both sides of</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/focusMarkerBefore/@checked)='no' and normalize-space(//focus/focusMarkerAfter/@checked)='yes' and normalize-space(//focus/focusMarkerBoth/@checked)='yes'">
+<xsl:text>after or on both sides of</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/focusMarkerBefore/@checked)='yes' and normalize-space(//focus/focusMarkerAfter/@checked)='yes' and normalize-space(//focus/focusMarkerBoth/@checked)='yes'">
+<xsl:text>on either side or on both sides of</xsl:text>
+</xsl:if>
+			   <xsl:if test="normalize-space(//focus/focusMarkerOther/@checked)='no'">
+<xsl:text> the focused phrase.  </xsl:text>
+			   </xsl:if>
+			   <xsl:if test="normalize-space(//focus/focusMarkerBefore/@checked)='no' and normalize-space(//focus/focusMarkerAfter/@checked)='no' and normalize-space(//focus/focusMarkerBoth/@checked)='no' and normalize-space(//focus/focusMarkerOther/@checked)='yes'">
+<xsl:text>___</xsl:text>
+<xsl:value-of select="//focus/focusMarkerOther" />
+<xsl:text>.  </xsl:text>
+			   </xsl:if>
+			   <xsl:if test="normalize-space(//focus/focusMarkerBefore/@checked)='yes' and normalize-space(//focus/focusMarkerOther/@checked)='yes' or normalize-space(//focus/focusMarkerAfter/@checked)='yes' and normalize-space(//focus/focusMarkerOther/@checked)='yes' or normalize-space(//focus/focusMarkerBoth/@checked)='yes' and normalize-space(//focus/focusMarkerOther/@checked)='yes'">
+<xsl:text> the focused phrase and may also occur ___</xsl:text>
+<xsl:value-of select="//focus/focusMarkerOther" />
+<xsl:text>.  </xsl:text>
+</xsl:if>
 			   <xsl:text> A focus marker is </xsl:text>
 <xsl:choose>
 				  <xsl:when test="//focus/@focusMarkerRequired='no'">optional</xsl:when>
 				  <xsl:when test="//focus/@focusMarkerRequired='yes'">required</xsl:when>
 </xsl:choose>
-			   <xsl:text> whenever there is a focused phrase.</xsl:text>
+			   <xsl:text> whenever there is a focused phrase.  The focus markers are:</xsl:text>
 			</xsl:if>
-<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='either' and normalize-space(//focus/@focusMarkerEither)='no' or normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='both' and normalize-space(//focus/@focusMarkerEither)='no'">
-<xsl:text> There are separate sets of focus markers which can occur on each side of the focused phrase.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='either' and normalize-space(//focus/@focusMarkerEither)='yes' or normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord' and normalize-space(//focus/@focusMarkerPos)='both' and normalize-space(//focus/@focusMarkerEither)='yes'">
-<xsl:text> All of the focus markers may occur on either side of the focused phrase.</xsl:text>
-</xsl:if>
 </p>
 </xsl:if>
-		 <xsl:if test="normalize-space(//focus/@focusMarker)!='no' and normalize-space(//focus/@focus)='yes'">
-<example num="xFocus.FocusFocus.14">
+		 <xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesWord'">
+<example num="xFocus.FocusFocus.16">
 <table border="1">
 			   <tr>
 				  <th>Focus Markers</th>
-				  <th>Gloss or Restrictions</th>
+				  <th>Gloss</th>
 			   </tr>
-			   <xsl:variable name="sExampleValue0">
+			   <xsl:variable name="sExampleValue0.0">
 <xsl:value-of select="translate(string(//focus/focusMarkerExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue0" />
+<xsl:value-of select="$sExampleValue0.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue0" />
+<xsl:value-of select="$sExampleValue0.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength0" />
+<xsl:value-of select="$iExampleLength0.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
@@ -415,7 +584,123 @@
 			</table>
 </example>
 </xsl:if>
-
+	     <xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesClitic'">
+<example num="xFocus.FocusFocus.18">
+<table border="1">
+	           <tr>
+	              <th>Focus Marker Clitics</th>
+	              <th>Gloss</th>
+	           </tr>
+	           <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//focus/focusMarkerCliticExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+	        </table>
+</example>
+</xsl:if>
+	     <xsl:if test="normalize-space(//focus/@focus)='yes' and normalize-space(//focus/@focusMarker)='yesAffix'">
+<example num="xFocus.FocusFocus.20">
+<table border="1">
+	           <tr>
+	              <th>Focus Marker Affixes</th>
+	              <th>Gloss</th>
+	           </tr>
+	           <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//focus/focusMarkerAffixExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+	        </table>
+</example>
+</xsl:if>
+	     
 
 	  </section2>
 
@@ -432,38 +717,14 @@
 	  
    
    
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+      
+      
+      
    
    
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+      
+      
+      
    
    
 	  
@@ -472,6 +733,82 @@
    
 
    
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+   
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+   
 	  
    
    
@@ -483,45 +820,96 @@
 	  
    
    
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+      
+      
+      
    
    
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+      
+      
+      
    
    
 	  
 	  
 	  
    
-
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+   
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
 
 </xsl:template>
 </xsl:stylesheet>

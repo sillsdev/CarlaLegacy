@@ -23,7 +23,7 @@
 		<br/>
 		<radioGroup>
 			<groupName dataItem="degree" default="no">RDegreeYN</groupName>
-			<prompt>¿Hay palabras de grado (escritas como palabras independientes) en su lengua que puedan modificar algunos de los adverbios?</prompt>
+			<prompt>¿Hay palabras de grado (escritas como palabras independientes) en su lengua que puedan modificar a algunos de los adverbios?</prompt>
 			<radio id="AdvPDegreeNo" dataValue="no">No</radio>
 			<radio id="AdvPDegreeYes" checked="yes" dataValue="yes">Sí</radio>
 			<radioGroup id="AdvPDegreeYesTable" show="swAdvPDegreeYes">
@@ -45,10 +45,10 @@
 			</radioGroup>
 			<radioGroup id="AdvPDegreeSetTable" show="swAdvPDegreeYes">
 				<groupName dataItem="degreeSet" default="unrestricted">RSet</groupName>
-				<prompt>¿Son las palabras de grado que pueden modificar adverbios todas las mismas?</prompt>
-				<radio id="AdvPSetUnrestricted" checked="yes" dataValue="unrestricted">Sí, el mismo grupo puede modificar cualquier tipo de adverbio</radio>
-				<radio id="AdvPSetAlmost" checked="yes" dataValue="exceptReason">Casi; el mismo grupo puede modificar adverbios de tiempo, adverbios de lugar y adverbios de manera, pero los adverbios de razón o propósito no se modifican</radio>
-				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos de las palabras de grado para cada tipo de adverbio (nota que algo traslapo es aceptable y ningunas palabras de grado para los adverbios de razón o propósito es también aceptable)
+				<prompt>¿Son las palabras de grado que pueden modificar a adverbios todas las mismas?</prompt>
+				<radio id="AdvPSetUnrestricted" checked="yes" dataValue="unrestricted">Sí, el mismo grupo puede modificar a cualquier tipo de adverbio</radio>
+				<radio id="AdvPSetAlmost" checked="yes" dataValue="exceptReason">Casi; el mismo grupo puede modificar a adverbios de tiempo, adverbios de lugar y adverbios de manera, pero los adverbios de razón o propósito no se modifican</radio>
+				<radio id="AdvPSetRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos de las palabras de grado para cada tipo de adverbio (nota que algo traslapo es aceptable y ningunas palabras de grado para los adverbios de razón o propósito es también aceptable) 
 </radio>
 			</radioGroup>
 		</radioGroup>
@@ -67,7 +67,7 @@
 					<li>
 						<feature>makeDeg modifies_reason</feature> for reason or purpose modifiers</li>
 				</ul>
- If you have overlapping in the sets, just add more than one <feature>modifies...</feature> feature after a space.    (Similarly, if any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional <feature>modifies...</feature> feature(s) to the same lexical entry.)  If there are no degree words which modify reason or purpose adverbs, just don’t mark any words with this feature.</span>
+ If you have overlapping in the sets, just add more than one <feature>modifies...</feature> feature after a space.    (Similarly, if any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional <feature>modifies...</feature> feature(s) to the same lexical entry.)  If there are no degree words which modify reason or purpose adverbs, just don't mark any words with this feature.</span>
 			<br/>
 			<br/>
 			<span id="AdvPDegreeEitherRestrictedInstruction" show="swAdvPDegreeEitherRestricted">
@@ -75,13 +75,13 @@ Those which can only occur before the adverb
 also need to have the feature <feature>AdvP-initial</feature>
 and those which can only occur after the adverb also need the
 feature <feature>AdvP-final</feature>.  Do not enter either
-feature <feature>AdvP-initial</feature> or <feature>AdvP-final</feature> on any degree words which can occur on
+feature <feature>AdvP-initial</feature> or <feature>AdvP-final</feature> on any degree words which can occur on 
 either side.</span>
 		</instruction>
 		<br/>
 		<buttons>
 			<button id="AdvPDegreeBack" value="Back" goto="AdvPReason.xml"/>
-			<button id="AdvPDegreeNext" value="Next" goto="AdvPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		    <button id="AdvPDegreeNext" value="Next" goto="AdvPCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
 	<showWhen id="swAdvPDegreeYes">

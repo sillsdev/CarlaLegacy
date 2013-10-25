@@ -1,253 +1,208 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
-<page id="IPAux" count="1/1">
-	<title level="2">Basic, Single-Clause Sentences - Auxiliaries</title>
-	<introduction>Some languages have auxiliary elements that are separate words, and some can have more than one auxiliary element before the main verb.  Examples are given for English transitive single-clause sentences.</introduction>
-	<EnglishExample>
-		<exItem label="1.">The boy hit the ball.</exItem>
-		<exItem label="2.">The boy will hit the ball.</exItem>
-		<exItem label="3.">The boy might have hit the ball.</exItem>
-		<exItem label="4.">The boy might have been hitting the ball.</exItem>
-	</EnglishExample>
-	<form section="ip">
-		<prompt>Think of any similar examples from your language and key them here:</prompt>
-		<textBox id="IPAuxExample" dataItem="auxExample" cols="50"/>
-		<br/>
-		<br/>
-		<radioGroup>
-			<groupName dataItem="aux" default="no">RIPAux</groupName>
-			<prompt>Looking at the examples of positive auxiliary elements above, does your language have any positive auxiliary elements that are separate words?</prompt>
-			<radio id="IPAuxNo" dataValue="no">No</radio>
-			<radio id="IPAuxYes" dataValue="yes">Yes</radio>
-			<radioGroup id="IPAuxRequiredTable" show="swAuxYes">
-				<groupName dataItem="auxRequired" default="no">RIPAuxRequired</groupName>
-				<prompt>Is an auxiliary element required in every sentence?</prompt>
-				<radio id="IPAuxRequiredNo" dataValue="no">No, it is optional</radio>
-				<radio id="IPAuxRequiredYes" dataValue="yes">Yes, at least one is always required</radio>
-			</radioGroup>
-			<radioGroup id="IPAuxManyTable" show="swAuxYes">
-				<groupName dataItem="auxMany" default="no">RIPAuxMany</groupName>
-				<prompt>Can there be more than one auxiliary in a single sentence?</prompt>
-				<radio id="IPAuxManyNo" dataValue="no">No, only one is possible</radio>
-				<radio id="IPAuxManyYes" dataValue="yes">Yes, more than one may occur</radio>
-			</radioGroup>
-			<radioGroup id="IPAuxOrderTable" show="swIPAuxOrderVSOorOSV">
-				<groupName dataItem="auxOrder" default="no">RIPAuxOrder</groupName>
-				<prompt>
-					<span id="IPAuxOrderPromptVSO" show="swIPAuxOrderVSO">After an auxiliary, is the normal VSO word order maintained?</span>
-					<span id="IPAuxOrderPromptOSV" show="swIPAuxOrderOSV">Before an auxiliary, is the normal OSV word order maintained?</span>
-				</prompt>
-				<radio id="IPAuxOrderYes" dataValue="yes">Yes, the order is always <span id="IPAuxOrderYesVSOPrompt" show="swIPAuxOrderVSO">Aux V S then other elements</span>
-					<span id="IPAuxOrderYesOSVPrompt" show="swIPAuxOrderOSV">other elements then S V Aux</span>
-				</radio>
-				<radio id="IPAuxOrderNo" dataValue="no">No, the subject may come directly after the  <span id="IPAuxOrderNoVSOPrompt" show="swIPAuxOrderVSO">Aux and before the verb</span>
-					<span id="IPAuxOrderNoOSVPrompt" show="swIPAuxOrderOSV">verb and before the Aux</span>
-				</radio>
-			</radioGroup>
-		</radioGroup>
-		<br/><br/>
-		<prompt id="IPAuxiliaryExamplePrompt" show="swAuxYes">Key the (positive) auxiliary words used your language here:</prompt>
-		<textBox id="IPAuxiliaryExample" dataItem="auxiliaryExample" rows="5" show="swAuxYes"/>
-		<br/><br/>
-		<introduction>In some languages verbal negation is an auxiliary element, while in others it is simply a verbal affix. English has both the negative auxiliary <example>not</example>, which is a separate word that must always follow another auxiliary, and the contraction form <example>-n’t</example>, which is written as a suffix on the auxiliary.  Examples are given for English negative transitive single-clause sentences.</introduction>
-	<EnglishExample>
-		<exItem label="1.">The boy did <u>not</u> hit the ball.</exItem>
-		<exItem label="2.">The boy did<u>n’t</u> hit the ball.</exItem>
-		<exItem label="3.">The boy will <u>not</u> hit the ball.</exItem>
-		<exItem label="4.">The boy wo<u>n’t</u> hit the ball.</exItem>
-		<exItem label="5.">The boy might <u>not</u> have hit the ball.</exItem>
-	</EnglishExample>
-		<br/>
-		<br/>
-<radioGroup>
-	<groupName dataItem="negAux" default="no">RNegAux</groupName>
-	<prompt>Does you language have one or more negative auxiliaries which are written as a separate word?</prompt>
-	<radio id="IPNegAuxYes" dataValue="yes">Yes</radio>
-	<radio id="IPNegAuxNo" dataValue="no">No</radio>
-</radioGroup>
-		<radioGroup>
-			<groupName dataItem="negAuxAffix" default="no">RNegAuxAffix</groupName>
-			<prompt>Does your language have one or more negative affixes which attach to a positive auxiliary to make it negative?</prompt>
-			<radio id="IPNegAuxAffixYes" dataValue="yes">Yes</radio>
-			<radio id="IPNegAuxAffixNo" dataValue="no">No</radio>
-		</radioGroup>
-		<radioGroup>
-			<groupName dataItem="negVAffix" default="no">RNegVAffix</groupName>
-			<prompt>Does your language have one or more negative affixes which attach to a verb to make it negative?</prompt>
-			<radio id="IPNegVAffixYes" dataValue="yes">Yes</radio>
-			<radio id="IPNegVAffixNo" dataValue="no">No</radio>
-		</radioGroup>
- <radioGroup id="NegAuxRequiresAuxTable" show="swIPNegAuxYes">
-	<groupName dataItem="negAuxRequiresAux" default="no">RNegAuxRequiresAux</groupName>
-	<prompt>Is there required to be another auxiliary element in the sentence when the negative auxiliary word is present?</prompt>
-	<radio id="IPNegAuxRequiresAuxNo" dataValue="no">No, the negative auxiliary may be the only auxiliary in the phrase</radio>
-	<radio id="IPNegAuxRequiresAuxYes" dataValue="yes">Yes, another auxiliary is required, as in English</radio>
- </radioGroup>
-		<prompt id="IPNegAuxRequiresAuxButNoAuxInstruction" show="swIPNegAuxRequiresAuxButNoAux">WARNING - The answers you have entered are incompatible!! A negative auxiliary word cannot require the presence of another auxiliary if your language does not have (positive) auxiliaries that are written as separate words.  Please change the answer to either question to correct this problem before proceeding.</prompt>
-		<prompt id="IPNegAuxAffixButNoAuxInstruction" show="swIPNegAuxAffixButNoAux">WARNING - The answers you have entered are incompatible!! A negative auxiliary affix cannot attach to anything if your language does not have (positive) auxiliaries that are written as separate words.  Please change the answer to either question to correct this problem before proceeding.</prompt>
-<prompt id="IPNegAuxWordPrompt" show="swIPNegAuxYes">Key the negative auxiliary word(s) only (each on a separate line) here:</prompt>
-<textBox id="IPNegAuxWordExample" dataItem="negAuxExample" rows="3" show="swIPNegAuxYes"></textBox>
-<prompt id="IPNegAuxAffixPrompt" show="swIPNegAuxAffix">Key examples of the negative auxiliary affix(es) attached to an auxiliary (each on a separate line) here:</prompt>
-<textBox id="IPNegAuxAffixExample" dataItem="negAuxAffixExample" rows="3" show="swIPNegAuxAffix"></textBox>
-<prompt id="IPNegVerbPrompt" show="swIPNegVerb">Key examples of the negative affix(es) attached to a verb (each on a separate line) here:</prompt>
-<textBox id="IPNegVerbExample" dataItem="negVerbExample" rows="3" show="swIPNegVerb"></textBox>
-		<br/>
-		<br/>
-	   <prompt>  These negative elements will be discussed further in <section number="14">Negative Constructions</section>.</prompt>
-	   <br/><br/>
-		<introduction>The nonfinite word <example>to</example> used in English embedded clauses also acts as an auxiliary in that it fills the same position and can occur before other auxiliaries:</introduction>
-		<EnglishExample>
-			<exItem label="1.">The boy wanted to hit the ball.</exItem>
-			<exItem label="2.">The boy would like to have hit the ball.</exItem>
-			<exItem label="3.">The boy would like to have been running the bases.</exItem>
-		</EnglishExample>
-		<prompt>Think of any nonfinite examples from your language and key them here:</prompt>
-		<textBox id="IPAuxNonfiniteExample" dataItem="auxNonfiniteExample" cols="50"/>
-		<br/>
-		<br/>
-		<radioGroup>
-			<groupName dataItem="auxNonfinite" default="no">RIPAuxNonfinite</groupName>
-			<prompt>Looking at the nonfinite examples you gave above, does your language have one or more separate auxiliary-type words used to mark a clause as nonfinite?</prompt>
-			<radio id="IPAuxNonfiniteNo" dataValue="no">No</radio>
-			<radio id="IPAuxNonfiniteYes" dataValue="yes">Yes</radio>
-			<radioGroup id="IPAuxNonfiniteRequiredTable" show="swAuxNonfiniteYes">
-				<groupName dataItem="auxNonfiniteRequired" default="no">RIPAuxNonfiniteRequired</groupName>
-				<prompt>Is an auxiliary-type element required in every nonfinite sentence?</prompt>
-				<radio id="IPAuxNonfiniteRequiredNo" dataValue="no">No, it is optional</radio>
-				<radio id="IPAuxNonfiniteRequiredYes" dataValue="yes">Yes, one is always required</radio>
-			</radioGroup>
-			<radioGroup id="IPAuxNonfiniteOrderTable" show="swIPAuxOrderVSOorOSVandAuxNonfiniteYes">
-				<groupName dataItem="auxNonfiniteOrder" default="no">RIPAuxNonfiniteOrder</groupName>
-				<prompt>
-					<span id="IPAuxNonfiniteOrderPromptVSO" show="swIPAuxOrderVSO">After an auxiliary, is the normal VSO word order maintained?</span>
-					<span id="IPAuxNonfiniteOrderPromptOSV" show="swIPAuxOrderOSV">Before an auxiliary, is the normal OSV word order maintained?</span>
-				</prompt>
-				<radio id="IPAuxNonfiniteOrderYes" dataValue="yes">Yes, the order is always <span id="IPAuxNonfiniteOrderYesVSOPrompt" show="swIPAuxOrderVSO">Aux V S then other elements</span>
-					<span id="IPAuxNonfiniteOrderYesOSVPrompt" show="swIPAuxOrderOSV">other elements then S V Aux</span>
-				</radio>
-				<radio id="IPAuxNonfiniteOrderNo" dataValue="no">No, the subject may come directly after the  <span id="IPAuxNonfiniteOrderNoVSOPrompt" show="swIPAuxOrderVSO">Aux and before the verb</span>
-					<span id="IPAuxNonfiniteOrderNoOSVPrompt" show="swIPAuxOrderOSV">verb and before the Aux</span>
-				</radio>
-			</radioGroup>
-		</radioGroup>
-		<br/><br/>
-		<prompt id="IPAuxiliaryNonfiniteExamplePrompt" show="swAuxNonfiniteYes">Key the auxiliary-type words used to mark nonfinite clauses in your language here:</prompt>
-		<textBox id="IPAuxiliaryNonfiniteExample" dataItem="auxiliaryNonfiniteExample" rows="3" show="swAuxNonfiniteYes"/>
-		<br/><br/>
-		<introduction>Some languages have other words that act like auxiliaries, such as motion auxiliaries or loan markers, which are written <span id="ipAuxVInitialSpan" show="swVInitial">before</span>
-			<span id="ipAuxVFinalSpan" show="swVFinal">after</span> the verb and share the same subject and complements.</introduction>
-		<prompt>Key examples of sentences including these other kinds of auxiliaries if your language has them here:</prompt>
-		<textBox id="IPAuxOtherExample" dataItem="auxOtherExample" cols="50"/>
-		<br/>
-		<br/>
-		<radioGroup>
-			<groupName dataItem="auxOther" default="no">RIPAuxOther</groupName>
-			<prompt>Does your language have any other of the other kinds of auxiliary elements, such as motion auxiliaries or loan markers, that are separate words?</prompt>
-			<radio id="IPAuxOtherNo" dataValue="no">No</radio>
-			<radio id="IPAuxOtherYes" dataValue="yes">Yes</radio>
-			<radioGroup id="IPAuxOtherOrderTable" show="swIPAuxOrderVSOorOSVandAuxOtherYes">
-				<groupName dataItem="auxOtherOrder" default="no">RIPAuxOtherOrder</groupName>
-				<prompt>
-					<span id="IPAuxOtherOrderPromptVSO" show="swIPAuxOrderVSO">After an auxiliary, is the normal VSO word order maintained?</span>
-					<span id="IPAuxOtherOrderPromptOSV" show="swIPAuxOrderOSV">Before an auxiliary, is the normal OSV word order maintained?</span>
-				</prompt>
-				<radio id="IPAuxOtherOrderYes" dataValue="yes">Yes, the order is always <span id="IPAuxOtherOrderYesVSOPrompt" show="swIPAuxOrderVSO">Aux V S then other elements</span>
-					<span id="IPAuxOtherOrderYesOSVPrompt" show="swIPAuxOrderOSV">other elements then S V Aux</span>
-				</radio>
-				<radio id="IPAuxOtherOrderNo" dataValue="no">No, the subject may come directly after the  <span id="IPAuxOtherOrderNoVSOPrompt" show="swIPAuxOrderVSO">Aux and before the verb</span>
-					<span id="IPAuxOtherOrderNoOSVPrompt" show="swIPAuxOrderOSV">verb and before the Aux</span>
-				</radio>
-			</radioGroup>
-		</radioGroup>
-		<br/><br/>
-		<prompt id="IPAuxiliaryOtherExamplePrompt" show="swAuxOtherYes">Key the other types of auxiliary words, such as motion auxiliaries or loan markers, used your language here:</prompt>
-		<textBox id="IPAuxiliaryOtherExample" dataItem="auxiliaryOtherExample" rows="3" show="swAuxOtherYes"/>
-		<br/><br/>
-		<instruction id="IPNegAuxYesInstruction" show="swIPNegAuxYes">Add the features <feature>negative makeAux</feature> to the negative auxiliary elements that are written as separate words.  This will mark them as negative and also assure that they have the category <category>Aux</category>.</instruction>
-		<instruction id="IPNegAuxAffixInstruction" show="swIPNegAuxAffix">Add the feature <feature>negative</feature> to the negative auxiliary affix(es).</instruction>
-		<instruction id="IPNegVerbInstruction" show="swIPNegVerb">Add the feature <feature>negative</feature> to the negative verbal affix(es).</instruction>
-		<instruction id="IPAuxNonfiniteInstruction" show="swAuxNonfiniteYes">Add the feature <feature>-finite</feature> to the entry for the nonfinite marker that is written as a separate word like <example>to</example> in English and make sure that it is included in the category mapping to <category>Aux</category> in the <section number="9.9">Basic, Single-Clause Sentences - Category Mapper</section>.  Alternatively, you can add the feature <feature>makeAux</feature> now to be sure.  However, remember that if the word can also be used as another syntactic category (like English <example>to</example> can be both a nonfinite <category>Aux</category> and a preposition <category>P</category>), you need to make a separate lexical entry for each use.</instruction>
-		<br/>
-		<br/>
-		<buttons>
-			<button id="IPAuxBack" value="Back" goto="IPContents.htm"/>
-			<button id="IPAuxNext" value="Next" goto="IPContents.htm"/>
-		</buttons>
-	</form>
-<showWhen id="swIPNegAuxYes">
-	<whenRadio button="IPNegAuxYes"></whenRadio>
-</showWhen>
-<showWhen id="swIPNegAuxAffix">
-	<whenRadio button="IPNegAuxAffixYes"></whenRadio>
-</showWhen>
-<showWhen id="swIPNegVerb">
-	<whenRadio button="IPNegVAffixYes"></whenRadio>
-</showWhen>
-	<showWhen id="swAuxYes">
-		<whenRadio button="IPAuxYes"/>
-	</showWhen>
-	<showWhen id="swIPNegAuxRequiresAuxButNoAux">
-		<whenRadio button="IPAuxNo"/>
-		<and/>
-		<whenRadio button="IPNegAuxRequiresAuxYes"/>
-	</showWhen>
-	<showWhen id="swIPNegAuxAffixButNoAux">
-		<whenRadio button="IPAuxNo"/>
-		<and/>
-		<whenRadio button="IPNegAuxAffixYes"/>
-	</showWhen>
-	<showWhen id="swAuxNonfiniteYes">
-		<whenRadio button="IPAuxNonfiniteYes"/>
-	</showWhen>
-	<showWhen id="swAuxOtherYes">
-		<whenRadio button="IPAuxOtherYes"/>
-	</showWhen>
-	<showWhen id="swIPAuxOrderVSO">
-		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-	</showWhen>
-	<showWhen id="swIPAuxOrderOSV">
-		<whenValue element="typology" attr="wordOrder" value="OSV"/>
-	</showWhen>
-	<showWhen id="swIPAuxOrderVSOorOSV">
-		<whenRadio button="IPAuxYes"/>
-		<and/>
-		<openParen/>
-		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OSV"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swIPAuxOrderVSOorOSVandAuxNonfiniteYes">
-		<whenRadio button="IPAuxNonfiniteYes"/>
-		<and/>
-		<openParen/>
-		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OSV"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swIPAuxOrderVSOorOSVandAuxOtherYes">
-		<whenRadio button="IPAuxOtherYes"/>
-		<and/>
-		<openParen/>
-		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OSV"/>
-		<closeParen/>
-	</showWhen>
-	<showWhen id="swVInitial">
-		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SVO"/>
-	</showWhen>
-	<showWhen id="swVFinal">
-		<whenValue element="typology" attr="wordOrder" value="OSV"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="SOV"/>
-	</showWhen>
+<page id="IPAux" count="1/2">
+    <title level="2">Basic Sentences - Auxiliaries</title>
+    <introduction>Some languages have auxiliary elements that are independent words, and some can have more than one auxiliary element before the main verb.  Examples are given for English transitive single-clause sentences.</introduction>
+    <EnglishExample>
+        <exItem label="1.">The boy hit the ball.</exItem>
+        <exItem label="2.">The boy will hit the ball.</exItem>
+        <exItem label="3.">The boy might have hit the ball.</exItem>
+        <exItem label="4.">The boy might have been hitting the ball.</exItem>
+    </EnglishExample>
+    <form section="ip">
+        <prompt>Think of any similar examples from your language and key them here:</prompt>
+        <textBox id="IPAuxExample" dataItem="auxExample" cols="50"/>
+        <br/>
+        <br/>
+        <radioGroup>
+            <groupName dataItem="aux" default="no">RIPAux</groupName>
+            <prompt>Looking at the examples of auxiliary elements above, does your language have any auxiliary elements that are independent words?</prompt>
+            <radio id="IPAuxNo" dataValue="no">No, these same meanings are all expressed as part of the verb</radio>
+            <radio id="IPAuxYes" dataValue="yes">Yes</radio>
+            <radioGroup id="IPAuxRequiredTable" show="swAuxYes">
+                <groupName dataItem="auxRequired" default="no">RIPAuxRequired</groupName>
+                <prompt>Is an auxiliary element required in every sentence?</prompt>
+                <radio id="IPAuxRequiredNo" dataValue="no">No, it is optional</radio>
+                <radio id="IPAuxRequiredYes" dataValue="yes">Yes, at least one is always required</radio>
+            </radioGroup>
+            <radioGroup id="IPAuxManyTable" show="swAuxYes">
+                <groupName dataItem="auxMany" default="no">RIPAuxMany</groupName>
+                <prompt>Can there be more than one auxiliary in a single sentence?</prompt>
+                <radio id="IPAuxManyNo" dataValue="no">No, only one is possible</radio>
+                <radio id="IPAuxManyYes" dataValue="yes">Yes, more than one may occur</radio>
+            </radioGroup>
+            <radioGroup id="IPAuxOrderTable" show="swIPAuxOrderVSOorOSV">
+                <groupName dataItem="auxOrder" default="no">RIPAuxOrder</groupName>
+                <prompt>
+                    <span id="IPAuxOrderPromptVSO" show="swIPAuxOrderVSO">After an auxiliary, is the normal VSO word order maintained?</span>
+                    <span id="IPAuxOrderPromptOSV" show="swIPAuxOrderOSV">Before an auxiliary, is the normal OSV word order maintained?</span>
+                </prompt>
+                <radio id="IPAuxOrderYes" dataValue="yes">Yes, the order is always <span id="IPAuxOrderYesVSOPrompt" show="swIPAuxOrderVSO">Aux V S then other elements</span>
+                    <span id="IPAuxOrderYesOSVPrompt" show="swIPAuxOrderOSV">other elements then S V Aux</span>
+                </radio>
+                <radio id="IPAuxOrderNo" dataValue="no">No, the subject may come directly after the  <span id="IPAuxOrderNoVSOPrompt" show="swIPAuxOrderVSO">Aux and before the verb</span>
+                    <span id="IPAuxOrderNoOSVPrompt" show="swIPAuxOrderOSV">verb and before the Aux</span>
+                </radio>
+            </radioGroup>
+        </radioGroup>
+        <br/><br/>
+        <prompt id="IPAuxiliaryExamplePrompt" show="swAuxYes">Key the auxiliary words used your language here:</prompt>
+        <textBox id="IPAuxiliaryExample" dataItem="auxiliaryExample" rows="5" show="swAuxYes"/>       
+        <br/><br/>
+        <introduction>The nonfinite word <example>to</example> used in English embedded clauses also acts as an auxiliary in that it fills the same position and can occur before other auxiliaries:</introduction>
+        <EnglishExample>
+            <exItem label="1.">The boy wanted to hit the ball.</exItem>
+            <exItem label="2.">The boy would like to have hit the ball.</exItem>
+            <exItem label="3.">The boy would like to have been running the bases.</exItem>
+        </EnglishExample>
+        <prompt>Think of any sentences with nonfinite verbs in either the main or embedded clause from your language and key them here:</prompt>
+        <textBox id="IPAuxNonfiniteExample" dataItem="auxNonfiniteExample" cols="50"/>
+        <br/>
+        <br/>
+        <radioGroup>
+            <groupName dataItem="auxNonfinite" default="no">RIPAuxNonfinite</groupName>
+            <prompt>Looking at the nonfinite examples you gave above, does your language have one or more independent auxiliary-type words used to mark a verb or clause as nonfinite?</prompt>
+           <radio id="IPAuxNonfiniteYes" dataValue="yes">Yes</radio>
+           <radio id="IPAuxNonfiniteNo" dataValue="no">No, the nonfinite or infinitive feature is part of the verb form</radio>
+            <radio id="IPAuxNonfiniteNone" dataValue="none">No, there is no infinitive or nonfinite form in the language</radio>
+        </radioGroup>
+       <prompt id="IPNonfiniteNonePrompt" show="swIPNonfiniteNoneAndFeaturesYes">WARNING: In <section number="9.2">Basic Sentences - Inflection Features</section> you checked the <feature>-finite</feature> feature as occurring in your language.  This is inconsistent with your answer here.  Please either change your answer here to say your language does have infinitives or nonfinite forms, 
+          or return to <section number="9.2">Basic Sentences - Inflection Features</section> and uncheck the <feature>-finite</feature> feature.</prompt>
+       <prompt id="IPNonfiniteNotNonePrompt" show="swIPNonfiniteNotNoneAndFeaturesNo">WARNING: In <section number="9.2">Basic Sentences - Inflection Features</section> you did not check the <feature>-finite</feature> feature as occurring in your language.  This is inconsistent with your answer here.  If your language has infinitives or nonfinite forms, 
+          return to <section number="9.2">Basic Sentences - Inflection Features</section> and check the <feature>-finite</feature> feature.</prompt>
+       
+       <radioGroup id="IPAuxNonfiniteRequiredTable" show="swAuxNonfiniteYes">
+                <groupName dataItem="auxNonfiniteRequired" default="no">RIPAuxNonfiniteRequired</groupName>
+                <prompt>Is an auxiliary-type element required in every nonfinite embedded clause?</prompt>
+                <radio id="IPAuxNonfiniteRequiredNo" dataValue="no">No, it is optional</radio>
+                <radio id="IPAuxNonfiniteRequiredYes" dataValue="yes">Yes, one is always required</radio>
+            </radioGroup>
+            <radioGroup id="IPAuxNonfiniteOrderTable" show="swIPAuxOrderVSOorOSVandAuxNonfiniteYes">
+                <groupName dataItem="auxNonfiniteOrder" default="no">RIPAuxNonfiniteOrder</groupName>
+                <prompt>
+                    <span id="IPAuxNonfiniteOrderPromptVSO" show="swIPAuxOrderVSO">After an auxiliary, is the normal VSO word order maintained?</span>
+                    <span id="IPAuxNonfiniteOrderPromptOSV" show="swIPAuxOrderOSV">Before an auxiliary, is the normal OSV word order maintained?</span>
+                </prompt>
+                <radio id="IPAuxNonfiniteOrderYes" dataValue="yes">Yes, the order is always <span id="IPAuxNonfiniteOrderYesVSOPrompt" show="swIPAuxOrderVSO">Aux V S then other elements</span>
+                    <span id="IPAuxNonfiniteOrderYesOSVPrompt" show="swIPAuxOrderOSV">other elements then S V Aux</span>
+                </radio>
+                <radio id="IPAuxNonfiniteOrderNo" dataValue="no">No, the subject may come directly after the  <span id="IPAuxNonfiniteOrderNoVSOPrompt" show="swIPAuxOrderVSO">Aux and before the verb</span>
+                    <span id="IPAuxNonfiniteOrderNoOSVPrompt" show="swIPAuxOrderOSV">verb and before the Aux</span>
+                </radio>
+            </radioGroup>       
+        <br/><br/>
+        <prompt id="IPAuxiliaryNonfiniteExamplePrompt" show="swAuxNonfiniteYes">Key the auxiliary-type words used to mark nonfinite clauses in your language here:</prompt>
+        <textBox id="IPAuxiliaryNonfiniteExample" dataItem="auxiliaryNonfiniteExample" rows="3" show="swAuxNonfiniteYes"/>   
+       <instruction id="IPAuxNonfiniteInstruction" show="swAuxNonfiniteYes">Add the feature <feature>-finite</feature> to the entry for the nonfinite marker that is written as an independent word like <example>to</example> in English and make sure that it is included in the category mapping to <category>Aux</category> in the <section number="9.9">Basic Sentences - Category Mapper</section>.  Alternatively, you can add the feature <feature>makeAux</feature> now to be sure.  However, remember that if the word can also be used as another syntactic category (like English <example>to</example> can be both a nonfinite <category>Aux</category> and a preposition <category>P</category>), you need to make a separate lexical entry for each use.</instruction>
+       
+       <br/><br/>
+        <introduction>Some languages have other words that act like auxiliaries, such as motion auxiliaries or loan markers, which are written <span id="ipAuxVInitialSpan" show="swVInitial">before</span>
+            <span id="ipAuxVFinalSpan" show="swVFinal">after</span> the verb and share the same subject and complements.</introduction>
+       <br/>
+        <br/>
+        <radioGroup>
+            <groupName dataItem="auxOther" default="no">RIPAuxOther</groupName>
+            <prompt>Does your language have any of the other kinds of auxiliary elements, such as motion auxiliaries or loan markers, that are independent words?</prompt>
+            <radio id="IPAuxOtherNo" dataValue="no">No</radio>
+            <radio id="IPAuxOtherYes" dataValue="yes">Yes</radio>
+        </radioGroup>
+       <prompt id="IPAuxOtherPrompt" show="swAuxOtherYes">Key examples of sentences including these other kinds of auxiliaries in your language here:</prompt>
+           <textBox id="IPAuxOtherExample" dataItem="auxOtherExample" cols="50" show="swAuxOtherYes"/>
+           
+           <radioGroup id="IPAuxOtherOrderTable" show="swIPAuxOrderVSOorOSVandAuxOtherYes">
+                <groupName dataItem="auxOtherOrder" default="no">RIPAuxOtherOrder</groupName>
+                <prompt>
+                    <span id="IPAuxOtherOrderPromptVSO" show="swIPAuxOrderVSO">After an auxiliary, is the normal VSO word order maintained?</span>
+                    <span id="IPAuxOtherOrderPromptOSV" show="swIPAuxOrderOSV">Before an auxiliary, is the normal OSV word order maintained?</span>
+                </prompt>
+                <radio id="IPAuxOtherOrderYes" dataValue="yes">Yes, the order is always <span id="IPAuxOtherOrderYesVSOPrompt" show="swIPAuxOrderVSO">Aux V S then other elements</span>
+                    <span id="IPAuxOtherOrderYesOSVPrompt" show="swIPAuxOrderOSV">other elements then S V Aux</span>
+                </radio>
+                <radio id="IPAuxOtherOrderNo" dataValue="no">No, the subject may come directly after the  <span id="IPAuxOtherOrderNoVSOPrompt" show="swIPAuxOrderVSO">Aux and before the verb</span>
+                    <span id="IPAuxOtherOrderNoOSVPrompt" show="swIPAuxOrderOSV">verb and before the Aux</span>
+                </radio>
+            </radioGroup>
+ 
+        <br/><br/>
+        <prompt id="IPAuxiliaryOtherExamplePrompt" show="swAuxOtherYes">Key the other types of auxiliary words, such as motion auxiliaries or loan markers, used your language here:</prompt>
+        <textBox id="IPAuxiliaryOtherExample" dataItem="auxiliaryOtherExample" rows="3" show="swAuxOtherYes"/>   
+       <instruction id="IPAuxOtherInstruction" show="swAuxOtherYes">Make sure that these words are included in the category mapping to <category>Aux</category> in the <section number="9.9">Basic Sentences - Category Mapper</section>.  Alternatively, you can add the feature <feature>makeAux</feature> now to be sure.  However, remember that if the word can also be used as another syntactic category (like <example>go</example> could be both a motion <category>Aux</category> and a main verb <category>V</category>), you need to make a separate lexical entry for each use.  Also, add the feature <feature>motion</feature> to the motion auxiliaries.</instruction>
+       <br/><br/>
+        <buttons>
+            <button id="IPAuxBack" value="Back" goto="IPContents.htm"/>
+            <button id="IPAuxNext" value="Next" goto="IPCompounds.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swAuxYes">
+      <whenRadio button="IPAuxYes"/>
+   </showWhen>
+   <showWhen id="swAuxNonfiniteYes">
+        <whenRadio button="IPAuxNonfiniteYes"/>
+    </showWhen>
+    <showWhen id="swAuxOtherYes">
+        <whenRadio button="IPAuxOtherYes"/>
+    </showWhen>
+    <showWhen id="swIPAuxOrderVSO">
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+    </showWhen>
+    <showWhen id="swIPAuxOrderOSV">
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+    </showWhen>
+    <showWhen id="swIPAuxOrderVSOorOSV">
+        <whenRadio button="IPAuxYes"/>
+        <and/>
+        <openParen/>
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swIPAuxOrderVSOorOSVandAuxNonfiniteYes">
+        <whenRadio button="IPAuxNonfiniteYes"/>
+        <and/>
+        <openParen/>
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swIPAuxOrderVSOorOSVandAuxOtherYes">
+        <whenRadio button="IPAuxOtherYes"/>
+        <and/>
+        <openParen/>
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swVInitial">
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="VOS"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="SVO"/>
+    </showWhen>
+    <showWhen id="swVFinal">
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OVS"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="SOV"/>
+    </showWhen>
+   <showWhen id="swIPNonfiniteNoneAndFeaturesYes">
+      <whenRadio button="IPAuxNonfiniteNone"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPNonfiniteNotNoneAndFeaturesNo">
+      <whenRadio button="IPAuxNonfiniteNo"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="no"/>
+      <or/>
+      <whenRadio button="IPAuxNonfiniteYes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="no"/>
+   </showWhen>
+   
 </page>

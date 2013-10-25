@@ -1,70 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="NPCompounds" count="1/1">
 	<title level="2">Nominal Phrases - Noun Compounds, Complements and Gerunds</title>
-	<introduction>Many languages are like English, in that they have noun modifiers. Normally, we simply think that all nouns can also be used as adjectives, but a closer look reveals that true adjectives come before the noun modifier, as in <example>large, round [syrup bottle]</example> but not <example>*round, syrup large bottle</example>.  Therefore, we will treat noun modifiers as compound nouns which are written as separate words.<br/>
-		<br/>In the English examples above, <example>bottle</example> is clearly the head noun rather than <example>syrup</example>, because <example>syrup</example> is restricting the type of <example>bottle</example>, not the other way around.  In all compound nouns and noun modifier constructions in English, the head is the right-most noun in the series.</introduction>
+	<introduction>Many languages are like English, in that they have noun modifiers. Normally, we simply think that all nouns can also be used as adjectives, but a closer look reveals that true adjectives come before the noun modifier, as in <example>large, round [syrup bottle]</example> but not <example>*round, syrup large bottle</example>.  Therefore, we will treat noun modifiers as compound nouns which are written as independent words.<br/>
+		<br/>In the English examples above, <example>bottle</example> is clearly the head noun rather than <example>syrup</example>, because <example>syrup</example> is restricting the type of <example>bottle</example>, not the other way around.  In all compound nouns and noun modifier constructions in English, the head is the right-most noun in the series.
+	<br/><br/>
+	In looking for examples of compounds, consider body parts, such as <example>eye lash</example>, kinship terms, such as <example>great grandmother</example>, and foods, such as <example>blackberry pie</example>, as well as the material something was made from, such as <example>brick house</example>.</introduction>
 	<form section="np">
-		<prompt>Key one or more examples with noun modifiers or compound nouns written as separate words, plus some written as a single word, in the box.  If you write all noun compounds as single words, key some of those examples here:</prompt>
-		<textBox id="NPCompExample" dataItem="compExample"/>
-		<br/>
+		<prompt><br/>Key one or more examples with noun modifiers or compound nouns written as independent words, plus some written as a single word, in the appropriate boxes.  If you write all noun compounds as single words, key some of those examples in the boxes.
+		<br/><br/>
+		Compounds for body parts:</prompt>
+		<textBox id="NPCompBodyPartExample" dataItem="compBodyPartExample"/>
+	   <prompt><br/>Compounds for kinship terms:</prompt>
+	   <textBox id="NPCompKinshipExample" dataItem="compKinshipExample"/>
+	   <prompt><br/>Compounds for foods:</prompt>
+	   <textBox id="NPCompFoodExample" dataItem="compFoodExample"/>
+	   <prompt><br/>Compounds for the material someting was made from:</prompt>
+	   <textBox id="NPCompMaterialExample" dataItem="compMaterialExample"/>
+	   <prompt><br/>Other noun compounds:</prompt>
+	   <textBox id="NPCompExample" dataItem="compExample"/>
+	   
 		<radioGroup>
 			<groupName dataItem="comp" default="no">RNPCompounds</groupName>
-			<prompt>Does your language have any noun compounds or noun modifiers that are written as separate words?</prompt>
+			<prompt><br/>Looking at the examples in the boxes above, does your language have any noun compounds or noun modifiers that are written as independent words?</prompt>
 			<radio id="NPCompNo" dataValue="no">No, they are all written as a single word with the head noun</radio>
-			<radio id="NPCompYes" dataValue="yes">Yes, some are written as separate words</radio>
+			<radio id="NPCompYes" dataValue="yes">Yes, some are written as independent words</radio>
 			<radioGroup id="NPCompHeadTable" show="swNPCompYes">
 				<groupName dataItem="compHead" default="right">RNPCompHead</groupName>
-				<prompt>In a compound or noun modifier construction, which noun is the head in your language?</prompt>
+				<prompt><br/>In a compound or noun modifier construction, which noun is the head in your language?</prompt>
 				<radio id="NPCompHeadLeft" dataValue="left">Left-most</radio>
 				<radio id="NPCompHeadRight" dataValue="right">Right-most</radio>
+			   <radio id="NPCompHeadEither" dataValue="either">It varies</radio>
 			</radioGroup>
 		   <radioGroup id="NPCompHeadMorphemeTable">
-			  <groupName dataItem="compHeadMorpheme" default="right">RNPCompHeadMorpheme</groupName>
-			  <prompt>In a compound noun that is written as a single word, which noun root is the head in your language?</prompt>
-			  <radio id="NPCompHeadMorphemeLeft" dataValue="left">Left-most</radio>
-			  <radio id="NPCompHeadMorphemeRight" dataValue="right">Right-most</radio>
+		      <groupName dataItem="compHeadMorpheme" default="right">RNPCompHeadMorpheme</groupName>
+		      <prompt><br/>In a compound noun that is written as a single word, which noun root is the head in your language?</prompt>
+		      <radio id="NPCompHeadMorphemeLeft" dataValue="left">Left-most</radio>
+		      <radio id="NPCompHeadMorphemeRight" dataValue="right">Right-most</radio>
+		      <radio id="NPCompHeadMorphemeEither" dataValue="either">It varies</radio>
 		   </radioGroup>
 		</radioGroup>
 	   <br/>
-	   <introduction>Now consider prepositional or postpositional phrase (PP) modifiers (or complements), such as in <example>the large, round bottle [of syrup]</example> and <example>the boy’s letter [to that girl]</example>.  <br/><br/>
-		  Think also of examples of genitive prepositional or postpositional phrases that take the place of the possessor, such as <example>those dogs [of his]</example> and <example>the tablecloth [of my mother’s]</example>.
+	   <introduction>Now consider prepositional or postpositional phrase (PP) modifiers (or complements), such as in <example>the large, round bottle [of syrup]</example> and <example>the boy’s letter [to that girl]</example>.  Not all languages allow this type of noun modifier or complement, but may express the same meaning in a relative clause.
 	   </introduction>
 	   <br/>
 	   <br/>
-	   <prompt>Key your examples of pre/post-positional phrases modifying nouns (without the brackets), other than possessor phrases here:</prompt>
+	   <prompt>Key your examples of prepositional phrases or postpositional phrases modifying nouns (without the brackets), if allowed in your language.  Do not include possessor phrases, since those were already covered in <section number="5.4">Nominal Phrases - Possessors</section>.  If your language does not use prepositional or postpositional phrases to express these kinds of modifiers, key examples of how your language would express similar nominal phrases.</prompt>
 	   <textBox id="NPCompPPExample" dataItem="compPPExample"/>
-	   <prompt>Key your examples of pre/post-positional phrases acting as the possessor of the noun here:</prompt>
-	   <textBox id="NPCompPPPossessorExample" dataItem="compPPPossessorExample"/>
 	   <br/>
 	   <br/>
 	   <radioGroup>
+	      <groupName dataItem="ppComp" default="no" >RNPPPComp</groupName>
+	      <prompt>Does your language allow PP modifiers or complements to nouns?</prompt>
+	      <radio id="NPPPCompYes" dataValue="yes">Yes</radio>
+	      <radio id="NPPPCompNo" dataValue="no">No, a relative clause is used instead</radio>
+	      <radio id="NPPPCompOther" dataValue="other">No, my language uses some other means than either a PP modifier or a relative clause to express similar meanings</radio>
+	   </radioGroup>
+	   <radioGroup id="NPPPCompPosTable" show="swNPPPCompYes">
 			<groupName dataItem="ppPos" default="unknown" position="yesHeadDiff">RNPPPPos</groupName>
-			<prompt>Looking at both of the above text boxes, where does the PP occur with respect to the head noun?</prompt>
-			<radio id="NPPPPosBefore" dataValue="before">Before</radio>
-			<radio id="NPPPPosAfter" dataValue="after">After</radio>
-			<radio id="NPPPPosEither" dataValue="either">Either side</radio>
-		</radioGroup>
+			<prompt>Looking at the examples in the box above, where does the PP occur with respect to the head noun?</prompt>
+			<radio id="NPPPPosBefore" dataValue="before">Before the noun</radio>
+			<radio id="NPPPPosAfter" dataValue="after">After the noun</radio>
+			<radio id="NPPPPosEither" dataValue="either">On either side</radio>
+	   </radioGroup>
+	   <prompt id="NPCompRelClPrompt" show="swNPPPCompNo">The structure and position of relative clauses will be covered in <section number="12">Relative Clauses</section>.</prompt>
 		<br/>
 		<br/>
-	<introduction>Another case which may look like a noun and a complement may actually be a gerund or gerund phrase.  This whole phrase occupies a normal argument position, such as subject, object, indirect object or the object of a preposition.  Some English examples in full sentences with the gerund phrase bracketed include:
-</introduction>
+	<introduction>Another case which may look like a noun and a complement may actually be a <technicalTermRef term="ttGerund"/> or gerund phrase.  This whole phrase occupies a normal argument position, such as subject, object, indirect object or the object of a preposition.  Some English examples in full sentences with the gerund phrase bracketed include:
+</introduction> 
 	<EnglishExample>
-		<exItem label="1.">[Studying grammar] is challenging.</exItem>
-		<exItem label="2.">He likes [reading Latin poetry].</exItem>
-		<exItem label="3.">The receiver showed his worth by [making the catch].</exItem>
+		<exItem label="6.">[Studying grammar] is challenging.</exItem>
+		<exItem label="7.">He likes [reading Latin poetry].</exItem>
+		<exItem label="8.">The receiver showed his worth by [making the catch].</exItem>
 	</EnglishExample>
-<introduction>Such phrases may be possessed or be modified as well, and sometimes only the gerund stands alone as the head of a nominal phrase, as in <example>the badly wounded</example>, <example>the dying</example> and <example>your following</example>. Therefore, we will allow gerund phrases to occupy the head position in the nominal phrase.</introduction><br/>
+	   <introduction>Such phrases may be possessed or be modified as well, and sometimes only the gerund stands alone as the head of a nominal phrase, as in <example>the badly wounded</example>, <example>the dying</example> and <example>your following</example>. 	   
+	      <br/><br/>
+	      Some languages may not use a gerund to express similar meanings, but instead use a relative clause.</introduction>
+	      <br/>
 		<br/>
-			<prompt>Key one or more examples of gerunds or gerund phrases that can take the place of a noun in a nominal phrase:</prompt>
+	   <prompt>Key how your language would express similar kinds of nominal phrase examples (like the bracketed parts of 6-8 or the examples in the following paragraph) here:</prompt>
 		<textBox id="NPPartExample" dataItem="partHeadExample"/>
 		<br/>
 <br/>
-			<prompt>Now put the gerunds or gerund phrases you keyed above into sentences:</prompt>
+			<prompt>Now put the phrases you keyed above into sentences with a main verb:</prompt>
 		<textBox id="NPPartSentExample" dataItem="partHeadSentExample"/>
 		<br/>
-		<instruction id="NPCompInstruction">Note that the head of these gerund phrases is categorically a verb, so these are derived nominals.  They will remain verbs in our grammar rules, but need to be distinguished as gerunds so that only the gerund forms of verbs may be used as nouns.   The appropriate features will be added in section <section number="9.2">Basic, Single-Clause Sentences - Inflection Features</section></instruction>
+	   <radioGroup>
+	      <groupName dataItem="partNP" default="no" >RNPPartNP</groupName>
+	      <prompt>Does your language allow gerunds or gerund phrases to take the place of a noun or nominal phrase?</prompt>
+	      <radio id="NPPartNPYes" dataValue="yes">Yes</radio>
+	      <radio id="NPPartNPNo" dataValue="no">No, a relative clause is used instead</radio>
+	      <radio id="NPPartNPOther" dataValue="other">No, my language uses some other means than either a gerund or a relative clause to express similar meanings</radio>
+	   </radioGroup>
+	   <prompt id="NPPartNPRelClPrompt" show="swNPPartNPNo">The structure and position of relative clauses will be covered in <section number="12">Relative Clauses</section>.</prompt>
+	   
+	   <instruction id="NPCompInstruction" show="swNPPartNPYes">Note that the head of these gerund phrases is categorically a verb, so these are derived nominals.  They will remain verbs in our grammar rules, but need to be distinguished as gerunds so that only the gerund forms of verbs may be used as nouns.   The appropriate features will be added in section <section number="9.2">Basic Sentences - Inflection Features</section></instruction>
 		<br/>
 		<br/>
 		<buttons>
@@ -75,4 +108,18 @@
 	<showWhen id="swNPCompYes">
 		<whenRadio button="NPCompYes"/>
 	</showWhen>
+   <showWhen id="swNPPPCompYes">
+      <whenRadio button="NPPPCompYes"/>
+   </showWhen>
+   <showWhen id="swNPPPCompNo">
+      <whenRadio button="NPPPCompNo"/>
+   </showWhen>
+   <showWhen id="swNPPartNPNo">
+      <whenRadio button="NPPartNPNo"/>
+   </showWhen>
+   <showWhen id="swNPPartNPYes">
+      <whenRadio button="NPPartNPYes"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
 </page>

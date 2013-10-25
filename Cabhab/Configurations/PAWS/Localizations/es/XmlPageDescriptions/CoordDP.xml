@@ -1,48 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="CoordDP" count="2/5">
-   <title level="2">Las construcciones coordinativas - Elementos consecutivos y apositivas</title>
-   <introduction>Además de las construcciones básicas de la coordinación donde existe una conjunción abierta entre las oraciones conjuntivas, las frases nominales especialmente pueden tener otras formas de construcciones coordinativas.
-	  Trataremos de elementos consecutivos y aposiciones aquí.
+<page id="CoordDP" count="2/4">
+   <title level="2">Las construcciones coordinadas - Elementos consecutivos y aposiciones</title>
+   <introduction>Además de las construcciones coordinadas básicas en que existe una conjunción explícita entre las oraciones enlazadas, las frases nominales especialmente pueden tener otras formas de construcciones coordinadas.    
+      Se tratan los elementos consecutivos como en una lista y aposiciones aquí.
 	<br/><br/>
-	  Los elementos consecutivos consisten en tres o más artículos que están coordinados para formar una sola frase nominal. Los elementos iniciales son separados normalmente por comas y existe una conjunción abierta antes del elemento final en la lista, aunque existen diversas posibilidades, como en ejemplos 3-4. Algunos ejemplos en español de frases nominales con elementos consecutivos son:
+      Los elementos consecutivos consisten en tres o más artículos que están coordinados para formar una sola frase nominal. Los elementos iniciales normalmente se separan con comas y una conjunción se presenta antes del elemento final en la lista, aunque existen diversas posibilidades, como en ejemplos 3-4. Algunos ejemplos en español de frases nominales con elementos consecutivos son:
 	</introduction>
    <EnglishExample>
-	  <exItem label="1.">Juan, Guillermo, Susana y María</exItem>
-	  <exItem label="2.">Juan, Guillermo, Susana y/o María</exItem>
-	  <exItem label="3.">Juan y Guillermo o Susana y María</exItem>
-	  <exItem label="4.">Un gato, dos perros y un pollo pero no un mono</exItem>
-   </EnglishExample>
+      <exItem label="1.">Juan, Guillermo, Susana y María</exItem>
+      <exItem label="2.">Juan, Guillermo, Susana y/o María</exItem>
+      <exItem label="3.">Juan y Guillermo o Susana y María</exItem>
+      <exItem label="4.">Un gato, dos perros y un pollo pero no un mono</exItem>
+   </EnglishExample>   
    <form section="coord" transparent="no">
-	  <prompt>Escriba cómo su lengua expresa elementos consecutivos dentro de una frase nominal aquí:</prompt>
-	  <textBox id="CoordListExample" dataItem="listExample"/>
+      <prompt>Escriba cómo su lengua expresa elementos consecutivos dentro de una frase nominal aquí:</prompt>
+      <textBox id="CoordListExample" dataItem="listExample"/>
 <br/><br/>
-	  <introduction>Las aposiciones consisten normalmente en un nombre seguido por una coma y entonces una descripción también seguida por una coma o el orden puede ser invertido. Algunos ejemplos en español son:
-	  </introduction>
+      <introduction>Las aposiciones también forman una sola frase nominal.  Estas consisten normalmente en un nombre seguido de una coma y entonces una descripción también seguida de una coma o el orden puede invertirse. Algunos ejemplos en español son: 
+      </introduction>
 	<EnglishExample>
 	   <exItem label="5.">George Washington, el primer Presidente de los Estados Unidos</exItem>
 	   <exItem label="6.">mi hermano, Jaime</exItem>
 	</EnglishExample>
   <br/>
-	  <prompt>Escriba algunas frases nominales que contienen aposiciones en su lengua aquí:</prompt>
-	  <textBox id="CoordAppositiveExample" dataItem="appositiveExample"/>
-	  <br/>
-	  <br/>
-	  <instruction id="CoordListCommaInstruction">Note that the comma is important in both of these constructions and may be useful in disambiguating list or appositive constructions from other types.  You can choose to make the comma (,) a word-formation character in <tool>CarlaStudio</tool>. Then make it a suffix or enclitic that can go on any word category and give it the feature <feature>comma</feature>.  The PC-Patr grammar constraints to disambiguate via commas are already provided, but you will need to activate them by removing the comment character in the DP rule <ruleInfo>option conjListAppos</ruleInfo>.  See a similar instruction for topics.</instruction><br/>
-	  <br/>
-		<buttons>
-			<button id="CoordDPBack" value="Back" goto="CoordMain.xml"/>
-			<button id="CoordDPNext" value="Next" goto="CoordComparative.xml"/>
-		</buttons>
-	</form>
+      <prompt>Escriba algunas frases nominales que contienen aposiciones en su lengua aquí:</prompt>
+      <textBox id="CoordAppositiveExample" dataItem="appositiveExample"/>
+      <br/>
+      <br/>
+      <instruction id="CoordListCommaInstruction">Note that the comma is important in both of these constructions and may be useful in disambiguating list or appositive constructions from other types.  You can choose to make the comma (,) a word-formation character in <tool>CarlaStudio</tool>. Then make it a suffix or enclitic that can go on any word category and give it the feature <feature>comma</feature>.  The PC-Patr grammar constraints to disambiguate via commas are already provided, but you will need to activate them by removing the comment character in the DP rule <ruleInfo>option conjListAppos</ruleInfo>.  See a similar instruction for topics.</instruction><br/>
+      <br/>
+      <buttons>
+         <button id="CoordDPBack" value="Back" goto="CoordMain.xml"/>
+         <button id="CoordDPNext" value="Next" goto="CoordCatMap.xml" gotoNoGrammar="Contents.htm"/>
+      </buttons>
+   </form>
    <showWhen id="swPPPosPrep">
-	  <whenValue element="pp" attr="pPos" value="before"/>
+      <whenValue element="pp" attr="pPos" value="before"/>
    </showWhen>
    <showWhen id="swPPPosPost">
-	  <whenValue element="pp" attr="pPos" value="after"/>
+      <whenValue element="pp" attr="pPos" value="after"/>
    </showWhen>
    <showWhen id="swPPPosBoth">
-	  <whenValue element="pp" attr="pPos" value="both"/>
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
    </showWhen>
 </page>

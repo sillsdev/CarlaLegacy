@@ -1,22 +1,24 @@
-<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="QPMain" count="1/6">
-	<title>Las frases cuantificadoras</title>
-	<introduction>Los cuantificadores pueden presentarse en varios lugares en una frase nominal. La mayoría de las lenguas tienen cuatro sistemas de cuantificadores:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="QPMain" count="1/7">
+   <title>Las frases cuantificadoras</title>
+   <introduction>Los <technicalTermRef term="ttQuantifiers">cuantificadores</technicalTermRef> pueden presentarse en varios lugares en una frase nominal, según su <technicalTermRef term="ttScope">ámbito</technicalTermRef>. La mayoría de las lenguas tienen cuatro sistemas de cuantificadores:
 <ul>
-	<li>ésos que significan <example>todos</example> o <example>no</example>, que modifican la frase nominal completo,</li>
-	<li>cuantificadores tales como <example>alguno</example> o <example>ninguno</example>, que no se presentan con ningún otro modificador excepto con los adjetivos,</li>
-	<li>otros cuantificadores tales como <example>muchos</example>
+   <li>cuantificadores de ámbito amplio que significan <example>todos</example> o <example>no</example> que modifican a la frase nominal completa,</li>
+   <li>cuantificador <technicalTermRef term="ttDeterminers">determinantes</technicalTermRef> como <example>alguno</example> o <example>cada</example>, que no se presentan con ningún otro modificador excepto con los adjetivos,</li>
+   <li>cuantificadores de ámbito limitado como <example>muchos</example>
 o <example>pocos</example>, y</li>
 			<li>los números.</li>
 		</ul>
-		Cada tipo será considerado en su orden correspondiente.
+      Cada tipo se considera en su orden correspondiente, seguido de las frases <technicalTermRef term="ttPartitive">partitivas</technicalTermRef>.
 </introduction>
-	<introduction>Los cuantificadores que significan <example>todos</example> o <example>no</example> parecen tener una categoría propia.
-	   Generalmente se presentan primero (o último) en una frase nominal, en una posición distinta de los otros cuantificadores pero en el mismo lugar que las palabras de grado como  <example>solamente</example> y <example>apenas</example>  ((que también pueden funcionar al igual que indicadores de foco, lo cual será analizado en  <section number="16">Las construcciones de foco y tópico</section>) y las palabras que significan lo mismo que  <example>casi</example> (lo que también puede presentarse con <example>todos</example> como en (4) abajo), así que les llamaremos palabras especiales de grado.
+	<introduction>Los cuantificadores que significan <example>todos</example> parecen tener una categoría propia. 
+	   Generalmente se presentan primero (o al final) en una frase nominal, en una posición distinta de los otros cuantificadores pero en el mismo lugar que algunas palabras de grado como  <example>solamente</example> y <example>apenas</example>  (que también pueden funcionar igual que indicadores de <technicalTermRef term="ttFocus">foco</technicalTermRef>, lo cual se analizan en  <section number="16">Las construcciones de foco y tópico</section>) y las palabras de grado que significan lo mismo que  <example>casi</example> (lo que también puede presentarse con <example>todos</example> como en (4) de abajo).  Se refiere a  <example>todos</example> como un cuantificador de ámbito amplio.
 <br/><br/>
-	   Primeramente, consideremos las formas positivas que modifican la frase nominal completa.  Busque los ejemplos en su lengua como los siguientes:
+	   Busque a algunos ejemplos en su lengua como los siguientes:   
 	</introduction>
 	<EnglishExample>
 		<exItem label="1">
@@ -37,416 +39,236 @@ o <example>pocos</example>, y</li>
 			<u>solamente</u> los tres niños de Susana.</exItem>
 	</EnglishExample>
    <form section="qp">
-	  <radioGroup id="QPClassifierAgrTable" show="swOTClassifierAgr">
-		 <groupName dataItem="npDegreeClassifier" default="no">RQPClassifierAgr</groupName>
-		 <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar este tipo de palabras especiales de grado que modifican toda la frase nominal?</prompt>
-		 <radio id="QPClassifierAgrNPDegreeNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
-		 <radio id="QPClassifierAgrNPDegreeYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
-	  </radioGroup>
-	  <prompt id="QPClassifierAgrPrompt" show="swOTClassifierAgrNPDegreeYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada una de las palabras solicitadas en esta página.</prompt>
-	  <br/>
-	  <br/>
-	  <prompt>Escriba la manera que su lengua expresa “todos”, con cada palabra seguida por un punto y en una línea separada.  (Si “todos” es un afijo o un clítico que se une a otra palabra en la frase nominal, escríbalo aquí con una indicación del guión en el lado que se une.)</prompt>
-	  <textBox id="QPAllExample" dataItem="all" rows="3"/>
-	  <br/>
-	  <br/>
-	  <prompt>Escriba la manera que su lengua expresa “casi”, con cada palabra seguida por un punto y en una línea separada.  (Si “casi” es un afijo o un clítico que se une a otra palabra en la frase nominal, escríbalo aquí con una indicación del guión en el lado que se une.)</prompt>
-	  <textBox id="QPAlmostExample" dataItem="almost" rows="3"/>
-	  <br/>
-	  <br/>
-	  <prompt>Escriba la manera que su lengua expresa “solamente” o “apenas”, con cada palabra seguida por un punto y en una línea separada.  (Si uno es un afijo o un clítico que se une a otra palabra en la frase nominal, escríbalo aquí con una indicación del guión en el lado que se une.)</prompt>
-	  <textBox id="QPOnlyExample" dataItem="only" rows="3"/>
-	  <br/>
-	  <br/>
-	  <radioGroup>
-		 <groupName dataItem="npDegree" default="yes">RNPDegree</groupName>
-		 <prompt>¿Expresa su lengua estos conceptos como palabras independientes que modifican la frase nominal completa?</prompt>
-		 <radio id="QPNPDegreeYes"  dataValue="yes">Sí, todos son palabras independientes</radio>
-		 <radio id="QPNPDegreeSome" dataValue="some">Algunos son palabras independientes, pero otros se unen a otra palabra en la frase nominal</radio>
-		 <radio id="QPNPDegreeNo" dataValue="no">No, todos se unen a otra palabra en la frase nominal</radio>
-		 <radioGroup id="NPDegreeType" show="swQPNPDegreeNoOrSome">
-			<groupName dataItem="npDegreeType" default="proclitic">RNPDegreeType</groupName>
-			<prompt>¿Dónde se unen los elementos especiales positivos de grado (especialmente ‘todos’) en la frase nominal?</prompt>
-			<radio id="QPNPDegreeProclitic" dataValue="proclitic">Como proclíticos que se unen al inicio de cualquier palabra con que comienza la frase nominal</radio>
-			<radio id="QPNPDegreeEnclitic" dataValue="enclitic">Como enclíticos que se unen al final de cualquier palabra con que termina la frase nominal</radio>
-			<radio id="QPNPDegreeClitic" dataValue="clitic">Algunas formas son proclíticos que se unen al inicio de cualquier palabra con que comienza la frase nominal y otros son enclíticos que se unen al final de cualquier palabra con que termina la frase nominal</radio>
-			<radio id="QPNPDegreePrefix" dataValue="prefix">Como prefijos que se unen al sustantivo principal de la frase nominal</radio>
-			<radio id="QPNPDegreeSuffix" dataValue="suffix">Como sufijos que se unen al sustantivo principal de la frase nominal</radio>
-			<radio id="QPNPDegreeAffix" dataValue="affix">Algunas formas son prefijos y algunas formas son sufijos que se unen al sustantivo principal de la frase nominal</radio>
-		 </radioGroup>
-	  </radioGroup>
-	  <prompt>Escriba ejemplos de <span id="QPNPDegreePromptYes" show="swQPNPDegreeYes">palabras</span><span id="QPNPDegreePromptSome" show="swQPNPDegreeSome">palabras y </span>
-		 <span id="QPNPDegreePromptNoAffix" show="swQPNPDegreeNoOrSomeAndAffix">afijos</span>
-		 <span id="QPNPDegreePromptNoClitic" show="swQPNPDegreeNoOrSomeAndClitic">clíticos</span> que significan ‘todos’, ‘casi’  y ‘solamente’ o ‘apenas’ incluido en frases nominales completas aquí: </prompt>
-	  <textBox id="QPNPExample" dataItem="example" cols="50"/>
-	  <br/><br/>
-	  <radioGroup id="QPNPDegreeYesTable" show="swQPNPDegreeYesOrSome">
-		 <groupName dataItem="npDegreePos" default="unknown" position="yesSpec">RQPNPDegreePos</groupName>
-		 <prompt>De acuerdo con los datos en el cuadro arriba, ¿dónde se presentan los elementos especiales de grado que se escriben como palabras independientes con respecto al resto de la frase nominal?</prompt>
-		 <radio id="QPNPDegreeBefore"  dataValue="before">Antes de la frase nominal</radio>
-		 <radio id="QPNPDegreeAfter"  dataValue="after">Después de la frase nominal</radio>
-		 <radio id="QPNPDegreeEitherSide"  dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeEitherOrBoth"  dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeBeforeOrBoth"  dataValue="beforeOrBoth">Antes de la frase nominal, o en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeAfterOrBoth"  dataValue="afterOrBoth">Después de la frase nominal, o en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeBothSides"  dataValue="both">Solamente en ambos lados en la misma oración</radio>
-	  </radioGroup>
-	  <radioGroup id="QPNPDegreeEitherSideTable" show="swQPNPDegreeEitherorBoth">
-		 <groupName dataItem="npDegreeEither" default="unrestricted">RQPNPDegreeEitherSide</groupName>
-		 <prompt>¿Pueden presentarse todas las palabras especiales de grado de cualquier lado del resto de la frase nominal?</prompt>
-		 <radio id="QPNPDegreeEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-		 <radio id="QPNPDegreeEitherRestricted" checked="yes" dataValue="restricted">No, hay grupos distintos para cada lado</radio>
-	  </radioGroup>
-	  <br/>
-	  <br/>
-	  <introduction>Ahora consideremos el negativo que significa ‘no’ cuando modifica una frase nominal completa.  Observe que <example>no</example> puede presentarse en lugar de o antes de las otras palabras especiales de grado:</introduction>
-	  <EnglishExample>
-		 <exItem label="1">
-			<u>no</u> los niños.</exItem>
-		 <exItem label="2">
-			<u>no todos</u> los cinco niños.</exItem>
-		 <exItem label="3">
-			<u>no apenas</u> estos conco niños.</exItem>
-		 <exItem label="4">
-			<u>no solamente</u> los tres niños de Susana.</exItem>
-	  </EnglishExample>
-	  <prompt>Esté seguro de distinguir los elementos como <example>not  ‘no’</example> que pueden negar una frase nominal completa de palabras como <example>ningunos</example> (ser tratado en la página siguiente) que se presentan en el lugar de los artículos, demonstrativos o el poseedor en la frase.</prompt>
-	  <prompt>Escriba la manera que su lengua expresa “no” (cuando modifica un nominal algo que una frase verbal), con cada palabra seguida por un punto y en una línea separada. (Si “no” es un afijo o un clítico que se une a otra palabra en la frase nominal, escríbalo aquí con una indicación del guión en el lado que se une.)</prompt>
-	  <textBox id="QPNotExample" dataItem="not" rows="3"/>
-	  <br/>
-	  <br/>
-	  <radioGroup>
-		 <groupName dataItem="npDegreeNeg" default="yes">RNPDegreeNeg</groupName>
-		 <prompt>¿Expresa su lengua el negativo “no” como una o más palabras independientes que modifican la frase nominal completa?</prompt>
-		 <radio id="QPNPDegreeNegYes"  dataValue="yes">Sí, todos son palabras independientes</radio>
-		 <radio id="QPNPDegreeNegSome" dataValue="some">Algunos son palabras independientes, pero otros se unen a otra palabra en la frase nominal</radio>
-		 <radio id="QPNPDegreeNegNo" dataValue="no">No, todos se unen a otra palabra en la frase nominal</radio>
-		 <radio id="QPNPDegreeNegNone"  dataValue="none">Parece que no existe una manera de expresar “no” como modificando la frase nominal completa en esa lengua</radio>
-		 <radioGroup id="NPDegreeNegType" show="swQPNPDegreeNegNoOrSome">
-			<groupName dataItem="npDegreeNegType" default="proclitic">RNPDegreeNegType</groupName>
-			<prompt>¿Dónde se unen los elementos especiales negativos de grado en la frase nominal?</prompt>
-			<radio id="QPNPDegreeNegProclitic" dataValue="proclitic">Como proclíticos que se unen al inicio de cualquier palabra con que comienza la frase nominal</radio>
-			<radio id="QPNPDegreeNegEnclitic" dataValue="enclitic">Como enclíticos que se unen al final de cualquier palabra con que termina la frase nominal</radio>
-			<radio id="QPNPDegreeNegClitic" dataValue="clitic">Algunas formas son proclíticos que se unen al inicio de cualquier palabra con que comienza la frase nominal y otros son enclíticos que se unen al final de cualquier palabra con que termina la frase nominal</radio>
-			<radio id="QPNPDegreeNegPrefix" dataValue="prefix">Como prefijos que se unen al sustantivo principal de la frase nominal</radio>
-			<radio id="QPNPDegreeNegSuffix" dataValue="suffix">Como sufijos que se unen al sustantivo principal de la frase nominal</radio>
-			<radio id="QPNPDegreeNegAffix" dataValue="affix">Algunas formas son prefijos y algunas formas son sufijos que se unen al sustantivo principal de la frase nominal</radio>
-		 </radioGroup>
-	  </radioGroup>
-	  <br/>
-	  <prompt id="QPDegreeNegNominalPhrasePrompt" show="swQPNPDegreeNegNotNone">Escriba ejemplos como (1) arriba de <span id="QPNPDegreeNegPromptYes" show="swQPNPDegreeNegYes">palabras negativas</span><span id="QPNPDegreeNegPromptSome" show="swQPNPDegreeNegSome">plabras y </span>
-		 <span id="QPNPDegreeNegPromptNoAffix" show="swQPNPDegreeNegNoOrSomeAffix">afijos negativos</span>
-		 <span id="QPNPDegreeNegPromptNoClitic" show="swQPNPDegreeNegNoOrSomeClitic">clíticos negativos</span> que significan ‘no’ incluido en frases nominales completas (sin los elementos especiales positivos de grado) aquí</prompt>
-	  <textBox id="QPNPNegExample" dataItem="negExample" cols="50" show="swQPNPDegreeNegNotNone"/>
-	  <br/><br/>
-	  <radioGroup id="QPNPDegreeNegYesTable" show="swQPNPDegreeNegYesorSome">
-		 <groupName dataItem="npDegreeNegPos" default="unknown" position="yesSpec">RQPNPDegreeNegPos</groupName>
-		 <prompt>De acuerdo con los datos en el cuadro arriba, ¿dónde se presentan los elementos especiales negativos de grado que se escriben como palabras independientes con respecto al resto de la frase nominal?</prompt>
-		 <radio id="QPNPDegreeNegBefore"  dataValue="before">Antes de la frase nominal</radio>
-		 <radio id="QPNPDegreeNegAfter"  dataValue="after">Después de la frase nominal</radio>
-		 <radio id="QPNPDegreeNegEitherSide"  dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeNegEitherOrBoth"  dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeNegBeforeOrBoth"  dataValue="beforeOrBoth">Antes de la frase nominal, o en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeNegAfterOrBoth"  dataValue="afterOrBoth">Después de la frase nominal, o en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeNegBothSides"  dataValue="both">Solamente en ambos lados en la misma oración</radio>
-		 <radioGroup id="QPNPDegreeNegNPEitherSideTable" show="swQPNPDegreeNegEitherorBoth">
-			<groupName dataItem="npDegreeNegNPEither" default="unrestricted">RQPNPDegreeNegNPEitherSide</groupName>
-			<prompt>¿Pueden presentarse todas las palabras especiales negativas de grado de cualquier lado del resto de la frase nominal?</prompt>
-			<radio id="QPNPDegreeNegNPEitherUnrestricted"  dataValue="unrestricted">Sí, no hay restricción (o solamente existe una palabra negativa y puede presentarse de cualquier lado)</radio>
-			<radio id="QPNPDegreeNegNPEitherRestricted"  dataValue="restricted">No, hay grupos distintos para cada lado</radio>
-		 </radioGroup>
-	  </radioGroup>
-	  <radioGroup id="QPNPDegreeNegCooccurTable" show="swQPNPDegreeNegNotNone">
-		 <groupName dataItem="npDegreeNegCooccur" default="no">RQPNPDegreeNegCooccur</groupName>
-		 <prompt>¿Pueden presentarse las palabras que significan “no” con las otras palabras especiales de grado, como en ejemplos (2-4) arriba?</prompt>
-		 <radio id="QPNPDegreeNegCooccurYes" dataValue="yes">Sí</radio>
-		 <radio id="QPNPDegreeNegCooccurNo" dataValue="no">No</radio>
-	  </radioGroup>
-	  <prompt id="QPNPDegreeNegCooccurPrompt" show="swQPNPDegreeNegNotNoneAndNegCooccurYes">Escriba ejemplos de los elementos negativos de grado que significan ‘no’ incluido en frases nominales completas e incluido los elementos especiales de grado aquí:</prompt>
-	  <textBox id="QPNPNegCooccurExample" dataItem="negCooccurExample" cols="50" show="swQPNPDegreeNegNotNoneAndNegCooccurYes"/>
-	  <br/>
-	  <br/>
-	  <radioGroup id="QPNPDegreeNegCooccurYesTable" show="swQPNPDegreeNegCooccurYesAndYesOrSome">
-		 <groupName dataItem="npDegreeNegNPPos" default="unknown" position="yesSpec">RQPNPDegreeNegNPPos</groupName>
-		 <prompt>¿Dónde se presentan las palabras negativas de grado que significan ‘no’ con respecto al resto de la frase nominal (incluyendo otras palabras especiales de grado?</prompt>
-		 <radio id="QPNPDegreeNegNPBefore"  dataValue="before">Antes de la frase nominal</radio>
-		 <radio id="QPNPDegreeNegNPAfter"  dataValue="after">Después de la frase nominal</radio>
-		 <radio id="QPNPDegreeNegNPEitherSide"  dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeNegNPEitherOrBoth"  dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeNegNPBeforeOrBoth"  dataValue="beforeOrBoth">Antes de la frase nominal, o en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeNegNPAfterOrBoth"  dataValue="afterOrBoth">Después de la frase nominal, o en ambos lados en la misma oración</radio>
-		 <radio id="QPNPDegreeNegNPBothSides"  dataValue="both">Solamente en ambos lados en la misma oración</radio>
-	  </radioGroup>
-	  <br/><br/><prompt>Estos elementos negativos serán discutidos más en <section number="14">Las construcciones negativas</section>.</prompt>
-	  <br/>
-	  <br/>
-
-	  <instruction id="QPNPDegreeYesInstruction" show="swQPNPDegreeYesOrSome">In the lexicon, mark the words meaning <example>all</example>, <example>not</example>, <example>almost</example>, <example>only</example>, and <example>just</example> with the features <feature>makeDeg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>Deg</category>
-		 and the second adds the feature to distinguish them as the type that modifies NPs.   If your language has a phrase meaning <example>almost</example>, such as <example>not quite</example> or <example>just about</example>, you need to make a single entry for these phrases with an underscore (_) between them and run the Join Compound program before AMPLE.  These entries need the same features as a single word entry with a similar meaning would have.<br/>
-		 <br/>
-		 Also, mark the word or words meaning <example>all</example> with the features
-		 <feature>plural quantifier</feature></instruction>
-	  <instruction id="QPNPDegreeNegYesInstruction" show="swQPNPDegreeNegYesOrSome">In the lexicon, mark the words meaning <example>not</example> with the features <feature>makeDeg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>Deg</category> and the second adds the feature to distinguish them as the type that modifies NPs.  <br/>
-		 <br/>
-		 Also, mark the word or words meaning <example>not</example> with the feature <feature>negative</feature>.</instruction>
-	  <instruction id="QPNPDegreePosProcliticInstruction" show="swQPNPDegreePosProclitic">In the lexicon, mark the positive proclitic(s) meaning <example>all</example> with the features <feature>plural quantifier_prefix</feature>.
-	  </instruction>
-	  <instruction id="QPNPDegreePosEncliticInstruction" show="swQPNPDegreePosEnclitic">In the lexicon, mark the positive enclitic(s) meaning <example>all</example> with the features <feature>plural quantifier_suffix</feature>.
-	  </instruction>
-	  <instruction id="QPNPDegreePosCliticInstruction" show="swQPNPDegreePosClitic">In the lexicon, mark the positive proclitics meaning <example>all</example> with the features <feature>plural quantifier_prefix</feature> and the positive enclitic(s) meaning <example>all</example> with the features <feature>plural quantifier_suffix</feature>.
-	  </instruction>
-	  <instruction id="QPNPDegreePosPrefixInstruction" show="swQPNPDegreePosPrefix">In the lexicon, mark the positive prefix(es) meaning <example>all</example> with the feature <feature>plural</feature>.
-	  </instruction>
-	  <instruction id="QPNPDegreePosSuffixInstruction" show="swQPNPDegreePosSuffix">In the lexicon, mark the positive suffix(es) meaning <example>all</example> with the feature <feature>plural</feature>.
-	  </instruction>
-	  <instruction id="QPNPDegreePosAffixInstruction" show="swQPNPDegreePosAffix">In the lexicon, mark the positive prefix(es) and suffix(es) meaning <example>all</example> with the feature <feature>plural</feature>.</instruction>
-	  <instruction id="QPNPDegreeNegProcliticInstruction" show="swQPNPDegreeNegProclitic">In the lexicon, mark the negative proclitic(s) meaning <example>not</example> with the feature <feature>negative_prefix</feature>.
-	  </instruction>
-	  <instruction id="QPNPDegreeNegEncliticInstruction" show="swQPNPDegreeNegEnclitic">In the lexicon, mark the negative enclitic(s) meaning <example>not</example> with the feature <feature>negative_suffix</feature>.
-	  </instruction>
-	  <instruction id="QPNPDegreeNegCliticInstruction" show="swQPNPDegreeNegClitic">In the lexicon, mark the negative proclitic(s) meaning <example>not</example> with the feature <feature>negative_prefix</feature> and the negative enclitic(s) meaning <example>not</example> with the feature <feature>negative_suffix</feature>.
-	  </instruction>
-	  <instruction id="QPNPDegreeNegPrefixInstruction" show="swQPNPDegreeNegPrefix">In the lexicon, mark the negative prefix(es) meaning <example>not</example> with the feature <feature>negative</feature>.
-	  </instruction>
-	  <instruction id="QPNPDegreeNegSuffixInstruction" show="swQPNPDegreeNegSuffix">In the lexicon, mark the negative suffix(es) meaning <example>not</example> with the feature <feature>negative</feature>.
-	  </instruction>
-	  <instruction id="QPNPDegreeNegAffixInstruction" show="swQPNPDegreeNegAffix">In the lexicon, mark the negative prefix(es) and suffix(es) meaning <example>not</example> with the feature <feature>negative</feature>.
-	  </instruction>
-	  <instruction id="QPNPDegreeEitherRestrictedInstruction" show="swQPNPDegreeEitherRestricted">In the lexicon, mark those special degree words which can only occur initially with the feature <feature>DP-initial</feature> and those which can only occur finally with the feature <feature>DP-final</feature>.  Do not enter either feature on any special degree words which can occur on either side.</instruction>
-	  <instruction id="QPNPDegreeNegEitherRestrictedInstruction" show="swQPNPDegreeNegEitherRestricted">In the lexicon, mark the special degree words meaning <example>not</example> which can only occur initially with the feature <feature>DP-initial</feature> and those which can only occur finally with the feature <feature>DP-final</feature>.  Do not enter either feature on any special degree words which can occur on either side.</instruction>
-	  <br/>
-		<br/>
-		<buttons>
-			<button id="QPMainBack" value="Back" goto="Contents.htm"/>
-			<button id="QPMainNext" value="Next" goto="QPDeterminers.xml"/>
-		</buttons>
-	</form>
+      <radioGroup id="QPClassifierAgrTable" show="swOTClassifierAgr">
+         <groupName dataItem="npDegreeClassifier" default="no">RQPClassifierAgr</groupName>
+         <prompt>Usted dijo que su lengua tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar estos cuantifiacdores o palabras de grado que modifican a la frase nominal completa?</prompt>
+         <radio id="QPClassifierAgrNPDegreeNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
+         <radio id="QPClassifierAgrNPDegreeYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+      </radioGroup>
+      <prompt id="QPClassifierAgrPrompt" show="swOTClassifierAgrNPDegreeYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada una de las palabras solicitadas en esta página.</prompt>	   
+      <br/>
+      <br/>
+      <prompt>Escriba la manera que su lengua expresa “todos”, con cada palabra en una línea separada.  (Si “todos” es un afijo o un <technicalTermRef term="ttClitic"/> que se une a otra palabra en la frase nominal, escríbalo aquí con una indicación del guión o signo igual en el lado que se une.)</prompt>
+      <textBox id="QPAllExample" dataItem="all" rows="3"/>
+      <br/>
+      <br/>
+      <prompt>Escriba la manera que su lengua expresa “casi”, con cada palabra en una línea separada.  (Si “casi” es un afijo o un clítico que se une a otra palabra en la frase nominal, escríbalo aquí con una indicación del guión o signo igual en el lado que se une.)</prompt>
+      <textBox id="QPAlmostExample" dataItem="almost" rows="3"/>
+      <br/>
+      <br/>
+      <prompt>Escriba la manera que su lengua expresa “solamente” o “apenas”, con cada palabra en una línea separada.  (Si uno es un afijo o un clítico que se une a otra palabra en la frase nominal, escríbalo aquí con una indicación del guión o signo igual en el lado que se une.)</prompt>
+      <textBox id="QPOnlyExample" dataItem="only" rows="3"/>
+      <br/>
+      <br/>
+      <radioGroup>
+         <groupName dataItem="npDegree" default="yes">RNPDegree</groupName>
+         <prompt>¿Expresa su lengua estos conceptos como palabras independientes que modifican a la frase nominal completa?</prompt>
+         <radio id="QPNPDegreeYes"  dataValue="yes">Sí, todos son palabras independientes</radio>
+         <radio id="QPNPDegreeSome" dataValue="some">Algunos son palabras independientes, pero otros se unen a otra palabra en la frase nominal</radio>
+         <radio id="QPNPDegreeNo" dataValue="no">No, todos se unen a otra palabra en la frase nominal</radio>
+      </radioGroup>
+      <br/><br/>	
+      <prompt id="QPNPDegreePromptYes" show="swQPNPDegreeYesOrSome">Escriba algunos ejemplos de frases nominales completas con las palabras independientes que significan ‘todos’, ‘casi’, ‘solamente’ o ‘apenas’ aquí:</prompt>
+      <textBox id="QPNPExample" dataItem="example" cols="50" show="swQPNPDegreeYesOrSome"/>
+         <br/><br/>
+      <checkboxGroup id="QPNPDegreePos" show="swQPNPDegreeYesOrSome">
+         <prompt>De acuerdo con los ejemplos, ¿dónde se presentan estos cuantificadores o palabras de grado que se escriben como palabras independientes con respecto al resto de la frase nominal?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+         <checkbox id="QPNPDegreePosBefore"  dataItem="npDegreePosBefore">Antes</checkbox>
+         <checkbox id="QPNPDegreePosAfter"  dataItem="npDegreePosAfter">Después</checkbox>
+         <checkbox id="QPNPDegreePosBoth"  dataItem="npDegreePosBoth">En ambos lados en la misma oración</checkbox>
+         <checkbox id="QPNPDegreePosOther"  dataItem="npDegreePosOther">En mi lengua, pueden presentarse <textBox  id="QPNPDegreePosOtherContent" dataItem="npDegreePosOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="QPNPDegreeWordNoCheckPrompt" show="swQPNPDegreeYesandNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos cuantificadores o palabras de grado con respecto al resto de la frase nominal en su lengua, o cambia la respuesta anterior a “No, todos se unen a otra palabra en la frase nominal”.</prompt>
+      
+      <instruction id="QPNPDegreeYesInstruction" show="swQPNPDegreeYesOrSome">In the lexicon, mark the words meaning <example>almost</example>, <example>nearly</example>, <example>only</example>, and <example>just</example> with the features <feature>makeDeg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>Deg</category>
+         and the second adds the feature to distinguish them as the type that modifies NPs.   If your language has a phrase meaning <example>almost</example>, such as <example>not quite</example> or <example>just about</example>, you need to make a single entry for these phrases with an underscore (_) between them and run the Join Compound program before AMPLE.  These entries need the same features as a single word entry with a similar meaning would have.<br/>
+         <br/>
+         Also, mark the word or words meaning <example>all</example> with the features
+         <feature>plural quantifier_wide_scope</feature>.  Add the feature <feature>makeQ</feature> as well if they do not already have the category <category>Q</category>.</instruction>
+      <instruction id="QPNPDegreeEitherRestrictedInstruction" show="swQPNPDegreeEitherorBoth">In the lexicon, mark those degree words or quantifiers which can only occur initially with the feature <feature>DP-initial</feature> and those which can only occur finally with the feature <feature>DP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+      
+      <checkboxGroup id="NPDegreeType" show="swQPNPDegreeNoOrSome">
+         <prompt><br/>¿Dónde se unen los cuantificadores o palabras de grado que no son palabras independientes en la frase nominal? Seleccione todas las opciones que son correctas en su lengua</prompt>
+         <checkbox id="QPNPDegreeProclitic" dataItem="npDegreeTypeProclitic">Como proclíticos que se unen al inicio de cualquier palabra con que comienza la frase nominal</checkbox>
+         <checkbox id="QPNPDegreeEnclitic" dataItem="npDegreeTypeEnclitic">Como enclíticos que se unen al final de cualquier palabra con que termina la frase nominal</checkbox>
+         <checkbox id="QPNPDegreePrefix" dataItem="npDegreeTypePrefix">Como prefijos que se unen al sustantivo principal de la frase nominal</checkbox>
+         <checkbox id="QPNPDegreeSuffix" dataItem="npDegreeTypeSuffix">Como sufijos que se unen al sustantivo principal de la frase nominal</checkbox>
+         <checkbox id="QPNPDegreeOther" dataItem="npDegreeTypeOther">En mi lengua, estos elementos se unen: <textBox  id="QPNPDegreeTypeOtherContent" dataItem="npDegreeTypeOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="QPNPDegreeAttachesNoCheckPrompt" show="swQPNPDegreeNoandNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos cuantificadores o palabras de grado se unen en su lengua, o cambia su respuesta de arriba a ‘Sí, todos son palabras independientes’.</prompt>
+      
+      <br/><br/>
+      <prompt id="QPNPDegreeCliticPrompt" show="swQPNPDegreeNoOrSomeAndClitic">Ahora escriba ejemplos de frases nominales completas con los clíticos que significan ‘todos', ‘casi'  y ‘solamente' o ‘apenas'  aquí: </prompt>
+      <textBox id="QPNPDegreeCliticExample" dataItem="npDegreeCliticExample" cols="50" show="swQPNPDegreeNoOrSomeAndClitic"/>
+      <instruction id="QPNPDegreeProcliticInstruction" show="swQPNPDegreeNoOrSomeAndProclitic">In the lexicon, mark the proclitics meaning <example>all</example> with the features <feature>plural quantifier_prefix</feature>.
+      </instruction>
+      <instruction id="QPNPDegreeEncliticInstruction" show="swQPNPDegreeNoOrSomeAndEnclitic">In the lexicon, mark the enclitics meaning <example>all</example> with the features <feature>plural quantifier_suffix</feature>.</instruction>
+      <prompt id="QPNPDegreeAffixPrompt" show="swQPNPDegreeNoOrSomeAndAffix">Ahora escriba ejemplos de frases nominales completas con los afijos que significan ‘todos', ‘casi'  y ‘solamente' o ‘apenas'  aquí: </prompt>
+      <textBox id="QPNPDegreeAffixExample" dataItem="npDegreeAffixExample" cols="50" show="swQPNPDegreeNoOrSomeAndAffix"/>
+      <instruction id="QPNPDegreeAffixInstruction" show="swQPNPDegreeNoOrSomeAndAffix">In the lexicon, mark the affixes meaning <example>all</example> with the feature <feature>plural</feature>.</instruction>
+      <prompt id="QPNPDegreeOtherPrompt" show="swQPNPDegreeNoOrSomeAndOther">Ahora escriba ejemplos de frases nominales completas con los <technicalTermRef term="ttMorphemes">morfemas</technicalTermRef> que significan ‘todos', ‘casi'  y ‘solamente' o ‘apenas' que se unen como se permiten en su lengua aquí: </prompt>
+      <textBox id="QPNPDegreeOtherExample" dataItem="npDegreeOtherExample" cols="50" show="swQPNPDegreeNoOrSomeAndOther"/>   
+      
+      <br/>
+      <br/>      
+      <buttons>
+         <button id="QPMainBack" value="Back" goto="Contents.htm"/>
+         <button id="QPMainNext" value="Next" goto="QPDeterminers.xml"/>
+      </buttons>
+   </form>
    <showWhen id="swOTClassifierAgr">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
    </showWhen>
    <showWhen id="swOTClassifierAgrNPDegreeYes">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
-	  <and/>
-	  <whenRadio button="QPClassifierAgrNPDegreeYes"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeYes">
-	  <whenRadio button="QPNPDegreeYes"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeSome">
-	  <whenRadio button="QPNPDegreeSome"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNo">
-	  <whenRadio button="QPNPDegreeNo"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="QPClassifierAgrNPDegreeYes"/>
    </showWhen>
    <showWhen id="swQPNPDegreeNoOrSome">
-	  <whenRadio button="QPNPDegreeSome"/>
-	  <or></or>
-	  <whenRadio button="QPNPDegreeNo"/>
+      <whenRadio button="QPNPDegreeSome"/>
+      <or></or>
+      <whenRadio button="QPNPDegreeNo"/>		
    </showWhen>
    <showWhen id="swQPNPDegreeYesOrSome">
-	  <whenRadio button="QPNPDegreeSome"/>
-	  <or></or>
-	  <whenRadio button="QPNPDegreeYes"/>
+      <whenRadio button="QPNPDegreeSome"/>
+      <or></or>
+      <whenRadio button="QPNPDegreeYes"/>		
    </showWhen>
    <showWhen id="swQPNPDegreeNoOrSomeAndAffix">
-	  <whenRadio button="QPNPDegreeSome"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="QPNPDegreePrefix"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeAffix"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeSuffix"/>
-	  <closeParen/>
-	  <or></or>
-	  <whenRadio button="QPNPDegreeNo"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="QPNPDegreePrefix"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeAffix"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeSuffix"/>
-	  <closeParen/>
+      <whenRadio button="QPNPDegreeSome"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QPNPDegreePrefix"/>
+      <or/>
+      <whenCheckbox button="QPNPDegreeSuffix"/>
+      <closeParen/>
+      <or></or>
+      <whenRadio button="QPNPDegreeNo"/>		
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QPNPDegreePrefix"/>
+      <or/>
+      <whenCheckbox button="QPNPDegreeSuffix"/>
+      <closeParen/>
    </showWhen>
    <showWhen id="swQPNPDegreeNoOrSomeAndClitic">
-	  <whenRadio button="QPNPDegreeSome"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="QPNPDegreeProclitic"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeClitic"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeEnclitic"/>
-	  <closeParen/>
-	  <or></or>
-	  <whenRadio button="QPNPDegreeNo"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="QPNPDegreeProclitic"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeClitic"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeEnclitic"/>
-	  <closeParen/>
+      <whenRadio button="QPNPDegreeSome"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QPNPDegreeProclitic"/>
+      <or/>
+      <whenCheckbox button="QPNPDegreeEnclitic"/>
+      <closeParen/>
+      <or></or>
+      <whenRadio button="QPNPDegreeNo"/>		
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QPNPDegreeProclitic"/>
+      <or/>
+      <whenCheckbox button="QPNPDegreeEnclitic"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNoOrSomeAndProclitic">
+      <whenRadio button="QPNPDegreeSome"/>
+      <and/>
+      <whenCheckbox button="QPNPDegreeProclitic"/>
+      <or></or>
+      <whenRadio button="QPNPDegreeNo"/>		
+      <and/>
+      <whenCheckbox button="QPNPDegreeProclitic"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNoOrSomeAndEnclitic">
+      <whenRadio button="QPNPDegreeSome"/>
+      <and/>
+      <whenCheckbox button="QPNPDegreeEnclitic"/>
+      <or></or>
+      <whenRadio button="QPNPDegreeNo"/>		
+      <and/>
+      <whenCheckbox button="QPNPDegreeEnclitic"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNoOrSomeAndOther">
+      <whenRadio button="QPNPDegreeSome"/>
+      <and/>
+      <whenCheckbox button="QPNPDegreeOther"/>
+      <or/>
+      <whenRadio button="QPNPDegreeNo"/>
+      <and/>
+      <whenCheckbox button="QPNPDegreeOther"/>
    </showWhen>
    <showWhen id="swQPNPDegreeYesorSome">
-	  <whenRadio button="QPNPDegreeSome"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeYes"/>
+      <whenRadio button="QPNPDegreeSome"/>
+      <or/>
+      <whenRadio button="QPNPDegreeYes"/>
    </showWhen>
-   <showWhen id="swQPNPDegreePosProclitic">
-	  <whenRadio button="QPNPDegreeProclitic"/>
+   <showWhen id="swQPNPDegreeClitic">
+      <whenCheckbox button="QPNPDegreeProclitic"/>
+      <or/>
+      <whenCheckbox button="QPNPDegreeEnclitic"/>
    </showWhen>
-   <showWhen id="swQPNPDegreePosEnclitic">
-	  <whenRadio button="QPNPDegreeEnclitic"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreePosClitic">
-	  <whenRadio button="QPNPDegreeClitic"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreePosPrefix">
-	  <whenRadio button="QPNPDegreePrefix"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreePosSuffix">
-	  <whenRadio button="QPNPDegreeSuffix"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreePosAffix">
-	  <whenRadio button="QPNPDegreeAffix"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeEitherRestricted">
-	  <whenRadio button="QPNPDegreeEitherRestricted"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegYes">
-	  <whenRadio button="QPNPDegreeNegYes"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegSome">
-	  <whenRadio button="QPNPDegreeNegSome"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegNo">
-	  <whenRadio button="QPNPDegreeNegNo"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegNone">
-	  <whenRadio button="QPNPDegreeNegNone"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegNotNone">
-	  <not/><whenRadio button="QPNPDegreeNegNone"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegNoOrSome">
-	  <whenRadio button="QPNPDegreeNegSome"/>
-	  <or></or>
-	  <whenRadio button="QPNPDegreeNegNo"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegYesOrSome">
-	  <whenRadio button="QPNPDegreeNegSome"/>
-	  <or></or>
-	  <whenRadio button="QPNPDegreeNegYes"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegNoOrSomeAffix">
-	  <whenRadio button="QPNPDegreeNegSome"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="QPNPDegreeNegPrefix"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeNegAffix"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeNegSuffix"/>
-	  <closeParen/>
-	  <or></or>
-	  <whenRadio button="QPNPDegreeNegNo"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="QPNPDegreeNegPrefix"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeNegAffix"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeNegSuffix"/>
-	  <closeParen/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegNoOrSomeClitic">
-	  <whenRadio button="QPNPDegreeNegSome"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="QPNPDegreeNegProclitic"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeNegClitic"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeNegEnclitic"/>
-	  <closeParen/>
-	  <or></or>
-	  <whenRadio button="QPNPDegreeNegNo"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="QPNPDegreeNegProclitic"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeNegClitic"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeNegEnclitic"/>
-	  <closeParen/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegYesorSome">
-	  <whenRadio button="QPNPDegreeNegSome"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeNegYes"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegProclitic">
-	  <whenRadio button="QPNPDegreeNegProclitic"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegEnclitic">
-	  <whenRadio button="QPNPDegreeNegEnclitic"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegClitic">
-	  <whenRadio button="QPNPDegreeNegClitic"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegPrefix">
-	  <whenRadio button="QPNPDegreeNegPrefix"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegSuffix">
-	  <whenRadio button="QPNPDegreeNegSuffix"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegAffix">
-	  <whenRadio button="QPNPDegreeNegAffix"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegEitherRestricted">
-	  <whenRadio button="QPNPDegreeNegNPEitherRestricted"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegNotNoneAndNegCooccurYes">
-	  <not/><whenRadio button="QPNPDegreeNegNone"/>
-	  <and/>
-	  <whenRadio button="QPNPDegreeNegCooccurYes"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegCooccurYesAndYesOrSome">
-	  <whenRadio button="QPNPDegreeNegCooccurYes"/>
-	  <and/>
-	  <whenRadio button="QPNPDegreeNegSome"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeNegCooccurYes"/>
-	  <and/>
-	  <whenRadio button="QPNPDegreeNegYes"/>
+   <showWhen id="swQPNPDegreeAffix">
+      <whenCheckbox button="QPNPDegreePrefix"/>
+      <or/>
+      <whenCheckbox button="QPNPDegreeSuffix"/>
    </showWhen>
    <showWhen id="swQPNPDegreeEitherorBoth">
-	  <whenRadio button="QPNPDegreeSome"/>
-	  <and/>
-	  <not/><whenRadio button="QPNPDegreeBefore"/>
-	  <and/>
-	  <not/><whenRadio button="QPNPDegreeAfter"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeYes"/>
-	  <and/>
-	  <not/><whenRadio button="QPNPDegreeBefore"/>
-	  <and/>
-	  <not/><whenRadio button="QPNPDegreeAfter"/>
+      <openParen/>
+      <whenRadio button="QPNPDegreeSome"/>
+      <or/>
+      <whenRadio button="QPNPDegreeYes"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QPNPDegreePosBefore"/>
+      <and/>
+      <whenCheckbox button="QPNPDegreePosAfter"/>
+      <or/>
+      <whenCheckbox button="QPNPDegreePosBoth"/>
+      <closeParen/>
    </showWhen>
-   <showWhen id="swQPNPDegreeNegEitherorBoth">
-	  <whenRadio button="QPNPDegreeNegSome"/>
-	  <and/>
-	  <not/><whenRadio button="QPNPDegreeNegBefore"/>
-	  <and/>
-	  <not/><whenRadio button="QPNPDegreeNegAfter"/>
-	  <or/>
-	  <whenRadio button="QPNPDegreeNegYes"/>
-	  <and/>
-	  <not/><whenRadio button="QPNPDegreeNegBefore"/>
-	  <and/>
-	  <not/><whenRadio button="QPNPDegreeNegAfter"/>
+   <showWhen id="swQPNPDegreeNoandNoCheck">
+      <openParen/>
+      <whenRadio button="QPNPDegreeNo"/>
+      <or/>
+      <whenRadio button="QPNPDegreeSome"/>
+      <closeParen/>     
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePrefix"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeOther"/>          
    </showWhen>
+   <showWhen id="swQPNPDegreeYesandNoCheck">
+      <openParen/>
+      <whenRadio button="QPNPDegreeYes"/>
+      <or/>
+      <whenRadio button="QPNPDegreeSome"/>
+      <closeParen/>     
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePosOther"/>          
+   </showWhen>
+   <showWhen id="swQPNPDegreeTypeNoCheck">
+      <not/>
+      <whenCheckbox button="QPNPDegreeProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePrefix"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeOther"/>          
+   </showWhen> 
+   &TechnicalTerms; 
+   
 </page>

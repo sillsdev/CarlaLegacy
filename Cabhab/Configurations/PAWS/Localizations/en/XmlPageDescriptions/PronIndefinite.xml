@@ -1,115 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="PronIndefinite" count="6/9">
-	<title level="2">Pronouns - Indefinites</title>
-	<introduction>A final type of pronouns is indefinites.  In English, these include <example>everybody</example>, <example>everything</example>, <example>everyone</example>, <example>anybody</example>, <example>something</example>, etc.  Also, <example>nobody</example>, <example>nothing</example>, <example>none</example> are negative versions of the indefinite pronouns.  Note that these are made up of a quantifier determiner (positive or negative) plus an indefinite generic noun, and some languages may not merge them into a single word, as in <example>no one</example> for English.</introduction>
-	<form section="pron">
-		<radioGroup id="PronIndefGroup">
-			<groupName dataItem="indef" default="yes">RPronIndef</groupName>
-			<prompt>Beginning with the positive forms, Does your language have any positive single-word indefinite pronouns?</prompt>
-			<radio id="PronIndefYes" dataValue="yes">Yes, like English, at least some of them are merged into indefinite pronouns</radio>
-			<radio id="PronIndefNo" dataValue="no">No, they are all nominal phrases</radio>
-		</radioGroup>
-	   <prompt id="PronIndefExamples" show="swPronIndefYes">
-		  Key some examples of the positive indefinite pronouns here:</prompt>
-	   <textBox id="PronIndefExample" dataItem="indefExample" show="swPronIndefYes"/>
-	   <prompt id="PronIndefNPExamples">
-		  Key some examples of positive indefinite noun phrases <span id="PronIndefYesSpan" show="swPronIndefYes">(if any) </span>in your language here:</prompt>
-	   <textBox id="PronIndefNPExample" dataItem="indefNPExample"/>
-	   <br/>
-	   <br/>
-		  <radioGroup id="PronNegIndefGroup">
-			<groupName dataItem="negIndef" default="yes">RPronNegIndef</groupName>
-			<prompt>Now turning to the negative forms, Does your language have any negative single-word indefinite pronouns?</prompt>
-			<radio id="PronNegIndefYes" dataValue="yes">Yes, like English, at least some of them are merged into negative indefinite pronouns <span id="PronNegIndefPosOnlySpan" show="swQPDeterminerNegNone">but no negative indefinite nominal phrases since the language does not have any means of negating a nominal phrase</span></radio>
-			<radio id="PronNegIndefNo" dataValue="no">No, <span id="PronNegIndefNotPosOnlySpan2" show="swQPDeterminerNegNotNone">they are all nominal phrases</span><span id="PronNegIndefPosOnlySpan2" show="swQPDeterminerNegNone">and there are no negative indefinite nominal phrases either since the language does not have any means of negating a nominal phrase</span></radio>
-		</radioGroup>
-	   <prompt id="PronNegIndefExamples" show="swPronNegIndefYes">
-		Key some examples of the negative indefinite pronouns here:</prompt>
-		<textBox id="PronNegIndefExample" dataItem="negIndefExample" show="swPronNegIndefYes"/>
-		<prompt id="PronNegIndefNPExamples" show="swQPDeterminerNegNotNone">
-		  Key some examples of negative indefinite noun phrases <span id="PronNegIndefYesSpan1" show="swPronNegIndefYes">(if any) </span>in your language here:</prompt>
-		<textBox id="PronNegIndefNPExample" dataItem="negIndefNPExample" show="swQPDeterminerNegNotNone"/>
-		<instruction id="PronNegIndefYesInstruction" show="swPronNegIndefYesAndQPDeterminerNegYesOrSome">
-			Add the feature <feature>negative</feature> to the negative indefinite pronouns.  The negative quantifier determiners meaning ‘no’ that can be used in a negative indefinite noun phrase should have already been marked with the features <feature>negative makeDet</feature> in <section number="2">Quantifiers and QP - No other modifiers</section>.  If any were missed, marked them now.   We will leave <feature>indefinite</feature> unspecified.</instruction>
-		<instruction id="PronNegIndefYesInstruction2" show="swPronNegIndefYesAndQPDeterminerNegNone">
-			Add the feature <feature>negative</feature> to the negative indefinite pronouns.   We will leave <feature>indefinite</feature> unspecified.</instruction>
-		<instruction id="PronNegIndefYesInstruction3" show="swPronNegIndefYesAndQPDeterminerNegNoOrAttaches">
-			Add the feature <feature>negative</feature> to the negative indefinite pronouns.  Any negative special degree elements meaning ‘not’ that can be used in a negative indefinite noun phrase should have already been marked with the proper features in <section number="2">Quantifiers and QP</section>.  If any were missed, marked them now: those written as separate words need the features <feature>negative makeDeg modifies_NP</feature>; phrasal clitics which attach to the front first word of the nominal phrase need the feature <feature>negative_prefix</feature> and phrasal clitics which attach to the end of the last word in the nominal phrase need the feature <feature>negative_suffix</feature>; affixes that attach to the head noun need only the feature <feature>negative</feature>.   We will leave <feature>indefinite</feature> unspecified.</instruction>
-		<instruction id="PronNegIndefNoInstruction" show="swPronNegIndefNoAndQPDeterminerNegYesOrSome">
-			The negative quantifier determiners meaning ‘no’ that can be used in a negative indefinite noun phrase should have already been marked with the features <feature>negative makeDet</feature> in <section number="2">Quantifiers and QP - No other modifiers</section>.  If any were missed, marked them now.  We will leave <feature>indefinite</feature> unspecified.</instruction>
-		<instruction id="PronNegIndefNoInstruction2" show="swPronNegIndefNoAndQPDeterminerNegNoOrAttaches">
-			Any negative special degree elements meaning ‘not’ that can be used in a negative indefinite noun phrase should have already been marked with the proper features in <section number="2">Quantifiers and QP</section>.  If any were missed, marked them now: those written as separate words need the features <feature>negative makeDeg modifies_NP</feature>; phrasal clitics which attach to the front first word of the nominal phrase need the feature <feature>negative_prefix</feature> and phrasal clitics which attach to the end of the last word in the nominal phrase need the feature <feature>negative_suffix</feature>; affixes that attach to the head noun need only the feature <feature>negative</feature>.   We will leave <feature>indefinite</feature> unspecified.</instruction>
-		<br/>
+    <title level="2">Pronouns - Indefinites</title>
+   <introduction>A final type of pronouns is <technicalTermRef term="ttIndefinite">indefinites</technicalTermRef>.        
+      There are two basic sets of indefinite pronouns, though not all languages merge them into a single word:
+      <ul>
+         <li>those consisting of a quantifier and an indefinite generic noun, such as <example>everybody</example>, <example>everything</example>, <example>everyone</example>, <example>anybody</example>, <example>anything</example>, <example>anyone</example>,  <example>somebody</example>, <example>something</example>, <example>someone</example>, and</li>
+         <li>those built from an <technicalTermRef term="ttInterrogative"/> word, such as <example>whoever</example> and <example>whatever</example>.   </li>
+      </ul>
+</introduction>
+    <form section="pron">
+
+       <checkboxGroup>
+          <prompt><br/>Beginning with the first type above that includes a quantifier, such as ‘everybody’, ‘anything’ and ‘someone’,  how does your language express these indefinites?  Check all options that are correct for your language</prompt>
+          <checkbox id="PronIndefTypeQWord" dataItem="indefQWord"> A quantifier and a generic noun merge into a single word</checkbox>
+          <checkbox id="PronIndefTypeQPhrase" dataItem="indefQPhrase">A quantifier occurs with a generic noun but they do not merge into a single word</checkbox>
+          <checkbox id="PronIndefTypeQOther" dataItem="indefQOther">My language does the following to express these indefinite meanings:<textBox  id="PronIndefTypeQOtherContent" dataItem="indefQOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="PronIndefTypeQNoCheckPrompt" show="swPronIndefTypeQNoCheck">WARNING: You need to check at least one box to describe how your language expresses these indefinite meanings.</prompt>
+       
+       <prompt id="ProneIndefTypeQWordPrompt" show="swPronIndefTypeQWord">Key your examples of the indefinites formed from a quantifier and a generic noun merged into a single word here:</prompt>
+       <textBox id="PronIndefTypeQWordExample" dataItem="indefTypeQWordExample" show="swPronIndefTypeQWord" rows="3"/>
+       <instruction  id="PronIndefTypeQWordInstruction" show="swPronIndefTypeQWord">In the lexicon, you will need to make two entries for the generic nouns, one which remains a noun and one with the category <category>Pron</category>, or else the feature <feature>makePron</feature> to change the category for the syntax.</instruction>
+       
+       <prompt id="PronIndefTypeQPhrasePrompt" show="swPronIndefTypeQPhrase">Key your examples of the indefinite phrases consisting of a quantifier word and a generic noun here:</prompt>
+       <textBox id="PronIndefTypeQPhraseExample" dataItem="indefTypeQPhraseExample" show="swPronIndefTypeQPhrase" rows="3"/>
+       <checkboxGroup id="PronIndefTypeQPhraseTable" show="swPronIndefTypeQPhrase">
+          <prompt><br/>Looking at the examples you keyed above, where does the quantifier occur with respect to the generic noun? Check all options that are correct for your language</prompt>
+          <checkbox id="PronIndefTypeQPQBefore" checked="yes" dataItem="indefTypeQPQBefore">Before the generic noun</checkbox>
+          <checkbox id="PronIndefTypeQPQAfter" checked="yes" dataItem="indefTypeQPQAfter">After the generic noun</checkbox>
+          <checkbox id="PronIndefTypeQPQBoth" checked="yes" dataItem="indefTypeQPQBoth">On both sides at the same time</checkbox>
+          <checkbox id="PronIndefTypeQPQOther" checked="yes" dataItem="indefTypeQPQOther">In my language, these quantifiers may occur as follows with respect to the generic noun: <textBox  id="PronIndefTypeQPQOtherContent" dataItem="indefTypeQPQOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="PronIndefTypeQPPhraseNoCheckPrompt" show="swPronIndefTypeQPPhraseAndNoCheck">WARNING: You need to check at least one box to describe where these quantifiers and generic nouns occur in your language, or change the answer above to a different form.</prompt>
+       <instruction id="PronIndefTypeQPQEitherRestrictedInstruction" show="swPronIndefTypeQPQEitherRestricted">In the lexicon, mark those quantifier words which can only occur before the generic noun with the feature <feature>DP-initial</feature> and those which can only occur after the generic noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier words which can occur on either side.</instruction>           
+       
+       <prompt id="PronIndefTypeQOtherPrompt" show="swPronIndefTypeQOther">Key some examples of the other way that your language expresses these indefinites that include a quantifier here:</prompt>
+       <textBox id="PronIndefTypeQOtherExample" dataItem="indefTypeQOtherExample" show="swPronIndefTypeQOther"/>
+       
+       <br/><br/>
+       <checkboxGroup>
+          <prompt><br/>Now consider the indefinites that are based on an interrogative word and an indefinite word, such as ‘whoever’ and ‘whatever’.  How does your language express these indefinites?  Check all options that are correct for your language</prompt>
+          <checkbox id="PronIndefTypeIntWord" dataItem="indefIntWord"> An interrogative word and an indefinite merge into a single word</checkbox>
+          <checkbox id="PronIndefTypeIntPhrase" dataItem="indefIntPhrase">An interrogative word occurs with an indefinite word but they do not merge into a single word</checkbox>
+          <checkbox id="PronIndefTypeIntOther" dataItem="indefIntOther">My language does the following to express this type of indefinite meaning:<textBox  id="PronIndefTypeIntOtherContent" dataItem="indefIntOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="PronIndefTypeIntNoCheckPrompt" show="swPronIndefTypeIntNoCheck">WARNING: You need to check at least one box to describe how your language expresses this type of indefinite meaning.</prompt>
+       <prompt id="PronIndefTypeIntWordPrompt" show="swPronIndefTypeIntWord">Key your examples of the indefinites formed from an interrogative word and an indefinite word merged into a single word here:</prompt>
+       <textBox id="PronIndefTypeIntWordExample" dataItem="indefTypeIntWordExample" show="swPronIndefTypeIntWord" rows="3"/>
+       <instruction  id="PronIndefTypeIntWordInstruction" show="swPronIndefTypeIntWord">In the lexicon, key the features <feature>makePron</feature> on the interrogative words if they do not already have the category <category>Pron</category>. </instruction>
+       
+       <prompt id="PronIndefTypeIntPhrasePrompt" show="swPronIndefTypeIntPhrase">Key your examples of the indefinite phrases consisting of an interrogative word and an indefinite word here:</prompt>
+       <textBox id="PronIndefTypeIntPhraseExample" dataItem="indefTypeIntPhraseExample" show="swPronIndefTypeIntPhrase" rows="3"/>
+       <checkboxGroup id="PronIndefTypeIntPhraseTable" show="swPronIndefTypeIntPhrase">
+          <prompt><br/>Looking at the examples you keyed above, where does the interrogative word occur with respect to the indefinite word? Check all options that are correct for your language</prompt>
+          <checkbox id="PronIndefTypeIntPhraseBefore" checked="yes" dataItem="indefTypeIntBefore">Before the indefinite</checkbox>
+          <checkbox id="PronIndefTypeIntPhraseAfter" checked="yes" dataItem="indefTypeIntAfter">After the indefinite</checkbox>
+          <checkbox id="PronIndefTypeIntPhraseBoth" checked="yes" dataItem="indefTypeIntBoth">On both sides at the same time</checkbox>
+          <checkbox id="PronIndefTypeIntPhraseOther" checked="yes" dataItem="indefTypeIntOther">In my language, these interrogative words may occur as follows with respect to the indefinite word: <textBox  id="PronIndefTypeIntPhraseOtherContent" dataItem="indefTypeIntOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="PronIndefTypeIntPhraseNoCheckPrompt" show="swPronIndefTypeIntPhraseAndNoCheck">WARNING: You need to check at least one box to describe where these interrogative words and indefinite words occur in your language, or change the answer above to a different form.</prompt>
+       <instruction id="PronIndefTypeIntEitherRestrictedInstruction" show="swPronIndefTypeIntEitherRestricted">In the lexicon, mark those interrogative words which can only occur before the indefinite word with the feature <feature>DP-initial</feature> and those which can only occur after the indefinite word with the feature <feature>DP-final</feature>.  Do not enter either feature on any interrogative words which can occur on either side.</instruction>           
+       
+       <prompt id="PronIndefTypeIntOtherPrompt" show="swPronIndefTypeIntOther">Key some examples of the other way that your language expresses these indefinites that include an interrogative word here:</prompt>
+       <textBox id="PronIndefTypeIntOtherExample" dataItem="indefTypeIntOtherExample" show="swPronIndefTypeIntOther"/>
 <br/>
-		<buttons>
-			<button id="PronIndefiniteBack" value="Back" goto="PronDem.xml"/>
-			<button id="PronIndefiniteNext" value="Next" goto="PronNP.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swPronIndefYes">
-		<whenRadio button="PronIndefYes"/>
-	</showWhen>
-	<showWhen id="swPronIndefNo">
-		<whenRadio button="PronIndefNo"/>
-	</showWhen>
-	<showWhen id="swPronNegIndefYes">
-		<whenRadio button="PronNegIndefYes"/>
-	</showWhen>
-	<showWhen id="swPronNegIndefNo">
-		<whenRadio button="PronNegIndefNo"/>
-	</showWhen>
-   <showWhen id="swQPDeterminerNegNone">
-	  <whenValue element="qp" attr="determinerNeg" value="none"/>
+<br/>
+        <buttons>
+            <button id="PronIndefiniteBack" value="Back" goto="PronDem.xml"/>
+            <button id="PronIndefiniteNext" value="Next" goto="PronNP.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swPronIndefTypeQNoCheck">
+      <not/>
+      <whenCheckbox button="PronIndefTypeQWord"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQOther"/>
+   </showWhen> 
+   <showWhen id="swPronIndefTypeIntNoCheck">
+      <not/>
+      <whenCheckbox button="PronIndefTypeIntWord"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntOther"/>
+   </showWhen> 
+   <showWhen id="swPronIndefTypeQPQEitherRestricted">
+      <whenRadio button="PronIndefTypeQPhrase"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeQPQBoth"/>
+      <or/>
+      <whenRadio button="PronIndefTypeQPhrase"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeQPQBefore"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeQPQAfter"/>
    </showWhen>
-   <showWhen id="swQPDeterminerNegNotNone">
-	 <not/> <whenValue element="qp" attr="determinerNeg" value="none"/>
+   <showWhen id="swPronIndefTypeQPhrase">
+      <whenCheckbox button="PronIndefTypeQPhrase"/>
+   </showWhen>   
+   <showWhen id="swPronIndefTypeQWord">
+      <whenCheckbox button="PronIndefTypeQWord"/>
+   </showWhen>   
+   <showWhen id="swPronIndefTypeQOther">
+      <whenCheckbox button="PronIndefTypeQOther"/>
+   </showWhen>   
+   <showWhen id="swPronIndefTypeQPPhraseAndNoCheck">
+      <whenCheckbox button="PronIndefTypeQPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQPQBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQPQAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQPQBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQPQOther"/>
+   </showWhen> 
+   <showWhen id="swPronIndefTypeIntPhrase">
+      <whenCheckbox button="PronIndefTypeIntPhrase"/>
    </showWhen>
-   <showWhen id="swQPDeterminerNegYesOrSome">
-	  <whenValue element="qp" attr="determinerNeg" value="yes"/>
-	  <or/>
-	  <whenValue element="qp" attr="determinerNeg" value="some"/>
+   <showWhen id="swPronIndefTypeIntWord">
+      <whenCheckbox button="PronIndefTypeIntWord"/>
    </showWhen>
-   <showWhen id="swPronNegIndefNoAndQPDeterminerNegYesOrSome">
-	  <whenRadio button="PronNegIndefNo"/>
-	  <and/>
-	  <whenValue element="qp" attr="determinerNeg" value="yes"/>
-	  <or/>
-	  <whenRadio button="PronNegIndefNo"/>
-	  <and/>
-	  <whenValue element="qp" attr="determinerNeg" value="some"/>
+   <showWhen id="swPronIndefTypeIntOther">
+      <whenCheckbox button="PronIndefTypeIntOther"/>
    </showWhen>
-   <showWhen id="swPronNegIndefYesAndQPDeterminerNegYesOrSome">
-	  <whenRadio button="PronNegIndefYes"/>
-	  <and/>
-	  <whenValue element="qp" attr="determinerNeg" value="yes"/>
-	  <or/>
-	  <whenRadio button="PronNegIndefYes"/>
-	  <and/>
-	  <whenValue element="qp" attr="determinerNeg" value="some"/>
+   <showWhen id="swPronIndefTypeIntPhraseAndNoCheck">
+      <whenCheckbox button="PronIndefTypeIntPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntPhraseBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntPhraseAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntPhraseBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntPhraseOther"/>
+   </showWhen> 
+   <showWhen id="swPronIndefTypeIntEitherRestricted">
+      <whenRadio button="PronIndefTypeIntPhrase"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeIntPhraseBoth"/>
+      <or/>
+      <whenRadio button="PronIndefTypeIntPhrase"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeIntPhraseBefore"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeIntPhraseAfter"/>
    </showWhen>
-   <showWhen id="swPronNegIndefNoAndQPDeterminerNegNoOrAttaches">
-	  <whenRadio button="PronNegIndefNo"/>
-	  <and/>
-	  <whenValue element="qp" attr="determinerNeg" value="no"/>
-	  <or/>
-	  <whenRadio button="PronNegIndefNo"/>
-	  <and/>
-	  <whenValue element="qp" attr="determinerNeg" value="attaches"/>
-   </showWhen>
-   <showWhen id="swPronNegIndefYesAndQPDeterminerNegNoOrAttaches">
-	  <whenRadio button="PronNegIndefYes"/>
-	  <and/>
-	  <whenValue element="qp" attr="determinerNeg" value="no"/>
-	  <or/>
-	  <whenRadio button="PronNegIndefYes"/>
-	  <and/>
-	  <whenValue element="qp" attr="determinerNeg" value="attaches"/>
-   </showWhen>
-   <showWhen id="swPronNegIndefYesAndQPDeterminerNegNone">
-	  <whenRadio button="PronNegIndefYes"/>
-	  <and/>
-	  <whenValue element="qp" attr="determinerNeg" value="none"/>
-   </showWhen>
+   
+     &TechnicalTerms; 
+   
 </page>

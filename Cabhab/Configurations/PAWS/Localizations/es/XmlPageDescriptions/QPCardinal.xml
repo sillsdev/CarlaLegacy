@@ -1,124 +1,318 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="QPCardinal" count="4/6">
-	<title level="2">Frases cuantificadoras - Los números</title>
-	<introduction>Ahora considera los números.  Los números no se pueden modificar con las palabras de grado como se puede hacer con los cuantificadores, aunque se presentan en la misma posición. Sin embargo, los números cardinales se pueden modificar con los números ordinales y por
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="QPCardinal" count="4/7">
+	<title level="2">Las frases cuantificadoras - Los números</title>
+   <introduction>Ahora considera los números.  Los números no se pueden modificar por las palabras de grado como se puede hacer los cuantificadores, aunque se presentan en la misma posición. Sin embargo, los números <technicalTermRef term="ttCardinal">cardinales</technicalTermRef> se pueden modificar por los números <technicalTermRef term="ttOrdinal">ordinales</technicalTermRef> y los adjetivos 
 		<example>siguiente</example> y <example>último</example>, como en <example>los primeros veinte muchachos</example> o
-		<example>los cientos años siguientes</example>.  Los números ordinales y <example>siguiente</example> y <example>último</example> pueden también modificar sustantivos directamente, como en
-		<example>la tercera muchacha</example> y <example>el último muchacho</example>.
+      <example>los siguientes cien años</example>.  Los números ordinales y <example>siguiente</example> y <example>último</example> pueden también modificar a sustantivos directamente, como en 
+		<example>la tercera muchacha</example> y <example>el último muchacho</example>. 
 </introduction>
 	<form section="qp">
 	   <radioGroup id="QPNumberClassifierAgrTable" show="swOTClassifierAgr">
-		  <groupName dataItem="numberClassifier" default="no">RQPNumberClassifierAgr</groupName>
-		  <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar los números?</prompt>
-		  <radio id="QPNumberClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
-		  <radio id="QPNumberClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+	      <groupName dataItem="numberClassifier" default="no">RQPNumberClassifierAgr</groupName>
+	      <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar los números?</prompt>
+	      <radio id="QPNumberClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
+	      <radio id="QPNumberClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
 	   </radioGroup>
-	   <prompt id="QPNumberClassifierAgrPrompt" show="swOTClassifierAgrNumberYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada una de las palabras solicitadas en esta página.</prompt>
+	   <prompt id="QPNumberClassifierAgrPrompt" show="swOTClassifierAgrNumberYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada una de las palabras solicitadas en esta página.</prompt>	   
+	   <br/>	   
+	   <prompt>Escriba el número cardinal que significa ‘uno’ aquí:</prompt>
+		<textBox id="QPCardinalNumbers1" dataItem="cardinalNumbers1" rows="2"/>
+		<br/>
+		<br/>
+	   <prompt>Escriba el número cardinal que significa ‘dos’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers2" dataItem="cardinalNumbers2" rows="2"/>
 	   <br/>
-	   <prompt>Escriba los primeros diez números cardinales, cada uno en una línea separada y seguido por un punto, en orden a partir del uno a diez aquí:</prompt>
-		<textBox id="QPCardinalNumbers1to10" dataItem="cardinalNumbers1to10"/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘tres’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers3" dataItem="cardinalNumbers3" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘cuatro’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers4" dataItem="cardinalNumbers4" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘cinco’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers5" dataItem="cardinalNumbers5" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘séis’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers6" dataItem="cardinalNumbers6" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘seite’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers7" dataItem="cardinalNumbers7" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘ocho’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers8" dataItem="cardinalNumbers8" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘nueve’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers9" dataItem="cardinalNumbers9" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘diez’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers10" dataItem="cardinalNumbers10" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘once’ aquí:</prompt>
+		<textBox id="QPCardinalNumbers11" dataItem="cardinalNumbers11" rows="2"/>
 		<br/>
 		<br/>
-		<prompt>Escriba los números cardinales para 11 a 20 aquí:</prompt>
-		<textBox id="QPCardinalNumbers11to20" dataItem="cardinalNumbers11to20"/>
+	   <prompt>Escriba el número cardinal que significa ‘doce’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers12" dataItem="cardinalNumbers12" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘trece’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers13" dataItem="cardinalNumbers13" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘catorce’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers41" dataItem="cardinalNumbers14" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘quince’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers15" dataItem="cardinalNumbers15" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘dieciséis’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers16" dataItem="cardinalNumbers16" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘diecisiete’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers17" dataItem="cardinalNumbers17" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘dieciocho’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers18" dataItem="cardinalNumbers18" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘diecinueve’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers19" dataItem="cardinalNumbers19" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘veinte’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers20" dataItem="cardinalNumbers20" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘treinta’ aquí:</prompt>
+		<textBox id="QPCardinalNumbers30" dataItem="cardinalNumbers30" rows="2"/>
 		<br/>
 		<br/>
-		<prompt>Escriba los números cardinales por los diez para 30 a 100 aquí:</prompt>
-		<textBox id="QPCardinalNumbers30to100" dataItem="cardinalNumbers30to100"/>
+	   <prompt>Escriba el número cardinal que significa ‘cuarenta’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers40" dataItem="cardinalNumbers40" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘cincuenta’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers50" dataItem="cardinalNumbers50" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘sesenta’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers60" dataItem="cardinalNumbers60" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘setenta’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers70" dataItem="cardinalNumbers70" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘ochenta’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers80" dataItem="cardinalNumbers80" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘noventa’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers90" dataItem="cardinalNumbers90" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número cardinal que significa ‘cien’ aquí:</prompt>
+	   <textBox id="QPCardinalNumbers100" dataItem="cardinalNumbers100" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Ahora para los números ordinales, escriba el número ordinal que significa ‘primero’ aquí:</prompt>
+		<textBox id="QPOrdinalNumbers1" dataItem="ordinalNumbers1" rows="2"/>
 		<br/>
 		<br/>
-		<prompt>Escriba los primeros diez números ordinales, cada uno en una línea separada y seguido por un punto, en orden del primero a décimos aquí:</prompt>
-		<textBox id="QPOrdinalNumbers" dataItem="ordinalNumbers"/>
-		<br/>
-		<br/>
-		<prompt>Escriba ejemplos de frases nominales que contienen números ordinales aquí, incluyendo números ordinales con un sustantivo, números ordinales que modifican un número cardinal con un sustantivo y los ejemplos que significan el último o siguiente de alguna cosa:</prompt>
-		<textBox id="QPOrdinalExample" dataItem="ordinalExample"/>
-		<br/>
-		<br/>
-		<radioGroup>
-			<groupName dataItem="ordinalFormation" default="independent">ROrdinalFormation</groupName>
-			<prompt>¿Cómo se forman los números ordinales en su lengua?</prompt>
-			<radio id="QPOrdinalAffix" checked="yes" dataValue="affix">Un afijo se une al número cardinal</radio>
-			<radio id="QPOrdinalIndependent" checked="yes" dataValue="independent">Todas son palabras independientes</radio>
-			<radio id="QPOrdinalBoth" checked="yes" dataValue="both">Algunos son formados con un afijo que se une al número cardinal pero algunas son palabras independientes</radio>
-		</radioGroup>
-		<radioGroup>
-			<groupName dataItem="ordinalPos" default="unknown" position="yesSpec">ROrdinalPosition</groupName>
-		   <prompt>¿Dónde se presentan los números ordinales y las palabras para ‘último’ y ‘siguiente’ con respecto al número cardinal en una frase como ‘los primeros veinte muchachos’?</prompt>
-			<radio id="QPOrdinalBefore" checked="yes" dataValue="before">Antes del número cardinal</radio>
-			<radio id="QPOrdinalAfter" checked="yes" dataValue="after">Después del número cardinal</radio>
-			<radio id="QPOrdinalEitherSide" checked="yes" dataValue="either">De cualquier lado del número cardinal, pero no en ambos lados en la misma oración</radio>
-			<radio id="QPOrdinalEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado del número cardinal, o en ambos lados en la misma oración</radio>
-			<radio id="QPOrdinalBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes del número cardinal, o en ambos lados en la misma oración</radio>
-			<radio id="QPOrdnialAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después del nimber cardinal, o en ambos lados en la misma oración</radio>
-			<radio id="QPOrdinalBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
-			<radioGroup id="QPOrdinalEitherSideTable" show="swQPOrdinalEitherorBoth">
-				<groupName dataItem="ordinalEither" default="yes">ROrdinalEitherSide</groupName>
-			   <prompt>¿Pueden presentarse todos los números ordinales y/o las palabras para ‘último’ y ‘siguiente’ de cualquier lado del número cardinal?</prompt>
-				<radio id="QPOrdinalEitherUnrestricted" checked="yes" dataValue="unrestricted">Sí, no hay restricción</radio>
-				<radio id="QPOrdinalEitherRestricted" checked="yes" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
-			</radioGroup>
-		</radioGroup>
-		<instruction id="QPOrdinalInstruction">
-			<span id="QPOrdinalAffixInstruction" show="swQPOrdinalAffix">In the lexicon, mark the affix with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
-			<span id="QPOrdinalIndependentInstruction" show="swQPOrdinalIndependent">In the lexicon, mark each ordinal word with the feature <feature>ordinal</feature>. Also, mark the words meaning <example>next</example> and <example>last</example> with this feature.</span>
-			<span id="QPOrdinalBothInstruction" show="swQPOrdinalBoth">In the lexicon, mark the appropriate affix and each independent ordinal word with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
-			<span id="QPOrdinalEitherRestrictedInstruction" show="swQPOrdinalEitherRestricted">Those which can only occur before the cardinal number also need to have the feature <feature>QP-initial</feature>
-and those which can only occur after the cardinal number also need the
-feature <feature>QP-final</feature>.  Do not enter either
-feature <feature>QP-initial</feature> or <feature>QP-final</feature> on any ordinal numbers which can occur on
-either side.</span>
-		</instruction>
-		<introduction>Además, los números cardinales más grandes pueden ser los compuestos que se pueden escribir como palabras independientes, tales como <example>cientos treinta y tres</example>.  En muchas lenguas, las conjunciones se requieren o se permiten en los compuestos. La posición de la conjunción es generalmente en el mismo lado del número en que los números más pequeños se presentan. Estos dos detalles nos dicen si el compuesto es núcleo-inicial o núcleo-final.
-			Por ejemplo, en español hay compuestos del número núcleo-finales porque la conjunción se presenta en el extremo del compuesto, antes del número de unidad, como en <example>cuatro mil y tres</example> o <example>seis mil ciento treinta y tres</example>.
+	   <prompt>Escriba el número ordinal que significa ‘segundo’ aquí:</prompt>
+	   <textBox id="QPOrdinalNumbers2" dataItem="ordinalNumbers2" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número ordinal que significa ‘tercero’ aquí:</prompt>
+	   <textBox id="QPOrdinalNumbers3" dataItem="ordinalNumbers3" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número ordinal que significa ‘cuarto’ aquí:</prompt>
+	   <textBox id="QPOrdinalNumbers4" dataItem="ordinalNumbers4" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número ordinal que significa ‘quinto’ aquí:</prompt>
+	   <textBox id="QPOrdinalNumbers5" dataItem="ordinalNumbers5" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número ordinal que significa ‘sexto’ aquí:</prompt>
+	   <textBox id="QPOrdinalNumbers6" dataItem="ordinalNumbers6" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número ordinal que significa ‘séptimo’ aquí:</prompt>
+	   <textBox id="QPOrdinalNumbers7" dataItem="ordinalNumbers7" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número ordinal que significa ‘octavo’ aquí:</prompt>
+	   <textBox id="QPOrdinalNumbers8" dataItem="ordinalNumbers8" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número ordinal que significa ‘noveno’ aquí:</prompt>
+	   <textBox id="QPOrdinalNumbers9" dataItem="ordinalNumbers9" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba el número ordinal que significa ‘décimo’ aquí:</prompt>
+	   <textBox id="QPOrdinalNumbers10" dataItem="ordinalNumbers10" rows="2"/>
+	   <br/>
+	   <br/>
+	   <checkboxGroup>
+	      <prompt>¿Cómo se forman los números ordinales en su lengua? Seleccione todas las opciones que son correctas en su lengua</prompt>
+	      <checkbox id="QPOrdinalAffix" checked="yes" dataItem="ordinalAffix">Un afijo se une al número cardinal</checkbox>
+	      <checkbox id="QPOrdinalIndependent" checked="yes" dataItem="ordinalIndependent">Algunos o todos son palabras independientes</checkbox>
+	      <checkbox id="QPOrdinalWord" checked="yes" dataItem="ordinalWord">Una palabra se presenta con al número cardinal</checkbox>
+	      <checkbox id="QPOrdinalOther" checked="yes" dataItem="ordinalOther">En mi lengua, los números ordinales se froman por: <textBox  id="QPOrdinalOtherContent" dataItem="ordinalOther" rows="2"/></checkbox>
+	   </checkboxGroup>
+	   <prompt id="QPOrdinalFormNoCheckPrompt" show="swQPOrdinalFormNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se forman los números ordinales en su lengua.</prompt>  
+	   
+	   <prompt id="QPOrdinalAffixPrompt" show="swQPOrdinalAffix"><br/>Escriba el afijo que se une a un número cardinal para formar a un número ordinal aquí: </prompt>	   
+	   <textBox id="QPOrdinalAffixExample" dataItem="ordinalAffixExample" rows="2" show="swQPOrdinalAffix"/>
+	   
+	   <prompt id="QPOrdinalWordPrompt" show="swQPOrdinalWord"><br/>Escriba la palabra que se presenta con un número cardinal para formar a un número ordinal aquí: </prompt>	   
+	   <textBox id="QPOrdinalWordExample" dataItem="ordinalWordExample" rows="2" show="swQPOrdinalWord"/>
+	   
+	   <checkboxGroup id="QPOrdinalWordPosTable" show="swQPOrdinalWord">
+	      <prompt><br/>¿Dónde se presenta la palabra ordinal con respecto al número cardinal? Seleccione todas las opciones que son correctas en su lengua</prompt>
+	      <checkbox id="QPOrdinalWordBefore" dataItem="ordinalWordBefore">Antes del número cardinal</checkbox>
+	      <checkbox id="QPOrdinalWordAfter" dataItem="ordinalWordAfter">Después del número cardinal</checkbox>
+	      <checkbox id="QPOrdinalWordBoth" dataItem="ordinalWordBoth">En ambos lados del número cardinal en la misma oración</checkbox>
+	      <checkbox id="QPOrdinalWordOther" dataItem="ordinalWordOther">En mi lengua, la palabra ordinal puede presentarse: <textBox  id="QPOrdinalWordOtherContent" dataItem="ordinalWordOther" rows="2"/></checkbox>
+	   </checkboxGroup>		
+	   <prompt id="QPOrdinalWordPosNoCheckPrompt" show="swQPOrdinalWordPosNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta la palabra ordinal con respecto al número cardinal en su lengua, o cambia su respuesta de arriba para decir que los números ordinales se forman en otra manera.</prompt>  
+	   <br/>
+	   <br/>
+	   <prompt>Escriba algunos ejemplos de las frases nominales que consisten de un número ordinal con un sustantivo aquí:</prompt>
+	   <textBox id="QPOrdinalExample" dataItem="ordinalExample"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba algunos ejemplos de las frases nominales que consisten de un número ordinal con un número cardinal y un sustantivo aquí:</prompt>
+	   <textBox id="QPOrdinalCardinalExample" dataItem="ordinalCardinalExample"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba cómo se expresa ‘siguiente’ aquí:</prompt>
+	   <textBox id="QPNextExample" dataItem="nextExample" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba cómo se expresa ‘último’ aquí:</prompt>
+	   <textBox id="QPLastExample" dataItem="lastExample" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Escriba algunos ejemplos de las frases nominales que consisten de ‘último’ o ‘siguiente’ con un sustantivo o con un número cardinal y un sustantivo aquí:</prompt>
+	   <textBox id="QPNextLastNPExample" dataItem="nextlastNPExample"/>
+	   <br/>
+	   <br/>
+	   <checkboxGroup>
+	      <prompt><br/>¿Dónde se presentan los números ordinales y las palabras para ‘último’ y ‘siguiente’ con respecto al número cardinal en una frase como ‘los primeros veinte muchachos’? Seleccione todas las opciones que son correctas en su lengua</prompt>
+	      <checkbox id="QPOrdinalBefore" checked="yes" dataItem="ordinalBefore">Antes del número cardinal</checkbox>
+	      <checkbox id="QPOrdinalAfter" checked="yes" dataItem="ordinalAfter">Después del número cardinal</checkbox>
+	      <checkbox id="QPOrdinalBoth" checked="yes" dataItem="ordinalBoth">En ambos lados del número cardinal en la misma oración</checkbox>
+	      <checkbox id="QPOrdinalNumOther" dataItem="QPOrdinalNumOther">En mi lengua, estos elementos pueden presentarse:  <textBox  id="QPOrdinalNumOtherContent" dataItem="qpOrdinalNumOther" rows="2"/></checkbox>
+	   </checkboxGroup>		
+	   <prompt id="QPOrdinalNumNoCheckPrompt" show="swQPOrdinalNumNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los números ordinales y las palabras para ‘último’ y ‘siguiente’ con respecto al número cardinal.</prompt>  
+	   
+	   <instruction id="QPOrdinalInstruction">
+	      <span id="QPOrdinalWordInstruction" show="swQPOrdinalWord">In the lexicon, mark the ordinal word with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
+	      <span id="QPOrdinalAffixInstruction" show="swQPOrdinalAffix">In the lexicon, mark the affix with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
+	      <span id="QPOrdinalIndependentInstruction" show="swQPOrdinalIndependent">In the lexicon, mark each ordinal word with the feature <feature>ordinal</feature>. Also, mark the words meaning <example>next</example> and <example>last</example> with this feature.</span>
+	      <span id="QPOrdinalBothInstruction" show="swQPOrdinalBoth">In the lexicon, mark the appropriate affix and each independent ordinal word with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
+	      <span id="QPOrdinalEitherRestrictedInstruction" show="swQPOrdinalEitherRestricted">Those which can only occur before the cardinal number also need to have the feature <feature>QP-initial</feature>
+	         and those which can only occur after the cardinal number also need the
+	         feature <feature>QP-final</feature>.  Do not enter either
+	         feature <feature>QP-initial</feature> or <feature>QP-final</feature> on any ordinal numbers which can occur on 
+	         either side.</span>
+	   </instruction>
+	   
+	   
+		<introduction>Además, los números cardinales más grandes pueden ser los compuestos que se pueden escribir como palabras independientes, por ejemplo, <example>ciento treinta y tres</example>.  En muchas lenguas, las conjunciones se requieren o se permiten en los compuestos. La posición de la conjunción es generalmente en el mismo lado del número en que los números más pequeños se presentan. 
+			Por ejemplo, en español la conjunción se presenta en el extremo del compuesto, antes del número de unidad, como en <example>cuatro mil y tres</example> o <example>seis mil ciento treinta y tres</example>. 
 </introduction>
 		<prompt>Escriba unos ejemplos de números compuestos aquí:</prompt>
 		<textBox id="QPCardinalCompoundExample" dataItem="cardinalCompoundExample" cols="50"/>
 		<radioGroup>
 			<groupName dataItem="cardinalHead" default="after">RCardinalHead</groupName>
-		   <prompt>De acuerdo con estos ejemplos, ¿dónde está el núcleo en los números compuestos cardinales?</prompt>
-			<radio id="CardinalHeadInitial" checked="yes" dataValue="before">Inicial, los números cero a nueve se presentan al inicio y cualquier conjunción se presenta en la parte inicial del compuesto</radio>
-			<radio id="CardinalHeadFinal" checked="yes" dataValue="after">Final, los números cero a nueve se presentan al final y cualquier conjunción se presenta en la parte final del compuesto</radio>
+		   <prompt>De acuerdo con estos ejemplos, ¿dónde se presentan los números cero a nueve y cualquier conjunción en los números compuestos cardinales?</prompt>
+		   <radio id="CardinalHeadInitial" checked="yes" dataValue="before">Primero o en la parte inicial del número compuesto</radio>
+		   <radio id="CardinalHeadFinal" checked="yes" dataValue="after">Último o en la parte final del número compuesto</radio>
 		</radioGroup>
 		<br/>
-		<buttons>
-			<button id="QPCardinalExamplesBack" value="Back" goto="QPDegree.xml"/>
-			<button id="QPCardinalExamplesNext" value="Next" goto="QPCatMap.xml" gotoNoGrammar="Contents.htm"/>
-		</buttons>
+	   <buttons>
+	      <button id="QPCardinalExamplesBack" value="Back" goto="QPDegree.xml"/>
+	      <button id="QPCardinalExamplesNext" value="Next" goto="QPPartitive.xml"/>
+	   </buttons>
 	</form>
    <showWhen id="swOTClassifierAgr">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
    </showWhen>
    <showWhen id="swOTClassifierAgrNumberYes">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
-	  <and/>
-	  <whenRadio button="QPNumberClassifierAgrYes"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="QPNumberClassifierAgrYes"/>
    </showWhen>
    <showWhen id="swQPOrdinalAffix">
-		<whenRadio button="QPOrdinalAffix"/>
-	</showWhen>
-	<showWhen id="swQPOrdinalIndependent">
-		<whenRadio button="QPOrdinalIndependent"/>
-	</showWhen>
-	<showWhen id="swQPOrdinalBoth">
-		<whenRadio button="QPOrdinalBoth"/>
-	</showWhen>
-	<showWhen id="swQPOrdinalEitherorBoth">
-		<not/>
-		<whenRadio button="QPOrdinalBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPOrdinalAfter"/>
-	</showWhen>
-	<showWhen id="swQPOrdinalEitherRestricted">
-		<whenRadio button="QPOrdinalEitherRestricted"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPOrdinalBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPOrdinalAfter"/>
-	</showWhen>
+      <whenCheckbox button="QPOrdinalAffix"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalIndependent">
+      <whenCheckbox button="QPOrdinalIndependent"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalWord">
+      <whenCheckbox button="QPOrdinalWord"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalBoth">
+      <whenCheckbox button="QPOrdinalBoth"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalEitherRestricted">
+      <whenCheckbox button="QPOrdinalBefore"/>
+      <and/>
+      <whenCheckbox button="QPOrdinalAfter"/>
+      <or/>
+      <whenCheckbox button="QPOrdinalBoth"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalFormNoCheck">
+      <not/>
+      <whenCheckbox button="QPOrdinalAffix"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalIndependent"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalWord"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalOther"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalNumNoCheck">
+      <not/>
+      <whenCheckbox button="QPOrdinalBefore"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalAfter"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalBoth"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalNumOther"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalWordPosNoCheck">
+      <whenCheckbox button="QPOrdinalWord"/>
+      <and/>    <not/>
+      <whenCheckbox button="QPOrdinalWordBefore"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalWordAfter"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalWordBoth"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalWordOther"/> 
+   </showWhen>
+   &TechnicalTerms; 
+   
 </page>

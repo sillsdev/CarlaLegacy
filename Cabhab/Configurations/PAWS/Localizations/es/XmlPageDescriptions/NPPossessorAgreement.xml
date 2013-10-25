@@ -1,159 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="NPPossessorAgreement" count="2/2">
-	<title level="2">Las frases nominales - La concordancia del poseedor</title>
-	<introduction>La concordancia del poseedor se manifiesta comúnmente de dos formas básicas:
+    <title level="2">Las frases nominales - La concordancia del posesivo</title>
+    <introduction>La concordancia del posesivo se manifiesta comúnmente de dos formas básicas:
 <ul>
-	<li>Un afijo que se encuentra en sustantivos poseídos alienables para indicar que están poseídas y por lo tanto deben tener un poseedor en la frase nominal. Los sustantivos poseídos inalienables no tienen ningún indicador, sino que siempre deben tener un poseedor. Éstos incluyen, pero no se limitan a, los términos del parentesco y las partes del cuerpo.</li>
-	<li>Un afijo que corresponde al poseedor (o expresa posiblemente al poseedor en sí mismo).</li>
-		</ul>
-	   Cada tipo será considerado en su orden correspondiente.
-		</introduction>
-	<form section="np">
-		<radioGroup>
-			<groupName dataItem="possAlienable" default="no">RNPPossAlienable</groupName>
-		   <prompt>¿Su lengua distingue sustantivos entre posesión alienable o inalienable?</prompt>
-			<radio id="NPPossAlienableNo" dataValue="no">No</radio>
-			<radio id="NPPossAlienableYes" dataValue="yes">Sí</radio>
-		</radioGroup>
-	   <prompt id="NPPossAlienableYesPrompt" show="swNPPossAlienableYes">Escriba los afijos que se utilizan para indicar sustantivos de posesión alienable cuando tienen un poseedor en el cuadro (cada uno en una línea separada si tiene más de uno). Utilice un guión después de los caracteres alfabéticos para indicar un prefijo, un guión antes para indicar un sufijo, y guiones en ambos lados para indicar un infijo.<br/><br/>
-		  Tenga en cuenta que estos afijos no deben ser iguales a los que concuerdan con o expresan el poseedor, examinado a continuación.</prompt>
-		<textBox id="NPPossAlienableYesAffixExample" dataItem="possAlienableAffixExample" rows="3" cols="20" show="swNPPossAlienableYes"/>
-		<br/>
-		<instruction id="NPPossAlienableYesInstruction" show="swNPPossAlienableYes">Key the feature <feature>possessed</feature> on the affix(es) that marks the alienably possessed nouns when they have a possessor.  Also, key the feature <feature>possessed</feature> on all inalienably possessed nouns so that a possessor will be required.</instruction>
-		<radioGroup id="NPPossAgrTable">
-			<groupName dataItem="possAgr" default="no">RNPPossAgr</groupName>
-		   <prompt>¿Se indican los sustantivos con un afijo que concuerda con el poseedor (o posiblemente expresa el poseedor por sí mismo)?  Estos afijos deben ser los pronombres dependientes utilizados para poseedores que se introducirán en <section number="7" >Los pronombres</section>.</prompt>
-			<radio id="NPPossAgrNo" dataValue="no">No</radio>
-			<radio id="NPPossAgrYes" dataValue="yes">Sí</radio>
-		</radioGroup>
-		<prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYes">Mire las características de la tabla abajo y compruebe (dando click) cualquiera que su lengua utiliza.  Para la concordancia de clase, substituya un tipo o un número como apropriado para ## en la gramática.<br/>
-			<featureChart>
-				<featureRow>
-					<featureType rowspan="5">persona</featureType>
-					<featureItem dataValue="npPossAgrPossFirst" name="NPPossAgrPossFirst">poss_first</featureItem>
-					<featureExplanation>el poseedor debe ser primera persona</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossExclusive" name="NPPossAgrPossExclusive">poss_exclusive</featureItem>
-					<featureExplanation>el poseedor debe ser primera persona exclusiva</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossInclusive" name="NPPossAgrPossInclusive">poss_inclusive</featureItem>
-					<featureExplanation>el poseedor debe ser primera persona inclusiva</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossSecond" name="NPPossAgrPossSecond">poss_second</featureItem>
-					<featureExplanation>el poseedor debe ser segunda persona</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossThird" name="NPPossAgrPossThird">poss_third</featureItem>
-					<featureExplanation>el poseedor debe ser tercera persona</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType rowspan="3">número</featureType>
-					<featureItem dataValue="npPossAgrPossSingular" name="NPPossAgrPossSingular">poss_singular</featureItem>
-					<featureExplanation>el poseedor debe ser singular en número</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossPlural" name="NPPossAgrPossPlural">poss_plural</featureItem>
-					<featureExplanation>el poseedor debe ser plural en número</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossDual" name="NPPossAgrPossDual">poss_dual</featureItem>
-					<featureExplanation>el poseedor debe ser dual en número</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureType rowspan="3">género</featureType>
-					<featureItem dataValue="npPossAgrPossMasculine" name="NPPossAgrPossMasculine">poss_masculine</featureItem>
-					<featureExplanation>el poseedor debe ser masculino en género</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossFeminine" name="NPPossAgrPossFeminine">poss_feminine</featureItem>
-					<featureExplanation>el poseedor debe ser femenino en género</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossNeuter" name="NPPossAgrPossNeuter">poss_neuter</featureItem>
-					<featureExplanation>el poseedor debe ser neutro en género</featureExplanation>
-				</featureRow>
-				<featureRow>
-				<featureType rowspan="4">animado</featureType>
-					<featureItem dataValue="npPossAgrPossAnimate" name="NPPossAgrPossAnimate">poss_animate</featureItem>
-					<featureExplanation>el poseedor debe ser animado</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossInanimate" name="NPPossAgrPossInanimate">poss_inanimate</featureItem>
-					<featureExplanation>el poseedor debe ser inanimado</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossHuman" name="NPPossAgrPossHuman">poss_human</featureItem>
-					<featureExplanation>el poseedor debe ser humano</featureExplanation>
-				</featureRow>
-				<featureRow>
-					<featureItem dataValue="npPossAgrPossNonHuman" name="NPPossAgrPossNonHuman">poss_nonhuman</featureItem>
-					<featureExplanation>el poseedor debe ser no humano</featureExplanation>
-				</featureRow>
-				<featureRow>
-				<featureType rowspan="1">clase</featureType>
-					<featureItem dataValue="npPossAgrPossClassClassNumber" name="NPPossAgrPossClassClassNumber">poss_class_##</featureItem>
-					<featureExplanation>el poseedor debe ser de ## clase</featureExplanation>
-				</featureRow>
-			</featureChart>
-		</prompt>
-	   <instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes"> In the lexicon, add one or more features from the following list as appropriate to the affix entries.  For class agreement, replace the ## with the appropriate class type or number up to 25 on the appropriate entries in the lexicon.<br/>
-		  Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="7">Los pronombres</section>.</instruction>
-	   <instruction id="NPPossNounAgrKeyedInstruction" show="swNPArtAndOrDem">If you followed instructions, any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.  If not, return there to complete the feature marking in the lexicon, before continuing on.</instruction>
-	   <br/><br/>
-		<buttons>
-			<button id="NPPossAgrBack" value="Back" goto="NPPossessors.xml"/>
-			<button id="NPPossAgrNext" value="Next" goto="NPContents.htm"/>
-		</buttons>
-	</form>
+   <li>Un afijo que se encuentra en sustantivos de posesión <technicalTermRef term="ttAlienably">alienable</technicalTermRef> para indicar que están poseídas y por lo tanto deben tener un posesivo en la frase nominal. Los sustantivos de posesión <technicalTermRef term="ttInalienably">inalienable</technicalTermRef> no tienen ningún indicador, pero siempre deben tener un posesivo. Estos incluyen pero no se limitan a los términos de parentesco y las partes del cuerpo.</li>
+    <li>Un afijo que concuerda con el posesivo (o expresa posiblemente al poseedor mismo).</li>
+        </ul>
+  Cada tipo se consideran en su orden correspondiente.
+        </introduction>
+    <form section="np">
+        <radioGroup>
+            <groupName dataItem="possAlienable" default="no">RNPPossAlienable</groupName>
+           <prompt><br/>¿Su lengua distingue entre los sustantivos de posesión alienable y los de posesión inalienable?</prompt>
+            <radio id="NPPossAlienableNo" dataValue="no">No</radio>
+            <radio id="NPPossAlienableYes" dataValue="yes">Sí</radio>
+        </radioGroup>
+       <prompt id="NPPossAlienableYesPrompt" show="swNPPossAlienableYes">Escriba los afijos que se utilizan para marcar sustantivos de posesión alienable cuando tienen un poseedor en el campo (cada uno en una línea separada si tiene más de uno). Utilice un guión después de los caracteres alfabéticos para indicar un prefijo, un guión antes para indicar un sufijo, y guiones en ambos lados para indicar un infijo.<br/><br/>
+          Tenga en cuenta que estos afijos no deben ser iguales a los que concuerdan con o expresan al poseedor, examinado a continuación.</prompt>
+        <textBox id="NPPossAlienableYesAffixExample" dataItem="possAlienableAffixExample" rows="3" cols="20" show="swNPPossAlienableYes"/>
+        <br/>
+        <instruction id="NPPossAlienableYesInstruction" show="swNPPossAlienableYes">Key the feature <feature>possessed</feature> on the affix(es) that marks the alienably possessed nouns when they have a possessor.  Also, key the feature <feature>possessed</feature> on all inalienably possessed nouns so that a possessor will be required.</instruction>
+        <radioGroup id="NPPossAgrTable">
+            <groupName dataItem="possAgr" default="no">RNPPossAgr</groupName>
+           <prompt><br/>¿Se marcan los sustantivos con un afijo que concuerda con el posesivo (o posiblemente expresa el poseedor mismo)?  Estos afijos deben ser los pronombres dependientes utilizados para posesivos que se detallan en <section number="7" >Los pronombres</section>.</prompt>
+            <radio id="NPPossAgrNo" dataValue="no">No</radio>
+            <radio id="NPPossAgrYes" dataValue="yes">Sí</radio>
+        </radioGroup>
+       <prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYesAndNotPractical">Mire las características de la tabla abajo y compruebe (dando click) cualquiera que su lengua utiliza. In the lexicon, add that feature to the appropriate entires.  La concordancia de clase fue analizado en <section number="1.">La tipología - clasificadores</section>.  <br/>
+            <featureChart>
+                <featureRow>
+                    <featureType rowspan="5">persona</featureType>
+                    <featureItem dataValue="npPossAgrPossFirst" name="NPPossAgrPossFirst">poss_first</featureItem>
+                    <featureExplanation>el poseedor debe ser primera persona</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossExclusive" name="NPPossAgrPossExclusive">poss_exclusive</featureItem>
+                    <featureExplanation>el poseedor debe ser primera persona exclusiva</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossInclusive" name="NPPossAgrPossInclusive">poss_inclusive</featureItem>
+                    <featureExplanation>el poseedor debe ser primera persona inclusiva</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossSecond" name="NPPossAgrPossSecond">poss_second</featureItem>
+                    <featureExplanation>el poseedor debe ser segunda persona</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossThird" name="NPPossAgrPossThird">poss_third</featureItem>
+                    <featureExplanation>el poseedor debe ser tercera persona</featureExplanation>
+                </featureRow>
+                <featureRow>
+                   <featureType rowspan="3">número</featureType>
+                    <featureItem dataValue="npPossAgrPossSingular" name="NPPossAgrPossSingular">poss_singular</featureItem>
+                    <featureExplanation>el poseedor debe ser singular en número</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossPlural" name="NPPossAgrPossPlural">poss_plural</featureItem>
+                    <featureExplanation>el poseedor debe ser plural en número</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossDual" name="NPPossAgrPossDual">poss_dual</featureItem>
+                    <featureExplanation>el poseedor debe ser dual en número</featureExplanation>
+                </featureRow>
+                <featureRow>
+                   <featureType rowspan="3">género</featureType>
+                    <featureItem dataValue="npPossAgrPossMasculine" name="NPPossAgrPossMasculine">poss_masculine</featureItem>
+                    <featureExplanation>el poseedor debe ser masculino en género</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossFeminine" name="NPPossAgrPossFeminine">poss_feminine</featureItem>
+                    <featureExplanation>el poseedor debe ser femenino en género</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossNeuter" name="NPPossAgrPossNeuter">poss_neuter</featureItem>
+                    <featureExplanation>el poseedor debe ser neutro en género</featureExplanation>
+                </featureRow>
+                <featureRow>
+                   <featureType rowspan="4">animado</featureType>
+                    <featureItem dataValue="npPossAgrPossAnimate" name="NPPossAgrPossAnimate">poss_animate</featureItem>
+                    <featureExplanation>el poseedor debe ser animado</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossInanimate" name="NPPossAgrPossInanimate">poss_inanimate</featureItem>
+                    <featureExplanation>el poseedor debe ser inanimado</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossHuman" name="NPPossAgrPossHuman">poss_human</featureItem>
+                    <featureExplanation>el poseedor debe ser humano</featureExplanation>
+                </featureRow>
+                <featureRow>
+                    <featureItem dataValue="npPossAgrPossNonHuman" name="NPPossAgrPossNonHuman">poss_nonhuman</featureItem>
+                    <featureExplanation>el poseedor debe ser no humano</featureExplanation>
+                </featureRow>
+           </featureChart>
+        </prompt>
+       <instruction id="NPPossAgr2Instruction" show="swNPPossAgrYes"> In the lexicon, add one or more features from the following list as appropriate to the affix entries. <br/> 
+          Note that this possessor agreement, at least in person features, cannot be tested until pronoun possessors are added in <section number="7">Los pronombres</section>.</instruction>
+       <instruction id="NPPossNounAgrKeyedInstruction" show="swNPArtAndOrDem">If you followed instructions, any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.  If not, return there to complete the feature marking in the lexicon, before continuing on.</instruction>
+       <br/><br/>
+ <introduction>
+    Además, algunas lenguas tienen un afijo que se presenta en los sustantivos cuando no están poseídos o pluralizados. Estse afijo es conocido como el indicador absolutivo, pero el nombre no está relacionado con el indicador de caso absolutivo usado en lenguas con un sistema de caso ergativo-absolutivo.  
+ </introduction>
+       <radioGroup>
+          <groupName dataItem="possAbsolutive" default="no">RNPPossAbsolutive</groupName>
+          <prompt><br/>¿Tiene su lengua un afijo que se presenta en sustantivos cuando no están poseídos o pluralizados?</prompt>
+          <radio id="NPPossAbsolutiveNo" dataValue="no">No</radio>
+          <radio id="NPPossAbsolutiveYes" dataValue="yes">Sí</radio>
+       </radioGroup>
+       <prompt id="NPPossAbsolutiveYesPrompt" show="swNPPossAbsolutiveYes">Escriba los afijos que se presentan en sustantivos cuando no están poseídos o pluralizados aquí (con cada uno en linea separada). Utilice un guión después de los caracteres alfabéticos para indicar un prefijo, un guión antes de indicar un sufijo y guiones en ambos lados para indicar un infijo.</prompt>
+       <textBox id="NPPossAbsolutiveAffixExample" dataItem="possAbsolutiveAffixExample" rows="3" cols="20" show="swNPPossAbsolutiveYes"/>
+       <br/><br/>
+       <buttons>
+          <button id="NPPossAgrBack" value="Back" goto="NPPossessors.xml"/>
+          <button id="NPPossAgrNext" value="Next" goto="NPContents.htm"/>
+       </buttons>
+    </form>
    <showWhen id="swNPArtAgreementNone">
-	  <whenValue element="np" attr="agreeNumber" value="no"/>
-	  <and/>
-	  <whenValue element="np" attr="agreeOther" value="no"/>
+      <whenValue element="np" attr="agreeNumber" value="no"/>
+      <and/>
+      <whenValue element="np" attr="agreeOther" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAgreementNumberYes">
-	  <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAgreementAnimacyYes">
-	  <whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
+      <whenValue element="np" attr="agreeAnimacy" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAgreementGenderYes">
-	  <whenValue element="np" attr="agreeOther" value="yesGender"/>
+      <whenValue element="np" attr="agreeGender" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAgreementClassYes">
-	  <whenValue element="np" attr="agreeOther" value="yesClass"/>
+      <whenValue element="np" attr="agreeClass" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtDemMassYes">
-	  <whenValue element="np" attr="artRequired" value="mass"/>
-	  <or/>
-	  <whenValue element="np" attr="demRequired" value="mass"/>
-	  <or/>
-	  <whenValue element="np" attr="demOrArtRequired" value="mass"/>
-	  <or/>
-	  <whenValue element="np" attr="demAndArtDem" value="mass"/>
-	  <or/>
-	  <whenValue element="np" attr="demAndArtArt" value="mass"/>
+      <whenValue element="np" attr="artRequired" value="mass"/>
+      <or/>
+      <whenValue element="np" attr="demRequired" value="mass"/>
+      <or/>
+      <whenValue element="np" attr="demOrArtRequired" value="mass"/>
+      <or/>
+      <whenValue element="np" attr="demAndArtDemRequired" value="mass"/>
+      <or/>
+      <whenValue element="np" attr="demAndArtArtRequired" value="mass"/>
    </showWhen>
    <showWhen id="swNPPossAlienableYes">
-	  <whenRadio button="NPPossAlienableYes"/>
+      <whenRadio button="NPPossAlienableYes"/>
    </showWhen>
    <showWhen id="swNPPossAgrYes">
-	  <whenRadio button="NPPossAgrYes"/>
+      <whenRadio button="NPPossAgrYes"/>
+   </showWhen>
+   <showWhen id="swNPPossAgrYesAndNotPractical">
+      <whenRadio button="NPPossAgrYes"/>
+      <and/>
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
+   <showWhen id="swNPPossAbsolutiveYes">
+      <whenRadio button="NPPossAbsolutiveYes"/>
    </showWhen>
    <showWhen id="swNPArtAndOrDem">
-	  <not/>
-	  <whenValue element="np" attr="artAndDem" value="no"/>
+      <not/>
+      <whenValue element="np" attr="artAndDem" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemNeither">
-	  <whenValue element="np" attr="artAndDem" value="no"/>
+      <whenValue element="np" attr="artAndDem" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndOrDemandNotPractical">
-	  <whenValue  element="paws" attr="outputGrammar" value="True"/>
-	  <and/><not/>
-	  <whenValue element="np" attr="artAndDem" value="no"/>
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+      <and/><not/>
+      <whenValue element="np" attr="artAndDem" value="no"/>
    </showWhen>
+   &TechnicalTerms; 
 </page>

@@ -1,47 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="CoordDP" count="2/5">
+<page id="CoordDP" count="2/4">
 	<title level="2">Coordination Constructions - Lists and Appositives</title>
 	<introduction>Besides the basic coordination constructions where there is an overt conjunction between the conjuncts, nominal phrases especially can have other forms of coordination constructions.  We will deal with lists and appositives here.
 	<br/><br/>
 	Lists consist of three or more items that are conjoined to form a single nominal phrase.  The initial items are normally separated by commas and there is an overt conjunction before the final item in the list, though there are different possibilities, as in 3-4.  Some English examples of nominal phrases consisting of lists are:
 	</introduction>
    <EnglishExample>
-	  <exItem label="1.">John, Bill, Sue and Mary</exItem>
-	  <exItem label="2.">John, Bill, Sue and/or Mary</exItem>
-	  <exItem label="3.">John and Bill or Sue and Mary</exItem>
-	  <exItem label="4.">A cat, two dogs, and a chicken but not a monkey</exItem>
-   </EnglishExample>
+      <exItem label="1.">John, Bill, Sue and Mary</exItem>
+      <exItem label="2.">John, Bill, Sue and/or Mary</exItem>
+      <exItem label="3.">John and Bill or Sue and Mary</exItem>
+      <exItem label="4.">A cat, two dogs, and a chicken but not a monkey</exItem>
+   </EnglishExample>   
    <form section="coord" transparent="no">
-	  <prompt>Key how your language expresses lists within a nominal phrase here:</prompt>
-	  <textBox id="CoordListExample" dataItem="listExample"/>
+      <prompt>Key how your language expresses lists within a nominal phrase here:</prompt>
+      <textBox id="CoordListExample" dataItem="listExample"/>
 <br/><br/>
-	  <introduction>Appositives normally consist of a name followed by a comma and then a description also followed by a comma, or the order may be reversed.  Some English examples include:
-	  </introduction>
+      <introduction>Appositives normally consist of a name followed by a comma and then a description also followed by a comma, or the order may be reversed.  Some English examples include:
+      </introduction>
 	<EnglishExample>
 	   <exItem label="5.">George Washington, the first President of the United States</exItem>
 	   <exItem label="6.">My brother, James</exItem>
 	</EnglishExample>
   <br/>
-	  <prompt>Key some nominal phrases containing appositives in your language here:</prompt>
-	  <textBox id="CoordAppositiveExample" dataItem="appositiveExample"/>
-	  <br/>
-	  <br/>
-	  <instruction id="CoordListCommaInstruction">Note that the comma is important in both of these constructions and may be useful in disambiguating list or appositive constructions from other types.  You can choose to make the comma (,) a word-formation character in <tool>CarlaStudio</tool>. Then make it a suffix or enclitic that can go on any word category and give it the feature <feature>comma</feature>.  The PC-Patr grammar constraints to disambiguate via commas are already provided, but you will need to activate them by removing the comment character in the DP rule <ruleInfo>option conjListAppos</ruleInfo>.  See a similar instruction for topics.</instruction><br/>
+      <prompt>Key some nominal phrases containing appositives in your language here:</prompt>
+      <textBox id="CoordAppositiveExample" dataItem="appositiveExample"/>
+      <br/>
+      <br/>
+      <instruction id="CoordListCommaInstruction">Note that the comma is important in both of these constructions and may be useful in disambiguating list or appositive constructions from other types.  You can choose to make the comma (,) a word-formation character in <tool>CarlaStudio</tool>. Then make it a suffix or enclitic that can go on any word category and give it the feature <feature>comma</feature>.  The PC-Patr grammar constraints to disambiguate via commas are already provided, but you will need to activate them by removing the comment character in the DP rule <ruleInfo>option conjListAppos</ruleInfo>.  See a similar instruction for topics.</instruction><br/>
 		<br/>
 		<buttons>
 			<button id="CoordDPBack" value="Back" goto="CoordMain.xml"/>
-			<button id="CoordDPNext" value="Next" goto="CoordComparative.xml"/>
+		   <button id="CoordDPNext" value="Next" goto="CoordCatMap.xml" gotoNoGrammar="Contents.htm"/>
 		</buttons>
 	</form>
    <showWhen id="swPPPosPrep">
-	  <whenValue element="pp" attr="pPos" value="before"/>
+      <whenValue element="pp" attr="pPos" value="before"/>
    </showWhen>
    <showWhen id="swPPPosPost">
-	  <whenValue element="pp" attr="pPos" value="after"/>
+      <whenValue element="pp" attr="pPos" value="after"/>
    </showWhen>
    <showWhen id="swPPPosBoth">
-	  <whenValue element="pp" attr="pPos" value="both"/>
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
    </showWhen>
 </page>

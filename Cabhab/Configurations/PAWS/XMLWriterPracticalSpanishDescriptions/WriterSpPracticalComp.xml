@@ -1,311 +1,923 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
-	<section1 id="sComp">
-		<secTitle>Las cláusulas de complemento</secTitle>
-		<p>
-			<content>Hay varios tipos de cláusulas subordinadas que son complementos de verbos principales o de adjetivos que funcionan al igual que el predicado de la oración.
-				Algunos ejemplos de cada tipo de complemento clausal serán dados en la sección siguiente, seguida por un análisis de los complementizadoras y su posición en cláusulas subordinadas declarativas. Véase la sección </content>
-			<sectionRef sec="sQues"/>
-			<content> para un análisis semejante para las preguntas subordinadas y la sección </content>
-			<sectionRef sec="sRelCl"/>
-			<content> para las cláusulas relativas.</content>
-		</p>
-		<section2 id="sCompType">
-			<secTitle>Tipos de cláusulas de complemento</secTitle>
-			<p>
-				<content>Cada uno de las subsecciones siguientes ejemplifica un tipo particular de complemento para un verbo o otro predicado.  Véase la sección </content>
-				<sectionRef sec="sAdvCl"/>
-				<content> para considerar ejemplos de cláusulas adverbiales. Algunos adverbios también pueden tener complementos clausal de la mayor parte de estos tipos, aunque las cláusulas adverbiales no son complementos del verbo principal. </content>
-			</p>
-			<section3 id="sCompTypeFinite">
-				<secTitle>Un complemento finito</secTitle>
-				<p>
-					<content>Algunos ejemplos de los verbos que solamente pueden tener un complemento finito clausal en español son: </content>
-					<langData>Creo que Juliana es mi amiga</langData>
-					<content>, </content>
-					<langData>Juliana insisto que ella sea mi amiga</langData>
-					<content> y </content>
-				   <langData>Yo sé que le gusto a él</langData>
-					<content>.  Observe que en estos mismos ejemplos en inglés, el complementizador es opcional.</content>
-				</p>
-				<p>
-					<content>Algunos ejemplos con este tipo de complemento en </content>
-					<langName/>
-					<content> son:</content>
-				</p>
-				<example>
-					<interlinear exampleLoc="comp/finiteExample"/>
-				</example>
-			</section3>
-			<section3 id="sCompFiniteOrNonfiniteIP">
-				<secTitle>Un complemento finito o infinitivo</secTitle>
-				<p>
-					<content>Algunos ejemplos de los verbos que pueden tener un complemento finito, con o sin un complementizador, o un complemento infinitivo sin un complementizador en inglés son: </content>
-					<langData>I expect that Joe will come to the party</langData><gloss><content> ‘Cuento con que José venga a la fiesta’</content></gloss>
-					<content> y </content>
-					<langData>I expect Joe to come to the party</langData><gloss><content> ‘Espero que José venga a la fiesta’</content></gloss>
-					<content>.</content>
-				</p>
-				<p>
-					<content>Algunos ejemplos con este tipo de complemento en </content>
-					<langName/>
-					<content> son:</content>
-				</p>
-				<example>
-					<interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
-				</example>
-			</section3>
-			<section3 id="sCompTypeNonfiniteIP">
-				<secTitle>Un complemento infinitivo</secTitle>
-				<p>
-					<content>Algunos verbos que solamente pueden tener un complemento infinitivo sin un complementizador permiten un diverso sujeto que la cláusula principal o un sujeto no expresado cuando es coreferente con el sujeto de la cláusula principal. Algunos ejemplos en inglés son: </content>
-					<langData>I want Joe to come to the party</langData><gloss><content> ‘Quisiera que José viniera a la fiesta’</content></gloss>
-					<content> y </content>
-					<langData>I want to come to the party</langData><gloss><content> ‘Quiero que venir a la fiesta’</content></gloss>
-					<content>.</content>
-				</p>
-				<p>
-					<content>Algunos ejemplos con este tipo de complemento en </content>
-					<langName/>
-					<content> son:</content>
-				</p>
-				<example>
-					<interlinear exampleLoc="comp/nonfiniteExample"/>
-				</example>
-			</section3>
-			<section3 id="sCompTypeNonfiniteIPPRO">
-				<secTitle>Un complemento infinitivo con un sujeto coreferente</secTitle>
-				<p>
-					<content>Algunos ejemplos en inglés de los verbos que solamente pueden tener un complemento infinitivo sin un complementizador, pero requieren un sujeto no expresado porque es coreferente con el sujeto de la cláusula principal son: </content>
-					<langData>Joe tried to come to the party</langData><gloss><content> ‘José intentó venir a la fiesta’</content></gloss>
-					<content> y </content>
-					<langData>I tried to think of more examples</langData><gloss><content> ‘Intenté pensar en más ejemplos’</content></gloss>
-					<content>.</content>
-				</p>
-				<p>
-					<content>Algunos ejemplos con este tipo de complemento en </content>
-					<langName/>
-					<content> son:</content>
-				</p>
-				<example>
-					<interlinear exampleLoc="comp/nonfiniteProDropExample"/>
-				</example>
-			</section3>
-			<section3 id="sCompTypeNonfiniteCP">
-				<secTitle>Un complemento infinitivo con un complementizador</secTitle>
-				<p>
-					<content>Algunos ejemplos en inglés de los verbos que solamente pueden tener un complemento infinitivo, pero el complementizador </content><langData>for</langData><gloss><content> ‘para’</content></gloss><content> es presente cuando el sujeto no es coreferente con el sujeto de la cláusula principal son: </content>
-					<langData>Joe would hate for Sue to be at the party</langData><gloss><content> ‘José odiaría que Susana esté en la fiesta’</content></gloss>
-					<content>, </content>
-					<langData>Joe hates to dance</langData><gloss><content> ‘José odia a bailar’</content></gloss>
-					<content> y </content>
-					<langData>I would like to be appreciated</langData><gloss><content> ‘Quisiera ser apreciado’</content></gloss>
-					<content>.</content>
-				</p>
-				<p>
-					<content>Algunos ejemplos con este tipo de complemento en </content>
-					<langName/>
-					<content> son:</content>
-				</p>
-				<example>
-					<interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
-				</example>
-			</section3>
-			<section3 id="sCompTypeObject">
-				<secTitle>Un objeto más una cláusula de complemento</secTitle>
-				<p>
-					<content>Algunos ejemplos en inglés de los verbos que pueden tener un objeto directo así como un complemento finito o infinitivo clausal son: </content>
-					<langData>I will persuade Joe that he should come to the party</langData><gloss><content> ‘Persuadiré a José que él debe venir a la fiesta’</content></gloss>
-					<content> y </content>
-					<langData>I will persuade Joe to come to the party</langData><gloss><content> ‘Persuadiré a José de venir a la fiesta’</content></gloss>
-					<content>.</content>
-				</p>
-				<p>
-					<content>Algunos ejemplos con este tipo de complemento en </content>
-					<langName/>
-					<content> son:</content>
-				</p>
-				<example>
-					<interlinear exampleLoc="comp/DPCPExample"/>
-				</example>
-			</section3>
+    <section1 id="sComp">
+        <secTitle>Las cláusulas de complemento</secTitle>
+       <p>
+          <content>Hay varios tipos de cláusulas subordinadas que son complementos de verbos principales o de adjetivos que funcionan igual que el predicado de la oración. 
+             Algunos ejemplos de cada tipo de complemento se presentan en las secciones siguientes, después de un análisis de los complementadores y su posición en cláusulas subordinadas declarativas.</content></p>
+       
+       <p contentType="ctComparativeIntro">
+          <content>En inglés hay dos complementadores que marcan cláusulas subordinadas declarativas, </content>
+          <langData>that</langData><gloss><content> ‘que’</content></gloss>
+          <content>  para las cláusulas finitas y </content>
+          <langData>for</langData><gloss><content> ‘para’</content></gloss>
+          <content> para las cláusulas no finitas. El español utiliza </content><langData>que</langData><content> como el complementador en ambos tipos de cláusulas subordinadas declarativas.  
+             En otras lenguas los complementadores para las cláusulas declarativas subordinadas pueden o no pueden ser explícitos, y en algunas lenguas son clíticos que se escriben unidos con otra palabra.</content>
+       </p>
+       <p>
+          <content>En el </content>
+          <langName/>
+          <content>, </content>
+          <case element="comp" attr="comp">
+             <caseText value="no">no hay ninguna palabra del complementador ni un clítico para las cláusulas subordinadas declarativas. Por lo tanto, todas las cláusulas subordinadas tienen la misma estructura que las oraciones regulares.  <case element="ip" attr="auxNonfinite">
+                <caseText value="yes">Todavía hay una distinción entre cláusulas subordinadas finitas y no infinitas, puesto que hay un auxiliar de no finito. </caseText>
+                <caseText value="no">Todavía hay una distinción entre cláusulas subordinadas finitas y no finitas, puesto que hay un marcador de no finito en el verbo.  </caseText>
+                <caseText value="none">Tampoca hay distinción entre cláusulas subordinadas finitas y no finitas, puesto que no hay ninguna forma de no finita en la lengua.  </caseText>
+             </case></caseText>
+             <caseText value="yes">hay por lo menos un complementador para las cláusulas subordinadas declarativas.  </caseText>
+          </case>
+          <text show="swCompYes"><content/>
+             <case element="comp" attr="compNonfinite">
+                <caseText value="yes">Hay un complementador distinta para las cláusulas subordinadas no finitas. </caseText>   
+                <caseText value="no">No hay un complementador distinto para las cláusulas subordinadas no finitas.  <case element="ip" attr="auxNonfinite">
+                   <caseText value="yes">Todavía hay una distinción entre cláusulas subordinadas finitas y no finitas, puesto que hay un auxiliar de no finito. </caseText>
+                   <caseText value="no">Todavía hay una distinción entre cláusulas subordinadas finitas y no finitas, puesto que hay un marcador de no finito en el verbo.  </caseText>
+                   <caseText value="none">Tampoca hay distinción entre cláusulas subordinadas finitas y no finitas, puesto que no hay ninguna forma de no finita en la lengua.  </caseText>
+                </case></caseText>
+             </case>
+             <text show="swCompWordSome"><content> Algunos de los</content></text><text show="swCompWordNotSome"><content> Los</content></text><content> complementadores </content>
+             <case element="comp" attr="compWord">
+                <caseText value="yes">se escriben como palabras independientes. </caseText>
+                <caseText value="some">se escriben como palabras independientes, pero otros se unen, </caseText>
+                <caseText value="no">se unen, </caseText>
+             </case>
+             <content/>
+             <text show="swCompWordNoOrSome">
+                <text show="swCompProclitic"><content>como proclíticos, al principio de la palabra inicial en la cláusula de complemento.  </content></text>
+                <text show="swCompEnclitic"><content>como enclíticos, al final de la última palabra en la cláusula de complemento.  </content></text>
+                <text show="swCompClitic"><content>como clíticos, al principio de la palabra inicial en la cláusula de complemento o al final de la última palabra en la cláusula de complemento.  </content></text>
+                <text show="swCompPrefix"><content>como prefijos, al verbo en la cláusula de complemento.  </content></text>
+                <text show="swCompSuffix"><content>como sufijos, al verbo en la cláusula de complemento.   </content></text>
+                <text show="swCompAffix"><content>como afijos, al verbo en la cláusula de complemento.  </content></text>
+                <text show="swCompCliticAffix"><content>como clíticos, al principio o final de la cláusula de complemento, o al verbo en la cláusula de complemento como afijos.  </content></text>
+                <text show="swCompAttachesOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="comp/attachesOther"/><content>.  </content></text>
+                <text show="swCompAttachesOtherAnd"><content>  Otros se unen ___</content><contentCheckBoxOther contentLoc="comp/attachesOther"/>  <content>.</content></text>              
+             </text>  </text>
+       </p>   
+       
+       <p show="swCompWordNoOrSomeAndClitic"><content>Estos clíticos complementadores son:</content></p>   
+       <example show="swCompWordNoOrSomeAndClitic">
+          <table border="1">
+             <headerRow>
+                <headerCol>Clíticos complementadores </headerCol>
+                <headerCol>Glosa</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="comp/cliticExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+          </table>
+       </example>     
+       <p show="swCompWordNoOrSomeAndAffix"><content>Estos afijos complementadores son:</content></p>   
+       <example show="swCompWordNoOrSomeAndAffix">
+          <table border="1">
+             <headerRow>
+                <headerCol>Afijos complementadores</headerCol>
+                <headerCol>Glosa</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="comp/affixExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+          </table>
+       </example>     
+       <p show="swCompWordNoOrSomeAndOther"><content>Los otros complementadores que se unen como se permiten en el </content><langName/><content> son:</content></p>   
+       <example show="swCompWordNoOrSomeAndOther">
+          <table border="1">
+             <headerRow>
+                <headerCol>Otros complementadores que se unen</headerCol>
+                <headerCol>Glosa</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="comp/attachesOtherExample"/>
+                <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+             </row>
+          </table>
+       </example>     
+       
+       <p show="swCompWordYesOrSome">
+          <content> Los complementadores que son palabras independientes se presentan </content>
+          <text show="swCompCompBefore"><content>antes</content></text>
+          <text show="swCompCompAfter"><content>después</content></text>
+          <text show="swCompCompBoth"><content>en ambos lados</content></text>
+          <text show="swCompCompEither"><content>de cualquier lado</content></text>
+          <text show="swCompCompBeforeOrBoth"><content>antes o en ambos lados</content></text>
+          <text show="swCompCompAfterOrBoth"><content>después o en ambos lados</content></text>
+          <text show="swCompCompEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+          <text show="swCompCompNotOther"><content> del resto de la cláusula de complemento. </content></text>
+          <text show="swCompCompOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="comp/compOther"/><content>.  </content></text>
+          <text show="swCompCompPosAndOther"><content> del resto de la cláusula de complemento y también pueden presentarse ___</content> <contentCheckBoxOther contentLoc="comp/compOther"/> <content>. </content></text>
+          <content> Estos complementadores son:</content>
+       </p>          
+       <example show="swCompWordYesOrSome">
+             <table border="1">
+                <headerRow>
+                   <headerCol>Complementadores</headerCol>
+                   <headerCol>Glosa</headerCol>
+                </headerRow>
+                <row>
+                   <col exampleLoc="comp/compExample"/>
+                   <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+                </row>
+             </table>
+       </example>     
+       
+       
+       <p><content>Véase la sección </content>
+          <sectionRef sec="sQues"/>
+          <content> para un análisis semejante sobre complementadores de preguntas y la sección </content>
+          <sectionRef sec="sRelCl"/>
+          <content> para las cláusulas relativas.</content>
+       </p>
+       <p>
+          <content>Cada una de las subsecciones siguientes ejemplifica un tipo específico de complemento para un verbo u otro predicado.  Véase la sección </content>
+          <sectionRef sec="sAdvCl"/>
+          <content> para ejemplos de cláusulas adverbiales. Algunos adverbios también pueden tener complementos similares a los que presentan aquí para verbos, aunque las cláusulas adverbiales no son complementos del verbo principal. </content>
+          <comment>Si es necesario, se puede eliminar algo de la prosa y combinar ejemplos si su lengua no tiene las mismas o todas las distinciones.</comment>
+       </p>
+       <section2 id="sCompTypeFiniteAndNonfiniteCP" show="swCompYesAndNonfiniteYes">
+          <secTitle>Cláusulas de complemento finitas y no finitas</secTitle>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos de los verbos que solamente pueden tener un complemento finito en español son: </content>
+             <langData>Creo que Juliana es mi amiga</langData>
+             <content>, </content>
+             <langData>Juliana insisto que ella sea mi amiga</langData>
+             <content> y </content>
+             <langData>Yo sé que le gusto a él</langData>
+             <content>.  Observe que en estos mismos ejemplos en inglés, el complementador es opcional. Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Algunos verbos solamente pueden tener un complemento finito, con o sin un complementador.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos de los verbos que pueden tener un complemento finito, con o sin un complementador, o un complemento no finito sin un complementador en inglés son: </content>
+             <langData>I expect that Joe will come to the party</langData><gloss><content> ‘Cuento con que José venga a la fiesta’</content></gloss>
+             <content> y </content>
+             <langData>I expect Joe to come to the party</langData><gloss><content> ‘Espero que José venga a la fiesta’</content></gloss>
+             <content>.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Algunos verbos pueden tener un complemento finito, con o sin un complementador, o un complemento no finito sin un complementador.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos verbos que solamente pueden tener un complemento no finito sin un complementador permiten un sujeto diverso que la cláusula principal o un sujeto no expresado cuando es coreferente con el sujeto de la cláusula principal. Algunos ejemplos en inglés son: </content>
+             <langData>I want Joe to come to the party</langData><gloss><content> ‘Quisiera que José viniera a la fiesta’</content></gloss>
+             <content> y </content>
+             <langData>I want to come to the party</langData><gloss><content> ‘Quiero que venir a la fiesta’</content></gloss>
+             <content>.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Algunos verbos que solamente pueden tener un complemento no finito sin un complementador permiten un diverso sujeto que la cláusula principal o un sujeto tácito cuando es coreferente con el sujeto de la cláusula principal.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos en inglés de los verbos que solamente pueden tener un complemento no finito sin un complementador, pero requieren un sujeto tácito porque es coreferente con el sujeto de la cláusula principal son: </content>
+             <langData>Joe tried to come to the party</langData><gloss><content> ‘José intentó venir a la fiesta’</content></gloss>
+             <content> y </content>
+             <langData>I tried to think of more examples</langData><gloss><content> ‘Intenté pensar en más ejemplos’</content></gloss>
+             <content>.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Algunos verbos solamente pueden tener un complemento no finito sin un complemenzador, pero requieren un sujeto tácito porque es coreferente con el sujeto de la cláusula principal.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos en inglés de los verbos que solamente pueden tener un complemento no finitio, pero el complementador </content><langData>for</langData><gloss><content> ‘para’</content></gloss><content> es presente cuando el sujeto no es coreferente con el sujeto de la cláusula principal son: </content>
+             <langData>Joe would hate for Sue to be at the party</langData><gloss><content> ‘José odiaría que Susana esté en la fiesta’</content></gloss>
+             <content>, </content>
+             <langData>Joe hates to dance</langData><gloss><content> ‘José odia a bailar’</content></gloss>
+             <content> y </content>
+             <langData>I would like to be appreciated</langData><gloss><content> ‘Quisiera ser apreciado’</content></gloss>
+             <content>.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Algunos verbos solamente pueden tener un complemento no finito, pero el complementador es presente cuando el sujeto no es coreferente con el sujeto de la cláusula principal.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos en inglés de los verbos que pueden tener un objeto directo así como un complemento finito o no finito son: </content>
+             <langData>I will persuade Joe that he should come to the party</langData><gloss><content> ‘Persuadiré a José que él debe venir a la fiesta’</content></gloss>
+             <content> y </content>
+             <langData>I will persuade Joe to come to the party</langData><gloss><content> ‘Persuadiré a José de venir a la fiesta’</content></gloss>
+             <content>..  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Otros verbos pueden tener un objeto directo así como un complemento finito o no finito.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/DPCPExample"/>
+          </example>
+       </section2>
 
-		   <section3 id="sCompRaising">
-			  <secTitle>Complementos de verbos de ‘ascenso’</secTitle>
-			  <p><content>Parece que los verbos de ‘ascenso’ incluyen todos los verbos de percepción y los verbos copulativos. Estos verbos pueden tener un complemento infinitivo o un complemento del adjetivo que sí mismo tiene un complemento finito con un complementizador o un complemento infinitivo. El verbo principal no tiene su propio sujeto, así que la posición sujeta es llenada por el sujeto del complemento infinitivo, como en: </content>
-				 <langData>John seemed to like the tortillas</langData><gloss><content> ‘Juan parecía tener gusto de las tortillas’</content></gloss><content>, </content>
-				 <langData>Joe is likely to come</langData><gloss><content> ‘José es probable venir’</content></gloss><content> y </content>
-				 <langData>The weather is certain to change soon</langData><gloss><content> ‘El tiempo cambia seguramente pronto’</content></gloss>
-				 <content>.  Cuando la cláusula de complemento es finita, el sujeto no puede ser ‘ascensado’ , así que una palabra sin significado </content><langData>it</langData><content> llena la posición del sujeto de la cláusula principal en inglés, como en:  </content>
-				 <langData>It seems likely that Joe will come</langData><gloss><content> ‘Parece probablemente que vendrá José’</content></gloss><content> y </content>
-				 <langData>It is certain that the weather will change soon</langData><gloss><content> ‘Es cierto que el tiempo cambiará pronto’</content></gloss><content>.</content>
-			  </p>
-			  <p>
-				 <content>Algunos ejemplos con este tipo de complemento en </content>
-				 <langName/>
-				 <content> son:</content>
-			  </p>
-			  <example>
-				 <interlinear exampleLoc="comp/raisingExample"/>
-			  </example>
-		   </section3>
-
-		   <section3 id="sCompCausative">
-			  <secTitle>Complementos de verbos causativos</secTitle>
-			  <p><content>Los causativos sintácticos consisten en dos cláusulas y tienen un objeto que también actúa como el sujeto de la cláusula de complemento. Esta cláusula de complemento es siempre infinitiva, pero no necesita el indicador infinitivo con algunos verbos en inglés, como en </content>
-				 <langData>My mother made me clean my room</langData><gloss><content> ‘Mi madre me hizo limpiar mi dormitorio’</content></gloss>
-				 <content>, mientras que se requiere con otros verbos, como en </content>
-				 <langData>The other girl caused us to break up</langData><gloss><content> ‘La otra muchacha hizo que nos separáramos’</content></gloss><content>.</content></p>
-			  <p>
-				 <content>Algunos ejemplos con este tipo de complemento en </content>
-				 <langName/>
-				 <content> son:</content>
-			  </p>
-			  <example>
-				 <interlinear exampleLoc="comp/causeExample"/>
-			  </example>
-			  <p show="swIPCausativeNotNo"><content>Véase la sección </content><sectionRef sec="sIPCausatives"/><content> para ejemplos de causativos oraciones causativas de una sola cláusula, donde el verbo se marca con un afijo que introduce el argumento adicional en </content><langName/><content>.</content>
-			  </p>
-		   </section3>
-
-		   <section3 id="sCompSpeech">
-			  <secTitle>Discurso directo e indirecto como complementos</secTitle>
-			  <p><content>Los verbos del discurso pueden tener complementos directos o indirectos. Las citas directas pueden consistir de cualquiera oración o interjección o saludo, por ejemplo: </content>
-				 <langData>Sue said, “I will come to your house tomorrow”</langData><gloss><content> ‘Susana dijo, “Vendré a su casa mañana”’</content></gloss>
-				 <content> o </content><langData>Joe said, “Bye!”</langData><gloss><content> ‘José dijo, “¡Adiós!”’</content></gloss>
-			  </p>
-			  <p><content>Las citas indirectas como complementos son más restrictas. En inglés, algunos verbos del discurso pueden tener un complemento finito, con o sin un complementizador, y una frase preposicional opcional para expresar al oyente, como en </content>
-				 <langData>Sue said (to me) that she would come here tomorrow</langData><gloss><content> ‘Susana dijo (a mí) que ella vendría aquí mañana’</content></gloss>
-				 <content>.  Otros verbos pueden tener al oyente ser expresado como objeto más un complemento finito, como en </content>
-				 <langData>Sue told me that she would come here tomorrow</langData><gloss><content> ‘Susana me dijo que ella vendría aquí mañana’</content></gloss>
-				 <content>, o un complemento infinitivo sin un complementizador con sujeto no expresado porque es coreferente con el sujeto de la cláusula principal, como en </content>
-				 <langData>Sue told me to come here tomorrow</langData><gloss><content> ‘Susana me dijo venir aquí mañana’</content></gloss><content>.</content>
-			  </p>
-			  <p>
-				 <content>Algunos ejemplos con este tipo de complemento en </content>
-				 <langName/>
-				 <content> son:</content>
-			  </p>
-			  <example>
-				 <interlinear exampleLoc="comp/quotationExample"/>
-			  </example>
-		   </section3>
-
-
-			<section3 id="sCompTypeOther">
-				<secTitle>Otras restricciones en cláusulas de complemento</secTitle>
-				<p>
-					<content>Algunas lenguas también tienen verbos que tengan otras restricciones en cláusulas subordinadas, tales como eso que el verbo subordinado debe estar en el modo subjuntivo o en el aspecto de perfectivo. Cualquiera ejemplos en </content>
-					<langName/>
-					<content> se muestran aquí:</content>
-				</p>
-				<example>
-					<interlinear exampleLoc="comp/otherExample"/>
-				</example>
-			</section3>
-		</section2>
-		<section2 id="sCompPos">
-			<secTitle>Posición de complementizador</secTitle>
-			<p>
-				<content>En inglés hay dos complementizadores que indican cláusulas subordinadas declarativas, </content>
-				<langData>that</langData><gloss><content> ‘que’</content></gloss>
-				<content>  para las cláusulas finitas y </content>
-				<langData>for</langData><gloss><content> ‘para’</content></gloss>
-				<content> para las cláusulas infinitivas. El español utiliza </content><langData>que</langData><content> como el complementizador en ambos tipos de cláusulas subordinadas declarativas.
-					En otras lenguas los complementizadores para las cláusulas declarativas subordinadas pueden o no pueden ser presentes, y en algunas lenguas son clíticos que se escriben unidos con otra palabra.</content>
-			</p>
-			<p>
-				<content>En </content>
-				<langName/>
-				<content>, </content>
-				<case element="comp" attr="comp">
-					<caseText value="no">no hay ninguna palabra del complementizador ni un clítico para las cláusulas subordinadas declarativas.</caseText>
-					<caseText value="yes">hay por lo menos un complementizador para las cláusulas subordinadas declarativas.</caseText>
-				</case>
-				<content/>
-				<text show="swCompYes">
-					<content>  El complementizador es </content>
-					<case element="comp" attr="compWord">
-						<caseText value="yes">escrito como una palabra independiente.</caseText>
-						<caseText value="no">un clítico que se une</caseText>
-					</case>
-					<content/>
-					<text show="swCompWordNo">
-						<content/>
-						<case element="comp" attr="compCliticAttaches">
-							<caseText value="edge">en el extremo de la cláusula subordinada. </caseText>
-							<caseText value="head">al verbo en la cláusula subordinada. </caseText>
-						</case>
-						<case element="comp" attr="compCliticPos">
-							<caseText value="before">Éstos clíticos son proclíticos.</caseText>
-							<caseText value="after">Éstos clíticos son enclíticos.</caseText>
-							<caseText value="both">Hay algunos clíticos que son proclíticos y algunos que son enclíticos.</caseText>
-							<caseText value="unknown">_______</caseText>
-						</case>
-						<content/>
-					</text>
-				</text>
-				<content/>
-				<text show="swCompWordYes">
-					<content> El complementizador se presenta </content>
-					<case element="comp" attr="compPos">
-						<caseText value="before">antes</caseText>
-						<caseText value="after">después</caseText>
-						<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-						<caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
-						<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-						<caseText value="afterOrBoth">después o en ambos lados</caseText>
-						<caseText value="both">en ambos lados</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content> de la  cláusula subordinada.  </content>
-					<text show="swCompEitherUnrestricted">
-						<content>Todos los complementizadores pueden presentarse de cualquier lado de la cláusula subordinada.</content>
-					</text>
-					<content/>
-					<text show="swCompEitherRestricted">
-						<content>Hay restricciones en cuanto a cuáles de los complementizadores pueden presentarse en cada lado de la cláusula subordinada.</content>
-					</text>
-					<content/>
-				</text>
-				<content/>
-			</p>
-		</section2>
-	</section1>
-	<showWhen id="swCompYes">
-		<whenValue element="comp" attr="comp" value="yes"/>
-	</showWhen>
-	<showWhen id="swCompWordYes">
-		<whenValue element="comp" attr="compWord" value="yes"/>
-		<and/>
-		<whenValue element="comp" attr="comp" value="yes"/>
-	</showWhen>
-	<showWhen id="swCompWordNo">
-		<whenValue element="comp" attr="compWord" value="no"/>
-		<and/>
-		<whenValue element="comp" attr="comp" value="yes"/>
-	</showWhen>
-	<showWhen id="swCompEitherRestricted">
-		<whenValue element="comp" attr="compPos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="comp" attr="compPos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="comp" attr="compEitherRestricted" value="restricted"/>
-		<and/>
-		<whenValue element="comp" attr="comp" value="yes"/>
-	</showWhen>
-	<showWhen id="swCompEitherUnrestricted">
-		<whenValue element="comp" attr="compPos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="comp" attr="compPos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="comp" attr="compEitherRestricted" value="unrestricted"/>
-		<and/>
-		<whenValue element="comp" attr="comp" value="yes"/>
-	</showWhen>
-
-   <showWhen id="swIPCausativeNotNo">
-	  <whenValue element="ip" attr="causative" value="no" negateValue="yes"/>
+       <section2 id="sCompTypeFiniteCP" show="swCompYesAndNonfiniteNo">
+          <secTitle>Cláusulas de complemento</secTitle>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos de los verbos que pueden tener una cláusula de complemento, con o sin un complementador, en español o inglés son: </content>
+             <langData>Creo que Juliana es mi amiga</langData>
+             <content>, </content>
+             <langData>Juliana insisto que ella sea mi amiga</langData>
+             <content> y </content>
+             <langData>Yo sé que le gusto a él</langData>
+             <content>, </content>         
+             <langData>I expect that Joe will come to the party</langData><gloss><content> ‘Cuento con que José venga a la fiesta’</content></gloss>
+             <content>, </content>
+             <langData>I expect Joe to come to the party</langData><gloss><content> ‘Espero que José venga a la fiesta’</content></gloss>
+             <content>, </content>           
+             <langData>I want Joe to come to the party</langData><gloss><content> ‘Quisiera que José viniera a la fiesta’</content></gloss>
+             <content>, </content>
+             <langData>I want to come to the party</langData><gloss><content> ‘Quiero que venir a la fiesta’</content></gloss>
+             <content>, </content>           
+             <langData>Joe tried to come to the party</langData><gloss><content> ‘José intentó venir a la fiesta’</content></gloss>
+             <content>, </content>
+             <langData>I tried to think of more examples</langData><gloss><content> ‘Intenté pensar en más ejemplos’</content></gloss>
+             <content>, </content>
+             <langData>Joe hates to dance</langData><gloss><content> ‘José odia a bailar’</content></gloss>
+             <content> y </content>
+             <langData>I would like to be appreciated</langData><gloss><content> ‘Quisiera ser apreciado’</content></gloss>
+             <content>.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Algunos verbos solo tienen una cláusula de complemento, con o sin un complementador.  Algunos ejemplos de este tipo en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos en inglés de los verbos que pueden tener un objeto directo así como un complemento finito o no finito son: </content>
+             <langData>I will persuade Joe that he should come to the party</langData><gloss><content> ‘Persuadiré a José que él debe venir a la fiesta’</content></gloss>
+             <content> y </content>
+             <langData>I will persuade Joe to come to the party</langData><gloss><content> ‘Persuadiré a José de venir a la fiesta’</content></gloss>
+             <content>..  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Otros verbos tienen un objeto directo así como un complemento finito o no finito.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/DPCPExample"/>
+          </example>
+       </section2>
+       
+       <section2 id="sCompTypeFiniteAndNonfiniteIP" show="swCompNoAndNonfiniteYes">
+          <secTitle>Oraciones finitas y no finitas como complementos</secTitle>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos de los verbos que solamente pueden tener un complemento finito en español son: </content>
+             <langData>Creo que Juliana es mi amiga</langData>
+             <content>, </content>
+             <langData>Juliana insisto que ella sea mi amiga</langData>
+             <content> y </content>
+             <langData>Yo sé que le gusto a él</langData>
+             <content>.  Observe que en estos mismos ejemplos en inglés, el complementador es opcional. En el </content>
+             <langName/><content> no hay ningún complementador independiente, entonces se expresa este tipo de complemento como se muesta aquí:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Algunos verbos solamente pueden tener un complemento finito.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos de los verbos que pueden tener un complemento finito, con o sin un complementador, o un complemento no finito sin un complementador en inglés son: </content>
+             <langData>I expect that Joe will come to the party</langData><gloss><content> ‘Cuento con que José venga a la fiesta’</content></gloss>
+             <content> y </content>
+             <langData>I expect Joe to come to the party</langData><gloss><content> ‘Espero que José venga a la fiesta’</content></gloss>
+             <content>.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Algunos verbos pueden tener un complemento finito o un complemento no finito.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos verbos que solamente pueden tener un complemento no finito permiten un sujeto diverso que la cláusula principal o un sujeto tácito cuando es coreferente con el sujeto de la cláusula principal. Algunos ejemplos en inglés son: </content>
+             <langData>I want Joe to come to the party</langData><gloss><content> ‘Quisiera que José viniera a la fiesta’</content></gloss>
+             <content> y </content>
+             <langData>I want to come to the party</langData><gloss><content> ‘Quiero que venir a la fiesta’</content></gloss>
+             <content>.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Algunos verbos que solamente pueden tener un complemento no finito permiten un sujeto diverso que la cláusula principal o un sujeto tácito cuando es coreferente con el sujeto de la cláusula principal.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos en inglés de los verbos que solamente pueden tener un complemento no finito sin un complementador, pero requieren un sujeto tácito porque es coreferente con el sujeto de la cláusula principal son: </content>
+             <langData>Joe tried to come to the party</langData><gloss><content> ‘José intentó venir a la fiesta’</content></gloss>
+             <content>, </content>
+             <langData>Joe hates to dance</langData><gloss><content> ‘José odia a bailar’</content></gloss>
+             <content> y </content>
+             <langData>I would like to be appreciated</langData><gloss><content> ‘Quisiera ser apreciado’</content></gloss>
+             <content>.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Algunos verbos solamente pueden tener un complemento no finito sin un complementador, pero requieren un sujeto tácito porque es coreferente con el sujeto de la cláusula principal.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos en inglés de los verbos que pueden tener un objeto directo así como un complemento finito o no finito son: </content>
+             <langData>I will persuade Joe that he should come to the party</langData><gloss><content> ‘Persuadiré a José que él debe venir a la fiesta’</content></gloss>
+             <content> y </content>
+             <langData>I will persuade Joe to come to the party</langData><gloss><content> ‘Persuadiré a José de venir a la fiesta’</content></gloss>
+             <content>..  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Otros verbos pueden tener un objeto directo así como un complemento finito o no finito.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/DPCPExample"/>
+          </example>
+       </section2>
+       
+       <section2 id="sCompTypeFiniteIP" show="swCompNoAndNonfiniteNo">
+          <secTitle>Oraciones como complementos</secTitle>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos de los verbos que pueden tener una oración como complemento en español o inglés son: </content>
+             <langData>Creo que Juliana es mi amiga</langData>
+             <content>, </content>
+             <langData>Juliana insisto que ella sea mi amiga</langData>
+             <content> y </content>
+             <langData>Yo sé que le gusto a él</langData>
+             <content>, </content>         
+             <langData>I expect that Joe will come to the party</langData><gloss><content> ‘Cuento con que José venga a la fiesta’</content></gloss>
+             <content>, </content>
+             <langData>I expect Joe to come to the party</langData><gloss><content> ‘Espero que José venga a la fiesta’</content></gloss>
+             <content>, </content>           
+             <langData>I want Joe to come to the party</langData><gloss><content> ‘Quisiera que José viniera a la fiesta’</content></gloss>
+             <content>, </content>
+             <langData>I want to come to the party</langData><gloss><content> ‘Quiero que venir a la fiesta’</content></gloss>
+             <content>, </content>           
+             <langData>Joe tried to come to the party</langData><gloss><content> ‘José intentó venir a la fiesta’</content></gloss>
+             <content>, </content>
+             <langData>Joe hates to dance</langData><gloss><content> ‘José odia a bailar’</content></gloss>
+             <content> y </content>
+             <langData>I would like to be appreciated</langData><gloss><content> ‘Quisiera ser apreciado’</content></gloss>
+             <content>.  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>        <p contentType="ctPracticalIntro">
+             <content>Algunos verbos pueden tener una oración como complemento  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+            </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Algunos ejemplos en inglés de los verbos que pueden tener un objeto directo así como un complemento finito o ino finito son: </content>
+             <langData>I will persuade Joe that he should come to the party</langData><gloss><content> ‘Persuadiré a José que él debe venir a la fiesta’</content></gloss>
+             <content> y </content>
+             <langData>I will persuade Joe to come to the party</langData><gloss><content> ‘Persuadiré a José de venir a la fiesta’</content></gloss>
+             <content>..  Algunos ejemplos de este tipo de complemento en el </content>
+             <langName/>
+             <content> son:</content>
+          </p>
+             <p contentType="ctPracticalIntro">
+                <content>Otros verbos pueden tener un objeto directo así como una oración como complemento.  Algunos ejemplos de este tipo de complemento en el </content>
+                <langName/>
+                <content> son:</content>
+             </p>
+             <example>
+                <interlinear exampleLoc="comp/DPCPExample"/>
+             </example>
+       </section2>
+       
+       
+       <section2 id="sCompRaising">
+              <secTitle>Complementos de verbos de ‘ascenso’</secTitle>
+              <p contentType="ctComparativeIntro"><content>Parece que los verbos de ‘ascenso’ incluyen todos los verbos de percepción y los verbos copulativos. Estos verbos pueden tener un complemento no finito o un complemento del adjetivo que sí mismo tiene un complemento finito con un complementador o un complemento no finito. El verbo principal no tiene su propio sujeto, así que la posición de sujeto es ocupada por el sujeto del complemento no finito, como en: </content>
+                 <langData>John seemed to like the tortillas</langData><gloss><content> ‘Juan parecía tener gusto de las tortillas’</content></gloss><content>, </content>
+                 <langData>Joe is likely to come</langData><gloss><content> ‘José es probable venir’</content></gloss><content> y </content>
+                 <langData>The weather is certain to change soon</langData><gloss><content> ‘El tiempo cambia seguramente pronto’</content></gloss>
+                 <content>.  Cuando la cláusula de complemento es finita, el sujeto no puede ser ‘ascensado’ , así que un pronombre sin cambios de concordancia </content><langData>it</langData><content> ocupa la posición del sujeto de la cláusula principal en inglés, como en:  </content>
+                 <langData>It seems likely that Joe will come</langData><gloss><content> ‘Parece probablemente que vendrá José’</content></gloss><content> y </content>
+                 <langData>It is certain that the weather will change soon</langData><gloss><content> ‘Es cierto que el tiempo cambiará pronto’</content></gloss><content>.  Algunas lenguas simplemente tienen el verbo sin un sujeto, seguido de una cláusula de complemento, así que no hay ‘ascenso’; las dos cláusulas comparten el mismo sujeto.</content>
+              </p>
+          <p contentType="ctPracticalIntro"><content>Parece que los verbos de ‘ascenso’ incluyen todos los verbos de percepción y los verbos copulativos. El verbo principal no tiene su propio sujeto, así que la posición de sujeto es ocupada por el sujeto del complemento no finito o por un pronombre sin cambios de concordancia.  Algunas lenguas simplemente tienen el verbo sin un sujeto, seguido de una cláusula de complemento, así que no hay ‘ascenso’; las dos cláusulas comparten el mismo sujeto.</content>
+          </p>
+          <p>
+                 <content>Algunos ejemplos de este tipo de complemento en el </content>
+                 <langName/>
+                 <content> son:</content>
+              </p>
+              <example>
+                 <interlinear exampleLoc="comp/raisingExample"/>
+              </example>              
+       </section2>
+           
+           <section2 id="sCompCausative">
+              <secTitle>Complementos de verbos causativos</secTitle>
+              <p contentType="ctComparativeIntro"><content>Los causativos sintácticos consisten en dos cláusulas y tienen un objeto que también funciona como el sujeto de la cláusula de complemento. Esta cláusula de complemento es siempre no finita, pero no necesita el indicador de no finito con algunos verbos en inglés, como en </content>
+                 <langData>My mother made me clean my room</langData><gloss><content> ‘Mi madre me hizo limpiar mi dormitorio’</content></gloss>
+                 <content>, mientras que se requiere con otros verbos, como en </content>
+                 <langData>The other girl caused us to break up</langData><gloss><content> ‘La otra muchacha hizo que nos separáramos’</content></gloss><content>.</content></p>
+              <p contentType="ctPracticalIntro"><content>Los causativos sintácticos consisten en dos cláusulas y tienen un objeto que también funciona como el sujeto de la cláusula de complemento. </content>
+                 </p>
+              <p show="swIPCausativeMakeNo"><content>El </content><langName/><content> no tiene los causativos sintácticos que consisten en dos cláusulas .</content></p>
+              <p show="swIPCausativeMakeYes">
+                 <content>Algunos ejemplos de este tipo de complemento en el </content>
+                 <langName/>
+                 <content> son:</content>
+              </p>
+              <example>
+                 <interlinear exampleLoc="comp/causeExample"/>
+              </example>     
+              <p show="swIPCausativeAffixYes"><content>Véase la sección </content><sectionRef sec="sIPCausatives"/><content> para ejemplos de oraciones causativas de una sola cláusula, en que el verbo se marca con un afijo que introduce el argumento adicional en el </content><langName/><content>.</content>
+              </p>
+           </section2>
+           
+           <section2 id="sCompSpeech">
+              <secTitle>Discurso  directo e indirecto como complementos</secTitle>
+              <p contentType="ctComparativeIntro"><content>Los verbos de habla pueden tener complementos directos o indirectos. Las citas directas pueden consistir en cualquier oración, interjección o saludo, por ejemplo: </content>
+                 <langData>Sue said, “I will come to your house tomorrow”</langData><gloss><content> ‘Susana dijo, “Vendré a su casa mañana”’</content></gloss>
+                 <content> o </content><langData>Joe said, “Bye!”</langData><gloss><content> ‘José dijo, “¡Adiós!”’</content></gloss>
+              </p>
+              <p contentType="ctComparativeIntro"><content>Las citas indirectas como complementos están más limitadas. En inglés, algunos verbos de habla pueden tener un complemento finito, con o sin un complementador, y una frase preposicional opcional para expresar al oyente, como en </content>
+                 <langData>Sue said (to me) that she would come here tomorrow</langData><gloss><content> ‘Susana dijo (a mí) que ella vendría aquí mañana’</content></gloss>
+                 <content>.  Otros verbos pueden tener el oyente expresado como el objeto directo más un complemento finito, como en </content>
+                 <langData>Sue told me that she would come here tomorrow</langData><gloss><content> ‘Susana me dijo que ella vendría aquí mañana’</content></gloss>
+                 <content>, o un complemento no finito sin un complementador con sujeto tácito porque es coreferente con el sujeto de la cláusula principal, como en </content>
+                 <langData>Sue told me to come here tomorrow</langData><gloss><content> ‘Susana me dijo venir aquí mañana’</content></gloss><content>.</content>
+              </p>
+              <p contentType="ctPracticalIntro"><content>Los verbos de habla pueden tener complementos directos o indirectos. Las citas directas pueden consistir en cualquier oración, interjección o saludo, pero las citas indirectas como complementos están más limitadas y la forma depende del verbo principal. </content>
+              </p>
+              <p>
+                 <content>Algunos ejemplos de complementos de verbos de habla en el </content>
+                 <langName/>
+                 <content> son:</content>
+              </p>
+              <example>
+                 <interlinear exampleLoc="comp/quotationExample"/>
+              </example>     
+           </section2>
+           
+           
+       <section2 id="sCompTypeOther" show="swCompTypeOtherYes">
+          <secTitle>Otras restricciones en cláusulas de complemento</secTitle>
+                <p contentType="ctComparativeIntro">
+                    <content>Algunas lenguas también tienen verbos que tengan otras restricciones en cláusulas subordinadas, por ejemplo que el verbo subordinado debe estar en el modo subjuntivo o en el aspecto de perfectivo.</content></p>
+               
+          <p><content>En el </content>   <langName/>
+             <content> también hay una restricción en algunos verbos que __</content><contentCheckBoxOther contentLoc="comp/otherRestrictions"/><content>.  A continuación algunos ejemplos:</content>
+          </p>
+                <example>
+                    <interlinear exampleLoc="comp/otherExample"/>
+                </example>
+            </section2>
+       
+    </section1>
+   <showWhen id="swCompYesAndNonfiniteYes">
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="compNonfinite" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="compNonfinite" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swCompYesAndNonfiniteNo">
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="compNonfinite" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none"/>
+   </showWhen>
+   <showWhen id="swCompNoAndNonfiniteYes">
+      <whenValue element="comp" attr="comp" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swCompNoAndNonfiniteNo">
+      <whenValue element="comp" attr="comp" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none"/>
+   </showWhen>
+   <showWhen id="swCompYes">
+        <whenValue element="comp" attr="comp" value="yes"/>
+    </showWhen>
+    <showWhen id="swCompWordYes">
+        <whenValue element="comp" attr="compWord" value="yes"/>
+        <and/>
+        <whenValue element="comp" attr="comp" value="yes"/>
+    </showWhen>
+    <showWhen id="swCompWordNo">
+        <whenValue element="comp" attr="compWord" value="no"/>
+        <and/>
+        <whenValue element="comp" attr="comp" value="yes"/>
+    </showWhen>
+   <showWhen id="swCompWordSome">
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNotSome">
+      <whenValue element="comp" attr="compWord" value="some" negateValue="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSome">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordYesOrSome">
+      <whenValue element="comp" attr="compWord" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompProclitic">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompEnclitic">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompClitic">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompPrefix">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompSuffix">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompAffix">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCliticAffix">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompAttachesOtherOnly">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompAttachesOtherAnd">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndClitic">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compProclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compProclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compEnclitic"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndAffix">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compPrefix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compSuffix"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndOther">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther"  attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swCompCompBefore">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompAfter">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompEither">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompBeforeOrBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompAfterOrBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompEitherOrBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompNotOther">
+      <whenValue element="comp/compOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompOtherOnly">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompPosAndOther">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompTypeOtherYes">
+      <whenValue element="comp" attr="compTypeOther" value="yes"/>
+   </showWhen>
+      <showWhen id="swIPCausativeMakeYes">
+      <whenValue element="ip/causativeMake" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPCausativeMakeNo">
+      <whenValue element="ip/causativeMake" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPCausativeAffixYes">
+      <whenValue element="ip/causativeAffix" attr="checked" value="yes"/>
    </showWhen>
 </portion>

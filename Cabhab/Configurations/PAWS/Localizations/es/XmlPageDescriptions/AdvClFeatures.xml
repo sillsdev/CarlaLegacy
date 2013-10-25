@@ -1,75 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvClFeatures" count="2/3">
-	<title level="2">Las cláusulas adverbiales - Ejemplos y características</title>
-   <introduction>Los ejemplos en español de adverbios de tiempo con los complementos utilizados en oraciones completas dados en la página anterior se repiten aquí:</introduction>
+   <title level="2">Las cláusulas adverbiales - Ejemplos y características</title>
+   <introduction>Los ejemplos en español de adverbios de tiempo con los complementos usados en oraciones completas que se dan en la página anterior se repiten aquí:</introduction>
    <EnglishExample>
-	  <exItem label="1.">[Desde entonces], Juan ha sido cambiante.</exItem>
-	  <exItem label="2.">Juan ha sido en casa [desde la semana pasada].</exItem>
-	  <exItem label="3.">[Puesto que Juan vuelto a casa del hospital] él está haciendo mejor.</exItem>
-	  <exItem label="4.">Juan está sintiendo fino [ahora que él ha vuelto a casa del hospital].</exItem>
-	  <exItem label="5.">El perro siguió a Susana por todas partes [cuando ella volvió de universidad].</exItem>
-	  <exItem label="6.">[Cuando ella volvió de universidad], el perro siguió a Susana por todas partes.</exItem>
+      <exItem label="1.">[Desde entonces], Juan ha sido cambiante.</exItem>
+      <exItem label="2.">Juan ha estado en casa [desde la semana pasada].</exItem>
+      <exItem label="3.">[Puesto que Juan ha vuelto a casa del hospital] él está haciendo mejor.</exItem>
+      <exItem label="4.">Juan está sintiendo bien [ahora que él ha vuelto a casa del hospital].</exItem>
+      <exItem label="5.">El perro siguió a Susana por todas partes [cuando ella volvió de universidad].</exItem>
+      <exItem label="6.">[Cuando ella volvió de universidad], el perro siguió a Susana por todas partes.</exItem>
    </EnglishExample>
    <form section="advcl">
-		<prompt>Escriba ejemplos similares de cláusulas adverbiales de tiempo en su lengua, incluidos en oraciones completas (pero simples) aquí:</prompt>
-		<textBox id="AdvlClTemporalExample" dataItem="tempSentExample" cols="50"/>
-		<br/>
-		<radioGroup>
-			<groupName dataItem="advOrNPPos" default="unknown" position="yesHeadDiff">RAdvOrNPPos</groupName>
-			<prompt>¿Dónde se presenta el complemento, si es una frase del adverbio o del nominal o el complemento clausal, con respecto al adverbio principal?</prompt>
-			<radio id="AdvClAdvOrNPPosBefore" dataValue="before">Antes del adverbio</radio>
-			<radio id="AdvClAdvOrNPPosAfter" dataValue="after">Después del adverbio</radio>
-			<radio id="AdvClAdvOrNPPosEither" dataValue="either">De cualquier lado</radio>
-		</radioGroup>
-		<br/>
-		<instruction id="AdvClTemporalInstruction">In the lexicon, add the following features to the adverb entry, in addition to the feature <feature>temporal</feature>.  Note that the first two features can be added to the same entry, or either or both can be added to the third or fourth sets of features.
+      <prompt>Escriba ejemplos similares de oraciones completas (pero simples) con cláusulas adverbiales de tiempo en su lengua aquí:</prompt>
+        <textBox id="AdvlClTemporalExample" dataItem="tempSentExample" cols="50"/>
+        <br/>
+        <radioGroup>
+            <groupName dataItem="advOrNPPos" default="unknown" position="yesHeadDiff">RAdvOrNPPos</groupName>
+           <prompt>¿Dónde se presenta el complemento, si es una frase adverbial, una frase nominal o una cláusula, con respecto al adverbio principal?</prompt>
+            <radio id="AdvClAdvOrNPPosBefore" dataValue="before">Antes del adverbio</radio>
+            <radio id="AdvClAdvOrNPPosAfter" dataValue="after">Después del adverbio</radio>
+            <radio id="AdvClAdvOrNPPosEither" dataValue="either">De cualquier lado</radio>
+        </radioGroup>
+        <br/>
+        <instruction id="AdvClTemporalInstruction">In the lexicon, add the following features to the adverb entry, in addition to the feature <feature>temporal</feature>.  Note that the first two features can be added to the same entry, or either or both can be added to the third or fourth sets of features.
 <ul>
-				<li>If the adverb may have another adverb as its complement, add the feature <feature>takes_Adv</feature>.</li>
-				<li>If the adverb may have a nominal phrase complement, add the feature <feature>takes_DP</feature>.</li>
-				<li>If the adverb may have an IP complement, add the features <feature>sentential embedded_finite</feature>.</li>
-				<li>If the adverb requires a complementizer to be present in its sentential complement (CP), add the features <feature>sentential embedded_finite embedded_CP</feature>.</li>
-			</ul>
-		</instruction>
-		<br/>
-		<introduction>Analizando ahora las frases adverbiales o las cláusulas que expresan razón o propósito, encontramos los adverbios que se colocan solos, por ejemplo <example>por lo tanto</example> y <example>pues</example>, junto con los adverbios que tiene varios tipos de cláusulas de complemento.  (Los ejemplos como <example>por esta razón</example> y <example>en propósito</example> deben servir en acuerdo con sus respuestas en  <section number="8">Las frases preposicionales y/o posposicionales</section>.)
-		   <br/><br/>Algunos ejemplos en español de los adverbios de la razón o del propósito que tienen complementos clausal son:
-		</introduction>
-		<EnglishExample>
-			<exItem label="1.">Juan fue de prisa al hospital [porque Susana estaba en un accidente].</exItem>
-			<exItem label="2.">[Puesto que Juliana dijo que ella tiene gusto de él], José sonríe todo el tiempo.</exItem>
-			<exItem label="3.">David fue de prisa al aeropuerto [de modo que él pudiera ver a María antes de que ella se fuera].</exItem>
-			<exItem label="4.">Las tropas lanzaron las granadas en el enemigo [para escaparse].</exItem>
-			<exItem label="5.">Las tropas lanzaron las granadas en el enemigo [en orden que los presos se escapen].</exItem>
-		</EnglishExample>
-		<introduction id="AdvClReasonIntroNotPractical" show="swNotPractical">In the examples above, <example>because</example> and <example>since</example> take only finite IP complements and <example>so</example> takes a finite CP complement.  In contrast, <example>in order</example> takes either a nonfinite IP with a pro-dropped subject or a nonfinite CP complement.  This is the same subcategorization as shown for <example>like</example> and <example>hate</example> in <section number="10">Complement Clauses</section>.  <br/>
-			<br/>(Note again that if your language has any multi-word forms, like <example>in order</example>, they need be handled as a single lexical entry using <tool>Join Compound</tool>.)
- </introduction>
-	  <introduction id="AdvClReasonIntroPractical" show="swPractical">En los ejemplos anteriores, <example>porque</example> puede tener una oración finita por su complemento, pero <example>puesto</example> y <example>de modo</example> tienen cláusulas finitas con un complementizador por complementos. En cambio, <example>para</example> o <example>en orden</example> tienen una oración o cláusula infinitiva.  Éste es el grupo de complementos como se muestra para <example>gustar</example> y <example>odiar</example> en  <section number="10">Las cláusulas de complemento</section>.
-		 </introduction>
-		<br/>
-		<prompt>Los ejemplos que usted escribió en <section number="3">Las frases adverbiales</section> se muestran abajo. Usted puede agregar ejemplos adicionales en oraciones completas (pero simples) también.</prompt>
-		<textBox id="AdvPReasonExample" section="advp" dataItem="reasonExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="AdvClReasonInstruction">In the lexicon, add the following features to the adverb entry, in addition to the feature <feature>reason</feature>.
+                <li>If the adverb may have another adverb as its complement, add the feature <feature>takes_Adv</feature>.</li>
+                <li>If the adverb may have a nominal phrase complement, add the feature <feature>takes_DP</feature>.</li>
+                <li>If the adverb may have an IP complement, add the features <feature>sentential embedded_finite</feature>.</li>
+                <li>If the adverb requires a complementizer to be present in its sentential complement (CP), add the features <feature>sentential embedded_finite embedded_CP</feature>.</li>
+            </ul>
+        </instruction>
+        <br/>
+      <introduction>Ahora se analizan las frases adverbiales o las cláusulas que expresan razón o propósito.  Pueden consistir en adverbios independientes, por ejemplo <example>por lo tanto</example> y <example>pues</example>, y también en los que toman varios tipos de cláusulas de complemento.  (Los ejemplos como <example>por esta razón</example> y <example>en propósito</example> son frases adposicionales que se traten en <section number="8">Las frases adposicionales</section>.)
+         <br/><br/>Algunos ejemplos en español de los adverbios que expresan razón o propósito que tienen complementos clausales son:
+        </introduction>
+        <EnglishExample>
+            <exItem label="1.">Juan fue de prisa al hospital [porque Susana estaba en un accidente].</exItem>
+            <exItem label="2.">[Puesto que Juliana dijo que ella tiene gusto de él], José sonríe todo el tiempo.</exItem>
+            <exItem label="3.">David fue de prisa al aeropuerto [de modo que él pudiera ver a María antes de que ella se fuera].</exItem>
+            <exItem label="4.">Las tropas lanzaron las granadas en el enemigo [para escaparse].</exItem>
+            <exItem label="5.">Las tropas lanzaron las granadas en el enemigo [en orden que los presos se escapen].</exItem>
+        </EnglishExample>
+      <introduction id="AdvClReasonIntroNotPractical" show="swNotPractical">In the examples above, <example>because</example> and <example>since</example> take only <technicalTermRef term="ttFinite"/> IP complements and <example>so</example> takes a finite CP complement.  In contrast, <example>in order</example> takes either a <technicalTermRef term="ttNonfinite"/> IP with a subject which is not expressed or a nonfinite CP complement.   Este es el mismo sistema de complementos como se muestra para <example>gustar</example> y <example>odiar</example> en  <section number="10">Las cláusulas de complemento</section>.
+      </introduction>
+       <introduction id="AdvClReasonIntroPractical" show="swPractical">En los ejemplos anteriores, <example>porque</example> puede tener una oración <technicalTermRef term="ttFinite">finita</technicalTermRef> como complemento, pero <example>puesto</example> y <example>de modo</example> tienen cláusulas finitas con un complementador como complementos. En cambio, <example>para</example> o <example>en orden</example> tienen una oración o cláusula <technicalTermRef term="ttNonfinite">no finita</technicalTermRef>.  
+         </introduction>
+        <br/>
+      <prompt>Los ejemplos que usted escribió en <section number="3">Las frases adverbiales</section> se muestran abajo. Usted puede agregar ejemplos adicionales en oraciones completas (pero simples) también. <span id="CompNoSpan" show="swCompNo">  Puesto que no hay un complementador para las cláusulas de complemento en su lengua, todos los ejemplos deben tener oraciones como complementos.</span></prompt>
+        <textBox id="AdvPReasonExample" section="advp" dataItem="reasonExample" cols="50"/>
+        <br/>
+        <br/>
+        <instruction id="AdvClReasonInstruction">In the lexicon, add the following features to the adverb entry, in addition to the feature <feature>reason</feature>.
 <ul>
-				<li>If the adverb may have a finite IP complement, add the features <feature>sentential embedded_finite</feature>.</li>
-				<li>If the adverb requires a complementizer to be present in its finite sentential complement (CP), add the features <feature>sentential embedded_finite embedded_CP</feature>.</li>
-				<li>If the adverb requires either a nonfinite IP with a pro-dropped subject or a nonfinite CP complement, add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature>.</li>
-			</ul>
-		</instruction>
-		<br/>
-		<buttons>
-			<button id="AdvClFeaturesBack" value="Back" goto="AdvClMain.xml"/>
-			<button id="AdvClFeaturesNext" value="Next" goto="AdvClTesting.xml" gotoNoGrammar="Contents.htm"/>
-		</buttons>
-	</form>
-	<showWhen id="swNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-	</showWhen>
-	<showWhen id="swPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="False"/>
-	</showWhen>
+                <li>If the adverb may have a finite IP complement, add the features <feature>sentential embedded_finite</feature>.</li>
+                <li>If the adverb requires a complementizer to be present in its finite sentential complement (CP), add the features <feature>sentential embedded_finite embedded_CP</feature>.</li>
+                <li>If the adverb requires either a nonfinite IP with a pro-dropped subject or a nonfinite CP complement, add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature>.</li>
+            </ul>
+        </instruction>
+        <br/>
+        <buttons>
+            <button id="AdvClFeaturesBack" value="Back" goto="AdvClMain.xml"/>
+            <button id="AdvClFeaturesNext" value="Next" goto="AdvClTesting.xml" gotoNoGrammar="Contents.htm"/>
+        </buttons>
+    </form>
+   <showWhen id="swCompYes">
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompNo">
+      <whenValue element="comp" attr="comp" value="no"/>
+   </showWhen>
+   <showWhen id="swNotPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
+   <showWhen id="swPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="False"/>
+   </showWhen>
+   &TechnicalTerms; 
 </page>

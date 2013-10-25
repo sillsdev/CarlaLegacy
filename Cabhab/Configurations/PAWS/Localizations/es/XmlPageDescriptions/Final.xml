@@ -1,0 +1,1458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="Final" count="1/1">
+   <title>Verificación final</title>
+   <introduction>
+      Usted ha llegado al final del programa Patas. Como una verificación final de su trabajo antes de salir del programa por última vez y comenzar a trabajar con el <span id="NorPracticalSpan1" show="swNotPractical"> archivo para PC-Patr gramática y el</span> archivo para la gramática escritor, mensajes de advertencia se muestran a continuación que se deben tratar. Estos mensajes decirle que usted no ha respondido a una pregunta o que las respuestas que dió a dos preguntas diferentes son incompatibles. Recuerda que si su lengua no parece tener una construcción particular, usted debe comprobar a la opción ‘otra’ y así que se puede decir lo que hace en su lengua.
+      <br/> <br/>Por cada mensaje que se muestra, vaya a la página listada y hace las correcciones apropiadas y vuelva luego aquí. Ese mensaje ya no debería aparecer.
+      <br/> <br/>Si no corrige estos problemas, el <span id="NotPracticalSpan2" show="swNotPractical"> archivo de reglas para PC-Patr gramática y el</span> archivo para la gramática escritor no estará correcto para su lengua. Está mucho más fácil corregir estos problemas dentro del programa Patas, así que por favor no siga avanzando hasta que no haya ningún mensaje ADVERTENCIA mostrando debajo de este campo.
+     <br/> <br/>Tenga en cuenta que si usted ha tratado los mensajes de advertencia en cada página antes, no veremos ninguno aquí ahora. Solo aquellos que fue omitidos se muestran.   </introduction>
+<form section="final" transparent="no">
+   <prompt id="QPNPDegreeWordNoCheckPrompt" show="swQPNPDegreeYesandNoCheck">De <section number="2.">Las frases cuantificadoras</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos cuantificadores o palabras de grado con respecto al resto de la frase nominal en su lengua, o cambia la respuesta anterior a “No, todos se unen a otra palabra en la frase nominal”.</prompt>
+   <prompt id="QPNPDegreeAttachesNoCheckPrompt" show="swQPNPDegreeNoandNoCheck">De <section number="2.">Las frases cuantificadoras</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos cuantificadores o palabras de grado se unen en su lengua, o cambia su respuesta de arriba a ‘Sí, todos son palabras independientes’.</prompt>
+   <prompt id="QPDeterminerWordNoCheckPrompt" show="swQPDeterminerYesandNoCheck">De <section number="2.">Las frases cuantificadoras - Los cuantificadores que no se presentan con determinantes</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos cuantificadores con respecto al resto de la frase nominal en su lengua, o cambia la respuesta anterior a “No, todos se unen a otra palabra en la frase nominal”.</prompt>
+   <prompt id="QPDeterminerAttachesNoCheckPrompt" show="swQPDeterminerTypeNoAndNoCheck">De <section number="2.">Las frases cuantificadoras - Los cuantificadores que no se presentan con determinantes</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos cuantificadores se unen en su lengua, o cambia su respuesta de arriba a ‘Sí, todos son palabras independientes’.</prompt>
+   <prompt id="QPDegreeWordPosNoCheckPrompt" show="swQPDegreeWordPosNoCheck">De <section number="2.">Las frases cuantificadoras - Otros cuantificadores y palabras de grado</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan las palabras de grado (opcionalmente) con respecto al cuantificador en su lengua, o cambia su respuesta anterior para decir que los elementos de grado no se expresan como palabras independientes.</prompt>
+   <prompt id="QPDegreeAttachesPosNoCheckPrompt" show="swQPDegreeAttachesPosNoCheck">De <section number="2.">Las frases cuantificadoras - Otros cuantificadores y palabras de grado</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se unen los afijos o clíticos de grado con respecto al cuantificador en su lengua, o cambia su respuesta anterior para decir que todos elementos de grado se escriben como palabras independientes.</prompt>
+   <prompt id="QPOrdinalFormNoCheckPrompt" show="swQPOrdinalFormNoCheck">De <section number="2.">Las frases cuantificadoras - Los números</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se forman los números ordinales en su lengua.</prompt>
+   <prompt id="QPOrdinalWordPosNoCheckPrompt" show="swQPOrdinalWordPosNoCheck">De <section number="2.">Las frases cuantificadoras - Los números</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta la palabra ordinal con respecto al número cardinal en su lengua, o cambia su respuesta de arriba para decir que los números ordinales se forman en otra manera.</prompt>  
+   <prompt id="QPOrdinalNumNoCheckPrompt" show="swQPOrdinalNumNoCheck">De <section number="2.">Las frases cuantificadoras - Los números</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los números ordinales y las palabras para ‘último’ y ‘siguiente’ con respecto al número cardinal.</prompt>  
+   <prompt id="AdvPTemporalDegreeNoCheckPrompt" show="swAdvPTemporalDegreeYesNoCheck">De <section number="3.">Las frases adverbiales</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cuáles modificadores pueden modificar o intensificar a los adverbios de tiempo en su lengua, o cambia la respuesta de arriba a “No, los adverbios de tiempo no se modifican ni intensifican”.</prompt>
+   <prompt id="AdvPTemporalDegreeWordNoCheckPrompt" show="swAdvPTemporalDegreeWordAndNoCheck">De <section number="3.">Las frases adverbiales</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estas palabras de grado en su lengua, o cambia su respuesta de arriba a un tipo diferente de modificador.</prompt>
+   <prompt id="AdvPTemporalIndefTypeQNoCheckPrompt" show="swAdvPTemporalIndefTypeQNoCheck">De <section number="3.">Las frases adverbiales</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se expresan estos adverbios de tiempo indefinidos en su lengua.</prompt>
+   <prompt id="AdvPTemporalIndefTypeQPPhraseNoCheckPrompt" show="swAdvPTemporalIndefTypeQPPhraseAndNoCheck">De <section number="3.">Las frases adverbiales</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el cuantifiacdor con respecto al sustantivo genérico de tiempo en su lengua, o cambia su respuesta de arriba a una forma diferente.</prompt>
+   <prompt id="AdvPTemporalIndefTypeIntNoCheckPrompt" show="swAdvPTemporalIndefTypeIntNoCheck">De <section number="3.">Las frases adverbiales</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se expresan estos adverbios de tiempo indefinidos en su lengua.</prompt>
+   <prompt id="AdvPTemporalIndefTypeIntPhraseNoCheckPrompt" show="swAdvPTemporalIndefTypeIntPhraseAndNoCheck">De <section number="3.">Las frases adverbiales</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta la palabra interrogativa de tiempo con respecto a la palabra indefinida en su lengua, o cambia su respuesta de arriba a una forma diferente.</prompt>
+   <prompt id="AdvPLocativeDegreeNoCheckPrompt" show="swAdvPLocativeDegreeYesNoCheck">De <section number="3.">Las frases adverbiales - Los adverbios de lugar</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cuáles modificadores pueden modificar o intensificar a los adverbios de lugar en su lengua, o cambia la respuesta de arriba a “No, los adverbios de lugar no se modifican ni intensifican”.</prompt>
+   <prompt id="AdvPLocativeDegreeWordNoCheckPrompt" show="swAdvPLocativeDegreeWordAndNoCheck">De <section number="3.">Las frases adverbiales - Los adverbios de lugar</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estas palabras de grado en su lengua, o cambia su respuesta de arriba a un tipo diferente de modificador.</prompt>
+   <prompt id="AdvPLocativeIndefTypeQNoCheckPrompt" show="swAdvPLocativeIndefTypeQNoCheck">De <section number="3.">Las frases adverbiales - Los adverbios de lugar</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se expresan estos adverbios de lugar indefinidos en su lengua.</prompt>
+   <prompt id="AdvPLocativeIndefTypeQPPhraseNoCheckPrompt" show="swAdvPLocativeIndefTypeQPPhraseAndNoCheck">De <section number="3.">Las frases adverbiales - Los adverbios de lugar</section>, DVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el cuantifiacdor con respecto al sustantivo genérico de lugar en su lengua, o cambia su respuesta de arriba a una forma diferente.</prompt>
+   <prompt id="AdvPLocativeIndefTypeIntNoCheckPrompt" show="swAdvPLocativeIndefTypeIntNoCheck">De <section number="3.">Las frases adverbiales - Los adverbios de lugar</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se expresan estos adverbios de lugar indefinidos en su lengua.</prompt>
+   <prompt id="AdvPLocativeIndefTypeIntPhraseNoCheckPrompt" show="swAdvPLocativeIndefTypeIntPhraseAndNoCheck">De <section number="3.">Las frases adverbiales - Los adverbios de lugar</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta la palabra interrogativa de lugar con respecto a la palabra indefinida en su lengua, o cambia su respuesta de arriba a una forma diferente.</prompt>
+   <prompt id="AdvPMannerWordDegreeNoCheckPrompt" show="swAdvPMannerTypeWordDegreeYesNoCheck">De <section number="3.">Las frases adverbiales - Los adverbios de modo</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cuáles modificadores pueden modificar o intensificar a los adverbios de modo en su lengua, o cambia la respuesta de arriba a “No, los adverbios de modo no se modifican ni intensifican”.</prompt>
+   <prompt id="AdvPMannerDegreeWordNoCheckPrompt" show="swAdvPMannerDegreeWordAndNoCheck">De <section number="3.">Las frases adverbiales - Los adverbios de modo</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estas palabras de grado en su lengua, o cambia la respuesta de arriba a un tipo diferente de modificador.</prompt>
+   <prompt id="AdvPMannerAffixDegreeNoCheckPrompt" show="swAdvPMannerTypeAffixDegreeYesNoCheck">De <section number="3.">Las frases adverbiales - Los adverbios de modo</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cuáles modificadores pueden modificar o intensificar a los afijos adverbiales de modo en su lengua, o cambia la respuesta de arriba a “No, los afijos adverbiales de modo no se modifican ni intensifican”.</prompt>
+   <prompt id="AdjPModifiersYesNoCheckPrompt" show="swAdjPModifiersYesAndNoCheck">De <section number="4.">Las frases adjetivales</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cuáles modificadores pueden modificar o intensificar a los adjetivos en su lengua, o cambia la respuesta de arriba a “No, los adjetivos no se modifican ni intensifican”.</prompt>
+   <prompt id="AdjPModifiersYesDegreeNoCheckPrompt" show="swAdjPModifiersYesDegreeAndNoCheck">De <section number="4.">Las frases adjetivales</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estas palabras de grado en su lengua, o cambia su respuesta de arriba a un tipo diferente de modificador.</prompt>
+   <prompt id="AdjPModifiersYesMannerNoCheckPrompt" show="swAdjPModifiersYesMannerAndNoCheck">De <section number="4.">Las frases adjetivales</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos adverbios de modo o frases adverbiales en su lengua, o cambia su respuesta de arriba a un tipo diferente de modificador.</prompt>
+   <prompt id="NPAgreeOtherTypeNoCheckPrompt" show="swNPAgreeOtherYesNoCheck">De <section number="5.2.">Las frases nominales - La concordancia</section>, ADVERTENCIA: Usted dijo anteriormente que los sustantivos y sus modificadores pueden/deben concordar en otras características además de número, pero no ha marcado ninguna de las opciones. Por favor marque uno o más opciones según corresponda, o cambia la respuesta de arriba a ‘No’.</prompt>
+   <prompt id="NPAgreeOtherTypeClassNoCheckButClassifiersYesPrompt" show="swNPAgreeOtherTypeClassNoCheckAndClassifiersYes">De <section number="5.2.">Las frases nominales - La concordancia</section>, ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Los clasificadores</section> que su lengua tiene un sistema de clasificadores con concordancia, así que usted debe seleccionar que pueden/deben concordar en clase aquí.</prompt>
+   <prompt id="NPAgreeOtherNoButClassifiersYesPrompt" show="swNPAgreeOtherNoAndClassifiersYes">De <section number="5.2.">Las frases nominales - La concordancia</section>, ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Los clasificadores</section> que su lengua tiene un sistema de clasificadores con concordancia, así que debe cambiar su respuesta aquí a ‘Sí’ y luego debe seleccionar que concuerden en clase.</prompt>
+   <prompt id="NPAgreeOtherTypeClassYesButClassifiersNoPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersNo">De <section number="5.2.">Las frases nominales - La concordancia</section>, ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Los clasificadores</section> que su lengua no tiene un sistema de clasificadores, así que no debe seleccionar que pueden/deben concordar en clase aquí. Si su lengua tiene un sistema de clasificadores, por favor vuelva a <section number="1.">La tipología - Los clasificadores</section> y cambia su respuesta antes de continuar aquí. </prompt>
+   <prompt id="NPAgreeOtherTypeClassYesButClassifiersNotAgrPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersYesNotAgr">De <section number="5.2.">Las frases nominales - La concordancia</section>, ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Los clasificadores</section> que su lengua tiene un sistema de clasificadores más simple que no incluye la concordancia en la frase nominal, así que no debe seleccionar que pueden/deben concordar en clase aquí  Si su lengua tiene un sistema de clasificadores con concordancia, por favor vuelva a <section number="1.">La tipología - Los clasificadores</section> y cambia su respuesta antes de continuar aquí. </prompt>
+   <prompt id="NPCaseWordNoCheckPrompt" show="swNPCaseWordYesOrSomeAndNoCheck">De <section number="5.2.">Las frases nominales - El caso</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los indicadores de caso con respecto al resto de la frase nominal, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra en la frase nominal’.</prompt>
+   <prompt id="NPCaseAttachesNoCheckPrompt" show="swNPCaseAttachesAndNoCheck">De <section number="5.2.">Las frases nominales - El caso</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se unen los indicadores de caso que no son palabras independientes en la frase nominal, o cambia su respuesta de arriba a ‘Sí, todos son palabras independientes’.</prompt>
+   <prompt id="NPArtAndDemArtPosNoCheckPrompt" show="swNPArtAndDemArtAndNoCheck">De <section number="5.3.">Las frases nominales - Los artículos y los demonstrativos: su posición y la concordancia</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el artículo con respecto al sustantivo, o cambia su respuesta en la página anterior al uno que no incluye artículos que se escriben como palabras independientes.</prompt>
+   <prompt id="NPArtAndDemDemPosNoCheckPrompt" show="swNPArtAndDemDemAndNoCheck">De <section number="5.3.">Las frases nominales - Los artículos y los demonstrativos: su posición y la concordancia</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el demostrativo con respecto al sustantivo, o cambia su respuesta en la página anterior al uno que no incluye demostrativos que se escriben como palabras independientes.</prompt>
+   <prompt id="NPArtAndDemBothCooccurNoPosNoCheckPrompt" show="swNPArtAndDemBothCooccurNoAndNoCheck">De <section number="5.3.">Las frases nominales - Los artículos y los demonstrativos: su posición y la concordancia</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el demostrativo o el artículo con respecto al sustantivo en su lengua.</prompt>
+   <prompt id="NPArtAndDemBothCooccurYesDemPosNoCheckPrompt" show="swNPArtAndDemBothCooccurYesAndDemPosNoCheck">De <section number="5.3.">Las frases nominales - Los artículos y los demonstrativos: su posición y la concordancia</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el demostrativo con respecto al sustantivo en su lengua.</prompt>
+   <prompt id="NPArtAndDemBothCooccurYesArtPosNoCheckPrompt" show="swNPArtAndDemBothCooccurYesAndArtPosNoCheck">De <section number="5.3.">Las frases nominales - Los artículos y los demonstrativos: su posición y la concordancia</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el artículo con respecto al sustantivo en su lengua.</prompt>
+   <prompt id="NPPossMarkedYesWordAndNoCheckPrompt" show="swPossMarkedYesWordAndNoCheck">De <section number="5.4.">Las frases nominales - Los posesivos</section>, ADVERTENCIA: Usted dijo anteriormente que las frases posesivas se marcan con una palabra posesiva, pero no ha marcado ninguna de las opciones en cuanto a dónde se presenta. Por favor marque una o más opciones según corresponda, o cambia la respuesta anterior a un diverso tipo de marcador o a ‘No, no hay indicador especial’.</prompt>
+   <prompt id="NPQPPosNoCheckPrompt" show="swNPQPNoCheck">De <section number="5.5.">Las frases nominales - Las frases cuantificadoras como modificadores</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan las frases cuantificadoras con respecto al sustantivo en su lengua.</prompt>
+   <prompt id="NPAdjPPosNoCheckPrompt" show="swNPAdjPPosNoCheck">De <section number="5.6.">Las frases nominales - Las frases adjetivales como modificadores</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan las frases adjetivales con respecto al sustantivo que las modifican.</prompt>
+   <prompt id="PronDependentNoCheckPrompt" show="swPronDependentYesandNoCheck">De <section number="7.">Los pronombres</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se unen los pronombres dependientes en su lengua, o cambia su repuesta de arriba a ‘No, solamente pronombres independientes’.</prompt>
+   <prompt id="PronPossAffixNoCheckPrompt" show="swPronPossYesNoCheck">De <section number="7.">Los pronombres - Los posesivos</section>, ADVERTENCIA: Usted dijo anteriormente que su lengua tiene pronombres posesivos, pero no ha marcado ninguna de las opciones para decir cómo se forman. Por favor, seleccione una o más opciones según corresponda, a menos que su lengua no tiene ningún pronombre posesivo, en cuyo caso no debe tener ninguna forma en los campos y debe cambia la respuesta anterior a ‘No’.</prompt>
+   <prompt id="PronReflAffixNoCheckPrompt" show="swPronReflYesNoCheck">De <section number="7.">Los pronombres - Los reflexivos</section>, ADVERTENCIA: Usted dijo anteriormente que su lengua tiene pronombres reflexivos, pero no ha marcado ninguna de las opciones para decir cómo se forman. Por favor, seleccione una o más opciones según corresponda, a menos que su lengua no tiene ningún reflexivo, en cuyo caso no debe tener ninguna forma en los campos y debe cambia la respuesta anterior a ‘No’ o ‘Sí, un afijo verbal indica la acción reflexiva’.</prompt>
+   <prompt id="PronRecipAffixNoCheckPrompt" show="swPronRecipYesNoCheck">De <section number="7.">Los pronombres - Los recíprocos</section>, ADVERTENCIA: Usted dijo anteriormente que su lengua tiene pronombres recíprocos, pero no ha marcado ninguna de las opciones para decir cómo se forman. Por favor, seleccione una o más opciones según corresponda, a menos que su lengua no tiene ningún recíproco, en cuyo caso no debe tener ninguna forma en los campos y debe cambia la respuesta anterior a ‘No’ o ‘Sí, un afijo verbal indica la acción recíproca’.</prompt>
+   <prompt id="PronIndefTypeQNoCheckPrompt" show="swPronIndefTypeQNoCheck">De <section number="7.">Los pronombres - Los indefinidos</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo su lengua expresa estos significados indefinidos.</prompt>
+   <prompt id="PronIndefTypeQPPhraseNoCheckPrompt" show="swPronIndefTypeQPPhraseAndNoCheck">De <section number="7.">Los pronombres - Los indefinidos</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el cuantificador con respecto del sustantivo genérico en su lengua, o cambia la respuesta anterior a una forma diferente.</prompt>
+   <prompt id="PronIndefTypeIntNoCheckPrompt" show="swPronIndefTypeIntNoCheck">De <section number="7.">Los pronombres - Los indefinidos</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo su lengua expresa estos significados indefinidos.</prompt>
+   <prompt id="PronIndefTypeIntPhraseNoCheckPrompt" show="swPronIndefTypeIntPhraseAndNoCheck">De <section number="7.">Los pronombres - Los indefinidos</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta la palabra interrogativa con respecto del indefinido en su lengua, o cambia la respuesta anterior a una forma diferente.</prompt>
+   <prompt id="PPModifiersNoCheckPrompt" show="swPPModifiersYesandNoCheck">De <section number="8.">Las frases adposicionales</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para descirbir cuáles modicifadores pueden presentarse en su lengua, o cambia su respuesta de arriba a ‘No, ni las palabras de grado ni los ordinales ni los adverbios pueden modificar a las frases adposicionales como palabras independientes’.</prompt>
+   <prompt id="PPDegreeWordNoCheckPrompt" show="swPPDegreeYesandNoCheck">De <section number="8.">Las frases adposicionales</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan las palabras de grado con respecto al resto de la frase adposicional en su lengua, o cambia la respuesta anterior a un tipo diferente de modificador. En ese caso, no debe tener ejemplos de las frases adposicionales con palabras de grado que las modificn en el campo de arriba tampoco.</prompt>
+   <prompt id="PPOrdinalNoCheckPrompt" show="swPPOrdinalYesandNoCheck">De <section number="8.">Las frases adposicionales</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los ordinales con respecto al resto de la frase adposicional en su lengua, o cambia la respuesta anterior a un tipo diferente de modificador. En ese caso, no debe tener ejemplos de las frases adposicionales con ordinales que las modifican en el campo de arriba tampoco.</prompt>
+   <prompt id="PPMannerNoCheckPrompt" show="swPPMannerYesandNoCheck">De <section number="8.">Las frases adposicionales</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los adverbios de modo con respecto al resto de la frase adposicional en su lengua, o cambia la respuesta anterior a un tipo diferente de modificador. En ese caso, no debe tener ejemplos de las frases adposicionales con adverbios de modo que las modifican en el campo de arriba tampoco.</prompt>
+   <prompt id="PPLocativeNoCheckPrompt" show="swPPLocativeYesandNoCheck">De <section number="8.">Las frases adposicionales</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los adverbios de lugar con respecto al resto de la frase adposicional en su lengua, o cambia la respuesta anterior a un tipo diferente de modificador. En ese caso, no debe tener ejemplos de las frases adposicionales con adverbios de lugar que las modifican en el campo de arriba tampoco.</prompt>
+   <prompt id="PPCliticOnlyAloneInstruction" show="swPPTypeCliticAloneYes">De <section number="8.">Las frases adposicionales - Los otros complementos</section>, ADVERTENCIA: Puesto que en su lengua hay solamente <span id="PPPrepSpanO3" show="swPPPosPrep">preposiciones</span>
+      <span id="PPPostSpanO3" show="swPPPosPost">posposiciones</span>
+      <span id="PPBothSpanO3" show="swPPPosBoth">adposiciones</span> clíticos, no debe ser posible que pueden colocarse solas.  Si hay algunas formas que pueden colocarse solas, por favor regresa a la página anterior y cambia su respuesta a ‘Se escriben algunas como palabras independientes, pero algunas son clíticos que se escriben unidos a otra palabra'.</prompt>
+   <prompt id="IPAgrFeatExclYesAndPronNoPrompt" show="swIPAgrFeatExclYesAndPronNo">De <section number="9.2.">Las oraciones básicas - Las características de la concordancia</section>, ADVERTENCIA: En <section number="7.">Los pronombres</section> usted dijo que su lengua no distingue entre las formas exclusivas e inclusivas de los pronombres, pero haya seleccionado algunas opciones exclusivas y inclusivas aquí. Si su lengua tiene formas exclusivas e inclusivas para cualquiero de los pronombres, incluyendo las formas dependientes que pueden presentarse en los verbos, por favor devuelva a <section number="7.">Los pronombres</section> (primera página) y cambia su respuesta a ‘Sí’. Este agregará campos adicionales para rellenar para esas formas como apropiado. Si en cambio su lengua realmente no distingue entre formas exclusivas e inclusivas, por favor desactive los accidentes en el cuadro de arriba.</prompt>
+   <prompt id="IPAgrFeatExclNoAndPronYesPrompt" show="swIPAgrFeatExclNoAndPronDepYes">De <section number="9.2.">Las oraciones básicas - La concordancia</section>, ADVERTENCIA: En <section number="7.">Los pronombres</section> usted dijo que su lengua tiene pronombres dependientes y hace una distinción entre las formas exclusivas e inclusivas de los pronombres, pero todavía no ha seleccionado cualquiera de las opciones exclusivas o inclusivas que se ofrecen aquí. Por lo tanto es más probable que necesita seleccionar todas o algunas de las opciones exclusivas e inclusivas en el cuadro de arriba. De lo contrario, por favor devuelva a <section number="7.">Los pronombres</section> (primera página) y cambia su respuesta a ‘No’, pero eso significa que no se incluyen ninguna forma que escribió en los campos para los pronombres exclusivos o inclusivos en cualquiera salida.</prompt>
+   <prompt id="IPAgrFeatNumberYesAndPronNoPrompt" show="swIPAgrFeatNumberYesAndPronNo">De <section number="9.2.">Las oraciones básicas - La concordancia</section>, ADVERTENCIA: En <section number="7.">Los pronombres</section> usted dijo que su lengua no tiene diversas formas para los singulares y los plurales de los pronombres, pero haya seleccionado algunas opciones de número aquí. Si su lengua tiene formas singulares y plurales para cualquiero de los pronombres, incluyendo las formas dependientes que pueden presentarse en los verbos, por favor devuelva a <section number="7.">Los pronombres</section> (primera página) y cambia su respuesta al ‘S’.  Este agregará campos adicionales para rellenar para esas formas como apropiado. Si en cambio su lengua realmente no distingue entre formas de número, por favor desactive los accidentess en el cuadro de arriba.</prompt>
+   <prompt id="IPAgrFeatNumberNoAndPronYesPrompt" show="swIPAgrFeatNumberNoAndPronDepYes">De <section number="9.2.">Las oraciones básicas - La concordancias</section>, ADVERTENCIA: En <section number="7.">Los pronombres</section> usted dijo que su lengua tiene pronombres dependientes y hace una distinción entre los pronombres singluares y plurales, pero odavía no ha seleccionado cualquiera de las opciones singulares o plurales que se ofrecen aquí. Por lo tanto es más probable que necesita seleccionar todas o algunas de las opciones singulares y plurales en el cuadro de arribas. De lo contrario, por favor devuelva a <section number="7.">Los pronombres</section> (primera página) y cambia su respuesta a ‘No, los pronombres marcan solo persona’, pero eso significa que no se incluyen ninguna forma que escribió en los campos para los pronombres plurales en cualquiera salida.</prompt>
+   <prompt id="IPNonfiniteNonePrompt" show="swIPNonfiniteNoneAndFeaturesYes">De <section number="9.3.">Las oraciones básicas - Los auxiliares</section>, ADVERTENCIA: En <section number="9.2"> Las oraciones básicas - La flexión verbal</section> usted marcó que su lengua utiliza el accidente gramatical <feature>-finito</feature> para no finito. Esto es inconsistente con su respuesta aquí. Por favor, o cambia su respuesta aquí para decir que su lengua tiene formas no finitos o vuelva a <section number="9.2">Las oraciones básicas - La flexión verbal</section> y desactive la opción para no finito <feature>-finito</feature>.</prompt>
+   <prompt id="IPNonfiniteNotNonePrompt" show="swIPNonfiniteNotNoneAndFeaturesNo">De <section number="9.3.">Las oraciones básicas - Los auxiliares</section>, ADVERTENCIA: En <section number="9.2">Las oraciones básicas - La flexión verbal</section> usted no marcó que su lengua utiliza el accidente gramatical <feature>-finito</feature> para no finito. Esto es inconsistente con su respuesta aquí.  Si su lengua tiene formas no finitos, por favor vuelva a <section number="9.2">Las oraciones básicas - La flexión verbal</section> y seleccione la opción para no finito <feature>-finito</feature></prompt>
+   <prompt id="IPProDropNoCheckPrompt" show="swIPProDropNoCheck">De <section number="9.4.">Las oraciones básicas - Los sujetos tácitos y las oraciones imperativas</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cuáles son las circumstancias en que un sujeto tácito se permite en su lengua.  Si ninguna opción es correcto, por favor seleccione ‘Ninguno, el sujeto debe ser explícito aun en los imperativos’ abajo.</prompt>
+   <prompt id="IPConditionAttachesNoCheckPrompt" show="swIPConditionWordNoOrSomeandNoCheck">De <section number="9.4.">Las oraciones básicas - Condicionales</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se unen los indicadores de la condición, o cambia su respuesta de arriba a ‘Sí, todas son palabras independientes’ o ‘No, solamente utiliza el modo condicional en el verbo’.</prompt>
+   <prompt id="IPConditionPosNoCheckPrompt" show="swIPConditionYesandNoCheck">De <section number="9.4.">Las oraciones básicas - Condicionales</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los indicadores de la condición con respecto del resto de la frase condicional, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra en la frase condicional’ o ‘No, solamente utiliza el modo condicional en el verbo’.</prompt>
+   <prompt id="IPSubjunctiveCondAttachesNoCheckPrompt" show="swIPSubjunctiveCondWordNoOrSomeandNoCheck">De <section number="9.4.">Las oraciones básicas - Subjuntivas</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se unen los indicadores de la condición subjuntiva, o cambia su respuesta de arriba a ‘Sí, todas son palabras independientes’ o ‘No, no hay ningún indicador para la condición en los subjuntivos en mi lengua, solamente utiliza el modo subjuntivo en el verbo’.</prompt>
+   <prompt id="IPSubjunctiveCondPosNoCheckPrompt" show="swIPSubjunctiveCondYesandNoCheck">De <section number="9.4.">Las oraciones básicas - Subjuntivas</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los indicadores de la condición subjuntiva con respecto del resto de la frase condicional subjuntiva, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra en la frase condicional subjuntiva’ o ‘No, no hay ningún indicador para la condición en los subjuntivos en mi lengua, solamente utiliza el modo subjuntivo en el verbo’.</prompt>
+   <prompt id="IPExistNoCheckPrompt" show="swIPExistNoCheck">De <section number="9.5.">Las oraciones básicas - Existenciales</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir qué elementos especiales se utilizan en oraciones existenciales en su lengua.  Si ninguna opción es correcto, por favor seleccione ‘Ninguno, son exactamente las mismas que oraciones copulativas’ abajo.</prompt>
+   <prompt id="IPPassiveNoPrompt" show="swIPPassiveNoAndFeaturesYes">De <section number="9.8.">Las oraciones básicas - Pasivos</section>, ADVERTENCIA: En <section number="9.2">Las oraciones básicas - La flexión verbal</section> usted seleccionó el accidente gramatical de voz pasiva para su lengua. Esto es inconsistente con su respuesta aquí. Por favor, o cambia su respuesta aquí para decir que su lengua tiene pasivas,
+      o vuelva a <section number="9.2">Las oraciones básicas - La flexión verbal</section> y desactive el accidente gramatical de voz pasiva.</prompt>
+   <prompt id="IPPassiveYesPrompt" show="swIPPassiveYesAndFeaturesNo">De <section number="9.8.">Las oraciones básicas - Pasivas</section>, ADVERTENCIA: En <section number="9.2">Las oraciones básicas - La flexión verbal</section> usted no seleccionó el accidente gramatical de voz pasiva para su lengua. Esto es inconsistente con su respuesta aquí  Si su lengua tiene pasivas, 
+      vuelva a <section number="9.2">Las oraciones básicas - La flexión verbal</section> y seleccione el accidente gramatical de voz pasiva.</prompt>
+   <prompt id="IPCausativeNoCheckPrompt" show="swIPCausativeNoCheck">De <section number="9.8.">Las oraciones básicas - Causativas y antipasivas</section>, ADVERTENCIA: Usted necesita sellecione al menos una opción para describir cómo se forman las causativas en su lengua. </prompt>
+   <prompt id="IPCausativeAffixAndFeaturesNoPrompt" show="swIPCausativeAffixAndFeaturesNo">De <section number="9.8.">Las oraciones básicas - Causativas y antipasivas</section>, ADVERTENCIA: En <section number="9.2"> Las oraciones básicas - La flexión verbal</section> no seleccionó el accidente gramatical de voz causativa para su lengua. Esto es inconsistente con su respuesta que existe un afijo verbal para causativo aquí. Si su lengua tiene uno o más afijos causativos, vuelva a <section number="9.2"> Las oraciones básicas - La flexión verbal</section> y seleccione el accidente gramatical de voz causativa.</prompt>
+   <prompt id="IPAntipassiveNoPrompt" show="swIPAntipassiveNoAndFeaturesYes">De <section number="9.8.">Las oraciones básicas - Causativas y antipasivas</section>, ADVERTENCIA: En <section number="9.2"> Las oraciones básicas - La flexión verbal</section> usted seleccionó el accidente gramatical de voz antipasiva para su lengua. Esto es inconsistente con su respuesta aquí. Por favor cambia su respuesta aquí a ‘Sí’ o vuelva a <section number="9.2"> Las oraciones básicas - La flexión verbal</section> y desactive el accidente gramatical de voz antipasiva.</prompt>
+   <prompt id="IPAntipassiveYesPrompt" show="swIPAntipassiveYesAndFeaturesNo">De <section number="9.8.">Las oraciones básicas - Causativas y antipasivas</section>, ADVERTENCIA: En <section number="9.2"> Las oraciones básicas - La flexión verbal</section> no seleccionó el accidente gramatical de voz antipasiva para su lengua. Esto es inconsistente con su respuesta aquí. Si su lengua tiene antipasivas, vuelva a <section number="9.2"> Las oraciones básicas - La flexión verbal</section> y seleccione el accidente gramatical de voz antipasiva.</prompt>
+   <prompt id="IPAntipassiveNoCheckPrompt" show="swIPAntipassiveYesAndNoCheck">De <section number="9.8.">Las oraciones básicas - Causativas y antipasivas</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se forman las antipasivas en su lengua, o cambia su respuesta de arriba a ‘No’.  En este caso, no debe ser ningún ejemplo de antipasivas en el campo de arriba.tampoco.</prompt>
+   <prompt id="IPVoiceNoPrompt" show="swIPVoiceNoAndFeaturesYes">De <section number="9.8.">Las oraciones básicas - Otra indicador de voz</section>, ADVERTENCIA: En <section number="9.2">Las oraciones básicas - La flexión verbal</section> usted seleccionó algunos de los accidentes gramaticales de voz de este tipo especial para su lengua. Esto es inconsistente con su respuesta aquí. Por favor, o cambia su respuesta aquí para decir que su lengua tiene indicadores de voz de este tipo especial,
+      o vuelva a <section number="9.2">Las oraciones básicas - La flexión verbal</section> y desactive los accidentes gramaticales de voz de este tipo especial.</prompt>
+   <prompt id="IPVoiceYesPrompt" show="swIPVoiceYesAndFeaturesNo">De <section number="9.8.">Las oraciones básicas - Otros indicadores de voz</section>, ADVERTENCIA: En <section number="9.2">Las oraciones básicas - La flexión verbal</section> usted no seleccionó ningún accidente gramatical de voz de este tipo especial para su lengua. Esto es inconsistente con su respuesta aquí  Si su lengua tiene indicadores de voz de este tipo especial, 
+      vuelva a <section number="9.2">Las oraciones básicas - La flexión verbal</section> y seleccione los accidentes gramaticales de voz de este tipo especial y escriba las morfemas antes de regresando aquí.</prompt>
+   <prompt id="CompAttachesNoCheckPrompt" show="swCompWordNoOrSomeandNoCheck">De<section number="10.">Las cláusulas de complemento - La posición de complementador</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos complementizadores se unen en su lengua, o cambia su respuesta arriba a ‘Sí, todos son palabras independientes’.</prompt>
+   <prompt id="CompWordNoCheckPrompt" show="swCompWordYesOrSomeAndNoCheck">De <section number="10.">Las cláusulas de complemento - La posición de complementador</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos complementizadores que se escriben como palabras independientes en su lengua, o cambia su respuesta arriba a ‘No, todos se unen a otra palabra’.</prompt>
+   <prompt id="QMainYNAuxAndNoAuxPrompt" show="swQMainYNAuxAndNoAux">De <section number="11.">Las preguntas - Las preguntas de respuesta sí/no como cláusula principal</section>, ADVERTENCIA: Sus respuestas son inconsistentes; no tiene sentido tener despalzamiento de un auxiliar si la lengua no tiene ningún auxliar que se escribe como una palabra independiente. Por favor cambia su respuesta aquí o vuelva a <section number="9.3">Las oraciones básicas - Los auxliaries</section> y cambia su respuesta a ‘Sí’ antes de continuando.</prompt>
+   <prompt id="QMainYNCliticPosNoCheckPrompt" show="swQMainYNWordNoOrSomeandNoCheck">De <section number="11.">Las preguntas - Las preguntas de respuesta sí/no como cláusula principal</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos indicadores o complementadores de pregunta de respuesta sí/no se unen en su lengua, o cambia su respuesta de arriba a ‘Sí, todos son palabras independientes’.</prompt>
+   <prompt id="QMainYNPosNoCheckPrompt" show="swQMainYNWordYesOrSomeandNoCheck">De <section number="11.">Las preguntas - Las preguntas de respuesta sí/no como cláusula principal</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos indicadores o complementadores de pregunta de respuesta sí/no que se escriben como palabras independientes con respecto al resto de la pregunta de respuesta sí/no en su lengua, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra’.</prompt>
+   <prompt id="QEmbYNAuxAndNoAuxPrompt" show="swQEmbYNAuxAndNoAux">De <section number="11.">Las preguntas - Las preguntas de respuesta sí/no como cláusula subordinada</section>, ADVERTENCIA: Sus respuestas son inconsistentes; no tiene sentido tener despalzamiento de un auxiliar si la lengua no tiene ningún auxliar que se escribe como una palabra independiente. Por favor cambia su respuesta aquí o vuelva a <section number="9.3">Las oraciones básicas - Los auxliaries</section> y cambia su respuesta a ‘Sí’ antes de continuando.</prompt>
+   <prompt id="QEmbYNCliticPosNoCheckPrompt" show="swQEmbYNWordNoOrSomeandNoCheck">De <section number="11.">Las preguntas - Las preguntas de respuesta sí/no como cláusula subordinada</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos indicadores o complementadores de pregunta de respuesta sí/no subordinada se unen en su lengua, o cambia su respuesta de arriba a ‘Sí, todos son palabras independientes’.</prompt>
+   <prompt id="QEmbYNPosNoCheckPrompt" show="swQEmbYNWordYesOrSomeandNoCheck">De <section number="11.">Las preguntas - Las preguntas de respuesta sí/no como cláusula subordinada</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos indicadores o complementadores de pregunta de respuesta sí/no que se escriben como palabras independientes con respecto al resto de la pregunta de respuesta sí/no subordinada en su lengua, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra’.</prompt>
+   <prompt id="QMainContAuxAndNoAuxPrompt" show="swQMainContAuxAndNoAux">De <section number="11.">Las preguntas - Las preguntas de respuesta abierta como cláusula principal</section>, ADVERTENCIA: Sus respuestas son inconsistentes; no tiene sentido tener despalzamiento de un auxiliar si la lengua no tiene ningún auxliar que se escribe como una palabra independiente. Por favor cambia su respuesta aquí o vuelva a <section number="9.3">Las oraciones básicas - Los auxliaries</section> y cambia su respuesta a ‘Sí’ antes de continuando.</prompt>
+   <prompt id="QMainContCliticPosNoCheckPrompt" show="swQMainContWordNoOrSomeandNoCheck">De <section number="11.">Las preguntas - Las preguntas de respuesta abierta como cláusula principal</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos indicadores o complementadores de pregunta se unen en su lengua, o cambia su respuesta de arriba a ‘Sí, todos son palabras independientes’.</prompt>
+   <prompt id="QMainContPosNoCheckPrompt" show="swQMainContWordYesOrSomeAndFrontNoOrOptionalOrFrontYesNotVSOandNoCheck">De <section number="11.">Las preguntas - Las preguntas de respuesta abierta como cláusula principal</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos indicadores o complementadores de pregunta que se escriben como palabras independientes con respecto al resto de la pregunta en su lengua, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra’.</prompt>
+   <prompt id="QMainContVSOPosNoCheckPrompt" show="swVSOWordFrontYesandNoCheck">De <section number="11.">Las preguntas - Las preguntas de respuesta abierta como cláusula principal</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos indicadores o complementadores de pregunta que se escriben como palabras independientes con respecto de la frase interrogativa desplazada y al resto de la pregunta en su lengua, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra’.</prompt>
+   <prompt id="QEmbContAuxAndNoAuxPrompt" show="swQEmbContAuxAndNoAux">De <section number="11.">La preguntas - Las preguntas de respuesta abierta como cláusula subordinada</section>, ADVERTENCIA: Sus respuestas son inconsistentes; no tiene sentido tener despalzamiento de un auxiliar si la lengua no tiene ningún auxliar que se escribe como una palabra independiente. Por favor cambia su respuesta aquí o vuelva a <section number="9.3">Las oraciones básicas - Los auxliaries</section> y cambia su respuesta a ‘Sí’ antes de continuando.</prompt>
+   <prompt id="QEmbContCliticPosNoCheckPrompt" show="swQEmbContWordNoOrSomeandNoCheck">De <section number="11.">La preguntas - Las preguntas de respuesta abierta como cláusula subordinada</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos indicadores o complementadores de pregunta subordinada se unen en su lengua, o cambia su respuesta de arriba a ‘Sí, todos son palabras independientes’.</prompt>
+   <prompt id="QEmbContPosNoCheckPrompt" show="swQEmbContWordYesOrSomeAndFrontNoOrOptionalOrFrontYesNotVSOandNoCheck">De <section number="11.">La preguntas - Las preguntas de respuesta abierta como cláusula subordinada</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos indicadores o complementadores de pregunta que se escriben como palabras independientes con respecto al resto de la pregunta subordinada en su lengua, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra’.</prompt>
+   <prompt id="QEmbContVSOPosNoCheckPrompt" show="swQEmbVSOWordFrontYesandNoCheck">De <section number="11.">La preguntas - Las preguntas de respuesta abierta como cláusula subordinada</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos indicadores o complementadores de pregunta que se escriben como palabras independientes con respecto de la frase interrogativa desplazada y al resto de la pregunta subordinada en su lengua, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra’.</prompt>
+   <prompt id="RelClTypeNoCheckPrompt" show="swRelClExistYesAndTypeNoCheck">De <section number="12.">Las cláusulas relativas</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir qué tipos de las cláusulas relativas tiene su lengua, o cambia su respuesta arriba a ‘No, no hay ningún tipo de cláusula relativa’.</prompt>
+   <prompt id="RelClWordPosNoCheckPrompt" show="swRelClTypeCPCompOrRelOrWhNotNoAndCompWordYesOrSomeAndNoCheck">De <section number="12.">Las cláusulas relativas</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el indicador relativo con respecto de la parte de la cláusula relativa que es una oración en su lengua.</prompt>
+   <prompt id="NegNPDegreeAttachesNoCheckPrompt" show="swNegNPDegreeNoAndNoCheck">De <section number="14.">Las construcciones de negación</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se unen los elementos negativos que no son palabras en su lengua, o cambia su respuesta de arriba a ‘Sí, todos son palabras independientes’.</prompt>
+   <prompt id="NegNPDegreeWordNoCheckPrompt" show="swNegNPDegreeYesAndNoCheck">De <section number="14.">Las construcciones de negación</section>, en la primera página, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan las palabras negativas con respecto al resto de la frase nominal en su lengua, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra en la frase nominal’.</prompt>
+   <prompt id="NegTemporalTypeNoCheckPrompt" show="swNegTemporalTypeNoCheck">De <section number="14.">Las construcciones de negación - La negación advebial y verbal</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo expresa su lengua el significado del adverbio de tiempo negativo.</prompt>
+   <prompt id="NegTemporalAdverbWordNoCheckPrompt" show="swNegTemporalAdverbWordAndNoCheck">De <section number="14.">Las construcciones de negación - La negación adverial y verbal</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta la palabra negativa con respecto al adverbio de tiempo positivo, o cambia su respuesta de arriba acerca de cómo los adverbios de tiempo negativos son relacionados con los adverbios de tiempo positivos.</prompt>
+   <prompt id="NegLocativeTypeNoCheckPrompt" show="swNegLocativeTypeNoCheck">De <section number="14.">Las construcciones de negación - La negación adverbial y verbal</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo expresa su lengua el significado del adverbio de lugar negativo .</prompt>
+   <prompt id="NegLocativeAdverbWordNoCheckPrompt" show="swNegLocativeAdverbWordAndNoCheck">De <section number="14.">Las construcciones de negación - La negación adverbial y verbal</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta la palabra negativa con respecto al adverbio de lugar positivo, o cambia su respuesta de arriba acerca de cómo los adverbios de lugar negativos son relacionados con los adverbios de lugar positivos.</prompt>
+   <prompt id="NegVerbalNoCheckPrompt" show="swNegVerbalAndNoCheck">De <section number="14.">Las construcciones de negación - La negación adevrbial y verbal</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se expresa la negación en el verbo o en un auxiliar en su lengua, o cambia su respuesta de arriba a ‘No’.</prompt>
+   <prompt id="NegAuxRequiresAuxButNoAuxInstruction" show="swNegAuxRequiresAuxButNoAux">De <section number="14.">Las construcciones de negación - La negación adverbial y verbal</section>, ADVERTENCIA - las respuestas que usted escribió son incompatibles!! Una palabra auxiliar negativa no puede requerir la presencia de otro auxiliar si su lengua no tiene auxiliares (positivos) que se escriben como palabras independientes. Por favor, cambie la respuesta aquí o en <section number="9.3">Las oraciones básicas - Los auxiliares</section> para corregir este problema antes de continuar.</prompt>
+   <prompt id="NegAuxAffixButNoAuxInstruction" show="swNegAuxAffixButNoAux">De <section number="14.">Las construcciones de negación - La negación adverbial y verbal</section>, ADVERTENCIA - las respuestas que usted escribió son incompatibles!! Un afijo auxiliar negativo no puede unirse con nada si su lengua no tiene auxiliares (positivos) que se escriben como palabras independientes. Por favor, cambie la respuesta aquí o en <section number="9.3">Las oraciones básicas - Los auxiliares</section> para corregir este problema antes de continuar.</prompt>
+   <prompt id="CoordConjAttachesNoCheckPrompt" show="swCoordConjWordNotYesAndNoCheck">De <section number="15.">Las construcciones coordinadas</section>, on the first page, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde las conjunciones se unen en su lengua, o cambia la respuesta de arriba a “Sí, todas son palabras independientes”.</prompt>
+   <prompt id="TopicMarkerPosNoCheckPrompt" show="swTopicMarkerYesWordAndNoCheck">De <section number="16.">Las construcciones de foco y tópico</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el indicador de tópico en su lengua, o cambia su respuesta de arriba a ‘No, solamente la posición en la oración y posiblemente la puntuación distingue el tópico’.  En este caso, no debe ser ningún ejemplo de indicadores de tópico en el campo de arriba.tampoco.</prompt>
+   <prompt id="FocusMarkerPosNoCheckPrompt" show="swFocusMarkerYesWordAndNoCheck">De <section number="16.">Las construcciones de foco y tópico</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el indicador de foco en su lengua, o cambia su respuesta arriba a ‘No, solamente la posición en la oración y posiblemente la puntuación distingue la frase enfocada’.  En este caso, no debe ser ningún ejemplo de indicadores de foco en el campo de arriba.tampoco.</prompt>
+   <prompt id="ExclMPosNoCheckPrompt" show="swExclMYesandNoCheck">De <section number="17.">Los saludos, las interjecciones y las exclamaciones</section>, ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estas palabras especiales que experesan una exclamación en su lengua, o cambia su respuesta de arriba a ‘No’. En este caso, no debe ser ningún ejemplo en el campo de arriba tampoco.</prompt>        
+      
+   
+   
+   <introduction>   
+      Una vez que no hay ADVERTENCIA mensajes de arriba, le sugerimos que también revise la página principal en <section number="7.">Los pronombres</section> para asegurarse de que le pidió el número correcto de sistemas de pronombres para su lengua. Si no, por favor siga las instrucciones sobre cómo cambiar su respuesta en <section number="1.">La tipología - Sistema de caso</section>. Si usted hace un cambio con respecto al sistema de caso cambiará muchas otras respuestas a lo largo, así que asegúrese de volver aquí después de rehacer los pronombres para ver si cualquier nuevos mensajes de advertencia necesitan ser atendidos.
+            <br/>
+      <br/>
+      <br/>
+      Ahora usted ha completado el programa Patas. <span id="NotPracticalSpan" show="swNotPractical"> Por favor, guarde el archivo de PC-Patr
+         gramática (.grm) con un nombre diferente antes de revisarlo.
+         Póngase en contacto con <a href="mailto:cheri_black@sil.org"> Cheri_Black@sil.org</a> para obtener ayuda sobre cómo proceder o cómo manejar las construcciones específicas si usted usa PC-Patr para parsear y desambiguación. </span>
+      Puede ver los boradores de la gramática dando doble click en los archivos de .htm.<br></br> <br/>
+      Por favor, guarde las versiones .xml con un nombre diferente antes de usted comience a corregirlas. Para un editor de XML agradable para la gramática, personalmente preferimos XMLMind XML Editor que hace revisar e imprimir una versión en pdf mucho más fácil,. Usted puede obtener más información en  <a href="http://www.xlingpaper.org/">http://www.xlingpaper.org/</a>.
+      <br/> <br/>Usted ahora ha terminado el programa de PATAS. <br></br>
+      Ahora puede salir el programa por su tiempo final. ¡ Felicidades!
+ </introduction>
+ <br/>      
+       <br/>
+      <buttons>
+           <button id="FinalBack" value="Back" goto="Contents.htm"/>
+            <button id="FinalNext" value="Next" goto="Contents.htm"/>
+        </buttons>
+    </form>
+   <showWhen id="swNotPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
+   <showWhen id="swPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="False"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNoandNoCheck">
+      <not/>
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <and/>
+      <whenValue  element="qp/npDegreeTypeProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/npDegreeTypeEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/npDegreeTypePrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/npDegreeTypeSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/npDegreeTypeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeYesandNoCheck">
+      <not/>
+      <whenValue element="qp" attr="npDegree" value="no"/>
+      <and/>
+      <whenValue  element="qp/npDegreePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/npDegreePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/npDegreePosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/npDegreePosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerYesandNoCheck">
+      <not/>
+      <whenValue element="qp" attr="determinerType" value="no"/>
+      <and/>
+      <whenValue  element="qp/determinerPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/determinerPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/determinerPosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/determinerPosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerTypeNoAndNoCheck">
+      <not/>
+      <whenValue element="qp" attr="determinerType" value="yes"/>
+      <and/>
+      <whenValue  element="qp/determinerTypeProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/determinerTypeEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/determinerTypePrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/determinerTypeSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/determinerTypeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQPDegreeAttachesPosNoCheck">
+      <openParen/>
+      <whenValue element="qp" attr="degree" value="attaches"/>
+      <or/>
+      <whenValue element="qp" attr="degree" value="some"/>
+      <closeParen/>     
+      <and/>
+      <whenValue  element="qp/degreeTypePrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/degreeTypeSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/degreeTypeOther" attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swQPDegreeWordPosNoCheck">
+      <openParen/>
+      <whenValue element="qp" attr="degree" value="yes"/>
+      <or/>
+      <whenValue element="qp" attr="degree" value="some"/>
+      <closeParen/>     
+      <and/>
+      <whenValue  element="qp/degreeBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/degreeAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/degreeBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue  element="qp/degreeOther" attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swQPOrdinalFormNoCheck">
+      <whenValue element="qp/ordinalAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalIndependent" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalWordPosNoCheck">
+      <whenValue element="qp/ordinalWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/ordinalWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalNumNoCheck">
+      <whenValue element="qp/ordinalBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalNumOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalDegreeYesNoCheck">
+      <whenValue  element="advp" attr="temporalDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeAttaches" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeRedup" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalDegreeWordAndNoCheck">
+      <whenValue  element="advp" attr="temporalDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalDegreeWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalIndefTypeQNoCheck">
+      <whenValue element="advp/temporalIndefQWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQOther" attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swAdvPTemporalIndefTypeIntNoCheck">
+      <whenValue element="advp/temporalIndefIntWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntOther" attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swAdvPTemporalIndefTypeIntPhraseAndNoCheck">
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeIntOther" attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swAdvPTemporalIndefTypeQPPhraseAndNoCheck">
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefTypeQPQOther" attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swAdvPLocativeDegreeYesNoCheck">
+      <whenValue  element="advp" attr="locativeDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeAttaches" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeRedup" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeIndefTypeQNoCheck">
+      <whenValue element="advp/locativeIndefQWord" attr="checked" value="no"/>
+      <and/> 
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="no"/>
+      <and/> 
+      <whenValue element="advp/locativeIndefQOther" attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swAdvPLocativeIndefTypeIntNoCheck">
+      <whenValue element="advp/locativeIndefIntWord" attr="checked" value="no"/>
+      <and/> 
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="no"/>
+      <and/> 
+      <whenValue element="advp/locativeIndefIntOther" attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swAdvPLocativeIndefTypeQPPhraseAndNoCheck">
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeQPQOther" attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swAdvPLocativeIndefTypeIntPhraseAndNoCheck">
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefTypeIntOther" attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swAdvPLocativeDegreeWordAndNoCheck">
+      <whenValue element="advp" attr="locativeDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeDegreeWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordDegreeYesNoCheck">
+<not/>
+      <whenValue element="advp" attr="mannerType" value="affix"/>
+      <and/>
+      <whenValue element="advp" attr="mannerDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeAttaches" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeRedup" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerWordDegreeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffixDegreeYesNoCheck">
+      <not/>
+      <whenValue element="advp" attr="mannerType" value="word"/>
+      <and/>
+      <whenValue element="advp" attr="mannerAffixDegree" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeYesBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeYesAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeRedup" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerAffixDegreeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeWordAndNoCheck">
+   <whenValue element="advp" attr="mannerDegree" value="yes"/>
+      <and/>
+     <whenValue element="advp/mannerWordDegreeWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/mannerDegreeWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdjPModifiersYesAndNoCheck">
+      <whenValue element="adjp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="adjp/modifiersDegree" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="adjp/modifiersManner" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="adjp/modifiersAttaches" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="adjp/modifiersRedup" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="adjp/modifiersOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdjPModifiersYesMannerAndNoCheck">
+      <whenValue element="adjp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="adjp/mannerBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="adjp/mannerAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="adjp/mannerBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="adjp/mannerOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swAdjPModifiersYesDegreeAndNoCheck">
+      <whenValue element="adjp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="adjp/degreeBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="adjp/degreeAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="adjp/degreeBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="adjp/degreeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherYesNoCheck">
+      <whenValue element="np" attr="agreeOther" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeClass" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherTypeClassNoCheckAndClassifiersYes">
+      <whenValue element="np" attr="agreeOther" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeClass" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherNoAndClassifiersYes">
+      <whenValue element="np" attr="agreeOther" value="no"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherTypeClassYesAndClassifiersYesNotAgr">
+      <whenValue element="np" attr="agreeOther" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesType"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherTypeClassYesAndClassifiersNo">
+      <whenValue element="np" attr="agreeOther" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordYesOrSomeAndNoCheck">
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <not/><whenValue element="np" attr="caseWord" value="no"/>
+      <and/>
+     <whenValue element="np/caseWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesAndNoCheck">
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <not/><whenValue element="np" attr="caseWord" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArtAndNoCheck">
+      <whenValue element="np" attr="artAndDem" value="article"/>
+      <and/>
+      <whenValue element="np/artOnlyBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDemAndNoCheck">
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+      <and/>
+      <whenValue element="np/demOnlyBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothCooccurYesAndDemPosNoCheck">
+      <whenValue element="np" attr="artAndDem" value="both"/>
+      <and/><not/>
+      <whenValue element="np" attr="artBothCooccur" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothCooccurYesAndArtPosNoCheck">
+      <whenValue element="np" attr="artAndDem" value="both"/>
+      <and/><not/>
+      <whenValue element="np" attr="artBothCooccur" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothCooccurNoAndNoCheck">
+      <whenValue element="np" attr="artAndDem" value="both"/>
+      <and/>
+      <whenValue element="np" attr="artBothCooccur" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPossMarkedYesWordAndNoCheck">
+      <whenValue element="np" attr="possMarked" value="yesWord"/>
+      <and/>
+      <whenValue element="np/possWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/possWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/possWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/possWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPQPNoCheck">
+ <whenValue element="np/qpPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosOther" attr="checked" value="no"/>
+      </showWhen>
+   <showWhen id="swNPAdjPPosNoCheck">
+      <whenValue element="np/adjBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjPosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPronPossYesNoCheck">
+     <whenValue element="pron" attr="poss" value="yes"/>
+      <and/>
+      <whenValue element="pron/possDistinct" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/possAffixPron" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/possAffixWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/possPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/possOther" attr="checked" value="no"/>
+      </showWhen>
+   <showWhen id="swPronDependentYesandNoCheck">
+      <whenValue element="pron" attr="dependentPron" value="yes"/>
+      <and/>
+      <whenValue element="pron/dependentTypeProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/dependentTypeEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/dependentTypePrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/dependentTypeSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/dependentTypeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPronReflYesNoCheck">
+      <whenValue element="pron" attr="refl" value="yes"/>
+      <and/>
+      <whenValue element="pron/reflDistinct" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/reflAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/reflNounPoss" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/reflQP" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/reflOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPronRecipYesNoCheck">
+      <whenValue element="pron" attr="recip" value="yes"/>
+      <and/>
+      <whenValue element="pron/recipDistinct" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/recipAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/recipNounPoss" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/recipQP" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/recipOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPronIndefTypeQNoCheck">
+      <whenValue element="pron/indefQWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/indefQPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/indefQOther" attr="checked" value="no"/>
+      </showWhen> 
+   <showWhen id="swPronIndefTypeIntNoCheck">
+      <whenValue element="pron/indefIntWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/indefIntPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/indefIntOther" attr="checked" value="no"/>
+   </showWhen> 
+   <showWhen id="swPronIndefTypeQPPhraseAndNoCheck">
+      <whenValue element="pron/indefQPhrase" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pron/indefTypeQPQBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/indefTypeQPQAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/indefTypeQPQBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pron/indefTypeQPQOther" attr="checked" value="no"/>
+   </showWhen> 
+<showWhen id="swPronIndefTypeIntPhraseAndNoCheck">
+   <whenValue element="pron/indefIntPhrase" attr="checked" value="yes"/>
+   <and/>
+   <whenValue element="pron/indefTypeIntBefore" attr="checked" value="no"/>
+   <and/>
+   <whenValue element="pron/indefTypeIntAfter" attr="checked" value="no"/>
+   <and/>
+   <whenValue element="pron/indefTypeIntBoth" attr="checked" value="no"/>
+   <and/>
+   <whenValue element="pron/indefTypeIntOther" attr="checked" value="no"/>
+</showWhen> 
+   <showWhen id="swPPModifiersYesandNoCheck">
+      <whenValue element="pp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppModifierDegree" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppModifierOrdinal" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppModifierManner" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppModifierLocative" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppModifierOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPPDegreeYesandNoCheck">
+      <whenValue element="pp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppModifierDegree" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppDegreePosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPPOrdinalYesandNoCheck">
+      <whenValue element="pp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppModifierOrdinal" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppOrdinalPosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPPMannerYesandNoCheck">
+      <whenValue element="pp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppModifierManner" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppMannerPosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPPLocativeYesandNoCheck">
+      <whenValue element="pp" attr="modifiers" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppModifierLocative" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="pp/ppLocativePosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swPPPosPrep">
+      <whenValue element="pp" attr="pPos" value="before"/>
+   </showWhen>
+   <showWhen id="swPPPosPost">
+      <whenValue element="pp" attr="pPos" value="after"/>
+   </showWhen>
+   <showWhen id="swPPPosBoth">
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
+   </showWhen>
+   <showWhen id="swPPTypeCliticAloneYes">
+      <whenValue element="pp" attr="pType" value="clitic"/>
+      <and/>
+      <whenValue element="pp" attr="alone" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPProDropNoCheck">
+     <whenValue element="ip/proDropYes" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/proDropClitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/proDropImp" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/proDropOther" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/proDropNone" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swIPConditionWordNoOrSomeandNoCheck">
+<not/><whenValue element="ip" attr="conditionWord" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPConditionYesandNoCheck">
+      <not/><whenValue element="ip" attr="conditionWord" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordNoOrSomeandNoCheck">
+      <openParen/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="no"/>
+      <or/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="some"/>
+      <closeParen/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondYesandNoCheck">
+      <openParen/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="some"/>
+      <closeParen/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPExistNoCheck">
+      <whenValue element="ip/existWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existVerb" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existPosition" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existOther" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existNone" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPNonfiniteNoneAndFeaturesYes">
+      <whenValue element="ip" attr="auxNonfinite" value="none"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPNonfiniteNotNoneAndFeaturesNo">
+      <whenValue element="ip" attr="auxNonfinite" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="no"/>
+ <or/>
+      <whenValue element="ip" attr="auxNonfinite" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPPassiveYesAndFeaturesNo">
+      <whenValue element="ip" attr="passive" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatPassive" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPPassiveNoAndFeaturesYes">
+      <whenValue element="ip" attr="passive" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatPassive" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPCausativeNoCheck">
+     <whenValue element="ip/causativeAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/causativeMake" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/causativeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPCausativeAffixAndFeaturesNo">
+      <whenValue element="ip/causativeAffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatCausative" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveYesAndNoCheck">
+      <whenValue element="ip" attr="antipassive" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveErg" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveAgr" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveNoAndFeaturesYes">
+      <whenValue element="ip" attr="antipassive" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatAntipassive" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveYesAndFeaturesNo">
+      <whenValue element="ip" attr="antipassive" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatAntipassive" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPVoiceNoAndFeaturesYes">
+      <whenValue element="ip" attr="voice" value="no"/>
+      <and/>
+      <openParen/>
+      <whenValue element="ip/ipInflFeatActorVoice" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipInflFeatObjectVoice" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipInflFeatDativeVoice" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipInflFeatGoalVoice" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipInflFeatLocativeVoice" attr="checked" value="yes"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swIPVoiceYesAndFeaturesNo">
+      <whenValue element="ip" attr="voice" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatActorVoice" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatObjectVoice" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatDativeVoice" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatGoalVoice" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatLocativeVoice" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeandNoCheck">
+      <not/><whenValue element="comp" attr="compWord" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <and/>
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompWordYesOrSomeAndNoCheck">
+      <not/><whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQMainYNAuxAndNoAux">
+      <whenValue element="q" attr="mainYN" value="noAux"/>
+      <and/>
+      <whenValue element="ip" attr="aux" value="no"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordNoOrSomeandNoCheck">
+      <not/><whenValue element="q" attr="mainYNWord" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNCliticOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordYesOrSomeandNoCheck">
+      <not/><whenValue element="q" attr="mainYNWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQEmbYNAuxAndNoAux">
+      <whenValue element="q" attr="embYN" value="noAux"/>
+      <and/>
+      <whenValue element="ip" attr="aux" value="no"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordNoOrSomeandNoCheck">
+      <not/><whenValue element="q" attr="embYNWord" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNCliticOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordYesOrSomeandNoCheck">
+      <not/><whenValue element="q" attr="embYNWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQMainContWordNoOrSomeandNoCheck">
+      <not/>
+      <whenValue element="q" attr="mainContWord" value="yes"/>
+      <and/>
+     <whenValue element="q" attr="mainCont" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContCliticOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQMainContWordYesOrSomeAndFrontNoOrOptionalOrFrontYesNotVSOandNoCheck">
+      <not/>
+      <whenValue element="q" attr="mainContWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <and/>
+      <openParen/>
+      <not/><whenValue element="q" attr="contFront" value="before"/>
+      <or/>
+      <whenValue element="q" attr="contFront" value="before"/>
+      <and/><not/>
+      <whenValue element="typology" attr="wordOrder" value="VSO"/>
+      <closeParen/>
+      <and/>
+      <whenValue element="q/mainContWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swVSOWordFrontYesandNoCheck">
+      <whenValue element="typology" attr="wordOrder" value="VSO"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="contFront" value="before"/>
+      <and/><not/>
+      <whenValue element="q" attr="mainContWord" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOAfterWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOBeforeWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOEnd" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQMainContAuxAndNoAux">
+      <whenValue element="q" attr="mainCont" value="noAux"/>
+      <and/>
+      <whenValue element="ip" attr="aux" value="no"/>
+   </showWhen>
+   <showWhen id="swQEmbContAuxAndNoAux">
+      <whenValue element="q" attr="embCont" value="noAux"/>
+      <and/>
+      <whenValue element="ip" attr="aux" value="no"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordNoOrSomeandNoCheck">
+      <not/>
+      <whenValue element="q" attr="embContWord" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <and/>
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContCliticOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordYesOrSomeAndFrontNoOrOptionalOrFrontYesNotVSOandNoCheck">
+      <not/>
+      <whenValue element="q" attr="embContWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <and/>
+      <openParen/>
+      <not/><whenValue element="q" attr="contFront" value="before"/>
+      <or/>
+      <whenValue element="q" attr="contFront" value="before"/>
+      <and/><not/>
+      <whenValue element="typology" attr="wordOrder" value="VSO"/>
+      <closeParen/>
+      <and/>
+      <whenValue element="q/embContWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQEmbVSOWordFrontYesandNoCheck">
+      <whenValue element="typology" attr="wordOrder" value="VSO"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="contFront" value="before"/>
+      <and/><not/>
+      <whenValue element="q" attr="embContWord" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOAfterWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOBeforeWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOEnd" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swRelClExistYesAndTypeNoCheck">
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPComp" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeIPRel" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeIP" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relTypeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swRelClTypeCPCompOrRelOrWhNotNoAndCompWordYesOrSomeAndNoCheck">
+      <openParen/>
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPComp" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPRel" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="relcl" attr="exist" value="yes"/>
+      <and/>
+      <whenValue element="relcl/relTypeCPWh" attr="checked" value="yes"/>
+      <and/><not/>
+      <whenValue element="relcl" attr="whAndComp" value="no"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenValue element="relcl" attr="relWord" value="yes"/>
+      <or/>
+      <whenValue element="relcl" attr="relWord" value="some"/>
+      <closeParen/>
+     <and/>
+      <whenValue element="relcl/relWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="relcl/relWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNoAndNoCheck">
+      <openParen/>
+      <whenValue element="neg" attr="npDegreeNeg" value="no"/>
+      <or/>
+      <whenValue element="neg" attr="npDegreeNeg" value="some"/>
+      <closeParen/>     
+      <and/>
+      <whenValue element="neg/npDegreeNegProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/npDegreeNegEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/npDegreeNegPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/npDegreeNegSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/npDegreeNegOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeYesAndNoCheck">
+      <openParen/>
+      <whenValue element="neg" attr="npDegreeNeg" value="yes"/>
+      <or/>
+      <whenValue element="neg" attr="npDegreeNeg" value="some"/>
+      <closeParen/>     
+      <and/>
+      <whenValue element="neg/npDegreeNegWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/npDegreeNegWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/npDegreeNegWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/npDegreeNegWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNegTemporalTypeNoCheck">
+      <whenValue element="neg/negTemporalTypeWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negTemporalTypeAdverb" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negTemporalTypeAdverbWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negTemporalTypeAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negTemporalTypeVerb" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negTemporalTypeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNegTemporalAdverbWordAndNoCheck">
+      <whenValue element="neg/negTemporalTypeAdverbWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="neg/negTemporalAdverbWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negTemporalAdverbWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negTemporalAdverbWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negTemporalAdverbWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNegLocativeTypeNoCheck">
+      <whenValue element="neg/negLocativeTypeWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negLocativeTypeAdverb" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negLocativeTypeAdverbWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negLocativeTypeAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negLocativeTypeVerb" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negLocativeTypeOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNegLocativeAdverbWordAndNoCheck">
+      <whenValue element="neg/negLocativeTypeAdverbWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="neg/negLocativeAdverbWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negLocativeAdverbWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negLocativeAdverbWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negLocativeAdverbWordOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNegAuxRequiresAuxButNoAux">
+      <whenValue element="ip" attr="aux" value="no"/>
+      <and/>
+      <whenValue element="neg" attr="negAuxRequiresAux" value="yes"/>
+      <and/>
+      <whenValue element="neg/negAuxWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="neg" attr="negVerbal" value="yes"/>
+   </showWhen>
+   <showWhen id="swNegAuxAffixButNoAux">
+      <whenValue element="ip" attr="aux" value="no"/>
+      <and/>
+      <whenValue element="neg/negAuxAffix" attr="checked" value="yes"/>
+      <and/>
+     <whenValue element="neg" attr="negVerbal" value="yes"/>
+   </showWhen>
+   <showWhen id="swNegVerbalAndNoCheck">
+      <whenValue element="neg" attr="negVerbal" value="yes"/>
+      <and/>
+      <whenValue element="neg/negAuxWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negAuxAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negVAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="neg/negVerbalOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCoordConjWordNotYesAndNoCheck">
+      <whenValue element="coord/proclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="coord/attachesOther" attr="checked" value="no"/>
+      <and/><not/>
+      <whenValue element="coord" attr="conjYord" value="yes"/>
+   </showWhen>
+   <showWhen id="swTopicMarkerYesWordAndNoCheck">
+      <whenValue element="focus" attr="topic" value="yes"/>
+      <and/>
+      <whenValue element="focus" attr="topicMarker" value="yesWord"/>
+      <and/>
+      <whenValue element="focus/topicMarkerBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerYesWordAndNoCheck">
+      <whenValue element="focus" attr="focus" value="yes"/>
+      <and/>
+      <whenValue element="focus" attr="focusMarker" value="yesWord"/>
+      <and/>
+      <whenValue element="focus/focusMarkerBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/focusMarkerAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/focusMarkerBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/focusMarkerOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swExclMYesandNoCheck">
+      <whenValue element="excl" attr="exclM" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatExclYesAndPronNo">
+      <whenValue element="pron" attr="pronounExcl" value="no"/>
+      <and/>
+      <openParen/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveSubject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveObject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveSubject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveObject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveErgative" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveAbsolutive" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveErgative" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveAbsolutive" attr="checked" value="yes"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatExclNoAndPronDepYes">
+      <whenValue element="pron" attr="pronounExcl" value="yes"/>
+      <and/>
+      <whenValue element="pron" attr="dependentPron" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveSubject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveObject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveSubject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveObject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveErgative" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveAbsolutive" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveErgative" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveAbsolutive" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatNumberYesAndPronNo">
+      <whenValue element="pron" attr="pronounNumber" value="no"/>
+      <and/>
+      <openParen/>
+      <whenValue element="ip/ipAgrFeatSingularSubject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatSingularObject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatPluralSubject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatPluralObject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatSingularErgative" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatSingularAbsolutive" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatPluralErgative" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatPluralAbsolutive" attr="checked" value="yes"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatNumberNoAndPronDepYes">
+      <whenValue element="pron" attr="pronounNumber" value="yes"/>
+      <and/>
+      <whenValue element="pron" attr="dependentPron" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatSingularSubject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatSingularObject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatPluralSubject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatPluralObject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatSingularErgative" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatSingularAbsolutive" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatPluralErgative" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatPluralAbsolutive" attr="checked" value="no"/>
+   </showWhen>
+   
+   
+</page>

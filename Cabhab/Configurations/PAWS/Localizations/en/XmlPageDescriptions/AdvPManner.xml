@@ -1,111 +1,279 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by Andy Black (SIL International) -->
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPManner" count="3/6">
-	<title level="2">Adverbs and AdvP - Manner Adverbs</title>
-	<introduction>Manner adverbs directly modify the verb and usually end in <example>-ly</example> in English.  They do not seem to have clear
+    <title level="2">Adverbs and AdvP - Manner Adverbs</title>
+    <introduction>Manner adverbs directly modify the verb and usually end in <example>-ly</example> in English.  They do not seem to have clear
 counterparts of other phrase types, except possibly some comparatives,
-such as <example>as fast as he could</example>.  (Comparatives will be dealt with in <section number="9.5">Basic, Single-clause Sentences - Copular, Comparative  and Existential</section> and <section number="15">Coordination Constructions</section>.)  In English,
+such as <example>as fast as he could</example>.  (Comparatives will be dealt with in <section number="9.5">Basic Sentences - Comparatives</section>.)  In English,
 manner adverbs can be modified by <example>very</example>
 and <example>so</example>, as in:
 </introduction>
-	<EnglishExample>
-		<exItem label="1.">very quickly.</exItem>
-		<exItem label="2.">so slowly.</exItem>
-		<exItem label="3.">very well.</exItem>
-	</EnglishExample>
-	<form section="advp">
-		<prompt>Some languages do not have separate words, but rather use verbal affixes to express manner.  Key examples of how your language expresses manner here, without any degree words.  If the manner adverbs are affixes, key a hyphen to show which side they attach on.</prompt>
-		<textBox id="AdvPMannerExample" dataItem="mannerExample" rows="5"/>
+    <EnglishExample>
+        <exItem label="1.">very quickly.</exItem>
+        <exItem label="2.">so slowly.</exItem>
+        <exItem label="3.">very well.</exItem>
+    </EnglishExample>
+    <form section="advp">
+        <prompt><br/>Some languages do not have independent words, but rather use verbal affixes to express manner.  Key examples of how your language expresses manner here, without any degree modifiers.  If the manner adverbs are affixes, key a hyphen to show which side they attach on.</prompt>
+        <textBox id="AdvPMannerExample" dataItem="mannerExample" rows="5"/>
 <br/> <br/>
 <radioGroup>
-	<groupName dataItem="mannerType" default="word">RAdvPMannerType</groupName>
-	<prompt>Does your language have any manner adverbs which are separate words?</prompt>
-	<radio id="AdvPMannerTypeWord" dataValue="word">Yes</radio>
-	<radio id="AdvPMannerTypeAffix" dataValue="affix">No, they are all written as part of the verb</radio>
-	<radioGroup id="AdvPMannerWordDegree" show="swAdvPMannerTypeWord">
-		<groupName dataItem="mannerDegree" default="no">RAdvPMannerWordDegree</groupName>
-		<prompt>Does your language have degree words which can modify the manner adverbs?</prompt>
-		<radio id="AdvPMannerWordDegreeYesBefore" dataValue="yesBefore">Yes, a degree word many appear before the manner adverb</radio>
-		<radio id="AdvPMannerWordDegreeYesAfter" dataValue="yesAfter">Yes, a degree word many appear after the manner adverb</radio>
-		<radio id="AdvPMannerWordDegreeAttaches" dataValue="attaches">There is an affix or clitic that attaches to the manner adverb to intensify it</radio>
-		<radio id="AdvPMannerWordDegreeNoRedup" dataValue="noRedup">No, but reduplication is used to intensify the meaning of the manner adverb</radio>
-		<radio id="AdvPMannerWordDegreeNo" dataValue="no">No, manner adverbs are not modified or intensified</radio>
-	</radioGroup>
-	<radioGroup id="AdvPMannerAffixDegree" show="swAdvPMannerTypeAffix">
-		<groupName dataItem="mannerAffixDegree" default="no">RAdvPMannerAffixDegree</groupName>
-		<prompt>Does your language have degree affixes which can modify or intensify the manner adverb affixes?</prompt>
-		<radio id="AdvPMannerAffixDegreeYesBefore" dataValue="yesBefore">Yes, a degree affix many appear before the manner adverb affix</radio>
-		<radio id="AdvPMannerAffixDegreeYesAfter" dataValue="yesAfter">Yes, a degree affix many appear after the manner adverb affix</radio>
-		<radio id="AdvPMannerAffixDegreeNoRedup" dataValue="noRedup">No, but reduplication is used to intensify the meaning of the manner adverb affix</radio>
-		<radio id="AdvPMannerAffixDegreeNo" dataValue="no">No, manner adverbs are not modified or intensified</radio>
-	</radioGroup>
+    <groupName dataItem="mannerType" default="word">RAdvPMannerType</groupName>
+    <prompt>Does your language have any manner adverbs which are written as independent words?</prompt>
+    <radio id="AdvPMannerTypeWord" dataValue="word">Yes</radio>
+   <radio id="AdvPMannerTypeBoth" dataValue="both">Some are independent words but some are written as part of the verb</radio>
+    <radio id="AdvPMannerTypeAffix" dataValue="affix">No, they are all written as part of the verb</radio>
 </radioGroup>
-		<prompt id="AdvPMannerWordDegreeAttachesPrompt" show="swAdvPMannerWordDegreeAttaches">Key the degree affixes or clitics which can modify manner adverbs here, with a hyphen indicating which side it attaches to the manner adverb on:</prompt>
-		<textBox id="AdvPMannerWordDegreeAffixExample" dataItem="mannerDegreeAffixExample" show="swAdvPMannerWordDegreeAttaches" rows="3"/>
-		<prompt id="AdvPMannerWordDegreePrompt" show="swAdvPMannerTypeWordAndYesDegree">Key the degree words which can modify manner adverbs here:</prompt>
-		<textBox id="AdvPMannerDegreeExample" dataItem="mannerDegreeExample" rows="3" show="swAdvPMannerTypeWordAndYesDegree"/>
-		<prompt id="AdvPMannerAffixDegreePrompt" show="swAdvPMannerTypeAffixAndYesDegree">Key the degree affixes which can modify or intensify the manner adverb affixes here, with a hyphen indicating which side it ataches on:</prompt>
-		<textBox id="AdvPMannerAffixDegreeExample" dataItem="mannerAffixDegreeExample" rows="3" show="swAdvPMannerTypeAffixAndYesDegree"/>
-		<br/><br/>
-		<prompt id="AdvPMannerWordDegreeAffixPhrasePrompt" show="swAdvPMannerWordDegreeAttaches">Now key examples of the degree affixes or clitics attached to the manner adverbs here:</prompt>
-		<textBox id="AdvPMannerWordPhraseAffixExample" dataItem="mannerPhraseAffixExample" show="swAdvPMannerWordDegreeAttaches"/>
-		<prompt id="AdvPMannerWordDegreePhrasePrompt" show="swAdvPMannerTypeWordAndYesDegree">Now key examples of the manner adverbs with degree words modifying them here:</prompt>
-		<textBox id="AdvPMannerDegreePhraseExample" dataItem="mannerDegreePhraseExample" rows="5" show="swAdvPMannerTypeWordAndYesDegree"/>
-		<prompt id="AdvPMannerAffixDegreePhrasePrompt" show="swAdvPMannerTypeAffixAndYesDegree">Now key examples of the manner adverb affixes attached to a verb with degree affixes also modifying them here:</prompt>
-		<textBox id="AdvPMannerAffixDegreePhraseExample" dataItem="mannerAffixDegreePhraseExample" rows="5" show="swAdvPMannerTypeAffixAndYesDegree"/>
-		<prompt id="AdvPMannerWordDegreeRedupPrompt" show="swAdvPMannerTypeWordAndNoRedup">Key examples of the manner adverbs with reduplication to intensify them here:</prompt>
-		<textBox id="AdvPMannerDegreeRedupExample" dataItem="mannerDegreeRedupExample" rows="5" show="swAdvPMannerTypeWordAndNoRedup"/>
-		<prompt id="AdvPMannerAffixDegreeRedupPrompt" show="swAdvPMannerTypeAffixAndNoRedup">Key examples of the manner adverb affixes attached to a verb with reduplication also intensifying them here:</prompt>
-		<textBox id="AdvPMannerAffixDegreeRedupExample" dataItem="mannerAffixDegreeRedupExample" rows="5" show="swAdvPMannerTypeAffixAndNoRedup"/>
-		<br/><br/>
-		<instruction id="AdvPMannerTypeWordInstruction" show="swAdvPMannerTypeWord">In the lexicon, key the feature <feature>manner</feature>
-on all adverbs that express manner.
-</instruction>
-		<instruction  id="AdvPMannerDegreeYesInstruction" show="swAdvPMannerTypeWordAndYesDegree">In the lexicon, key the features <feature>makeDeg modifies_manner</feature> on the degree words to change the category and allow it to modify manner adverbs.  Simply add the <feature>modifies_manner</feature> feature if this same degree word can modify temporal and/or locative adverbs and you already marked it with those features.</instruction>
-		<br/><br/>
+       <instruction id="AdvPMannerTypeWordInstruction" show="swAdvPMannerTypeWordOrBoth">In the lexicon, key the feature <feature>manner</feature>
+          on all adverb words that express manner.
+       </instruction>
+       <radioGroup id="AdvPMannerWordDegree" show="swAdvPMannerTypeWordOrBoth">
+        <groupName dataItem="mannerDegree" default="no">RAdvPMannerWordDegree</groupName>
+        <prompt><br/>Does your language have a means to express the intensity of the manner adverbs which are independent  words?</prompt>
+       <radio id="AdvPMannerWordDegreeNo" dataValue="no">No, manner adverbs are not modified or intensified</radio>
+       <radio id="AdvPMannerWordDegreeYes" dataValue="yes">Yes, manner adverbs may be modified or intensified in the following ways:</radio>
+       <checkboxGroup id="AdvPMannerWordDegreeType" show="swAdvPMannerWordDegreeYes">
+          <prompt>Check all options that are correct for your language</prompt> 
+          <checkbox id="AdvPMannerWordDegreeWord" dataItem="mannerWordDegreeWord">Degree words may modify the manner adverb</checkbox>
+          <checkbox id="AdvPMannerWordDegreeAttaches" dataItem="mannerWordDegreeAttaches">There is an affix or clitic that attaches to the manner adverb to intensify it</checkbox>
+          <checkbox id="AdvPMannerWordDegreeRedup" dataItem="mannerWordDegreeRedup">Reduplication is used to intensify the meaning of the manner adverb</checkbox>
+          <checkbox id="AdvPMannerWordDegreeOther" dataItem="mannerWordDegreeOther">My language does the following to intensify the meaning of the manner adverb:<textBox  id="AdvPMannerWordDegreeOtherContent" dataItem="mannerWordDegreeOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       </radioGroup>
+       <prompt id="AdvPMannerWordDegreeNoCheckPrompt" show="swAdvPMannerTypeWordDegreeYesNoCheck">WARNING: You said above that manner adverbs may be modified or intensified, but you did not check any of the options.  Please either check one or more options as appropriate, or change the answer above to "No, manner adverbs are not modified or intensified".</prompt>
+   <prompt id="AdvPMannerWordDegreePrompt" show="swAdvPMannerTypeWordAndYesDegree">Key the degree words which can modify manner adverbs here:</prompt>
+   <textBox id="AdvPMannerDegreeExample" dataItem="mannerDegreeExample" rows="3" show="swAdvPMannerTypeWordAndYesDegree"/>       
+   <prompt id="AdvPMannerWordDegreePhrasePrompt" show="swAdvPMannerTypeWordAndYesDegree">Now key examples of the manner adverbs with degree words modifying them here:</prompt>
+   <textBox id="AdvPMannerDegreePhraseExample" dataItem="mannerDegreePhraseExample" rows="5" show="swAdvPMannerTypeWordAndYesDegree"/> 
+       <br/><br/>
+       <checkboxGroup id="AdvPMannerlDegreeWordTable" show="swAdvPMannerTypeWordAndYesDegree">
+          <prompt>Looking at the examples you keyed above, where do the degree words occur with respect to the manner adverb? Check all options that are correct for your language</prompt>
+          <checkbox id="AdvPMannerDegreeWordBefore" checked="yes" dataItem="mannerDegreeWordBefore">Before the manner adverb</checkbox>
+          <checkbox id="AdvPMannerDegreeWordAfter" checked="yes" dataItem="mannerDegreeWordAfter">After the manner adverb</checkbox>
+          <checkbox id="AdvPMannerDegreeWordBoth" checked="yes" dataItem="mannerDegreeWordBoth">On both sides at the same time</checkbox>
+          <checkbox id="AdvPMannerDegreeWordOther" checked="yes" dataItem="mannerDegreeWordOther">In my language, these degree words may occur as follows: <textBox  id="AdvPMannerDegreeWordOtherContent" dataItem="mannerDegreeWordOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="AdvPMannerDegreeWordNoCheckPrompt" show="swAdvPMannerDegreeWordAndNoCheck">WARNING: You need to check at least one box to describe where these degree words occur in your language, or change the answer above to a different type of modifier.</prompt>
+       <instruction  id="AdvPMannerDegreeYesInstruction" show="swAdvPMannerTypeWordAndYesDegree">In the lexicon, key the features <feature>makeDeg modifies_manner</feature> on the degree words to change the category and allow it to modify manner adverbs.  Simply add the <feature>modifies_manner</feature> feature if this same degree word can modify temporal and/or locative adverbs and you already marked it with those features.</instruction>
+       <instruction id="AdvPMannerDegreeEitherRestrictedInstruction" show="swAdvPMannerDegreeEitherRestricted">In the lexicon, mark those degree words which can only occur before the adverb with the feature <feature>AdvP-initial</feature> and those which can only occur after the adverb with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</instruction>      
+       
+        <prompt id="AdvPMannerWordDegreeAttachesPrompt" show="swAdvPMannerWordDegreeAttaches">Key the degree affixes or clitics which can modify manner adverbs here, with a hyphen or equal sign indicating which side it attaches to the manner adverb on:</prompt>
+   <textBox id="AdvPMannerWordDegreeAffixExample" dataItem="mannerDegreeAffixExample" show="swAdvPMannerWordDegreeAttaches" rows="3"/>
+   <prompt id="AdvPMannerWordDegreeAffixPhrasePrompt" show="swAdvPMannerWordDegreeAttaches">Now key examples of the degree affixes or clitics attached to the manner adverbs here:</prompt>
+   <textBox id="AdvPMannerWordPhraseAffixExample" dataItem="mannerPhraseAffixExample" show="swAdvPMannerWordDegreeAttaches"/>
+   <prompt id="AdvPMannerWordDegreeRedupPrompt" show="swAdvPMannerTypeWordRedup">Key examples of the manner adverbs with <technicalTermRef term="ttReduplication"/> to intensify them here:</prompt>
+   <textBox id="AdvPMannerDegreeRedupExample" dataItem="mannerDegreeRedupExample" rows="5" show="swAdvPMannerTypeWordRedup"/> 
+       <prompt id="AdvPMannerWordDegreeOtherPrompt" show="swAdvPMannerTypeWordAndOther">Key examples of the manner adverbs with the other means your language uses to intensify them here:</prompt>
+       <textBox id="AdvPMannerDegreeOtherExample" dataItem="mannerDegreeOtherExample" rows="5" show="swAdvPMannerTypeWordAndOther"/> 
 
-		<buttons>
-			<button id="AdvPMannerExamplesBack" value="Back" goto="AdvPLocative.xml"/>
-			<button id="AdvPMannerExamplesNext" value="Next" goto="AdvPReason.xml"/>
-		</buttons>
-	</form>
-<showWhen id="swAdvPMannerTypeWord">
-	<whenRadio button="AdvPMannerTypeWord"></whenRadio>
+    <radioGroup id="AdvPMannerAffixDegree" show="swAdvPMannerTypeAffix">
+        <groupName dataItem="mannerAffixDegree" default="no">RAdvPMannerAffixDegree</groupName>
+        <prompt><br/>Does your language have a means to intensify the manner adverbs which are affixes?</prompt>
+       <radio id="AdvPMannerAffixDegreeNo" dataValue="no">No, manner adverb afixes are not modified or intensified</radio>
+       <radio id="AdvPMannerAffixDegreeYes" dataValue="yes">Yes, manner adverb affixes may be modified or intensified in the following ways:</radio>
+       <checkboxGroup id="AdvPMannerAffixDegreeType" show="swAdvPMannerAffixDegreeYes">
+          <prompt>Check all options that are correct for your language</prompt> 
+          <checkbox id="AdvPMannerAffixDegreeYesBefore" dataItem="mannerAffixDegreeYesBefore">Yes, a degree affix many appear before the manner adverb affixes</checkbox>
+          <checkbox id="AdvPMannerAffixDegreeYesAfter" dataItem="mannerAffixDegreeYesAfter">Yes, a degree affix many appear after the manner adverb affixes</checkbox>
+          <checkbox id="AdvPMannerAffixDegreeRedup" dataItem="mannerAffixDegreeRedup">Reduplication is used to intensify the meaning of the manner adverb affixes</checkbox>
+          <checkbox id="AdvPMannerAffixDegreeOther" dataItem="mannerAffixDegreeOther">My language does the following to intensify the meaning of the manner adverb affixes:<textBox  id="AdvPMannerAffixDegreeOtherContent" dataItem="mannerAffixDegreeOther" rows="2"/></checkbox>
+       </checkboxGroup>
+    </radioGroup>
+       <prompt id="AdvPMannerAffixDegreeNoCheckPrompt" show="swAdvPMannerTypeAffixDegreeYesNoCheck">WARNING: You said above that manner adverb affixes may be modified or intensified, but you did not check any of the options.  Please either check one or more options as appropriate, or change the answer above to "No, manner adverb affixes are not modified or intensified".</prompt>
+       <prompt id="AdvPMannerAffixDegreePrompt" show="swAdvPMannerTypeAffixAndYesDegree">Key the degree affixes which can modify or intensify the manner adverb affixes here, with a hyphen indicating which side it ataches on:</prompt>
+        <textBox id="AdvPMannerAffixDegreeExample" dataItem="mannerAffixDegreeExample" rows="3" show="swAdvPMannerTypeAffixAndYesDegree"/>   
+        <br/><br/>
+        <prompt id="AdvPMannerAffixDegreePhrasePrompt" show="swAdvPMannerTypeAffixAndYesDegree">Now key examples of the manner adverb affixes attached to a verb with degree affixes also modifying them here:</prompt>
+        <textBox id="AdvPMannerAffixDegreePhraseExample" dataItem="mannerAffixDegreePhraseExample" rows="5" show="swAdvPMannerTypeAffixAndYesDegree"/>           
+        <prompt id="AdvPMannerAffixDegreeRedupPrompt" show="swAdvPMannerTypeAffixRedup">Key examples of the manner adverb affixes attached to a verb with <technicalTermRef term="ttReduplication"/> also intensifying them here:</prompt>
+        <textBox id="AdvPMannerAffixDegreeRedupExample" dataItem="mannerAffixDegreeRedupExample" rows="5" show="swAdvPMannerTypeAffixRedup"/>
+       <prompt id="AdvPMannerAffixDegreeOtherPrompt" show="swAdvPMannerTypeAffixAndOther">Key examples of the manner adverb affixes with the other means your language uses to intensify them here:</prompt>
+       <textBox id="AdvPMannerAffixDegreeOtherExample" dataItem="mannerAffixDegreeOtherExample" rows="5" show="swAdvPMannerTypeAffixAndOther"/> 
+       <br/><br/>      
+        <buttons>
+            <button id="AdvPMannerExamplesBack" value="Back" goto="AdvPLocative.xml"/>
+            <button id="AdvPMannerExamplesNext" value="Next" goto="AdvPReason.xml"/>
+        </buttons>
+    </form>
+<showWhen id="swAdvPMannerTypeWordOrBoth">
+    <whenRadio button="AdvPMannerTypeWord"></whenRadio>
+   <or/>
+   <whenRadio button="AdvPMannerTypeBoth"/>
 </showWhen>
-	<showWhen id="swAdvPMannerTypeAffix">
-		<whenRadio button="AdvPMannerTypeAffix"/>
-	</showWhen>
-	<showWhen id="swAdvPMannerWordDegreeAttaches">
-		<whenRadio button="AdvPMannerWordDegreeAttaches"/>
-	</showWhen>
-	<showWhen id="swAdvPMannerTypeWordAndYesDegree">
-		<whenRadio button="AdvPMannerTypeWord"/>
-		<and/>
-		<whenRadio button="AdvPMannerWordDegreeYesAfter"/>
-		<or/>
-		<whenRadio button="AdvPMannerTypeWord"/>
-		<and/>
-		<whenRadio button="AdvPMannerWordDegreeYesBefore"/>
-	</showWhen>
-	<showWhen id="swAdvPMannerTypeAffixAndYesDegree">
-		<whenRadio button="AdvPMannerTypeAffix"/>
-		<and/>
-		<whenRadio button="AdvPMannerAffixDegreeYesAfter"/>
-		<or/>
-		<whenRadio button="AdvPMannerTypeAffix"/>
-		<and/>
-		<whenRadio button="AdvPMannerAffixDegreeYesBefore"/>
-	</showWhen>
-	<showWhen id="swAdvPMannerTypeWordAndNoRedup">
-		<whenRadio button="AdvPMannerTypeWord"/>
-		<and/>
-		<whenRadio button="AdvPMannerWordDegreeNoRedup"/>
-	</showWhen>
-	<showWhen id="swAdvPMannerTypeAffixAndNoRedup">
-		<whenRadio button="AdvPMannerTypeAffix"/>
-		<and/>
-		<whenRadio button="AdvPMannerAffixDegreeNoRedup"/>
-	</showWhen>
+    <showWhen id="swAdvPMannerTypeAffix">
+        <whenRadio button="AdvPMannerTypeAffix"/>
+       <or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+    </showWhen>
+    <showWhen id="swAdvPMannerWordDegreeAttaches">
+       <not/>
+       <whenRadio button="AdvPMannerWordDegreeNo"/>
+       <and/><openParen/>
+       <whenRadio button="AdvPMannerTypeWord"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerWordDegreeAttaches"/>
+       <or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerWordDegreeAttaches"/>
+       <closeParen/>
+    </showWhen>
+   <showWhen id="swAdvPMannerWordDegreeYes">
+      <whenRadio button="AdvPMannerWordDegreeYes"/>
+      <and/>
+<openParen/>
+      <whenRadio button="AdvPMannerTypeWord"></whenRadio>
+      <or/>
+      <whenRadio button="AdvPMannerTypeBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swAdvPMannerAffixDegreeYes">
+      <whenRadio button="AdvPMannerAffixDegreeYes"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordAndYesDegree">
+      <whenRadio button="AdvPMannerWordDegreeYes"/>
+        <and/>
+      <whenCheckbox button="AdvPMannerWordDegreeWord"/>
+      <and/><not/>
+      <whenRadio button="AdvPMannerTypeAffix"/>
+    </showWhen>
+    <showWhen id="swAdvPMannerTypeAffixAndYesDegree">
+       <not/>
+       <whenRadio button="AdvPMannerAffixDegreeNo"/>
+       <and/><openParen/>
+       <whenRadio button="AdvPMannerTypeAffix"/>
+        <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeYesAfter"/>     
+       <or/>
+        <whenRadio button="AdvPMannerTypeAffix"/>
+        <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeYesBefore"/>
+<or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeYesAfter"/>
+       <or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeYesBefore"/>
+       <closeParen/>
+    </showWhen>
+    <showWhen id="swAdvPMannerTypeWordRedup">
+       <not/>
+       <whenRadio button="AdvPMannerWordDegreeNo"/>
+       <and/><openParen/>
+       <whenRadio button="AdvPMannerTypeWord"/>
+        <and/>
+       <whenCheckbox button="AdvPMannerWordDegreeRedup"/>
+<or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerWordDegreeRedup"/>
+       <closeParen/>
+    </showWhen>
+    <showWhen id="swAdvPMannerTypeAffixRedup">
+       <not/>
+       <whenRadio button="AdvPMannerAffixDegreeNo"/>
+       <and/><openParen/>
+       <whenRadio button="AdvPMannerTypeAffix"/>
+        <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeRedup"/>
+<or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeRedup"/>
+       <closeParen/>
+    </showWhen>
+   <showWhen id="swAdvPMannerTypeWordAndOther">
+      <not/>
+      <whenRadio button="AdvPMannerWordDegreeNo"/>
+      <and/><openParen/>
+      <whenRadio button="AdvPMannerTypeWord"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerWordDegreeOther"/>
+      <or/>
+      <whenRadio button="AdvPMannerTypeBoth"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerWordDegreeOther"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffixAndOther">
+    <not/>
+      <whenRadio button="AdvPMannerAffixDegreeNo"/>
+      <and/><openParen/>
+      <whenRadio button="AdvPMannerTypeAffix"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerAffixDegreeOther"/>
+      <or/>
+      <whenRadio button="AdvPMannerTypeBoth"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerAffixDegreeOther"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordDegreeYesNoCheck">
+<openParen/>
+      <whenRadio button="AdvPMannerTypeWord"/>
+      <or/>
+      <whenRadio button="AdvPMannerTypeBoth"/>
+   <closeParen/>   
+   <and/>
+      <whenRadio button="AdvPMannerWordDegreeYes"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerWordDegreeWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerWordDegreeAttaches"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerWordDegreeRedup"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerWordDegreeOther"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffixDegreeYesNoCheck">
+      <openParen/>
+      <whenRadio button="AdvPMannerTypeAffix"/>
+      <or/>
+      <whenRadio button="AdvPMannerTypeBoth"/>
+      <closeParen/>   
+      <and/>
+      <whenRadio button="AdvPMannerAffixDegreeYes"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerAffixDegreeYesAfter"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerAffixDegreeYesBefore"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerAffixDegreeRedup"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerAffixDegreeOther"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeWordAndNoCheck">
+      <whenRadio button="AdvPMannerWordDegreeYes"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerWordDegreeWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerDegreeWordBefore"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerDegreeWordAfter"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerDegreeWordBoth"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerDegreeWordOther"/>     
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeEitherRestricted">
+      <whenRadio button="AdvPMannerWordDegreeYes"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerWordDegreeWord"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="AdvPMannerDegreeWordBefore"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerDegreeWordAfter"/>
+      <or/>
+      <whenCheckbox button="AdvPMannerDegreeWordBoth"/>
+      <closeParen/>
+   </showWhen>
+   
+   &TechnicalTerms; 
+   
 </page>

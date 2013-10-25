@@ -1,146 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="CompFeatures" count="2/4">
-	<title level="2">Las cláusulas de complemento - Los ejemplos y características</title>
-	<introduction>Los varios tipos de cláusulas de complemento <span id="CompFeatSpanNotPractical" show="swNotPractical">shown in the trees </span>representan la estructura de los argumentos del verbo<span id="CompFeatIntroSpanNotPractical" show="swNotPractical"> as well as its syntactic subcategorization</span>.  Por lo tanto, hay un cierto grado de semejanza sobre todos las lenguas en los tipos de complementos clausales <span id="CompFeaturesIntroSpan2NotPractical" show="swNotPractical">verbs subcategorize for.</span><span id="CompFeaturesIntroSpan2Practical" show="swPractical">los verbos particulares escojen.</span>  Para cada tipo presentado abajo, usted puede también pensar en los adjetivos que toman ese tipo de complemento cuando están funcionando al igual que el predicado de la oración.
-	   Algunos adverbios pueden tener complementos similares para formar adverbial cláusulas adverbiales también (véase <section number="13.">Las cláusulas adverbiales</section>).
-</introduction>
-	<form section="comp">
-	   <introduction>Primero, considere los verbos que solamente pueden tener un complemento finito con o sin un complementizador, como:</introduction>
-	   <EnglishExample>
-		  <exItem label="1.">I believe (that) Jill is my friend. ‘Creo que Juliana es mi amiga.’</exItem>
-		  <exItem label="2.">Jill insists (that) she is my friend. ‘Juliana insiste que ella es mi amiga.’</exItem>
-		  <exItem label="3.">I know (that) he likes me. ‘Yo sé que le gusto a él.’</exItem>
-		</EnglishExample>
-		<prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
-		<textBox id="CompFiniteExample" dataItem="finiteExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompMakeInstruction">In the lexicon, add the feature <feature>makeC</feature> to the complementizer(s) so it will show up in the correct position in the tree structure.  (For a word like English <example>that</example>, which can be both a complementizer <category>C</category> and a demonstrative <category>Dem</category>, you will need to have two separate lexical entries.)
+   <title level="2">Las cláusulas de complemento - Los ejemplos y características</title>
+    <introduction>Los varios tipos de cláusulas de complemento <span id="CompFeatSpanNotPractical" show="swNotPractical">shown in the trees </span>representan la estructura de los argumentos del verbo<span id="CompFeatIntroSpanNotPractical" show="swNotPractical"> as well as its syntactic subcategorization</span>.  Por lo tanto, hay un cierto grado de semejanza sobre todos las lenguas en los tipos de complementos clausales <span id="CompFeaturesIntroSpan2NotPractical" show="swNotPractical">verbs subcategorize for.</span><span id="CompFeaturesIntroSpan2Practical" show="swPractical">los verbos particulares escojen.</span>  Para cada tipo presentado abajo, usted puede también pensar en los adjetivos que toman ese tipo de complemento cuando funcionan igual que el predicado de la oración.  
+       Algunos adverbios pueden tener complementos similares para formar cláusulas adverbiales también (véase <section number="13.">Las cláusulas adverbiales</section>).
+       <br/><br/>
+       Aunque su lengua no tiene tantos tipos diferentes de las cláusulas de complemento que se le piden aquí, por favor escriba ejemplos en cada campo usando verbos que significan tan cerca que es posible al significado de los ejemplos dados.  En esta manera, puede documentar cómo su lengua expresa un rango completo de las cláusulas de complemento. 
+    </introduction>
+    <form section="comp">
+       <introduction>Primero, considere los verbos que solamente pueden tener un complemento <technicalTermRef term="ttFinite">finito</technicalTermRef> con o sin un complementador, como:</introduction>
+       <EnglishExample>
+          <exItem label="1.">I believe (that) Jill is my friend. ‘Creo que Juliana es mi amiga.'</exItem>
+          <exItem label="2.">Jill insists (that) she is my friend. ‘Juliana insiste que ella es mi amiga.'</exItem>
+          <exItem label="3.">I know (that) he likes me. ‘Yo sé que le gusto a él.'</exItem>
+        </EnglishExample>
+        <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
+        <textBox id="CompFiniteExample" dataItem="finiteExample" cols="50"/>
+        <br/>
+        <br/>
+        <instruction id="CompMakeInstruction">In the lexicon, add the feature <feature>makeC</feature> to the complementizer(s) so it will show up in the correct position in the tree structure.  (For a word like English <example>that</example>, which can be both a complementizer <category>C</category> and a demonstrative <category>Dem</category>, you will need to have two separate lexical entries.)
 <br/>
-			<br/>
+            <br/>
 Add the features <feature>sentential embedded_finite</feature> to the lexical entries for the main verbs in the examples.  If one or more of your verbs require the complementizer to be present, also add the feature <feature>embedded_CP</feature> to those entries.</instruction>
-		<br/>
-	   <introduction>Segundo, considere los verbos que pueden tener un complemento finito, con o sin un complementizador, o un complemento infinitivo sin un complementizador, como:</introduction>
-	   <EnglishExample>
-		  <exItem label="4.">I expect that Joe will come to the party. ‘Cuento con que José venga a la fiesta.’</exItem>
-		  <exItem label="5.">I expect Joe to come to the party. ‘Espero que José venga a la fiesta.’</exItem>
-		</EnglishExample>
-		<prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
-		<textBox id="CompFiniteOrNonfiniteExample" dataItem="finiteOrNonfiniteExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompSententialEmbeddedInstruction">Add the features <feature>sentential embedded_-question</feature> to the lexical entries for the main verbs in the examples.</instruction>
-		<br/>
-	   <introduction>Ahora considere los verbos que pueden tener un objeto directo así como un complemento finito o infinitivo clausal, como:</introduction>
-	   <EnglishExample>
-		  <exItem label="6.">I will persuade Joe that he should come to the party. ‘Persuadiré a José que él debe venir a la fiesta.’</exItem>
-		  <exItem label="7.">I will persuade Joe to come to the party. ‘Persuadiré a José de venir a la fiesta.’</exItem>
-		</EnglishExample>
-		<prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
-		<textBox id="CompDPCPExample" dataItem="DPCPExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompSententialObjectInstruction">Add the feature <feature>sentential_with_object</feature> to the lexical entries for the main verbs in the examples.</instruction>
-		<br/>
-	   <introduction>Algunos verbos pueden tener solamente un complemento infinitivo sin un complementizador y permiten un diverso sujeto que la cláusula principal o un sujeto no expresado cuando es coreferente con el sujeto de la cláusula principal, como en:</introduction>
-	   <EnglishExample>
-		  <exItem label="8.">I want to come to the party. ‘Quisiera que José viniera a la fiesta.’</exItem>
-		  <exItem label="9.">I want Joe to come to the party. ‘Quiero que venir a la fiesta.’</exItem>
-		</EnglishExample>
-		<prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
-		<textBox id="CompNonfiniteExample" dataItem="nonfiniteExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompSententialNonFiniteInstruction">Add the features <feature>sentential embedded_-finite embedded_IP</feature> to the lexical entries for the main verbs in the examples.</instruction>
-		<br/>
-	   <introduction>Algunos verbos pueden tener solamente un complemento infinitivo sin un complementizador y el sujeto debe ser coreferente con el sujeto de la cláusula principal y no expresada, como en:</introduction>
-	   <EnglishExample>
-		  <exItem label="10.">Joe tried to come to the party. ‘José intentó venir a la fiesta.’</exItem>
-		  <exItem label="11.">I tried to think of more examples. ‘Intenté pensar en más ejemplos.’</exItem>
-		</EnglishExample>
-		<prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
-		<textBox id="CompNonfiniteProDropExample" dataItem="nonfiniteProDropExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompSententialProDropInstruction">Add the features <feature>sentential embedded_-finite embedded_pro-drop embedded_IP</feature> to the lexical entries for the main verbs in the examples.</instruction>
-		<br/>
-	   <introduction>Algunos verbos pueden tener solamente un complemento infinitivo, pero el complementizador ‘for’ (para) es presente cuando el sujeto no es coreferente con el sujeto de la cláusula principal, como en:</introduction>
-	   <EnglishExample>
-		  <exItem label="12.">Joe would hate for Sue to be at the party. ‘José odiaría que Susana esté en la fiesta.’</exItem>
-		  <exItem label="13.">Joe hates to dance. ‘José odia a bailar.’</exItem>
-		  <exItem label="14.">I would like to be appreciated. ‘Quisiera ser apreciado.’</exItem>
-		</EnglishExample>
-		<prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
-		<textBox id="CompNonfiniteCPOrProDropExample" dataItem="nonfiniteCPOrProDropExample" cols="50"/>
-		<br/>
-		<br/>
-	   <instruction id="CompMakeCInstruction">In the lexicon, add the features <feature>makeC -finite</feature> to any complementizer(s) like ‘for’ so it will show up in the correct position in the tree structure and be restricted to nonfinite clauses.  (If your complementizer can also occur in finite clauses, do not add the feature <feature>-finite</feature>.  Also, remember that if the word is like English <example>for</example>, which can be used both as a complementizer <category>C</category> and as a preposition <category>P</category>, you will need to make two separate lexical entries.)
+        <br/>
+       <introduction>Segundo, considere los verbos que pueden tener un complemento finito, con o sin un complementador, o un complemento <technicalTermRef term="ttNonfinite">no finito</technicalTermRef> sin un complementador, como:</introduction>
+       <EnglishExample>
+          <exItem label="4.">I expect that Joe will come to the party. ‘Cuento con que José venga a la fiesta.'</exItem>
+          <exItem label="5.">I expect Joe to come to the party. ‘Espero que José venga a la fiesta.'</exItem>
+        </EnglishExample>
+        <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
+        <textBox id="CompFiniteOrNonfiniteExample" dataItem="finiteOrNonfiniteExample" cols="50"/>
+        <br/>
+        <br/>
+        <instruction id="CompSententialEmbeddedInstruction">Add the features <feature>sentential embedded_-question</feature> to the lexical entries for the main verbs in the examples.</instruction>
+        <br/>
+       <introduction>Ahora considere los verbos que pueden tener un objeto directo así como un complemento finito o no finito clausal, como:</introduction>
+       <EnglishExample>
+          <exItem label="6.">I will persuade Joe that he should come to the party. ‘Persuadiré a José que él debe venir a la fiesta.'</exItem>
+          <exItem label="7.">I will persuade Joe to come to the party. ‘Persuadiré a José de venir a la fiesta.'</exItem>
+        </EnglishExample>
+        <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
+        <textBox id="CompDPCPExample" dataItem="DPCPExample" cols="50"/>
+        <br/>
+        <br/>
+        <instruction id="CompSententialObjectInstruction">Add the feature <feature>sentential_with_object</feature> to the lexical entries for the main verbs in the examples.</instruction>
+        <br/>
+       <introduction>Algunos verbos pueden tener solamente un complemento no finito sin un complementador y permiten un diverso sujeto que la cláusula principal o un sujeto tácito cuando es coreferente con el sujeto de la cláusula principal, como en:</introduction>
+       <EnglishExample>
+          <exItem label="8.">I want to come to the party. ‘Quiero venir a la fiesta.'</exItem>
+          <exItem label="9.">I want Joe to come to the party. ‘Quiero que José venir a la fiesta.'</exItem>
+        </EnglishExample>
+        <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
+        <textBox id="CompNonfiniteExample" dataItem="nonfiniteExample" cols="50"/>
+        <br/>
+        <br/>
+        <instruction id="CompSententialNonFiniteInstruction">Add the features <feature>sentential embedded_-finite embedded_IP</feature> to the lexical entries for the main verbs in the examples.</instruction>
+        <br/>
+       <introduction>Algunos verbos pueden tener solamente un complemento no finito sin un complementador y el sujeto debe ser coreferente con el sujeto de la cláusula principal y no expresada, como en:</introduction>
+       <EnglishExample>
+          <exItem label="10.">Joe tried to come to the party. ‘José intentó venir a la fiesta.'</exItem>
+          <exItem label="11.">I tried to think of more examples. ‘Intenté pensar en más ejemplos.'</exItem>
+        </EnglishExample>
+        <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
+        <textBox id="CompNonfiniteProDropExample" dataItem="nonfiniteProDropExample" cols="50"/>
+        <br/>
+        <br/>
+        <instruction id="CompSententialProDropInstruction">Add the features <feature>sentential embedded_-finite embedded_pro-drop embedded_IP</feature> to the lexical entries for the main verbs in the examples.</instruction>
+        <br/>
+       <introduction>Algunos verbos pueden tener solamente un complemento no finito, pero el complementador 'for' (para) debe ser presente cuando el sujeto no es coreferente con el sujeto de la cláusula principal.  Se requiere el sujeto tácito sin complementador cuando el sujeto de la cláusula de complemento es coreferente con el sujeto de la cláusula principal.  Ejemplos:</introduction>
+       <EnglishExample>
+          <exItem label="12.">Joe would hate for Sue to be at the party. ‘José odiaría que Susana esté en la fiesta.'</exItem>
+          <exItem label="13.">Joe hates to dance. ‘José odia a bailar.'</exItem>
+          <exItem label="14.">I would like to be appreciated. ‘Quisiera ser apreciado.'</exItem>
+        </EnglishExample>
+        <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
+        <textBox id="CompNonfiniteCPOrProDropExample" dataItem="nonfiniteCPOrProDropExample" cols="50"/>
+        <br/>
+        <br/>
+       <instruction id="CompMakeCInstruction">In the lexicon, add the features <feature>makeC -finite</feature> to any complementizer(s) like ‘for' so it will show up in the correct position in the tree structure and be restricted to nonfinite clauses.  (If your complementizer can also occur in finite clauses, do not add the feature <feature>-finite</feature>.  Also, remember that if the word is like English <example>for</example>, which can be used both as a complementizer <category>C</category> and as a preposition <category>P</category>, you will need to make two separate lexical entries.)
 <br/>
-			<br/>
-		Add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature> to the lexical entries for the main verbs in the examples.</instruction>
-		<br/>
-	   <introduction>Ahora considere los verbos de ‘ascenso’, que parece a incluir todos los verbos de percepción y los verbos copulativos. Estos verbos pueden tener un complemento infinitivo o un complemento del adjetivo que sí mismo tiene un complemento finito con un complementizador o un complemento infinitivo. El verbo principal no tiene su propio sujeto, así que la posición sujeta es llenada por el sujeto del complemento infinitivo, como en ejemplos 15, 17-18, o por una palabra sin significado <example>it</example> cuando el complemento es finito (en algunas lenguas), como en ejemplos 16 y 19: </introduction>
-	   <EnglishExample>
-		  <exItem label="15.">John seemed to like the tortillas. ‘Juan parecía tener gusto de las tortillas.’</exItem>
-		  <exItem label="16.">It seems likely that Joe will come. ‘Parece probablemente que vendrá José.’</exItem>
-		  <exItem label="17.">Joe is likely to come. ‘José es probable venir.’</exItem>
-		  <exItem label="18.">The weather is certain to change soon.  ‘El tiempo cambia seguramente pronto.’</exItem>
-		  <exItem label="19.">It is certain that the weather will change soon. ‘Es cierto que el tiempo cambiará pronto.’</exItem>
-	   </EnglishExample>
-	   <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
-	   <textBox id="CompRaisingExample" dataItem="raisingExample" cols="50"/>
-	   <br/>
-	   <br/>
-	   <instruction id="CompRaisingInstruction">Add the features <feature>sentential embedded_raising</feature> to the lexical entries for the main verbs in the examples.  In the examples with adjectives, it is really the adjective that is acting as the predicate that selects the complement clause.  Therefore, add the features <feature>sentential embedded_CP embedded_-finite</feature> to their lexical entries.</instruction>
-	   <br/>
-	   <introduction>Los causativos que consisten en dos cláusulas tienen un objeto que también actúa como el sujeto de la cláusula de complemento. Esta cláusula de complemento es siempre infinitiva, pero no necesita el indicador infinitivo con algunos verbos en inglés, como en ejemplo 20, mientras que se requiere con otros verbos, como en ejemplo 21: </introduction>
-	   <EnglishExample>
-		  <exItem label="20.">My mother made me clean my room. ‘Mi madre me hizo limpiar mi dormitorio.’</exItem>
-		  <exItem label="21.">The other girl caused us to break up. ‘La otra muchacha hizo que nos separáramos.’</exItem>
-	   </EnglishExample>
-	   <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
-	   <textBox id="CompCausativeExample" dataItem="causeExample" cols="50"/>
-	   <br/>
-	   <br/>
-	   <instruction id="CompCausativeInstruction">Add the features <feature>sentential embedded_causative_VP</feature> to the lexical entries for the main verbs in the examples that are like <example>make</example>.
-		  Add the features <feature>sentential embedded_causative_IP</feature> to the lexical entries for the main verbs in the examples that require the nonfinite marker like <example>cause</example>.</instruction>
-	   <br/>
-	   <introduction>Finally, consider direct and indirect complements of verbs of speaking.  Direct quotations, such as in 22, can be just about any sentence or fragment.
-		  <br/><br/>Indirect quotations, as in 23-25, are more restricted.  Some speech verbs take a finite sentence complement with or without a complementizer, and an optional prepositional or postpositional phrase to express the hearer, as in 23, and some require the hearer to be expressed as an object plus either a finite sentential complement or a nonfinite sentential complement in which the subject must be coreferent with the main clause subject and dropped, as in 24-25:</introduction>
-	   <introduction>Finalmente, considere los complementos directos e indirectos de los verbos del discurso. Las citas directas, como en ejemplo 22,  pueden consistir de cualquiera oración o interjección o saludo. <br/><br/>
-		  Las citas indirectas como complementos, como en ejemplos 23-25, son más restrictas. En inglés, algunos verbos del discurso pueden tener un complemento finito, con o sin un complementizador, y una frase preposicional opcional para expresar al oyente, como en ejemplo 23.  Otros verbos pueden tener al oyente ser expresado como objeto más un complemento finito, como en ejemplo 24, o un complemento infinitivo sin un complementizador con sujeto no expresado porque es coreferente con el sujeto de la cláusula principal, como en ejemplo 25:
-	   </introduction>
-	   <EnglishExample>
-		  <exItem label="22.">Sue said, “I will come to your house tomorrow.” ‘Susana dijo, “Vendré a su casa mañana”.’</exItem>
-		  <exItem label="23."> Sue said (to me) that she would come here tomorrow. ‘Susana dijo (a mí) que ella vendría aquí mañana.’</exItem>
-		  <exItem label="24.">Sue told me that she would come here tomorrow. ‘Susana me dijo que ella vendría aquí mañana.’</exItem>
-		  <exItem label="25.">Sue told me to come here tomorrow. ‘Susana me dijo venir aquí mañana.’</exItem>
-	   </EnglishExample>
-	   <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
-	   <textBox id="CompQuotationExample" dataItem="quotationExample" cols="50"/>
-	   <br/>
-	   <br/>
-	   <instruction id="CompSpeakingInstruction">Add the feature <feature>sentential</feature> to the lexical entries for the speech verbs that are like <example>said</example>.
-		  For those speech verbs that express the hearer as an object, like <example>told</example>, add the feature <feature>sentential_with_object</feature>.</instruction>
-	   <br/>
-	   <prompt>
-			Su lengua puede también tener otras restricciones en cláusulas subordinadas, tales como el verbo subordinado debe que está en el modo subjuntivo o en el aspecto perfectivo. Escriba algunos ejemplos en su lengua aquí:</prompt>
-		<textBox id="CompOtherExample" dataItem="otherExample" cols="50"/>
-		<br/>
-		<br/>
-		<instruction id="CompSententialInstruction">Add the feature <feature>sentential</feature> to the lexical entries for the main verbs in the examples.  Also add the feature <feature>embedded_subjunctive</feature> or <feature>embedded_perfective</feature> if appropriate for your language.  Other specific restrictions will need to be taken care of after completion of the starter kit.</instruction>
-		<br/>
-		<buttons>
-			<button id="CompFeaturesBack" value="Back" goto="CompMain.xml"/>
-			<button id="CompFeaturesNext" value="Next" goto="CompPosition.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-	</showWhen>
-	<showWhen id="swPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="False"/>
-	</showWhen>
+            <br/>
+        Add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature> to the lexical entries for the main verbs in the examples.</instruction>
+        <br/>
+       <introduction>Ahora considere los verbos de ‘ascenso', que parece a incluir todos los verbos de percepción y los verbos copulativos. Estos verbos pueden tener un complemento no finito o un complemento del adjetivo que sí mismo tiene un complemento finito con un complementador o un complemento no finito. El verbo principal no tiene su propio sujeto, así que la posición de sujeto es ocupda por el sujeto del complemento no finito, como en ejemplos 15, 17-18, o por una palabra sin cambios de concordancia <example>it</example> cuando el complemento es finito (en algunas lenguas), como en ejemplos 16 y 19: </introduction>
+       <EnglishExample>
+          <exItem label="15.">John seemed to like the tortillas. ‘Juan parecía tener gusto de las tortillas.'</exItem>
+          <exItem label="16.">It seems likely that Joe will come. ‘Parece probable que vendrá José.'</exItem>
+          <exItem label="17.">Joe is likely to come. ‘José es probable venir.'</exItem>
+          <exItem label="18.">The weather is certain to change soon.  ‘El tiempo cambia seguramente pronto.'</exItem>
+          <exItem label="19.">It is certain that the weather will change soon. ‘Es cierto que el tiempo cambiará pronto.'</exItem>
+       </EnglishExample>
+       <introduction>Algunas lenguas simplemente tienen el verbo sin un sujeto, seguido de una cláusula de complemento, así que no hay ‘ascenso’; las dos cláusulas comparten el mismo sujeto.</introduction>
+       <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
+       <textBox id="CompRaisingExample" dataItem="raisingExample" cols="50"/>
+       <br/>
+       <br/>
+       <instruction id="CompRaisingInstruction">Add the features <feature>sentential embedded_raising</feature> to the lexical entries for the main verbs in the examples.  In the examples with adjectives, it is really the adjective that is acting as the predicate that selects the complement clause.  Therefore, add the features <feature>sentential embedded_CP embedded_-finite</feature> to their lexical entries.</instruction>
+       <br/>
+       <introduction>Los causativos que consisten en dos cláusulas tienen un objeto que también funciona como el sujeto de la cláusula de complemento. Esta cláusula de complemento es siempre no finita, pero no necesita el indicador de no finito con algunos verbos en inglés, como en ejemplo 20, mientras que se requiere con otros verbos, como en ejemplo 21: </introduction>
+       <EnglishExample>
+          <exItem label="20.">My mother made me clean my room. ‘Mi madre me hizo limpiar mi dormitorio.’</exItem>
+          <exItem label="21.">The other girl caused us to break up. ‘La otra muchacha hizo que nos separáramos.'</exItem>
+       </EnglishExample>
+       <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
+       <textBox id="CompCausativeExample" dataItem="causeExample" cols="50"/>
+       <br/>
+       <br/>
+       <instruction id="CompCausativeInstruction">Add the features <feature>sentential embedded_causative_VP</feature> to the lexical entries for the main verbs in the examples that are like <example>make</example>.
+          Add the features <feature>sentential embedded_causative_IP</feature> to the lexical entries for the main verbs in the examples that require the nonfinite marker like <example>cause</example>.</instruction>
+       <br/>        
+       <introduction>Finalmente, considere los complementos directos e indirectos de los verbos de habla. Las citas directas, como en ejemplo 22,  pueden consistir de cualquier oración, interjección o saludo. <br/><br/>
+          Las citas indirectas como complementos, como en ejemplos 23-25, están más limitadas  En inglés, algunos verbos de hab;a pueden tener un complemento finito, con o sin un complementador, y una frase preposicional opcional para expresar al oyente, como en ejemplo 23.  Otros verbos pueden tener al oyente expresado como el objeto directo más un complemento finito, como en ejemplo 24, o un complemento no finito sin un complementador con el sujeto tácito porque es coreferente con el sujeto de la cláusula principal, como en ejemplo 25:
+       </introduction> 
+       <EnglishExample>
+          <exItem label="22.">Sue said, “I will come to your house tomorrow.” ‘Susana dijo, “Vendré a su casa mañana”.'</exItem>
+          <exItem label="23."> Sue said (to me) that she would come here tomorrow. ‘Susana me dijo (a mí) que ella vendría aquí mañana.'</exItem>
+          <exItem label="24.">Sue told me that she would come here tomorrow. ‘Susana me dijo que ella vendría aquí mañana.'</exItem>
+          <exItem label="25.">Sue told me to come here tomorrow. ‘Susana me dijo venir aquí mañana.'</exItem>
+       </EnglishExample>
+       <prompt>Escriba algunos ejemplos similares en su lengua aquí:</prompt>
+       <textBox id="CompQuotationExample" dataItem="quotationExample" cols="50"/>
+       <br/>
+       <br/>
+       <instruction id="CompSpeakingInstruction">Add the feature <feature>sentential</feature> to the lexical entries for the speech verbs that are like <example>said</example>.  
+          For those speech verbs that express the hearer as an object, like <example>told</example>, add the feature <feature>sentential_with_object</feature>.</instruction>
+       <br/>         
+       <prompt>
+          Su lengua también puede tener otras restricciones en cláusulas subordinadas, por ejemplo que el verbo subordinado debe estar en el modo subjuntivo o en el aspecto perfectivo.</prompt>
+       <radioGroup id="CompTypeOtherTable">
+          <groupName dataItem="compTypeOther" default="no">RCompTypeOther</groupName>
+          <prompt>¿Tiene su lengua otros tipos de restricciones en cláusulas subordinadas?
+          </prompt>
+          <radio id="CompTypeOtherYes" dataValue="yes">Sí</radio>
+          <radio id="CompTypeOtherNo" dataValue="no">No</radio>
+       </radioGroup>
+       <prompt id="CompTypeOtherYesRestriction" show="swCompTypeOtherYes" >Escriba este otro tipo de restricción que su lengua tiene aquí:</prompt>
+       <textBox id="CompTypeOtherYesRestrictions" dataItem="otherRestrictions" cols="50" rows="2" show="swCompTypeOtherYes"/>
+       <br/><br/>
+       
+       <prompt id="CompTypeOtherExamplePrompt" show="swCompTypeOtherYes"> Escriba algunos ejemplos de oraciones que incluyen las cláusulas de complemento con este otro tipo de restricción aquí:</prompt>
+       <textBox id="CompOtherExample" dataItem="otherExample" cols="50" show="swCompTypeOtherYes"/>
+       <br/>
+        <br/>
+        <instruction id="CompSententialInstruction">Add the feature <feature>sentential</feature> to the lexical entries for the main verbs in the examples.  Also add the feature <feature>embedded_subjunctive</feature> or <feature>embedded_perfective</feature> if appropriate for your language.  Other specific restrictions will need to be taken care of after completion of the starter kit.</instruction>
+        <br/>
+        <buttons>
+            <button id="CompFeaturesBack" value="Back" goto="CompMain.xml"/>
+            <button id="CompFeaturesNext" value="Next" goto="CompPosition.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swNotPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
+   <showWhen id="swPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="False"/>
+   </showWhen>
+   <showWhen id="swCompTypeOtherYes">
+      <whenRadio button="CompTypeOtherYes"/>
+   </showWhen>
+   &TechnicalTerms; 
 </page>

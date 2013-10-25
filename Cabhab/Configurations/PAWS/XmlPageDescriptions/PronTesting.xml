@@ -9,10 +9,10 @@
 	<br/>
 Run the file <file id="PronTestingFile" section="pron">xxxPronTest.txt</file> through your morphological parser and then
 run the syntactic parser on the output (all possible within CarlaStudio, as noted on the ‘Contents’ page).  Check the log for the
-results and note any changes you need to make, most likely by adding features to particular entries in the lexicon.  If any words fail to be parsed by your morphological parser, then the syntactic parser cannot parse any phrases or sentences those words are included in, so you need to fix the problem with the morphlogical parser first.  You may also find you need to change your answers on the previous pages of PAWS about the order of elements in the phrase structure rules.   Or you may need to use the Category Mapper on the previous page to correct differences between your categories and those used by PAWS.  Make the changes as needed.  If you have changed anything on the pages within PAWS, you will need to return to this page and then save the files again.  Rerun the parsers and check the results again.<br/>
+results and note any changes you need to make, most likely by adding features to particular entries in the lexicon.  If any words fail to be parsed by your morphological parser, then the syntactic parser cannot parse any phrases or sentences those words are included in, so you need to fix the problem with the morphlogical parser first.  You may also find you need to change your answers on the previous pages of PAWS about the order of elements in the phrase structure rules.   Or you may need to use the Category Mapper on the previous page to correct differences between your categories and those used by PAWS.  Make the changes as needed.  If you have changed anything on the pages within PAWS, you will need to return to this page and then save the files again.  Rerun the parsers and check the results again.<br/>		
 			<br/>
 Please check off this section now in ‘Contents’ and then proceed to
-<section number="8">Pre/Post-positional Phrases</section> when you are ready.
+<section number="8">Adpositional Phrases</section> when you are ready.
 		</instruction>
 		<br/>
 		<br/>

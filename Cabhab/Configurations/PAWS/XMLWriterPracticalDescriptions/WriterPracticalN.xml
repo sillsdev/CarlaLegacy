@@ -7,8 +7,11 @@
 		<p><content>The following sections cover noun agreement, case and possession in </content><langName/><content>.  The types of noun compounds allowed in </content><langName/><content> are given in section </content><sectionRef sec="sNPCompounds"/><content>.  All of the elements than can modify nouns in full nominal phrases are covered in section </content><sectionRef sec="sNP"/><content>.</content></p>
 		<section2 id="sNPAgr">
 			<secTitle>Agreement</secTitle>
-			<p>
-				<content>Many languages require agreement between at least some of the modifiers and the head noun.  While English only has number agreement, in other languages this agreement may also include animacy, class, or gender.</content>
+		   <p contentType="ctPracticalIntro">
+		      <content>Agreement between at least some of the modifiers and the head noun may be requiured in number, animacy,  gender, class or other features.</content>
+		   </p>
+		   <p contentType="ctComparativeIntro">
+				<content>Many languages require agreement between at least some of the modifiers and the head noun.  While English only has number agreement, in other languages this agreement may also include animacy, gender, class or other features.</content>
 			</p>
 			<p>
 				<content>In </content>
@@ -20,13 +23,25 @@
 				</case>
 				<content>  Further, </content>
 				<case element="np" attr="agreeOther">
-					<caseText value="no">there is no agreement in animacy, class number, nor gender between the modifiers and the head noun.</caseText>
-					<caseText value="yesAnimacy">the modifiers and the head noun agree in animacy.</caseText>
-					<caseText value="yesClass">the modifiers and the head noun agree in class number.</caseText>
-					<caseText value="yesGender">the modifiers and the head noun agree in gender.</caseText>
+					<caseText value="no">there is no agreement in animacy, gender, class or other features between the modifiers and the head noun.</caseText>
+					<caseText value="yes">the modifiers and the head noun agree in </caseText>
 				</case>
-			   <text show="swNPAgreeYesClassAndClassifiersNo"><content>(Note that this class agreement needs to be reviewed, as no classifier system was documented in </content><sectionRef sec="sTypology"/><content>.)</content></text><content/>
-			</p>
+			   <text show="swNPAgrClass"><content>class.</content></text>
+			   <text show="swNPAgrGender"><content>gender.</content></text>
+			   <text show="swNPAgrAnimacy"><content>animacy.</content></text>
+			   <text show="swNPAgrOther"><content>___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
+			   <text show="swNPAgrClassGender"><content>gender and class.</content></text>
+			   <text show="swNPAgrClassAnimacy"><content>animacy and class.</content></text>
+			   <text show="swNPAgrClassOther"><content>class and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
+			   <text show="swNPAgrClassAnimacyGender"><content>gender, animacy and class.</content></text>
+			   <text show="swNPAgrClassAnimacyOther"><content>animacy, class and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
+			   <text show="swNPAgrClassGenderOther"><content>gender, class and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
+			   <text show="swNPAgrClassAnimacyGenderOther"><content>gender, animacy, class and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
+			   <text show="swNPAgrGenderAnimacy"><content>gender and animacy.</content></text>
+			   <text show="swNPAgrGenderOther"><content>gender and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
+			   <text show="swNPAgrGenderAnimacyOther"><content>gender, animacy and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
+			   <text show="swNPAgrAnimacyOther"><content>animacy and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
+			   </p>
 			<p show="swNPAgreeYesNumber">
 				<content>Examples showing number agreement in </content><langName/><content> nominal phrases include:</content>	
 			</p>
@@ -40,13 +55,20 @@
 			</p>
 			<example show="swNPAgreeYesClass"><interlinear exampleLoc="np/agreeClassExample"/></example>
 			<p show="swNPAgreeYesGender">
-				<content>Examples showing gender agreement in </content><langName/><content> nominal phrases include:</content>	
+				<content>Examples showing gender agreement in </content><langName/><content> nominal phrases include:</content>
 			</p>
 			<example show="swNPAgreeYesGender"><interlinear exampleLoc="np/agreeGenderExample"/></example>
+		   <p show="swNPAgreeYesOther">
+		      <content>Examples showing ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content> agreement in </content><langName/><content> nominal phrases include:</content>
+		   </p>
+		   <example show="swNPAgreeYesOther"><interlinear exampleLoc="np/agreeOtherExample"/></example>
 		</section2>
 	   <section2 id="sNPCase">
 	   <secTitle>Case</secTitle>
-	      <p>
+	      <p contentType="ctPracticalIntro">
+	         <content>Nouns and their modifiers may also be marked for case.  Case systems help distinguish the role of a noun or pronoun with respect to the verb.</content>
+	         </p>
+	      <p contentType="ctComparativeIntro">
 	         <content>Nouns and their modifiers may be marked for case.  The most common case system is nominative-accusative.  This is the system English has, though only pronouns are marked for case in English.  In a nominative-accusative system, subjects of both transitive and intransitive verbs are in nominative case, while direct objects are accusative case.  Possessors are genitive case.  The nominative pronouns in English are: </content>
 	         <langData>I, we, you, he, she, they</langData>
 	         <content>.  The accusative pronouns are: </content>
@@ -59,18 +81,18 @@
 	         <langData>Them hit he</langData>
 	         <content>. </content>
 	      </p>
-	      <p>
+	      <p contentType="ctComparativeIntro">
 	         <content> A language with a basic nominative-accusative case system may have different case marking for Experiencer subjects than for Agent subjects.  Some verbs with Experiencer subjects are </content><langData>appear, see, fear, be found, want, like</langData><content> and </content><langData>laugh</langData><content>. </content> 
 	      </p>
-	      <p>
+	      <p contentType="ctComparativeIntro">
 	         <content>
 	            In an ergative-absolutive case system, subjects of transitive verbs are marked with the ergative case, while objects of transitive verbs and subjects of intransitive verbs are marked with the absolutive case.  The case of possessors is not set cross-linguistically.  Some languages with an ergative-absolutive system simply have different sets of verbal agreement markers, but no marking on nouns.  This type of agreement marking will be handled in section </content>
 	         <sectionRef sec="sIPAgr"/>
 	         <content>.</content>
 	      </p>
-	      <p>
+	      <p contentType="ctComparativeIntro">
 	         <content>
-	            Some languages are even more complex in that they normally have a nominative-accusative system but under some grammatical conditions, such as a particular tense or aspect or a particular person agreement feature, the case system switches to ergative-absolutive.  This is called “split ergativity”.</content>
+	            Some languages are even more complex in that they normally have a nominative-accusative case system but under some grammatical conditions, such as a particular tense or aspect or a particular person agreement feature, the case system switches to ergative-absolutive.  This is called “split ergativity”.</content>
 	      </p>
 	      <p>
 	         <content/>
@@ -144,60 +166,121 @@
 	         <interlinear exampleLoc="typology/experiencerPnExample"/>
 	      </example>
 
-	      <p><content>There are more cases to consider beyond that of the subject and object, also.  These may include ablative case for a source or origin, genitive case for kinds or possessors, dative case for indirect objects, instrumental case for means or instruments, locative case for locations, vocative case for direct address, and oblique case is sometimes used for the minor grammatical relations.
-	         These additional cases are usually marked via case markers on the nominal phrases themselves in languages which normally mark case on nouns or nominal phrases as well as pronouns.  For languages without any case marking and those which only show case in the pronouns, these additional grammatical relations are normally expressed via prepositional or postpositional phrases.
+	      <p contentType="ctPracticalIntro"><content>There are additional cases for the minor grammatical relations which may be marked on the nominal phrases in languages which mark case on nouns. Languages without any case marking and those which only show case in the pronouns normally express these additional grammatical relations via adpositional phrases.
+	      </content>   
+	      </p>
+	      <p contentType="ctComparativeIntro"><content>There are more cases to consider beyond that of the subject and object, also.  These may include ablative case for a source or origin, genitive case for kinds or possessors, dative case for indirect objects, instrumental case for means or instruments, locative case for locations, vocative case for direct address, and oblique case is sometimes used for the minor grammatical relations.
+	         These additional cases are usually marked via case markers on the nominal phrases themselves in languages which normally mark case on nouns or nominal phrases as well as pronouns.  For languages without any case marking and those which only show case in the pronouns, these additional grammatical relations are normally expressed via adpositional phrases.
 	      </content>   
 	      </p>
 	      <p show="swNPCaseNone"><content>In </content><langName/><content>, there are not any kind of case distinctions.  Therefore, the minor grammatical relations are expressed by </content><case element="pp" attr="pPos">
 	         <caseText value="before">prepositional</caseText>
 	         <caseText value="after">postpositional</caseText>
 	         <caseText value="both">prepositional or postpositional</caseText>
-	         <caseText value="unknown">prepositional and/or postpositional</caseText>
-	      </case><content> phrases, rather than by nominal phrases.</content>
+	         <caseText value="unknown">adpositional</caseText>
+	      </case><content> phrases, rather than by nominal phrases (see </content><sectionRef sec="sPP"/><content>).</content>
 	      </p>
 	      <p show="swNPCaseNotNoneAndCaseNNo"><content>In </content><langName/><content>, case distinctions are not marked on nouns or nominal phrases; only the pronoun sets distinguish case.  Therefore, the minor grammatical relations are expressed by </content><case element="pp" attr="pPos">
 	            <caseText value="before">prepositional</caseText>
 	            <caseText value="after">postpositional</caseText>
 	            <caseText value="both">prepositional or postpositional</caseText>
-	            <caseText value="unknown">prepositional and/or postpositional</caseText>
-	      </case><content> phrases, rather than by nominal phrases.   The case distinctions in the pronouns will be delineated in </content><sectionRef sec="sPronPersonal"/><content>.</content>	         
+	            <caseText value="unknown">adpositional</caseText>
+	      </case><content> phrases, rather than by nominal phrases (see </content><sectionRef sec="sPP"/><content>).  The case distinctions in the pronouns will be delineated in </content><sectionRef sec="sPronPersonal"/><content>.</content>	         
 	      </p>
 	      <p show="swNPCaseNotNoneAndCaseNYes"><content>In </content><langName/><content>, case is marked on both pronouns and nouns or nominal phrases. </content>
 	         <text show="swNPCaseDefaultNom">
 	            <content>  Nominative case is the default (unmarked) case. </content>
 	         </text>	        
-	      <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordYes">	            
-	         <content>The case marker is written as a separate word and occurs </content>
-	         <case element="np" attr="caseWordPos">
-	            <caseText value="before">before</caseText>
-	            <caseText value="after">after</caseText>
-	            <caseText value="either">on either side of</caseText>
-	            <caseText value="unknown">________</caseText>
-	         </case>
+	      <text show="swNPCaseWordYesAndNotOther">	            
+	         <content>The case markers are written as an independent word and occur </content>
+	         <text show="swCaseWordBefore"><content>before</content></text>
+	         <text show="swCaseWordAfter"><content>after</content></text>
+	         <text show="swCaseWordBoth"><content>on both sides of</content></text>
+	         <text show="swCaseWordEither"><content>on either side of</content></text>
+	         <text show="swCaseWordBeforeOrBoth"><content>before or on both sides of</content></text>
+	         <text show="swCaseWordAfterOrBoth"><content>after or on both sides of</content></text>
+	         <text show="swCaseWordEitherOrBoth"><content>on either side or on  both sides of</content></text>
 	         <content> the rest of the nominal phrase.  </content>
-	         <text show="swNPCaseWordEitherUnrestricted">
-	            <content>All of the case markers can occur on either side of the nominal phrase. </content>
 	         </text>
-	         <content/>
-	         <text show="swNPCaseWordEitherRestricted">
-	            <content>There are restrictions as to which of the case markers can occur on each side of the nominal phrase. </content>
+
+	         <text show="swNPCaseWordYesAndOtherOnly"> 
+	            <content>The case markers are written as an independent word and occur ___</content><contentCheckBoxOther contentLoc="np/caseWordOther"/>
+	            <content>.   </content>
+	         </text>
+	         <text show="swNPCaseWordYesAndOtherAnd">
+	            <content>The case markers are written as an independent word and occur </content>
+	            <text show="swCaseWordBefore"><content>before</content></text>
+	            <text show="swCaseWordAfter"><content>after</content></text>
+	            <text show="swCaseWordBoth"><content>on both sides of</content></text>
+	            <text show="swCaseWordEither"><content>on either side of</content></text>
+	            <text show="swCaseWordBeforeOrBoth"><content>before or on both sides of</content></text>
+	            <text show="swCaseWordAfterOrBoth"><content>after or on both sides of</content></text>
+	            <text show="swCaseWordEitherOrBoth"><content>on either side or on  both sides of</content></text>
+	            <content> the rest of the nominal phrase, and they may also occur ___</content><contentCheckBoxOther contentLoc="np/caseWordOther"/><content>.   </content>
+	         </text>
+	         <text show="swNPCaseWordSomeAndNotOther">	            
+	            <content>Some of the case markers are written as an independent word and occur </content>
+	            <text show="swCaseWordBefore"><content>before</content></text>
+	            <text show="swCaseWordAfter"><content>after</content></text>
+	            <text show="swCaseWordBoth"><content>on both sides of</content></text>
+	            <text show="swCaseWordEither"><content>on either side of</content></text>
+	            <text show="swCaseWordBeforeOrBoth"><content>before or on both sides of</content></text>
+	            <text show="swCaseWordAfterOrBoth"><content>after or on both sides of</content></text>
+	            <text show="swCaseWordEitherOrBoth"><content>on either side or on  both sides of</content></text>
+	            <content> the rest of the nominal phrase.  </content>
 	         </text>
 	         
+	         <text show="swNPCaseWordSomeAndOtherOnly"> 
+	            <content>Some of the case markers are written as an independent word and occur ___</content><contentCheckBoxOther contentLoc="np/caseWordOther"/>
+	            <content>.   </content>
 	         </text>
-	         <text show="swNPCaseNotNoneAndCaseNYesAndCaseWordNo">  <content></content>
-	        <case element="np" attr="caseCliticPos">
-	           <caseText value="before">The case markers attach to the beginning of the initial word in the nominal phrase.</caseText>
-	           <caseText value="after">The case markers attach to the end of the final word in the nominal phrase.</caseText>
-	           <caseText value="either">Some of the case markers attach to the beginning of the initial word and some attach to the end of the final word in the nominal phrase.</caseText>
-	           <caseText value="prefixN">The case markers are prefixes which attach to the head noun.</caseText>
-	           <caseText value="suffixN">The case markers are suffixes which attach to the head noun.</caseText>
-	           <caseText value="eitherN">Some of the case markers are prefixes and some are suffixes which attach to the head noun.</caseText>
-	        </case>
-	            </text>
+	         <text show="swNPCaseWordSomeAndOtherAnd">
+	            <content>Some of the case markers are written as an independent word and occur </content>
+	            <text show="swCaseWordBefore"><content>before</content></text>
+	            <text show="swCaseWordAfter"><content>after</content></text>
+	            <text show="swCaseWordBoth"><content>on both sides of</content></text>
+	            <text show="swCaseWordEither"><content>on either side of</content></text>
+	            <text show="swCaseWordBeforeOrBoth"><content>before or on both sides of</content></text>
+	            <text show="swCaseWordAfterOrBoth"><content>after or on both sides of</content></text>
+	            <text show="swCaseWordEitherOrBoth"><content>on either side or on  both sides of</content></text>
+	            <content> the rest of the nominal phrase, and some may also occur ___</content><contentCheckBoxOther contentLoc="np/caseWordOther"/><content>.   </content>
+	         </text>
+	         <text show="swNPCaseWordSome"><content>Other </content>
+	            <text show="swNPCaseAttachesProclitic"><content>case markers attach to the beginning of the initial word in the nominal phrase.</content></text>
+	            <text show="swNPCaseAttachesEnclitic"><content>case markers attach to the end of the final word in the nominal phrase.</content></text>
+	            <text show="swNPCaseAttachesClitic"><content>case markers attach to the beginning of the initial word and some attach to the end of the final word in the nominal phrase.</content></text>
+	            <text show="swNPCaseAttachesPrefix"><content>case markers are prefixes which attach to the head noun.</content></text>
+	            <text show="swNPCaseAttachesSuffix"><content>case markers are suffixes which attach to the head noun.</content></text>
+	            <text show="swNPCaseAttachesAffix"><content>case markers are prefixes and some are suffixes which attach to the head noun.</content></text>
+	            <text show="swNPCaseAttachesBoth"><content>case markers are clitics which attach to either the beginning of the initial word or the end of the final word in the nominal phrase and some are affixes which attach to the head noun.</content></text>
+	            <text show="swNPCaseAttachesOther"><content>  Some may also attach ___</content><contentCheckBoxOther contentLoc="np/caseAttachesOther"/>
+	               <content>.   </content></text>
+	         </text>	    
+	         <text show="swNPCaseWordSomeAttachesAndOtherOnly"> 
+	            <content>Some of the case markers attach ___</content><contentCheckBoxOther contentLoc="np/caseAttachesOther"/>
+	            <content>.   </content>
+	         </text>
+	         
+	         <text show="swNPCaseWordNo">  <content></content>
+	            <text show="swNPCaseAttachesProclitic"><content>The case markers attach to the beginning of the initial word in the nominal phrase.</content></text>
+	            <text show="swNPCaseAttachesEnclitic"><content>The case markers attach to the end of the final word in the nominal phrase.</content></text>
+	            <text show="swNPCaseAttachesClitic"><content>Some of the case markers attach to the beginning of the initial word and some attach to the end of the final word in the nominal phrase.</content></text>
+	            <text show="swNPCaseAttachesPrefix"><content>The case markers are prefixes which attach to the head noun.</content></text>
+	            <text show="swNPCaseAttachesSuffix"><content>The case markers are suffixes which attach to the head noun.</content></text>
+	            <text show="swNPCaseAttachesAffix"><content>Some of the case markers are prefixes and some are suffixes which attach to the head noun.</content></text>
+	            <text show="swNPCaseAttachesBoth"><content>Some of the case markers are clitics which attach to either the beginning of the initial word or the end of the final word in the nominal phrase and some are affixes which attach to the head noun.</content></text>
+	            <text show="swNPCaseAttachesOther"><content>  Some may also attach ___</content><contentCheckBoxOther contentLoc="np/caseAttachesOther"/>
+	               <content>.   </content></text>
+	         </text>	
+	         <text show="swNPCaseWordNoAndOtherOnly"> 
+	            <content>The case markers attach ___</content><contentCheckBoxOther contentLoc="np/caseAttachesOther"/>
+	            <content>.   </content>
+	         </text>
+	         
 	       </p>
 	      <p show="swNPCaseNotNoneAndCaseNYes"><content>The case markers used on nouns or nominal phrases in </content>
 	      <langName/>
-	      <content> are shown in the following chart.</content>
+	      <content> are shown in the following table.</content>
 	      </p>
 	      <example num="xCase" show="swNPCaseNotNoneAndCaseNYes">
 	         <table border="1">
@@ -205,9 +288,7 @@
 	               <content>Case markers</content>
 	            </caption>
 	            <headerRow>
-	               <headerCol>
-	                  <langName/>
-	               </headerCol>
+	               <headerCol>Morphemes</headerCol>
 	               <headerCol>Case</headerCol>
 	               <headerCol>Use</headerCol>
 	            </headerRow>
@@ -353,13 +434,13 @@
 		<section2 id="sNPoss">
 			<secTitle>Possessors</secTitle>
 			<p>
-				<content>Possession can normally be expressed by a pronoun, by a simple noun, or by a full nominal phrase (see section </content><sectionRef sec="sNPPoss"/><content>).  The case and agreement features on possessed nouns or nouns acting as possessors is covered here.</content>
+				<content>Possession can normally be expressed by a pronoun, by a simple noun, or by a full nominal phrase (see section </content><sectionRef sec="sNPPoss"/><content>).  The case and agreement features on possessed nouns or nouns acting as possessors are covered here.</content><text show="swNPAbsolutiveYes"><content>  The special affix that occurs on nouns when they are not possessed or pluralized is also discussed.</content></text>
 			</p>
 			<section3 id="sNPPossCase">
 				<secTitle>Possessor Case</secTitle>
-				<p show="swNPCaseNo"><content>As discussed in section </content><sectionRef sec="sNPCase"/><content>, </content><langName/><content> does not have any case system.  Therefore, there is no separate case marking on nouns nor a distinct set of pronouns used for possessors.</content></p>
+				<p show="swNPCaseNo"><content>As discussed in section </content><sectionRef sec="sNPCase"/><content>, </content><langName/><content> does not have any case system.  Therefore, there is no case marking on nouns nor a distinct set of pronouns used for possessors.</content></p>
 				<p show="swNPCaseNom">
-					<content>With the normal nominative-accusative case system followed by </content>
+					<content>Within the normal nominative-accusative case system followed by </content>
 					<langName/>
 					<content>, possessors are marked with the genitive case.</content>
 				</p>
@@ -385,10 +466,73 @@
 					</case>
 					<content/>
 				</p>
-				<p show="swNPCaseYes">
+			   <p show="swNPCaseYes" contentType="ctPracticalIntro">
+			      <content>In </content>
+			      <langName/>
+			      <content>, </content>
+			      <case element="np" attr="possNounCaseChange">
+			         <caseText value="no">the grammatical function of the head noun relative to the verb determines its case, not the presence of a possessor.</caseText>
+			         <caseText value="yes">the case of the head noun matches the case of the possessor, when a possessor is present.</caseText>
+			      </case>
+			      <case element="np" attr="possNounCaseChange">
+			         <caseText value="no"> The grammatical function of the head noun relative to the verb determines its case, not the presence of a possessor.</caseText>
+			         <caseText value="yes"> The case of the head noun matches the case of the possessor, when a possessor is present.</caseText>
+			      </case>
+			      <text show="swNPPossNounCaseChangeYes"><content> If there is an adjective modifier in the nominal phrase, the case of the head noun </content>
+			      <case element="np" attr="adjpCaseChange">
+			         <caseText value="no">only changes when a possessor is present, though the adjective may/must also carry that case.</caseText>
+			         <caseText value="yes">changes to match the normal case of a possessor even if just an adjectival modifier is present.</caseText>
+			      </case>
+			      </text>
+			      <text show="swNPAdjPCaseAffixNotNo">
+			            <content> When the overt </content>
+			            <text show="swNPPossCaseGen">
+			               <content>genitive </content>
+			            </text>
+			            <text show="swNPCaseSplitNotGen">
+			               <content>or </content>
+			            </text>
+			            <content/>
+			            <text show="swNPPossCaseErg">
+			               <content>ergative </content>
+			            </text>
+			            <content/>
+			            <text show="swNPPossCaseAbs">
+			               <content>absolutive </content>
+			            </text>
+			            <content/>
+			            <case element="np" attr="adjpCaseAffix">
+			               <caseText value="yesSuffix">suffix</caseText>
+			               <caseText value="yesPrefix">prefix</caseText>
+			            </case>
+			            <content> is present on the head noun, it indicates that an adjectival modifier and/or a possessor must be present in the phrase.  If the adjective is marked with this </content>
+			            <text show="swNPPossCaseGen">
+			               <content>genitive </content>
+			            </text>
+			            <text show="swNPCaseSplitNotGen">
+			               <content>or </content>
+			            </text>
+			            <content/>
+			            <text show="swNPPossCaseErg">
+			               <content>ergative </content>
+			            </text>
+			            <content/>
+			            <text show="swNPPossCaseAbs">
+			               <content>absolutive </content>
+			            </text>
+			            <content/>
+			            <case element="np" attr="adjpCaseAffix">
+			               <caseText value="yesSuffix">suffix,</caseText>
+			               <caseText value="yesPrefix">prefix,</caseText>
+			            </case>
+			            <content> then another adjective and/or a possessor must also be present.</content>
+			         </text>
+			         <content/>
+			   </p>
+				<p show="swNPCaseYes" contentType="ctComparativeIntro">
 					<content>In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its position relative to the verb: nominative or accusative, ergative or absolutive depending on the case system.</content>
 				</p>
-				<p show="swNPCaseYes">
+			   <p show="swNPCaseYes" contentType="ctComparativeIntro">
 					<content>In </content>
 					<langName/>
 					<content>, </content>
@@ -398,12 +542,12 @@
 					</case>
 					<content/>
 				</p>
-				<p show="swNPPossNounCaseChangeYes">
+				<p show="swNPPossNounCaseChangeYes" contentType="ctComparativeIntro">
 					<content>Languages like </content>
 					<langName/>
 					<content> which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.</content>
 				</p>
-				<p  show="swNPPossNounCaseChangeYes">
+			   <p  show="swNPPossNounCaseChangeYes" contentType="ctComparativeIntro">
 					<content>In </content>
 					<langName/>
 					<content>, the case of the head noun </content>
@@ -413,10 +557,10 @@
 					</case>
 					<content/>
 				</p>
-				<p show="swNPAdjPCaseChangeYes">
+			   <p show="swNPAdjPCaseChangeYes" contentType="ctComparativeIntro">
 					<content>Further, some languages of this latter type have an overt affix which marks the genitive case (or the normal case of possessors) on the head noun to indicate that there must be either an adjective or a possessor in that nominal phrase.  In this situation, the adjective and/or possessor will also be in genitive case (or the normal case of possessors), though the case marking will not be overt on the highest modifier in the nominal phrase.</content>
 				</p>
-				<p show="swNPAdjPCaseChangeYes">
+			   <p show="swNPAdjPCaseChangeYes" contentType="ctComparativeIntro">
 					<content>In </content>
 					<langName/>
 					<content>, the case marking </content>
@@ -491,7 +635,7 @@
 					<content/>
 					<case element="np" attr="possAlienable">
 						<caseText value="no"> does not distinguish</caseText>
-						<caseText value="yes"> does make a distinction</caseText>
+						<caseText value="yes"> makes a distinction</caseText>
 					</case>
 					<content> between alienably and inalienably possessed nouns.  </content>
 					<text show="swNPPossAlienableYes">
@@ -503,7 +647,7 @@
 					<table border="1">
 					<headerRow>
 						<headerCol>Possessive affix</headerCol>
-						<headerCol>Gloss or Restrictions</headerCol>
+						<headerCol>Gloss</headerCol>
 					</headerRow>
 						<row>
 							<col exampleLoc="np/possAlienableAffixExample"/>
@@ -521,158 +665,41 @@
 					</case>
 					<content> marked with a pronominal affix or clitic which either agrees with the possessor or expresses the possessor by itself.  </content>
 					<text show="swNPPossAgrYes">
-					   <content>See the dependent personal pronouns used for possessors, given in section </content><sectionRef sec="sPronPersonal"/><content>. These affixes mark the following features of the possessor:</content>
+					   <content>See the dependent personal pronouns used for possessors, given in section </content><sectionRef sec="sPronPersonal"/><content>. </content>
 					</text>
 					<content/>
 				</p>
-				<example show="swNPPossAgrYes">
-					<table border="1">
-						<headerRow>
-							<headerCol>Type of feature</headerCol>
-							<headerCol>Feature</headerCol>
-						</headerRow>
-						<row show="swNPPossAgrPossFirst">
-							<col>
-								<content>person</content>
-							</col>
-							<col>
-								<content>first</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossExclusive">
-							<col>
-								<content>person</content>
-							</col>
-							<col>
-								<content>first exclusive</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossInclusive">
-							<col>
-								<content>person</content>
-							</col>
-							<col>
-								<content>first inclusive</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossSecond">
-							<col>
-								<content>person</content>
-							</col>
-							<col>
-								<content>second</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossThird">
-							<col>
-								<content>person</content>
-							</col>
-							<col>
-								<content>third</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossSingular">
-							<col>
-								<content>number</content>
-							</col>
-							<col>
-								<content>singular</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossDual">
-							<col>
-								<content>number</content>
-							</col>
-							<col>
-								<content>dual</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossPlural">
-							<col>
-								<content>number</content>
-							</col>
-							<col>
-								<content>plural</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossMasculine">
-							<col>
-								<content>gender</content>
-							</col>
-							<col>
-								<content>masculine</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossFeminine">
-							<col>
-								<content>gender</content>
-							</col>
-							<col>
-								<content>feminine</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossNeuter">
-							<col>
-								<content>gender</content>
-							</col>
-							<col>
-								<content>neuter</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossAnimate">
-							<col>
-								<content>animacy</content>
-							</col>
-							<col>
-								<content>animate</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossInanimate">
-							<col>
-								<content>animacy</content>
-							</col>
-							<col>
-								<content>inanimate</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossHuman">
-							<col>
-								<content>animacy</content>
-							</col>
-							<col>
-								<content>human</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossNonHuman">
-							<col>
-								<content>animacy</content>
-							</col>
-							<col>
-								<content>nonhuman</content>
-							</col>
-						</row>
-						<row show="swNPPossAgrPossClassClassNumber">
-							<col>
-								<content>class</content>
-							</col>
-							<col>
-								<content>class_##</content>
-							</col>
-						</row>
-					</table>
-				</example>
 			</section3>
+		   <section3 id="sNPossAbsolutive" show="swNPAbsolutiveYes">
+		      <secTitle>Absolutive Marking</secTitle>
+		      <p><langName/><content> has an affix that occurs on nouns when they are not possessed or pluralized.  This affix is known as the absolutive marker, but the name is not related to the absolutive case marker used in languages with an ergative-absolutive case system.</content></p>
+		      <p><content>The forms of the affix used in </content><langName/><content> are:</content></p>
+		      <example show="swNPAbsolutiveYes">
+		         <table border="1">
+		            <headerRow>
+		               <headerCol>Absolutive affix</headerCol>
+		               <headerCol>Gloss</headerCol>
+		            </headerRow>
+		            <row>
+		               <col exampleLoc="np/possAbsolutiveAffixExample"/>
+		               <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		            </row>
+		         </table>
+		      </example>
+		      
+		   </section3>
+		   
 		</section2>
 		<section2 id="sNPCompounds">
 			<secTitle>Noun Compounds</secTitle>
-			<p>
+			<p contentType="ctComparativeIntro">
 				<content>Many languages are like English, in that they have noun modifiers.  It may seem like all nouns can also be used as adjectives, but a closer look reveals that true adjectives come before the noun modifier, as in </content>
 				<langData>large, round [syrup bottle]</langData>
 				<content> but not </content>
 				<langData>*round, syrup large bottle</langData>
-				<content>.  Therefore, noun modifiers will be treated as compound nouns which are written as separate words.</content>
+				<content>.  Therefore, noun modifiers will be treated as compound nouns which are written as independent words.</content>
 			</p>
-			<p>
+			<p contentType="ctComparativeIntro">
 				<content>In the English examples above, </content>
 				<langData>bottle</langData>
 				<content> is clearly the head noun rather than </content>
@@ -683,40 +710,641 @@
 				<langData>bottle</langData>
 				<content>, not the other way around.  In all compound nouns and noun modifier constructions in English, the head is the right-most noun in the series.</content>
 			</p>
+		   <p><content>Noun compounds include those which are combined into a single word as well as those written as two or more independent words.  Some typical categories of noun compounds are exemplified here.</content></p>
+		   <example>
+		      <table border="1">
+		         <caption><content>Compounds for Body Parts</content></caption>
+		         <headerRow>
+		            <headerCol>Compound</headerCol>
+		            <headerCol>Gloss for each noun</headerCol>
+		            <headerCol>Gloss for the compound</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/compBodyPartExample"/>
+		            <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		            <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		         </row>
+		      </table>
+		   </example>
+		   <example>
+		      <table border="1">
+		         <caption><content>Compounds for Kinship Terms</content></caption>
+		         <headerRow>
+		            <headerCol>Compound</headerCol>
+		            <headerCol>Gloss for each noun</headerCol>
+		            <headerCol>Gloss for the compound</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/compKinshipExample"/>
+		            <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		            <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		         </row>
+		      </table>
+		   </example>
+		   <example>
+		      <table border="1">
+		         <caption><content>Compounds for Foods</content></caption>
+		         <headerRow>
+		            <headerCol>Compound</headerCol>
+		            <headerCol>Gloss for each noun</headerCol>
+		            <headerCol>Gloss for the compound</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/compFoodExample"/>
+		            <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		            <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		         </row>
+		      </table>
+		   </example>
+		   <example>
+		      <table border="1">
+		         <caption><content>Compounds describing the Material the Noun is Constructed from</content></caption>
+		         <headerRow>
+		            <headerCol>Compound</headerCol>
+		            <headerCol>Gloss for each noun</headerCol>
+		            <headerCol>Gloss for the compound</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/compMaterialExample"/>
+		            <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		            <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		         </row>
+		      </table>
+		   </example>
+		   <example>
+		      <table border="1">
+	<caption><content>Other Noun Compounds</content></caption>
+		         <headerRow>
+		            <headerCol>Compound</headerCol>
+		            <headerCol>Gloss for each noun</headerCol>
+		            <headerCol>Gloss for the compound</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/compExample"/>
+		            <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		            <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		         </row>
+		      </table>
+		   </example>
+		   
+		   
 			<p show="swNPCompNo">
-				<content/>
+				<content>As shown in the examples, </content>
 				<langName/>
-				<content> does not  have any compound nouns or noun modifiers that are written as separate words.  They are all written as a single word with the head noun.  Examples include:</content>
+				<content> does not  have any compound nouns or noun modifiers that are written as independent words.  They are all written as a single word with the head noun.  </content>
+			   <case element="np" attr="compHeadMorpheme">
+			      <caseText value="left">The left-most noun root is </caseText>
+			      <caseText value="right">The right-most noun root is </caseText>
+			      <caseText value="either">Either noun root may be </caseText>
+			   </case>
+			   <content>head in these single-word compounds.</content>
 			</p>
 			<p show="swNPCompYes">
-				<content/>
-				<langName/>
-				<content> has compound nouns or noun modifiers that are written as separate words.  The </content>
+			   <content>As shown in the examples, </content>
+			   <langName/>
+				<content> has compound nouns or noun modifiers that are written as independent words.  </content>
 				<case element="np" attr="compHead">
-					<caseText value="left">left-most</caseText>
-					<caseText value="right">right-most</caseText>
+				   <caseText value="left">The left-most noun is </caseText>
+				   <caseText value="right">The right-most noun is </caseText>
+				   <caseText value="either">Either noun may be </caseText>
 				</case>
-				<content> noun is the head in these constructions.   Examples include:</content>
+			   <content>the head in these multi-word compounds.  In the compounds which are written as a single word with the head noun,  </content>
+			   <case element="np" attr="compHeadMorpheme">
+			      <caseText value="left">the left-most noun root is </caseText>
+			      <caseText value="right">the right-most noun root is </caseText>
+			      <caseText value="either">either noun root may be </caseText>
+			   </case>
+			   <content>the head.</content>
+			   
 			</p>
-			<example>
-				<interlinear exampleLoc="np/compExample"/>
-			</example>
 		</section2>
 
 	</section1>
 <showWhen id="swNPAgreeYesNumber">
 	<whenValue element="np"  attr="agreeNumber" value="yes"/>
 </showWhen>
+   <showWhen id="swNPAgrClass">
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgrGender">
+      <whenValue element="np/agreeClass" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgrAnimacy">
+      <whenValue element="np/agreeClass" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgrOther">
+      <whenValue element="np/agreeClass" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgrClassGender">
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgrClassAnimacy">
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgrClassOther">
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgrClassAnimacyGender">
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgrClassAnimacyOther">
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgrClassGenderOther">
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgrClassAnimacyGenderOther">
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgrGenderAnimacy">
+      <whenValue element="np/agreeClass" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgrGenderOther">
+      <whenValue element="np/agreeClass" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgrGenderAnimacyOther">
+      <whenValue element="np/agreeClass" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgrAnimacyOther">
+      <whenValue element="np/agreeClass" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeGender" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
+   </showWhen>
+   
 	<showWhen id="swNPAgreeYesAnimacy">
-		<whenValue element="np"  attr="agreeOther" value="yesAnimacy"/>
+		<whenValue element="np"  attr="agreeOther" value="yes"/>
+	   <and/>
+	   <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPAgreeYesClass">
-		<whenValue element="np"  attr="agreeOther" value="yesClass"/>
+		<whenValue element="np"  attr="agreeOther" value="yes"/>
+	   <and/>
+	   <whenValue element="np/agreeClass" attr="checked" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPAgreeYesGender">
-		<whenValue element="np"  attr="agreeOther" value="yesGender"/>
+		<whenValue element="np"  attr="agreeOther" value="yes"/>
+	   <and/>
+	   <whenValue element="np/agreeGender" attr="checked" value="yes"/>
 	</showWhen>
-	<showWhen id="swNPPossessorBefore">
+      <showWhen id="swNPAgreeYesOther">
+         <whenValue element="np"  attr="agreeOther" value="yes"/>
+         <and/>
+         <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
+      </showWhen>
+   <showWhen id="swNPCaseNotNoneAndCaseNYes">
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNYes">
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNone">
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseDefaultNom">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseDefault" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseDefault" value="nominative"/>
+   </showWhen>
+   
+   <showWhen id="swNPCaseNomOrSplitAndCaseNYes">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplitAndCaseNNo">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgAndCaseNYes">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgAndCaseNNo">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndCaseNNo">
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordYes">
+      <whenValue element="np" attr="caseWord" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordNo">
+      <whenValue element="np" attr="caseWord" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplit">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplit">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordYesAndNotOther">
+      <whenValue element="np" attr="caseWord" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="no"/>
+   </showWhen>   
+   <showWhen id="swNPCaseWordSomeAndNotOther">
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="no"/>
+   </showWhen>   
+   <showWhen id="swCaseWordBefore">
+      <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCaseWordAfter">
+      <whenValue element="np/caseWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCaseWordBoth">
+      <whenValue element="np/caseWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCaseWordBeforeOrBoth">
+      <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCaseWordAfterOrBoth">
+      <whenValue element="np/caseWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCaseWordEither">
+      <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCaseWordEitherOrBoth">
+      <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+   </showWhen>
+      <showWhen id="swNPCaseWordYesAndOtherOnly">
+         <whenValue element="np" attr="caseWord" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordBefore" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/caseWordAfter" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/caseWordBoth" attr="checked" value="no"/>
+      </showWhen>
+      <showWhen id="swNPCaseWordYesAndOtherAnd">
+         <whenValue element="np" attr="caseWord" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+         <or/>
+         <whenValue element="np" attr="caseWord" value="no" negateValue="yes"/>
+         <and/>
+         <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+       <or/>
+         <whenValue element="np" attr="caseWord" value="no" negateValue="yes"/>
+         <and/>
+         <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+      </showWhen>
+   <showWhen id="swNPCaseWordSomeAndOtherOnly">
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordSomeAndOtherAnd">
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordSome">
+      <whenValue element="np" attr="caseWord" value="some"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordSomeAttachesAndOtherOnly">
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordNoAndOtherOnly">
+      <whenValue element="np" attr="caseWord" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesOther">
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesProclitic">
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesEnclitic">
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesClitic">
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesPrefix">
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesSuffix">
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesAffix">
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesBoth">
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+   <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+   <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+   <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+   </showWhen>   
+  
+      <showWhen id="swNPPossessorBefore">
 		<whenValue element="np" attr="possNounPos" value="after" negateValue="yes"/>
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="unknown" negateValue="yes"/>
@@ -886,84 +1514,6 @@
 	<showWhen id="swNPCompYes">
 		<whenValue element="np" attr="comp" value="yes"/>
 	</showWhen>
-   <showWhen id="swNPCaseNYes">
-      <whenValue element="np" attr="caseN" value="yes"/>
-      <and/>
-      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-   </showWhen>
-   <showWhen id="swNPCaseNotNone">
-      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-   </showWhen>
-   <showWhen id="swNPCaseDefaultNom">
-      <whenValue element="typology" attr="case" value="nominative"/>
-      <and/>
-      <whenValue element="np" attr="caseDefault" value="nominative"/>
-      <or/>
-      <whenValue element="typology" attr="case" value="split"/>
-      <and/>
-      <whenValue element="np" attr="caseDefault" value="nominative"/>
-   </showWhen>
-   
-   <showWhen id="swNPCaseNomOrSplitAndCaseNYes">
-      <whenValue element="typology" attr="case" value="nominative"/>
-      <and/>
-      <whenValue element="np" attr="caseN" value="yes"/>
-      <or/>
-      <whenValue element="typology" attr="case" value="split"/>
-      <and/>
-      <whenValue element="np" attr="caseN" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPCaseNomOrSplitAndCaseNNo">
-      <whenValue element="typology" attr="case" value="nominative"/>
-      <and/>
-      <whenValue element="np" attr="caseN" value="no"/>
-      <or/>
-      <whenValue element="typology" attr="case" value="split"/>
-      <and/>
-      <whenValue element="np" attr="caseN" value="no"/>
-   </showWhen>
-   <showWhen id="swNPCaseErgAndCaseNYes">
-      <whenValue element="typology" attr="case" value="ergative"/>
-      <and/>
-      <whenValue element="np" attr="caseN" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPCaseErgAndCaseNNo">
-      <whenValue element="typology" attr="case" value="ergative"/>
-      <and/>
-      <whenValue element="np" attr="caseN" value="no"/>
-   </showWhen>
-   <showWhen id="swNPCaseNotNoneAndCaseNNo">
-      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="np" attr="caseN" value="no"/>
-   </showWhen>
-   <showWhen id="swNPCaseNotNoneAndCaseNYes">
-      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="np" attr="caseN" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPCaseWordYes">
-      <whenValue element="np" attr="caseWord" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPCaseWordEitherRestricted">
-      <whenValue element="np" attr="caseWordEither" value="restricted"/>
-   </showWhen>
-   <showWhen id="swNPCaseWordEitherUnrestricted">
-      <whenValue element="np" attr="caseWordEither" value="unrestricted"/>
-   </showWhen>
-   <showWhen id="swNPCaseWordNo">
-      <whenValue element="np" attr="caseWord" value="no"/>
-   </showWhen>
-   <showWhen id="swNPCaseNomOrSplit">
-      <whenValue element="typology" attr="case" value="nominative"/>
-      <or/>
-      <whenValue element="typology" attr="case" value="split"/>
-   </showWhen>
-   <showWhen id="swNPCaseErgOrSplit">
-      <whenValue element="typology" attr="case" value="ergative"/>
-      <or/>
-      <whenValue element="typology" attr="case" value="split"/>
-   </showWhen>
    <showWhen id="swExperiencerNotNo">
       <whenValue element="typology" attr="caseExperiencer" value="no" negateValue="yes"/>
    </showWhen>
@@ -1036,5 +1586,8 @@
       <whenValue element="np" attr="agreeOther" value="yesClass"/>
       <and/>
       <whenValue element="typology" attr="classifier" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAbsolutiveYes">
+      <whenValue element="np" attr="possAbsolutive" value="yes"/>
    </showWhen>
 </portion>

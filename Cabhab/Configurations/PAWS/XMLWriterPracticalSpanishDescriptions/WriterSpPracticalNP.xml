@@ -4,499 +4,140 @@
 	<section1 id="sNP">
 		<secTitle>Las frases nominales</secTitle>
 		<p>
-		   <content>Las frases nominales pueden ser muy complejas.  Esta sección se enfoca en las frases que tienen como núcleo sustantivos comunes. Se consideran la modificación producida por los artículos, los demostrativos, los poseedores, los cuantificadores y las palabras de grado, las frases adjetivales y las frases  </content>
+		   <content>Las frases nominales pueden ser muy complejas.  Esta sección se enfoca en el orden de los modificadores que se escriben como palabras independientes permitidos en frases nominales con sustantivos comunes como el sustantivo principal. Se consideran la modificación producida por los artículos, los demostrativos, los posesivos, los cuantificadores y las palabras de grado, las frases adjetivales y las frases  </content>
 			<case element="pp" attr="pPos">
 				<caseText value="before">preposicionales</caseText>
 				<caseText value="after">posposicionales</caseText>
-				<caseText value="both">preposicional y/o posposicionales</caseText>
-				<caseText value="unknown">preposicional y/o posposicionales</caseText>
+				<caseText value="both">adposicionales</caseText>
+				<caseText value="unknown">adposicionales</caseText>
 			</case>
 			<content>. Los temas de participios y gerundios se tratan al final de esta sección, pero véase la sección </content>
 			<sectionRef sec="sNPCompounds"/><content> para considerar los sustantivos compuestos si se escriben como una sola palabra o no. Las frases nominales que tienen nombres propios como núcleo se discuten en la sección </content>
 			<sectionRef sec="sProp"/>
-			<content> y las frases que tienen pronombres, demostrativos o cuantificadores como núcleo se analizan en la sección </content>
-			<sectionRef sec="sPronNP"/>
+			<content> y las frases que tienen pronombres de cualquier tipo o cuantificadores como núcleo se analizan en las secciones </content>
+		   <sectionRef sec="sPronNP"/><content> y </content><sectionRef sec="sQPPartitive"/>
 			<content>.  Las cláusulas relativas, que normalmente aparecen al final de una frase nominal, se tratan en la sección </content>
 			<sectionRef sec="sRelCl"/>
 			<content>.</content>
 		</p>
-		<p>
-			<content>El orden básico de los elementos permitidos en frases nominales en </content>
-			<langName/>
-			<content> es:</content>
-		</p>
-		<example show="swPossDemAndArtCooccurYesOrSome">
-			<table>
-				<row>
-					<col show="swQPNPDegreeYesBefore">
-						<content>(Grado)</content>
-					</col>
-					<col show="swNPDemBefore">
-						<content>(Dem)</content>
-					</col>
-					<col show="swNPArtBefore">
-						<content>(Art)</content>
-					</col>
-					<col show="swNPPossessorBefore">
-						<content>(Pos)</content>
-					</col>
-					<col show="swNPQPBefore">
-						<content>(Cuant)</content>
-					</col>
-					<col show="swNPAdjPBefore">
-						<content>(Adj)</content>
-					</col>
-					<col show="swNPPPBefore">
-						<content>(FP)</content>
-					</col>
-					<col show="swNPCompoundYesRightHead">
-						<content>((S) S)</content>
-					</col>
-					<col>
-						<content>Sustantivo</content>
-					</col>
-					<col show="swNPCompoundYesLeftHead">
-						<content>(S (S))</content>
-					</col>
-					<col show="swNPPPAfter">
-						<content>(FP)</content>
-					</col>
-					<col show="swNPAdjPAfter">
-						<content>(Adj)</content>
-					</col>
-					<col show="swNPQPAfter">
-						<content>(Cuant)</content>
-					</col>
-					<col show="swNPPossessorAfter">
-						<content>(Pos)</content>
-					</col>
-					<col show="swNPArtAfter">
-						<content>(Art)</content>
-					</col>
-					<col show="swNPDemAfter">
-						<content>(Dem)</content>
-					</col>
-					<col show="swQPNPDegreeYesAfter">
-						<content>(Grado)</content>
-					</col>
-				</row>
-			</table>
-		</example>
-		<example show="swPossDemOrArtCooccurYesOrSome">
-			<table>
-				<row>
-					<col show="swQPNPDegreeYesBefore">
-						<content>(Grado)</content>
-					</col>
-					<col show="swNPDemOrArtBefore">
-						<content>(Dem/Art)</content>
-					</col>
-					<col show="swNPPossessorBefore">
-						<content>(Pos)</content>
-					</col>
-					<col show="swNPQPBefore">
-						<content>(Cuant)</content>
-					</col>
-					<col show="swNPAdjPBefore">
-						<content>(Adj)</content>
-					</col>
-					<col show="swNPPPBefore">
-						<content>(FP)</content>
-					</col>
-					<col show="swNPCompoundYesRightHead">
-						<content>((S) S)</content>
-					</col>
-					<col>
-						<content>Sustantivo</content>
-					</col>
-					<col show="swNPCompoundYesLeftHead">
-						<content>(S (S))</content>
-					</col>
-					<col show="swNPPPAfter">
-						<content>(FP)</content>
-					</col>
-					<col show="swNPAdjPAfter">
-						<content>(Adj)</content>
-					</col>
-					<col show="swNPQPAfter">
-						<content>(Cuant)</content>
-					</col>
-					<col show="swNPPossessorAfter">
-						<content>(Pos)</content>
-					</col>
-					<col show="swNPDemOrArtAfter">
-						<content>(Art/Dem)</content>
-					</col>
-					<col show="swQPNPDegreeYesAfter">
-						<content>(Grado)</content>
-					</col>
-				</row>
-			</table>
-		</example>
-		<example show="swPossDemAndOrArtCooccurNo">
-			<table>
-				<row>
-					<col show="swQPNPDegreeYesBefore">
-						<content>(Grado)</content>
-					</col>
-					<col show="swPossDemAndOrArtCooccurNoBefore">
-						<content>(Dem/Art/Pos)</content>
-					</col>
-					<col show="swPossDemAndOrArtCooccurNoBeforeArtAfter">
-						<content>(Dem/Pos)</content>
-					</col>
-					<col show="swPossDemAndOrArtCooccurNoBeforeDemAfter">
-						<content>(Art/Pos)</content>
-					</col>
-					<col show="swPossDemAndOrArtCooccurNoBeforePosAfter">
-						<content>(Dem/Art)</content>
-					</col>
-					<col show="swNPQPBefore">
-						<content>(Cuant)</content>
-					</col>
-					<col show="swNPAdjPBefore">
-						<content>(Adj)</content>
-					</col>
-					<col show="swNPPPBefore">
-						<content>(FP)</content>
-					</col>
-					<col show="swNPCompoundYesRightHead">
-						<content>((S) S)</content>
-					</col>
-					<col>
-						<content>Sustantivo</content>
-					</col>
-					<col show="swNPCompoundYesLeftHead">
-						<content>(S (S))</content>
-					</col>
-					<col show="swNPPPAfter">
-						<content>(FP)</content>
-					</col>
-					<col show="swNPAdjPAfter">
-						<content>(Adj)</content>
-					</col>
-					<col show="swNPQPAfter">
-						<content>(Cuant)</content>
-					</col>
-					<col show="swPossDemAndOrArtCooccurNoAfter">
-						<content>(Pos/Art/Dem)</content>
-					</col>
-					<col show="swPossDemAndOrArtCooccurNoAfterArtBefore">
-						<content>(Pos/Dem)</content>
-					</col>
-					<col show="swPossDemAndOrArtCooccurNoAfterDemBefore">
-						<content>(Pos/Art)</content>
-					</col>
-					<col show="swPossDemAndOrArtCooccurNoAfterPosBefore">
-						<content>(Art/Dem)</content>
-					</col>
-					<col show="swQPNPDegreeYesAfter">
-						<content>(Grado)</content>
-					</col>
-				</row>
-			</table>
-		</example>
-		<example show="swPossDemOnlyCooccurNo">
-			<table>
-				<row>
-					<col show="swQPNPDegreeYesBefore">
-						<content>(Grado)</content>
-					</col>
-					<col show="swPossDemOnlyCooccurNoBefore">
-						<content>(Dem/Pos)</content>
-					</col>
-					<col show="swPossDemOnlyCooccurNoBeforePosAfter">
-						<content>(Dem)</content>
-					</col>
-					<col show="swNPQPBefore">
-						<content>(Cuant)</content>
-					</col>
-					<col show="swNPAdjPBefore">
-						<content>(Adj)</content>
-					</col>
-					<col show="swNPPPBefore">
-						<content>(FP)</content>
-					</col>
-					<col show="swNPCompoundYesRightHead">
-						<content>((S) S)</content>
-					</col>
-					<col>
-						<content>Sustantivo</content>
-					</col>
-					<col show="swNPCompoundYesLeftHead">
-						<content>(S(S))</content>
-					</col>
-					<col show="swNPPPAfter">
-						<content>(FP)</content>
-					</col>
-					<col show="swNPAdjPAfter">
-						<content>(Adj)</content>
-					</col>
-					<col show="swNPQPAfter">
-						<content>(Cuant)</content>
-					</col>
-					<col show="swPossDemOnlyCooccurNoAfter">
-						<content>(Pos/Dem)</content>
-					</col>
-					<col show="swPossDemOnlyCooccurNoAfterPosBefore">
-						<content>(Dem)</content>
-					</col>
-					<col show="swQPNPDegreeYesAfter">
-						<content>(Grado)</content>
-					</col>
-				</row>
-			</table>
-		</example>
-		<example show="swPossArtOnlyCooccurNo">
-			<table>
-				<row>
-					<col show="swQPNPDegreeYesBefore">
-						<content>(Grado)</content>
-					</col>
-					<col show="swPossArtOnlyCooccurNoBefore">
-						<content>(Art/Pos)</content>
-					</col>
-					<col show="swPossArtOnlyCooccurNoBeforePosAfter">
-						<content>(Art)</content>
-					</col>
-					<col show="swNPQPBefore">
-						<content>(Cuant)</content>
-					</col>
-					<col show="swNPAdjPBefore">
-						<content>(Adj)</content>
-					</col>
-					<col show="swNPPPBefore">
-						<content>(FP)</content>
-					</col>
-					<col show="swNPCompoundYesRightHead">
-						<content>((S) S)</content>
-					</col>
-					<col>
-						<content>Sustantivo</content>
-					</col>
-					<col show="swNPCompoundYesLeftHead">
-						<content>(S (S))</content>
-					</col>
-					<col show="swNPPPAfter">
-						<content>(FP)</content>
-					</col>
-					<col show="swNPAdjPAfter">
-						<content>(Adj)</content>
-					</col>
-					<col show="swNPQPAfter">
-						<content>(Cuant)</content>
-					</col>
-					<col show="swPossArtOnlyCooccurNoAfter">
-						<content>(Pos/Art)</content>
-					</col>
-					<col show="swPossArtOnlyCooccurNoAfterPosBefore">
-						<content>(Art)</content>
-					</col>
-					<col show="swQPNPDegreeYesAfter">
-						<content>(Grado)</content>
-					</col>
-				</row>
-			</table>
-		</example>
-		<p>
-			<content>Cada una de estas frases será analizada y ejemplificada en las secciones siguientes.</content>
-		</p>
-		<section2 id="sNPDegree">
-			<secTitle>Palabras especiales de grado como modificadores</secTitle>
-			<p>
-				<content>
-					Empezando con el extremo de la frase nominal, esta posición se ocupa por las palabras de grado que modifican a la frase completa, tal como </content>
-				<langData>todos</langData>
-				<content>, </content>
-				<langData>casi</langData>
-				<content>, </content>
-				<langData>apenas</langData>
-				<content>, </content>
-				<langData>solamente</langData>
-				<content>, y </content>
-				<langData>no</langData>
-				<content>.  Las palabras especiales de grado son analizadas en la sección </content>
-				<sectionRef sec="sQPAll"/>
-				<content>.  </content></p>
+	   <p><content>Se empieza con los modificadores que tienen el alcance o ámbito más amplio, y luego se avanza presentando otros elementos con ámbito más limitado y más cerca del sustantivo..</content></p>
+	   <section2 id="sNPDegree">
+	      <secTitle>Cuantificadors y palabras de grado con con ámbito amplio  </secTitle>
+	      <p contentType="ctPracticalIntro">
+	         <content>Los cuantificadores de ámbito amplio  y palabras de grado que modifican a la frase nominal completa fueron analizadas en la sección </content>
+	         <sectionRef sec="sQPAll"/>
+	         <content>.  </content></p>
+	      <p contentType="ctComparativeIntro">
+	         <content>Los cuantificadores de ámbito amplio  y palabras de grado que modifican a la frase nominal,  tal como </content>
+	         <langData>todos</langData>
+	         <content>, </content>
+	         <langData>casi</langData>
+	         <content>, </content>
+	         <langData>apenas</langData>
+	         <content> y </content>
+	         <langData>solamente</langData><content>, fueron analizadas en la sección </content>
+	         <sectionRef sec="sQPAll"/>
+	         <content>.  </content></p>
 
-				   <p><content>De acuerdo con lo considerado, en  </content>
-				<langName/>
-				<content>,  </content></p>
-
-		   <p show="swQPNPDegreeNo">
-			  <content>De acuerdo con lo considerado, en </content>
-			  <langName/>
-			  <content>, los elementos especiales positivos de grado no se expresan como palabras independientes. Por el contrario, todos se unen a otra palabra de la frase nominal como </content>
-			  <case element="qp" attr="npDegreeType">
-				 <caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
-				 <caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
-				 <caseText value="clitic">clíticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
-				 <caseText value="prefix">prefijos que se unen al sustantivo principal de la frase nominal.</caseText>
-				 <caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
-				 <caseText value="affix">prefijos o sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
-			  </case>
-		   </p>
-		   <p show="swQPNPDegreeSome">
-			  <content>De acuerdo con lo considerado, en </content>
-			  <langName/>
-			  <content>, algunos de los elementos positivas son palabras independientes pero algunos de los elementos especiales positivos de grado no se expresan como palabras independientes.  Por el contrario, algunos se unen a otra palabra de la frase nominal como </content>
-			  <case element="qp" attr="npDegreeType">
-				 <caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
-				 <caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
-				 <caseText value="clitic">clíticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
-				 <caseText value="prefix">prefijos que se unen al sustantivo principal de la frase nominal.</caseText>
-				 <caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
-				 <caseText value="affix">prefijos o sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
-			  </case>
-			  <content>  Los elementos especiales positivos de grado que se expresan como palabras independientes se presentan </content>
-			  <case element="qp" attr="npDegreePos">
-				 <caseText value="before">antes</caseText>
-				 <caseText value="after">después</caseText>
-				 <caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-				 <caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
-				 <caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-				 <caseText value="afterOrBoth">después o en ambos lados</caseText>
-				 <caseText value="both">en ambos lados</caseText>
-				 <caseText value="unknown">_______</caseText>
-			  </case>
-			  <content> del resto de la frase nominal.  </content>
-		   </p>
-
-		   <p show="swQPNPDegreeYes">
-			  <content>De acuerdo con lo considerado, en </content>
-			  <langName/>
-			  <content>, los elementos especiales positivos de grado se expresan como palabras independientes que modifican la frase nominal completa.  Se presentan  </content>
-			  <case element="qp" attr="npDegreePos">
-				 <caseText value="before">antes</caseText>
-				 <caseText value="after">después</caseText>
-				 <caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-				 <caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
-				 <caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-				 <caseText value="afterOrBoth">después o en ambos lados</caseText>
-				 <caseText value="both">en ambos lados</caseText>
-				 <caseText value="unknown">_______</caseText>
-			  </case>
-			  <content> del resto de la frase nominal.  </content>
-</p>
-
-		   <p show="swQPNPDegreeNegNone">
-			  <content>Para los elementos negativos en </content>
-			  <langName/>
-			  <content>,  parece que no hay ninguna manera en la lengua para expresar el significado de </content><langData>no</langData><content> cuando está modificando a una frase nominal completa. </content>
-		   </p>
-		   <p show="swQPNPDegreeNegNo">
-			  <content>Para los elementos negativos en </content>
-			  <langName/>
-			  <content>, los elementos especiales negativos de grado no se expresan como palabras independientes. Por el contrario, todos se unen a otra palabra de la frase nominal como </content>
-			  <case element="qp" attr="npDegreeType">
-				 <caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
-				 <caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
-				 <caseText value="clitic">clíticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
-				 <caseText value="prefix">prefijos que se unen al sustantivo principal de la frase nominal.</caseText>
-				 <caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
-				 <caseText value="affix">prefijos o sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
-			  </case>
-			  <content/>
-		   </p>
-
-		   <p show="swQPNPDegreeNegSome">
-			  <content>Para los elementos negativos en </content>
-			  <langName/>
-			  <content>, algunos son palabras independientes pero algunos de los elementos especiales negativos de grado no se expresan como palabras independientes.  Por el contrario, algunos se unen a otra palabra de la frase nominal como </content>
-			  <case element="qp" attr="npDegreeNegType">
-				 <caseText value="proclitic">proclíticos que se unen al inicio de cualquier palabra que comienza la frase nominal.</caseText>
-				 <caseText value="enclitic">enclíticos que se unen al final de cualquier palabra que termina la frase nominal.</caseText>
-				 <caseText value="clitic">clíticos que se unen al inicio de cualquier palabra que comienza la frase nominal o al final de cualquier palabra que termina la frase nominal.</caseText>
-				 <caseText value="prefix">prefijos que se unen al sustantivo principal de la frase nominal.</caseText>
-				 <caseText value="suffix">sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
-				 <caseText value="affix">prefijos o sufijos que se unen al sustantivo principal de la frase nominal.</caseText>
-			  </case>
-			  <content>  Los elementos especiales negativos de grado que se expresan como palabras independientes se presentan </content>
-			  <case element="qp" attr="npDegreeNegPos">
-				 <caseText value="before">antes</caseText>
-				 <caseText value="after">después</caseText>
-				 <caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-				 <caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
-				 <caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-				 <caseText value="afterOrBoth">después o en ambos lados</caseText>
-				 <caseText value="both">en ambos lados</caseText>
-				 <caseText value="unknown">_______</caseText>
-			  </case>
-			  <content> del resto de la frase nominal.  </content>
-		   </p>
-		   <p show="swQPNPDegreeNegYes">
-			  <content>Para los elementos negativos en </content>
-			  <langName/>
-			  <content>, los elementos especiales negativos de grado se expresan como palabras independientes que modifican la frase nominal completa.  Se presentan  </content>
-			  <case element="qp" attr="npDegreeNegPos">
-				 <caseText value="before">antes</caseText>
-				 <caseText value="after">después</caseText>
-				 <caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-				 <caseText value="eitherOrBoth">de cualquier lado o en ambo lados</caseText>
-				 <caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-				 <caseText value="afterOrBoth">después o en ambos lados</caseText>
-				 <caseText value="both">en ambos lados</caseText>
-				 <caseText value="unknown">_______</caseText>
-			  </case>
-			  <content> del resto de la frase nominal.  </content>
-		   </p>
-
-		   <p show="swQPNPDegreeClassifierYes">
-			  <content>El cuadro siguiente presenta cómo los elementos especiales de grado se expresan en </content><langName/>
-			  <content>.  Las formas en el cuadro son los raíces; cada uno puede presentarse con su clasificador apropriado.</content>
-		   </p>
-		   <p show="swQPNPDegreeClassifierNo">
-			  <content>El cuadro siguiente presenta cómo los elementos especiales de grado se expresan en </content><langName/>
-			  <content>:</content>
-		   </p>
-
-		   <example>
-			  <table border="1">
-				 <headerRow>
-					<headerCol>
-					   <langName/>
-					</headerCol>
-					<headerCol>Glosa</headerCol>
-				 </headerRow>
-				 <row>
-					<col exampleLoc="qp/all"/>
-					<col>
-					   <content>todos</content>
-					</col>
-				 </row>
-				 <row>
-					<col exampleLoc="qp/almost"/>
-					<col>
-					   <content>casi</content>
-					</col>
-				 </row>
-				 <row>
-					<col exampleLoc="qp/only"/>
-					<col>
-					   <content>solamente o apenas</content>
-					</col>
-				 </row>
-				 <row show="swQPNPDegreeNegNotNone">
-					<col exampleLoc="qp/not"/>
-					<col>
-					   <content>no</content>
-					</col>
-				 </row>
-			  </table>
-		   </example>
-
+	      <p show="swQPNPDegreeClassifierYes">
+	         <content>El cuadro siguiente muestra un resumen de cómo se expresan las raíces de los cuantificadores de ámbito amplio y palabras de grado que modifican a la frase nominal completa en el </content><langName/>
+	         <content>.  Cada forma puede presentarse con el clasificador apropiado.</content>
+	      </p>
+	      <p show="swQPNPDegreeClassifierNo">
+	         <content>El cuadro siguiente muestra un resumen de cómo se expresan los cuantificadores de ámbito amplio y palabras de grado que modificana la frase nominal completa en el </content><langName/>
+	         <content>:</content>
+	      </p>
+	      <example>
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Morfemas</headerCol>
+	               <headerCol>Glosa</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="qp/all"/>
+	               <col>
+	                  <gloss><content>todos</content></gloss>
+	               </col>
+	            </row>
+	            <row>
+	               <col exampleLoc="qp/almost"/>
+	               <col>
+	                  <gloss><content>casi</content></gloss>
+	               </col>
+	            </row>
+	            <row>
+	               <col exampleLoc="qp/only"/>
+	               <col>
+	                  <gloss><content>solamente o apenas</content></gloss>
+	               </col>
+	            </row>
+	         </table>
+	      </example>
+	      
+	      <p show="swQPNPDegreeYesOrSome">
+	         <content>Los cuantificadores y palabras de grado de ámbito amplio que son palabras independientes se presentan </content>
+	         <text show="swQPNPDegreePosBefore"><content>antes</content></text>
+	         <text show="swQPNPDegreePosAfter"><content>después</content></text>
+	         <text show="swQPNPDegreePosBoth"><content>en ambos lados</content></text>
+	         <text show="swQPNPDegreePosEither"><content>de cualquier lado</content></text>
+	         <text show="swQPNPDegreePosBeforeOrBoth"><content>antes o en ambos lados</content></text>
+	         <text show="swQPNPDegreePosAfterOrBoth"><content>después o en ambos lados</content></text>
+	         <text show="swQPNPDegreePosEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+	         <text show="swQPNPDegreePosNotOther"><content> del resto de la frase nominal.  </content>
+	         </text>
+	         <text show="swQPNPDegreePosOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="qp/npDegreePosOther"/><content>.  </content>
+	         </text>
+	         <text show="swQPNPDegreePosAndOther"><content> del resto de la frase nominal y también pueden presentarse ___</content><contentCheckBoxOther contentLoc="qp/npDegreePosOther"/><content>.  </content></text>
+	      </p>
+	      
+	      <p show="swQPNPDegreeYesOrSome">
+	         <content>Algunas ejemplos de las palabras independientes en frases nominales completas son:</content>
+	      </p>                        
+	      <example>
+	         <interlinear exampleLoc="qp/example"/>
+	      </example>                 
+	      
+	      <p show="swQPNPDegreeNo">
+	         <content>Estos elementos no se expresan como palabras independientes. Por el contrario, todos se unen a otra palabra de la frase nominal.</content></p>
+	      <p show="swQPNPDegreeSome">
+	         <content>Algunos de estos elementos no se expresan como palabras independientes. Por el contrario, se unen a otra palabra de la frase nominal.</content></p>
+	      <p show="swQPNPDegreeNoOrSomeAndClitic">
+	         <content>Algunas ejemplos de los clíticos en frases nominales completas son:</content>
+	      </p>
+	      <example show="swQPNPDegreeNoOrSomeAndClitic">
+	         <interlinear exampleLoc="qp/npDegreeCliticExample"/>
+	      </example>
+	      <p show="swQPNPDegreeNoOrSomeAndAffix">
+	         <content>Algunas ejemplos de los afijos en frases nominales completas son:</content>
+	      </p>
+	      <example show="swQPNPDegreeNoOrSomeAndAffix">
+	         <interlinear exampleLoc="qp/npDegreeAffixExample"/>
+	      </example>
+	      <p show="swQPNPDegreeNoOrSomeAndOther">
+	         <content>Algunas ejemplos de las formas que se unen como se permiten en el </content><langName/><content> incluídos en frases nominales completas son:</content>
+	      </p>
+	      <example show="swQPNPDegreeNoOrSomeAndOther">
+	         <interlinear exampleLoc="qp/npDegreeOtherExample"/>
+	      </example>     
+	      <p><content>El indicador de nega ción de una frase nominal se presenta en esta posición de ámbito amplio también.  Véase la sección </content><sectionRef sec="sNegNominal"/><content> para ejemplos.</content></p>
+	      
 		</section2>
 		<section2 id="sNPArtDem">
-			<secTitle>Artículos y demostrativos en la frase nominal</secTitle>
-			<p>
-				<content>Los artículos y/o los demostrativos normalmente constan del siguiente nivel cuando se mueven del extremo hacia el sustantivo.
-					En español, los artículos y los demostrativos no se presentan en la misma frase nominal, sino que ambos se presentan antes del sustantivo.
-					Algunas lenguas permiten que ambos se presentan en la misma frase, y pueden presentarse en diversas posiciones con respecto al sustantivo.
-					Por lo tanto, necesitan categorías sintácticas distintas. Algunas lenguas tienen solamente una categoría, los artículos o los demostrativos.
+		   <secTitle><case element="np" attr="artAndDem">
+		      <caseText value="no">Artículos y demostrativos</caseText>
+		      <caseText value="art">Artículos</caseText>
+		      <caseText value="dem">Demostrativos</caseText>
+		      <caseText value="both">Artículos y demostrativos</caseText>
+		   </case></secTitle>
+			<p contentType="ctComparativeIntro">
+				<content>
+					En español, los artículos y los demostrativos no se presentan en la misma frase nominal, sino que ambos se presentan antes del sustantivo. 
+					Algunas lenguas permiten que ambos se presentan en la misma frase, y pueden presentarse en diversas posiciones con respecto al sustantivo. 
+					Por lo tanto, necesitan categorías sintácticas distintas. Algunas lenguas tienen solamente una categoría, los artículos o los demostrativos. 
 					Algunas lenguas no tienen cualquier tipo expresado como palabras independientes. </content>
 			</p>
 			<p>
-				<content>De acuerdo con lo considerado en la sección </content><sectionRef sec="sAdjArtDem"/><content>, en </content>
+				<content>De acuerdo con lo considerado en la sección </content><sectionRef sec="sAdjArtDem"/><content>, en el </content>
 				<langName/>
 				<content/>
 				<case element="np" attr="artAndDem">
@@ -523,248 +164,130 @@
 			</p>
 			<p show="swNPArtAndDemArt">
 				<content>El artículo se presenta </content>
-				<case element="np" attr="artPos">
-					<caseText value="before">antes</caseText>
-					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado</caseText>
-					<caseText value="unknown">_______</caseText>
-				</case>
-				<content> del sustantivo.  </content>
-				<text show="swNPArtAndDemArtPosEitherUnrestricted">
-					<content>Todos los artículos pueden presentarse de cualquier lado del sustantivo.</content>
-				</text>
-				<content/>
-				<text show="swNPArtAndDemArtPosEitherRestricted">
-					<content>Hay estricciones en cuanto a cuáles de los artículos pueden presentarse en cualquier lado del sustantivo.</content>
-				</text>
-				<content>  La presencia de un artículo es </content>
+			   <text show="swNPArtOnlyBefore"><content>antes</content></text>
+			   <text show="swNPArtOnlyAfter"><content>después</content></text>
+			   <text show="swNPArtOnlyBoth"><content>en ambos lados</content></text>
+			   <text show="swNPArtOnlyEither"><content>de cualquier lado</content></text>
+			   <text show="swNPArtOnlyBeforeOrBoth"><content>antes o en ambos lados</content></text>
+			   <text show="swNPArtOnlyAfterOrBoth"><content>después o en ambos lados</content></text>
+			   <text show="swNPArtOnlyEitherOrBoth"><content>de cualquier lado o en ambos lados </content></text>
+			   <text show="swNPArtOnlyNotOther"><content> del sustantivo.  </content>
+			   </text>
+			   <text show="swNPArtOnlyOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="np/artOnlyOther"/><content>.  </content>
+			   </text>
+			   <text show="swNPArtOnlyAndOther"><content> del sustantivo y también puede presentarse  ___</content><contentCheckBoxOther contentLoc="np/artOnlyOther"/><content>.  </content></text>
+			   <content>  La presencia de un artículo es </content>
 				<case element="np" attr="artRequired">
 					<caseText value="no">siempre opcional.</caseText>
 					<caseText value="mass">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</caseText>
 					<caseText value="yes">siempre requirido.</caseText>
 				</case>
 				<content/>
-				<text show="swNPArtAndDemArtPosBothSidesRequiredMass">
-					<content> En las formas singulares, un artículo se requiere presentarse </content>
-					<case element="np" attr="artBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">ambos antes y después del sustantivo.</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
-				<text show="swNPArtAndDemArtPosBothSidesRequiredYes">
-					<content> Un artículo se requiere presentarse </content>
-					<case element="np" attr="artBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">ambos antes y después del sustantivo.</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
 			</p>
 			<p show="swNPArtAndDemDem">
 				<content>El demostrativo se presenta </content>
-				<case element="np" attr="demPos">
-					<caseText value="before">antes</caseText>
-					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado</caseText>
-					<caseText value="unknown">_______</caseText>
-				</case>
-				<content> del sustantivo.  </content>
-				<text show="swNPArtAndDemDemPosEitherUnrestricted">
-					<content>Todos los demostrativos pueden presentarse de cualquier lado del sustantivo.</content>
-				</text>
-				<content/>
-				<text show="swNPArtAndDemDemPosEitherRestricted">
-					<content>Hay restricciones en cuanto a cuáles de los demostrativos pueden presentarse en cualquier lado del sustantivo.</content>
-				</text>
-				<content>  La presencia de un demostrativo es </content>
+			   <text show="swNPDemOnlyBefore"><content>antes</content></text>
+			   <text show="swNPDemOnlyAfter"><content>después</content></text>
+			   <text show="swNPDemOnlyBoth"><content>en ambos lados</content></text>
+			   <text show="swNPDemOnlyEither"><content>de cualquier lado</content></text>
+			   <text show="swNPDemOnlyBeforeOrBoth"><content>antes o en ambos lados</content></text>
+			   <text show="swNPDemOnlyAfterOrBoth"><content>después o en ambos lados</content></text>
+			   <text show="swNPDemOnlyEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+			   <text show="swNPDemOnlyNotOther"><content> del sustantivo.  </content>
+			   </text>
+			   <text show="swNPDemOnlyOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="np/demOnlyOther"/><content>r.  </content>
+			   </text>
+			   <text show="swNPDemOnlyAndOther"><content> del sustantivo y también puede presentarse ___</content><contentCheckBoxOther contentLoc="np/demOnlyOther"/><content>.  </content></text>
+			   <content>  La presencia de un demostrativo es </content>
 				<case element="np" attr="demRequired">
 					<caseText value="no">siempre opcional.</caseText>
 					<caseText value="mass">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</caseText>
 					<caseText value="yes">siempre requirido.</caseText>
 				</case>
 				<content/>
-				<text show="swNPArtAndDemDemPosBothSidesRequiredMass">
-					<content> En las formas singulares, un demostrativo se requiere presentarse </content>
-					<case element="np" attr="demBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">ambos antes y después del sustantivo.</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
-				<text show="swNPArtAndDemDemPosBothSidesRequiredYes">
-					<content> Un demostrativo se requiere presentarse </content>
-					<case element="np" attr="demBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">ambos antes y después del sustantivo.</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
 			</p>
-			<p show="swNPArtAndDemBothCooccurNo">
-				<content>Los artículos y los demonstrativos ambos presentarse en la misma posición, así que no se presenten en la misma frase nominal. Los artículos o los demostrativos se presentan </content>
-				<case element="np" attr="demOrArtPos">
-					<caseText value="before">antes</caseText>
-					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado</caseText>
-					<caseText value="unknown">_______</caseText>
-				</case>
-				<content> del sustantivo.  </content>
-				<text show="swNPArtAndDemBothCooccurNoPosEitherUnrestricted">
-					<content>Todos los artículos y demostrativos pueden presentarse de cualquier lado del sustantivo.</content>
-				</text>
-				<content/>
-				<text show="swNPArtAndDemBothCooccurNoPosEitherRestricted">
-					<content>Hay restricciones en cuanto a cuáles de los artículos y de los demostrativos pueden presentarse en cualquier lado del sustantivo.</content>
-				</text>
-				<content>  La presencia de un artículo o un demostrativo es </content>
+
+		   <p show="swNPArtAndDemBothCooccurNo">
+				<content>Los artículos y los demonstrativos se presentan en la misma posición, así que no se presenten en la misma frase nominal. Los artículos o los demostrativos se presentan </content>
+		      <text show="swNPDemOrArtPosBefore"><content>antes</content></text>
+		      <text show="swNPDemOrArtPosAfter"><content>después</content></text>
+		      <text show="swNPDemOrArtPosBoth"><content>en ambos lados</content></text>
+		      <text show="swNPDemOrArtPosEither"><content>de cualquier lado</content></text>
+		      <text show="swNPDemOrArtPosBeforeOrBoth"><content>antes o en ambos lados</content></text>
+		      <text show="swNPDemOrArtPosAfterOrBoth"><content>después o en ambos lados</content></text>
+		      <text show="swNPDemOrArtPosEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+		      <text show="swNPDemOrArtPosNotOther"><content> del sustantivo.  </content>
+		      </text>
+		      <text show="swNPDemOrArtPosOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="np/demOrArtPosOther"/><content>.  </content>
+		      </text>
+		      <text show="swNPDemOrArtPosAndOther"><content> del sustantivo y también pueden presentarse ___</content><contentCheckBoxOther contentLoc="np/demOrArtPosOther"/><content>.  </content></text>
+		      <content>  La presencia de un artículo o un demostrativo es </content>
 				<case element="np" attr="demOrArtRequired">
 					<caseText value="no">siempre opcional.</caseText>
 					<caseText value="mass">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</caseText>
 					<caseText value="yes">siempre requirido.</caseText>
 				</case>
 				<content/>
-				<text show="swNPArtAndDemBothCooccurNoRequiredMass">
-					<content> En las formas singulares, un artículo o un demostrativo se requiere presentarse </content>
-					<case element="np" attr="demOrArtBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
-				<text show="swNPArtAndDemBothCooccurNoRequiredYes">
-					<content> Un artículo o un demostrativo se requiere para aparecer </content>
-					<case element="np" attr="demOrArtBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">para aparecer ambos antes y después del sustantivo.</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
 			</p>
 			<p show="swNPArtAndDemBothCooccurYes">
 				<content>Los artículos y los demostrativos no se presentan en la misma posición con respecto al sustantivo, </content>
 				<case element="np" attr="artBothCooccur">
-					<caseText value="different">sino ambos no pueden </caseText>
-					<caseText value="yes">y que pueden ambos </caseText>
+				   <caseText value="different">pero no pueden presentarse un artículo y un demostrativo </caseText>
+				   <caseText value="yes">y un artículo y un demostrativo pueden presentarse </caseText>
 				</case>
-				<content>presentarse en la misma frase nominal.  </content></p>
-
+				<content>en la misma frase nominal.  </content></p>
+		   
 		   <p show="swNPArtAndDemBothCooccurYes"><content>  El artículo se presenta </content>
-			  <case element="np" attr="demAndArtArtPos">
-				 <caseText value="before">antes</caseText>
-				 <caseText value="after">después</caseText>
-				 <caseText value="either">de cualquier lado</caseText>
-				 <caseText value="unknown">_______</caseText>
-			  </case>
-			  <content> del sustantivo.  </content>
-			  <text show="swNPArtAndDemBothCooccurYesArtPosEitherUnrestricted">
-				 <content>Todos los artículos pueden presentarse de cualquier lado del sustantivo.</content>
-			  </text>
-			  <content/>
-			  <text show="swNPArtAndDemBothCooccurYesArtPosEitherRestricted">
-				 <content>Hay restricciones en cuanto a cuáles de los artículos pueden presentarse en cualquier lado del sustantivo.</content>
-			  </text>
-			  <content>  La presencia de un artículo es </content>
-			  <case element="np" attr="demAndArtArtRequired">
-				 <caseText value="no">siempre opcional.</caseText>
-				 <caseText value="mass">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</caseText>
-				 <caseText value="yes">siempre requirido.</caseText>
-			  </case>
-			  <content/>
-			  <text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMass">
-				 <content> En las formas singulares, un artículo se requiere presentarse </content>
-				 <case element="np" attr="demAndArtArtBothRequiredPos">
-					<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
-					<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
-					<caseText value="both">ambos antes y después del sustantivo.</caseText>
-					<caseText value="unknown">_______</caseText>
-				 </case>
-				 <content/>
-			  </text>
-			  <content/>
-			  <text show="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredYes">
-				 <content> Un artículo se requiere presentarse </content>
-				 <case element="np" attr="demAndArtArtBothRequiredPos">
-					<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
-					<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
-					<caseText value="both">ambos antes y después del sustantivo.</caseText>
-					<caseText value="unknown">_______</caseText>
-				 </case>
-				 <content/>
-			  </text>
-			  <content/>
+		      <text show="swNPDemAndArtArtBefore"><content>antes</content></text>
+		      <text show="swNPDemAndArtArtAfter"><content>después</content></text>
+		      <text show="swNPDemAndArtArtBoth"><content>en ambos lados</content></text>
+		      <text show="swNPDemAndArtArtEither"><content>de cualquier lado</content></text>
+		      <text show="swNPDemAndArtArtBeforeOrBoth"><content>antes o en ambos lados</content></text>
+		      <text show="swNPDemAndArtArtAfterOrBoth"><content>después de o ambos lados</content></text>
+		      <text show="swNPDemAndArtArtEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+		      <text show="swNPDemAndArtArtNotOther"><content> del sustantivo.  </content>
+		      </text>
+		      <text show="swNPDemAndArtArtOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="np/demAndArtArtOther"/><content>.  </content>
+		      </text>
+		      <text show="swNPDemAndArtArtAndOther"><content> de sustantivo y también pueden presentarse ___</content><contentCheckBoxOther contentLoc="np/demAndArtArtOther"/><content>.  </content></text>
+		      <content>  La presencia de un artículo es </content>
+		      <case element="np" attr="demAndArtArtRequired">
+		         <caseText value="no">siempre opcional.</caseText>
+		         <caseText value="mass">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</caseText>
+		         <caseText value="yes">siempre requirido.</caseText>
+		      </case>
+		      <content/>
 		   </p>
 		   <p show="swNPArtAndDemBothCooccurYes"><content>El demostrativo se presenta </content>
-				<case element="np" attr="demAndArtDemPos">
-					<caseText value="before">antes</caseText>
-					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado</caseText>
-					<caseText value="unknown">_______</caseText>
-				</case>
-				<content> del sustantivo.  </content>
-				<text show="swNPArtAndDemBothCooccurYesDemPosEitherUnrestricted">
-					<content>Todos los demostrativos pueden presentarse de cualquier lado del sustantivo.</content>
-				</text>
-				<content/>
-				<text show="swNPArtAndDemBothCooccurYesDemPosEitherRestricted">
-					<content>Hay restricciones en cuanto a cuáles de los demostrativos pueden presentarse en cualquier lado del sustantivo.</content>
-				</text>
-				<content>  La presencia de un demostrativo es </content>
+		      <text show="swNPDemAndArtDemBefore"><content>antes</content></text>
+		      <text show="swNPDemAndArtDemAfter"><content>después</content></text>
+		      <text show="swNPDemAndArtDemBoth"><content>en ambos lados</content></text>
+		      <text show="swNPDemAndArtDemEither"><content>de cualquier lado</content></text>
+		      <text show="swNPDemAndArtDemBeforeOrBoth"><content>antes o en ambos lados</content></text>
+		      <text show="swNPDemAndArtDemAfterOrBoth"><content>después o en ambos lados</content></text>
+		      <text show="swNPDemAndArtDemEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+		      <text show="swNPDemAndArtDemNotOther"><content> del sustantivo.  </content>
+		      </text>
+		      <text show="swNPDemAndArtDemOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="np/demAndArtDemOther"/><content>.  </content>
+		      </text>
+		      <text show="swNPDemAndArtDemAndOther"><content> del sustantivo y también pueden presentarse ___</content><contentCheckBoxOther contentLoc="np/demAndArtDemOther"/><content>.  </content></text>
+		      <content>  La presencia de un demostrativo es </content>
 				<case element="np" attr="demAndArtDemRequired">
 					<caseText value="no">siempre opcional.</caseText>
 					<caseText value="mass">opcional con sustantivos plurales o no contables, pero se requiere con sustantivos singulares.</caseText>
 					<caseText value="yes">siempre requirido.</caseText>
 				</case>
 				<content/>
-				<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMass">
-					<content> En las formas singulares, un demostrativo se requiere presentarse </content>
-					<case element="np" attr="demAndArtDemBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">ambos antes y después del sustantivo.</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
-				<text show="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredYes">
-					<content> Un demostrativo se requiere presentarse </content>
-					<case element="np" attr="demAndArtDemBothRequiredPos">
-						<caseText value="before">antes del sustantivo y uno también puede presentarse opcionalmente después del sustantivo.</caseText>
-						<caseText value="after">después del sustantivo y uno también puede presentarse opcionalmente antes del sustantivo.</caseText>
-						<caseText value="both">ambos antes y después del sustantivo.</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content/>
-				</text></p>
-
-
+			</p>
+		   
 			<p show="swNPArtAndOrDem">
-				<content>Algunos ejemplos de las frases nominales incluyendo </content>
+				<content>Algunos ejemplos de frases nominales con </content>
 				<case element="np" attr="artAndDem">
 					<caseText value="article">los artículos</caseText>
 					<caseText value="demonstrative">los demostrativos</caseText>
-					<caseText value="both">los artículos y/o los demostrativos</caseText>
+					<caseText value="both">los artículos o los demostrativos</caseText>
 				</case>
-				<content> de acuerdo con lo permitido en </content>
+				<content> de acuerdo con lo permitido en el </content>
 				<langName/>
 				<content> son:</content>
 			</p>
@@ -773,34 +296,87 @@
 			</example>
 		</section2>
 		<section2 id="sNPPoss">
-			<secTitle>Poseedores</secTitle>
-			<p>
-			   <content>En muchas lenguas, los poseedores constan del siguiente nivel cuando se mueven del extremo hacia el sustantivo.   La posesión se puede expresar normalmente por un pronombre, por un sustantivo simple, o por una frase nominal completa. El español permite solamente pronombres en la posición del poseedor antes del sustantivo,
-					con todos los poseedores de sustantivos o frases nominales expresados en una frase preposicional con la preposición </content><langData>de</langData><content>, después del sustantivo.</content></p>
-			<p><content>Dentro de las lenguas que expresan a poseedores por sustantivos o frases nominales completas así como por pronombres, muchos también agregan un indicador, tal como el </content>
+			<secTitle>Posesivos</secTitle>
+		   <p contentType="ctPracticalIntro">
+		      <content>Normalmente, la posesión se puede expresar normalmente con un pronombre, un sustantivo simple, un nombre propio o con una frase nominal completa.</content></p>
+		   <p contentType="ctComparativeIntro">
+		      <content>Normalmente, la posesión se puede expresar normalmente con un pronombre, un sustantivo simple, un nombre propio o con una frase nominal completa.
+		         El español permite solamente pronombres en la posición del posesivo antes del sustantivo,  
+					con todos los posesivos que se expresan como sustantivos o frases nominales en una frase preposicional con la preposición </content><langData>de</langData><content>, después del sustantivo.</content></p>
+			<p contentType="ctComparativeIntro"><content>Dentro de las lenguas que expresan a los posesivos con sustantivos o frases nominales completas así como con pronombres, muchas también agregan un indicador, como el </content>
 				<langData>’s</langData>
-				<content> en inglés, para indicar de la posesión.  Estos indicadores son afijos (o clíticos) del sustantivo principal o clíticos de la frase que se unen a un lado de la frase completa.
-					El indicador de inglés es el segundo tipo, porque junto a frases donde el </content>
+				<content> en inglés, para marcar la frase posesiva.  Estos indicadores son afijos en el sustantivo principal o clíticos que se unen a un lado de la frase completa.  
+					El indicador de inglés es el segundo tipo, porque junto a frases en que el </content>
 				<langData>’s</langData>
 				<content> se presenta unido al sustantivo principal, como en </content>
 				<langData>the boy’s mother</langData><gloss><content> ‘la madre del muchacho’</content></gloss>
-				<content>, hay las frases que muestran claramente que el clítico se une al final de la frase nominal completo, tal como </content>
+				<content>, hay las frases que muestran claramente que el clítico se une al final de la frase nominal completa, tal como </content>
 				<langData>the boy that I just talked to’s mother</langData><gloss><content> ‘la madre del muchacho que acabo de hablar con’</content></gloss>
 				<content> o </content>
 				<langData>the girl in green’s wonderful speech</langData><gloss><content> ‘el discurso maravilloso de la muchacha en verde’</content></gloss>
-				<content>.  Estos ejemplos muestran que los poseedores pueden incluir frases </content>
+				<content>.  Estos ejemplos muestran que los posesivos pueden incluir frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
-					<caseText value="both">preposicionales y/o posposicionales</caseText>
-					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
+					<caseText value="both">adposicionales</caseText>
+					<caseText value="unknown">adposicionales</caseText>
 				</case>
-				<content> y cláusulas relativas.  Los poseedores pueden también ser subordinados en uno otro, como en </content>
+			   <content> y cláusulas relativas.  Los posesivos también pueden ser subordinados uno en otro, como en </content>
 				<langData>the boy’s sister’s dog</langData><gloss><content> ‘el perro de la hermana del muchacho’</content></gloss>
 				<content>.  Esto se permite en español dentro de la frase preposicional después del sustantivo. </content>
 			</p>
+		   
+		   <p><content>En el </content><langName/><content>, </content>
+		      <case element="np" attr="possNP">
+		         <caseText value="yes">los pronombres posesivos y los que son frases nominales pueden poseer un sustantivo directamente y pueden presentarse adentro de frases <case element="pp" attr="pPos">
+		            <caseText value="before">preposicionales</caseText>
+		            <caseText value="after">posposicionales</caseText>
+		            <caseText value="both">adposicionales</caseText>
+		            <caseText value="unknown">adposicionales</caseText>
+		         </case> también.  </caseText>
+		         <caseText value="yesOnly">los pronombres posesivos y los que son frases nominales pueden poseer un sustantivo directamente, pero no se permiten frases <case element="pp" attr="pPos">
+		            <caseText value="before">preposicionales</caseText>
+		            <caseText value="after">posposicionales</caseText>
+		            <caseText value="both">adposicionales</caseText>
+		            <caseText value="unknown">adposicionales</caseText>
+		         </case> como posesivos.  </caseText>
+		         <caseText value="no">solamente los pronombres posesivos pueden poseer un sustantivo directamente; las frases nominales como posesivos solamente pueden presentarse adentro de frases <case element="pp" attr="pPos">
+		            <caseText value="before">preposicionales</caseText>
+		            <caseText value="after">posposicionales</caseText>
+		            <caseText value="both">adposicionales</caseText>
+		            <caseText value="unknown">adposicionales</caseText>
+		         </case>.  </caseText>
+		         <caseText value="none">ni pronombres posesivos ni frases nominales pueden poseer un sustantivo directamente; el posesivo solamente se expresa adentro de frases <case element="pp" attr="pPos">
+		            <caseText value="before">preposicionales</caseText>
+		            <caseText value="after">posposicionales</caseText>
+		            <caseText value="both">adposicionales</caseText>
+		            <caseText value="unknown">adposicionales</caseText>
+		         </case>.  </caseText>
+		      </case>
+		      <text show="swNPPossNPNotYesOnly"><content>La frase </content><case element="pp" attr="pPos">
+		         <caseText value="before">preposicional</caseText>
+		         <caseText value="after">posposicional</caseText>
+		         <caseText value="both">adposicional</caseText>
+		         <caseText value="unknown">adposicional</caseText>
+		      </case><content> que expresa el poseedor se presenta </content><case element="np" attr="possPPPos">
+		         <caseText value="before">antes</caseText>
+		         <caseText value="after">después</caseText>
+		         <caseText value="either">de cualquier lado</caseText>
+		      </case><content> del sustantivo. </content></text>
+		      <text show="swNPPossNPYesOrYesOnly"><content>La frase nominal o pronombre que expresa el poseedor se presenta </content><case element="np" attr="possNounPos">
+		         <caseText value="before">antes</caseText>
+		         <caseText value="after">después</caseText>
+		         <caseText value="either">de cualquier lado</caseText>
+		      </case><content> del sustantivo. </content></text>
+		      <text show="swNPPossNPNo"><content>El pronombre que expresa el poseedor se presenta </content><case element="np" attr="possPronPos">
+		         <caseText value="before">antes</caseText>
+		         <caseText value="after">después</caseText>
+		         <caseText value="either">de cualquier lado</caseText>
+		      </case><content> del sustantivo. </content></text>
+		   </p>
+		   	   
 			<p>
-				<content>Algunos ejemplos de frases nominales poseídas con los poseedores simples y subordinados en </content>
+				<content>Algunos ejemplos de frases nominales poseídas por posesivos simples y subordinados en el </content>
 				<langName/>
 				<content> son:</content>
 			</p>
@@ -808,82 +384,96 @@
 				<interlinear exampleLoc="np/embeddedExample"/>
 			</example>
 			<p>
-				<content>Algunos ejemplos con frases </content>
+				<content>Algunos ejemplos de frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
-					<caseText value="both">preposicionales y/o posposicionales</caseText>
-					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
+					<caseText value="both">adposicionales</caseText>
+					<caseText value="unknown">adposicionales</caseText>
 				</case>
-				<content> incluidas en el poseedor son:</content>
+				<content> en el posesivo son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/ppExample"/>
 			</example>
 			<p>
-				<content>Algunos ejemplos con cláusulas relativas incluidas en el poseedor, incluido en oraciones completas son:</content>
+				<content>Algunos ejemplos en oraciones completas de cláusulas relativas en el posesivo son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/relClExample"/>
 			</example>
-			<p>
-				<content>De acuerdo con lo considerado anteriormente en los ejemplos,  en </content>
-				<langName/>
-				<content/>
-				<case element="np" attr="possMarked">
-					<caseText value="no"> no hay un indicador especial para distinguir a poseedores de cualquier otra frase nominal.</caseText>
-					<caseText value="yesAffix"> se indica el sustantivo principal dentro del poseedor con un afijo para distinguir a poseedores de cualquier otra frase nominal.</caseText>
-					<caseText value="yesClitic"> se indica la frase completa con un clítico para distinguir a poseedores de cualquier otra frase nominal.</caseText>
-				</case>
-				<content/>
-				<text show="swNPPossMarkedYesCliticWordNoSuffix">
-					<content> Este clítico es un enclítico que se une al final de cualquier palabra que termina el poseedor.</content>
-				</text>
-				<content/>
-				<text show="swNPPossMarkedYesCliticWordNoPrefix">
-					<content> Este clítico es un proclítico que se une al inicio de cualquier palabra que comienza el poseedor.</content>
-				</text>
-				<content/>
-				<text show="swNPPossMarkedYesCliticWordYes">
-					<content> Se escribe este clítico como una palabra independiente que se presenta </content>
-					<case element="np" attr="possCliticPossPos">
-						<caseText value="before">antes</caseText>
-						<caseText value="after">después</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content> del poseedor.  El clítico posesivo es </content>
-					<case element="np" attr="possCliticRequired">
-						<caseText value="no">opcional en algunos casos.</caseText>
-						<caseText value="no">siempre requirido.</caseText>
-						<caseText value="unknown">_______</caseText>
-					</case>
-					<content/>
-				</text>
-				<content/>
-			</p>
-			<p>
-				<content>El poseedor (especialmente un pronombre, si  </content><langName/><content> es como español) se presenta </content>
-				<case element="np" attr="possNounPos">
-					<caseText value="before">antes</caseText>
-					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado</caseText>
-					<caseText value="unknown">_______</caseText>
-				</case>
-				<content> del sustantivo que es poseído.</content>
-			</p>
-				<p>
-					<content>En español y muchos otras lenguas, los poseedores y los artículos o los demonstrativos no se presentan en la misma frase nominal, a menos que expresen el poseedor en una frase preposicional. Por ejemplo, </content>
+		   <p show="swNPPossNPYesOrYesOnly">
+		      <content>
+		      De acuerdo con lo considerado anteriormente en los ejemplos,
+		      </content>
+		      <case element="np" attr="possMarked">
+		         <caseText value="no"> no hay un indicador especial para distinguir entre posesivos y cualquier otra frase nominal.</caseText>
+		         <caseText value="yesAffix"> se indica el sustantivo principal dentro del posesivo con un afijo para distinguir entre posesivos y cualquier otra frase nominal.  El afijo es:</caseText>
+		         <caseText value="yesProclitic"> se indica la frase completa con un proclítico que se une al inicio de la primera palabra en el posesivo para distinguir entre posesivos y cualquier otra frase nominal.  Este proclítico es </caseText>
+		         <caseText value="yesEnclitic"> se indica la frase completa con un enclítico que se une al final de la última palabra en el posesivo para distinguir entre posesivos y cualquier otra frase nominal.  Este enclítico es: </caseText>
+		         <caseText value="yesWord"> se indica la frase completa con una palabra independiente para distinguir entre posesivos y cualquier otra frase nominal.  La presencia de esta palabra es <case element="np" attr="possWordRequired">
+		            <caseText value="no">opcional en algunos casos.</caseText>
+		            <caseText value="yes">siempre requirido.</caseText>
+		         </case>  Se presenta </caseText>
+		      </case>
+		      <text show="swNPPossMarkedYesWordBefore"><content>antes</content></text>
+		      <text show="swNPPossMarkedYesWordAfter"><content>después</content></text>
+		      <text show="swNPPossMarkedYesWordBoth"><content>en ambos lados</content></text>
+		      <text show="swNPPossMarkedYesWordEither"><content>de cualquier lado</content></text>
+		      <text show="swNPPossMarkedYesWordBeforeOrBoth"><content>antes o en ambos lados</content></text>
+		      <text show="swNPPossMarkedYesWordAfterOrBoth"><content>después o en ambos lados</content></text>
+		      <text show="swNPPossMarkedYesWordEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+		      <text show="swNPPossMarkedYesWordNotOther"><content> de la frase nominal posesiva.  Esta palabra es:</content>
+		      </text>
+		      <text show="swNPPossMarkedYesWordOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="np/possWordOther"/><content>.  Esta palabra es:</content>
+		      </text>
+		      <text show="swNPPossMarkedYesWordAndOther"><content> de la frase nominal posesiva y también puede presentarse  ___</content><contentCheckBoxOther contentLoc="np/possWordOther"/><content>.  Esta palabra es:</content></text>
+		   </p>
+		   <example show="swNPPossMarkedYesAffix">
+		      <table border="1">
+		         <headerRow>
+		            <headerCol>Afijo posesivo</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/possMarkerAffix"/>
+		         </row>
+		      </table>
+		   </example>
+		   <example show="swNPPossMarkedYesClitic">
+		      <table border="1">
+		         <headerRow>
+		            <headerCol>Clítico posesivo</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/possMarkerClitic"/>
+		         </row>
+		      </table>
+		   </example>
+		   <example show="swNPPossMarkedYesWord">
+		      <table border="1">
+		         <headerRow>
+		            <headerCol>Palabra posesiva</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/possMarkerWord"/>
+		         </row>
+		      </table>
+		   </example>
+		   
+		   
+				<p contentType="ctComparativeIntro">
+					<content>En español y otras lenguas, los posesivos y los artículos o los demonstrativos no se presentan en la misma frase nominal, a menos que expresan el posesivo en una frase preposicional. Por ejemplo, </content>
 					<langData>*esos [sus] libros</langData>
 					<content> no es gramatical; por el contrario deciría </content>
 					<langData>esos libros [de él]</langData>
-					<content> para expresar el mismo significado. Algunas lenguas permiten que los poseedores y los artículos o los demonstrativos se presentan en la misma frase, así que el primer ejemplo antedicho sería gramatical.</content>
+					<content> para expresar el mismo significado. Algunas lenguas permiten que los posesivos y los artículos o los demonstrativos se presentan en la misma frase, así que el primer ejemplo antedicho sería gramatical.</content>
 				</p>
 				<p>
-					<content>En </content>
+					<content>En el </content>
 					<langName/>
 				   <content>, </content><case element="np" attr="possCooccur">
-					  <caseText value="some">algunos de </caseText>
-					  </case><content>los poseedores </content>
+				      <caseText value="some">algunos de </caseText>
+				      </case><content>los pronombres o frases nominales posesivos </content>
 					<case element="np" attr="possCooccur">
 						<caseText value="yes">pueden</caseText>
 					   <caseText value="some">pueden</caseText>
@@ -893,19 +483,19 @@
 					<case element="np" attr="artAndDem">
 						<caseText value="article">los artículos</caseText>
 						<caseText value="demonstrative">los demonstrativos</caseText>
-						<caseText value="both">los artículos y/o los demonstrativos</caseText>
+						<caseText value="both">los artículos o los demonstrativos</caseText>
 					</case>
-					<content> en la posición normal del poseedor</content>
+					<content> en la posición normal del posesivo</content>
 				   <case element="np" attr="possCooccur">
-					  <caseText value="yes">.</caseText>
-					  <caseText value="some"> pero algunos otros no pueden.  Para estos possedores, </caseText>
-					  <caseText value="no">.  Por el contrario,  </caseText>
+				      <caseText value="yes">.</caseText>
+				      <caseText value="some"> pero algunos otros no pueden.  Para estos posesivos, </caseText>
+				      <caseText value="no">.  Por el contrario,  </caseText>
 				   </case>						<text show="swNPPossCooccurNoOrSome"><content>deben ser expresados en una frase </content>
 					<case element="pp" attr="pPos">
 						<caseText value="before">preposicional.</caseText>
 						<caseText value="after">posposicional.</caseText>
-						<caseText value="both">preposicional y/o posposicional.</caseText>
-						<caseText value="unknown">preposicional y/o posposicional.</caseText>
+						<caseText value="both">adposicional.</caseText>
+						<caseText value="unknown">adposicional.</caseText>
 					</case>
 					<content></content>
 					</text>
@@ -913,39 +503,38 @@
 
 		</section2>
 		<section2 id="sNPQP">
-			<secTitle>Frases cuantificadoras como modificadores</secTitle>
+			<secTitle>Frases cuantificadoras</secTitle>
+		   <p contentType="ctPracticalIntro">
+		      <content>Las frases cuantificadoras incluyen tanto números (véase la sección </content>
+		      <sectionRef sec="sAdjNumbers"/>
+		      <content>) como cuantificadores de ámbito limitado (véase la sección </content><sectionRef sec="sQPOtherQuantifiers"/><content>).</content></p>
+		   <p contentType="ctComparativeIntro">
+		      <content>Las frases cuantificadoras incluyen tanto números (véase la sección </content>
+		      <sectionRef sec="sAdjNumbers"/>
+		      <content>) como cuantificadores de ámbito limitado (véase la sección </content><sectionRef sec="sQPOtherQuantifiers"/><content>).  Tales modificadores indican el número de la frase del nominal completo. Algunos ejemplos de frases nominales cuantificadas en español son: </content>
+		      <langData>ésos muy pocos libros</langData>
+		      <content>, </content>
+		      <langData>los muchos perros del muchacho</langData>
+		      <content> y </content>
+		      <langData> solamente los primeros cien muchachos</langData>
+		      <content>.  Todas las frases cuantificadoras se presentan antes del sustantivo en español.</content>
+		   </p>
 			<p>
-				<content>Las frases cuantificadoras ocupan el siguiente nivel hacia el sustantivo. Esta posición incluye ambos números (véase la sección </content>
-				<sectionRef sec="sAdjNumbers"/>
-				<content>) y otros cuantificadores y palabras de grado (véase la sección </content><sectionRef sec="sQPOtherQuantifiers"/><content>).  Tales modificadores indican el número de la frase del nominal completo. Algunos ejemplos de frases nominales cuantificadas en español son: </content>
-				<langData>ésos muy pocos libros</langData>
-				<content>, </content>
-				<langData>los muchos perros del muchacho</langData>
-				<content> y </content>
-				<langData> solamente los primeros cien muchachos</langData>
-				<content>.  Todas las frases cuantificadoras se presentan antes del sustantivo en español.</content>
-			</p>
-			<p>
-				<content>En </content>
+				<content>En el </content>
 				<langName/>
 				<content>, las frases cuantificadoras se presentan </content>
-				<case element="np" attr="qpPos">
-					<caseText value="before">antes</caseText>
-					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-					<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
-					<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-					<caseText value="afterOrBoth">después o en ambos lados</caseText>
-					<caseText value="both">en ambos lados</caseText>
-					<caseText value="unknown">_______</caseText>
-				</case>
-				<content> del sustantivo.  </content>
-				<text show="swNPQPPosEitherOrBothUnrestricted">
-					<content>Todas las frases cuantificadoras pueden presentarse de cualquier lado del sustantivo. </content>
-				</text>
-				<content/>
-				<text show="swNPQPPosEitherOrBothRestricted">
-					<content>Hay restricciones en cuanto a cuáles de las frases cuantificadoras pueden presentarse en cada lado del sustantivo.  </content>
+			   <text show="swNPQPPosBefore"><content>antes</content></text>
+			   <text show="swNPQPPosAfter"><content>después</content></text>
+			   <text show="swNPQPPosBoth"><content>en ambos lados</content></text>
+			   <text show="swNPQPPosEither"><content>de cualquier lado</content></text>
+			   <text show="swNPQPPosBeforeOrBoth"><content>antes o en ambos lados</content></text>
+			   <text show="swNPQPPosAfterOrBoth"><content>después o en ambos lados</content></text>
+			   <text show="swNPQPPosEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+			   <text show="swNPQPPosNotOther"><content> del sustantivo.  </content>
+			   </text>
+			   <text show="swNPQPPosOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="np/qpPosOther"/><content>.   </content>
+			   </text>
+			   <text show="swNPQPPosAndOther"><content> del sustantivo y también pueden presentarse ___</content><contentCheckBoxOther contentLoc="np/qpPosOther"/><content>.  </content></text>
 					<text show="swNPQPPosEitherRestrictedNumBefore">
 						<content>Todos los números se presentan antes del sustantivo. </content>
 					</text>
@@ -954,27 +543,19 @@
 						<content>Todos los números se presentan después del sustantivo. </content>
 					</text>
 					<content/>
-				</text>
-				<content> Algunos ejemplos de frases nominales cuantificadas en </content><langName/><content> son:</content>
+				<content> Algunos ejemplos de frases nominales cuantificadas son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/qpExample"/>
 			</example>
-		   <p show="swNPQPAgreeYesandNotYesClassandClassifiersNo">
-				<content>Al igual que otros modificadores dentro de la frase nominal, las frases cuantificadoras en  </content>
-				<langName/>
-				<content> concuerdan con el sustantivo principal en </content>
-				<case element="np" attr="agreeOther">
-					<caseText value="yesAnimacy">animado.</caseText>
-					<caseText value="yesClass">número de clase.</caseText>
-					<caseText value="yesGender">género.</caseText>
-				</case>
-				<content/>
-			</p>
 		</section2>
 		<section2 id="sNPAdjP">
-			<secTitle>Frases adjetivales como modificadores</secTitle>
-			<p>
+			<secTitle>Frases adjetivales</secTitle>
+		   <p contentType="ctPracticalIntro">
+		      <content>Las frases adjetivales fueron analizadas anteriormente en la sección </content>
+		      <sectionRef sec="sAdjP"/>
+		      <content>.</content></p>
+		      <p contentType="ctComparativeIntro">
 				<content>Las frases adjetivales fueron analizadas anteriormente en la sección </content>
 				<sectionRef sec="sAdjP"/>
 				<content>.  Las frases adjetivales se presentan cerca del sustantivo.  Algunas frases nominales en inglés con adjetivos son: </content>
@@ -983,62 +564,56 @@
 				<langData>all the boy’s many black dogs</langData><gloss><content> ‘todos los muchos perros negros del muchacho’</content></gloss>
 				<content> y </content>
 				<langData>only the first one hundred very eager young boys</langData><gloss><content> ‘solamente los primeros cien muchachos jovenes que están muy impacientes’</content></gloss>
-				<content>.  Como se puede ver en los ejemplos en inglés, todos los adjetivos se presentan antes del sustantivo, y, al contrario de los otros modificadores, se permita más de una frase adjetival.
-				   En español, los adjetivos se presentan después del sustantivo y solamente se permite solamente una frase adjetival, a menos que los adjetivos son coordinados (véase la sección </content><sectionRef sec="sCoordAdj"/><content>) o en una cláusula relativa (véase la sección </content><sectionRef sec="sRelCl"/><content>).</content></p>
+				<content>.  Como se puede ver en los ejemplos en inglés, todos los adjetivos se presentan antes del sustantivo, y, al contrario de los otros modificadores, se permitan más de una frase adjetival.  
+				   En español, los adjetivos se presentan después del sustantivo y solamente se permite una frase adjetival, a menos que los adjetivos son coordinados (véase la sección </content><sectionRef sec="sCoordAdj"/><content>) o en una cláusula relativa (véase la sección </content><sectionRef sec="sRelCl"/><content>).</content></p>
 			<p>
-				<content>En </content>
+				<content>En el </content>
 				<langName/>
 				<content>, las frases adjetivales se presentan </content>
-				<case element="np" attr="adjpPos">
-					<caseText value="before">antes</caseText>
-					<caseText value="after">después</caseText>
-					<caseText value="either">de cualquier lado (pero no en ambos lados)</caseText>
-					<caseText value="eitherOrBoth">de cualquier lado o en ambos lados</caseText>
-					<caseText value="beforeOrBoth">antes o en ambos lados</caseText>
-					<caseText value="afterOrBoth">después o en ambos lados</caseText>
-					<caseText value="both">en ambos lados</caseText>
-					<caseText value="unknown">_______</caseText>
-				</case>
-				<content> del sustantivo.  </content>
-				<text show="swNPAdjPPosEitherOrBothUnrestricted">
-					<content>Todas las frases adjetivales pueden presentarse de cualquier lado del sustantivo. </content>
-				</text>
-				<content/>
-				<text show="swNPAdjPPosEitherOrBothRestricted">
-					<content>Hay restricciones en cuanto a cuáles de las frases adjetivales pueden presentarse en cada lado del sustantivo. </content>
-				</text>
-				<content> Algunos ejemplos de las frases nominales con adjetivos cualitativos como modificadores en </content><langName/><content> son:</content>
+				   <text show="swNPAdjBefore"><content>antes</content></text>
+				   <text show="swNPAdjAfter"><content>después</content></text>
+				   <text show="swNPAdjBoth"><content>en ambos lados</content></text>
+				   <text show="swNPAdjEither"><content>de cualquier lado</content></text>
+				   <text show="swNPAdjBeforeOrBoth"><content>antes o en ambos lados</content></text>
+				   <text show="swNPAdjAfterOrBoth"><content>después o en ambos lados</content></text>
+				   <text show="swNPAdjEitherOrBoth"><content>de cualquier lado o en ambos lados</content></text>
+				   <text show="swNPAdjPosNotOther"><content> del sustantivo que las modifican.  </content>
+				   </text>
+				   <text show="swNPAdjPosOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="np/adjPosOther"/><content>.   </content>
+				   </text>
+				   <text show="swNPAdjPosAndOther"><content> del sustantivo que las modifican y también pueden presentarse ___</content><contentCheckBoxOther contentLoc="np/adjPosOther"/><content>.  </content></text>
+			</p>
+		   <p><content> Algunos ejemplos de frases nominales con adjetivos calificativos o frases adjetivales como modificadores son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/adjpExample"/>
 			</example>
-		   <p show="swNPAdjPAgreeYesandNotYesClassandClassifiersNo">
-				<content>Al igual que otros modificadores dentro de la frase nominal, las frases adjetivales en </content>
-				<langName/>
-				<content> concuerdan con el sustantivo principal en </content>
-				<case element="np" attr="agreeOther">
-					<caseText value="yesAnimacy">animado.</caseText>
-					<caseText value="yesClass">número de clase.</caseText>
-					<caseText value="yesGender">género.</caseText>
-				</case>
-				<content/>
-			</p>
-
+		
 		</section2>
 		<section2 id="sNPPP">
 			<secTitle>            <case  element="pp" attr="pPos">
-				<caseText value="before">Frases preposicionales como modificadores o complementos</caseText>
-				<caseText value="after">Frases posposicionales como modificadores o complementos</caseText>
-				<caseText value="both">Frases preposicionales o posposicionales como modificadores o complementos</caseText>
-				<caseText value="unknown">Frases preposicionales y/o posposicionales como modificadores o complementos</caseText>
+				<caseText value="before">Frases preposicionales</caseText>
+				<caseText value="after">Frases posposicionales</caseText>
+				<caseText value="both">Frases adposicionales</caseText>
+				<caseText value="unknown">Frases adposicionales</caseText>
 			</case></secTitle>
-			<p>
+		   <p contentType="ctPracticalIntro">
+		      <content>Los sustantivos simples y compuestos pueden tener frases </content>
+		      <case element="pp" attr="pPos">
+		         <caseText value="before">preposicionales</caseText>
+		         <caseText value="after">posposicionales</caseText>
+		         <caseText value="both">adposicionales</caseText>
+		         <caseText value="unknown">adposicionales</caseText>
+		      </case>
+		      <content> como modificadores o complementos. </content>
+		   </p>
+		   <p contentType="ctComparativeIntro">
 				<content>Los sustantivos simples y compuestos pueden tener frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
-					<caseText value="both">preposicionales y/o posposicionales</caseText>
-					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
+					<caseText value="both">adposicionales</caseText>
+					<caseText value="unknown">adposicionales</caseText>
 				</case>
 				<content> como modificadores o complementos, tal como en </content>
 				<langData>la botella grande, redonda [de jarabe]</langData>
@@ -1048,24 +623,24 @@
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
-					<caseText value="both">preposicionales y/o posposicionales</caseText>
-					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
+					<caseText value="both">adposicionales</caseText>
+					<caseText value="unknown">adposicionales</caseText>
 				</case>
-				<content> del genitivo pueden funcionar como el poseedor, tal como </content>
+				<content> del genitivo pueden funcionar como el posesivo, tal como </content>
 				<langData>esos perros [de él]</langData>
 				<content> y </content>
 				<langData>el mantel [de mi madre]</langData>
 				<content>.    En español, la frase preposicional siempre se presenta después del sustantivo.</content>
 			</p>
 			<p>
-				<content>En </content>
+				<content>En el </content>
 				<langName/>
 				<content>, la frase </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicional</caseText>
 					<caseText value="after">posposicional</caseText>
-					<caseText value="both">preposicional y/o posposicional</caseText>
-					<caseText value="unknown">preposicional y/o posposicional</caseText>
+					<caseText value="both">adposicional</caseText>
+					<caseText value="unknown">adposicional</caseText>
 				</case>
 				<content> se presenta </content>
 				<case element="np" attr="ppPos">
@@ -1076,53 +651,57 @@
 				</case>
 				<content> del sustantivo principal.  </content>
 
-				<content> Algunos ejemplos con las frases </content>
+				<content> Algunos ejemplos de frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
-					<caseText value="both">preposicionales y/o posposicionales</caseText>
-					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
+					<caseText value="both">adposicionales</caseText>
+					<caseText value="unknown">adposicionales</caseText>
 				</case>
-				<content> como modificadores o complementos en </content><langName/><content> son:</content>
+				<content> como modificadores o complementos son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/compPPExample"/>
 			</example>
 			<p>
-				<content>Véase el la sección </content>
+				<content>Véase la sección </content>
 				<sectionRef sec="sPP"/>
-				<content> para considerar el análisis de las frases </content>
+				<content> para el análisis de las frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>
 					<caseText value="after">posposicionales</caseText>
-					<caseText value="both">preposicionales y/o posposicionales</caseText>
-					<caseText value="unknown">preposicionales y/o posposicionales</caseText>
+					<caseText value="both">adposicionales</caseText>
+					<caseText value="unknown">adposicionales</caseText>
 				</case>
-				<content> en </content>
-				<langName/>
 				<content>.</content>
 			</p>
 		</section2>
 <section2 id="sNPParticiple">
-	<secTitle>Participios y Gerundios</secTitle>
-   <p>
-	  <content>Los participios o las frases del participio pueden también funcionar al igual que adjetivos en la modificación de un sustantivo en muchas lenguas (también llamada un gerundio). Algunos ejemplos en inglés con el participio o la frase del participio entre corchetes son: </content>
-	  <langData>the bright, [shining] sun</langData><gloss><content> ‘el brillante, [brillando] sol’</content></gloss>
-	  <content>, </content><langData>my [crying] child</langData><gloss><content> ‘mi niño, [gritando]’</content></gloss>
-	  <content> y </content>
-	  <langData>the books [loved by millions]</langData><gloss><content> ‘los libros [amados por millones]’</content></gloss><content>.</content>
+	<secTitle>Participios y gerundios</secTitle>
+   <p contentType="ctPracticalIntro">
+      <content>Los participios o las frases de participio pueden también funcionar como adjetivos modificando a un sustantivo. </content>
+   </p>
+   <p contentType="ctComparativeIntro">
+      <content>Los participios o las frases de participio pueden también funcionar como adjetivos modificando a un sustantivo en muchas lenguas. Algunos ejemplos en inglés con el participio o la frase del participio entre corchetes son: </content>
+      <langData>the bright, [shining] sun</langData><gloss><content> ‘el brillante, [brillando] sol’</content></gloss>
+      <content>, </content><langData>my [crying] child</langData><gloss><content> ‘mi niño, [gritando]’</content></gloss>
+      <content> y </content>
+      <langData>the books [loved by millions]</langData><gloss><content> ‘los libros [amados por millones]’</content></gloss><content>.</content>
    </p>
    <p>
-	  <content>  Algunos ejemplos en </content>
-	  <langName/>
-	  <content> son:</content>
+      <content>  Algunos ejemplos en el </content>
+      <langName/>
+      <content> son:</content>
    </p>
    <example>
-	  <interlinear exampleLoc="np/partExample"/>
+      <interlinear exampleLoc="np/partExample"/>
    </example>
-   <p>
-			<content>Otro caso que se puede parecer al igual que un sustantivo y un complemento puede ser realmente una frase del gerundio. Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición o posposición. Algunos ejemplos en oraciones completas en inglés con la frase del gerundio entre corchetes son: </content>
-	  <langData>[Studying grammar] is difficult</langData><gloss><content> ‘[Estudiando gramática] es dificil’</content></gloss><content>, </content>
+   <p contentType="ctPracticalIntro">
+      <content>Un gerundio o frase de gerundio se puede parecer a un sustantivo y un complemento. Esta frase completa se presenta en la posición normal de una frase nominal, sea como sujeto, objeto directo, objeto indirecto o el objeto de una adposición. </content>
+   </p>
+   <p contentType="ctComparativeIntro">
+      <content>Un gerundio o frase de gerundio se puede parecer a un sustantivo y un complemento. Esta frase completa se presenta en la posición normal de una frase nominal, sea como sujeto, objeto directo, objeto indirecto o el objeto de una adposición Algunos ejemplos en oraciones completas en inglés con la frase de gerundio entre corchetes son: </content>
+      <langData>[Studying grammar] is difficult</langData><gloss><content> ‘[Estudiando gramática] es dificil’</content></gloss><content>, </content>
 			<langData>He likes [reading Latin poetry]</langData><gloss><content> ‘Él tiene gusto [leyendo la poesía latina]’</content></gloss>
 				<content> y </content>
 			<langData>The receiver showed his worth by [making the catch]</langData><gloss><content> ‘El receptor mostró su valor cerca [haciendo el retén]’</content></gloss>
@@ -1132,50 +711,50 @@
 			<langData>your following</langData><gloss><content> ‘su siguiente’</content></gloss><content>.</content>
 			</p>
 			<p>
-				<content> Algunos ejemplos de los gerundios o las frases del gerundio que pueden substituir por un sustantivo en una frase nominal en </content><langName/><content> son:</content>
+				<content> Algunos ejemplos de gerundios o frases de gerundio que pueden sustituir a una frase nominal en el </content><langName/><content> son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/partHeadExample"/>
 			</example>
 			<p>
-				<content>Estas frases del gerundio pueden presentarse en oraciones completas como se muestra a continuación: </content>
+				<content>Estas frases de gerundio pueden presentarse en oraciones completas como se muestra a continuación: </content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/partHeadSentExample"/>
 			</example>
 
-</section2>
+</section2>		
 	</section1>
    <showWhen id="swNPPossCooccurNoOrSome">
-	  <whenValue element="np" attr="possCooccur" value="no"/>
-	  <or/>
-	  <whenValue element="np" attr="possCooccur" value="some"/>
+      <whenValue element="np" attr="possCooccur" value="no"/>
+      <or/>
+      <whenValue element="np" attr="possCooccur" value="some"/>
    </showWhen>
    <showWhen id="swPossDemAndArtCooccurYesOrSome">
-	  <whenValue element="np" attr="artAndDem" value="both"/>
-	  <and/>
-	  <whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
-	  <or/>
-	  <whenValue element="np" attr="artAndDem" value="article"/>
-	  <and/>
-	  <whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
-	  <or/>
-	  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
-	  <and/>
-	  <whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
-	  <or/>
-	  <whenValue element="np" attr="artAndDem" value="no"/>
+      <whenValue element="np" attr="artAndDem" value="both"/>
+      <and/>
+      <whenValue element="np" attr="artBothCooccur" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
+      <or/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
+      <and/>
+      <whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
+      <or/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+      <and/>
+      <whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
+      <or/>
+      <whenValue element="np" attr="artAndDem" value="no"/>
    </showWhen>
    <showWhen id="swPossDemOrArtCooccurYesOrSome">
-	  <whenValue element="np" attr="artAndDem" value="both"/>
-	  <and/>
-	  <whenValue element="np" attr="artBothCooccur" value="no"/>
-	  <and/>
-	  <whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
+      <whenValue element="np" attr="artAndDem" value="both"/>
+      <and/>
+      <whenValue element="np" attr="artBothCooccur" value="no"/>
+      <and/>
+      <whenValue element="np" attr="possCooccur" value="no" negateValue="yes"/>
    </showWhen>
-
+   
 	<showWhen id="swPossDemAndOrArtCooccurNoBefore">
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
@@ -1347,7 +926,8 @@
 		<whenValue element="np" attr="artPos" value="either" negateValue="no"/>
 		<and/>
 		<whenValue element="np" attr="possNounPos" value="after" negateValue="no"/>
-	</showWhen>	<showWhen id="swPossArtOnlyCooccurNoAfter">
+	</showWhen>
+   <showWhen id="swPossArtOnlyCooccurNoAfter">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 		<and/>
 		<whenValue element="np" attr="possCooccur" value="no"/>
@@ -1366,7 +946,791 @@
 		<whenValue element="np" attr="possNounPos" value="before" negateValue="no"/>
 	</showWhen>
 
-	<showWhen id="swNPDemOrArtBefore">
+   <showWhen id="swQPNPDegreeNo">
+      <whenValue element="qp" attr="npDegree" value="no"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeSome">
+      <whenValue element="qp" attr="npDegree" value="some"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNoOrSome">
+      <whenValue element="qp" attr="npDegree" value="no"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeYesOrSome">
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeYes">
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNoOrSomeAndClitic">
+      <whenValue element="qp" attr="npDegree" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreeTypeProclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreeTypeEnclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp/npDegreeTypeProclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp/npDegreeTypeEnclitic" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNoOrSomeAndAffix">
+      <whenValue element="qp" attr="npDegree" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreeTypePrefix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreeTypeSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp/npDegreeTypePrefix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp/npDegreeTypeSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNoOrSomeAndOther">
+      <whenValue element="qp" attr="npDegree" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreeTypeOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp/npDegreeTypeOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreePosBefore">
+      <whenValue element="qp/npDegreePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/npDegreePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreePosBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreePosAfter">
+      <whenValue element="qp/npDegreePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/npDegreePosBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreePosBoth">
+      <whenValue element="qp/npDegreePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreePosBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreePosEither">
+      <whenValue element="qp/npDegreePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/npDegreePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/npDegreePosBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreePosBeforeOrBoth">
+      <whenValue element="qp/npDegreePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/npDegreePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreePosBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreePosAfterOrBoth">
+      <whenValue element="qp/npDegreePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/npDegreePosBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreePosEitherOrBoth">
+      <whenValue element="qp/npDegreePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/npDegreePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/npDegreePosBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreePosNotOther">
+      <whenValue element="qp/npDegreePosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreePosOtherOnly">
+      <whenValue element="qp/npDegreePosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreePosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/npDegreePosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/NPDegreePosOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreePosAndOther">
+      <whenValue element="qp/npDegreePosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/npDegreePosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp/npDegreePosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/npDegreePosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp/npDegreePosBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="qp/npDegreePosOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swNPQPPosBefore">
+      <whenValue element="np/qpPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/qpPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPQPPosAfter">
+      <whenValue element="np/qpPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/qpPosBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPQPPosBoth">
+      <whenValue element="np/qpPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPQPPosEither">
+      <whenValue element="np/qpPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/qpPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/qpPosBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPQPPosBeforeOrBoth">
+      <whenValue element="np/qpPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/qpPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPQPPosAfterOrBoth">
+      <whenValue element="np/qpPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/qpPosBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPQPPosEitherOrBoth">
+      <whenValue element="np/qpPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/qpPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/qpPosBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPQPPosNotOther">
+      <whenValue element="np/qpPosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPQPPosOtherOnly">
+      <whenValue element="np/qpPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/qpPosOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPQPPosAndOther">
+      <whenValue element="np/qpPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/qpPosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/qpPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/qpPosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/qpPosBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/qpPosOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swNPAdjBefore">
+      <whenValue element="np/adjBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/adjAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAdjAfter">
+      <whenValue element="np/adjBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/adjBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAdjBoth">
+      <whenValue element="np/adjBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAdjEither">
+      <whenValue element="np/adjBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/adjAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/adjBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAdjBeforeOrBoth">
+      <whenValue element="np/adjBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/adjAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAdjAfterOrBoth">
+      <whenValue element="np/adjBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/adjBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAdjEitherOrBoth">
+      <whenValue element="np/adjBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/adjAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/adjBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAdjPosNotOther">
+      <whenValue element="np/adjPosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAdjPosOtherOnly">
+      <whenValue element="np/adjBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/adjPosOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAdjPosAndOther">
+      <whenValue element="np/adjBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/adjPosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/adjAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/adjPosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/adjBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/adjPosOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swNPArtAndDem">
+      <whenValue element="np" attr="artAndDem" value="both"/>
+   </showWhen>
+   <showWhen id="swNPArtOnlyBefore">
+      <whenValue element="np/artOnlyBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/artOnlyAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPArtOnlyAfter">
+      <whenValue element="np/artOnlyBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/artOnlyBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPArtOnlyBoth">
+      <whenValue element="np/artOnlyBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPArtOnlyEither">
+      <whenValue element="np/artOnlyBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/artOnlyAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/artOnlyBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPArtOnlyBeforeOrBoth">
+      <whenValue element="np/artOnlyBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/artOnlyAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPArtOnlyAfterOrBoth">
+      <whenValue element="np/artOnlyBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/artOnlyBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPArtOnlyEitherOrBoth">
+      <whenValue element="np/artOnlyBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/artOnlyAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/artOnlyBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPArtOnlyNotOther">
+      <whenValue element="np/artOnlyOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPArtOnlyOtherOnly">
+      <whenValue element="np/artOnlyBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/artOnlyOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtOnlyAndOther">
+      <whenValue element="np/artOnlyBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/artOnlyOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/artOnlyAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/artOnlyOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/artOnlyBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/artOnlyOther" attr="checked" value="yes"/>      
+   </showWhen>
+   
+   <showWhen id="swNPDemOnlyBefore">
+      <whenValue element="np/demOnlyBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOnlyAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemOnlyAfter">
+      <whenValue element="np/demOnlyBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOnlyBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemOnlyBoth">
+      <whenValue element="np/demOnlyBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemOnlyEither">
+      <whenValue element="np/demOnlyBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOnlyAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOnlyBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemOnlyBeforeOrBoth">
+      <whenValue element="np/demOnlyBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOnlyAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemOnlyAfterOrBoth">
+      <whenValue element="np/demOnlyBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOnlyBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemOnlyEitherOrBoth">
+      <whenValue element="np/demOnlyBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOnlyAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOnlyBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemOnlyNotOther">
+      <whenValue element="np/demOnlyOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPDemOnlyOtherOnly">
+      <whenValue element="np/demOnlyBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOnlyOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPDemOnlyAndOther">
+      <whenValue element="np/demOnlyBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOnlyOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/demOnlyAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOnlyOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/demOnlyBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOnlyOther" attr="checked" value="yes"/>      
+   </showWhen>
+   <showWhen id="swNPDemOrArtPosBefore">
+      <whenValue element="np/demOrArtPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOrArtPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemOrArtPosAfter">
+      <whenValue element="np/demOrArtPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOrArtPosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemOrArtPosBoth">
+      <whenValue element="np/demOrArtPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemOrArtPosEither">
+      <whenValue element="np/demOrArtPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOrArtPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOrArtPosBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemOrArtPosBeforeOrBoth">
+      <whenValue element="np/demOrArtPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOrArtPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemOrArtPosAfterOrBoth">
+      <whenValue element="np/demOrArtPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOrArtPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemOrArtPosEitherOrBoth">
+      <whenValue element="np/demOrArtPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOrArtPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOrArtPosBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemOrArtPosNotOther">
+      <whenValue element="np/demOrArtPosOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPDemOrArtPosOtherOnly">
+      <whenValue element="np/demOrArtPosBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demOrArtPosOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPDemOrArtPosAndOther">
+      <whenValue element="np/demOrArtPosBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOrArtPosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/demOrArtPosAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOrArtPosOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/demOrArtPosBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demOrArtPosOther" attr="checked" value="yes"/>      
+   </showWhen>
+   <showWhen id="swNPDemAndArtArtBefore">
+      <whenValue element="np/demAndArtArtBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtArtAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtArtAfter">
+      <whenValue element="np/demAndArtArtBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtArtBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtArtBoth">
+      <whenValue element="np/demAndArtArtBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtArtEither">
+      <whenValue element="np/demAndArtArtBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtArtAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtArtBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtArtBeforeOrBoth">
+      <whenValue element="np/demAndArtArtBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtArtAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtArtAfterOrBoth">
+      <whenValue element="np/demAndArtArtBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtArtBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtArtEitherOrBoth">
+      <whenValue element="np/demAndArtArtBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtArtAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtArtBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtArtNotOther">
+      <whenValue element="np/demAndArtArtOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPDemAndArtArtOtherOnly">
+      <whenValue element="np/demAndArtArtBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtArtOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPDemAndArtArtAndOther">
+      <whenValue element="np/demAndArtArtBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtArtOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/demAndArtArtAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtArtOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/demAndArtArtBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtArtOther" attr="checked" value="yes"/>      
+   </showWhen>
+   <showWhen id="swNPDemAndArtDemBefore">
+      <whenValue element="np/demAndArtDemBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtDemAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtDemAfter">
+      <whenValue element="np/demAndArtDemBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtDemBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtDemBoth">
+      <whenValue element="np/demAndArtDemBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtDemEither">
+      <whenValue element="np/demAndArtDemBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtDemAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtDemBoth" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtDemBeforeOrBoth">
+      <whenValue element="np/demAndArtDemBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtDemAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtDemAfterOrBoth">
+      <whenValue element="np/demAndArtDemBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtDemBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtDemEitherOrBoth">
+      <whenValue element="np/demAndArtDemBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtDemAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtDemBoth" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swNPDemAndArtDemNotOther">
+      <whenValue element="np/demAndArtDemOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPDemAndArtDemOtherOnly">
+      <whenValue element="np/demAndArtDemBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/demAndArtDemOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPDemAndArtDemAndOther">
+      <whenValue element="np/demAndArtDemBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtDemOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/demAndArtDemAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtDemOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/demAndArtDemBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/demAndArtDemOther" attr="checked" value="yes"/>      
+   </showWhen>
+   
+      <showWhen id="swNPPossMarkedYesWordBefore">
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordBefore" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/possWordAfter" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/possWordBoth" attr="checked" value="no"/>
+      </showWhen>  
+      <showWhen id="swNPPossMarkedYesWordAfter">
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordBefore" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/possWordAfter" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/possWordBoth" attr="checked" value="no"/>
+      </showWhen>  
+      <showWhen id="swNPPossMarkedYesWordBoth">
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordBefore" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/possWordAfter" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/possWordBoth" attr="checked" value="yes"/>
+      </showWhen>  
+      <showWhen id="swNPPossMarkedYesWordEither">
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordBefore" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/possWordAfter" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/possWordBoth" attr="checked" value="no"/>
+      </showWhen>  
+      <showWhen id="swNPPossMarkedYesWordBeforeOrBoth">
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordBefore" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/possWordAfter" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/possWordBoth" attr="checked" value="yes"/>
+      </showWhen>  
+      <showWhen id="swNPPossMarkedYesWordAfterOrBoth">
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordBefore" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/possWordAfter" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/possWordBoth" attr="checked" value="yes"/>
+      </showWhen>  
+      <showWhen id="swNPPossMarkedYesWordEitherOrBoth">
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordBefore" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/possWordAfter" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/possWordBoth" attr="checked" value="yes"/>
+      </showWhen>  
+      <showWhen id="swNPPossMarkedYesWordNotOther">
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordOther" attr="checked" value="no"/>
+      </showWhen>
+      <showWhen id="swNPPossMarkedYesWordOtherOnly">
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordBefore" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/possWordAfter" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/possWordBoth" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/possWordOther" attr="checked" value="yes"/>
+      </showWhen>
+      <showWhen id="swNPPossMarkedYesWordAndOther">
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordBefore" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/possWordOther" attr="checked" value="yes"/>
+         <or/>
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordAfter" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/possWordOther" attr="checked" value="yes"/>
+         <or/>
+         <whenValue element="np" attr="possMarked" value="yesWord" />
+         <and/>
+         <whenValue element="np/possWordBoth" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/possWordOther" attr="checked" value="yes"/>      
+      </showWhen>
+   <showWhen id="swNPPossMarkedYesAffix">
+      <whenValue element="np"  attr="possMarked" value="yesAffix"/>
+   </showWhen>
+   <showWhen id="swNPPossMarkedYesClitic">
+      <whenValue element="np"  attr="possMarked" value="yesProclitic"/>
+      <or/>
+      <whenValue element="np"  attr="possMarked" value="yesEnclitic"/>
+   </showWhen>
+   <showWhen id="swNPPossMarkedYesWord">
+      <whenValue element="np"  attr="possMarked" value="yesWord"/>
+   </showWhen>
+   <showWhen id="swNPPossNPNo">
+      <whenValue element="np" attr="possNP" value="no"/>
+   </showWhen>
+   <showWhen id="swNPPossNPNotYesOnly">
+      <whenValue element="np" attr="possNP" value="yesOnly" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPPossNPYesOrYesOnly">
+    <whenValue element="np" attr="possNP" value="yes"/>  
+      <or/>
+      <whenValue element="np" attr="possNP" value="yesOnly"/>
+   </showWhen>
+   
+   
+   <showWhen id="swNPDemOrArtBefore">
 		<whenValue element="np" attr="artAndDem" value="both"/>
 		<and/>
 		<whenValue element="np" attr="artBothCooccur" value="no"/>
@@ -1396,42 +1760,6 @@
 		<whenValue element="np" attr="possCooccur" value="no"/>
 		<and/>
 		<whenValue element="np" attr="demOrArtPos" value="after" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swNPDemBefore">
-		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
-		<and/>
-		<whenValue element="np" attr="demPos" value="after" negateValue="yes"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="both"/>
-		<and/>
-		<whenValue element="np" attr="demAndArtDemPos" value="after" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swNPDemAfter">
-		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
-		<and/>
-		<whenValue element="np" attr="demPos" value="before" negateValue="yes"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="both"/>
-		<and/>
-		<whenValue element="np" attr="demAndArtDemPos" value="before" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swNPArtBefore">
-		<whenValue element="np" attr="artAndDem" value="article"/>
-		<and/>
-		<whenValue element="np" attr="artPos" value="after" negateValue="yes"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="both"/>
-		<and/>
-		<whenValue element="np" attr="demAndArtArtPos" value="after" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swNPArtAfter">
-		<whenValue element="np" attr="artAndDem" value="article"/>
-		<and/>
-		<whenValue element="np" attr="artPos" value="before" negateValue="yes"/>
-		<or/>
-		<whenValue element="np" attr="artAndDem" value="both"/>
-		<and/>
-		<whenValue element="np" attr="demAndArtArtPos" value="before" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPPossessorBefore">
 		<whenValue element="np" attr="possNounPos" value="after" negateValue="yes"/>
@@ -1468,7 +1796,7 @@
 		<and/>
 		<whenValue element="np" attr="ppPos" value="unknown" negateValue="yes"/>
 	</showWhen>
-		<showWhen id="swNPPPAfter">
+	<showWhen id="swNPPPAfter">
 		<whenValue element="np" attr="ppPos" value="before" negateValue="yes"/>
 		<and/>
 		<whenValue element="np" attr="ppPos" value="unknown" negateValue="yes"/>
@@ -1492,7 +1820,9 @@
 		<and/>
 		<whenValue element="np" attr="caseDefault" value="nominative"/>
 	</showWhen>
-
+   
+ 
+   
 	<showWhen id="swNPArtAndOrDem">
 		<whenValue element="np" attr="artAndDem" value="no" negateValue="yes"/>
 	</showWhen>
@@ -1690,7 +2020,7 @@
 	</showWhen>
 	<showWhen id="swNPCaseSplitNotGen">
 		<whenValue element="typology" attr="case" value="split"/>
-		<and/>
+		<and/> 
 		<whenValue element="np" attr="possCaseErg" value="genitive" negateValue="yes"/>
 	</showWhen>
 	<showWhen id="swNPPossAlienableYes">
@@ -1747,39 +2077,27 @@
 	<showWhen id="swNPPossAgrPossClassClassNumber">
 		<whenValue element="np/npPossAgrPossClassClassNumber" attr="checked" value="yes"/>
 	</showWhen>
-	<showWhen id="swNPQPPosEitherOrBothRestricted">
-		<whenValue element="np" attr="qpEither" value="restricted"/>
-		<and/>
-		<whenValue element="np" attr="qpPos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="np" attr="qpPos" value="after" negateValue="yes"/>
-	</showWhen>
-	<showWhen id="swNPQPPosEitherOrBothUnrestricted">
-		<whenValue element="np" attr="qpEither" value="unrestricted"/>
-		<and/>
-		<whenValue element="np" attr="qpPos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="np" attr="qpPos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="np" attr="qpPos" value="unknown" negateValue="yes"/>
-	</showWhen>
 	<showWhen id="swNPQPPosEitherRestrictedNumBefore">
 		<whenValue element="np" attr="qpEitherRestrictedNumPos" value="before"/>
 		<and/>
-		<whenValue element="np" attr="qpEither" value="unrestricted"/>
+		<whenValue element="np/qpPosBefore" attr="checked" value="yes"/>
 		<and/>
-		<whenValue element="np" attr="qpPos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="np" attr="qpPos" value="after" negateValue="yes"/>
+		<whenValue element="np/qpPosAfter" attr="checked" value="yes"/>
+		<or/>
+	   <whenValue element="np" attr="qpEitherRestrictedNumPos" value="before"/>
+	   <and/>
+	   <whenValue element="np/qpPosBoth" attr="checked" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPQPPosEitherRestrictedNumAfter">
-		<whenValue element="np" attr="qpEitherRestrictedNumPos" value="after"/>
-		<and/>
-		<whenValue element="np" attr="qpEither" value="unrestricted"/>
-		<and/>
-		<whenValue element="np" attr="qpPos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="np" attr="qpPos" value="after" negateValue="yes"/>
+	   <whenValue element="np" attr="qpEitherRestrictedNumPos" value="after"/>
+	   <and/>
+	   <whenValue element="np/qpPosBefore" attr="checked" value="yes"/>
+	   <and/>
+	   <whenValue element="np/qpPosAfter" attr="checked" value="yes"/>
+	   <or/>
+	   <whenValue element="np" attr="qpEitherRestrictedNumPos" value="after"/>
+	   <and/>
+	   <whenValue element="np/qpPosBoth" attr="checked" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPAdjPPosEitherOrBothRestricted">
 		<whenValue element="np" attr="adjpEither" value="restricted"/>
@@ -1797,36 +2115,6 @@
 		<and/>
 		<whenValue element="np" attr="adjpPos" value="unknown" negateValue="yes"/>
 	</showWhen>
-   <showWhen id="swNPQPAgreeYesandNotYesClassandClassifiersNo">
-	  <whenValue element="np" attr="qpAgree" value="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="agreeOther" value="yesClass"/>
-	  <and/>
-	  <whenValue element="typology" attr="classifier" value="no" negateValue="yes"/>
-	  <or/>
-	  <whenValue element="np" attr="qpAgree" value="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
-	  <or/>
-	  <whenValue element="np" attr="qpAgree" value="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="agreeOther" value="yesGender"/>
-   </showWhen>
-   <showWhen id="swNPAdjPAgreeYesandNotYesClassandClassifiersNo">
-	  <whenValue element="np" attr="adjpAgree" value="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="agreeOther" value="yesClass"/>
-	  <and/>
-	  <whenValue element="typology" attr="classifier" value="no" negateValue="yes"/>
-	  <or/>
-	  <whenValue element="np" attr="adjpAgree" value="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
-	  <or/>
-	  <whenValue element="np" attr="adjpAgree" value="yes"/>
-	  <and/>
-	  <whenValue element="np" attr="agreeOther" value="yesGender"/>
-   </showWhen>
    <showWhen id="swNPPossNounCaseChangeYes">
 	<whenValue element="typology" attr="case" value="none" negateValue="yes"/>
 	<and/>
@@ -1868,124 +2156,98 @@
 	<showWhen id="swNPCompYes">
 		<whenValue element="np" attr="comp" value="yes"/>
 	</showWhen>
-
-   <showWhen id="swQPNPDegreeNo">
-	  <whenValue element="qp" attr="npDegree" value="no"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeSome">
-	  <whenValue element="qp" attr="npDegree" value="some"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegNone">
-	  <whenValue element="qp" attr="npDegreeNeg" value="none"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegNotNone">
-	  <whenValue element="qp" attr="npDegreeNeg" value="none" negateValue="yes"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegNo">
-	  <whenValue element="qp" attr="npDegreeNeg" value="no"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegSome">
-	  <whenValue element="qp" attr="npDegreeNeg" value="some"/>
-   </showWhen>
-   <showWhen id="swQPNPDegreeNegYes">
-	  <whenValue element="qp" attr="npDegreeNeg" value="yes"/>
-   </showWhen>
-
-   <showWhen id="swQPNPDegreeYes">
-	  <whenValue element="qp" attr="npDegree" value="yes"/>
-   </showWhen>
-
+   
+   
    <showWhen id="swQPNPDegreeYesAfter">
-	  <whenValue element="qp" attr="npDegree" value="yes"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="after"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="some"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="after"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="yes"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="either"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="some"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="either"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="yes"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="some"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="yes"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="afterOrBoth"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="some"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="afterOrBoth"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="yes"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="both"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="some"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="both"/>
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="after"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="after"/>   
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="either"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="either"/>  
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>  
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="afterOrBoth"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="afterOrBoth"/>  
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="both"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="both"/>  
    </showWhen>
    <showWhen id="swQPNPDegreeYesBefore">
-	  <whenValue element="qp" attr="npDegree" value="yes"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="before"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="some"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="before"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="yes"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="either"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="some"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="either"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="yes"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="some"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="yes"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="beforeOrBoth"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="some"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="beforeOrBoth"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="yes"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="both"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegree" value="some"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreePos" value="both"/>
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="before"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="before"/>   
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="either"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="either"/>  
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="eitherOrBoth"/>  
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="beforeOrBoth"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="beforeOrBoth"/>  
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="yes"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="both"/>
+      <or/>
+      <whenValue element="qp" attr="npDegree" value="some"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreePos" value="both"/>  
    </showWhen>
    <showWhen id="swQPNPDegreeClassifierYes">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
-	  <and/>
-	  <whenValue element="qp" attr="npDegreeClassifier" value="yes"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenValue element="qp" attr="npDegreeClassifier" value="yes"/>
    </showWhen>
    <showWhen id="swQPNPDegreeClassifierNo">
-	  <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
-	  <or/>
-	  <whenValue element="qp" attr="npDegreeClassifier" value="yes" negateValue="yes"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr" negateValue="yes"/>
+      <or/>
+      <whenValue element="qp" attr="npDegreeClassifier" value="yes" negateValue="yes"/>
    </showWhen>
-
 </portion>

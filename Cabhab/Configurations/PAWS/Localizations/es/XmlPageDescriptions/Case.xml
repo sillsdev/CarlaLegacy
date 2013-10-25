@@ -1,96 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="Case" count="2/3">
    <title level="2">La tipología - Sistema de caso</title>
-   <introduction>Ahora necesitamos determinar cuál sistema de caso utiliza su lengua, si lo hubiera.  Empezaremos por examinar ejemplos con sustantivos y pronombres como sujetos y objetos directos (determinarémos el caso de poseedores más tarde).</introduction>
-	<form section="typology">
-	   <prompt>En la pájina anterior, usted escribió los siguientes ejemplos de oraciones transitivas en su lengua.  Si los ejemplos solamente tiene nombres para el sujeto y el objeto directo, escriba ejemplos adicionales aquí utilizando frase nominales simples para el sujeto y el objeto directo.   Por favor, utiliza solamente las oraciones con un sujeto-agente y que no tienen cambias por voz aquí.</prompt>
-		<textBox id="OTExample" dataItem="example" cols="50"/>
-	   <prompt>Considerando los ejemplos arriba, observe si existe un indicador en los sustantivos para señalar cuáles son sujetos y cuáles son objetos directos.  (Las observaciones que usted hace cuando examina los ejemplos de varios tipos aquí  van a ayudayle en responder a las preguntas abajo.)<br/><br/>
-			Ahora escriba ejemplos similares de oraciones transitivas con un sujeto-agente, pero con pronombres independientes para el sujeto y objeto directo:</prompt>
-		<textBox id="OTPnExample" dataItem="pnExample" cols="50"/>
-	   <prompt>Considerando los ejemplos arriba, observe si existen distinctos grupos de pronombres para el sujeto y el objeto directo. </prompt>
-	   <br/>
-	   <introduction>Algunas lenguas tiene indicadores de caso distintos y un sistema de pronombes distinto para sujetos-experimentadores que sujetos-agentes.
-		  En algunas lenguas esta distinción es solamente para el pronombre primera singular “yo”.  Algunos verbos transitivos con sujetos-experimentadores son: ‘aparecer’, ‘ver’, ‘temer’, ‘encontrarse’, ‘desear’ y ‘oír’.</introduction>
-	   <br/><br/>
-	   <prompt>Escriba ejemplos de oraciones transitivas con un sujeto-experimentador, utilizando frase nominales simples para el sujeto y el objeto directo aquí:</prompt>
-	   <textBox id="OTExperiencerExample" dataItem="experiencerExample" cols="50"/>
-	   <prompt>Considerando los ejemplos arriba, observe si existe un indicador en los sustantivos para señalar cuáles son sujetos y cuáles son objetos directos.  Si existe, ¿es el indicador el mismo para un sujeto-experimentador que un sujeto-agente?  Tal vez es el  mismo que para los objetos directos en los ejemplos transitivos con un sujeto-agente, o tal vez es un indicador distinto. <br/><br/>
-		  Ahora escriba ejemplos similares de oraciones transitivas con un sujeto-experimentador, pero con pronombres independientes para el sujeto y objeto directo: </prompt>
-	   <textBox id="OTExperiencerPnExample" dataItem="experiencerPnExample" cols="50"/>
-	   <prompt>Considerando los ejemplos arriba, observe si existen distinctos grupos de pronombres para el sujeto y el objeto directo.   Ahora observe si los pronombres utilizados para un sujeto-experimentador son los mismos o distintos que los para un sujeto-agente.
-		  Si son distintos, ¿son los mismos que los pronombres utilizadas para objetos directos en los ejemplos con un sujeto-agente, o son distintos de objetos también?</prompt>
-	   <br/>
-	   <prompt>Tenemos que examinar preguntas similares en oraciones intransitivas.  Ahora escriba ejemplos similares de oraciones intransitivas, con una frase nominal que es un agente para el sujeto:</prompt>
-		<textBox id="OTIntExample" dataItem="intExample" cols="50"/>
-	   <prompt>Considerando los ejemplos arriba, observe si existe un indicador en los sustantivos para señalar los sujetos.  Si existe, ¿es el indicador el mismo que el para sujetos o objetos en los ejemplos transitivos con un sujeto-agente arriba?<br/><br/>
-		   Ahora escriba ejemplos similares de oraciones intransitivas con un sujeto-agente, pero con pronombres independientes para el sujeto:</prompt>
-		<textBox id="OTIntPnExample" dataItem="pnIntExample" cols="50"/>
-	   <prompt>Considerando los ejemplos arriba, observe si el pronombre es del mismo grupo de pronombres para sujetos o objetos (o ambos) en los ejemplos transitivos con pronombres y un sujeto-agente arriba.</prompt>
-	   <br/>
-	   <prompt>Necesitamos observar si existe distinciones con un sujeto-experimentador.  Algunos verbos intransitivos con un sujeto-experimentador son: ‘reírse’, ‘llorar’, ‘temerse’ y ‘enojarse’.  Escriba ejemplos de oraciones intransitivas con un sujeto-experimentador, utilizando frase nominales simples para el sujeto aquí:</prompt>
-	   <textBox id="OTExperiencerIntExample" dataItem="experiencerIntExample" cols="50"/>
-	   <prompt>Considerando los ejemplos arriba, observe si existe un indicador en los sustantivos para señalar los sujetos.  Si existe, ¿es el indicador el mismo para los sujetos-experimentadores que para los sujetos-agentes? Tal vez es el  mismo que para los objetos directos en los ejemplos transitivos con un sujeto-agente, o tal vez es un indicador distinto. <br/><br/>
-		  Ahora escriba ejemplos similares de oraciones intransitivas con un sujeto-experimentador, pero con pronombres independientes para el sujeto:</prompt>
-	   <textBox id="OTExperiencerPnIntExample" dataItem="experiencerPnIntExample" cols="50"/>
-	   <prompt>Considerando los ejemplos arriba, observe si los pronombres utilizados para los sujetos-experimentadores son los mismos o distintos que los utilizados para los sujetos-agentes.
-		  Si son distintos, ¿so los pronombres utilizados para los sujetos-experimentadores los mismos que los pronombres utilizados para los objetos directos en las oraciones transitivas con un sujeto-agente arriba, o son distintos?</prompt>
-
-	   <introduction>Recordando lo que usted ha aprendido de estos ejemplos, lea por favor la información siguiente sobre sistemas de caso, así usted puede contestar las preguntas sobre el sistema de caso en su lengua.</introduction>
-		<instruction id="CaseNullAdapting">You may have the situation (as is true for two of the projects this starter kit was initially tested on) where the source language you wish to adapt from is unmarked or less marked for case than the target language(s) you wish to adapt into.  If so, you will need to add null allomorphs for the case markers in the source language to match the case markers in the target language(s) and allow the syntactic parser to disambiguate between these as much as possible.  If you have this situation, read the following information and answer the question(s) below based on the target language(s) case system.<br/>
-		</instruction>
-		<introduction id="NPCaseIntro">
-		   El sistema de caso más común es el nominativo-acusativo.
-		   Éste es el sistema que español tiene, aunque solamente se indica el caso en los pronombres y los poseedores.
-		   En un sistema del nominativo-acusativo, los sujetos de los verbos intransitivos y transitivos son casos del nominativo, mientras que los objetos directos son casos del acusativo.
-		   Los poseedores son casos del genitivo. Los pronombres del nominativo en español son:
-		   <example>yo, nosotros, usted, ustedes, él, ella, ellos, ellas</example>.  Los pronombres del acusativo son:
-		   <example>me, nos, te, le, les</example>.  Los pronombres del genitivo incluyen:
-		   <example>mi, nuestro, su, suyo, suya</example>.  Por lo tanto, decimos
-		   <example>Ellos le golpearon a él</example> y no
-		   <example>Les golpearon él</example>. <br/>
-			<br/>
-		   Una lengua con un sistema de caso nominativo-acusativo puede tener indicadores distintos para sujetos-experimentadores que para sujetos-agentes.<br/>
-		   <br/>
-		   En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se indican con el caso del ergativo, mientras que los objetos de verbos transitivos y los sujetos de verbos intransitivos se indican con el caso del absolutivo.
-		   El caso de poseedores no se fija en todos las lenguas de este tipo.  Algunas lenguas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de indicadores verbales de la concordancia, pero ningún indicador en sustantivos.
-		   Este tipo de indicador en la concordancia será considerado en <section number="9.2">Las oraciones básicas - Las características de inflexión y concordancia</section>.<br/>
-			<br/>
-		   Algunas lenguas son aún más complejas en que tienen normalmente un sistema de caso del nominativo-acusativo pero bajo ciertas condiciones gramaticales el sistema de caso cambia a ergativo-absolutivo.
-		   Por ejemplo, en Urdu e Hindi, se utiliza el caso ergativo para agentes en el tiempo y perfecto para los verbos transitivos y ditransitivos, mientras que en otros tiempos y aspectos agentes utilizan el caso nominativo. En Dyirbal, los pronombres siguen un patrón de nominativo–acusativo cuando el agente es la primera o segunda persona, sino un patrón ergativo-absolutivo cuando el agente es la tercera persona.  Esto se llama “ergatividad escindida”.
-		   <span id="OTCaseSplitNotPracticalSpan" show="swNotPractical"> In this starter kit, the best we can do for these languages is to add all the rules allowing both case systems.  Afterward, the specific constraints needed for your language can be added to the rules.</span>
-		</introduction>
-		<radioGroup>
-		<groupName dataItem="case" default="nominative">RCase</groupName>
-		   <prompt>De acuerdo con la información sobre sistemas de caso y los ejemplos de su lengua arriba, ¿cuál sistema es correcto para su lengua?</prompt>
-		   <radio id="NPCaseNone" checked="yes" dataValue="none">Ninguno: el mismo grupo de pronombres puede ser sujetos o objetos de cualquier verbo y no existe indicador en los sustantivos ni sus modificadores para señalar su posición en la oración</radio>
-		   <radio id="NPCaseNom" checked="yes" dataValue="nominative">Nominativo-acusativo: como en inglés y español, los sujetos de ambos verbos transitivos e intransitivos son los mismos, pero objetos son diferentes</radio>
-		<radio id="NPCaseErg" checked="yes" dataValue="ergative">Ergativo-absolutivo: los sujetos de verbos intransitivos y objetos de verbos transitivos son los mismos, pero los sujetos de verbos transitivos son diferentes</radio>
-		   <radio id="NPCaseSplit" checked="yes" dataValue="split">Ergatividad escindida: la lengua normalmente posee un sistema nominativo-accusativo, pero también utiliza el sistema ergativo-absolutiva en ciertas condiciones gramaticales</radio>
-	</radioGroup>
-	   <radioGroup id="NPCaseExperiencerTable" show="swNPCaseNotNone">
-		  <groupName dataItem="caseExperiencer" default="no">RNPCaseExperiencer</groupName>
-		  <prompt>¿Utiliza su lenguas indicadores distintos para caso en sustantivos y/o sistemas distintos de pronombres para sujetos-experimentadores contra sujetos-agentes?</prompt>
-		  <radio id="NPCaseExperiencerNo" dataValue="no">No, los mismos indicadores y/o pronombres se untilizan para ambos sujetos-agentes y sujetos-experimentadores</radio>
-		  <radio id="NPCaseExperiencerYesObj" dataValue="yesObj">Sí, los sujetos-experimentadores utilizan los mismos indicadores de caso y/o pronombres que los objetos directos de verbos transitivos con un sujeto-agente</radio>
-		  <radio id="NPCaseExperiencerYesDat" dataValue="yesDat">Sí, los sujetos-experimentadores utilizan indicadores de caso y/o pronombres distintos que ambos el sujeto y objeto directo de verbos transitivos con un sujeto-agente, pero pueden utilizarse para objetos indirectos</radio>
-	   </radioGroup>
-	   <br/>
-		 <br/>
-		<buttons>
-			<button id="CaseBack" value="Back" goto="OverallTypology.xml"/>
-			<button id="CaseNext" value="Next" goto="Classifiers.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-	</showWhen>
-	<showWhen id="swPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="False"/>
-	</showWhen>
-	<showWhen id="swNPCaseNotNone">
-		<not/><whenRadio button="NPCaseNone"/>
-	</showWhen>
+   <introduction>Ahora necesitamos determinar cuál sistema de <technicalTermRef term="ttCase"/> se utiliza en su lengua, si lo hubiera.  Empezaremos por examinar ejemplos con sustantivos y pronombres como sujetos y objetos directos (determinarémos el caso de los <technicalTermRef term="ttPossessors">posesivos</technicalTermRef> más tarde).</introduction>
+    <form section="typology">   
+       <prompt>En la página anterior, usted escribió los siguientes ejemplos de oraciones <technicalTermRef term="ttTransitive">transitivas</technicalTermRef> en su lengua.  Si los ejemplos solamente tienen nombres como el sujeto y el objeto directo, escriba ejemplos adicionales aquí utilizando frase nominales simples como el sujeto y el objeto directo.   Por favor, utiliza solamente las oraciones con un sujeto-<technicalTermRef term="ttAgent"/> y que no tienen cambios por la  <technicalTermRef term="ttVoice"/> aquí.</prompt>
+       <textBox id="OTExample" dataItem="example" cols="50"/>
+<prompt>En los ejemplos de arriba, observe si existe un indicador en los sustantivos para señalar cuáles son sujetos y cuáles son objetos directos.  (Las observaciones que usted hace cuando examina los ejemplos de varios tipos aquí van a ayudayle en responder a las preguntas abajo.)<br/><br/>
+            Ahora escriba ejemplos similares de oraciones transitivas con un sujeto-agente, pero con pronombres como el sujeto y el objeto directo:</prompt>
+        <textBox id="OTPnExample" dataItem="pnExample" cols="50"/>       
+       <prompt>En los ejemplos de arriba, observe si existen distintos grupos de pronombres para el sujeto y el objeto directo. </prompt>
+       <br/>
+       <introduction>Algunas lenguas tienen indicadores de caso distintos y un sistema de pronombes distinto para sujetos-<technicalTermRef term="ttExperiencer">experimentadores</technicalTermRef> que sujetos-agentes.  
+          En algunas lenguas esta distinción es solamente para el pronombre primera singular “yo”.  Algunos verbos transitivos con sujetos-experimentadores son: ‘aparecer', ‘ver', ‘temer', ‘encontrarse', ‘desear' y ‘oír'.</introduction>     
+       <br/><br/>  
+       <prompt>Escriba ejemplos de oraciones transitivas con un sujeto-experimentador, con frases nominales simples como el sujeto y el objeto directo aquí:</prompt>
+       <textBox id="OTExperiencerExample" dataItem="experiencerExample" cols="50"/>
+       <prompt>En los ejemplos de arriba, observe si existe un indicador en los sustantivos para señalar cuáles son sujetos y cuáles son objetos directos.  Si existe, ¿es el indicador el mismo para un sujeto-experimentador que un sujeto-agente?  Tal vez es el  mismo que para los objetos directos en los ejemplos transitivos con un sujeto-agente, o tal vez es un indicador distinto. <br/><br/>
+          Ahora escriba ejemplos similares de oraciones transitivas con un sujeto-experimentador, pero con pronombres como el sujeto y objeto directo: </prompt>
+       <textBox id="OTExperiencerPnExample" dataItem="experiencerPnExample" cols="50"/>       
+       <prompt>En los ejemplos de arriba, observe si existen distintos grupos de pronombres para el sujeto y el objeto directo.   Ahora observe si los pronombres utilizados para un sujeto-experimentador son los mismos o distintos que los para un sujeto-agente.  
+          Si son distintos, ¿son los mismos que los pronombres utilizadas para objetos directos en los ejemplos con un sujeto-agente, o son distintos de los objetos también?</prompt>
+       <br/>
+        <prompt>Tenemos que examinar preguntas similares en oraciones <technicalTermRef term="ttIntransitive">intransitivas</technicalTermRef>.  Ahora escriba ejemplos similares de oraciones intransitivas, con una frase nominal que es un agente como el sujeto:</prompt>
+        <textBox id="OTIntExample" dataItem="intExample" cols="50"/>
+       <prompt>En los ejemplos de arriba, observe si existe un indicador en los sustantivos para señalar a los sujetos.  Si existe, ¿es el indicador el mismo que el para sujetos o objetos en los ejemplos transitivos con un sujeto-agente de arriba?<br/><br/>
+          Ahora escriba ejemplos similares de oraciones intransitivas con un sujeto-agente, pero con pronombres como el sujeto.  Incluye ejemplos con los pronombres para "yo, nosotros, usted, él y ellos" como sujetos.</prompt>
+        <textBox id="OTIntPnExample" dataItem="pnIntExample" cols="50"/>
+       <prompt>En los ejemplos de arriba, observe si el pronombre es del mismo grupo de pronombres para sujetos o para objetos (o ambos) en los ejemplos transitivos con pronombres y un sujeto-agente de arriba.</prompt>
+       <br/>
+        <prompt>Necesitamos observar si existe distinciones con un sujeto-experimentador.  Algunos verbos intransitivos con un sujeto-experimentador son: ‘reírse', ‘llorar', ‘temerse' y ‘enojarse'. (Algunos de estos pueden ser oraciones con un adjetivo predicativo, pero son verbos en algunas lenguas.) Escriba ejemplos de oraciones intransitivas con un sujeto-experimentador, con frases nominales simples como el sujeto aquí:</prompt>
+       <textBox id="OTExperiencerIntExample" dataItem="experiencerIntExample" cols="50"/>
+       <prompt>En los ejemplos de arriba, observe si existe un indicador en los sustantivos para señalar a los sujetos.  Si existe, ¿es el indicador el mismo para los sujetos-experimentadores que para los sujetos-agentes? Tal vez es el  mismo que para los objetos directos en los ejemplos transitivos con un sujeto-agente, o tal vez es un indicador distinto. <br/><br/>
+          Ahora escriba ejemplos similares de oraciones intransitivas con un sujeto-experimentador, pero con pronombres como el sujeto.  Incluye ejemplos con los pronombres para "yo, nosotros, usted, él y ellos" como sujetos.</prompt>
+       <textBox id="OTExperiencerPnIntExample" dataItem="experiencerPnIntExample" cols="50"/>       
+       <prompt>En los ejemplos de arriba, observe si los pronombres utilizados como los sujetos-experimentadores son los mismos o distintos que los utilizados como los sujetos-agentes.
+          Si son distintos, ¿son los pronombres utilizados como los sujetos-experimentadores los mismos que los pronombres utilizados como los objetos directos en las oraciones transitivas con un sujeto-agente de arriba, o son distintos?</prompt>
+       
+       <introduction>Recordando lo que usted ha aprendido de estos ejemplos, lea por favor la información siguiente sobre sistemas de caso, así usted puede contestar las preguntas sobre el sistema de caso en su lengua.</introduction>       
+        <instruction id="CaseNullAdapting">You may have the situation (as is true for two of the projects this starter kit was initially tested on) where the source language you wish to adapt from is unmarked or less marked for case than the target language(s) you wish to adapt into.  If so, you will need to add null allomorphs for the case markers in the source language to match the case markers in the target language(s) and allow the syntactic parser to disambiguate between these as much as possible.  If you have this situation, read the following information and answer the question(s) below based on the target language(s) case system.<br/>   
+        </instruction>
+        <introduction id="NPCaseIntro">
+           El sistema de caso más común es el nominativo-acusativo. 
+           Este es el sistema que español tiene, aunque solamente se indica el caso en los pronombres y los posesivos.  
+           En un sistema del nominativo-acusativo, los sujetos de los verbos intransitivos y transitivos son de caso <technicalTermRef term="ttNominative"/>, mientras que los objetos directos son de caso <technicalTermRef term="ttAccusative"/>. 
+           Los posesivos son de caso <technicalTermRef term="ttGenitive"/>. Los pronombres del nominativo en español son: 
+           <example>yo, nosotros, usted, ustedes, él, ella, ellos, ellas</example>.  Los pronombres del acusativo son: 
+           <example>me, nos, te, le, les</example>.  Los pronombres del genitivo incluyen: 
+           <example>mi, nuestro, su, suyo, suya</example>.  Por lo tanto, decimos 
+           <example>Ellos le golpearon a él</example> y no 
+           <example>Les golpearon él</example>. <br/>
+           <br/>
+           Una lengua con un sistema de caso nominativo-acusativo puede tener indicadores distintos para sujetos-experimentadores que para sujetos-agentes.<br/>
+           <br/>
+ En un sistema de caso ergativo-absolutivo, los sujetos de los verbos transitivos se indican con el caso del <technicalTermRef term="ttErgative"/>, mientras que los objetos de verbos transitivos y los sujetos de verbos intransitivos se indican con el caso del <technicalTermRef term="ttAbsolutive"/>. 
+           El caso de posesivos no se fija en todos las lenguas de este tipo, entonces si su lengua tiene un sistema de caso ergativo-absolutivo, se le pedirá qué caso se utilzan los posesivos en <section number="5.4">Frases nominales - Los posesivos</section>.
+           <br/><br/>Algunas lenguas con un sistema ergativo-absolutivo tienen simplemente diversos sistemas de indicadores verbales de la concordancia, pero ningún indicador en sustantivos. Si es correcto en su lengua, y también hay solamente un solo sistema de pronombres, escoje la respuesta “Ninguno” abajo.  Sin embargo, si hay dos sistemas de pronombres además de sistemas diferentes de concordancia, escoje la respuesta “ergativo-absolutivo” abajo.  
+           Este tipo de indicador en la concordancia se considera en <section number="9.2">Las oraciones básicas - La flexión y la concordancia</section>.<br/>
+            <br/>
+           Algunas lenguas son aún más complejas en que tienen normalmente un sistema de caso del nominativo-acusativo pero bajo ciertas condiciones gramaticales el sistema de caso cambia a ergativo-absolutivo.  
+           Por ejemplo, en Urdu e Hindi, se utiliza el caso ergativo para agentes en el tiempo pretérito y aspecto perfecto para los verbos transitivos y ditransitivos, mientras que en otros tiempos y aspectos agentes utilizan el caso nominativo. En Dyirbal, los pronombres siguen un patrón de nominativo–acusativo cuando el agente es la primera o segunda persona, sino un patrón ergativo-absolutivo cuando el agente es la tercera persona.  Esto se llama “ergatividad escindida”.   
+           <span id="OTCaseSplitNotPracticalSpan" show="swNotPractical"> In this starter kit, the best we can do for these languages is to add all the rules allowing both case systems.  Afterward, the specific constraints needed for your language can be added to the rules.</span>
+        </introduction>
+        <radioGroup>
+        <groupName dataItem="case" default="nominative">RCase</groupName>
+           <prompt>De acuerdo con la información sobre sistemas de caso y los ejemplos en su lengua con sujetos-agentes de arriba, ¿cuál sistema de caso es correcto para su lengua?</prompt>
+           <radio id="NPCaseNone" checked="yes" dataValue="none">Ninguno: el mismo grupo de pronombres puede ser sujetos o objetos de cualquier verbo y no existe indicador en los sustantivos ni sus modificadores para señalar su posición en la oración</radio>
+           <radio id="NPCaseNom" checked="yes" dataValue="nominative">Nominativo-acusativo: los sujetos-agentes de ambos verbos transitivos e intransitivos son los mismos, pero objetos son diferentes</radio>
+        <radio id="NPCaseErg" checked="yes" dataValue="ergative">Ergativo-absolutivo: los sujetos-agentes de verbos intransitivos y objetos de verbos transitivos son los mismos, pero los sujetos-agentes de verbos transitivos son diferentes</radio>
+           <radio id="NPCaseSplit" checked="yes" dataValue="split">Ergatividad escindida: la lengua normalmente posee un sistema nominativo-accusativo, pero también utiliza el sistema ergativo-absolutiva en ciertas condiciones gramaticales</radio>
+    </radioGroup>
+       <prompt id="NPCaseSplitPrompt" show="swNPCaseSplit">El sistema de caso del ergativo-absolutivo se utiliza en estas condiciones:</prompt>
+       <textBox id="NPCaseSplitConditions" dataItem="splitConditions" cols="50" rows="2" show="swNPCaseSplit"/>
+       <br/><br/>
+       <radioGroup id="NPCaseExperiencerTable" show="swNPCaseNotNone">
+          <groupName dataItem="caseExperiencer" default="no">RNPCaseExperiencer</groupName>
+          <prompt>¿Utiliza su lengua indicadores distintos para caso en sustantivos y/o sistemas distintos de pronombres para sujetos-experimentadores contra sujetos-agentes?</prompt>
+          <radio id="NPCaseExperiencerNo" dataValue="no">No, los mismos indicadores y/o pronombres se untilizan para ambos sujetos-agentes y sujetos-experimentadores</radio>
+          <radio id="NPCaseExperiencerYesObj" dataValue="yesObj">Sí, los sujetos-experimentadores utilizan los mismos indicadores de caso y/o pronombres que los objetos directos de verbos transitivos con un sujeto-agente</radio>
+          <radio id="NPCaseExperiencerYesDat" dataValue="yesDat">Sí, los sujetos-experimentadores utilizan indicadores de caso y/o pronombres distintos que ambos el sujeto y objeto directo de verbos transitivos con un sujeto-agente, pero pueden utilizarse para objetos indirectos</radio>
+       </radioGroup>
+        <br/>
+         <br/>
+        <buttons>
+            <button id="CaseBack" value="Back" goto="OverallTypology.xml"/>
+            <button id="CaseNext" value="Next" goto="Classifiers.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swNotPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
+   <showWhen id="swPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="False"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNone">
+      <not/><whenRadio button="NPCaseNone"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplit">
+      <whenRadio button="NPCaseNom"/>
+      <or/>
+      <whenRadio button="NPCaseSplit"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplit">
+      <whenRadio button="NPCaseSplit"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
 </page>

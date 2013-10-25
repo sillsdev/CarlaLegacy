@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPAux" count="2/2">
+   <title level="2">Las oraciones básicas - Verbos compuestos</title>
+   <introduction>Los verbos pueden combinar con otros verbos, con sustantivos o palabras de otras categorías para forma verbos compuestos. Estos compuestos funcionan igual que verbos, pero su valencia puede cambiar, por ejemplo de un verbo transitivo a un verbo intransitivo. <br/><br/>
+      Además de compuestos que están escritas como una palabra, también hay expresiones idiomáticas que consiste de un verbo y otra palabra.  Los tipos comunes se tratan aquí, empezando con los verbos compuestos.</introduction>
+   <form section="ip">
+<radioGroup>
+   <groupName dataItem="heartCompound" default="no">RIPHeartCompound</groupName>
+   <prompt><br/>Algunas lenguas tienen un sistema especial de verbos compuestos que consiste en el que todos los verbos incluyen un sustantivo que expresa el centro de las emociones,  como el corazón.  ¿Existe este tipo de verbo compuesto en su lengua?</prompt>
+   <radio id="IPHeartCompoundYes" dataValue="yes">Sí</radio>
+   <radio id="IPHeartCompoundNo" dataValue="no">No</radio>
+</radioGroup>     
+      <prompt id="IPHeartCompoundExamplesPrompt" show="swIPHeartCompoundYes">Escriba algunos ejemplos de este tipo especial de verbo compuesto aquí:</prompt>
+      <textBox id="IPHeartCompoundExample" dataItem="heartCompoundExample" cols="50" show="swIPHeartCompoundYes"/>
+        <br/>
+        <br/>
+      <radioGroup>
+         <groupName dataItem="bodypartCompound" default="no">RIPBodypartCompound</groupName>
+         <prompt><br/>Algunas lenguas tienen un sistema especial de verbos compuestos que consiste en el que todos los verbos incluyen un sustantivo de una parte del cuerpo<span id="IPHeartCompoundYesSpan" show="swIPHeartCompoundYes"> menos el que expresa el centro de emociones (cubierto arriba)</span>.  ¿Existe este tipo de verbo compuesto en su lengua?</prompt>
+         <radio id="IPBodypartCompoundYes" dataValue="yes">Sí</radio>
+         <radio id="IPBodypartCompoundNo" dataValue="no">No</radio>
+      </radioGroup>     
+      <prompt id="IPBodypartCompoundExamplesPrompt" show="swIPBodypartCompoundYes">Escriba algunos ejemplos de este tipo especial de verbo compuesto aquí:</prompt>
+      <textBox id="IPBodypartCompoundExample" dataItem="bodypartCompoundExample" cols="50" show="swIPBodypartCompoundYes"/>
+      <br/>
+      <br/>
+      <prompt id="IPVerbNCompoundExamplesPrompt">Escriba algunos ejemplos de <span id="IPHeartOrBodypartCompoundYesSpan" show="swIPHeartOrBodypartCompoundYes">cualquier otros</span> compuestos que consisten de un verbo y un sustantivo aquí:</prompt>
+      <textBox id="IPVerbNCompoundExample" dataItem="verbNCompoundExample" cols="50"/>
+      <br/>
+      <br/>
+      <prompt id="IPVerbNCompoundSentExamplesPrompt">Ahora escriba ejemplos de oraciones completas con los verbos compuestos arriba aquí:</prompt>
+      <textBox id="IPVerbNCompoundSentExample" dataItem="verbNCompoundSentExample" cols="50"/>
+      <br/>
+      <br/>
+      <prompt id="IPVerbOtherCompoundExamplesPrompt">Escriba algunos ejemplos de compuestos que  consisten de un verbo con una palabra que no es un sustantivo aquí:</prompt>
+      <textBox id="IPVerbOtherCompoundExample" dataItem="verbOtherCompoundExample" cols="50"/>
+      <br/>
+      <br/>
+      <prompt id="IPVerbOtherCompoundSentExamplesPrompt">Ahora escriba algunos ejemplos de oraciones con estos compuestos que consisten de un verbo con una palabra que no es un sustantivo aquí:</prompt>
+      <textBox id="IPVerbOtherCompoundSentExample" dataItem="verbOtherCompoundSentExample" cols="50"/>
+      <br/>
+      <br/>
+      <prompt id="IPVerbIdiomExamplesPrompt">Ahora se consideren expresiones idiomáticas que consisten en un verbo y otra palabra que juntos, como una unidad, expresan una idea que no es la misma que el significado cuando se combinan los de las dos palabras independientes. Se llaman modismos.  Escriba algunos ejemplos de modismos en su lengua aquí:</prompt>
+      <textBox id="IPVerbIdiomExample" dataItem="verbIdiomExample" cols="50"/>
+      <instruction id="IPVerbIdiomInstruction">These multi-word idioms are best handled as a single verb entry in the lexicon using <tool>Join Compound</tool>.</instruction>
+       <br/><br/>
+        <buttons>
+            <button id="IPCompoundsBack" value="Back" goto="IPAux.xml"/>
+            <button id="IPCompoundsNext" value="Next" goto="IPContents.htm"/>
+        </buttons>
+   </form>
+   <showWhen id="swIPHeartCompoundYes">
+      <whenRadio button="IPHeartCompoundYes"/>
+   </showWhen>
+   <showWhen id="swIPBodypartCompoundYes">
+      <whenRadio button="IPBodypartCompoundYes"/>
+   </showWhen>
+   <showWhen id="swIPHeartOrBodypartCompoundYes">
+      <whenRadio button="IPHeartCompoundYes"/>
+      <or/>
+      <whenRadio button="IPBodypartCompoundYes"/>
+   </showWhen>
+   <showWhen id="swIPHeartAndBodypartCompoundNo">
+      <whenRadio button="IPHeartCompoundNo"/>
+      <and/>
+      <whenRadio button="IPBodypartCompoundNo"/>
+   </showWhen>
+</page>

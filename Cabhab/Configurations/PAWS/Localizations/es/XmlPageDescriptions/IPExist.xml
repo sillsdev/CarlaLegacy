@@ -3,61 +3,89 @@
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPExist" count="3/3">
    <title level="2">Las oraciones básicas - Existenciales</title>
-   <introduction>Las oraciones existenciales son similares a las oraciones copulativas, salvo que utilizan una palabra o palabras que significan ‘hay’ o ‘existe’ junto con una frase nominal y generalmente un lugar. Algunos ejemplos en inglés son:</introduction>
-		<EnglishExample>
-		   <exItem label="1.">There is a book on the table. ‘Hay un libro en la mesa.’</exItem>
-		   <exItem label="2.">There are two men outside. ‘Hay dos hombres afuera.’</exItem>
-		   <exItem label="3.">There is no more food. ‘No hay alimento.’</exItem>
-		</EnglishExample>
-   <introduction>Algunas lenguas tienen un sistema entero de los verbos existenciales que expresan la posición del objeto que es descrito.</introduction>
-	<form section="ip">
-	   <prompt>Escriba algunos ejemplos de oraciones existenciales en su lengua aquí :</prompt>
-		<textBox id="IPExamplesExistExample" dataItem="existExample" cols="50"/>
-	   <br/><br/>
-		<radioGroup>
-			<groupName dataItem="existVerb" default="yes">RIPExistVerb</groupName>
-		   <prompt>¿Su lengua tiene uno o más verbos utilizados especialmente en oraciones existenciales?</prompt>
-		   <radio id="IPExistVerbYes" dataValue="yes">Sí, y hay también una palabra existencial independiente, como ‘there’ en inglés</radio>
-		   <radio id="IPExistVerbYesOnly" dataValue="yesOnly">Sí, y estos verbos expresan el existencial en sí mismos, como ‘hay’ en español</radio>
-		   <radio id="IPExistVerbNoCop" dataValue="noCop">No, la cópula normal se utiliza, junto con una palabra existencial independiente, como ‘there’ en inglés</radio>
-		   <radio id="IPExistVerbNo" dataValue="no">No, no hay verbo utilizado en oraciones existenciales, sólo una palabra existencial independiente, como ‘there’ en inglés</radio>
-		</radioGroup>
-		<prompt id="IPExistWordPrompt" show="swIPExistWordYes"></prompt>
-		<instruction id="IPExistVerbYesInstruction" show="swIPExistVerbYes">Add the feature <feature>exist</feature> to the appropriate verbs  in the lexicon.</instruction>
-		<instruction id="IPExistWordYesInstruction" show="swIPExistWordYes">Add the feature <feature>exist</feature> to the appropriate word(s) in the lexicon.</instruction>
-		<br/>
-	   <prompt id="IPExistVerbExamples" show="swIPExistVerbYes">Escriba los verbos utilizados en oraciones existenciales en su lengua aquí (cada uno en una línea separada):</prompt>
-		<textBox id="IPExamplesExistVerbExample" dataItem="existVerbExample" rows="5" show="swIPExistVerbYes"/>
-		<br/>
-	   <prompt id="IPExistWordExamples" show="swIPExistWordYes">Escriba la(s) palabra(s) que significa ‘there’ utilizadas en oraciones existenciales en su lengua aquí (cada uno en una línea separada):</prompt>
-		<textBox id="IPExamplesExistWordExample" dataItem="existWordExample" rows="3" show="swIPExistWordYes"/>
-		<br/>  <br/>
-	   <buttons>
-			<button id="IPExistBack" value="Back" goto="IPComparative.xml"/>
-			<button id="IPExistNext" value="Next" goto="IPContents.htm"/>
-		</buttons>
-	</form>
-	<showWhen id="swHeadInitial">
-		<whenValue element="typology" attr="wordOrder" value="SVO"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VOS"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="VSO"/>
-	</showWhen>
-	<showWhen id="swHeadFinal">
-		<whenValue element="typology" attr="wordOrder" value="SOV"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OSV"/>
-	</showWhen>
-<showWhen id="swIPExistVerbYes">
-	<whenRadio button="IPExistVerbYes"/>
-	<or/>
-	<whenRadio button="IPExistVerbYesOnly"/>
-</showWhen>
-	<showWhen id="swIPExistWordYes">
-		<not/>
-		<whenRadio button="IPExistVerbYesOnly"/>
-	</showWhen>
+   <introduction>Las oraciones existenciales son similares a las oraciones copulativas, salvo que utilizan una palabra o palabras que significan <example>there</example>‘hay' o <example>there exists</example>‘existe' junto con una frase nominal y generalmente un lugar. Algunos ejemplos en inglés son:</introduction>
+        <EnglishExample>
+           <exItem label="1.">There is a book on the table. ‘Hay un libro en la mesa.'</exItem>
+           <exItem label="2.">There are two men outside. ‘Hay dos hombres afuera.'</exItem>
+           <exItem label="3.">There is no more food. ‘No hay alimento.'</exItem>
+        </EnglishExample>
+   <introduction>En vez de esta palabra existencial, algunas lenguas tienen un verbo existencial, como <example>hay</example> en español.  Otras lenguas tienen un sistema entero de los verbos existenciales que expresan la posición del objeto que se describe.</introduction>
+    <form section="ip">
+       <prompt>Escriba algunos ejemplos de oraciones existenciales en su lengua aquí :</prompt>
+        <textBox id="IPExamplesExistExample" dataItem="existExample" cols="50"/>
+       <br/><br/>
+       <checkboxGroup>
+          <prompt><br/>¿Qué elementos especiales se utilizan en oraciones existenciales en su lengua?  Seleccione todas las opciones que son correctas en su lengua.  Si ningún opción se permite en su lengua, quita estas opciones y seleccione la opción para ‘Ninguno’ de abajo</prompt>
+          <checkbox id="IPExistWord" dataItem="existWord">Una palabra existencial independiente, como ‘there' en inglés</checkbox>
+          <checkbox id="IPExistVerb" dataItem="existVerb">Un verbo existencial, como ‘hay’ en español</checkbox>
+          <checkbox id="IPExistPosition" dataItem="existPosition">Un sistema de verbos existenciales que expresan la posición del objeto que se describe</checkbox>
+          <checkbox id="IPExistOther" dataItem="existOther">En mi lengua, las oraciones existenciales se pueden marcar en esta manera: <textBox  id="IPExistOtherContent" dataItem="existOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="IPExistNoCheckPrompt" show="swIPExistNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir qué elementos especiales se utilizan en oraciones existenciales en su lengua.  Si ninguna opción es correcto, por favor seleccione ‘Ninguno, son exactamente las mismas que oraciones copulativas’ abajo.</prompt>
+       <checkboxGroup id="IPExistNoneTable" show="swIPExistNoCheck">
+          <prompt>Seleccione esta opción solamente si su lengua no distingue oraciones existenciales en absoluto</prompt>
+          <checkbox id="IPExistNone" dataItem="existNone">Ninguno, son exactamente las mismas que oraciones copulativas</checkbox>
+       </checkboxGroup>   
+       <br/>
+       <br/>
+       <prompt id="IPExistWordExamples" show="swIPExistWord">Escriba la(s) palabra(s) que significa(n) ‘there (existe)’ utiliza en oraciones existenciales en su lengua aquí (cada uno en una línea separada):</prompt>
+       <textBox id="IPExamplesExistWordExample" dataItem="existWordExample" rows="3" show="swIPExistWord"/>
+       <br/>
+       <instruction id="IPExistWordPrompt" show="swIPExistWord">Add the feature <feature>exist</feature> to the existential word in the lexicon.  We assume that this word will have the category <category>Adv</category>.  If it does not, please also add the feature <feature>makeAdv</feature> to change the category for these constructions.  If the existential word is synonymous with another word or another category in your language, you will need to make two separate lexical entries.</instruction>
+        <br/>
+       <prompt id="IPExistVerbExamples" show="swIPExistVerb">Escriba los verbos utilizados en oraciones existenciales en su lengua aquí (cada uno en una línea separada):</prompt>
+        <textBox id="IPExamplesExistVerbExample" dataItem="existVerbExample" rows="5" show="swIPExistVerb"/>
+        <br/>
+       <prompt id="IPExistPositionExamples" show="swIPExistPosition">Escriba los verbos de posición utilizados en oraciones existenciales en su lengua aquí (cada uno en una línea separada):</prompt>
+        <textBox id="IPExamplesExistPositionExample" dataItem="existPositionExample" rows="3" show="swIPExistPosition"/>
+       <instruction id="IPExistVerbYesInstruction" show="swIPExistVerbOrPosition">Add the feature <feature>exist</feature> to the appropriate verbs  in the lexicon. Since the existential verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-exist</feature>.  Also add the feature <feature>exist</feature> to any copular verbs that may be used in these existential constructions.</instruction>
+       <prompt id="IPExistOtherExamples" show="swIPExistOther"><br/>Escriba ejemplos de la otra manera de marcar las oraciones existenciales en su lengua aquí:</prompt>
+       <textBox id="IPExamplesExistOtherExample" dataItem="existOtherExample" rows="3" show="swIPExistOther"/>
+       <br/>  <br/>
+       <buttons>
+            <button id="IPExistBack" value="Back" goto="IPComparative.xml"/>
+            <button id="IPExistNext" value="Next" goto="IPContents.htm"/>
+        </buttons>
+    </form>
+   <showWhen id="swHeadInitial">
+      <whenValue element="typology" attr="wordOrder" value="SVO"/>
+      <or/>
+      <whenValue element="typology" attr="wordOrder" value="VOS"/>
+      <or/>
+      <whenValue element="typology" attr="wordOrder" value="VSO"/>
+   </showWhen>
+   <showWhen id="swHeadFinal">
+      <whenValue element="typology" attr="wordOrder" value="SOV"/>
+      <or/>
+      <whenValue element="typology" attr="wordOrder" value="OVS"/>
+      <or/>
+      <whenValue element="typology" attr="wordOrder" value="OSV"/>
+   </showWhen>
+   <showWhen id="swIPExistVerb">
+      <whenCheckbox button="IPExistVerb"/>
+   </showWhen>
+   <showWhen id="swIPExistPosition">
+      <whenCheckbox button="IPExistPosition"/>
+   </showWhen>
+   <showWhen id="swIPExistVerbOrPosition">
+      <whenRadio button="IPExistVerb"/>
+      <or/>
+      <whenRadio button="IPExistPosition"/>
+   </showWhen>
+   <showWhen id="swIPExistWord">
+      <whenRadio button="IPExistWord"/>
+   </showWhen>
+   <showWhen id="swIPExistOther">
+      <whenCheckbox button="IPExistOther"/>
+   </showWhen>
+   <showWhen id="swIPExistNoCheck">
+      <not/>
+      <whenCheckbox button="IPExistWord"/>
+      <and/><not/>
+      <whenCheckbox button="IPExistVerb"/>
+      <and/><not/>
+      <whenCheckbox button="IPExistPosition"/>
+      <and/><not/>
+      <whenCheckbox button="IPExistOther"/>
+   </showWhen>
 </page>

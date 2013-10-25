@@ -1,95 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="PronReciprocal" count="4/9">
-	<title level="2">Pronouns - Reciprocals</title>
-	<introduction>Reciprocals are similar to reflexives except that  they only occur with plural subjects.  They may be formed in the same way reflexives are, or they may be distinct.  For example, in English, the reciprocal forms are phrases: <example>each other</example> and <example>one another</example>.  Some languages use only a verbal affix to indicate reciprocal action of the plural subject, others have separate pronouns, others use a possessed noun phrase or a quantified noun phrase (as in English), and some do not mark reciprocal action at all.</introduction>
-	<form section="pron">
-		<radioGroup>
-			<groupName dataItem="recip" default="yes">RPronRecip</groupName>
-			<prompt>Does your language have (any type of) reciprocals?</prompt>
-			<radio id="PronRecipNo" dataValue="no">No</radio>
-			<radio id="PronRecipVerbal" dataValue="verbal">Yes, a verbal affix indicates reciprocal action</radio>
-			<radio id="PronRecipYes" dataValue="yes">Yes, a special pronoun or nominal phrase indicates reciprocal action</radio>
-		</radioGroup>
-		<prompt id="PronRecipExamples" show="swPronRecipYesOrVerbal">
-			<br/>Key some examples here:
-		</prompt>
-		<textBox id="PronRecipExample" dataItem="recipExample" show="swPronRecipYesOrVerbal"/>
-		<prompt id="PronRecipSentExamples" show="swPronRecipYesOrVerbal">
-			<br/>Now include the examples in simple sentences here:
-		</prompt>
-		<textBox id="PronRecipSentExample" dataItem="recipSentExample" show="swPronRecipYesOrVerbal"/>
-		<radioGroup id="PronRecipYesTable" show="swPronRecipYes">
-			<groupName dataItem="recipAffix" default="yes">RPronRecipAffix</groupName>
-			<prompt>
-				<br/>Are the reciprocals built by adding an affix to other pronouns?</prompt>
-			<radio id="PronRecipAffixYes" dataValue="yes">Yes, one or more affixes are chosen among to make another pronoun reciprocal</radio>
-			<radio id="PronRecipAffixNoWord" dataValue="noWord">No, they are distinct, stand alone words</radio>
-			<radio id="PronRecipAffixNoNoun" dataValue="noNoun">No, a phrase consisting of a certain noun with a pronoun as the possessor is used</radio>
-			<radio id="PronRecipAffixNoQP" dataValue="noQP">No, special quantified noun phrases are used, like in English</radio>
-			<radio id="PronRecipAffixSome" dataValue="some">Some are distinct words, some are phrases and some may be made with a reciprocal affix</radio>
-		</radioGroup>
-		<instruction id="PronRecipAffixYesInstruction" show="swPronRecipAffixYes">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant affix(es).</instruction>
-		<instruction id="PronRecipVerbalInstruction" show="swPronRecipVerbal">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant affix(es).</instruction>
-		<instruction id="PronRecipAffixNoWordInstruction" show="swPronRecipAffixNoWord">In the lexicon, mark each reciprocal pronoun with the feature <feature>reciprocal</feature> and also all the relevant
+    <title level="2">Pronouns - Reciprocals</title>
+    <introduction><technicalTermRef term="ttReciprocals" capitalize="yes"/> are similar to reflexives except that they only occur with plural subjects.  They may be formed in the same way reflexives are, or they may be distinct.  For example, in English, the reciprocal forms are special quantifier phrases: <example>each other</example> and <example>one another</example>.  Some languages use only a verbal affix to indicate reciprocal action of the plural subject, others have separate pronouns, others use a possessed noun phrase, and some do not mark reciprocal action at all.</introduction>
+    <form section="pron">
+        <radioGroup>
+            <groupName dataItem="recip" default="no">RPronRecip</groupName>
+            <prompt>Does your language have any type of reciprocals?</prompt>
+            <radio id="PronRecipNo" dataValue="no">No</radio>
+            <radio id="PronRecipYes" dataValue="yes">Yes, a special pronoun or nominal phrase which indicates reciprocal action fills the object position</radio>
+           <radio id="PronRecipVerbal" dataValue="yesVerbal">Yes, a verbal affix indicates reciprocal action</radio>
+        </radioGroup>
+       <prompt id="PronRecipVerbExamples" show="swPronRecipVerbal">
+          <br/>Key the reciprocal affix that attaches to verbs here, with a hyphen to indicate which side it attaches to the verb on:</prompt>
+       <textBox id="PronRecipVerbAffixExample" dataItem="recipVerbAffixExample" show="swPronRecipVerbal" rows="2"/>
+       <prompt id="PronRecipVerbSentExamples" show="swPronRecipVerbal">
+          <br/>Now key several examples of simple sentences with the reciprocal affix on the verb to indicate reciprocal action by the subject:</prompt>
+       <textBox id="PronRecipVerbSentExample" dataItem="recipVerbSentExample" show="swPronRecipVerbal"/>  
+       
+       <prompt id="PronRecipFirstExamples" show="swPronRecipYesAndPronExclNo">
+            <br/>Key the pronouns or nominal phrases used as reciprocals to refer back to first person plural subjects here:
+        </prompt>
+        <textBox id="PronRecipFirstPlExample" dataItem="recipFirstPlExample" show="swPronRecipYesAndPronExclNo" rows="2"/>
+       <prompt id="PronRecipFirstExclExamples" show="swPronRecipYesAndPronExclYes">
+          <br/>Key the pronouns or nominal phrases used as reciprocals to refer back to first person plural exclusive subjects here:
+       </prompt>
+       <textBox id="PronRecipFirstExclExample" dataItem="recipFirstExclExample" show="swPronRecipYesAndPronExclYes" rows="2"/>
+       <prompt id="PronRecipFirstInclExamples" show="swPronRecipYesAndPronExclYes">
+          <br/>Key the pronouns or nominal phrases used as reciprocals to refer back to first person plural inclusive subjects here:
+       </prompt>
+       <textBox id="PronRecipFirstInclExample" dataItem="recipFirstInclExample" show="swPronRecipYesAndPronExclYes" rows="2"/>
+       <prompt id="PronRecipSecondExamples" show="swPronRecipYes">
+          <br/>Key the pronouns or nominal phrases used as reciprocals to refer back to second person plural subjects here:
+       </prompt>
+       <textBox id="PronRecipSecondExample" dataItem="recipSecondExample" show="swPronRecipYes" rows="2"/>
+       <prompt id="PronRecipThirdExamples" show="swPronRecipYes">
+          <br/>Key the pronouns or nominal phrases used as reciprocals to refer back to third person plural subjects here:
+       </prompt>
+       <textBox id="PronRecipThirdExample" dataItem="recipThirdExample" show="swPronRecipYes" rows="2"/>
+       <prompt id="PronRecipSentExamples" show="swPronRecipYes">
+            <br/>Now include some of the examples in simple sentences here:
+        </prompt>
+        <textBox id="PronRecipSentExample" dataItem="recipSentExample" show="swPronRecipYes"/>
+
+       <checkboxGroup id="PronRecipYesTable" show="swPronRecipYes">
+          <prompt>
+             <br/>How are the reciprocals that fill the object position formed in your language? Check all options that are correct for your language</prompt>
+          <checkbox id="PronRecipAffixNoWord" dataItem="recipDistinct">They are distinct, stand alone words</checkbox>
+          <checkbox id="PronRecipAffixYes" dataItem="recipAffix">One or more affixes are chosen among to make another pronoun into a reciprocal</checkbox>
+          <checkbox id="PronRecipAffixNoNoun" dataItem="reciplNounPoss">A phrase consisting of a certain noun with a pronoun as the possessor is used</checkbox>
+          <checkbox id="PronRecipAffixNoQP" dataItem="recipQP">Special quantified noun phrases are used</checkbox>
+          <checkbox id="PronRecipAffixOther" dataItem="recipOther">My language does the following to form a reciprocal:<textBox  id="PronRecipAffixOtherContent" dataItem="recipOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <br/><br/>
+       <prompt id="PronRecipAffixNoCheckPrompt" show="swPronRecipYesNoCheck">WARNING: You said above that your language has reciprocals, but you did not check any of the options to say how they are formed.  Please either check one or more options as appropriate, unless you do not have any reciprocals, in which case you should not have added any forms to the text boxes and should change the answer above to either ‘No’ or ‘Yes, a verbal affix indicates reciprocal action’.</prompt>
+       
+       <instruction id="PronRecipVerbalInstruction" show="swPronRecipVerbal">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant verbal affix(es).</instruction>
+        <instruction id="PronRecipAffixNoWordInstruction" show="swPronRecipAffixNoWord">In the lexicon, mark each reciprocal pronoun with the feature <feature>reciprocal</feature> and also all the relevant
 <ul>
-				<li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>) and</li>
-				<li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) features.</li>
-				<li>Also, add the appropriate case feature (<feature>accusative</feature>, <feature>absolutive</feature>).</li>
-				<li>We assume that reciprocals require a plural subject.</li>
-			</ul>
-		</instruction>
-		<instruction id="PronRecipAffixNoNounInstruction" show="swPronRecipAffixNoNoun">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant noun.</instruction>
-		<instruction id="PronRecipAffixNoQPInstruction" show="swPronRecipAffixNoQP">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant nouns and quantifiers.</instruction>
-	   <instruction id="PronRecipAffixSomeInstruction" show="swPronRecipAffixSome">In the lexicon, mark each reciprocal that is a separate word with the feature <feature>reciprocal</feature> and also all the relevant
-		  <ul>
-			 <li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>) and</li>
-			 <li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) features.</li>
-			 <li>Also, add the appropriate case feature (<feature>accusative</feature>, <feature>absolutive</feature>).</li>
-			 <li>We assume that reciprocals require a plural subject.</li>
-		  </ul>
-		  Also, add the feature <feature>reciprocal</feature> to any reciprocal affix and to any relevant nouns or quantifiers.
-	   </instruction>
-	   <br/>
-		<buttons>
-			<button id="PronReciprocalBack" value="Back" goto="PronRefl.xml"/>
-			<button id="PronReciprocalNext" value="Next" goto="PronDem.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swPronRecipYesOrVerbal">
-		<not/>
-		<whenRadio button="PronRecipNo"/>
-	</showWhen>
-	<showWhen id="swPronRecipYes">
-		<whenRadio button="PronRecipYes"/>
-	</showWhen>
-	<showWhen id="swPronRecipVerbal">
-		<whenRadio button="PronRecipVerbal"/>
-	</showWhen>
-	<showWhen id="swPronRecipAffixYes">
-		<whenRadio button="PronRecipYes"/>
-		<and/>
-		<whenRadio button="PronRecipAffixYes"/>
-	</showWhen>
-	<showWhen id="swPronRecipAffixNoNoun">
-		<whenRadio button="PronRecipYes"/>
-		<and/>
-		<whenRadio button="PronRecipAffixNoNoun"/>
-	</showWhen>
-	<showWhen id="swPronRecipAffixNoQP">
-		<whenRadio button="PronRecipYes"/>
-		<and/>
-		<whenRadio button="PronRecipAffixNoQP"/>
-	</showWhen>
-	<showWhen id="swPronRecipAffixNoWord">
-		<whenRadio button="PronRecipYes"/>
-		<and/>
-		<whenRadio button="PronRecipAffixNoWord"/>
-	</showWhen>
-   <showWhen id="swPronRecipAffixSome">
-	  <whenRadio button="PronRecipYes"/>
-	  <and/>
-	  <whenRadio button="PronRecipAffixSome"/>
+                <li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>) and</li>
+                <li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) features.</li>
+                <li>Also, add the appropriate case feature (<feature>accusative</feature>, <feature>absolutive</feature>).</li>
+                <li>We assume that reciprocals require a plural subject.</li>
+            </ul>
+        </instruction>
+       <prompt id="PronRecipAffixYesPrompt" show="swPronRecipAffixYes"><br/>Key the reciprocal affixes that change another pronoun into a reciprocal pronoun here, with a hyphen to indicate which side it attaches to the pronoun on:
+       </prompt>
+       <textBox id="PronReflAffixExamples" dataItem="pronRecipAffixExample"  rows="2" show="swPronRecipAffixYes"/> 
+       <instruction id="PronRecipAffixYesInstruction" show="swPronRecipAffixYes">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant affix(es).</instruction>
+       <prompt id="PronRecipAffixNoNounPrompt" show="swPronRecipAffixNoNoun"><br/>Key the special noun that is possessed by the possessor pronouns to form a reciprocal phrase that acts the same as a reciprocal pronoun here:
+       </prompt>
+       <textBox id="PronRecipNounPossExamples" dataItem="pronRecipNounPossExample"  rows="2" show="swPronRecipAffixNoNoun"/> 
+       <instruction id="PronRecipAffixNoNounInstruction" show="swPronRecipAffixNoNoun">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant noun.</instruction>
+       <prompt id="PronRecipAffixNoQPPrompt" show="swPronRecipAffixNoQP"><br/>Key the special quantifier or phrase that is used in reciprocals here:
+       </prompt>
+       <textBox id="PronRecipQPExamples" dataItem="pronRecipQExample"  rows="2" show="swPronRecipAffixNoQP"/> 
+       <instruction id="PronRecipAffixNoQPInstruction" show="swPronRecipAffixNoQP">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant nouns and quantifiers.</instruction>
+<br/>       <br/>
+        <buttons>
+            <button id="PronReciprocalBack" value="Back" goto="PronRefl.xml"/>
+            <button id="PronReciprocalNext" value="Next" goto="PronDem.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swPronRecipYes">
+        <whenRadio button="PronRecipYes"/>
+    </showWhen>
+    <showWhen id="swPronRecipVerbal">
+        <whenRadio button="PronRecipVerbal"/>
+    </showWhen>
+    <showWhen id="swPronRecipAffixYes">
+        <whenRadio button="PronRecipYes"/>
+        <and/>
+        <whenCheckbox button="PronRecipAffixYes"/>
+    </showWhen>
+    <showWhen id="swPronRecipAffixNoNoun">
+        <whenRadio button="PronRecipYes"/>
+        <and/>
+       <whenCheckbox button="PronRecipAffixNoNoun"/>
+    </showWhen>
+    <showWhen id="swPronRecipAffixNoQP">
+        <whenRadio button="PronRecipYes"/>
+        <and/>
+       <whenCheckbox button="PronRecipAffixNoQP"/>
+    </showWhen>
+    <showWhen id="swPronRecipAffixNoWord">
+        <whenRadio button="PronRecipYes"/>
+        <and/>
+       <whenCheckbox button="PronRecipAffixNoWord"/>
+    </showWhen>
+   <showWhen id="swPronRecipYesNoCheck">
+      <whenRadio button="PronRecipYes"/>
+      <and/><not/>
+      <whenCheckbox button="PronRecipAffixNoWord"/>
+      <and/><not/>
+      <whenCheckbox button="PronRecipAffixYes"/>
+      <and/><not/>
+      <whenCheckbox button="PronRecipAffixNoNoun"/>
+      <and/><not/>
+      <whenCheckbox button="PronRecipAffixNoQP"/>
+      <and/><not/>
+      <whenCheckbox button="PronRecipAffixOther"/>
    </showWhen>
+   <showWhen id="swPronRecipYesAndPronExclNo">
+      <whenRadio button="PronRecipYes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounExcl" value="no"/>
+   </showWhen>
+   <showWhen id="swPronRecipYesAndPronExclYes">
+      <whenRadio button="PronRecipYes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounExcl" value="yes"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
 </page>

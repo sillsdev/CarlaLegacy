@@ -1,432 +1,428 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPAgrFeatures" count="2/2">
-	<title level="2">Las oraciones básicas - Las características de la concordancia</title>
-	<instruction>Los verbos y los auxiliares también pueden tener características de la concordancia que requieren la concordancia con el sujeto, y a veces también con el objeto directo. Mire las características en el cuadro abajo y dando click a la izquierda de cualquiera que su lengua utiliza.
-	   <br/><br/>
-	   <span id="IPAgrClassAndClassifierNoSpan" show="swClassifierNo">Tenga en cuenta que no debería tener ningún característica de clase porque ya dijiste en <section number="1">La tipología - Clasificadores</section> que su lengua no tiene clasificadores. Si esto es incorrecto, por favor regresa a <section number="1">La tipología - Clasificadores</section> para cambiar su respuesta allí y documentar los clasificadores.  También necesitará volver por el resto de las secciones anteriores hasta esta página para responder a las preguntas sobre si ese elemento está marcado con clasificadores antes de continuar más allá.  </span>Para la concordancia de clase, si su lengua tiene clasificadores para tipo, dando click a la izquierda de las características del tipo apropiadas a continuación.  Si se usan números de clase, dando click a la izquierda de las características <feature>class_ ## _ [tema/objeto/ergativo/absolutivo]</feature> apropiadas en el cuadro y substituya un tipo o un número en vez de ## (abajo) en la gramática. <span id="IPAgrFeaturesNotPracticalSpan" show="swNotPractical">In the lexicon, add the appropriate features to the relevant affixes, including pronominal clitics that may attach to the verb.  For class agreement, replace the ## with the appropriate class number up to 25 on the appropriate entries in the lexicon.
-<br/>
-		  <br/>For animacy, it is most likely a property of the semantics of the individual verb whether its subject and/or object must be animate, so those features will need to be keyed on the verb entry.  Since verbs are a large, open class, you do not need to mark all verbs at this point (or even ever).  Mark those common verbs that come to mind that can only have an animate subject or object.  For example, any “experiencer” verbs which have to do with feeling or thinking must have an animate subject.  Later, when you are working on eliminating incorrect parses, you will find others that need these features.</span><br/>
-		<featureChart>
-			<featureRow>
-				<featureType rowspan="20">persona</featureType>
-				<featureItem dataValue="ipAgrFeatFirstSubject" name="IPFeatAgrFirstSubject">first_subject</featureItem>
-				<featureExplanation>el sujeto debe ser primera persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFirstObject" name="IPFeatAgrFirstObject">first_object</featureItem>
-				<featureExplanation>el objeto debe ser primera persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFirstErgative" name="IPFeatAgrFirstErgative">first_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser primera persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFirstAbsolutive" name="IPFeatAgrFirstAbsolutive">first_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser primera persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFirstExclusiveSubject" name="IPFeatAgrFirstExclusiveSubject">first_exclusive_subject</featureItem>
-				<featureExplanation>el sujeto debe ser primera persona exclusiva</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFirstExclusiveObject" name="IPFeatAgrFirstExclusiveObject">first_exclusive_object</featureItem>
-				<featureExplanation>el objeto debe ser primera persona exclusiva</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFirstExclusiveErgative" name="IPFeatAgrFirstExclusiveErgative">first_exclusive_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser primera persona exclusiva</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFirstExclusiveAbsolutive" name="IPFeatAgrFirstExclusiveAbsolutive">first_exclusive_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser primera persona exclusiva</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFirstInclusiveSubject" name="IPFeatAgrFirstInclusiveSubject">first_inclusive_subject</featureItem>
-				<featureExplanation>el sujeto debe ser primera persona inclusiva</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFirstInclusiveObject" name="IPFeatAgrFirstInclusiveObject">first_inclusive_object</featureItem>
-				<featureExplanation>el objeto debe ser primera persona inclusiva</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFirstInclusiveErgative" name="IPFeatAgrFirstInclusiveErgative">first_inclusive_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser primera persona inclusiva</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFirstInclusiveAbsolutive" name="IPFeatAgrFirstInclusiveAbsolutive">first_inclusive_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser primera persona inclusiva</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatSecondSubject" name="IPFeatAgrSecondSubject">second_subject</featureItem>
-				<featureExplanation>el sujeto debe ser segunda persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatSecondObject" name="IPFeatAgrSecondObject">second_object</featureItem>
-				<featureExplanation>el objeto debe ser segunda persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatSecondErgative" name="IPFeatAgrSecondErgative">second_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser segunda persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatSecondAbsolutive" name="IPFeatAgrSecondAbsolutive">second_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser segunda persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatThirdSubject" name="IPFeatAgrThirdSubject">third_subject</featureItem>
-				<featureExplanation>el sujeto debe ser tercera persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatThirdObject" name="IPFeatAgrThirdObject">third_object</featureItem>
-				<featureExplanation>el objeto debe ser tercera persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatThirdErgative" name="IPFeatAgrThirdErgative">third_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser tercera persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatThirdAbsolutive" name="IPFeatAgrThirdAbsolutive">third_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser tercera persona</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureType rowspan="12">número</featureType>
-				<featureItem dataValue="ipAgrFeatSingularSubject" name="IPFeatAgrSingularSubject">singular_subject</featureItem>
-				<featureExplanation>el sujeto debe ser singular</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatSingularObject" name="IPFeatAgrSingularObject">singular_object</featureItem>
-				<featureExplanation>el objeto debe ser singular</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatSingularErgative" name="IPFeatAgrSingularErgative">singular_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser singular</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatSingularAbsolutive" name="IPFeatAgrSingularAbsolutive">singular_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser singular</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatDualSubject" name="IPFeatAgrDualSubject">dual_subject</featureItem>
-				<featureExplanation>el sujeto debe ser dual</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatDualObject" name="IPFeatAgrDualObject">dual_object</featureItem>
-				<featureExplanation>el objeto debe ser dual</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatDualErgative" name="IPFeatAgrDualErgative">dual_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser dual</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatDualAbsolutive" name="IPFeatAgrDualAbsolutive">dual_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser dual</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatPluralSubject" name="IPFeatAgrPluralSubject">plural_subject</featureItem>
-				<featureExplanation>el sujeto debe ser plural</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatPluralObject" name="IPFeatAgrPluralObject">plural_object</featureItem>
-				<featureExplanation>el objeto debe ser plural</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatPluralErgative" name="IPFeatAgrPluralErgative">plural_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser plural</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatPluralAbsolutive" name="IPFeatAgrPluralAbsolutive">plural_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser plural</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureType rowspan="12">género</featureType>
-				<featureItem dataValue="ipAgrFeatMasculineSubject" name="IPFeatAgrMasculineSubject">masculine_subject</featureItem>
-				<featureExplanation>el sujeto debe ser masculino</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatMasculineObject" name="IPFeatAgrMasculineObject">masculine_object</featureItem>
-				<featureExplanation>el objeto debe ser masculino</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatMasculineErgative" name="IPFeatAgrMasculineErgative">masculine_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser masculino</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatMasculineAbsolutive" name="IPFeatAgrMasculineAbsolutive">masculine_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser masculino</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFeminineSubject" name="IPFeatAgrFeminineSubject">feminine_subject</featureItem>
-				<featureExplanation>el sujeto debe ser femenino</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFeminineObject" name="IPFeatAgrFeminineObject">feminine_object</featureItem>
-				<featureExplanation>el objeto debe ser femenino</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFeminineErgative" name="IPFeatAgrFeminineErgative">feminine_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser femenino</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatFeminineAbsolutive" name="IPFeatAgrFeminineAbsolutive">feminine_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser femenino</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatNeuterSubject" name="IPFeatAgrNeuterSubject">neuter_subject</featureItem>
-				<featureExplanation>el sujeto debe ser neutro</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatNeuterObject" name="IPFeatAgrNeuterObject">neuter_object</featureItem>
-				<featureExplanation>el objeto debe ser neutro</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatNeuterErgative" name="IPFeatAgrNeuterErgative">neuter_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser neutro</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatNeuterAbsolutive" name="IPFeatAgrNeuterAbsolutive">neuter_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser neutro</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureType rowspan="16">animado</featureType>
-				<featureItem dataValue="ipAgrFeatAnimateSubject" name="IPFeatAgrAnimateSubject">animate_subject</featureItem>
-				<featureExplanation>el sujeto debe ser animado</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatAnimateObject" name="IPFeatAgrAnimateObject">animate_object</featureItem>
-				<featureExplanation>el objeto debe ser animado</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatAnimateErgative" name="IPFeatAgrAnimateErgative">animate_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser animado</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatAnimateAbsolutive" name="IPFeatAgrAnimateAbsolutive">animate_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser animado</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatMinusAnimateSubject" name="IPFeatAgrMinusAnimateSubject">-animate_subject</featureItem>
-				<featureExplanation>el sujeto debe ser inanimado</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatMinusAnimateObject" name="IPFeatAgrMinusAnimateObject">-animate_object</featureItem>
-				<featureExplanation>el objeto debe ser inanimado</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatMinusAnimateErgative" name="IPFeatAgrMinusAnimateErgative">-animate_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser inanimado</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatMinusAnimateAbsolutive" name="IPFeatAgrMinusAnimateAbsolutive">-animate_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser inanimado</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatHumanSubject" name="IPFeatAgrHumanSubject">human_subject</featureItem>
-				<featureExplanation>el sujeto debe ser humano</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatHumanObject" name="IPFeatAgrHumanObject">human_object</featureItem>
-				<featureExplanation>el objeto debe ser humano</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatHumanErgative" name="IPFeatAgrHumanErgative">human_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser humano</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatHumanAbsolutive" name="IPFeatAgrHumanAbsolutive">human_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser humano</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatMinusHumanSubject" name="IPFeatAgrMinusHumanSubject">-human_subject</featureItem>
-				<featureExplanation>el sujeto no debe ser humano</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatMinusHumanObject" name="IPFeatAgrMinusHumanObject">-human_object</featureItem>
-				<featureExplanation>el objeto no debe ser humano</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatMinusHumanErgative" name="IPFeatAgrMinusHumanErgative">-human_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo no debe ser humano</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatMinusHumanAbsolutive" name="IPFeatAgrMinusHumanAbsolutive">-human_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo no debe ser humano</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureType rowspan="40">clase</featureType>
-				<featureItem dataValue="ipAgrFeatClassClassNumberSubject" name="IPFeatAgrClassClassNumberSubject">class_##_subject</featureItem>
-				<featureExplanation>el sujeto debe ser de la clase ##</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatClassClassNumberObject" name="IPFeatAgrClassClassNumberObject">class_##_object</featureItem>
-				<featureExplanation>el objeto debe ser de la clase ##</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatClassClassNumberErgative" name="IPFeatAgrClassClassNumberErgative">class_##_ergative</featureItem>
-				<featureExplanation>el sujeto de un verbo transitivo debe ser  de la clase ##</featureExplanation>
-			</featureRow>
-			<featureRow>
-				<featureItem dataValue="ipAgrFeatClassClassNumberAbsolutive" name="IPFeatAgrClassClassNumberAbsolutive">class_##_absolutive</featureItem>
-				<featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de la clase ## </featureExplanation>
-			</featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeAnimalSubject" name="IPFeatAgrClassClassTypeAnimalSubject">class_animal_subject</featureItem>
-			  <featureExplanation>el sujeto debe ser de tipo animal</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeInsectSubject" name="IPFeatAgrClassClassTypeInsectSubject">class_insect_subject</featureItem>
-			  <featureExplanation>el sujeto debe ser de tipo insecto</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeLiquidSubject" name="IPFeatAgrClassLiquidSubject">class_liquid_subject</featureItem>
-			  <featureExplanation>el sujeto debe ser de tipo líquido</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeRoundSubject" name="IPFeatAgrClassClassTypeRoundSubject">class_round_subject</featureItem>
-			  <featureExplanation>el sujeto debe ser de tipo redondo</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeCylinderSubject" name="IPFeatAgrClassClassTypeCylinderSubject">class_cylinder_subject</featureItem>
-			  <featureExplanation>el sujeto debe ser de tipo cilíndrico</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeSphericalSubject" name="IPFeatAgrClassClassTypeSphericalSubject">class_spherical_subject</featureItem>
-			  <featureExplanation>el sujeto debe ser de tipo esférico</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeTreeSubject" name="IPFeatAgrClassClassTypeTreeSubject">class_tree_subject</featureItem>
-			  <featureExplanation>el sujeto debe ser de tipo árbol</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeWoodSubject" name="IPFeatAgrClassClassTypeWoodSubject">class_wooden_subject</featureItem>
-			  <featureExplanation>el sujeto debe ser de tipo madera</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeOtherSubject" name="IPFeatAgrClassClassTypeOtherSubject">class_other_subject</featureItem>
-			  <featureExplanation>el sujeto debe ser de otro tipo inanimado</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeAnimalObject" name="IPFeatAgrClassClassTypeAnimalObject">class_animal_object</featureItem>
-			  <featureExplanation>el objeto debe ser de tipo animal</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeInsectObject" name="IPFeatAgrClassClassTypeInsectObject">class_insect_object</featureItem>
-			  <featureExplanation>el objeto debe ser de tipo insecto</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeLiquidObject" name="IPFeatAgrClassClassTypeLiquidObject">class_liquid_object</featureItem>
-			  <featureExplanation>el objeto debe ser de tipo líquido</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeRoundObject" name="IPFeatAgrClassClassTypeRoundObject">class_round_object</featureItem>
-			  <featureExplanation>el objeto debe ser de tipo redondo</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeCylinderObject" name="IPFeatAgrClassClassTypeCylinderObject">class_cylinder_object</featureItem>
-			  <featureExplanation>el objeto debe ser de tipo cilíndrico</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeSphericalObject" name="IPFeatAgrClassClassTypeSphericalObject">class_spherical_object</featureItem>
-			  <featureExplanation>el objeto debe ser de tipo esférico</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeTreeObject" name="IPFeatAgrClassClassTypeTreeObject">class_tree_object</featureItem>
-			  <featureExplanation>el objeto debe ser de tipo árbol</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeWoodObject" name="IPFeatAgrClassClassTypeWoodObject">class_wooden_object</featureItem>
-			  <featureExplanation>el objeto debe ser de tipo madera</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeOtherObject" name="IPFeatAgrClassClassTypeOtherObject">class_other_object</featureItem>
-			  <featureExplanation>el objeto debe ser de otro tipo inanimado</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeAnimalErgative" name="IPFeatAgrClassClassTypeAnimalErgative">class_animal_ergative</featureItem>
-			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo animal</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeInsectErgative" name="IPFeatAgrClassClassTypeInsectErgative">class_insect_ergative</featureItem>
-			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo insecto</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeLiquidErgative" name="IPFeatAgrClassClassTypeLiquidErgative">class_liquid_ergative</featureItem>
-			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo líquido</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeRoundErgative" name="IPFeatAgrClassClassTypeRoundErgative">class_round_ergative</featureItem>
-			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo redondo</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeCylinderErgative" name="IPFeatAgrClassClassTypeCylinderErgative">class_cylinder_ergative</featureItem>
-			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo cilíndrico</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeSphericalErgative" name="IPFeatAgrClassClassTypeSphericalErgative">class_spherical_ergative</featureItem>
-			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo esférico</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeTreeErgative" name="IPFeatAgrClassClassTypeTreeErgative">class_tree_ergative</featureItem>
-			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo árbol</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeWoodErgative" name="IPFeatAgrClassClassTypeWoodErgative">class_wooden_ergative</featureItem>
-			  <featureExplanation>el sujeto de un verbo transitivo debe ser de tipo madera</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeOtherErgative" name="IPFeatAgrClassClassTypeOtherErgative">class_other_ergative</featureItem>
-			  <featureExplanation>el sujeto de un verbo transitivo debe ser de otro tipo inanimado</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeAnimalAbsolutive" name="IPFeatAgrClassClassTypeAnimalAbsolutive">class_animal_absolutive</featureItem>
-			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo animal</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeInsectAbsolutive" name="IPFeatAgrClassClassTypeInsectAbsolutive">class_insect_absolutive</featureItem>
-			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo insecto</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeLiquidAbsolutive" name="IPFeatAgrClassClassTypeLiquidAbsolutive">class_liquid_absolutive</featureItem>
-			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo líquido</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeRoundAbsolutive" name="IPFeatAgrClassClassTypeRoundAbsolutive">class_round_absolutive</featureItem>
-			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo redondo</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeCylinderAbsolutivet" name="IPFeatAgrClassClassTypeCylinderAbsolutive">class_cylinder_absolutive</featureItem>
-			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo cilíndrico</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeSphericalAbsolutive" name="IPFeatAgrClassClassTypeSphericalAbsolutive">class_spherical_absolutive</featureItem>
-			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo esférico</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeTreeAbsolutive" name="IPFeatAgrClassClassTypeTreeAbsolutive">class_tree_absolutive</featureItem>
-			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo árbol</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeWoodAbsolutive" name="IPFeatAgrClassClassTypeWoodAbsolutive">class_wooden_absolutive</featureItem>
-			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de tipo madera</featureExplanation>
-		   </featureRow>
-		   <featureRow>
-			  <featureItem dataValue="ipAgrFeatClassClassTypeOtherAbsolutive" name="IPFeatAgrClassClassTypeOtherAbsolutive">class_other_absolutive</featureItem>
-			  <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser de otro tipo inanimado</featureExplanation>
-		   </featureRow>
-		</featureChart>
-	</instruction>
-	<form section="ip" transparent="yes">
-		<br/>
-		<buttons>
-			<button id="IPAgrFeaturesBack" value="Back" goto="IPInflFeatures.xml"/>
-			<button id="IPAgrFeaturesNext" value="Next" goto="IPContents.htm"/>
-		</buttons>
-	</form>
-	<showWhen id="swNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-	</showWhen>
-   <showWhen id="swClassifierNo">
-	  <whenValue element="typology" attr="classifier" value="no"/>
+    <title level="2">Las oraciones básicas - Las características de la concordancia</title>
+   <introduction>Los verbos y los auxiliares también pueden sufrir cambios para expresar concordancia con el sujeto, y a veces también con el objeto directo, incluyen persona, número, género, animado y clase.  La mayoría de los cambios o accidentes se agregan como afijos o clíticos pronominales que pueden unirse con el verbo. Las lenguas difieren en cuántos accidentes se marcan en los verbos o auxliairies.</introduction>
+   <form section="ip">
+      <prompt><br/>Mire los accidenteds de concordancia en el cuadro abajo y dando click a la izquierda de cualquier que su lengua utiliza. La concordancia de clase se explica en <section number="1.">La tipología - clasificadores</section>. Escriba los <technicalTermRef term="ttMorphemes"/> para cada accidente de concordancia en la columna final. Incluyen clíticos pronominales que se unen a los verbos (los pronombres dependientes) así como afijos verbales.</prompt>
+      <instruction> <span id="IPAgrFeaturesNotPracticalSpan" show="swNotPractical">In the lexicon, add the appropriate features to the relevant affixes, including pronominal clitics that may attach to the verb.      
+       <br/><br/>
+For animacy, it is most likely a property of the semantics of the individual verb whether its subject and/or object must be animate, so those features will need to be keyed on the verb entry.  Since verbs are a large, open class, you do not need to mark all verbs at this point (or even ever).  Mark those common verbs that come to mind that can only have an animate subject or object.  For example, any “experiencer” verbs which have to do with feeling or thinking must have an animate subject.  Later, when you are working on eliminating incorrect parses, you will find others that need these features.</span><br/>
+        <featureChart>
+            <featureRow>
+                <featureType rowspan="20">persona</featureType>
+                <featureItem dataValue="ipAgrFeatFirstSubject" name="IPFeatAgrFirstSubject">first_subject</featureItem>
+                <featureExplanation>el sujeto debe ser primera persona</featureExplanation>
+               <textBox id="TBPersonFirstSubject" dataItem="firstSubjectPerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFirstObject" name="IPFeatAgrFirstObject">first_object</featureItem>
+                <featureExplanation>el objeto debe ser primera persona</featureExplanation>
+               <textBox id="TBPersonFirstObject" dataItem="firstObjectPerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFirstErgative" name="IPFeatAgrFirstErgative">first_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser primera persona</featureExplanation>
+               <textBox id="TBPersonFirstErgative" dataItem="firstErgativePerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFirstAbsolutive" name="IPFeatAgrFirstAbsolutive">first_absolutive</featureItem>
+               <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser primera persona</featureExplanation>
+               <textBox id="TBPersonFirstAbsolutive" dataItem="firstAbsolutivePerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFirstExclusiveSubject" name="IPFeatAgrFirstExclusiveSubject">first_exclusive_subject</featureItem>
+                <featureExplanation>el sujeto debe ser primera persona exclusiva</featureExplanation>
+               <textBox id="TBPersonFirstExclusiveSubject" dataItem="firstExclusiveSubjectPerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFirstExclusiveObject" name="IPFeatAgrFirstExclusiveObject">first_exclusive_object</featureItem>
+                <featureExplanation>el objeto debe ser primera persona exclusiva</featureExplanation>
+               <textBox id="TBPersonFirstExclusiveObject" dataItem="firstExclusiveObjectPerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFirstExclusiveErgative" name="IPFeatAgrFirstExclusiveErgative">first_exclusive_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser primera persona exclusiva</featureExplanation>
+               <textBox id="TBPersonFirstExclusiveErgative" dataItem="firstExclusiveErgativePerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFirstExclusiveAbsolutive" name="IPFeatAgrFirstExclusiveAbsolutive">first_exclusive_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser primera persona exclusiva</featureExplanation>
+               <textBox id="TBPersonFirstExclusiveAbsolutive" dataItem="firstExclusiveAbsolutivePerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFirstInclusiveSubject" name="IPFeatAgrFirstInclusiveSubject">first_inclusive_subject</featureItem>
+                <featureExplanation>el sujeto debe ser primera persona inclusiva</featureExplanation>
+               <textBox id="TBPersonFirstInclusiveSubject" dataItem="firstInclusiveSubjectPerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFirstInclusiveObject" name="IPFeatAgrFirstInclusiveObject">first_inclusive_object</featureItem>
+                <featureExplanation>el objeto debe ser primera persona inclusiva</featureExplanation>
+               <textBox id="TBPersonFirstInclusiveObject" dataItem="firstInclusiveObjectPerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFirstInclusiveErgative" name="IPFeatAgrFirstInclusiveErgative">first_inclusive_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser primera persona inclusiva</featureExplanation>
+               <textBox id="TBPersonFirstInclusiveErgative" dataItem="firstInclusiveErgativePerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFirstInclusiveAbsolutive" name="IPFeatAgrFirstInclusiveAbsolutive">first_inclusive_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser primera persona inclusiva</featureExplanation>
+               <textBox id="TBPersonFirstInclusiveAbsolutive" dataItem="firstInclusiveAbsolutivePerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatSecondSubject" name="IPFeatAgrSecondSubject">second_subject</featureItem>
+                <featureExplanation>el sujeto debe ser segunda persona</featureExplanation>
+               <textBox id="TBPersonSecondSubject" dataItem="secondSubjectPerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatSecondObject" name="IPFeatAgrSecondObject">second_object</featureItem>
+                <featureExplanation>el objeto debe ser segunda persona</featureExplanation>
+               <textBox id="TBPersonSecondObject" dataItem="secondObjectPerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatSecondErgative" name="IPFeatAgrSecondErgative">second_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser segunda persona</featureExplanation>
+               <textBox id="TBPersonSecondErgative" dataItem="secondErgativePerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatSecondAbsolutive" name="IPFeatAgrSecondAbsolutive">second_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser segunda persona</featureExplanation>
+               <textBox id="TBPersonSecondAbsolutive" dataItem="secondAbsolutivePerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatThirdSubject" name="IPFeatAgrThirdSubject">third_subject</featureItem>
+                <featureExplanation>el sujeto debe ser tercera persona</featureExplanation>
+               <textBox id="TBPersonThirdSubject" dataItem="thirdSubjectPerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatThirdObject" name="IPFeatAgrThirdObject">third_object</featureItem>
+                <featureExplanation>el objeto debe ser tercera persona</featureExplanation>
+               <textBox id="TBPersonThirdObject" dataItem="thirdObjectPerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatThirdErgative" name="IPFeatAgrThirdErgative">third_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser tercera persona</featureExplanation>
+               <textBox id="TBPersonThirdErgative" dataItem="thirdErgativePerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatThirdAbsolutive" name="IPFeatAgrThirdAbsolutive">third_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser tercera persona</featureExplanation>
+               <textBox id="TBPersonThirdAbsolutive" dataItem="thirdAbsolutivePerson" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureType rowspan="12">número</featureType>
+                <featureItem dataValue="ipAgrFeatSingularSubject" name="IPFeatAgrSingularSubject">singular_subject</featureItem>
+                <featureExplanation>el sujeto debe ser singular</featureExplanation>
+               <textBox id="TBNumberSingularSubject" dataItem="singularSubjectNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatSingularObject" name="IPFeatAgrSingularObject">singular_object</featureItem>
+                <featureExplanation>el objeto debe ser singular</featureExplanation>
+               <textBox id="TBNumberSingularObject" dataItem="singularObjectNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatSingularErgative" name="IPFeatAgrSingularErgative">singular_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser singular</featureExplanation>
+               <textBox id="TBNumberSingularErgative" dataItem="singularErgativeNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatSingularAbsolutive" name="IPFeatAgrSingularAbsolutive">singular_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser singular</featureExplanation>
+               <textBox id="TBNumberSingularAbsolutive" dataItem="singularAbsolutiveNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatDualSubject" name="IPFeatAgrDualSubject">dual_subject</featureItem>
+                <featureExplanation>el sujeto debe ser dual</featureExplanation>
+               <textBox id="TBNumberDualSubject" dataItem="dualSubjectNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatDualObject" name="IPFeatAgrDualObject">dual_object</featureItem>
+                <featureExplanation>el objeto debe ser dual</featureExplanation>
+               <textBox id="TBNumberDualObject" dataItem="dualObjectNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatDualErgative" name="IPFeatAgrDualErgative">dual_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser dual</featureExplanation>
+               <textBox id="TBNumberDualErgative" dataItem="dualErgativeNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatDualAbsolutive" name="IPFeatAgrDualAbsolutive">dual_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser dual</featureExplanation>
+               <textBox id="TBNumberDualAbsolutive" dataItem="dualAbsolutiveNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatPluralSubject" name="IPFeatAgrPluralSubject">plural_subject</featureItem>
+                <featureExplanation>el sujeto debe ser plural</featureExplanation>
+               <textBox id="TBNumberPluralSubject" dataItem="pluralSubjectNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatPluralObject" name="IPFeatAgrPluralObject">plural_object</featureItem>
+                <featureExplanation>el objeto debe ser plural</featureExplanation>
+               <textBox id="TBNumberPluralObject" dataItem="pluralObjectNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatPluralErgative" name="IPFeatAgrPluralErgative">plural_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser plural</featureExplanation>
+               <textBox id="TBNumberPluralErgative" dataItem="pluralErgativeNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatPluralAbsolutive" name="IPFeatAgrPluralAbsolutive">plural_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser plural</featureExplanation>
+               <textBox id="TBNumberPluralAbsolutive" dataItem="pluralAbsolutiveNumber" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureType rowspan="12">género</featureType>
+                <featureItem dataValue="ipAgrFeatMasculineSubject" name="IPFeatAgrMasculineSubject">masculine_subject</featureItem>
+                <featureExplanation>el sujeto debe ser masculino</featureExplanation>
+               <textBox id="TBGenderMasculineSubject" dataItem="masculineSubjectGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatMasculineObject" name="IPFeatAgrMasculineObject">masculine_object</featureItem>
+                <featureExplanation>el objeto debe ser masculino</featureExplanation>
+               <textBox id="TBGenderMasculineObject" dataItem="masculineObjectGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatMasculineErgative" name="IPFeatAgrMasculineErgative">masculine_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser masculino</featureExplanation>
+               <textBox id="TBGenderMasculineErgative" dataItem="masculineErgativeGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatMasculineAbsolutive" name="IPFeatAgrMasculineAbsolutive">masculine_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser masculino</featureExplanation>
+               <textBox id="TBGenderMasculineAbsolutive" dataItem="masculineAbsolutiveGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFeminineSubject" name="IPFeatAgrFeminineSubject">feminine_subject</featureItem>
+                <featureExplanation>el sujeto debe ser femenino</featureExplanation>
+               <textBox id="TBGenderFeminineSubject" dataItem="feminineSubjectGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFeminineObject" name="IPFeatAgrFeminineObject">feminine_object</featureItem>
+                <featureExplanation>el objeto debe ser femenino</featureExplanation>
+               <textBox id="TBGenderFeminineObject" dataItem="feminineObjectGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFeminineErgative" name="IPFeatAgrFeminineErgative">feminine_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser femenino</featureExplanation>
+               <textBox id="TBGenderFeminineErgative" dataItem="feminineErgativeGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatFeminineAbsolutive" name="IPFeatAgrFeminineAbsolutive">feminine_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser femenino</featureExplanation>
+               <textBox id="TBGenderFeminineAbsolutive" dataItem="feminineAbsolutiveGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatNeuterSubject" name="IPFeatAgrNeuterSubject">neuter_subject</featureItem>
+                <featureExplanation>el sujeto debe ser neutro</featureExplanation>
+               <textBox id="TBGenderNeuterSubject" dataItem="neuterSubjectGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatNeuterObject" name="IPFeatAgrNeuterObject">neuter_object</featureItem>
+                <featureExplanation>el objeto debe ser neutro</featureExplanation>
+               <textBox id="TBGenderNeuterObject" dataItem="neuterObjectGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatNeuterErgative" name="IPFeatAgrNeuterErgative">neuter_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser neutro</featureExplanation>
+               <textBox id="TBGenderNeuterErgative" dataItem="neuterErgativeGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatNeuterAbsolutive" name="IPFeatAgrNeuterAbsolutive">neuter_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser neutro</featureExplanation>
+               <textBox id="TBGenderNeuterAbsolutive" dataItem="neuterAbsolutiveGender" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureType rowspan="16">animado</featureType>
+                <featureItem dataValue="ipAgrFeatAnimateSubject" name="IPFeatAgrAnimateSubject">animate_subject</featureItem>
+                <featureExplanation>el sujeto debe ser animado</featureExplanation>
+               <textBox id="TBAnimacyAnimateSubject" dataItem="animateSubjectAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatAnimateObject" name="IPFeatAgrAnimateObject">animate_object</featureItem>
+                <featureExplanation>el objeto debe ser animado</featureExplanation>
+               <textBox id="TBAnimacyAnimateObject" dataItem="animateObjectAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatAnimateErgative" name="IPFeatAgrAnimateErgative">animate_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser animado</featureExplanation>
+               <textBox id="TBAnimacyAnimateErgative" dataItem="animateErgativeAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatAnimateAbsolutive" name="IPFeatAgrAnimateAbsolutive">animate_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser animado</featureExplanation>
+               <textBox id="TBAnimacyAnimateAbsolutive" dataItem="animateAbsolutiveAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatMinusAnimateSubject" name="IPFeatAgrMinusAnimateSubject">-animate_subject</featureItem>
+                <featureExplanation>el sujeto debe ser inanimado</featureExplanation>
+               <textBox id="TBAnimacyMinusAnimateSubject" dataItem="inanimateSubjectAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatMinusAnimateObject" name="IPFeatAgrMinusAnimateObject">-animate_object</featureItem>
+                <featureExplanation>el objeto debe ser inanimado</featureExplanation>
+               <textBox id="TBAnimacyMinusAnimateObject" dataItem="inanimateObjectAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatMinusAnimateErgative" name="IPFeatAgrMinusAnimateErgative">-animate_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser inanimado</featureExplanation>
+               <textBox id="TBAnimacyMinusAnimateErgative" dataItem="inanimateErgativeAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatMinusAnimateAbsolutive" name="IPFeatAgrMinusAnimateAbsolutive">-animate_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser inanimado</featureExplanation>
+               <textBox id="TBAnimacyMinusAnimateAbsolutive" dataItem="inanimateAbsolutiveAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatHumanSubject" name="IPFeatAgrHumanSubject">human_subject</featureItem>
+                <featureExplanation>el sujeto debe ser humano</featureExplanation>
+               <textBox id="TBAnimacyHumanSubject" dataItem="humanSubjectAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatHumanObject" name="IPFeatAgrHumanObject">human_object</featureItem>
+                <featureExplanation>el objeto debe ser humano</featureExplanation>
+               <textBox id="TBAnimacyHumanObject" dataItem="humanObjectAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatHumanErgative" name="IPFeatAgrHumanErgative">human_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo debe ser humano</featureExplanation>
+               <textBox id="TBAnimacyHumanErgative" dataItem="humanErgativeAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatHumanAbsolutive" name="IPFeatAgrHumanAbsolutive">human_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo debe ser humano</featureExplanation>
+               <textBox id="TBAnimacyHumanAbsolutive" dataItem="humanAbsolutiveAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatMinusHumanSubject" name="IPFeatAgrMinusHumanSubject">-human_subject</featureItem>
+                <featureExplanation>el sujeto no debe ser humano</featureExplanation>
+               <textBox id="TBAnimacyMinusHumanSubject" dataItem="nonhumanSubjectAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatMinusHumanObject" name="IPFeatAgrMinusHumanObject">-human_object</featureItem>
+                <featureExplanation>el objeto no debe ser humano</featureExplanation>
+               <textBox id="TBAnimacyMinusHumanObject" dataItem="nonhumanObjectAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatMinusHumanErgative" name="IPFeatAgrMinusHumanErgative">-human_ergative</featureItem>
+                <featureExplanation>el sujeto de un verbo transitivo no debe ser humano</featureExplanation>
+               <textBox id="TBAnimacyMinusHumanErgative" dataItem="nonhumanErgativeAnimacy" rows="1"/>
+            </featureRow>
+            <featureRow>
+                <featureItem dataValue="ipAgrFeatMinusHumanAbsolutive" name="IPFeatAgrMinusHumanAbsolutive">-human_absolutive</featureItem>
+                <featureExplanation>el sujeto de un verbo intransitivo o el objeto de un verbo transitivo no debe ser humano</featureExplanation>
+               <textBox id="TBAnimacyMinusHumanAbsolutive" dataItem="nonhumanAbsolutiveAnimacy" rows="1"/>
+            </featureRow>
+        </featureChart>
+    </instruction>
+      <prompt id="IPAgrFeatExclYesAndPronNoPrompt" show="swIPAgrFeatExclYesAndPronNo">ADVERTENCIA: En <section number="7.">Los pronombres</section> usted dijo que su lengua no distingue entre las formas exclusivas e inclusivas de los pronombres, pero haya seleccionado algunas opciones exclusivas y inclusivas aquí. Si su lengua tiene formas exclusivas e inclusivas para cualquiero de los pronombres, incluyendo las formas dependientes que pueden presentarse en los verbos, por favor devuelva a <section number="7.">Los pronombres</section> (primera página) y cambia su respuesta a ‘Sí’. Este agregará campos adicionales para rellenar para esas formas como apropiado. Si en cambio su lengua realmente no distingue entre formas exclusivas e inclusivas, por favor desactive los accidentes en el cuadro de arriba.</prompt>
+      <prompt id="IPAgrFeatExclNoAndPronYesPrompt" show="swIPAgrFeatExclNoAndPronDepYes">ADVERTENCIA: En <section number="7.">Los pronombres</section> usted dijo que su lengua tiene pronombres dependientes y hace una distinción entre las formas exclusivas e inclusivas de los pronombres, pero todavía no ha seleccionado cualquiera de las opciones exclusivas o inclusivas que se ofrecen aquí. Por lo tanto es más probable que necesita seleccionar todas o algunas de las opciones exclusivas e inclusivas en el cuadro de arriba. De lo contrario, por favor devuelva a <section number="7.">Los pronombres</section> (primera página) y cambia su respuesta a ‘No’, pero eso significa que no se incluyen ninguna forma que escribió en los campos para los pronombres exclusivos o inclusivos en cualquiera salida.</prompt>
+      <prompt id="IPAgrFeatNumberYesAndPronNoPrompt" show="swIPAgrFeatNumberYesAndPronNo">ADVERTENCIA: En <section number="7.">Los pronombres</section> usted dijo que su lengua no tiene diversas formas para los singulares y los plurales de los pronombres, pero haya seleccionado algunas opciones de número aquí. Si su lengua tiene formas singulares y plurales para cualquiero de los pronombres, incluyendo las formas dependientes que pueden presentarse en los verbos, por favor devuelva a <section number="7.">Los pronombres</section> (primera página) y cambia su respuesta al ‘S’.  Este agregará campos adicionales para rellenar para esas formas como apropiado. Si en cambio su lengua realmente no distingue entre formas de número, por favor desactive los accidentess en el cuadro de arriba.</prompt>
+      <prompt id="IPAgrFeatNumberNoAndPronYesPrompt" show="swIPAgrFeatNumberNoAndPronDepYes">ADVERTENCIA: En <section number="7.">Los pronombres</section> usted dijo que su lengua tiene pronombres dependientes y hace una distinción entre los pronombres singluares y plurales, pero odavía no ha seleccionado cualquiera de las opciones singulares o plurales que se ofrecen aquí. Por lo tanto es más probable que necesita seleccionar todas o algunas de las opciones singulares y plurales en el cuadro de arribas. De lo contrario, por favor devuelva a <section number="7.">Los pronombres</section> (primera página) y cambia su respuesta a ‘No, los pronombres marcan solo persona’, pero eso significa que no se incluyen ninguna forma que escribió en los campos para los pronombres plurales en cualquiera salida.</prompt>
+      
+      <br/><br/>
+      
+        <buttons>
+            <button id="IPAgrFeaturesBack" value="Back" goto="IPInflFeatures.xml"/>
+            <button id="IPAgrFeaturesNext" value="Next" goto="IPContents.htm"/>
+        </buttons>
+    </form>
+   <showWhen id="swNotPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
    </showWhen>
+   <showWhen id="swCaseErgOrSplit">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatExclYesAndPronNo">
+      <whenValue element="pron" attr="pronounExcl" value="no"/>
+      <and/>
+      <openParen/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveSubject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveObject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveSubject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveObject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveErgative" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveAbsolutive" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveErgative" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveAbsolutive" attr="checked" value="yes"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatExclNoAndPronDepYes">
+      <whenValue element="pron" attr="pronounExcl" value="yes"/>
+      <and/>
+      <whenValue element="pron" attr="dependentPron" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveSubject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveObject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveSubject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveObject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveErgative" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstExclusiveAbsolutive" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveErgative" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatFirstInclusiveAbsolutive" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatNumberYesAndPronNo">
+      <whenValue element="pron" attr="pronounNumber" value="no"/>
+      <and/>
+      <openParen/>
+      <whenValue element="ip/ipAgrFeatSingularSubject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatSingularObject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatPluralSubject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatPluralObject" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatSingularErgative" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatSingularAbsolutive" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatPluralErgative" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipAgrFeatPluralAbsolutive" attr="checked" value="yes"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swIPAgrFeatNumberNoAndPronDepYes">
+      <whenValue element="pron" attr="pronounNumber" value="yes"/>
+      <and/>
+      <whenValue element="pron" attr="dependentPron" value="yes"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatSingularSubject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatSingularObject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatPluralSubject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatPluralObject" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatSingularErgative" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatSingularAbsolutive" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatPluralErgative" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipAgrFeatPluralAbsolutive" attr="checked" value="no"/>
+   </showWhen>
+   &TechnicalTerms; 
 </page>
+
+

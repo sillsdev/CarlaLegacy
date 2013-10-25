@@ -8,18 +8,15 @@
             <sectionRef sec="sAdvPTemporal"/>
             <content> and </content>
             <sectionRef sec="sAdvPReason"/>
-            <content>.  All of these adverbial clauses (or phrases) act the same as simple adverbs, so they will be considered adverbial phrases with the appropriate type of complement.  Adverbial clauses of these types normally may occur either sentence-initially or sentence-finally.</content>
+            <content>.  All of these adverbial clauses act the same as simple adverbs, so they will be considered adverbial phrases with the appropriate type of complement.  Adverbial clauses may normally occur either sentence-initially or sentence-finally.</content>
         </p>
         <section2 id="sAdvClTemporal">
             <secTitle>Complements of Temporal Adverbs</secTitle>
-            <p>
+            <p contentType="ctComparativeIntro">
 			   <content>English examples of temporal adverbs with complements used in full sentences include: </content><langData>[Since then], John has been moody</langData><content>; </content>
 			   <langData>John has been home [since last week]</langData><content>; </content><langData>[Since John has been home from the hospital] he is doing better</langData><content>; </content>
 			   <langData>John is feeling fine [now that he is home from the hospital</langData><content>; </content><langData>The dog followed Sue everywhere [when she returned from college]</langData>
-			   <content> and </content><langData>[When she returned from college], the dog followed Sue everywhere</langData><content>.</content>
-            </p>
-		   <p>
-				<content>These examples show that particular temporal adverbs allow certain types of complements.  For example, </content>
+			   <content> and </content><langData>[When she returned from college], the dog followed Sue everywhere</langData><content>. These examples show that particular temporal adverbs allow certain types of complements.  For example, </content>
                 <langData>since</langData>
 				<content> can be followed by another temporal adverb or by a temporal nominal phrase or it may have a sentential complement.  The temporal adverb </content>
                 <langData>when</langData>
@@ -30,16 +27,16 @@
             <p>
                 <content>In </content>
                 <langName/>
-                <content>, the complements occur </content>
+               <content>, the temporal adverbs allow complements similar to those discussed in section </content>
+               <sectionRef sec="sComp"/>
+               <content>.  The complements occur </content>
                 <case element="advcl" attr="advOrNPPos">
                     <caseText value="before">before</caseText>
                     <caseText value="after">after</caseText>
                     <caseText value="either">on either side of</caseText>
                     <caseText value="unknown">_______</caseText>
                 </case>
-                <content> the adverb.  Examples of temporal adverbial clauses in </content>
-                <langName/>
-                <content>, included in full sentences are:</content>
+                <content> the temporal adverb.  Examples of temporal adverbial clauses included in full sentences are:</content>
             </p>
             <example>
                 <interlinear exampleLoc="advcl/tempSentExample"/>
@@ -47,7 +44,7 @@
         </section2>
         <section2 id="sAdvClReason">
             <secTitle>Complements of Reason Adverbs</secTitle>
-            <p>
+            <p contentType="ctComparativeIntro">
 				<content>Adverbial phrases or clauses which express reason or purpose consist of adverbs which stand alone, such as </content>
                 <langData>therefore</langData>
                 <content> and </content>
@@ -55,9 +52,8 @@
 				<content> (which are sometimes considered sentential conjunctions), along with those that take various types of complement clauses.  English examples of reason or purpose adverbs which take clausal complements include: </content>
 			   <langData>John rushed to the hospital [because Sue was in an accident</langData><content>; </content><langData>[Since Jill said that she likes him], Joe smiles all the time</langData>
 			   <content>; </content><langData>Bill rushed to the airport [so that he could see Kay before she left]</langData><content>; </content><langData>The troops threw grenades at the enemy [in order to escape]</langData>
-			   <content> and </content><langData>The troops threw grenades at the enemy [in order for the prisoners to escape]</langData></p>
-            <p>
-                <content>In the examples above, </content>
+			   <content> and </content><langData>The troops threw grenades at the enemy [in order for the prisoners to escape]</langData>
+                <content>.  In the examples, </content>
                 <langData>because</langData>
                 <content> and </content>
                 <langData>since</langData>
@@ -70,10 +66,19 @@
                 <content> and </content>
                 <langData>hate</langData>
                 <content> in section </content>
-                <sectionRef sec="sCompTypeNonfiniteCP"/>
+                <sectionRef sec="sComp"/>
                 <content>.</content>
             </p>
-            <p>
+           <p contentType="ctPracticalIntro">
+              <content>Adverbial phrases or clauses which express reason or purpose consist of adverbs which stand alone, such as </content>
+              <langData>therefore</langData>
+              <content> and </content>
+              <langData>so</langData>
+              <content> (which are sometimes considered sentential conjunctions), along with those that take various types of complement clauses similar to those discussed for verbs in section </content>
+              <sectionRef sec="sComp"/>
+              <content>.</content>
+           </p>
+           <p>
                 <content>Examples of reason or purpose adverbial clauses in </content>
                 <langName/>
                 <content>, included in full sentences are:</content>

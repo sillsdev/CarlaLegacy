@@ -1,10 +1,9 @@
 <html>
    <head>
-	  <title>Contents</title>
-		  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		  <link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
-		  <script id="clientEventHandlersJS" language="jscript" src="Contents.js">
-		  </script>
+      <title>Contents</title>
+      <link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
+          <script id="clientEventHandlersJS" language="jscript" src="Contents.js">
+          </script>
    </head>
    <body onload="Initialize()">
 <h1>Contents</h1>
@@ -19,143 +18,147 @@
 			<th>&nbsp;</th>
 		</tr>
 		<tr>
-			<td id="ContentsOverallTypologyQuestionsStatus" onclick="StatusClicked(ContentsOverallTypologyQuestionsStatus,'typology')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">1.</td>
+		   <td id="ContentsOverallTypologyQuestionsStatus" onclick="StatusClicked(ContentsOverallTypologyQuestionsStatus,'typology')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">1.</td>
 			<td valign="top"><A id=ContentsOverallTypologyQuestions href="OverallTypology.xml" >Overall Typology Questions</A></td>
 			<td rowspan="18" width="50%" class="instruction" valign="top">
-				<div>
-					<p>Select the outputs you want by checking the box before each one.  Please note that at least one writer output must be present.  The default writer is the comparative one.</p>
-					<table>
-						<tr>
-							<td><input type="checkbox" name="OutputGrammar" id="OutputGrammar" onclick="SetOutput('grammar')" value="grammar"></td>
-							<td onclick="SetOutputViaDescription('grammar')">Output the PC-PATR grammar file and test example files.</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="OutputWriter" id="OutputWriter" onclick="SetOutput('writer')" value="writer"></td>
-							<td onclick="SetOutputViaDescription('writer')">Output the comparative grammar write-up file.</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="OutputWriterPractical" id="OutputWriterPractical" onclick="SetOutput('writerPractical')" value="writerPractical"></td>
-							<td onclick="SetOutputViaDescription('writerPractical')">Output the practical grammar write-up file.</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="OutputWriterPracticalSpanish" id="OutputWriterPracticalSpanish" onclick="SetOutput('writerPracticalSpanish')" value="writerPracticalSpanish"></td>
-							<td onclick="SetOutputViaDescription('writerPracticalSpanish')">Output the Spanish practical grammar write-up file.</td>
-						</tr>
-					</table>
-				</div>
-				<br/>
-				For each section:<br>
+			    <div>
+			        <p>Select all of the outputs you want by checking the box before each one.  Please note that at least one writer output must be present.  The writer which produces a grammar in the national language of the country where the language is spoken, if available, will be most useful to the language community.  The default writer is the English one.</p>
+			        <table>
+			            <tr>
+			                <td><input type="checkbox" name="OutputGrammar" id="OutputGrammar" onclick="SetOutput('grammar')" value="grammar"></td>
+			                <td onclick="SetOutputViaDescription('grammar')">Output the PC-PATR grammar file and test example files.</td>
+			            </tr>
+			           <!--<tr>
+			              <td><input type="checkbox" name="OutputWriter" id="OutputWriter" onclick="SetOutput('writer')" value="writer"></td>
+			              <td onclick="SetOutputViaDescription('writer')">Output the comparative grammar write-up file.  ***WANT TO REMOVE THIS OPTION***</td>
+			           </tr>-->
+			           <tr>
+			                <td><input type="checkbox" name="OutputWriterPractical" id="OutputWriterPractical" onclick="SetOutput('writerPractical')" value="writerPractical"></td>
+			                <td onclick="SetOutputViaDescription('writerPractical')">Output the English grammar write-up file.</td>
+			            </tr>
+			            <tr>
+			                <td><input type="checkbox" name="OutputWriterPracticalSpanish" id="OutputWriterPracticalSpanish" onclick="SetOutput('writerPracticalSpanish')" value="writerPracticalSpanish"></td>
+			                <td onclick="SetOutputViaDescription('writerPracticalSpanish')">Output the Spanish grammar write-up file.</td>
+			            </tr>
+			        </table>
+			    </div>
+			    <br/>
+			    For each section:<br>
 <ol>
 <li>Think of relevant data for your language,
-		concentrating on straightforward data with no special language-specific
-		constructions unless they are asked about in the questions (those will have to be dealt with after completion of the
-		starter kit). </li>
+        concentrating on straightforward data with no special language-specific
+        constructions unless they are asked about in the questions (those will have to be dealt with after completion of the
+        starter kit). </li>
 
-<li>Fill in the answer to each question, based on the data.
-	Keep in mind that since this starter kit deals with syntactic parsing, the questions are almost always asking about categories which are written as a separate word, unless specifically indicated.</li>
+   <li>Fill in the answer to each question, based on the data. The questions are either in the form of radio buttons, where you can only choose one of the options, or check boxes, where you should check all options that are used in your language.  Most of the questions with check boxes include an Other option where you can decribe any other way that your language handles that question. </li>
 
 <li id="InstructionsAddFeatures">Add the feature names to the appropriate entries in the lexicon, as directed.
-	Please note that both feature names and category names are sensitive to capitalization and are limited to a single word for each.
-	A space indicates a separate feature name.
-	Therefore, whenever you are instructed to add a feature to a lexical entry,
-	simply list the feature name (with a space between it and any other features) in the feature field (normally \f).
-	You also need to be sure CARLAStudio knows about the feature field by keying an f (or the marker you are using) in the box by *features (one of the Optional Markers) in all the Analysis SFM Markers sections under the Dictionary tab in the Language Model.</li>
+    Please note that both feature names and category names are sensitive to capitalization and are limited to a single word for each.
+    A space indicates a separate feature name.
+    Therefore, whenever you are instructed to add a feature to a lexical entry,
+    simply list the feature name (with a space between it and any other features) in the feature field (normally \f).
+    You also need to be sure CARLAStudio knows about the feature field by keying an f (or the marker you are using) in the box by *features (one of the Optional Markers) in all the Analysis SFM Markers sections under the Dictionary tab in the Language Model.</li>
 
-<li>Key relevant data into the text box, as directed, with a period and new line after each example.  (If you are completing PAWS for the practical grammar output only, you can add a free translation or a source page in parentheses after the examples to make it easier to fill in the glosses when edting the output later.)</li>
+<li>Key relevant data into the text box, as directed, with a period and new line after each example.  (If you are completing PAWS for the grammar writer only, you can add a free translation or a source page in parentheses after the examples to make it easier to fill in the glosses when edting the output later.)</li>
 
-	<li id="InstructionsSaveResultsParser">At the end of each section, save the results so that the output files will be generated. then run the parser on the test file indicated and check the output.  Click <A href="CarlaStudioSetup.htm">here</A> to see how to modify a CARLAStudio setup to use the grammar. </li>
+<li id="InstructionsSaveResultsWriterOnly">At the end of each section, save the results so that the output files will be generated.</li>
+    <li id="InstructionsSaveResultsParser">At the end of each section, save the results so that the output files will be generated. then run the parser on the test file indicated and check the output.  Click <A href="CarlaStudioSetup.htm">here</A> to see how to modify a CARLAStudio setup to use the grammar. </li>
 
-	<li id="InstructionsMakeChanges">Make any changes to the starter kit questions
-		(to change the phrase structure) or to the lexicon feature names needed,
-		then save and re-run. Note any details the starter kit is not able to handle, so
-		that they can be dealt with later. </li>
+    <li id="InstructionsMakeChanges">Make any changes to the starter kit questions
+        (to change the phrase structure) or to the lexicon feature names needed,
+        then save and re-run. Note any details the starter kit is not able to handle, so
+        that they can be dealt with later. </li>
 
 <li>Check off that you have completed that section, then go on to the next.  (To check off a section, click on the white box to the left of it.) You may also exit the starter kit at any time and return to it later.</li>
 </ol>
 </td>
 		</tr>
 		<tr>
-			<td id="ContentsQuantifiersStatus" onclick="StatusClicked(ContentsQuantifiersStatus, 'qp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">2.</td>
+		   <td id="ContentsQuantifiersStatus" onclick="StatusClicked(ContentsQuantifiersStatus, 'qp')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">2.</td>
 			<td valign="top"><A id=ContentsQuantifiers href="QPMain.xml" >Quantifiers and QP</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsAdverbsStatus" onclick="StatusClicked(ContentsAdverbsStatus,'advp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">3.</td>
+		   <td id="ContentsAdverbsStatus" onclick="StatusClicked(ContentsAdverbsStatus,'advp')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">3.</td>
 			<td valign="top"><A id=ContentsAdverbs href="AdvPMain.xml">Adverbs and AdvP</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsAdjectivesStatus" onclick="StatusClicked(ContentsAdjectivesStatus,'adjp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">4.</td>
-			<td valign="top"><A id=ContentsAdjectives href="AdjPMain.xml">Adjectives and
-	AdjP</A>  </td>
+		   <td id="ContentsAdjectivesStatus" onclick="StatusClicked(ContentsAdjectivesStatus,'adjp')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">4.</td>
+			<td valign="top"><A id=ContentsAdjectives href="AdjPMain.xml">Adjectives and AdjP</A>  </td>
 		</tr>
 		<tr>
-			<td id="ContentsSimpleNPStatus" onclick="StatusClicked(ContentsSimpleNPStatus,'np')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">5.</td>
-			<td valign="top"><A id=ContentsSimpleNP href="NPContents.htm" >Simple and Possessed Nominal Phrases</A></td>
+		   <td id="ContentsSimpleNPStatus" onclick="StatusClicked(ContentsSimpleNPStatus,'np')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">5.</td>
+			<td valign="top"><A id=ContentsSimpleNP href="NPContents.htm" >Nominal Phrases</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsProperNamesStatus" onclick="StatusClicked(ContentsProperNamesStatus,'prop')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">6.</td>
+		   <td id="ContentsProperNamesStatus" onclick="StatusClicked(ContentsProperNamesStatus,'prop')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">6.</td>
 			<td valign="top"><A id=ContentsProperNames href="PNMain.xml">Proper Names</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsPronounsStatus" onclick="StatusClicked(ContentsPronounsStatus,'pron')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">7.</td>
+		   <td id="ContentsPronounsStatus" onclick="StatusClicked(ContentsPronounsStatus,'pron')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">7.</td>
 			<td valign="top"><A id=ContentsPronouns href="PronMain.xml">Pronouns</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsPrepositionsStatus" onclick="StatusClicked(ContentsPrepositionsStatus,'pp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">8.</td>
-			<td valign="top"><A id=ContentsPrepositions href="PPMain.xml">Pre/Post-positional Phrases</A></td>
+		   <td id="ContentsPrepositionsStatus" onclick="StatusClicked(ContentsPrepositionsStatus,'pp')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">8.</td>
+			<td valign="top"><A id=ContentsPrepositions href="PPMain.xml">Adpositional Phrases</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsSingleClausesStatus" onclick="StatusClicked(ContentsSingleClausesStatus,'ip')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">9.</td>
-			<td valign="top"><A id=ContentsSingleClauses href="IPContents.htm">Basic, Single-clause Sentences</A></td>
+		   <td id="ContentsSingleClausesStatus" onclick="StatusClicked(ContentsSingleClausesStatus,'ip')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">9.</td>
+			<td valign="top"><A id=ContentsSingleClauses href="IPContents.htm">Basic Sentences</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsCompsStatus" onclick="StatusClicked(ContentsCompsStatus,'comp')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">10.</td>
+		   <td id="ContentsCompsStatus" onclick="StatusClicked(ContentsCompsStatus,'comp')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">10.</td>
 			<td valign="top"><A id=ContentsComps href="CompMain.xml">Complement Clauses</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsQuestionsStatus" onclick="StatusClicked(ContentsQuestionsStatus,'q')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">11.</td>
+		   <td id="ContentsQuestionsStatus" onclick="StatusClicked(ContentsQuestionsStatus,'q')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">11.</td>
 			<td valign="top"><A id=ContentsQuestions href="QMain.xml">Questions</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsRelClStatus" onclick="StatusClicked(ContentsRelClStatus,'relcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">12.</td>
+		   <td id="ContentsRelClStatus" onclick="StatusClicked(ContentsRelClStatus,'relcl')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">12.</td>
 			<td valign="top"><A id=ContentsRelCl href="RelClMain.xml">Relative Clauses</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsAdvClsStatus" onclick="StatusClicked(ContentsAdvClsStatus,'advcl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">13.</td>
+		   <td id="ContentsAdvClsStatus" onclick="StatusClicked(ContentsAdvClsStatus,'advcl')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">13.</td>
 			<td valign="top"><A id=ContentsAdvCls href="AdvClMain.xml">Adverbial Clauses</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsNegativeStatus" onclick="StatusClicked(ContentsNegativeStatus,'neg')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">14.</td>
+		   <td id="ContentsNegativeStatus" onclick="StatusClicked(ContentsNegativeStatus,'neg')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">14.</td>
 			<td valign="top"><A id=ContentsNegative href="NegMain.xml">Negative Constructions</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsCoordStatus" onclick="StatusClicked(ContentsCoordStatus,'coord')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">15.</td>
+		   <td id="ContentsCoordStatus" onclick="StatusClicked(ContentsCoordStatus,'coord')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">15.</td>
 			<td valign="top"><A id=ContentsCoord href="CoordMain.xml">Coordination Constructions</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsFocusStatus" onclick="StatusClicked(ContentsFocusStatus,'focus')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">16.</td>
+		   <td id="ContentsFocusStatus" onclick="StatusClicked(ContentsFocusStatus,'focus')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">16.</td>
 			<td valign="top"><A id=ContentsFocus href="FocusMain.xml">Focus and Topic Constructions</A></td>
 		</tr>
 		<tr>
-			<td id="ContentsExclamationsStatus" onclick="StatusClicked(ContentsExclamationsStatus,'excl')">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
-						<td valign="top">17.</td>
-			<td valign="top"><A id=ContentsExclamations href="ExclMain.xml">Exclamations, Greetings and Interjections</A></td>
+		   <td id="ContentsExclamationsStatus" onclick="StatusClicked(ContentsExclamationsStatus,'excl')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+                        <td valign="top">17.</td>
+			<td valign="top"><A id=ContentsExclamations href="ExclMain.xml">Greetings, Interjections and Exclamations</A></td>
 		</tr>
+	   <tr>
+	      <td id="ContentsFinalStatus" onclick="StatusClicked(ContentsFinalStatus,'final')" valign="top">&nbsp;&nbsp;<IMG src="UnCheckedOff.GIF"></td>
+	      <td valign="top">18.</td>
+	      <td valign="top"><A id=ContentsFinal href="Final.xml">Final Check</A></td>
+	   </tr>
 	</tbody>
 </table>
    </body>

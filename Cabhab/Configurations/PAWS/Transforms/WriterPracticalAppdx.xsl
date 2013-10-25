@@ -28,10 +28,10 @@
 </xsl:choose>
 <xsl:text> has the consonants shown in </xsl:text>
 <exampleRef num="xConsonants" equal="no" letterOnly="no" />
-<xsl:text>.   The chart identifies the sounds in the phonetic alphabet (IPA), followed by the symbol used in the practical orthography in parentheses, if they are different.</xsl:text>
+<xsl:text>.   The table identifies the sounds in the phonetic alphabet (IPA), followed by the symbol used in the practical orthography in parentheses, if they are different.</xsl:text>
 </p>
 		<p>
-<object type="tComment">Note that the chart contains many more IPA symbols than your language has.  You need to delete any symbols and possibly full columns or rows not used in your language.  Further, enter the symbol from the practical orthography in parenthesis after the IPA symbol wherever they are different.</object>
+<object type="tComment">Note that the table contains many more IPA symbols than your language has.  You need to delete any symbols and possibly full columns or rows not used in your language.  Further, enter the symbol from the practical orthography in parenthesis after the IPA symbol wherever they are different.</object>
 </p>
 			<example num="xConsonants">
 <table>
@@ -634,10 +634,10 @@
 </xsl:choose>
 <xsl:text> has the vowels shown in </xsl:text>
 <exampleRef num="xVowels" equal="no" letterOnly="no" />
-<xsl:text>.  The chart identifies the sounds according to the phonetic alphabet (IPA),  followed by the symbol used in the practical orthography in parentheses, if they are different.</xsl:text>
+<xsl:text>.  The table identifies the sounds according to the phonetic alphabet (IPA),  followed by the symbol used in the practical orthography in parentheses, if they are different.</xsl:text>
 </p>
 		<p>
-<object type="tComment">Note that the chart contains many more IPA symbols than your language has.  You need to delete any symbols and possibly full columns or rows not used in your language.  Further, enter the symbol from the practical orthography in parenthesis after the IPA symbol wherever they are different.</object>
+<object type="tComment">Note that the table contains many more IPA symbols than your language has.  You need to delete any symbols and possibly full columns or rows not used in your language.  Further, enter the symbol from the practical orthography in parenthesis after the IPA symbol wherever they are different.</object>
 </p>
 			<example num="xVowels">
 <table>

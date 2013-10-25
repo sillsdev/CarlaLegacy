@@ -1,73 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="NPPossessors" count="1/2">
 	<title level="2">Nominal Phrases - Possessors</title>
-	<introduction>
-	The next type of modifier to consider is possessors.  Possession can normally be expressed by a pronoun or by a simple noun or a full nominal phrase.  However, Spanish only allows pronouns in the possessor position before the noun, with all noun and full nominal phrase possessors expressed in a prepositional phrase with <example>de</example> after the noun.<br/>
+	<introduction>  
+	The next type of modifier to consider is <technicalTermRef term="ttPossessors"/>.  Possession can normally be expressed by a pronoun or by a nominal phrase which may consist of a proper name, a simple noun, or a fully modified noun.  However, Spanish only allows pronouns in the possessor position before the noun, with all noun and full nominal phrase possessors expressed in a prepositional phrase with <example>de</example> after the noun.<br/>
 		<br/>Within the languages which express possessors by nouns or full nominal phrases as well as by pronouns, many also add some kind of marking, such as the <example>’s</example> in English,
-		as an indication of possession.  These markings are either affixes (or clitics) on the head noun or phrase-level clitics which attach to one end of the whole phrase.  The English marking is this second type,
-		because alongside phrases where the <example>’s</example> appears to attach to the head noun, as in <example>the boy’s mother</example>, there are phrases which clearly show that the clitic attaches
-		to the end of the whole nominal phrase, such as <example>the boy that I just talked to’s mother</example> or <example>the girl in green’s wonderful speech</example>.  These examples show that possessors
-		can include pre/post-positional  phrases and relative clauses.  </introduction>
+	   to the posessor phrase itself as an indication of possession.  These markings are either affixes on the head noun or phrase-level clitics which attach to one end of the whole phrase.  Sometimes the possessor phrase marker is written as an independent word. The English marking is the second type, because alongside phrases where the <example>’s</example> appears to attach to the head noun, as in <example>the boy’s mother</example>, there are phrases which clearly show that the clitic attaches 
+		to the end of the whole nominal phrase, such as <example>the boy that I just talked to’s mother</example> or <example>the girl in green’s wonderful speech</example>.  These examples also show that possessors 
+		can include <technicalTermRef term="ttAdpositionalPhrases"/> and relative clauses.  
+	<br/><br/>
+	Note that marking on the possessor phrase is what is being discussed here.  Marking which occurs on the noun being possessed to indicate the presence of a possessor will be dealt with on the next page.</introduction>
 	<form section="np">
-		<prompt>Think about how possession is expressed in your language.  We won’t be able to handle pre/post-positional phrases until <section number="8">Pre/Post-positional Phrases</section> and relative clauses within nominal phrases until <section number="12">Relative Clauses</section>, but examples such as the English ones above will clarify for you what type of possessive marking you have.</prompt>
+		<prompt><br/>Think about how possession is expressed in your language.  We won’t be able to handle adpositional phrases until <section number="8">Adpositional Phrases</section> and relative clauses within nominal phrases until <section number="12">Relative Clauses</section>, but examples such as the English ones above will clarify for you what type of possessor marking you have.</prompt>
 	   <br/>
 	   <prompt>
-			Key some examples of possessed nominal phrases with simple possessors here, including both pronouns and nominal phrase possessors:</prompt>
+            Key some examples of possessed nominal phrases with simple possessors here, including both pronominal and nominal phrase possessors:</prompt>
 		<textBox id="NPPossExample" dataItem="possessorExample" cols="50"/>
 		<br/>
 	   <prompt>Note also that possessors can be embedded in one another, as in <example>the boy’s sister’s dog</example>.  This is allowed in Spanish within the prepositional phrase after the noun.<br/><br/>
-		  Key some examples of possessed nominal phrases with embedded possessors here:</prompt>
+	      Key some examples of possessed nominal phrases with embedded possessors here:</prompt>
 	   <textBox id="NPPossEmbeddedExample" dataItem="embeddedExample" cols="50"/>
 	   <br/>
 	   <prompt>
-			Key some examples of possessed nominal prases with pre/post-positional phrases within the possessor here:</prompt>
+            Key some examples of possessed nominal prases with adpositional phrases within the possessor here:</prompt>
 		<textBox id="NPPossPPExample" dataItem="ppExample" cols="50"/>
 		<br/>
 		<prompt>
-			Key some examples of possessed nominal phrases with relative clauses within the possessor here, included in simple full sentences:</prompt>
+            Key some examples of possessed nominal phrases with relative clauses within the possessor here, included in simple full sentences:</prompt>
 		<textBox id="NPPossRelClExample" dataItem="relClExample" cols="50"/>
-		<br/>
+	   <br/><br/>
 	   <radioGroup>
-		  <groupName dataItem="possNounPos" default="unknown" position="yesSpec">RNPPossNounPos</groupName>
-		  <prompt>Based on your examples above, where does the possessor (especially the pronoun form, if  your language is like Spanish) occur with respect to the noun being possessed?</prompt>
-		  <radio id="NPPossBefore" checked="yes" dataValue="before">Before the noun</radio>
-		  <radio id="NPPossAfter" checked="yes" dataValue="after">After the noun</radio>
-		  <radio id="NPPossEitherSide" checked="yes" dataValue="either">On either side of the noun</radio>
+	      <groupName dataItem="possNP" default="yes">RNPPossNP</groupName>
+	      <prompt>Based on your examples above, does your language allow the possessor to be expressed directly by a nominal phrase?</prompt>
+	      <radio id="NPPossNPYes" checked="yes" dataValue="yes">Yes, both nominal phrases and pronouns may possess a noun directly, and both may also occur within an adpositional phrase</radio>
+	      <radio id="NPPossNPYesOnly" checked="yes" dataValue="yesOnly">Yes, both nominal phrases and pronouns may possess a noun directly, but my language does not allow adpositional phrase possessors</radio>
+	      <radio id="NPPossNPNo" checked="yes" dataValue="no">No, only pronouns may possess a noun directly; nominal phrase possessors only occur within an adpositional phrase</radio>
+	      <radio id="NPPossNPNone" checked="yes" dataValue="none">No, neither nominal phrases nor pronouns may possess a noun directly; possession is only expressed within an adpositional phrase in my language</radio>
 	   </radioGroup>
-	   <br/>
-		<radioGroup id="NPPossMarkedTable">
+	   
+	   <radioGroup id="NPPossPronPosTable" show="swNPPossNPNo">
+	      <groupName dataItem="possPronPos" default="unknown" position="yesSpec">RNPPossPronPos</groupName>
+	      <prompt><br/>Based on your examples above, where does the pronoun possessor occur with respect to the noun being possessed?</prompt>
+	      <radio id="NPPossPronBefore" checked="yes" dataValue="before">Before the noun</radio>
+	      <radio id="NPPossPronAfter" checked="yes" dataValue="after">After the noun</radio>
+	      <radio id="NPPossPronEitherSide" checked="yes" dataValue="either">On either side of the noun</radio>
+	   </radioGroup>
+
+	   <radioGroup id="NPPossPPPosTable" show="swNPPossNPNotYesOnly">
+	      <groupName dataItem="possPPPos" default="unknown" position="yesHeadDiff">RNPPossPPPos</groupName>
+	      <prompt><br/>Based on your examples above, where does the adpositional phrase possessor occur with respect to the noun being possessed?</prompt>
+	      <radio id="NPPossPPBefore" checked="yes" dataValue="before">Before the noun</radio>
+	      <radio id="NPPossPPAfter" checked="yes" dataValue="after">After the noun</radio>
+	      <radio id="NPPossPPEitherSide" checked="yes" dataValue="either">On either side of the noun</radio>
+	   </radioGroup>
+	
+	   <radioGroup id="NPPossNounPosTable" show="swNPPossNPYesOrYesOnly">
+	      <groupName dataItem="possNounPos" default="unknown" position="yesSpec">RNPPossNounPos</groupName>
+	      <prompt><br/>Based on your examples above, where does the nominal phrase or pronoun possessor occur with respect to the noun being possessed?</prompt>
+	      <radio id="NPPossBefore" checked="yes" dataValue="before">Before the noun</radio>
+	      <radio id="NPPossAfter" checked="yes" dataValue="after">After the noun</radio>
+	      <radio id="NPPossEitherSide" checked="yes" dataValue="either">On either side of the noun</radio>
+	   </radioGroup>
+
+	   <radioGroup id="NPPossMarkedTable" show="swNPPossNPYesOrYesOnly">
 			<groupName dataItem="possMarked" default="no">RNPPossMarked</groupName>
-			<prompt>Based on your examples above, does your language have any special marking to distinguish possessors from any other nominal phrase?</prompt>
+	      <prompt><br/>Based on your examples above, does your language have any special marking to distinguish nominal phrase possessors from any other nominal phrase?</prompt>
 			<radio id="NPPossMarkedNo" dataValue="no">No, there is no special marking</radio>
 			<radio id="NPPossMarkedYesAffix" dataValue="yesAffix">Yes, the head noun within the possessor is syntactically marked via an affix</radio>
-			<radio id="NPPossMarkedYesClitic" dataValue="yesClitic">Yes, the whole phrase is syntactically marked via a phrasal clitic</radio>
-			<radioGroup id="NPPossMarkedYesCliticTable" show="swNPPossMarkedYesClitic">
-				<groupName dataItem="possCliticWord" default="no">RNPPossMarkedYesCliticWord</groupName>
-				<prompt>Is the phrasal clitic written as a separate word?</prompt>
-				<radio id="NPPossMarkedYesCliticWordNo" dataValue="no">No, like in English, it attaches to the closest word </radio>
-				<radioGroup id="NPPossMarkedYesCliticAffixTable" show="swNPPossMarkedYesCliticWordNo">
-					<groupName dataItem="possCliticAffix" default="suffix">RNPossMarkedYesCliticAffix</groupName>
-					<prompt>How does the clitic attach to the peripheral word of the nominal phrase?</prompt>
-					<radio id="NPPossMarkedYesCliticSuffix" dataValue="suffix">As a suffix, like in English</radio>
-					<radio id="NPPossMarkedYesCliticPrefix" dataValue="prefix">As a prefix</radio>
+			<radio id="NPPossMarkedYesProclitic" dataValue="yesProclitic">Yes, the whole phrase is syntactically marked via a phrasal proclitic which attaches to the beginning of the initial word in the possessor nominal phrase</radio>
+	      <radio id="NPPossMarkedYesEnclitic" dataValue="yesEnclitic">Yes, the whole phrase is syntactically marked via a phrasal enclitic which attaches to the end of the final word in the possessor nominal phrase</radio>
+	      <radio id="NPPossMarkedYesWord" dataValue="yesWord">Yes, the whole possessor phrase is syntactically marked via an independent word</radio>
+	   </radioGroup>
+	   <prompt id="NPPossMarkedYesAffixPrompt" show="swNPPossMarkedYesAffix">
+	      Key the possessive marker affix that marks the noun as a possessor here, with a hyphen to indicate which side it attaches on:
+	   </prompt>
+	   <textBox id="NPPossMarkerAffixExample" dataItem="possMarkerAffix" show="swNPPossMarkedYesAffix" rows="2"/>
+	   <prompt id="NPPossMarkedYesCliticPrompt" show="swNPPossMarkedYesClitic">
+	      Key the possessive marker clitic that marks the nominal phrase as a possessor here, with an equal sign to indicate which side it attaches on:
+	   </prompt>
+	   <textBox id="NPPossMarkerCliticExample" dataItem="possMarkerClitic" show="swNPPossMarkedYesClitic" rows="2"/>
+	   <prompt id="NPPossMarkedYesWordPrompt" show="swNPPossMarkedYesWord">
+	      Key the possessive marker word that marks the nominal phrase as a possessor here:
+	   </prompt>
+	   <textBox id="NPPossMarkerWordExample" dataItem="possMarkerWord" show="swNPPossMarkedYesWord" rows="2"/>
+	   <radioGroup id="NPPossMarkedYesWordRequiredTable" show="swNPPossMarkedYesWord">
+					<groupName default="no" dataItem="possWordRequired">RNPPossMarkedYesWordRequired</groupName>
+					<prompt><br/>Is this possessive marker word required on all possessors (other than pronouns)?</prompt>
+					<radio id="NPPossMarkedYesWordRequiredNo" dataValue="no">No, it is optional in some cases</radio>
+					<radio id="NPPossMarkedYesWordRequiredYes" dataValue="yes">Yes, it is always required</radio>
 				</radioGroup>
-				<radio id="NPPossMarkedYesCliticWordYes" dataValue="yes">Yes</radio>
-				<radioGroup id="NPPossMarkedYesCliticRequiredTable" show="swNPPossMarkedYesCliticWordYes">
-					<groupName default="no" dataItem="possCliticRequired">RNPPossMarkedYesCliticRequired</groupName>
-					<prompt>Is this possessive marker required on all possessors (other than pronouns)?</prompt>
-					<radio id="NPPossMarkedYesCliticRequiredNo" dataValue="no">No, it is optional in some cases</radio>
-					<radio id="NPPossMarkedYesCliticRequiredYes" dataValue="yes">Yes, it is always required</radio>
-				</radioGroup>
-				<radioGroup id="NPPossMarkedYesCliticRequiredPosTable" show="swNPPossMarkedYesCliticWordYes">
-					<groupName dataItem="possCliticPossPos" default="before" position="yesHead">RNPPossMarkedYesCliticRequiredPos</groupName>
-					<prompt>Where does the possessive marker occur with respect to the possessor?</prompt>
-					<radio id="NPPossMarkedYesCliticRequiredPossPosBefore" dataValue="before">Before the possessor</radio>
-					<radio id="NPPossMarkedYesCliticRequiredPossPosAfter" dataValue="after">After the possessor</radio>
-				</radioGroup>
-			</radioGroup>
-		</radioGroup>
+				<checkboxGroup id="NPPossMarkedYesWordPosTable" show="swNPPossMarkedYesWord">
+					<prompt><br/>Where does the possessive marker word occur with respect to the possessor? Check all options that are correct for your language</prompt>
+				   <checkbox id="NPPossMarkedYesWordBefore" dataItem="possWordBefore">Before the possessor</checkbox>
+				   <checkbox id="NPPossMarkedYesWordAfter" dataItem="possWordAfter">After the possessor</checkbox>
+				   <checkbox id="NPPossMarkedYesWordBoth" dataItem="possWordBoth">On both sides of the possessor</checkbox>
+				   <checkbox id="NPPossMarkedYesWordOther" dataItem="possWordOther">In my language, the possessive marker word may occur as follows: <textBox  id="NPPossMarkedYesWordOtherContent" dataItem="possWordOther" rows="2"/></checkbox>
+				</checkboxGroup>
+	   <prompt id="NPPossMarkedYesWordAndNoCheckPrompt" show="swPossMarkedYesWordAndNoCheck">WARNING: You said above that possessors are marked with a possessive word, but you did not check any of the options as to where it occurs.  Please either check one or more options here as appropriate, or change the answer above to a different type pf marker or "No, there is no special marking".</prompt>
+	   
 	   <br/>
 	   <instruction id="NPPossMarkedYesAffixErgInstruction" show="swNPPossMarkedYesAffixErg">In the lexicon, mark the possessive affix with the feature <feature>ergative</feature>.</instruction>
 	   <instruction id="NPPossMarkedYesAffixAbsInstruction" show="swNPPossMarkedYesAffixAbs">In the lexicon, mark the possessive affix with the feature <feature>absolutive</feature>.</instruction>
@@ -75,52 +108,52 @@
 	   <instruction id="NPPossMarkedYesAffixErgSplitInstruction" show="swNPPossMarkedYesAffixErgSplit">In the lexicon, mark the possessive affix used in the nominative-accusative constructions with the feature <feature>genitive</feature> and mark the possessive affix used in the split ergativity constructions with the feature <feature>ergative</feature>.</instruction>
 	   <instruction id="NPPossMarkedYesAffixAbsSplitInstruction" show="swNPPossMarkedYesAffixAbsSplit">In the lexicon, mark the possessive affix used in the nominative-accusative constructions with the feature <feature>genitive</feature> and mark the possessive affix used in the split ergativity constructions with the feature  <feature>absolutive</feature>.</instruction>
 	   <instruction id="NPPossMarkedYesAffixGenSplitInstruction" show="swNPPossMarkedYesAffixGenSplit">In the lexicon, mark the possessive affix with the feature <feature>genitive</feature>.</instruction>
-	   <instruction id="NPPossMarkedYesCliticWordNoInstruction" show="swNPPossMarkedYesCliticWordNo">In the lexicon, add  the feature <span id="NPPossCliticPrefix" show="swNPPossMarkedYesCliticPrefix">
-		  <feature>poss_prefix</feature>
+	   <instruction id="NPPossMarkedYesCliticWordNoInstruction" show="swNPPossMarkedYesClitic">In the lexicon, add  the feature <span id="NPPossCliticPrefix" show="swNPPossMarkedYesProclitic">
+	      <feature>poss_prefix</feature>
 	   </span>
-		  <span id="NPPossCliticSuffix" show="swNPPossMarkedYesCliticSuffix">
-			 <feature>poss_suffix</feature>
-		  </span> to the possessive clitic(s).
-		  <span id="NPPossMarkedYesCliticWordNoGen" show="swNPPossMarkedYesCliticWordNoGen">Also, add the feature <feature>genitive</feature> for the case marking.</span>
-		  <span id="NPPossMarkedYesCliticWordNoErg" show="swNPPossMarkedYesCliticWordNoErg">Also, add the feature <feature>ergative</feature> for the case marking.</span>
-		  <span id="NPPossMarkedYesCliticWordNoAbs" show="swNPPossMarkedYesCliticWordNoAbs">Also, add the feature <feature>absolutive</feature> for the case marking.</span>
-		  <span id="NPPossMarkedYesCliticWordNoGenSplit" show="swNPPossMarkedYesCliticWordNoGenSplit">Also, add the feature <feature>genitive</feature> for the case marking.</span>
-		  <span id="NPPossMarkedYesCliticWordNoErgSplit" show="swNPPossMarkedYesCliticWordNoErgSplit">Also, add the feature <feature>genitive</feature> or <feature>ergative</feature> as appropriate for the case marking.</span>
-		  <span id="NPPossMarkedYesCliticWordNoAbsSplit" show="swNPPossMarkedYesCliticWordNoAbsSplit">Also, add the feature <feature>genitive</feature> or <feature>absolutive</feature> as appropriate for the case marking.</span>
+	      <span id="NPPossCliticSuffix" show="swNPPossMarkedYesEnclitic">
+	         <feature>poss_suffix</feature>
+	      </span> to the possessive clitic(s).   
+	      <span id="NPPossMarkedYesCliticWordNoGen" show="swNPPossMarkedYesCliticWordNoGen">Also, add the feature <feature>genitive</feature> for the case marking.</span>
+	      <span id="NPPossMarkedYesCliticWordNoErg" show="swNPPossMarkedYesCliticWordNoErg">Also, add the feature <feature>ergative</feature> for the case marking.</span>
+	      <span id="NPPossMarkedYesCliticWordNoAbs" show="swNPPossMarkedYesCliticWordNoAbs">Also, add the feature <feature>absolutive</feature> for the case marking.</span>
+	      <span id="NPPossMarkedYesCliticWordNoGenSplit" show="swNPPossMarkedYesCliticWordNoGenSplit">Also, add the feature <feature>genitive</feature> for the case marking.</span>
+	      <span id="NPPossMarkedYesCliticWordNoErgSplit" show="swNPPossMarkedYesCliticWordNoErgSplit">Also, add the feature <feature>genitive</feature> or <feature>ergative</feature> as appropriate for the case marking.</span>
+	      <span id="NPPossMarkedYesCliticWordNoAbsSplit" show="swNPPossMarkedYesCliticWordNoAbsSplit">Also, add the feature <feature>genitive</feature> or <feature>absolutive</feature> as appropriate for the case marking.</span>
 	   </instruction>
-	   <instruction id="NPPossMarkedYesCliticWordYesGenInstruction" show="swNPPossMarkedYesCliticWordYesGen">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss</feature>, which will change the category and add the genitive case.</instruction>
-	   <instruction id="NPPossMarkedYesCliticWordYesErgInstruction" show="swNPPossMarkedYesCliticWordYesErg">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss_ergative</feature>, which will change the category and add the ergative case.</instruction>
-	   <instruction id="NPPossMarkedYesCliticWordYesAbsInstruction" show="swNPPossMarkedYesCliticWordYesAbs">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss_absolutive</feature>, which will change the category and add the absolutive case.</instruction>
-	   <instruction id="NPPossMarkedYesCliticWordYesGenSplitInstruction" show="swNPPossMarkedYesCliticWordYesGenSplit">In the lexicon, mark the possessive clitic word entry with the feature <feature>Poss</feature>, which will change the category and add the genitive case.</instruction>
-	   <instruction id="NPPossMarkedYesCliticWordYesErgSplitInstruction" show="swNPPossMarkedYesCliticWordYesErgSplit">In the lexicon, mark the possessive clitic word entry used in the nominative-accusative constructions with the feature <feature>Poss</feature>, which will change the category and add the genitive case.  Mark the possessive clitic word entry used in the split ergativity constructions with the feature <feature>Poss_ergative</feature>, which will change the category and add the ergative case.</instruction>
-	   <instruction id="NPPossMarkedYesCliticWordYesAbsSplitInstruction" show="swNPPossMarkedYesCliticWordYesAbsSplit">In the lexicon, mark the possessive clitic word entry used in the nominative-accusative constructions with the feature <feature>Poss</feature>, which will change the category and add the genitive case.  Mark the possessive clitic word entry used in the split ergativity constructions with the feature <feature>Poss_absolutive</feature>, which will change the category and add the absolutive case.</instruction>
-
+	   <instruction id="NPPossMarkedYesCliticWordYesGenInstruction" show="swNPPossMarkedYesCliticWordYesGen">In the lexicon, mark the possessive marker word entry with the feature <feature>Poss</feature>, which will change the category and add the genitive case.</instruction>
+	   <instruction id="NPPossMarkedYesCliticWordYesErgInstruction" show="swNPPossMarkedYesCliticWordYesErg">In the lexicon, mark the possessive marker word entry with the feature <feature>Poss_ergative</feature>, which will change the category and add the ergative case.</instruction>
+	   <instruction id="NPPossMarkedYesCliticWordYesAbsInstruction" show="swNPPossMarkedYesCliticWordYesAbs">In the lexicon, mark the possessive marker word entry with the feature <feature>Poss_absolutive</feature>, which will change the category and add the absolutive case.</instruction>
+	   <instruction id="NPPossMarkedYesCliticWordYesGenSplitInstruction" show="swNPPossMarkedYesCliticWordYesGenSplit">In the lexicon, mark the possessive marker word entry with the feature <feature>Poss</feature>, which will change the category and add the genitive case.</instruction>
+	   <instruction id="NPPossMarkedYesCliticWordYesErgSplitInstruction" show="swNPPossMarkedYesCliticWordYesErgSplit">In the lexicon, mark the possessive marker word entry used in the nominative-accusative constructions with the feature <feature>Poss</feature>, which will change the category and add the genitive case.  Mark the possessive marker word entry used in the split ergativity constructions with the feature <feature>Poss_ergative</feature>, which will change the category and add the ergative case.</instruction>
+	   <instruction id="NPPossMarkedYesCliticWordYesAbsSplitInstruction" show="swNPPossMarkedYesCliticWordYesAbsSplit">In the lexicon, mark the possessive marker word entry used in the nominative-accusative constructions with the feature <feature>Poss</feature>, which will change the category and add the genitive case.  Mark the possessive marker word entry used in the split ergativity constructions with the feature <feature>Poss_absolutive</feature>, which will change the category and add the absolutive case.</instruction>
+	   
 		<introduction id="NPPossCooccurIntroduction" show="swNPArtAndOrDem">We also need to know whether possessors and articles or demonstratives can co-occur in the same nominal phrase.  In English, these elements do not co-occur, unless the possessor is expressed in a prepositional phrase.  For example, we can’t say <example>those [the boy’s] books</example>; instead we use <example>those books [of his]</example> to express the same thought.  Some other languages allow both possessors and articles or demonstratives to occur in the same phrase, so the first example above would be grammatical.</introduction>
 <br/>
 		<radioGroup id="NPPossCooccurTable" show="swNPArtAndOrDem">
 			<groupName dataItem="possCooccur" default="yes"/>
-			<prompt>Can possessors co-occur with <span id="NPArtOnlyCooccurSpan" show="swNPArtAndDemArt">articles</span>
+			<prompt>Can <span id="NPPronPossOnlySpan" show="swNPPossNPNo">pronoun </span>possessors co-occur with <span id="NPArtOnlyCooccurSpan" show="swNPArtAndDemArt">articles</span>
 				<span id="NPDemOnlyCooccurSpan" show="swNPArtAndDemDem">demonstratives</span>
 				<span id="NPArtAndDemCooccurSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> in your language?</prompt>
 			<radio id="NPPossCooccurYes" dataValue="yes">Yes, they may co-occur</radio>
-		   <radio id="NPPossCooccurSome" dataValue="some">Some of the possessors may co-occur with <span id="NPArtOnlyCooccurSpan1" show="swNPArtAndDemArt">articles</span>
-			  <span id="NPDemOnlyCooccurSpan1" show="swNPArtAndDemDem">demonstratives</span>
-			  <span id="NPArtAndDemCooccurSpan1" show="swNPArtAndDemBoth">articles and demonstratives</span> but some may not</radio>
-		   <radio id="NPPossCooccurNo" dataValue="no">No, it is the same as English in this regard</radio>
+		   <radio id="NPPossCooccurSome" dataValue="some">Some of the <span id="NPPronPossOnlySpan1" show="swNPPossNPNo">pronoun </span>possessors may co-occur with <span id="NPArtOnlyCooccurSpan1" show="swNPArtAndDemArt">articles</span>
+		      <span id="NPDemOnlyCooccurSpan1" show="swNPArtAndDemDem">demonstratives</span>
+		      <span id="NPArtAndDemCooccurSpan1" show="swNPArtAndDemBoth">articles and demonstratives</span> but some may not</radio>
+		   <radio id="NPPossCooccurNo" dataValue="no">No, they never co-occur in the same nominal phrase</radio>
 		</radioGroup>
-	   <instruction id="NPPossCooccurSomeInstruction" show="swNPPossCooccurSome">In the lexicon, add the feature <feature>poss_cooccur</feature> to the <span id="NPArtOnlyCooccurSpan2" show="swNPArtAndDemArt">articles</span>
-		  <span id="NPDemOnlyCooccurSpan2" show="swNPArtAndDemDem">demonstratives</span>
-		  <span id="NPArtAndDemCooccurSpan2" show="swNPArtAndDemBoth">articles and demonstratives</span> which may co-occur with possessors so that they will be restricted to the proper phrase structure rules.</instruction>
-	   <introduction id="NPPossNounCaseChangeIntroduction" show="swNPCaseYes">In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its position relative to the verb: nominative or accusative, ergative or absolutive depending on the case system. </introduction>
+	   <instruction id="NPPossCooccurSomeInstruction" show="swNPArtAndOrDemAndNPPossCooccurSome">In the lexicon, add the feature <feature>poss_cooccur</feature> to the <span id="NPArtOnlyCooccurSpan2" show="swNPArtAndDemArt">articles</span>
+	      <span id="NPDemOnlyCooccurSpan2" show="swNPArtAndDemDem">demonstratives</span>
+	      <span id="NPArtAndDemCooccurSpan2" show="swNPArtAndDemBoth">articles and demonstratives</span> which may co-occur with possessors so that they will be restricted to the proper phrase structure rules.</instruction>
+	   <introduction id="NPPossNounCaseChangeIntroduction" show="swNPCaseYes">In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its grammatical relation to the verb: nominative or accusative, ergative or absolutive depending on the case system. </introduction>
 	   <br/>
 	   <radioGroup id="NPPossNounCaseChange" show="swNPCaseYes">
-		  <groupName dataItem="possNounCaseChange" default="no">RNPPossNounCaseChange</groupName>
-		  <prompt>
-			 Does the presence of a possessor change the case marking on the head noun to match the case of the possessor?</prompt>
-		  <radio id="NPPossNounCaseChangeNo" dataValue="no">No, the grammatical function of the head noun relative to the verb determines its case, not the presence of a possessor</radio>
-		  <radio id="NPPossNounCaseChangeYes" dataValue="yes">Yes, the case of the head noun matches the case of the possessor, when a possessor is present</radio>
+	      <groupName dataItem="possNounCaseChange" default="no">RNPPossNounCaseChange</groupName>
+	      <prompt>
+	         Does the presence of a <span id="NPPronPossOnlySpan2" show="swNPPossNPNo">pronoun </span>possessor change the case marking on the head noun to match the case of the possessor?</prompt>
+	      <radio id="NPPossNounCaseChangeNo" dataValue="no">No, the grammatical relation of the head noun to the verb determines its case, not the presence of a possessor</radio>
+	      <radio id="NPPossNounCaseChangeYes" dataValue="yes">Yes, the case of the head noun matches the case of the possessor, when a possessor is present</radio>
 	   </radioGroup>
-
+	   
 		<br/>
 		<br/>
 		<buttons>
@@ -128,7 +161,19 @@
 			<button id="NPPossNext" value="Next" goto="NPPossessorAgreement.xml"/>
 		</buttons>
 	</form>
-	<showWhen id="swNPArtAndDemArt">
+   <showWhen id="swNPPossNPNo">
+      <whenRadio button="NPPossNPNo"/>
+   </showWhen>
+   <showWhen id="swNPPossNPYesOrYesOnly">
+      <whenRadio button="NPPossNPYes"/>
+      <or/>
+      <whenRadio button="NPPossNPYesOnly"/>
+   </showWhen>
+   <showWhen id="swNPPossNPNotYesOnly">
+      <not/>
+      <whenRadio button="NPPossNPYesOnly"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArt">
 		<whenValue element="np" attr="artAndDem" value="article"/>
 	</showWhen>
 	<showWhen id="swNPArtAndDemDem">
@@ -140,211 +185,498 @@
 	<showWhen id="swNPArtAndOrDem">
 		<not/>
 		<whenValue element="np" attr="artAndDem" value="no"/>
+	   <and/><not/>
+	   <whenRadio button="NPPossNPNone"/>
 	</showWhen>
-	<showWhen id="swNPPossMarkedYesClitic">
-		<whenRadio button="NPPossMarkedYesClitic"/>
+   <showWhen id="swNPPossMarkedYesAffix">
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenRadio button="NPPossNPYes"/>
+      <or/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenRadio button="NPPossNPYesOnly"/>
+   </showWhen>
+<showWhen id="swNPPossMarkedYesProclitic">
+   <whenRadio button="NPPossMarkedYesProclitic"/>
+</showWhen>
+   <showWhen id="swNPPossMarkedYesEnclitic">
+      <whenRadio button="NPPossMarkedYesEnclitic"/>
+   </showWhen>
+   <showWhen id="swNPPossMarkedYesClitic">
+		<whenRadio button="NPPossMarkedYesProclitic"/>
+<and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
+<or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
 	</showWhen>
-	<showWhen id="swNPPossMarkedYesCliticWordYes">
-		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
-		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
-	</showWhen>
-	<showWhen id="swNPPossMarkedYesCliticSuffix">
-		<whenRadio button="NPPossMarkedYesCliticSuffix"/>
-	</showWhen>
-	<showWhen id="swNPPossMarkedYesCliticPrefix">
-		<whenRadio button="NPPossMarkedYesCliticPrefix"/>
-	</showWhen>
-	<showWhen id="swNPPossMarkedYesCliticWordNo">
-		<whenRadio button="NPPossMarkedYesClitic"/>
-		<and/>
-		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
+	<showWhen id="swNPPossMarkedYesWord">
+		<whenRadio button="NPPossMarkedYesWord"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesWord"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNoGen">
-		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
-		<and/>
 		<whenValue element="typology" attr="case" value="nominative"/>
 		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
-<or/>
-		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
-		<and/>
+<openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
 	   <whenValue element="np" attr="possCaseErg" value="genitive"/>
 	   <and/>
 		<whenValue element="typology" attr="case" value="ergative"/>
 		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
-</showWhen>
+	   <openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenValue element="typology" attr="case" value="nominative"/>
+	   <and/>
+	   <openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
+	   <or/>
+	   <whenValue element="np" attr="possCaseErg" value="genitive"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="ergative"/>
+	   <and/>
+	   <openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
+	</showWhen>
 <showWhen id="swNPPossMarkedYesCliticWordNoGenSplit">
-		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
-		<and/>
    <whenValue element="np" attr="possCaseErg" value="genitive"/>
    <and/>
 		<whenValue element="typology" attr="case" value="split"/>
 		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
+   <openParen/>
+   <whenRadio button="NPPossMarkedYesProclitic"/>
+   <or/>
+   <whenRadio button="NPPossMarkedYesEnclitic"/>
+   <closeParen/>
+   <and/>
+   <whenRadio button="NPPossNPYes"/>
+   <or/>
+   <whenValue element="np" attr="possCaseErg" value="genitive"/>
+   <and/>
+   <whenValue element="typology" attr="case" value="split"/>
+   <and/>
+   <openParen/>
+   <whenRadio button="NPPossMarkedYesProclitic"/>
+   <or/>
+   <whenRadio button="NPPossMarkedYesEnclitic"/>
+   <closeParen/>
+   <and/>
+   <whenRadio button="NPPossNPYesOnly"/>
 </showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNoErg">
-	<whenRadio button="NPPossMarkedYesCliticWordNo"/>
-		<and/>
 	   <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	   <and/>
 		<whenValue element="typology" attr="case" value="ergative"/>
 		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
-</showWhen>
+	   <openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenValue element="np" attr="possCaseErg" value="ergative"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="ergative"/>
+	   <and/>
+	   <openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
+	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNoErgSplit">
-		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
-		<and/>
 	   <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	   <and/>
 		<whenValue element="typology" attr="case" value="split"/>
 		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
+	   <openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenValue element="np" attr="possCaseErg" value="ergative"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="split"/>
+	   <and/>
+	   <openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNoAbs">
-		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
-		<and/>
 	   <whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	   <and/>
 		<whenValue element="typology" attr="case" value="ergative"/>
 		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
+	   <openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="ergative"/>
+	   <and/>
+	   <openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordNoAbsSplit">
-		<whenRadio button="NPPossMarkedYesCliticWordNo"/>
-		<and/>
 		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
 		<and/>
 		<whenValue element="typology" attr="case" value="split"/>
 		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
+	   <openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="split"/>
+	   <and/>
+	   <openParen/>
+	   <whenRadio button="NPPossMarkedYesProclitic"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesEnclitic"/>
+	   <closeParen/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesGen">
-		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
+		<whenRadio button="NPPossMarkedYesWord"/>
 		<and/>
 		<whenValue element="typology" attr="case" value="nominative"/>
-		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
-<or/>
-		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+		<whenRadio button="NPPossMarkedYesWord"/>
 		<and/>
 	   <whenValue element="np" attr="possCaseErg" value="genitive"/>
 	   <and/>
 		<whenValue element="typology" attr="case" value="ergative"/>
-		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	<or/>
+	   <whenRadio button="NPPossMarkedYesWord"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="nominative"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesWord"/>
+	   <and/>
+	   <whenValue element="np" attr="possCaseErg" value="genitive"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="ergative"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesGenSplit">
-		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
+		<whenRadio button="NPPossMarkedYesWord"/>
 		<and/>
 	   <whenValue element="np" attr="possCaseErg" value="genitive"/>
 	   <and/>
 		<whenValue element="typology" attr="case" value="split"/>
-		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesWord"/>
+	   <and/>
+	   <whenValue element="np" attr="possCaseErg" value="genitive"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="split"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesErg">
-		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
+		<whenRadio button="NPPossMarkedYesWord"/>
 		<and/>
 	   <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	   <and/>
 		<whenValue element="typology" attr="case" value="ergative"/>
-		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
-</showWhen>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesWord"/>
+	   <and/>
+	   <whenValue element="np" attr="possCaseErg" value="ergative"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="ergative"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
+	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesErgSplit">
-		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
+		<whenRadio button="NPPossMarkedYesWord"/>
 		<and/>
 	   <whenValue element="np" attr="possCaseErg" value="ergative"/>
 	   <and/>
 		<whenValue element="typology" attr="case" value="split"/>
-		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesWord"/>
+	   <and/>
+	   <whenValue element="np" attr="possCaseErg" value="ergative"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="split"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
 	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesAbs">
-		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
+		<whenRadio button="NPPossMarkedYesWord"/>
 		<and/>
 	   <whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	   <and/>
 		<whenValue element="typology" attr="case" value="ergative"/>
-		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
-</showWhen>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesWord"/>
+	   <and/>
+	   <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="ergative"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
+	</showWhen>
 	<showWhen id="swNPPossMarkedYesCliticWordYesAbsSplit">
-		<whenRadio button="NPPossMarkedYesCliticWordYes"/>
+		<whenRadio button="NPPossMarkedYesWord"/>
 		<and/>
 	   <whenValue element="np" attr="possCaseErg" value="absolutive"/>
 	   <and/>
 		<whenValue element="typology" attr="case" value="split"/>
-		<and/>
-		<whenRadio button="NPPossMarkedYesClitic"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYes"/>
+	   <or/>
+	   <whenRadio button="NPPossMarkedYesWord"/>
+	   <and/>
+	   <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+	   <and/>
+	   <whenValue element="typology" attr="case" value="split"/>
+	   <and/>
+	   <whenRadio button="NPPossNPYesOnly"/>
 	</showWhen>
 	<showWhen id="swNPPossNounCaseChangeYes">
 		<not/>
 		<whenValue element="typology" attr="case" value="none"/>
 <and/>
 		<whenRadio button="NPPossNounCaseChangeYes"/>
+	   <and/><not/>
+	   <whenRadio button="NPPossNPNone"/>
 	</showWhen>
-   <showWhen id="swNPPossCooccurSome">
-	  <whenRadio button="NPPossCooccurSome"/>
-	  <and/>
-	 <not/> <whenValue element="np" attr="artAndDem" value="no"/>
+   <showWhen id="swNPArtAndOrDemAndNPPossCooccurSome">
+      <not/>
+      <whenValue element="np" attr="artAndDem" value="no"/>
+      <and/>
+      <whenRadio button="NPPossCooccurSome"/>
+      <and/><not/>
+      <whenRadio button="NPPossNPNone"/>
    </showWhen>
    <showWhen id="swNPCaseErg">
-	  <whenValue element="typology" attr="case" value="ergative"/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPPossNPYes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPPossNPYesOnly"/>
    </showWhen>
    <showWhen id="swNPCaseSplit">
-	  <whenValue element="typology" attr="case" value="split"/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPPossNPYes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPPossNPYesOnly"/>
    </showWhen>
    <showWhen id="swNPCaseYes">
-	  <not/>
-	  <whenValue element="typology" attr="case" value="none"/>
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/><not/>
+      <whenRadio button="NPPossNPNone"/>
    </showWhen>
    <showWhen id="swNPPossMarkedYesAffixErg">
-	  <whenRadio button="NPPossMarkedYesAffix"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="ergative"/>
-	  <and/>
-	  <whenValue element="typology" attr="case" value="ergative"/>
-   </showWhen>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPPossNPYes"/>
+      <or/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPPossNPYesOnly"/>
+   </showWhen>	
    <showWhen id="swNPPossMarkedYesAffixErgSplit">
-	  <whenRadio button="NPPossMarkedYesAffix"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="ergative"/>
-	  <and/>
-	  <whenValue element="typology" attr="case" value="split"/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPPossNPYes"/>
+      <or/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPPossNPYesOnly"/>
    </showWhen>
    <showWhen id="swNPPossMarkedYesAffixAbs">
-	  <whenRadio button="NPPossMarkedYesAffix"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="absolutive"/>
-	  <and/>
-	  <whenValue element="typology" attr="case" value="ergative"/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPPossNPYes"/>
+      <or/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPPossNPYesOnly"/>
    </showWhen>
    <showWhen id="swNPPossMarkedYesAffixAbsSplit">
-	  <whenRadio button="NPPossMarkedYesAffix"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="absolutive"/>
-	  <and/>
-	  <whenValue element="typology" attr="case" value="split"/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPPossNPYes"/>
+      <or/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPPossNPYesOnly"/>
    </showWhen>
    <showWhen id="swNPPossMarkedYesAffixGen">
-	  <whenRadio button="NPPossMarkedYesAffix"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="genitive"/>
-	  <and/>
-	  <whenValue element="typology" attr="case" value="ergative"/>
-	  <or/>
-	  <whenRadio button="NPPossMarkedYesAffix"/>
-	  <and/>
-	  <whenValue element="typology" attr="case" value="nominative"/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="genitive"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPPossNPYes"/>
+      <or/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenRadio button="NPPossNPYes"/>
+      <or/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="genitive"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPPossNPYesOnly"/>
+      <or/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenRadio button="NPPossNPYesOnly"/>
    </showWhen>
    <showWhen id="swNPPossMarkedYesAffixGenSplit">
-	  <whenRadio button="NPPossMarkedYesAffix"/>
-	  <and/>
-	  <whenValue element="np" attr="possCaseErg" value="genitive"/>
-	  <and/>
-	  <whenValue element="typology" attr="case" value="split"/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="genitive"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPPossNPYes"/>
+      <or/>
+      <whenRadio button="NPPossMarkedYesAffix"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="genitive"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPPossNPYesOnly"/>
    </showWhen>
+   <showWhen id="swPossMarkedYesWordAndNoCheck">
+      <whenRadio button="NPPossMarkedYesWord"/>
+      <and/><not/>
+      <whenCheckbox button="NPPossMarkedYesWordBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NPPossMarkedYesWordAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NPPossMarkedYesWordBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPPossMarkedYesWordOther"/>
+   </showWhen>
+   &TechnicalTerms; 
 </page>

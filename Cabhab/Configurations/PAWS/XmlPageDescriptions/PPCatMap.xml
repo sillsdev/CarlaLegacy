@@ -2,7 +2,7 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PPCatMap" count="4/5">
-	<title level="2">Pre/Post-Positional Phrases - Category Mapper</title>
+	<title level="2">Adpositional Phrases - Category Mapper</title>
 	<form section="pp">
 		<instruction>
 			<span id="PPWordCategorySpan" show="swPPWord">You need to make sure the <span id="PPPrepSpanT1" show="swPPPosPrep">prepositions</span>
@@ -48,7 +48,10 @@
 	<showWhen id="swPPPosPost">
 		<whenValue element="pp" attr="pPos" value="after"/>
 	</showWhen>
-	<showWhen id="swPPPosBoth">
-		<whenValue element="pp" attr="pPos" value="both"/>
-	</showWhen>
+   <showWhen id="swPPPosBoth">
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
+   </showWhen>
 </page>
+

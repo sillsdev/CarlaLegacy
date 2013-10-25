@@ -1,170 +1,318 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPLocative" count="2/6">
-	<title level="2">Adverbs and AdvP - Locative Adverbs</title>
-	<introduction>Locative adverbs include the English words: <example>here</example>, <example>there</example>, <example>everywhere</example>.  These locative adverbs may be related to the demonstratives.  Many languages also have a negative temporal adverb meaning <example>nowhere</example>.
-<br/>
-		<br/>
+    <title level="2">Adverbs and AdvP - Locative Adverbs</title>
+   <introduction>Locative adverbs include the English words: <example>here</example> and <example>there</example>.  These locative adverbs may be related to the <technicalTermRef term="ttDemonstratives"/>.  
+ <br/>
+        <br/>
 In English, location is often also expressed by a prepositional
 phrase, such as: <example>in the mountains</example>, <example>at San Jose</example>, <example>over there</example>.  Many
 languages allow just a nominal phrase, consisting of a proper noun or
-description of the place.
+description of the place.  
 <br/>
-		<br/>We will begin again with the positive locative adverbs.  Think about how locatives are expressed in
+      <br/>Think about how locatives are expressed in
 your language.  For those which are adverbs, are there any degree
 words which can modify them?  In English, this seems to be limited to
-<example>only</example> (a type of focus construction) and <example>right</example>, as in:
+<example>only</example> (a type of <technicalTermRef term="ttFocus"/> construction) and <example>right</example>, as in:
 </introduction>
-	<EnglishExample>
-		<exItem label="1.">only here.</exItem>
-		<exItem label="2">only there.</exItem>
-		<exItem label="3.">right here.</exItem>
-		<exItem label="4.">right there.</exItem>
-	</EnglishExample>
-	<form section="advp">
-	   <radioGroup id="AdvPLocativeClassifierAgrTable" show="swOTClassifierAgr">
-		  <groupName dataItem="locativeClassifier" default="no">RAdvPLocativeClassifierAgr</groupName>
-		  <prompt>You said that your language has classifiers which mark concord agreement. Many languages of this type also have classifiers on locatives.  Do the locative adverbs have classifiers attached to them in your language?</prompt>
-		  <radio id="AdvPLocativeClassifierAgrNo" dataValue="no">No, these elements are not marked with classifiers</radio>
-		  <radio id="AdvPLocativeClassifierAgrYes" dataValue="yes">Yes, these elements are marked with classifiers as part of the concord agreement system</radio>
-	   </radioGroup>
-	   <prompt id="AdvPLocativeClassifierAgrPrompt" show="swOTClassifierAgrLocativeYes">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the words asked for on this page.  However, if the classifiers for the locatives are a limited class, you may choose to enter all the forms here, with a hyphen to separate the classifier from the root.</prompt>
-	   <br/>
-	   <prompt>Key your examples of positive locative adverbs here, without any degree words:</prompt>
-		<textBox id="AdvPLocExample" dataItem="locativeExample"/>
-		<br/><br/>
-	   <radioGroup>
-		  <groupName dataItem="advLocDem" default="no">RAdvPLocDem</groupName>
-		  <prompt>Are the positive locative adverbs in your language related to the demonstratives?</prompt>
-		  <radio id="AdvPLocDemNo" dataValue="no">No, the forms are completely distinct</radio>
-		  <radio id="AdvPLocDemSame" dataValue="same">Yes, the forms are identical, but they are used in different positions in the sentence</radio>
-		  <radio id="AdvPLocDemAffix" dataValue="affix">Yes, an affix is added to a demonstrative to form a locative adverb</radio>
-	   </radioGroup>
-	   <br/><br/>
-	   <radioGroup>
-			<groupName dataItem="locativeDegree" default="no">RAdvPLocativeDegree</groupName>
-			<prompt>Does your language have any degree words which modify the locative adverbs?</prompt>
-			<radio id="AdvPLocativeDegreeYesBefore" dataValue="yesBefore">Yes, a degree word many appear before the locative adverb</radio>
-			<radio id="AdvPLocativeDegreeYesAfter" dataValue="yesAfter">Yes, a degree word many appear after the locative adverb</radio>
-			<radio id="AdvPLocativeDegreeAttaches" dataValue="attaches">There is an affix or clitic that attaches to the locative adverb to intensify it</radio>
-			<radio id="AdvPLocativeDegreeNoRedup" dataValue="noRedup">No, but reduplication is used to intensify the meaning of the locative adverb</radio>
-			<radio id="AdvPLocativeDegreeNo" dataValue="no">No, locative adverbs are not modified or intensified</radio>
-		</radioGroup>
-		<br/><br/>
-		<prompt id="AdvPLocativeDegreePrompt" show="swAdvPLocativeDegreeYes">Key your examples of degree words which can modify locative adverbs here:</prompt>
-		<textBox id="AdvPLocativeDegreeExample" dataItem="locativeDegreeExample" show="swAdvPLocativeDegreeYes" rows="3"/>
-		<prompt id="AdvPLocativeDegreeAttachesPrompt" show="swAdvPLocativeDegreeAttaches">Key your examples of the degree affixes or clitics which can modify locative adverbs here, with a hyphen indicating which side it attaches to the locative adverb on:</prompt>
-		<textBox id="AdvPLocativeDegreeAffixExample" dataItem="locativeDegreeAffixExample" show="swAdvPLocativeDegreeAttaches" rows="3"/>
-		<prompt id="AdvPLocativeDegreePhrasePrompt" show="swAdvPLocativeDegreeYes">Now key examples of the degree words modifying the positive locative adverbs here:</prompt>
-		<textBox id="AdvPLocativePhraseExample" dataItem="locativePhraseExample" show="swAdvPLocativeDegreeYes"/>
-		<prompt id="AdvPLocativeDegreeAffixPhrasePrompt" show="swAdvPLocativeDegreeAttaches">Now key examples of the degree affixes or clitics attached to the positive locative adverbs here:</prompt>
-		<textBox id="AdvPLocativePhraseAffixExample" dataItem="locativePhraseAffixExample" show="swAdvPLocativeDegreeAttaches"/>
-		<prompt id="AdvPLocativeDegreeRedupPrompt" show="swAdvPLocativeDegreeNoRedup">Key some examples of the positive locative adverbs with reduplication modifying or intensifying them here:</prompt>
-		<textBox id="AdvPLocativeRedupExample" dataItem="locativeRedupExample" show="swAdvPLocativeDegreeNoRedup"/>
-		<instruction  id="AdvPLocativeDegreeYesInstruction" show="swAdvPLocativeDegreeYes">In the lexicon, key the features <feature>makeDeg modifies_locative</feature> on the degree words to change the category and allow it to modify locative adverbs.  Simply add the <feature>modifies_locative</feature> feature if this same degree word can modify temporal adverbs and you already marked it with those features.</instruction>
-		<br/><br/>
+    <EnglishExample>
+        <exItem label="1.">only here.</exItem>
+        <exItem label="2">only there.</exItem>
+        <exItem label="3.">right here.</exItem>
+        <exItem label="4.">right there.</exItem>
+    </EnglishExample>
+    <form section="advp">
+       <radioGroup id="AdvPLocativeClassifierAgrTable" show="swOTClassifierAgr">
+          <groupName dataItem="locativeClassifier" default="no">RAdvPLocativeClassifierAgr</groupName>
+          <prompt><br/>You said that your language has classifiers which mark concord agreement. Many languages of this type also have classifiers on locatives.  Do the locative adverbs have classifiers attached to them in your language?</prompt>
+          <radio id="AdvPLocativeClassifierAgrNo" dataValue="no">No, these elements are not marked with classifiers</radio>
+          <radio id="AdvPLocativeClassifierAgrYes" dataValue="yes">Yes, these elements are marked with classifiers as part of the concord agreement system</radio>
+       </radioGroup>
+       <prompt id="AdvPLocativeClassifierAgrPrompt" show="swOTClassifierAgrLocativeYes">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the words asked for on this page.  However, if the classifiers for the locatives are a limited class, you may choose to enter all the forms here, with a hyphen to separate the classifier from the root.</prompt>	   
+       <br/>	   
+       <prompt>Key your examples of locative adverbs (without any modifiers or intensifiers) here:</prompt>
+        <textBox id="AdvPLocExample" dataItem="locativeExample"/>
+       <instruction id="AdvPLocativeInstruction">In the lexicon, key the feature <feature>locative</feature>
+          on all adverbs that express location.  You can also add this feature
+          to nouns and proper names which express location.
+       </instruction>
+       <br/><br/>
+       <radioGroup id="AdvPLocDemTable">
+          <groupName dataItem="locativeDem" default="distinct">RAdvPLocDem</groupName>
+          <prompt>How are the locative adverbs in your language related to the demonstratives?</prompt>
+          <radio id="AdvPLocDemDistinct" dataValue="distinct">The forms are completely distinct</radio>
+          <radio id="AdvPLocDemSame" dataValue="same">The forms are identical, but they are used in different positions in the sentence</radio>
+          <radio id="AdvPLocDemSome" dataValue="someSame">Some of the forms are identical, but other forms are distinct</radio>
+          <radio id="AdvPLocDemAffix" dataValue="demAffix">An affix is added to a demonstrative to form a locative adverb</radio>
+          <radio id="AdvPLocAffixDem" dataValue="locativeAffix">An affix is added to a locative adverb to form a demonstrative</radio>
+          <radio id="AdvPLocDemOther" dataValue="other">The two forms have the following other relationship in my language:</radio>
+      </radioGroup>       
+             <textBox  id="AdvPLocativeDemOtherContent" dataItem="locativeDemOther" rows="2" show="swAdvPLocDemOther"/>
+       
+       <instruction id="AdvPLocDemSameInstruction" show="swAdvPLocDemSame">In the lexicon, you will need to have two entries for each word, one with the category <category>Adv</category> and feature <feature>locative</feature> and one with the category <category>Dem</category>.</instruction>
+       <instruction id="AdvPLocDemAffixInstruction" show="swAdvPLocDemAffix">In the lexicon, key the features <feature>locative makeAdv</feature> on the affix that  is added to a demonstrative to form a locative adverb, as this will take care of the category change needed.</instruction>
+       <instruction id="AdvPLocAffixDemInstruction" show="swAdvPLocAffixDem">In the lexicon, key the features <feature>locative makeDem</feature> on the affix that  is added to a locative adverb to form a demonstrative, as this will take care of the category change needed.</instruction>
+       <br/><br/>
+       <radioGroup>
+            <groupName dataItem="locativeDegree" default="no">RAdvPLocativeDegree</groupName>
+            <prompt>Does your language have any degree words which modify the locative adverbs?</prompt>
+          <radio id="AdvPLocativeDegreeNo" dataValue="no">No, locative adverbs are not modified or intensified</radio>
+          <radio id="AdvPLocativeDegreeYes" dataValue="yes">Yes, locative adverbs may be modified or intensified in the following ways:</radio>
+          <checkboxGroup id="AdvPLocativeDegreeType" show="swAdvPLocativeDegreeYes">
+             <prompt>Check all options that are correct for your language</prompt> 
+             <checkbox id="AdvPLocativeDegreeWord" dataItem="locativeDegreeWord">Degree words may modify the locative adverb</checkbox>
+             <checkbox id="AdvPLocativeDegreeAttaches" dataItem="locativeDegreeAttaches">There is an affix or clitic that attaches to the locative adverb to intensify it</checkbox>
+             <checkbox id="AdvPLocativeDegreeRedup" dataItem="locativeDegreeRedup">Reduplication is used to intensify the meaning of the locative adverb</checkbox>
+             <checkbox id="AdvPLocativeDegreeOther" dataItem="locativeDegreeOther">My language does the following to intensify the meaning of the locative adverb:<textBox  id="AdvPLocativeDegreeOtherContent" dataItem="locativeDegreeOther" rows="2"/></checkbox>
+          </checkboxGroup>
+       </radioGroup>
+       <prompt id="AdvPLocativeDegreeNoCheckPrompt" show="swAdvPLocativeDegreeYesNoCheck">WARNING: You said above that locative adverbs may be modified or intensified, but you did not check any of the options.  Please either check one or more options as appropriate, or change the answer above to “No, locative adverbs are not modified or intensified”.</prompt>
+        <prompt id="AdvPLocativeDegreePrompt" show="swAdvPLocativeDegreeYesWord">Key your examples of degree words which can modify locative adverbs here:</prompt>
+        <textBox id="AdvPLocativeDegreeExample" dataItem="locativeDegreeExample" show="swAdvPLocativeDegreeYesWord" rows="3"/>
+       <prompt id="AdvPLocativeDegreePhrasePrompt" show="swAdvPLocativeDegreeYesWord">Now key examples of the degree words modifying the locative adverbs here:</prompt>
+        <textBox id="AdvPLocativePhraseExample" dataItem="locativePhraseExample" show="swAdvPLocativeDegreeYesWord"/>
+       <br/><br/>
+       <checkboxGroup id="AdvPLocativeDegreeWordTable" show="swAdvPLocativeDegreeYesWord">
+          <prompt>Looking at the examples you keyed above, where do the degree words occur with respect to the locative adverb? Check all options that are correct for your language</prompt>
+          <checkbox id="AdvPLocativeDegreeWordBefore" checked="yes" dataItem="locativeDegreeWordBefore">Before the locative adverb</checkbox>
+          <checkbox id="AdvPLocativeDegreeWordAfter" checked="yes" dataItem="locativeDegreeWordAfter">After the locative adverb</checkbox>
+          <checkbox id="AdvPLocativeDegreeWordBoth" checked="yes" dataItem="locativeDegreeWordBoth">On both sides at the same time</checkbox>
+          <checkbox id="AdvPLocativeDegreeWordOther" checked="yes" dataItem="locativeDegreeWordOther">In my language, these degree words may occur as follows: <textBox  id="AdvPLocativeDegreeWordOtherContent" dataItem="locativeDegreeWordOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="AdvPLocativeDegreeWordNoCheckPrompt" show="swAdvPLocativeDegreeWordAndNoCheck">WARNING: You need to check at least one box to describe where these degree words occur in your language, or change the answer above to a different type of modifier.</prompt>
+       <instruction  id="AdvPLocativeDegreeYesInstruction" show="swAdvPLocativeDegreeYesWord">In the lexicon, key the features <feature>makeDeg modifies_locative</feature> on the degree words to change the category and allow it to modify locative adverbs.  Simply add the <feature>modifies_locative</feature> feature if this same degree word can modify temporal adverbs and you already marked it with those features.</instruction>
+       <instruction id="AdvPLocativeDegreeEitherRestrictedInstruction" show="swAdvPLocativeDegreeEitherRestricted">In the lexicon, mark those degree words which can only occur before the adverb with the feature <feature>AdvP-initial</feature> and those which can only occur after the adverb with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</instruction>           
+       
+       <prompt id="AdvPLocativeDegreeAttachesPrompt" show="swAdvPLocativeDegreeAttaches">Key your examples of the degree affixes or clitics which can modify locative adverbs here, with a hyphen or equal sign indicating which side it attaches to the locative adverb on:</prompt>
+       <textBox id="AdvPLocativeDegreeAffixExample" dataItem="locativeDegreeAffixExample" show="swAdvPLocativeDegreeAttaches" rows="3"/>
+       <prompt id="AdvPLocativeDegreeAffixPhrasePrompt" show="swAdvPLocativeDegreeAttaches">Now key examples of the degree affixes or clitics attached to the locative adverbs here:</prompt>
+        <textBox id="AdvPLocativePhraseAffixExample" dataItem="locativePhraseAffixExample" show="swAdvPLocativeDegreeAttaches"/>
+        <prompt id="AdvPLocativeDegreeRedupPrompt" show="swAdvPLocativeDegreeRedup">Key some examples of the locative adverbs with reduplication modifying or intensifying them here:</prompt>
+        <textBox id="AdvPLocativeRedupExample" dataItem="locativeDegreeRedupExample" show="swAdvPLocativeDegreeRedup"/>
+       <prompt id="AdvPLocativeDegreeOtherPrompt" show="swAdvPLocativeDegreeOther">Key some examples of how you language modifies or intensifies the locative adverbs here:</prompt>
+       <textBox id="AdvPLocativeOtherExample" dataItem="locativeOtherExample" show="swAdvPLocativeDegreeOther"/>
+ 
+       <br/><br/>
+       <introduction>There are also two types of locative adverbial <technicalTermRef term="ttIndefinite">indefinites</technicalTermRef>: those built from a quantifier and a general locative noun, such as <example>everywhere</example> and <example>somewhere</example>, and those built from an <technicalTermRef term="ttInterrogative"/> word and an indefinite, such as <example>whereever</example>. </introduction>  
+       <br/><br/>
+       <checkboxGroup>
+          <prompt><br/>First, consider the locative adverbial indefinites that include a quantifier.  How does your language express these locative adverbial indefinites?  Check all options that are correct for your language</prompt>
+          <checkbox id="AdvPLocativeIndefTypeQWord" dataItem="locativeIndefQWord">A quantifier and a general locative noun merge into a single word</checkbox>
+          <checkbox id="AdvPLocativeIndefTypeQPhrase" dataItem="locativeIndefQPhrase">A quantifier occurs with a general locative noun but they do not merge into a single word</checkbox>
+          <checkbox id="AdvPLocativeIndefTypeQOther" dataItem="locativeIndefQOther">My language does the following to express these locative indefinite meanings:<textBox  id="AdvPLocativeIndefTypeQOtherContent" dataItem="locativeIndefQOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="AdvPLocativeIndefTypeQNoCheckPrompt" show="swAdvPLocativeIndefTypeQNoCheck">WARNING: You need to check at least one box to describe how your language expresses these locative indefinite meanings.</prompt>
+       
+       <prompt id="AdvPLocativeIndefTypeQWordPrompt" show="swAdvPLocativeIndefTypeQWord">Key your examples of the locative adverbial indefinites formed from a quantifier and a general locative word merged into a single word here:</prompt>
+       <textBox id="AdvPLocativeIndefTypeQWordExample" dataItem="locativeIndefTypeQWordExample" show="swAdvPLocativeIndefTypeQWord" rows="3"/>
+       <instruction  id="AdvPLocativeIndefTypeQWordInstruction" show="swAdvPLocativeIndefTypeQWord">In the lexicon, key the features <feature>makeAdv locative</feature> on the general locative words.</instruction>
+       
+       <prompt id="AdvPLocativeIndefTypeQPhrasePrompt" show="swAdvPLocativeIndefTypeQPhrase">Key your examples of the locative adverbial indefinites formed from a quantifier word and a general locative word here:</prompt>
+       <textBox id="AdvPLocativeIndefTypeQPhraseExample" dataItem="locativeIndefTypeQPhraseExample" show="swAdvPLocativeIndefTypeQPhrase" rows="3"/>
+       <checkboxGroup id="AdvPLocativeIndefTypeQPhraseTable" show="swAdvPLocativeIndefTypeQPhrase">
+          <prompt><br/>Looking at the examples you keyed above, where does the quantifier occur with respect to the general locative word? Check all options that are correct for your language</prompt>
+          <checkbox id="AdvPLocativeIndefTypeQPQBefore" checked="yes" dataItem="locativeIndefTypeQPQBefore">Before the general locative word</checkbox>
+          <checkbox id="AdvPLocativeIndefTypeQPQAfter" checked="yes" dataItem="locativeIndefTypeQPQAfter">After the general locative word</checkbox>
+          <checkbox id="AdvPLocativeIndefTypeQPQBoth" checked="yes" dataItem="locativeIndefTypeQPQBoth">On both sides at the same time</checkbox>
+          <checkbox id="AdvPLocativeIndefTypeQPQOther" checked="yes" dataItem="locativeIndefTypeQPQOther">In my language, these quantifiers may occur as follows with respect to the general locative word: <textBox  id="AdvPLocativeIndefTypeQPQOtherContent" dataItem="locativeIndefTypeQPQOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="AdvPLocativeIndefTypeQPPhraseNoCheckPrompt" show="swAdvPLocativeIndefTypeQPPhraseAndNoCheck">WARNING: You need to check at least one box to describe where these quantifiers and general locative words occur in your language, or change the answer above to a different form.</prompt>
+       <instruction  id="AdvPLocativeIndefTypeQPPhraseInstruction" show="swAdvPLocativeIndefTypeQPhrase">In the lexicon, key the features <feature>makeAdv locative</feature> on the general locative words.</instruction>
+       <instruction id="AdvPLocativeIndefTypeQPQEitherRestrictedInstruction" show="swAdvPLocativeIndefTypeQPQEitherRestricted">In the lexicon, mark those quantifier words which can only occur before the general locative word with the feature <feature>AdvP-initial</feature> and those which can only occur after the general locative word with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any quantifier words which can occur on either side.</instruction>           
+       
+       <prompt id="AdvPLocativeIndefTypeQOtherPrompt" show="swAdvPLocativeIndefTypeQOther">Key some examples of the  other way that your language expresses these locative adverbial indefinites that include a quantifier here:</prompt>
+       <textBox id="AdvPLocativeIndefTypeQOtherExample" dataItem="locativeIndefTypeQOtherExample" show="swAdvPLocativeIndefTypeQOther" rows="3"/>
+             
+       <br/><br/>
+       <checkboxGroup>
+          <prompt><br/>Now consider the locative adverbial indefinites that are based on the locative interrogative word and an indefinite word, such as ‘whereever’.  How does your language express these locative adverbial indefinites?  Check all options that are correct for your language</prompt>
+          <checkbox id="AdvPLocativeIndefTypeIntWord" dataItem="locativeIndefIntWord">A locative interrogative word and an indefinite merge into a single word</checkbox>
+          <checkbox id="AdvPLocativeIndefTypeIntPhrase" dataItem="locativeIndefIntPhrase">A locative interrogative word occurs with an indefinite word but they do not merge into a single word</checkbox>
+          <checkbox id="AdvPLocativeIndefTypeIntOther" dataItem="locativeIndefIntOther">My language does the following to express this type of  locative indefinite meaning:<textBox  id="AdvPLocativeIndefTypeIntOtherContent" dataItem="locativeIndefIntOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="AdvPLocativeIndefTypeIntNoCheckPrompt" show="swAdvPLocativeIndefTypeIntNoCheck">WARNING: You need to check at least one box to describe how your language expresses this type of locative indefinite meaning.</prompt>
+       <prompt id="AdvPLocativeIndefTypeIntWordPrompt" show="swAdvPLocativeIndefTypeIntWord">Key your examples of the locative adverbial indefinites formed from a locative interrogative word and an indefinite word merged into a single word here:</prompt>
+       <textBox id="AdvPLocativeIndefTypeIntWordExample" dataItem="locativeIndefTypeIntWordExample" show="swAdvPLocativeIndefTypeIntWord" rows="3"/>
+       <instruction  id="AdvPLocativeIndefTypeIntWordInstruction" show="swAdvPLocativeIndefTypeIntWord">In the lexicon, key the features <feature>makeAdv locative</feature> on the locative interrogative words.</instruction>
+       
+       <prompt id="AdvPLocativeIndefTypeIntPhrasePrompt" show="swAdvPLocativeIndefTypeIntPhrase">Key your examples of the locative adverbial indefinites formed from a locative interrogative word and an indefinite word here:</prompt>
+       <textBox id="AdvPLocativeIndefTypeIntPhraseExample" dataItem="locativeIndefTypeIntPhraseExample" show="swAdvPLocativeIndefTypeIntPhrase" rows="3"/>
+       <checkboxGroup id="AdvPLocativeIndefTypeIntPhraseTable" show="swAdvPLocativeIndefTypeIntPhrase">
+          <prompt><br/>Looking at the examples you keyed above, where does the locative interrogative word occur with respect to the indefinite word? Check all options that are correct for your language</prompt>
+          <checkbox id="AdvPLocativeIndefTypeIntPhraseBefore" checked="yes" dataItem="locativeIndefTypeIntBefore">Before the indefinite</checkbox>
+          <checkbox id="AdvPLocativeIndefTypeIntPhraseAfter" checked="yes" dataItem="locativeIndefTypeIntAfter">After the indefinite</checkbox>
+          <checkbox id="AdvPLocativeIndefTypeIntPhraseBoth" checked="yes" dataItem="locativeIndefTypeIntBoth">On both sides at the same time</checkbox>
+          <checkbox id="AdvPLocativeIndefTypeIntPhraseOther" checked="yes" dataItem="locativeIndefTypeIntOther">In my language, these locative interrogative words may occur as follows with respect to the indefinite word: <textBox  id="AdvPLocativeIndefTypeIntPhraseOtherContent" dataItem="locativeIndefTypeIntOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="AdvPLocativeIndefTypeIntPhraseNoCheckPrompt" show="swAdvPLocativeIndefTypeIntPhraseAndNoCheck">WARNING: You need to check at least one box to describe where these locative interrogative words and indefinite words occur in your language, or change the answer above to a different form.</prompt>
+       <instruction  id="AdvPLocativeIndefTypeIntPhraseInstruction" show="swAdvPLocativeIndefTypeIntPhrase">In the lexicon, key the features <feature>makeAdv locative</feature> on the locative interrogative words.</instruction>
+       <instruction id="AdvPLocativeIndefTypeIntEitherRestrictedInstruction" show="swAdvPLocativeIndefTypeIntEitherRestricted">In the lexicon, mark those locative interrogative words which can only occur before the indefinite word with the feature <feature>AdvP-initial</feature> and those which can only occur after the indefinite word with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any locative interrogative words which can occur on either side.</instruction>           
+       
+       <prompt id="AdvPLocativeIndefTypeIntOtherPrompt" show="swAdvPLocativeIndefTypeIntOther">Key some examples of the  other way that your language expresses these locative adverbial indefinites that include a locative interrogative word here:</prompt>
+       <textBox id="AdvPLocativeIndefTypeIntOtherExample" dataItem="locativeIndefTypeIntOtherExample" show="swAdvPLocativeIndefTypeIntOther" rows="3"/>
+       
 
-		<radioGroup>
-			<groupName dataItem="negLocativeType" default="word">RNegLocativeType</groupName>
-			<prompt>Moving now to the negatives, does your language have any negative locative adverbs which are separate words?</prompt>
-		   <radio id="AdvPNegLocativeTypeWord" dataValue="word">Yes, a separate word or phrase unrelated to the positive forms expresses the negative locative concept of ‘no place’</radio>
-			<radio id="AdvPNegLocativeTypeAdverb" dataValue="adverb">Yes, a negative affix is added to the positive locative adverb(s) to form the negative adverb word(s)</radio>
-			<radio id="AdvPNegLocativeTypeAdverbWord" dataValue="adverbWord">Yes, a separate negative word occurs with the positive locative adverb(s) to form the negative locative adverb phrase(s)</radio>
-			<radio id="AdvPNegLocativeTypeAffix" dataValue="affix">No, they are all written as part of the verb</radio>
-			<radio id="AdvPNegLocativeTypeVerb" dataValue="verb">No, there is only a verbal negative affix, but it may occur with positive locative adverbs to give a negative locative meaning</radio>
-			<radioGroup id="AdvPNegLocativeTypeAdverbWordTable" show="swAdvPNegLocativeTypeAdverbWord">
-				<groupName dataItem="negLocativeWordPos" default="unknown" position="yesSpec">RNegLocativeWordPos</groupName>
-				<prompt>Where does the negative word occur with respect to the positive locative adverb?</prompt>
-				<radio id="AdvPNegLocativeWordBefore" dataValue="before">Before it</radio>
-				<radio id="AdvPNegLocativeWordAfter" dataValue="after">After it</radio>
-			</radioGroup>
-		</radioGroup>
-		<prompt id="AdvPNegLocativeTypeAdverbWordPrompt" show="swAdvPNegLocativeTypeAdverbWord">Key the negative word that occurs with the positive locative adverbs here:</prompt>
-		<textBox id="AdvPNegLocativeAdverbWordExample" dataItem="negLocativeAdverbWordExample" show="swAdvPNegLocativeTypeAdverbWord" rows="3"/>
-		<prompt id="AdvPNegLocativeTypeAdverbWordPrompt2" show="swAdvPNegLocativeTypeAdverbWord">Now key examples of the negative locative adverb phrases formed by adding the negative word to the positive locative adverbs here:</prompt>
-		<textBox id="AdvPNegLocativeAdverbWordsExample" dataItem="negLocativeAdverbWordsExample" show="swAdvPNegLocativeTypeAdverbWord" rows="5"/>
-		<prompt id="AdvPNegLocativeTypeAdverbPrompt" show="swAdvPNegLocativeTypeAdverb">Key the negative affix that is added to the positive locative adverbs here, with a hyphen to show what side it attaches on:</prompt>
-		<textBox id="AdvPNegLocativeAdverbAffixExample" dataItem="negLocativeAdverbAffixExample" show="swAdvPNegLocativeTypeAdverb" rows="3"/>
-		<prompt id="AdvPNegLocativeTypeAdverbPrompt2" show="swAdvPNegLocativeTypeAdverb">Now key examples of the negative locative adverbs formed by adding the negative affix to the positive locative adverbs here:</prompt>
-		<textBox id="AdvPNegLocativeAdverbExample" dataItem="negLocativeAdverbExample" show="swAdvPNegLocativeTypeAdverb" rows="5"/>
-
-		<prompt id="AdvPNegLocativeExamplePrompt" show="swAdvPNegLocativeTypeWord">Key your examples of negative locative adverbs or phrases here:</prompt>
-		<prompt id="AdvPNegLocativeExamplePrompt2" show="swAdvPNegLocativeTypeVerb">Key your examples of locative adverbs with a negative verb here:</prompt>
-		<textBox id="AdvPNegLocativeExample" dataItem="negLocativeExample" show="swAdvPNegLocativeTypeWordOrVerb" rows="3"/>
-		<prompt id="AdvPNegLocativeAffixExamplePrompt" show="swAdvPNegLocativeTypeAffix">Key your examples of the negative locative adverbial affix(es) which can attach to verbs here, with a hyphen to show which side it attaches on here:</prompt>
-		<textBox id="AdvPNegLocativeAffixExample" dataItem="negLocativeAffixExample" show="swAdvPNegLocativeTypeAffix" rows="3"/>
-		<prompt id="AdvPNegLocativeAffixVerbExamplePrompt" show="swAdvPNegLocativeTypeAffix">Now key some examples of the negative locative adverbial affix(es) attached to verbs here:</prompt>
-		<textBox id="AdvPNegLocativeVerbExample" dataItem="negLocativeVerbExample" show="swAdvPNegLocativeTypeAffix" rows="5"/>
-		<br/><br/>
-		<prompt>  These negative elements will be discussed further in <section number="14">Negative Constructions - Adverbial and Auxiliary elements</section>.</prompt>
-		<instruction id="AdvPLocativeInstruction">In the lexicon, key the feature <feature>locative</feature>
-on all adverbs that express location.  You can also add this feature
-to nouns and proper names which express location.
-		</instruction>
-		<instruction id="AdvPLocDemSameInstruction" show="swAdvPLocDemSame">In the lexicon, you will need to have two entries for each word, one with the category <category>Adv</category> and feature <feature>locative</feature> and one with the category <category>Dem</category>.</instruction>
-<instruction id="AdvPLocDemAffixInstruction" show="swAdvPLocDemAffix">In the lexicon, key the features <feature>locative makeAdv</feature> on the affix that  is added to a demonstrative to form a locative adverb, as this will take care of the category change needed.</instruction>
-		<instruction id="AdvPNegLocativeTypeWordInstruction" show="swAdvPNegLocativeTypeWord">In the lexicon, key the features <feature>negative locative</feature>
-on all the negative locative adverbs.
-</instruction>
-		<instruction id="AdvPNegLocativeTypeAdverbInstruction" show="swAdvPNegLocativeTypeAdverb">In the lexicon, key the feature <feature>negative</feature>
-			on the negative affix(es) that attach to a locative adverb to express the meaning of ‘nowhere’.
-		</instruction>
-		<instruction id="AdvPNegLocativeTypeAffixInstruction" show="swAdvPNegLocativeTypeAffix">In the lexicon, key the feature <feature>negative locative</feature>
-			on the affix(es) that express the meaning of ‘nowhere’.
-		</instruction>
-		<instruction id="AdvPNegLocativeTypeVerbInstruction" show="swAdvPNegLocativeTypeVerb">In the lexicon, key the feature <feature>negative</feature>
-on the affix(es) that express the negation on the verb.  Verbal negation will be discussed further in <section number="9">Basic, Single-clause Sentences - Auxiliaries</section>.</instruction>
-		<br/>
-		<br/>
-		<buttons>
-			<button id="AdvPLocExamplesBack" value="Back" goto="AdvPMain.xml"/>
-			<button id="AdvPLocExamplesNext" value="Next" goto="AdvPManner.xml"/>
-		</buttons>
-	</form>
+        <br/>
+        <br/>
+        <buttons>
+            <button id="AdvPLocExamplesBack" value="Back" goto="AdvPMain.xml"/>
+            <button id="AdvPLocExamplesNext" value="Next" goto="AdvPManner.xml"/>
+        </buttons>
+    </form>
    <showWhen id="swOTClassifierAgr">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
    </showWhen>
    <showWhen id="swOTClassifierAgrLocativeYes">
-	  <whenRadio button="AdvPLocativeClassifierAgrYes"/>
-	  <and/>
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <whenRadio button="AdvPLocativeClassifierAgrYes"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>    
    </showWhen>
-	<showWhen id="swAdvPLocativeDegreeYes">
-		<whenRadio button="AdvPLocativeDegreeYesBefore"/>
-		<or/>
-		<whenRadio button="AdvPLocativeDegreeYesAfter"/>
-	</showWhen>
-	<showWhen id="swAdvPLocativeDegreeAttaches">
-		<whenRadio button="AdvPLocativeDegreeAttaches"/>
-	</showWhen>
-	<showWhen id="swAdvPLocativeDegreeNoRedup">
-		<whenRadio button="AdvPLocativeDegreeNoRedup"/>
-	</showWhen>
-	<showWhen id="swAdvPLocDemSame">
-	<whenRadio button="AdvPLocDemSame"/>
-</showWhen>
-	<showWhen id="swAdvPLocDemAffix">
-		<whenRadio button="AdvPLocDemAffix"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeWord">
-		<whenRadio button="AdvPNegLocativeTypeWord"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeAffix">
-		<whenRadio button="AdvPNegLocativeTypeAffix"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeAdverb">
-		<whenRadio button="AdvPNegLocativeTypeAdverb"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeVerb">
-		<whenRadio button="AdvPNegLocativeTypeVerb"/>
-</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeWordOrVerb">
-		<whenRadio button="AdvPNegLocativeTypeWord"/>
-<or/>
-		<whenRadio button="AdvPNegLocativeTypeVerb"/>
-	</showWhen>
-	<showWhen id="swAdvPNegLocativeTypeAdverbWord">
-		<whenRadio button="AdvPNegLocativeTypeAdverbWord"/>
-	</showWhen>
+   <showWhen id="swAdvPLocativeDegreeYesNoCheck">
+      <whenRadio button="AdvPLocativeDegreeYes"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeDegreeWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeDegreeAttaches"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeDegreeRedup"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeDegreeOther"/>      
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeYes">
+      <whenRadio button="AdvPLocativeDegreeYes"/>
+   </showWhen>
+    <showWhen id="swAdvPLocativeDegreeYesWord">
+        <whenCheckbox button="AdvPLocativeDegreeWord"/>
+    </showWhen>
+    <showWhen id="swAdvPLocativeDegreeAttaches">
+        <whenCheckbox button="AdvPLocativeDegreeAttaches"/>
+    </showWhen>
+    <showWhen id="swAdvPLocativeDegreeRedup">
+        <whenCheckbox button="AdvPLocativeDegreeRedup"/>
+    </showWhen>
+   <showWhen id="swAdvPLocativeDegreeOther">
+      <whenCheckbox button="AdvPLocativeDegreeOther"/>
+   </showWhen>
+   <showWhen id="swAdvPLocDemSame">
+      <whenCheckbox button="AdvPLocDemSame"/>
+   </showWhen>
+   <showWhen id="swAdvPLocDemAffix">
+      <whenCheckbox button="AdvPLocDemAffix"/>
+   </showWhen>
+   <showWhen id="swAdvPLocAffixDem">
+      <whenCheckbox button="AdvPLocAffixDem"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeIndefTypeQNoCheck">
+      <not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeQWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeQPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeQOther"/>
+   </showWhen> 
+   <showWhen id="swAdvPLocativeIndefTypeIntNoCheck">
+      <not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeIntWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeIntPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeIntOther"/>
+   </showWhen> 
+   <showWhen id="swAdvPLocativeIndefTypeQPQEitherRestricted">
+      <whenRadio button="AdvPLocativeIndefTypeQPhrase"/>
+      <and/>
+      <whenCheckbox button="AdvPLocativeIndefTypeQPQBoth"/>
+      <or/>
+      <whenRadio button="AdvPLocativeIndefTypeQPhrase"/>
+      <and/>
+      <whenCheckbox button="AdvPLocativeIndefTypeQPQBefore"/>
+      <and/>
+      <whenCheckbox button="AdvPLocativeIndefTypeQPQAfter"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeIndefTypeQPhrase">
+      <whenCheckbox button="AdvPLocativeIndefTypeQPhrase"/>
+   </showWhen>   
+   <showWhen id="swAdvPLocativeIndefTypeQWord">
+      <whenCheckbox button="AdvPLocativeIndefTypeQWord"/>
+   </showWhen>   
+   <showWhen id="swAdvPLocativeIndefTypeQOther">
+      <whenCheckbox button="AdvPLocativeIndefTypeQOther"/>
+   </showWhen>   
+   <showWhen id="swAdvPLocativeIndefTypeQPPhraseAndNoCheck">
+      <whenCheckbox button="AdvPLocativeIndefTypeQPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeQPQBefore"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeQPQAfter"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeQPQBoth"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeQPQOther"/>
+   </showWhen> 
+   <showWhen id="swAdvPLocativeIndefTypeIntPhrase">
+      <whenCheckbox button="AdvPLocativeIndefTypeIntPhrase"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeIndefTypeIntWord">
+      <whenCheckbox button="AdvPLocativeIndefTypeIntWord"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeIndefTypeIntOther">
+      <whenCheckbox button="AdvPLocativeIndefTypeIntOther"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeIndefTypeIntPhraseAndNoCheck">
+      <whenCheckbox button="AdvPLocativeIndefTypeIntPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeIntPhraseBefore"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeIntPhraseAfter"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeIntPhraseBoth"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeIndefTypeIntPhraseOther"/>
+   </showWhen> 
+   <showWhen id="swAdvPLocativeIndefTypeIntEitherRestricted">
+      <whenRadio button="AdvPLocativeIndefTypeIntPhrase"/>
+      <and/>
+      <whenCheckbox button="AdvPLocativeIndefTypeIntPhraseBoth"/>
+      <or/>
+      <whenRadio button="AdvPLocativeIndefTypeIntPhrase"/>
+      <and/>
+      <whenCheckbox button="AdvPLocativeIndefTypeIntPhraseBefore"/>
+      <and/>
+      <whenCheckbox button="AdvPLocativeIndefTypeIntPhraseAfter"/>
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeWordAndNoCheck">
+      <whenRadio button="AdvPLocativeDegreeYes"/>
+      <and/>
+      <whenCheckbox button="AdvPLocativeDegreeWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeDegreeWordBefore"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeDegreeWordAfter"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeDegreeWordBoth"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPLocativeDegreeWordOther"/>     
+   </showWhen>
+   <showWhen id="swAdvPLocativeDegreeEitherRestricted">
+      <whenRadio button="AdvPLocativeDegreeYes"/>
+      <and/>
+      <whenCheckbox button="AdvPLocativeDegreeWord"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="AdvPLocativeDegreeWordBefore"/>
+      <and/>
+      <whenCheckbox button="AdvPLocativeDegreeWordAfter"/>
+      <or/>
+      <whenCheckbox button="AdvPLocativeDegreeWordBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swAdvPLocDemOther">
+      <whenRadio button="AdvPLocDemOther"/>
+   </showWhen>
+
+   &TechnicalTerms; 
+   
 </page>

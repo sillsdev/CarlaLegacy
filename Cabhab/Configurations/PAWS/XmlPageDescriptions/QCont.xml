@@ -12,7 +12,7 @@
         <help href="Help/Cbgbtext.doc#ContentQuestions">Click here for more information about the CP phrase structure of content questions.</help>
         <br/>
         <br/>
-In languages without fronting for interrogatives, the phrase structure of a content question will either be the same as a Yes/No question with a question marker or auxiliary in the head of CP position or just the same as a normal sentence (IP).  In either case, the interrogative phrase appears in its normal argument positon.
+In languages without fronting for interrogatives, the phrase structure of a content question will either be the same as a Yes/No question with a question marker or auxiliary in the head of CP position or just the same as a normal sentence (IP).  In either case, the interrogative phrase appears in its normal argument positon.  
 <br/>
 <br/>
 Many SOV languages optionally allow movement of an interrogative phrase to the position immediately before the verb, which will be within the VP in the tree structures used here.
@@ -21,7 +21,7 @@ Many SOV languages optionally allow movement of an interrogative phrase to the p
         <br/>In languages like English, the interrogative word or phrase must be fronted.
         <br/>
         <br/>
-        In languages without fronting for interrogatives, the phrase structure of a content question will either be the same as a Yes/No question with a question marker or auxiliary in the complementizer position or just the same as a normal sentence.  In either case, the interrogative phrase appears in its normal argument positon.
+        In languages without fronting for interrogatives, the phrase structure of a content question will either be the same as a Yes/No question with a question marker or auxiliary in the complementizer position or just the same as a normal sentence.  In either case, the interrogative phrase appears in its normal argument positon.  
         <br/>
         <br/>
         Many SOV languages optionally allow movement of an interrogative phrase to the position immediately before the verb.
@@ -38,4 +38,5 @@ Many SOV languages optionally allow movement of an interrogative phrase to the p
     </showWhen>
     <showWhen id="swPractical">
         <whenValue  element="paws" attr="outputGrammar" value="False"/>
-    </showWhen></page>
+    </showWhen>
+</page>

@@ -2,123 +2,137 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="PPComps" count="2/5">
-	<title level="2">Las frases preposicionales y/o posposicionales - Los complementos nominales</title>
-	<introduction>Ahora consideramos al nivel de complementos.  Las preposiciones o posposiciones tienen normalmente una frase nominal para su complemento, como en <example>a [la casa de Guillermo]</example> y <example>debajo [del árbol sicómoro gigante]</example>.  </introduction>
-	<form section="pp">
-	   <radioGroup id="PPClassifierAgrTable" show="swOTClassifierAgr">
-		  <groupName dataItem="ppClassifier" default="no">RPPClassifierAgr</groupName>
-		  <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar preposiciones o posposiciones?</prompt>
-		  <radio id="PPClassifierAgrPPNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
-		  <radio id="PPClassifierAgrPPYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte del sistema de concordancia</radio>
-	   </radioGroup>
-	   <br/>
-	   <prompt>Escriba algunos ejemplos de las frases preposicionales y/o posposcionales de su lengua aquí (sin los soportes pero con cada una en una linea separada):</prompt>
-		<textBox id="PPCompsNominalExample" dataItem="ppExample"/>
-		<radioGroup>
-			<groupName dataItem="pPos" default="unknown" position="yesHead">RPPPosition</groupName>
-			<prompt>¿Hay preposiciones o posposiciones en su lengua?</prompt>
-			<radio id="PPPosPrep" dataValue="before">Solamente preposiciones</radio>
-			<radio id="PPPosPost" dataValue="after">Solamente posposiciones</radio>
-			<radio id="PPPosBoth" dataValue="both">Algunas de cada tipo</radio>
-		</radioGroup>
-		<radioGroup>
-			<groupName dataItem="pType" default="word">RPPType</groupName>
-			<prompt>¿Son <span id="PPPrepSpan" show="swPPPosPrep">las preposiciones</span><span id="PPPostSpan" show="swPPPosPost">las posposiciones</span><span id="PPBothSpan" show="swPPPosBoth">las preposiciones y posposiciones</span> escritas como palabras independientes?</prompt>
-			<radio id="PPTypeWord" dataValue="word">Sí, son todas palabras independientes</radio>
-			<radio id="PPTypeClitic" dataValue="clitic">No, son todas clíticos que se escriben unidos a otra palabra</radio>
-			<radio id="PPTypeBoth" dataValue="both">Se escriben algunas como palabras independientes, pero algunas son clíticos que se escriben unidos a otra palabra</radio>
-			<radioGroup id="PPTypeCliticAttachesTable" show="swPPTypeCliticOrBoth">
-				<groupName dataItem="attaches" default="edge">RPPTypeCliticAttaches</groupName>
-				<prompt>¿Dónde se unen los clíticos a la frase nominal?</prompt>
-			   <radio id="PPTypeCliticAttachesEdge" dataValue="edge">A la orilla de la frase</radio>
-				<radio id="PPTypeCliticAttachesHead" dataValue="head">Al sustantivo principal</radio>
-			</radioGroup>
-		</radioGroup>
-		<instruction id="PPPosBothBothEdgeInstruction" show="swPPPosBothBothEdge">In the lexicon, mark the prepositions which are stand alone words with the feature <feature>PP-initial</feature> and the postpositions which are stand alone words with the feature <feature>PP-final</feature>.  Mark the clitic prepositions with the feature <feature>P_prefix</feature> and the clitic postpositions with the feature <feature>P_suffix</feature>.</instruction>
-		<instruction id="PPPosBothBothHeadInstruction" show="swPPPosBothBothHead">In the lexicon, mark the prepositions which are stand alone words with the feature <feature>PP-initial</feature> and the postpositions which are stand alone words with the feature <feature>PP-final</feature>.  Mark the clitic prepositions with the feature <feature>P_prefix_N</feature> and the clitic postpositions with the feature <feature>P_suffix_N</feature>.</instruction>
-		<instruction id="PPPosBothWordInstruction" show="swPPPosBothWord">In the lexicon, mark the prepositions with the feature <feature>PP-initial</feature> and the postpositions with the feature <feature>PP-final</feature>.</instruction>
-		<instruction id="PPPosBothCliticEdgeInstruction" show="swPPPosBothCliticEdge">In the lexicon, mark the prepositions with the feature <feature>P_prefix</feature> and the postpositions with the feature <feature>P_suffix</feature>.</instruction>
-		<instruction id="PPTypeCliticPrepEdgeInstruction" show="swPPTypeCliticOrBothPrepEdge">In the lexicon, mark the clitic prepositions with the feature <feature>P_prefix</feature>.</instruction>
-		<instruction id="PPTypeCliticPostEdgeInstruction" show="swPPTypeCliticOrBothPostEdge">In the lexicon, mark the clitic postpositions with the feature <feature>P_suffix</feature>.</instruction>
-		<instruction id="PPTypeCliticHeadInstruction" show="swPPTypeCliticOrBothHead">In the lexicon, mark the clitics with the feature <feature>PP</feature>.</instruction>
-		<br/>
-		<buttons>
-			<button id="PPCompBack" value="Back" goto="PPMain.xml"/>
-			<button id="PPCompNext" value="Next" goto="PPOther.xml"/>
-		</buttons>
-	</form>
+    <title level="2">Las frases adposicionales - Los complementos nominales</title>
+   <introduction>El uso principal de preposiciones o postpositions es para expresar el lugar. Por lo tanto, se cubren adpositions de lugar y sus frases primero. Entonces, para las lenguas que no marcan el caso en los sustantivos o frases nominales, se ejemplifica las adpositions utilizadas para expresar cada relación de caso menor.
+      <br/> <br/>
+      Las preposiciones locativas en español incluyen: <example>en, debajo, encima, al lado, arriba, cerca</example> y <example>a través de</example>. Estos se pueden utilizar en frases como <example>en la casita</example>, <example>al lado del río</example> y <example>cerca de la pared</example>.
+      <br/> <br/>
+      Algunas lenguas utilizan palabras de partes del cuerpo para expresar estos mismos significados.</introduction>
+    <form section="pp">
+       <radioGroup id="PPClassifierAgrTable" show="swOTClassifierAgr">
+          <groupName dataItem="ppClassifier" default="no">RPPClassifierAgr</groupName>
+          <prompt>Usted dijo que su lengua tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar preposiciones o posposiciones?</prompt>
+          <radio id="PPClassifierAgrPPNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
+          <radio id="PPClassifierAgrPPYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte del sistema de concordancia</radio>
+       </radioGroup>	   
+       <prompt id="PPClassifierAgrPrompt" show="swPPClassifierAgrPPYes">Puesto que ya se han detallado las formas de los clasificadores, solo tiene que escribir las raíces de cada una de las palabras en esta página, pero los ejemplos de las frases deben mostrar las formas completas con clasificadores..</prompt>   
+       <br/>
+       <br/>
+       <radioGroup>
+          <groupName dataItem="bodyPart" default="no"> RPPBodyPart</groupName>
+          <prompt><br/>¿Utiliza su lengua palabras de partes del cuerpo en las frases adposicionales locativas?</prompt>
+          <radio id="PPBodyPartNo" dataValue="no"> No</radio>
+          <radio id="PPBodyPartYes" dataValue="yes"> Sí, palabras de partes del cuerpo se usan como <span id="PPBodyPartPrepSpan" show="swPPPrep"> preposiciones</span> <span id="PPBodyPartPostSpan" show="swPPPost"> posposiciones</span> <span id="PPBodyPartBothSpan" show="swPPBoth"> preposiciones o posposiciones</span> además de algunas <span id="PPBodyPartPrepSpan1" show="swPPPrep"> preposiciones</span> <span id="PPBodyPartPostSpan1" show="swPPPost"> posposiciones</span> <span id="PPBodyPartBothSpan1" show="swPPBoth"> preposiciones o posposiciones</span> regulares </radio>
+       </radioGroup>
+       <prompt id="PPLocativePrepPrompt" show="swPPPrepOrBoth">Escriba las preposiciones <span id="PPBodyPartYesSpan" show="swPPBodyPartYes"> regulares</span> que su lengua utiliza en las frases preposicionales locativas aquí <span id="PPCliticSomeSpan" show="swPPCliticBoth"> con un signo igual después de las formas de clítico</span>:</prompt>
+       <textBox id="PPLocativePrepExample" dataItem="locativePrepExample" rows="6" show="swPPPrepOrBoth"/>
+       <prompt id="PPLocativePostPrompt" show="swPPPostOrBoth"> Escriba las posposiciones <span id="PPBodyPartYesSpan1" show="swPPBodyPartYes"> regulares</span> que su lengua utiliza en las frases posposicionales locativas aquí <span id="PPCliticSomeSpan1" show="swPPCliticBoth"> con un signo igual antes las formas de clítico</span>:</prompt>
+       <textBox id="PPLocativePostExample" dataItem="locativePostExample" rows="6" show="swPPPostOrBoth"/>
+       <instruction id="PPLocativePrepInstruction" show="swPPBoth">In the lexicon, add the feature <feature>PP-initial</feature> to each of the prepositions and the feature <feature>PP-final</feature> to each of the postpositions.  If any can appear either before or after the complement, do not add either feature to that entry.</instruction>
+       <prompt id="PPLocativePrepPPPrompt" show="swPPPrepOrBoth">Ahora escriba algunos ejemplos de las preposiciones <span id="PPBodyPartYesSpan2" show="swPPBodyPartYes"> regulares</span> dentro de las frases preposicionales locativas aquí:</prompt>
+       <textBox id="PPLocativePrepPPExample" dataItem="locativePrepPPExample" rows="6" show="swPPPrepOrBoth"/>
+       <prompt id="PPLocativePostPPPrompt" show="swPPPostOrBoth">Ahora escriba algunos ejemplos de las posposiciones <span id="PPBodyPartYesSpan3" show="swPPBodyPartYes"> regulares</span> dentro de las frases posposicionales locativas aquí:</prompt>
+       <textBox id="PPLocativePostPPExample" dataItem="locativePostPPExample" rows="6" show="swPPPostOrBoth"/>
+       <br/> <br/>
+       <prompt id="PPBodyPartPrepPrompt" show="swPPPrepOrBothAndBodyPartYes">Escriba las partes del cuerpo que su lengua utiliza como preposiciones aquí <span id="PPCliticSomeSpan2" show="swPPCliticBoth"> con un signo igual después de las formas de clítico</span>:</prompt>
+       <textBox id="PPBodyPartPrepExample" dataItem="bodyPartPrepExample" rows="6" show="swPPPrepOrBothAndBodyPartYes"/>
+       <prompt id="PPBodyPartPostPrompt" show="swPPPostOrBothAndBodyPartYes">Escriba las partes del cuerpo que su lengua utiliza como posposiciones aquí <span id="PPCliticSomeSpan3" show="swPPCliticBoth"> con un signo igual antes de las formas de clítico</span>:</prompt>
+       <textBox id="PPBodyPartPostExample" dataItem="bodyPartPostExample" rows="6" show="swPPPostOrBothAndBodyPartYes"/>
+       <instruction id="PPBodyPartPrepInstruction" show="swPPBodyPartYes">In the lexicon, you will need to make two entries for each body part, the noun entry with the category <category>N</category> and a second entry with the category <category>P</category>.  <span id="PPBodyPartPrepBothSpan" show="swPPBoth">In addition, add the feature <feature>PP-initial</feature> to each of the body part prepositions and the feature <feature>PP-final</feature> to each of the body part postpositions.  If any can appear either before or after the complement, do not add either feature to that entry.</span></instruction>
+       <prompt id="PPBodyPartPrepPPPrompt" show="swPPPrepOrBothAndBodyPartYes">Ahora escriba algunos ejemplos de frases preposicionales locativas con las partes del cuerpo como preposiciones aquí:</prompt>
+       <textBox id="PPBodyPartPrepPPExample" dataItem="bodyPartPrepPPExample" rows="6" show="swPPPrepOrBothAndBodyPartYes"/>
+       <prompt id="PPBodyPartPostPPPrompt" show="swPPPostOrBothAndBodyPartYes">Ahora escriba algunos ejemplos de frases posposicionales locativas con las partes del cuerpo como posposiciones aquí:</prompt>
+       <textBox id="PPBodyPartPostPPExample" dataItem="bodyPartPostPPExample" rows="6" show="swPPPostOrBothAndBodyPartYes"/>
+       <br/> <br/>
+       <introduction id="PPCaseIntroduction" show="swNPCaseNNo">Desde que su lengua no marque el caso en los sustantivos o frases nominales, las relaciones de caso menores se deben detallar por las <span id="PPBodyPartPrepSpan10" show="swPPPrep"> preposiciones</span> <span id="PPBodyPartPostSpan10" show="swPPPost"> posposiciones</span> <span id="PPBodyPartBothSpan10" show="swPPBoth"> adposiciones</span>.</introduction>
+       
+       <prompt id="PPCaseTable" show="swNPCaseNNo">Para cada uno de los siguientes campos, escriba las <span id="PPBodyPartPrepSpan11" show="swPPPrep">preposiciones</span> <span id="PPBodyPartPostSpan11" show="swPPPost">posposiciones</span> <span id="PPBodyPartBothSpan11" show="swPPBoth">preposiciones o posposiciones</span> que expresan ese relación de caso en su lengua<span id="PPCiticSpan" show="swPPClitic">  con un signo igual en el lado apropiado de cada forma de clítico para indicar de qué lado se une</span>. Si hay más de un marcador para un caso, escriba cada uno en una línea separada. Si su lengua no distingue una relación de caso específico, simplemente deje el campo vacío.</prompt>
+       <br/>
+       <prompt id="PPCaseGenitivePrompt" show="swNPCaseNNo">Escriba las <span id="PPBodyPartPrepSpan12" show="swPPPrep">preposiciones</span> <span id="PPBodyPartPostSpan12" show="swPPPost">posposiciones</span> <span id="PPBodyPartBothSpan12" show="swPPBoth">preposiciones o posposiciones</span> su lengua utiliza para el caso genitivo para expresar posesión:</prompt>
+       <textBox id="PPGen" dataItem="genitiveP" rows="3" show="swNPCaseNNo"/>
+       <br/>
+       <prompt id="PPCaseDativePrompt" show="swNPCaseNNo">Escriba las <span id="PPBodyPartPrepSpan13" show="swPPPrep">preposiciones</span> <span id="PPBodyPartPostSpan13" show="swPPPost">posposiciones</span> <span id="PPBodyPartBothSpan13" show="swPPBoth">preposiciones o posposiciones</span> su lengua utiliza para el caso dativo para expresar el objeto indirecto:</prompt>
+       <textBox id="PPDat" dataItem="dativeP" rows="3" show="swNPCaseNNo"/>
+       <br/>
+       <prompt id="PPCaseAblativePrompt" show="swNPCaseNNo">Escriba las <span id="PPBodyPartPrepSpan14" show="swPPPrep">preposiciones</span> <span id="PPBodyPartPostSpan14" show="swPPPost">posposiciones</span> <span id="PPBodyPartBothSpan14" show="swPPBoth">preposiciones o posposiciones</span> su lengua utiliza para el caso ablativo expresa fuente u origen:</prompt>
+       <textBox id="PPAbl" dataItem="ablativeP" rows="3" show="swNPCaseNNo"/>
+       <br/>
+       <prompt id="PPCaseInstrumentalPrompt" show="swNPCaseNNo">Escriba las <span id="PPBodyPartPrepSpan15" show="swPPPrep">preposiciones</span> <span id="PPBodyPartPostSpan15" show="swPPPost">posposiciones</span> <span id="PPBodyPartBothSpan15" show="swPPBoth">preposiciones o posposiciones</span> su lengua utiliza para el caso instrumental para expresar el instrumento, medio o agencia:</prompt>
+       <textBox id="PPIns" dataItem="instrumentalP" rows="3" show="swNPCaseNNo"/>
+       <br/>
+       <prompt id="PPCaseVocativePrompt" show="swNPCaseNNo">Escriba las <span id="PPBodyPartPrepSpan16" show="swPPPrep">preposiciones</span> <span id="PPBodyPartPostSpan16" show="swPPPost">posposiciones</span> <span id="PPBodyPartBothSpan16" show="swPPBoth">preposiciones o posposiciones</span> su lengua utiliza para el caso vocativo para expresar un discurso directo:</prompt>
+       <textBox id="PPVoc" dataItem="vocativeP" rows="3" show="swNPCaseNNo"/>
+       <br/>
+       <prompt id="PPCaseObliquePrompt" show="swNPCaseNNo">Escriba las <span id="PPBodyPartPrepSpan17" show="swPPPrep">preposiciones</span> <span id="PPBodyPartPostSpan17" show="swPPPost">posposiciones</span> <span id="PPBodyPartBothSpan17" show="swPPBoth">preposiciones o posposiciones</span> su lengua utiliza para el caso oblicuo para expresar una relación gramatical menor general:</prompt>
+       <textBox id="PPObl" dataItem="obliqueP" rows="3" show="swNPCaseNNo"/>    
+       <br/><br/>
+        <buttons>
+            <button id="PPCompBack" value="Back" goto="PPMain.xml"/>
+            <button id="PPCompNext" value="Next" goto="PPOther.xml"/>
+        </buttons>
+    </form>
    <showWhen id="swOTClassifierAgr">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
    </showWhen>
-   <showWhen id="swPPPosPrep">
-	  <whenRadio button="PPPosPrep"/>
+   <showWhen id="swPPClassifierAgrPPYes">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="PPClassifierAgrPPYes"/>
    </showWhen>
-   <showWhen id="swPPPosPost">
-	  <whenRadio button="PPPosPost"/>
+   <showWhen id="swPPPrep">
+      <whenValue element="pp" attr="pPos" value="before"/>
    </showWhen>
-   <showWhen id="swPPPosBoth">
-	  <whenRadio button="PPPosBoth"/>
+   <showWhen id="swPPPost">
+      <whenValue element="pp" attr="pPos" value="after"/>
    </showWhen>
-   <showWhen id="swPPTypeCliticOrBoth">
-	  <whenRadio button="PPTypeClitic"/>
-	  <or/>
-	  <whenRadio button="PPTypeBoth"/>
+   <showWhen id="swPPBoth">
+      <whenValue element="pp" attr="pPos" value="both"/>
    </showWhen>
-   <showWhen id="swPPPosBothBothEdge">
-	  <whenRadio button="PPPosBoth"/>
-	  <and/>
-	  <whenRadio button="PPTypeBoth"/>
-	  <and/>
-	  <whenRadio button="PPTypeCliticAttachesEdge"/>
+   <showWhen id="swPPPrepOrBoth">
+      <whenValue element="pp" attr="pPos" value="before"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="both"/>
    </showWhen>
-   <showWhen id="swPPPosBothBothHead">
-	  <whenRadio button="PPPosBoth"/>
-	  <and/>
-	  <whenRadio button="PPTypeBoth"/>
-	  <and/>
-	  <whenRadio button="PPTypeCliticAttachesHead"/>
+   <showWhen id="swPPPostOrBoth">
+      <whenValue element="pp" attr="pPos" value="after"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="both"/>
    </showWhen>
-   <showWhen id="swPPPosBothWord">
-	  <whenRadio button="PPPosBoth"/>
-	  <and/>
-	  <whenRadio button="PPTypeWord"/>
+   <showWhen id="swPPBodyPartYes">
+      <whenRadio button="PPBodyPartYes"/>
    </showWhen>
-   <showWhen id="swPPPosBothCliticEdge">
-	  <whenRadio button="PPPosBoth"/>
-	  <and/>
-	  <whenRadio button="PPTypeClitic"/>
-	  <and/>
-	  <whenRadio button="PPTypeCliticAttachesEdge"/>
+   <showWhen id="swPPPrepOrBothAndBodyPartYes">
+      <whenRadio button="PPBodyPartYes"/>
+      <and/>
+      <whenValue element="pp" attr="pPos" value="before"/>
+      <or/>
+      <whenRadio button="PPBodyPartYes"/>
+      <and/>
+      <whenValue element="pp" attr="pPos" value="both"/>
    </showWhen>
-   <showWhen id="swPPTypeCliticOrBothPrepEdge">
-	  <whenRadio button="PPPosPrep"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="PPTypeClitic"/>
-	  <or/>
-	  <whenRadio button="PPTypeBoth"/>
-	  <closeParen/>
-	  <and/>
-	  <whenRadio button="PPTypeCliticAttachesEdge"/>
+   <showWhen id="swPPPostOrBothAndBodyPartYes">
+      <whenRadio button="PPBodyPartYes"/>
+      <and/>
+      <whenValue element="pp" attr="pPos" value="after"/>
+      <or/>
+      <whenRadio button="PPBodyPartYes"/>
+      <and/>
+      <whenValue element="pp" attr="pPos" value="both"/>
    </showWhen>
-   <showWhen id="swPPTypeCliticOrBothPostEdge">
-	  <whenRadio button="PPPosPost"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="PPTypeClitic"/>
-	  <or/>
-	  <whenRadio button="PPTypeBoth"/>
-	  <closeParen/>
-	  <and/>
-	  <whenRadio button="PPTypeCliticAttachesEdge"/>
+   <showWhen id="swPPBothAndBodyPartYes">
+      <whenRadio button="PPBodyPartYes"/>
+      <and/>
+      <whenValue element="pp" attr="pPos" value="both"/>
    </showWhen>
-   <showWhen id="swPPTypeCliticOrBothHead">
-	  <openParen/>
-	  <whenRadio button="PPTypeClitic"/>
-	  <or/>
-	  <whenRadio button="PPTypeBoth"/>
-	  <closeParen/>
-	  <and/>
-	  <whenRadio button="PPTypeCliticAttachesHead"/>
+   <showWhen id="swPPClitic">
+      <whenValue element="pp" attr="pType" value="clitic"/>
+      <or/>
+      <whenValue element="pp" attr="pType" value="both"/>
+   </showWhen>
+   <showWhen id="swNPCaseNNo">
+      <whenValue element="np" attr="caseN" value="no"/>
+   </showWhen>
+   <showWhen id="swPPCliticBoth">
+      <whenValue element="pp" attr="pType" value="both"/>
    </showWhen>
 </page>

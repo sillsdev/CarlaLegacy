@@ -1,107 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="CoordMain" count="1/5">
-	<title>Las construcciones coordinativas</title>
-	<introduction>Esta sección considera construcciones coordinativas básicas donde una conjunción se presenta entre dos oraciones conjuntivas que estén en el mismo nivel. Esto incluye la coordinación al nivel de la oración y de la frase de verbo, la frase nominal, la frase preposicional y/o posposicional y la frase adjetival.
-	   Entonces, para el nivel de la frase nominal solamente, los elementos consecutivos y aposiciones serán descritas. Finalmente, las construcciones comparativas que consisten en oraciones completas serán discutidas. (Los comparativos más cortos fueron analizados en <section number="9.5">Las oraciones básicas - Comparativos</section>.)
-	   Tipos más complejos de construcciones coordinativas, tales como por ejemplo partes que falta de una de las oraciones conjuntivas y otros niveles posibles de coordinación, necesitarán ser tratados de luego.
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="CoordMain" count="1/4">
+   <title>Las construcciones coordinadas</title>
+   <introduction>sta sección empieza con las construcciones coordinadas básicas en que una conjunción se presenta entre dos oraciones. Estas incluyen la coordinación a nivel de la oración, la frase verbal, la frase nominal, la frase <span id="CoordPrepSpan" show="swPPPosPrep">preposicional</span><span id="CoordPostSpan" show="swPPPosPost">posposicional</span><span id="CoordPBothSpan" show="swPPPosBoth">adposicional</span> y la frase adjetival.  
+      Luego, para el nivel de la frase nominal solamente, se describen los elementos consecutivos como en una lista y las aposiciones. 
+	   Tipos más complejos de construcciones coordinadas, por ejemplo partes que faltan de una de las oraciones enlazadas y otros niveles posibles de coordinación, se necesitan tratar de luego.  
 		</introduction>
 	<form section="coord" transparent="no">
-		<introduction>En español, las conjunciones que se pueden utilizar entre dos oraciones conjuntivas son  <example>y</example>, <example>o</example>, <example>pero</example> y <example>y/o</example>.
-			Además, hay las construcciones coordinativas que requieren una conjunción inicial, como <example>o...o</example> y <example>ni...ni</example> construcciones. Algunas lenguas también utilizan una palabra que significa <example>con</example> al igual que una conjunción entre las frases nominales.</introduction>
-	   <prompt>Escriba la manera en que su lengua expresa estas conjunciones en los cuadros siguientes. Si hay más de una opción, escriba cada palabra en una línea separada. Si la conjunción es un clítico o afijo, escriba un guión con la conjunción indicando en qué lado se une.</prompt>
-	   <prompt>Escriba la palabra su lengua utiliza para la conjunción ‘y’:</prompt>
+		<introduction>En español, las conjunciones que se pueden utilizar entre dos construcciones enlazadas son  <example>y</example>, <example>o</example>, <example>pero</example> e <example>y/o</example>.  
+			Además, hay las construcciones coordinadas que requieren una conjunción inicial, como <example>o...o</example> y <example>ni...ni</example> construcciones. Algunas lenguas también utilizan una palabra que significa <example>con</example> igual que una conjunción entre las frases nominales.
+		<br/><br/>
+		   Se consideran las palabras o cláusulas de introducción, designadas a veces como coordinación, y los ejemplos de cláusulas adverbiales, que son subordinación, en <section number="13">Las cláusulas adverbiales</section>.</introduction>
+	   <prompt>Escriba la manera en que su lengua expresa estas conjunciones en los siguientes campos. Si hay más de una opción, escriba cada palabra en una línea separada. Si la conjunción es un afijo o clítico, escriba un guión o signo igual con la conjunción indicando en qué lado se une.</prompt>
+	   <prompt>Escriba la palabra su lengua utiliza para la conjunción ‘y':</prompt>
 		<textBox id="CoordAnd" dataItem="and" rows="3"/>
 		<br/>
-	   <prompt>Escriba la palabra su lengua utiliza para la conjunción ‘o’ aquí:</prompt>
+	   <prompt>Escriba la palabra su lengua utiliza para la conjunción ‘o' aquí:</prompt>
 		<textBox id="CoordOr" dataItem="or" rows="3"/>
 		<br/>
-	   <prompt>Escriba la palabra su lengua utiliza para la conjunción ‘pero’ aquí:</prompt>
+	   <prompt>Escriba la palabra su lengua utiliza para la conjunción ‘pero' aquí:</prompt>
 		<textBox id="CoordBut" dataItem="but" rows="3"/>
 		<br/>
-	   <prompt>Escriba la palabra su lengua utiliza para la conjunción ‘y/o’ aquí:</prompt>
+	   <prompt>Escriba la palabra su lengua utiliza para la conjunción ‘y/o' aquí:</prompt>
 		<textBox id="CoordAndOr" dataItem="andOr" rows="3"/>
 		<br/>
-	   <prompt>Si su lengua utiliza ‘con’ al igual que una conjunción entre frases nominales, escriba esa palabra aquí:</prompt>
+	   <prompt>Si su lengua utiliza ‘con' igual que una conjunción entre frases nominales, escriba esa palabra aquí:</prompt>
 		<textBox id="CoordWith" dataItem="with" rows="3"/>
 		<br/>
 		<prompt>Escriba cualquiera palabra adicional que su lengua utiliza entre las oraciones conjuntivas aquí:</prompt>
 		<textBox id="CoordOther" dataItem="other" rows="3"/>
 		<br/>
-	   <prompt>Escriba la conjuncion inicial que significa ‘o’ que su lengua utiliza para ‘o...o’ construcciones aquí:</prompt>
+	   <prompt>Escriba la conjuncion inicial que significa ‘o' que su lengua utiliza para ‘o...o' construcciones aquí:</prompt>
 		<textBox id="CoordEither" dataItem="either" rows="3"/>
 		<br/>
-	   <prompt>Escriba la conjuncion inicial negativa que significa ‘ni’ que su lengua utiliza para ‘ni...ni’ construcciones aquí:</prompt>
+	   <prompt>Escriba la conjuncion inicial negativa que significa ‘ni' que su lengua utiliza para ‘ni...ni' construcciones aquí:</prompt>
 		<textBox id="CoordNeither" dataItem="neither" rows="3"/>
 		<br/>
-	   <prompt>Escriba la conjuncion negativa que significa ‘ni’ que su lengua utiliza para ‘ni...ni’ construcciones aquí ((incluso si una conjunción inicial no se requiere para su lengua):</prompt>
+	   <prompt>Escriba la conjuncion negativa que significa ‘ni' que su lengua utiliza para ‘ni...ni' construcciones aquí ((incluso si una conjunción inicial no se requiere para su lengua):</prompt>
 		<textBox id="CoordNor" dataItem="nor" rows="3"/>
 		<br/>
-	   <instruction id="CoordAndOrInstruction">Note that a word like ‘and/or’ which is written with a slash (/) in the word, must be entered in your lexicon with a backslash in front of the slash (eg. ‘and\/or’) for <tool>CARLA Studio</tool> to process it correctly.</instruction>
+	   <instruction id="CoordAndOrInstruction">Note that a word like ‘and/or' which is written with a slash (/) in the word, must be entered in your lexicon with a backslash in front of the slash (eg. ‘and\/or') for <tool>CARLA Studio</tool> to process it correctly.</instruction>
 	   <radioGroup>
-		  <groupName dataItem="conjWord" default="yes">RCoordConjWord</groupName>
-		  <prompt>¿Se escriben las conjunciones en su lengua como palabras independientes entre las oraciones conjuntivas?</prompt>
-		  <radio id="CoordConjWordYes" dataValue="yes">Sí</radio>
-		  <radio id="CoordConjWordSome" dataValue="some">Algunas son palabras independientes, pero algunos se unen a uno de las oraciones conjuntivas</radio>
-		  <radio id="CoordConjWordNo" dataValue="no">No, todas las conjunciones antedichas se unen a uno de las oraciones conjuntivas</radio>
-		  <radioGroup id="CoordConjAttachTable" show="swCoordWordNotYes">
-			 <groupName dataItem="conjPos" default="before">RCoordConjAttaches</groupName>
-			 <prompt>¿Dónde se unen los clíticos o afijos conjuntivos dentro de la construcción coordinativa?</prompt>
-			 <radio id="CoordConjAttachesBefore" dataValue="before">Al principio de la segunda oración conjuntiva</radio>
-			 <radio id="CoordConjAttachesAfter" dataValue="after">Al final de la primera oración conjuntiva</radio>
-			 <radio id="CoordConjAttachesEither" dataValue="either">Algunos se unen al final de la primera oración conjuntiva y algunos al principio de la segunda oración conjuntiva</radio>
-			 <radio id="CoordConjAttachesOther" dataValue="other">Se unen a otro lugar dentro de la construcción coordinativa</radio>
-		  </radioGroup>
+	      <groupName dataItem="conjWord" default="yes">RCoordConjWord</groupName>
+	      <prompt>¿Se escriben las conjunciones en su lengua como palabras independientes entre las oraciones enlazadas?</prompt>
+	      <radio id="CoordConjWordYes" dataValue="yes">Sí, todas son palabras independientes</radio>
+	      <radio id="CoordConjWordSome" dataValue="some">Algunas son palabras independientes, pero algunos se unen a uno de las oraciones conjuntivas</radio>
+	      <radio id="CoordConjWordNo" dataValue="no">No, todas las conjunciones se unen a uno de las oraciones conjuntivas</radio>
 	   </radioGroup>
-
-	   <instruction id="CoordInstruction" show="swCoordWordNotNo">In the lexicon, add the feature <feature>plural</feature> to the conjunctions written as a separate word meaning ‘and’, ‘and/or’ and ‘with’, and also to any other conjunctions in your language which require plural agreement when they are used to conjoin nominal phrases.
-		  Also, add the feature <feature>-conjoins_IP</feature> to any conjunction, such as ‘with’, used for conjoining nominal phrases only.
-		  Add the feature <feature>negative</feature> to the negative conjunctions meaning ‘nor’ and ‘neither’.
-		  Add the feature <feature>makeInitialConj</feature> to the conjunction words meaning ‘either’ and ‘neither’ that are used in the initial position.
-		  If the same conjunction word can also be used in the medial position, you will need to make two lexical entries, so one can maintain the category <category>Conj</category>. </instruction>
+	   <instruction id="CoordInstruction" show="swCoordWordNotNo">In the lexicon, add the feature <feature>plural</feature> to the conjunctions written as an independent word meaning ‘and’, ‘and/or’ and ‘with’, and also to any other conjunctions in your language which require plural agreement when they are used to conjoin nominal phrases.  
+	      Also, add the feature <feature>-conjoins_IP</feature> to any conjunction, such as ‘with’, used for conjoining nominal phrases only.  
+	      Add the feature <feature>negative</feature> to the negative conjunctions meaning ‘nor’ and ‘neither’.  
+	      Add the feature <feature>makeInitialConj</feature> to the conjunction words meaning ‘either’ and ‘neither’ that are used in the initial position.  
+	      If the same conjunction word can also be used in the medial position, you will need to make two lexical entries, so one can maintain the category <category>Conj</category>. </instruction>
+	   
+	   <checkboxGroup id="CoordConjAttachTable" show="swCoordWordNotYes">
+	      <prompt><br/>¿Dónde se unen los clíticos o afijos dentro de la construcción coordinada?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+	      <checkbox id="CoordConjAttachesProclitic" dataItem="proclitic">Al principio de la segunda oración enlazada como un proclítico</checkbox>
+	      <checkbox id="CoordConjAttachesEnclitic" dataItem="enclitic">Al final de la primera oración enlazada como un enclítico</checkbox>
+	      <checkbox id="CoordConjAttachesOther" dataItem="attachesOther">En mi lengua, las conjunciones pueden unirse: <textBox  id="CoordConjAttachesOtherContent" dataItem="attachesOther" rows="2"/></checkbox>
+	   </checkboxGroup>
+	   <prompt id="CoordConjAttachesNoCheckPrompt" show="swCoordConjWordNotYesAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde las conjunciones se unen en su lengua, o cambia la respuesta de arriba a “Sí, todas son palabras independientes”.</prompt>
+	   
 	   <br/>
-	   <instruction id="CoordConjAttachesBeforeInstruction" show="swCoordWordAttachesBefore">In the lexicon, add the feature <feature>conj_prefix</feature> to the conjunctions that attach to the beginning of the second conjunct.
-		  Also add the feature <feature>conj_prefix_pl</feature> to the conjunctions that attach to the beginning of the second conjunct meaning ‘and’, ‘and/or’ and ‘with’, and also to any others which require plural agreement when they are used to conjoin nominal phrases.
-		  In addition, add the feature <feature>conj_prefix_neg</feature> to the negative conjunctions meaning ‘nor’ that attach to the beginning of the second conjunct.</instruction>
-	   <instruction id="CoordConjAttachesAfterInstruction" show="swCoordWordAttachesAfter">In the lexicon, add the feature <feature>conj_suffix</feature> to the conjunctions that attach to the end of the first conjunct.
-		  Also add the feature <feature>conj_suffix_pl</feature> to the conjunctions that attach to the end of the first conjunct meaning ‘and’, ‘and/or’ and ‘with’, and also to any others which require plural agreement when they are used to conjoin nominal phrases.
-		  In addition, add the feature <feature>conj_suffix_neg</feature> to the negative conjunctions meaning ‘nor’ that attach to the end of the first conjunct.</instruction>
-
-	   <instruction id="CoordConjAttachesEitherInstruction" show="swCoordWordAttachesEither">In the lexicon, add the feature <feature>conj_prefix</feature> to the conjunctions that attach to the beginning of the second conjunct and the feature <feature>conj_suffix</feature> to the conjunctions that attach to the end of the first conjunct.
-		  Also add the feature <feature>conj_prefix_pl</feature> or the feature <feature>conj_suffix_pl</feature> as appropriate to the conjunctions that attach to one of the conjuncts meaning ‘and’, ‘and/or’ and ‘with’, and also to any others which require plural agreement when they are used to conjoin nominal phrases.
-		  In addition, add the feature <feature>conj_prefix_neg</feature> or the feature <feature>conj_suffix_neg</feature> as appropriate to the negative conjunctions meaning ‘nor’ that attach to one of the conjuncts.</instruction>
-
+	   <instruction id="CoordConjAttachesProcliticInstruction" show="swCoordWordAttachesProclitic">In the lexicon, add the feature <feature>conj_prefix</feature> to the conjunctions that attach to the beginning of the second conjunct.  
+	      Also add the feature <feature>conj_prefix_pl</feature> to the conjunctions that attach to the beginning of the second conjunct meaning ‘and’, ‘and/or’ and ‘with’, and also to any others which require plural agreement when they are used to conjoin nominal phrases.
+	      In addition, add the feature <feature>conj_prefix_neg</feature> to the negative conjunctions meaning ‘nor’ that attach to the beginning of the second conjunct.</instruction>	   
+	   <instruction id="CoordConjAttachesEncliticInstruction" show="swCoordWordAttachesEnclitic">In the lexicon, add the feature <feature>conj_suffix</feature> to the conjunctions that attach to the end of the first conjunct. 
+	      Also add the feature <feature>conj_suffix_pl</feature> to the conjunctions that attach to the end of the first conjunct meaning ‘and’, ‘and/or’ and ‘with’, and also to any others which require plural agreement when they are used to conjoin nominal phrases.
+	      In addition, add the feature <feature>conj_suffix_neg</feature> to the negative conjunctions meaning ‘nor’ that attach to the end of the first conjunct.</instruction>	   
+	   
 	   <instruction id="CoordConjAttachesOtherInstruction" show="swCoordWordAttachesOther">Specific phrase structure rules for the coordination constructions with attached conjunctions in your language will need to be added after completion of the PAWS Starter Kit.  For now, the rules without any conjunction are given, and they should work fairly well.</instruction>
 	   <br/>
+	   <br/>
 	   <radioGroup>
-		  <groupName dataItem="noConj" default="no">RCoordNoConj</groupName>
-		  <prompt>¿Permite su lengua también coordinación de las frases nominales y quizás oraciones y otras categorías sin ninguna conjunción entre las dos partes? </prompt>
-		  <radio id="CoordNoConjNo" dataValue="no">No, cuando solamente dos elementos se unen, una de las conjunciones antedichas debe presentarse</radio>
-		  <radio id="CoordNoConjYes" dataValue="yes">Sí, dos elementos pueden ser coordinativas sin ninguna conjunción entre ellas</radio>
-	   </radioGroup>
+	      <groupName dataItem="noConj" default="no">RCoordNoConj</groupName>
+	      <prompt>¿Permite su lengua también coordinación de las frases nominales y quizás de las oraciones y otras categorías sin ninguna conjunción entre las dos partes? </prompt>
+	      <radio id="CoordNoConjNo" dataValue="no">No, cuando solamente dos elementos se unen, una de las conjunciones debe presentarse</radio>
+	      <radio id="CoordNoConjYes" dataValue="yes">Sí, dos elementos pueden ser coordinadas sin ninguna conjunción entre ellas</radio>
+	   </radioGroup>  
 	   <br/>
 	   <br/>
-	   <introduction>En general, la coordinación está entre categorías similares. Para la coordinación a nivel de la oración, esto significa que dos oraciones declarativas pueden ser coordinativas, como en ejemplos 1-2, o dos preguntas, como en ejemplo 3. Cuando la conjunción significa ‘pero’, una de las oraciones conjuntivas debe ser negativa, como en ejemplo 4.  Algunos ejemplos en español de la coordinación a nivel de la oración son:</introduction>
+	   <introduction>En general, la coordinación está entre categorías similares. Para la coordinación a nivel de la oración, esto significa que dos oraciones declarativas pueden ser coordinadas, como en ejemplos 1-2, o dos preguntas, como en ejemplo 3. Cuando la conjunción significa ‘pero', una de las oraciones enlazadas debe ser negativa, como en ejemplo 4.  Algunos ejemplos en español de la coordinación a nivel de la oración son:</introduction>
 		<EnglishExample>
 		   <exItem label="1.">Juan fue a la oficina esta mañana y él acaba de volver.</exItem>
 		   <exItem label="2.">O vendré a la fiesta o enviaré a mi hermana.</exItem>
-		   <exItem label="3.">¿Cuándo vino el correo viene y dónde está mi paquete?</exItem>
+		   <exItem label="3.">¿Cuándo vino el correo y dónde está mi paquete?</exItem>
 		   <exItem label="4.">Juan fue a la oficina esta mañana pero él no volvió.</exItem>
 		</EnglishExample>
 		<prompt>Escriba ejemplos de la coordinación a nivel de la oración en su lengua aquí:</prompt>
 		<textBox id="CoordSent" dataItem="sentExample" rows="5"/>
 		<br/>
-	   <introduction>La coordinación de la frase de verbo implica dos frases de verbo completas que compartan un solo sujeto. La coordinación de la frase de verbo se ejemplifica en las oraciones en español siguientes:</introduction>
+	   <introduction>La coordinación de la frase verbal implica dos frases verbales completas que compartan un solo sujeto. Se ejemplifica en las siguientes oraciones en español:</introduction>
 		<EnglishExample>
 			<exItem label="5.">Guillermo corrió la carrera y ganó el premio.</exItem>
 			<exItem label="6.">Susana irá a la fiesta o enviará a su hermana.</exItem>
 		   <exItem label="7.">Susana ni irá a la fiesta ni enviará a su hermana.</exItem>
 		</EnglishExample>
-		<prompt>Escriba ejemplos de la coordinación a nivel de la frase de verbo en su lengua aquí:</prompt>
+		<prompt>Escriba ejemplos de la coordinación a nivel de la frase verbal en su lengua aquí:</prompt>
 		<textBox id="CoordVP" dataItem="vpExample" rows="5"/>
 		<br/>
-	   <introduction>Las frases nominales coordinadas generalmente pueden presentarse en todas las posiciones donde una frase nominal normal puede presentarse, por ejemplo sujetos, objetos, objetos indirectos y objetos de preposiciones y/o posposiciones. La coordinación de la frase nominal se ejemplifica en las oraciones en español siguientes:</introduction>
+	   <introduction>Las frases nominales coordinadas generalmente pueden presentarse como sujetos, objetos directos, objetos indirectos y objetos de <span id="CoordPrepSpan1" show="swPPPosPrep">preposiciones</span><span id="CoordPostSpan1" show="swPPPosPost">posposiciones</span><span id="CoordPBothSpan1" show="swPPPosBoth">adposiciones</span> como cualquier frase nominal. La coordinación de la frase nominal se ejemplifica en las siguientes oraciones en español:</introduction>
 		<EnglishExample>
 			<exItem label="8.">Guillermo corrió en el maratón de Boston y las Olimpiadas</exItem>
 			<exItem label="9.">Mi hermana o yo estará allí.</exItem>
@@ -112,16 +113,16 @@
 		<prompt>Escriba ejemplos de la coordinación a nivel de la frase nominal en su lengua aquí:</prompt>
 		<textBox id="CoordDP" dataItem="dpExample" rows="5"/>
 		<br/>
-	   <introduction>Normalmente sea posible para frases preposicionales o posposicionales coordinativas presentarse en todas las posiciones en que una frase de este tipo puede presentarse.  Algunos ejemplos en español de la coordinación de la frase preposicional son:</introduction>
+	   <introduction>Usualmente también es posible para las frases <span id="CoordPrepSpan2" show="swPPPosPrep">preposicionales</span><span id="CoordPostSpan2" show="swPPPosPost">posposicionales</span><span id="CoordPBothSpan2" show="swPPPosBoth">adposicionales</span> coordinadas presentarse en todas las posiciones en que cualquier frase <span id="CoordPrepSpan3" show="swPPPosPrep">preposicional</span><span id="CoordPostSpan3" show="swPPPosPost">posposicional</span><span id="CoordPBothSpan3" show="swPPPosBoth">adposicional</span> puede presentarse.  Algunos ejemplos en español de la coordinación de la frase preposicional son:</introduction>
 		<EnglishExample>
 			<exItem label="13.">Guillermo corrió a través del bosque y sobre el puente.</exItem>
 			<exItem label="14.">Vendré con usted al ensayo pero no a su hogar.</exItem>
 			<exItem label="15.">Vendré o a la boda o a la recepción.</exItem>
 		</EnglishExample>
-		<prompt>Escriba ejemplos de la coordinación a nivel de la frase preposicional y/o posposcional en su lengua aquí:</prompt>
+	   <prompt>Escriba ejemplos de la coordinación a nivel de la frase <span id="CoordPrepSpan4" show="swPPPosPrep">preposicional</span><span id="CoordPostSpan4" show="swPPPosPost">posposicional</span><span id="CoordPBothSpan4" show="swPPPosBoth">adposicional</span> en su lengua aquí:</prompt>
 		<textBox id="CoordPP" dataItem="coordppExample" rows="5"/>
 		<br/>
-	   <introduction>Finalmente, los adjetivos o frases adjetivales usualmente pueden ser coordinativas, cuando modifican un sustantivo, por ejemplo en 16-18, y también cuando actúan como el adjetivo predicativo en una oración copulativo, como en ejemplos 19-20. La coordinación de la frase adjetival se ejemplifica en las oraciones en español siguientes:</introduction>
+	   <introduction>Finalmente, los adjetivos o frases adjetivales usualmente pueden ser coordinadas, cuando modifican a un sustantivo, por ejemplo en 16-18, y también cuando actúan como el adjetivo predicativo en una oración copulativo, como en ejemplos 19-20. La coordinación de la frase adjetival se ejemplifica en las siguientes oraciones en español:</introduction>
 		<EnglishExample>
 			<exItem label="16.">El perro blanco y negro pertenece a mi hijo.</exItem>
 		   <exItem label="17.">Mi hermana quiere una vela roja o azul.</exItem>
@@ -135,42 +136,49 @@
 		<br/>
 		<buttons>
 			<button id="CoordMainBack" value="Back" goto="Contents.htm"/>
-			<button id="CoordMainNext" value="Next"  goto="CoordDP.xml"/>
+		    <button id="CoordMainNext" value="Next"  goto="CoordDP.xml"/>
 		</buttons>
 	</form>
    <showWhen id="swPPPosPrep">
-	  <whenValue element="pp" attr="pPos" value="before"/>
+      <whenValue element="pp" attr="pPos" value="before"/>
    </showWhen>
    <showWhen id="swPPPosPost">
-	  <whenValue element="pp" attr="pPos" value="after"/>
+      <whenValue element="pp" attr="pPos" value="after"/>
    </showWhen>
    <showWhen id="swPPPosBoth">
-	  <whenValue element="pp" attr="pPos" value="both"/>
+      <whenValue element="pp" attr="pPos" value="both"/>
+   <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
    </showWhen>
    <showWhen id="swCoordWordNotNo">
-	  <not/><whenRadio button="CoordConjWordNo"/>
+      <not/><whenRadio button="CoordConjWordNo"/>
    </showWhen>
    <showWhen id="swCoordWordNotYes">
-	  <not/><whenRadio button="CoordConjWordYes"/>
+      <not/><whenRadio button="CoordConjWordYes"/>
    </showWhen>
-   <showWhen id="swCoordWordAttachesBefore">
-	  <not/><whenRadio button="CoordConjWordYes"/>
-	  <and/>
-	  <whenRadio button="CoordConjAttachesBefore"/>
+   <showWhen id="swCoordWordAttachesProclitic">
+      <not/><whenRadio button="CoordConjWordYes"/>
+      <and/>
+      <whenCheckbox button="CoordConjAttachesProclitic"/>
    </showWhen>
-   <showWhen id="swCoordWordAttachesAfter">
-	  <not/><whenRadio button="CoordConjWordYes"/>
-	  <and/>
-	  <whenRadio button="CoordConjAttachesAfter"/>
-   </showWhen>
-   <showWhen id="swCoordWordAttachesEither">
-	  <not/><whenRadio button="CoordConjWordYes"/>
-	  <and/>
-	  <whenRadio button="CoordConjAttachesEither"/>
+   <showWhen id="swCoordWordAttachesEnclitic">
+      <not/><whenRadio button="CoordConjWordYes"/>
+      <and/>
+      <whenCheckbox button="CoordConjAttachesEnclitic"/>
    </showWhen>
    <showWhen id="swCoordWordAttachesOther">
-	  <not/><whenRadio button="CoordConjWordYes"/>
-	  <and/>
-	  <whenRadio button="CoordConjAttachesOther"/>
+      <not/><whenRadio button="CoordConjWordYes"/>
+      <and/>
+      <whenCheckbox button="CoordConjAttachesOther"/>
    </showWhen>
+   <showWhen id="swCoordConjWordNotYesAndNoCheck">
+      <not/><whenRadio button="CoordConjWordYes"/>
+      <and/><not/>
+      <whenCheckbox button="CoordConjAttachesProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="CoordConjAttachesEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="CoordConjAttachesOther"/>
+   </showWhen>
+   &TechnicalTerms; 
 </page>

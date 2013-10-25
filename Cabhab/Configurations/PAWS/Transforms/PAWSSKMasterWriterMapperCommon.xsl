@@ -332,8 +332,36 @@
 			<xsl:call-template name="HandleAnyAbbreviationLanguage"/>
 		</languages>
 		<types>
+			<comment>The following types are provided as pre-set examples. You may well want to create your own types that refer to one or more of these. You do that by typing in the names of the types in the types attribute of your type.</comment>
+			<type font-weight="bold" id="tBold"/>
+			<type font-style="italic" font-weight="bold" id="tBoldItalic"/>
+			<type font-weight="bold" id="tEmphasis"/>
+			<type id="tGrammaticalGloss" types="tSmallCaps"/>
+			<type font-style="italic" id="tItalic"/>
+			<type cssSpecial="text-decoration:none" id="tNoOverline" xsl-foSpecial="text-decoration=&quot;no-overline&quot;"/>
+			<type font-variant="normal" id="tNoSmallCaps"/>
+			<type cssSpecial="text-decoration:none" id="tNoStrikethrough" xsl-foSpecial="text-decoration=&quot;no-line-through&quot;"/>
+			<type cssSpecial="text-decoration:none" id="tNoUnderline" xsl-foSpecial="text-decoration=&quot;no-underline&quot;"/>
+			<type cssSpecial="text-decoration:overline" id="tOverline" xsl-foSpecial="text-decoration=&quot;overline&quot;"/>
+			<type font-style="normal" font-variant="normal" font-weight="normal" id="tRegular"/>
+			<type font-family="Charis SIL CompactSmallCaps" id="tSmallCaps"/>
+			<type XeLaTeXSpecial="line-through" cssSpecial="text-decoration:line-through" id="tStrikethrough" xsl-foSpecial="text-decoration=&quot;line-through&quot;"/>
+			<type XeLaTeXSpecial="subscript" cssSpecial="vertical-align:sub;" font-size="65%" id="tSubscript" xsl-foSpecial="baseline-shift='sub'"/>
+			<type XeLaTeXSpecial="superscript" cssSpecial="vertical-align:super;" font-size="65%" id="tSuperscript" xsl-foSpecial="baseline-shift='super'"/>
+			<type XeLaTeXSpecial="underline" cssSpecial="text-decoration:underline" id="tUnderline" xsl-foSpecial="text-decoration=&quot;underline&quot;"/>
+			<comment>Add your custom types here.</comment>
 			<type id="tComment" font-weight="bold" color="red"/>
 		</types>
+		<contentControl showOnlyChosenItemsInEditor="yes">
+	      <contentTypes>
+	         <contentType id="ctPracticalIntro">Practical Introduction</contentType>
+	         <contentType id="ctComparativeIntro">Comparative Introduction</contentType>
+	      </contentTypes>
+	      <contentControlChoices>
+	         <contentControlChoice exclude="ctComparativeIntro" active="yes">Practical Grammar</contentControlChoice>
+	         <contentControlChoice exclude="ctPracticalIntro" active="no">Comparative Grammar</contentControlChoice>
+	      </contentControlChoices>
+	   </contentControl>
 	</xsl:template>
 	<xsl:template name="OutputReferencesElement">
 		<xsl:param name="sReferencesLabel"/>

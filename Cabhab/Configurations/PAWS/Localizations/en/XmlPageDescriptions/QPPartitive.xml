@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="QPPartitive" count="5/7">
+	<title level="2">Quantifiers and QP - Partitives</title>
+	<introduction>All of the quantifiers, including numbers, can normally occur in <technicalTermRef term="ttPartitive"/> constructions.  These constructions are used to signify that one is talking about just a part of a larger group.  Examples include:
+	</introduction>
+   <EnglishExample>
+      <exItem label="1.">some of the children.</exItem>
+      <exItem label="2.">several of the older girls.</exItem>
+      <exItem label="3.">many of the women.</exItem>
+      <exItem label="4.">just this much of the food.</exItem>
+      <exItem label="5.">only ten of the boys.</exItem>
+   </EnglishExample>
+   <introduction>As the examples show, partitive constructions of this type normally have a prepositional or postpositional phrase modifying the quantifier, which indicates the group or full item being discussed.  Note that in all of these examples, the noun in the partitive phrase can be further modified by a relative clause.<br/><br/>
+      Some languages may use a relative clause to express the group of the partitive construction instead of a prepositional or postpositional phrase.
+   </introduction>
+	<form section="qp">
+	   <prompt><br/>Key how your language would express similar kinds of partitive examples with quantifiers here:</prompt>
+	   <textBox id="QPPartitiveQExample" dataItem="partitiveQExample"/>
+<br/><br/>
+	   <radioGroup>
+	      <groupName dataItem="partitive" default="no" >RQPPartitive</groupName>
+	      <prompt>Based on the examples you keyed, does your language use prepositional or postpositional phrases in partitive constructions?</prompt>
+	      <radio id="QPPartitiveYes" dataValue="yes">Yes</radio>
+	      <radio id="QPPartitiveNo" dataValue="no">No, a relative clause is used instead</radio>
+	      <radio id="QPPartitiveOther" dataValue="other">No, my language uses some other means than either a prepositional or postpositional phrase or a relative clause to express similar meanings</radio>
+	   </radioGroup>
+	   
+	   <radioGroup id="QPPartitivePPPosTable" show="swQPPartitiveYes">
+	      <groupName dataItem="partitivePPPos" default="unknown" position="yesHeadDiff">RQPPartitivePPPos</groupName>
+	      <prompt>Where does the prepositional or postpositional phrase occur with respect to the quantifier?</prompt>
+	      <radio id="QPPartitivePPBefore" checked="yes" dataValue="before">Before the quantifier</radio>
+	      <radio id="QPPartitivePPAfter" checked="yes" dataValue="after">After the quantifier</radio>
+	      <radio id="QPPartitivePPEitherSide" checked="yes" dataValue="either">On either side</radio>
+	   </radioGroup>
+	   
+	   <prompt id="QPPartitiveOfPrompt" show="swQPPartitiveYes">Key the prepositions or postpositions that can be used to mean “of” in these partitive constructions, with each word on a separate line. </prompt>
+	   <textBox id="QPPartitiveOfExample" dataItem="partitiveOf" rows="3" show="swQPPartitiveYes"/>
+	   <br/>
+	   
+	   <prompt id="QPPartitiveRelClPrompt" show="swQPPartitiveNo">The structure of relative clauses will be covered in <section number="12">Relative Clauses</section>.</prompt>
+<br/>		<br/>
+		<buttons>
+			<button id="QPPartitiveBack" value="Back" goto="QPCardinal.xml"/>
+		    <button id="QPPartitiveNext" value="Next" goto="QPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+   <showWhen id="swQPPartitiveNo">
+      <whenRadio button="QPPartitiveNo"/>  
+   </showWhen> 
+   <showWhen id="swQPPartitiveYes">
+      <whenRadio button="QPPartitiveYes"/>  
+   </showWhen> 
+   &TechnicalTerms; 
+   
+</page>

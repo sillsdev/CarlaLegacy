@@ -1,84 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="NPAdjP" count="1/1">
-	<title level="2">Nominal Phrases - AdjP Modifiers</title>
+	<title level="2">Nominal Phrases - Adjective Phrase Modifiers</title>
 	<introduction>Adjective phrases (AdjP) come next, discussed earlier in <section number="4">Adjectives and AdjP</section>.  Adjectives occur close to the noun.  Some examples of nominal phrases including adjective phrases in English are:</introduction>
 	<EnglishExample>
 		<exItem label="1.">just those very few old, dirty books.</exItem>
-		<exItem label="2.">all the boy’s many black dogs.</exItem>
-		<exItem label="3.">only the first one hundred very eager young boys.</exItem>
+		<exItem label="2.">the boy’s many black dogs.</exItem>
+	   <exItem label="3.">all the clean dishes.</exItem>
+	   <exItem label="4.">happy little children.</exItem>
+	   <exItem label="5.">only the first ten very eager young boys.</exItem>
 	</EnglishExample>
-	<introduction>As the English examples show, more than one adjective phrase is allowed before the noun.<span id="NPAdjPRecurringIntro" show="swNotPractical">  This will be handled in the syntactic parser by a recursive rule.</span></introduction>
+	<introduction>As the English examples show, more than one adjective phrase is usually allowed before the noun.<span id="NPAdjPRecurringIntro" show="swNotPractical">  This will be handled in the syntactic parser by a recursive rule.</span></introduction>
 	<form section="np">
 		<prompt>Key examples of similar nominal phrases with adjective modifiers in your language here:</prompt>
 		<textBox id="NPAdjpExample" dataItem="adjpExample"/>
 		<br/>
 		<br/>
-		<radioGroup>
-			<groupName dataItem="adjpPos" default="unknown" position="yesSpec">RNPAdjPPos</groupName>
-			<prompt>Where do adjective phrases occur with respect to the noun?</prompt>
-			<radio id="NPAdjPPosBefore" dataValue="before">Before</radio>
-			<radio id="NPAdjPPosAfter" dataValue="after">After</radio>
-			<radio id="NPAdjPPosEitherSide" dataValue="either">Either side</radio>
-			<radioGroup id="NPAdjPPosEitherSideTable" show="swNPAdjPPosEitherSide">
-				<groupName dataItem="adjpEither" default="unrestricted">RNPAdjPPosEitherSideEither</groupName>
-				<prompt>Can all the adjective phrases appear on either side of the noun?</prompt>
-				<radio id="NPAdjPPosEitherSideEitherUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
-				<radio id="NPAdjPPosEitherSideEitherRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
-			</radioGroup>
-		</radioGroup>
-	   <instruction id="NPAdjPPosEitherSideEitherRestrictedInstruction" show="swNPAdjPPosEitherSideEitherRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
+		<checkboxGroup>
+			<prompt>Where do adjective phrases occur with respect to the noun?  Check all options that are correct for your language</prompt>
+			<checkbox id="NPAdjPPosBefore" dataItem="adjBefore">Before it</checkbox>
+		   <checkbox id="NPAdjPPosAfter" dataItem="adjAfter">After it</checkbox>
+		   <checkbox id="NPAdjPPosBoth" dataItem="adjBoth">On both sides in the same nominal phrase</checkbox>
+		   <checkbox id="NPAdjPPosOther" dataItem="adjPosOther">In my language, the adjective may occur as follows with respect to the noun: <textBox  id="NPAdjPPosOtherContent" dataItem="adjPosOther" rows="2"/></checkbox>
+		</checkboxGroup>
+	   <prompt id="NPAdjPPosNoCheckPrompt" show="swNPAdjPPosNoCheck">WARNING: You need to check at least one box to describe where the adjective phrases occur with respect the noun in your language.</prompt>
+	   <instruction id="NPAdjPPosEitherSideRestrictedInstruction" show="swNPAdjPPosEitherSideRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
 	   <br/>
-	   <radioGroup>
-		  <groupName dataItem="adjpAgree" default="no">RNPAdjPAgree</groupName>
-		  <prompt>Do adjectives carry any marking to agree with the noun they modify?</prompt>
-		  <radio id="NPAdjPAgreeNo" dataValue="no">No</radio>
-		  <radio id="NPAdjPAgreeYes" dataValue="yes">Yes</radio>
-	   </radioGroup>
-	   <br/>
-	   <instruction id="NPAdjPNoAgreementInstruction" show="swNPAgreementNone">You said your language does not mark any agreement in <section number="5.2">Agreement and Case</section>, so it is unclear what agreement marking adjectives may have.  Return to <section number="5.2">Agreement and Case</section> and change your answer appropriately if you do have agreement marking.  If not, change your answer here to “no”.</instruction>
 	   <instruction id="NPAdjPNumberAgreementInstruction" show="swNPNumberAgreement">
-		  To handle the number agreement, in the lexicon:
-		  <ul>
-			 <li>Mark the adjectives (or appropriate affixes) that only go with singular nouns with the feature <feature>singular</feature>.</li>
-			 <li>Mark the adjectives (or appropriate affixes) that only go with plural nouns with the feature <feature>plural</feature>.</li>
-			 <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate adjectives, if any.
-			 </li>
-		  </ul>
+	      To handle the number agreement, in the lexicon:
+	      <ul>
+	         <li>Mark the adjectives (or appropriate affixes) that only go with singular nouns with the feature <feature>singular</feature>.</li>
+	         <li>Mark the adjectives (or appropriate affixes) that only go with plural nouns with the feature <feature>plural</feature>.</li>
+	         <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate adjectives, if any.
+	         </li>
+	      </ul>
 	   </instruction>
 	   <instruction id="NPAdjPAgreementAnimacyInstruction" show="swNPAgreementAnimacyYes">
-		  To handle animacy agreement:
-		  <ul>
-			 <li>Mark the adjectives (or the appropriate affixes) that can only go with animate nouns with the feature <feature>animate</feature>.</li>
-			 <li>Mark the adjectives (or the appropriate affixes) that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
-			 <li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
-		  </ul>
+	      To handle animacy agreement:
+	      <ul>
+	         <li>Mark the adjectives (or the appropriate affixes) that can only go with animate nouns with the feature <feature>animate</feature>.</li>
+	         <li>Mark the adjectives (or the appropriate affixes) that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
+	         <li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
+	      </ul>
 	   </instruction>
 	   <instruction id="NPAdjPAgreementGenderInstruction" show="swNPAgreementGenderYes">
-		  Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any adjectives (or the appropriate affixes) that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.</instruction>
+	      Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any adjectives (or the appropriate affixes) that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.</instruction>
 	   <instruction id="NPQPAgreementClassInstruction" show="swNPAgreementClassYes">
-		  To handle class marking and agreement:
-		  <ul>
-			 <li>It is most likely the case that the same affixes that mark the class number or type on nouns are also used on adjectives.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">Overall Typology - Classifiers</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
-			 <li>Any adjectives which can only appear with a certain class, yet do not have an affix which marks the class, will require marking of the class feature on the particular lexical item in the lexicon.   Mark those elements with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">Overall Typology - Classifiers</section>.</li>
-		  </ul>
+	      To handle class marking and agreement:
+	      <ul>
+	         <li>It is most likely the case that the same affixes that mark the class number or type on nouns are also used on adjectives.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">Overall Typology - Classifiers</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
+	         <li>Any adjectives which can only appear with a certain class, yet do not have an affix which marks the class, will require marking of the class feature on the particular lexical item in the lexicon.   Mark those elements with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">Overall Typology - Classifiers</section>.</li>
+	      </ul>
 	   </instruction>
 	   <br/>
-
-		<introduction>Participles or participle phrases can also act as adjectives in modifying a noun.  Some English examples with the participle or participle phrase bracketed  include:</introduction>
+		
+		<introduction>Participles or <technicalTermRef term="ttParticiple"/> phrases can also act as adjectives in modifying a noun.  Some English examples with the participle or participle phrase bracketed  include:</introduction>
 		<EnglishExample>
-			<exItem label="1.">the bright, [shining] sun.</exItem>
-			<exItem label="2.">my [crying] child.</exItem>
-			<exItem label="3.">the books [loved by millions].</exItem>
+			<exItem label="6.">the bright, [shining] sun.</exItem>
+			<exItem label="7.">my [crying] child.</exItem>
+			<exItem label="8.">the books [loved by millions].</exItem>
 		</EnglishExample>
-		<prompt>Key similar examples from your language here:</prompt>
+	   <introduction>Some languages may not use a participle to express similar meanings, but instead use a relative clause.</introduction>
+		<prompt><br/>Key how your language would express similar kinds of examples here:</prompt>
 		<textBox id="NPAdjPPartExample" dataItem="partExample"/>
-		<br/>
-		<instruction id="NPAdjPInstruction">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Basic, Single-Clause Sentences - Inflection Features</section>
+	   <radioGroup>
+	      <groupName dataItem="adjpPart" default="no" >RNPAdjPPart</groupName>
+	      <prompt>Does your language allow participles or participle phrases to act as adjectives modifying a noun?</prompt>
+	      <radio id="NPAdjPPartYes" dataValue="yes">Yes</radio>
+	      <radio id="NPAdjPPartNo" dataValue="no">No, a relative clause is used instead</radio>
+	      <radio id="NPAdjPPartOther" dataValue="other">No, my language uses some other means than either a participle or a relative clause to express similar meanings</radio>
+	   </radioGroup>
+	   <prompt id="NPAdjPPartRelClPrompt" show="swNPAdjPPartNo">The structure and position of relative clauses will be covered in <section number="12">Relative Clauses</section>.</prompt>
+	   
+	   <instruction id="NPAdjPInstruction" show="swNPAdjPPartYes">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Basic Sentences - Inflection Features</section>
 		</instruction>
-		<br/>
-		<introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Languages which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.
+		<br/><br/>
+		<introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Languages which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.  
 <br/>
 			<br/>
 Further, some languages of the latter type have an overt affix which marks the genitive case (or the normal case of possessors) on the head noun to indicate that there must be either an adjective or a possessor in that nominal phrase.  In this situation, the adjective and/or possessor will also be in genitive case (or the normal case of possessors), though the case marking will not be overt on the highest modifier in the nominal phrase. </introduction>
@@ -110,30 +110,30 @@ Is there an overt case affix that marks the <span id="NPAdjPCaseAffixGenPrompt" 
 					<span id="NPAdjPCaseAffixAbsYesSuffixSpan1" show="swNPPossCaseAbs">absolutive </span>suffix then another adjective and/or a possessor must also be present.) </radio>
 			</radioGroup>
 		</radioGroup>
-	   <br/>
+	   <br/>	   
 	   <instruction id="NPAdjPCaseAffixYesPrefixInstruction" show="swNPAdjPCaseAffixYesPrefix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenPrefixSpan" show="swNPPossCaseGen">
-		  <feature>genitive_prefix </feature>
+	      <feature>genitive_prefix </feature>
 	   </span><span id="NPAdjPCaseAffixSplitPrefixSpan" show="swNPCaseSplitNotGen">or </span>
-		  <span id="NPAdjPCaseAffixErgPrefixSpan" show="swNPPossCaseErg">
-			 <feature>ergative_prefix </feature>
-		  </span>
-		  <span id="NPAdjPCaseAffixAbsPrefixSpan" show="swNPPossCaseAbs">
-			 <feature>absolutive_prefix </feature>
-		  </span>on the affix which marks <span id="NPAdjPCaseAffixGenPrefixSpan1" show="swNPPossCaseGen">genitive </span><span id="NPAdjPCaseAffixSplitPrefixSpan1" show="swNPCaseSplitNotGen">or </span>
-		  <span id="NPAdjPCaseAffixErgPrefixSpan1" show="swNPPossCaseErg">ergative </span>
-		  <span id="NPAdjPCaseAffixAbsPrefixSpan1" show="swNPPossCaseAbs">absolutive </span>case on the head noun and on an adjective if another adjective or possessor is present.</instruction>
+	      <span id="NPAdjPCaseAffixErgPrefixSpan" show="swNPPossCaseErg">
+	         <feature>ergative_prefix </feature>
+	      </span>
+	      <span id="NPAdjPCaseAffixAbsPrefixSpan" show="swNPPossCaseAbs">
+	         <feature>absolutive_prefix </feature>
+	      </span>on the affix which marks <span id="NPAdjPCaseAffixGenPrefixSpan1" show="swNPPossCaseGen">genitive </span><span id="NPAdjPCaseAffixSplitPrefixSpan1" show="swNPCaseSplitNotGen">or </span>
+	      <span id="NPAdjPCaseAffixErgPrefixSpan1" show="swNPPossCaseErg">ergative </span>
+	      <span id="NPAdjPCaseAffixAbsPrefixSpan1" show="swNPPossCaseAbs">absolutive </span>case on the head noun and on an adjective if another adjective or possessor is present.</instruction>
 	   <instruction id="NPAdjPCaseAffixYesSuffixInstruction" show="swNPAdjPCaseAffixYesSuffix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenSuffixSpan" show="swNPPossCaseGen">
-		  <feature>genitive_suffix </feature>
+	      <feature>genitive_suffix </feature>
 	   </span><span id="NPAdjPCaseAffixSplitSuffixSpan" show="swNPCaseSplitNotGen">or </span>
-		  <span id="NPAdjPCaseAffixErgSuffixSpan" show="swNPPossCaseErg">
-			 <feature>ergative_suffix </feature>
-		  </span>
-		  <span id="NPAdjPCaseAffixAbsSuffixSpan" show="swNPPossCaseAbs">
-			 <feature>absolutive_suffix </feature>
-		  </span>on the affix which marks <span id="NPAdjPCaseAffixGenSuffixSpan1" show="swNPPossCaseGen">genitive </span><span id="NPAdjPCaseAffixSplitSuffixSpan1" show="swNPCaseSplitNotGen">or </span>
-		  <span id="NPAdjPCaseAffixErgSuffixSpan1" show="swNPPossCaseErg">ergative </span>
-		  <span id="NPAdjPCaseAffixAbsSuffixSpan1" show="swNPPossCaseAbs">absolutive </span> case on the head noun and on an adjective if another adjective or possessor is present.</instruction>
-
+	      <span id="NPAdjPCaseAffixErgSuffixSpan" show="swNPPossCaseErg">
+	         <feature>ergative_suffix </feature>
+	      </span>
+	      <span id="NPAdjPCaseAffixAbsSuffixSpan" show="swNPPossCaseAbs">
+	         <feature>absolutive_suffix </feature>
+	      </span>on the affix which marks <span id="NPAdjPCaseAffixGenSuffixSpan1" show="swNPPossCaseGen">genitive </span><span id="NPAdjPCaseAffixSplitSuffixSpan1" show="swNPCaseSplitNotGen">or </span>
+	      <span id="NPAdjPCaseAffixErgSuffixSpan1" show="swNPPossCaseErg">ergative </span>
+	      <span id="NPAdjPCaseAffixAbsSuffixSpan1" show="swNPPossCaseAbs">absolutive </span> case on the head noun and on an adjective if another adjective or possessor is present.</instruction>
+	   
 	   <br/>		<br/>
 		<buttons>
 			<button id="NPAdjPBack" value="Back" goto="NPContents.htm"/>
@@ -210,41 +210,43 @@ Is there an overt case affix that marks the <span id="NPAdjPCaseAffixGenPrompt" 
 		<whenValue element="typology" attr="case" value="split"/>
 	<closeParen/>
 	</showWhen>
-	<showWhen id="swNPAdjPPosEitherSide">
-		<whenRadio button="NPAdjPPosEitherSide"/>
-	</showWhen>
-	<showWhen id="swNPAdjPPosEitherSideEitherRestricted">
-		<whenRadio button="NPAdjPPosEitherSideEitherRestricted"/>
+	<showWhen id="swNPAdjPPosEitherSideRestricted">
+		<whenCheckbox button="NPAdjPPosBefore"/>
 		<and/>
-		<whenRadio button="NPAdjPPosEitherSide"/>
+		<whenCheckbox button="NPAdjPPosAfter"/>
+	   <or/>
+	   <whenCheckbox button="NPAdjPPosBoth"/>
 	</showWhen>
-	<showWhen id="swNPAgreementNone">
-		<whenRadio button="NPAdjPAgreeYes"/>
-		<and/>
-		<whenValue element="np" attr="agreeNumber" value="no"/>
-		<and/>
-		<whenValue element="np" attr="agreeOther" value="no"/>
-	</showWhen>
+   <showWhen id="swNPAdjPPosNoCheck">
+      <not/>
+      <whenCheckbox button="NPAdjPPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NPAdjPPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NPAdjPPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPAdjPPosOther"/>
+   </showWhen>
 	<showWhen id="swNPNumberAgreement">
-		<whenRadio button="NPAdjPAgreeYes"/>
-		<and/>
 		<whenValue element="np" attr="agreeNumber" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPAgreementAnimacyYes">
-		<whenRadio button="NPAdjPAgreeYes"/>
-		<and/>
-		<whenValue element="np" attr="agreeOther" value="yesAnimacy"/>
+		<whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPAgreementGenderYes">
-		<whenRadio button="NPAdjPAgreeYes"/>
-		<and/>
-		<whenValue element="np" attr="agreeOther" value="yesGender"/>
+		<whenValue element="np/agreeGender" attr="checked" value="yes"/>
 	</showWhen>
 	<showWhen id="swNPAgreementClassYes">
-		<whenRadio button="NPAdjPAgreeYes"/>
-		<and/>
-		<whenValue element="np" attr="agreeOther" value="yesClass"/>
+		<whenValue element="np/agreeClass" attr="checked" value="yes"/>
 	</showWhen>
 	<showWhen id="swNotPractical">
 		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-	</showWhen></page>
+	</showWhen>
+   <showWhen id="swNPAdjPPartNo">
+      <whenRadio button="NPAdjPPartNo"/>
+   </showWhen>
+   <showWhen id="swNPAdjPPartYes">
+      <whenRadio button="NPAdjPPartYes"/>
+   </showWhen>
+   &TechnicalTerms; 
+</page>

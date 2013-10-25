@@ -139,13 +139,18 @@ col template
 		<xsl:choose>
 			<xsl:when test="@exampleLoc">
 				<xsl:variable name="iPosition" select="count(parent::row/preceding-sibling::row)"/>
+			   <xsl:variable name="iPositionCol" select="count(preceding-sibling::col)"/>
 				<xsl:variable name="sExampleValueThisTable">
 					<xsl:text>sExampleValue</xsl:text>
 					<xsl:value-of select="$iPosition"/>
+				   <xsl:text>.</xsl:text>
+				   <xsl:value-of select="$iPositionCol"/>
 				</xsl:variable>
 				<xsl:variable name="iExampleLengthThisTable">
 					<xsl:text>iExampleLength</xsl:text>
 					<xsl:value-of select="$iPosition"/>
+				   <xsl:text>.</xsl:text>
+				   <xsl:value-of select="$iPositionCol"/>
 				</xsl:variable>
 				<xsl:element name="xsl:variable">
 					<xsl:attribute name="name">
@@ -321,17 +326,29 @@ comment template
 			<xsl:apply-templates/>
 		</xsl:element>
 	</xsl:template>
-	<!--
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-content template
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
--->
-	<xsl:template match="//content">
-		<xsl:element name="xsl:text">
-			<xsl:value-of select="."/>
-		</xsl:element>
-	</xsl:template>
-	<!--
+   <!--
+      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      content template
+      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   -->
+   <xsl:template match="//content">
+      <xsl:element name="xsl:text">
+         <xsl:value-of select="."/>
+      </xsl:element>
+   </xsl:template>
+   <!--
+      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      contentCheckBoxOther template
+      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   -->
+   <xsl:template match="//contentCheckBoxOther">
+<!--      <xsl:element name="xsl:text">-->
+         <xsl:element name="xsl:value-of">
+            <xsl:attribute name="select">//<xsl:value-of select="@contentLoc"/></xsl:attribute>
+         </xsl:element>
+<!--      </xsl:element>-->
+   </xsl:template>
+   <!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 endnote template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -560,6 +577,8 @@ p template
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
 	<xsl:template match="//p">
+	   <xsl:if test="@contentType">
+	   </xsl:if>
 		<xsl:choose>
 			<xsl:when test="@show">
 				<xsl:element name="xsl:if">
@@ -785,7 +804,7 @@ BuildCondition
 	-->
 	<xsl:template name="DoColumnsBeforeExampleLocColumn">
 		<xsl:for-each select="preceding-sibling::col[not(@exampleLoc)]">
-			<xsl:sort order="descending"/>
+			<xsl:sort order="ascending" select="position()"/>
 			<xsl:apply-templates select="self::col"/>
 		</xsl:for-each>
 	</xsl:template>
@@ -1012,6 +1031,11 @@ DoP
 -->
 	<xsl:template name="DoP">
 		<p>
+		   <xsl:if test="@contentType">
+		   <xsl:attribute name="contentType">
+		      <xsl:value-of select="@contentType"/>
+		   </xsl:attribute>
+		   </xsl:if>
 			<xsl:apply-templates select="*"/>
 		</p>
 	</xsl:template>

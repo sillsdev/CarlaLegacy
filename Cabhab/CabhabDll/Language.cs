@@ -388,6 +388,14 @@ namespace SIL.Cabhab
 							lastAft = aft;
 						}
 					}
+					for (int i = 0; i < set.Count; i++)
+					{
+						AnswerFileTransform aft = set.GetTransform(i);
+						if (!aft.SaveResult)
+						{
+							File.Delete(aft.ResultFile);
+						}
+					}
 				}
 				LanguageDataChanged = false;
 				SaveSettings();

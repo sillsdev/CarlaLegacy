@@ -4,265 +4,580 @@
     <section1 id="sComp">
         <secTitle>Complement Clauses</secTitle>
         <p>
-            <content>There are various types of embedded clauses which are complements of main verbs or of adjectives acting as the predicate of the sentence.  Examples of each type of clausal complement will be given in the next section, followed by a discussion of the complementizers and their position in declarative embedded clauses.  See section </content>
+            <content>The various types of embedded clauses which are complements of main verbs or of adjectives acting as the predicate of the sentence will be presented, after covering the complementizers and their position in declarative embedded clauses.</content></p>
+       
+          <p contentType="ctComparativeIntro">
+             <content>English has two complementizers which mark declarative embedded clauses, </content>
+             <langData>that</langData>
+             <content>  for finite clauses and </content>
+             <langData>for</langData>
+             <content> for nonfinite clauses.  In other languages the complementizers for embedded declarative clauses may or may not be overt, and in some languages they are clitics which are written attached to another word.</content>
+          </p>
+       <p>
+             <content>In </content>
+             <langName/>
+             <content>, there is </content>
+             <case element="comp" attr="comp">
+                <caseText value="no">no complementizer word or clitic or affix for declarative embedded clauses.  Therefore, all embedded clauses have the same structure as regular sentences.  <case element="ip" attr="auxNonfinite">
+                   <caseText value="yes">There is still a distinction between finite and nonfinite embedded clauses, since there is a nonfinite auxiliary. </caseText>
+                   <caseText value="no">There is still a distinction between finite and nonfinite embedded clauses, since there is a nonfinite marker on the verb. </caseText>
+                   <caseText value="none">There is not any distinction between finite and nonfinite embedded clauses either, since there is not any nonfinite form in the language. </caseText>
+                </case></caseText>
+                <caseText value="yes">at least one complementizer for declarative embedded clauses.  </caseText>
+             </case>
+          <text show="swCompYes"><content>There is </content>
+             <case element="comp" attr="compNonfinite">
+                <caseText value="yes">a distinct complementizer for nonfinite clauses. </caseText>   
+                <caseText value="no">not a distinct complementizer for nonfinite clauses.  <case element="ip" attr="auxNonfinite">
+                   <caseText value="yes">There is still a distinction between finite and nonfinite embedded clauses, since there is a nonfinite auxiliary. </caseText>
+                   <caseText value="no">There is still a distinction between finite and nonfinite embedded clauses, since there is a nonfinite marker on the verb. </caseText>
+                   <caseText value="none">There is not any distinction between finite and nonfinite embedded clauses either, since there is not any nonfinite form in the language. </caseText>
+                </case></caseText>
+          </case>
+                <text show="swCompWordSome"><content> Some of the</content></text><text show="swCompWordNotSome"><content> The</content></text><content> complementizers </content>
+                <case element="comp" attr="compWord">
+                   <caseText value="yes">are written as an independent word. </caseText>
+                   <caseText value="some">are written as an independent word, but some attach </caseText>
+                   <caseText value="no">attach </caseText>
+                </case>
+                <content/>
+                <text show="swCompWordNoOrSome">
+                   <text show="swCompProclitic"><content>to the beginning of whatever word begins the complement clause as phrasal proclitics.  </content></text>
+                   <text show="swCompEnclitic"><content>to the end of whatever word ends the complement clause as phrasal enclitics.    </content></text>
+                   <text show="swCompClitic"><content>either to the beginning of whatever word begins the complement clause or to the end of whatever word ends the complement clause as phrasal clitics.   </content></text>
+                   <text show="swCompPrefix"><content>to the verb in the complement clause as a prefix.  </content></text>
+                   <text show="swCompSuffix"><content>to the verb in the complement clause as a suffix.   </content></text>
+                   <text show="swCompAffix"><content>to the verb in the complement clause, some as prefixes and some as suffixes.   </content></text>
+                   <text show="swCompCliticAffix"><content>either to the beginning or end of the complement clause as a phrasal clitic, or to the verb in the complement clause as an affix.  </content></text>
+                   <text show="swCompAttachesOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="comp/attachesOther"/><content>.  </content></text>
+                   <text show="swCompAttachesOtherAnd"><content>  Some also attach ___</content><contentCheckBoxOther contentLoc="comp/attachesOther"/>  <content>.</content></text>              
+                </text>  </text>
+       </p>   
+       
+       <p show="swCompWordNoOrSomeAndClitic"><content>These complementizer clitics are:</content></p>   
+       <example show="swCompWordNoOrSomeAndClitic">
+          <table border="1">
+             <headerRow>
+                <headerCol>Complementizer clitics</headerCol>
+                <headerCol>Gloss</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="comp/cliticExample"/>
+                <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+             </row>
+          </table>
+       </example>     
+       <p show="swCompWordNoOrSomeAndAffix"><content>These complementizer affixes are:</content></p>   
+       <example show="swCompWordNoOrSomeAndAffix">
+          <table border="1">
+             <headerRow>
+                <headerCol>Complementizer Affixes</headerCol>
+                <headerCol>Gloss</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="comp/affixExample"/>
+                <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+             </row>
+          </table>
+       </example>     
+       <p show="swCompWordNoOrSomeAndOther"><content>The other complementizers which attach as allowed in </content><langName/><content> are:</content></p>   
+       <example show="swCompWordNoOrSomeAndOther">
+          <table border="1">
+             <headerRow>
+                <headerCol>Other Complementizers That attach</headerCol>
+                <headerCol>Gloss</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="comp/attachesOtherExample"/>
+                <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+             </row>
+          </table>
+       </example>     
+       
+       <p show="swCompWordYesOrSome">
+                <content> The complementizers which are independent words occur </content>
+          <text show="swCompCompBefore"><content>before</content></text>
+          <text show="swCompCompAfter"><content>after</content></text>
+          <text show="swCompCompBoth"><content>on both sides of</content></text>
+          <text show="swCompCompEither"><content>on either side of</content></text>
+          <text show="swCompCompBeforeOrBoth"><content>before or on both sides of</content></text>
+          <text show="swCompCompAfterOrBoth"><content>after or on both sides of</content></text>
+          <text show="swCompCompEitherOrBoth"><content>on either side or on both sides of</content></text>
+          <text show="swCompCompNotOther"><content> the rest of the complement clause. </content></text>
+          <text show="swCompCompOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="comp/compOther"/><content>.  </content></text>
+          <text show="swCompCompPosAndOther"><content> the rest of the complement clause and may also occur ___</content> <contentCheckBoxOther contentLoc="comp/compOther"/> <content>. </content></text>
+          <content> These complementizers are:</content>
+       </p>          
+       <example show="swCompWordYesOrSome">
+          <table border="1">
+             <headerRow>
+                <headerCol>Complementizers</headerCol>
+                <headerCol>Gloss</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="comp/compExample"/>
+                <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+             </row>
+          </table>
+       </example>     
+       
+       
+       <p><content>See section </content>
             <sectionRef sec="sQues"/>
-            <content> for similar discussion for questions and section </content>
+            <content> for similar discussion on complementizers for questions and section </content>
             <sectionRef sec="sRelCl"/>
             <content> for relative clauses.</content>
         </p>
-        <section2 id="sCompType">
-            <secTitle>Types of Complement Clauses</secTitle>
-            <p>
-                <content>Each of the following subsections exemplifies a particular type of complement for a verb or other predicate.  See section </content>
-                <sectionRef sec="sAdvCl"/>
-                <content> for examples of adverbial clauses. Some adverbs can also take clausal complements of most of these types, yet the adverbial clauses are not complements of the main verb. </content>
-            </p>
-            <section3 id="sCompTypeFinite">
-                <secTitle>A Finite Complement</secTitle>
-                <p>
+       <p>
+          <content>Each of the following subsections exemplifies a particular type of complement for a verb or other predicate.  See section </content>
+          <sectionRef sec="sAdvCl"/>
+          <content> for examples of adverbial clauses. Some adverbs can also take clausal complements similar to these, but the adverbial clauses are not complements of the main verb. </content><comment>You may need to remove some of the prose and combine examples if your language does not make all the same distinctions.</comment>
+       </p>
+       <section2 id="sCompTypeFiniteAndNonfiniteCP" show="swCompYesAndNonfiniteYes">
+                <secTitle>Finite and Nonfinite Complement Clauses</secTitle>
+                <p contentType="ctComparativeIntro">
                     <content>Verbs which take only a finite clause complement, with or without a complementizer, include the following examples in English: </content>
                     <langData>I believe (that) Jill is my friend</langData>
                     <content>, </content>
                     <langData>Jill insists (that) she is my friend</langData>
                     <content> and </content>
                     <langData>I know (that) he likes me</langData>
-                    <content>.</content>
+                   <content>.  Examples of this type in </content>
+                   <langName/>
+                   <content> include:</content>
                 </p>
-                <p>
-                    <content>Examples of this type in </content>
-                    <langName/>
-                    <content> include:</content>
-                </p>
+          <p contentType="ctPracticalIntro">
+             <content>Some verbs have only a finite clause complement, with or without a complementizer. Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
                 <example>
                     <interlinear exampleLoc="comp/finiteExample"/>
                 </example>
-            </section3>
-            <section3 id="sCompFiniteOrNonfiniteIP">
-                <secTitle>A Finite or A Nonfinite Complement</secTitle>
-                <p>
+                <p contentType="ctComparativeIntro">
                     <content>Verbs which take either a finite complement, with or without a complementizer, or a nonfinite complement without a complementizer, include the following examples in English: </content>
                     <langData>I expect that Joe will come to the party</langData>
                     <content> and </content>
                     <langData>I expect Joe to come to the party</langData>
-                    <content>.</content>
-                </p>
-                <p>
-                    <content>Examples of this type in </content>
+                    <content>.  Examples of this type in </content>
                     <langName/>
                     <content> include:</content>
                 </p>
-                <example>
+          <p contentType="ctPracticalIntro">
+             <content>Some verbs may have either a finite complement, with or without a complementizer, or a nonfinite complement without a complementizer.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
                     <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
                 </example>
-            </section3>
-            <section3 id="sCompTypeNonfiniteIP">
-                <secTitle>A Nonfinite Complement</secTitle>
-                <p>
+                <p contentType="ctComparativeIntro">
                     <content>Some verbs which take only a nonfinite complement without a complementizer allow either a different subject than the main clause or a dropped subject when it is coreferent with the main clause subject.  English examples include: </content>
                     <langData>I want to come to the party</langData>
                     <content> and </content>
                     <langData>I want Joe to come to the party</langData>
-                    <content>.</content>
+                   <content>.  Examples of this type in </content>
+                   <langName/>
+                   <content> include:</content>
                 </p>
-                <p>
-                    <content>Examples of this type in </content>
-                    <langName/>
-                    <content> include:</content>
-                </p>
-                <example>
+          <p contentType="ctPracticalIntro">
+             <content>Some verbs have only a nonfinite complement without a complementizer and allow either a different subject than the main clause or a dropped subject when it is coreferent with the main clause subject.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
                     <interlinear exampleLoc="comp/nonfiniteExample"/>
                 </example>
-            </section3>
-            <section3 id="sCompTypeNonfiniteIPPRO">
-                <secTitle>A Nonfinite Complement with a Coreferent Subject</secTitle>
-                <p>
+                <p contentType="ctComparativeIntro">
                     <content>Verbs which take only a nonfinite complement without a complementizer, but require the subject to be coreferent with the main clause subject and dropped, include the following examples in English: </content>
                     <langData>Joe tried to come to the party</langData>
                     <content> and </content>
                     <langData>I tried to think of more examples</langData>
-                    <content>.</content>
+                   <content>.  Examples of this type in </content>
+                   <langName/>
+                   <content> include:</content>
                 </p>
-                <p>
-                    <content>Examples of this type in </content>
-                    <langName/>
-                    <content> include:</content>
-                </p>
+          <p contentType="ctPracticalIntro">
+             <content>Some verbs have only a nonfinite complement without a complementizer, but require the subject to be coreferent with the main clause subject and dropped.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>     
                 <example>
                     <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
                 </example>
-            </section3>
-            <section3 id="sCompTypeNonfiniteCP">
-                <secTitle>A Nonfinite Complement with a Complementizer</secTitle>
-                <p>
-					<content>Verbs which take only a nonfinite complement, but the complementizer ‘for’ is present when the embedded subject is not coreferent with the main clause subject, include the following examples in English: </content>
+                <p contentType="ctComparativeIntro">
+                   <content>Verbs which take only a nonfinite complement, but the complementizer </content><langData>for</langData><content> is present when the embedded subject is not coreferent with the main clause subject, include the following examples in English: </content>
                     <langData>Joe would hate for Sue to be at the party</langData>
                     <content>, </content>
                     <langData>Joe hates to dance</langData>
                     <content> and </content>
                     <langData>I would like to be appreciated</langData>
-                    <content>.</content>
+                   <content>.  Examples of this type in </content>
+                   <langName/>
+                   <content> include:</content>
                 </p>
-                <p>
-                    <content>Examples of this type in </content>
-                    <langName/>
-                    <content> include:</content>
-                </p>
-                <example>
+          <p contentType="ctPracticalIntro">
+             <content>Some verbs have only a nonfinite complement, but the complementizer is present when the embedded subject is not coreferent with the main clause subject.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
                     <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
                 </example>
-            </section3>
-            <section3 id="sCompTypeObject">
-                <secTitle>An Object plus a Complement Clause</secTitle>
-                <p>
+                <p contentType="ctComparativeIntro">
                     <content>Verbs which take a direct object as well as either a finite or nonfinite clause complement include the following examples in English: </content>
                     <langData>I will persuade Joe that he should come to the party</langData>
                     <content> and </content>
                     <langData>I will persuade Joe to come to the party</langData>
-                    <content>.</content>
+                   <content>.  Examples of this type in </content>
+                   <langName/>
+                   <content> include:</content>
                 </p>
-                <p>
-                    <content>Examples of this type in </content>
-                    <langName/>
-                    <content> include:</content>
-                </p>
-                <example>
+          <p contentType="ctPracticalIntro">
+             <content>Other verbs have a direct object as well as either a finite or nonfinite clause complement.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
                     <interlinear exampleLoc="comp/DPCPExample"/>
                 </example>
-            </section3>
-
-		   <section3 id="sCompRaising">
-			  <secTitle>Raising Constructions</secTitle>
-			  <p><content>‘Raising’ verbs seem to include all the perception verbs and copulas. These verbs take either a nonfinite complement or an adjective complement which itself has either a finite complement with a complementizer or a nonfinite complement. The main verb does not have its own subject, so the subject position is filled by the subject of the nonfinite complement, as in: </content>
-				 <langData>John seemed to like the tortillas</langData><content>, </content><langData>Joe is likely to come</langData><content> and </content><langData>The weather is certain to change soon</langData>
-				 <content>.  When the complement clause is finite, the subject cannot be ‘raised’, so a dummy </content><langData>it</langData><content> fills the main clause subject position in English, as in: </content>
-				 <langData>It seems likely that Joe will come</langData><content> and </content><langData>It is certain that the weather will change soon</langData><content>.</content>
-			  </p>
-			  <p>
-				 <content>Examples of this type in </content>
-				 <langName/>
-				 <content> include:</content>
-			  </p>
-			  <example>
-				 <interlinear exampleLoc="comp/raisingExample"/>
-			  </example>
-		   </section3>
-
-		   <section3 id="sCompCausative">
-			  <secTitle>Complements of Causatives</secTitle>
-			  <p><content>Syntactic causatives are made up of two clauses and have an object that also acts as the subject of the complement clause. That complement clause is always nonfinite, but does not need the nonfinite marker with some verbs in English, as in: </content>
-				 <langData>My mother made me clean my room</langData><content>, while it is required with others, as in: </content><langData>The other girl caused us to break up</langData><content>.</content></p>
-			  <p>
-				 <content>Examples of this type in </content>
-				 <langName/>
-				 <content> include:</content>
-			  </p>
-			  <example>
-				 <interlinear exampleLoc="comp/causeExample"/>
-			  </example>
-			  <p show="swIPCausativeNotNo"><content>See section </content><sectionRef sec="sIPCausatives"/><content> for examples of morphological causatives in </content><langName/><content>.</content>
-			  </p>
-		   </section3>
-
-		   <section3 id="sCompSpeech">
-			  <secTitle>Direct and Indirect Speech as Complements</secTitle>
-			  <p><content>Verbs of speaking can have either direct or indirect complements. Direct quotations can be just about any sentence or interjection or greeting, such as: </content>
-				 <langData>Sue said, “I will come to your house tomorrow”</langData><content> or </content><langData>Joe said, “Bye!”</langData>
-			  </p>
-			  <p><content>Indirect quotations as complements are more restricted. In English, some speech verbs take a finite sentence complement with or without a complementizer, and an optional prepositional phrase to express the hearer, as in: </content>
-				 <langData>Sue said (to me) that she would come here tomorrow</langData><content>.  Others require the hearer to be expressed as an object plus either a finite sentential complement, as in: </content>
-				 <langData>Sue told me that she would come here tomorrow</langData><content>, or a nonfinite sentential complement in which the subject must be coreferent with the main clause subject and dropped, as in: </content>
-				 <langData>Sue told me to come here tomorrow</langData><content>.</content>
-			  </p>
-			  <p>
-				 <content>Examples of this type in </content>
-				 <langName/>
-				 <content> include:</content>
-			  </p>
-			  <example>
-				 <interlinear exampleLoc="comp/quotationExample"/>
-			  </example>
-		   </section3>
-
-            <section3 id="sCompTypeOther">
+            </section2>
+           
+       <section2 id="sCompTypeFiniteCP" show="swCompYesAndNonfiniteNo">
+          <secTitle>Complement Clauses</secTitle>
+          <p contentType="ctComparativeIntro">
+             <content>Verbs which take a clause complement, with or without a complementizer, include the following examples in English: </content>
+             <langData>I believe (that) Jill is my friend</langData>
+             <content>, </content>
+             <langData>Jill insists (that) she is my friend</langData>
+             <content>, </content>           
+             <langData>I know (that) he likes me</langData>
+             <content>, </content>           
+             <langData>I expect that Joe will come to the party</langData>
+             <content>, </content>           
+             <langData>I expect Joe to come to the party</langData>
+             <content>, </content>           
+             <langData>I want to come to the party</langData>
+             <content>, </content>           
+             <langData>I want Joe to come to the party</langData>
+             <content>, </content>           
+             <langData>Joe tried to come to the party</langData>
+             <content>, </content>
+             <langData>Joe would hate for Sue to be at the party</langData>
+             <content>, </content>
+             <langData>Joe hates to dance</langData>
+             <content> and </content>
+             <langData>I would like to be appreciated</langData>
+             <content>.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Some verbs have only a clause complement, with or without a complementizer. Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Verbs which take a direct object as well as a clause complement include the following examples in English: </content>
+             <langData>I will persuade Joe that he should come to the party</langData>
+             <content> and </content>
+             <langData>I will persuade Joe to come to the party</langData>
+             <content>.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Other verbs have a direct object as well as either a finite or nonfinite clause complement.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/DPCPExample"/>
+          </example>
+       </section2>
+       
+       <section2 id="sCompTypeFiniteAndNonfiniteIP" show="swCompNoAndNonfiniteYes">
+          <secTitle>Finite and Nonfinite Sentential Complements</secTitle>
+          <p contentType="ctComparativeIntro">
+             <content>Verbs which take only a finite sentential complement include the following examples in English: </content>
+             <langData>I believe Jill is my friend</langData>
+             <content>, </content>
+             <langData>Jill insists she is my friend</langData>
+             <content> and </content>
+             <langData>I know he likes me</langData>
+             <content>.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Some verbs have only a finite sentential complement. Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Verbs which take either a finite or a nonfinite sentential complement or a nonfinite complement include the following examples in English: </content>
+             <langData>I expect Joe will come to the party</langData>
+             <content> and </content>
+             <langData>I expect Joe to come to the party</langData>
+             <content>.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Some verbs may have either a finite or a nonfinite sentential complement.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Some verbs which take only a nonfinite sentential complement allow either a different subject than the main clause or a dropped subject when it is coreferent with the main clause subject.  English examples include: </content>
+             <langData>I want to come to the party</langData>
+             <content> and </content>
+             <langData>I want Joe to come to the party</langData>
+             <content>.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Some verbs have only a nonfinite sentential complement and allow either a different subject than the main clause or a dropped subject when it is coreferent with the main clause subject.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Verbs which take only a nonfinite sentential complement, but require the subject to be coreferent with the main clause subject and dropped, include the following examples in English: </content>
+             <langData>Joe tried to come to the party</langData>
+             <content>, </content>
+             <langData>Joe hates to dance</langData>
+             <content> and </content>
+             <langData>I would like to be appreciated</langData>
+             <content>.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Other verbs have only a nonfinite sentential complement but require the subject to be coreferent with the main clause subject and dropped.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>     
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Verbs which take a direct object as well as either a finite or nonfinite sentential complement include the following examples in English: </content>
+             <langData>I will persuade Joe he should come to the party</langData>
+             <content> and </content>
+             <langData>I will persuade Joe to come to the party</langData>
+             <content>.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Other verbs have a direct object as well as either a finite or nonfinite sentential complement.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/DPCPExample"/>
+          </example>
+       </section2>
+       
+       <section2 id="sCompTypeFiniteIP" show="swCompNoAndNonfiniteNo">
+          <secTitle>Sentential Complements</secTitle>
+          <p contentType="ctComparativeIntro">
+             <content>Verbs which take a sentential complement include the following examples in English: </content>
+             <langData>I believe Jill is my friend</langData>
+             <content>, </content>
+             <langData>Jill insists she is my friend</langData>
+             <content>, </content>           
+             <langData>I know he likes me</langData>
+             <content>, </content>           
+             <langData>I expect Joe will come to the party</langData>
+             <content>, </content>           
+             <langData>I expect Joe to come to the party</langData>
+             <content>, </content>           
+             <langData>I want to come to the party</langData>
+             <content>, </content>           
+             <langData>I want Joe to come to the party</langData>
+             <content>, </content>           
+             <langData>Joe tried to come to the party</langData>
+             <content>, </content>
+             <langData>Joe hates to dance</langData>
+             <content> and </content>
+             <langData>I would like to be appreciated</langData>
+             <content>.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Some verbs have only a sentential complement. Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Verbs which take a direct object as well as a sentential complement include the following examples in English: </content>
+             <langData>I will persuade Joe he should come to the party</langData>
+             <content> and </content>
+             <langData>I will persuade Joe to come to the party</langData>
+             <content>.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Other verbs have a direct object as well as either a finite or nonfinite clause complement.  Examples of this type in </content>
+             <langName/>
+             <content> include:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/DPCPExample"/>
+          </example>
+       </section2>
+       
+       <section2 id="sCompRaising">
+              <secTitle>Raising Constructions</secTitle>
+              <p contentType="ctComparativeIntro"><content>‘Raising’ verbs seem to include all the perception verbs and copulas. These verbs take either a nonfinite complement or an adjective complement which itself has either a finite complement with a complementizer or a nonfinite complement. The main verb does not have its own subject, so the subject position is filled by the subject of the nonfinite complement, as in: </content>
+                 <langData>John seemed to like the tortillas</langData><content>, </content><langData>Joe is likely to come</langData><content> and </content><langData>The weather is certain to change soon</langData>
+                 <content>.  When the complement clause is finite, the subject cannot be ‘raised’, so a pronoun without features  </content><langData>it</langData><content> fills the main clause subject position in English, as in: </content>
+                 <langData>It seems likely that Joe will come</langData><content> and </content><langData>It is certain that the weather will change soon</langData><content>.  Some languages simply have the verb without a subject, followed by a complement clause, so no ‘raising’ takes place; the two clauses simply share the same subject. </content>
+              </p>
+              <p contentType="ctPracticalIntro"><content>‘Raising’ verbs seem to include all the perception verbs and copulas. The main verb does not have its own subject, so the subject position is filled by the subject of the nonfinite complement or by a pronoun without features.  Some languages simply have the main verb without a subject, followed by a complement clause, so no ‘raising’ takes place; the two clauses simply share the same subject. </content>
+              </p>
+              <p>
+                 <content>Examples of this type in </content>
+                 <langName/>
+                 <content> include:</content>
+              </p>
+              <example>
+                 <interlinear exampleLoc="comp/raisingExample"/>
+              </example>              
+           </section2>
+           
+           <section2 id="sCompCausative">
+              <secTitle>Complements of Causatives</secTitle>
+              <p contentType="ctComparativeIntro"><content>Syntactic causatives are made up of two clauses and have an object that also acts as the subject of the complement clause. That complement clause is always nonfinite, but does not need the nonfinite marker with some verbs in English, as in: </content>
+                 <langData>My mother made me clean my room</langData><content>, while it is required with others, as in: </content><langData>The other girl caused us to break up</langData><content>.</content></p>
+              
+                 <p contentType="ctPracticalIntro"><content>Syntactic causatives are made up of two clauses and have an object that also acts as the subject of the complement clause. </content></p>
+              <p show="swIPCausativeMakeNo"><langName/><content> does not have syntactic causatives.</content></p>
+                 <p show="swIPCausativeMakeYes">
+                    <content>Examples of this type in </content>
+                 <langName/>
+                 <content> include:</content>
+              </p>
+              <example>
+                 <interlinear exampleLoc="comp/causeExample"/>
+              </example>     
+              <p show="swIPCausativeAffixYes"><content>See section </content><sectionRef sec="sIPCausatives"/><content> for examples of single-clause causatives, in which the verb is marked with an affix which introduces an additional argument.</content>
+              </p>
+           </section2>
+      
+           <section2 id="sCompSpeech">
+              <secTitle>Direct and Indirect Speech as Complements</secTitle>
+              
+              <p contentType="ctComparativeIntro"><content>Verbs of speaking can have either direct or indirect speech complements. Direct quotations can be just about any sentence or interjection or greeting, such as: </content>
+                 <langData>Sue said, “I will come to your house tomorrow”</langData><content> or </content><langData>Joe said, “Bye!”</langData>
+              </p>
+              <p contentType="ctComparativeIntro"><content>Indirect quotations as complements are more restricted. In English, some speech verbs take a finite sentence complement with or without a complementizer, and an optional prepositional phrase to express the hearer, as in: </content>
+                 <langData>Sue said (to me) that she would come here tomorrow</langData><content>.  Others require the hearer to be expressed as an object plus either a finite sentential complement, as in: </content>
+                 <langData>Sue told me that she would come here tomorrow</langData><content>, or a nonfinite sentential complement in which the subject must be coreferent with the main clause subject and dropped, as in: </content>
+                 <langData>Sue told me to come here tomorrow</langData><content>.</content>
+              </p>
+              <p contentType="ctPracticalIntro"><content>Verbs of speaking can have either direct or indirect speech complements. Direct quotations can be just about any sentence or interjection or greeting, but indirect quotations as complements are more restricted and depend upon the main verb.</content>
+              </p>
+              <p>
+                 <content>Examples of complements of verbs of speaking in </content>
+                 <langName/>
+                 <content> include:</content>
+              </p>
+              <example>
+                 <interlinear exampleLoc="comp/quotationExample"/>
+              </example>     
+           </section2>
+           
+            <section2 id="sCompTypeOther" show="swCompTypeOtherYes">
                 <secTitle>Other Restrictions on Complement Clauses</secTitle>
-                <p>
-                    <content>Some languages also have verbs which have other restrictions on embedded clauses, such as that the embedded verb must be in the subjunctive mood or in the perfective aspect.  Any such examples in </content>
-                    <langName/>
-                    <content> are shown here:</content>
+                <p contentType="ctComparativeIntro">
+                    <content>Some languages also have verbs which have other restrictions on embedded clauses, such as that the embedded verb must be in the subjunctive mood or in the perfective aspect. </content></p>
+   
+                <p>   <langName/>
+                    <content> also has the restriction with some verbs that __</content><contentCheckBoxOther contentLoc="comp/otherRestrictions"/><content>.  Examples are shown here:</content>
                 </p>
                 <example>
                     <interlinear exampleLoc="comp/otherExample"/>
                 </example>
-            </section3>
+        
         </section2>
-        <section2 id="sCompPos">
-            <secTitle>Complementizer Position</secTitle>
-            <p>
-                <content>English has two complementizers which mark declarative embedded clauses, </content>
-                <langData>that</langData>
-                <content>  for finite clauses and </content>
-                <langData>for</langData>
-                <content> for nonfinite clauses.  In other languages the complementizers for embedded declarative clauses may or may not be overt, and in some languages they are clitics which are written attached to another word.</content>
-            </p>
-            <p>
-                <content>In </content>
-                <langName/>
-                <content>, there is </content>
-                <case element="comp" attr="comp">
-				   <caseText value="no">no complementizer word or clitic for declarative embedded clauses.</caseText>
-                    <caseText value="yes">at least one complementizer for declarative embedded clauses.</caseText>
-                </case>
-                <content/>
-                <text show="swCompYes">
-                    <content>  The complementizer is </content>
-                    <case element="comp" attr="compWord">
-                        <caseText value="yes">written as a separate word.</caseText>
-                        <caseText value="no">a clitic which attaches</caseText>
-                    </case>
-                    <content/>
-                    <text show="swCompWordNo">
-                        <content/>
-                        <case element="comp" attr="compCliticAttaches">
-                            <caseText value="edge">at the edge of the embedded clause. </caseText>
-                            <caseText value="head">to the verb in the embedded clause. </caseText>
-                        </case>
-                        <case element="comp" attr="compCliticPos">
-                            <caseText value="before">These clitic(s) is(are) proclitic(s).</caseText>
-                            <caseText value="after">These clitic(s) is(are) enclitic(s).</caseText>
-                            <caseText value="both">There are some complementizer clitics which are proclitics and some which are enclitics.</caseText>
-                            <caseText value="unknown">_______</caseText>
-                        </case>
-                        <content/>
-                    </text>
-                </text>
-                <content/>
-                <text show="swCompWordYes">
-                    <content> The complementizer occurs </content>
-                    <case element="comp" attr="compPos">
-                        <caseText value="before">before</caseText>
-                        <caseText value="after">after</caseText>
-                        <caseText value="either">on either side (but not both sides) of</caseText>
-                        <caseText value="eitherOrBoth">on either side or on both sides of</caseText>
-                        <caseText value="beforeOrBoth">before or on both sides of</caseText>
-                        <caseText value="afterOrBoth">after or on both sides of</caseText>
-                        <caseText value="both">on both sides of</caseText>
-                        <caseText value="unknown">_______</caseText>
-                    </case>
-                    <content> the embedded clause.  </content>
-                    <text show="swCompEitherUnrestricted">
-                        <content>All of the complementizers can occur on either side of the embedded clause.</content>
-                    </text>
-                    <content/>
-                    <text show="swCompEitherRestricted">
-                        <content>There are restrictions as to which of the complementizers can occur on each side of the embedded clause.</content>
-                    </text>
-                    <content/>
-                </text>
-                <content/>
-            </p>
-        </section2>
+
     </section1>
-    <showWhen id="swCompYes">
+   <showWhen id="swCompYesAndNonfiniteYes">
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="compNonfinite" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="compNonfinite" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swCompYesAndNonfiniteNo">
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="compNonfinite" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none"/>
+   </showWhen>
+   <showWhen id="swCompNoAndNonfiniteYes">
+      <whenValue element="comp" attr="comp" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swCompNoAndNonfiniteNo">
+      <whenValue element="comp" attr="comp" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none"/>
+   </showWhen>
+   <showWhen id="swCompYes">
         <whenValue element="comp" attr="comp" value="yes"/>
     </showWhen>
     <showWhen id="swCompWordYes">
@@ -275,26 +590,325 @@
         <and/>
         <whenValue element="comp" attr="comp" value="yes"/>
     </showWhen>
-    <showWhen id="swCompEitherRestricted">
-        <whenValue element="comp" attr="compPos" value="before" negateValue="yes"/>
-        <and/>
-        <whenValue element="comp" attr="compPos" value="after" negateValue="yes"/>
-        <and/>
-        <whenValue element="comp" attr="compEitherRestricted" value="restricted"/>
-        <and/>
-        <whenValue element="comp" attr="comp" value="yes"/>
-    </showWhen>
-    <showWhen id="swCompEitherUnrestricted">
-        <whenValue element="comp" attr="compPos" value="before" negateValue="yes"/>
-        <and/>
-        <whenValue element="comp" attr="compPos" value="after" negateValue="yes"/>
-        <and/>
-        <whenValue element="comp" attr="compEitherRestricted" value="unrestricted"/>
-        <and/>
-        <whenValue element="comp" attr="comp" value="yes"/>
-    </showWhen>
-
-   <showWhen id="swIPCausativeNotNo">
-	  <whenValue element="ip" attr="causative" value="no" negateValue="yes"/>
+   <showWhen id="swCompWordSome">
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNotSome">
+      <whenValue element="comp" attr="compWord" value="some" negateValue="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSome">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordYesOrSome">
+      <whenValue element="comp" attr="compWord" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompProclitic">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompEnclitic">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompClitic">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompPrefix">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompSuffix">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompAffix">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCliticAffix">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompAttachesOtherOnly">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompAttachesOtherAnd">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndClitic">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compProclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compProclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compEnclitic"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndAffix">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compPrefix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compSuffix"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndOther">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther"  attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swCompCompBefore">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompAfter">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompEither">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompBeforeOrBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompAfterOrBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompEitherOrBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompNotOther">
+      <whenValue element="comp/compOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompOtherOnly">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompPosAndOther">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompTypeOtherYes">
+      <whenValue element="comp" attr="compTypeOther" value="yes"/>
+   </showWhen>
+      <showWhen id="swIPCausativeMakeYes">
+      <whenValue element="ip/causativeMake" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPCausativeMakeNo">
+      <whenValue element="ip/causativeMake" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPCausativeAffixYes">
+      <whenValue element="ip/causativeAffix" attr="checked" value="yes"/>
    </showWhen>
 </portion>

@@ -1,0 +1,436 @@
+<technicalTerms version="1.0">
+   <technicalTerm id="ttAbsolutive">
+      <termInLang>
+         <term>absolutive</term>
+         <termDefinition>Absolutive is the name for the case marking used for subjects of intransitive verbs and direct objects of transitive verbs in a language which utilizes an ergative-absolutive case system.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAccusative">
+      <termInLang>
+         <term>accusative</term>
+         <termDefinition>Accusative is the name for the case marking used for objects of transitive verbs in a language which utilizes a nominative-accusative case system.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAdpositionalPhrases">
+   <termInLang>
+      <term>adpositional phrases</term>
+      <termDefinition>Adpositional phrases are either prepositional phrases or postpositional phrases, depending on what the language allows..</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttAdposition">
+      <termInLang>
+         <term>adposition</term>
+         <termDefinition>An adposition is either a preposition or a postposition.  It normally has a nominal phrase complement, and is a preposition if it comes before the nominal phrase or a postposition if it comes after the nominal phrase.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAgent">
+      <termInLang>
+         <term>Agent</term>
+         <termDefinition>The semantic role of Agent is the argument that does the action expressed by the verb.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAlienably">
+      <termInLang>
+         <term>alienably</term>
+         <termDefinition>Alienably possessed nouns are things which can be owned temporarily, such as ‘my money’.  Some languages add an affix to these nouns when they are possessed to indicate that a possessor must be present.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAllomorph">
+      <termInLang>
+         <term>allomorph</term>
+         <termDefinition>An allomorph is a pronunciation variant of a morpheme.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAntipassive">
+      <termInLang>
+         <term>antipassive</term>
+         <termDefinition>Antipassive is a verb voice in which the object of a transitive verb is not expressed.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttArgument">
+      <termInLang>
+         <term>argument</term>
+         <termDefinition>An argument for a verb is its subject or object or indirect object.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttArticles">
+      <termInLang>
+         <term>articles</term>
+         <termDefinition>An article is a word which occurs with a noun to show whether the noun is used in a particiular (definite) or general (indefinite) sense.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAuxiliary">
+      <termInLang>
+         <term>auxiliary</term>
+         <termDefinition>A verb, such as ‘have’, ‘can’, ‘be’, or ‘will’, that accompanies the main verb and helps to make distinctions in mood, voice, aspect, and tense.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCardinal">
+   <termInLang>
+      <term>cardinal</term>
+      <termDefinition>A cardinal number tells ‘how many’. Cardinal numbers are also known as ‘counting numbers’ because they show quantity.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttCase">
+      <termInLang>
+         <term>case</term>
+         <termDefinition>Case distinguishes between pronouns and nouns that fill different argument positions in the sentence, so subjects, objects, and possessors may be marked differently.  There are different types of case systems which determine how the marking is divided among the arguments.  Some languages do not mark case at all, others utilize one of the main case systems, and others utilize a combination of case systems. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCausative">
+      <termInLang>
+         <term>causative</term>
+         <termDefinition>A causative affix or word adds an additional argument to either an intransitive of transitive sentence. This additional argument  is the Agent is there is not already an Agent present, or it is the Causer of the action.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+ <technicalTerm id="ttClassifier">
+    <termInLang>
+       <term>classifier</term>
+       <termDefinition> A classifier is an affix or independent word that marks nouns according to their shape, position, color, animacy or other characteristics.  Classifiers may be expressed by numbers or by types and may or may not be part of the agreement system.</termDefinition>
+    </termInLang>
+ </technicalTerm>
+   <technicalTerm id="ttClitic">
+      <termInLang>
+         <term>clitic</term>
+         <termDefinition> A clitic as defined here is a syntactic element that is phonologically dependent, so it attaches to another word or phrase.  Phrasal clitics may be proclitics which attach to the beginning of whatever word begins the phrase, or enclitics which attach to whatever word ends the phrase.  Any elements which are written as independent words in your orthography should not be considered clitics for PAWS.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttComplements">
+      <termInLang>
+         <term>complements</term>
+         <termDefinition>A verb’s complements include those elements that occur with it in the verb phrase: the direct object and indirect object and a location for motion verbs, as well as embedded clauses of particular types.  The subject is not a complement.  The complement for an adverb or adjective is normally an embedded clause.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCopular">
+      <termInLang>
+         <term>copular</term>
+         <termDefinition>A copular verb is a linking verb, such as ‘is’.  Copular sentences have an adjective or nominal phrase instead of an action verb as the predicate.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDative">
+      <termInLang>
+         <term>dative</term>
+         <termDefinition>Dative is the case normally used to mark the indirect object.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDefinite">
+      <termInLang>
+         <term>definite</term>
+         <termDefinition>The definite article points out some particular person or thing.  For example, ‘the man’ means some particular individual.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDemonstratives">
+      <termInLang>
+         <term>demonstratives</term>
+         <termDefinition>A demonstrative points out which item, object, person or concept is being referred to and includes a sense of distance from the speaker.  Demonstratives which modify a noun are considered a type of adjective, while demonstratives that stand alone as a nominal phrase are a type of pronoun.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDerivational">
+      <termInLang>
+         <term>derivational</term>
+         <termDefinition>A derivational affix changes the category of the stem or word it attaches to.  For example,  the prefix ‘-en’ in ‘enslave’ converts the noun ‘slave’ into a verb, and the suffix ‘-ize’ converts the adjective ‘modern’ into the verb ‘modernize’.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDeterminers">
+      <termInLang>
+         <term>determiners</term>
+         <termDefinition>Determiners are elements which modify nouns, including articles and demonstratives and sometimes possessors.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDitransitive">
+      <termInLang>
+         <term>ditransitive</term>
+         <termDefinition>A ditransitive sentence has a subject and a direct object and an indirect object.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttErgative">
+      <termInLang>
+         <term>ergative</term>
+         <termDefinition>Ergative is the name for the case marking used for subjects of transitive verbs in a language which utilizes an ergative-absolutive case system.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttExclusive">
+      <termInLang>
+         <term>exclusive</term>
+         <termDefinition>An exclusive pronoun refers to the speaker and others (if plural), but excludes the hearer.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttExistential">
+      <termInLang>
+         <term>existential</term>
+         <termDefinition>Existential sentences express only that something either exists or does not and usually include a location.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttExperiencer">
+      <termInLang>
+         <term>Experiencer</term>
+         <termDefinition>The semantic role of Experiencer is used for the subject of verbs that express an experience instead of an action.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttFinite">
+		<termInLang>
+			<term>finite</term>
+			<termDefinition>A finite verb or clause is one which is marked for tense and/or aspect, as opposed to an infinitive or nonfinite form which is not.</termDefinition>
+		</termInLang>
+	</technicalTerm>
+   <technicalTerm id="ttFocus">
+      <termInLang>
+         <term>focus</term>
+         <termDefinition>In a focus construction, there is a word or phrase that is emphasized.  It may be moved from its normal position in the sentence, usually to the initial or final position.  Some languages have affixes or words that mark focus as well.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttGenitive">
+      <termInLang>
+         <term>genitive</term>
+         <termDefinition>Genitive is the name for the case marking used for possessors.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttGerund">
+     <termInLang>
+        <term>gerund</term>
+        <termDefinition>A gerund is a verb or verb phrase that acts like a noun or nominal phrase.  For example, ‘playing soccer’ is a gerund phrase acting as the subject of the sentence in ‘Playing soccer is fun.’</termDefinition>
+     </termInLang>
+  </technicalTerm>
+   <technicalTerm id="ttImperative">
+      <termInLang>
+         <term>imperative</term>
+         <termDefinition>Imperatives are commands, which can have strong or more polite forms.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttInalienably">
+      <termInLang>
+         <term>inalienably</term>
+         <termDefinition>An inalienably possessed noun is one that is always possessed.  For example, ‘a hand’ implies ‘someone’s hand’, even if it is severed from the body.  Likewise, ‘father’ implies ‘someone’s father’.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttInclusive">
+      <termInLang>
+         <term>inclusive</term>
+         <termDefinition>An inclusive pronoun refers to the speaker and the hearer, and possibly others.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttIndefinite">
+      <termInLang>
+         <term>indefinite</term>
+         <termDefinition>An indefinite article or pronoun does not refer to some particular person or thing, but indicates the widest sense.  For example, ‘a man’ means any man whatsoever.  As a type of pronoun, indefinites are those that do not refer to some particular person or thing.  Positive indefinite pronouns include ‘somebody’, ‘anyone’, ‘whatever’, and negative versions are ‘nobody’, ‘nothing’ and ‘none’.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttInfinitive">
+      <termInLang>
+         <term>infinitive</term>
+         <termDefinition> An infinitive verb is in its base form, not marked for tense or aspect.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttInflection">
+      <termInLang>
+         <term>inflection</term>
+         <termDefinition> Inflection is expressed by morphemes that signal the grammatical variants of a word; the inflectional ‘-s’ at the end of ‘ideas’ indicates that the noun is plural; the inflectional ‘-s’ at the end of ‘makes’ indicates that the verb is the third person singular, so that we say ‘she makes’ but ‘I make’ and ‘they make’.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttInterrogative">
+    <termInLang>
+       <term>interrogative</term>
+       <termDefinition>Interrogatives are questions, including the normal type of direct question and indirect questions which are complements of a verb such as ‘ask’ or ‘wonder’.</termDefinition>
+    </termInLang>
+ </technicalTerm>
+<technicalTerm id="ttIntransitive">
+   <termInLang>
+      <term>intransitive</term>
+      <termDefinition>An intransitive sentence has only a subject, no direct object.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttMass">
+      <termInLang>
+         <term>mass</term>
+         <termDefinition>A mass noun denotes something that cannot be counted (e.g., a substance or quality), usually a noun that lacks a plural in ordinary usage.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttMorphemes">
+      <termInLang>
+         <term>morphemes</term>
+         <termDefinition>A morpheme is the smallest unit which has meaning.  It can be an affix or clitic or a word, or even a tone or a feature such as nasalization.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttNegation">
+   <termInLang>
+      <term>negation</term>
+      <termDefinition>A negation construction contains a negative element either within the verb or one of the arguments or an adverbial element.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttNegativePolarityItem">
+      <termInLang>
+         <term>negative polarity item</term>
+         <termDefinition>A negative polarity item is an indefinite pronoun, adverb or determiner which is used in place of a negative indefinite pronoun or adverb or determiner in some languages.  Negative polarity items may be required in object position when there is a negative element earlier in the sentence.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttNominative">
+    <termInLang>
+       <term>nominative</term>
+       <termDefinition>Nominative is the name for the case marking used for all subjects in a language which utilizes a nominative-accusative case system.</termDefinition>
+    </termInLang>
+      </technicalTerm>
+      <technicalTerm id="ttNonfinite">
+         <termInLang>
+            <term>nonfinite</term>
+            <termDefinition> A nonfinite verb or clause is not marked for tense or aspect, as opposed to a finite form which is marked for tense and/or aspect.</termDefinition>
+         </termInLang>
+      </technicalTerm>
+   <technicalTerm id="ttOblique">
+   <termInLang>
+      <term>oblique</term>
+      <termDefinition>An oblique argument is one which is not a main argument of a verb, so not a subject or object or indirect object.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttOrdinal">
+      <termInLang>
+         <term>ordinal</term>
+         <termDefinition>Ordinal numbers tell the order of things in a set—first, second, third, etc. Ordinal numbers do not show quantity. They only show rank or position. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttOvert">
+      <termInLang>
+         <term>overt</term>
+         <termDefinition>An element is overt when it is expressed in writing or pronounced in speech.  Its meaning is not simply implied. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttParadigms">
+      <termInLang>
+         <term>paradigms</term>
+         <termDefinition>Paradigms are tables showing the different forms of a particular verb based on the person, number, and tense or aspect features.  They can provide the reader a way to figure out which form to use in a particular sentence.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttParticiple">
+      <termInLang>
+         <term>participle</term>
+         <termDefinition>A participle is an adjective (descriptive word) formed from a verb, such as ‘sleeping’ in ‘those sleeping dogs’ and ‘spoken’ in ‘the spoken word’.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPartitive">
+      <termInLang>
+         <term>partitive</term>
+         <termDefinition>A partitive phrase expresses that something is a part of a group or a whole item.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPassive">
+      <termInLang>
+         <term>passive</term>
+         <termDefinition>In a passive sentence, the Theme or Patient fills the subject position, instead of an Agent.  In some languages, the Agent may be optionally expressed as an oblique argument.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPatient">
+   <termInLang>
+      <term>Patient</term>
+      <termDefinition>The semantic role of Patient is the argument that receives the action expressed by the verb.  Patient is usually only used for humans or at least animate arguments; otherwise Theme is used.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttPerception">
+      <termInLang>
+         <term>perception</term>
+         <termDefinition>Verbs of perception express how we perceive something with our senses.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPolarity">
+   <termInLang>
+      <term>polarity</term>
+      <termDefinition>Polarity has a value of positive or negative.  It tells us whether the sentence is expressing a positive or negative meaning.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttPossessives">
+      <termInLang>
+         <term>possessives</term>
+         <termDefinition>Possessive pronouns express a relation of ownership.  They are distinct from the pronouns that can be used to express the possessor of a noun within a nominal phrase.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPossessors">
+      <termInLang>
+         <term>possessors</term>
+         <termDefinition>The possessor is the person, animal or thing that owns something or someone, or it belongs or pertains to the possessor.  This program considers the possessor to be the independent nominal phrase, not an attached pronoun; the pronoun is seen to agree with the nominal phrase possessor if it is present, though languages with pronominal affixes marking the possessor usually also allow the independent possessor to be unexpressed (pro-drop).</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPredicates">
+      <termInLang>
+         <term>predicates</term>
+         <termDefinition>The predicate normally consists of the verb and its modifiers, expressing the action of the subject.  In a copular sentence, the predicate may be an adjective or a noun instead, expressing some quality or position of the subject.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttProDrop">
+   <termInLang>
+      <term>pro-drop</term>
+      <termDefinition>Pro-drop is allowed most often in languages which have pronominal agreement affixes attached to the verb to mark the features of the subject and object and on the noun to mark the features of the possessor.  These affixes agree with the features of any nominal phrases which fill those positions, but if the subject, object or possessor is a pronoun, then an independent pronoun appears only when that argument is emphasized or focused.  Otherwise, the argument position is empty or dropped.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttQuantifiers">
+   <termInLang>
+      <term>quantifiers</term>
+      <termDefinition>Quantifiers express the quantity of the noun they modify. Quantifiers include numbers and words such as ‘all’, ‘many’ and ‘few’.   </termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttReciprocals">
+      <termInLang>
+         <term>reciprocals</term>
+         <termDefinition>Reciprocals express mutual action or relationship.  An example of a reciprocal pronoun is  ‘each other’.   </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttReduplication">
+      <termInLang>
+         <term>reduplication</term>
+         <termDefinition>Sometimes a morpheme can be expressed using reduplication, which is the repetition of a vowel, or part or all of the root, or of the whole word. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttReflexives">
+      <termInLang>
+         <term>reflexives</term>
+         <termDefinition>In reflexive sentences, a verb’s subject and an object in the sentence refer to the same person or thing, serving to indicate that the action of the verb is directed back to the subject, as in   ‘Joe hurt himself’.   </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttScope">
+      <termInLang>
+         <term>scope</term>
+         <termDefinition>The scope of a quantifier or a negative or other modifier relates to its area of influence.  The wider its scope, the further its quantifying or negating or modifying extends within the phrase.   </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttSemantics">
+      <termInLang>
+         <term>semantics</term>
+         <termDefinition>Semantics is the study of meaning in language.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttSubjunctive">
+      <termInLang>
+         <term>subjunctive</term>
+         <termDefinition>The subjunctive is a verb mood which is used to express something that is contrary to fact, or that expresses suppositions, doubts, fears, desires or possibilities.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttSyntax">
+      <termInLang>
+         <term>syntax</term>
+         <termDefinition>The study of the arrangement of words and phrases to create well-formed sentences in a language.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttTheme">
+      <termInLang>
+         <term>Theme</term>
+         <termDefinition>The semantic role of Theme is the argument that receives the action expressed by the verb.  It is a general term that can be used for animate and inanimate arguments, but some choose to limit the use of Theme to only inanimate arguments and use Patient for animate arguments.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttTopic">
+	   <termInLang>
+	      <term>topic</term>
+	      <termDefinition>Topic constructions consist of a phrase that expresses what is being talked about (the topic), usually set apart by a comma, followed by a complete sentence or question.  Some languages have affixes or words that are also used to mark topics.</termDefinition>
+	   </termInLang>
+	</technicalTerm>
+   <technicalTerm id="ttTransitive">
+      <termInLang>
+         <term>transitive</term>
+         <termDefinition>A transitive sentence has both a subject and a direct object.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttVoice">
+      <termInLang>
+         <term>voice</term>
+         <termDefinition>Voice is a grammatical feature that expresses which nominal phrase is prominent.  In active voice the Agent is the subject, while in passive voice the Patient is the subject.  Other voice types include causative and antipassive, and some languages have other voice distinctions as well.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   
+</technicalTerms>
+	

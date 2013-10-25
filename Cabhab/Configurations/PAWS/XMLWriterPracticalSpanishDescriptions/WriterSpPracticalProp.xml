@@ -1,84 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
 <portion>
-	<section1 id="sProp">
-		<secTitle>Los nombres propios</secTitle>
-		<p>
-			<content>Los nombres propios son una clase especial de sustantivos o frases que sintácticamente funcionan al igual que otros sustantivos o frases nominales. En español, algunos nombres propios pueden presentarse solos, como </content>
-			<langData>Susana</langData>
-			<content> y </content>
-			<langData>Oaxaca</langData>
-			<content>.  Otros actúan como sustantivos compuestos, tales como </content>
-			<langData>George Washington</langData>
-			<content>.  Los nombres propios pueden también contener los artículos y/o frases </content>
-			<case element="pp" attr="pPos">
-				<caseText value="before">preposicionales</caseText>
-				<caseText value="after">posposicionales</caseText>
-				<caseText value="both">preposicionales y/o posposicionales</caseText>
-				<caseText value="unknown">preposicionales y/o posposicionales</caseText>
-			</case>
-			<content>, como en </content>
-			<langData>los Estados Unidos de América</langData>
-			<content>.  Muchas lenguas requieren un artículo antes de un nombre. También se presentan los apositivos.  En algunos casos aparecen con un poseedor, como en </content>
-			<langData>mi hijo, David</langData>
-		   <content>, pero apositivos será discutido luego en la sección </content><sectionRef sec="sCoordAppositive"/><content>.  Además, los nombres propios se pueden modificar con los adjetivos y cláusulas relativas, como en </content>
-			<langData>México fuerte y orgulloso</langData>
-			<content> o </content>
-			<langData>la Susana que conozco</langData>
-			<content>.</content>
-		</p>
-		<p>
-			<content>Algunos ejemplos de nombres propios simples y compuestos, o los que se presentan con artículos, demonstratives, adjetivos y/o los poseedores en </content>
-			<langName/>
-			<content> son los siguientes:</content>
-		</p>
-		<example>
-			<interlinear exampleLoc="prop/example"/>
-		</example>
-	   <p show="swClassifiersYesPropYes"><content>En </content><langName/><content>, los nombres propios se marcan con clasificadores lo mismo que sustantivos como parte del sistema de concordancia.</content></p>
-	   <p show="swClassifiersYesPropNo"><content>En </content><langName/><content>, los nombres propios no se marcan con clasificadores al contrario que sustantivos.</content></p>
-	   <p show="swNPArtAndDemNotNo"><content>Los nombres propios en </content><langName/><case element="prop" attr="pnDeterminer">
-		  <caseText value="no"> pueden, pero no es requirido,</caseText>
-		  <caseText value="yes"> deben</caseText>
-	   </case><content> contener un </content><case element="np" attr="artAndDem">
-		  <caseText value="article">artículo</caseText>
-		  <caseText value="demonstrative">demostrativo</caseText>
-		  <caseText value="both">artículo y/o demostrativo</caseText></case><content> o un poseedor.</content></p>
-	   <p>
-			<content>Algunos ejemplos de nombres propios con frases </content>
-			<case element="pp" attr="pPos">
-				<caseText value="before">preposicionales</caseText>
-				<caseText value="after">posposicionales</caseText>
-				<caseText value="both">preposicionales y/o posposicionales</caseText>
-				<caseText value="unknown">preposicionales y/o posposicionales</caseText>
-			</case>
-			<content> en </content>
-			<langName/>
-			<content> son los siguientes:</content>
-		</p>
-		<example>
-			<interlinear exampleLoc="prop/ppExample"/>
-		</example>
-		<p>
-			<content>Algunos ejemplos de los nombres propios modificados con las cláusulas relativas en oraciones completas en </content>
-			<langName/>
-			<content> son los siguientes:</content>
-		</p>
-		<example>
-			<interlinear exampleLoc="prop/relClExample"/>
-		</example>
-	</section1>
+    <section1 id="sProp">
+        <secTitle>Los nombres propios</secTitle>
+       <p contentType="ctPracticalIntro">
+          <content>Los nombres propios son una clase especial de sustantivos o frases que sintácticamente funcionan igual que otros sustantivos o frases nominales.</content>
+          </p>
+          <p contentType="ctComparativeIntro">
+            <content>Los nombres propios son una clase especial de sustantivos o frases que sintácticamente funcionan igual que otros sustantivos o frases nominales. En español, algunos nombres propios pueden presentarse solos, como </content>
+            <langData>Susana</langData>
+            <content> y </content>
+            <langData>Oaxaca</langData>
+            <content>.  Otros funcionan como sustantivos compuestos, como </content>
+            <langData>George Washington</langData>
+             <content>.  Los nombres propios también pueden contener los artículos y/o frases </content>
+            <case element="pp" attr="pPos">
+                <caseText value="before">preposicionales</caseText>
+                <caseText value="after">posposicionales</caseText>
+                <caseText value="both">adposicionales</caseText>
+                <caseText value="unknown">adposicionales</caseText>
+            </case>
+            <content>, como en </content>
+            <langData>los Estados Unidos de América</langData>
+            <content>.  Muchas lenguas requieren un artículo antes de un nombre. También se presentan los apositivos.  En algunos casos aparecen con un posesivo, como en </content>
+            <langData>mi hijo, David</langData>
+             <content>, pero apositivos se tratann más adelante en la sección </content><sectionRef sec="sCoordAppositive"/><content>.  Además, los nombres propios se pueden modificar con los adjetivos y cláusulas relativas, como en </content>
+            <langData>México fuerte y orgulloso</langData>
+            <content> o </content>
+            <langData>la Susana que conozco</langData>
+            <content>.</content>
+        </p>
+        <p>
+            <content>Algunos ejemplos de nombres propios simples y compuestos, o los que se presentan con artículos, demostrativeo, adjetivos o posesivos en el </content>
+            <langName/>
+            <content> son los siguientes:</content>
+        </p>
+        <example>
+            <interlinear exampleLoc="prop/example"/>
+        </example>
+       <p show="swClassifiersYesPropYes"><content>En el </content><langName/><content>, los nombres propios se marcan con clasificadores lo mismo que sustantivos como parte del sistema de concordancia.</content></p> 
+       <p show="swClassifiersYesPropNo"><content>En el </content><langName/><content>, los nombres propios no se marcan con clasificadores al contrario que sustantivos.</content></p>       
+       <p show="swNPArtAndDemNotNo"><content>Los nombres propios</content><case element="prop" attr="pnDeterminer">
+          <caseText value="no"> pueden</caseText>
+          <caseText value="yes"> deben</caseText>
+       </case><content> contener un </content><case element="np" attr="artAndDem">
+          <caseText value="article">artículo</caseText>
+          <caseText value="demonstrative">demostrativo</caseText>
+          <caseText value="both">artículo o demostrativo</caseText></case><content> o un posesivo.</content></p>
+       <p>
+            <content>Algunos ejemplos de nombres propios con frases </content>
+            <case element="pp" attr="pPos">
+                <caseText value="before">preposicionales</caseText>
+                <caseText value="after">posposicionales</caseText>
+                <caseText value="both">adposicionales</caseText>
+                <caseText value="unknown">adposicionales</caseText>
+            </case>
+            <content> son los siguientes:</content>
+        </p>
+        <example>
+            <interlinear exampleLoc="prop/ppExample"/>
+        </example>
+        <p>
+            <content>Algunos ejemplos de nombres propios modificados por cláusulas relativas en oraciones completas son:</content>
+        </p>
+        <example>
+            <interlinear exampleLoc="prop/relClExample"/>
+        </example>
+    </section1>
    <showWhen id="swClassifiersYesPropYes">
-	  <whenValue element="typology"  attr="classifier" value="yesAgr"/>
-	  <and/>
-	  <whenValue element="prop" attr="pnClassifier" value="yes"/>
+      <whenValue element="typology"  attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenValue element="prop" attr="pnClassifier" value="yes"/>
    </showWhen>
    <showWhen id="swClassifiersYesPropNo">
-	  <whenValue element="typology"  attr="classifier" value="yesAgr"/>
-	  <and/>
-	  <whenValue element="prop" attr="pnClassifier" value="no"/>
+      <whenValue element="typology"  attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenValue element="prop" attr="pnClassifier" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemNotNo">
-	  <whenValue element="np" attr="artAndDem" value="no" negateValue="yes"/>
+      <whenValue element="np" attr="artAndDem" value="no" negateValue="yes"/>
    </showWhen>
 </portion>

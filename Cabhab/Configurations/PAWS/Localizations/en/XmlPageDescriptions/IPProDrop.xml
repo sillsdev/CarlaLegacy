@@ -1,45 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="IPProDrop" count="1/1">
-	<title level="2">Basic, Single-Clause Sentences - <i>Pro</i>-Drop and Imperative</title>
-   <introduction>Some languages are <i>pro</i>-drop languages which allow a subject and/or object to be missing.  For example, in Spanish the normal way to say “I buy a book” is <example>Compro un libro</example> rather than with the overt subject pronoun included: <example>Yo compro un libro</example>.  This is not allowed in English, except for imperatives.  (The missing subject of infinitives in embedded complements will be considered in <section number="10">Complement Clauses</section>.)  <br/>
-		<br/>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPProDrop" count="1/3">
+    <title level="2">Basic Sentences - <i>Pro</i>-Drop and Imperatives</title>
+   <introduction>Some languages are <technicalTermRef term="ttProDrop"/> languages which allow a subject and/or object to be missing.  For example, in Spanish the normal way to say “I buy a book” is <example>Compro un libro</example> rather than with the overt subject pronoun included: <example>Yo compro un libro</example>.  This is not allowed in English, except in imperatives.  (The missing subject of infinitives in embedded clauses will be considered in <section number="10">Complement Clauses</section>.)  <br/>
+        <br/>
 Some languages are not really <i>pro</i>-drop languages, but at least some of the pronouns are clitics which can attach to the verb.  When this happens, there is no pronoun or nominal phrase in subject position, so the sentence looks the same as in a true <i>pro</i>-drop language.</introduction>
-	<form section="ip">
-		<prompt>Key any examples of <i>pro</i>-drop from your language here, where there is no independent pronoun or nominal phrase in subject and/or object position:</prompt>
-		<textBox id="IPExamplesProDropExample" dataItem="proDropExample" cols="50"/><br/>
-		<prompt>Key examples of imperative constructions from your language here:</prompt>
-		<textBox id="IPExamplesImpExample" dataItem="impExample" cols="50"/><br/>
-		<prompt>Key any examples that look like <i>pro</i>-drop with clitic pronouns attached to the verb so that there is no independent pronoun or nominal phrase in subject position here:</prompt>
-		<textBox id="IPExamplesCliticPnExample" dataItem="cliticPnExample" cols="50"/><br/>
-		<radioGroup>
-			<groupName dataItem="proDrop" default="no">RIPProDrop</groupName>
-			<prompt>
-				<br/>Does your language allow <i>pro</i>-drop of the subject?</prompt>
-			<radio id="IPProDropNoImp" dataValue="noImp">No, like English, the subject must be overt except in imperatives</radio>
-			<radio id="IPProDropNo" dataValue="no">No, the subject must be overt even in imperatives</radio>
-			<radio id="IPProDropYes" dataValue="yes">Yes, <i>pro</i>-drop of the subject is allowed</radio>
-			<radio id="IPProDropYesClitic" dataValue="yesClitic">The subject may look like it is missing due to pronominal clitics attached to the verb</radio>
-		</radioGroup>
-		<instruction id="IPProDropImpInstruction">In the lexicon, mark any affixes that indicate imperative and any inherently imperative verbs with the feature <feature>imperative</feature>.</instruction>
-		<instruction id="IPProDropYesCliticInstruction" show="swIPProDropYesClitic">All of the pronouns that may attach as subject clitics need to have the appropriate agreement features added in the lexicon.  If a particular pronoun can stand alone in subject position and also may attach to the verb, add both sets of features, e.g. <feature>first singular first_subject singular_subject</feature>.</instruction>
-		<radioGroup id="IPProDropObject" show="swIPProDropYes">
-			<groupName dataItem="proDropObject" default="no">RIPProDropObject</groupName>
-			<prompt>Does your language have object agreement marking on the verb to allow <i>pro</i>-drop of the object?</prompt>
-			<radio id="IPProDropObjectNo" dataValue="no">No</radio>
-			<radio id="IPProDropObjectYes" dataValue="yes">Yes, <i>pro</i>-drop of the object is also allowed</radio>
-		</radioGroup>
-		<br/>
-		<buttons>
-			<button id="IPProDropBack" value="Back" goto="IPContents.htm"/>
-			<button id="IPProDropNext" value="Next" goto="IPContents.htm"/>
-		</buttons>
-	</form>
-	<showWhen id="swIPProDropYes">
-		<whenRadio button="IPProDropYes"/>
-	</showWhen>
-	<showWhen id="swIPProDropYesClitic">
-		<whenRadio button="IPProDropYesClitic"/>
-	</showWhen>
+    <form section="ip">
+       <checkboxGroup>
+          <prompt>
+             <br/>Under what circumstances can a subject be missing from its normal position?  Check all options that are correct for your language, though note that you should either have pro-drop or pronominal clitics, so only one of the first two options should be checked, not both.  If no options are allowed in your language, leave these unchecked and check the button for ‘None’ below</prompt>
+          <checkbox id="IPProDropYes" dataItem="proDropYes">Pro-drop of the subject is allowed</checkbox>
+          <checkbox id="IPProDropClitic" dataItem="proDropClitic">The subject may look like it is missing due to pronominal clitics attached to the verb</checkbox>
+          <checkbox id="IPProDropImp" dataItem="proDropImp">The subject may be missing in imperatives</checkbox>
+          <checkbox id="IPProDropOther" dataItem="proDropOther">In my language, the subject may be missing in this other construction: <textBox  id="IPProDropOtherContent" dataItem="proDropOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="IPProDropNoCheckPrompt" show="swIPProDropNoCheck">WARNING: You did not check any boxes to describe when the subject may be missing from its normal position in your language.  If it is truly not ever allowed to be missing, please check the box for ‘None’ below.</prompt>
+  <checkboxGroup id="IPProDropNoNoneTable" show="swIPProDropNoCheck">
+     <prompt>Check this box only if your language never allows the subject to be missing</prompt>
+     <checkbox id="IPProDropNone" dataItem="proDropNone">None, the subject must always be overt, even in imperatives</checkbox>
+  </checkboxGroup>
+       
+       <prompt id="IPProDropYesPrompt" show="swIPProDropYes">Key examples of <i>pro</i>-drop from your language here, where there is no independent pronoun or nominal phrase in subject and/or object position:</prompt>
+        <textBox id="IPExamplesProDropExample" dataItem="proDropExample" cols="50" show="swIPProDropYes"/><br/>
+       <radioGroup id="IPProDropObject" show="swIPProDropYes">
+          <groupName dataItem="proDropObject" default="no">RIPProDropObject</groupName>
+          <prompt>Does your language also allow the object to be missing from its normal position?</prompt>
+          <radio id="IPProDropObjectNo" dataValue="no">No</radio>
+          <radio id="IPProDropObjectYes" dataValue="yes">Yes, <i>pro</i>-drop of the object is also allowed</radio>
+       </radioGroup>
+       
+       <prompt id="IPProDropCliticPrompt" show="swIPProDropClitic">Key examples that look like <i>pro</i>-drop with clitic pronouns attached to the verb so that there is no independent pronoun or nominal phrase in subject position here:</prompt>
+       <textBox id="IPExamplesCliticPnExample" dataItem="cliticPnExample" cols="50" show="swIPProDropClitic"/><br/>
+       <instruction id="IPProDropYesCliticInstruction" show="swIPProDropClitic">All of the pronouns that may attach as subject clitics need to have the appropriate agreement features added in the lexicon.  This should have been done in <section number="7.">Pronouns</section> and <section number="9.2.">Basic Sentences - Agreement Features</section>, but you may want to verify your entries now.  Note that if a particular pronoun can stand alone in subject position and also may attach to the verb, it should have both sets of features, e.g. <feature>first singular first_subject singular_subject</feature>.</instruction>
+       
+       <prompt id="IPProDropOtherPrompt" show="swIPProDropOther">Key examples of the other construction in which a subject may be missing from its normal position in your language here:</prompt>
+       <textBox id="IPExamplesProDropOtherExample" dataItem="proDropOtherExample" cols="50" show="swIPProDropOther"/><br/>
+       
+       <prompt>Key examples of imperative constructions from your language <span id="IPImperativeNoSubjSpan" show="swIPProDropImp">with some showing that the subject may be missing </span><span id="IPImperativeWithSubjectSpan" show="swIPProDropNone">showing that the subject is required </span>here:</prompt>
+       <textBox id="IPExamplesImpExample" dataItem="impExample" cols="50"/><br/>
+       <instruction id="IPProDropImpInstruction">In the lexicon, mark any affixes that indicate imperative and any inherently imperative verbs with the feature <feature>imperative</feature>.</instruction>
+  <radioGroup>
+     <groupName dataItem="impPolite" default="no">RIPImpPolite</groupName>
+     <prompt>Is there also a more polite form of imperative in your language?</prompt>
+     <radio id="IPImpPoliteYes" dataValue="yes">Yes</radio>
+     <radio id="IPImpPoliteNo" dataValue="no">No</radio>
+  </radioGroup>
+ <prompt id="IPImpPolitePrompt" show="swIPImpPoliteYes">Key some example of this polite imperative construction here:</prompt>
+       <textBox id="IPImpPoliteExamples" dataItem="impPoliteExample" cols="50" show="swIPImpPoliteYes"/>
+       <br/><br/>
+        <buttons>
+            <button id="IPProDropBack" value="Back" goto="IPContents.htm"/>
+            <button id="IPProDropNext" value="Next" goto="IPConditional.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swIPProDropYes">
+        <whenCheckbox button="IPProDropYes"/>
+    </showWhen>
+    <showWhen id="swIPProDropClitic">
+        <whenCheckbox button="IPProDropClitic"/>
+    </showWhen>
+   <showWhen id="swIPProDropOther">
+      <whenCheckbox button="IPProDropOther"/>
+   </showWhen>
+   <showWhen id="swIPProDropImp">
+      <whenCheckbox button="IPProDropImp"/>
+   </showWhen>
+   <showWhen id="swIPProDropNone">
+      <whenCheckbox button="IPProDropNone"/>
+      <and/> <not/>
+      <whenCheckbox button="IPProDropYes"/>
+      <and/><not/>
+      <whenCheckbox button="IPProDropClitic"/>
+      <and/><not/>
+      <whenCheckbox button="IPProDropImp"/>
+      <and/><not/>
+      <whenCheckbox button="IPProDropOther"/>
+   </showWhen>
+   <showWhen id="swIPImpPoliteYes">
+      <whenRadio button="IPImpPoliteYes"/>
+   </showWhen>
+ <showWhen id="swIPProDropNoCheck">
+    <not/>
+    <whenCheckbox button="IPProDropYes"/>
+    <and/><not/>
+    <whenCheckbox button="IPProDropClitic"/>
+    <and/><not/>
+    <whenCheckbox button="IPProDropImp"/>
+    <and/><not/>
+    <whenCheckbox button="IPProDropOther"/>
+ </showWhen>  
+   &TechnicalTerms; 
 </page>

@@ -2,151 +2,227 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="QMainYN" count="2/9">
-   <title level="2">Las preguntas - Las preguntas de respuesta sí/no de la cláusula principal</title>
-   <introduction>Mientras que en español simplemente hay un cambio en la entonación para señalar una pregunta de respuesta sí/no de la cláusula principal, otras lenguas utilizan indicadores y/o cambios especiales del orden de las palabras. Algunos ejemplos en inglés de las preguntas de respuesta sí/no de la cláusula principal que muestran el desplazamiento requerido de un auxiliar son:</introduction>
-		<EnglishExample>
-		   <exItem label="1.">Are you going to the store? ‘¿Usted va al almacén?’</exItem>
-		   <exItem label="2.">Will Sue buy the present for her mother? ‘¿Compra Susana el regalo para su madre?’</exItem>
-		   <exItem label="3.">Could the boy have hit the ball? ‘¿Habría podido el muchacho golpear el beísbol?’</exItem>
-		</EnglishExample>
+   <title level="2">Las preguntas - Las preguntas de respuesta sí/no como cláusula principal</title>
+   <introduction>Mientras que en español simplemente hay un cambio en la entonación para señalar una pregunta de respuesta sí/no como cláusula principal, otras lenguas utilizan indicadores y/o cambios especiales del orden de las palabras. Algunos ejemplos en inglés de las preguntas de respuesta sí/no como cláusula principal que muestran el desplazamiento que se reqiuere a un auxiliar son:</introduction>
+        <EnglishExample>
+           <exItem label="1.">Are you going to the store? ‘¿Usted va al almacén?'</exItem>
+           <exItem label="2.">Will Sue buy the present for her mother? ‘¿Compra Susana el regalo para su madre?'</exItem>
+           <exItem label="3.">Could the boy have hit the ball? ‘¿Habría podido el muchacho golpear el beísbol?'</exItem>
+        </EnglishExample>
    <form section="q">
-	  <prompt>Escriba ejemplos similares de las preguntas de respuesta sí/no  de la cláusula principal en su lengua aquí:</prompt>
-		<textBox id="QExample" dataItem="example" cols="50"/>
-		<br/>
-		<br/>
-		<radioGroup>
-			<groupName dataItem="mainYN" default="no">RQMainYN</groupName>
-		   <prompt>Para las preguntas de respuesta sí/no de la cláusula principal, ¿hay uno o más indicadores o complementizadores de la pregunta (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
-			<radio id="QMainYNYes" dataValue="yes">Sí</radio>
-			<radioGroup id="QMainYNWordTable" show="swQMainYNYes">
-				<groupName dataItem="mainYNWord" default="yes">RQMainYNWord</groupName>
-				<prompt>¿Se escribe como una palabra independiente?</prompt>
-				<radio id="QMainYNWordNo" dataValue="no">No, es un clítico que se une a otra palabra</radio>
-				<radioGroup id="QMainYNCliticPosTable" show="swQMainYNWordNo">
-					<groupName dataItem="mainYNCliticPos" default="unknown" position="yesHead">RQMainYNCliticPos</groupName>
-					<prompt>¿Es el clítico un proclítico o un enclítico?</prompt>
-					<radio id="QMainYNCliticPosBefore" dataValue="before">Un proclítico o un prefijo</radio>
-					<radio id="QMainYNCliticPosAfter" dataValue="after">Un enclítico o un sufijo</radio>
-					<radio id="QMainYNCliticPosBoth" dataValue="both">Algunos de cada tipo</radio>
-				</radioGroup>
-				<radioGroup id="QMainYNCliticTypeTable" show="swQMainYNWordNo">
-					<groupName dataItem="mainYNCliticAttaches" default="edge">RQMainYNCliticAttaches</groupName>
-				   <prompt>¿Dónde se une el clítico a la pregunta de respuesta sí/no?</prompt>
-					<radio id="QMainYNCliticAttachesEdge" dataValue="edge">A la orilla</radio>
-					<radio id="QMainYNCliticAttachesHead" dataValue="head">Al verbo</radio>
-				</radioGroup>
-				<radio id="QMainYNWordYes" dataValue="yes">Sí</radio>
-			</radioGroup>
-			<radioGroup id="QMainYNPosTable" show="swQMainYNWordYes">
-				<groupName dataItem="mainYNPos" default="unknown" position="yesHead">RQMainYNPos</groupName>
-				<prompt>¿Dónde se presenta el indicador o complementizador de la pregunta con respecto al resto de la pregunta?</prompt>
-				<radio id="QMainYNPosBefore" dataValue="before">Antes de la pregunta</radio>
-				<radio id="QMainYNPosAfter" dataValue="after">Después de la pregunta</radio>
-				<radio id="QMainYNPosEitherSide" dataValue="either">De cualquier lado, pero no en ambos lados en la misma oración</radio>
-				<radio id="QMainYNPosEitherOrBoth" checked="yes" dataValue="eitherOrBoth">De cualquier lado, o en ambos lados en la misma oración</radio>
-				<radio id="QMainYNPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Antes, o en ambos lados en la misma oración</radio>
-				<radio id="QMainYNPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">Después, o en ambos lados en la misma oración</radio>
-				<radio id="QMainYNPosBothSides" checked="yes" dataValue="both">Solamente en ambos lados en la misma oración</radio>
-				<radioGroup id="QMainYNEitherOrBothTable" show="swQMainYNPosEitherOrBoth">
-					<groupName dataItem="mainYNEitherRestricted" default="unrestricted">RQMainYNEitherRestricted</groupName>
-					<prompt>¿Pueden todos los indicadores o complementizadores de la pregunta presentarse de cualquier lado de la pregunta?</prompt>
-					<radio id="QMainYNEitherUnrestricted" dataValue="unrestricted">Sí, no hay restricción</radio>
-					<radio id="QMainYNEitherRestricted" dataValue="restricted">No, hay distintos grupos para cada lado</radio>
-				</radioGroup>
-			</radioGroup>
-			<radio id="QMainYNNoAux" dataValue="noAux">No, pero un auxiliar se desplaza, como en inglés</radio>
-			<radioGroup id="QMainYNAuxPosTable" show="swQMainYNNoAux">
-				<groupName dataItem="mainYNAuxPos" default="unknown" position="yesHead">RQMainYNAuxPos</groupName>
-				<prompt>¿Dónde se presenta el auxiliar con respecto al resto de la pregunta?</prompt>
-				<radio id="QMainYNAuxPosBefore" dataValue="before">Antes de la pregunta</radio>
-				<radio id="QMainYNAuxPosAfter" dataValue="after">Después de la pregunta</radio>
-			</radioGroup>
-			<radio id="QMainYNNo" dataValue="no">No, no existe ni indicador ni cambio del orden de las palabras, se de con un cambio en la entonación o el tono u otra indicación que no es sintáctica</radio>
-		</radioGroup>
-		<instruction id="QMainYNHeadCliticInstruction" show="swQMainYNHeadClitic">In the lexicon, add the feature <feature>YNQ</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QMainYNEdgeCliticPrefixInstruction" show="swQMainYNEdgeCliticPrefix">In the lexicon, add the feature <feature>YNQ_prefix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QMainYNEdgeCliticSuffixInstruction" show="swQMainYNEdgeCliticSuffix">In the lexicon, add the feature <feature>YNQ_suffix</feature> to these clitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QMainYNEdgeCliticBothInstruction" show="swQMainYNEdgeCliticBoth">In the lexicon, add the feature <feature>YNQ_prefix</feature> to the proclitics and add <feature>YNQ_suffix</feature> to the enclitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QMainYNWordYesInstruction" show="swQMainYNWordYes">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>makeC</feature> to the feature line to change the category for the syntax.  (If a particular entry can also be used as another syntactic category, make a separate lexical entry for each use.)  In either case, add the feature <feature>question</feature>.  If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
-		<instruction id="QMainYNEitherRestrictedInstruction" show="swQMainYNEitherRestricted">In the lexicon, mark those markers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
-		<br/>
-		<buttons>
-			<button id="QMainYNBack" value="Back" goto="QMain.xml"/>
-			<button id="QMainYNNext" value="Next" goto="QEmbYN.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swQMainYNYes">
-		<whenRadio button="QMainYNYes"/>
-	</showWhen>
-	<showWhen id="swQMainYNWordNo">
-		<whenRadio button="QMainYNWordNo"/>
-		<and/>
-		<whenRadio button="QMainYNYes"/>
-	</showWhen>
-	<showWhen id="swQMainYNHeadClitic">
-		<whenRadio button="QMainYNWordNo"/>
-		<and/>
-		<whenRadio button="QMainYNYes"/>
-		<and/>
-		<whenRadio button="QMainYNCliticAttachesHead"/>
-	</showWhen>
-	<showWhen id="swQMainYNEdgeCliticPrefix">
-		<whenRadio button="QMainYNWordNo"/>
-		<and/>
-		<whenRadio button="QMainYNYes"/>
-		<and/>
-		<whenRadio button="QMainYNCliticPosBefore"/>
-		<and/>
-		<whenRadio button="QMainYNCliticAttachesEdge"/>
-	</showWhen>
-	<showWhen id="swQMainYNEdgeCliticSuffix">
-		<whenRadio button="QMainYNWordNo"/>
-		<and/>
-		<whenRadio button="QMainYNYes"/>
-		<and/>
-		<whenRadio button="QMainYNCliticPosAfter"/>
-		<and/>
-		<whenRadio button="QMainYNCliticAttachesEdge"/>
-	</showWhen>
-	<showWhen id="swQMainYNEdgeCliticBoth">
-		<whenRadio button="QMainYNWordNo"/>
-		<and/>
-		<whenRadio button="QMainYNYes"/>
-		<and/>
-		<whenRadio button="QMainYNCliticAttachesEdge"/>
-		<and/>
-		<whenRadio button="QMainYNCliticPosBoth"/>
-	</showWhen>
-	<showWhen id="swQMainYNWordYes">
-		<whenRadio button="QMainYNWordYes"/>
-		<and/>
-		<whenRadio button="QMainYNYes"/>
-	</showWhen>
-	<showWhen id="swQMainYNPosEitherOrBoth">
-		<not/>
-		<whenRadio button="QMainYNPosBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="QMainYNPosAfter"/>
-		<and/>
-		<whenRadio button="QMainYNWordYes"/>
-		<and/>
-		<whenRadio button="QMainYNYes"/>
-	</showWhen>
-	<showWhen id="swQMainYNEitherRestricted">
-		<not/>
-		<whenRadio button="QMainYNPosBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="QMainYNPosAfter"/>
-		<and/>
-		<whenRadio button="QMainYNWordYes"/>
-		<and/>
-		<whenRadio button="QMainYNYes"/>
-		<and/>
-		<whenRadio button="QMainYNEitherRestricted"/>
-	</showWhen>
-	<showWhen id="swQMainYNNoAux">
-		<whenRadio button="QMainYNNoAux"/>
-	</showWhen>
+      <prompt>Escriba ejemplos similares de las preguntas de respuesta sí/no como cláusula principal en su lengua aquí:</prompt>
+        <textBox id="QExample" dataItem="example" cols="50"/>
+        <br/>
+        <br/>
+        <radioGroup>
+            <groupName dataItem="mainYN" default="no">RQMainYN</groupName>
+           <prompt>Para las preguntas de respuesta sí/no como cláusula principal, ¿hay uno o más indicadores o complementadores de pregunta (incluya los afijos o clíticos en la contestación de esta pregunta)?</prompt>
+            <radio id="QMainYNYes" dataValue="yes">Sí</radio>
+           <radio id="QMainYNNoAux" dataValue="noAux">No, pero un auxiliar se desplaza</radio>
+           <radio id="QMainYNNo" dataValue="no">No, no hay indicador ni cambio del orden de las palabras en las preguntas de respuesta sí/no, se da con un cambio en la entonación o el tono u otra indicación que no es sintáctica</radio>
+        </radioGroup>
+      <prompt id="QMainYNAuxAndNoAuxPrompt" show="swQMainYNAuxAndNoAux">ADVERTENCIA: Sus respuestas son inconsistentes; no tiene sentido tener despalzamiento de un auxiliar si la lengua no tiene ningún auxliar que se escribe como una palabra independiente. Por favor cambia su respuesta aquí o vuelva a <section number="9.3">Las oraciones básicas - Los auxliaries</section> y cambia su respuesta a ‘Sí’ antes de continuando.</prompt>
+      
+      <radioGroup id="QMainYNWordTable" show="swQMainYNYes">
+         <groupName dataItem="mainYNWord" default="yes">RQMainYNWord</groupName>
+         <prompt><br/>¿Se escriben todos los indicadores o complementadores de pregunta de respuesta sí/no como una palabra independiente?</prompt>
+         <radio id="QMainYNWordYes" dataValue="yes">Sí</radio>
+         <radio id="QMainYNWordSome" dataValue="some">Algunos se escriben como una palabra independiente pero otros se unen a otra palabra</radio>
+         <radio id="QMainYNWordNo" dataValue="no">No, todos se unen a otra palabra</radio>
+      </radioGroup>
+      
+      <checkboxGroup  id="QMainYNCliticPosTable" show="swQMainYNWordNoOrSome">
+         <prompt><br/>¿Dónde se unen los indicadores o complementadores de pregunta de respuesta sí/no <span id="QMainYNCliticSomeSpan" show="swQMainYNWordSome">que no son palabras independientes </span>a la pregunta subordinada?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+         <checkbox id="QMainYNCliticProclitic" dataItem="mainYNProclitic">Como un proclítico que se une al inicio de culaquiera palabra que empieza la pregunta de respuesta sí/no</checkbox>
+         <checkbox id="QMainYNCliticEnclitic" dataItem="mainYNEnclitic">Como un enclítico que se une al final de culaquiera palabra que termina la pregunta de respuesta sí/no</checkbox>
+         <checkbox id="QMainYNCliticPrefix" dataItem="mainYNPrefix">Como un prefijo que se une al verbo en la pregunta de respuesta sí/no</checkbox>
+         <checkbox id="QMainYNCliticSuffix" dataItem="mainYNSuffix">Como un sufijo que se une al verbo en la pregunta de respuesta sí/no</checkbox>
+         <checkbox id="QMainYNCliticOther" dataItem="mainYNCliticOther">En mi lengua, estos elementos se unen:  <textBox  id="QMainYNCliticOtherContent" dataItem="mainYNCliticOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="QMainYNCliticPosNoCheckPrompt" show="swQMainYNWordNoOrSomeandNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos indicadores o complementadores de pregunta de respuesta sí/no se unen en su lengua, o cambia su respuesta de arriba a ‘Sí, todos son palabras independientes’.</prompt>
+      <prompt id="QMainYNCliticsExamplesPrompt" show="swQMainYNCliticProcliticOrEnclitic"><br/>Escriba los indicadores o complementadores de pregunta de respuesta sí/no que son clíticos con un signo igual para indicar en qué lado se unen aquí:</prompt>
+      <textBox id="QMainYNCliticExamples" dataItem="mainYNCliticExample" show="swQMainYNCliticProcliticOrEnclitic" rows="3"/>    
+      <instruction id="QMainYNProcliticInstruction" show="swQMainYNCliticProclitic">In the lexicon, add the feature <feature>YNQ_prefix</feature> to these proclitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+      <instruction id="QMainYNEncliticInstruction" show="swQMainYNCliticEnclitic">In the lexicon, add the feature <feature>YNQ_suffix</feature> to these enclitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+      
+      <prompt id="QMainYNAffixExamplesPrompt" show="swQMainYNCliticPrefixOrSuffix"><br/>Escriba los indicadores o complementadores de pregunta de respuesta sí/no que son afijos en el verbo con un guión para indicar en qué lado se unen aquí:</prompt>    
+      <textBox id="QMainYNAffixExamples" dataItem="mainYNAffixExample" show="swQMainYNCliticPrefixOrSuffix" rows="3"/>    
+      <instruction id="QMainYNAffixInstruction" show="swQMainYNCliticPrefixOrSuffix">In the lexicon, add the feature <feature>YNQ</feature> to these verbal affixes.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+      
+      <prompt id="QMainYNWordExamplesPrompt" show="swQMainYNWordYesOrSome"><br/>Escriba los indicadores o complementadores de pregunta de respuesta sí/no que son palabras independientes aquí:    </prompt>    
+      <textBox id="QMainYNWordExamples" dataItem="mainYNWordExample" show="swQMainYNWordYesOrSome" rows="3"/>    
+      
+      <checkboxGroup id="QMainYNPosTable" show="swQMainYNWordYesOrSome">
+         <prompt><br/>¿Dónde se presentan los indicadores o complementadores de pregunta de respuesta sí/no que se ecriben como palabras independientes con respecto al resto de la pregunta de respuesta sí/no? Seleccione todas las opciones que son correctas en su lengua</prompt>
+         <checkbox id="QMainYNPosBefore"  dataItem="mainYNWordBefore">Antes de la pregunta</checkbox>
+         <checkbox id="QMainYNPosAfter"  dataItem="mainYNWordAfter">Después de la pregunta</checkbox>
+         <checkbox id="QMainYNPosBoth"  dataItem="mainYNWordBoth">En ambos lados en la misma oración</checkbox>
+         <checkbox id="QMainYNPosOther"  dataItem="mainYNWordOther">En mi lengua, el indicador o complementador de pregunta de respuesta sí/no puede presentarse:   <textBox  id="QMainYNPosOtherContent" dataItem="mainYNWordOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="QMainYNPosNoCheckPrompt" show="swQMainYNWordYesOrSomeandNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos indicadores o complementadores de pregunta de respuesta sí/no que se escriben como palabras independientes con respecto al resto de la pregunta de respuesta sí/no en su lengua, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra’.</prompt>
+      
+      <instruction id="QMainYNWordYesInstruction" show="swQMainYNWordYesOrSome">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>makeC</feature> to the feature line to change the category for the syntax.  (If a particular entry can also be used as another syntactic category, make a separate lexical entry for each use.)  In either case, add the feature <feature>question</feature>.  If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+      <instruction id="QMainYNEitherRestrictedInstruction" show="swQMainYNWordYesOrSomeAndBoth">In the lexicon, mark those words which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
+      
+      <radioGroup id="QMainYNAuxPosTable" show="swQMainYNNoAux">
+         <groupName dataItem="mainYNAuxPos" default="unknown" position="yesHead">RQMainYNAuxPos</groupName>
+         <prompt><br/>¿Dónde se presenta el auxiliar con respecto al resto de la pregunta de respuesta sí/no?</prompt>
+         <radio id="QMainYNAuxPosBefore" dataValue="before">Antes de la pregunta</radio>
+         <radio id="QMainYNAuxPosAfter" dataValue="after">Después de la pregunta</radio>
+      </radioGroup>
+ <br/>       <br/>
+        <buttons>
+            <button id="QMainYNBack" value="Back" goto="QMain.xml"/>
+            <button id="QMainYNNext" value="Next" goto="QEmbYN.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swQMainYNYes">
+      <whenRadio button="QMainYNYes"/>
+   </showWhen>
+   <showWhen id="swQMainYNAuxAndNoAux">
+      <whenRadio button="QMainYNNoAux"/>
+      <and/>
+      <whenValue element="ip" attr="aux" value="no"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordNoOrSome">
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordSome">
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordNoOrSomeandNoCheck">
+      <openParen/>
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNCliticProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNCliticEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNCliticPrefix"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNCliticSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNCliticOther"/>
+   </showWhen>
+   <showWhen id="swQMainYNCliticProcliticOrEnclitic">
+      <openParen/>
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QMainYNCliticProclitic"/>
+      <or/>
+      <whenCheckbox button="QMainYNCliticEnclitic"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swQMainYNCliticProclitic">
+      <openParen/>
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/>
+      <whenCheckbox button="QMainYNCliticProclitic"/>
+   </showWhen>
+   <showWhen id="swQMainYNCliticEnclitic">
+      <openParen/>
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/>
+      <whenCheckbox button="QMainYNCliticEnclitic"/>
+   </showWhen>
+   <showWhen id="swQMainYNCliticPrefixOrSuffix">
+      <openParen/>
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QMainYNCliticPrefix"/>
+      <or/>
+      <whenCheckbox button="QMainYNCliticSuffix"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swQMainYNWordYesOrSome">
+      <whenRadio button="QMainYNWordYes"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordYesOrSomeandNoCheck">
+      <openParen/>
+      <whenRadio button="QMainYNWordYes"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNPosOther"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordYesOrSomeAndBoth">
+      <whenRadio button="QMainYNWordYes"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <and/>
+      <whenCheckbox button="QMainYNPosBefore"/>
+      <and/>
+      <whenCheckbox button="QMainYNPosAfter"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <and/>
+      <whenCheckbox button="QMainYNPosBoth"/>
+   </showWhen>
+   <showWhen id="swQMainYNNoAux">
+      <whenRadio button="QMainYNNoAux"/>
+   </showWhen>
 </page>

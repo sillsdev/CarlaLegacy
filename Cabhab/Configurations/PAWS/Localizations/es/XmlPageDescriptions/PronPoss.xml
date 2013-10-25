@@ -1,68 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="PronPoss" count="2/9">
-	<title level="2">Los pronombres - Los posesivos</title>
-	<introduction>Muchas lenguas también tienen los pronombres posesivos que pueden usar sólos, por ejemplo <example>suys</example>, <example>mío</example>, <example>suyos</example> o <example>tuyo</example>  en español.
-		Éstos son distintos de los que puedan presentarse en la posición del poseedor, tal como <example>su</example>, <example>mi</example>, <example>sus</example> o <example>tu</example>, que fueron ejemplificados con los pronombres personales en la página anterior.</introduction>
-	<form section="pron">
-		<radioGroup>
-			<groupName dataItem="poss" default="no">RPronPoss</groupName>
-			<prompt>¿Existen pronombres posesivos que se usan sólos como frase nominal en su lengua?</prompt>
-			<radio id="PronPossNo" dataValue="no">No</radio>
-			<radio id="PronPossYes" dataValue="yes">Sí</radio>
-		</radioGroup>
-		<prompt id="PronPossYesExamples" show="swPronPossYes">
-			<br/>Escriba sus pronombres posesivos aquí, con cada uno en una nueva línea, comenzando con la primera persona, siguiendo con segunda persona, y finalmente con tercera persona:
-		</prompt>
-		<textBox id="PronPossExample" dataItem="possExample" show="swPronPossYes"/>
-		<radioGroup id="PronPossAffix" show="swPronPossYes">
-			<groupName dataItem="possAffix" default="no">RPronPossAffix</groupName>
-			<prompt>
-				<br/>¿Son construidos los pronombres posesivos que se usan sólos agregando uno o más afijos a otros pronombres (o a otra palabra)?</prompt>
-			<radio id="PronPossAffixNo" dataValue="no">No, son palabras distintas</radio>
-			<radio id="PronPossAffixYes" dataValue="yes">Sí, uno o más afijos se unen  para hacer otro pronombre (u otra palabra) en un posesivo</radio>
-			<radio id="PronPossAffixBoth" dataValue="both">Sí, uno o más afijos se unen para hacer otro pronombre (u otra palabra) en un posesivo en algunos casos, pero algunas formas son palabras distintas</radio>
-		</radioGroup>
-		<instruction id="PronPossAffixNoInstruction" show="swPronPossAffixNo">In the lexicon, mark each possessive pronoun with the feature <feature>possessive</feature> and also all the relevant
-<ul>
-				<li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
-				<li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), </li>
-				<li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) and </li>
-				<li>animacy (<feature>animate</feature>, <feature>-animate</feature>, <feature>human</feature>, <feature>-human</feature>), features.</li>
-			</ul>
-		</instruction>
-		<instruction id="PronPossAffixYesInstruction" show="swPronPossAffixYes">In the lexicon, add the feature <feature>possessive</feature> to the relevant affixes.</instruction>
-		<instruction id="PronPossAffixBothInstruction" show="swPronPossAffixBoth">In the lexicon, add the feature <feature>possessive</feature> to the relevant affixes.  In addition, mark each stand alone possessive pronoun with the feature <feature>possessive</feature> and also all the relevant
-<ul>
-				<li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
-				<li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), </li>
-				<li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) and </li>
-				<li>animacy (<feature>animate</feature>, <feature>-animate</feature>, <feature>human</feature>, <feature>-human</feature>), features.</li>
-			</ul>
-		</instruction>
-		<br/>
-		<buttons>
-			<button id="PronPossBack" value="Back" goto="PronMain.xml"/>
-			<button id="PronPossNext" value="Next" goto="PronRefl.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swPronPossYes">
-		<whenRadio button="PronPossYes"/>
-	</showWhen>
-	<showWhen id="swPronPossAffixNo">
-		<whenRadio button="PronPossYes"/>
-		<and/>
-		<whenRadio button="PronPossAffixNo"/>
-	</showWhen>
-	<showWhen id="swPronPossAffixYes">
-		<whenRadio button="PronPossYes"/>
-		<and/>
-		<whenRadio button="PronPossAffixYes"/>
-	</showWhen>
-	<showWhen id="swPronPossAffixBoth">
-		<whenRadio button="PronPossYes"/>
-		<and/>
-		<whenRadio button="PronPossAffixBoth"/>
-	</showWhen>
+    <title level="2">Los pronombres - Los posesivos</title>
+   <introduction>Muchas lenguas también tienen los pronombres <technicalTermRef term="ttPossessives">posesivos</technicalTermRef> que pueden usar solos, por ejemplo <example>suyo</example>, <example>mío</example>, <example>suyos</example> o <example>tuyo</example>  en español. 
+      Estos son distintos de los que puedan presentarse en la posición del posesivo de un sustantivo, como <example>su</example>, <example>mi</example>, <example>sus</example> o <example>tu</example>, que fueron ejemplificados con los pronombres personales en la página anterior.<br/><br/>
+   En algunas lenguas, los pronombres posesivos se escriben como frases en vez de una sola palabra.</introduction>
+    <form section="pron">
+        <radioGroup>
+            <groupName dataItem="poss" default="no">RPronPoss</groupName>
+            <prompt>¿Existen pronombres posesivos que se usan solos como frase nominal en su lengua?</prompt>
+            <radio id="PronPossNo" dataValue="no">No</radio>
+            <radio id="PronPossYes" dataValue="yes">Sí</radio>
+        </radioGroup>
+       <prompt id="PronPossYesFirstSgPrompt" show="swPronPossYes">
+          Escriba los pronombres posesivos de la primera persona <span id="PronNumberSpan" show="swPronNumberYes">singular </span>aquí, con cada uno en una nueva línea. <br/>
+       </prompt>
+       <textBox id="PronPossFirstSgExample" dataItem="possFirstSgExample"  rows="2" show="swPronPossYes"/>
+       <prompt id="PronPossYesFirstPlPrompt" show="swPronPossYesAndPronNumberYesExclNo">
+          Escriba los pronombres posesivos de la primera persona plural aquí, con cada uno en una nueva línea. <br/>
+       </prompt>
+       <textBox id="PronPossFirstPlExample" dataItem="possFirstPlExample"  rows="2" show="swPronPossYesAndPronNumberYesExclNo"/>
+       <prompt id="PronPossFirstExclPrompt" show="swPronPossYesAndPronExclYes">
+          Escriba los pronombres posesivos de la primera persona <span id="PronNumberPlSpan" show="swPronNumberYes">plural </span>exclusiva aquí, con cada uno en una nueva línea. <br/>
+       </prompt>
+       <textBox id="PronPossFirstExclExample" dataItem="possFirstExclExample"  rows="2" show="swPronPossYesAndPronExclYes"/>
+       <prompt id="PronPossFirstInclPrompt" show="swPronPossYesAndPronExclYes">
+          Escriba los pronombres posesivos de la primera persona <span id="PronNumberPlSpan1" show="swPronNumberYes">plural </span>inclusiva aquí, con cada uno en una nueva línea. <br/>
+       </prompt>
+       <textBox id="PronPossFirstInclExample" dataItem="possFirstInclExample"  rows="2" show="swPronPossYesAndPronExclYes"/>
+       <prompt id="PronPossYesSecondSgPrompt" show="swPronPossYes">
+          Escriba los pronombres posesivos de la segunda persona <span id="PronNumberSpan1" show="swPronNumberYes">singular </span>aquí, con cada uno en una nueva línea. <br/>
+       </prompt>
+       <textBox id="PronPossSecondSgExample" dataItem="possSecondSgExample"  rows="2" show="swPronPossYes"/>
+       <prompt id="PronPossYesSecondPlPrompt" show="swPronPossYesAndPronNumberYes">
+          Escriba los pronombres posesivos de la segunda persona plural aquí, con cada uno en una nueva línea. <br/>
+       </prompt>
+       <textBox id="PronPossSecondPlExample" dataItem="possSecondPlExample"  rows="2" show="swPronPossYesAndPronNumberYes"/>
+       <prompt id="PronPossYesThirdSgPrompt" show="swPronPossYes">
+          Escriba los pronombres posesivos de la tercera persona <span id="PronNumberSpan2" show="swPronNumberYes">singular </span>aquí, con cada uno en una nueva línea. <br/>
+       </prompt>
+       <textBox id="PronPossThirdSgExample" dataItem="possThirdSgExample"  rows="2" show="swPronPossYes"/>
+       <prompt id="PronPossYesThirdPlPrompt" show="swPronPossYesAndPronNumberYes">
+          Escriba los pronombres posesivos de la tercera persona plural aquí, con cada uno en una nueva línea. <br/>
+       </prompt>
+       <textBox id="PronPossThirdPlExample" dataItem="possThirdPlExample"  rows="2" show="swPronPossYesAndPronNumberYes"/>    
+       <br/><br/>     
+       <checkboxGroup id="PronPossAffix" show="swPronPossYes">
+          <prompt>
+             <br/>¿Cómo son construidos los pronombres posesivos en su lengua?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+          <checkbox id="PronPossAffixNo" dataItem="possDistinct">Son un distinto sistema, no relacionado con los otros pronombres</checkbox>
+          <checkbox id="PronPossAffixYes" dataItem="possAffixPron">Uno o más afijos se unen para hacer otro pronombre en un posesivo</checkbox>
+          <checkbox id="PronPossAffixYesWord" dataItem="possAffixWord">Uno o más afijos se unen para hacer otra palabra (que no es un pronombre) en un posesivo</checkbox>
+          <checkbox id="PronPossAffixNoPhrase" dataItem="possPhrase">Se utilizan los pronombres como el posesivo de una palabra especial (que no es un pronombre) y esto se convierte en una frase posesiva que tiene el mismo significado y uso como un pronombre posesivo</checkbox>
+          <checkbox id="PronPossAffixOther" dataItem="possOther">En mi lengua, los posesivos son construidos con:<textBox  id="PronPossAffixOtherContent" dataItem="possOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <br/><br/>
+       <prompt id="PronPossAffixNoCheckPrompt" show="swPronPossYesNoCheck">ADVERTENCIA: Usted dijo anteriormente que su lengua tiene pronombres posesivos, pero no ha marcado ninguna de las opciones para decir cómo se forman. Por favor, seleccione una o más opciones según corresponda, a menos que su lengua no tiene ningún pronombre posesivo, en cuyo caso no debe tener ninguna forma en los campos y debe cambia la respuesta anterior a ‘No’.</prompt>
+       
+       <instruction id="PronPossAffixNoInstruction" show="swPronPossAffixNo">In the lexicon, mark each possessive pronoun with the feature <feature>possessive</feature> and also all the relevant 
+          <ul>
+             <li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
+             <li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), </li>
+             <li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) and </li>
+             <li>animacy (<feature>animate</feature>, <feature>-animate</feature>, <feature>human</feature>, <feature>-human</feature>), features.</li>
+          </ul>
+       </instruction>
+       <prompt id="PronPossAffixYesPrompt" show="swPronPossAffixYes"><br/>Escriba los afijos posesivos que cambia un otro pronombre en un pronombre posesivo aquí, con un guión para indicar de qué lado se une al pronombre:
+       </prompt>
+       <textBox id="PronPossAffixExamples" dataItem="pronPossAffixExample"  rows="2" show="swPronPossAffixYes"/> 
+       <instruction id="PronPossAffixYesInstruction" show="swPronPossAffixYes">In the lexicon, add the feature <feature>possessive</feature> to the possessive affixes.</instruction>
+       <prompt id="PronPossAffixYesWordPrompt" show="swPronPossAffixYesWord"><br/>Escriba la palabra con que se unen los afijos posesivos aquí:
+       </prompt>
+       <textBox id="PronPossAffixWordExamples" dataItem="pronPossAffixWordExample"  rows="2" show="swPronPossAffixYesWord"/> 
+       <prompt id="PronPossAffixYesWordPrompt2" show="swPronPossAffixYesWord"><br/>Escriba los afijos posesivos que cambia esta palabra en un pronombre posesivo aquí, con un guión para indicar de qué lado se une a la palabra:
+       </prompt>
+       <textBox id="PronPossAffixWordAffixesExamples" dataItem="pronPossAffixWordAffixesExample"  rows="2" show="swPronPossAffixYesWord"/> 
+       <instruction id="PronPossAffixYesWordInstruction" show="swPronPossAffixYesWord">In the lexicon, add the feature <feature>possessive</feature> to the possessive affixes.</instruction>
+       <prompt id="PronPossAffixNoPhrasePrompt" show="swPronPossAffixNoPhrase"><br/>Escriba la palabra especial que está poseída por los pronombres para poseedores para formar una frase posesiva que actúa igual que un pronombre posesivo aquí:
+       </prompt>
+       <textBox id="PronPossPhraseWordExamples" dataItem="pronPossPhraseWordExample"  rows="2" show="swPronPossAffixNoPhrase"/> 
+       <instruction id="PronPossPhraseWordInstruction" show="swPronPossAffixNoPhrase">In the lexicon, add the feature <feature>possessive</feature> to this special possessive word.</instruction>
+ <br/>       <br/>
+        <buttons>
+            <button id="PronPossBack" value="Back" goto="PronMain.xml"/>
+            <button id="PronPossNext" value="Next" goto="PronRefl.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swPronPossYes">
+      <whenRadio button="PronPossYes"/>
+   </showWhen>
+   <showWhen id="swPronPossAffixNo">
+      <whenRadio button="PronPossYes"/>
+      <and/>
+      <whenCheckbox button="PronPossAffixNo"/>
+   </showWhen>
+   <showWhen id="swPronPossAffixYes">
+      <whenRadio button="PronPossYes"/>
+      <and/>
+      <whenCheckbox button="PronPossAffixYes"/>
+      <or/>
+      <whenRadio button="PronPossYes"/>
+      <and/>
+      <whenCheckbox button="PronPossAffixYesWord"/>
+   </showWhen>
+   <showWhen id="swPronPossYesNoCheck">
+      <whenRadio button="PronPossYes"/>
+      <and/><not/>
+      <whenCheckbox button="PronPossAffixNo"/>
+      <and/><not/>
+      <whenCheckbox button="PronPossAffixYes"/>
+      <and/><not/>
+      <whenCheckbox button="PronPossAffixYesWord"/>
+      <and/><not/>
+      <whenCheckbox button="PronPossAffixNoPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="PronPossAffixOther"/>
+   </showWhen>
+   <showWhen id="swPronPossYesAndPronNumberYesExclNo">
+      <whenRadio button="PronPossYes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounNumber" value="yes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounExcl" value="no"/>
+   </showWhen>
+   <showWhen id="swPronPossYesAndPronExclYes">
+      <whenRadio button="PronPossYes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounExcl" value="yes"/>
+   </showWhen>
+   <showWhen id="swPronPossYesAndPronNumberYes">
+      <whenRadio button="PronPossYes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swPronNumberYes">
+      <whenValue element="pron" attr="pronounNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swPronPossAffixNoPhrase">
+      <whenRadio button="PronPossYes"/>
+      <and/>
+      <whenCheckbox button="PronPossAffixNoPhrase"/>
+   </showWhen>
+   <showWhen id="swPronPossAffixYesWord">
+      <whenRadio button="PronPossYes"/>
+      <and/>
+      <whenCheckbox button="PronPossAffixYesWord"/>
+   </showWhen>
+   
+   
+   &TechnicalTerms; 
+   
 </page>

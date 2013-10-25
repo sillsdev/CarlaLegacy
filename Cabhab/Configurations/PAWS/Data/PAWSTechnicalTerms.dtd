@@ -1,0 +1,32 @@
+<!-- a set of technical terms
+       The version attribute is a way to document the set of technicalTerms contained within this element. 
+       This is to facilitate reuse of sets of technical terms.
+       This is a subcomponent of PAWSHtmlMapper.dtd
+       -->
+<!ELEMENT technicalTerms (technicalTerm*)>
+<!ATTLIST technicalTerms
+    version CDATA #IMPLIED
+>
+<!-- a technicalTerm that might be used in discussions in a page description.
+   A given technicalTerm may be expressed in more than one language (e.g. English, Spanish, French, etc.).  Thus it has multiple termInLang elements.
+   The id attribute uniquely identifies this technicalTerm so it can be referred to by technicalTermRef elements
+-->
+<!ELEMENT technicalTerm (termInLang+)>
+<!ATTLIST technicalTerm
+    id ID #REQUIRED
+>
+<!-- a termInLang element has a term and its defintion, both of which are in the same language
+-->
+<!ELEMENT termInLang (term, termDefinition) >
+<!ATTLIST termInLang
+    lang CDATA #IMPLIED
+>
+<!ELEMENT term (#PCDATA)>
+<!ELEMENT termDefinition (%embedded;)*>
+<!-- a technicalTermRef element refers to a technicalTerm element
+-->
+<!ELEMENT technicalTermRef (#PCDATA) >
+<!ATTLIST technicalTermRef
+   term IDREF #REQUIRED
+   capitalize (no | yes) "no"
+>

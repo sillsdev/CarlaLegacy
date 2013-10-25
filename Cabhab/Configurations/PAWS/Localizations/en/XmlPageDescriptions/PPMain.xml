@@ -1,314 +1,351 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="PPMain" count="1/5">
-	<title>Pre/Post-Positional Phrases</title>
-	<introduction>This section considers the internal structure of PPs, which usually express location, accompaniment, goal, instrument, recipient, or agent in languages which do not mark case on nouns or noun  phrases.  Languages with case marking normally still have locative and temporal PPs.<br/><br/>
-	   First, we need to see what words can modify PPs.  There are normally a few degree words that can modify a whole PP, such as <example>just</example> and <example>right</example> in <example>just around the corner</example> and <example>right to the last second</example>.  Some languages have a set of locative adverbs meaning ‘right here’ and ‘right there’ that can modify PPs, so we will allow that option as well.  <br/><br/>
-	   Ordinal numbers and adjectives can also modify PPs, as in <example>next in line</example> and <example>first out the door</example>. <br/><br/>
-	   In addition, certain manner adverbs, such as <example>almost</example>, <example>mostly</example>, <example>squarely</example>, and <example>nearly</example>, can modify PPs, as in <example>almost in the hole</example>, <example>mostly up the tree</example>, <example>squarely on the table</example>, and <example>nearly upon the enemy</example>.</introduction>
-	<form section="pp">
-		<prompt>Key similar examples from your language here:</prompt>
-		<textBox id="PPMainExample" dataItem="example"/>
-		<br/>
-		<radioGroup>
-			<groupName dataItem="modifiers" default="no">RPPModifiers</groupName>
-			<prompt>Considering the data you keyed above, does your language have any modifiers which occur either before or after PPs as separate words?</prompt>
-			<radio id="PPModifiersNo" dataValue="no">No, neither degree words nor ordinals nor adverbials can modify PPs as separate words</radio>
-			<radio id="PPModifiersYes" dataValue="yes">Yes</radio>
-			<radioGroup id="PPModifiersTable" show="swPPModifiersYes">
-				<groupName dataItem="modifierType" default="degree">RPPModifiersType</groupName>
-				<prompt>What type(s) of modifiers can occur?</prompt>
-				<radio id="PPModifiersDegree" dataValue="degree">Only degree words</radio>
-				<radio id="PPModifiersOrdinal" dataValue="ordinal">Only ordinals</radio>
-				<radio id="PPModifiersManner" dataValue="manner">Only manner adverbials</radio>
-			   <radio id="PPModifiersLocative" dataValue="locative">Only locative adverbials</radio>
-				<radio id="PPModifiersDegreeAndOrdinal" dataValue="degreeAndOrdinal">Both degree words and ordinals, but no adverbials</radio>
-				<radio id="PPModifiersDegreeAndManner" dataValue="degreeAndManner">Both degree words and manner adverbials, but not ordinals or locative adverbials</radio>
-				<radio id="PPModifiersMannerAndOrdinal" dataValue="mannerAndOrdinal">Both manner adverbials and ordinals, but not degree words or locative adverbials</radio>
-			   <radio id="PPModifiersMannerAndLocative" dataValue="mannerAndLocative">Both manner and locative adverbials, but not degree words or ordinals</radio>
-			   <radio id="PPModifiersAll" dataValue="all">All three main types, degree words, manner adverbials and ordinals may occur</radio>
-			   <radio id="PPModifiersAll4" dataValue="all4">All four types, degree words, manner and locative adverbials and ordinals may occur</radio>
-			   <radioGroup id="PPModifierDegreePosTable" show="swPPModifiersYesDegree">
-					<groupName dataItem="degreePos" default="unknown" position="yesSpec">RPPModifiersDegreePos</groupName>
-					<prompt>Do the degree words come before or after the rest of the PP?</prompt>
-					<radio id="PPModifiersDegreePosBefore" dataValue="before">Before</radio>
-					<radio id="PPModifiersDegreePosAfter" dataValue="after">After</radio>
-					<radio id="PPModifiersDegreePosEitherSide" dataValue="either">Either side, but not on both sides at the same time</radio>
-					<radio id="PPModifiersDegreePosEitherOrBoth" dataValue="eitherOrBoth">Either side, or on both sides at the same time</radio>
-			 <radio id="PPModifiersDegreePosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before it, or on both sides at the same time</radio>
-			<radio id="PPModifiersDegreePosAfterOrBoth" checked="yes" dataValue="afterOrBoth">After it, or on both sides at the same time</radio>
-			<radio id="PPModifiersDegreePosBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
-				   <radioGroup id="PPModifiersDegreePosEitherOrBothRestrictedTable" show="swPPModifiersYesDegreeEitherOrBoth">
-						<groupName dataItem="degreeRestricted" default="unrestricted">RPPModifiersDegreePosRestricted</groupName>
-						<prompt>Can all the degree words appear on either side of the PP?</prompt>
-						<radio id="PPModifiersDegreePosEitherOrBothUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
-						<radio id="PPModifiersDegreePosEitherOrBothRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
-					</radioGroup>
-				</radioGroup>
-				<radioGroup id="PPModifiersOrdinalPosTable" show="swPPModifiersYesOrdinal">
-					<groupName dataItem="ordinalPos" default="unknown" position="yesSpec">RPPModifiersOrdinalPos</groupName>
-					<prompt>Do the ordinals come before or after the rest of the PP?</prompt>
-					<radio id="PPModifiersOrdinalPosBefore" dataValue="before">Before</radio>
-					<radio id="PPModifiersOrdinalPosAfter" dataValue="after">After</radio>
-					<radio id="PPModifiersOrdinalPosEitherSide" dataValue="either">Either side, but not on both sides at the same time</radio>
-					<radio id="PPModifiersOrdinalPosEitherOrBoth" dataValue="eitherOrBoth">Either side, or on both sides at the same time</radio>
-			 <radio id="PPModifiersOrdinalPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before it, or on both sides at the same time</radio>
-			<radio id="PPModifiersOrdinalPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">After it, or on both sides at the same time</radio>
-			<radio id="PPModifiersOrdinalPosBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
-					<radioGroup id="PPModifiersOrdinalPosEitherOrBothRestrictedTable" show="swPPModifiersYesOrdinalEitherOrBoth">
-						<groupName dataItem="ordinalRestricted" default="unrestricted">RPPModifiersOrdinalPosRestricted</groupName>
-						<prompt>Can all the ordinals appear on either side of the PP?</prompt>
-						<radio id="PPModifiersOrdinalPosEitherOrBothUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
-						<radio id="PPModifiersOrdinalPosEitherOrBothRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
-					</radioGroup>
-				</radioGroup>
-				<radioGroup id="PPModifiersPosTable" show="swPPModifiersYesManner">
-					<groupName dataItem="mannerPos" default="unknown" position="yesSpec">RPPModifiersMannerPos</groupName>
-					<prompt>Do the manner adverbials come before or after the rest of the PP?</prompt>
-					<radio id="PPModifiersMannerPosBefore" dataValue="before">Before</radio>
-					<radio id="PPModifiersMannerPosAfter" dataValue="after">After</radio>
-					<radio id="PPModifiersMannerPosEitherSide" dataValue="either">Either side, but not on both sides at the same time</radio>
-					<radio id="PPModifiersMannerPosEitherOrBoth" dataValue="eitherOrBoth">Either side, or on both sides at the same time</radio>
-			 <radio id="PPModifiersMannerPosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before it, or on both sides at the same time</radio>
-			<radio id="PPModifiersMannerPosAfterOrBoth" checked="yes" dataValue="afterOrBoth">After it, or on both sides at the same time</radio>
-			<radio id="PPModifiersMannerPosBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
-					<radioGroup id="PPModifiersMannerPosEitherOrBothRestrictedTable" show="swPPModifiersYesMannerEitherOrBoth">
-						<groupName dataItem="mannerRestricted" default="unrestricted">RPPModifiersMannerPosRestricted</groupName>
-						<prompt>Can all the manner adverbials appear on either side of the PP?</prompt>
-						<radio id="PPModifiersMannerPosEitherOrBothUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
-						<radio id="PPModifiersMannerPosEitherOrBothRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
-					</radioGroup>
-				</radioGroup>
-			   <radioGroup id="PPModifiersLocativePosTable" show="swPPModifiersYesLocative">
-				  <groupName dataItem="locativePos" default="unknown" position="yesSpec">RPPModifiersLocativePos</groupName>
-				  <prompt>Do the locative adverbials come before or after the rest of the PP?</prompt>
-				  <radio id="PPModifiersLocativePosBefore" dataValue="before">Before</radio>
-				  <radio id="PPModifiersLocativePosAfter" dataValue="after">After</radio>
-				  <radio id="PPModifiersLocativePosEitherSide" dataValue="either">Either side, but not on both sides at the same time</radio>
-				  <radio id="PPModifiersLocativePosEitherOrBoth" dataValue="eitherOrBoth">Either side, or on both sides at the same time</radio>
-				  <radio id="PPModifiersLocativePosBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before it, or on both sides at the same time</radio>
-				  <radio id="PPModifiersLocativePosAfterOrBoth" checked="yes" dataValue="afterOrBoth">After it, or on both sides at the same time</radio>
-				  <radio id="PPModifiersLocativePosBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
-				  <radioGroup id="PPModifiersLocativePosEitherOrBothRestrictedTable" show="swPPModifiersYesLocativeEitherOrBoth">
-					 <groupName dataItem="locativeRestricted" default="unrestricted">RPPModifiersLocativePosRestricted</groupName>
-					 <prompt>Can all the locative adverbials appear on either side of the PP?</prompt>
-					 <radio id="PPModifiersLocativePosEitherOrBothUnrestricted" dataValue="unrestricted">Yes, there is no restriction</radio>
-					 <radio id="PPModifiersLocativePosEitherOrBothRestricted" dataValue="restricted">No, there are separate sets for each side</radio>
-				  </radioGroup>
-			   </radioGroup>
-			</radioGroup>
-		</radioGroup>
-		<instruction id="PPModifiersDegreeYesInstruction" show="swPPModifiersYesDegree">In the lexicon, mark the degree words with the features <feature>makeDeg modifies_PP</feature>.    (If any of these degree words are the same as those which can modify another category, you can simply add the additional feature <feature>modifies_PP</feature> to the same lexical entry.)</instruction>
-		<instruction id="PPModifiersDegreeEitherSideInstruction" show="swPPModifiersYesDegreeRestricted">In the lexicon, mark those degree words which can only occur before the PP with the feature <feature>PP-initial</feature> and those which can only occur after the PP with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
-		<instruction id="PPModifiersOrdinalEitherSideInstruction" show="swPPModifiersYesOrdinalRestricted">In the lexicon, mark those ordinals which can only occur before the PP with the feature <feature>PP-initial</feature> and those which can only occur after the PP with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
-		<instruction id="PPModifiersMannerEitherSideInstruction" show="swPPModifiersYesMannerRestricted">In the lexicon, mark those manner adverbials which can only occur before the PP with the feature <feature>PP-initial</feature> and those which can only occur after the PP with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
-	   <instruction id="PPModifiersLocativeEitherSideInstruction" show="swPPModifiersYesLocativeRestricted">In the lexicon, mark those locative adverbials which can only occur before the PP with the feature <feature>PP-initial</feature> and those which can only occur after the PP with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
-	   <br/>
-		<buttons>
-			<button id="PPMainBack" value="Back" goto="Contents.htm"/>
-			<button id="PPMainNext" value="Next" goto="PPComps.xml"/>
-		</buttons>
-	</form>
-	<showWhen id="swPPModifiersYes">
-		<whenRadio button="PPModifiersYes"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesDegree">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersDegree"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-	   <or/>
-	   <whenRadio button="PPModifiersAll4"/>
-	   <closeParen/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesDegreeEitherOrBoth">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersDegree"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-	   <or/>
-	   <whenRadio button="PPModifiersAll4"/>
-	   <closeParen/>
-		<and/> <not/>         <whenRadio button="PPModifiersDegreePosBefore"/>
-	  <and/> <not/>         <whenRadio button="PPModifiersDegreePosAfter"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesDegreeRestricted">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersDegree"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-	   <or/>
-	   <whenRadio button="PPModifiersAll4"/>
-	   <closeParen/>
-		<and/>
-		 <not/>         <whenRadio button="PPModifiersDegreePosBefore"/>
-	  <and/> <not/>         <whenRadio button="PPModifiersDegreePosAfter"/>
-		<and/>
-		<whenRadio button="PPModifiersDegreePosEitherOrBothRestricted"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesOrdinal">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal "/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-	   <or/>
-	   <whenRadio button="PPModifiersAll4"/>
-	   <closeParen/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesOrdinalEitherOrBoth">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal "/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-	   <or/>
-	   <whenRadio button="PPModifiersAll4"/>
-	   <closeParen/>
-			 <and/> <not/>         <whenRadio button="PPModifiersOrdinalPosBefore"/>
-	  <and/> <not/>         <whenRadio button="PPModifiersOrdinalPosAfter"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesOrdinalRestricted">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal "/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndOrdinal"/>
-		<or/>
-		<whenRadio button="PPModifiersAll"/>
-	   <or/>
-	   <whenRadio button="PPModifiersAll4"/>
-	   <closeParen/>
-		<and/> <not/>         <whenRadio button="PPModifiersOrdinalPosBefore"/>
-	  <and/> <not/>         <whenRadio button="PPModifiersOrdinalPosAfter"/>
-		<and/>
-		<whenRadio button="PPModifiersOrdinalPosEitherOrBothRestricted"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesManner">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal"/>
-	   <or/>
-	   <whenRadio button="PPModifiersMannerAndLocative"/>
-	   <or/>
-		<whenRadio button="PPModifiersAll"/>
-	   <or/>
-	   <whenRadio button="PPModifiersAll4"/>
-	   <closeParen/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesMannerEitherOrBoth">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal"/>
-	   <or/>
-	   <whenRadio button="PPModifiersMannerAndLocative"/>
-	   <or/>
-		<whenRadio button="PPModifiersAll"/>
-	   <or/>
-	   <whenRadio button="PPModifiersAll4"/>
-	   <closeParen/>
-		<and/> <not/>         <whenRadio button="PPModifiersMannerPosBefore"/>
-	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosAfter"/>
-	</showWhen>
-	<showWhen id="swPPModifiersYesMannerRestricted">
-		<whenRadio button="PPModifiersYes"/>
-		<and/>
-		<openParen/>
-		<whenRadio button="PPModifiersManner"/>
-		<or/>
-		<whenRadio button="PPModifiersDegreeAndManner"/>
-		<or/>
-		<whenRadio button="PPModifiersMannerAndOrdinal"/>
-	   <or/>
-	   <whenRadio button="PPModifiersMannerAndLocative"/>
-	   <or/>
-		<whenRadio button="PPModifiersAll"/>
-	   <or/>
-	   <whenRadio button="PPModifiersAll4"/>
-	   <closeParen/>
-	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosBefore"/>
-	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosAfter"/>
-		<and/>
-		<whenRadio button="PPModifiersMannerPosEitherOrBothRestricted"/>
-	</showWhen>
+    <title>Adpositional Phrases</title>
+   <introduction>This section considers the internal structure of <technicalTermRef term="ttAdpositionalPhrases"/> (PPs), which usually express location, accompaniment, goal, instrument, recipient, or agent in languages which do not mark case on nouns or noun  phrases.  Languages with case marking on nominals normally still have locative and temporal PPs.  These will be exemplified on the next page.<br/><br/>
+       We will begin by determining whether your language has prepositions or postpositions and whether they are independent words or clitics.  
+    <br/><br/>
+       Consider locative PPs in your language, as in <example>at [Bill’s house]</example> and <example>under [the giant Sycamore tree]</example>.  English has prepositions which are independent words and come before the nominal phrases complement.  In a language with postpositions, the nominal phrase complement comes first.</introduction>  
+   <form section="pp">
+      <prompt><br/>Key some locative PP examples from your language here (without brackets but each on a separate line):</prompt>
+      <textBox id="PPCompsNominalExample" dataItem="ppExample"/>
+      <radioGroup>
+         <groupName dataItem="pPos" default="unknown" position="yesHead">RPPPosition</groupName>
+         <prompt>Does your language have prepositions or postpositions?</prompt>
+         <radio id="PPPosPrep" dataValue="before">Prepositions only</radio>
+         <radio id="PPPosPost" dataValue="after">Postpositions only</radio>
+         <radio id="PPPosBoth" dataValue="both">Some of each type</radio>
+      </radioGroup>
+      <radioGroup>
+         <groupName dataItem="pType" default="word">RPPType</groupName>
+         <prompt><br/>Are the <span id="PPPrepSpan" show="swPPPosPrep">prepositions</span><span id="PPPostSpan" show="swPPPosPost">postpositions</span><span id="PPBothSpan" show="swPPPosBoth">prepositions and postpositions</span> written as independent words?</prompt>
+         <radio id="PPTypeWord" dataValue="word">Yes, they are all independent words</radio>
+         <radio id="PPTypeClitic" dataValue="clitic">No, they are all clitics written attached to another word</radio>
+         <radio id="PPTypeBoth" dataValue="both">Some are written as independent words, but some are clitics written attached to another word</radio>
+         <radioGroup id="PPTypeCliticAttachesTable" show="swPPTypeCliticOrBoth">
+            <groupName dataItem="attaches" default="edge">RPPTypeCliticAttaches</groupName>
+            <prompt><br/>Where do the clitics attach to the nominal phrase?</prompt>
+            <radio id="PPTypeCliticAttachesEdge" dataValue="edge">At the edge of the phrase</radio>
+            <radio id="PPTypeCliticAttachesHead" dataValue="head">To the head noun within the phrase</radio>
+         </radioGroup>
+      </radioGroup>
+      <instruction id="PPPosBothBothEdgeInstruction" show="swPPPosBothBothEdge">In the lexicon, mark the prepositions which are stand alone words with the feature <feature>PP-initial</feature> and the postpositions which are stand alone words with the feature <feature>PP-final</feature>.  Mark the clitic prepositions with the feature <feature>P_prefix</feature> and the clitic postpositions with the feature <feature>P_suffix</feature>.</instruction>
+      <instruction id="PPPosBothBothHeadInstruction" show="swPPPosBothBothHead">In the lexicon, mark the prepositions which are stand alone words with the feature <feature>PP-initial</feature> and the postpositions which are stand alone words with the feature <feature>PP-final</feature>.  Mark the clitic prepositions with the feature <feature>P_prefix_N</feature> and the clitic postpositions with the feature <feature>P_suffix_N</feature>.</instruction>
+      <instruction id="PPPosBothWordInstruction" show="swPPPosBothWord">In the lexicon, mark the prepositions with the feature <feature>PP-initial</feature> and the postpositions with the feature <feature>PP-final</feature>.</instruction>
+      <instruction id="PPPosBothCliticEdgeInstruction" show="swPPPosBothCliticEdge">In the lexicon, mark the prepositions with the feature <feature>P_prefix</feature> and the postpositions with the feature <feature>P_suffix</feature>.</instruction>
+      <instruction id="PPTypeCliticPrepEdgeInstruction" show="swPPTypeCliticOrBothPrepEdge">In the lexicon, mark the clitic prepositions with the feature <feature>P_prefix</feature>.</instruction>
+      <instruction id="PPTypeCliticPostEdgeInstruction" show="swPPTypeCliticOrBothPostEdge">In the lexicon, mark the clitic postpositions with the feature <feature>P_suffix</feature>.</instruction>
+      <instruction id="PPTypeCliticHeadInstruction" show="swPPTypeCliticOrBothHead">In the lexicon, mark the clitics with the feature <feature>PP</feature>.</instruction>
+      
+      <br/><br/>
+      <introduction>Next, we need to see what words can modify whole PPs.  There are normally a few degree words that can modify a whole PP, such as <example>just</example> and <example>right</example> in <example>just around the corner</example> and <example>right to the last second</example>.  Some languages have a set of locative adverbs meaning ‘right here’ and ‘right there’ that can modify PPs, so we will allow that option as well.  <br/><br/>
+       Ordinal numbers and adjectives can also modify PPs, as in <example>next in line</example> and <example>first out the door</example>. <br/><br/> 
+       In addition, certain manner adverbs, such as <example>almost</example>, <example>mostly</example>, <example>squarely</example>, and <example>nearly</example>, can modify PPs, as in <example>almost in the hole</example>, <example>mostly up the tree</example>, <example>squarely on the table</example>, and <example>nearly upon the enemy</example>.</introduction>
+        <radioGroup>
+            <groupName dataItem="modifiers" default="no">RPPModifiers</groupName>
+            <prompt><br/>Does your language have any modifiers which occur either before or after PPs as independent words?</prompt>
+            <radio id="PPModifiersNo" dataValue="no">No, neither degree words nor ordinals nor adverbials can modify PPs as independent words</radio>
+            <radio id="PPModifiersYes" dataValue="yes">Yes, the following modifiers may occur</radio>
+           <checkboxGroup id="PPModifiersType" show="swPPModifiersYes">
+              <prompt>Check all options that are correct for your language</prompt>
+              <checkbox id="PPModifiersDegree" dataItem="ppModifierDegree">Degree words</checkbox>
+              <checkbox id="PPModifiersOrdinal" dataItem="ppModifierOrdinal">Ordinals</checkbox>
+              <checkbox id="PPModifiersManner" dataItem="ppModifierManner">Manner adverbials</checkbox>
+              <checkbox id="PPModifiersLocative" dataItem="ppModifierLocative">Locative Adverbials</checkbox>
+              <checkbox id="PPModifiersOther" dataItem="ppModifierOther">In my language, these other modifiers may be used: <textBox  id="PPModifiersOtherContent" dataItem="ppModifierOther" rows="2"/></checkbox>
+           </checkboxGroup>
+           </radioGroup>
+      <prompt id="PPModifiersNoCheckPrompt" show="swPPModifiersYesandNoCheck">WARNING: You need to check at least one box to describe which modifiers may occur in your language, or change the answer above to ‘No’.</prompt>
+ <br/><br/>
+      <prompt id="PPModifiersDegreePrompt" show="swPPModifiersYesDegree">Key the degree words which can modify a whole PP here:</prompt>
+      <textBox id="PPDegreeModifiersExample" dataItem="degree" rows="3" show="swPPModifiersYesDegree"/>
+      <prompt id="PPModifiersDegreePPPrompt" show="swPPModifiersYesDegree">Now key examples of PPs with the degree words modifying them here:</prompt>
+      <textBox id="PPWithDegreeModifiersExample" dataItem="degreeWithPP" rows="3" show="swPPModifiersYesDegree"/>
+
+      <checkboxGroup id="PPDegreePos" show="swPPModifiersYesDegree">
+         <prompt><br/>Looking at the data in the box above, where do these degree words occur with respect to the rest of the PP? Check all options that are correct for your language</prompt>
+         <checkbox id="PPDegreePosBefore"  dataItem="ppDegreePosBefore">Before it</checkbox>
+         <checkbox id="PPDegreePosAfter"  dataItem="ppDegreePosAfter">After it</checkbox>
+         <checkbox id="PPDegreePosBoth"  dataItem="ppDegreePosBoth">On both sides at the same time</checkbox>
+         <checkbox id="PPDegreePosOther"  dataItem="ppDegreePosOther">In my language, they may occur in the following position: <textBox  id="PPDegreePosOtherContent" dataItem="ppDegreePosOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="PPDegreeWordNoCheckPrompt" show="swPPDegreeYesandNoCheck">WARNING: You need to check at least one box to describe where these degree word modifiers occur with respect to the rest of the PP in your language, or change the answer above to a different type of modifier.  In that case, you should not have any examples of PPs with degree word modifiers in the text box above.</prompt>
+      <instruction id="PPModifiersDegreeYesInstruction" show="swPPModifiersYesDegree">In the lexicon, mark the degree words with the features <feature>makeDeg modifies_PP</feature>.    (If any of these degree words are the same as those which can modify another category, you can simply add the additional feature <feature>modifies_PP</feature> to the same lexical entry.)</instruction>
+      <instruction id="PPDegreeEitherRestrictedInstruction" show="swPPDegreeEitherorBoth">In the lexicon, mark those degree words which can only occur initially with the feature <feature>PP-initial</feature> and those which can only occur finally with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+      <br/><br/>
+      <prompt id="PPModifiersOrdinalPrompt" show="swPPModifiersYesOrdinal">Key the ordinals which can modify a whole PP here:</prompt>
+      <textBox id="PPOrdinalModifiersExample" dataItem="ordinal" rows="3" show="swPPModifiersYesOrdinal"/>
+      <prompt id="PPModifiersOrdinalPPPrompt" show="swPPModifiersYesOrdinal">Now key examples of PPs with the ordinals modifying them here:</prompt>
+      <textBox id="PPWithOrdinalModifiersExample" dataItem="ordinalWithPP" rows="3" show="swPPModifiersYesOrdinal"/>
+ 
+      <checkboxGroup id="PPOrdinalPos" show="swPPModifiersYesOrdinal">
+         <prompt><br/>Looking at the data in the box above, where do these ordinals occur with respect to the rest of the PP? Check all options that are correct for your language</prompt>
+         <checkbox id="PPOrdinalPosBefore"  dataItem="ppOrdinalPosBefore">Before it</checkbox>
+         <checkbox id="PPOrdinalPosAfter"  dataItem="ppOrdinalPosAfter">After it</checkbox>
+         <checkbox id="PPOrdinalPosBoth"  dataItem="ppOrdinalPosBoth">On both sides at the same time</checkbox>
+         <checkbox id="PPOrdinalPosOther"  dataItem="ppOrdinalPosOther">In my language, they may occur in the following position: <textBox  id="PPOrdinalPosOtherContent" dataItem="ppOrdinalPosOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="PPOrdinalNoCheckPrompt" show="swPPOrdinalYesandNoCheck">WARNING: You need to check at least one box to describe where these ordinal modifiers occur with respect to the rest of the PP in your language, or change the answer above to a different type of modifier.  In that case, you should not have any examples of PPs with ordinal modifiers in the text box above.</prompt>
+      <instruction id="PPModifiersOrdinalYesInstruction" show="swPPModifiersYesOrdinal">In the lexicon, mark the ordinals with the feature <feature>modifies_PP</feature>.</instruction>
+      <instruction id="PPOrdinalEitherRestrictedInstruction" show="swPPOrdinalEitherorBoth">In the lexicon, mark those ordinals which can only occur initially with the feature <feature>PP-initial</feature> and those which can only occur finally with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+      <br/><br/>
+      <prompt id="PPModifiersMannerPrompt" show="swPPModifiersYesManner">Key the manner adverbials which can modify a whole PP here:</prompt>
+      <textBox id="PPMannerModifiersExample" dataItem="manner" rows="3" show="swPPModifiersYesManner"/>
+      <prompt id="PPModifiersMannerPPPrompt" show="swPPModifiersYesManner">Now key examples of PPs with manner adverbials modifying them here:</prompt>
+      <textBox id="PPWithMannerModifiersExample" dataItem="mannerWithPP" rows="3" show="swPPModifiersYesManner"/>
+
+      <checkboxGroup id="PPMannerPos" show="swPPModifiersYesManner">
+         <prompt><br/>Looking at the data in the box above, where do these manner adverbials occur with respect to the rest of the PP? Check all options that are correct for your language</prompt>
+         <checkbox id="PPMannerPosBefore"  dataItem="ppMannerPosBefore">Before it</checkbox>
+         <checkbox id="PPMannerPosAfter"  dataItem="ppMannerPosAfter">After it</checkbox>
+         <checkbox id="PPMannerPosBoth"  dataItem="ppMannerPosBoth">On both sides at the same time</checkbox>
+         <checkbox id="PPMannerPosOther"  dataItem="ppMannerPosOther">In my language, they may occur in the following position: <textBox  id="PPMannerPosOtherContent" dataItem="ppMannerPosOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="PPMannerNoCheckPrompt" show="swPPMannerYesandNoCheck">WARNING: You need to check at least one box to describe where these manner adverbial modifiers occur with respect to the rest of the PP in your language, or change the answer above to a different type of modifier.  In that case, you should not have any examples of PPs with manner adverbial modifiers in the text box above.</prompt>
+      <instruction id="PPModifiersMannerYesInstruction" show="swPPModifiersYesManner">In the lexicon, mark the manner adverbials with the feature <feature>modifies_PP</feature>.</instruction>
+      <instruction id="PPMannerEitherRestrictedInstruction" show="swPPMannerEitherorBoth">In the lexicon, mark those manner adverbials which can only occur initially with the feature <feature>PP-initial</feature> and those which can only occur finally with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+      <br/><br/>
+      <prompt id="PPModifiersLocativePrompt" show="swPPModifiersYesLocative">Key the locative adverbials which can modify a whole PP here:</prompt>
+      <textBox id="PPLocativeModifiersExample" dataItem="locative" rows="3" show="swPPModifiersYesLocative"/>
+      <prompt id="PPModifiersLocativePPPrompt" show="swPPModifiersYesLocative">Now key examples of PPs with the locative adverbials modifying them here:</prompt>
+      <textBox id="PPWithLocativeModifiersExample" dataItem="locativeWithPP" rows="3" show="swPPModifiersYesLocative"/>
+
+      <checkboxGroup id="PPLocativePos" show="swPPModifiersYesLocative">
+         <prompt><br/>Looking at the data in the box above, where do these locative adverbials occur with respect to the rest of the PP? Check all options that are correct for your language</prompt>
+         <checkbox id="PPLocativePosBefore"  dataItem="ppLocativePosBefore">Before it</checkbox>
+         <checkbox id="PPLocativePosAfter"  dataItem="ppLocativePosAfter">After it</checkbox>
+         <checkbox id="PPLocativePosBoth"  dataItem="ppLocativePosBoth">On both sides at the same time</checkbox>
+         <checkbox id="PPLocativePosOther"  dataItem="ppLocativePosOther">In my language, they may occur in the following position: <textBox  id="PPLocativePosOtherContent" dataItem="ppLocativePosOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="PPLocativeNoCheckPrompt" show="swPPLocativeYesandNoCheck">WARNING: You need to check at least one box to describe where these locative adverbial modifiers occur with respect to the rest of the PP in your language, or change the answer above to a different type of modifier.  In that case, you should not have any examples of PPs with locative adverbial modifiers in the text box above.</prompt>
+      <instruction id="PPModifiersLocativeYesInstruction" show="swPPModifiersYesLocative">In the lexicon, mark the locative adverbials with the feature <feature>modifies_PP</feature>.</instruction>
+      <instruction id="PPLocativeEitherRestrictedInstruction" show="swPPLocativeEitherorBoth">In the lexicon, mark those locative adverbials which can only occur initially with the feature <feature>PP-initial</feature> and those which can only occur finally with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+      
+      <br/><br/>
+      <prompt id="PPModifiersOtherPrompt" show="swPPModifiersYesOther">Key the other elements which can modify a whole PP in your language here:</prompt>
+      <textBox id="PPOtherModifiersExample" dataItem="otherMod" rows="3" show="swPPModifiersYesOther"/>
+      <prompt id="PPModifiersOtherPPPrompt" show="swPPModifiersYesOther">Now key examples of PPs with these other elements modifying them here:</prompt>
+      <textBox id="PPWithOtherModifiersExample" dataItem="otherModWithPP" rows="3" show="swPPModifiersYesOther"/>
+      <br/>
+      <br/>
+        <buttons>
+            <button id="PPMainBack" value="Back" goto="Contents.htm"/>
+            <button id="PPMainNext" value="Next" goto="PPComps.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swPPPosPrep">
+      <whenRadio button="PPPosPrep"/>
+   </showWhen>
+   <showWhen id="swPPPosPost">
+      <whenRadio button="PPPosPost"/>
+   </showWhen>
+   <showWhen id="swPPPosBoth">
+      <whenRadio button="PPPosBoth"/>
+   </showWhen>
+   <showWhen id="swPPTypeCliticOrBoth">
+      <whenRadio button="PPTypeClitic"/>
+      <or/>
+      <whenRadio button="PPTypeBoth"/>
+   </showWhen>
+   <showWhen id="swPPPosBothBothEdge">
+      <whenRadio button="PPPosBoth"/>
+      <and/>
+      <whenRadio button="PPTypeBoth"/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesEdge"/>
+   </showWhen>
+   <showWhen id="swPPPosBothBothHead">
+      <whenRadio button="PPPosBoth"/>
+      <and/>
+      <whenRadio button="PPTypeBoth"/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesHead"/>
+   </showWhen>
+   <showWhen id="swPPPosBothWord">
+      <whenRadio button="PPPosBoth"/>
+      <and/>
+      <whenRadio button="PPTypeWord"/>
+   </showWhen>
+   <showWhen id="swPPPosBothCliticEdge">
+      <whenRadio button="PPPosBoth"/>
+      <and/>
+      <whenRadio button="PPTypeClitic"/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesEdge"/>
+   </showWhen>
+   <showWhen id="swPPTypeCliticOrBothPrepEdge">
+      <whenRadio button="PPPosPrep"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="PPTypeClitic"/>
+      <or/>
+      <whenRadio button="PPTypeBoth"/>
+      <closeParen/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesEdge"/>
+   </showWhen>
+   <showWhen id="swPPTypeCliticOrBothPostEdge">
+      <whenRadio button="PPPosPost"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="PPTypeClitic"/>
+      <or/>
+      <whenRadio button="PPTypeBoth"/>
+      <closeParen/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesEdge"/>
+   </showWhen>
+   <showWhen id="swPPTypeCliticOrBothHead">
+      <openParen/>
+      <whenRadio button="PPTypeClitic"/>
+      <or/>
+      <whenRadio button="PPTypeBoth"/>
+      <closeParen/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesHead"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYes">
+        <whenRadio button="PPModifiersYes"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesandNoCheck">
+      <whenRadio button="PPModifiersYes"/>
+      <and/><not/>
+      <whenCheckbox button="PPModifiersDegree"/>
+      <and/><not/>
+      <whenCheckbox button="PPModifiersOrdinal"/>
+      <and/><not/>
+      <whenCheckbox button="PPModifiersManner"/>
+      <and/><not/>
+      <whenCheckbox button="PPModifiersLocative"/>
+      <and/><not/>
+      <whenCheckbox button="PPModifiersOther"/>
+   </showWhen>
+   
+    <showWhen id="swPPModifiersYesDegree">
+        <whenRadio button="PPModifiersYes"/>
+        <and/>
+        <whenCheckbox button="PPModifiersDegree"/>
+    </showWhen> 
+   <showWhen id="swPPDegreeYesandNoCheck">
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersDegree"/>
+      <and/><not/>
+      <whenCheckbox button="PPDegreePosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PPDegreePosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PPDegreePosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PPDegreePosOther"/>
+   </showWhen>
+   <showWhen id="swPPDegreeEitherorBoth">
+      <whenRadio button="PPModifiersDegree"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="PPDegreePosBefore"/>
+      <and/>
+      <whenCheckbox button="PPDegreePosAfter"/>
+      <or/>
+      <whenCheckbox button="PPDegreePosBoth"/>
+      <closeParen/>
+   </showWhen>  
+   
+    <showWhen id="swPPModifiersYesOrdinal">
+        <whenRadio button="PPModifiersYes"/>
+        <and/>
+        <whenCheckbox button="PPModifiersOrdinal"/>
+    </showWhen>
+   <showWhen id="swPPOrdinalYesandNoCheck">
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersOrdinal"/>
+      <and/><not/>
+      <whenCheckbox button="PPOrdinalPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PPOrdinalPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PPOrdinalPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PPOrdinalPosOther"/>
+   </showWhen>
+   <showWhen id="swPPOrdinalEitherorBoth">
+      <whenRadio button="PPModifiersOrdinal"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="PPOrdinalPosBefore"/>
+      <and/>
+      <whenCheckbox button="PPOrdinalPosAfter"/>
+      <or/>
+      <whenCheckbox button="PPOrdinalPosBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesManner">
+        <whenRadio button="PPModifiersYes"/>
+        <and/>
+        <whenCheckbox button="PPModifiersManner"/>
+    </showWhen>
+   <showWhen id="swPPMannerYesandNoCheck">
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersManner"/>
+   <and/><not/>
+      <whenCheckbox button="PPMannerPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PPMannerPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PPMannerPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PPMannerPosOther"/>
+   </showWhen>
+   <showWhen id="swPPMannerEitherorBoth">
+      <whenRadio button="PPModifiersManner"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="PPMannerPosBefore"/>
+      <and/>
+      <whenCheckbox button="PPMannerPosAfter"/>
+      <or/>
+      <whenCheckbox button="PPMannerPosBoth"/>
+      <closeParen/>
+   </showWhen>
    <showWhen id="swPPModifiersYesLocative">
-	  <whenRadio button="PPModifiersYes"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="PPModifiersLocative"/>
-	  <or/>
-	  <whenRadio button="PPModifiersMannerAndLocative"/>
-	  <or/>
-	  <whenRadio button="PPModifiersAll4"/>
-	  <closeParen/>
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersLocative"/>
    </showWhen>
-   <showWhen id="swPPModifiersYesLocativeEitherOrBoth">
-	  <whenRadio button="PPModifiersYes"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="PPModifiersLocative"/>
-	  <or/>
-	  <whenRadio button="PPModifiersMannerAndLocative"/>
-	  <or/>
-	  <whenRadio button="PPModifiersAll4"/>
-	  <closeParen/>
-	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosBefore"/>
-	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosAfter"/>
+   <showWhen id="swPPLocativeYesandNoCheck">
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersLocative"/>
+      <and/><not/>
+      <whenCheckbox button="PPLocativePosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PPLocativePosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PPLocativePosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PPLocativePosOther"/>
    </showWhen>
-   <showWhen id="swPPModifiersYesLocativeRestricted">
-	  <whenRadio button="PPModifiersYes"/>
-	  <and/>
-	  <openParen/>
-	  <whenRadio button="PPModifiersLocative"/>
-	  <or/>
-	  <whenRadio button="PPModifiersMannerAndLocative"/>
-	  <or/>
-	  <whenRadio button="PPModifiersAll4"/>
-	  <closeParen/>
-	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosBefore"/>
-	  <and/> <not/>         <whenRadio button="PPModifiersMannerPosAfter"/>
-	  <and/>
-	  <whenRadio button="PPModifiersLocativePosEitherOrBothRestricted"/>   </showWhen>
+   <showWhen id="swPPLocativeEitherorBoth">
+      <whenRadio button="PPModifiersLocative"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="PPLocativePosBefore"/>
+      <and/>
+      <whenCheckbox button="PPLocativePosAfter"/>
+      <or/>
+      <whenCheckbox button="PPLocativePosBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesOther">
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersOther"/>
+   </showWhen>  
+
+&TechnicalTerms; 
 </page>

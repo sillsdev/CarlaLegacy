@@ -1,76 +1,231 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
-<page id="QPCardinal" count="4/6">
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="QPCardinal" count="4/7">
 	<title level="2">Quantifiers and QP - Numbers</title>
 	<introduction>Now consider numbers.  They cannot be modified by the
 degree words like the quantifiers can, though they occur in the same
-position.  Note, however, that cardinal numbers can be modified by
-ordinal numbers and by <example>next</example> and <example>last</example>, as in <example>the first twenty boys</example> or
-<example>the next one hundred years</example>.  Ordinal numbers and <example>next</example> and <example>last</example> can also modify nouns directly, as in <example>the third girl</example> and <example>the last boy</example>.
+position.  Note, however, that <technicalTermRef term="ttCardinal"/> numbers can be modified by
+<technicalTermRef term="ttOrdinal"/> numbers and by <example>next</example> and <example>last</example>, as in <example>the first twenty boys</example> or
+<example>the next one hundred years</example>.  Ordinal numbers and <example>next</example> and <example>last</example> can also modify nouns directly, as in <example>the third girl</example> and <example>the last boy</example>. 
 </introduction>
 	<form section="qp">
 	   <radioGroup id="QPNumberClassifierAgrTable" show="swOTClassifierAgr">
-		  <groupName dataItem="numberClassifier" default="no">RQPNumberClassifierAgr</groupName>
-		  <prompt>You said that your language has classifiers which mark concord agreement throughout the nominal phrases.  Do numbers have classifiers attached to them?</prompt>
-		  <radio id="QPNumberClassifierAgrNo" dataValue="no">No, these elements are not marked with classifiers</radio>
-		  <radio id="QPNumberClassifierAgrYes" dataValue="yes">Yes, these elements are marked with classifiers as part of the concord agreement throughout the nominal phrase</radio>
+	      <groupName dataItem="numberClassifier" default="no">RQPNumberClassifierAgr</groupName>
+	      <prompt>You said that your language has classifiers which mark concord agreement throughout the nominal phrases.  Do numbers have classifiers attached to them?</prompt>
+	      <radio id="QPNumberClassifierAgrNo" dataValue="no">No, these elements are not marked with classifiers</radio>
+	      <radio id="QPNumberClassifierAgrYes" dataValue="yes">Yes, these elements are marked with classifiers as part of the concord agreement throughout the nominal phrase</radio>
 	   </radioGroup>
-	   <prompt id="QPNumberClassifierAgrPrompt" show="swOTClassifierAgrNumberYes">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the words asked for on this page.</prompt>
+	   <prompt id="QPNumberClassifierAgrPrompt" show="swOTClassifierAgrNumberYes">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the words asked for on this page.</prompt>	   
+	   <br/>	   
+	   <prompt>Key the cardinal number meaning ‘one’ here:</prompt>
+		<textBox id="QPCardinalNumbers1" dataItem="cardinalNumbers1" rows="2"/>
+		<br/>
+		<br/>
+	   <prompt>Key the cardinal number meaning ‘two’ here:</prompt>
+	   <textBox id="QPCardinalNumbers2" dataItem="cardinalNumbers2" rows="2"/>
 	   <br/>
-		<prompt>Key the first ten cardinal numbers, each on a separate line, in order from one to ten here:</prompt>
-		<textBox id="QPCardinalNumbers1to10" dataItem="cardinalNumbers1to10"/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘three’ here:</prompt>
+	   <textBox id="QPCardinalNumbers3" dataItem="cardinalNumbers3" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘four’ here:</prompt>
+	   <textBox id="QPCardinalNumbers4" dataItem="cardinalNumbers4" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘five’ here:</prompt>
+	   <textBox id="QPCardinalNumbers5" dataItem="cardinalNumbers5" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘six’ here:</prompt>
+	   <textBox id="QPCardinalNumbers6" dataItem="cardinalNumbers6" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘seven’ here:</prompt>
+	   <textBox id="QPCardinalNumbers7" dataItem="cardinalNumbers7" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘eight’ here:</prompt>
+	   <textBox id="QPCardinalNumbers8" dataItem="cardinalNumbers8" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘nine’ here:</prompt>
+	   <textBox id="QPCardinalNumbers9" dataItem="cardinalNumbers9" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘ten’ here:</prompt>
+	   <textBox id="QPCardinalNumbers10" dataItem="cardinalNumbers10" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘eleven’ here:</prompt>
+	   <textBox id="QPCardinalNumbers11" dataItem="cardinalNumbers11" rows="2"/>
 		<br/>
 		<br/>
-		<prompt>Key the cardinal numbers for 11 through 20 here:</prompt>
-		<textBox id="QPCardinalNumbers11to20" dataItem="cardinalNumbers11to20"/>
+	   <prompt>Key the cardinal number meaning ‘twelve’ here:</prompt>
+	   <textBox id="QPCardinalNumbers12" dataItem="cardinalNumbers12" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘thirteen’ here:</prompt>
+	   <textBox id="QPCardinalNumbers13" dataItem="cardinalNumbers13" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘fourteen’ here:</prompt>
+	   <textBox id="QPCardinalNumbers14" dataItem="cardinalNumbers14" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘fifteen’ here:</prompt>
+	   <textBox id="QPCardinalNumbers15" dataItem="cardinalNumbers15" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘sixteen’ here:</prompt>
+	   <textBox id="QPCardinalNumbers16" dataItem="cardinalNumbers16" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘seventeen’ here:</prompt>
+	   <textBox id="QPCardinalNumbers17" dataItem="cardinalNumbers17" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘eighteen’ here:</prompt>
+	   <textBox id="QPCardinalNumbers18" dataItem="cardinalNumbers19" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘nineteen’ here:</prompt>
+	   <textBox id="QPCardinalNumbers19" dataItem="cardinalNumbers19" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘twenty’ here:</prompt>
+	   <textBox id="QPCardinalNumbers20" dataItem="cardinalNumbers20" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘thirty’ here:</prompt>
+		<textBox id="QPCardinalNumbers30" dataItem="cardinalNumbers30" rows="2"/>
 		<br/>
 		<br/>
-		<prompt>Key the cardinal numbers by tens for 30 through 100 here:</prompt>
-		<textBox id="QPCardinalNumbers30to100" dataItem="cardinalNumbers30to100"/>
+	   <prompt>Key the cardinal number meaning ‘forty’ here:</prompt>
+	   <textBox id="QPCardinalNumbers40" dataItem="cardinalNumbers40" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘fifty’ here:</prompt>
+	   <textBox id="QPCardinalNumbers50" dataItem="cardinalNumbers50" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘sixty’ here:</prompt>
+	   <textBox id="QPCardinalNumbers60" dataItem="cardinalNumbers60" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘seventy’ here:</prompt>
+	   <textBox id="QPCardinalNumbers70" dataItem="cardinalNumbers70" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘eighty’ here:</prompt>
+	   <textBox id="QPCardinalNumbers80" dataItem="cardinalNumbers80" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘ninety’ here:</prompt>
+	   <textBox id="QPCardinalNumbers90" dataItem="cardinalNumbers90" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key the cardinal number meaning ‘one hundred’ here:</prompt>
+	   <textBox id="QPCardinalNumbers100" dataItem="cardinalNumbers100" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Now for the ordinal numbers, key the ordinal number meaning ‘first’ here:</prompt>
+		<textBox id="QPOrdinalNumbers1" dataItem="ordinalNumbers1" rows="2"/>
+		<br/>
+		<br/>		
+	   <prompt>Key the ordinal number meaning ‘second’ here:</prompt>
+	   <textBox id="QPOrdinalNumbers2" dataItem="ordinalNumbers2" rows="2"/>
+	   <br/>
+	   <br/>		
+	   <prompt>Key the ordinal number meaning ‘third’ here:</prompt>
+	   <textBox id="QPOrdinalNumbers3" dataItem="ordinalNumbers3" rows="2"/>
+	   <br/>
+	   <br/>		
+	   <prompt>Key the ordinal number meaning ‘fourth’ here:</prompt>
+	   <textBox id="QPOrdinalNumbers4" dataItem="ordinalNumbers4" rows="2"/>
+	   <br/>
+	   <br/>		
+	   <prompt>Key the ordinal number meaning ‘fifth’ here:</prompt>
+	   <textBox id="QPOrdinalNumbers5" dataItem="ordinalNumbers5" rows="2"/>
+	   <br/>
+	   <br/>		
+	   <prompt>Key the ordinal number meaning ‘sixth’ here:</prompt>
+	   <textBox id="QPOrdinalNumbers6" dataItem="ordinalNumbers6" rows="2"/>
+	   <br/>
+	   <br/>		
+	   <prompt>Key the ordinal number meaning ‘seventh’ here:</prompt>
+	   <textBox id="QPOrdinalNumbers7" dataItem="ordinalNumbers7" rows="2"/>
+	   <br/>
+	   <br/>		
+	   <prompt>Key the ordinal number meaning ‘eighth’ here:</prompt>
+	   <textBox id="QPOrdinalNumbers8" dataItem="ordinalNumbers8" rows="2"/>
+	   <br/>
+	   <br/>		
+	   <prompt>Key the ordinal number meaning ‘ninth’ here:</prompt>
+	   <textBox id="QPOrdinalNumbers9" dataItem="ordinalNumbers9" rows="2"/>
+	   <br/>
+	   <br/>		
+	   <prompt>Key the ordinal number meaning ‘tenth’ here:</prompt>
+	   <textBox id="QPOrdinalNumbers10" dataItem="ordinalNumbers10" rows="2"/>
+	   <br/>
+	   <br/>		
+	   <checkboxGroup>
+		   <prompt>How are ordinal numbers formed in your language? Check all options that are correct for your language</prompt>
+		   <checkbox id="QPOrdinalAffix" checked="yes" dataItem="ordinalAffix">An affix is added to the cardinal number</checkbox>
+		   <checkbox id="QPOrdinalIndependent" checked="yes" dataItem="ordinalIndependent">Some or all of the ordinal numbers are distinct words</checkbox>
+		   <checkbox id="QPOrdinalWord" checked="yes" dataItem="ordinalWord">Another word is added to the cardinal number</checkbox>
+		   <checkbox id="QPOrdinalOther" checked="yes" dataItem="ordinalOther">In my language, ordinal numbers are formed as follows: <textBox  id="QPOrdinalOtherContent" dataItem="ordinalOther" rows="2"/></checkbox>
+		</checkboxGroup>
+	   <prompt id="QPOrdinalFormNoCheckPrompt" show="swQPOrdinalFormNoCheck">WARNING: You need to check at least one box to describe how the ordinal numbers are formed in your language.</prompt>  
+	   
+<prompt id="QPOrdinalAffixPrompt" show="swQPOrdinalAffix"><br/>Key the affix that makes a cardinal number into an ordinal number here: </prompt>	   
+	   <textBox id="QPOrdinalAffixExample" dataItem="ordinalAffixExample" rows="2" show="swQPOrdinalAffix"/>
+
+	   <prompt id="QPOrdinalWordPrompt" show="swQPOrdinalWord"><br/>Key the ordinal word that makes a cardinal numner into an ordinal number here: </prompt>	   
+	   <textBox id="QPOrdinalWordExample" dataItem="ordinalWordExample" rows="2" show="swQPOrdinalWord"/>
+	   
+	   <checkboxGroup id="QPOrdinalWordPosTable" show="swQPOrdinalWord">
+	      <prompt><br/>Where does the ordinal word occur with respect to the cardinal number to form the ordinal number? Check all options that are correct for your language</prompt>
+	      <checkbox id="QPOrdinalWordBefore" dataItem="ordinalWordBefore">Before the cardinal number</checkbox>
+	      <checkbox id="QPOrdinalWordAfter" dataItem="ordinalWordAfter">After the cardinal number</checkbox>
+	      <checkbox id="QPOrdinalWordBoth" dataItem="ordinalWordBoth">On both sides of the cardinal number</checkbox>
+	      <checkbox id="QPOrdinalWordOther" dataItem="ordinalWordOther">In my language, the ordinal word occurs as follows: <textBox  id="QPOrdinalWordOtherContent" dataItem="ordinalWordOther" rows="2"/></checkbox>
+	   </checkboxGroup>		
+	   <prompt id="QPOrdinalWordPosNoCheckPrompt" show="swQPOrdinalWordPosNoCheck">WARNING: You need to check at least one box to describe where the ordinal word occurs with respect to the cardinal nunber to form the ordinal number in your language, or change your answer above to say that the the ordinal numbers are formed in another way.</prompt>  
 		<br/>
 		<br/>
-		<prompt>Key the first ten ordinal numbers, each on a separate line, in order from first to tenth here:</prompt>
-		<textBox id="QPOrdinalNumbers" dataItem="ordinalNumbers"/>
-		<br/>
-		<br/>
-		<radioGroup>
-			<groupName dataItem="ordinalFormation" default="independent">ROrdinalFormation</groupName>
-			<prompt>How are ordinal numbers formed in your language?</prompt>
-			<radio id="QPOrdinalAffix" checked="yes" dataValue="affix">An affix is added to the cardinal number</radio>
-			<radio id="QPOrdinalIndependent" checked="yes" dataValue="independent">They are all independent syntactic words</radio>
-			<radio id="QPOrdinalWord" checked="yes" dataValue="word">Another word is added to the cardinal number</radio>
-			<radio id="QPOrdinalBoth" checked="yes" dataValue="both">Some are formed by adding an affix to the cardinal number but some are independent syntactic words</radio>
-			<radioGroup id="OrdinalWordPosTable" show="swQPOrdinalWord">
-				<groupName dataItem="ordinalWordPos" default="unknown" position="yesSpec">ROrdinanWordPos</groupName>
-				<prompt>Where does the ordinal word occur with respect to the cardinal nunmer to form the ordinal number?</prompt>
-				<radio id="OrdinalWordBefore" dataValue="before">Before the cardinal number</radio>
-				<radio id="OrdinalWordAfter" dataValue="after">After the cardinal number</radio>
-			</radioGroup>
-		</radioGroup>
-		<br/>
-		<br/>
-		<prompt>Key your examples of nominal phrases containing ordinal numbers here, including ordinal numbers with a noun, ordinal numbers modifying a cardinal number with a noun, and examples meaning the last or next something:</prompt>
-		<textBox id="QPOrdinalExample" dataItem="ordinalExample"/>
-		<br/>
-		<br/>
-		<radioGroup>
-			<groupName dataItem="ordinalPos" default="unknown" position="yesSpec">ROrdinalPosition</groupName>
-			<prompt>Where do ordinal numbers and the words for ‘last’ and ‘next’ occur with respect to the cardinal number in a phrase like ‘the first twenty boys’?</prompt>
-			<radio id="QPOrdinalBefore" checked="yes" dataValue="before">Before the cardinal number</radio>
-			<radio id="QPOrdinalAfter" checked="yes" dataValue="after">After the cardinal number</radio>
-			<radio id="QPOrdinalEitherSide" checked="yes" dataValue="either">On either side of the cardinal number, but not both at the same time</radio>
-			<radio id="QPOrdinalEitherOrBoth" checked="yes" dataValue="eitherOrBoth">On either side of the cardinal number, or both sides at the same time</radio>
-			<radio id="QPOrdinalBeforeOrBoth" checked="yes" dataValue="beforeOrBoth">Before the cardinal number, or both sides at the same time</radio>
-			<radio id="QPOrdnialAfterOrBoth" checked="yes" dataValue="afterOrBoth">After the cardinal number, or both sides at the same time</radio>
-			<radio id="QPOrdinalBothSides" checked="yes" dataValue="both">Only on both sides at the same time</radio>
-			<radioGroup id="QPOrdinalEitherSideTable" show="swQPOrdinalEitherorBoth">
-				<groupName dataItem="ordinalEither" default="yes">ROrdinalEitherSide</groupName>
-				<prompt>Can all the ordinal numbers and/or the words for ‘last’ and ‘next’ appear on either side of the cardinal number?</prompt>
-				<radio id="QPOrdinalEitherUnrestricted" checked="yes" dataValue="unrestricted">Yes, there is no restriction</radio>
-				<radio id="QPOrdinalEitherRestricted" checked="yes" dataValue="restricted">No, there are separate sets for each side</radio>
-			</radioGroup>
-		</radioGroup>
+	   <prompt>Key your examples of nominal phrases containing ordinal numbers with a noun here:</prompt>
+	   <textBox id="QPOrdinalExample" dataItem="ordinalExample"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key your examples of nominal phrases containing ordinal numbers modifying a cardinal number with a noun here:</prompt>
+	   <textBox id="QPOrdinalCardinalExample" dataItem="ordinalCardinalExample"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key how your language expresses ‘next’ here:</prompt>
+	   <textBox id="QPNextExample" dataItem="nextExample" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key how your language expresses ‘last’ here:</prompt>
+	   <textBox id="QPLastExample" dataItem="lastExample" rows="2"/>
+	   <br/>
+	   <br/>
+	   <prompt>Key your examples of nominal phrases containing ‘next’ or ‘last’ with a noun or with a cardinal number and a noun here:</prompt>
+	   <textBox id="QPNextLastNPExample" dataItem="nextlastNPExample"/>
+	   <br/>
+	   <br/>
+	   <checkboxGroup>
+	      <prompt><br/>Where do ordinal numbers and the words for ‘next’ and ‘last’ occur with respect to the cardinal number in a phrase like ‘the first twenty boys’? Check all options that are correct for your language</prompt>
+	      <checkbox id="QPOrdinalBefore" checked="yes" dataItem="ordinalBefore">Before the cardinal number</checkbox>
+	      <checkbox id="QPOrdinalAfter" checked="yes" dataItem="ordinalAfter">After the cardinal number</checkbox>
+	      <checkbox id="QPOrdinalBoth" checked="yes" dataItem="ordinalBoth">On both sides of the cardinal number at the same time</checkbox>
+	      <checkbox id="QPOrdinalNumOther" dataItem="QPOrdinalNumOther">In my language, these elements as follows with respect to the cardinal number: <textBox  id="QPOrdinalNumOtherContent" dataItem="qpOrdinalNumOther" rows="2"/></checkbox>
+	   </checkboxGroup>		
+	   <prompt id="QPOrdinalNumNoCheckPrompt" show="swQPOrdinalNumNoCheck">WARNING: You need to check at least one box to describe where the ordinal numbers and the words for ‘next’ and ‘last’ occur with respect to the cardinal number.</prompt>  
+	   
 		<instruction id="QPOrdinalInstruction">
 			<span id="QPOrdinalWordInstruction" show="swQPOrdinalWord">In the lexicon, mark the ordinal word with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
 			<span id="QPOrdinalAffixInstruction" show="swQPOrdinalAffix">In the lexicon, mark the affix with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
@@ -79,60 +234,84 @@ ordinal numbers and by <example>next</example> and <example>last</example>, as i
 			<span id="QPOrdinalEitherRestrictedInstruction" show="swQPOrdinalEitherRestricted">Those which can only occur before the cardinal number also need to have the feature <feature>QP-initial</feature>
 and those which can only occur after the cardinal number also need the
 feature <feature>QP-final</feature>.  Do not enter either
-feature <feature>QP-initial</feature> or <feature>QP-final</feature> on any ordinal numbers which can occur on
+feature <feature>QP-initial</feature> or <feature>QP-final</feature> on any ordinal numbers which can occur on 
 either side.</span>
 		</instruction>
 		<introduction>Further, larger cardinal numbers can be compounds which may be
-written as separate words, such as <example>one hundred thirty three</example>.  In many languages, conjunctions are either required or allowed in the compounds.  The position of the conjunction is usually on the same side of the number as the smallest numbers are.  These two facts tell us whether the compound is head-initial or head-final.  For example, English has head-final number compounds because the conjunction appears towards the end of the compound, either before the last number (the ones digit) or the last two numbers in the compound (the tens and ones digits), as in <example>four thousand and three</example> or <example>six thousand one hundred and thirty three</example>.
+written as independent words, such as <example>one hundred thirty three</example>.  In many languages, conjunctions are either required or allowed in the compounds.  The position of the conjunction is usually on the same side of the number as the smallest numbers are. For example, in English number compounds the conjunction appears towards the end of the compound, either before the last number (the ones digit) or the last two numbers in the compound (the tens and ones digits), as in <example>four thousand and three</example> or <example>six thousand one hundred and thirty three</example>. 
 </introduction>
 		<prompt>Key any examples of compound numbers here:</prompt>
 		<textBox id="QPCardinalCompoundExample" dataItem="cardinalCompoundExample" cols="50"/>
 		<radioGroup>
-			<groupName dataItem="cardinalHead" default="after">RCardinalHead</groupName>
-			<prompt>Based on these examples, where is the head in the cardinal compound numbers?</prompt>
-			<radio id="CardinalHeadInitial" checked="yes" dataValue="before">Initial, the numbers zero through nine occur initially and any conjunctions occur in the initial part of the compound </radio>
-			<radio id="CardinalHeadFinal" checked="yes" dataValue="after">Final, the numbers zero through nine occur finally and any conjunctions occur in the final part of the compound</radio>
+			<groupName dataItem="cardinalHead" default="final">RCardinalHead</groupName>
+		   <prompt>Based on these examples, where do  the numbers zero through nine and any conjunctions occur in the compound numbers?</prompt>
+		   <radio id="CardinalHeadInitial" checked="yes" dataValue="initial">First or in the initial part of the compound number</radio>
+			<radio id="CardinalHeadFinal" checked="yes" dataValue="final">Last or in the final part of the compound number</radio>
 		</radioGroup>
 		<br/>
 		<buttons>
 			<button id="QPCardinalExamplesBack" value="Back" goto="QPDegree.xml"/>
-			<button id="QPCardinalExamplesNext" value="Next" goto="QPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		    <button id="QPCardinalExamplesNext" value="Next" goto="QPPartitive.xml"/>
 		</buttons>
 	</form>
    <showWhen id="swOTClassifierAgr">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
    </showWhen>
    <showWhen id="swOTClassifierAgrNumberYes">
-	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
-	  <and/>
-	  <whenRadio button="QPNumberClassifierAgrYes"/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="QPNumberClassifierAgrYes"/>
    </showWhen>
 	<showWhen id="swQPOrdinalAffix">
-		<whenRadio button="QPOrdinalAffix"/>
+	   <whenCheckbox button="QPOrdinalAffix"/>
 	</showWhen>
 	<showWhen id="swQPOrdinalIndependent">
-		<whenRadio button="QPOrdinalIndependent"/>
+	   <whenCheckbox button="QPOrdinalIndependent"/>
 	</showWhen>
 	<showWhen id="swQPOrdinalWord">
-		<whenRadio button="QPOrdinalWord"/>
+	   <whenCheckbox button="QPOrdinalWord"/>
 	</showWhen>
 	<showWhen id="swQPOrdinalBoth">
-		<whenRadio button="QPOrdinalBoth"/>
-	</showWhen>
-	<showWhen id="swQPOrdinalEitherorBoth">
-		<not/>
-		<whenRadio button="QPOrdinalBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPOrdinalAfter"/>
+	   <whenCheckbox button="QPOrdinalBoth"/>
 	</showWhen>
 	<showWhen id="swQPOrdinalEitherRestricted">
-		<whenRadio button="QPOrdinalEitherRestricted"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPOrdinalBefore"/>
-		<and/>
-		<not/>
-		<whenRadio button="QPOrdinalAfter"/>
+	   <whenCheckbox button="QPOrdinalBefore"/>
+	   <and/>
+	   <whenCheckbox button="QPOrdinalAfter"/>
+	   <or/>
+	   <whenCheckbox button="QPOrdinalBoth"/>
 	</showWhen>
+   <showWhen id="swQPOrdinalFormNoCheck">
+      <not/>
+      <whenCheckbox button="QPOrdinalAffix"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalIndependent"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalWord"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalOther"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalNumNoCheck">
+      <not/>
+      <whenCheckbox button="QPOrdinalBefore"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalAfter"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalBoth"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalNumOther"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalWordPosNoCheck">
+      <whenCheckbox button="QPOrdinalWord"/>
+      <and/>    <not/>
+      <whenCheckbox button="QPOrdinalWordBefore"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalWordAfter"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalWordBoth"/>
+      <and/><not/>
+      <whenCheckbox button="QPOrdinalWordOther"/> 
+   </showWhen>
+   &TechnicalTerms; 
+   
 </page>

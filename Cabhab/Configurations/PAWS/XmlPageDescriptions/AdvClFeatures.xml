@@ -1,64 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
-<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvClFeatures" count="2/3">
     <title level="2">Adverbial Clauses - Examples and Features</title>
    <introduction>The English examples of temporal adverbs with complements used in full sentences given on the last page are repeated here: </introduction>
    <EnglishExample>
-	  <exItem label="1.">[Since then], John has been moody.</exItem>
-	  <exItem label="2.">John has been home [since last week].</exItem>
-	  <exItem label="3.">[Since John has been home from the hospital] he is doing better.</exItem>
-	  <exItem label="4.">John is feeling fine [now that he is home from the hospital].</exItem>
-	  <exItem label="5.">The dog followed Sue everywhere [when she returned from college].</exItem>
-	  <exItem label="6."> [When she returned from college], the dog followed Sue everywhere.</exItem>
+      <exItem label="1.">[Since then], John has been moody.</exItem>
+      <exItem label="2.">John has been home [since last week].</exItem>
+      <exItem label="3.">[Since John has been home from the hospital] he is doing better.</exItem>
+      <exItem label="4.">John is feeling fine [now that he is home from the hospital].</exItem>
+      <exItem label="5.">The dog followed Sue everywhere [when she returned from college].</exItem>
+      <exItem label="6."> [When she returned from college], the dog followed Sue everywhere.</exItem>
    </EnglishExample>
     <form section="advcl">
-        <prompt>Key similar examples of temporal adverbial clauses in your language, included in (simple) full sentences here:</prompt>
+        <prompt><br/>Key similar examples of temporal adverbial clauses in your language, included in (simple) full sentences here:</prompt>
         <textBox id="AdvlClTemporalExample" dataItem="tempSentExample" cols="50"/>
         <br/>
         <radioGroup>
             <groupName dataItem="advOrNPPos" default="unknown" position="yesHeadDiff">RAdvOrNPPos</groupName>
-			<prompt>Where does the complement, whether it is an adverb or nominal phrase or sentential or clausal complement, occur with respect to the head adverb?</prompt>
+            <prompt>Where does the complement, whether it is an adverb or nominal phrase or sentential or clausal complement, occur with respect to the head adverb?</prompt>
             <radio id="AdvClAdvOrNPPosBefore" dataValue="before">Before the adverb</radio>
             <radio id="AdvClAdvOrNPPosAfter" dataValue="after">After the adverb</radio>
             <radio id="AdvClAdvOrNPPosEither" dataValue="either">On either side</radio>
         </radioGroup>
         <br/>
-        <instruction id="AdvClTemporalInstruction">In the lexicon, add the following features to the adverb entry, in addition to the feature <feature>temporal</feature>.  Note that the first two features can be added to the same entry, or either or both can be added to the third or fourth sets of features.
+        <instruction id="AdvClTemporalInstruction">In the lexicon, add the following features to the adverb entry, in addition to the feature <feature>temporal</feature>.  Note that the first two features can be added to the same entry, and either or both can be added to the other sets of features.
 <ul>
                 <li>If the adverb may have another adverb as its complement, add the feature <feature>takes_Adv</feature>.</li>
                 <li>If the adverb may have a nominal phrase complement, add the feature <feature>takes_DP</feature>.</li>
                 <li>If the adverb may have an IP complement, add the features <feature>sentential embedded_finite</feature>.</li>
-                <li>If the adverb requires a complementizer to be present in its sentential complement (CP), add the features <feature>sentential embedded_finite embedded_CP</feature>.</li>
+                <li id="CompYesOption" show="swCompYes">If the adverb requires a complementizer to be present in its sentential complement (CP), add the features <feature>sentential embedded_finite embedded_CP</feature>.</li>
             </ul>
         </instruction>
         <br/>
-        <introduction>Turning now to adverbial phrases or clauses which express reason or purpose, we find adverbs which stand alone, such as <example>therefore</example> and <example>so</example>, along with those that take various types of complement clauses.  (Examples such as <example>for this reason</example> and <example>on purpose</example> should work based on your answers in <section number="8">Pre/post-positional Phrases</section>.)
-		   <br/><br/> English examples of reason or purpose adverbs which take clausal complements include the bracketed ones in 7-11:
+        <introduction>Turning now to adverbial phrases or clauses which express reason or purpose, we find adverbs which stand alone, such as <example>therefore</example> and <example>so</example>, along with those that take various types of complement clauses.  (Examples such as <example>for this reason</example> and <example>on purpose</example> should work based on your answers in <section number="8">Adpositional Phrases</section>.)
+           <br/><br/> English examples of reason or purpose adverbs which take clausal complements include the bracketed ones in 7-11:
 </introduction>
         <EnglishExample>
-			<exItem label="7.">John rushed to the hospital [because Sue was in an accident].</exItem>
-			<exItem label="8.">[Since Jill said that she likes him], Joe smiles all the time.</exItem>
-			<exItem label="9.">Bill rushed to the airport [so that he could see Kay before she left].</exItem>
-			<exItem label="10.">The troops threw grenades at the enemy [in order to escape].</exItem>
-			<exItem label="11.">The troops threw grenades at the enemy [in order for the prisoners to escape].</exItem>
+            <exItem label="7.">John rushed to the hospital [because Sue was in an accident].</exItem>
+            <exItem label="8.">[Since Jill said that she likes him], Joe smiles all the time.</exItem>
+            <exItem label="9.">Bill rushed to the airport [so that he could see Kay before she left].</exItem>
+            <exItem label="10.">The troops threw grenades at the enemy [in order to escape].</exItem>
+            <exItem label="11.">The troops threw grenades at the enemy [in order for the prisoners to escape].</exItem>
         </EnglishExample>
-        <introduction id="AdvClReasonIntroNotPractical" show="swNotPractical">In the examples above, <example>because</example> and <example>since</example> take only finite IP complements and <example>so</example> takes a finite CP complement.  In contrast, <example>in order</example> takes either a nonfinite IP with a pro-dropped subject or a nonfinite CP complement.  This is the same subcategorization as shown for <example>like</example> and <example>hate</example> in <section number="10">Complement Clauses</section>.  <br/>
-            <br/>(Note again that if your language has any multi-word forms, like <example>in order</example>, they need be handled as a single lexical entry using <tool>Join Compound</tool>.)
+       <introduction id="AdvClReasonIntroNotPractical" show="swNotPractical">In the examples above, <example>because</example> and <example>since</example> take only <technicalTermRef term="ttFinite"/> IP complements and <example>so</example> takes a finite CP complement.  In contrast, <example>in order</example> takes either a <technicalTermRef term="ttNonfinite"/> IP with a subject which is not expressed or a nonfinite CP complement.  This is the same subcategorization as shown for <example>like</example> and <example>hate</example> in <section number="10">Complement Clauses</section>. 
  </introduction>
-		<introduction id="AdvClReasonIntroPractical" show="swPractical">In the examples above, <example>because</example> and <example>since</example> take only finite sentential complements and <example>so</example> takes a finite complement clause with a complementizer.  In contrast, <example>in order</example> takes either a nonfinite sentential complement with a coreferential pro-dropped subject or a nonfinite complement clause with a complementizer.  This is the same set of complements as shown selected by <example>like</example> and <example>hate</example> in <section number="10">Complement Clauses</section>.
+        <introduction id="AdvClReasonIntroPractical" show="swPractical">In the examples above, <example>because</example> and <example>since</example> take only <technicalTermRef term="ttFinite"/> sentential complements and <example>so</example> takes a finite complement clause with a complementizer.  In contrast, <example>in order</example> takes either a <technicalTermRef term="ttNonfinite"/> sentential complement with a coreferential subject which is not expresses or a nonfinite complement clause with a complementizer.  This is the same set of complements as shown selected by <example>like</example> and <example>hate</example> in <section number="10">Complement Clauses</section>. 
          </introduction>
         <br/>
-		<prompt>The examples you keyed in <section number="3">Adverbs and AdvP</section> are shown below.  You may add any additional examples in (simple) full sentences as well.</prompt>
-        <textBox id="AdvPReasonExample" section="advp" dataItem="reasonExample" cols="50"/>
+        <prompt>The examples you keyed in <section number="3">Adverbs and AdvP</section> are shown below.  You may add any additional examples in (simple) full sentences as well.<span id="CompNoSpan" show="swCompNo">  Since your language does not have a complementizer for embedded clauses, all the examples should have only sentential complements.</span></prompt>
+        <textBox id="AdvPReasonSentExample" section="advp" dataItem="reasonSentExample" cols="50"/>
         <br/>
         <br/>
         <instruction id="AdvClReasonInstruction">In the lexicon, add the following features to the adverb entry, in addition to the feature <feature>reason</feature>.
 <ul>
                 <li>If the adverb may have a finite IP complement, add the features <feature>sentential embedded_finite</feature>.</li>
-                <li>If the adverb requires a complementizer to be present in its finite sentential complement (CP), add the features <feature>sentential embedded_finite embedded_CP</feature>.</li>
-                <li>If the adverb requires either a nonfinite IP with a pro-dropped subject or a nonfinite CP complement, add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature>.</li>
-            </ul>
+   <li id="CompYesOptionReason" show="swCompYes">If the adverb requires a complementizer to be present in its finite sentential complement (CP), add the features <feature>sentential embedded_finite embedded_CP</feature>.</li>
+                <li id="CompYesOptionReason1" show="swCompYes">If the adverb requires either a nonfinite IP with a pro-dropped subject or a nonfinite CP complement, add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature>.</li>
+</ul>
+           Those that are phrases, like <example>in order</example>, need to be entered in the lexicon with underscores between the words so <tool>Join Compound</tool> will parse them as a single lexical entry within <tool>CARLA Studio</tool>.
         </instruction>
         <br/>
         <buttons>
@@ -66,10 +68,17 @@
             <button id="AdvClFeaturesNext" value="Next" goto="AdvClTesting.xml" gotoNoGrammar="Contents.htm"/>
         </buttons>
     </form>
-    <showWhen id="swNotPractical">
+   <showWhen id="swCompYes">
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompNo">
+      <whenValue element="comp" attr="comp" value="no"/>
+   </showWhen>
+   <showWhen id="swNotPractical">
         <whenValue  element="paws" attr="outputGrammar" value="True"/>
     </showWhen>
     <showWhen id="swPractical">
         <whenValue  element="paws" attr="outputGrammar" value="False"/>
     </showWhen>
+   &TechnicalTerms; 
 </page>

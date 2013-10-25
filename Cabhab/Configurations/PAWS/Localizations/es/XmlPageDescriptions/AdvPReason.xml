@@ -2,30 +2,30 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPReason" count="4/6">
-	<title level="2">Frases adverbiales - Los adverbios que expresan razón o propósito</title>
-	<introduction>Los adverbios que expresan razón o propósito son <example>por lo tanto</example> y
-	   <example>pues</example>.  Los adverbios que expresan razón o propósito nromalmente no permiten modificadores.<br/><br/>
-	   La razón o el propósito también se puede expresar con una frase preposicional, por ejemplo  <example>por esta razón</example> o <example>en propósito</example>, y
-		con una cláusula adverbial empezando con <example>porque</example> o <example>desde que</example> o <example>en orden que</example>.  La estructura de las cláusulas adverbiales será analizada en  <section number="13">Las cláusulas adverbiales</section>.
+    <title level="2">Frases adverbiales - Los adverbios que expresan razón o propósito</title>
+    <introduction>Los adverbios que expresan razón o propósito son <example>por lo tanto</example> y
+       <example>pues</example>.  Los adverbios que expresan razón o propósito normalmente no permiten modificadores.<br/><br/>
+       La razón o el propósito también se puede expresar con una frase preposicional, por ejemplo  <example>por esta razón</example> o <example>en propósito</example>, y
+       con una cláusula adverbial que empieza con <example>porque</example>, <example>desde que</example><example>ya que</example> o <example>para</example>.  La estructura de las cláusulas adverbiales se analiza en  <section number="13">Las cláusulas adverbiales</section>.
 </introduction>
-	<form section="advp">
-	   <prompt>Escriba ejemplos de los adverbios de la razón o del propósito que expresan razón o propósito por sí mismos o que empiezan una cláusula adverbial que expresa razón o propósito aquí:</prompt>
-		<textBox id="AdvPReasonExample" dataItem="reasonExample"/>
-	   <prompt>Escriba ejemplos de frases preposicionales o posposicionales que expresan razón o propósito aquí:</prompt>
-	   <textBox id="AdvPReasonPPExample" dataItem="reasonPPExample" rows="3"/>
-	   <prompt>Ahora escriba algunos ejemplos de los adverbios que expresan razón o propósito o de las cláusulas adverbiales o de frases preposicionales o posposicionales que expresan razón o propósito de los cuadros arriba incluyendo en oraciones completas (con un punto y una nueva línea después de cada ejemplo) aquí:</prompt>
-	   <textBox id="AdvPReasonSentExample" dataItem="reasonSentExample" rows="5" cols="50"/>
-	   <br/>
-	   <instruction id="AdvPReasonInstruction">In the lexicon, key the feature <feature>reason</feature> on
+    <form section="advp">
+       <prompt>Escriba ejemplos de los adverbios independiente que expresan razón o propósito o están al inicio de una cláusula adverbial que expresa razón o propósito aquí:</prompt>
+        <textBox id="AdvPReasonExample" dataItem="reasonExample"/>
+       <prompt>Escriba ejemplos de frases adposicionales que expresan razón o propósito aquí:</prompt>
+       <textBox id="AdvPReasonPPExample" dataItem="reasonPPExample" rows="3"/>
+       <prompt>Ahora escriba algunos ejemplos de oraciones completas con los adverbios que expresan razón o propósito o de las cláusulas adverbiales o de frases adposicionales que expresan razón o propósito (con un punto y una nueva línea después de cada ejemplo) aquí:</prompt>
+       <textBox id="AdvPReasonSentExample" dataItem="reasonSentExample" rows="5" cols="50"/> 
+       <br/>
+       <instruction id="AdvPReasonInstruction">In the lexicon, key the feature <feature>reason</feature> on
 all adverbs that express reason or purpose, and also on the nouns like <example>reason</example> and <example>purpose</example>.  Any multi-word forms, like <example>in order</example> are best handled as a single entry using <tool>Join Compound</tool>.
-	   </instruction>
-	   <br/><br/>
-		<buttons>
-			<button id="AdvPReasonExamplesBack" value="Back" goto="AdvPManner.xml"/>
-		   <button id="AdvPReasonExamplesNext" value="Next" goto="AdvPCatMap.xml" gotoNoGrammar="Contents.htm"/>
-		</buttons>
-	</form>
-	   <showWhen id="swNotPractical">
-		  <whenValue  element="paws" attr="outputGrammar" value="True"/>
-	   </showWhen>
+       </instruction>
+       <br/><br/>
+        <buttons>
+            <button id="AdvPReasonExamplesBack" value="Back" goto="AdvPManner.xml"/>
+           <button id="AdvPReasonExamplesNext" value="Next" goto="AdvPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+        </buttons>
+    </form>
+       <showWhen id="swNotPractical">
+          <whenValue  element="paws" attr="outputGrammar" value="True"/>
+       </showWhen>
 </page>

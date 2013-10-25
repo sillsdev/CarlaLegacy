@@ -4,7 +4,7 @@
 	<section1 id="sIP">
 		<secTitle>Basic Sentences</secTitle>
 		<p>
-			<content>This section covers copular, intransitive, transitive, ditransitive and passive sentences in their basic word order (i.e. not changed by focus, topic, interrogative, or negation constructions).  As noted in section </content>
+			<content>This section covers copular, intransitive, transitive, ditransitive, imperative, passive and causative sentences in their basic word order (i.e. not changed by focus, topic, interrogative, or negation constructions).  As noted in section </content>
 			<sectionRef sec="sIntro"/>
 			<content>,  the typology of </content>
 			<langName/>
@@ -32,9 +32,9 @@
 	   <section2 id="sIPCop">
 		  <secTitle>Copular Constructions</secTitle>
 
-		  <p><content>Copular constructions include those with a copular verb, if required, or with a perception verb, plus comparatives and existentials.  Each will be discussed in turn.</content></p>
-		  <p>
-			 <content>True copular sentences can have an adjective, prepositional or postpositional phrase, or nominal phrase following the copular verb.  Some languages do not require a copular verb or auxiliary to be present.  English examples include </content>
+		  <p><content>Copular constructions include those with a copular verb, if required, or with a perception verb, plus comparatives and existentials.</content></p>
+		  <p contentType="ctComparativeIntro">
+			 <content>True copular sentences can have an adjective, adpositional phrase, or nominal phrase following the copular verb.  Some languages do not require a copular verb or auxiliary to be present.  English examples include </content>
 			 <langData>The girl is pretty</langData>
 			 <content>, </content>
 			 <langData>Susan is sick</langData>
@@ -44,47 +44,120 @@
 			 <langData>He is the leader</langData>
 			 <content>.</content>
 		  </p>
-		  <p>
-			 <content>In </content>
-			 <langName/>
-			 <content> copular sentences, </content>
+	      <p>
+	         <content>Examples of copular sentences in </content>
+	         <langName/>
+	         <content> include:</content>
+	      </p>
+	      <example>
+	         <interlinear exampleLoc="ip/copularExample"/>
+	      </example>
+	      <p show="swIPCopVerbYesOrOptional">
+			 <content>As the examples show, </content>
 			 <case element="ip" attr="copular">
-				<caseText value="yes">a copular verb is required.</caseText>
-				<caseText value="yesOptional">a copular verb is optional, and no auxiliary is required either.</caseText>
-				<caseText value="yesAux">a copular verb is optional, but an auxiliary is required if the copular verb is not present.</caseText>
-				<caseText value="noAux">there is no copular verb, but an auxiliary is required.</caseText>
-				<caseText value="noNeither">neither a copular verb nor an auxiliary is used.</caseText>
+			    <caseText value="yes">a copular verb is required </caseText>
+			    <caseText value="optional">a copular verb is optional </caseText>
 			 </case>
-			 <content/>
-			 <text show="swIPCopVerbNoNeitherOrOptional">
+	         <content>in </content>
+			       <langName/>
+	         <content> copular sentences.  The copular verbs are: </content>
+	         </p>
+	      <example show="swIPCopVerbYesOrOptional">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Copular Verbs</headerCol>
+	               <headerCol>Gloss</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/copularVerb"/>
+	               <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+	            </row>
+	         </table>
+	      </example>
+	      <p show="swIPCopVerbNo">
+	         <content>As the examples show, there is no copular verb in </content>
+	         <langName/>
+	         <content> copular sentences.  There is </content>
+	         <case element="ip" attr="copularAffix">
+	            <caseText value="no">not any copular affix on the predicate nominal or predicate adjective either.</caseText>
+	            <caseText value="yesPrefix">a copular prefix on the predicate nominal or predicate adjective, however.  This prefix is:</caseText>
+	            <caseText value="yesSuffix">a copular suffix on the predicate nominal or predicate adjective, however  This suffix is:</caseText>
+	            <caseText value="yesEither">either a copular prefix or suffix on the predicate nominal or predicate adjective, however.  These affixes are:</caseText>
+	         </case>
+	      </p>
+	      <example show="swIPCopVerbNoAndAffixYesPrefix">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Copular Prefix</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/copularAffix"/>
+	            </row>
+	         </table>
+	      </example>
+	      <example show="swIPCopVerbNoAndAffixYesSuffix">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Copular Suffix</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/copularAffix"/>
+	            </row>
+	         </table>
+	      </example>
+	      <example show="swIPCopVerbNoAndAffixYesEither">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Copular Affixes</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/copularAffix"/>
+	            </row>
+	         </table>
+	      </example>
+	      
+	      <p show="swIPCopVerbOptional">
 				<content>  There is </content>
 				<case element="ip" attr="copularAffix">
-				   <caseText value="no">not any copular affix on the predicate nominal or predicate adjective either</caseText>
-				   <caseText value="yesPrefix">a copular prefix on the predicate nominal or predicate adjective, however</caseText>
-				   <caseText value="yesSuffix">a copular suffix on the predicate nominal or predicate adjective, however</caseText>
-				   <caseText value="yesEither">either a copular prefix or suffix on the predicate nominal or predicate adjective, however</caseText>
+				   <caseText value="no">not any copular affix on the predicate nominal or predicate adjective that occurs when the copular verb is not present.</caseText>
+				   <caseText value="yesPrefix">also a copular prefix on the predicate nominal or predicate adjective that occurs when there is no copular verb present.  This prefix is:</caseText>
+				   <caseText value="yesSuffix">also a copular suffix on the predicate nominal or predicate adjective that occurs when there is no copular verb present.  This suffix is:</caseText>
+				   <caseText value="yesEither">also either a copular prefix or suffix on the predicate nominal or predicate adjective that occurs when there is no copular verb present.  These affixes are:</caseText>
 				</case>
 				<content/>
-			 </text>
-			 <content/>
-			 <text show="swIPCopVerbNoNeither">
-				<content>.</content>
-			 </text>
-			 <content/>
-			 <text show="swIPCopVerbYesOptional">
-				<content>, that occurs when there is no copular verb present.</content>
-			 </text>
 		  </p>
-		  <p>
-			 <content>Examples of copular sentences in </content>
-			 <langName/>
-			 <content> include:</content>
-		  </p>
-		  <example>
-			 <interlinear exampleLoc="ip/copularExample"/>
-		  </example>
-
-		  <p><content>In contrast to copular verbs, perception verbs usually only allow an adjective phrase following them, except in superlative constructions where a nominal phrase follows a perception verb, as shown in the next section.  Some English examples with perception verbs include:</content>
+	      <example show="swIPCopVerbOptionalAndAffixYesPrefix">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Copular Prefix</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/copularAffix"/>
+	            </row>
+	         </table>
+	      </example>
+	      <example show="swIPCopVerbOptionalAndAffixYesSuffix">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Copular Suffix</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/copularAffix"/>
+	            </row>
+	         </table>
+	      </example>
+	      <example show="swIPCopVerbOptionalAndAffixYesEither">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Copular Affixes</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/copularAffix"/>
+	            </row>
+	         </table>
+	      </example>
+	      
+		  <p contentType="ctComparativeIntro"><content>In contrast to copular verbs, perception verbs usually only allow an adjective phrase following them, except in superlative constructions where a nominal phrase follows a perception verb, as shown in the next section.  Some English examples with perception verbs include:</content>
 			 <langData>The girl looks pretty</langData><content>, </content><langData>She seems nice</langData><content> and </content><langData>The water appears murky</langData><content>.</content></p>
 		  <p>
 			 <content>Examples of sentences with perception verbs in </content>
@@ -100,13 +173,14 @@
 		  </p>
 		  <section3 id="sIPComparatives">
 			 <secTitle>Comparatives and Superlatives</secTitle>
-			 <p><content>Comparatives are a subtype of copular sentences. We will consider two types which rate two parts as equal, then comparatives where one part is better than the other, then superlatives. All of these types may normally use either a copular verb or a perception verb. </content></p>
-			 <p><content>Comparison of equals can use a noun or an adjective for comparison. The noun equality construction uses a formula meaning ‘is the same </content><gloss><content>Noun</content></gloss><content> as’ between two nominal phrases. Some English examples are: </content>
+			 <p><content>Comparatives are a subclass of copular sentences. We will consider two types which rate two parts as equal, then comparatives where one part is better than the other, then superlatives. All of these types may normally use either a copular or perception verb. </content></p>
+		     <p contentType="ctComparativeIntro"><content>Comparison of equals can use a noun or an adjective for comparison. The noun equality construction uses a formula meaning </content><langData>‘is the same Noun as’</langData><content> between two nominal phrases. Some English examples are: </content>
 				<langData>The curtains look the same color as the walls</langData><content>, </content><langData>Your backpack is the same size as mine</langData><content> and </content>
 				<langData>Sue has the same hairstyle as Mary</langData><content>. </content></p>
-			 <p><langName/><case element="ip" attr="same">
-				<caseText value="yes"> has a comparative degree word meaning ‘same’ which is used with the noun of comparison in sentences involving comparison of equals, as shown in the following chart.</caseText>
-				<caseText value="attaches"> attaches an affix or clitic meaning ‘same’ to the noun of comparison in sentences involving comparison of equals, as shown in the following chart.</caseText>
+		     <p contentType="ctPracticalIntro"><content>Comparison of equals can use a noun or an adjective for comparison. The noun equality construction uses a formula meaning </content><langData>‘is the same Noun as’</langData><content> between two nominal phrases.</content></p>
+		     <p><langName/><case element="ip" attr="same">
+				<caseText value="yes"> has a comparative degree word meaning ‘same’ which is used with the noun of comparison in sentences involving comparison of equals, as shown in the following table.</caseText>
+				<caseText value="attaches"> attaches a comparative degree affix or clitic meaning ‘same’ to the noun of comparison in sentences involving comparison of equals, as shown in the following table.</caseText>
 				<caseText value="no"> does not have a comparative degree word meaning ‘same’.  Only the presence of the two nominal phrases and the noun of comparison with the copular predicate occur in sentences involviong comparison of  equals.</caseText>
 			 </case>
 			 </p>
@@ -114,7 +188,7 @@
 			 <example show="swIPSameYes">
 				<table border="1">
 				   <headerRow>
-					  <headerCol>Equal Noun Comparative DegreeWord</headerCol>
+					  <headerCol>Equal Noun Comparative Degree Word</headerCol>
 					  <headerCol>Gloss</headerCol>
 				   </headerRow>
 				   <row>
@@ -162,11 +236,13 @@
 			 <example>
 				<interlinear exampleLoc="ip/sameExample"/>
 			 </example>
-			 <p><content>The second type of comparison of equals uses an adjective for comparison. This construction uses a formula meaning ‘is as </content><gloss><content>Adjective</content></gloss><content> as’ between the two nominal phrases. Some English examples are: </content>
+		     <p contentType="ctComparativeIntro"><content>The second type of comparison of equals uses an adjective for comparison. This construction uses a formula meaning </content><langData>‘is as Adjective as’</langData><content> between the two nominal phrases. Some English examples are: </content>
 				<langData>John is as friendly as Bill</langData><content>, </content><langData>Sue is as fast as Mary</langData><content> and </content><langData>David appears as tall as Michael</langData><content>.</content>
 			 </p>
-			 <p><langName/><case element="ip" attr="as">
-				<caseText value="yes"> has a comparative degree word meaning ‘as’ which is used with the adjective of comparison in sentences involving comparison of equals, as shown in the following chart.</caseText>
+		     <p contentType="ctPracticalIntro"><content>The second type of comparison of equals uses an adjective for comparison. This construction uses a formula meaning </content><langData>‘is as Adjective as’</langData><content> between the two nominal phrases.</content>
+		     </p>
+		     <p><langName/><case element="ip" attr="as">
+				<caseText value="yes"> has a comparative degree word meaning ‘as’ which is used with the adjective of comparison, as shown in the following table.</caseText>
 				<caseText value="no"> does not have a comparative degree word meaning ‘as’.  Its meaning is simply implied in the adjective of comparison sentences involving comparison of equals.</caseText>
 			 </case>
 			 </p>
@@ -184,7 +260,7 @@
 				</table>
 			 </example>
 			 <p><langName/><case element="ip" attr="compareAdj">
-				<caseText value="yes"> uses the following comparative conjunction meaning ‘as’ before the second nominal phrase in sentences involving comparison of equal qualitative adjectives:</caseText>
+				<caseText value="yes"> uses the following comparative conjunction meaning ‘as’ before the second nominal phrase:</caseText>
 				<caseText value="no"> does not have any comparative conjunction meaning ‘as’ before the second nominal phrase in sentences involving comparison of equal qualitative adjectives.</caseText>
 			 </case>
 			 </p>
@@ -210,12 +286,13 @@
 				<interlinear exampleLoc="ip/asExample"/>
 			 </example>
 
-			 <p><content>Comparatives where one part is better than the other compare two nominal phrases using a comparative word meaning ‘than’, and include whatever copula the language uses, or a perception verb.  Degree marking occurs with the predicate adjective or nominal phrase.  In some languages, this degree marking may either be an independent degree word or an affix on the predicate adjective, as shown in the English examples: </content>
-				<langData>John is more handsome than Bill</langData><content>, </content><langData>Sue is a better runner than Mary</langData><content>, </content>
-				<langData>David appears taller than Michael</langData><content> and </content><langData>Mary looks prettier than Julie</langData><content>.</content></p>
-			 <p><content>Note that there is an implied copula following the final nominal phrase in the English examples. A more complex type of comparative has an overt sentence in the place of the second noun phrase. These will be covered in section </content><sectionRef sec="sCoordComparative"/><content>.</content></p>
-			 <p><langName/><case element="ip" attr="comparative">
-				<caseText value="yes"> has a comparative conjunction meaning ‘than’ which is used in comparatives where one part is better than the other, as shown in the following chart.</caseText>
+		     <p contentType="ctComparativeIntro"><content>Comparatives where one part is better than the other compare two nominal phrases using a comparative word meaning </content><langData>than</langData><content> and include a copular or perception verb.  Degree marking occurs with the predicate adjective or nominal phrase.  In some languages, this degree marking may either be an independent degree word or an affix on the predicate adjective, as shown in the English examples: </content>
+				<langData>John is more handsome than Bill</langData><content>, </content><langData>Sue is a poorer runner than Mary</langData><content>, </content>
+		        <langData>David appears taller than Michael</langData><content> and </content><langData>Mary looks prettier than Julie</langData><content> and </content><langData>John seems less certain of his answers than Sue</langData><content>.</content><content>.</content></p>
+			 <p contentType="ctComparativeIntro"><content>Note that there is an implied copula following the final nominal phrase in the English examples. A more complex type of comparative has an overt sentence in the place of the second noun phrase. These will be covered below.</content></p>
+		     <p contentType="ctPracticalIntro"><content >Comparatives where one part is better than the other compare two nominal phrases using a comparative word meaning </content><langData>than</langData><content> and include a copular or perception verb.  Degree marking occurs with the predicate adjective or nominal phrase. </content></p>
+		     <p><langName/><case element="ip" attr="comparative">
+				<caseText value="yes"> has a comparative conjunction meaning ‘than’ which is used in comparatives where one part is better than the other, as shown in the following table.</caseText>
 				<caseText value="no"> does not have a comparative conjunction meaning ‘than’.  Only the presence of the two noun phrases and the degree word with the copular predicate signal a comparative where one part is better than the other.</caseText>
 			 </case>
 			 </p>
@@ -273,11 +350,51 @@
 			 <example>
 				<interlinear exampleLoc="ip/comparativeExample"/>
 			 </example>
-
-			 <p><content>Superlatives are another subtype of copular sentences, directly related to comparatives. They compare a nominal phrase to a group, which may be expressed as a prepositional or postpositional phrase or simply implied. Like comparatives, superlatives include whatever copula the language uses, or a perception verb, along with special superlative degree marking on the predicate adjective or nominal phrase. In some languages, the superlative degree marking may either be an independent degree word or an affix on the predicate adjective.  This is shown in the English examples: </content>
-				<langData>John is the most handsome of the boys</langData><content>, </content><langData>Sue is the best runner (in the class</langData><content> and </content>
-				<langData>Mary looks prettiest</langData><content>.</content></p>
-
+		        <p contentType="ctComparativeIntro"><content>Now consider comparatives which have two sentences surrounding the comparative conjunction, though the second sentence may be missing the adjective.
+		              Like the shorter comparatives above, these compare the qualities or actions of the subjects of the sentences and may have a copular verb or a perception verb or an action verb, along with an adjective that is modified by a degree word or affix. Some English examples are:
+		           </content><langData>John is more handsome than Bill is</langData><content>, </content><langData>Sue runs much faster than Mary can run</langData><content>, </content>
+		           <langData>David appears lots shorter than Michael does</langData><content>, </content><langData>Mary looks prettier than Julie looks</langData><content> and </content>
+		           <langData>John seems less certain of his answers than Sue seems</langData><content>.</content>
+		        </p>
+		        <p contentType="ctComparativeIntro"><content>Some languages do not allow any part of the second sentence to be omitted and instead always have two full sentences being compared.  Also, languages which do not have a separate comparative conjunction meaning </content><gloss><content>‘than’</content></gloss><content> for the shorter comparative constructions will simply have the two sentence parts following one another in this construction.
+		        </content> </p>
+		     <p contentType="ctPracticalIntro"><content>Now consider comparatives which have two sentences surrounding the comparative conjunction, though the second sentence may be missing the adjective.
+		     </content> </p>
+		     <p><content>In these fuller comparative constructions, </content><langName/><case element="ip" attr="gap">
+		           <caseText value="yes"> allows the adjective to be omitted in the second part. </caseText>
+		           <caseText value="no"> requires the full sentence to be repeated for the second part, including the adjective. </caseText>
+		        </case>
+		           <langName/><case element="ip" attr="comparative">
+		              <caseText value="yes"> has a comparative conjunction meaning ‘than’ which is used in both the shorter comparatives and these fuller comparatives, as shown above.</caseText>
+		              <caseText value="no"> does not have a comparative conjunction meaning ‘than’, so this type of comparative has the two sentence parts directly following one another.</caseText>
+		           </case>
+		        </p>
+		        <p>
+		           <content>Examples of these fuller comparative sentences in </content><langName/><content> are:</content>
+		        </p>
+		        <example>
+		           <interlinear exampleLoc="ip/comparativeSentExample"/>
+		        </example>
+		        
+		     <p contentType="ctComparativeIntro"><content>Superlatives are another subclass of copular sentences, directly related to comparatives. They compare a nominal phrase to a group, which may be expressed as </content>
+		        <case element="pp" attr="pPos">
+		           <caseText value="before">a prepositional</caseText>
+		           <caseText value="after">a postpositional</caseText>
+		           <caseText value="both">an adpositional</caseText>
+		           <caseText value="unknown">an adpositional</caseText>
+		        </case>
+		        <content> phrase or simply implied. Like comparatives, superlatives include whatever copula the language uses, or a perception verb, along with special superlative degree marking on the predicate adjective or nominal phrase. In some languages, the superlative degree marking may either be an independent degree word or an affix on the predicate adjective.  This is shown in the English examples: </content>
+			    <langData>John is the most handsome of the boys</langData><content>, </content><langData>Sue is the worst runner (in the class</langData><content>, </content><langData>David appears the tallest (of all)</langData><content>, </content><langData>Mary looks prettiest</langData><content> and </content>
+			    <langData>John seems the least certain of his answers of all my students</langData><content>.</content></p>
+		     <p contentType="ctPracticalIntro"><content>Superlatives are another subtype of copular sentences, directly related to comparatives. They compare a nominal phrase to a group, which may be expressed as </content>
+		        <case element="pp" attr="pPos">
+		           <caseText value="before">a prepositional</caseText>
+		           <caseText value="after">a postpositional</caseText>
+		           <caseText value="both">an adpositional</caseText>
+		           <caseText value="unknown">an adpositional</caseText>
+		        </case>
+		        <content> phrase or simply implied.</content></p>
+		     
 			 <p><content>As with comparatives in </content><langName/><content>, </content><case element="ip" attr="comparativeAdj">
 				<caseText value="no">there is not an affix to express the superlative degree on predicate adjectives.  A separate superlative degree word is used with both predicate adjectives and nominal phrases.</caseText>
 				<caseText value="yes">one or more affixes express the superlative degree on predicate adjectives and one is always used with predicate adjectives in superlatives.  </caseText>
@@ -324,19 +441,26 @@
 		  <section3 id="sIPExistentials">
 			 <secTitle>Existentials</secTitle>
 
-			 <p><content>Existential sentences are similar to copular sentences, except that they use a word or words meaning </content><gloss><content>‘there is’</content></gloss><content> or </content><gloss><content>‘there exists’</content></gloss><content> along with a nominal phrase and usually a location. English examples include: </content>
+			 <p contentType="ctComparativeIntro"><content>Existential sentences are similar to copular sentences, except that they use a word or words meaning </content><langData>there</langData><content> or </content><langData>there exists</langData><content> along with a nominal phrase and usually a location. English examples include: </content>
 				<langData>There is a book on the table</langData><content>, </content><langData>There are two men outside</langData><content> and </content><langData>There is no more food</langData><content>.</content>
 			 </p>
-			 <p><content>Some languages instead have a separate existential verb, such as </content><langData>hay</langData><gloss><content> ‘there exists’</content></gloss><content> in Spanish.  Other languages have a whole set of existential verbs which express the position of the object being described.</content></p>
+			 <p contentType="ctComparativeIntro"><content>Some languages instead have a separate existential verb, such as </content><langData>hay</langData><gloss><content> ‘there exists’</content></gloss><content> in Spanish.  Other languages have a whole set of existential verbs which express the position of the object being described.</content></p>
+		     <p contentType="ctPracticalIntro"><content>Existential sentences are distinguished from copular sentences by special existential verbs and/or words along with a nominal phrase and usually a location.</content></p>
 
-			 <p><langName/><case element="ip" attr="existVerb">
-				<caseText value="yes"> has one or more verbs used especially in existential sentences, and there is also a separate existential word meaning ‘there’ or ‘there exists’.</caseText>
-				<caseText value="yesOnly"> has one or more verbs used especially in existential sentences, and these verbs fully express the existential alone, like ‘hay’ in Spanish.</caseText>
-				<caseText value="noCop"> does not have special verbs for existential sentences.  The normal copula is used, along with a separate existential word meaning ‘there’ or ‘there exists’.</caseText>
-				<caseText value="no"> does not use any verb in existential sentences.  Only the separate existential word meaning ‘there’ or ‘there exists’ is used for existential sentences.</caseText>
-			 </case><content>  </content></p>
-			 <p show="swIPExistVerbYesOrYesOnly"><content>The verbs used in existential sentences in </content><langName/><content> are:</content></p>
-			 <example show="swIPExistVerbYesOrYesOnly">
+			 <p><langName/>
+			    <text show="swIPExistNone"><content> does not distinguish existential sentences at all.  They are exactly the same as copular sentences exemplified above in section </content><sectionRef sec="sIPCop"/><content>.</content></text>
+			    <text show="swIPExistWordOnly"><content> has an independent existential word meaning </content><langData>there</langData><content> or </content><langData>there exists</langData><content>.</content></text>
+			    <text show="swIPExistVerbOnly"><content> has one or more verbs used especially in existential sentences, and these verbs fully express the existential alone.</content></text>
+			    <text show="swIPExistWordAndVerb"><content> has one or more verbs used especially in existential sentences, and there is also an independent existential word meaning </content><langData>there</langData><content> or </content><langData>there exists</langData><content>.</content></text>
+			    <text show="swIPExistPositionOnly"><content> a set of existential verbs which express the position of the object.</content></text>
+			    <text show="swIPExistWordAndPosition"><content> has an independent existential word meaning </content><langData>there</langData><content> or </content><langData>there exists</langData><content> and a set of existential verbs which express the position of the object.</content></text>
+			    <text show="swIPExistVerbAndPosition"><content> has one or more verbs used especially in existential sentences, along with a set of existential verbs which express the position of the object.</content></text>
+			    <text show="swIPExistWordAndVerbAndPosition"><content> has one or more verbs used especially in existential sentences, and there is also an independent existential word meaning </content><langData>there</langData><content> or </content><langData>there exists</langData><content>, along with a set of existential verbs which express the position of the object.</content></text>
+			    <text show="swIPExistOtherOnly"><content> marks existential sentences by ___</content><contentCheckBoxOther contentLoc="ip/existOther"/><content>.</content></text>
+			    <text show="swIPExistAndOther"><content>  Existential sentences are also marked by ___</content><contentCheckBoxOther contentLoc="ip/existOther"/><content>.</content></text>
+			 </p>
+			 <p show="swIPExistVerb"><content>The verbs used in existential sentences in </content><langName/><content> are:</content></p>
+			 <example show="swIPExistVerb">
 				<table border="1">
 				   <headerRow>
 					  <headerCol>Existential Verbs</headerCol>
@@ -348,8 +472,8 @@
 				   </row>
 				</table>
 			 </example>
-			 <p show="swIPExistVerbNotYesOnly"><content>The existential word(s) meaning </content><gloss><content>‘there’</content></gloss><content> or </content><gloss><content>‘there exists’</content></gloss><content> used in existential sentences in </content><langName/><content> are:</content></p>
-			 <example show="swIPExistVerbNotYesOnly">
+			 <p show="swIPExistWord"><content>The existential word(s) meaning </content><langData>there</langData><content> or </content><langData>there exists</langData><content> used in existential sentences are:</content></p>
+			 <example show="swIPExistWord">
 				<table border="1">
 				   <headerRow>
 					  <headerCol>Existential Words</headerCol>
@@ -361,7 +485,33 @@
 				   </row>
 				</table>
 			 </example>
-			 <p>
+		     <p show="swIPExistPosition"><content>The existential verbs which mark the position of the object are:</content></p>
+		     <example show="swIPExistPosition">
+		        <table border="1">
+		           <headerRow>
+		              <headerCol>Existential Positional Verbs</headerCol>
+		              <headerCol>Gloss</headerCol>
+		           </headerRow>
+		           <row>
+		              <col exampleLoc="ip/existPositionExample"/>
+		              <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		           </row>
+		        </table>
+		     </example>
+		     <p show="swIPExistOther"><content>The special markers for existential sentences in </content><langName/><content> are:</content></p>
+		     <example show="swIPExistOther">
+		        <table border="1">
+		           <headerRow>
+		              <headerCol>Existential Markers</headerCol>
+		              <headerCol>Gloss</headerCol>
+		           </headerRow>
+		           <row>
+		              <col exampleLoc="ip/existOtherExample"/>
+		              <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+		           </row>
+		        </table>
+		     </example>
+		     <p>
 				<content>Examples of existential sentences in </content>
 				<langName/>
 				<content> include:</content>
@@ -376,82 +526,56 @@
 
 	   <section2 id="sIPMotion">
 		  <secTitle>Intransitives and Motion Constructions</secTitle>
-		  <p>
+		  <p contentType="ctComparativeIntro">
 			 <content>Simple intransitives do not have any complements after the verb, such as in </content>
 			 <langData>The girl swims</langData>
-			 <content>.  Motion verbs include a location in the form of either a </content>
-			 <case element="pp" attr="pPos">
-				<caseText value="before">prepositional</caseText>
-				<caseText value="after">postpositional</caseText>
-				<caseText value="both">prepositional or postpositional</caseText>
-				<caseText value="unknown">prepositional or postpositional</caseText></case>
-			 <content> phrase or adverb.  English examples of motion verbs include </content>
-			 <langData>The girl ran around the track</langData>
-			 <content>, </content>
-			 <langData>My mother went to the store</langData>
-			 <content> and </content>
-			 <langData>My teacher came here</langData>
-			 <content>.</content>
-		  </p>
-		  <p>
+		     <content>.  Many intransitives have Experiencer subjects instead of Agent subjects, such as in </content> <langData>My sister laughed</langData>
+		     <content>.  </content></p>  
+	      <p contentType="ctPracticalIntro">
+	         <content>Simple intransitives do not have any complements after the verb.  The subject may be an Agent or an Experiencer, depending on the verb.</content></p>  
+	      <p>
 			 <content>Examples of simple intransitive sentences in </content>
 			 <langName/>
-			 <content> with an Agent nominal phrase or proper name in the subject position include:</content>
+	         <content> with an Agent subject are shown in </content><exampleRef num="xIntranAgentNP"/><content>-</content><exampleRef num="xIntranAgentPron"/><content>.  In </content><exampleRef num="xIntranAgentNP"/><content> a nominal phrase or proper name fills the subject position, while in </content><exampleRef num="xIntranAgentPron"/><content> the subject is a pronoun.</content>
 		  </p>
-		  <example>
+		  <example num="xIntranAgentNP">
 			 <interlinear exampleLoc="typology/intExample"/>
 		  </example>
-		  <p><content>Examples of simple intransitive sentences in </content>
-			 <langName/>
-			 <content> with an independent Agent pronoun in the subject position include:</content>
-		  </p>
-		  <example>
+		  <example num="xIntranAgentPron">
 			 <interlinear exampleLoc="typology/pnIntExample"/>
 		  </example>
 		  <p>
-			 <content>Examples of simple intransitive sentences in </content>
-			 <langName/>
-			 <content> with an Experiencer nominal phrase or proper name in the subject position include:</content>
+		     <content>Examples with an Experiencer subject are shown in </content><exampleRef num="xIntranExperiencerNP"/><content>-</content><exampleRef num="xIntranExperiencerPron"/><content>.  In </content><exampleRef num="xIntranExperiencerNP"/><content> a nominal phrase or proper name fills the subject position, while in </content><exampleRef num="xIntranExperiencerPron"/><content> the subject is a pronoun.</content>
 		  </p>
-		  <example>
+		  <example num="xIntranExperiencerNP">
 			 <interlinear exampleLoc="typology/experiencerIntExample"/>
 		  </example>
-		  <p><content>Examples of simple intransitive sentences in </content>
-			 <langName/>
-			 <content> with an independent Experiencer pronoun in the subject position include:</content>
-		  </p>
-		  <example>
+		  <example num="xIntranExperiencerPron">
 			 <interlinear exampleLoc="typology/experiencerPnIntExample"/>
 		  </example>
-		  <p show="swNPCaseNone"><content>There is no distinction between the nominal phrases nor the pronouns used for Agent subjects and Experiencer subjects in the examples above, since </content><langName/><content> does not have a case system.</content></p>
-		  <p show="swNPCaseNomorSplit"><content>The examples above verify that </content><case element="typology" attr="case">
-			 <caseText value="split">in most constructions </caseText>
-		  </case>
-			 <case element="typology" attr="caseExperiencer">
-				<caseText value="no">both Agent and Experiencer subjects use the same nominative </caseText>
-				<caseText value="yesObj">Agent subjects are nominative case while Experiencer subjects use the accusative </caseText>
-				<caseText value="yesDat">Agent subjects are nominative case while Experiencer subjects use the dative </caseText>
-			 </case><case element="np" attr="caseN">
-				<caseText value="no">pronouns for intransitive verbs. </caseText>
-				<caseText value="yes">case markers and pronouns for intransitive verbs. </caseText>
-			 </case><case  element="typology" attr="caseExperiencer">
-				<caseText value="yesObj"> (There is no distinct datve case.)</caseText></case>
-			 <case element="typology" attr="case">
-				<caseText value="split"> Under certain grammatical conditions, the case system switches to ergative-absolutive, where the normal case of subjects of intransitive verbs is absolutive. </caseText>
-			 </case>
-		  </p>
-		  <p show="swNPCaseErg"><content>The examples above verify that </content>
-			 <case element="typology" attr="caseExperiencer">
-				<caseText value="no">both Agent and Experiencer subjects use the same absolutive </caseText>
-				<caseText value="yesObj">both Agent and Experiencer subjects use the same absolutive </caseText>
-				<caseText value="yesDat">Agent subjects are absolutive case while Experiencer subjects use the dative </caseText>
-			 </case><case element="np" attr="caseN">
-				<caseText value="no">pronouns for intransitive verbs. </caseText>
-				<caseText value="yes">case markers and pronouns for intransitive verbs. </caseText>
-			 </case><case  element="typology" attr="caseExperiencer">
-				<caseText value="yesObj"> (There is no distinct datve case.)</caseText></case>
-		  </p>
-		  <p>
+			    <p contentType="ctComparativeIntro"><content>Sentences with a motion verb include a location in the form of either </content>
+			       <case element="pp" attr="pPos">
+			          <caseText value="before">a prepositional</caseText>
+			          <caseText value="after">a postpositional</caseText>
+			          <caseText value="both">a prepositional or postpositional</caseText>
+			          <caseText value="unknown">an adpositional</caseText></case>
+			       <content> phrase or adverb.  English examples of motion verbs include </content>
+			       <langData>The girl ran around the track</langData>
+			       <content>, </content>
+			       <langData>My mother went to the store</langData>
+			       <content> and </content>
+			       <langData>My teacher came here</langData>
+			       <content>.</content>
+			    </p>
+	      <p contentType="ctPracticalIntro"><content>Sentences with a motion verb include a location in the form of either </content>
+	         <case element="pp" attr="pPos">
+	            <caseText value="before">a prepositional</caseText>
+	            <caseText value="after">a postpositional</caseText>
+	            <caseText value="both">a prepositional or postpositional</caseText>
+	            <caseText value="unknown">an adpositional</caseText></case>
+	         <content> phrase or adverb.</content>
+	      </p>
+	      <p>
 			 <content/>
 			 <langName/>
 			 <content> examples with motion verbs include:</content>
@@ -462,107 +586,69 @@
 	   </section2>
 	   <section2 id="sIPTrans">
 			<secTitle>Transitives and Ditransitives</secTitle>
-			<p>
-				<content>Examples of English transitive single-clause sentences include </content>
+			<p contentType="ctComparativeIntro">
+				<content>Examples of English transitive single-clause sentences with an Agent subject include </content>
 				<langData>The batter will hit the ball</langData>
-				<content>, </content>
-				<langData>My baby wants that toy</langData>
+			   <content> and </content>
+			   <langData>The dog might have buried his bone</langData>
+			   <content>.  Examples with an Experiencer subject include: </content>
+				<langData>The baby wants that toy</langData>
 				<content> and </content>
-				<langData>The dog might have buried his bone</langData>
+			   <langData>My daughter likes her gift</langData>
 				<content>.</content>
 			</p>
-		  <p>
-			 <content/>
-			 <langName/>
-			 <content> examples of transitive sentences with an Agent subject which have proper names or nominal phrases in the subject and object positions include:</content>
-		  </p>
-		  <example>
+	   
+	         <p>
+	         <content/>
+	         <langName/>
+	         <content> examples of transitive sentences with an Agent subject are shown in </content><exampleRef num="xTranAgentNP"/><content>-</content><exampleRef num="xTranAgentPron"/><content>.  In </content><exampleRef num="xTranAgentNP"/><content> nominal phrases or proper names fill the subject and direct object positions, while in </content><exampleRef num="xTranAgentPron"/><content> the subject and direct object are pronouns.</content>
+	      </p>
+	      
+		  <example num="xTranAgentNP">
 			 <interlinear exampleLoc="typology/example"/>
 		  </example>
-		  <p>
-			 <content/>
-			 <langName/>
-			 <content> examples of transitive sentences with an Agent subject which have pronouns in the subject and object positions include:</content>
-		  </p>
-		  <example>
+		  <example num="xTranAgentPron">
 			 <interlinear exampleLoc="typology/pnExample"/>
 		  </example>
-		  <p>
-			 <content/>
-			 <langName/>
-			 <content> examples of transitive sentences with an Experiencer subject which have proper names or nominal phrases in the subject and object positions include:</content>
-		  </p>
-		  <example>
+	      <p>
+	         <content>Transitive examples with an Experiencer subject are shown in </content><exampleRef num="xTranExperiencerNP"/><content>-</content><exampleRef num="xTranExperiencerPron"/><content>.  In </content><exampleRef num="xTranExperiencerNP"/><content> nominal phrases or proper names fill the subject and direct object positions, while in </content><exampleRef num="xTranExperiencerPron"/><content> the subject and direct object are pronouns.</content>
+	      </p>
+	      <example num="xTranExperiencerNP">
 			 <interlinear exampleLoc="typology/experiencerExample"/>
 		  </example>
-		  <p>
-			 <content/>
-			 <langName/>
-			 <content> examples of transitive sentences with an Experiencer subject which have pronouns in the subject and object positions include:</content>
-		  </p>
-		  <example>
+	      <example num="xTranExperiencerPron">
 			 <interlinear exampleLoc="typology/pnExperiencerExample"/>
 		  </example>
-		  <p show="swNPCaseNone"><content>There is no distinction between the nominal phrases nor the pronouns used for Agent subjects and Experiencer subjects in the examples above, since </content><langName/><content> does not have a case system.</content></p>
-		  <p show="swNPCaseNomorSplit"><content>The examples above verify that </content><case element="typology" attr="case">
-			 <caseText value="split">in most constructions </caseText>
-		  </case>
-			 <case element="typology" attr="caseExperiencer">
-				<caseText value="no">both Agent and Experiencer subjects use the same nominative </caseText>
-				<caseText value="yesObj">Agent subjects are nominative case while Experiencer subjects use the accusative </caseText>
-				<caseText value="yesDat">Agent subjects are nominative case while Experiencer subjects use the dative </caseText>
-			 </case><case element="np" attr="caseN">
-				<caseText value="no">pronouns for transitive verbs. </caseText>
-				<caseText value="yes">case markers and pronouns for transitive verbs. </caseText>
-			 </case><case  element="typology" attr="caseExperiencer">
-				<caseText value="yesObj"> (There is no distinct datve case.)</caseText></case>
-			 <case element="typology" attr="case">
-				<caseText value="split"> Under certain grammatical conditions, the case system switches to ergative-absolutive, where the normal case of subjects of transitive verbs is ergative. </caseText>
-			 </case>
-		  </p>
-		  <p show="swNPCaseErg"><content>The examples above verify that </content>
-			 <case element="typology" attr="caseExperiencer">
-				<caseText value="no">both Agent and Experiencer subjects use the same ergative </caseText>
-				<caseText value="yesObj">Agent subjects are ergative case while Experiencer subjects use the absolutive </caseText>
-				<caseText value="yesDat">Agent subjects are absolutive case while Experiencer subjects use the dative </caseText>
-			 </case><case element="np" attr="caseN">
-				<caseText value="no">pronouns for transitive verbs. </caseText>
-				<caseText value="yes">case markers and pronouns for transitive verbs. </caseText>
-			 </case><case  element="typology" attr="caseExperiencer">
-				<caseText value="yesObj"> (There is no distinct datve case.)</caseText></case>
-		  </p>
-		  <p>
-				<content>Ditransitives can have the second object expressed as a </content>
+		  <p contentType="ctComparativeIntro">
+				<content>Ditransitives can have the second object expressed as </content>
 				<case element="pp" attr="pPos">
-					<caseText value="before">prepositional</caseText>
-					<caseText value="after">postpositional</caseText>
-					<caseText value="both">prepositional or postpositional</caseText>
-					<caseText value="unknown">prepositional or postpositional</caseText></case>
+				   <caseText value="before">a prepositional</caseText>
+				   <caseText value="after">a postpositional</caseText>
+				   <caseText value="both">a prepositional or postpositional</caseText>
+				   <caseText value="unknown">an adpositional</caseText></case>
 				<content> phrase or as a nominal phrase.  Some languages, like English, allow both types via Dative Movement, as in </content>
 				<langData>The girl gave the gift to her mother</langData>
 				<content> and </content>
 				<langData>The girl gave her mother the gift</langData>
 				<content>.</content>
 			</p>
-			<p>
-				<content>In </content>
+	      <p>
+				<content>In ditransitive sentences </content>
 				<langName/>
-				<content>, the second object in a ditransitive </content>
+				<content>, the second object </content>
 				<case element="ip" attr="diCat">
-					<caseText value="pp">is always a
-						<case element="pp" attr="pPos">
-							<caseText value="before">prepositional phrase.</caseText>
-							<caseText value="after">postpositional phrase.</caseText>
-							<caseText value="both">prepositional or postpositional phrase.</caseText>
-							<caseText value="unknown">prepositional or postpositional phrase.</caseText></case>
+					<caseText value="pp">is always <case element="pp" attr="pPos">
+					   <caseText value="before">a prepositional phrase.</caseText>
+					   <caseText value="after">a postpositional phrase.</caseText>
+					   <caseText value="both">a prepositional or postpositional phrase.</caseText>
+					   <caseText value="unknown">an adpositional phrase.</caseText></case>
 						</caseText>
 					<caseText value="dp">is always a nominal phrase.  The </caseText>
-					<caseText value="both">can be either a
-						<case element="pp" attr="pPos">
-							<caseText value="before">prepositional</caseText>
-							<caseText value="after">postpositional</caseText>
-							<caseText value="both">prepositional or postpositional</caseText>
-							<caseText value="unknown">prepositional or postpositional</caseText></case>
+					<caseText value="both">can be either <case element="pp" attr="pPos">
+					   <caseText value="before">a prepositional</caseText>
+					   <caseText value="after">a postpositional</caseText>
+					   <caseText value="both">a prepositional or postpositional</caseText>
+					   <caseText value="unknown">an adpositional</caseText></case>
 						 phrase or a nominal phrase.  When both objects are nominal phrases, the </caseText>
 				</case>
 				<text show="swIPDiCatNotPP">
@@ -573,17 +659,237 @@
 					<content> appears closest to the verb.</content>
 				</text>
 			</p>
-			<p>	<content>  Examples of ditransitive sentences in </content>
-				<langName/>
-				<content> include:</content>
+			<p>	<content>  Some examples of ditransitive sentences are:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="ip/diExample"/>
 			</example>
-		</section2>
+	   </section2>
+	   <section2 id="sIPImp">
+	      <secTitle>Imperatives</secTitle>
+	      <p><content>Imperatives are commands.  In </content><langName/><content>, a subject </content>
+	      <text show="swIPProDropImpYes"><content>may be missing in imperatives, since it is assumed to be second person.</content></text>
+	         <text show="swIPProDropImpNo"><content>is required in imperative sentences.</content></text>
+	      <content>  Some examples of imperatives are:</content></p>
+	      <example><interlinear exampleLoc="ip/impExample"/></example>
+	      <p><langName/><case element="ip" attr="impPolite">
+	         <caseText value="yes"> also has a polite form for imperatives.  Examples are:</caseText>
+	         <caseText value="no"> does not have a polite form for imperatives.  </caseText>
+	      </case><content/></p>
+	      <example show="swIPImpPoliteYes"><interlinear exampleLoc="ip/impPoliteExample"/></example>
+	   </section2>
+	   
+	   <section2 id="sIPConditional">
+	      <secTitle>Conditionals</secTitle>
+	      
+	      <p contentType="ctComparativeIntro"><content>Conditionals have two parts: a condition and a consequence.  The condition is introduced by a conditional word, such as </content><langData>if</langData><content>, </content><langData>when</langData><content> or </content><langData>after</langData><content>, and is set off by a comma.  The consequence may be marked by a word meaning </content> <langData>then</langData><content> in examples with the condition first.  English examples include: </content>
+	         <langData>If you save enough money, then you can buy that</langData><content>, </content>
+	         <langData>After you clean your room, then you can play</langData><content> and </content>
+	         <langData>When you eat your vegetables, then you can have dessert</langData><content>.  The consequence can also be presented before the condition, in which case there is no marker on the consequence, only on the condition.  English examples include: </content><langData>You can buy that if you have enough money saved</langData><content>, </content>
+	         <langData>You can play with your friends after you clean your room</langData><content> and </content>
+	         <langData>You can have dessert when you have finished your vegetables</langData><content>.</content></p>
+	      <p contentType="ctPracticalIntro"><content>Conditionals have two parts: a condition and a consequence.  The two can appear in either order.</content></p>
+	      
+	         <p><content>Some examples of conditionals in </content><langName/><content> are:</content></p>
+	      <example><interlinear exampleLoc="ip/conditionalExample"/></example>
+	      <p show="swIPConditionWordMood"><content>As the  examples show, there is no marker for the condition in </content><langName/><content>, only the conditional mood itself marked on the verb.</content></p>
+	      <p show="swIPConditionWordYesOrSome"><content>As the examples show, the condition is </content>
+	      <case element="ip" attr="conditionWord">
+	         <caseText  value="yes">marked by independent words which occur </caseText>
+	         <caseText value="some">sometimes marked by independent words which occur </caseText>
+	      </case>
+	         <text show="swIPConditionWordBefore"><content>before</content></text>
+	         <text show="swIPConditionWordAfter"><content>after</content></text>
+	         <text show="swIPConditionWordBoth"><content>on both sides of</content></text>
+	         <text show="swIPConditionWordEither"><content>on either side of</content></text>
+	         <text show="swIPConditionWordBeforeOrBoth"><content>before or on both sides of</content></text>
+	         <text show="swIPConditionWordAfterOrBoth"><content>after or on both sides of</content></text>
+	         <text show="swIPConditionWordEitherOrBoth"><content>on either side or on both sides of</content></text>
+	         <text show="swIPConditionWordNotOther"><content> the rest of the conditional phrase.  </content></text>
+	         <text show="swIPConditionWordOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="ip/conditionWordOther"/><content>.  </content></text>
+	         <text show="swIPConditionWordPosAndOther"><content> the rest of the conditional phrase and may also occur ___ </content><contentCheckBoxOther contentLoc="ip/conditionWordOther"/><content>.  </content></text>
+	         <content>  The words which mark the condition are:</content>
+	      </p>
+	      <example show="swIPConditionWordYesOrSome">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Condition words</headerCol>
+	               <headerCol>Gloss</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/conditionWordExample"/>
+	               <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+	            </row>
+	         </table>
+	      </example>     
+	      <p show="swIPConditionWordNoOrSome"><text show="swIPConditionWordNo"><content>As the examples show, the condition is marked by </content></text>
+	         <text show="swIPConditionWordSome"><content>The condition may also be marked by </content></text>
+	         <text show="swIPConditionProclitic"><content>phrasal proclitics which attach to the front of whatever word begins the conditional phrase.  </content></text>
+	         <text show="swIPConditionEnclitic"><content>phrasal enclitics which attach to the end of whatever word ends the conditional phrase.    </content></text>
+	         <text show="swIPConditionClitic"><content>phrasal clitics which attach either to the front of whatever word begins the conditional phrase or to the end of whatever word ends the conditional phrase.   </content></text>
+	         <text show="swIPConditionPrefix"><content>prefixes which attach to the head noun in the conditional phrase.  </content></text>
+	         <text show="swIPConditionSuffix"><content>suffixes which attach to the head noun in the conditional phrase.   </content></text>
+	         <text show="swIPConditionAffix"><content>affixes which attach to the head noun in the conditional phrase.   </content></text>
+	         <text show="swIPConditionCliticAffix"><content>either clitics which attach to the beginning or end of the conditional phrase, or by affixes which attach to the head noun in the conditional phrase.  </content></text>
+	         <text show="swIPConditionOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="ip/conditionOther"/><content>.  </content></text>
+	         <text show="swIPConditionOtherAnd"><content>  Some also attach ___</content><contentCheckBoxOther contentLoc="ip/conditionOther"/>  <content>.</content></text>              
+	         <content></content>
+	      </p>   
+	<p show="swIPConditionWordNoOrSomeAndClitic"><content>The clitics which mark the condition are:</content></p>      
+	      <example show="swIPConditionWordNoOrSomeAndClitic">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Condition clitics</headerCol>
+	               <headerCol>Gloss</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/conditionCliticExample"/>
+	               <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+	            </row>
+	         </table>
+	      </example>     
+	      <p show="swIPConditionWordNoOrSomeAndAffix"><content>The affixes which mark the condition are:</content></p>      
+	      <example show="swIPConditionWordNoOrSomeAndAffix">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Condition affixes</headerCol>
+	               <headerCol>Gloss</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/conditionAffixExample"/>
+	               <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+	            </row>
+	         </table>
+	      </example>     
+	      <p show="swIPConditionWordNoOrSomeAndOther"><content>The other elements which mark the condition in </content><langName/><content> are:</content></p>      
+	      <example show="swIPConditionWordNoOrSomeAndOther">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Condition markers</headerCol>
+	               <headerCol>Gloss</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/conditionOtherExample"/>
+	               <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+	            </row>
+	         </table>
+	      </example>     
+	      <p show="swIPConditionWordNotMood"><content>The consequence part of the conditional </content>
+	      <case element="ip" attr="consequence">
+	         <caseText value="yes">may be marked by an independent word which is required when the conditional phrase comes first.  </caseText>
+	         <caseText value="optional">may be marked by an independent word, but it is optional even when the conditional phrase comes first.  </caseText>
+	         <caseText value="no">is never marked by an independent word.</caseText></case>
+	         <content>This word occurs </content>
+	      <case element="ip" attr="consequencePos">
+	         <caseText value="before">before</caseText>
+	      <caseText value="after">after</caseText></case>
+	      <content> the rest of the consequence phrase.</content></p>
+	      
+	   </section2>
+	   
+	   <section2 id="sIPSubjunctive">
+	      <secTitle>Subjunctives</secTitle>
+	      <p contentType="ctComparativeIntro"><content>The subjunctive mood is used to express notions that are supposed, doubted, feared or desired.  They are not currently reality.  Subjunctives are not used very much in English and the examples look something like conditionals but in first person, such as: </content>
+	         <langData>If I were in charge, I would fix the problem</langData><content> and </content>
+	         <langData>If I were a man, I would be a soccer player</langData><content>
+	            In these examples, the subjuctive verb is </content><langData>were</langData><content> and it follows the conditional word </content> <langData>if</langData><content>.  The consequence is normally in the future form.  The consequence can also be presented before the subjunctive condition, as in: </content>   
+	         <langData>I would fix the problem if I were in charge</langData><content> and </content>
+	         <langData>I would like to be a soccer player if I were a man</langData><content>.</content>
+	         </p>
+	      <p contentType="ctComparativeIntro"><content>Subjunctives are most commonly used in embedded clauses in many languages, following main verbs such as </content><langData>demand</langData><content>, </content><langData>doubt</langData><content>, </content><langData>wish</langData><content>, </content><langData>fear</langData><content> and </content><langData>hope</langData><content> plus the complementizer </content><langData>that</langData><content>.  The embedded clause examples will be discussed further in section </content><sectionRef sec="sComp"/><content>. </content></p>
+	      <p contentType="ctPracticalIntro"><content>The subjunctive mood is used to express notions that are supposed, doubted, feared or desired.  They are not currently reality.  Subjunctives may look something like conditionals but in first person. Subjunctives are most commonly used in embedded clauses in many languages.  The embedded clause examples will be discussed in section </content><sectionRef sec="sComp"/><content>. </content></p>
+	      <p><content>Some examples of main clause subjunctives in </content><langName/><content> are:</content></p>
+	      <example><interlinear exampleLoc="ip/subjunctiveExample"/></example>
+
+	      <p show="swIPSubjunctiveCondWordMood"><content>As the examples show, there is no marker for the condition in subjunctives in </content><langName/><content>, only the subjunctive mood itself marked on the verb.</content></p>
+	      
+	      <p show="swIPSubjunctiveCondWordYesOrSome"><content>As the examples show, the condition in subjunctives is </content>
+	         <case element="ip" attr="subjunctiveCondWord">
+	            <caseText  value="yes">marked by independent words which occur </caseText>
+	            <caseText value="some">sometimes marked by independent words which occur </caseText>
+	         </case>
+	         <text show="swIPSubjunctiveCondWordBefore"><content>before</content></text>
+	         <text show="swIPSubjunctiveCondWordAfter"><content>after</content></text>
+	         <text show="swIPSubjunctiveCondWordBoth"><content>on both sides of</content></text>
+	         <text show="swIPSubjunctiveCondWordEither"><content>on either side of</content></text>
+	         <text show="swIPSubjunctiveCondWordBeforeOrBoth"><content>before or on both sides of</content></text>
+	         <text show="swIPSubjunctiveCondWordAfterOrBoth"><content>after or on both sides of</content></text>
+	         <text show="swIPSubjunctiveCondWordEitherOrBoth"><content>on either side or on both sides of</content></text>
+	         <text show="swIPSubjunctiveCondWordNotOther"><content> the rest of the subjunctive conditional phrase.  </content></text>
+	         <text show="swIPSubjunctiveCondWordOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="ip/subjunctiveCondWordOther"/><content>.  </content></text>
+	         <text show="swIPSubjunctiveCondWordPosAndOther"><content> the rest of the subjunctive conditional phrase and may also occur  ___</content><contentCheckBoxOther contentLoc="ip/subjunctiveCondWordOther"/><content>.  </content></text>
+	         <content>  The words which mark the condition in subjunctives are:</content>
+	      </p>
+	      <example show="swIPSubjunctiveCondWordYesOrSome">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Subjunctive Condition words</headerCol>
+	               <headerCol>Gloss</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/subjunctiveCondWordExample"/>
+	               <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+	            </row>
+	         </table>
+	      </example>     
+	      <p show="swIPSubjunctiveCondWordNoOrSome"><text show="swIPSubjunctiveCondWordNo"><content>As the examples show, the condition in subjunctives is marked by </content></text>
+	         <text show="swIPSubjunctiveCondWordSome"><content>The condition in subjunctives may also be marked by </content></text>
+	         <text show="swIPSubjunctiveCondProclitic"><content>phrasal proclitics which attach to the front of whatever word begins the subjunctive conditional phrase.  </content></text>
+	         <text show="swIPSubjunctiveCondEnclitic"><content>phrasal enclitics which attach to the end of whatever word ends the subjunctive conditional phrase.    </content></text>
+	         <text show="swIPSubjunctiveCondClitic"><content>phrasal clitics which attach either to the front of whatever word begins the subjunctive conditional phrase or to the end of whatever word ends the subjunctive conditional phrase.   </content></text>
+	         <text show="swIPSubjunctiveCondPrefix"><content>prefixes which attach to the head noun in the subjunctive conditional phrase.  </content></text>
+	         <text show="swIPSubjunctiveCondSuffix"><content>suffixes which attach to the head noun in the subjunctive conditional phrase.   </content></text>
+	         <text show="swIPSubjunctiveCondAffix"><content>affixes which attach to the head noun in the subjunctive conditional phrase.   </content></text>
+	         <text show="swIPSubjunctiveCondCliticAffix"><content>either clitics which attach to the beginning or end of the subjunctive conditional phrase, or by affixes which attach to the head noun in the subjunctive conditional phrase.  </content></text>
+	         <text show="swIPSubjunctiveCondOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="ip/subjunctiveCondOther"/><content>.  </content></text>
+	         <text show="swIPSubjunctiveCondOtherAnd"><content>  Some also attach ___</content><contentCheckBoxOther contentLoc="ip/subjunctiveCondOther"/>  <content>.</content></text>              
+	         <content></content>
+	      </p>   
+	      <p show="swIPSubjunctiveCondWordNoOrSomeAndClitic"><content>The clitics which mark the subjunctive condition are:</content></p>      
+	      <example show="swIPSubjunctiveCondWordNoOrSomeAndClitic">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Subjunctive Condition clitics</headerCol>
+	               <headerCol>Gloss</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/subjunctiveCondCliticExample"/>
+	               <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+	            </row>
+	         </table>
+	      </example>     
+	      <p show="swIPSubjunctiveCondWordNoOrSomeAndAffix"><content>The affixes which mark the subjunctive condition are:</content></p>      
+	      <example show="swIPSubjunctiveCondWordNoOrSomeAndAffix">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Subjunctive Condition affixes</headerCol>
+	               <headerCol>Gloss</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/subjunctiveCondAffixExample"/>
+	               <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+	            </row>
+	         </table>
+	      </example>     
+	      <p show="swIPSubjunctiveCondWordNoOrSomeAndOther"><content>The other elements which mark the subjunctive condition in </content><langName/><content> are:</content></p>      
+	      <example show="swIPSubjunctiveCondWordNoOrSomeAndOther">
+	         <table border="1">
+	            <headerRow>
+	               <headerCol>Subjunctive Condition markers</headerCol>
+	               <headerCol>Gloss</headerCol>
+	            </headerRow>
+	            <row>
+	               <col exampleLoc="ip/subjunctiveCondOtherExample"/>
+	               <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+	            </row>
+	         </table>
+	      </example>     
+	      
+	   </section2>
+	   
 	   <section2 id="sIPPassive">
 		  <secTitle>Passives</secTitle>
-		  <p>
+		  <p contentType="ctComparativeIntro">
 			 <content>Most languages also have passive sentences, where the Theme or Patient fills the subject position.  The Agent may be optionally expressed in some languages, but is not allowed at all in others.  If expressed, it may take the form of a PP (as in English with the particular preposition </content>
 			 <langData>by</langData>
 			 <content>) or of a nominal phrase, depending on the language.  In addition, a particular auxiliary may be required in passives (a form of </content>
@@ -598,31 +904,40 @@
 			 <langData>The ball might have been hit by the boy</langData>
 			 <content>.</content>
 		  </p>
-		  <p>
+	      <p contentType="ctPracticalIntro">
+	         <content>In passive sentences the Theme or Patient fills the subject position.</content>
+	      </p>
+	      <p>
 			 <content/>
 			 <langName/>
 			 <content/>
 			 <case element="ip" attr="passive">
 				<caseText value="no"> does not have any passives.</caseText>
-				<caseText value="yes"> has passives</caseText>
+				<caseText value="yes"> has passives as shown here:</caseText>
 			 </case>
+	      </p>
+	      <example show="swIPPassiveYes">
+	         <interlinear exampleLoc="ip/passiveExample"/>
+	      </example>
+	      
+	      <p show="swIPPassiveYes">
 			 <content/>
 			 <text show="swIPPassiveYes">
-				<content> in which the Agent </content>
+				<content>The Agent </content>
 				<case element="ip" attr="passiveAgent">
 				   <caseText value="no">may not be expressed.</caseText>
 				   <caseText value="yes">may be expressed</caseText>
 				</case>
 				<content/>
 				<text show="swIPPassiveAgentYes">
-				   <content> as a </content>
+				   <content> as </content>
 				   <case element="ip" attr="passiveAgentCat">
 					  <caseText value="pp">
 						 <case element="pp" attr="pPos">
-							<caseText value="before">prepositional phrase.</caseText>
-							<caseText value="after">postpositional phrase.</caseText>
-							<caseText value="both">prepositional or postpositional phrase.</caseText>
-							<caseText value="unknown">prepositional or postpositional phrase.</caseText></case></caseText>
+							<caseText value="before">a prepositional phrase.</caseText>
+							<caseText value="after">a postpositional phrase.</caseText>
+							<caseText value="both">a prepositional or postpositional phrase.</caseText>
+							<caseText value="unknown">an adpositional phrase.</caseText></case></caseText>
 					  <caseText value="dp">nominal phrase.</caseText>
 				   </case>
 				   <content/>
@@ -641,7 +956,7 @@
 				<caseText value="before">preposition</caseText>
 				<caseText value="after">postposition</caseText>
 				<caseText value="both">preposition or postposition</caseText>
-				<caseText value="unknown">preposition or postposition</caseText></case><content> used to mark the Agent phrase in </content><langName/><content> is:</content></p>
+				<caseText value="unknown">adposition</caseText></case><content> used to mark the Agent phrase in </content><langName/><content> is:</content></p>
 		  <example show="swIPPassiveYesAndPP">
 			 <table border="1">
 				<headerRow>
@@ -668,25 +983,25 @@
 			 </table>
 		  </example>
 
-		  <p show="swIPPassiveYes">
-			 <content>Examples of passive sentences in </content>
-			 <langName/>
-			 <content> include:</content>
-		  </p>
-		  <example show="swIPPassiveYes">
-			 <interlinear exampleLoc="ip/passiveExample"/>
-		  </example>
 	   </section2>
-	   <section2 id="sIPAntipassives" show="swIPAntipassivesNotNo">
+	   <section2 id="sIPAntipassives" show="swIPAntipassiveYes">
 		  <secTitle>Antipassives</secTitle>
-		  <p><content>Instead of promoting the object to subject as a passive does, antipassive is a verb voice that deletes the object of transitive verbs. Antipassives are found most often in languages with an ergative-absolutive case system, where the deletion of the object changes the subject from ergative case to absolutive case. It is also found in some languages with a nominative-accusative case system where there is verbal agreement with both the subject and object. In these languages, the antipassive is usually formed by deleting the object agreement affix. Most languages with the antipassive voice are Australian Aboriginal or Native American languages. </content></p>
-		  <p><content>Similarly to the subject or Agent in passives, some languages allow the object or Patient to be optionally expressed in a prepositional or postpositional phrase.</content></p>
-		  <p><content>In </content><langName/><content>, </content><case element="ip" attr="antipassive">
-			 <caseText value="yesErg"> the subject of a transitive verb changes to absolutive case when the object is deleted in antipassives.</caseText>
-			 <caseText value="yesAgr">the object agreement affix on the verb is deleted to signal an antipassive.</caseText>
-			 <caseText value="yesAffix">there is a verbal affix for antipassive that signals the change in grammatical roles.  This affix is:</caseText>
-		  </case></p>
-		  <example show="swIPAntipassiveYesAffix">
+		  <p contentType="ctComparativeIntro"><content>Instead of promoting the object to subject as a passive does, antipassive is a verb voice that deletes the object of transitive verbs. Antipassives are found most often in languages with an ergative-absolutive case system, where the deletion of the object changes the subject from ergative case to absolutive case. It is also found in some languages with a nominative-accusative case system where there is verbal agreement with both the subject and object. In these languages, the antipassive is usually formed by deleting the object agreement affix. Most languages with the antipassive voice are Australian Aboriginal or Native American languages. </content></p>
+		  <p contentType="ctComparativeIntro"><content>Similarly to the subject or Agent in passives, some languages allow the object or Patient to be optionally expressed in a prepositional or postpositional phrase.</content></p>
+	      <p contentType="ctPracticalIntro"><content>Instead of promoting the object to subject as a passive does, antipassive is a verb voice that deletes the object of transitive verbs.</content></p>
+	      <p><content>In </content><langName/><content>, </content>
+	         <text show="swIPAntipassiveErgOnly"><content> the subject of a transitive verb changes to absolutive case when the object is deleted in antipassives. </content></text>
+	         <text show="swIPAntipassiveAgrOnly"><content> the object agreement affix on the verb is deleted to signal an antipassive. </content></text>
+	         <text show="swIPAntipassiveAffixOnly"><content> there is a verbal affix for antipassive that signals the change in grammatical roles. </content></text>
+	         <text show="swIPAntipassiveErgAndAgr"><content> the subject of a transitive verb changes to absolutive case when the object is deleted in antipassives and the object agreement affix on the verb is deleted to signal an antipassive. </content></text>
+	         <text show="swIPAntipassiveErgAndAffix"><content> the subject of a transitive verb changes to absolutive case when the object is deleted in antipassives and there is a verbal affix for antipassive that signals the change in grammatical roles. </content></text>
+	         <text show="swIPAntipassiveErgAndAgrAndAffix"><content> the subject of a transitive verb changes to absolutive case when the object is deleted in antipassives and the object agreement affix on the verb is deleted to signal an antipassive and there is a verbal affix for antipassive that signals the change in grammatical roles. </content></text>
+	         <text show="swIPAntipassiveAgrAndAffix"><content> the object agreement affix on the verb is deleted to signal an antipassive and there is a verbal affix for antipassive that signals the change in grammatical roles. </content></text>
+	         <text show="swIPAntipassiveOtherOnly"><content> antipassives are expressed by ___</content><contentCheckBoxOther contentLoc="ip/antipassiveOther"/><content>.</content></text>
+	         <text show="swIPAntipassiveAndOther"><content> Antipassives may also be expressed by ___</content><contentCheckBoxOther contentLoc="ip/antipassiveOther"/><content>.</content></text>
+	      </p>
+	      <p show="swIPAntipassiveAffix"><content>The antipassive affix is:</content></p>
+	      <example show="swIPAntipassiveAffix">
 			 <table border="1">
 				<headerRow>
 				   <headerCol>Antipassive Affix</headerCol>
@@ -698,7 +1013,7 @@
 				</row>
 			 </table>
 		  </example>
-		  <p><content>Examples of antipassives in </content><langName/><content>, with some including the optional object or Patient if allowed, are:</content></p>
+		  <p><content>Examples of antipassives in </content><langName/><content> are:</content></p>
 		  <example>
 			 <interlinear exampleLoc="ip/antipassiveExample"/>
 		  </example>
@@ -707,12 +1022,14 @@
 
 	   <section2 id="sIPVoice" show="swIPVoiceYes">
 		  <secTitle>Other Voice Changes</secTitle>
-		  <p><content>Some languages, such as Tagalog and other Austronesian languages, have affixes on the verb which help define the roles and relationships of the nominal phrases in the sentence.  This is a voice change like passive in that it gives emphasis to a particular nominal phrase.  The verbal affix marks which nominal phrase is prominent, and may involve a change in word order and/or case marking.  For example, in Tagalog the voice marker reflects the role of the nominative argument. </content></p>
-		  <p><content>In </content><langName/><content>, </content><case element="ip" attr="voiceCase">
-			 <caseText value="no">the voice changes are indicated by word order changes instead of case marking.</caseText>
-			 <caseText value="yesNom">the voice affix reflects the role of the nominative argument.</caseText>
-			 <caseText value="yesAbs">the voice affix reflects the role of the absolutive argument.</caseText>
-		  </case><content>  The following chart shows the verbal affixes used to indicate the voice of the sentence:</content></p>
+		  <p contentType="ctComparativeIntro"><content>Some languages, such as Tagalog and other Austronesian languages, have affixes on the verb which help define the roles and relationships of the nominal phrases in the sentence.  This is a voice change like passive in that it gives emphasis to a particular nominal phrase.  The verbal affix marks which nominal phrase is prominent, and may involve a change in word order and/or case marking.  For example, in Tagalog the voice marker reflects the role of the nominative argument. </content></p>
+	      <p contentType="ctPracticalIntro"><content>Other affixes on the verb may indicate a voice change similar to passive in that it gives emphasis to a particular nominal phrase. The verbal affix marks which nominal phrase is prominent, and may involve a change in word order and/or case marking.</content>
+	      </p>
+	      <p><content>In </content><langName/><content>, </content><case element="ip" attr="voiceCase">
+			 <caseText value="no">the voice changes are indicated by word order changes instead of by case marking.</caseText>
+			 <caseText value="yesNom">when a specific voice affix occurs on the verb, the corresponding nominal phrase is mrked with nominative case.</caseText>
+	         <caseText value="yesAbs">when a specific voice affix occurs on the verb, the corresponding nominal phrase is mrked with absolutive case.</caseText>
+		  </case><content>  The following table shows the verbal affixes used to indicate the voice of the sentence:</content></p>
 		  <example>
 			 <table border="1">
 				<caption>
@@ -721,48 +1038,48 @@
 				<headerRow>
 				   <headerCol>Voice type</headerCol>
 				   <headerCol>
-					  <langName/>
+					  Affixes
 				   </headerCol>
 				</headerRow>
 				<row>
 				   <col>
 					  <content>Actor or Active</content>
 				   </col>
-				   <col exampleLoc="ip/actorVoiceExample"/>
+				   <col exampleLoc="ip/actorVoice"/>
 				</row>
 				<row>
 				   <col>
 					  <content>Object, Patient, Theme or Conveyance</content>
 				   </col>
-				   <col exampleLoc="ip/objectVoiceExample"/>
+				   <col exampleLoc="ip/objectVoice"/>
 				</row>
 				<row>
 				   <col>
 					  <content>Dative</content>
 				   </col>
-				   <col exampleLoc="ip/dativeVoiceExample"/>
+				   <col exampleLoc="ip/dativeVoice"/>
 				</row>
 				<row>
 				   <col>
 					  <content>Locative</content>
 				   </col>
-				   <col exampleLoc="ip/locativeVoiceExample"/>
+				   <col exampleLoc="ip/locativeVoice"/>
 				</row>
 				<row>
 				   <col>
 					  <content>Instrumental</content>
 				   </col>
-				   <col exampleLoc="ip/instrumentalVoiceExample"/>
+				   <col exampleLoc="ip/instrumentalVoice"/>
 				</row>
 				<row>
 				   <col>
 					  <content>Goal</content>
 				   </col>
-				   <col exampleLoc="ip/goalVoiceExample"/>
+				   <col exampleLoc="ip/goalVoice"/>
 				</row>
 			 </table>
 		  </example>
-		  <p><content>Examples showing changes in this type of voice marking in </content><langName/><content> include:</content></p>
+		  <p><content>Some examples of sentences showing changes in this type of voice marking are:</content></p>
 		  <example>
 			 <interlinear exampleLoc="ip/voiceExample"/>
 		  </example>
@@ -770,16 +1087,20 @@
 
 	   <section2 id="sIPCausatives">
 		  <secTitle>Causatives</secTitle>
-		  <p><content>Causatives add an additional argument to the sentence. Some languages have single-clause causative sentences, where the verb is marked with an affix that introduces the additional argument. That is the type of construction addressed in this section.</content></p>
-		  <p><content>English and Spanish only have syntactic causatives which consist of two clauses, such as: </content><langData>My mother made me clean my room</langData><content> and </content>
+		  <p contentType="ctComparativeIntro"><content>Causatives add an additional argument to the sentence. Some languages have single-clause causative sentences, where the verb is marked with an affix that introduces the additional argument. That is the type of construction addressed in this section.  English and Spanish only have syntactic causatives which consist of two clauses, such as: </content><langData>My mother made me clean my room</langData><content> and </content>
 			 <langData>The other girl caused us to break up</langData><content>.  This second type of causative will be handled more fully in section </content><sectionRef sec="sCompCausative"/><content>.</content>
 		  </p>
-		  <p><content>In </content><langName/><content>, </content><case element="ip" attr="causative">
-			 <caseText value="no">the only causative sentences consist of two clauses with a main verb meaning ‘make’ or ‘cause’.  Some examples of syntactic causatives are:</caseText>
-			 <caseText value="yes">there is a verbal affix for causative that introduces an additional argument, and that is the only type of causative in the language.  The causative affixes are:</caseText>
-			 <caseText value="yesBoth">there is a verbal affix for causative that introduces an additional argument, and syntactic causatives with two clauses are also possible.  The causative affixes are:</caseText>
-		  </case></p>
-		  <example show="swIPCausativeYesOrYesBoth">
+	      <p contentType="ctPracticalIntro"><content>Causatives add an additional argument to the sentence. In single-clause causative sentences, the verb is marked with an affix that introduces the additional argument. That is the type of construction addressed here.  Syntactic causatives consisting of two clauses will be handled more fully in section </content><sectionRef sec="sCompCausative"/><content>.</content>
+	      </p>
+	      <p><content>In </content><langName/><content>, </content>
+	         <text show="swIPCausativeAffixOnly"><content>there is a verbal affix for causative that introduces an additional argument. </content></text>
+	         <text show="swIPCausativeMakeOnly"><content>there is not any causative verbal affix.  Causative sentences consist of two clauses with a main verb meaning </content><langData>make</langData><content> or </content><langData>cause</langData><content>.</content></text>
+	         <text show="swIPCausativeAffixAndMake"><content>there is a verbal affix for causative that introduces an additional argument and causative sentences may also consist of two clauses with a main verb meaning </content><langData>make</langData><content> or </content><langData>cause</langData><content>.</content></text>
+	         <text show="swIPCausativeOtherOnly"><content>there is not any causative verbal affix.  Causatives are expressed by  ___</content><contentCheckBoxOther contentLoc="ip/causativeOther"/><content>.</content></text>
+	         <text show="swIPCausativeAndOther"><content> Causatives may also be expressed by ___</content><contentCheckBoxOther contentLoc="ip/causativeOther"/><content>.</content></text>
+	      </p>
+	      <p show="swIPCausativeAffix"><content>The causative affixes are:</content></p>
+		  <example show="swIPCausativeAffix">
 			 <table border="1">
 				<headerRow>
 				   <headerCol>Causative Affixes</headerCol>
@@ -791,12 +1112,19 @@
 				</row>
 			 </table>
 		  </example>
-		  <p show="swIPCausativeYesOrYesBoth"><content>Some examples of causatives using the causative affixes </content><case element="ip" attr="causative">
-			 <caseText value="yesBoth">as well as some syntactic causatives </caseText>
-		  </case><content>are:</content></p>
-		  <example>
+		  <p show="swIPCausativeAffix"><content>Some examples of single-clause causative sentences using the causative affixes are: </content></p>
+		  <example show="swIPCausativeAffix">
 			 <interlinear exampleLoc="ip/causativeExample"/>
 		  </example>
+	      <p show="swIPCausativeMake"><content>Some examples of syntactic causative sentences consisting of two clauses are: </content></p>
+	      <example show="swIPCausativeMake">
+	         <interlinear exampleLoc="ip/causativeMakeExample"/>
+	      </example>
+	      <p show="swIPCausativeOther"><content>Some examples of the other type of causative sentences allowed in </content><langName/><content> are: </content></p>
+	      <example show="swIPCausativeOther">
+	         <interlinear exampleLoc="ip/causativeOtherExample"/>
+	      </example>
+	      
 
 	   </section2>
 
@@ -806,7 +1134,53 @@
 		<or/>
 		<whenValue element="typology" attr="wordOrder" value="OSV"/>
 	</showWhen>
-
+   <showWhen id="swIPCopVerbOptional">
+      <whenValue element="ip" attr="copular" value="optional"/>
+   </showWhen>
+   <showWhen id="swIPCopVerbNo">
+      <whenValue element="ip" attr="copular" value="no"/>
+   </showWhen>
+   <showWhen id="swIPCopVerbNoOrOptional">
+      <whenValue element="ip" attr="copular" value="no"/>
+ <or/>
+      <whenValue element="ip" attr="copular" value="optional"/>
+   </showWhen>
+   <showWhen id="swIPCopVerbYesOrOptional">
+      <whenValue element="ip" attr="copular" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="copular" value="optional"/>
+   </showWhen>
+   <showWhen id="swIPCopVerbNoAndAffixYesPrefix">
+      <whenValue element="ip" attr="copular" value="no"/>
+      <and/>
+      <whenValue element="ip" attr="copularAffix" value="yesPrefix"/>
+   </showWhen>
+   <showWhen id="swIPCopVerbNoAndAffixYesSuffix">
+      <whenValue element="ip" attr="copular" value="no"/>
+      <and/>
+      <whenValue element="ip" attr="copularAffix" value="yesSuffix"/>
+   </showWhen>
+   <showWhen id="swIPCopVerbNoAndAffixYesEither">
+      <whenValue element="ip" attr="copular" value="no"/>
+      <and/>
+      <whenValue element="ip" attr="copularAffix" value="yesEither"/>
+   </showWhen>
+   <showWhen id="swIPCopVerbOptionalAndAffixYesPrefix">
+      <whenValue element="ip" attr="copular" value="optional"/>
+      <and/>
+      <whenValue element="ip" attr="copularAffix" value="yesPrefix"/>
+   </showWhen>
+   <showWhen id="swIPCopVerbOptionalAndAffixYesSuffix">
+      <whenValue element="ip" attr="copular" value="optional"/>
+      <and/>
+      <whenValue element="ip" attr="copularAffix" value="yesSuffix"/>
+   </showWhen>
+   <showWhen id="swIPCopVerbOptionalAndAffixYesEither">
+      <whenValue element="ip" attr="copular" value="optional"/>
+      <and/>
+      <whenValue element="ip" attr="copularAffix" value="yesEither"/>
+   </showWhen>
+   
    <showWhen id="swIPSameYes">
    <whenValue element="ip" attr="same" value="yes"/>
    </showWhen>
@@ -836,16 +1210,801 @@
    <showWhen id="swIPComparativeYes">
 	  <whenValue element="ip" attr="comparative" value="yes"/>
    </showWhen>
-   <showWhen id="swIPExistVerbYesOrYesOnly">
-	  <whenValue element="ip" attr="existVerb" value="yes"/>
-	  <or/>
-	  <whenValue element="ip" attr="existVerb" value="yesOnly"/>
-   </showWhen>
-   <showWhen id="swIPExistVerbNotYesOnly">
-	  <whenValue element="ip" attr="existVerb" value="yesOnly" negateValue="yes"/>
-   </showWhen>
 
-
+<showWhen id="swIPExistNone">
+   <whenValue element="ip/existNone" attr="checked" value="yes"/>
+</showWhen>
+   <showWhen id="swIPExistVerb">
+      <whenValue element="ip/existVerb" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPExistWord">
+      <whenValue element="ip/existWord" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPExistPosition">
+      <whenValue element="ip/existPosition" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPExistOther">
+      <whenValue element="ip/existOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPExistWordOnly">
+      <whenValue element="ip/existWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/existVerb" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existPosition" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPExistVerbOnly">
+      <whenValue element="ip/existWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existVerb" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/existPosition" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPExistPositionOnly">
+      <whenValue element="ip/existWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existVerb" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existPosition" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPExistWordAndVerb">
+      <whenValue element="ip/existWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/existVerb" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/existPosition" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPExistWordAndPosition">
+      <whenValue element="ip/existWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/existVerb" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existPosition" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPExistVerbAndPosition">
+      <whenValue element="ip/existWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existVerb" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/existPosition" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPExistWordAndVerbAndPosition">
+      <whenValue element="ip/existWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/existVerb" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/existPosition" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPExistOtherOnly">
+      <whenValue element="ip/existWord" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existVerb" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existPosition" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/existOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPExistAndOther">
+      <whenValue element="ip/existWord" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/existOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/existVerb" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/existOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/existPosition" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/existOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swIPProDropImpYes">
+      <whenValue element="ip/proDropImp" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPProDropImpNo">
+      <whenValue element="ip/proDropImp" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPImpPoliteYes">
+      <whenValue element="ip" attr="impPolite" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swIPConditionWordNo">
+      <whenValue element="ip" attr="conditionWord" value="no"/>
+   </showWhen>
+   <showWhen id="swIPConditionWordMood">
+      <whenValue element="ip" attr="conditionWord" value="mood"/>
+   </showWhen>
+   <showWhen id="swIPConditionWordNotMood">
+      <whenValue element="ip" attr="conditionWord" value="mood" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swIPConditionWordSome">
+      <whenValue element="ip" attr="conditionWord" value="some"/>
+   </showWhen>
+   <showWhen id="swIPConditionWordYesOrSome">
+      <whenValue element="ip" attr="conditionWord" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="conditionWord" value="some"/>
+   </showWhen>
+   <showWhen id="swIPConditionWordNoOrSome">
+      <whenValue element="ip" attr="conditionWord" value="no"/>
+      <or/>
+      <whenValue element="ip" attr="conditionWord" value="some"/>
+   </showWhen>
+   <showWhen id="swIPConditionWordNoOrSomeAndClitic">
+      <whenValue element="ip" attr="conditionWord" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionProclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="conditionWord" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="conditionWord" value="some"/>
+      <and/>
+      <whenValue element="ip/conditionProclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="conditionWord" value="some"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPConditionWordNoOrSomeAndAffix">
+      <whenValue element="ip" attr="conditionWord" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="conditionWord" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="conditionWord" value="some"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="conditionWord" value="some"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPConditionWordNoOrSomeAndOther">
+      <whenValue element="ip" attr="conditionWord" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionOther"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="conditionWord" value="some"/>
+      <and/>
+      <whenValue element="ip/conditionOther"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPConditionProclitic">
+      <whenValue element="ip/conditionProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPConditionEnclitic">
+      <whenValue element="ip/conditionProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPConditionClitic">
+      <whenValue element="ip/conditionProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPConditionPrefix">
+      <whenValue element="ip/conditionProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPConditionSuffix">
+      <whenValue element="ip/conditionProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPConditionAffix">
+      <whenValue element="ip/conditionProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPConditionCliticAffix">
+      <whenValue element="ip/conditionProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="ip/conditionProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/conditionProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/conditionProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="ip/conditionProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/conditionProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/conditionProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/conditionProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="ip/conditionProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/conditionProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPConditionOtherOnly">
+      <whenValue element="ip/conditionProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/conditionOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPConditionOtherAnd">
+      <whenValue element="ip/conditionProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/conditionEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/conditionPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/conditionSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/conditionOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swIPConditionWordBefore">
+            <whenValue element="ip/conditionWordBefore" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/conditionWordAfter" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/conditionWordBoth" attr="checked" value="no"/>
+         </showWhen>
+         <showWhen id="swIPConditionWordAfter">
+            <whenValue element="ip/conditionWordBefore" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/conditionWordAfter" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/conditionWordBoth" attr="checked" value="no"/>
+         </showWhen>
+         <showWhen id="swIPConditionWordBoth">
+            <whenValue element="ip/conditionWordBefore" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/conditionWordAfter" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/conditionWordBoth" attr="checked" value="yes"/>
+         </showWhen>
+         <showWhen id="swIPConditionWordEither">
+            <whenValue element="ip/conditionWordBefore" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/conditionWordAfter" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/conditionWordBoth" attr="checked" value="no"/>
+         </showWhen>
+         <showWhen id="swIPConditionWordBeforeOrBoth">
+            <whenValue element="ip/conditionWordBefore" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/conditionWordAfter" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/conditionWordBoth" attr="checked" value="yes"/>
+         </showWhen>
+         <showWhen id="swIPConditionWordAfterOrBoth">
+            <whenValue element="ip/conditionWordBefore" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/conditionWordAfter" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/conditionWordBoth" attr="checked" value="yes"/>
+         </showWhen>
+         <showWhen id="swIPConditionWordEitherOrBoth">
+            <whenValue element="ip/conditionWordBefore" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/conditionWordAfter" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/conditionWordBoth" attr="checked" value="yes"/>
+         </showWhen>
+         <showWhen id="swIPConditionWordNotOther">
+            <whenValue element="ip/conditionWordOther" attr="checked" value="no"/>
+         </showWhen>
+         <showWhen id="swIPConditionWordOtherOnly">
+            <whenValue element="ip/conditionWordBefore" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/conditionWordAfter" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/conditionWordBoth" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/conditionWordOther" attr="checked" value="yes"/>
+         </showWhen>
+         <showWhen id="swIPConditionWordPosAndOther">
+            <whenValue element="ip/conditionWordBefore" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/conditionWordOther" attr="checked" value="yes"/>
+            <or/>
+            <whenValue element="ip/conditionWordAfter" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/conditionWordOther" attr="checked" value="yes"/>
+            <or/>
+            <whenValue element="ip/conditionWordBoth" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/conditionWordOther" attr="checked" value="yes"/>
+         </showWhen>
+         
+   <showWhen id="swIPSubjunctiveCondWordNo">
+      <whenValue element="ip" attr="subjunctiveCondWord" value="no"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordMood">
+      <whenValue element="ip" attr="subjunctiveCondWord" value="mood"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordNotMood">
+      <whenValue element="ip" attr="subjunctiveCondWord" value="mood" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordSome">
+      <whenValue element="ip" attr="subjunctiveCondWord" value="some"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordYesOrSome">
+      <whenValue element="ip" attr="subjunctiveCondWord" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="some"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordNoOrSome">
+      <whenValue element="ip" attr="subjunctiveCondWord" value="no"/>
+      <or/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="some"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordNoOrSomeAndClitic">
+      <whenValue element="ip" attr="subjunctiveCondWord" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondProclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="some"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondProclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="some"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordNoOrSomeAndAffix">
+      <whenValue element="ip" attr="subjunctiveCondWord" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="some"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="some"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordNoOrSomeAndOther">
+      <whenValue element="ip" attr="subjunctiveCondWord" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondOther"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip" attr="subjunctiveCondWord" value="some"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondOther"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondProclitic">
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondEnclitic">
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondClitic">
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondPrefix">
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondSuffix">
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondAffix">
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondCliticAffix">
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondOtherOnly">
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondOtherAnd">
+      <whenValue element="ip/subjunctiveCondProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/subjunctiveCondSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/subjunctiveCondOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swIPSubjunctiveCondWordBefore">
+            <whenValue element="ip/subjunctiveCondWordBefore" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordAfter" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordBoth" attr="checked" value="no"/>
+         </showWhen>
+         <showWhen id="swIPSubjunctiveCondWordAfter">
+            <whenValue element="ip/subjunctiveCondWordBefore" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordAfter" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordBoth" attr="checked" value="no"/>
+         </showWhen>
+         <showWhen id="swIPSubjunctiveCondWordBoth">
+            <whenValue element="ip/subjunctiveCondWordBefore" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordAfter" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordBoth" attr="checked" value="yes"/>
+         </showWhen>
+         <showWhen id="swIPSubjunctiveCondWordEither">
+            <whenValue element="ip/subjunctiveCondWordBefore" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordAfter" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordBoth" attr="checked" value="no"/>
+         </showWhen>
+         <showWhen id="swIPSubjunctiveCondWordBeforeOrBoth">
+            <whenValue element="ip/subjunctiveCondWordBefore" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordAfter" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordBoth" attr="checked" value="yes"/>
+         </showWhen>
+         <showWhen id="swIPSubjunctiveCondWordAfterOrBoth">
+            <whenValue element="ip/subjunctiveCondWordBefore" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordAfter" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordBoth" attr="checked" value="yes"/>
+         </showWhen>
+         <showWhen id="swIPSubjunctiveCondWordEitherOrBoth">
+            <whenValue element="ip/subjunctiveCondWordBefore" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordAfter" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordBoth" attr="checked" value="yes"/>
+         </showWhen>
+         <showWhen id="swIPSubjunctiveCondWordNotOther">
+            <whenValue element="ip/subjunctiveCondWordOther" attr="checked" value="no"/>
+         </showWhen>
+         <showWhen id="swIPSubjunctiveCondWordOtherOnly">
+            <whenValue element="ip/subjunctiveCondWordBefore" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordAfter" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordBoth" attr="checked" value="no"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordOther" attr="checked" value="yes"/>
+         </showWhen>
+         <showWhen id="swIPSubjunctiveCondWordPosAndOther">
+            <whenValue element="ip/subjunctiveCondWordBefore" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordOther" attr="checked" value="yes"/>
+            <or/>
+            <whenValue element="ip/subjunctiveCondWordAfter" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordOther" attr="checked" value="yes"/>
+            <or/>
+            <whenValue element="ip/subjunctiveCondWordBoth" attr="checked" value="yes"/>
+            <and/>
+            <whenValue element="ip/subjunctiveCondWordOther" attr="checked" value="yes"/>
+         </showWhen>
+   
+   <showWhen id="swIPAntipassiveYes">
+      <whenValue element="ip" attr="antipassive" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveErgOnly">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="ip/antipassiveErg" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveAgr" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveAffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="ip/antipassiveErg" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveAgr" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveAffix" attr="checked" value="no"/>
+      </showWhen>
+      <showWhen id="swIPAntipassiveAgrOnly">
+         <whenValue element="ip/antipassiveErg" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="ip/antipassiveAgr" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="ip/antipassiveAffix" attr="checked" value="no"/>
+      </showWhen>
+   <showWhen id="swIPAntipassiveAffixOnly">
+      <whenValue element="ip/antipassiveErg" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveAgr" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveAffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveErgAndAgr">
+      <whenValue element="ip/antipassiveErg" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveAgr" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveAffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveErgAndAffix">
+      <whenValue element="ip/antipassiveErg" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveAgr" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveAffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveErgAndAgrAndAffix">
+      <whenValue element="ip/antipassiveErg" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveAgr" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveAffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveAgrAndAffix">
+      <whenValue element="ip/antipassiveErg" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveAgr" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveAffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveOtherOnly">
+      <whenValue element="ip/antipassiveErg" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveAgr" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/antipassiveOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveAndOther">
+      <whenValue element="ip/antipassiveErg" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/antipassiveAgr" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/antipassiveAffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/antipassiveOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPAntipassiveAffix">
+      <whenValue element="ip/antipassiveAffix" attr="checked" value="yes"/>
+      </showWhen>
+      
+       
 	<showWhen id="swIPAuxOrderVSO">
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
 	</showWhen>
@@ -898,18 +2057,49 @@
 	  <and/>
 	  <whenValue element="ip" attr="passiveAux" value="yes"/>
    </showWhen>
-   <showWhen id="swIPCausativeYesOrYesBoth">
-	  <whenValue element="ip" attr="causative" value="yes"/>
-	  <or/>
-	  <whenValue element="ip" attr="causative" value="yesBoth"/>
+
+   <showWhen id="swIPCausativeAffixOnly">
+      <whenValue element="ip/causativeAffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/causativeMake" attr="checked" value="no"/>
+      </showWhen>
+   <showWhen id="swIPCausativeMakeOnly">
+      <whenValue element="ip/causativeAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/causativeMake" attr="checked" value="yes"/>
    </showWhen>
-   <showWhen id="swIPAntipassivesNotNo">
-	  <whenValue element="ip" attr="antipassive" value="no" negateValue="yes"/>
+   <showWhen id="swIPCausativeAffixAndMake">
+      <whenValue element="ip/causativeAffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/causativeMake" attr="checked" value="yes"/>
    </showWhen>
-   <showWhen id="swIPAntipassiveYesAffix">
-	  <whenValue element="ip" attr="antipassive" value="yesAffix"/>
+   <showWhen id="swIPCausativeOtherOnly">
+      <whenValue element="ip/causativeAffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/causativeMake" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/causativeOther" attr="checked" value="yes"/>
    </showWhen>
-   <showWhen id="swIPVoiceYes">
+   <showWhen id="swIPCausativeAndOther">
+      <whenValue element="ip/causativeAffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/causativeOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/causativeMake" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="ip/causativeOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPCausativeAffix">
+      <whenValue element="ip/causativeAffix" attr="checked" value="yes"/>
+      </showWhen>
+   <showWhen id="swIPCausativeMake">
+      <whenValue element="ip/causativeMake" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPCausativeOther">
+      <whenValue element="ip/causativeOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+      <showWhen id="swIPVoiceYes">
 	  <whenValue element="ip" attr="voice" value="yes"/>
    </showWhen>
    <showWhen id="swNPCaseNomorSplit">
