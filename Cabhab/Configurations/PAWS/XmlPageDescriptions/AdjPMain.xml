@@ -48,8 +48,8 @@
 	      <checkbox id="AdjPModifiersAttaches" dataItem="modifiersAttaches">There are affixes or clitics that attach to the adjective to intensify it</checkbox>
 	      <checkbox id="AdjPModifiersRedup" dataItem="modifiersRedup">Reduplication is used to intensify the meaning of the adjective</checkbox>
 	      <checkbox id="AdjPModifiersOther" dataItem="modifiersOther">In my language, adjectives may be modified as follows: <textBox  id="AdjPModifiersOtherContent" dataItem="modifiersOther" rows="2"/></checkbox>
-	   </checkboxGroup>
-		<prompt id="AdjPModifiersYesNoCheckPrompt" show="swAdjPModifiersYesAndNoCheck">WARNING: You need to check at least one box to describe which modifiers may modify or intensify adjectives in your language, or change the answer above to “No, adjectives are not modified or intensified”.</prompt>
+	   </checkboxGroup>	
+	   <prompt id="AdjPModifiersYesNoCheckPrompt" show="swAdjPModifiersYesAndNoCheck">WARNING: You need to check at least one box to describe which modifiers may modify or intensify adjectives in your language, or change the answer above to “No, adjectives are not modified or intensified”.</prompt>
 	   <br/>
 	   <radioGroup id="AdjPDegreeClassifierAgrTable" show="swOTClassifierAgrAdjPModifiersYesOrYesManner">
 	      <groupName dataItem="adjectiveDegreeClassifier" default="no">RAdjPDegreeClassifierAgr</groupName>
@@ -62,7 +62,7 @@
 	   <prompt id="AdjPModifiersYesPrompt" show="swAdjPModifiersYesDegree">Key any degree words which can modify adjectives here:</prompt>
 	   <textBox id="AdjPModifiersDegreeExample" dataItem="adjectiveDegreeExample" show="swAdjPModifiersYesDegree"/>
 	   <prompt id="AdjPModifiersDegreePhrasePrompt" show="swAdjPModifiersYesDegree">Now key examples of adjectives with degree words modifying them here:</prompt>
-	   <textBox id="AdjPModifiersDegreePhraseExample" dataItem="adjectiveDegreePhraseExample" show="swAdjPModifiersYesDegree"/>
+	   <textBox id="AdjPModifiersDegreePhraseExample" dataItem="adjectiveDegreePhraseExample" show="swAdjPModifiersYesDegree"/>   
 	   <br/><br/>
 	   <checkboxGroup id="AdjPModifiersYesDegreeTable" show="swAdjPModifiersYesDegree">
 	      <prompt>Looking at the examples you keyed above, where do the degree words occur with respect to the adjective? Check all options that are correct for your language</prompt>

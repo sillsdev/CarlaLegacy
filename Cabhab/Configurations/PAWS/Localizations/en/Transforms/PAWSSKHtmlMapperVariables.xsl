@@ -6,4 +6,5 @@
 	<xsl:variable name="sTypeOfFeature" select="'Type of Feature'"/>
 	<xsl:variable name="sFeature" select="'Feature'"/>
 	<xsl:variable name="sExplanation" select="'Explanation'"/>
+	<xsl:variable name="sMorphemes" select="'Morphemes'"/>
 </xsl:stylesheet>

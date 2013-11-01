@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- both the label and settingsId are specific to PAWS -->
 <window label="PAWS Starter Kit" settingsId="paws">
-	<version>0.9.1.1 Beta</version>
+	<version>0.9.1.2 Beta</version>
 	<!--
 Following are common to all Cabhab Applications
 -->
