@@ -3,8 +3,8 @@
     <leftOffAt>Contents.htm</leftOffAt>
     <language>
        <langNames>
-          <langName lang="en"/>
-          <langName lang="es"/>
+          <langName lang="en"/>    
+          <langName lang="es"/>    
        </langNames>
         <langAbbr/>
         <font bold="False" italic="False" under="False" strike="False" rtl="False">
@@ -20,7 +20,7 @@
         <writerPracticalSpanishFile/>
         <exampleFilesPath/>
     </language>
-   <typology checkedOff="no" wordOrder="SVO" case="nominative" caseExperiencer="no" classifier="no" classifierNum="number"
+   <typology checkedOff="no" wordOrder="SVO" case="nominative" caseExperiencer="no" noCaseExperiencer="no" classifier="no" classifierNum="number"
       class1agr="irrelevant" class2agr="irrelevant" class3agr="irrelevant" class4agr="irrelevant" class5agr="irrelevant" class6agr="irrelevant" class7agr="irrelevant"
       class8agr="irrelevant" class9agr="irrelevant" class10agr="irrelevant" class11agr="irrelevant" class12agr="irrelevant" class13agr ="irrelevant"
       class14agr="irrelevant" class15agr="irrelevant" class16agr="irrelevant" class17agr="irrelevant" class18agr="irrelevant" class19agr="irrelevant"
@@ -213,7 +213,7 @@
       locativeDegree="no" mannerType="word"  mannerDegree="no" mannerAffixDegree="no">
       <temporalDegreeWord checked= "no"/>
       <temporalDegreeAttaches checked= "no"/>
-      <temporalDegreeRedup checked= "no"/>
+      <temporalDegreeRedup checked= "no"/>      
       <temporalDegreeOther checked= "no"/>
       <temporalDegreeWordBefore checked="no" />
       <temporalDegreeWordAfter checked="no" />
@@ -240,7 +240,7 @@
       </temporalIndefTypeIntOther>
       <locativeDegreeWord checked= "no"/>
       <locativeDegreeAttaches checked= "no"/>
-      <locativeDegreeRedup checked= "no"/>
+      <locativeDegreeRedup checked= "no"/>      
       <locativeDegreeOther checked= "no"/>
       <locativeDegreeWordBefore checked="no" />
       <locativeDegreeWordAfter checked="no" />
@@ -267,7 +267,7 @@
       </locativeIndefTypeIntOther>
       <mannerWordDegreeWord checked= "no"/>
       <mannerWordDegreeAttaches checked= "no"/>
-      <mannerWordDegreeRedup checked= "no"/>
+      <mannerWordDegreeRedup checked= "no"/>      
       <mannerWordDegreeOther checked= "no"/>
       <mannerDegreeWordBefore checked="no" />
       <mannerDegreeWordAfter checked="no" />
@@ -275,8 +275,8 @@
       <mannerDegreeWordOther checked="no">
       </mannerDegreeWordOther>
       <mannerAffixDegreeYesBefore checked= "no"/>
-      <mannerAffixDegreeYesAfter checked= "no"/>
-      <mannerAffixDegreeRedup checked= "no"/>
+      <mannerAffixDegreeYesAfter checked= "no"/>      
+      <mannerAffixDegreeRedup checked= "no"/>      
       <mannerAffixDegreeOther checked= "no"/>
       <temporalExample/>
        <temporalDegreeExample/>
@@ -304,11 +304,11 @@
         <locativeExample/>
       <locativeDemOther/>
       <locativeDegreeExample/>
-      <locativePhraseExample/>
+      <locativePhraseExample/> 
       <locativeDegreeAffixExample/>
       <locativePhraseAffixExample/>
       <locativeDegreeRedupExample/>
-      <locativeOtherExample/>
+      <locativeOtherExample/> 
       <locativeIndefTypeQWordExample>
       </locativeIndefTypeQWordExample>
       <locativeIndefTypeQPhraseExample>
@@ -421,12 +421,12 @@
       <adjBoth checked="no" />
       <adjPosOther checked="no">
       </adjPosOther>
-      <agreeNumberExample/>
+      <agreeNumberExample/>   
       <agreeClassExample/>
-      <agreeGenderExample/>
-      <agreeAnimacyExample/>
-      <agreeOtherExample/>
-      <caseNPExample/>
+      <agreeGenderExample/>      
+      <agreeAnimacyExample/>     
+      <agreeOtherExample/>     
+      <caseNPExample/>    
       <nominative/>
       <accusative/>
       <ergative/>
@@ -689,7 +689,23 @@
        <personalSecondSgNoCaseExample/>
        <personalSecondPlNoCaseExample/>
        <personalThirdSgNoCaseExample/>
-       <personalThirdPlNoCaseExample/>
+       <personalThirdPlNoCaseExample/>    
+       <personalFirstSgNoneDativeExample>
+       </personalFirstSgNoneDativeExample>
+       <personalFirstPlNoneDativeExample>
+       </personalFirstPlNoneDativeExample>
+       <personalFirstExclNoneDativeExample>
+       </personalFirstExclNoneDativeExample>
+       <personalFirstInclNoneDativeExample>
+       </personalFirstInclNoneDativeExample>
+       <personalSecondSgNoneDativeExample>
+       </personalSecondSgNoneDativeExample>
+       <personalSecondPlNoneDativeExample>
+       </personalSecondPlNoneDativeExample>
+       <personalThirdSgNoneDativeExample>
+       </personalThirdSgNoneDativeExample>
+       <personalThirdPlNoneDativeExample>
+       </personalThirdPlNoneDativeExample>
        <personalFirstSgNomSubjectExample/>
        <personalFirstPlNomSubjectExample/>
        <personalFirstExclNomSubjectExample/>
@@ -801,7 +817,7 @@
        <personalSecondSgSplitAbsExample/>
        <personalSecondPlSplitAbsExample/>
        <personalThirdSgSplitAbsExample/>
-       <personalThirdPlSplitAbsExample/>
+       <personalThirdPlSplitAbsExample/>    
        <personalDependentFirstSgNoCaseExample/>
        <personalDependentFirstPlNoCaseExample/>
        <personalDependentFirstExclNoCaseExample/>
@@ -809,7 +825,23 @@
        <personalDependentSecondSgNoCaseExample/>
        <personalDependentSecondPlNoCaseExample/>
        <personalDependentThirdSgNoCaseExample/>
-       <personalDependentThirdPlNoCaseExample/>
+       <personalDependentThirdPlNoCaseExample/>    
+       <personalDependentFirstSgNoneDativeExample>
+       </personalDependentFirstSgNoneDativeExample>
+       <personalDependentFirstPlNoneDativeExample>
+       </personalDependentFirstPlNoneDativeExample>
+       <personalDependentFirstExclNoneDativeExample>
+       </personalDependentFirstExclNoneDativeExample>
+       <personalDependentFirstInclNoneDativeExample>
+       </personalDependentFirstInclNoneDativeExample>
+       <personalDependentSecondSgNoneDativeExample>
+       </personalDependentSecondSgNoneDativeExample>
+       <personalDependentSecondPlNoneDativeExample>
+       </personalDependentSecondPlNoneDativeExample>
+       <personalDependentThirdSgNoneDativeExample>
+       </personalDependentThirdSgNoneDativeExample>
+       <personalDependentThirdPlNoneDativeExample>
+       </personalDependentThirdPlNoneDativeExample>
        <personalDependentFirstSgNomSubjectExample/>
        <personalDependentFirstPlNomSubjectExample/>
        <personalDependentFirstExclNomSubjectExample/>
@@ -1098,16 +1130,16 @@
       <ppLocativePosOther checked="no">
       </ppLocativePosOther>
       <ppExample/>
-      <degree/>
-      <degreeWithPP/>
-      <ordinal/>
-      <ordinalWithPP/>
-      <manner/>
-      <mannerWithPP/>
-      <locative/>
-      <locativeWithPP/>
-      <otherMod/>
-      <otherModWithPP/>
+      <degree/>      
+      <degreeWithPP/>     
+      <ordinal/>  
+      <ordinalWithPP/>   
+      <manner/>      
+      <mannerWithPP/>     
+      <locative/>     
+      <locativeWithPP/>     
+      <otherMod/>      
+      <otherModWithPP/>    
       <locativePrepExample/>
       <locativePostExample/>
       <locativePrepPPExample/>
@@ -1372,6 +1404,7 @@ antipassive="no" voice="no" voiceCase="no">
                       </nonhumanErgativeAnimacy>
                       <nonhumanAbsolutiveAnimacy>
                       </nonhumanAbsolutiveAnimacy>
+                      
        <proDropExample/>
        <cliticPnExample/>
        <proDropOtherExample/>
@@ -1696,16 +1729,16 @@ antipassive="no" voice="no" voiceCase="no">
        <npDegreeNegEnclitic checked="no" />
        <npDegreeNegPrefix checked="no" />
        <npDegreeNegSuffix checked="no" />
-       <npDegreeNegOther checked="no"/>
+       <npDegreeNegOther checked="no"/> 
        <npDegreeNegWordBefore checked="no" />
        <npDegreeNegWordAfter checked="no" />
        <npDegreeNegWordBoth checked="no" />
        <npDegreeNegWordOther checked="no"/>
       <negTemporalTypeWord checked= "no"/>
-      <negTemporalTypeAdverb checked= "no"/>
-      <negTemporalTypeAdverbWord checked= "no"/>
+      <negTemporalTypeAdverb checked= "no"/>      
+      <negTemporalTypeAdverbWord checked= "no"/>      
       <negTemporalTypeAffix checked= "no"/>
-      <negTemporalTypeVerb checked= "no"/>
+      <negTemporalTypeVerb checked= "no"/>      
       <negTemporalTypeOther checked= "no"/>
       <negTemporalAdverbWordBefore checked="no" />
       <negTemporalAdverbWordAfter checked="no" />
@@ -1713,10 +1746,10 @@ antipassive="no" voice="no" voiceCase="no">
       <negTemporalAdverbWordOther checked="no">
       </negTemporalAdverbWordOther>
       <negLocativeTypeWord checked= "no"/>
-      <negLocativeTypeAdverb checked= "no"/>
-      <negLocativeTypeAdverbWord checked= "no"/>
+      <negLocativeTypeAdverb checked= "no"/>      
+      <negLocativeTypeAdverbWord checked= "no"/>      
       <negLocativeTypeAffix checked= "no"/>
-      <negLocativeTypeVerb checked= "no"/>
+      <negLocativeTypeVerb checked= "no"/>      
       <negLocativeTypeOther checked= "no"/>
       <negLocativeAdverbWordBefore checked="no" />
       <negLocativeAdverbWordAfter checked="no" />

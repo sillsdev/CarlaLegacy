@@ -139,8 +139,8 @@
         </buttons>
     </form>
    <showWhen id="swNotPractical">
-        <whenValue  element="paws" attr="outputGrammar" value="True"/>
-    </showWhen>
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
    <showWhen id="swNPCaseNone">
       <whenValue element="typology" attr="case" value="none"/>
    </showWhen>
@@ -148,30 +148,44 @@
       <not/><whenValue element="typology" attr="case" value="none"/>
    </showWhen>
    <showWhen id="swNPCaseNNo">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNNo"/>
    </showWhen>
    <showWhen id="swNPCaseNYes">
-<whenRadio button="NPCaseNYes"/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
    </showWhen>
    <showWhen id="swNPCaseNYesAndWordNoOrSome">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordNo"/>
-<or/>
+      <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordSome"/>
    </showWhen>
    <showWhen id="swNPCaseNYesAndWordYesOrSome">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordYes"/>
       <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordSome"/>
    </showWhen>
    <showWhen id="swNPCaseNYesAndWordYes">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordYes"/>
@@ -186,7 +200,7 @@
       <whenValue element="typology" attr="case" value="nominative"/>
       <and/>
       <whenRadio button="NPCaseNYes"/>
-      </showWhen>
+   </showWhen>
    <showWhen id="swNPCaseNomOrSplitAndNYes">
       <whenValue element="typology" attr="case" value="nominative"/>
       <and/>
@@ -219,30 +233,30 @@
       <whenValue element="typology" attr="caseExperiencer" value="yesObj"/>
    </showWhen>
    <showWhen id="swNPCaseSplitAndNYes">
-            <whenValue element="typology" attr="case" value="split"/>
-            <and/>
-            <whenRadio button="NPCaseNYes"/>
-         </showWhen>
-         <showWhen id="swNPCaseErgAndNYes">
-            <whenValue element="typology" attr="case" value="ergative"/>
-            <and/>
-            <whenRadio button="NPCaseNYes"/>
-         </showWhen>
-         <showWhen id="swNPCaseNomOrSplitOrErgPossGenAndNYes">
-   <whenValue element="typology" attr="case" value="nominative"/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgAndNYes">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplitOrErgPossGenAndNYes">
+      <whenValue element="typology" attr="case" value="nominative"/>
       <and/>
       <whenRadio button="NPCaseNYes"/>
       <or/>
-<whenValue element="typology" attr="case" value="split"/>
+      <whenValue element="typology" attr="case" value="split"/>
       <and/>
       <whenRadio button="NPCaseNYes"/>
-            <or/>
-            <whenValue element="typology" attr="case" value="ergative"/>
-            <and/>
-            <whenRadio button="NPCaseNYes"/>
-        <and/>
-            <whenRadio button="NPPossCaseGenitive"/>
-         </showWhen>
+      <or/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPPossCaseGenitive"/>
+   </showWhen>
    <showWhen id="swNPCaseErgOrSplitAndNYes">
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -253,6 +267,8 @@
       <whenRadio button="NPCaseNYes"/>
    </showWhen>
    <showWhen id="swNPCaseWordEitherRestricted">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <openParen/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
@@ -272,12 +288,14 @@
       <closeParen/>
    </showWhen>   
    <showWhen id="swNPCaseNYesAttachesProclitic">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordNo"/>
       <and/>
       <whenCheckbox button="NPCaseAttachesProclitic"/>
-<or/>
+      <or/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordSome"/>
@@ -285,6 +303,8 @@
       <whenCheckbox button="NPCaseAttachesProclitic"/>
    </showWhen>
    <showWhen id="swNPCaseNYesAttachesEnclitic">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordNo"/>
@@ -298,6 +318,8 @@
       <whenCheckbox button="NPCaseAttachesEnclitic"/>
    </showWhen>
    <showWhen id="swNPCaseNYesAttachesAffix">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordNo"/>
@@ -309,7 +331,7 @@
       <whenRadio button="NPCaseWordSome"/>
       <and/>
       <whenCheckbox button="NPCaseAttachesPrefix"/>
-<or/>
+      <or/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordNo"/>
@@ -323,15 +345,17 @@
       <whenCheckbox button="NPCaseAttachesSuffix"/>
    </showWhen>
    <showWhen id="swNPCaseWordYesOrSomeAndNoCheck">
- <openParen/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <openParen/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordYes"/>
-     <or/>
+      <or/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordSome"/>
-<closeParen/>
+      <closeParen/>
       <and/><not/>
       <whenCheckbox button="NPCaseWordBefore"/>
       <and/><not/>
@@ -342,6 +366,8 @@
       <whenCheckbox button="NPCaseWordOther"/>
    </showWhen>
    <showWhen id="swNPCaseAttachesAndNoCheck">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <openParen/>
       <whenRadio button="NPCaseNYes"/>
       <and/>

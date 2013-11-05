@@ -6,7 +6,7 @@
 <page id="NPArtPosition" count="2/2">
     <title level="2">Nominal Phrases - Articles &amp; Demonstratives: Position and Agreement Features</title>
     <form section="np">
-        <prompt id="NPArtAndDemInstruction" show="swNPArtAndDem"><span id="NPArtandDemTreespan" show="swNotPractical"><br/>Now we are ready to build the next part of the phrase structure tree.  </span>Look at the examples of nominal phrases with <span id="NPArtandDemSpan" show="swNPArtAndDemBoth">articles and demonstratives</span><span id="NPArtSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemSpan" show="swNPArtAndDemDem">demonstratives</span> that you keyed in (repeated below).</prompt>
+        <prompt id="NPArtAndDemInstruction" show="swNPArtAndDem"><span id="NPArtandDemTreespan" show="swNotPractical"><br/>Now we are ready to build the next part of the phrase structure tree.  </span>Key examples of nominal phrases with <span id="NPArtandDemSpan" show="swNPArtAndDemBoth">articles and demonstratives</span><span id="NPArtSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemSpan" show="swNPArtAndDemDem">demonstratives</span> here:</prompt>
         <textBox id="NPArtPosExample" show="swNPArtAndDem" dataItem="example"/>
         <prompt id="NPArtAndDemNoInstruction" show="swNPArtAndDemNo">Since your language does not have articles or demonstratives expressed as independent words, we do not need to determine a syntactic position for them.</prompt>
 <instruction id="NPArtAndDemNoInstruction2" show="swNPArtAndDemNo">You will be instructed to add the agreement features to nouns and their affixes when we deal with agreement again in the section on possessors.</instruction>

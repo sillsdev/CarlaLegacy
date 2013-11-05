@@ -39,82 +39,56 @@
           No tiene que escribir las formas de los pronombres demostrativos aquí, puesto que son los mismos que los demostrativos que se pueden modificar a un sustantivo que ha introducido ya en <section number="5.3.">Las frases nominales - Los artículos y demostrativos: ejemplos y caso</section>.
        </prompt>
        <instruction id="PronDemFeaturesSameInstruction" show="swPronDemAdjSameYes">Each of the demonstrative pronouns needs to have the feature <feature>demonstrative</feature> and have the category <category>Pron</category> or have a category that will be mapped to it via the category mapper at the end of this section.  Since your langauge is like English and uses the same demonstratives as both stand-alone pronouns and nominal modifiers, they will each need two entries in the lexicon.</instruction>
-       <prompt id="PronDemProximalCaseNone" show="swNPCaseNone">Puesto que su lengua no distingue el caso, debe tener solamente un solo sistema de los pronombres demostrativos que pueden presentarse en cualquier posición de la oración.</prompt>
-       <prompt id="PronDemProximalCaseNo" show="swPronDemCaseNoOrNoneAndNumberNo">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseNoExample" dataItem="demProximalExample" rows="3" show="swPronDemCaseNoOrNoneAndNumberNo"/>
-       <prompt id="PronDemMedialCaseNo" show="swPronDemCaseNoOrNoneAndNumberNo">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseNoExample" dataItem="demMedialExample" rows="3" show="swPronDemCaseNoOrNoneAndNumberNo"/>
-       <prompt id="PronDemDistalCaseNo" show="swPronDemCaseNoOrNoneAndNumberNo">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseNoExample" dataItem="demDistalExample" rows="3" show="swPronDemCaseNoOrNoneAndNumberNo"/>
-        
-       <prompt id="PronDemProximalSgCaseNo" show="swPronDemCaseNoOrNoneAndNumberYes">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgCaseNoExample" dataItem="demProximalExample" rows="2" show="swPronDemCaseNoOrNoneAndNumberYes"/>
+       <prompt id="PronDemProximalCaseNone" show="swPronDemCaseNoOrNone">Puesto que su lengua no distingue el caso, debe tener solamente un solo sistema de los pronombres demostrativos que pueden presentarse en cualquier posición de la oración.</prompt>
+       
+       <prompt id="PronDemProximalCaseNo" show="swPronDemCaseNoOrNone">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos <span id="SingularSpan" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseNoExample" dataItem="demProximalExample" rows="3" show="swPronDemCaseNoOrNone"/>
        <prompt id="PronDemProximalPlCaseNo" show="swPronDemCaseNoOrNoneAndNumberYes">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemProximalPlCaseNoExample" dataItem="demProximalPlExample" rows="2" show="swPronDemCaseNoOrNoneAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseNo" show="swPronDemCaseNoOrNoneAndNumberYes">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialSgCaseNoExample" dataItem="demMedialExample" rows="2" show="swPronDemCaseNoOrNoneAndNumberYes"/>
+       <prompt id="PronDemMedialCaseNo" show="swPronDemCaseNoOrNone">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos <span id="SingularSpan1" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseNoExample" dataItem="demMedialExample" rows="3" show="swPronDemCaseNoOrNone"/>
        <prompt id="PronDemMedialPlCaseNo" show="swPronDemCaseNoOrNoneAndNumberYes">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemMedialPlCaseNoExample" dataItem="demMedialPlExample" rows="2" show="swPronDemCaseNoOrNoneAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseNo" show="swPronDemCaseNoOrNoneAndNumberYes">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseNoExample" dataItem="demDistalExample" rows="2" show="swPronDemCaseNoOrNoneAndNumberYes"/>
+       <prompt id="PronDemDistalCaseNo" show="swPronDemCaseNoOrNone">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos <span id="SingularSpan2" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseNoExample" dataItem="demDistalExample" rows="3" show="swPronDemCaseNoOrNone"/>
        <prompt id="PronDemDistalPlCaseNo" show="swPronDemCaseNoOrNoneAndNumberYes">Escriba los pronombres demostrativos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseNoExample" dataItem="demDistalPlExample" rows="2" show="swPronDemCaseNoOrNoneAndNumberYes"/>
        
-       <prompt id="PronDemProximalCaseNom" show="swPronDemCaseNomAndNumberNo">Puesto que su lengua tiene un sistema de caso nominativo-acusativo, usted debe tener sistemas distintos de los pronombres demostrativos que pueden presentarse como sujetos y objetos y posesivos.<br/><br/>
-          Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseNomExample" dataItem="demProximalNomExample" rows="3" show="swPronDemCaseNomAndNumberNo"/>
-       <prompt id="PronDemProximalCaseAcc" show="swPronDemCaseNomAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como objetos que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseAccExample" dataItem="demProximalAccExample" rows="3" show="swPronDemCaseNomAndNumberNo"/>
-       <prompt id="PronDemProximalCaseGen" show="swPronDemCaseNomAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseGenExample" dataItem="demProximalGenExample" rows="2" show="swPronDemCaseNomAndNumberNo"/>
-       <prompt id="PronDemMedialCaseNom" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseNomExample" dataItem="demMedialNomExample" rows="3" show="swPronDemCaseNomAndNumberNo"/>
-       <prompt id="PronDemMedialCaseAcc" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como objetos que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseAccExample" dataItem="demMedialAccExample" rows="3" show="swPronDemCaseNomAndNumberNo"/>
-       <prompt id="PronDemMedialCaseGen" show="swPronDemCaseNomAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseGenExample" dataItem="demMedialGenExample" rows="2" show="swPronDemCaseNomAndNumberNo"/>
-       <prompt id="PronDemDistalCaseNom" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseNomExample" dataItem="demDistalNomExample" rows="3" show="swPronDemCaseNomAndNumberNo"/>
-       <prompt id="PronDemDistalCaseAcc" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como objetos directos que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseAccExample" dataItem="demDistalAccExample" rows="3" show="swPronDemCaseNomAndNumberNo"/>
-       <prompt id="PronDemDistalCaseGen" show="swPronDemCaseNomAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseGenExample" dataItem="demDistalGenExample" rows="2" show="swPronDemCaseNomAndNumberNo"/>
-       
-       <prompt id="PronDemProximalSgCaseNom" show="swPronDemCaseNomAndNumberYes">Puesto que su lengua tiene un sistema de caso de nominativo-acusativo, usted debe tener sistemas distintos de los pronombres demostrativos que pueden presentarse como sujetos y objetos y posesivos.<br/><br/>
-          Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgCaseNomExample" dataItem="demProximalNomExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemProximalCaseNom" show="swPronDemCaseNom">Puesto que su lengua tiene un sistema de caso nominativo-acusativo, usted debe tener sistemas distintos de los pronombres demostrativos que pueden presentarse como sujetos y objetos y posesivos.<br/><br/>
+          Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos <span id="SingularSpan3" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseNomExample" dataItem="demProximalNomExample" rows="3" show="swPronDemCaseNom"/>
        <prompt id="PronDemProximalPlCaseNom" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemProximalPlCaseNomExample" dataItem="demProximalPlNomExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
-       <prompt id="PronDemProximalSgCaseAcc" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como objetos que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgCaseAccExample" dataItem="demProximalAccExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemProximalCaseAcc" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como objetos directos que se utilizan para referirse a los objetos <span id="SingularSpan4" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseAccExample" dataItem="demProximalAccExample" rows="3" show="swPronDemCaseNom"/>
        <prompt id="PronDemProximalPlCaseAcc" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como objetos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemProximalPlCaseAccExample" dataItem="demProximalPlAccExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
-       <prompt id="PronDemProximalSgCaseGen" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgCaseGenExample" dataItem="demProximalGenExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemProximalCaseGen" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos <span id="SingularSpan5" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseGenExample" dataItem="demProximalGenExample" rows="2" show="swPronDemCaseNom"/>
        <prompt id="PronDemProximalPlCaseGen" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemProximalPlCaseGenExample" dataItem="demProximalPlGenExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseNom" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialSgCaseNomExample" dataItem="demMedialNomExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemMedialCaseNom" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos <span id="SingularSpan6" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseNomExample" dataItem="demMedialNomExample" rows="3" show="swPronDemCaseNom"/>
        <prompt id="PronDemMedialPlCaseNom" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemMedialPlCaseNomExample" dataItem="demMedialPlNomExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseAcc" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como objetos que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialSgCaseAccExample" dataItem="demMedialAccExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemMedialCaseAcc" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como objetos directos que se utilizan para referirse a los objetos <span id="SingularSpan7" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseAccExample" dataItem="demMedialAccExample" rows="3" show="swPronDemCaseNom"/>
        <prompt id="PronDemMedialPlCaseAcc" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como objetos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemMedialPlCaseAccExample" dataItem="demMedialPlAccExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseGen" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialSgCaseGenExample" dataItem="demMedialGenExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemMedialCaseGen" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos <span id="SingularSpan8" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseGenExample" dataItem="demMedialGenExample" rows="2" show="swPronDemCaseNom"/>
        <prompt id="PronDemMedialPlCaseGen" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemMedialPlCaseGenExample" dataItem="demMedialPlGenExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseNom" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseNomExample" dataItem="demDistalNomExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemDistalCaseNom" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos <span id="SingularSpan9" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseNomExample" dataItem="demDistalNomExample" rows="3" show="swPronDemCaseNom"/>
        <prompt id="PronDemDistalPlCaseNom" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseNomExample" dataItem="demDistalPlNomExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseAcc" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como objetos que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseAccExample" dataItem="demDistalAccExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemDistalCaseAcc" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como objetos directos que se utilizan para referirse a los objetos <span id="SingularSpan10" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseAccExample" dataItem="demDistalAccExample" rows="3" show="swPronDemCaseNom"/>
        <prompt id="PronDemDistalPlCaseAcc" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como objetos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseAccExample" dataItem="demDistalPlAccExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseGen" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseGenExample" dataItem="demDistalGenExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemDistalCaseGen" show="swPronDemCaseNom">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos <span id="SingularSpan11" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseGenExample" dataItem="demDistalGenExample" rows="2" show="swPronDemCaseNom"/>
        <prompt id="PronDemDistalPlCaseGen" show="swPronDemCaseNomAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseGenExample" dataItem="demDistalPlGenExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
        
@@ -128,62 +102,42 @@
           </ul>
        </instruction>
        
-       <prompt id="PronDemProximalCaseErg" show="swPronDemCaseErgAndNumberNo">Puesto que su lengua tiene un sistema de caso ergativo-absolutivo, debe tener sistemas distintos de los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en contraste que sujetos de verbos intransitivos u objetos de verbos transitivos en contraste que posesivos.<br/><br/>
-          Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseErgExample" dataItem="demProximalErgExample" rows="3" show="swPronDemCaseErgAndNumberNo"/>
-       <prompt id="PronDemProximalCaseAbs" show="swPronDemCaseErgAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseAbsExample" dataItem="demProximalAbsExample" rows="3" show="swPronDemCaseErgAndNumberNo"/>
-       <prompt id="PronDemProximalCaseErgGen" show="swPronDemCaseErgAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseErgGenExample" dataItem="demProximalGenExample" rows="2" show="swPronDemCaseErgAndNumberNo"/>
-       <prompt id="PronDemMedialCaseErg" show="swPronDemCaseErgAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseErgExample" dataItem="demMedialErgExample" rows="3" show="swPronDemCaseErgAndNumberNo"/>
-       <prompt id="PronDemMedialCaseAbs" show="swPronDemCaseErgAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseAbsExample" dataItem="demMedialAbsExample" rows="3" show="swPronDemCaseErgAndNumberNo"/>
-       <prompt id="PronDemMedialCaseErgGen" show="swPronDemCaseErgAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseErgGenExample" dataItem="demMedialGenExample" rows="2" show="swPronDemCaseErgAndNumberNo"/>
-       <prompt id="PronDemDistalCaseErg" show="swPronDemCaseErgAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseErgExample" dataItem="demDistalErgExample" rows="3" show="swPronDemCaseErgAndNumberNo"/>
-       <prompt id="PronDemDistalCaseAbs" show="swPronDemCaseErgAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseAbsExample" dataItem="demDistalAbsExample" rows="3" show="swPronDemCaseErgAndNumberNo"/>
-       <prompt id="PronDemDistalCaseErgGen" show="swPronDemCaseErgAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseErgGenExample" dataItem="demDistalGenExample" rows="2" show="swPronDemCaseErgAndNumberNo"/>
-       
-       <prompt id="PronDemProximalSgCaseErg" show="swPronDemCaseErgAndNumberYes">Puesto que su lengua tiene un sistema de caso ergativo-absolutivo, debe tener sistemas distintos de los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en contraste que sujetos de verbos intransitivos u objetos de verbos transitivos en contrate que posesivos.<br/><br/>
-          Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt>  
-       <textBox id="PronDemProximalSgCaseErgExample" dataItem="demProximalErgExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemProximalCaseErg" show="swPronDemCaseErg">Puesto que su lengua tiene un sistema de caso ergativo-absolutivo, debe tener sistemas distintos de los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en contraste que sujetos de verbos intransitivos u objetos de verbos transitivos en contraste que posesivos.<br/><br/>
+          Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos <span id="SingularSpan20" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseErgExample" dataItem="demProximalErgExample" rows="3" show="swPronDemCaseErg"/>
        <prompt id="PronDemProximalPlCaseErg" show="swPronDemCaseErgAndNumberYes">
           Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemProximalPlCaseErgExample" dataItem="demProximalPlErgExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemProximalSgCaseAbs" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgCaseAbsExample" dataItem="demProximalAbsExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemProximalPlCaseAbs" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <prompt id="PronDemProximalCaseAbs" show="swPronDemCaseErg">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos directos de verbos transitivos que se utilizan para referirse a los objetos <span id="SingularSpan21" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseAbsExample" dataItem="demProximalAbsExample" rows="3" show="swPronDemCaseErg"/>
+       <prompt id="PronDemProximalPlCaseAbs" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos directos de verbos transitivos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemProximalPlCaseAbsExample" dataItem="demProximalPlAbsExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemProximalSgCaseErgGen" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgCaseErgGenExample" dataItem="demProximalGenExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemProximalCaseErgGen" show="swPronDemCaseErg">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos <span id="SingularSpan22" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseErgGenExample" dataItem="demProximalGenExample" rows="2" show="swPronDemCaseErg"/>
        <prompt id="PronDemProximalPlCaseErgGen" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemProximalPlCaseErgGenExample" dataItem="demProximalPlGenExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseErg" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialSgCaseErgExample" dataItem="demMedialErgExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemMedialPlCaseErg" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt>  
+       <prompt id="PronDemMedialCaseErg" show="swPronDemCaseErg">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos <span id="SingularSpan23" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseErgExample" dataItem="demMedialErgExample" rows="3" show="swPronDemCaseErg"/>
+       <prompt id="PronDemMedialPlCaseErg" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt>
        <textBox id="PronDemMedialPlCaseErgExample" dataItem="demMedialPlErgExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseAbs" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialSgCaseAbsExample" dataItem="demMedialAbsExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemMedialPlCaseAbs" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <prompt id="PronDemMedialCaseAbs" show="swPronDemCaseErg">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos directos de verbos transitivos que se utilizan para referirse a los objetos <span id="SingularSpan24" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseAbsExample" dataItem="demMedialAbsExample" rows="3" show="swPronDemCaseErg"/>
+       <prompt id="PronDemMedialPlCaseAbs" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos directos de verbos transitivos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemMedialPlCaseAbsExample" dataItem="demMedialPlAbsExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseErgGen" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialSgCaseErgGenExample" dataItem="demMedialGenExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemMedialCaseErgGen" show="swPronDemCaseErg">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos <span id="SingularSpan25" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseErgGenExample" dataItem="demMedialGenExample" rows="2" show="swPronDemCaseErg"/>
        <prompt id="PronDemMedialPlCaseErgGen" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemMedialPlCaseErgGenExample" dataItem="demMedialPlGenExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseErg" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseErgExample" dataItem="demDistalErgExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemDistalCaseErg" show="swPronDemCaseErg">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos <span id="SingularSpan26" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseErgExample" dataItem="demDistalErgExample" rows="3" show="swPronDemCaseErg"/>
        <prompt id="PronDemDistalPlSgCaseErg" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseErgExample" dataItem="demDistalPlErgExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseAbs" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseAbsExample" dataItem="demDistalAbsExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemDistalPlCaseAbs" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos de verbos transitivos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <prompt id="PronDemDistalCaseAbs" show="swPronDemCaseErg">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos directos de verbos transitivos que se utilizan para referirse a los objetos <span id="SingularSpan27" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseAbsExample" dataItem="demDistalAbsExample" rows="3" show="swPronDemCaseErg"/>
+       <prompt id="PronDemDistalPlCaseAbs" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos o como objetos directos de verbos transitivos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseAbsExample" dataItem="demDistalPlAbsExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseErgGen" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseErgGenExample" dataItem="demDistalGenExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemDistalCaseErgGen" show="swPronDemCaseErg">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos <span id="SingularSpan28" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseErgGenExample" dataItem="demDistalGenExample" rows="2" show="swPronDemCaseErg"/>
        <prompt id="PronDemDistalPlCaseErgGen" show="swPronDemCaseErgAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como posesivos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseErgGenExample" dataItem="demDistalPlGenExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
        <instruction id="PronDemCaseErgInstruction" show="swPronDemCaseErg">
@@ -196,101 +150,68 @@
           </ul>
        </instruction>
        
-       <prompt id="PronDemProximalCaseSplitNom" show="swPronDemCaseSplitAndNumberNo">Puesto que su lengua tiene un sistema de caso de ergatividad escindida, debe tener sistemas distintos de los pronombres demostrativos que se utilizan normalmente como sujetos y objetos y posesivos, más algunos sistemas especiales que se utilizan en los situaciones de ergatividad escindida.<br/><br/>
-          Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseSplitNomExample" dataItem="demProximalNomExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemProximalCaseSplitAcc" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que normalmente presentarse como objetos que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseSplitAccExample" dataItem="demProximalAccExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemProximalCaseSplitGen" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseSplitGenExample" dataItem="demProximalGenExample" rows="2" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemMedialCaseSplitNom" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseSplitNomExample" dataItem="demMedialNomExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemMedialCaseSplitAcc" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que normalmente presentarse como objetos que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseSplitAccExample" dataItem="demMedialAccExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemMedialCaseSplitGen" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseSplitGenExample" dataItem="demMedialGenExample" rows="2" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemDistalCaseSplitNom" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseSplitNomExample" dataItem="demDistalNomExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemDistalCaseSplitAcc" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que normalmente presentarse como objetos que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseSplitAccExample" dataItem="demDistalAccExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemDistalCaseSplitGen" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseSplitGenExample" dataItem="demDistalGenExample" rows="2" show="swPronDemCaseSplitAndNumberNo"/>
-
-       <prompt id="PronDemProximalSgCaseSplitNom" show="swPronDemCaseSplitAndNumberYes">Puesto que su lengua tiene un sistema de caso de ergatividad escindida, debe tener sistemas distintos de los pronombres demostrativos que se utilizan normalmente como sujetos y objetos y posesivos, más algunos sistemas especiales que se utilizan en los situaciones de ergatividad escindida.<br/><br/>
-          Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgCaseSplitNomExample" dataItem="demProximalNomExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemProximalCaseSplitNom" show="swPronDemCaseSplit">Puesto que su lengua tiene un sistema de caso de ergatividad escindida, debe tener sistemas distintos de los pronombres demostrativos que se utilizan normalmente como sujetos y objetos y posesivos, más algunos sistemas especiales que se utilizan en los situaciones de ergatividad escindida.<br/><br/>
+          Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos <span id="SingularSpan30" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseSplitNomExample" dataItem="demProximalNomExample" rows="3" show="swPronDemCaseSplit"/>
        <prompt id="PronDemProximalPlCaseSplitNom" show="swPronDemCaseSplitAndNumberYes">
           Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt>  
        <textBox id="PronDemProximalPlCaseSplitNomExample" dataItem="demProximalPlNomExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemProximalSgCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como objetos que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgCaseSplitAccExample" dataItem="demProximalAccExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemProximalPlCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como objetos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <prompt id="PronDemProximalCaseSplitAcc" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que normalmente presentarse como objetos directos que se utilizan para referirse a los objetos <span id="SingularSpan31" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseSplitAccExample" dataItem="demProximalAccExample" rows="3" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemProximalPlCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como objetos directos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemProximalPlCaseSplitAccExample" dataItem="demProximalPlAccExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemProximalSgCaseSplitGen" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgCaseSplitGenExample" dataItem="demProximalGenExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemProximalCaseSplitGen" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos <span id="SingularSpan32" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseSplitGenExample" dataItem="demProximalGenExample" rows="2" show="swPronDemCaseSplit"/>
        <prompt id="PronDemProximalPlCaseSplitGen" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemProximalPlCaseSplitGenExample" dataItem="demProximalPlGenExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseSplitNom" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt>
-       <textBox id="PronDemMedialSgCaseSplitNomExample" dataItem="demMedialNomExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemMedialCaseSplitNom" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos <span id="SingularSpan33" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseSplitNomExample" dataItem="demMedialNomExample" rows="3" show="swPronDemCaseSplit"/>
        <prompt id="PronDemMedialPlCaseSplitNom" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt>
        <textBox id="PronDemMedialPlCaseSplitNomExample" dataItem="demMedialPlNomExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como objetos que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialSgCaseSplitAccExample" dataItem="demMedialAccExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemMedialPlCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como objetos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <prompt id="PronDemMedialCaseSplitAcc" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que normalmente presentarse como objetos directosque se utilizan para referirse a los objetos <span id="SingularSpan34" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseSplitAccExample" dataItem="demMedialAccExample" rows="3" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemMedialPlCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como objetos directos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemMedialPlCaseSplitAccExample" dataItem="demMedialPlAccExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseSplitGen" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialSgCaseSplitGenExample" dataItem="demMedialGenExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemMedialCaseSplitGen" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos <span id="SingularSpan35" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseSplitGenExample" dataItem="demMedialGenExample" rows="2" show="swPronDemCaseSplit"/>
        <prompt id="PronDemMedialPlCaseSplitGen" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemMedialPlCaseSplitGenExample" dataItem="demMedialPlGenExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseSplitNom" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseSplitNomExample" dataItem="demDistalNomExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemDistalCaseSplitNom" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos <span id="SingularSpan36" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseSplitNomExample" dataItem="demDistalNomExample" rows="3" show="swPronDemCaseSplit"/>
        <prompt id="PronDemDistalPlCaseSplitNom" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como sujetos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseSplitNomExample" dataItem="demDistalPlNomExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como objetos que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseSplitAccExample" dataItem="demDistalAccExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemDistalPlCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como objetos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <prompt id="PronDemDistalCaseSplitAcc" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que normalmente presentarse como objetos directos que se utilizan para referirse a los objetos <span id="SingularSpan37" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseSplitAccExample" dataItem="demDistalAccExample" rows="3" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemDistalPlCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como objetos directos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseSplitAccExample" dataItem="demDistalPlAccExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseSplitGen" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseSplitGenExample" dataItem="demDistalGenExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemDistalPlCaseSplitGen" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <prompt id="PronDemDistalCaseSplitGen" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos <span id="SingularSpan38" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseSplitGenExample" dataItem="demDistalGenExample" rows="2" show="swPronDemCaseSplit"/>
+      <prompt id="PronDemDistalPlCaseSplitGen" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que normalmente presentarse como posesivos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseSplitGenExample" dataItem="demDistalPlGenExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
        
-       <prompt id="PronDemProximalCaseSplitErg" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseSplitErgExample" dataItem="demProximalErgExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemProximalCaseSplitAbs" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalCaseSplitAbsExample" dataItem="demProximalAbsExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemMedialCaseSplitErg" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseSplitErgExample" dataItem="demMedialErgExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemMedialCaseSplitAbs" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialCaseSplitAbsExample" dataItem="demMedialAbsExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemDistalCaseSplitErg" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseSplitErgExample" dataItem="demDistalErgExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-       <prompt id="PronDemDistalCaseSplitAbs" show="swPronDemCaseSplitAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalCaseSplitAbsExample" dataItem="demDistalAbsExample" rows="3" show="swPronDemCaseSplitAndNumberNo"/>
-           
-       <prompt id="PronDemProximalSgCaseSplitErg" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgCaseSplitErgExample" dataItem="demProximalErgExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemProximalCaseSplitErg" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos <span id="SingularSpan40" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseSplitErgExample" dataItem="demProximalErgExample" rows="3" show="swPronDemCaseSplit"/>
        <prompt id="PronDemProximalPlCaseSplitErg" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemProximalPlCaseSplitErgExample" dataItem="demProximalPlErgExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemProximalSgCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgCaseSplitAbsExample" dataItem="demProximalAbsExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemProximalPlCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <prompt id="PronDemProximalCaseSplitAbs" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos directos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos <span id="SingularSpan41" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalCaseSplitAbsExample" dataItem="demProximalAbsExample" rows="3" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemProximalPlCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos directos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemProximalPlCaseSplitAbsExample" dataItem="demProximalPlAbsExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseSplitErg" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialSgCaseSplitErgExample" dataItem="demMedialErgExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemMedialCaseSplitErg" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos <span id="SingularSpan42" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseSplitErgExample" dataItem="demMedialErgExample" rows="3" show="swPronDemCaseSplit"/>
        <prompt id="PronDemMedialPlCaseSplitErg" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemMedialPlCaseSplitErgExample" dataItem="demMedialPlErgExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemMedialSgCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemMedialSgCaseSplitAbsExample" dataItem="demMedialAbsExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemMedialPlCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <prompt id="PronDemMedialCaseSplitAbs" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos directos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos <span id="SingularSpan43" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialCaseSplitAbsExample" dataItem="demMedialAbsExample" rows="3" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemMedialPlCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos directos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemMedialPlCaseSplitAbsExample" dataItem="demMedialPlAbsExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseSplitErg" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseSplitErgExample" dataItem="demDistalErgExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemDistalCaseSplitErg" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos <span id="SingularSpan44" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseSplitErgExample" dataItem="demDistalErgExample" rows="3" show="swPronDemCaseSplit"/>
        <prompt id="PronDemDistalPlCaseSplitErg" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseSplitErgExample" dataItem="demDistalPlErgExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemDistalSgCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalSgCaseSplitAbsExample" dataItem="demDistalAbsExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
-       <prompt id="PronDemDistalPlCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <prompt id="PronDemDistalCaseSplitAbs" show="swPronDemCaseSplit">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos directos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos <span id="SingularSpan45" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalCaseSplitAbsExample" dataItem="demDistalAbsExample" rows="3" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemDistalPlCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos y objetos directos de verbos transitivos en los situaciones de ergatividad escindida que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
        <textBox id="PronDemDistalPlCaseSplitAbsExample" dataItem="demDistalPlAbsExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
        
        <instruction id="PronDemCaseSplitInstruction" show="swPronDemCaseSplit">
@@ -307,27 +228,21 @@
           <br/><br/>
           <span id="PronDemNumberSpan" show="swPronDemNumberYes">Add the feature <feature>singular</feature> to each of the demonstrative pronouns  that refer only to singular items and the feature <feature>plural</feature> to each of the demonstrative pronouns that refer only to plural items.  Do no add any  number feature to any demonstrative pronouns that can refer to singular or plural items.</span></instruction>
        
-       <prompt id="PronDemDativeSet" show="swNPCaseNotNoneAndExperiencerYesDat">
-          <br/>También debería tener un sistema adicional de pronombres demostrativos para objetos indirectos y sujetos-experimentadores.  
+       <prompt id="PronDemDativeSet" show="swNPCaseNotNone">
+          <br/>También puede tener un sistema adicional de pronombres demostrativos en caso dativo.  
        </prompt>
-       <prompt id="PronDemProximalDative" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos-experimentadores y objetos indirectos que se utilizan para referirse a los objetos que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalDativeExample" dataItem="demProximalDatExample" rows="2" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberNo"/>
-       <prompt id="PronDemMedialDative" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos-experimentadores y objetos indirectos que se utilizan para referirse a los objetos que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt>        <textBox id="PronDemMedialDativeExample" dataItem="demMedialDatExample" rows="2" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberNo"/>
-       <prompt id="PronDemDistalDative" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberNo">Escriba los pronombres demostrativos que pueden presentarse como sujetos-experimentadores y objetos indirectos que se utilizan para referirse a los objetos que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt>  
-       <textBox id="PronDemDistaldativeExample" dataItem="demDistalDatExample" rows="2" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberNo"/>
-       
-       <prompt id="PronDemProximalSgDative" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos-experimentadores y objetos indirectos que se utilizan para referirse a los objetos singulares que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemProximalSgDativeExample" dataItem="demProximalDatExample" rows="2" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes"/>
-       <prompt id="PronDemProximalPlDative" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos-experimentadores y objetos indirectos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt>  
-       <textBox id="PronDemProximalPlDativeExample" dataItem="demProximalPlDatExample" rows="2" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes"/>
-       <prompt id="PronDemMedialSgDative" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos-experimentadores y objetos indirectos que se utilizan para referirse a los objetos singulares que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt>  
-       <textBox id="PronDemMedialSgDativeExample" dataItem="demMedialDatExample" rows="2" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes"/>
-       <prompt id="PronDemMedialPlDative" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos-experimentadores y objetos indirectos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt>   
-       <textBox id="PronDemMedialPlDativeExample" dataItem="demMedialPlDatExample" rows="2" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes"/>
-       <prompt id="PronDemDistalSgDative" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos-experimentadores y objetos indirectos que se utilizan para referirse a los objetos singulares que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt>
-       <textBox id="PronDemDistalSgDativeExample" dataItem="demDistalDatExample" rows="2" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes"/>
-       <prompt id="PronDemDistalPlDative" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como sujetos-experimentadores y objetos indirectos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
-       <textBox id="PronDemDistalPlDativeExample" dataItem="demDistalPlDatExample" rows="2" show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes"/>
+       <prompt id="PronDemProximalDative" show="swNPCaseNotNone">Escriba los pronombres demostrativos que pueden presentarse como <span id="ExperiencerSpan1" show="swExperiencerYesDat">sujetos-experimentadores y </span>objetos indirectos que se utilizan para referirse a los objetos <span id="SingularSpan50" show="swPronDemNumberYes">singulares </span>que están más cerca del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemProximalDativeExample" dataItem="demProximalDatExample" rows="2" show="swNPCaseNotNone"/>
+       <prompt id="PronDemProximalPlDative" show="swNPCaseNotNoneAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como <span id="ExperiencerSpan4" show="swExperiencerYesDat">sujetos-experimentadores y </span>objetos indirectos que se utilizan para referirse a los objetos plurales que están más cerca del hablante aquí, cada uno en una línea separada: </prompt>  
+       <textBox id="PronDemProximalPlDativeExample" dataItem="demProximalPlDatExample" rows="2" show="swNPCaseNotNoneAndNumberYes"/>
+       <prompt id="PronDemMedialDative" show="swNPCaseNotNone">Escriba los pronombres demostrativos que pueden presentarse como <span id="ExperiencerSpan2" show="swExperiencerYesDat">sujetos-experimentadores y </span>objetos indirectos que se utilizan para referirse a los objetos <span id="SingularSpan51" show="swPronDemNumberYes">singulares </span>que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemMedialDativeExample" dataItem="demMedialDatExample" rows="2" show="swNPCaseNotNone"/>
+       <prompt id="PronDemMedialPlDative" show="swNPCaseNotNoneAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como <span id="ExperiencerSpan5" show="swExperiencerYesDat">sujetos-experimentadores y </span>objetos indirectos que se utilizan para referirse a los objetos plurales que están más alejados (pero que se pueden ver) del hablante aquí, cada uno en una línea separada: </prompt>   
+       <textBox id="PronDemMedialPlDativeExample" dataItem="demMedialPlDatExample" rows="2" show="swNPCaseNotNoneAndNumberYes"/>
+       <prompt id="PronDemDistalDative" show="swNPCaseNotNone">Escriba los pronombres demostrativos que pueden presentarse como <span id="ExperiencerSpan3" show="swExperiencerYesDat">sujetos-experimentadores y </span>objetos indirectos que se utilizan para referirse a los objetos <span id="SingularSpan52" show="swPronDemNumberYes">singulares </span>que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt>  
+       <textBox id="PronDemDistaldativeExample" dataItem="demDistalDatExample" rows="2" show="swNPCaseNotNone"/>
+       <prompt id="PronDemDistalPlDative" show="swNPCaseNotNoneAndNumberYes">Escriba los pronombres demostrativos que pueden presentarse como <span id="ExperiencerSpan6" show="swExperiencerYesDat">sujetos-experimentadores y </span>objetos indirectos que se utilizan para referirse a los objetos plurales que están muy alejados del hablante o lejos de la vista aquí, cada uno en una línea separada: </prompt> 
+       <textBox id="PronDemDistalPlDativeExample" dataItem="demDistalPlDatExample" rows="2" show="swNPCaseNotNoneAndNumberYes"/>
        <instruction id="PronDemCaseDativeInstruction" show="swNPCaseNotNoneAndExperiencerYesDat">
           <br/>In the lexicon, add the feature <feature>dative</feature> to all the demonstrative pronouns that occur as indirect objects or Experiencer subjects.</instruction>
        
@@ -369,17 +284,8 @@
       <not/>
       <whenRadio button="PronDemAdjSameYes"/>
    </showWhen>
-   <showWhen id="swNPCaseNotNone">
-      <not/>
-      <whenValue element="typology" attr="case" value="none"/>
-      <and/>
-      <not/>
-      <whenRadio button="PronDemAdjSameYes"/>
-   </showWhen>
-   <showWhen id="swPronDemCaseNoOrNoneAndNumberNo">
+   <showWhen id="swPronDemCaseNoOrNone">
       <whenRadio button="PronDemCaseNo"/>
-      <and/>
-      <whenRadio button="PronDemNumberNo"/>
       <and/>
       <not/>
       <whenRadio button="PronDemAdjSameYes"/>
@@ -387,8 +293,6 @@
       <whenRadio button="PronDemCaseYes"/>   
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
-      <and/>
-      <whenRadio button="PronDemNumberNo"/>
       <and/>
       <not/>
       <whenRadio button="PronDemAdjSameYes"/>
@@ -502,15 +406,23 @@
       <and/>
       <whenRadio button="PronDemCaseYes"/>
    </showWhen>
-   <showWhen id="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes">
+   <showWhen id="swNPCaseNotNoneAndNumberYes">
       <not/>
       <whenValue element="typology" attr="case" value="none"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenRadio button="PronDemNumberYes"/>
       <and/>
       <whenRadio button="PronDemCaseYes"/>
+      <and/><not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNone">
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="PronDemCaseYes"/>
+      <and/><not/>
+      <whenRadio button="PronDemAdjSameYes"/>
    </showWhen>
    <showWhen id="swNPCaseNotNoneAndExperiencerYesDatAndNumberNo">
       <not/>
@@ -521,6 +433,9 @@
       <whenRadio button="PronDemNumberNo"/>
       <and/>
       <whenRadio button="PronDemCaseYes"/>
+   </showWhen>
+   <showWhen id="swExperiencerYesDat">
+      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
    </showWhen>
    
    <showWhen id="swNotPractical">

@@ -157,6 +157,10 @@
 	         <caseText value="yesDat">Experiencer subjects use a pronoun set which is distinct from both the subject and object of verbs with an Agent subject.  These are the dative pronouns, also used for indirect objects.</caseText>
 	      </case>	
 	      </p>
+	      
+	      <p show="swNPCaseNoneAndExperiencerNo"><content>In </content><langName/><content>, the same pronoun set is used for both Agent and Experiencer subjects.</content>  </p>
+	      <p show="swNPCaseNoneAndExperiencerNotNo"><content>In </content><langName/><content>, at least some of the pronouns used for Experiencer subjects are distinct from those used for Agent subjects.</content>  </p>
+	      
 	      <p><content>This is shown in the following examples of transitive sentences with verbs which have Experiencer subjects, where the subject and object are nominal phrases:</content></p>
 	      <example>
 	         <interlinear exampleLoc="typology/experiencerExample"/>
@@ -979,6 +983,16 @@
          <and/>
          <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
       </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNo">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="caseExperiencer" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNotNo">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="caseExperiencer" value="no" negateValue="yes"/>
+   </showWhen>
    <showWhen id="swNPCaseNotNoneAndCaseNYes">
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>

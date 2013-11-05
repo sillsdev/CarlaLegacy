@@ -679,10 +679,40 @@
 	      </xsl:choose>
 </p>
 </xsl:if>
+	      
+	      <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@caseExperiencer)='no'">
+<p>
+<xsl:text>En el </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, se usan los mismos pronombres tanto para los sujetos-experimentadores como los sujetos-agentes.</xsl:text>
+</p>
+</xsl:if>
+	      <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@caseExperiencer)!='no'">
+<p>
+<xsl:text>En el </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, al menos algunos de los prnombres que se usan para los sujetos-experimentadores son distintos que los que se usan para los sujetos-agentes.</xsl:text>
+</p>
+</xsl:if>
+	      
 	      <p>
 <xsl:text>Esto se muestran en los siguientes ejemplos de oraciones transitivas con sujetos-experimentadores en que el sujeto y el objeto son frases nominales:</xsl:text>
 </p>
-	      <example num="xN.NPCase.42">
+	      <example num="xN.NPCase.46">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//typology/experiencerExample" />
 </xsl:variable>
@@ -696,7 +726,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//typology/experiencerExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xN.NPCase.42</xsl:with-param>
+<xsl:with-param name="sExNumber">xN.NPCase.46</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -705,7 +735,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xN.NPCase.42.1</xsl:text>
+<xsl:text>xN.NPCase.46.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -723,7 +753,7 @@
 	      <p>
 <xsl:text>Observe las formas de los pronombres que se presentan como sujetos-experimendadores y objetos en estas oraciones transitivas:</xsl:text>
 </p>
-	      <example num="xN.NPCase.46">
+	      <example num="xN.NPCase.50">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//typology/experiencerPnExample" />
 </xsl:variable>
@@ -737,7 +767,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//typology/experiencerPnExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xN.NPCase.46</xsl:with-param>
+<xsl:with-param name="sExNumber">xN.NPCase.50</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -746,7 +776,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xN.NPCase.46.1</xsl:text>
+<xsl:text>xN.NPCase.50.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1808,7 +1838,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> no existe ningún sistema de caso. Por lo tanto, no hay ningún marca de caso en sustantivos ni un sistema distinto de pronombres usados para los posesivos.</xsl:text>
+<xsl:text> no existe ningún sistema de caso. Por lo tanto, no hay ninguna marca de caso en sustantivos ni un sistema distinto de pronombres usados para los posesivos.</xsl:text>
 </p>
 </xsl:if>
 				<xsl:if test="normalize-space(//typology/@case)='nominative'">
@@ -1897,10 +1927,10 @@
 			            <xsl:when test="//np/@adjpCaseAffix='yesPrefix'">prefijo</xsl:when>
 			         </xsl:choose>
 			         <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//typology/@case)='nominative'">
-			            <xsl:text>genitivo </xsl:text>
+			            <xsl:text> genitivo </xsl:text>
 			         </xsl:if>
 			         <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)!='genitive'">
-			            <xsl:text>o el </xsl:text>
+			            <xsl:text>o </xsl:text>
 			         </xsl:if>
 			         <xsl:text></xsl:text>
 			         <xsl:if test="normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//typology/@case)='ergative' or normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//typology/@case)='split'">
@@ -1913,11 +1943,11 @@
 			         <xsl:text> se presenta en el sustantivo principal, indica que un modificador adjetival y/o un posesivo deben estar presentes en la frase. Si el adjetivo está marcado con este </xsl:text>
 			         <xsl:text></xsl:text>
 			         <xsl:choose>
-			            <xsl:when test="//np/@adjpCaseAffix='yesSuffix'">sufijo,</xsl:when>
-			            <xsl:when test="//np/@adjpCaseAffix='yesPrefix'">prefijo,</xsl:when>
+			            <xsl:when test="//np/@adjpCaseAffix='yesSuffix'">sufijo</xsl:when>
+			            <xsl:when test="//np/@adjpCaseAffix='yesPrefix'">prefijo</xsl:when>
 			         </xsl:choose>
 			         <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//typology/@case)='nominative'">
-			            <xsl:text>genitivo </xsl:text>
+			            <xsl:text> genitivo </xsl:text>
 			         </xsl:if>
 			         <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)!='genitive'">
 			            <xsl:text>o </xsl:text>
@@ -2898,6 +2928,16 @@
          
          
       
+   
+      
+      
+      
+   
+   
+      
+      
+      
+   
    
       
       

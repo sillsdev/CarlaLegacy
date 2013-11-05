@@ -61,7 +61,7 @@
 </p>
 </xsl:if>
 		   
-		   <xsl:if test="normalize-space(//typology/@case)='none'">
+		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@noCaseExperiencer)='no'">
 <p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
@@ -74,9 +74,22 @@
 <xsl:text> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here.</xsl:text>
 </p>
 </xsl:if>
-
-			<xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.12">
+		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@noCaseExperiencer)!='no'">
+<p>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> does not have any case distinctions, so there is a single set of pronouns that can be used with Agent subjects and in any other position in the sentence, as exemplified here.</xsl:text>
+</p>
+</xsl:if>
+		   
+		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//pron/@pronounNumber)='no'">
+<example num="xPron.PronPersonal.14">
 <table border="1">
 					<caption>
 <xsl:text>Independent Personal Pronouns</xsl:text>
@@ -368,7 +381,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.14">
+<example num="xPron.PronPersonal.16">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Personal Pronouns</xsl:text>
@@ -876,6 +889,815 @@
 		      </table>
 </example>
 </xsl:if>
+
+		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@noCaseExperiencer)!='no'">
+<p>
+<xsl:text>The independent personal pronouns which are used for Experiencer subjects are:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@noCaseExperiencer)!='no' and normalize-space(//pron/@pronounNumber)='no'">
+<example num="xPron.PronPersonal.20">
+<table border="1">
+		         <caption>
+<xsl:text>Independent Personal Pronouns for Experiencer Subjects</xsl:text>
+</caption>
+		         <tr>
+		            <th>Person</th>
+		            <th>Dative Pronouns</th>
+		            <th>Gloss</th>
+		         </tr>	
+		         <xsl:variable name="sExampleValue0.1">
+<xsl:value-of select="translate(string(//pron/personalFirstSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.1 != 0 and $sExampleValue0.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left" rowspan="1">
+<xsl:text>First</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left" rowspan="1">
+<xsl:text>First</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		         <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<xsl:variable name="sExampleValue1.1">
+<xsl:value-of select="translate(string(//pron/personalFirsExclNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength1.1 != 0 and $sExampleValue1.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength1.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left" rowspan="1">
+<xsl:text>First exclusive</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left" rowspan="1">
+<xsl:text>First exclusive</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+		         <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<xsl:variable name="sExampleValue2.1">
+<xsl:value-of select="translate(string(//pron/personalFirstInclNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength2.1 != 0 and $sExampleValue2.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength2.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left" rowspan="1">
+<xsl:text>First inclusive</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left" rowspan="1">
+<xsl:text>First inclusive</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+		         <xsl:variable name="sExampleValue3.1">
+<xsl:value-of select="translate(string(//pron/personalSecondSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength3.1" select="string-length(normalize-space($sExampleValue3.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength3.1 != 0 and $sExampleValue3.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength3.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left" rowspan="1">
+<xsl:text>Second</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left" rowspan="1">
+<xsl:text>Second</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		         <xsl:variable name="sExampleValue4.1">
+<xsl:value-of select="translate(string(//pron/personalThirdSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength4.1" select="string-length(normalize-space($sExampleValue4.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength4.1 != 0 and $sExampleValue4.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength4.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left" rowspan="1">
+<xsl:text>Third</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left" rowspan="1">
+<xsl:text>Third</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		      </table>
+</example>
+</xsl:if>
+		   
+		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@noCaseExperiencer)!='no' and normalize-space(//pron/@pronounNumber)='yes'">
+<example num="xPron.PronPersonal.22">
+<table border="1">
+		         <caption>
+<xsl:text>Independent Personal Pronouns for Expereincer Subjects</xsl:text>
+</caption>
+		         <tr>
+		            <th>Person</th>
+		            <th>Number</th>
+		            <th>Dative Pronouns</th>
+		            <th>Gloss</th>
+		         </tr>	
+		         <xsl:variable name="sExampleValue0.2">
+<xsl:value-of select="translate(string(//pron/personalFirstSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.2 != 0 and $sExampleValue0.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		         <xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<xsl:variable name="sExampleValue1.2">
+<xsl:value-of select="translate(string(//pron/personalFirstPlNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength1.2 != 0 and $sExampleValue1.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength1.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+		         <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<xsl:variable name="sExampleValue2.2">
+<xsl:value-of select="translate(string(//pron/personalFirstExclNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength2.2 != 0 and $sExampleValue2.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength2.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Exclusive</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Exclusive</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+		         <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<xsl:variable name="sExampleValue3.2">
+<xsl:value-of select="translate(string(//pron/personalFirstInclNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength3.2 != 0 and $sExampleValue3.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength3.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Inclusive</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Inclusive</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+		         <xsl:variable name="sExampleValue4.2">
+<xsl:value-of select="translate(string(//pron/personalSecondSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength4.2 != 0 and $sExampleValue4.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength4.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>Second</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>Second</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		         <xsl:variable name="sExampleValue5.2">
+<xsl:value-of select="translate(string(//pron/personalSecondPlNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength5.2 != 0 and $sExampleValue5.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue5.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue5.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength5.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>Second</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>Second</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		         <xsl:variable name="sExampleValue6.2">
+<xsl:value-of select="translate(string(//pron/personalThirdSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength6.2" select="string-length(normalize-space($sExampleValue6.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength6.2 != 0 and $sExampleValue6.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue6.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue6.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength6.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>Third</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>Third</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		         <xsl:variable name="sExampleValue7.2">
+<xsl:value-of select="translate(string(//pron/personalThirdPlNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength7.2" select="string-length(normalize-space($sExampleValue7.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength7.2 != 0 and $sExampleValue7.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue7.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue7.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength7.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>Third</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>Third</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		      </table>
+</example>
+</xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='nominative'">
 <p>
@@ -890,8 +1712,8 @@
 </xsl:choose>
 <xsl:text> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors. </xsl:text>
 <xsl:choose>
-				   <xsl:when test="//typology/@caseExperiencer='no'">Both Agent subjects and Experiencer subjects use the nominative pronouns, while both direct and indirect objects use the accusative pronouns.  There is not a distinct set of dative pronouns.</xsl:when>
-				   <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for both direct and indirect objects.  There is not a distinct set of dative pronouns.</xsl:when>
+				   <xsl:when test="//typology/@caseExperiencer='no'">Both Agent subjects and Experiencer subjects use the nominative pronouns, while direct objects use the accusative pronouns.  There is a set of dative pronouns for indirect objects.</xsl:when>
+				   <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for direct objects.  There is a set of dative pronouns for indirect objects.</xsl:when>
 				   <xsl:when test="//typology/@caseExperiencer='yesDat'">Agent subjects use the nominative pronouns, while Experiencer subjects use the dative pronouns also used for indirect objects.  Direct objects use the accusative pronouns.</xsl:when>
 				</xsl:choose>
 </p>
@@ -907,7 +1729,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.20">
+<example num="xPron.PronPersonal.28">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Nominative Personal Pronouns</xsl:text>
@@ -1201,7 +2023,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.22">
+<example num="xPron.PronPersonal.30">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Nominative Personal Pronouns</xsl:text>
@@ -1713,14 +2535,14 @@
 <p>
 <xsl:text>The independent personal pronouns which are used for </xsl:text>
 <xsl:choose>
-			      <xsl:when test="//typology/@caseExperiencer='no'">direct or indirect objects are:</xsl:when>
-			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct or indirect objects, or for Experiencer subjects are:</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='no'">direct objects are:</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct objects or for Experiencer subjects are:</xsl:when>
 			      <xsl:when test="//typology/@caseExperiencer='yesDat'">direct objects are:</xsl:when>
 			   </xsl:choose>
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.26">
+<example num="xPron.PronPersonal.34">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Accusative Personal Pronouns</xsl:text>
@@ -2014,7 +2836,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.28">
+<example num="xPron.PronPersonal.36">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Accusative Personal Pronouns</xsl:text>
@@ -2522,13 +3344,17 @@
 		      </table>
 </example>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//typology/@caseExperiencer)='yesDat'">
+		   <xsl:if test="normalize-space(//typology/@case)='nominative'">
 <p>
-<xsl:text>The independent personal pronouns which are used for Experiencer subjects or for indirect objects are:</xsl:text>
+<xsl:text>The independent personal pronouns which are used </xsl:text>
+<xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
+<xsl:text>for Experiencer subjects or </xsl:text>
+</xsl:if>
+<xsl:text>for indirect objects are:</xsl:text>
 </p>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.32">
+		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='no'">
+<example num="xPron.PronPersonal.40">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Dative Personal Pronouns</xsl:text>
@@ -2821,8 +3647,8 @@
 </example>
 </xsl:if>
 		   
-		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.34">
+		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='yes'">
+<example num="xPron.PronPersonal.42">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Dative Personal Pronouns</xsl:text>
@@ -3336,7 +4162,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.38">
+<example num="xPron.PronPersonal.46">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Genitive Personal Pronouns</xsl:text>
@@ -3630,7 +4456,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.40">
+<example num="xPron.PronPersonal.48">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Genitive Personal Pronouns</xsl:text>
@@ -4152,8 +4978,8 @@
 </xsl:choose>
 <xsl:text> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs. </xsl:text>
 <xsl:choose>
-			      <xsl:when test="//typology/@caseExperiencer='no'">Both Agent subjects and Experiencer subjects of transitive verbs use the ergative pronouns, while both Agent and Experiencer subjects of intransitive verbs and direct and indirect objects of transitive verbs use the absolutive pronouns.  There is not a distinct set of dative pronouns.</xsl:when>
-			      <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects of transitive verbs use the ergative pronouns, while Experiencer subjects of transitive verbs use the same set of absolutive pronouns that are also used for subjects of intransitive verbs and both direct and indirect objects.  There is not a distinct set of dative pronouns.</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='no'">Both Agent subjects and Experiencer subjects of transitive verbs use the ergative pronouns, while both Agent and Experiencer subjects of intransitive verbs and direct objects of transitive verbs use the absolutive pronouns.  There is a set of dative pronouns for indirect objects.</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects of transitive verbs use the ergative pronouns, while Experiencer subjects of transitive verbs use the same set of absolutive pronouns that are also used for subjects of intransitive verbs and direct objects.  There is a set of dative pronouns for indirect objects.</xsl:when>
 			      <xsl:when test="//typology/@caseExperiencer='yesDat'">Agent subjects of transitive verbs use the ergative pronouns, while Agent subjects of intransitive verbs and direct objects of transitive verbs use the absolutive pronouns.  Experiencer subjects use the dative pronouns also used for indirect objects.</xsl:when>
 			   </xsl:choose>
 <xsl:text> Possessors use the </xsl:text>
@@ -4175,7 +5001,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.46">
+<example num="xPron.PronPersonal.54">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Ergative Personal Pronouns</xsl:text>
@@ -4469,7 +5295,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.48">
+<example num="xPron.PronPersonal.56">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Ergative Personal Pronouns</xsl:text>
@@ -4981,14 +5807,14 @@
 <p>
 <xsl:text>The independent personal pronouns which are used for   </xsl:text>
 <xsl:choose>
-		         <xsl:when test="//typology/@caseExperiencer='no'">subjects of intransitive verbs or for direct or indirect objects of transitive verbs are:</xsl:when>
-		         <xsl:when test="//typology/@caseExperiencer='yesObj'">direct or indirect objects, or for Experiencer subjects are:</xsl:when>
+		         <xsl:when test="//typology/@caseExperiencer='no'">subjects of intransitive verbs or for direct objects of transitive verbs are:</xsl:when>
+		         <xsl:when test="//typology/@caseExperiencer='yesObj'">direct objects or for Experiencer subjects are:</xsl:when>
 		         <xsl:when test="//typology/@caseExperiencer='yesDat'">Agent subjects of intransitive verbs or for direct objects of transitive verbs are:</xsl:when>
 		      </xsl:choose>
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.52">
+<example num="xPron.PronPersonal.60">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Absolutive Personal Pronouns</xsl:text>
@@ -5282,7 +6108,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.54">
+<example num="xPron.PronPersonal.62">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Absolutive Personal Pronouns</xsl:text>
@@ -5790,13 +6616,17 @@
 		      </table>
 </example>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//typology/@caseExperiencer)='yesDat'">
+		   <xsl:if test="normalize-space(//typology/@case)='ergative'">
 <p>
-<xsl:text>The independent personal pronouns which are used for Experiencer subjects or for indirect objects are:</xsl:text>
+<xsl:text>The independent personal pronouns which are used </xsl:text>
+<xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
+<xsl:text>for Experiencer subjects or </xsl:text>
+</xsl:if>
+<xsl:text>for indirect objects are:</xsl:text>
 </p>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.58">
+		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='no'">
+<example num="xPron.PronPersonal.66">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Dative Personal Pronouns</xsl:text>
@@ -6089,8 +6919,8 @@
 </example>
 </xsl:if>
 		   
-		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.60">
+		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='yes'">
+<example num="xPron.PronPersonal.68">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Dative Personal Pronouns</xsl:text>
@@ -6604,7 +7434,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.64">
+<example num="xPron.PronPersonal.72">
 <table border="1">
 		         <caption>
 <xsl:text>Independent </xsl:text>
@@ -6904,7 +7734,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.66">
+<example num="xPron.PronPersonal.74">
 <table border="1">
 		         <caption>
 <xsl:text>Independent </xsl:text>
@@ -7432,8 +8262,8 @@
 </xsl:choose>
 <xsl:text> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  In the nominative-accusative cases, </xsl:text>
 <xsl:choose>
-			      <xsl:when test="//typology/@caseExperiencer='no'">both Agent subjects and Experiencer subjects use the nominative pronouns, while both direct and indirect objects use the accusative pronouns.  There is not a distinct set of dative pronouns.</xsl:when>
-			      <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for both direct and indirect objects.  There is not a distinct set of dative pronouns.</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='no'">both Agent subjects and Experiencer subjects use the nominative pronouns, while direct objects use the accusative pronouns.  There is a set of dative pronouns for indirect objects.</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for direct objects.  There is a set of dative pronouns for indirect objects.</xsl:when>
 			      <xsl:when test="//typology/@caseExperiencer='yesDat'">Agent subjects use the nominative pronouns, while Experiencer subjects use the dative pronouns also used for indirect objects.  Direct objects use the accusative pronouns.</xsl:when>
 			   </xsl:choose>
 </p>
@@ -7449,7 +8279,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.72">
+<example num="xPron.PronPersonal.80">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Nominative Personal Pronouns</xsl:text>
@@ -7743,7 +8573,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.74">
+<example num="xPron.PronPersonal.82">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Nominative Personal Pronouns</xsl:text>
@@ -8256,15 +9086,15 @@
 <p>
 <xsl:text>The independent personal pronouns which are used for </xsl:text>
 <xsl:choose>
-			      <xsl:when test="//typology/@caseExperiencer='no'">direct or indirect objects are:</xsl:when>
-			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct or indirect objects, or for Experiencer subjects are:</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='no'">direct objects are:</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct objects or for Experiencer subjects are:</xsl:when>
 			      <xsl:when test="//typology/@caseExperiencer='yesDat'">direct objects are:</xsl:when>
 			   </xsl:choose>
 </p>
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.78">
+<example num="xPron.PronPersonal.86">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Accusative Personal Pronouns</xsl:text>
@@ -8558,7 +9388,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.80">
+<example num="xPron.PronPersonal.88">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Accusative Personal Pronouns</xsl:text>
@@ -9066,13 +9896,17 @@
 		      </table>
 </example>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//typology/@caseExperiencer)='yesDat'">
+		   <xsl:if test="normalize-space(//typology/@case)='split'">
 <p>
-<xsl:text>The independent personal pronouns which are used for Experiencer subjects or for indirect objects are:</xsl:text>
+<xsl:text>The independent personal pronouns which are used for </xsl:text>
+<xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
+<xsl:text>for Experiencer subjects or </xsl:text>
+</xsl:if>
+<xsl:text>indirect objects are:</xsl:text>
 </p>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.84">
+		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no'">
+<example num="xPron.PronPersonal.92">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Dative Personal Pronouns</xsl:text>
@@ -9365,8 +10199,8 @@
 </example>
 </xsl:if>
 		   
-		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.86">
+		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes'">
+<example num="xPron.PronPersonal.94">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Dative Personal Pronouns</xsl:text>
@@ -9880,7 +10714,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.90">
+<example num="xPron.PronPersonal.98">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Genitive Personal Pronouns</xsl:text>
@@ -10174,7 +11008,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.92">
+<example num="xPron.PronPersonal.100">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Genitive Personal Pronouns</xsl:text>
@@ -10694,7 +11528,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.96">
+<example num="xPron.PronPersonal.104">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Ergative Personal Pronouns</xsl:text>
@@ -10988,7 +11822,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.98">
+<example num="xPron.PronPersonal.106">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Ergative Personal Pronouns</xsl:text>
@@ -11500,15 +12334,15 @@
 <p>
 <xsl:text>The independent personal pronouns which are used for   </xsl:text>
 <xsl:choose>
-			      <xsl:when test="//typology/@caseExperiencer='no'">subjects of intransitive verbs or for direct or indirect objects of transitive verbs</xsl:when>
-			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct or indirect objects, or for Experiencer subjects</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='no'">subjects of intransitive verbs or for direct objects of transitive verbs</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct objects or for Experiencer subjects</xsl:when>
 			      <xsl:when test="//typology/@caseExperiencer='yesDat'">Agent subjects of intransitive verbs or for direct objects of transitive verbs</xsl:when>
 			   </xsl:choose>
 <xsl:text> in the special cases of split ergativity are:</xsl:text>
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no'">
-<example num="xPron.PronPersonal.102">
+<example num="xPron.PronPersonal.110">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Absolutive Personal Pronouns</xsl:text>
@@ -11802,7 +12636,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xPron.PronPersonal.104">
+<example num="xPron.PronPersonal.112">
 <table border="1">
 		         <caption>
 <xsl:text>Independent Absolutive Personal Pronouns</xsl:text>
@@ -12377,7 +13211,7 @@
 </p>
 </xsl:if>
 		         
-		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//pron/@dependentPron)='yes'">
+		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@noCaseExperiencer)='no' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
 <xsl:text>As seen above, </xsl:text>
 <xsl:choose>
@@ -12388,11 +13222,25 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence, as exemplified here.</xsl:text>
+<xsl:text> does not have any case distinctions, so there is only a single set of pronouns that can be used in any position in the sentence:.</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@noCaseExperiencer)!='no' and normalize-space(//pron/@dependentPron)='yes'">
+<p>
+<xsl:text>As seen above, </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> does not have any case distinctions, so there is a single set of pronouns that can be used with Agent subjects and in any other position in the sentence:</xsl:text>
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.112">
+<example num="xPron.PronPersonal.122">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Personal Pronouns</xsl:text>
@@ -12685,7 +13533,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.114">
+<example num="xPron.PronPersonal.124">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Personal Pronouns</xsl:text>
@@ -13193,6 +14041,816 @@
 		      </table>
 </example>
 </xsl:if>
+		   
+		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@noCaseExperiencer)!='no' and normalize-space(//pron/@dependentPron)='yes'">
+<p>
+<xsl:text>The dependent personal pronouns which are used for Experiencer subjects are:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@noCaseExperiencer)!='no' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
+<example num="xPron.PronPersonal.128">
+<table border="1">
+		         <caption>
+<xsl:text>Dependent Personal Pronouns for Experiencer Subjects</xsl:text>
+</caption>
+		         <tr>
+		            <th>Person</th>
+		            <th>Dative Pronouns</th>
+		            <th>Gloss</th>
+		         </tr>	
+		         <xsl:variable name="sExampleValue0.1">
+<xsl:value-of select="translate(string(//pron/personalDependentFirstSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.1 != 0 and $sExampleValue0.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left" rowspan="1">
+<xsl:text>First</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left" rowspan="1">
+<xsl:text>First</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		         <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<xsl:variable name="sExampleValue1.1">
+<xsl:value-of select="translate(string(//pron/personalDependentFirsExclNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength1.1 != 0 and $sExampleValue1.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength1.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left" rowspan="1">
+<xsl:text>First exclusive</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left" rowspan="1">
+<xsl:text>First exclusive</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+		         <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<xsl:variable name="sExampleValue2.1">
+<xsl:value-of select="translate(string(//pron/personalDependentFirstInclNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength2.1 != 0 and $sExampleValue2.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength2.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left" rowspan="1">
+<xsl:text>First inclusive</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left" rowspan="1">
+<xsl:text>First inclusive</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+		         <xsl:variable name="sExampleValue3.1">
+<xsl:value-of select="translate(string(//pron/personalDependentSecondSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength3.1" select="string-length(normalize-space($sExampleValue3.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength3.1 != 0 and $sExampleValue3.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength3.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left" rowspan="1">
+<xsl:text>Second</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left" rowspan="1">
+<xsl:text>Second</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>					
+		         <xsl:variable name="sExampleValue4.1">
+<xsl:value-of select="translate(string(//pron/personalDependentThirdSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength4.1" select="string-length(normalize-space($sExampleValue4.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength4.1 != 0 and $sExampleValue4.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength4.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left" rowspan="1">
+<xsl:text>Third</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left" rowspan="1">
+<xsl:text>Third</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>				</table>
+</example>
+</xsl:if>
+		   
+		   <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@noCaseExperiencer)!='no' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
+<example num="xPron.PronPersonal.130">
+<table border="1">
+		         <caption>
+<xsl:text>Dependent Personal Pronouns for Experiencer Subjects</xsl:text>
+</caption>
+		         <tr>
+		            <th>Person</th>
+		            <th>Number</th>
+		            <th>Dative Pronouns</th>
+		            <th>Gloss</th>
+		         </tr>	
+		         <xsl:variable name="sExampleValue0.2">
+<xsl:value-of select="translate(string(//pron/personalDependentFirstSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.2 != 0 and $sExampleValue0.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		         <xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<xsl:variable name="sExampleValue1.2">
+<xsl:value-of select="translate(string(//pron/personalDependentFirstPlNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength1.2 != 0 and $sExampleValue1.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength1.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+		         <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<xsl:variable name="sExampleValue2.2">
+<xsl:value-of select="translate(string(//pron/personalDependentFirstExclNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength2.2 != 0 and $sExampleValue2.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength2.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Exclusive</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Exclusive</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+		         <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<xsl:variable name="sExampleValue3.2">
+<xsl:value-of select="translate(string(//pron/personalDependentFirstInclNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength3.2 != 0 and $sExampleValue3.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength3.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Inclusive</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>First</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Inclusive</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+		         <xsl:variable name="sExampleValue4.2">
+<xsl:value-of select="translate(string(//pron/personalDependentSecondSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength4.2 != 0 and $sExampleValue4.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength4.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>Second</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>Second</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		         <xsl:variable name="sExampleValue5.2">
+<xsl:value-of select="translate(string(//pron/personalDependentSecondPlNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength5.2 != 0 and $sExampleValue5.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue5.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue5.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength5.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>Second</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>Second</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		         <xsl:variable name="sExampleValue6.2">
+<xsl:value-of select="translate(string(//pron/personalDependentThirdSgNoneDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength6.2" select="string-length(normalize-space($sExampleValue6.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength6.2 != 0 and $sExampleValue6.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue6.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue6.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength6.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>Third</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>Third</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Singular</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		         <xsl:variable name="sExampleValue7.2">
+<xsl:value-of select="translate(string(//pron/personalDependentThirdPlNomDativeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength7.2" select="string-length(normalize-space($sExampleValue7.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength7.2 != 0 and $sExampleValue7.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue7.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue7.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength7.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>Third</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>Third</xsl:text>
+</td>
+<td align="left">
+<xsl:text>Plural</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+		      </table>
+</example>
+</xsl:if>
+		   
+		   
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
 <xsl:text>As seen above, </xsl:text>
@@ -13206,8 +14864,8 @@
 </xsl:choose>
 <xsl:text> has a nominative-accusative case system, so there are distinct sets of pronouns for subjects, objects, and possessors. </xsl:text>
 <xsl:choose>
-		         <xsl:when test="//typology/@caseExperiencer='no'">Both Agent subjects and Experiencer subjects use the nominative pronouns, while both direct and indirect objects use the accusative pronouns.  There is not a distinct set of dative pronouns.</xsl:when>
-		         <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for both direct and indirect objects.  There is not a distinct set of dative pronouns.</xsl:when>
+		         <xsl:when test="//typology/@caseExperiencer='no'">Both Agent subjects and Experiencer subjects use the nominative pronouns, while direct objects use the accusative pronouns.  There is a set of dative pronouns for indirect objects.</xsl:when>
+		         <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for direct objects.  There is a set of dative pronouns for indirect objects.</xsl:when>
 		         <xsl:when test="//typology/@caseExperiencer='yesDat'">Agent subjects use the nominative pronouns, while Experiencer subjects use the dative pronouns also used for indirect objects.  Direct objects use the accusative pronouns.</xsl:when>
 		      </xsl:choose>
 </p>
@@ -13223,7 +14881,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.120">
+<example num="xPron.PronPersonal.136">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Nominative Personal Pronouns</xsl:text>
@@ -13516,7 +15174,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.122">
+<example num="xPron.PronPersonal.138">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Nominative Personal Pronouns</xsl:text>
@@ -14028,14 +15686,14 @@
 <p>
 <xsl:text>The dependent personal pronouns which are used for </xsl:text>
 <xsl:choose>
-		         <xsl:when test="//typology/@caseExperiencer='no'">direct or indirect objects are:</xsl:when>
-		         <xsl:when test="//typology/@caseExperiencer='yesObj'">direct or indirect objects, or for Experiencer subjects are:</xsl:when>
+		         <xsl:when test="//typology/@caseExperiencer='no'">direct objects are:</xsl:when>
+		         <xsl:when test="//typology/@caseExperiencer='yesObj'">direct objects or for Experiencer subjects are:</xsl:when>
 		         <xsl:when test="//typology/@caseExperiencer='yesDat'">direct objects are:</xsl:when>
 		      </xsl:choose>
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.126">
+<example num="xPron.PronPersonal.142">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Accusative Personal Pronouns</xsl:text>
@@ -14328,7 +15986,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.128">
+<example num="xPron.PronPersonal.144">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Accusative Personal Pronouns</xsl:text>
@@ -14836,13 +16494,17 @@
 		      </table>
 </example>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//pron/@dependentPron)='yes'">
+		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>The dependent personal pronouns which are used for Experiencer subjects or for indirect objects are:</xsl:text>
+<xsl:text>The dependent personal pronouns which are used for </xsl:text>
+<xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
+<xsl:text>for Experiencer subjects or </xsl:text>
+</xsl:if>
+<xsl:text>indirect objects are:</xsl:text>
 </p>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.132">
+		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
+<example num="xPron.PronPersonal.148">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Dative Personal Pronouns</xsl:text>
@@ -15134,8 +16796,8 @@
 </example>
 </xsl:if>
 		   
-		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.134">
+		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
+<example num="xPron.PronPersonal.150">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Dative Personal Pronouns</xsl:text>
@@ -15272,7 +16934,7 @@
 </xsl:if>
 		         <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//pron/personalDependentFirstExclNoDativeExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/personalDependentFirstExclNomDativeExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -15649,7 +17311,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.138">
+<example num="xPron.PronPersonal.154">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Genitive Personal Pronouns</xsl:text>
@@ -15942,7 +17604,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.140">
+<example num="xPron.PronPersonal.156">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Genitive Personal Pronouns</xsl:text>
@@ -16464,8 +18126,8 @@
 </xsl:choose>
 <xsl:text> has an ergative-absolutive case system, so there are distinct sets of pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs. </xsl:text>
 <xsl:choose>
-		         <xsl:when test="//typology/@caseExperiencer='no'">Both Agent subjects and Experiencer subjects of transitive verbs use the ergative pronouns, while both Agent and Experiencer subjects of intransitive verbs and direct and indirect objects of transitive verbs use the absolutive pronouns.  There is not a distinct set of dative pronouns.</xsl:when>
-		         <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects of transitive verbs use the ergative pronouns, while Experiencer subjects of transitive verbs use the same set of absolutive pronouns that are also used for subjects of intransitive verbs and both direct and indirect objects.  There is not a distinct set of dative pronouns.</xsl:when>
+		         <xsl:when test="//typology/@caseExperiencer='no'">Both Agent subjects and Experiencer subjects of transitive verbs use the ergative pronouns, while both Agent and Experiencer subjects of intransitive verbs and direct objects of transitive verbs use the absolutive pronouns.  There is a set of dative pronouns for indirect objects.</xsl:when>
+		         <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects of transitive verbs use the ergative pronouns, while Experiencer subjects of transitive verbs use the same set of absolutive pronouns that are also used for subjects of intransitive verbs and direct objects.  There is a set of dative pronouns for indirect objects.</xsl:when>
 		         <xsl:when test="//typology/@caseExperiencer='yesDat'">Agent subjects of transitive verbs use the ergative pronouns, while Agent subjects of intransitive verbs and direct objects of transitive verbs use the absolutive pronouns.  Experiencer subjects use the dative pronouns also used for indirect objects.</xsl:when>
 		      </xsl:choose>
 <xsl:text> Possessors use the </xsl:text>
@@ -16487,7 +18149,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.146">
+<example num="xPron.PronPersonal.162">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Ergative Personal Pronouns</xsl:text>
@@ -16780,7 +18442,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.148">
+<example num="xPron.PronPersonal.164">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Ergative Personal Pronouns</xsl:text>
@@ -17292,14 +18954,14 @@
 <p>
 <xsl:text>The dependent personal pronouns which are used for   </xsl:text>
 <xsl:choose>
-			      <xsl:when test="//typology/@caseExperiencer='no'">subjects of intransitive verbs or for direct or indirect objects of transitive verbs are:</xsl:when>
-			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct or indirect objects, or for Experiencer subjects are:</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='no'">subjects of intransitive verbs or for direct objects of transitive verbs are:</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct objects or for Experiencer subjects are:</xsl:when>
 			      <xsl:when test="//typology/@caseExperiencer='yesDat'">Agent subjects of intransitive verbs or for direct objects of transitive verbs are:</xsl:when>
 			   </xsl:choose>
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.152">
+<example num="xPron.PronPersonal.168">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Absolutive Personal Pronouns</xsl:text>
@@ -17592,7 +19254,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.154">
+<example num="xPron.PronPersonal.170">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Absolutive Personal Pronouns</xsl:text>
@@ -18100,13 +19762,17 @@
 		      </table>
 </example>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//pron/@dependentPron)='yes'">
+		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>The dependent personal pronouns which are used for Experiencer subjects or for indirect objects are:</xsl:text>
+<xsl:text>The dependent personal pronouns which are used for </xsl:text>
+<xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
+<xsl:text>for Experiencer subjects or </xsl:text>
+</xsl:if>
+<xsl:text>indirect objects are:</xsl:text>
 </p>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.158">
+		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
+<example num="xPron.PronPersonal.174">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Dative Personal Pronouns</xsl:text>
@@ -18398,8 +20064,8 @@
 </example>
 </xsl:if>
 		   
-		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.160">
+		   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
+<example num="xPron.PronPersonal.176">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Dative Personal Pronouns</xsl:text>
@@ -18914,7 +20580,7 @@
 </xsl:if>
 
 				   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.164">
+<example num="xPron.PronPersonal.180">
 <table border="1">
 				         <caption>
 <xsl:text>Dependent </xsl:text>
@@ -19213,7 +20879,7 @@
 </xsl:if>
 				   
 				   <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.166">
+<example num="xPron.PronPersonal.182">
 <table border="1">
 				         <caption>
 <xsl:text>Dependent </xsl:text>
@@ -19740,8 +21406,8 @@
 </xsl:choose>
 <xsl:text> has a split case system, so there are distinct sets of pronouns  that are normally used as subjects, objects, and possessors, plus some special sets which are used in the split ergativity cases.  In the nominative-accusative cases, </xsl:text>
 <xsl:choose>
-			      <xsl:when test="//typology/@caseExperiencer='no'">both Agent subjects and Experiencer subjects use the nominative pronouns, while both direct and indirect objects use the accusative pronouns.  There is not a distinct set of dative pronouns.</xsl:when>
-			      <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for both direct and indirect objects.  There is not a distinct set of dative pronouns.</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='no'">both Agent subjects and Experiencer subjects use the nominative pronouns, while direct objects use the accusative pronouns.  There is a set of dative pronouns for indirect objects.</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='yesObj'">Agent subjects use the nominative pronouns, while Experiencer subjects use the same set of accusative pronouns that are also used for direct objects.  There is a set of dative pronouns for indirect objects.</xsl:when>
 			      <xsl:when test="//typology/@caseExperiencer='yesDat'">Agent subjects use the nominative pronouns, while Experiencer subjects use the dative pronouns also used for indirect objects.  Direct objects use the accusative pronouns.</xsl:when>
 			   </xsl:choose>
 </p>
@@ -19757,7 +21423,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.172">
+<example num="xPron.PronPersonal.188">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Nominative Personal Pronouns</xsl:text>
@@ -20050,7 +21716,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.174">
+<example num="xPron.PronPersonal.190">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Nominative Personal Pronouns</xsl:text>
@@ -20562,14 +22228,14 @@
 <p>
 <xsl:text>The dependent personal pronouns which are used for </xsl:text>
 <xsl:choose>
-			      <xsl:when test="//typology/@caseExperiencer='no'">direct or indirect objects are:</xsl:when>
-			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct or indirect objects, or for Experiencer subjects are:</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='no'">direct objects are:</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct objects or for Experiencer subjects are:</xsl:when>
 			      <xsl:when test="//typology/@caseExperiencer='yesDat'">direct objects are:</xsl:when>
 			   </xsl:choose>
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.178">
+<example num="xPron.PronPersonal.194">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Accusative Personal Pronouns</xsl:text>
@@ -20862,7 +22528,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.180">
+<example num="xPron.PronPersonal.196">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Accusative Personal Pronouns</xsl:text>
@@ -21370,13 +23036,17 @@
 		      </table>
 </example>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//pron/@dependentPron)='yes'">
+		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@dependentPron)='yes'">
 <p>
-<xsl:text>The dependent personal pronouns which are used for Experiencer subjects or for indirect objects are:</xsl:text>
+<xsl:text>The dependent personal pronouns which are used for </xsl:text>
+<xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
+<xsl:text>for Experiencer subjects or </xsl:text>
+</xsl:if>
+<xsl:text>indirect objects are:</xsl:text>
 </p>
 </xsl:if>
-		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.184">
+		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
+<example num="xPron.PronPersonal.200">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Dative Personal Pronouns</xsl:text>
@@ -21668,8 +23338,8 @@
 </example>
 </xsl:if>
 		   
-		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes' and normalize-space(//typology/@caseExperiencer)='yesDat'">
-<example num="xPron.PronPersonal.186">
+		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
+<example num="xPron.PronPersonal.202">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Dative Personal Pronouns</xsl:text>
@@ -22183,7 +23853,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.190">
+<example num="xPron.PronPersonal.206">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Genitive Personal Pronouns</xsl:text>
@@ -22476,7 +24146,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.192">
+<example num="xPron.PronPersonal.208">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Genitive Personal Pronouns</xsl:text>
@@ -22996,7 +24666,7 @@
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.196">
+<example num="xPron.PronPersonal.212">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Ergative Personal Pronouns</xsl:text>
@@ -23289,7 +24959,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.198">
+<example num="xPron.PronPersonal.214">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Ergative Personal Pronouns</xsl:text>
@@ -23801,15 +25471,15 @@
 <p>
 <xsl:text>The dependent personal pronouns which are used for   </xsl:text>
 <xsl:choose>
-			      <xsl:when test="//typology/@caseExperiencer='no'">subjects of intransitive verbs or for direct or indirect objects of transitive verbs</xsl:when>
-			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct or indirect objects, or for Experiencer subjects</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='no'">subjects of intransitive verbs or for direct objects of transitive verbs</xsl:when>
+			      <xsl:when test="//typology/@caseExperiencer='yesObj'">direct objects or for Experiencer subjects</xsl:when>
 			      <xsl:when test="//typology/@caseExperiencer='yesDat'">Agent subjects of intransitive verbs or for direct objects of transitive verbs</xsl:when>
 			   </xsl:choose>
 <xsl:text> in the special cases of split ergativity are:</xsl:text>
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.202">
+<example num="xPron.PronPersonal.218">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Absolutive Personal Pronouns</xsl:text>
@@ -24102,7 +25772,7 @@
 </xsl:if>
 		   
 		   <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
-<example num="xPron.PronPersonal.204">
+<example num="xPron.PronPersonal.220">
 <table border="1">
 		         <caption>
 <xsl:text>Dependent Absolutive Personal Pronouns</xsl:text>
@@ -27861,16 +29531,7 @@
 	      
 	      <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//pron/@demNumber)='no' or normalize-space(//pron/@demCase)='no' and normalize-space(//pron/@demNumber)='no'">
 <p>
-<xsl:text>The demonstrative pronouns in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstrative pronouns are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//pron/@demNumber)='no' or normalize-space(//pron/@demCase)='no' and normalize-space(//pron/@demNumber)='no'">
@@ -28229,16 +29890,7 @@
 	      
 	      <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//pron/@demNumber)='yes' or normalize-space(//pron/@demCase)='no' and normalize-space(//pron/@demNumber)='yes'">
 <p>
-<xsl:text>The demonstrative pronouns in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstrative pronouns are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//pron/@demNumber)='yes' or normalize-space(//pron/@demCase)='no' and normalize-space(//pron/@demNumber)='yes'">
@@ -29021,16 +30673,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> has a nominative-accusative case system, there are separate sets of demonstrative pronouns for subjects and objects and possessors.  The demonstrative pronouns which can be used as subjects in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text> has a nominative-accusative case system, there are separate sets of demonstrative pronouns for subjects and objects and possessors.  The demonstrative pronouns which can be used as subjects are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='no'">
@@ -30163,16 +31806,7 @@
 
 	      <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@demCase)='yes'">
 <p>
-<xsl:text>The demonstrative pronouns which can be used as objects in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstrative pronouns which can be used as direct objects are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='no'">
@@ -31304,16 +32938,7 @@
 </xsl:if>	      
 	      <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@demCase)='yes'">
 <p>
-<xsl:text>The demonstrative pronouns which can be used as possessors in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstrative pronouns which can be used as possessors are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='no'">
@@ -32455,16 +34080,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> has an ergative-absolutive case system, there are separate sets of demonstrative pronouns for subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs versus possessors.  The demonstrative pronouns which can be used as subjects of transitive verbs in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text> has an ergative-absolutive case system, there are separate sets of demonstrative pronouns for subjects of transitive verbs versus subjects of intransitive verbs and direct objects of transitive verbs versus possessors.  The demonstrative pronouns which can be used as subjects of transitive verbs are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='no'">
@@ -33596,16 +35212,7 @@
 </xsl:if>	      
 	      <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@demCase)='yes'">
 <p>
-<xsl:text>The demonstrative pronouns which can be used as subjects of intransitive verbs or as objects of transitive verbs in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstrative pronouns which can be used as subjects of intransitive verbs or as direct objects of transitive verbs are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='no'">
@@ -34738,16 +36345,7 @@
 
 	      <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@demCase)='yes' and normalize-space(//np/@possCaseErg)='genitive'">
 <p>
-<xsl:text>The demonstrative pronouns which can be used as possessors in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstrative pronouns which can be used as possessors are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='ergative' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='no' and normalize-space(//np/@possCaseErg)='genitive'">
@@ -37026,16 +38624,7 @@
 </xsl:if>	      
 	      <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@demCase)='yes'">
 <p>
-<xsl:text>The demonstrative pronouns which can be used as objects in the normal nominative-accusative system in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstrative pronouns which can be used as direct objects in the normal nominative-accusative system are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='no'">
@@ -38168,16 +39757,7 @@
 
 	      <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@demCase)='yes'">
 <p>
-<xsl:text>The demonstrative pronouns which can be used as possessors in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstrative pronouns which can be used as possessors are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='no'">
@@ -39310,16 +40890,7 @@
 	      	      
 	      <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@demCase)='yes'">
 <p>
-<xsl:text>The demonstrative pronouns that can be used as subjects ot transitive verbs in the split ergativity situations in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstrative pronouns that can be used as subjects ot transitive verbs in the split ergativity situations are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='no'">
@@ -40449,16 +42020,7 @@
 </xsl:if>	      
 	      <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@demCase)='yes'">
 <p>
-<xsl:text>The demonstrative pronouns which can be used as subjects of intransitive verbs or as objects of transitive verbs n the split ergativity situations in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstrative pronouns which can be used as subjects of intransitive verbs or as direct objects of transitive verbs n the split ergativity situations are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
 	      <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='no'">
@@ -41589,21 +43151,16 @@
 </example>
 </xsl:if>	      	      
 
-	      <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat'">
+	      <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//pron/@demCase)='yes'">
 <p>
-<xsl:text>There is another set of demonstrative pronouns which can be used as subjects of Experiencer verbs or as indirect objects in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text>, which are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>There is another set of demonstrative pronouns which can be used as </xsl:text>
+<xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
+<xsl:text>subjects of Experiencer verbs or as </xsl:text>
+</xsl:if>
+<xsl:text>indirect objects, which are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-	      <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//pron/@demNumber)='no'">
+	      <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='no'">
 <example num="xPron.PronDem.92">
 <table border="1">
 	            <caption>
@@ -41959,7 +43516,7 @@
 	         </table>
 </example>
 </xsl:if>	      	      
-	      <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//pron/@demNumber)='yes'">
+	      <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//pron/@demCase)='yes' and normalize-space(//pron/@demNumber)='yes'">
 <example num="xPron.PronDem.94">
 <table border="1">
 	            <caption>
@@ -42748,9 +44305,7 @@
 	               <th>Nominative</th>
 	               <th>Accusative</th>
 	               <th>Genitive</th>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dative</th>
-</xsl:if>
+	               <th>Dative</th>
 	            </tr>			
 	            <tr>
 	               <td align="left">
@@ -42774,14 +44329,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -42805,14 +44358,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -42836,14 +44387,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	         </table>
 </example>
@@ -42866,9 +44415,7 @@
 	               <th>Nominative</th>
 	               <th>Accusative</th>
 	               <th>Genitive</th>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dative</th>
-</xsl:if>
+	               <th>Dative</th>
 	            </tr>			
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -42895,14 +44442,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -42926,14 +44471,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -42960,14 +44503,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -42991,14 +44532,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -43025,14 +44564,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -43056,14 +44593,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	         </table>
 </example>
@@ -43089,9 +44624,7 @@
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <th>Genitive</th>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dative</th>
-</xsl:if>
+	               <th>Dative</th>
 	            </tr>			
 	            <tr>
 	               <td align="left">
@@ -43117,14 +44650,12 @@
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -43150,14 +44681,12 @@
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -43183,14 +44712,12 @@
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	         </table>
 </example>
@@ -43215,9 +44742,7 @@
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <th>Genitive</th>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dative</th>
-</xsl:if>
+	               <th>Dative</th>
 	               </tr>			
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -43246,14 +44771,12 @@
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	               </tr>
 	            <tr>
 	               <td align="left">
@@ -43279,14 +44802,12 @@
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	               </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -43315,14 +44836,12 @@
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	               </tr>
 	            <tr>
 	               <td align="left">
@@ -43348,14 +44867,12 @@
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	               </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -43384,14 +44901,12 @@
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	               </tr>
 	            <tr>
 	               <td align="left">
@@ -43417,14 +44932,12 @@
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	               </tr>
 	         </table>
 </example>
@@ -43447,9 +44960,7 @@
 	               <th>NOM</th>
 	               <th>ACC</th>
 	               <th>GEN</th>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>DAT</th>
-</xsl:if>
+	               <th>DAT</th>
 	               <th>ERG</th>
 	               <th>ABS</th>
 	               </tr>			
@@ -43487,14 +44998,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -43530,14 +45039,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -43573,14 +45080,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	         </table>
 </example>
@@ -43603,9 +45108,7 @@
 	               <th>NOM</th>
 	               <th>ACC</th>
 	               <th>GEN</th>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>DAT</th>
-</xsl:if>
+	               <th>DAT</th>
 	               <th>ERG</th>
 	               <th>ABS</th>
 	            </tr>			
@@ -43646,14 +45149,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -43689,14 +45190,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -43735,14 +45234,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -43778,14 +45275,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -43824,14 +45319,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -43867,14 +45360,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
-</xsl:if>
 	            </tr>
 	         </table>
 </example>
@@ -44815,6 +46306,37 @@
 	
    
       
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
    
    
       
@@ -45073,27 +46595,12 @@
       
       
       
-   
-   
-      
-      
-      
       
       
    
    
       
       
-      
-      
-      
-   
-   
-      
-      
-      
-   
-   
       
       
       
@@ -45131,6 +46638,28 @@
       
       
       
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
       
       
    
@@ -45142,6 +46671,13 @@
       
    
    
+      
+      
+      
+      
+      
+   
+   
    
       
       
@@ -45150,6 +46686,24 @@
       
    
    
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
       
       
       
@@ -46014,6 +47568,27 @@
    
    
       
+   
+   
+   
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
    
    
 

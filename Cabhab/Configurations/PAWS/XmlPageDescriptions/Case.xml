@@ -75,7 +75,14 @@
           <radio id="NPCaseExperiencerYesObj" dataValue="yesObj">Yes, Experiencer subjects use the same case marking and/or pronoun set as objects of  transitive verbs with an Agent subject do</radio>
           <radio id="NPCaseExperiencerYesDat" dataValue="yesDat">Yes, Experiencer subjects use a case marking and/or pronoun set which is distinct from both the subject and object of verbs with an Agent subject, but can be used for indirect objects</radio>
        </radioGroup>
-        <br/>
+       
+       <radioGroup id="NPNoCaseExperiencerTable" show="swNPCaseNone">
+          <groupName dataItem="noCaseExperiencer" default="no">RNPNoCaseExperiencer</groupName>
+          <prompt>Does your language have any distinct pronouns for Experiencer subjects versus Agent subjects?</prompt>
+          <radio id="NPNoCaseExperiencerNo" dataValue="no">No, the same pronouns are used for both Agent and Experiencer subjects</radio>
+          <radio id="NPNoCaseExperiencerYes" dataValue="yes">Yes, Experiencer subjects use different forms for some or all of the pronouns than Agent subjects do</radio>
+       </radioGroup>
+       <br/>
          <br/>
         <buttons>
             <button id="CaseBack" value="Back" goto="OverallTypology.xml"/>
@@ -91,6 +98,9 @@
     <showWhen id="swNPCaseNotNone">
         <not/><whenRadio button="NPCaseNone"/>
     </showWhen>
+   <showWhen id="swNPCaseNone">
+      <whenRadio button="NPCaseNone"/>
+   </showWhen>
     <showWhen id="swNPCaseNomOrSplit">
         <whenRadio button="NPCaseNom"/>
         <or/>

@@ -419,7 +419,7 @@
                             <col exampleLoc="qp/ordinalNumbers10"/>
                          </row>
                          <row>
-                            <col rowspan="1"><content>siguiuente</content></col>
+                            <col rowspan="1"><content>siguiente</content></col>
                             <col exampleLoc="qp/nextExample"/>
                          </row>
                          <row>
@@ -526,7 +526,7 @@
         <section2 id="sAdjQP">
             <secTitle>Los cuantificadores</secTitle>
            <p contentType="ctPracticalIntro">
-              <content>Los cuantificadores pueden presentarse en varios lugares en una frase nominal, según su ámbito. A continuación se presentan tres sistemas de cuantificadores, seguidos de las construcciones partitivas..</content>
+              <content>Los cuantificadores pueden presentarse en varios lugares en una frase nominal, según su ámbito. A continuación se presentan tres sistemas de cuantificadores, seguidos de las construcciones partitivas.</content>
            </p>
            <p contentType="ctComparativeIntro">
               <content>Los cuantificadores pueden presentarse en varios lugares en una frase nominal,  según su ámbito. La mayoría de las lenguas tienen tres sistemas de cuantificadores además de números: esos de ámbito amplio que significan </content>
@@ -1515,7 +1515,7 @@
               </row>
            </table>
         </example>	      
-        <p show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYes"><content>Los artículos que pueden presentarse con objetos son:</content></p>
+        <p show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYes"><content>Los artículos que pueden presentarse con objetos directos son:</content></p>
         <example show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYesAndArtPlNo">
            <table border="1">
               <headerRow>
@@ -1733,8 +1733,8 @@
            </table>
         </example>	      
         
-        <p show="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDat"><content>Hay un otro sistema de artículos que pueden presentarse con sujetos-experimentadores o con objetos indirectos, como se muestra en el siguiente cuadro:</content></p>
-        <example show="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDatAndArtPlNo">
+        <p show="swNPArtAndDemArtOrBothCaseNotNone"><content>Hay un otro sistema de artículos que pueden presentarse con </content><text show="swExperiencerYesDat"><content>sujetos-experimentadores o con </content></text><content>objetos indirectos, como se muestra en el siguiente cuadro:</content></p>
+        <example show="swNPArtAndDemArtOrBothCaseNotNoneAndArtPlNo">
            <table border="1">
               <headerRow>
                  <headerCol>Tipo</headerCol>
@@ -1753,7 +1753,7 @@
               </row>
            </table>
         </example>	      	      
-        <example show="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDatAndArtPlYes">
+        <example show="swNPArtAndDemArtOrBothCaseNotNoneAndArtPlYes">
            <table border="1">
               <headerRow>
                  <headerCol>Tipo</headerCol>
@@ -1797,25 +1797,25 @@
                  <headerCol>Nominativo</headerCol>
                  <headerCol>Accusativo</headerCol>
                  <headerCol>Genitivo</headerCol>
-                 <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+                 <headerCol>Dativo</headerCol>
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
            </table>
         </example>	      
-        <p show="swNPArtAndDemArtOrBothCaseNomAndArtCaseYesAndArtPlYes"><content>En el siguiente cuadro se muestran todas las formas para comparación: </content><comment> Aquí tiene que escribir la forma en cada celda .  Si no quiere utilizar este cuadro, elimine este párrafo y el cuadro.</comment></p>
+        <p show="swNPArtAndDemArtOrBothCaseNomAndArtCaseYesAndArtPlYes"><content>En el siguiente cuadro se muestran todas las formas para comparación: </content><comment> Aquí tiene que escribir la forma en cada celda.  Si no quiere utilizar este cuadro, elimine este párrafo y el cuadro.</comment></p>
         <example show="swNPArtAndDemArtOrBothCaseNomAndArtCaseYesAndArtPlYes">
            <table border="1">
               <caption><content>Resumen de los artículos</content></caption>
@@ -1825,7 +1825,7 @@
                  <headerCol>Nominativo</headerCol>
                  <headerCol>Accusativo</headerCol>
                  <headerCol>Genitivo</headerCol>
-                 <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+                 <headerCol>Dativo</headerCol>
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col rowspan="2"><content>Definido</content></col>
@@ -1833,14 +1833,14 @@
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Plural</content></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col rowspan="2"><content>Indefinido</content></col>
@@ -1848,14 +1848,14 @@
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Plural</content></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
            </table>
         </example>	      
@@ -1868,21 +1868,21 @@
                  <headerCol>Ergativo</headerCol>
                  <headerCol>Absolutivo</headerCol>
                  <headerCol show="swNPPossCaseErgGen">Genitivo</headerCol>
-                 <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+                 <headerCol>Dativo</headerCol>
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
            </table>
         </example>	      
@@ -1896,7 +1896,7 @@
                  <headerCol>Ergativo</headerCol>
                  <headerCol>Absolutivo</headerCol>
                  <headerCol show="swNPPossCaseErgGen">Genitivo</headerCol>
-                 <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+                 <headerCol>Dativo</headerCol>
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col rowspan="2"><content>Definido</content></col>
@@ -1904,14 +1904,14 @@
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Plural</content></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col rowspan="2"><content>Indefinido</content></col>
@@ -1919,14 +1919,14 @@
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Plural</content></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
            </table>
         </example>	     
@@ -1940,7 +1940,7 @@
                  <headerCol>NOM</headerCol>
                  <headerCol>ACC</headerCol>
                  <headerCol>GEN</headerCol>
-                 <headerCol show="swExperiencerYesDat">DAT</headerCol>
+                 <headerCol>DAT</headerCol>
                  <headerCol>ERG</headerCol>
                  <headerCol>ABS</headerCol>
               </headerRow>			
@@ -1951,7 +1951,7 @@
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
@@ -1960,7 +1960,7 @@
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
            </table>
         </example>	      
@@ -1974,7 +1974,7 @@
                  <headerCol>NOM</headerCol>
                  <headerCol>ACC</headerCol>
                  <headerCol>GEN</headerCol>
-                 <headerCol show="swExperiencerYesDat">DAT</headerCol>
+                 <headerCol>DAT</headerCol>
                  <headerCol>ERG</headerCol>
                  <headerCol>ABS</headerCol>
               </headerRow>			
@@ -1986,7 +1986,7 @@
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Plural</content></col>
@@ -1995,7 +1995,7 @@
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col rowspan="2"><content>Indefinido</content></col>
@@ -2005,7 +2005,7 @@
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Plural</content></col>
@@ -2014,7 +2014,7 @@
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
                  <col><langData>FORMA</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+                 <col><langData>FORMA</langData></col>
               </row>
            </table>
         </example>	      
@@ -2178,7 +2178,7 @@
 	         </table>
 	      </example>	      
 
-        <p show="swNPArtAndDemDemOrBothCaseNomAndArtCaseYes"><content>Los demostrativos que pueden presentarse con objetos se muestran en el siguiente cuadro, de acuerdo a  la distancia del hablante de lo que representa el demostrativo: </content></p>
+        <p show="swNPArtAndDemDemOrBothCaseNomAndArtCaseYes"><content>Los demostrativos que pueden presentarse con objetos directos se muestran en el siguiente cuadro, de acuerdo a  la distancia del hablante de lo que representa el demostrativo: </content></p>
         <example show="swNPArtAndDemDemOrBothCaseNomAndArtCaseYesAndDemPlNo">
 	         <table border="1">
 	            <headerRow>
@@ -2608,7 +2608,7 @@
 	            </row>
 	         </table>
 	      </example>	      
-        <p show="swNPArtAndDemDemOrBothCaseSplitAndArtCaseYes"><content>Los demostrativos que pueden presentarse con objetos en los casos normales que siguen el sistema de nominativo-acusativo se muestran en el siguiente cuadro, de acuerdo a  la distancia del hablante de lo que representa el demostrativo:</content></p>
+        <p show="swNPArtAndDemDemOrBothCaseSplitAndArtCaseYes"><content>Los demostrativos que pueden presentarse con objetos directos en los casos normales que siguen el sistema de nominativo-acusativo se muestran en el siguiente cuadro, de acuerdo a  la distancia del hablante de lo que representa el demostrativo:</content></p>
         <example show="swNPArtAndDemDemOrBothCaseSplitAndArtCaseYesAndDemPlNo">
 	         <table border="1">
 	            <headerRow>
@@ -2895,8 +2895,8 @@
 	         </table>
 	      </example>	      	      
 
-        <p show="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDat"><content>Hay un sistema adicional de demostrativos que pueden presentarse con sujetos-experimentadores o con objetos indirectos, como se muestra en el cuadro siguiente:</content></p>
-        <example show="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDatAndDemPlNo">
+        <p show="swNPArtAndDemDemOrBothCaseNotNone"><content>Hay un sistema adicional de demostrativos que pueden presentarse con </content><text show="swExperiencerYesDat"><content>sujetos-experimentadores o con </content></text><content>objetos indirectos, como se muestra en el cuadro siguiente:</content></p>
+        <example show="swNPArtAndDemDemOrBothCaseNotNoneAndDemPlNo">
 	         <table border="1">
 	            <headerRow>
 	               <headerCol>Distancia</headerCol>
@@ -2920,7 +2920,7 @@
 	            </row>
 	         </table>
 	      </example>	      	      
-        <example show="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDatAndDemPlYes">
+        <example show="swNPArtAndDemDemOrBothCaseNotNoneAndDemPlYes">
 	         <table border="1">
 	            <headerRow>
 	               <headerCol>Distancia</headerCol>
@@ -2976,28 +2976,28 @@
 	               <headerCol>Nominativo</headerCol>
 	               <headerCol>Accusativo</headerCol>
 	               <headerCol>Genitivo</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+	               <headerCol>Dativo</headerCol>
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3011,52 +3011,52 @@
 	               <headerCol>Nominativo</headerCol>
 	               <headerCol>Accusativo</headerCol>
 	               <headerCol>Genitivo</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+	               <headerCol>Dativo</headerCol>
 	            </headerRow>			
 	            <row>
 	               <col rowspan="2"><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3071,28 +3071,28 @@
 	               <headerCol>Ergativo</headerCol>
 	               <headerCol>Absolutivo</headerCol>
 	               <headerCol show="swNPPossCaseErgGen">Genitivo</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+	               <headerCol>Dativo</headerCol>
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3106,52 +3106,52 @@
 	               <headerCol>Ergativo</headerCol>
 	               <headerCol>Absolutivo</headerCol>
 	               <headerCol show="swNPPossCaseErgGen">Genitivo</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+	               <headerCol>Dativo</headerCol>
 	               </headerRow>			
 	            <row>
 	               <col rowspan="2"><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	         </table>
 	      </example>	     
@@ -3165,36 +3165,36 @@
 	               <headerCol>NOM</headerCol>
 	               <headerCol>ACC</headerCol>
 	               <headerCol>GEN</headerCol>
-	               <headerCol show="swExperiencerYesDat">DAT</headerCol>
+	               <headerCol>DAT</headerCol>
 	               <headerCol>ERG</headerCol>
 	               <headerCol>ABS</headerCol>
 	               </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3208,66 +3208,66 @@
 	               <headerCol>NOM</headerCol>
 	               <headerCol>ACC</headerCol>
 	               <headerCol>GEN</headerCol>
-	               <headerCol show="swExperiencerYesDat">DAT</headerCol>
+	               <headerCol>DAT</headerCol>
 	               <headerCol>ERG</headerCol>
 	               <headerCol>ABS</headerCol>
 	            </headerRow>			
 	            <row>
 	               <col rowspan="2"><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3278,7 +3278,7 @@
  
     </section1>
  
-   <showWhen id="swAdjPModifiersNo">
+  <showWhen id="swAdjPModifiersNo">
       <whenValue element="adjp" attr="modifiers" value="no"/>
    </showWhen>
    <showWhen id="swAdjPModifiersYesDegree">
@@ -4567,12 +4567,10 @@
    <showWhen id="swArtDefOnlyNotIndef">
       <whenValue element="np" attr="artDefOnly" value="indef" negateValue="yes"/>
    </showWhen>
-   <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDat">
+   <showWhen id="swNPArtAndDemArtOrBothCaseNotNone">
       <whenValue element="np" attr="artAndDem" value="art"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="artCase" value="yes"/>
       <or/>
@@ -4580,16 +4578,12 @@
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
-      <and/>
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
-   <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDatAndArtPlYes">
+   <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndArtPlYes">
       <whenValue element="np" attr="artAndDem" value="art"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="artCase" value="yes"/>
       <and/>
@@ -4599,26 +4593,20 @@
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
-      <and/>
       <whenValue element="np" attr="artCase" value="yes"/>
       <and/>
       <whenValue element="np" attr="artPl" value="yes"/>
    </showWhen>
-   <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDatAndArtPlNo">
+   <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndArtPlNo">
       <whenValue element="np" attr="artAndDem" value="art"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="artCase" value="yes"/>
       <and/>
       <whenValue element="np" attr="artPl" value="no"/>
       <or/>
       <whenValue element="np" attr="artAndDem" value="both"/>
-      <and/>
-      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>
       <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
@@ -4806,50 +4794,38 @@
       <and/>
       <whenValue element="np" attr="artPl" value="yes"/>
    </showWhen>
-   <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDat">
+   <showWhen id="swNPArtAndDemDemOrBothCaseNotNone">
       <whenValue element="np" attr="artAndDem" value="dem"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <or/>
       <whenValue element="np" attr="artAndDem" value="both"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       </showWhen>
-   <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDatAndDemPlNo">
+   <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndDemPlNo">
       <whenValue element="np" attr="artAndDem" value="dem"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="demPl" value="no"/>
       <or/>
       <whenValue element="np" attr="artAndDem" value="both"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="demPl" value="no"/>
    </showWhen>
-   <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDatAndDemPlYes">
+   <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndDemPlYes">
       <whenValue element="np" attr="artAndDem" value="dem"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="demPl" value="yes"/>
       <or/>
       <whenValue element="np" attr="artAndDem" value="both"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="demPl" value="yes"/>
    </showWhen>

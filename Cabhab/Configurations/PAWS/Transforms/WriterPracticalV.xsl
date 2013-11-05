@@ -2047,7 +2047,7 @@
 			<secTitle>Agreement Features</secTitle>
 			<p>
 <xsl:text>Verbs and auxiliaries may also carry agreement features that agree with the subject or the direct object.  Most of these features are added by affixes or pronominal clitics which may attach to the verb.  </xsl:text>
-<xsl:if test="normalize-space(//typology/@classifiers)!='no'">
+<xsl:if test="normalize-space(//typology/@classifier)!='no'">
 <xsl:text>Class agreement was handled in section </xsl:text>
 <sectionRef sec="sClassifiers" />
 <xsl:text>.</xsl:text>

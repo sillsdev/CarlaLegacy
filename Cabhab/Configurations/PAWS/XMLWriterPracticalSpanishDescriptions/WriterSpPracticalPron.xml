@@ -51,16 +51,23 @@ show="swClassifierYesPronYes"
 ><content
 > se marcan con clasificadores como parte del sistema de concordancia. Las formas para los pronombres presentados en esta sección pueden ser solamente las raíces, o el clasificador puede mostrarse unido con el pronombre.</content
 ></p
-><p
-show="swNPCaseNone"
+>
+   <p
+show="swNPCaseNoneAndExperiencerNo"
 ><content
 >En el </content
 ><langName
 ></langName
 ><content
-   > no hay distinciones de caso, así que hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquier posición de la oración, de acuerdo con lo ejemplificado a continuación.</content
+   > no hay distinciones de caso, así que hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquiera posición de la oración, de acuerdo con lo ejemplificado a continuación.</content
 ></p
 >
+   
+   <p show="swNPCaseNoneAndExperiencerNotNo">
+      <content>En el </content><langName/>
+      <content>  no hay distinciones de caso, así que hay un solo sistema de los pronombres que se pueden utilizar con sujetos-agentes y en cualquiera otra posición de la oración, de acuerdo con lo ejemplificado a continuación.</content>
+   </p>
+   
    <example show="swNPCaseNoneAndPronNumberNo">
       <table border="1">
          <caption><content>Pronombres personales independientes</content></caption>
@@ -156,6 +163,109 @@ show="swNPCaseNone"
          </row>
       </table>
    </example>
+   
+   <p
+      show="swNPCaseNoneAndExperiencerNotNo"
+      ><content
+         >Los pronombres personales independientes que se utilizan para sujetos-experimentadores son:</content
+      ></p
+   >
+   <example show="swNPCaseNoneAndExperiencerNotNoAndPronNumberNo">
+      <table border="1">
+         <caption><content>Pronombres personales independientes para sujetos-experimentadores</content></caption>
+         <headerRow>
+            <headerCol>Persona</headerCol>
+            <headerCol>Pronombres dativos </headerCol>
+            <headerCol>Glosa</headerCol>
+         </headerRow>	
+         <row>
+            <col rowspan="1"><content>Primera</content></col>
+            <col exampleLoc="pron/personalFirstSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row show="swPronExclYes">
+            <col rowspan="1"><content>Primera exclusiva</content></col>
+            <col exampleLoc="pron/personalFirsExclNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row show="swPronExclYes">
+            <col rowspan="1"><content>Primera inclusiva</content></col>
+            <col exampleLoc="pron/personalFirstInclNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row>
+            <col rowspan="1"><content>Segunda</content></col>
+            <col exampleLoc="pron/personalSecondSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row>
+            <col rowspan="1"><content>Tercera</content></col>
+            <col exampleLoc="pron/personalThirdSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+      </table>
+   </example>
+   
+   <example show="swNPCaseNoneAndExperiencerNotNoAndPronNumberYes">
+      <table border="1">
+         <caption><content>Pronombres personales independientes para sujetos-experimentadores</content></caption>
+         <headerRow>
+            <headerCol>Persona</headerCol>
+            <headerCol>Número</headerCol>
+            <headerCol>Pronombres dativos </headerCol>
+            <headerCol>Glosa</headerCol>
+         </headerRow>	
+         <row>
+            <col><content>Primera</content></col>
+            <col><content>Singular</content></col>
+            <col exampleLoc="pron/personalFirstSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row show="swPronExclNo">
+            <col><content>Primera</content></col>
+            <col><content>Plural</content></col>
+            <col exampleLoc="pron/personalFirstPlNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row show="swPronExclYes">
+            <col><content>Primera</content></col>
+            <col ><content>Exclusivo</content></col>
+            <col exampleLoc="pron/personalFirstExclNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row show="swPronExclYes">
+            <col><content>Primera</content></col>
+            <col ><content>Inclusivo</content></col>
+            <col exampleLoc="pron/personalFirstInclNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row>
+            <col><content>Segundo</content></col>
+            <col><content>Singular</content></col>
+            <col exampleLoc="pron/personalSecondSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row>
+            <col><content>Segundo</content></col>
+            <col><content>Plural</content></col>
+            <col exampleLoc="pron/personalSecondPlNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row>
+            <col><content>Tercera</content></col>
+            <col><content>Singular</content></col>
+            <col exampleLoc="pron/personalThirdSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row>
+            <col><content>Tercera</content></col>
+            <col><content>Plural</content></col>
+            <col exampleLoc="pron/personalThirdPlNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+      </table>
+   </example>
+  
 <p
 show="swNPCaseNom"
 ><content
@@ -169,10 +279,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
-> Ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que ambos objetos directos e indirectos utilizan los pronombres acusativos. No hay un distinto sistema de pronombres dativos.</caseText
+> Ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que objetos directos utilizan los pronombres acusativos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesObj"
-> Los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para ambos objetos directos e indirectos. No hay un distinto sistema de pronombres dativos.</caseText
+> Los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para objetos directos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesDat"
 > Los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan los pronombres dativos que se utilizan también para los objetos indirectos. Los objetos directos utilizan los pronombres acusativos.</caseText
@@ -302,10 +412,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
-> objetos directos e indirectos son:</caseText
+> objetos directos son:</caseText
 ><caseText
 value="yesObj"
-> objetos directos e indirectos, o para sujetos-experimentadores son:</caseText
+> objetos directos o para sujetos-experimentadores son:</caseText
 ><caseText
 value="yesDat"
 > objetos directos son:</caseText
@@ -408,12 +518,12 @@ value="yesDat"
       </table>
    </example>
    <p
-show="swNPCaseNomAndYesDat"
+show="swNPCaseNom"
 ><content
->Los pronombres personales independientes que se utilizan para sujetos-experimentadores o para objetos indirectos son:</content
+   >Los pronombres personales independientes que se utilizan para </content><text show="swExperiencerYesDat"><content>sujetos-experimentadores o </content></text><content>objetos indirectos son:</content
 ></p
 >
-   <example show="swNPCaseNomAndYesDatAndPronNumberNo">
+   <example show="swNPCaseNomAndPronNumberNo">
       <table border="1">
          <caption><content>Pronombres personales independientes dativos</content></caption>
          <headerRow>
@@ -449,7 +559,7 @@ show="swNPCaseNomAndYesDat"
       </table>
    </example>
    
-   <example show="swNPCaseNomAndYesDatAndPronNumberYes">
+   <example show="swNPCaseNomAndPronNumberYes">
       <table border="1">
          <caption><content>Pronombres personales independientes dativos</content></caption>
          <headerRow>
@@ -624,10 +734,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
-   > Ambos sujetos-agentes y sujetos-experimentadores de verbos transitivos utilizan los pronombres ergativos, mientras que ambos sujetos-agentes y sujetos-experimentadores de verbos intransitivos y los objetos directos e indirectos de verbos transitivos utilizan los pronombres absolutivos. No hay un distinto sistema de pronombres dativos.</caseText
+   > Ambos sujetos-agentes y sujetos-experimentadores de verbos transitivos utilizan los pronombres ergativos, mientras que ambos sujetos-agentes y sujetos-experimentadores de verbos intransitivos y los objetos directos de verbos transitivos utilizan los pronombres absolutivos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesObj"
-   > Los sujetos-agentes de verbos transitivos utilizan los pronombres ergativos, mientras que los sujetos-experimentadores de verbos transitivos utilizan el mismo sistema de pronombres absolutivos que se utilizan para los sujetos de verbos intransitivos y ambos objetos directos e indirectos. No hay un distinto sistema de pronombres dativos.</caseText
+   > Los sujetos-agentes de verbos transitivos utilizan los pronombres ergativos, mientras que los sujetos-experimentadores de verbos transitivos utilizan el mismo sistema de pronombres absolutivos que se utilizan para los sujetos de verbos intransitivos y los objetos directos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesDat"
    > Los sujetos-agentes de verbos transitivos utilizan los pronombres ergativos, mientras que los sujetos-agentes de verbos intransitivos y objetos directos de verbos transitivos utilizan los pronombres absolutivos. Los sujetos-experimentadores utilizan los pronombres dativos, que también se utilizan para los objetos indirectos.</caseText
@@ -772,10 +882,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
->sujetos de verbos intransitivos o para objetos directos e indirectos de verbos transitivos son:</caseText
+>sujetos de verbos intransitivos o para objetos directos de verbos transitivos son:</caseText
 ><caseText
 value="yesObj"
->objetos directos e indirectos, o para sujetos-experimentadores son:</caseText
+>objetos directos o para sujetos-experimentadores son:</caseText
 ><caseText
 value="yesDat"
 >sujetos-agentes de verbos intransitivos o para objetos directos de verbos transitivos son:</caseText
@@ -879,12 +989,12 @@ value="yesDat"
    </example>
    
    <p
-show="swNPCaseErgAndYesDat"
+show="swNPCaseErg"
 ><content
->Los pronombres personales independientes que se utilizan para sujetos-experimentadores o para objetos indirectos son:</content
+   >Los pronombres personales independientes que se utilizan para </content><text show="swExperiencerYesDat"><content>sujetos-experimentadores o </content></text><content>objetos indirectos son:</content
 ></p
 >
-   <example show="swNPCaseErgAndYesDatAndPronNumberNo">
+   <example show="swNPCaseErgAndPronNumberNo">
       <table border="1">
          <caption><content>Pronombres personales independientes dativos</content></caption>
          <headerRow>
@@ -920,7 +1030,7 @@ show="swNPCaseErgAndYesDat"
       </table>
    </example>
    
-   <example show="swNPCaseErgAndYesDatAndPronNumberYes">
+   <example show="swNPCaseErgAndPronNumberYes">
       <table border="1">
          <caption><content>Pronombres personales independientes dativos</content></caption>
          <headerRow>
@@ -995,7 +1105,7 @@ show="swNPCaseErg"
          </case></caption>
          <headerRow>
             <headerCol>Persona</headerCol>
-            <headerCol>Pronombres para poseedores</headerCol>
+            <headerCol>Pronombres para posesivos</headerCol>
             <headerCol>Glosa</headerCol>
          </headerRow>	
          <row>
@@ -1103,10 +1213,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
->ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que ambos objetos directos e indirectos utilizan los pronombres acusativos. No hay un distinto sistema de pronombres dativos.</caseText
+>ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que objetos directos utilizan los pronombres acusativos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesObj"
->los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para ambos objetos directos e indirectos. No hay un distinto sistema de pronombres dativos.</caseText
+>los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para los objetos directos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesDat"
 >los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan los pronombres dativos, que se utilizan también para los objetos indirectos. Los objetos directos utilizan los pronombres acusativos.</caseText
@@ -1236,10 +1346,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
->objetos directos e indirectos son:</caseText
+>objetos directos son:</caseText
 ><caseText
 value="yesObj"
->objetos directos e indirectos, o para sujetos-experimentadores son:</caseText
+>objetos directos o para sujetos-experimentadores son:</caseText
 ><caseText
 value="yesDat"
 >objetos directos son:</caseText
@@ -1343,12 +1453,12 @@ value="yesDat"
    </example>
    
    <p
-show="swNPCaseSplitAndYesDat"
+show="swNPCaseSplit"
 ><content
->Los pronombres personales independientes que comúnmente se utilizan para sujetos-experimentadores o para objetos indirectos son:</content
+   >Los pronombres personales independientes que comúnmente se utilizan para </content><text show="swExperiencerYesDat"><content>sujetos-experimentadores o </content></text><content>objetos indirectos son:</content
 ></p
 >
-   <example show="swNPCaseSplitAndYesDatAndPronNumberNo">
+   <example show="swNPCaseSplitAndPronNumberNo">
       <table border="1">
          <caption><content>Pronombres personales independientes dativos</content></caption>
          <headerRow>
@@ -1384,7 +1494,7 @@ show="swNPCaseSplitAndYesDat"
       </table>
    </example>
    
-   <example show="swNPCaseSplitAndYesDatAndPronNumberYes">
+   <example show="swNPCaseSplitAndPronNumberYes">
       <table border="1">
          <caption><content>Pronombres personales independientes dativos</content></caption>
          <headerRow>
@@ -1672,10 +1782,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
->sujetos de verbos intransitivos o para objetos directos e indirectos de verbos transitivos</caseText
+>sujetos de verbos intransitivos o para objetos directos de verbos transitivos</caseText
 ><caseText
 value="yesObj"
->objetos directos e indirectos, o para sujetos-experimentadores</caseText
+>objetos directos o para sujetos-experimentadores</caseText
 ><caseText
 value="yesDat"
 >sujeots-agentes de verbos intransitivos o para objetos directos de verbos transitivos</caseText
@@ -1787,7 +1897,7 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="yesDat"
->Los pronombres dativos que ha dado arriba se utilizan para sujetos-experimentadores y para objetos indirectos, tanto en los casos especiales de ergatividad escindida.</caseText
+>Los pronombres dativos que ha dado arriba se utilizan para sujetos-experimentadores y para los objetos indirectos, tanto en los casos especiales de ergatividad escindida.</caseText
 ></case
 ><content
    >Los posesivos utilizan los pronombres </content
@@ -1823,22 +1933,27 @@ value="genitive"
             <caseText value="yes">, especialmente en tercera persona, son idénticas o relacionadas a los clasificadores apropiados.</caseText>
          </case></text>
    </p>
-<p
-show="swNPCaseNoneandDependentYes"
-><content
->De acuerdo con lo considerado anteriormente, en el </content
-><langName
-></langName
-><content
-> no hay distinciones de caso, así que hay solamente un solo sistema de pronombres que se pueden utilizar en cualquier posición de la oración:</content
-></p
->
+   <p
+      show="swNPCaseNoneAndExperiencerNoAndDependentYes"
+      ><content
+         >De acuerdo con lo considerado anteriormente, en el </content
+      ><langName
+         ></langName
+      ><content
+         > no hay distinciones de caso, así que hay solamente un solo sistema de los pronombres que se pueden utilizar en cualquiera posición de la oración:</content
+      ></p
+   >
+   
+   <p show="swNPCaseNoneAndExperiencerNotNoAndDependentYes">
+      <content>De acuerdo con lo considerado anteriormente, en el </content><langName/>
+      <content>  no hay distinciones de caso, así que hay un solo sistema de los pronombres que se pueden utilizar con sujetos-agentes y en cualquiera otra posición de la oración:</content>
+   </p>
+   
    <example show="swNPCaseNoneAndPronNumberNoandDependentYes">
       <table border="1">
          <caption><content>Pronombres personales dependientes </content></caption>
          <headerRow>
             <headerCol>Persona</headerCol>
-            <headerCol>Número</headerCol>
             <headerCol>Pronombres </headerCol>
             <headerCol>Glosa</headerCol>
          </headerRow>	
@@ -1928,6 +2043,107 @@ show="swNPCaseNoneandDependentYes"
          </row>
       </table>
    </example>
+
+   <p
+      show="swNPCaseNoneAndExperiencerNotNoandDependentYes"
+      ><content
+         >Los pronombres personales dependientes que se utilizan para sujetos-experimentadores son:</content
+      ></p
+   >
+   <example show="swNPCaseNoneAndExperiencerNotNoAndPronNumberNoandDependentYes">
+      <table border="1">
+         <caption><content>Pronombres personales dependientes para sujectos-experimentadores</content></caption>
+         <headerRow>
+            <headerCol>Persona</headerCol>
+            <headerCol>Pronombres dativos </headerCol>
+            <headerCol>Glosa</headerCol>
+         </headerRow>	
+         <row>
+            <col rowspan="1"><content>Primera</content></col>
+            <col exampleLoc="pron/personalDependentFirstSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row show="swPronExclYes">
+            <col rowspan="1"><content>Primera exclusiva</content></col>
+            <col exampleLoc="pron/personalDependentFirsExclNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row show="swPronExclYes">
+            <col rowspan="1"><content>Primera inclusiva</content></col>
+            <col exampleLoc="pron/personalDependentFirstInclNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row>
+            <col rowspan="1"><content>Segunda</content></col>
+            <col exampleLoc="pron/personalDependentSecondSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>					
+         <row>
+            <col rowspan="1"><content>Tercera</content></col>
+            <col exampleLoc="pron/personalDependentThirdSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>				</table>
+   </example>
+   
+   <example show="swNPCaseNoneAndExperiencerNotNoAndPronNumberYesandDependentYes">
+      <table border="1">
+         <caption><content>Pronombres personales dependientes para sujetos-experimentadores</content></caption>
+         <headerRow>
+            <headerCol>Persona</headerCol>
+            <headerCol>Número</headerCol>
+            <headerCol>Pronombres dativos </headerCol>
+            <headerCol>Glosa</headerCol>
+         </headerRow>	
+         <row>
+            <col><content>Primera</content></col>
+            <col><content>Singular</content></col>
+            <col exampleLoc="pron/personalDependentFirstSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row show="swPronExclNo">
+            <col><content>Primera</content></col>
+            <col><content>Plural</content></col>
+            <col exampleLoc="pron/personalDependentFirstPlNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row show="swPronExclYes">
+            <col><content>Primera</content></col>
+            <col ><content>Exclusivo</content></col>
+            <col exampleLoc="pron/personalDependentFirstExclNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row show="swPronExclYes">
+            <col><content>Primera</content></col>
+            <col ><content>Inclusivo</content></col>
+            <col exampleLoc="pron/personalDependentFirstInclNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row>
+            <col><content>Segunda</content></col>
+            <col><content>Singular</content></col>
+            <col exampleLoc="pron/personalDependentSecondSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row>
+            <col><content>Segunda</content></col>
+            <col><content>Plural</content></col>
+            <col exampleLoc="pron/personalDependentSecondPlNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row>
+            <col><content>Tercera</content></col>
+            <col><content>Singular</content></col>
+            <col exampleLoc="pron/personalDependentThirdSgNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+         <row>
+            <col><content>Tercera</content></col>
+            <col><content>Plural</content></col>
+            <col exampleLoc="pron/personalDependentThirdPlNoneDativeExample"/>
+            <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+         </row>
+      </table>
+   </example>
    
 
    <p
@@ -1943,10 +2159,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
-   > Ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que ambos objetos directos e indirectos utilizan los pronombres acusativos. No hay un distinto sistema de pronombres dativos.</caseText
+   > Ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que los objetos directos utilizan los pronombres acusativos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesObj"
-   > Los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para ambos objetos directos e indirectos. No hay un distinto sistema de pronombres dativos.</caseText
+   > Los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para los objetos directos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesDat"
 > Los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan los pronombres dativos, que se utilizan también para los objetos indirectos. Los objetos directos utilizan los pronombres acusativos.</caseText
@@ -2075,10 +2291,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
->objetos directos e indirectos son:</caseText
+>objetos directos son:</caseText
 ><caseText
 value="yesObj"
->objetos directos e indirectos, o para sujetos-experimentadores son:</caseText
+>objetos directos o para sujetos-experimentadores son:</caseText
 ><caseText
 value="yesDat"
 >objetos directos son:</caseText
@@ -2181,12 +2397,12 @@ value="yesDat"
    </example>
    
    <p
-show="swNPCaseNomAndYesDatandDependentYes"
+show="swNPCaseNomandDependentYes"
 ><content
->Los pronombres personales dependientes que se utilizan para sujetos-experimentadores o para objetos indirectos son:</content
+   >Los pronombres personales dependientes que se utilizan para </content><text show="swExperiencerYesDat"><content>sujetos-experimentadores o </content></text><content>objetos indirectos son:</content
 ></p
 >
-   <example show="swNPCaseNomAndYesDatAndPronNumberNoandDependentYes">
+   <example show="swNPCaseNomAndPronNumberNoandDependentYes">
       <table border="1">
          <caption><content>Pronombres personales dependientes dativos</content></caption>
          <headerRow>
@@ -2221,7 +2437,7 @@ show="swNPCaseNomAndYesDatandDependentYes"
          </row>				</table>
    </example>
    
-   <example show="swNPCaseNomAndYesDatAndPronNumberYesandDependentYes">
+   <example show="swNPCaseNomAndPronNumberYesandDependentYes">
       <table border="1">
          <caption><content>Pronombres personales dependientes dativos</content></caption>
          <headerRow>
@@ -2245,7 +2461,7 @@ show="swNPCaseNomAndYesDatandDependentYes"
          <row show="swPronExclYes">
             <col><content>Primera</content></col>
             <col ><content>Exclusivo</content></col>
-            <col exampleLoc="pron/personalDependentFirstExclNoDativeExample"/>
+            <col exampleLoc="pron/personalDependentFirstExclNomDativeExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronExclYes">
@@ -2395,10 +2611,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
-   > Ambos sujetos-agentes y sujetos-experimentadores de verbos transitivos utilizan los pronombres ergativos, mientras que ambos sujetos-agentes y sujetos-experimentadores de verbos intransitivos y los objetos directos e indirectos de verbos transitivos utilizan los pronombres absolutivos. No hay un distinto sistema de pronombres dativos.</caseText
+   > Ambos sujetos-agentes y sujetos-experimentadores de verbos transitivos utilizan los pronombres ergativos, mientras que ambos sujetos-agentes y sujetos-experimentadores de verbos intransitivos y los objetos directos de verbos transitivos utilizan los pronombres absolutivos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesObj"
-   > Los sujetos-agentes de verbos transitivos utilizan los pronombres ergativos, mientras que los sujetos-experimentadores de verbos transitivos utilizan el mismo sistema de pronombres absolutivos que se utilizan para los sujetos de verbos intransitivos y ambos objetos directos e indirectos. No hay un distinto sistema de pronombres dativos.</caseText
+   > Los sujetos-agentes de verbos transitivos utilizan los pronombres ergativos, mientras que los sujetos-experimentadores de verbos transitivos utilizan el mismo sistema de pronombres absolutivos que se utilizan para los sujetos de verbos intransitivos y los objetos directos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesDat"
 > Los sujetos-agentes de verbos transitivos utilizan los pronombres ergativos, mientras que los sujetos-agentes de verbos intransitivos y los objetos directos de verbos transitivos utilizan los pronombres absolutivos. Los sujetos-experimentadores utilizan los pronombres dativos, que se utilizan también para los objetos indirectos.</caseText
@@ -2543,10 +2759,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
->sujetos de verbos intransitivos o para objetos directos e indirectos de verbos transitivos son:</caseText
+>sujetos de verbos intransitivos o para objetos directos de verbos transitivos son:</caseText
 ><caseText
 value="yesObj"
->objetos directos e indirectos, o para sujetos-experimentadores son:</caseText
+>objetos directos o para sujetos-experimentadores son:</caseText
 ><caseText
 value="yesDat"
 >sujetos-agentes de verbos intransitivos o para objetos directos de verbos transitivos son:</caseText
@@ -2649,12 +2865,12 @@ value="yesDat"
    </example>
    
    <p
-show="swNPCaseErgAndYesDatandDependentYes"
+show="swNPCaseErgandDependentYes"
 ><content
->Los pronombres personales dependientes que se utilizan para sujetos-experimentadores o para objetos indirectos son:</content
+   >Los pronombres personales dependientes que se utilizan para </content><text show="swExperiencerYesDat"><content>sujetos-experimentadores o </content></text><content>objetos indirectos son:</content
 ></p
 >
-   <example show="swNPCaseErgAndYesDatAndPronNumberNoandDependentYes">
+   <example show="swNPCaseErgAndPronNumberNoandDependentYes">
       <table border="1">
          <caption><content>Pronombres personales dependientes dativos</content></caption>
          <headerRow>
@@ -2689,7 +2905,7 @@ show="swNPCaseErgAndYesDatandDependentYes"
          </row>				</table>
    </example>
    
-   <example show="swNPCaseErgAndYesDatAndPronNumberYesandDependentYes">
+   <example show="swNPCaseErgAndPronNumberYesandDependentYes">
       <table border="1">
          <caption><content>Pronombres personales dependientes dativos</content></caption>
          <headerRow>
@@ -2764,7 +2980,7 @@ show="swNPCaseErgandDependentYes"
          </case></caption>
          <headerRow>
             <headerCol>Persona</headerCol>
-            <headerCol>Pronombres para poseedores </headerCol>
+            <headerCol>Pronombres para posesivos </headerCol>
             <headerCol>Glosa</headerCol>
          </headerRow>	
          <row>
@@ -2871,10 +3087,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
-   >ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que ambos objetos directos e indirectos utilizan los pronombres acusativos. No hay un distinto sistema de pronombres dativos.</caseText
+   >ambos sujetos-agentes y sujetos-experimentadores utilizan los pronombres nominativos, mientras que los objetos directos utilizan los pronombres acusativos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesObj"
-   >los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para ambos objetos directos e indirectos. No hay un distinto sistema de pronombres dativos.</caseText
+   >los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan el mismo sistema de pronombres acusativos que se utiliza para los objetos directos. Hay un sistema de pronombres dativos para los objetos indirectos.</caseText
 ><caseText
 value="yesDat"
 >los sujetos-agentes utilizan los pronombres nominativos, mientras que los sujetos-experimentadores utilizan los pronombres dativos, que se utilizan también para los objetos indirectos. Los objetos directos utilizan los pronombres acusativos.</caseText
@@ -3003,10 +3219,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
->objetos directos e indirectos son:</caseText
+>objetos directos son:</caseText
 ><caseText
 value="yesObj"
->objetos directos e indirectos, o para sujetos-experimentadores son:</caseText
+>objetos directos o para sujetos-experimentadores son:</caseText
 ><caseText
 value="yesDat"
 >objetos directos son:</caseText
@@ -3109,12 +3325,12 @@ value="yesDat"
    </example>
    
  <p
-show="swNPCaseSplitAndYesDatandDependentYes"
+show="swNPCaseSplitandDependentYes"
 ><content
->Los pronombres personales dependientes que comúnmente se utilizan para sujetos-experimentadores o para objetos indirectos son:</content
+>Los pronombres personales dependientes que comúnmente se utilizan para objetos indirectos son:</content
 ></p
 >
-   <example show="swNPCaseSplitAndYesDatAndPronNumberNoandDependentYes">
+   <example show="swNPCaseSplitAndPronNumberNoandDependentYes">
       <table border="1">
          <caption><content>Pronombres personales dependientes dativos</content></caption>
          <headerRow>
@@ -3149,7 +3365,7 @@ show="swNPCaseSplitAndYesDatandDependentYes"
          </row>				</table>
    </example>
    
-   <example show="swNPCaseSplitAndYesDatAndPronNumberYesandDependentYes">
+   <example show="swNPCaseSplitAndPronNumberYesandDependentYes">
       <table border="1">
          <caption><content>Pronombres personales dependientes dativos</content></caption>
          <headerRow>
@@ -3435,10 +3651,10 @@ attr="caseExperiencer"
 element="typology"
 ><caseText
 value="no"
->sujetos de verbos intransitivos o para objetos directos e indirectos de verbos transitivos</caseText
+>sujetos de verbos intransitivos o para objetos directos de verbos transitivos</caseText
 ><caseText
 value="yesObj"
->objetos directos e indirectos, o para sujetos-experimentadores</caseText
+>objetos directos o para sujetos-experimentadores</caseText
 ><caseText
 value="yesDat"
 >sujeots-agentes de verbos intransitivos o para objetos directos de verbos transitivos</caseText
@@ -3570,17 +3786,17 @@ value="genitive"
 ><p
 show="swDependentPronYes"
 ><content
->Para considerar otros detalles sobre cómo pueden ser utilizados los pronombres dependientes, véanse las secciones</content
+>Para considerar otros detalles sobre cómo pueden ser utilizados los pronombres dependientes, véanse las secciones </content
 ><sectionRef
 sec="sIPAgr"
 ></sectionRef
 ><content
->y</content
+> y </content
 ><sectionRef
 sec="sIPProDrop"
 ></sectionRef
 ><content
-   >donde se analizan la concordancia verbal y los sujetos tácitos.</content
+   > donde se analizan la concordancia verbal y los sujetos tácitos.</content
 ></p
 ></section2
 ><section2
@@ -4586,7 +4802,7 @@ show="swCaseNomAndDemCaseYes"
    <p
 show="swCaseNomAndDemCaseYes"
 ><content
-   >Los pronombres demostrativos que pueden presentarse como objetos se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content
+   >Los pronombres demostrativos que pueden presentarse como objetos directos se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content
 ></p
 >
    <example show="swCaseNomAndDemCaseYesAndNumberNo">
@@ -4844,7 +5060,7 @@ show="swCaseErgAndDemCaseYes"
 ><langName
 ></langName
 ><content
-   > tiene un sistema de caso ergativo-absolutivo, hay distintos sistemas de pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en contraste que sujetos de verbos intransitivos u objetos de verbos transiitivos en contraste que posesivos. Los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content
+   > tiene un sistema de caso ergativo-absolutivo, hay distintos sistemas de pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos en contraste que sujetos de verbos intransitivos u objetos directos de verbos transiitivos en contraste que posesivos. Los pronombres demostrativos que pueden presentarse como sujetos de verbos transitivos se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content
 ></p
 >
    <example show="swCaseErgAndDemCaseYesAndNumberNo">
@@ -4974,7 +5190,7 @@ show="swCaseErgAndDemCaseYes"
    <p
 show="swCaseErgAndDemCaseYes"
 ><content
-   >Los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos u objetos de verbos transitivos se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content
+   >Los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos u objetos directos de verbos transitivos se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content
 ></p
 >
    <example show="swCaseErgAndDemCaseYesAndNumberNo">
@@ -5233,7 +5449,7 @@ show="swCaseSplitAndDemCaseYes"
 ><langName
 ></langName
 ><content
-   > tiene un sistema de caso ergatividad escindida, hay cinco sistemas de pronombres demostrativos: tres para el normal sistema de caso nominativo-acusativo para distinguir entre sujetos, objetos y posesivos, y dos para los especiales usos del sistema de caso ergativo-absolutivo, para dinsinguir entre sujetos de verbos transitivos en contraste que sujetos de verbos intransitivos u objetos de verbos transitivos.</content
+   > tiene un sistema de caso ergatividad escindida, hay cinco sistemas de pronombres demostrativos: tres para el normal sistema de caso nominativo-acusativo para distinguir entre sujetos, objetos y posesivos, y dos para los especiales usos del sistema de caso ergativo-absolutivo, para dinsinguir entre sujetos de verbos transitivos en contraste que sujetos de verbos intransitivos u objetos directos de verbos transitivos.</content
 ></p
 ><p
 show="swCaseSplitAndDemCaseYes"
@@ -5368,7 +5584,7 @@ show="swCaseSplitAndDemCaseYes"
    <p
 show="swCaseSplitAndDemCaseYes"
 ><content
-   >Los pronombres demostrativos que pueden presentarse como objetos en el normal sistema de caso nominativo-accusativo se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content
+   >Los pronombres demostrativos que pueden presentarse como objetos directos en el normal sistema de caso nominativo-accusativo se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content
 ></p
 >
    <example show="swCaseSplitAndDemCaseYesAndNumberNo">
@@ -5750,7 +5966,7 @@ show="swCaseSplitAndDemCaseYes"
    <p
 show="swCaseSplitAndDemCaseYes"
 ><content
-   >Los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos u objetos de verbos transitivos en los situaciones de ergatividad escindida se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content
+   >Los pronombres demostrativos que pueden presentarse como sujetos de verbos intransitivos u objetos directos de verbos transitivos en los situaciones de ergatividad escindida se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content
 ></p
 >
 	      <example show="swCaseSplitAndDemCaseYesAndNumberNo">
@@ -5879,8 +6095,8 @@ show="swCaseSplitAndDemCaseYes"
 	         </table>
 	      </example>	      	      
 
-   <p show="swNPCaseNotNoneAndExperiencerYesDat"><content>Otro sistema de pronombres demostrativos que pueden presentarse como sujetos-experimentadores o como objetos indirectos se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content></p>
-	      <example show="swNPCaseNotNoneAndExperiencerYesDatAndNumberNo">
+   <p show="swPronDemCaseNotNoneOrNo"><content>Otro sistema de pronombres demostrativos que pueden presentarse como </content><text show="swExperiencerYesDat"><content>sujetos-experimentadores o como </content></text><content>objetos indirectos se presentan en el siguiente cuadro, de acuerdo a la distancia del hablante de lo que representa el pronombre:</content></p>
+	      <example show="swPronDemCaseNotNoneOrNoAndNumberNo">
 	         <table border="1">
 	            <caption><content>Pronombres demostrativos dativos</content></caption>
 	            <headerRow>
@@ -5921,7 +6137,7 @@ show="swCaseSplitAndDemCaseYes"
 	            </row>
 	         </table>
 	      </example>	      	      
-	      <example show="swNPCaseNotNoneAndExperiencerYesDatAndNumberYes">
+	      <example show="swPronDemCaseNotNoneOrNoAndNumberYes">
 	         <table border="1">
 	            <caption><content>Pronombres demostrativos dativos</content></caption>
 	            <headerRow>
@@ -6015,28 +6231,28 @@ show="swCaseSplitAndDemCaseYes"
 	               <headerCol>Nominativo</headerCol>
 	               <headerCol>Accusativo</headerCol>
 	               <headerCol>Genitivo</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+	               <headerCol>Dativo</headerCol>
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -6050,7 +6266,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <headerCol>Nominativo</headerCol>
 	               <headerCol>Accusativo</headerCol>
 	               <headerCol>Genitivo</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+	               <headerCol>Dativo</headerCol>
 	            </headerRow>			
 	            <row>
 	               <col rowspan="2"><content>Próxima</content></col>
@@ -6058,14 +6274,14 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
@@ -6073,14 +6289,14 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
@@ -6088,14 +6304,14 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -6110,28 +6326,28 @@ show="swCaseSplitAndDemCaseYes"
 	               <headerCol>Ergativo</headerCol>
 	               <headerCol>Absolutivo</headerCol>
 	               <headerCol show="swNPPossCaseErgGen">Genitivo</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+	               <headerCol>Dativo</headerCol>
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -6145,7 +6361,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <headerCol>Ergativo</headerCol>
 	               <headerCol>Absolutivo</headerCol>
 	               <headerCol show="swNPPossCaseErgGen">Genitivo</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dativo</headerCol>
+	               <headerCol>Dativo</headerCol>
 	               </headerRow>			
 	            <row>
 	               <col rowspan="2"><content>Próxima</content></col>
@@ -6153,14 +6369,14 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
@@ -6168,14 +6384,14 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
@@ -6183,14 +6399,14 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	               </row>
 	         </table>
 	      </example>	     
@@ -6204,7 +6420,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <headerCol>NOM</headerCol>
 	               <headerCol>ACC</headerCol>
 	               <headerCol>GEN</headerCol>
-	               <headerCol show="swExperiencerYesDat">DAT</headerCol>
+	               <headerCol>DAT</headerCol>
 	               <headerCol>ERG</headerCol>
 	               <headerCol>ABS</headerCol>
 	               </headerRow>			
@@ -6215,7 +6431,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
@@ -6224,7 +6440,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
@@ -6233,7 +6449,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -6247,7 +6463,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <headerCol>NOM</headerCol>
 	               <headerCol>ACC</headerCol>
 	               <headerCol>GEN</headerCol>
-	               <headerCol show="swExperiencerYesDat">DAT</headerCol>
+	               <headerCol>DAT</headerCol>
 	               <headerCol>ERG</headerCol>
 	               <headerCol>ABS</headerCol>
 	            </headerRow>			
@@ -6259,7 +6475,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
@@ -6268,7 +6484,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
@@ -6278,7 +6494,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
@@ -6287,7 +6503,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
@@ -6297,7 +6513,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
@@ -6306,7 +6522,7 @@ show="swCaseSplitAndDemCaseYes"
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
 	               <col><langData>FORMA</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORMA</langData></col>
+	               <col><langData>FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -6551,7 +6767,7 @@ id="sPronNP"
       <content> y </content>
       <langData>nosotros que creemos</langData>
       <content>.  </content></p>
-   <p show="swPronModNotNo"><content>Algunos ejemplos de oraciones con un pronombre modificado por una cláusula relativason:</content>
+   <p show="swPronModNotNo"><content>Algunos ejemplos de oraciones con un pronombre modificado por una cláusula relativa son:</content>
    </p>
    <example show="swPronModNotNo">
       <interlinear exampleLoc="pron/pronRelClExample"/>
@@ -6559,10 +6775,40 @@ id="sPronNP"
    
 </section2
 ></section1
->
-   	<showWhen id="swPronPronounCatNP">
+>	<showWhen id="swPronPronounCatNP">
 		<whenValue element="pron" attr="pronounCat" value="NP"/>
 	</showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNo">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="noCaseExperiencer" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNotNo">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="noCaseExperiencer" value="no" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNoAndDependentYes">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="noCaseExperiencer" value="no"/>
+      <and/>
+      <whenValue element="pron" attr="dependentPron" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNotNoandDependentYes">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="noCaseExperiencer" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="pron" attr="dependentPron" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNotNoAndDependentYes">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="noCaseExperiencer" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="pron" attr="dependentPron" value="yes"/>
+   </showWhen>
    <showWhen id="swNPCaseNone">
       <whenValue element="typology" attr="case" value="none"/>
    </showWhen>
@@ -6819,6 +7065,20 @@ id="sPronNP"
       <and/>
       <whenValue element="pron" attr="pronounNumber" value="no"/>
    </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNotNoAndPronNumberYes">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="noCaseExperiencer" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNotNoAndPronNumberNo">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="noCaseExperiencer" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounNumber" value="no"/>
+   </showWhen>
    <showWhen id="swNPCaseNomAndPronNumberYes">
       <whenValue element="typology" attr="case" value="nominative"/>
       <and/>
@@ -6903,6 +7163,24 @@ id="sPronNP"
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
       <whenValue element="pron" attr="pronounNumber" value="no"/>
+      <and/>
+      <whenValue element="pron" attr="dependentPron" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNotNoAndPronNumberNoandDependentYes">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="noCaseExperiencer" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounNumber" value="no"/>
+      <and/>
+      <whenValue element="pron" attr="dependentPron" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNotNoAndPronNumberYesandDependentYes">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="noCaseExperiencer" value="no" negateValue="yes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounNumber" value="yes"/>
       <and/>
       <whenValue element="pron" attr="dependentPron" value="yes"/>
    </showWhen>
@@ -7765,6 +8043,27 @@ id="sPronNP"
    <showWhen id="swExperiencerYesDat">
       <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
    </showWhen>
+   
+   <showWhen id="swPronDemCaseNotNoneOrNo">
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="pron" attr="demCase" value="yes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseNotNoneOrNoAndNumberYes">
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="pron" attr="demCase" value="yes"/>
+      <and/>
+      <whenValue element="pron"  attr="demNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseNotNoneOrNoAndNumberNo">
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="pron" attr="demCase" value="yes"/>
+      <and/>
+      <whenValue element="pron"  attr="demNumber" value="no"/>
+   </showWhen>
+   
    
 <showWhen id="swNPPossCaseErgGen">
    <whenValue element="np" attr="possCaseErg" value="genitive"/>

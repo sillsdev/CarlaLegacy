@@ -430,19 +430,19 @@
             <p>
                 <content>Las palabras en el </content>
                 <langName/>
-               <content> aparecen en la primera línea. En la segunda línea se presenta una traducción literal palabra por palabra en español, con el l significado más cercano a la palabra en el </content>
+               <content> aparecen en la primera línea. En la segunda línea se presenta una traducción literal palabra por palabra en español, con el significado más cercano a la palabra en el </content>
                 <langName/>
                 <content>. Si es necesario usar más de una palabra en español para expresar el significado en el </content>
                 <langName/>
                 <content>, estas se separan con un punto. Siempre que alguna de las palabras en el </content>
                 <langName/>
-                <content> tenga más de una parte con significado (morfema), la tercera línea indicará la glosa para cada una de las partes de la palabra, con los prefijos, la raíz, y los sufijos separados por un guión. Esta línea puede ser la más útil para los lingüistas. En la línea final se proporciona la traducción libre del ejemplo completo</content>
+                <content> tenga más de una parte con significado (morfema), la tercera línea indicará la glosa para cada una de las partes de la palabra, con los prefijos, la raíz, y los sufijos separados por un guión. Esta línea puede ser la más útil para los lingüistas. En la línea final se proporciona la traducción libre del ejemplo completo.</content>
             </p>
             <p>
                <comment>Mencione aquí cualquier diferencia que haya entre su lengua y el español. Por ejemplo, si su lengua no distingue entre el número y/o el género en los sustantivos, como lo hace el español, deberá usar el singular y la forma en masculino para las glosas de las palabras.</comment>
             </p>
             <p>
-                <content>Después de proveer la información sobre la tipología sintáctica de la lengua, la gramática comienza a describir las partes del discurso y las frases en las secciones </content>
+               <content>Después de proveer la información sobre la tipología sintáctica de la lengua, la gramática comienza a describir las categorías gramaticales y las frases en las secciones </content>
                 <sectionRef sec="sN"/>
                 <content>-</content>
                 <sectionRef sec="sExcl"/>
@@ -458,7 +458,7 @@
                 <sectionRef sec="sComp"/>
                 <content>-</content>
                 <sectionRef sec="sRelCl"/>
-                <content>.. Al final se incluyen algunos textos para mostrar cómo se forman las construcciones más grandes como párrafos, conversaciones e historias.</content>
+                <content>. Al final se incluyen algunos textos para mostrar cómo se forman las construcciones más grandes como párrafos, conversaciones e historias.</content>
             </p>
         </section2>
     </section1>
@@ -476,7 +476,7 @@
                 <caseText value="OVS">Objeto-Verbo-Sujeto</caseText>
                 <caseText value="OSV">Objeto-Sujeto-Verbo</caseText>
             </case>
-           <content>, como se muestra en los siguiente ejemploss:</content>
+           <content>, como se muestra en los siguientes ejemplos:</content>
         </p>
         <example>
             <interlinear exampleLoc="typology/example"/>
@@ -626,11 +626,11 @@
           <langName/>
           <content>, </content>
           <text show="swProDropYes"><content>se permite un sujeto tácito en cualquier tipo de oración.</content></text>
-          <text show="swProDropClitic"><content>parece que el sujeto no se presenta porque solo se ven pronombres dependientes (clíticos pronominales) que se ligan al verbo, pero no es una lengua que en realidad permita la ausencia del sujeto.</content></text>
-          <text show="swProDropJustImp"><content>no se permite la ausencia del sujeto. Siempre debe ser expresado, excepto en enunciados imperativos.</content></text>
-          <text show="swProDropNone"><content>no se permite un sujeto tácito. Siempre debe ser expresado aun en enunciados imperativos.</content></text>
+          <text show="swProDropClitic"><content>parece que el sujeto no se presenta porque solo se ven pronombres dependientes (clíticos pronominales) que se ligan al verbo, pero no es una lengua que en realidad permita la ausencia del sujeto</content></text>
+          <text show="swProDropJustImp"><content>no se permite la ausencia del sujeto. Siempre debe ser expresado, excepto en enunciados imperativos</content></text>
+          <text show="swProDropNone"><content>no se permite un sujeto tácito. Siempre debe ser expresado aun en enunciados imperativos</content></text>
           <text show="swProDropOtherOnly"><content>se permite un sujeto tácito  ___</content><contentCheckBoxOther contentLoc="ip/proDropOther"/><content> .</content></text>
-          <text show="swProDropOtherAndImp"><content>aunque se permite un sujeto tácito  ___</content><contentCheckBoxOther contentLoc="ip/proDropOther"/><content> y también en enunciados imperativos.</content></text>
+          <text show="swProDropOtherAndImp"><content>aunque se permite un sujeto tácito  ___</content><contentCheckBoxOther contentLoc="ip/proDropOther"/><content> y también en enunciados imperativos</content></text>
           <content> (véase la sección </content>
           <sectionRef sec="sIPProDrop"/>
           <content>).</content>
@@ -724,8 +724,8 @@
                 <caseText value="split"> tiene un sistema de caso de ergatividad escindida. La lengua sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones gramaticales.</caseText>
              </case>
              <text show="swNPCaseNotNone"><content/><case element="np" attr="caseN">
-                <caseText value="yes">En los sustantivos y posiblements sus modificadores se indica el caso así como los pronombres</caseText>
-                <caseText value="no">En los sustantivos no se indica el caso.  Solamente los pronombres lo hacen</caseText>
+                <caseText value="yes"> En los sustantivos y posiblemente sus modificadores se indica el caso así como los pronombres</caseText>
+                <caseText value="no"> En los sustantivos no se indica el caso.  Solamente los pronombres lo hacen</caseText>
              </case></text>
              <content> (véase la sección </content><sectionRef sec="sNPCase"/><content>.)</content>
              <text show="swNPCaseDefaultNom">
@@ -1307,7 +1307,16 @@
       
  <p show="swClassifiersYesType"><content>Algunos ejemplos de sustantivos con sus clasificadores son:</content></p>
       <example show="swClassifiersYesType">
-         <interlinear exampleLoc="typology/classifierTypeExample"/>
+         <table border="1">
+            <headerRow>
+               <headerCol>Sustantivo</headerCol>
+               <headerCol>Glosa</headerCol>
+            </headerRow>
+            <row>
+               <col exampleLoc="typology/classifierTypeExample"/>
+               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+            </row>
+         </table>
       </example>
       <p show="swClassifiersYesAgr"><content>Algunos ejemplos de oraciones que muestran la concordancia de clasificador en la frase nominal y entre esta y el verbo son:</content></p>
       <example show="swClassifiersYesAgr">

@@ -2553,7 +2553,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left" rowspan="1">
-<xsl:text>siguiuente</xsl:text>
+<xsl:text>siguiente</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -2564,7 +2564,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left" rowspan="1">
-<xsl:text>siguiuente</xsl:text>
+<xsl:text>siguiente</xsl:text>
 </td>
 <td>
 <langData>
@@ -3034,7 +3034,7 @@
         <section2 id="sAdjQP">
             <secTitle>Los cuantificadores</secTitle>
            <p contentType="ctPracticalIntro">
-<xsl:text>Los cuantificadores pueden presentarse en varios lugares en una frase nominal, según su ámbito. A continuación se presentan tres sistemas de cuantificadores, seguidos de las construcciones partitivas..</xsl:text>
+<xsl:text>Los cuantificadores pueden presentarse en varios lugares en una frase nominal, según su ámbito. A continuación se presentan tres sistemas de cuantificadores, seguidos de las construcciones partitivas.</xsl:text>
 </p>
            <p contentType="ctComparativeIntro">
 <xsl:text>Los cuantificadores pueden presentarse en varios lugares en una frase nominal,  según su ámbito. La mayoría de las lenguas tienen tres sistemas de cuantificadores además de números: esos de ámbito amplio que significan </xsl:text>
@@ -8295,7 +8295,7 @@
 </xsl:if>	      
         <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
-<xsl:text>Los artículos que pueden presentarse con objetos son:</xsl:text>
+<xsl:text>Los artículos que pueden presentarse con objetos directos son:</xsl:text>
 </p>
 </xsl:if>
         <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
@@ -9871,12 +9871,16 @@
 </example>
 </xsl:if>	      
         
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes'">
 <p>
-<xsl:text>Hay un otro sistema de artículos que pueden presentarse con sujetos-experimentadores o con objetos indirectos, como se muestra en el siguiente cuadro:</xsl:text>
+<xsl:text>Hay un otro sistema de artículos que pueden presentarse con </xsl:text>
+<xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
+<xsl:text>sujetos-experimentadores o con </xsl:text>
+</xsl:if>
+<xsl:text>objetos indirectos, como se muestra en el siguiente cuadro:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.86">
 <table border="1">
               <tr>
@@ -10001,7 +10005,7 @@
            </table>
 </example>
 </xsl:if>	      	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.88">
 <table border="1">
               <tr>
@@ -10283,9 +10287,7 @@
                  <th>Nominativo</th>
                  <th>Accusativo</th>
                  <th>Genitivo</th>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dativo</th>
-</xsl:if>
+                 <th>Dativo</th>
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <tr>
@@ -10310,14 +10312,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
@@ -10343,14 +10343,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
            </table>
@@ -10359,7 +10357,7 @@
         <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <p>
 <xsl:text>En el siguiente cuadro se muestran todas las formas para comparación: </xsl:text>
-<object type="tComment"> Aquí tiene que escribir la forma en cada celda .  Si no quiere utilizar este cuadro, elimine este párrafo y el cuadro.</object>
+<object type="tComment"> Aquí tiene que escribir la forma en cada celda.  Si no quiere utilizar este cuadro, elimine este párrafo y el cuadro.</object>
 </p>
 </xsl:if>
         <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
@@ -10374,9 +10372,7 @@
                  <th>Nominativo</th>
                  <th>Accusativo</th>
                  <th>Genitivo</th>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dativo</th>
-</xsl:if>
+                 <th>Dativo</th>
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <tr>
@@ -10404,14 +10400,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
@@ -10437,14 +10431,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
@@ -10473,14 +10465,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
@@ -10506,14 +10496,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
            </table>
@@ -10538,9 +10526,7 @@
                  <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <th>Genitivo</th>
 </xsl:if>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dativo</th>
-</xsl:if>
+                 <th>Dativo</th>
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <tr>
@@ -10567,14 +10553,12 @@
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
@@ -10602,14 +10586,12 @@
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
            </table>
@@ -10635,9 +10617,7 @@
                  <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <th>Genitivo</th>
 </xsl:if>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dativo</th>
-</xsl:if>
+                 <th>Dativo</th>
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <tr>
@@ -10667,14 +10647,12 @@
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
@@ -10702,14 +10680,12 @@
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
@@ -10740,14 +10716,12 @@
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
@@ -10775,14 +10749,12 @@
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
            </table>
@@ -10806,9 +10778,7 @@
                  <th>NOM</th>
                  <th>ACC</th>
                  <th>GEN</th>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>DAT</th>
-</xsl:if>
+                 <th>DAT</th>
                  <th>ERG</th>
                  <th>ABS</th>
               </tr>			
@@ -10847,14 +10817,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
@@ -10892,14 +10860,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
            </table>
@@ -10923,9 +10889,7 @@
                  <th>NOM</th>
                  <th>ACC</th>
                  <th>GEN</th>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>DAT</th>
-</xsl:if>
+                 <th>DAT</th>
                  <th>ERG</th>
                  <th>ABS</th>
               </tr>			
@@ -10967,14 +10931,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
@@ -11012,14 +10974,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
@@ -11060,14 +11020,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
@@ -11105,14 +11063,12 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-                 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+                 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
               </tr>
 </xsl:if>
            </table>
@@ -12302,7 +12258,7 @@
 
         <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
 <p>
-<xsl:text>Los demostrativos que pueden presentarse con objetos se muestran en el siguiente cuadro, de acuerdo a  la distancia del hablante de lo que representa el demostrativo: </xsl:text>
+<xsl:text>Los demostrativos que pueden presentarse con objetos directos se muestran en el siguiente cuadro, de acuerdo a  la distancia del hablante de lo que representa el demostrativo: </xsl:text>
 </p>
 </xsl:if>
         <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
@@ -15689,7 +15645,7 @@
 </xsl:if>	      
         <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
-<xsl:text>Los demostrativos que pueden presentarse con objetos en los casos normales que siguen el sistema de nominativo-acusativo se muestran en el siguiente cuadro, de acuerdo a  la distancia del hablante de lo que representa el demostrativo:</xsl:text>
+<xsl:text>Los demostrativos que pueden presentarse con objetos directos en los casos normales que siguen el sistema de nominativo-acusativo se muestran en el siguiente cuadro, de acuerdo a  la distancia del hablante de lo que representa el demostrativo:</xsl:text>
 </p>
 </xsl:if>
         <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
@@ -17926,12 +17882,16 @@
 </example>
 </xsl:if>	      	      
 
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)!='none' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none'">
 <p>
-<xsl:text>Hay un sistema adicional de demostrativos que pueden presentarse con sujetos-experimentadores o con objetos indirectos, como se muestra en el cuadro siguiente:</xsl:text>
+<xsl:text>Hay un sistema adicional de demostrativos que pueden presentarse con </xsl:text>
+<xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
+<xsl:text>sujetos-experimentadores o con </xsl:text>
+</xsl:if>
+<xsl:text>objetos indirectos, como se muestra en el cuadro siguiente:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@demPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@demPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='no'">
 <example num="xAdjP.AdjArtDem.194">
 <table border="1">
 	            <tr>
@@ -18107,7 +18067,7 @@
 	         </table>
 </example>
 </xsl:if>	      	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@demPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@demPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='yes'">
 <example num="xAdjP.AdjArtDem.196">
 <table border="1">
 	            <tr>
@@ -18503,9 +18463,7 @@
 	               <th>Nominativo</th>
 	               <th>Accusativo</th>
 	               <th>Genitivo</th>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dativo</th>
-</xsl:if>
+	               <th>Dativo</th>
 	            </tr>			
 	            <tr>
 	               <td align="left">
@@ -18515,28 +18473,26 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -18546,28 +18502,26 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -18577,28 +18531,26 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	         </table>
 </example>
@@ -18621,9 +18573,7 @@
 	               <th>Nominativo</th>
 	               <th>Accusativo</th>
 	               <th>Genitivo</th>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dativo</th>
-</xsl:if>
+	               <th>Dativo</th>
 	            </tr>			
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -18636,28 +18586,26 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -18667,28 +18615,26 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -18701,28 +18647,26 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -18732,28 +18676,26 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -18766,28 +18708,26 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -18797,28 +18737,26 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	         </table>
 </example>
@@ -18844,9 +18782,7 @@
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <th>Genitivo</th>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dativo</th>
-</xsl:if>
+	               <th>Dativo</th>
 	            </tr>			
 	            <tr>
 	               <td align="left">
@@ -18856,30 +18792,28 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -18889,30 +18823,28 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -18922,30 +18854,28 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	         </table>
 </example>
@@ -18970,9 +18900,7 @@
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <th>Genitivo</th>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>Dativo</th>
-</xsl:if>
+	               <th>Dativo</th>
 	               </tr>			
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -18985,30 +18913,28 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	               </tr>
 	            <tr>
 	               <td align="left">
@@ -19018,30 +18944,28 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	               </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -19054,30 +18978,28 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	               </tr>
 	            <tr>
 	               <td align="left">
@@ -19087,30 +19009,28 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	               </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -19123,30 +19043,28 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	               </tr>
 	            <tr>
 	               <td align="left">
@@ -19156,30 +19074,28 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	               </tr>
 	         </table>
 </example>
@@ -19202,9 +19118,7 @@
 	               <th>NOM</th>
 	               <th>ACC</th>
 	               <th>GEN</th>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>DAT</th>
-</xsl:if>
+	               <th>DAT</th>
 	               <th>ERG</th>
 	               <th>ABS</th>
 	               </tr>			
@@ -19216,40 +19130,38 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -19259,40 +19171,38 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -19302,40 +19212,38 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	         </table>
 </example>
@@ -19358,9 +19266,7 @@
 	               <th>NOM</th>
 	               <th>ACC</th>
 	               <th>GEN</th>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<th>DAT</th>
-</xsl:if>
+	               <th>DAT</th>
 	               <th>ERG</th>
 	               <th>ABS</th>
 	            </tr>			
@@ -19375,40 +19281,38 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -19418,40 +19322,38 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -19464,40 +19366,38 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -19507,40 +19407,38 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left" rowspan="2">
@@ -19553,40 +19451,38 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	            <tr>
 	               <td align="left">
@@ -19596,40 +19492,38 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-	               <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
-<td align="left">
+	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
+</xsl:attribute>FORMA</langData>
 </td>
-</xsl:if>
 	            </tr>
 	         </table>
 </example>
@@ -19647,7 +19541,7 @@
  
     </section1>
  
-   
+  
       
    
    
@@ -20948,10 +20842,6 @@
       
       
       
-      
-      
-      
-      
    
    
       
@@ -20969,16 +20859,8 @@
       
       
       
-      
-      
-      
-      
    
    
-      
-      
-      
-      
       
       
       
@@ -21184,15 +21066,7 @@
       
       
       
-      
-      
-      
-      
    
-      
-      
-      
-      
       
       
       
@@ -21206,10 +21080,6 @@
       
    
    
-      
-      
-      
-      
       
       
       

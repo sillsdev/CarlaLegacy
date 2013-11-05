@@ -2050,7 +2050,7 @@
 			<secTitle>Concordancia verbal</secTitle>
 		   <p>
 <xsl:text>Los verbos y los auxiliares también pueden sufrir cambios para expresar concordancia con el sujeto, y a veces también con el objeto directo. La mayoría de los cambios o accidentes se agregan como afijos o clíticos pronominales que pueden unirse con el verbo. </xsl:text>
-<xsl:if test="normalize-space(//typology/@classifiers)!='no'">
+<xsl:if test="normalize-space(//typology/@classifier)!='no'">
 <xsl:text>La concordancia de clase se explica en la sección </xsl:text>
 <sectionRef sec="sClassifiers" />
 <xsl:text>.</xsl:text>

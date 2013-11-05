@@ -148,30 +148,44 @@
       <not/><whenValue element="typology" attr="case" value="none"/>
    </showWhen>
    <showWhen id="swNPCaseNNo">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNNo"/>
    </showWhen>
    <showWhen id="swNPCaseNYes">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
    </showWhen>
    <showWhen id="swNPCaseNYesAndWordNoOrSome">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordNo"/>
       <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordSome"/>
    </showWhen>
    <showWhen id="swNPCaseNYesAndWordYesOrSome">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordYes"/>
       <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordSome"/>
    </showWhen>
    <showWhen id="swNPCaseNYesAndWordYes">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordYes"/>
@@ -253,6 +267,8 @@
       <whenRadio button="NPCaseNYes"/>
    </showWhen>
    <showWhen id="swNPCaseWordEitherRestricted">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <openParen/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
@@ -272,6 +288,8 @@
       <closeParen/>
    </showWhen>   
    <showWhen id="swNPCaseNYesAttachesProclitic">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordNo"/>
@@ -285,6 +303,8 @@
       <whenCheckbox button="NPCaseAttachesProclitic"/>
    </showWhen>
    <showWhen id="swNPCaseNYesAttachesEnclitic">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordNo"/>
@@ -298,6 +318,8 @@
       <whenCheckbox button="NPCaseAttachesEnclitic"/>
    </showWhen>
    <showWhen id="swNPCaseNYesAttachesAffix">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordNo"/>
@@ -323,6 +345,8 @@
       <whenCheckbox button="NPCaseAttachesSuffix"/>
    </showWhen>
    <showWhen id="swNPCaseWordYesOrSomeAndNoCheck">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <openParen/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
@@ -342,6 +366,8 @@
       <whenCheckbox button="NPCaseWordOther"/>
    </showWhen>
    <showWhen id="swNPCaseAttachesAndNoCheck">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <openParen/>
       <whenRadio button="NPCaseNYes"/>
       <and/>

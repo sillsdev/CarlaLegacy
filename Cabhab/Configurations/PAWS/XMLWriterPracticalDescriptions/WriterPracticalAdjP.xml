@@ -1204,7 +1204,7 @@
               </row>
            </table>
         </example>	      
-        <p show="swNPArtAndDemArtOrBothCaseNomAndArtCaseYes"><content>The articles which can be used in objects in </content><langName/><content> are shown in the following table:</content></p>
+        <p show="swNPArtAndDemArtOrBothCaseNomAndArtCaseYes"><content>The articles which can be used in direct objects are shown in the following table:</content></p>
         <example show="swNPArtAndDemArtOrBothCaseNomAndArtCaseYesAndArtPlNo">
            <table border="1">
               <headerRow>
@@ -1258,7 +1258,7 @@
               </row>
            </table>
         </example>	      
-        <p show="swNPArtAndDemArtOrBothCaseNomAndArtCaseYes"><content>The articles which can be used in possessors in </content><langName/><content> are shown in the following table:</content></p>
+        <p show="swNPArtAndDemArtOrBothCaseNomAndArtCaseYes"><content>The articles which can be used in possessors are shown in the following table:</content></p>
         <example show="swNPArtAndDemArtOrBothCaseNomAndArtCaseYesAndArtPlNo">
            <table border="1">
               <headerRow>
@@ -1313,7 +1313,7 @@
            </table>
         </example>	      
         
-        <p show="swNPArtAndDemArtOrBothCaseErgAndArtCaseYes"><content>Since </content><langName/><content> has a ergative-absolutive case system, there are separate sets of articles to modify subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs</content><text show="swNPPossCaseErgGen"><content> versus possessors</content></text><content>.  The articles which can be used in subjects of transitive verbs in </content><langName/><content> are shown in the following table:</content></p>
+        <p show="swNPArtAndDemArtOrBothCaseErgAndArtCaseYes"><content>Since </content><langName/><content> has a ergative-absolutive case system, there are separate sets of articles to modify subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs</content><text show="swNPPossCaseErgGen"><content> versus possessors</content></text><content>.  The articles which can be used in subjects of transitive verbs are shown in the following table:</content></p>
         <example show="swNPArtAndDemArtOrBothCaseErgAndArtCaseYesAndArtPlNo">
            <table border="1">
               <headerRow>
@@ -1367,7 +1367,7 @@
               </row>
            </table>
         </example>	      
-        <p show="swNPArtAndDemArtOrBothCaseErgAndArtCaseYes"><content>The articles which can be used in subjects of intransitive verbs and objects of transitive verbs in </content><langName/><content> are shown in the following table:</content></p>
+        <p show="swNPArtAndDemArtOrBothCaseErgAndArtCaseYes"><content>The articles which can be used in subjects of intransitive verbs and objects of transitive verbs  are shown in the following table:</content></p>
         <example show="swNPArtAndDemArtOrBothCaseErgAndArtCaseYesAndArtPlNo">
            <table border="1">
               <headerRow>
@@ -1421,7 +1421,7 @@
               </row>
            </table>
         </example>	      
-        <p show="swNPArtAndDemArtOrBothCaseErgAndArtCaseYesAndPossCaseErgGen"><content>The articles which can be used in possessors in </content><langName/><content> are shown in the following table:</content></p>
+        <p show="swNPArtAndDemArtOrBothCaseErgAndArtCaseYesAndPossCaseErgGen"><content>The articles which can be used in possessors are shown in the following table:</content></p>
         <example show="swNPArtAndDemArtOrBothCaseErgAndArtCaseYesAndPossCaseErgGenAndArtPlNo">
            <table border="1">
               <headerRow>
@@ -1476,7 +1476,7 @@
            </table>
         </example>	      
         
-        <p show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYes"><content>Since </content><langName/><content> has a split case system, there are separate sets of articles to modify subjects and objects and possessors, plus some additional sets for use under the special split ergativity conditions.  The articles which can be used in subjects in </content><langName/><content> are shown in the following table:</content></p>
+        <p show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYes"><content>Since </content><langName/><content> has a split case system, there are separate sets of articles to modify subjects and objects and possessors, plus some additional sets for use under the special split ergativity conditions.  The articles which can be used in subjects are shown in the following table:</content></p>
         <example show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYesAndArtPlNo">
            <table border="1">
               <headerRow>
@@ -1530,7 +1530,7 @@
               </row>
            </table>
         </example>	      
-        <p show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYes"><content>The articles which can be used in objects in </content><langName/><content> are shown in the following table:</content></p>
+        <p show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYes"><content>The articles which can be used in direct objects are shown in the following table:</content></p>
         <example show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYesAndArtPlNo">
            <table border="1">
               <headerRow>
@@ -1584,7 +1584,7 @@
               </row>
            </table>
         </example>	      
-        <p show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYes"><content>The articles which can be used in possessors in </content><langName/><content> are shown in the following table:</content></p>
+        <p show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYes"><content>The articles which can be used in possessors are:</content></p>
         <example show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYesAndArtPlNo">
            <table border="1">
               <headerRow>
@@ -1693,7 +1693,7 @@
               </row>
            </table>
         </example>	      
-        <p show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYes"><content>The articles which can be used in subjects of intransitive verbs and objects of transitive verbs under the split ergativity conditions are shown in the following table:</content></p>
+        <p show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYes"><content>The articles which can be used in subjects of intransitive verbs and objects of transitive verbs under the split ergativity conditions are:</content></p>
         <example show="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYesAndArtPlNo">
            <table border="1">
               <headerRow>
@@ -1748,8 +1748,8 @@
            </table>
         </example>	      
         
-        <p show="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDat"><content>There is another set of articles which can be used in subjects of Experiencer verbs or as indirect objects in </content><langName/><content>, which are shown in the following table:</content></p>
-        <example show="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDatAndArtPlNo">
+        <p show="swNPArtAndDemArtOrBothCaseNotNone"><content>There is another set of articles which can be used in </content><text show="swExperiencerYesDat"><content>subjects of Experiencer verbs or </content></text><content>indirect objects, which are shown in the following table:</content></p>
+        <example show="swNPArtAndDemArtOrBothCaseNotNoneAndArtPlNo">
            <table border="1">
               <headerRow>
                  <headerCol>Type</headerCol>
@@ -1768,7 +1768,7 @@
               </row>
            </table>
         </example>	      	      
-        <example show="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDatAndArtPlYes">
+        <example show="swNPArtAndDemArtOrBothCaseNotNoneAndArtPlYes">
            <table border="1">
               <headerRow>
                  <headerCol>Type</headerCol>
@@ -1812,21 +1812,21 @@
                  <headerCol>Nominative</headerCol>
                  <headerCol>Accusative</headerCol>
                  <headerCol>Genitive</headerCol>
-                 <headerCol show="swExperiencerYesDat">Dative</headerCol>
+                 <headerCol>Dative</headerCol>
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definite</content></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinite</content></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
            </table>
         </example>	      
@@ -1840,7 +1840,7 @@
                  <headerCol>Nominative</headerCol>
                  <headerCol>Accusative</headerCol>
                  <headerCol>Genitive</headerCol>
-                 <headerCol show="swExperiencerYesDat">Dative</headerCol>
+                 <headerCol>Dative</headerCol>
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col rowspan="2"><content>Definite</content></col>
@@ -1848,14 +1848,14 @@
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Plural</content></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col rowspan="2"><content>Indefinite</content></col>
@@ -1863,14 +1863,14 @@
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Plural</content></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
            </table>
         </example>	      
@@ -1883,21 +1883,21 @@
                  <headerCol>Ergative</headerCol>
                  <headerCol>Absolutive</headerCol>
                  <headerCol show="swNPPossCaseErgGen">Genitive</headerCol>
-                 <headerCol show="swExperiencerYesDat">Dative</headerCol>
+                 <headerCol>Dative</headerCol>
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definite</content></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinite</content></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
            </table>
         </example>	      
@@ -1911,7 +1911,7 @@
                  <headerCol>Ergative</headerCol>
                  <headerCol>Absolutive</headerCol>
                  <headerCol show="swNPPossCaseErgGen">Genitive</headerCol>
-                 <headerCol show="swExperiencerYesDat">Dative</headerCol>
+                 <headerCol>Dative</headerCol>
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col rowspan="2"><content>Definite</content></col>
@@ -1919,14 +1919,14 @@
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Plural</content></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col rowspan="2"><content>Indefinite</content></col>
@@ -1934,14 +1934,14 @@
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Plural</content></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
            </table>
         </example>	     
@@ -1955,7 +1955,7 @@
                  <headerCol>NOM</headerCol>
                  <headerCol>ACC</headerCol>
                  <headerCol>GEN</headerCol>
-                 <headerCol show="swExperiencerYesDat">DAT</headerCol>
+                 <headerCol>DAT</headerCol>
                  <headerCol>ERG</headerCol>
                  <headerCol>ABS</headerCol>
               </headerRow>			
@@ -1966,7 +1966,7 @@
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinite</content></col>
@@ -1975,7 +1975,7 @@
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
            </table>
         </example>	      
@@ -1989,7 +1989,7 @@
                  <headerCol>NOM</headerCol>
                  <headerCol>ACC</headerCol>
                  <headerCol>GEN</headerCol>
-                 <headerCol show="swExperiencerYesDat">DAT</headerCol>
+                 <headerCol>DAT</headerCol>
                  <headerCol>ERG</headerCol>
                  <headerCol>ABS</headerCol>
               </headerRow>			
@@ -2001,7 +2001,7 @@
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Plural</content></col>
@@ -2010,7 +2010,7 @@
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col rowspan="2"><content>Indefinite</content></col>
@@ -2020,7 +2020,7 @@
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Plural</content></col>
@@ -2029,7 +2029,7 @@
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
                  <col><langData>FORM</langData></col>
-                 <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+                 <col><langData>FORM</langData></col>
               </row>
            </table>
         </example>	      
@@ -2194,7 +2194,7 @@
 	         </table>
 	      </example>	      
 
-        <p show="swNPArtAndDemDemOrBothCaseNomAndArtCaseYes"><content>The demonstratives which can be used in objects are shown in the following table, based on the distance from the speaker:</content></p>
+        <p show="swNPArtAndDemDemOrBothCaseNomAndArtCaseYes"><content>The demonstratives which can be used in direct objects are shown in the following table, based on the distance from the speaker:</content></p>
         <example show="swNPArtAndDemDemOrBothCaseNomAndArtCaseYesAndDemPlNo">
 	         <table border="1">
 	            <headerRow>
@@ -2624,7 +2624,7 @@
 	            </row>
 	         </table>
 	      </example>	      
-        <p show="swNPArtAndDemDemOrBothCaseSplitAndArtCaseYes"><content>The demonstratives which can be used in objects in the normal nominative-accusative system are shown in the following table, based on the distance from the speaker:</content></p>
+        <p show="swNPArtAndDemDemOrBothCaseSplitAndArtCaseYes"><content>The demonstratives which can be used in direct objects in the normal nominative-accusative system are shown in the following table, based on the distance from the speaker:</content></p>
         <example show="swNPArtAndDemDemOrBothCaseSplitAndArtCaseYesAndDemPlNo">
 	         <table border="1">
 	            <headerRow>
@@ -2911,8 +2911,8 @@
 	         </table>
 	      </example>	      	      
 
-        <p show="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDat"><content>There is another set of demonstratives which can be used in subjects of Experiencer verbs or in indirect objects, as shown in the following table, based on the distance from the speaker:</content></p>
-        <example show="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDatAndDemPlNo">
+        <p show="swNPArtAndDemDemOrBothCaseNotNone"><content>There is another set of demonstratives which can be used in </content><text show="swExperiencerYesDat"><content>subjects of Experiencer verbs or in </content></text><content>indirect objects, as shown in the following table, based on the distance from the speaker:</content></p>
+        <example show="swNPArtAndDemDemOrBothCaseNotNoneAndDemPlNo">
 	         <table border="1">
 	            <headerRow>
 	               <headerCol>Distance</headerCol>
@@ -2936,7 +2936,7 @@
 	            </row>
 	         </table>
 	      </example>	      	      
-        <example show="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDatAndDemPlYes">
+        <example show="swNPArtAndDemDemOrBothCaseNotNoneAndDemPlYes">
 	         <table border="1">
 	            <headerRow>
 	               <headerCol>Distance</headerCol>
@@ -2992,28 +2992,28 @@
 	               <headerCol>Nominative</headerCol>
 	               <headerCol>Accusative</headerCol>
 	               <headerCol>Genitive</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dative</headerCol>
+	               <headerCol>Dative</headerCol>
 	            </headerRow>			
 	            <row>
 	               <col><content>Proximal</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Medial</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distal</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3027,7 +3027,7 @@
 	               <headerCol>Nominative</headerCol>
 	               <headerCol>Accusative</headerCol>
 	               <headerCol>Genitive</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dative</headerCol>
+	               <headerCol>Dative</headerCol>
 	            </headerRow>			
 	            <row>
 	               <col rowspan="2"><content>Proximal</content></col>
@@ -3035,14 +3035,14 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Medial</content></col>
@@ -3050,14 +3050,14 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Distal</content></col>
@@ -3065,14 +3065,14 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3087,28 +3087,28 @@
 	               <headerCol>Ergative</headerCol>
 	               <headerCol>Absolutive</headerCol>
 	               <headerCol show="swNPPossCaseErgGen">Genitive</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dative</headerCol>
+	               <headerCol>Dative</headerCol>
 	            </headerRow>			
 	            <row>
 	               <col><content>Proximal</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Medial</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distal</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3122,7 +3122,7 @@
 	               <headerCol>Ergative</headerCol>
 	               <headerCol>Absolutive</headerCol>
 	               <headerCol show="swNPPossCaseErgGen">Genitive</headerCol>
-	               <headerCol show="swExperiencerYesDat">Dative</headerCol>
+	               <headerCol>Dative</headerCol>
 	               </headerRow>			
 	            <row>
 	               <col rowspan="2"><content>Proximal</content></col>
@@ -3130,14 +3130,14 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	               </row>
 	            <row>
 	               <col rowspan="2"><content>Medial</content></col>
@@ -3145,14 +3145,14 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	               </row>
 	            <row>
 	               <col rowspan="2"><content>Distal</content></col>
@@ -3160,14 +3160,14 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col show="swNPPossCaseErgGen"><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	               </row>
 	         </table>
 	      </example>	     
@@ -3181,7 +3181,7 @@
 	               <headerCol>NOM</headerCol>
 	               <headerCol>ACC</headerCol>
 	               <headerCol>GEN</headerCol>
-	               <headerCol show="swExperiencerYesDat">DAT</headerCol>
+	               <headerCol>DAT</headerCol>
 	               <headerCol>ERG</headerCol>
 	               <headerCol>ABS</headerCol>
 	               </headerRow>			
@@ -3192,7 +3192,7 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Medial</content></col>
@@ -3201,7 +3201,7 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distal</content></col>
@@ -3210,7 +3210,7 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3224,7 +3224,7 @@
 	               <headerCol>NOM</headerCol>
 	               <headerCol>ACC</headerCol>
 	               <headerCol>GEN</headerCol>
-	               <headerCol show="swExperiencerYesDat">DAT</headerCol>
+	               <headerCol>DAT</headerCol>
 	               <headerCol>ERG</headerCol>
 	               <headerCol>ABS</headerCol>
 	            </headerRow>			
@@ -3236,7 +3236,7 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
@@ -3245,7 +3245,7 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Medial</content></col>
@@ -3255,7 +3255,7 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
@@ -3264,7 +3264,7 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Distal</content></col>
@@ -3274,7 +3274,7 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
@@ -3283,7 +3283,7 @@
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
 	               <col><langData>FORM</langData></col>
-	               <col show="swExperiencerYesDat"><langData>FORM</langData></col>
+	               <col><langData>FORM</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3295,7 +3295,7 @@
      </section2>
         
     </section1>
-   <showWhen id="swAdjPModifiersNo">
+ <showWhen id="swAdjPModifiersNo">
       <whenValue element="adjp" attr="modifiers" value="no"/>
    </showWhen>
    <showWhen id="swAdjPModifiersYesDegree">
@@ -4584,12 +4584,10 @@
    <showWhen id="swArtDefOnlyNotIndef">
       <whenValue element="np" attr="artDefOnly" value="indef" negateValue="yes"/>
    </showWhen>
-   <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDat">
+   <showWhen id="swNPArtAndDemArtOrBothCaseNotNone">
       <whenValue element="np" attr="artAndDem" value="art"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="artCase" value="yes"/>
       <or/>
@@ -4597,16 +4595,12 @@
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
-      <and/>
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
-   <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDatAndArtPlYes">
+   <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndArtPlYes">
       <whenValue element="np" attr="artAndDem" value="art"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="artCase" value="yes"/>
       <and/>
@@ -4616,26 +4610,20 @@
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
-      <and/>
       <whenValue element="np" attr="artCase" value="yes"/>
       <and/>
       <whenValue element="np" attr="artPl" value="yes"/>
    </showWhen>
-   <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndExperiencerYesDatAndArtPlNo">
+   <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndArtPlNo">
       <whenValue element="np" attr="artAndDem" value="art"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="artCase" value="yes"/>
       <and/>
       <whenValue element="np" attr="artPl" value="no"/>
       <or/>
       <whenValue element="np" attr="artAndDem" value="both"/>
-      <and/>
-      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>
       <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
@@ -4823,55 +4811,46 @@
       <and/>
       <whenValue element="np" attr="artPl" value="yes"/>
    </showWhen>
-   <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDat">
+   <showWhen id="swNPArtAndDemDemOrBothCaseNotNone">
       <whenValue element="np" attr="artAndDem" value="dem"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <or/>
       <whenValue element="np" attr="artAndDem" value="both"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       </showWhen>
-   <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDatAndDemPlNo">
+   <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndDemPlNo">
       <whenValue element="np" attr="artAndDem" value="dem"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="demPl" value="no"/>
       <or/>
       <whenValue element="np" attr="artAndDem" value="both"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="demPl" value="no"/>
    </showWhen>
-   <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndExperiencerYesDatAndDemPlYes">
+   <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndDemPlYes">
       <whenValue element="np" attr="artAndDem" value="dem"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="demPl" value="yes"/>
       <or/>
       <whenValue element="np" attr="artAndDem" value="both"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
-      <and/>
-      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
       <and/>
       <whenValue element="np" attr="demPl" value="yes"/>
    </showWhen>
    <showWhen id="swNPPossCaseErgGen">
       <whenValue element="np" attr="possCaseErg" value="genitive"/>
+   </showWhen>
+   <showWhen id="swNPPossCaseErgNotGen">
+      <whenValue element="np" attr="possCaseErg" value="genitive" negateValue="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNoOrNoneAndPlNo">
       <whenValue element="np" attr="artAndDem" value="art"/>

@@ -719,7 +719,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> aparecen en la primera línea. En la segunda línea se presenta una traducción literal palabra por palabra en español, con el l significado más cercano a la palabra en el </xsl:text>
+<xsl:text> aparecen en la primera línea. En la segunda línea se presenta una traducción literal palabra por palabra en español, con el significado más cercano a la palabra en el </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -746,13 +746,13 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tenga más de una parte con significado (morfema), la tercera línea indicará la glosa para cada una de las partes de la palabra, con los prefijos, la raíz, y los sufijos separados por un guión. Esta línea puede ser la más útil para los lingüistas. En la línea final se proporciona la traducción libre del ejemplo completo</xsl:text>
+<xsl:text> tenga más de una parte con significado (morfema), la tercera línea indicará la glosa para cada una de las partes de la palabra, con los prefijos, la raíz, y los sufijos separados por un guión. Esta línea puede ser la más útil para los lingüistas. En la línea final se proporciona la traducción libre del ejemplo completo.</xsl:text>
 </p>
             <p>
 <object type="tComment">Mencione aquí cualquier diferencia que haya entre su lengua y el español. Por ejemplo, si su lengua no distingue entre el número y/o el género en los sustantivos, como lo hace el español, deberá usar el singular y la forma en masculino para las glosas de las palabras.</object>
 </p>
             <p>
-<xsl:text>Después de proveer la información sobre la tipología sintáctica de la lengua, la gramática comienza a describir las partes del discurso y las frases en las secciones </xsl:text>
+<xsl:text>Después de proveer la información sobre la tipología sintáctica de la lengua, la gramática comienza a describir las categorías gramaticales y las frases en las secciones </xsl:text>
 <sectionRef sec="sN" />
 <xsl:text>-</xsl:text>
 <sectionRef sec="sExcl" />
@@ -768,7 +768,7 @@
 <sectionRef sec="sComp" />
 <xsl:text>-</xsl:text>
 <sectionRef sec="sRelCl" />
-<xsl:text>.. Al final se incluyen algunos textos para mostrar cómo se forman las construcciones más grandes como párrafos, conversaciones e historias.</xsl:text>
+<xsl:text>. Al final se incluyen algunos textos para mostrar cómo se forman las construcciones más grandes como párrafos, conversaciones e historias.</xsl:text>
 </p>
         </section2>
     </section1>
@@ -793,7 +793,7 @@
                 <xsl:when test="//typology/@wordOrder='OVS'">Objeto-Verbo-Sujeto</xsl:when>
                 <xsl:when test="//typology/@wordOrder='OSV'">Objeto-Sujeto-Verbo</xsl:when>
             </xsl:choose>
-<xsl:text>, como se muestra en los siguiente ejemploss:</xsl:text>
+<xsl:text>, como se muestra en los siguientes ejemplos:</xsl:text>
 </p>
         <example num="xTypology.6">
 <xsl:variable name="sExampleValue">
@@ -1080,13 +1080,13 @@
 <xsl:text>se permite un sujeto tácito en cualquier tipo de oración.</xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/proDropClitic/@checked)='yes'">
-<xsl:text>parece que el sujeto no se presenta porque solo se ven pronombres dependientes (clíticos pronominales) que se ligan al verbo, pero no es una lengua que en realidad permita la ausencia del sujeto.</xsl:text>
+<xsl:text>parece que el sujeto no se presenta porque solo se ven pronombres dependientes (clíticos pronominales) que se ligan al verbo, pero no es una lengua que en realidad permita la ausencia del sujeto</xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/proDropImp/@checked)='yes' and normalize-space(//ip/proDropYes/@checked)='no' and normalize-space(//ip/proDropClitic/@checked)='no' and normalize-space(//ip/proDropOther/@checked)='no' and normalize-space(//ip/proDropNone/@checked)='no'">
-<xsl:text>no se permite la ausencia del sujeto. Siempre debe ser expresado, excepto en enunciados imperativos.</xsl:text>
+<xsl:text>no se permite la ausencia del sujeto. Siempre debe ser expresado, excepto en enunciados imperativos</xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/proDropNone/@checked)='yes' and normalize-space(//ip/proDropYes/@checked)='no' and normalize-space(//ip/proDropClitic/@checked)='no' and normalize-space(//ip/proDropOther/@checked)='no' and normalize-space(//ip/proDropImp/@checked)='no'">
-<xsl:text>no se permite un sujeto tácito. Siempre debe ser expresado aun en enunciados imperativos.</xsl:text>
+<xsl:text>no se permite un sujeto tácito. Siempre debe ser expresado aun en enunciados imperativos</xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/proDropOther/@checked)='yes' and normalize-space(//ip/proDropYes/@checked)='no' and normalize-space(//ip/proDropClitic/@checked)='no' and normalize-space(//ip/proDropNone/@checked)='no' and normalize-space(//ip/proDropImp/@checked)='no'">
 <xsl:text>se permite un sujeto tácito  ___</xsl:text>
@@ -1096,7 +1096,7 @@
 <xsl:if test="normalize-space(//ip/proDropOther/@checked)='yes' and normalize-space(//ip/proDropImp/@checked)='yes'">
 <xsl:text>aunque se permite un sujeto tácito  ___</xsl:text>
 <xsl:value-of select="//ip/proDropOther" />
-<xsl:text> y también en enunciados imperativos.</xsl:text>
+<xsl:text> y también en enunciados imperativos</xsl:text>
 </xsl:if>
 <xsl:text> (véase la sección </xsl:text>
 <sectionRef sec="sIPProDrop" />
@@ -1249,8 +1249,8 @@
 <xsl:if test="normalize-space(//typology/@case)!='none'">
 <xsl:text></xsl:text>
 <xsl:choose>
-                <xsl:when test="//np/@caseN='yes'">En los sustantivos y posiblements sus modificadores se indica el caso así como los pronombres</xsl:when>
-                <xsl:when test="//np/@caseN='no'">En los sustantivos no se indica el caso.  Solamente los pronombres lo hacen</xsl:when>
+                <xsl:when test="//np/@caseN='yes'"> En los sustantivos y posiblemente sus modificadores se indica el caso así como los pronombres</xsl:when>
+                <xsl:when test="//np/@caseN='no'"> En los sustantivos no se indica el caso.  Solamente los pronombres lo hacen</xsl:when>
              </xsl:choose>
 </xsl:if>
 <xsl:text> (véase la sección </xsl:text>
@@ -4063,42 +4063,60 @@
 </xsl:if>
       <xsl:if test="normalize-space(//typology/@classifier)='yesType'">
 <example num="xClassifiers.26">
-<xsl:variable name="sExampleValue">
-<xsl:value-of select="//typology/classifierTypeExample" />
+<table border="1">
+            <tr>
+               <th>Sustantivo</th>
+               <th>Glosa</th>
+            </tr>
+            <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//typology/classifierTypeExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//typology/classifierTypeExample))" />
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
-<xsl:call-template name="OutputInterlinearExamples">
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="//typology/classifierTypeExample" />
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//typology/classifierTypeExample))" />
+<xsl:value-of select="$iExampleLength0.0" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xClassifiers.26</xsl:with-param>
-<xsl:with-param name="sLetterList">
-<xsl:value-of select="$sMasterLetterList" />
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
 </xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
 </xsl:call-template>
 </xsl:when>
 <xsl:otherwise>
-<listInterlinear>
-<xsl:attribute name="letter">
-<xsl:text>xClassifiers.26.1</xsl:text>
-</xsl:attribute>
-<lineGroup>
-<line>
+<tr>
+<td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
-</line>
-<xsl:call-template name="DoWordGloss" />
-<xsl:call-template name="DoMorphemeGloss" />
-</lineGroup>
-<xsl:call-template name="DoFree" />
-</listInterlinear>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
 </xsl:otherwise>
 </xsl:choose>
+         </table>
 </example>
 </xsl:if>
       <xsl:if test="normalize-space(//typology/@classifier)='yesAgr'">

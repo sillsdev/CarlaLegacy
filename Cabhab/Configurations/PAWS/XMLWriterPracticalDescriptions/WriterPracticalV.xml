@@ -4735,7 +4735,7 @@ Some languages are not really pro-drop languages, but at least some of the prono
 		<whenValue element="ip" attr="passiveAgent" value="yes"/>
 	</showWhen>
    <showWhen id="swClassifiersNotNo">
-      <whenValue element="typology" attr="classifiers" value="no" negateValue="yes"/>
+      <whenValue element="typology" attr="classifier" value="no" negateValue="yes"/>
    </showWhen>
    <showWhen id="swPronExclYes">
       <whenValue element="pron" attr="pronounExcl" value="yes"/>

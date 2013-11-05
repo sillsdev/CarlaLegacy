@@ -166,6 +166,10 @@
 	         <caseText value="yesDat">el sujeto-experimentador utiliza un sistema de pronombres distinto al que utilizan tanto el sujeto-agente como el objeto directo. Esos pronombres son los que marcan el dativo y que se utilizan también para el objeto indirecto.</caseText>
 	      </case>	
 	      </p>
+	      
+	      <p show="swNPCaseNoneAndExperiencerNo"><content>En el </content><langName/><content>, se usan los mismos pronombres tanto para los sujetos-experimentadores como los sujetos-agentes.</content>  </p>
+	      <p show="swNPCaseNoneAndExperiencerNotNo"><content>En el </content><langName/><content>, al menos algunos de los prnombres que se usan para los sujetos-experimentadores son distintos que los que se usan para los sujetos-agentes.</content>  </p>
+	      
 	      <p><content>Esto se muestran en los siguientes ejemplos de oraciones transitivas con sujetos-experimentadores en que el sujeto y el objeto son frases nominales:</content></p>
 	      <example>
 	         <interlinear exampleLoc="typology/experiencerExample"/>
@@ -450,7 +454,7 @@
 			</p>
 			<section3 id="sNPPossCase">
 				<secTitle>Caso del posesivo</secTitle>
-			   <p show="swNPCaseNo"><content>Conforma a lo argumentado en la sección </content><sectionRef sec="sNPCase"/><content>, en el </content><langName/><content> no existe ningún sistema de caso. Por lo tanto, no hay ningún marca de caso en sustantivos ni un sistema distinto de pronombres usados para los posesivos.</content></p>
+			   <p show="swNPCaseNo"><content>Conforma a lo argumentado en la sección </content><sectionRef sec="sNPCase"/><content>, en el </content><langName/><content> no existe ningún sistema de caso. Por lo tanto, no hay ninguna marca de caso en sustantivos ni un sistema distinto de pronombres usados para los posesivos.</content></p>
 				<p show="swNPCaseNom">
 					<content>Dentro del sistema de caso nominativo-acusativo usado en el </content>
 					<langName/>
@@ -501,10 +505,10 @@
 			            <caseText value="yesPrefix">prefijo</caseText>
 			         </case>
 			         <text show="swNPPossCaseGen">
-			            <content>genitivo </content>
+			            <content> genitivo </content>
 			         </text>
 			         <text show="swNPCaseSplitNotGen">
-			            <content>o el </content>
+			            <content>o </content>
 			         </text>
 			         <content/>
 			         <text show="swNPPossCaseErg">
@@ -517,11 +521,11 @@
 			         <content> se presenta en el sustantivo principal, indica que un modificador adjetival y/o un posesivo deben estar presentes en la frase. Si el adjetivo está marcado con este </content>
 			         <content/>
 			         <case element="np" attr="adjpCaseAffix">
-			            <caseText value="yesSuffix">sufijo,</caseText>
-			            <caseText value="yesPrefix">prefijo,</caseText>
+			            <caseText value="yesSuffix">sufijo</caseText>
+			            <caseText value="yesPrefix">prefijo</caseText>
 			         </case>
 			         <text show="swNPPossCaseGen">
-			            <content>genitivo </content>
+			            <content> genitivo </content>
 			         </text>
 			         <text show="swNPCaseSplitNotGen">
 			            <content>o </content>
@@ -984,6 +988,16 @@
          <and/>
          <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
       </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNo">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="caseExperiencer" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNotNo">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="caseExperiencer" value="no" negateValue="yes"/>
+   </showWhen>
    <showWhen id="swNPCaseNotNoneAndCaseNYes">
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>

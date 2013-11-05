@@ -327,6 +327,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_166E27BE7E7F4831814CDBC196A0DD75"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_16735AD12B2445AFA21401198F2B5CAE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -5109,6 +5115,26 @@
             "TargetName" = "8:GrammarVPIntCop.xml"
             "Tag" = "8:"
             "Folder" = "8:_1A486F56DB734A23BEFF3277EE088F84"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_166E27BE7E7F4831814CDBC196A0DD75"
+            {
+            "SourcePath" = "8:..\\Configurations\\PAWS\\Transforms\\DataMigrations\\DBVersion9To9a.xsl"
+            "TargetName" = "8:DBVersion9To9a.xsl"
+            "Tag" = "8:"
+            "Folder" = "8:_3B70C962F3BB441C80E784F0692D9DA7"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -17161,7 +17187,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PAWS Starter Kit (Cabhab version)"
         "ProductCode" = "8:{5E7A315D-6D57-42C1-8E07-11DFEB9A4CB6}"
-        "PackageCode" = "8:{F364E4FB-4F3E-4376-B0F7-993385ED2627}"
+        "PackageCode" = "8:{26CC4E7E-F69B-486F-BA7A-D41A021C3D22}"
         "UpgradeCode" = "8:{FEBBCD5B-3BAF-45D9-A9B5-6B4D3CE2AB46}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -17282,9 +17308,9 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_BF347F3E762343B683AE38FF2D42B4DC"
             {
-            "Name" = "8:PAWS Starter Kit version 0.9.1"
+            "Name" = "8:PAWS Starter Kit version 0.9.2"
             "Arguments" = "8:-x PAWS\\paws.xml"
-            "Description" = "8:Shortcut to PAWS Starter Kit version 0.9.1"
+            "Description" = "8:Shortcut to PAWS Starter Kit version 0.9.2"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"

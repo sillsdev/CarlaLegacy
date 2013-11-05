@@ -4091,42 +4091,60 @@
 </xsl:if>
 	  <xsl:if test="normalize-space(//typology/@classifier)='yesType'">
 <example num="xClassifiers.26">
-<xsl:variable name="sExampleValue">
-<xsl:value-of select="//typology/classifierTypeExample" />
+<table border="1">
+	        <tr>
+	           <th>Noun</th>
+	           <th>Gloss</th>
+	        </tr>
+	        <xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//typology/classifierTypeExample),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//typology/classifierTypeExample))" />
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
-<xsl:call-template name="OutputInterlinearExamples">
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="//typology/classifierTypeExample" />
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//typology/classifierTypeExample))" />
+<xsl:value-of select="$iExampleLength0.0" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xClassifiers.26</xsl:with-param>
-<xsl:with-param name="sLetterList">
-<xsl:value-of select="$sMasterLetterList" />
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
 </xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
 </xsl:call-template>
 </xsl:when>
 <xsl:otherwise>
-<listInterlinear>
-<xsl:attribute name="letter">
-<xsl:text>xClassifiers.26.1</xsl:text>
-</xsl:attribute>
-<lineGroup>
-<line>
+<tr>
+<td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
-</line>
-<xsl:call-template name="DoWordGloss" />
-<xsl:call-template name="DoMorphemeGloss" />
-</lineGroup>
-<xsl:call-template name="DoFree" />
-</listInterlinear>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
 </xsl:otherwise>
 </xsl:choose>
+	     </table>
 </example>
 </xsl:if>
 	  <xsl:if test="normalize-space(//typology/@classifier)='yesAgr'">

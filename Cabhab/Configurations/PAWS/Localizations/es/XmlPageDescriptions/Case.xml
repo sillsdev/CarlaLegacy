@@ -5,7 +5,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="Case" count="2/3">
    <title level="2">La tipología - Sistema de caso</title>
-   <introduction>Ahora necesitamos determinar cuál sistema de <technicalTermRef term="ttCase"/> se utiliza en su lengua, si lo hubiera.  Empezaremos por examinar ejemplos con sustantivos y pronombres como sujetos y objetos directos (determinarémos el caso de los <technicalTermRef term="ttPossessors">posesivos</technicalTermRef> más tarde).</introduction>
+   <introduction>Ahora necesitamos determinar cuál sistema de <technicalTermRef term="ttCase"/> se utiliza en su lengua, si lo hubiera.  Se empieza por examinar ejemplos con sustantivos y pronombres como sujetos y objetos directos (el caso de los <technicalTermRef term="ttPossessors">posesivos</technicalTermRef> se determina más tarde).</introduction>
     <form section="typology">   
        <prompt>En la página anterior, usted escribió los siguientes ejemplos de oraciones <technicalTermRef term="ttTransitive">transitivas</technicalTermRef> en su lengua.  Si los ejemplos solamente tienen nombres como el sujeto y el objeto directo, escriba ejemplos adicionales aquí utilizando frase nominales simples como el sujeto y el objeto directo.   Por favor, utiliza solamente las oraciones con un sujeto-<technicalTermRef term="ttAgent"/> y que no tienen cambios por la  <technicalTermRef term="ttVoice"/> aquí.</prompt>
        <textBox id="OTExample" dataItem="example" cols="50"/>
@@ -62,7 +62,7 @@
            Este tipo de indicador en la concordancia se considera en <section number="9.2">Las oraciones básicas - La flexión y la concordancia</section>.<br/>
             <br/>
            Algunas lenguas son aún más complejas en que tienen normalmente un sistema de caso del nominativo-acusativo pero bajo ciertas condiciones gramaticales el sistema de caso cambia a ergativo-absolutivo.  
-           Por ejemplo, en Urdu e Hindi, se utiliza el caso ergativo para agentes en el tiempo pretérito y aspecto perfecto para los verbos transitivos y ditransitivos, mientras que en otros tiempos y aspectos agentes utilizan el caso nominativo. En Dyirbal, los pronombres siguen un patrón de nominativo–acusativo cuando el agente es la primera o segunda persona, sino un patrón ergativo-absolutivo cuando el agente es la tercera persona.  Esto se llama “ergatividad escindida”.   
+           Por ejemplo, en Urdu e Hindi, se utiliza el caso ergativo para agentes en el tiempo pretérito y aspecto perfecto para los verbos transitivos y ditransitivos, mientras que en otros tiempos y aspectos agentes utilizan el caso nominativo. En Dyirbal, los pronombres siguen un patrón de nominativo–acusativo cuando el agente es de primera o segunda persona, sino un patrón ergativo-absolutivo cuando el agente es de tercera persona.  Esto se llama “ergatividad escindida”.   
            <span id="OTCaseSplitNotPracticalSpan" show="swNotPractical"> In this starter kit, the best we can do for these languages is to add all the rules allowing both case systems.  Afterward, the specific constraints needed for your language can be added to the rules.</span>
         </introduction>
         <radioGroup>
@@ -78,12 +78,19 @@
        <br/><br/>
        <radioGroup id="NPCaseExperiencerTable" show="swNPCaseNotNone">
           <groupName dataItem="caseExperiencer" default="no">RNPCaseExperiencer</groupName>
-          <prompt>¿Utiliza su lengua indicadores distintos para caso en sustantivos y/o sistemas distintos de pronombres para sujetos-experimentadores contra sujetos-agentes?</prompt>
-          <radio id="NPCaseExperiencerNo" dataValue="no">No, los mismos indicadores y/o pronombres se untilizan para ambos sujetos-agentes y sujetos-experimentadores</radio>
+          <prompt>¿Utiliza su lengua indicadores distintos para caso en sustantivos y/o sistemas distintos de pronombres para sujetos-experimentadores en contraste con sujetos-agentes?</prompt>
+          <radio id="NPCaseExperiencerNo" dataValue="no">No, los mismos indicadores y/o pronombres se untilizan tanto para sujetos-agentes como sujetos-experimentadores</radio>
           <radio id="NPCaseExperiencerYesObj" dataValue="yesObj">Sí, los sujetos-experimentadores utilizan los mismos indicadores de caso y/o pronombres que los objetos directos de verbos transitivos con un sujeto-agente</radio>
           <radio id="NPCaseExperiencerYesDat" dataValue="yesDat">Sí, los sujetos-experimentadores utilizan indicadores de caso y/o pronombres distintos que ambos el sujeto y objeto directo de verbos transitivos con un sujeto-agente, pero pueden utilizarse para objetos indirectos</radio>
        </radioGroup>
-        <br/>
+         
+       <radioGroup id="NPNoCaseExperiencerTable" show="swNPCaseNone">
+          <groupName dataItem="noCaseExperiencer" default="no">RNPNoCaseExperiencer</groupName>
+          <prompt>¿Utiliza su lengua algunos pronombres distintos para sujetos-experimentadores en contraste con sujetos-agentes?</prompt>
+          <radio id="NPNoCaseExperiencerNo" dataValue="no">No, los mismos pronombres se untilizan tanto para sujetos-agentes como sujetos-experimentadores</radio>
+          <radio id="NPNoCaseExperiencerYes" dataValue="yes">Sí, los sujetos-experimentadores utilizan formas distintos para algunos o todos los pronombres en contraste con los sujetos-agentes</radio>
+       </radioGroup>
+       <br/>
          <br/>
         <buttons>
             <button id="CaseBack" value="Back" goto="OverallTypology.xml"/>
@@ -98,6 +105,9 @@
    </showWhen>
    <showWhen id="swNPCaseNotNone">
       <not/><whenRadio button="NPCaseNone"/>
+   </showWhen>
+   <showWhen id="swNPCaseNone">
+      <whenRadio button="NPCaseNone"/>
    </showWhen>
    <showWhen id="swNPCaseNomOrSplit">
       <whenRadio button="NPCaseNom"/>

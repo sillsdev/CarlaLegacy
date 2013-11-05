@@ -6,7 +6,7 @@
 <page id="NPArtPosition" count="2/2">
     <title level="2">Las frases nominales - Los artículos y los demonstrativos: su posición y la concordancia</title>
     <form section="np">
-        <prompt id="NPArtAndDemInstruction" show="swNPArtAndDem"><span id="NPArtandDemTreespan" show="swNotPractical">Now we are ready to build the next part of the phrase structure tree.  </span>Mire los ejemplos de las frases nominales con <span id="NPArtandDemSpan" show="swNPArtAndDemBoth">los artículos y los demonstrativos</span><span id="NPArtSpan" show="swNPArtAndDemArt">los artículos</span><span id="NPDemSpan" show="swNPArtAndDemDem">los demonstrativos</span> que usted escribió (repetido abajo).</prompt>
+       <prompt id="NPArtAndDemInstruction" show="swNPArtAndDem"><span id="NPArtandDemTreespan" show="swNotPractical">Now we are ready to build the next part of the phrase structure tree.  </span>Escriba ejemplos de las frases nominales con <span id="NPArtandDemSpan" show="swNPArtAndDemBoth">los artículos y los demonstrativos</span><span id="NPArtSpan" show="swNPArtAndDemArt">los artículos</span><span id="NPDemSpan" show="swNPArtAndDemDem">los demonstrativos</span> aquí:</prompt>
         <textBox id="NPArtPosExample" show="swNPArtAndDem" dataItem="example"/>
         <prompt id="NPArtAndDemNoInstruction" show="swNPArtAndDemNo">Puesto que su lengua no tiene artículos o demonstrativos que se expresan como palabras independientes, no necesitamos determinar una posición sintáctica para ellos.</prompt>
 <instruction id="NPArtAndDemNoInstruction2" show="swNPArtAndDemNo">You will be instructed to add the agreement features to nouns and their affixes when we deal with agreement again in the section on possessors.</instruction>

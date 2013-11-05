@@ -30,7 +30,7 @@
             <radio id="NPPossAgrNo" dataValue="no">No</radio>
             <radio id="NPPossAgrYes" dataValue="yes">Sí</radio>
         </radioGroup>
-       <prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYesAndNotPractical">Mire las características de la tabla abajo y compruebe (dando click) cualquiera que su lengua utiliza. In the lexicon, add that feature to the appropriate entires.  La concordancia de clase fue analizado en <section number="1.">La tipología - clasificadores</section>.  <br/>
+       <prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYesAndNotPractical">Mire las características de la tabla abajo y compruebe (haga clic) cualquiera que su lengua utiliza. In the lexicon, add that feature to the appropriate entires.  La concordancia de clase fue analizado en <section number="1.">La tipología - clasificadores</section>.  <br/>
             <featureChart>
                 <featureRow>
                     <featureType rowspan="5">persona</featureType>

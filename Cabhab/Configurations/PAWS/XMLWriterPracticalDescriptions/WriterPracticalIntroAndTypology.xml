@@ -1299,7 +1299,16 @@
 
  <p show="swClassifiersYesType"><content>Some example nouns with their associated type classifiers are:</content></p>
 	  <example show="swClassifiersYesType">
-		 <interlinear exampleLoc="typology/classifierTypeExample"/>
+	     <table border="1">
+	        <headerRow>
+	           <headerCol>Noun</headerCol>
+	           <headerCol>Gloss</headerCol>
+	        </headerRow>
+	        <row>
+	           <col exampleLoc="typology/classifierTypeExample"/>
+	           <col ><gloss><content>ENTER GLOSS</content></gloss></col>
+	        </row>
+	     </table>
 	  </example>
 	  <p show="swClassifiersYesAgr"><content>Some example sentences showing the concord classifier agreement  within the nominal phrase and on the verb are:</content></p>
 	  <example show="swClassifiersYesAgr">

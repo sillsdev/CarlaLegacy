@@ -725,10 +725,40 @@
 	      </xsl:choose>
 </p>
 </xsl:if>
+	      
+	      <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@caseExperiencer)='no'">
+<p>
+<xsl:text>In </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, the same pronoun set is used for both Agent and Experiencer subjects.</xsl:text>
+</p>
+</xsl:if>
+	      <xsl:if test="normalize-space(//typology/@case)='none' and normalize-space(//typology/@caseExperiencer)!='no'">
+<p>
+<xsl:text>In </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, at least some of the pronouns used for Experiencer subjects are distinct from those used for Agent subjects.</xsl:text>
+</p>
+</xsl:if>
+	      
 	      <p>
 <xsl:text>This is shown in the following examples of transitive sentences with verbs which have Experiencer subjects, where the subject and object are nominal phrases:</xsl:text>
 </p>
-	      <example num="xN.NPCase.42">
+	      <example num="xN.NPCase.46">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//typology/experiencerExample" />
 </xsl:variable>
@@ -742,7 +772,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//typology/experiencerExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xN.NPCase.42</xsl:with-param>
+<xsl:with-param name="sExNumber">xN.NPCase.46</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -751,7 +781,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xN.NPCase.42.1</xsl:text>
+<xsl:text>xN.NPCase.46.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -769,7 +799,7 @@
 	      <p>
 <xsl:text>Note the forms of the pronouns used for the Experiencer subjects and the objects in these transitive sentences:</xsl:text>
 </p>
-	      <example num="xN.NPCase.46">
+	      <example num="xN.NPCase.50">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//typology/experiencerPnExample" />
 </xsl:variable>
@@ -783,7 +813,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//typology/experiencerPnExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xN.NPCase.46</xsl:with-param>
+<xsl:with-param name="sExNumber">xN.NPCase.50</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -792,7 +822,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xN.NPCase.46.1</xsl:text>
+<xsl:text>xN.NPCase.50.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -2929,6 +2959,16 @@
          
          
       
+   
+      
+      
+      
+   
+   
+      
+      
+      
+   
    
       
       
